@@ -1,2 +1,2 @@
 # matekido
-nteraktív matematikai tanulási platform magyar gyerekeknek.
+Interaktív matematikai tanulási platform magyar gyerekeknek.

@@ -1,2 +1,2 @@
 # matekido
-time for play mathematics
+nteraktív matematikai tanulási platform magyar gyerekeknek.

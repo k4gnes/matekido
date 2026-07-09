@@ -1,23 +1,22 @@
 {
   "id": "grade1-addition-01",
   "title": "Segíts a postásnak!",
-  "grade": 1,
-  "theme": "postman",
   "steps": [
     {
       "type": "story",
       "title": "📮 Segíts a postásnak!",
-      "text": "A postás ma öt házba visz levelet. Segíts neki kiszámolni, hány levelet kell kézbesítenie!"
+      "text": "A postás ma öt házba visz levelet."
     },
     {
       "type": "addition",
+      "title": "📬 Első ház",
       "a": 23,
       "b": 14
     },
     {
       "type": "celebration",
       "title": "🎉 Ügyes voltál!",
-      "text": "Az első család megkapta a leveleit."
+      "text": "A postás sikeresen kézbesítette az első házhoz a leveleket."
     }
   ]
 }

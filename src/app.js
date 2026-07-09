@@ -1,10 +1,10 @@
-import { renderStory } from "./components/story.js";
+import { Game } from "./engine/Game.js";
+import { loadLesson } from "./engine/LessonLoader.js";
 
-const app = document.getElementById("app");
+const lesson = await loadLesson("./src/data/lessons/grade1/addition-01.json");
 
-const step = {
-    title: "📮 Segíts a postásnak!",
-    text: "A postás ma öt házba visz levelet. Segíts neki kiszámolni, hány levelet kell kézbesítenie!"
-};
+const root = document.getElementById("app");
 
-renderStory(step, app);
+const game = new Game(lesson, root);
+
+game.start();

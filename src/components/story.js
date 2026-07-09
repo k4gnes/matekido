@@ -1,4 +1,4 @@
-export function renderStory(step, root) {
+export function renderStory(step, root, next) {
     root.innerHTML = "";
 
     const title = document.createElement("h1");
@@ -9,6 +9,7 @@ export function renderStory(step, root) {
 
     const button = document.createElement("button");
     button.textContent = "Kezdjük!";
+    button.addEventListener("click", next);
 
     const card = document.createElement("div");
     card.className = "card";
@@ -19,6 +20,7 @@ export function renderStory(step, root) {
 
 
     return button;
+
 
     
 }

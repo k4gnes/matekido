@@ -1,1 +1,0 @@
-document.getElementById('start').onclick=()=>alert('A következő verzióban itt indul az első játék! 🚀');

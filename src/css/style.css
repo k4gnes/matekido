@@ -71,3 +71,35 @@ button:hover {
     flex-direction: column;
     align-items: center;
 }
+
+.equation {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:.75rem;
+  font-size:2rem;
+  margin:2rem 0;
+}
+.equation input{
+  width:5ch;
+  text-align:center;
+  font-size:2rem;
+  padding:.3rem;
+  border:2px solid #bbb;
+  border-radius:8px;
+}
+.message {
+    min-height: 2rem;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.success {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+.error {
+    color: #c62828;
+}

@@ -7,10 +7,8 @@ export function buildLesson(lesson) {
     for (const step of lesson.steps) {
 
         if (step.type !== "exercise") {
-
             steps.push(step);
             continue;
-
         }
 
         const tasks = generate(step);
@@ -18,8 +16,11 @@ export function buildLesson(lesson) {
         tasks.forEach((task, index) => {
 
             steps.push({
-                ...task,
-                title: `🏠 ${index + 1}. ház`
+                type: "exercise",
+                kind: "addition",
+                title: `🏠 ${index + 1}. ház`,
+                a: task.a,
+                b: task.b
             });
 
         });

@@ -1,5 +1,5 @@
 import { renderScene } from "../components/scene.js";
-import { renderAddition } from "../components/addition.js";
+import { renderExercise } from "../components/exercise.js";
 import { renderCelebration } from "../components/celebration.js";
 
 export class Game {
@@ -36,7 +36,7 @@ export class Game {
     getProgress() {
 
         const exercises = this.lesson.steps.filter(
-            step => step.type === "addition"
+            step => step.type === "exercise"
         );
 
         const total = exercises.length;
@@ -45,7 +45,7 @@ export class Game {
 
         for (let i = 0; i <= this.currentStep; i++) {
 
-            if (this.lesson.steps[i].type === "addition") {
+            if (this.lesson.steps[i].type === "exercise") {
                 current++;
             }
 
@@ -71,8 +71,8 @@ export class Game {
                 );
                 break;
 
-            case "addition":
-                renderAddition(
+            case "exercise":
+                renderExercise(
                     step,
                     this.root,
                     () => this.next()

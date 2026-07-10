@@ -1,4 +1,4 @@
-export function renderAddition(step, root, next) {
+export function renderAddition(step, root, next, progress) {
     root.replaceChildren();
     const card = document.createElement("div");
     card.className = "card";
@@ -28,7 +28,10 @@ export function renderAddition(step, root, next) {
     message.className = "message";
 
 
-    card.append(title, equation, button, message);
+    if (progress) {
+        card.append(progress);
+    } card.append(title, equation, button, message);
+
     function check() {
         const answer = Number(input.value);
         const correctAnswer = step.a + step.b;

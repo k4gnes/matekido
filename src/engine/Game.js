@@ -1,6 +1,7 @@
 import { renderScene } from "../components/scene.js";
 import { renderExercise } from "../components/exercise.js";
 import { renderCelebration } from "../components/celebration.js";
+import { renderProgress } from "../components/progress.js";
 
 export class Game {
 
@@ -58,7 +59,9 @@ export class Game {
     }
 
     render() {
-
+        const progress = renderProgress(
+            this.getProgress()
+        );
         const step = this.lesson.steps[this.currentStep];
 
         switch (step.type) {
@@ -67,15 +70,19 @@ export class Game {
                 renderScene(
                     step,
                     this.root,
-                    () => this.next()
+                    () => this.next(),
+                    progress
                 );
+
                 break;
 
             case "exercise":
+
                 renderExercise(
                     step,
                     this.root,
-                    () => this.next()
+                    () => this.next(),
+                    progress
                 );
                 break;
 

@@ -5,18 +5,22 @@ export function renderProgress({ current, total }) {
 
     for (let i = 1; i <= total; i++) {
 
-        const house = document.createElement("span");
+        const item = document.createElement("span");
 
         if (i < current) {
-            house.textContent = "🏠";
-        } else if (i === current) {
-            house.textContent = "📮";
-        } else {
-            house.textContent = "🏡";
+            item.textContent = "🏠";
+        }
+        else if (i === current) {
+            item.textContent = "📮";
+        }
+        else {
+            item.textContent = "🏡";
         }
 
-        progress.append(house);
+        progress.append(item);
+
     }
 
     return progress;
+
 }

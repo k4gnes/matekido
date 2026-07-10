@@ -1,11 +1,11 @@
 import { renderAddition } from "./addition.js";
 
-export function renderExercise(step, root, next) {
+export function renderExercise(step, root, next,progress) {
 
     switch (step.kind) {
 
         case "addition":
-            renderAddition(step, root, next);
+            renderAddition(step, root, next,progress);
             break;
 
         default:

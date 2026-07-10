@@ -5,18 +5,25 @@
     {
       "type": "story",
       "title": "📮 Segíts a postásnak!",
-      "text": "A postás ma öt házba visz levelet."
+      "text": "A postás ma sok házba visz levelet. Segíts neki!"
     },
+
     {
-      "type": "addition",
-      "title": "📬 Első ház",
-      "a": 23,
-      "b": 14
+      "type": "exercise",
+      "generator": "addition",
+      "count": 5,
+      "options": {
+        "count": 5,
+        "min": 10,
+        "max": 99,
+        "carry": false
+      }
     },
+
     {
       "type": "celebration",
-      "title": "🎉 Ügyes voltál!",
-      "text": "A postás sikeresen kézbesítette az első házhoz a leveleket."
+      "title": "🎉 Minden levelet kézbesítettél!",
+      "text": "A postás nagyon hálás neked!"
     }
   ]
 }

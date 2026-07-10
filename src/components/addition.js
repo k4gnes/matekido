@@ -11,18 +11,25 @@ export function renderAddition(step, root, next) {
     const second=document.createElement("span"); second.textContent=step.b;
     const equal=document.createElement("span"); equal.textContent="=";
     const input=document.createElement("input");
-    input.type="number"; input.placeholder="?"; input.autofocus=true;
+    input.type="number"; input.placeholder="?"; 
+
+
     equation.append(first,plus,second,equal,input);
     const button=document.createElement("button");
     button.textContent="Ellenőrzöm";
  
     root.append(card);
+
+requestAnimationFrame(() => {
+    input.focus();
+});
+
     const message = document.createElement("p");
     message.className = "message";
 
     
     card.append(title, equation, button, message);
-    button.addEventListener("click",()=>{
+    function check() {
         const answer=Number(input.value);
         const correctAnswer=step.a+step.b;
 
@@ -41,5 +48,10 @@ export function renderAddition(step, root, next) {
     input.focus();
     input.select();
 }
+    }
+
+    button.addEventListener("click", check);
+    input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") check();
     });
 }

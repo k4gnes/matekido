@@ -1,4 +1,4 @@
-export function renderStory(step, root, next) {
+export function renderScene(step, root, next) {
     root.innerHTML = "";
 
     const title = document.createElement("h1");

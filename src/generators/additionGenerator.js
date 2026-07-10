@@ -45,3 +45,4 @@ function hasCarry(a, b) {
 
     return onesA + onesB >= 10;
 }
+

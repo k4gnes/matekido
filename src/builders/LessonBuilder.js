@@ -1,4 +1,4 @@
-import { generateAddition } from "../generators/additionGenerator.js";
+import { generate } from "../generators/index.js";
 
 export function buildLesson(lesson) {
 
@@ -7,40 +7,28 @@ export function buildLesson(lesson) {
     for (const step of lesson.steps) {
 
         if (step.type !== "exercise") {
+
             steps.push(step);
             continue;
+
         }
 
-        switch (step.generator) {
+        const tasks = generate(step);
 
-            case "addition":
+        tasks.forEach((task, index) => {
 
-                const tasks = generateAddition(step.options);
+            steps.push({
+                ...task,
+                title: `🏠 ${index + 1}. ház`
+            });
 
-                tasks.forEach((task, index) => {
+        });
 
-                    steps.push({
-                        type: "addition",
-                        title: `🏠 ${index + 1}. ház`,
-                        a: task.a,
-                        b: task.b
-                    });
-
-                });
-
-                break;
-
-
-            default:
-                console.error(
-                    "Ismeretlen generátor:",
-                    step.generator
-                );
-        }
     }
 
     return {
         ...lesson,
         steps
     };
+
 }

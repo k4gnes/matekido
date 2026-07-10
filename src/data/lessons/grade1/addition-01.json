@@ -3,11 +3,10 @@
   "title": "Segíts a postásnak!",
   "steps": [
     {
-      "type": "story",
+      "type": "scene",
       "title": "📮 Segíts a postásnak!",
       "text": "A postás ma sok házba visz levelet. Segíts neki!"
     },
-
     {
       "type": "exercise",
       "generator": "addition",
@@ -16,10 +15,10 @@
         "count": 5,
         "min": 10,
         "max": 99,
-        "carry": false
+        "carry": false,
+        "unique": true
       }
     },
-
     {
       "type": "celebration",
       "title": "🎉 Minden levelet kézbesítettél!",

@@ -1,4 +1,4 @@
-import { renderStory } from "../components/story.js";
+import { renderScene } from "../components/scene.js";
 import { renderAddition } from "../components/addition.js";
 import { renderCelebration } from "../components/celebration.js";
 
@@ -15,19 +15,46 @@ export class Game {
     }
 
     next() {
+
         this.currentStep++;
 
         if (this.currentStep >= this.lesson.steps.length) {
+
             this.root.innerHTML = `
-    <div class="card">
-        <h1>🏁 Lecke vége</h1>
-        <p>Nagyon ügyesen dolgoztál!</p>
-    </div>
-`;
-        return;
+                <div class="card">
+                    <h1>🏁 Lecke vége</h1>
+                    <p>Nagyon ügyesen dolgoztál!</p>
+                </div>
+            `;
+
+            return;
         }
 
         this.render();
+    }
+
+    getProgress() {
+
+        const exercises = this.lesson.steps.filter(
+            step => step.type === "addition"
+        );
+
+        const total = exercises.length;
+
+        let current = 0;
+
+        for (let i = 0; i <= this.currentStep; i++) {
+
+            if (this.lesson.steps[i].type === "addition") {
+                current++;
+            }
+
+        }
+
+        return {
+            current,
+            total
+        };
     }
 
     render() {
@@ -36,20 +63,37 @@ export class Game {
 
         switch (step.type) {
 
-            case "story":
-                renderStory(step, this.root, () => this.next());
+            case "scene":
+                renderScene(
+                    step,
+                    this.root,
+                    () => this.next()
+                );
                 break;
+
             case "addition":
-                renderAddition(step, this.root, () => this.next());
+                renderAddition(
+                    step,
+                    this.root,
+                    () => this.next()
+                );
                 break;
+
             case "celebration":
-                renderCelebration(step, this.root, () => this.next());
+                renderCelebration(
+                    step,
+                    this.root,
+                    () => this.next()
+                );
                 break;
+
             default:
-                console.error("Ismeretlen lépéstípus:", step.type);
+                console.error(
+                    "Ismeretlen lépéstípus:",
+                    step.type
+                );
 
         }
-        
 
     }
 

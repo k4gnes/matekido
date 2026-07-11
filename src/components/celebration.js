@@ -1,4 +1,4 @@
-export function renderCelebration(step, root, next) {
+export function renderCelebration(step, root, actions = {}) {
 
     root.replaceChildren();
 
@@ -6,17 +6,31 @@ export function renderCelebration(step, root, next) {
     card.className = "card";
 
     const title = document.createElement("h1");
-    title.textContent = step.title;
+    title.textContent = step.title ?? "🎉 Szép munka!";
 
     const text = document.createElement("p");
-    text.textContent = step.text;
+    text.textContent = step.text ?? "Ügyesen megoldottad az összes feladatot!";
 
-    const button = document.createElement("button");
-    button.textContent = "Következő";
+    const restartButton = document.createElement("button");
+    restartButton.textContent = "🔁 Újra";
 
-    button.addEventListener("click", next);
+    restartButton.addEventListener("click", () => {
+        actions.onRestart?.();
+    });
 
-    card.append(title, text, button);
+    const menuButton = document.createElement("button");
+    menuButton.textContent = "📚 Leckék";
+
+    menuButton.addEventListener("click", () => {
+        actions.onExit?.();
+    });
+
+    card.append(
+        title,
+        text,
+        restartButton,
+        menuButton
+    );
 
     root.append(card);
 }

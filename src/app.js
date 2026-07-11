@@ -27,7 +27,11 @@ async function startLesson(path) {
 
     const game = new Game(
         lesson,
-        root
+        root,
+        {
+            onRestart: () => startLesson(path),
+            onExit: showMenu
+        }
     );
 
     game.start();

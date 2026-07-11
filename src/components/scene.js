@@ -11,6 +11,14 @@ export function renderScene(step, root, next, progress) {
     button.textContent = "Kezdjük!";
     button.addEventListener("click", next);
 
+    const ac = new AbortController();
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            ac.abort();
+            next();
+        }
+    }, { signal: ac.signal });
+
     const card = document.createElement("div");
     card.className = "card";
 
@@ -22,9 +30,5 @@ export function renderScene(step, root, next, progress) {
 
     root.replaceChildren(card);
 
-
     return button;
-
-
-    
 }

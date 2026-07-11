@@ -12,10 +12,18 @@ export function generateAddition(options = {}) {
         count = 10,
         min = 10,
         max = 99,
-        carry = true,
+        carry = "any",
         sumMin = min * 2,
         sumMax = Number.MAX_SAFE_INTEGER
     } = options;
+
+    const validCarryModes = ["never", "always", "any"];
+
+    if (!validCarryModes.includes(carry)) {
+        throw new Error(
+            `Érvénytelen carry érték: ${carry}`
+        );
+    }
 
     const tasks = [];
     let attempts = 0;
@@ -45,7 +53,13 @@ export function generateAddition(options = {}) {
         const b = random(minB, maxB);
 
         // Átlépés tiltása
-        if (!carry && hasCarry(a, b)) {
+        const carryResult = hasCarry(a, b);
+
+        if (carry === "never" && carryResult) {
+            continue;
+        }
+
+        if (carry === "always" && !carryResult) {
             continue;
         }
 

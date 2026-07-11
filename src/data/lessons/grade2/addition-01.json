@@ -15,7 +15,7 @@
         "count": 5,
         "min": 10,
         "max": 99,
-        "carry": false,
+        "carry": "always",
         "unique": true
       }
     },

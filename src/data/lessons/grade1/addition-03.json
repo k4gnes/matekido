@@ -16,7 +16,7 @@
         "count": 5,
         "min": 0,
         "max": 99,
-        "carry": false,
+        "carry": "never",
         "sumMin": 21,
         "sumMax": 100
       }

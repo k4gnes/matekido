@@ -4,7 +4,7 @@ import { buildLesson } from "./builders/LessonBuilder.js";
 
 
 const rawLesson = await loadLesson(
-    "./src/data/lessons/grade1/addition-01.json"
+    "./src/data/lessons/grade1/addition-02.json"
 );
 
 

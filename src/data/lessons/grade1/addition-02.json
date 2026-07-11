@@ -1,0 +1,30 @@
+{
+  "id": "grade1-addition-02",
+  "title": "📮 Segíts a postásnak! – Összeadás 20-ig átlépéssel",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📮 Segíts a postásnak!",
+      "text": "Ma néhány háznál egy kicsit nehezebb lesz a számolás. Figyelj, mert néha át kell lépned a tízesen!"
+    },
+
+    {
+      "type": "exercise",
+      "generator": "addition",
+      "options": {
+        "count": 5,
+        "min": 0,
+        "max": 20,
+        "carry": true,
+        "sumMax": 20
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "A postás minden levelet kézbesített. Az átlépős feladatok sem fogtak ki rajtad!"
+    }
+  ]
+}

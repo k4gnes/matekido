@@ -1,23 +1,35 @@
 import { Game } from "./engine/Game.js";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js";
-
-
-const rawLesson = await loadLesson(
-    "./src/data/lessons/grade1/addition-03.json"
-);
-
-
-const lesson = buildLesson(rawLesson);
-
+import { renderLessonMenu } from "./components/lessonMenu.js";
 
 const root = document.getElementById("app");
 
+const lessonIndex = await loadLesson("./src/data/lessons/index.json");
 
-const game = new Game(
-    lesson,
-    root
-);
+showMenu();
 
+function showMenu() {
 
-game.start();
+    renderLessonMenu(
+        lessonIndex,
+        root,
+        startLesson
+    );
+
+}
+
+async function startLesson(path) {
+
+    const rawLesson = await loadLesson(path);
+
+    const lesson = buildLesson(rawLesson);
+
+    const game = new Game(
+        lesson,
+        root
+    );
+
+    game.start();
+
+}

@@ -1,0 +1,34 @@
+{
+    "grades": [
+        {
+            "title": "1. osztály",
+            "lessons": [
+                {
+                    "mission": "📮 A postás első útja",
+                    "subtitle": "Összeadás 20-ig",
+                    "file": "./src/data/lessons/grade1/addition-01.json"
+                },
+                {
+                    "mission": "📮 A postás mindig kétszer csenget",
+                    "subtitle": "Összeadás 20-ig átlépéssel",
+                    "file": "./src/data/lessons/grade1/addition-02.json"
+                },
+                {
+                    "mission": "📮 A postás nehéz napja",
+                    "subtitle": "Összeadás 100-ig",
+                    "file": "./src/data/lessons/grade1/addition-03.json"
+                }
+            ]
+        },
+        {
+            "title": "2. osztály",
+            "lessons": [
+                {
+                    "mission": "📮 A postás sokadik útja",
+                    "subtitle": "Összeadás 100-ig átlépéssel",
+                    "file": "./src/data/lessons/grade2/addition-01.json"
+                }
+            ]
+        }
+    ]
+}

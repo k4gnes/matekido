@@ -111,3 +111,72 @@ button:hover {
     font-size: 2rem;
     margin-bottom: 24px;
 }
+
+.lesson-group {
+    margin-top: 1.8rem;
+    margin-bottom: .4rem;
+
+    font-size: 1.2rem;
+    color: #444;
+}
+
+.lesson-separator {
+    border: none;
+    border-top: 2px solid #e6e6e6;
+    margin-bottom: .8rem;
+}
+
+.lesson-button {
+
+    display: block;
+    width: 100%;
+
+    margin: .45rem 0;
+    padding: .8rem 1rem;
+
+    font-size: 1rem;
+}
+
+.lesson-card {
+
+    background: white;
+
+    border: 2px solid #e8e8e8;
+    border-radius: 16px;
+
+    padding: 1rem;
+
+    margin: .8rem 0;
+
+    cursor: pointer;
+
+    transition:
+        transform .15s ease,
+        box-shadow .15s ease;
+}
+
+.lesson-card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 18px rgba(0,0,0,.08);
+
+}
+
+.lesson-card-title {
+
+    margin: 0;
+
+    font-size: 1.2rem;
+
+}
+
+.lesson-card-subtitle {
+
+    margin-top: .4rem;
+
+    color: #666;
+
+    font-size: .95rem;
+
+}

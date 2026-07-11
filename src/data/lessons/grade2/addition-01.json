@@ -10,7 +10,6 @@
     {
       "type": "exercise",
       "generator": "addition",
-      "count": 5,
       "options": {
         "count": 5,
         "min": 10,

@@ -1,3 +1,5 @@
+import { renderAdditionHint } from "./hints/additionHint.js";
+
 export function renderAddition(step, root, next, progress) {
 
     let mistakes = 0;
@@ -43,8 +45,8 @@ export function renderAddition(step, root, next, progress) {
 
         hintShown = true;
 
-        hint.textContent = "💡 Itt hamarosan segítséget kapsz.";
-
+        //hint.textContent = "💡 Itt hamarosan segítséget kapsz.";
+        renderAdditionHint(step, hint);
         hintButton.style.display = "none";
 
     });

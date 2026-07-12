@@ -6,6 +6,7 @@ export function renderExercise(step, root, next,progress) {
 
         case "addition":
             renderAddition(step, root, next,progress);
+           // renderAdditionHint(step, hint);
             break;
 
         default:

@@ -191,3 +191,6 @@ button:hover {
 
 }
 
+.message.retry {
+    color: #d97706;
+}

@@ -7,14 +7,22 @@ export function renderScene(step, root, next, progress) {
     const text = document.createElement("p");
     text.textContent = step.text;
 
+    let done = false;
+
     const button = document.createElement("button");
     button.textContent = "Kezdjük!";
-    button.addEventListener("click", next);
+    button.addEventListener("click", () => {
+        if (done) return;
+        done = true;
+        next();
+    });
 
     const ac = new AbortController();
     document.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
             ac.abort();
+            if (done) return;
+            done = true;
             next();
         }
     }, { signal: ac.signal });

@@ -4,6 +4,7 @@ export function renderAddition(step, root, next, progress) {
 
     let mistakes = 0;
     let hintShown = false;
+    let answered = false;
 
     root.replaceChildren();
     const card = document.createElement("div");
@@ -49,6 +50,8 @@ export function renderAddition(step, root, next, progress) {
         renderAdditionHint(step, hint);
         hintButton.style.display = "none";
 
+        input.focus();
+
     });
 
     if (progress) {
@@ -66,10 +69,16 @@ export function renderAddition(step, root, next, progress) {
 
 
     function check() {
+        if (answered) return;
+
         const answer = Number(input.value);
         const correctAnswer = step.a + step.b;
 
         if (answer === correctAnswer) {
+
+            answered = true;
+            input.disabled = true;
+            button.disabled = true;
 
             message.textContent = "😊 Szép munka!";
             message.className = "message success";
@@ -78,8 +87,18 @@ export function renderAddition(step, root, next, progress) {
 
         } else {
 
-            message.textContent = "💡 Próbáld meg még egyszer!";
-            message.className = "message error";
+
+            if (mistakes === 1) {
+
+                message.textContent = "🙂 Majdnem! Próbáld meg még egyszer!";
+
+            } else {
+
+                message.textContent = "🤔 Még nem sikerült.";
+
+            }
+
+            message.className = "message retry";
 
             mistakes++;
 

@@ -49,20 +49,19 @@ export class Game {
 
         const step = this.lesson.steps[this.currentStep];
 
-        renderProgress(
-            this.currentStep,
-            this.lesson.steps.length,
-            this.root
-        );
+        const progress = renderProgress({
+            current: this.currentStep,
+            total: this.lesson.steps.length
+        });
 
         switch (step.type) {
 
             case "scene":
-                renderScene(step, this.root, () => this.next());
+                renderScene(step, this.root, () => this.next(), progress);
                 break;
 
             case "exercise":
-                renderExercise(step, this.root, () => this.next());
+                renderExercise(step, this.root, () => this.next(), progress);
                 break;
 
             case "celebration":

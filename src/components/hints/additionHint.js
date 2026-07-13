@@ -1,3 +1,5 @@
+import { splitNumber, distanceToNextTen } from "../../math/number.js";
+
 export function renderAdditionHint(step, container) {
 
     const { a, b } = step;
@@ -7,6 +9,7 @@ export function renderAdditionHint(step, container) {
     const box = document.createElement("div");
     box.className = "hint";
 
+    // 20-as számkör
     if (a + b <= 20) {
 
         box.innerHTML = `
@@ -15,52 +18,54 @@ export function renderAdditionHint(step, container) {
             <p>${Math.max(a, b)} ...</p>
         `;
 
-    } else {
-
-        const ones = b % 10;
-        const toNextTen = 10 - (a % 10);
-
-        if (toNextTen > 0 && toNextTen < ones) {
-
-            const rest = b - toNextTen;
-
-            box.innerHTML = `
-                <p><strong>💡 Tipp</strong></p>
-
-                <p>${a} + ${toNextTen} = ${a + toNextTen}</p>
-
-                <p>${a + toNextTen} + ${rest} = ${a + b}</p>
-            `;
-
-        } else {
-
-            const tensA = Math.floor(a / 10) * 10;
-            const onesA = a % 10;
-
-            const tensB = Math.floor(b / 10) * 10;
-            const onesB = b % 10;
-
-            box.innerHTML = `
-                <p><strong>💡 Tipp</strong></p>
-
-                <p>${a} = ${tensA} + ${onesA}</p>
-
-                <p>${b} = ${tensB} + ${onesB}</p>
-
-                <br>
-
-                <p>${tensA} + ${tensB} = ${tensA + tensB}</p>
-
-                <p>${onesA} + ${onesB} = ${onesA + onesB}</p>
-
-                <br>
-
-                <p>${tensA + tensB} + ${onesA + onesB} = ${a + b}</p>
-            `;
-
-        }
-
+        container.append(box);
+        return;
     }
+
+    // Mindig a nagyobb számhoz adjuk a kisebbet
+    const big = Math.max(a, b);
+    const small = Math.min(a, b);
+
+    const toNextTen = distanceToNextTen(big);
+
+    // Tízesátlépés
+    if (toNextTen > 0 && toNextTen < small) {
+
+        const rest = small - toNextTen;
+
+        box.innerHTML = `
+            <p><strong>💡 Tipp</strong></p>
+
+            <p>Érj el először a következő tízeshez!</p>
+
+            <p>${big} + ${toNextTen} = ${big + toNextTen}</p>
+
+            <p>Most már csak ${rest} maradt.</p>
+
+            <p>${big + toNextTen} + ${rest} = ${a + b}</p>
+        `;
+
+        container.append(box);
+        return;
+    }
+
+    // Bontás
+    const left = splitNumber(big);
+    const right = splitNumber(small);
+
+    box.innerHTML = `
+        <p><strong>💡 Tipp</strong></p>
+
+        <p>Bontsd fel a számokat!</p>
+
+        <p>${big} = ${left.tens} + ${left.ones}</p>
+
+        <p>${small} = ${right.tens} + ${right.ones}</p>
+
+        <br>
+
+        <p>Most add össze külön a tízeseket és az egyeseket!</p>
+    `;
 
     container.append(box);
 

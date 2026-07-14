@@ -88,6 +88,35 @@ button:hover {
   border:2px solid #bbb;
   border-radius:8px;
 }
+.decomposition-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: .5rem 0;
+}
+
+.decomposition-inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .75rem;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.decomposition-inputs input {
+    width: 4ch;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: .3rem;
+    border: 2px solid #bbb;
+    border-radius: 8px;
+}
+
+.decomposition-inputs span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 .message {
     min-height: 2rem;
     margin-top: 1rem;

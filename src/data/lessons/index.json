@@ -17,6 +17,10 @@
                     "mission": "📮 A postás nehéz napja",
                     "subtitle": "Összeadás 100-ig",
                     "file": "./src/data/lessons/grade1/addition-03.json"
+                },{
+                    "mission": "🧩 Bontás",
+                    "subtitle": "Számok bontása",
+                    "file": "./src/data/lessons/grade1/decompsition-01.json"
                 }
             ]
         },

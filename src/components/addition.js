@@ -25,12 +25,6 @@ export function renderAddition(step, root, next, progress) {
     const button = document.createElement("button");
     button.textContent = "Ellenőrzöm";
 
-    root.append(card);
-
-    requestAnimationFrame(() => {
-        input.focus();
-    });
-
     const message = document.createElement("p");
     message.className = "message";
 
@@ -46,7 +40,6 @@ export function renderAddition(step, root, next, progress) {
 
         hintShown = true;
 
-        //hint.textContent = "💡 Itt hamarosan segítséget kapsz.";
         renderAdditionHint(step, hint);
         hintButton.style.display = "none";
 
@@ -66,6 +59,12 @@ export function renderAddition(step, root, next, progress) {
         hintButton,
         hint
     );
+
+    root.append(card);
+
+    requestAnimationFrame(() => {
+        input.focus();
+    });
 
 
     function check() {

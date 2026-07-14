@@ -1,7 +1,9 @@
 import { renderScene } from "../components/scene.js";
 import { renderExercise } from "../components/exercise.js";
+import { renderDecomposition } from "../components/decomposition.js";
 import { renderCelebration } from "../components/celebration.js";
 import { renderProgress } from "../components/progress.js";
+
 
 export class Game {
 
@@ -49,9 +51,19 @@ export class Game {
 
         const step = this.lesson.steps[this.currentStep];
 
+        const exerciseSteps = this.lesson.steps.filter(s => s.type === "exercise");
+        const totalExercises = exerciseSteps.length;
+        const completedExercises = this.lesson.steps
+            .slice(0, this.currentStep)
+            .filter(s => s.type === "exercise").length;
+
+        const progressCurrent = step.type === "exercise"
+            ? completedExercises + 1
+            : completedExercises;
+
         const progress = renderProgress({
-            current: this.currentStep,
-            total: this.lesson.steps.length
+            current: progressCurrent,
+            total: totalExercises
         });
 
         switch (step.type) {
@@ -64,6 +76,10 @@ export class Game {
                 renderExercise(step, this.root, () => this.next(), progress);
                 break;
 
+            case "decomposition":
+                renderDecomposition(step, this.root, () => this.next(), progress);
+                break;
+                
             case "celebration":
                 renderCelebration(step, this.root, {
                     onRestart: this.onRestart,

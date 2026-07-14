@@ -21,24 +21,49 @@ export function renderDecomposition(step, root, onNext, progress) {
     card.append(titleElement);
     card.append(numberElement);
 
+    /*
+        const inputs = document.createElement("div");
+        inputs.className = "decomposition-inputs";
+    
+        const firstInput = document.createElement("input");
+        firstInput.type = "number";
+        firstInput.min = 0;
+    
+        const plus = document.createElement("span");
+        plus.textContent = "+";
+    
+        const secondInput = document.createElement("input");
+        secondInput.type = "number";
+        secondInput.min = 0;
+    
+        inputs.append(firstInput, plus, secondInput);
+    
+        card.append(inputs);*/
 
-    const inputs = document.createElement("div");
-    inputs.className = "decomposition-inputs";
+    const letters = document.createElement("div");
+    letters.className = "decomposition-letters";
 
-    const firstInput = document.createElement("input");
-    firstInput.type = "number";
-    firstInput.min = 0;
+    card.append(letters); for (let i = 0; i < step.number; i++) {
 
-    const plus = document.createElement("span");
-    plus.textContent = "+";
+        const letter = document.createElement("div");
+        letter.className = "letter";
+        //letter.innerHTML = `    <span class="letter-icon">✉️</span>`;
+        const image = document.createElement("img");
+        image.src = "./assets/images/mail.svg";
+        image.alt = "Levél";
 
-    const secondInput = document.createElement("input");
-    secondInput.type = "number";
-    secondInput.min = 0;
+        letter.append(image);
+        letter.classList.add("selected");
 
-    inputs.append(firstInput, plus, secondInput);
+        letter.addEventListener("click", () => {
 
-    card.append(inputs);
+        });
+
+
+        letters.append(letter);
+    }
+
+
 
     const button = document.createElement("button");
     button.textContent = "Ellenőrzöm";
@@ -50,18 +75,30 @@ export function renderDecomposition(step, root, onNext, progress) {
 
     card.append(message);
 
+    const foundList = document.createElement("ul");
+    foundList.className = "decomposition-found";
+
+    card.append(foundList);
+
     button.addEventListener("click", () => {
 
         const first = Number(firstInput.value);
         const second = Number(secondInput.value);
 
+
+
         if (first + second === step.number) {
 
+            foundPairs.push({
+                first,
+                second
+            });
             message.textContent = "✅ Ügyes vagy!";
 
-            setTimeout(() => {
-                onNext();
-            }, 600);
+            const item = document.createElement("li");
+            item.textContent = `${first} + ${second}`;
+
+            foundList.append(item);
 
         } else {
 

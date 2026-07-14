@@ -223,3 +223,53 @@ button:hover {
 .message.retry {
     color: #d97706;
 }
+
+/* ==========================
+   Decomposition
+   ========================== */
+
+.decomposition-number {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #4b5563;
+    margin: 1rem 0;
+}
+
+.decomposition-letters {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+
+    margin: 1.5rem 0;
+}
+
+.letter {
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    border-radius: 12px;
+
+    transition: transform .15s ease,
+                background-color .15s ease;
+}
+
+.letter:hover {
+    background: #eef6ff;
+    transform: translateY(-3px);
+}
+
+.letter-icon {
+    font-size: 2rem;
+}
+
+.letter.selected {
+    background-image: url("../assets/images/mail-stamped.svg");
+}

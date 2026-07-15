@@ -1,4 +1,4 @@
-import { generateAddition } from "./additionGenerator.js";
+import { generateAddition } from "./additionGenerator.js?v=3";
 
 export function generate(step) {
 

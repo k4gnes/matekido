@@ -52,6 +52,11 @@ export function generateAddition(options = {}) {
 
         const b = random(minB, maxB);
 
+        // Biztonsági szűrő: az összeg ne haladja meg a megengedett maximumot
+        if (a + b > sumMax || a + b < sumMin) {
+            continue;
+        }
+
         // Átlépés tiltása
         const carryResult = hasCarry(a, b);
 

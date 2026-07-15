@@ -1,5 +1,5 @@
 {
-  "id": "grade1-addition-01",
+  "id": "grade2-addition-02",
   "title": "Segíts a postásnak!",
   "steps": [
     {
@@ -14,8 +14,9 @@
         "count": 5,
         "min": 10,
         "max": 99,
-        "carry": "always",
-        "unique": true
+        "carry": "any",
+        "sumMin": 21,
+        "sumMax": 100
       }
     },
     {

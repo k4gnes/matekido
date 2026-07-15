@@ -1,6 +1,6 @@
-import { Game } from "./engine/Game.js";
+import { Game } from "./engine/Game.js?v=3";
 import { loadLesson } from "./engine/LessonLoader.js";
-import { buildLesson } from "./builders/LessonBuilder.js";
+import { buildLesson } from "./builders/LessonBuilder.js?v=3";
 import { renderLessonMenu } from "./components/lessonMenu.js";
 
 const root = document.getElementById("app");

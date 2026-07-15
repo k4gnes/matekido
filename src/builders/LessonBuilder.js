@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js";
+import { generate } from "../generators/index.js?v=3";
 
 export function buildLesson(lesson) {
 

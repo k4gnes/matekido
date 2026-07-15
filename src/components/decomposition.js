@@ -34,7 +34,7 @@ export function renderDecomposition(step, root, onNext, progress) {
     card.append(lettersContainer);
     const mailbox = document.createElement("div");
     mailbox.className = "mailbox";
-    mailbox.textContent = "📮";
+    mailbox.innerHTML = "📮 <span>Postázd!</span>";
 
     const result = document.createElement("div");
     result.className = "decomposition-result";

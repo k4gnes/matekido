@@ -228,6 +228,11 @@ button:hover {
    Decomposition
    ========================== */
 
+.decomposition-card h1 {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+
 .decomposition-number {
     font-size: 3rem;
     font-weight: bold;
@@ -242,7 +247,7 @@ button:hover {
     gap: 14px;
     flex-wrap: wrap;
 
-    margin: 1.5rem 0;
+    margin: .5rem 0;
 }
 
 .letter {
@@ -272,4 +277,70 @@ button:hover {
 
 .letter.selected {
     background-image: url("../assets/images/mail-stamped.svg");
+}
+
+.decomposition-result {
+
+    min-height: 42px;
+
+    margin: .25rem 0;
+
+    text-align: center;
+
+    font-size: 2rem;
+
+    font-weight: bold;
+
+    color: #2563eb;
+
+}
+
+.mailbox {
+
+    width: 80px;
+    height: 80px;
+
+    margin: 12px auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 3rem;
+
+    cursor: pointer;
+
+    border-radius: 18px;
+
+    transition: transform .2s;
+}
+
+.mailbox:hover {
+
+    transform: scale(1.08);
+
+}
+
+.found-list {
+
+    margin-top: 8px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .35rem;
+
+}
+
+.found-row {
+
+    padding: .45rem .75rem;
+
+    border-radius: 10px;
+
+    background: #f8fafc;
+
+    text-align: center;
+
+    font-weight: 600;
+
 }

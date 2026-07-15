@@ -2,114 +2,149 @@ export function renderDecomposition(step, root, onNext, progress) {
 
     root.innerHTML = "";
 
+    const number = Math.floor(Math.random() * 10) + 1;
+
+    let selectedCount = 0;
+    const found = new Set();
+    const letters = [];
     const foundPairs = [];
 
     const card = document.createElement("div");
-    card.className = "card";
+    card.className = "card decomposition-card";
 
     if (progress) {
         card.append(progress);
     }
 
     const titleElement = document.createElement("h1");
-    titleElement.textContent = step.title;
+    titleElement.textContent = `🧩 Bontsd fel a ${number} számot összegekre!`;
 
     const numberElement = document.createElement("div");
     numberElement.className = "decomposition-number";
-    numberElement.textContent = step.number;
+    numberElement.textContent = number;
 
     card.append(titleElement);
     card.append(numberElement);
 
-    /*
-        const inputs = document.createElement("div");
-        inputs.className = "decomposition-inputs";
-    
-        const firstInput = document.createElement("input");
-        firstInput.type = "number";
-        firstInput.min = 0;
-    
-        const plus = document.createElement("span");
-        plus.textContent = "+";
-    
-        const secondInput = document.createElement("input");
-        secondInput.type = "number";
-        secondInput.min = 0;
-    
-        inputs.append(firstInput, plus, secondInput);
-    
-        card.append(inputs);*/
 
-    const letters = document.createElement("div");
-    letters.className = "decomposition-letters";
 
-    card.append(letters); for (let i = 0; i < step.number; i++) {
+    const lettersContainer = document.createElement("div");
+    lettersContainer.className = "decomposition-letters";
+
+    card.append(lettersContainer);
+    const mailbox = document.createElement("div");
+    mailbox.className = "mailbox";
+    mailbox.textContent = "📮";
+
+    const result = document.createElement("div");
+    result.className = "decomposition-result";
+
+    const foundList = document.createElement("div");
+    foundList.className = "found-list";
+
+    function renderFoundList() {
+
+        foundList.replaceChildren();
+
+        for (let first = 0; first <= number; first++) {
+
+            const second = number - first;
+
+            const row = document.createElement("div");
+            row.className = "found-row";
+
+            const key = `${first}-${second}`;
+
+            row.textContent =
+                `${found.has(key) ? "✅" : "⬜"} ${first} + ${second}`;
+
+            foundList.append(row);
+
+        }
+
+    }
+    renderFoundList();
+
+    mailbox.addEventListener("click", () => {
+
+        const first = selectedCount;
+        const second = number - selectedCount;
+
+        const key = `${first}-${second}`;
+
+        if (found.has(key)) {
+
+            result.textContent = "🙂 Ezt már kézbesítetted.";
+
+        } else {
+
+            found.add(key);
+
+            result.textContent = `⭐ ${first} + ${second}`;
+
+            renderFoundList();
+
+            if (found.size === number + 1) {
+                result.textContent = "😊 Ügyes vagy!";
+                result.style.color = "#2e7d32";
+                setTimeout(() => onNext(), 2500);
+            }
+
+        }
+
+        letters.forEach(letter => {
+
+            letter.selected = false;
+
+            letter.image.src = "./assets/images/mail.svg";
+
+        });
+
+        selectedCount = 0;
+
+    });
+
+    card.append(mailbox);
+    card.append(result);
+    card.append(foundList);
+
+
+    for (let i = 0; i < number; i++) {
+
 
         const letter = document.createElement("div");
         letter.className = "letter";
-        //letter.innerHTML = `    <span class="letter-icon">✉️</span>`;
         const image = document.createElement("img");
         image.src = "./assets/images/mail.svg";
         image.alt = "Levél";
 
         letter.append(image);
-        letter.classList.add("selected");
+
 
         letter.addEventListener("click", () => {
+            const current = letters[i];
+
+            current.selected = !current.selected;
+
+            selectedCount += current.selected ? 1 : -1;
+
+            current.image.src = current.selected
+                ? "./assets/images/mail-stamped.svg"
+                : "./assets/images/mail.svg";
 
         });
-
-
-        letters.append(letter);
+        letters.push({
+            element: letter,
+            image,
+            selected: false
+        });
+        lettersContainer.append(letter);
     }
 
 
 
-    const button = document.createElement("button");
-    button.textContent = "Ellenőrzöm";
 
-    card.append(button);
-
-    const message = document.createElement("p");
-    message.className = "message";
-
-    card.append(message);
-
-    const foundList = document.createElement("ul");
-    foundList.className = "decomposition-found";
-
-    card.append(foundList);
-
-    button.addEventListener("click", () => {
-
-        const first = Number(firstInput.value);
-        const second = Number(secondInput.value);
-
-
-
-        if (first + second === step.number) {
-
-            foundPairs.push({
-                first,
-                second
-            });
-            message.textContent = "✅ Ügyes vagy!";
-
-            const item = document.createElement("li");
-            item.textContent = `${first} + ${second}`;
-
-            foundList.append(item);
-
-        } else {
-
-            message.textContent = "🙂 Ez most nem jó. Próbáld újra!";
-
-        }
-
-    });
 
     root.append(card);
-
-    firstInput.focus();
 
 }

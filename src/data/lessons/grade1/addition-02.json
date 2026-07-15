@@ -17,6 +17,7 @@
         "min": 0,
         "max": 20,
         "carry": "always",
+        "sumMin": 11,
         "sumMax": 20
       }
     },

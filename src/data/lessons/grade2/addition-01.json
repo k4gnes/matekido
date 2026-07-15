@@ -1,27 +1,31 @@
 {
-  "id": "grade1-addition-01",
-  "title": "Segíts a postásnak!",
+  "id": "grade1-addition-03",
+  "title": "📮 Segíts a postásnak! – Összeadás 100-ig",
+
   "steps": [
     {
       "type": "scene",
       "title": "📮 Segíts a postásnak!",
-      "text": "A postás ma sok házba visz levelet. Segíts neki!"
+      "text": "A postásnak ma sok levelet kell kézbesítenie. Számold ki az összegeket, hogy minden házhoz időben odaérjen!"
     },
+
     {
       "type": "exercise",
       "generator": "addition",
       "options": {
         "count": 5,
-        "min": 10,
+        "min": 0,
         "max": 99,
-        "carry": "always",
-        "unique": true
+        "carry": "never",
+        "sumMin": 21,
+        "sumMax": 100
       }
     },
+
     {
       "type": "celebration",
-      "title": "🎉 Minden levelet kézbesítettél!",
-      "text": "A postás nagyon hálás neked!"
+      "title": "🎉 Szép munka!",
+      "text": "Minden levelet sikeresen kézbesítettél!"
     }
   ]
 }

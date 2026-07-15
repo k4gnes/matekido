@@ -1,0 +1,27 @@
+{
+  "id": "grade1-addition-01",
+  "title": "Segíts a postásnak!",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📮 Segíts a postásnak!",
+      "text": "A postás ma sok házba visz levelet. Segíts neki!"
+    },
+    {
+      "type": "exercise",
+      "generator": "addition",
+      "options": {
+        "count": 5,
+        "min": 10,
+        "max": 99,
+        "carry": "always",
+        "unique": true
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Minden levelet kézbesítettél!",
+      "text": "A postás nagyon hálás neked!"
+    }
+  ]
+}

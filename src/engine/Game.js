@@ -1,8 +1,12 @@
 import { renderScene } from "../components/scene.js";
 import { renderExercise } from "../components/exercise.js";
 import { renderDecomposition } from "../components/decomposition.js";
+import { renderMissingNumber } from "../components/missingNumber.js";
+
+
 import { renderCelebration } from "../components/celebration.js";
 import { renderProgress } from "../components/progress.js";
+import { renderMissingProgress } from "../components/missingProgress.js";
 
 
 export class Game {
@@ -51,20 +55,22 @@ export class Game {
 
         const step = this.lesson.steps[this.currentStep];
 
-        const exerciseSteps = this.lesson.steps.filter(s => s.type === "exercise");
-        const totalExercises = exerciseSteps.length;
+        const isCounted = s => s.type === "exercise" || s.type === "missing-number";
+
+        const totalExercises = this.lesson.steps.filter(isCounted).length;
         const completedExercises = this.lesson.steps
             .slice(0, this.currentStep)
-            .filter(s => s.type === "exercise").length;
+            .filter(isCounted).length;
 
-        const progressCurrent = step.type === "exercise"
+        const progressCurrent = isCounted(step)
             ? completedExercises + 1
             : completedExercises;
 
-        const progress = renderProgress({
-            current: progressCurrent,
-            total: totalExercises
-        });
+        const hasMissing = this.lesson.steps.some(s => s.type === "missing-number");
+
+        const progress = hasMissing
+            ? renderMissingProgress({ current: progressCurrent, total: totalExercises })
+            : renderProgress({ current: progressCurrent, total: totalExercises });
 
         switch (step.type) {
 
@@ -79,7 +85,11 @@ export class Game {
             case "decomposition":
                 renderDecomposition(step, this.root, () => this.next(), progress);
                 break;
-                
+
+            case "missing-number":
+                renderMissingNumber(step, this.root, () => this.next(), progress);
+                break;
+
             case "celebration":
                 renderCelebration(step, this.root, {
                     onRestart: this.onRestart,

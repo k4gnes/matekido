@@ -2,12 +2,14 @@ import { generate } from "../generators/index.js?v=3";
 
 export function buildLesson(lesson) {
 
-    const steps = [];
+    const steps = lesson.steps || [];
 
-    for (const step of lesson.steps) {
+    const result = [];
+
+    for (const step of steps) {
 
         if (step.type !== "exercise") {
-            steps.push(step);
+            result.push(step);
             continue;
         }
 
@@ -15,13 +17,22 @@ export function buildLesson(lesson) {
 
         tasks.forEach((task, index) => {
 
-            steps.push({
-                type: "exercise",
-                kind: "addition",
-                title: `🏠 ${index + 1}. ház`,
-                a: task.a,
-                b: task.b
-            });
+            if (step.generator === "missing-to-10") {
+                result.push({
+                    type: "missing-number",
+                    a: task.a,
+                    sum: task.sum,
+                    answer: task.answer
+                });
+            } else {
+                result.push({
+                    type: "exercise",
+                    kind: "addition",
+                    title: `🏠 ${index + 1}. ház`,
+                    a: task.a,
+                    b: task.b
+                });
+            }
 
         });
 
@@ -29,7 +40,7 @@ export function buildLesson(lesson) {
 
     return {
         ...lesson,
-        steps
+        steps: result
     };
 
 }

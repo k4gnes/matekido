@@ -4,9 +4,14 @@
             "title": "1. osztály",
             "lessons": [
                 {
+                    "mission": "🔢 Mennyi hiányzik?",
+                    "subtitle": "Hiányzó szám 10-ig",
+                    "file": "./src/data/lessons/grade1/missing-number.json"
+                },
+                {
                     "mission": "🧩 Bontás",
                     "subtitle": "Számok bontása 10-ig",
-                    "file": "./src/data/lessons/grade1/decompsition-01.json"
+                    "file": "./src/data/lessons/grade1/decompsition.json"
                 },
                 {
                     "mission": "📮 A postás első útja",

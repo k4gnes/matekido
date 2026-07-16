@@ -1,0 +1,123 @@
+.decomposition-card h1 {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+.decomposition-number {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #4b5563;
+    margin: 1rem 0;
+}
+
+.decomposition-letters {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+
+    margin: .5rem 0;
+}
+
+.letter {
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    border-radius: 12px;
+
+    transition: transform .15s ease,
+                background-color .15s ease;
+}
+
+.letter:hover {
+    background: #eef6ff;
+    transform: translateY(-3px);
+}
+
+.letter-icon {
+    font-size: 2rem;
+}
+
+.letter.selected {
+    background-image: url("../assets/images/mail-stamped.svg");
+}
+
+.decomposition-result {
+
+    min-height: 42px;
+
+    margin: .25rem 0;
+
+    text-align: center;
+
+    font-size: 2rem;
+
+    font-weight: bold;
+
+    color: #2563eb;
+
+}
+
+.mailbox {
+
+    width: auto;
+    height: 80px;
+
+    margin: 12px auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.5rem;
+
+    cursor: pointer;
+
+    border-radius: 18px;
+
+    transition: transform .2s;
+
+    background: transparent;
+    border: none;
+    color: inherit;
+    padding: 0 1rem;
+}
+
+.mailbox:hover {
+
+    transform: scale(1.08);
+
+}
+
+.found-list {
+
+    margin-top: 8px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: .35rem;
+
+}
+
+.found-row {
+
+    padding: .75rem 1rem;
+
+    border-radius: 10px;
+
+    background: #f8fafc;
+
+    text-align: center;
+
+    font-weight: 600;
+
+    font-size: 1.3rem;
+
+}

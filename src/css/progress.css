@@ -1,0 +1,7 @@
+.progress {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    font-size: 2rem;
+    margin-bottom: 24px;
+}

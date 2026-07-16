@@ -1,0 +1,42 @@
+.comparison-equation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 2rem;
+    margin: 2rem 0;
+}
+
+.comparison-side {
+    font-weight: bold;
+    min-width: 80px;
+    text-align: center;
+}
+
+.comparison-operators {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+
+.comparison-op {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 2px solid #bbb;
+    border-radius: 12px;
+    background: white;
+    color: var(--text);
+    cursor: pointer;
+    transition: transform .15s ease, background-color .15s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.comparison-op:hover {
+    background: #eef6ff;
+    transform: scale(1.1);
+}

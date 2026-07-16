@@ -33,7 +33,7 @@ export function renderDecomposition(step, root, onNext, progress) {
 
     card.append(lettersContainer);
 
-    const mailbox = createButton("📮 Postázd!", { className: "mailbox" });
+    const mailbox = createButton("📮 Bélyegzés után postázd!", { className: "mailbox" });
 
     const result = document.createElement("div");
     result.className = "decomposition-result";

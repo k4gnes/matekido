@@ -1,0 +1,17 @@
+.equation {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:.75rem;
+  font-size:2rem;
+  margin:2rem 0;
+  flex-wrap: wrap;
+}
+.equation input{
+  width:5ch;
+  text-align:center;
+  font-size:2rem;
+  padding:.3rem;
+  border:2px solid #bbb;
+  border-radius:8px;
+}

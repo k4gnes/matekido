@@ -20,9 +20,9 @@
 }
 
 .comparison-op {
-    width: 60px;
-    height: 60px;
-    font-size: 2rem;
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
     font-weight: bold;
     border: 2px solid #bbb;
     border-radius: 12px;

@@ -24,9 +24,19 @@
                     "file": "./src/data/lessons/grade1/addition-01.json"
                 },
                 {
+                    "mission": "🏘️ Kinek a szomszédai?",
+                    "subtitle": "Számok szomszédai 20-ig",
+                    "file": "./src/data/lessons/grade1/neighbor-01.json"
+                },
+                {
                     "mission": "📮 A postás rákapcsol",
                     "subtitle": "Összeadás 20-ig átlépéssel",
                     "file": "./src/data/lessons/grade1/addition-02.json"
+                },
+                {
+                    "mission": "⚖️ Melyik a nagyobb?",
+                    "subtitle": "Összehasonlítás 10-ig",
+                    "file": "./src/data/lessons/grade1/comparison-00.json"
                 },
                 {
                     "mission": "⚖️ Melyik a nagyobb?",

@@ -1,0 +1,27 @@
+{
+  "id": "grade1-comparison-00",
+  "title": "Melyik a nagyobb? (10-ig)",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "⚖️ Melyik a nagyobb?",
+      "text": "Válaszd ki a helyes relációjelet!"
+    },
+
+    {
+      "type": "exercise",
+      "generator": "comparison",
+      "options": {
+        "count": 5,
+        "max": 10
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden összehasonlítást jól megcsináltál!"
+    }
+  ]
+}

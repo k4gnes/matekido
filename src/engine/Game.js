@@ -3,12 +3,14 @@ import { renderExercise } from "../components/exercise.js";
 import { renderDecomposition } from "../components/decomposition.js";
 import { renderMissingNumber } from "../components/missingNumber.js";
 import { renderComparison } from "../components/comparison.js";
+import { renderNeighbor } from "../components/neighbor.js";
 
 
 import { renderCelebration } from "../components/celebration.js";
 import { renderProgress } from "../components/progress.js";
 import { renderMissingProgress } from "../components/missingProgress.js";
 import { renderComparisonProgress } from "../components/comparisonProgress.js";
+import { renderNeighborProgress } from "../components/neighborProgress.js";
 
 
 export class Game {
@@ -57,7 +59,7 @@ export class Game {
 
         const step = this.lesson.steps[this.currentStep];
 
-        const isCounted = s => s.type === "exercise" || s.type === "missing-number" || s.type === "comparison";
+        const isCounted = s => s.type === "exercise" || s.type === "missing-number" || s.type === "comparison" || s.type === "neighbor";
 
         const totalExercises = this.lesson.steps.filter(isCounted).length;
         const completedExercises = this.lesson.steps
@@ -70,10 +72,13 @@ export class Game {
 
         const hasMissing = this.lesson.steps.some(s => s.type === "missing-number");
         const hasComparison = this.lesson.steps.some(s => s.type === "comparison");
+        const hasNeighbor = this.lesson.steps.some(s => s.type === "neighbor");
 
         let progress;
         if (hasComparison) {
             progress = renderComparisonProgress({ current: progressCurrent, total: totalExercises });
+        } else if (hasNeighbor) {
+            progress = renderNeighborProgress({ current: progressCurrent, total: totalExercises });
         } else if (hasMissing) {
             progress = renderMissingProgress({ current: progressCurrent, total: totalExercises });
         } else {
@@ -100,6 +105,10 @@ export class Game {
 
             case "comparison":
                 renderComparison(step, this.root, () => this.next(), progress);
+                break;
+
+            case "neighbor":
+                renderNeighbor(step, this.root, () => this.next(), progress);
                 break;
 
             case "celebration":

@@ -1,0 +1,27 @@
+{
+  "id": "grade1-neighbor-01",
+  "title": "Kinek a szomszédai? (20-ig)",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "❓ Kinek a szomszédai?",
+      "text": "Írd be, kinek a szomszédait látod!"
+    },
+
+    {
+      "type": "exercise",
+      "generator": "neighbor",
+      "options": {
+        "count": 5,
+        "max": 20
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden szomszédot jól megtaláltál!"
+    }
+  ]
+}

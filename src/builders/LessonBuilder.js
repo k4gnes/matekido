@@ -33,6 +33,14 @@ export function buildLesson(lesson) {
                     rightValue: task.rightValue,
                     operator: task.operator
                 });
+            } else if (step.generator === "neighbor") {
+                result.push({
+                    type: "neighbor",
+                    a: task.a,
+                    left: task.left,
+                    right: task.right,
+                    answer: task.answer
+                });
             } else {
                 result.push({
                     type: "exercise",

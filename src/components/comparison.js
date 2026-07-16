@@ -1,14 +1,9 @@
-import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
-import { createMessageBox } from "./ui/messageBox.js";
+import { createExercise } from "./ui/exercise.js";
 
 export function renderComparison(step, root, next, progress) {
 
     let answered = false;
-
-    root.replaceChildren();
-
-    const card = createCard();
 
     const title = document.createElement("h1");
     title.textContent = "⚖️ Melyik a nagyobb?";
@@ -22,8 +17,6 @@ export function renderComparison(step, root, next, progress) {
 
     const operators = document.createElement("div");
     operators.className = "comparison-operators";
-
-    const message = createMessageBox();
 
     ["<", "=", ">"].forEach(op => {
 
@@ -53,11 +46,8 @@ export function renderComparison(step, root, next, progress) {
 
     equation.append(left, operators, right);
 
-    if (progress) {
-        card.append(progress);
-    }
-
-    card.append(title, equation, message.element);
-
-    root.append(card);
+    const { message } = createExercise({
+        root, title, progress,
+        children: [equation]
+    });
 }

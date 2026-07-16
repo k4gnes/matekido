@@ -1,18 +1,14 @@
 import { renderAdditionHint } from "./hints/additionHint.js";
-import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createNumberInput } from "./ui/numberInput.js";
-import { createMessageBox } from "./ui/messageBox.js";
 import { createHintBox } from "./ui/hintBox.js";
+import { createExercise } from "./ui/exercise.js";
 
 export function renderAddition(step, root, next, progress) {
 
     let mistakes = 0;
     let hintShown = false;
     let answered = false;
-
-    root.replaceChildren();
-    const card = createCard();
 
     const title = document.createElement("h1");
     title.textContent = step.title;
@@ -36,8 +32,6 @@ export function renderAddition(step, root, next, progress) {
 
     equation.append(first, plus, second, equal, input);
 
-    const message = createMessageBox();
-
     const hint = createHintBox();
 
     const hintButton = createButton("💡 Segítséget kérek", {
@@ -52,20 +46,10 @@ export function renderAddition(step, root, next, progress) {
 
     const button = createButton("Ellenőrzöm");
 
-    if (progress) {
-        card.append(progress);
-    }
-
-    card.append(
-        title,
-        equation,
-        button,
-        message.element,
-        hintButton,
-        hint
-    );
-
-    root.append(card);
+    const { message } = createExercise({
+        root, title, progress,
+        children: [equation, button, hintButton, hint]
+    });
 
     requestAnimationFrame(() => {
         input.focus();

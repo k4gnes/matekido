@@ -1,16 +1,11 @@
-import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createNumberInput } from "./ui/numberInput.js";
-import { createMessageBox } from "./ui/messageBox.js";
+import { createExercise } from "./ui/exercise.js";
 
 export function renderMissingNumber(step, root, next, progress) {
 
     let mistakes = 0;
     let answered = false;
-
-    root.replaceChildren();
-
-    const card = createCard();
 
     const title = document.createElement("h1");
     title.textContent = "🔢 Mennyi hiányzik?";
@@ -34,17 +29,12 @@ export function renderMissingNumber(step, root, next, progress) {
 
     equation.append(first, plus, input, equal, result);
 
-    const message = createMessageBox();
-
     const button = createButton("Ellenőrzöm");
 
-    if (progress) {
-        card.append(progress);
-    }
-
-    card.append(title, equation, button, message.element);
-
-    root.append(card);
+    const { message } = createExercise({
+        root, title, progress,
+        children: [equation, button]
+    });
 
     requestAnimationFrame(() => {
         input.focus();

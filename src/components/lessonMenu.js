@@ -1,7 +1,8 @@
+import { createCard } from "./ui/card.js";
+
 function createLessonCard(grade, onSelect) {
 
-    const card = document.createElement("div");
-    card.className = "card";
+    const card = createCard();
 
     const gradeTitle = document.createElement("h2");
     gradeTitle.className = "lesson-group";
@@ -46,8 +47,7 @@ export function renderLessonMenu(index, root, onSelect) {
 
     root.replaceChildren();
 
-    const wrapper = document.createElement("div");
-    wrapper.className = "card";
+    const wrapper = createCard();
 
     const title = document.createElement("h1");
     title.textContent = "📚 Matekidő";

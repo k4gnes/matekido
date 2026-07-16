@@ -1,3 +1,6 @@
+import { createCard } from "./ui/card.js";
+import { createButton } from "./ui/button.js";
+
 export function renderDecomposition(step, root, onNext, progress) {
 
     root.innerHTML = "";
@@ -9,8 +12,7 @@ export function renderDecomposition(step, root, onNext, progress) {
     const letters = [];
     const foundPairs = [];
 
-    const card = document.createElement("div");
-    card.className = "card decomposition-card";
+    const card = createCard("decomposition-card");
 
     if (progress) {
         card.append(progress);
@@ -26,15 +28,12 @@ export function renderDecomposition(step, root, onNext, progress) {
     card.append(titleElement);
     card.append(numberElement);
 
-
-
     const lettersContainer = document.createElement("div");
     lettersContainer.className = "decomposition-letters";
 
     card.append(lettersContainer);
-    const mailbox = document.createElement("div");
-    mailbox.className = "mailbox";
-    mailbox.innerHTML = "📮 <span>Postázd!</span>";
+
+    const mailbox = createButton("📮 Postázd!", { className: "mailbox" });
 
     const result = document.createElement("div");
     result.className = "decomposition-result";
@@ -109,9 +108,7 @@ export function renderDecomposition(step, root, onNext, progress) {
     card.append(result);
     card.append(foundList);
 
-
     for (let i = 0; i < number; i++) {
-
 
         const letter = document.createElement("div");
         letter.className = "letter";
@@ -120,7 +117,6 @@ export function renderDecomposition(step, root, onNext, progress) {
         image.alt = "Levél";
 
         letter.append(image);
-
 
         letter.addEventListener("click", () => {
             const current = letters[i];
@@ -141,10 +137,6 @@ export function renderDecomposition(step, root, onNext, progress) {
         });
         lettersContainer.append(letter);
     }
-
-
-
-
 
     root.append(card);
 

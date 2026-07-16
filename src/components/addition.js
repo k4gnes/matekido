@@ -1,4 +1,9 @@
 import { renderAdditionHint } from "./hints/additionHint.js";
+import { createCard } from "./ui/card.js";
+import { createButton } from "./ui/button.js";
+import { createNumberInput } from "./ui/numberInput.js";
+import { createMessageBox } from "./ui/messageBox.js";
+import { createHintBox } from "./ui/hintBox.js";
 
 export function renderAddition(step, root, next, progress) {
 
@@ -7,45 +12,45 @@ export function renderAddition(step, root, next, progress) {
     let answered = false;
 
     root.replaceChildren();
-    const card = document.createElement("div");
-    card.className = "card";
+    const card = createCard();
+
     const title = document.createElement("h1");
     title.textContent = step.title;
+
     const equation = document.createElement("div");
     equation.className = "equation";
-    const first = document.createElement("span"); first.textContent = step.a;
-    const plus = document.createElement("span"); plus.textContent = "+";
-    const second = document.createElement("span"); second.textContent = step.b;
-    const equal = document.createElement("span"); equal.textContent = "=";
-    const input = document.createElement("input");
-    input.type = "number"; input.placeholder = "?";
 
+    const first = document.createElement("span");
+    first.textContent = step.a;
+
+    const plus = document.createElement("span");
+    plus.textContent = "+";
+
+    const second = document.createElement("span");
+    second.textContent = step.b;
+
+    const equal = document.createElement("span");
+    equal.textContent = "=";
+
+    const input = createNumberInput();
 
     equation.append(first, plus, second, equal, input);
-    const button = document.createElement("button");
-    button.textContent = "Ellenőrzöm";
 
-    const message = document.createElement("p");
-    message.className = "message";
+    const message = createMessageBox();
 
+    const hint = createHintBox();
 
-    const hint = document.createElement("div");
-    hint.className = "hint";
-
-    const hintButton = document.createElement("button");
-    hintButton.textContent = "💡 Segítséget kérek";
+    const hintButton = createButton("💡 Segítséget kérek", {
+        onClick: () => {
+            hintShown = true;
+            renderAdditionHint(step, hint);
+            hintButton.style.display = "none";
+            input.focus();
+        }
+    });
     hintButton.style.display = "none";
 
-    hintButton.addEventListener("click", () => {
-
-        hintShown = true;
-
-        renderAdditionHint(step, hint);
-        hintButton.style.display = "none";
-
-        input.focus();
-
-    });
+    const button = createButton("Ellenőrzöm");
 
     if (progress) {
         card.append(progress);
@@ -55,7 +60,7 @@ export function renderAddition(step, root, next, progress) {
         title,
         equation,
         button,
-        message,
+        message.element,
         hintButton,
         hint
     );
@@ -65,7 +70,6 @@ export function renderAddition(step, root, next, progress) {
     requestAnimationFrame(() => {
         input.focus();
     });
-
 
     function check() {
         if (answered) return;
@@ -79,25 +83,17 @@ export function renderAddition(step, root, next, progress) {
             input.disabled = true;
             button.disabled = true;
 
-            message.textContent = "😊 Szép munka!";
-            message.className = "message success";
+            message.show("😊 Szép munka!", "success");
 
             setTimeout(() => next(), 800);
 
         } else {
 
-
             if (mistakes === 1) {
-
-                message.textContent = "🙂 Majdnem! Próbáld meg még egyszer!";
-
+                message.show("🙂 Majdnem! Próbáld meg még egyszer!", "retry");
             } else {
-
-                message.textContent = "🤔 Még nem sikerült.";
-
+                message.show("🤔 Még nem sikerült.", "retry");
             }
-
-            message.className = "message retry";
 
             mistakes++;
 

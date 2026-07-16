@@ -1,13 +1,7 @@
-export function createCard(title) {
+export function createCard(className = "") {
 
     const card = document.createElement("div");
-    card.className = "card";
-
-    const heading = document.createElement("h2");
-    heading.className = "card-title";
-    heading.textContent = title;
-
-    card.append(heading);
+    card.className = className ? `card ${className}` : "card";
 
     return card;
 

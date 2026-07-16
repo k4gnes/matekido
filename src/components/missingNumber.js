@@ -1,3 +1,8 @@
+import { createCard } from "./ui/card.js";
+import { createButton } from "./ui/button.js";
+import { createNumberInput } from "./ui/numberInput.js";
+import { createMessageBox } from "./ui/messageBox.js";
+
 export function renderMissingNumber(step, root, next, progress) {
 
     let mistakes = 0;
@@ -5,8 +10,7 @@ export function renderMissingNumber(step, root, next, progress) {
 
     root.replaceChildren();
 
-    const card = document.createElement("div");
-    card.className = "card";
+    const card = createCard();
 
     const title = document.createElement("h1");
     title.textContent = "🔢 Mennyi hiányzik?";
@@ -20,9 +24,7 @@ export function renderMissingNumber(step, root, next, progress) {
     const plus = document.createElement("span");
     plus.textContent = "+";
 
-    const input = document.createElement("input");
-    input.type = "number";
-    input.placeholder = "?";
+    const input = createNumberInput();
 
     const equal = document.createElement("span");
     equal.textContent = "=";
@@ -32,17 +34,15 @@ export function renderMissingNumber(step, root, next, progress) {
 
     equation.append(first, plus, input, equal, result);
 
-    const button = document.createElement("button");
-    button.textContent = "Ellenőrzöm";
+    const message = createMessageBox();
 
-    const message = document.createElement("p");
-    message.className = "message";
+    const button = createButton("Ellenőrzöm");
 
     if (progress) {
         card.append(progress);
     }
 
-    card.append(title, equation, button, message);
+    card.append(title, equation, button, message.element);
 
     root.append(card);
 
@@ -61,20 +61,17 @@ export function renderMissingNumber(step, root, next, progress) {
             input.disabled = true;
             button.disabled = true;
 
-            message.textContent = "😊 Szép munka!";
-            message.className = "message success";
+            message.show("😊 Szép munka!", "success");
 
             setTimeout(() => next(), 800);
 
         } else {
 
             if (mistakes === 1) {
-                message.textContent = "🙂 Majdnem! Próbáld meg még egyszer!";
+                message.show("🙂 Majdnem! Próbáld meg még egyszer!", "retry");
             } else {
-                message.textContent = "🤔 Még nem sikerült.";
+                message.show("🤔 Még nem sikerült.", "retry");
             }
-
-            message.className = "message retry";
 
             mistakes++;
 

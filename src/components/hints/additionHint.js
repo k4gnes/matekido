@@ -1,4 +1,5 @@
 import { splitNumber, distanceToNextTen } from "../../math/number.js";
+import { createHintBox } from "../ui/hintBox.js";
 
 export function renderAdditionHint(step, container) {
 
@@ -6,8 +7,7 @@ export function renderAdditionHint(step, container) {
 
     container.replaceChildren();
 
-    const box = document.createElement("div");
-    box.className = "hint";
+    const box = createHintBox();
 
     const big = Math.max(a, b);
     const small = Math.min(a, b);

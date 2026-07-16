@@ -1,11 +1,14 @@
+import { createCard } from "./ui/card.js";
+import { createButton } from "./ui/button.js";
+import { createMessageBox } from "./ui/messageBox.js";
+
 export function renderComparison(step, root, next, progress) {
 
     let answered = false;
 
     root.replaceChildren();
 
-    const card = document.createElement("div");
-    card.className = "card";
+    const card = createCard();
 
     const title = document.createElement("h1");
     title.textContent = "⚖️ Melyik a nagyobb?";
@@ -20,28 +23,25 @@ export function renderComparison(step, root, next, progress) {
     const operators = document.createElement("div");
     operators.className = "comparison-operators";
 
+    const message = createMessageBox();
+
     ["<", "=", ">"].forEach(op => {
 
-        const btn = document.createElement("button");
-        btn.className = "comparison-op";
-        btn.textContent = op;
+        const btn = createButton(op, {
+            className: "comparison-op",
+            onClick: () => {
+                if (answered) return;
 
-        btn.addEventListener("click", () => {
+                answered = true;
 
-            if (answered) return;
-
-            answered = true;
-
-            if (op === step.operator) {
-                message.textContent = "😊 Szép munka!";
-                message.className = "message success";
-                setTimeout(() => next(), 800);
-            } else {
-                message.textContent = `🤔 Nem, a helyes válasz: ${step.operator}`;
-                message.className = "message retry";
-                setTimeout(() => next(), 1500);
+                if (op === step.operator) {
+                    message.show("😊 Szép munka!", "success");
+                    setTimeout(() => next(), 800);
+                } else {
+                    message.show(`🤔 Nem, a helyes válasz: ${step.operator}`, "retry");
+                    setTimeout(() => next(), 1500);
+                }
             }
-
         });
 
         operators.append(btn);
@@ -53,14 +53,11 @@ export function renderComparison(step, root, next, progress) {
 
     equation.append(left, operators, right);
 
-    const message = document.createElement("p");
-    message.className = "message";
-
     if (progress) {
         card.append(progress);
     }
 
-    card.append(title, equation, message);
+    card.append(title, equation, message.element);
 
     root.append(card);
 }

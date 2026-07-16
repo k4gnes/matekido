@@ -13,7 +13,7 @@
       "type": "exercise",
       "generator": "comparison",
       "options": {
-        "count": 10,
+        "count": 5,
         "max": 20
       }
     },

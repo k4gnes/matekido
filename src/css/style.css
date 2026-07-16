@@ -320,6 +320,11 @@ button:hover {
     border-radius: 18px;
 
     transition: transform .2s;
+
+    background: transparent;
+    border: none;
+    color: inherit;
+    padding: 0;
 }
 
 .mailbox:hover {

@@ -1,3 +1,6 @@
+import { createCard } from "./ui/card.js";
+import { createButton } from "./ui/button.js";
+
 export function renderScene(step, root, next, progress) {
     root.innerHTML = "";
 
@@ -9,12 +12,12 @@ export function renderScene(step, root, next, progress) {
 
     let done = false;
 
-    const button = document.createElement("button");
-    button.textContent = "Kezdjük!";
-    button.addEventListener("click", () => {
-        if (done) return;
-        done = true;
-        next();
+    const button = createButton("Kezdjük!", {
+        onClick: () => {
+            if (done) return;
+            done = true;
+            next();
+        }
     });
 
     const ac = new AbortController();
@@ -27,13 +30,12 @@ export function renderScene(step, root, next, progress) {
         }
     }, { signal: ac.signal });
 
-    const card = document.createElement("div");
-    card.className = "card";
+    const card = createCard();
 
    if (progress) {
     card.append(progress);
 }
-   
+
     card.append(title, text, button);
 
     root.replaceChildren(card);

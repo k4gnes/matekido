@@ -49,6 +49,11 @@
             "title": "2. osztály",
             "lessons": [
                 {
+                    "mission": "🔢 Mennyi hiányzik?",
+                    "subtitle": "Hiányzó szám véletlen számig 100-ig",
+                    "file": "./src/data/lessons/grade2/missing-random.json"
+                },
+                {
                     "mission": "📮 A postás nehéz napja",
                     "subtitle": "Összeadás 100-ig",
                     "file": "./src/data/lessons/grade2/addition-01.json"

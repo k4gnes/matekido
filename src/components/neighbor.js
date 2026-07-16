@@ -1,40 +1,64 @@
 import { createButton } from "./ui/button.js";
 import { createNumberInput } from "./ui/numberInput.js";
-import { createExercise } from "./ui/exercise.js";
+import { createCard } from "./ui/card.js";
+import { createMessageBox } from "./ui/messageBox.js";
 
 export function renderNeighbor(step, root, next, progress) {
 
     let mistakes = 0;
     let answered = false;
 
+    root.replaceChildren();
+
+    const card = createCard();
+
+    if (progress) {
+        card.append(progress);
+    }
+
     const title = document.createElement("h1");
     title.textContent = "❓ Kinek a szomszédai?";
+    card.append(title);
 
-    const equation = document.createElement("div");
-    equation.className = "equation";
+    const row = document.createElement("div");
+    row.className = "equation";
+
+    const lowerTen = document.createElement("span");
+    lowerTen.textContent = step.lowerTen;
+    lowerTen.className = "neighbor-ten";
+
+    const dotsLeft = document.createElement("span");
+    dotsLeft.textContent = "...";
+    dotsLeft.className = "neighbor-dots";
 
     const left = document.createElement("span");
     left.textContent = step.left;
-    left.style.fontSize = "2rem";
-    left.style.fontWeight = "bold";
-    left.style.margin = "0 1rem";
+    left.className = "neighbor-num";
 
     const input = createNumberInput();
 
     const right = document.createElement("span");
     right.textContent = step.right;
-    right.style.fontSize = "2rem";
-    right.style.fontWeight = "bold";
-    right.style.margin = "0 1rem";
+    right.className = "neighbor-num";
 
-    equation.append(left, input, right);
+    const dotsRight = document.createElement("span");
+    dotsRight.textContent = "...";
+    dotsRight.className = "neighbor-dots";
+
+    const upperTen = document.createElement("span");
+    upperTen.textContent = step.upperTen;
+    upperTen.className = "neighbor-ten";
+
+    row.append(lowerTen, dotsLeft, left, input, right, dotsRight, upperTen);
+    card.append(row);
 
     const button = createButton("Ellenőrzöm");
+    card.append(button);
 
-    const { message } = createExercise({
-        root, title, progress,
-        children: [equation, button]
-    });
+    const message = createMessageBox();
+    card.append(message.element);
+
+    root.append(card);
 
     requestAnimationFrame(() => {
         input.focus();

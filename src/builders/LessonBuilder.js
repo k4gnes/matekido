@@ -39,7 +39,9 @@ export function buildLesson(lesson) {
                     a: task.a,
                     left: task.left,
                     right: task.right,
-                    answer: task.answer
+                    answer: task.answer,
+                    lowerTen: task.lowerTen,
+                    upperTen: task.upperTen
                 });
             } else {
                 result.push({

@@ -6,14 +6,22 @@ export function generateNeighbor(options = {}) {
 
     for (let i = 0; i < count; i++) {
 
-        const a = Math.floor(Math.random() * (max - 1)) + 2;
+        let a;
+        do {
+            a = Math.floor(Math.random() * (max - 1)) + 2;
+        } while (a % 10 === 0);
+
+        const lowerTen = Math.floor(a / 10) * 10;
+        const upperTen = Math.ceil(a / 10) * 10;
 
         tasks.push({
             type: "neighbor",
             a,
             left: a - 1,
             right: a + 1,
-            answer: a
+            answer: a,
+            lowerTen,
+            upperTen
         });
     }
 

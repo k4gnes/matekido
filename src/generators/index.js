@@ -1,5 +1,6 @@
 import { generateAddition } from "./additionGenerator.js?v=3";
 import { generateMissingTo10, generateMissingRandom } from "./missingNumberGenerator.js?v=3";
+import { generateComparison } from "./comparisonGenerator.js?v=3";
 
 export function generate(step) {
 
@@ -11,6 +12,8 @@ export function generate(step) {
             return generateMissingTo10(step.options);
         case "missing-random":
             return generateMissingRandom(step.options);
+        case "comparison":
+            return generateComparison(step.options);
         case "subtraction":
         case "multiplication":
         case "division":

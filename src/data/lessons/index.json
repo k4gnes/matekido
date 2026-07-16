@@ -4,6 +4,11 @@
             "title": "1. osztály",
             "lessons": [
                 {
+                    "mission": "🧩 Bontás",
+                    "subtitle": "Számok bontása 10-ig",
+                    "file": "./src/data/lessons/grade1/decompsition.json"
+                },
+                {
                     "mission": "🔢 Mennyi hiányzik?",
                     "subtitle": "Hiányzó szám 10-ig",
                     "file": "./src/data/lessons/grade1/missing-number.json"
@@ -14,11 +19,6 @@
                     "file": "./src/data/lessons/grade1/missing-random.json"
                 },
                 {
-                    "mission": "🧩 Bontás",
-                    "subtitle": "Számok bontása 10-ig",
-                    "file": "./src/data/lessons/grade1/decompsition.json"
-                },
-                {
                     "mission": "📮 A postás első útja",
                     "subtitle": "Összeadás 20-ig",
                     "file": "./src/data/lessons/grade1/addition-01.json"
@@ -27,6 +27,11 @@
                     "mission": "📮 A postás rákapcsol",
                     "subtitle": "Összeadás 20-ig átlépéssel",
                     "file": "./src/data/lessons/grade1/addition-02.json"
+                },
+                {
+                    "mission": "⚖️ Melyik a nagyobb?",
+                    "subtitle": "Összehasonlítás 20-ig",
+                    "file": "./src/data/lessons/grade1/comparison-01.json"
                 }
             ]
         },

@@ -2,11 +2,13 @@ import { renderScene } from "../components/scene.js";
 import { renderExercise } from "../components/exercise.js";
 import { renderDecomposition } from "../components/decomposition.js";
 import { renderMissingNumber } from "../components/missingNumber.js";
+import { renderComparison } from "../components/comparison.js";
 
 
 import { renderCelebration } from "../components/celebration.js";
 import { renderProgress } from "../components/progress.js";
 import { renderMissingProgress } from "../components/missingProgress.js";
+import { renderComparisonProgress } from "../components/comparisonProgress.js";
 
 
 export class Game {
@@ -55,7 +57,7 @@ export class Game {
 
         const step = this.lesson.steps[this.currentStep];
 
-        const isCounted = s => s.type === "exercise" || s.type === "missing-number";
+        const isCounted = s => s.type === "exercise" || s.type === "missing-number" || s.type === "comparison";
 
         const totalExercises = this.lesson.steps.filter(isCounted).length;
         const completedExercises = this.lesson.steps
@@ -67,10 +69,16 @@ export class Game {
             : completedExercises;
 
         const hasMissing = this.lesson.steps.some(s => s.type === "missing-number");
+        const hasComparison = this.lesson.steps.some(s => s.type === "comparison");
 
-        const progress = hasMissing
-            ? renderMissingProgress({ current: progressCurrent, total: totalExercises })
-            : renderProgress({ current: progressCurrent, total: totalExercises });
+        let progress;
+        if (hasComparison) {
+            progress = renderComparisonProgress({ current: progressCurrent, total: totalExercises });
+        } else if (hasMissing) {
+            progress = renderMissingProgress({ current: progressCurrent, total: totalExercises });
+        } else {
+            progress = renderProgress({ current: progressCurrent, total: totalExercises });
+        }
 
         switch (step.type) {
 
@@ -88,6 +96,10 @@ export class Game {
 
             case "missing-number":
                 renderMissingNumber(step, this.root, () => this.next(), progress);
+                break;
+
+            case "comparison":
+                renderComparison(step, this.root, () => this.next(), progress);
                 break;
 
             case "celebration":

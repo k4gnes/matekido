@@ -24,6 +24,15 @@ export function buildLesson(lesson) {
                     sum: task.sum,
                     answer: task.answer
                 });
+            } else if (step.generator === "comparison") {
+                result.push({
+                    type: "comparison",
+                    leftExpr: task.leftExpr,
+                    rightExpr: task.rightExpr,
+                    leftValue: task.leftValue,
+                    rightValue: task.rightValue,
+                    operator: task.operator
+                });
             } else {
                 result.push({
                     type: "exercise",

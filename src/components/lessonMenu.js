@@ -12,6 +12,9 @@ function createLessonCard(grade, onSelect) {
 
     card.append(gradeTitle, separator);
 
+    const lessonGrid = document.createElement("div");
+    lessonGrid.className = "lesson-grid";
+
     grade.lessons.forEach(lesson => {
 
         const lessonCard = document.createElement("div");
@@ -31,8 +34,10 @@ function createLessonCard(grade, onSelect) {
             onSelect(lesson.file);
         });
 
-        card.append(lessonCard);
+        lessonGrid.append(lessonCard);
     });
+
+    card.append(lessonGrid);
 
     return card;
 }

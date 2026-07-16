@@ -29,3 +29,25 @@ export function generateMissingTo10(options = {}) {
 
     return tasks;
 }
+
+export function generateMissingRandom(options = {}) {
+
+    const { count = 10, min = 10, max = 20 } = options;
+
+    const tasks = [];
+
+    for (let i = 0; i < count; i++) {
+
+        const sum = Math.floor(Math.random() * (max - min + 1)) + min;
+        const a = Math.floor(Math.random() * (sum - 1)) + 1;
+
+        tasks.push({
+            type: "missing-number",
+            a,
+            sum,
+            answer: sum - a
+        });
+    }
+
+    return tasks;
+}

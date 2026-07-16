@@ -17,7 +17,7 @@ export function buildLesson(lesson) {
 
         tasks.forEach((task, index) => {
 
-            if (step.generator === "missing-to-10") {
+            if (step.generator === "missing-to-10" || step.generator === "missing-random") {
                 result.push({
                     type: "missing-number",
                     a: task.a,

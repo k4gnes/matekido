@@ -9,6 +9,11 @@
                     "file": "./src/data/lessons/grade1/missing-number.json"
                 },
                 {
+                    "mission": "🔢 Mennyi hiányzik?",
+                    "subtitle": "Hiányzó szám véletlen számig",
+                    "file": "./src/data/lessons/grade1/missing-random.json"
+                },
+                {
                     "mission": "🧩 Bontás",
                     "subtitle": "Számok bontása 10-ig",
                     "file": "./src/data/lessons/grade1/decompsition.json"

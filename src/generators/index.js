@@ -1,5 +1,5 @@
 import { generateAddition } from "./additionGenerator.js?v=3";
-import { generateMissingTo10 } from "./missingNumberGenerator.js?v=3";
+import { generateMissingTo10, generateMissingRandom } from "./missingNumberGenerator.js?v=3";
 
 export function generate(step) {
 
@@ -9,6 +9,8 @@ export function generate(step) {
             return generateAddition(step.options);
         case "missing-to-10":
             return generateMissingTo10(step.options);
+        case "missing-random":
+            return generateMissingRandom(step.options);
         case "subtraction":
         case "multiplication":
         case "division":

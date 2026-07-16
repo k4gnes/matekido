@@ -1,20 +1,21 @@
 {
-  "id": "grade1-missing-10",
-  "title": "Mennyi hiányzik? (10-es számkör)",
+  "id": "grade1-missing-random",
+  "title": "Mennyi hiányzik? (véletlen számig)",
 
   "steps": [
     {
       "type": "scene",
       "title": "🔢 Mennyi levél hiányzik?",
-      "text": "Segíts megtalálni a 10-ig hiányzó leveleket!"
+      "text": "Segíts megtalálni a hiányzó leveleket!"
     },
 
     {
       "type": "exercise",
-      "generator": "missing-to-10",
+      "generator": "missing-random",
       "options": {
         "count": 5,
-        "sum": 10
+        "min": 10,
+        "max": 20
       }
     },
 

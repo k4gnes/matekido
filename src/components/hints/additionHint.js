@@ -9,27 +9,25 @@ export function renderAdditionHint(step, container) {
     const box = document.createElement("div");
     box.className = "hint";
 
-    // mindig a nagyobb számhoz adunk
     const big = Math.max(a, b);
     const small = Math.min(a, b);
 
-    const stepToTen = distanceToNextTen(big);
+    const stepToFirstTen = distanceToNextTen(a);
+
     // 20-as számkör
-    if (a + b <= 20 && stepToTen > 0 && stepToTen < small) {
-        const rest = small - stepToTen;
+    if (a + b <= 20 && stepToFirstTen > 0 && stepToFirstTen <= b) {
+        const rest = b - stepToFirstTen;
 
         box.innerHTML = `
             <p><strong>💡 Segítség</strong></p>
 
-            <p> Mindig a nagyobb számhoz adjunk hozzá, ezért vegyük a nagyobb számot (${big}) előre:  ${big} + ${small} = ? </p>
-            
-            <p> Ezután érd el a következő tízest!</p>
+            <p> Először érd el a következő tízest!</p>
 
-            <p>${big} + ${stepToTen} = ${big + stepToTen}</p>
+            <p>${a} + ${stepToFirstTen} = ${a + stepToFirstTen}</p>
 
-            <p>Most add hozzá ami még maradt a kisebből (${small}) :  ${rest} </p>
+            <p>Most add hozzá ami még maradt a másikból: ${b} - ${stepToFirstTen} = ${rest} </p>
 
-            <p>${a === small ? `${a} + ${b} = ${big} + ${small} = ${big + stepToTen} + ${rest} =?` : `${big} + ${small} = ${big + stepToTen} + ${rest} =?`}</p>
+            <p>${a} + ${b} = ${a + stepToFirstTen} + ${rest} </p>
         `;
 
         container.append(box);
@@ -48,33 +46,6 @@ export function renderAdditionHint(step, container) {
         container.append(box);
         return;
 
-    }
-
-
-
-    // Tízesátlépés
-    // if (stepToTen > 0 && stepToTen < small) {
-    // Tízesátlépés csak akkor,
-    // ha a kisebbik szám egyjegyű.
-
-    if (small < 10 && stepToTen > 0 && stepToTen < small) {
-
-        const rest = small - stepToTen;
-
-        box.innerHTML = `
-            <p><strong>💡 Segítség</strong></p>
-
-            <p>Először érd el a következő tízest!</p>
-
-            <p>${big} + ${stepToTen} = ${big + stepToTen}</p>
-
-            <p>Most add hozzá ami még maradt + ${small} +ból : + ${rest} </p>
-
-            <p>${big + stepToTen} + ${rest} = ${a + b}</p>
-        `;
-
-        container.append(box);
-        return;
     }
 
     // Bontás

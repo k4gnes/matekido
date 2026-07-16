@@ -50,13 +50,14 @@ export function renderDecomposition(step, root, onNext, progress) {
 
             const second = number - first;
 
+            const key = `${first}-${second}`;
+
+            if (!found.has(key)) continue;
+
             const row = document.createElement("div");
             row.className = "found-row";
 
-            const key = `${first}-${second}`;
-
-            row.textContent =
-                `${found.has(key) ? "✅" : "⬜"} ${first} + ${second}`;
+            row.textContent = `✅ ${first} + ${second}`;
 
             foundList.append(row);
 

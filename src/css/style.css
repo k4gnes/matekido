@@ -326,14 +326,14 @@ button:hover {
     margin-top: 8px;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: .35rem;
 
 }
 
 .found-row {
 
-    padding: .45rem .75rem;
+    padding: .75rem 1rem;
 
     border-radius: 10px;
 
@@ -342,5 +342,7 @@ button:hover {
     text-align: center;
 
     font-weight: 600;
+
+    font-size: 1.3rem;
 
 }

@@ -1,0 +1,3 @@
+isUnlocked("racing")
+
+unlock("racing")

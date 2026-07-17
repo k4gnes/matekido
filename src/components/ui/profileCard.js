@@ -17,18 +17,29 @@ export function createProfileCard() {
 
     const stars = document.createElement("p");
     stars.className = "profile-stat";
-    stars.textContent = `⭐ ${profile.stars}`;
+    stars.textContent = `⭐ ${profile.stars} csillag`;
 
     const lessons = document.createElement("p");
     lessons.className = "profile-stat";
-    lessons.textContent = `📚 ${profile.lessonsCompleted}`;
+    lessons.textContent =
+        `📚 ${profile.lessonsCompleted} lecke`;
 
     const letters = document.createElement("p");
     letters.className = "profile-stat";
-    letters.textContent = `📬 ${profile.lettersDelivered}`;
+    letters.textContent =
+        `📬 ${profile.lettersDelivered} levél`;
 
-    stats.append(stars, lessons, letters);
-    card.append(title, stats);
+    const streak = document.createElement("p");
+    streak.className = "profile-stat";
+    streak.textContent = `🔥 ${profile.streak} nap`;
+
+    const progress = document.createElement("div");
+    progress.className = "profile-progress";
+
+    
+
+    stats.append(stars, lessons, letters, streak);
+    card.append(title, stats, progress);
 
     return card;
 

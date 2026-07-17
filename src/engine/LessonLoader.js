@@ -1,4 +1,8 @@
+import { updateStreak } from "../profile/Profile.js";
+
 export async function loadLesson(path) {
+
+    updateStreak();
 
     const response = await fetch(path);
 

@@ -17,11 +17,17 @@
     margin: 0 0 .5rem;
 }
 
-.profile-stats {
+/*.profile-stats {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
+}*/
+
+.profile-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
 }
 
 .profile-stat {

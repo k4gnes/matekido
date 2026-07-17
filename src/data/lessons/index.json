@@ -24,7 +24,7 @@
                     "file": "./src/data/lessons/grade1/addition-01.json"
                 },
                 {
-                    "mission": "🔍 Kinek a szomszédai?",
+                    "mission": "🏡 Ki lakik mellette?",
                     "subtitle": "Számok szomszédai 100-ig",
                     "file": "./src/data/lessons/grade1/neighbor-01.json"
                 },
@@ -34,12 +34,12 @@
                     "file": "./src/data/lessons/grade1/addition-02.json"
                 },
                 {
-                    "mission": "📦 Melyik zsák nehezebb?",
+                    "mission": "📦 Melyik kis zsák nehezebb?",
                     "subtitle": "Összehasonlítás 10-ig",
                     "file": "./src/data/lessons/grade1/comparison-00.json"
                 },
                 {
-                    "mission": "📦 Melyik zsák nehezebb?",
+                    "mission": "📦 Melyik nagy zsák nehezebb?",
                     "subtitle": "Összehasonlítás 20-ig",
                     "file": "./src/data/lessons/grade1/comparison-01.json"
                 }

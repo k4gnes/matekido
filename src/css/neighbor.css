@@ -11,4 +11,5 @@
 .neighbor-num {
     font-size: 2rem;
     font-weight: bold;
+    margin: 0 .75rem;
 }

@@ -12,6 +12,8 @@ import { renderMissingProgress } from "../components/missingProgress.js";
 import { renderComparisonProgress } from "../components/comparisonProgress.js";
 import { renderNeighborProgress } from "../components/neighborProgress.js";
 
+import { completeLesson } from "../profile/Profile.js";
+
 
 export class Game {
 
@@ -40,6 +42,11 @@ export class Game {
     render() {
 
         if (this.currentStep >= this.lesson.steps.length) {
+
+            if (!this.lesson.completed) {
+                completeLesson();
+                this.lesson.completed = true;
+            }
 
             renderCelebration(
                 {
@@ -112,10 +119,17 @@ export class Game {
                 break;
 
             case "celebration":
+                if (!this.lesson.completed) {
+                    completeLesson();
+                    this.lesson.completed = true;
+                }
+
                 renderCelebration(step, this.root, {
                     onRestart: this.onRestart,
                     onExit: this.onExit
-                });
+                }
+                );
+
                 break;
 
             default:

@@ -8,7 +8,7 @@ export function renderComparisonProgress({ current, total }) {
         const item = document.createElement("span");
 
         if (i < current) {
-            item.textContent = "⚖️";
+            item.textContent = "📦";
         }
         else if (i === current) {
             item.textContent = "🔍";

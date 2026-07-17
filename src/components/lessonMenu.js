@@ -1,4 +1,5 @@
 import { createCard } from "./ui/card.js";
+import { createProfileCard } from "./ui/profileCard.js";
 
 function createLessonCard(grade, onSelect) {
 
@@ -46,6 +47,7 @@ function createLessonCard(grade, onSelect) {
 export function renderLessonMenu(index, root, onSelect) {
 
     root.replaceChildren();
+    
 
     const wrapper = createCard();
 
@@ -57,6 +59,6 @@ export function renderLessonMenu(index, root, onSelect) {
     index.grades.forEach(grade => {
         wrapper.append(createLessonCard(grade, onSelect));
     });
-
+root.append(createProfileCard());
     root.append(wrapper);
 }

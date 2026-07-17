@@ -1,4 +1,5 @@
 import { renderAddition } from "./addition.js";
+import { renderSubtraction } from "./subtraction.js";
 
 export function renderExercise(step, root, next,progress) {
 
@@ -6,7 +7,10 @@ export function renderExercise(step, root, next,progress) {
 
         case "addition":
             renderAddition(step, root, next,progress);
-           // renderAdditionHint(step, hint);
+            break;
+
+        case "subtraction":
+            renderSubtraction(step, root, next, progress);
             break;
 
         default:

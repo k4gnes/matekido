@@ -1,0 +1,26 @@
+{
+    "id": "grade1-subtraction-01",
+    "title": "🎒 Mennyi maradt a táskában?",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🎒 Mennyi maradt a táskában?",
+            "text": "Számold ki, mennyi levél maradt a táskában!"
+        },
+        {
+            "type": "exercise",
+            "generator": "subtraction",
+            "options": {
+                "count": 5,
+                "min": 10,
+                "max": 20,
+                "subMax": 20
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Minden táskát sikerült kipakolni!"
+        }
+    ]
+}

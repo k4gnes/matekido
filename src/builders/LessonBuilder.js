@@ -43,6 +43,14 @@ export function buildLesson(lesson) {
                     lowerTen: task.lowerTen,
                     upperTen: task.upperTen
                 });
+            } else if (step.generator === "subtraction") {
+                result.push({
+                    type: "exercise",
+                    kind: "subtraction",
+                    title: `🎒 ${index + 1}. táska`,
+                    a: task.a,
+                    b: task.b
+                });
             } else {
                 result.push({
                     type: "exercise",

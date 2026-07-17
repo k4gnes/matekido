@@ -51,6 +51,17 @@ export function buildLesson(lesson) {
                     a: task.a,
                     b: task.b
                 });
+            } else if (step.generator === "mixed") {
+                result.push({
+                    type: "exercise",
+                    kind: "mixed",
+                    title: `❓ ${index + 1}.`,
+                    op: task.op,
+                    a: task.a,
+                    b: task.b,
+                    answer: task.answer,
+                    inputPos: task.inputPos
+                });
             } else {
                 result.push({
                     type: "exercise",

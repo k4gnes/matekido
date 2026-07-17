@@ -1,0 +1,24 @@
+{
+    "id": "grade1-mixed-01",
+    "title": "🔍 Valami hiányzik",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🔍 Valami hiányzik",
+            "text": "Valami hiányzik a műveletből! Találd ki, melyik szám nem látszik!"
+        },
+        {
+            "type": "exercise",
+            "generator": "mixed",
+            "options": {
+                "count": 5,
+                "max": 20
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Minden hiányzó számot megtaláltál!"
+        }
+    ]
+}

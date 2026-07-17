@@ -47,6 +47,11 @@
                     "mission": "📦 Melyik nagy zsák nehezebb?",
                     "subtitle": "Összehasonlítás 20-ig",
                     "file": "./src/data/lessons/grade1/comparison-01.json"
+                },
+                {
+                    "mission": "🔍 Valami hiányzik",
+                    "subtitle": "Vegyes műveletek 20-ig",
+                    "file": "./src/data/lessons/grade1/mixed-01.json"
                 }
             ]
         },

@@ -1,5 +1,6 @@
 import { generateAddition } from "./additionGenerator.js?v=3";
 import { generateSubtraction } from "./substractionGenerator.js?v=3";
+import { generateMixed } from "./mixedGenerator.js?v=3";
 import { generateMissingTo10, generateMissingRandom } from "./missingNumberGenerator.js?v=3";
 import { generateComparison } from "./comparisonGenerator.js?v=3";
 import { generateNeighbor } from "./neighborGenerator.js?v=3";
@@ -20,6 +21,8 @@ export function generate(step) {
             return generateNeighbor(step.options);
         case "subtraction":
             return generateSubtraction(step.options);
+        case "mixed":
+            return generateMixed(step.options);
         case "multiplication":
         case "division":
 

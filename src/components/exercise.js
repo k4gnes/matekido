@@ -1,5 +1,6 @@
 import { renderAddition } from "./addition.js";
 import { renderSubtraction } from "./subtraction.js";
+import { renderMixed } from "./mixed.js";
 
 export function renderExercise(step, root, next,progress) {
 
@@ -11,6 +12,10 @@ export function renderExercise(step, root, next,progress) {
 
         case "subtraction":
             renderSubtraction(step, root, next, progress);
+            break;
+
+        case "mixed":
+            renderMixed(step, root, next, progress);
             break;
 
         default:

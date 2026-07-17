@@ -49,7 +49,7 @@
                     "file": "./src/data/lessons/grade1/comparison-01.json"
                 },
                 {
-                    "mission": "🔍 Valami hiányzik",
+                    "mission": "📮 Hiányos küldemény",
                     "subtitle": "Vegyes műveletek 20-ig",
                     "file": "./src/data/lessons/grade1/mixed-01.json"
                 }

@@ -1,11 +1,11 @@
 {
   "id": "grade1-comparison-01",
-  "title": "Melyik a nagyobb? (20-as számkör)",
+  "title": "📦 Melyik zsák nehezebb? (20-as számkör)",
 
   "steps": [
     {
       "type": "scene",
-      "title": "⚖️ Melyik a nagyobb?",
+      "title": "⚖️ Melyik oldalon van több?",
       "text": "Válaszd ki a helyes relációjelet!"
     },
 

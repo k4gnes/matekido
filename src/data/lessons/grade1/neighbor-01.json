@@ -5,7 +5,7 @@
   "steps": [
     {
       "type": "scene",
-      "title": "❓ Kinek a szomszédai?",
+      "title": "🔍 Kinek a szomszédai?",
       "text": "Írd be, melyik szám szomszédait látod!"
     },
 

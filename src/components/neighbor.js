@@ -17,7 +17,7 @@ export function renderNeighbor(step, root, next, progress) {
     }
 
     const title = document.createElement("h1");
-    title.textContent = "❓ Kinek a szomszédai?";
+    title.textContent = "🔍 Kinek a szomszédai?";
     card.append(title);
 
     const row = document.createElement("div");

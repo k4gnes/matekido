@@ -11,7 +11,7 @@ export function renderNeighborProgress({ current, total }) {
             item.textContent = "🧑";
         }
         else if (i === current) {
-            item.textContent = "❓";
+            item.textContent = "🚪";
         }
         else {
             item.textContent = "👤";

@@ -1,11 +1,11 @@
 {
   "id": "grade1-comparison-00",
-  "title": "Melyik a nagyobb? (10-ig)",
+  "title": "📦 Melyik zsák nehezebb? (10-ig)",
 
   "steps": [
     {
       "type": "scene",
-      "title": "⚖️ Melyik a nagyobb?",
+      "title": "⚖️ Melyik oldalon van több?",
       "text": "Válaszd ki a helyes relációjelet!"
     },
 

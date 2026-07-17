@@ -5,7 +5,7 @@
   "steps": [
     {
       "type": "scene",
-      "title": "🔢 Mennyi levél hiányzik?",
+      "title": "📮 Mennyi levél hiányzik?",
       "text": "Segíts megtalálni a hiányzó leveleket!"
     },
 

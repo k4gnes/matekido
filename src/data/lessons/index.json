@@ -4,17 +4,17 @@
             "title": "1. osztály",
             "lessons": [
                 {
-                    "mission": "🧩 Bontás",
+                    "mission": "✉️ Csomagok szétválogatása",
                     "subtitle": "Számok bontása 10-ig",
                     "file": "./src/data/lessons/grade1/decompsition.json"
                 },
                 {
-                    "mission": "🔢 Mennyi hiányzik?",
+                    "mission": "📮 Mennyi levél hiányzik?",
                     "subtitle": "Hiányzó szám 10-ig",
                     "file": "./src/data/lessons/grade1/missing-number.json"
                 },
                 {
-                    "mission": "🔢 Mennyi hiányzik?",
+                    "mission": "📮 Mennyi levél hiányzik?",
                     "subtitle": "Hiányzó szám véletlen számig",
                     "file": "./src/data/lessons/grade1/missing-random.json"
                 },
@@ -24,7 +24,7 @@
                     "file": "./src/data/lessons/grade1/addition-01.json"
                 },
                 {
-                    "mission": "🏘️ Kinek a szomszédai?",
+                    "mission": "🔍 Kinek a szomszédai?",
                     "subtitle": "Számok szomszédai 100-ig",
                     "file": "./src/data/lessons/grade1/neighbor-01.json"
                 },
@@ -34,12 +34,12 @@
                     "file": "./src/data/lessons/grade1/addition-02.json"
                 },
                 {
-                    "mission": "⚖️ Melyik a nagyobb?",
+                    "mission": "📦 Melyik zsák nehezebb?",
                     "subtitle": "Összehasonlítás 10-ig",
                     "file": "./src/data/lessons/grade1/comparison-00.json"
                 },
                 {
-                    "mission": "⚖️ Melyik a nagyobb?",
+                    "mission": "📦 Melyik zsák nehezebb?",
                     "subtitle": "Összehasonlítás 20-ig",
                     "file": "./src/data/lessons/grade1/comparison-01.json"
                 }
@@ -49,7 +49,7 @@
             "title": "2. osztály",
             "lessons": [
                 {
-                    "mission": "🔢 Mennyi hiányzik?",
+                    "mission": "📮 Mennyi levél hiányzik?",
                     "subtitle": "Hiányzó szám véletlen számig 100-ig",
                     "file": "./src/data/lessons/grade2/missing-random.json"
                 },

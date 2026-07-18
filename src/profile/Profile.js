@@ -57,6 +57,8 @@ export function completeLesson() {
 
     const profile = loadProfile();
 
+    const prev = profile.lessonsCompleted;
+
     profile.lessonsCompleted++;
 
     saveProfile(profile);
@@ -66,6 +68,20 @@ export function completeLesson() {
         unlock("racing");
 
     }
+
+    const goals = [10, 25, 50, 100];
+
+    for (const goal of goals) {
+
+        if (prev < goal && profile.lessonsCompleted >= goal) {
+
+            return { title: `${goal} lecke teljesítve!` };
+
+        }
+
+    }
+
+    return null;
 
 }
 

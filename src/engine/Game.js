@@ -42,9 +42,12 @@ export class Game {
     render() {
 
         if (this.currentStep >= this.lesson.steps.length) {
+            let milestone = null;
 
             if (!this.lesson.completed) {
-                try { completeLesson(); } catch (e) { console.error(e); }
+                try {
+                    milestone = completeLesson();
+                } catch (e) { console.error(e); }
                 this.lesson.completed = true;
             }
 
@@ -57,7 +60,8 @@ export class Game {
                 {
                     onRestart: this.onRestart,
                     onExit: this.onExit
-                }
+                },
+                milestone
             );
 
             return;
@@ -118,19 +122,20 @@ export class Game {
                 renderNeighbor(step, this.root, () => this.next(), progress);
                 break;
 
-            case "celebration":
+            case "celebration": {
+                let milestone2 = null;
                 if (!this.lesson.completed) {
-                    try { completeLesson(); } catch (e) { console.error(e); }
+                    try { milestone2 = completeLesson(); } catch (e) { console.error(e); }
                     this.lesson.completed = true;
                 }
 
                 renderCelebration(step, this.root, {
                     onRestart: this.onRestart,
                     onExit: this.onExit
-                }
-                );
+                }, milestone2);
 
                 break;
+            }
 
             default:
                 console.error("Ismeretlen lépéstípus:", step.type);

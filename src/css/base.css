@@ -63,3 +63,13 @@ button {
 button:hover {
     transform: scale(1.03);
 }
+
+.milestone{
+    margin:20px 0;
+    text-align:center;
+}
+
+.milestone-icon{
+    font-size:64px;
+    margin-bottom:8px;
+}

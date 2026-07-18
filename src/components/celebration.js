@@ -1,7 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 
-export function renderCelebration(step, root, actions = {}) {
+export function renderCelebration(step, root, actions = {}, milestone) {
 
     root.replaceChildren();
 
@@ -21,7 +21,24 @@ export function renderCelebration(step, root, actions = {}) {
         onClick: () => actions.onExit?.()
     });
 
-    card.append(title, text, restartButton, menuButton);
+    if (milestone) {
+
+        const reward = document.createElement("div");
+        reward.className = "milestone";
+
+        reward.innerHTML = `
+        <div class="milestone-icon">🏅</div>
+        <h2>${milestone.title}</h2>
+        <p>Új mérföldkövet értél el!</p>
+    `;
+
+        card.append(title, text, reward, restartButton, menuButton);
+
+    } else {
+
+        card.append(title, text, restartButton, menuButton);
+
+    }
 
     root.append(card);
 }

@@ -1,0 +1,24 @@
+{
+    "id": "grade2-mixed-01",
+    "title": "📮 Hiányos nagy küldemény",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🔍 Valami hiányzik",
+            "text": "Valami hiányzik a műveletből! Találd ki, melyik szám nem látszik!"
+        },
+        {
+            "type": "exercise",
+            "generator": "mixed",
+            "options": {
+                "count": 5,
+                "max": 100
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Minden hiányzó számot megtaláltál 100-ig is!"
+        }
+    ]
+}

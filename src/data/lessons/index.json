@@ -77,6 +77,11 @@
                     "mission": "🎒 Mennyi maradt a csomagból?",
                     "subtitle": "Kivonás 100-ig",
                     "file": "./src/data/lessons/grade2/subtraction-01.json"
+                },
+                {
+                    "mission": "📮 Hiányos nagy küldemény",
+                    "subtitle": "Vegyes műveletek 100-ig",
+                    "file": "./src/data/lessons/grade2/mixed-01.json"
                 }
             ]
         }

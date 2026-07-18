@@ -9,7 +9,12 @@ const DEFAULT_PROFILE = {
     lastPlayed: null,
     unlockedThemes: [
         "postman"
-    ]
+    ],
+    dailyQuest: {
+        id: "three-lessons",
+        progress: 0,
+        date: null
+    }
 };
 
 export function loadProfile() {
@@ -61,6 +66,12 @@ export function completeLesson() {
 
     profile.lessonsCompleted++;
 
+    if (!profile.dailyQuest) {
+        profile.dailyQuest = { id: "three-lessons", progress: 0, date: null };
+    }
+
+    profile.dailyQuest.progress++;
+    
     saveProfile(profile);
 
     if (profile.lessonsCompleted >= 25) {

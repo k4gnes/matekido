@@ -38,8 +38,13 @@ export function createProfileCard() {
     label.textContent =
         `🎯 Következő cél: ${goal.current} / ${goal.target}`;
 
+    const quest = document.createElement("p");
+
+    quest.textContent =
+        `📅 Mai küldetés: ${profile.dailyQuest.progress}/3`;
+
     stats.append(lessons, streak);
-    card.append(title, stats,label, progress);
+    card.append(title, stats, label, progress, quest);
 
     return card;
 

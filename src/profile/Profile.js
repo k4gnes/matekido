@@ -17,15 +17,48 @@ const DEFAULT_PROFILE = {
     }
 };
 
+function getToday() {
+    return new Date().toISOString().split("T")[0];
+}
+
+function refreshDailyQuest(profile) {
+
+    if (profile.dailyQuest.date === getToday()) {
+        return;
+    }
+
+    profile.dailyQuest = {
+        ...profile.dailyQuest,
+        progress: 0,
+        completed: false,
+        date: getToday()
+    };
+
+}
 export function loadProfile() {
 
     const saved = localStorage.getItem(STORAGE_KEY);
 
-    if (!saved) {
-        return { ...DEFAULT_PROFILE };
+    const profile = saved
+        ? { ...DEFAULT_PROFILE, ...JSON.parse(saved) }
+        : { ...DEFAULT_PROFILE };
+
+    if (!profile.dailyQuest) {
+        profile.dailyQuest = { id: "three-lessons", progress: 0, date: null };
     }
 
-    return JSON.parse(saved);
+    if (profile.dailyQuest.date !== getToday()) {
+        profile.dailyQuest = {
+            ...profile.dailyQuest,
+            progress: 0,
+            completed: false,
+            date: getToday()
+        };
+
+        saveProfile(profile);
+    }
+
+    return profile;
 
 }
 
@@ -71,7 +104,11 @@ export function completeLesson() {
     }
 
     profile.dailyQuest.progress++;
-    
+
+    if (profile.dailyQuest.progress >= 3) {
+    profile.dailyQuest.completed = true;
+}
+
     saveProfile(profile);
 
     if (profile.lessonsCompleted >= 25) {

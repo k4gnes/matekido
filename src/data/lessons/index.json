@@ -10,12 +10,12 @@
                 },
                 {
                     "mission": "📮 Mennyi levél hiányzik?",
-                    "subtitle": "Hiányzó szám 10-ig",
+                    "subtitle": "Kiegészítés 10-ig",
                     "file": "./src/data/lessons/grade1/missing-number.json"
                 },
                 {
                     "mission": "📮 Mennyi levél hiányzik?",
-                    "subtitle": "Hiányzó szám véletlen számig",
+                    "subtitle": "Kiegészítés véletlen számig 20-ig",
                     "file": "./src/data/lessons/grade1/missing-random.json"
                 },
                 {

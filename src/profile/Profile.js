@@ -33,6 +33,20 @@ export function saveProfile(profile) {
 
 }
 
+function unlock(theme) {
+
+    const profile = loadProfile();
+
+    if (!profile.unlockedThemes.includes(theme)) {
+
+        profile.unlockedThemes.push(theme);
+
+        saveProfile(profile);
+
+    }
+
+}
+
 export function completeLesson() {
 
     const profile = loadProfile();

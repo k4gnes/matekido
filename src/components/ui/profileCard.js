@@ -1,5 +1,5 @@
-import { loadProfile } from "../../profile/Profile.js";
 import { createCard } from "./card.js";
+import { loadProfile, getNextGoal } from "../../profile/Profile.js";
 
 export function createProfileCard() {
 
@@ -8,6 +8,8 @@ export function createProfileCard() {
     const card = createCard();
     card.classList.add("profile-card");
 
+    const goal = getNextGoal();
+
     const title = document.createElement("h1");
     title.className = "profile-title";
     title.textContent = "📮 Saját postahivatal";
@@ -15,31 +17,29 @@ export function createProfileCard() {
     const stats = document.createElement("div");
     stats.className = "profile-stats";
 
-    const stars = document.createElement("p");
-    stars.className = "profile-stat";
-    stars.textContent = `⭐ ${profile.stars} csillag`;
-
     const lessons = document.createElement("p");
     lessons.className = "profile-stat";
     lessons.textContent =
         `📚 ${profile.lessonsCompleted} lecke`;
 
-    const letters = document.createElement("p");
-    letters.className = "profile-stat";
-    letters.textContent =
-        `📬 ${profile.lettersDelivered} levél`;
-
     const streak = document.createElement("p");
     streak.className = "profile-stat";
     streak.textContent = `🔥 ${profile.streak} nap`;
 
-    const progress = document.createElement("div");
-    progress.className = "profile-progress";
+    const progress = document.createElement("progress");
 
-    
+    progress.max = goal.target;
+    progress.value = goal.current;
 
-    stats.append(stars, lessons, letters, streak);
-    card.append(title, stats, progress);
+    const label = document.createElement("p");
+
+    label.className = "profile-goal";
+
+    label.textContent =
+        `🎯 Következő cél: ${goal.current} / ${goal.target}`;
+
+    stats.append(lessons, streak);
+    card.append(title, stats,label, progress);
 
     return card;
 

@@ -9,7 +9,7 @@
                     "file": "./src/data/lessons/grade1/decompsition.json"
                 },
                 {
-                    "mission": "📮 Mennyi levél hiányzik?",
+                    "mission": "📮 Mennyi kis levél hiányzik?",
                     "subtitle": "Kiegészítés 10-ig",
                     "file": "./src/data/lessons/grade1/missing-number.json"
                 },

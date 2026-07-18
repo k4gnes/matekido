@@ -34,3 +34,14 @@
     font-size: 1rem;
     margin: 0;
 }
+.profile-goal{
+    margin-top:12px;
+    margin-bottom:4px;
+    font-weight:600;
+    font-size:1rem;
+}
+
+progress{
+    width:100%;
+    height:8px;
+}

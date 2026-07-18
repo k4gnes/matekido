@@ -44,7 +44,7 @@ export class Game {
         if (this.currentStep >= this.lesson.steps.length) {
 
             if (!this.lesson.completed) {
-                completeLesson();
+                try { completeLesson(); } catch (e) { console.error(e); }
                 this.lesson.completed = true;
             }
 
@@ -120,7 +120,7 @@ export class Game {
 
             case "celebration":
                 if (!this.lesson.completed) {
-                    completeLesson();
+                    try { completeLesson(); } catch (e) { console.error(e); }
                     this.lesson.completed = true;
                 }
 

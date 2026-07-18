@@ -37,6 +37,12 @@ function unlock(theme) {
 
     const profile = loadProfile();
 
+    if (!profile.unlockedThemes) {
+
+        profile.unlockedThemes = [];
+
+    }
+
     if (!profile.unlockedThemes.includes(theme)) {
 
         profile.unlockedThemes.push(theme);
@@ -129,5 +135,31 @@ export function updateStreak() {
     profile.lastPlayed = today.toISOString();
 
     saveProfile(profile);
+
+}
+
+export function getNextGoal() {
+
+    const profile = loadProfile();
+
+    const goals = [10, 25, 50, 100];
+
+    for (const goal of goals) {
+
+        if (profile.lessonsCompleted < goal) {
+
+            return {
+                current: profile.lessonsCompleted,
+                target: goal
+            };
+
+        }
+
+    }
+
+    return {
+        current: profile.lessonsCompleted,
+        target: profile.lessonsCompleted
+    };
 
 }

@@ -2,7 +2,7 @@ import { createButton } from "./ui/button.js";
 import { createNumberInput } from "./ui/numberInput.js";
 import { createExercise } from "./ui/exercise.js";
 
-export function renderMissingNumber(step, root, next, progress) {
+export function renderMissingNumber(step, root, next, progress, onResult) {
 
     let mistakes = 0;
     let answered = false;
@@ -53,6 +53,7 @@ export function renderMissingNumber(step, root, next, progress) {
 
             message.show("😊 Szép munka!", "success");
 
+            onResult?.(true);
             setTimeout(() => next(), 800);
 
         } else {
@@ -65,6 +66,7 @@ export function renderMissingNumber(step, root, next, progress) {
 
             mistakes++;
 
+            onResult?.(false);
             input.focus();
             input.select();
         }

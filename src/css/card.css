@@ -55,15 +55,15 @@
 }
 
 .profile-page {
-    padding: 1.5rem;
+    padding: 1rem;
 }
 
 .profile-page-stats {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    gap: 6px;
     width: 100%;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.6rem;
 }
 
 .profile-page-stat {
@@ -71,32 +71,32 @@
     flex-direction: column;
     align-items: center;
     background: rgba(79, 134, 247, 0.08);
-    border-radius: 12px;
-    padding: 0.8rem;
+    border-radius: 8px;
+    padding: 0.4rem;
 }
 
 .stat-icon {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
 
 .stat-value {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     font-weight: 700;
 }
 
 .stat-label {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     opacity: 0.7;
 }
 
 .profile-page-progress {
     width: 100%;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.6rem;
 }
 
 .profile-page-progress progress {
     width: 100%;
-    height: 8px;
+    height: 6px;
     appearance: none;
     -webkit-appearance: none;
     border: none;
@@ -104,25 +104,125 @@
 
 .profile-page-quest {
     width: 100%;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.6rem;
 }
 
 .profile-page-quest-title {
     font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+}
+
+.profile-page-daily {
+    width: 100%;
+    margin-bottom: 0.6rem;
+}
+
+.profile-page-daily h2 {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+}
+
+.daily-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 0.4rem;
+}
+
+.daily-nav-btn {
+    margin: 0;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    min-width: auto;
+}
+
+.daily-date-label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    min-width: 130px;
+    text-align: center;
+}
+
+.daily-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.daily-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(79, 134, 247, 0.06);
+    border-radius: 6px;
+    padding: 0.35rem;
+}
+
+.daily-icon {
+    font-size: 0.9rem;
+}
+
+.daily-value {
     font-size: 1rem;
-    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.daily-label {
+    font-size: 0.65rem;
+    opacity: 0.7;
+}
+
+.type-breakdown {
+    margin-top: 0.5rem;
+}
+
+.type-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.type-label {
+    font-size: 0.7rem;
+    min-width: 110px;
+    white-space: nowrap;
+}
+
+.type-bar-wrap {
+    flex: 1;
+    height: 8px;
+    background: #e8e8e8;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.type-bar {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 4px;
+    transition: width 0.3s;
+}
+
+.type-pct {
+    font-size: 0.7rem;
+    font-weight: 600;
+    min-width: 28px;
+    text-align: right;
 }
 
 .quest-bar {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 0.4rem;
+    gap: 8px;
+    margin-bottom: 0.3rem;
 }
 
 .quest-dot {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     background: #e0e0e0;
     transition: background 0.3s;
@@ -134,21 +234,21 @@
 
 .profile-page-achievements {
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
 }
 
 .profile-page-achievements h2 {
-    font-size: 1.1rem;
-    margin-bottom: 0.6rem;
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
 }
 
 .achievement-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 0.6rem 0.8rem;
-    border-radius: 10px;
-    margin-bottom: 6px;
+    gap: 6px;
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+    margin-bottom: 3px;
 }
 
 .achievement-item.unlocked {
@@ -161,7 +261,7 @@
 }
 
 .achievement-icon {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .achievement-info {
@@ -171,10 +271,10 @@
 
 .achievement-name {
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.8rem;
 }
 
 .achievement-req {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     opacity: 0.7;
 }

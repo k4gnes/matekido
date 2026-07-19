@@ -4,7 +4,7 @@ import { createNumberInput } from "./ui/numberInput.js";
 import { createHintBox } from "./ui/hintBox.js";
 import { createExercise } from "./ui/exercise.js";
 
-export function renderAddition(step, root, next, progress) {
+export function renderAddition(step, root, next, progress, onResult) {
 
     let mistakes = 0;
     let hintShown = false;
@@ -69,6 +69,7 @@ export function renderAddition(step, root, next, progress) {
 
             message.show("😊 Szép munka!", "success");
 
+            onResult?.(true);
             setTimeout(() => next(), 800);
 
         } else {
@@ -85,6 +86,7 @@ export function renderAddition(step, root, next, progress) {
                 hintButton.style.display = "inline-block";
             }
 
+            onResult?.(false);
             input.focus();
             input.select();
         }

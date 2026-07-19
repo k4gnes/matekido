@@ -14,6 +14,29 @@ const DEFAULT_PROFILE = {
         id: "three-lessons",
         progress: 0,
         date: null
+    },
+    dailyStats: {},
+    statistics: {
+        addition: {
+            correct: 0,
+            wrong: 0
+        },
+        subtraction: {
+            correct: 0,
+            wrong: 0
+        },
+        neighbours: {
+            correct: 0,
+            wrong: 0
+        },
+        missingNumber: {
+            correct: 0,
+            wrong: 0
+        },
+        bigger: {
+            correct: 0,
+            wrong: 0
+        }
     }
 };
 
@@ -106,8 +129,8 @@ export function completeLesson() {
     profile.dailyQuest.progress++;
 
     if (profile.dailyQuest.progress >= 3) {
-    profile.dailyQuest.completed = true;
-}
+        profile.dailyQuest.completed = true;
+    }
 
     saveProfile(profile);
 
@@ -128,7 +151,7 @@ export function completeLesson() {
         }
 
     }
-
+ 
     return null;
 
 }
@@ -150,6 +173,70 @@ export function addDeliverLetters(count = 1) {
     profile.lettersDelivered += count;
 
     saveProfile(profile);
+
+}
+
+export function updateStatistics(lessonId, correct, wrong) {
+
+    const profile = loadProfile();
+
+    if (!profile.statistics[lessonId]) {
+        return;
+    }
+
+    profile.statistics[lessonId].correct += correct;
+    profile.statistics[lessonId].wrong += wrong;
+
+    saveProfile(profile);
+
+}
+
+export function recordDailyResult(correct, wrong, byType = {}) {
+
+    const profile = loadProfile();
+    const today = getToday();
+
+    if (!profile.dailyStats) {
+        profile.dailyStats = {};
+    }
+
+    if (!profile.dailyStats[today]) {
+        profile.dailyStats[today] = { correct: 0, wrong: 0, lessonsPlayed: 0, byType: {} };
+    }
+
+    if (!profile.dailyStats[today].byType) {
+        profile.dailyStats[today].byType = {};
+    }
+
+    const day = profile.dailyStats[today];
+    day.correct += correct;
+    day.wrong += wrong;
+    day.lessonsPlayed++;
+
+    for (const [type, counts] of Object.entries(byType)) {
+        if (!day.byType[type]) {
+            day.byType[type] = { correct: 0, wrong: 0 };
+        }
+        day.byType[type].correct += counts.correct;
+        day.byType[type].wrong += counts.wrong;
+    }
+
+    saveProfile(profile);
+
+}
+
+export function getDailyStats() {
+
+    const profile = loadProfile();
+    const stats = profile.dailyStats || {};
+
+    for (const [date, day] of Object.entries(stats)) {
+        if (!day.byType) {
+            day.byType = {};
+        }
+    }
+
+    return stats;
 
 }
 

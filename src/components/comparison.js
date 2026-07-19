@@ -1,7 +1,7 @@
 import { createButton } from "./ui/button.js";
 import { createExercise } from "./ui/exercise.js";
 
-export function renderComparison(step, root, next, progress) {
+export function renderComparison(step, root, next, progress, onResult) {
 
     let answered = false;
 
@@ -29,9 +29,11 @@ export function renderComparison(step, root, next, progress) {
 
                 if (op === step.operator) {
                     message.show("😊 Szép munka!", "success");
+                    onResult?.(true);
                     setTimeout(() => next(), 800);
                 } else {
                     message.show(`🤔 Nem, a helyes válasz: ${step.operator}`, "retry");
+                    onResult?.(false);
                     setTimeout(() => next(), 1500);
                 }
             }

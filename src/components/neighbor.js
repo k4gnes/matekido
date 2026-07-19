@@ -3,7 +3,7 @@ import { createNumberInput } from "./ui/numberInput.js";
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
 
-export function renderNeighbor(step, root, next, progress) {
+export function renderNeighbor(step, root, next, progress, onResult) {
 
     let mistakes = 0;
     let answered = false;
@@ -77,6 +77,7 @@ export function renderNeighbor(step, root, next, progress) {
 
             message.show("😊 Szép munka!", "success");
 
+            onResult?.(true);
             setTimeout(() => next(), 800);
 
         } else {
@@ -89,6 +90,7 @@ export function renderNeighbor(step, root, next, progress) {
 
             mistakes++;
 
+            onResult?.(false);
             input.focus();
             input.select();
         }

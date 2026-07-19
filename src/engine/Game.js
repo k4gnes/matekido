@@ -12,7 +12,7 @@ import { renderMissingProgress } from "../components/missingProgress.js";
 import { renderComparisonProgress } from "../components/comparisonProgress.js";
 import { renderNeighborProgress } from "../components/neighborProgress.js";
 
-import { completeLesson } from "../profile/Profile.js";
+import { completeLesson, recordDailyResult } from "../profile/Profile.js";
 
 
 export class Game {
@@ -22,6 +22,9 @@ export class Game {
         this.lesson = lesson;
         this.root = root;
         this.currentStep = 0;
+        this.correct = 0;
+        this.wrong = 0;
+        this.byType = {};
 
         this.onRestart = actions.onRestart;
         this.onExit = actions.onExit;
@@ -39,6 +42,24 @@ export class Game {
 
     }
 
+    onResult(isCorrect, type) {
+        if (isCorrect) {
+            this.correct++;
+        } else {
+            this.wrong++;
+        }
+        if (type) {
+            if (!this.byType[type]) {
+                this.byType[type] = { correct: 0, wrong: 0 };
+            }
+            if (isCorrect) {
+                this.byType[type].correct++;
+            } else {
+                this.byType[type].wrong++;
+            }
+        }
+    }
+
     render() {
 
         if (this.currentStep >= this.lesson.steps.length) {
@@ -47,6 +68,7 @@ export class Game {
             if (!this.lesson.completed) {
                 try {
                     milestone = completeLesson();
+                    recordDailyResult(this.correct, this.wrong, this.byType);
                 } catch (e) { console.error(e); }
                 this.lesson.completed = true;
             }
@@ -103,29 +125,32 @@ export class Game {
                 break;
 
             case "exercise":
-                renderExercise(step, this.root, () => this.next(), progress);
+                renderExercise(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, step.kind));
                 break;
 
             case "decomposition":
-                renderDecomposition(step, this.root, () => this.next(), progress);
+                renderDecomposition(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "decomposition"));
                 break;
 
             case "missing-number":
-                renderMissingNumber(step, this.root, () => this.next(), progress);
+                renderMissingNumber(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "missing-number"));
                 break;
 
             case "comparison":
-                renderComparison(step, this.root, () => this.next(), progress);
+                renderComparison(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "comparison"));
                 break;
 
             case "neighbor":
-                renderNeighbor(step, this.root, () => this.next(), progress);
+                renderNeighbor(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "neighbor"));
                 break;
 
             case "celebration": {
                 let milestone2 = null;
                 if (!this.lesson.completed) {
-                    try { milestone2 = completeLesson(); } catch (e) { console.error(e); }
+                    try {
+                        milestone2 = completeLesson();
+                        recordDailyResult(this.correct, this.wrong, this.byType);
+                    } catch (e) { console.error(e); }
                     this.lesson.completed = true;
                 }
 

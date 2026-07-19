@@ -1,7 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 
-export function renderDecomposition(step, root, onNext, progress) {
+export function renderDecomposition(step, root, onNext, progress, onResult) {
 
     root.innerHTML = "";
 
@@ -87,6 +87,7 @@ export function renderDecomposition(step, root, onNext, progress) {
             if (found.size === number + 1) {
                 result.textContent = "😊 Ügyes vagy!";
                 result.style.color = "#2e7d32";
+                onResult?.(true);
                 setTimeout(() => onNext(), 2500);
             }
 

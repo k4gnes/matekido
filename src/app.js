@@ -2,6 +2,7 @@ import { Game } from "./engine/Game.js?v=3";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=3";
 import { renderLessonMenu } from "./components/lessonMenu.js";
+import { renderProfilePage } from "./components/profilePage.js";
 
 const root = document.getElementById("app");
 
@@ -14,9 +15,14 @@ function showMenu() {
     renderLessonMenu(
         lessonIndex,
         root,
-        startLesson
+        startLesson,
+        showProfile
     );
 
+}
+
+function showProfile() {
+    renderProfilePage(root, showMenu);
 }
 
 async function startLesson(path) {

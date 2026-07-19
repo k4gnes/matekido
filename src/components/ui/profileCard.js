@@ -39,6 +39,7 @@ export function createProfileCard() {
         `🎯 Következő cél: ${goal.current} / ${goal.target}`;
 
     const quest = document.createElement("p");
+    quest.className = "profile-quest";
 
     quest.textContent =
         `📅 Mai küldetés: ${profile.dailyQuest.progress}/3`;

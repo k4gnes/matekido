@@ -36,7 +36,8 @@ async function startLesson(path) {
         root,
         {
             onRestart: () => startLesson(path),
-            onExit: showMenu
+            onExit: showMenu,
+            onProfile: showProfile
         }
     );
 

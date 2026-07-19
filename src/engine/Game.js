@@ -28,6 +28,7 @@ export class Game {
 
         this.onRestart = actions.onRestart;
         this.onExit = actions.onExit;
+        this.onProfile = actions.onProfile;
     }
 
     start() {
@@ -81,7 +82,8 @@ export class Game {
                 this.root,
                 {
                     onRestart: this.onRestart,
-                    onExit: this.onExit
+                    onExit: this.onExit,
+                    onProfile: this.onProfile
                 },
                 milestone
             );
@@ -156,7 +158,8 @@ export class Game {
 
                 renderCelebration(step, this.root, {
                     onRestart: this.onRestart,
-                    onExit: this.onExit
+                    onExit: this.onExit,
+                    onProfile: this.onProfile
                 }, milestone2);
 
                 break;

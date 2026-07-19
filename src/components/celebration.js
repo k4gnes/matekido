@@ -21,6 +21,10 @@ export function renderCelebration(step, root, actions = {}, milestone) {
         onClick: () => actions.onExit?.()
     });
 
+    const profileButton = createButton("👤 Profilom", {
+        onClick: () => actions.onProfile?.()
+    });
+
     if (milestone) {
 
         const reward = document.createElement("div");
@@ -32,11 +36,11 @@ export function renderCelebration(step, root, actions = {}, milestone) {
         <p>Új mérföldkövet értél el!</p>
     `;
 
-        card.append(title, text, reward, restartButton, menuButton);
+        card.append(title, text, reward, restartButton, menuButton, profileButton);
 
     } else {
 
-        card.append(title, text, restartButton, menuButton);
+        card.append(title, text, restartButton, menuButton, profileButton);
 
     }
 

@@ -1,5 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
+import { listPlayers, getActiveId } from "../profile/UserManager.js";
 
 const TYPE_EMOJI = {
     addition: "➕",
@@ -78,12 +79,23 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch) {
     const buttonRow = document.createElement("div");
     buttonRow.style.cssText = "display:flex; gap:.5rem; justify-content:center; margin-bottom:1rem;";
 
+    const allPlayers = listPlayers();
+    const activeId = getActiveId();
+    const currentPlayer = allPlayers.find(p => p.id === activeId);
+
     const profileButton = createButton("👤 Profilom", {
         onClick: () => onProfile?.()
     });
     profileButton.className = "profile-page-button";
 
     buttonRow.append(profileButton);
+
+    if (currentPlayer) {
+        const avatar = document.createElement("span");
+        avatar.textContent = currentPlayer.avatar;
+        avatar.style.cssText = "font-size:1.4rem; line-height:1; display:inline-flex; align-items:center;";
+        buttonRow.append(avatar);
+    }
 
     if (onSwitch) {
         const switchButton = createButton("👤 Játékos", {

@@ -12,7 +12,7 @@ import { renderMissingProgress } from "../components/missingProgress.js";
 import { renderComparisonProgress } from "../components/comparisonProgress.js";
 import { renderNeighborProgress } from "../components/neighborProgress.js";
 
-import { completeLesson, recordDailyResult } from "../profile/Profile.js";
+import { completeLesson, recordDailyResult, recordPerfectLesson } from "../profile/Profile.js";
 
 
 export class Game {
@@ -70,6 +70,9 @@ export class Game {
                 try {
                     milestone = completeLesson();
                     recordDailyResult(this.correct, this.wrong, this.byType);
+                    if (this.wrong === 0) {
+                        recordPerfectLesson();
+                    }
                 } catch (e) { console.error(e); }
                 this.lesson.completed = true;
             }
@@ -77,7 +80,9 @@ export class Game {
             renderCelebration(
                 {
                     title: "🎉 Nagyszerű!",
-                    text: "Minden feladatot megoldottál!"
+                    text: this.wrong === 0
+                        ? "Tökéletes! Egyetlen hiba sem volt!"
+                        : "Minden feladatot megoldottál!"
                 },
                 this.root,
                 {
@@ -152,6 +157,9 @@ export class Game {
                     try {
                         milestone2 = completeLesson();
                         recordDailyResult(this.correct, this.wrong, this.byType);
+                        if (this.wrong === 0) {
+                            recordPerfectLesson();
+                        }
                     } catch (e) { console.error(e); }
                     this.lesson.completed = true;
                 }

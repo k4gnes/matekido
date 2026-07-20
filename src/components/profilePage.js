@@ -1,7 +1,8 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { loadProfile, getNextGoal, getDailyStats } from "../profile/Profile.js";
-import { ACHIEVEMENTS } from "../profile/Achievements.js";
+import { ACHIEVEMENTS, getUnlockedAchievements } from "../profile/Achievements.js";
+import { listPlayers, getActiveId } from "../profile/UserManager.js";
 
 function formatDate(dateStr) {
     const d = new Date(dateStr + "T00:00:00");
@@ -24,11 +25,33 @@ export function renderProfilePage(root, onBack) {
     const today = new Date().toISOString().split("T")[0];
     let selectedDate = today;
 
+    const TYPE_LABELS = {
+        addition: "➕ Összeadás",
+        subtraction: "➖ Kivonás",
+        mixed: "🔀 Vegyes",
+        "missing-number": "❓ Hiányzó szám",
+        comparison: "⚖️ Összehasonlítás",
+        neighbor: "🔍 Szomszéd",
+        decomposition: "🧩 Bontás"
+    };
+
     const card = createCard();
     card.classList.add("profile-page");
 
+    const avatarDisplay = document.createElement("div");
+    avatarDisplay.style.cssText = "font-size:3rem; text-align:center; margin-bottom:.2rem;";
+
+    const allPlayers = listPlayers();
+    const activeId = getActiveId();
+    const activePlayer = allPlayers.find(p => p.id === activeId);
+    avatarDisplay.textContent = activePlayer?.avatar ?? "🦊";
+
     const title = document.createElement("h1");
     title.textContent = "📮 Saját postahivatal";
+
+    const nameDisplay = document.createElement("p");
+    nameDisplay.style.cssText = "font-size:1.1rem; font-weight:600; margin:0 0 .6rem; text-align:center;";
+    nameDisplay.textContent = activePlayer?.name ?? "Játékos";
 
     const stats = document.createElement("div");
     stats.className = "profile-page-stats";
@@ -87,15 +110,21 @@ export function renderProfilePage(root, onBack) {
 
     achievementSection.append(achievementTitle);
 
+    const unlockedIds = new Set(getUnlockedAchievements(profile).map(a => a.id));
+
     ACHIEVEMENTS.forEach(ach => {
-        const unlocked = profile.lessonsCompleted >= ach.lessons;
+        const unlocked = unlockedIds.has(ach.id);
+        const reqText = ach.category === "lessons"
+            ? `${ach.target} lecke`
+            : `${ach.target} tökéletes lecke`;
+
         const item = document.createElement("div");
         item.className = unlocked ? "achievement-item unlocked" : "achievement-item locked";
         item.innerHTML = `
             <span class="achievement-icon">${ach.icon}</span>
             <div class="achievement-info">
                 <span class="achievement-name">${ach.title}</span>
-                <span class="achievement-req">${ach.lessons} lecke${unlocked ? " ✓" : ""}</span>
+                <span class="achievement-req">${reqText}${unlocked ? " ✓" : ""}</span>
             </div>
         `;
         achievementSection.append(item);
@@ -179,16 +208,6 @@ export function renderProfilePage(root, onBack) {
         const hasAny = Object.keys(byType).length > 0;
         if (!hasAny) return;
 
-        const TYPE_LABELS = {
-            addition: "➕ Összeadás",
-            subtraction: "➖ Kivonás",
-            mixed: "🔀 Vegyes",
-            "missing-number": "❓ Hiányzó szám",
-            comparison: "⚖️ Összehasonlítás",
-            neighbor: "🔍 Szomszéd",
-            decomposition: "🧩 Bontás"
-        };
-
         Object.entries(byType).forEach(([type, counts]) => {
             const typeTotal = counts.correct + counts.wrong;
             const pct = typeTotal > 0 ? Math.round((counts.correct / typeTotal) * 100) : 0;
@@ -224,11 +243,24 @@ export function renderProfilePage(root, onBack) {
     let totalCorrect = 0;
     let totalWrong = 0;
     let totalLessons = 0;
+    const summaryByType = {};
+
+    const dayCount = Object.keys(allStats).length;
 
     Object.values(allStats).forEach(day => {
         totalCorrect += day.correct;
         totalWrong += day.wrong;
         totalLessons += day.lessonsPlayed;
+
+        if (day.byType) {
+            Object.entries(day.byType).forEach(([type, counts]) => {
+                if (!summaryByType[type]) {
+                    summaryByType[type] = { correct: 0, wrong: 0 };
+                }
+                summaryByType[type].correct += counts.correct;
+                summaryByType[type].wrong += counts.wrong;
+            });
+        }
     });
 
     const totalAll = totalCorrect + totalWrong;
@@ -259,10 +291,45 @@ export function renderProfilePage(root, onBack) {
 
     summarySection.append(summaryTitle, summaryGrid);
 
+    if (dayCount > 1 && Object.keys(summaryByType).length > 0) {
+        const summaryTypeBreakdown = document.createElement("div");
+        summaryTypeBreakdown.className = "type-breakdown";
+
+        Object.entries(summaryByType).forEach(([type, counts]) => {
+            const typeTotal = counts.correct + counts.wrong;
+            const pct = typeTotal > 0 ? Math.round((counts.correct / typeTotal) * 100) : 0;
+
+            const row = document.createElement("div");
+            row.className = "type-row";
+
+            const label = document.createElement("span");
+            label.className = "type-label";
+            label.textContent = TYPE_LABELS[type] || type;
+
+            const barWrap = document.createElement("div");
+            barWrap.className = "type-bar-wrap";
+
+            const bar = document.createElement("div");
+            bar.className = "type-bar";
+            bar.style.width = pct + "%";
+
+            barWrap.append(bar);
+
+            const pctText = document.createElement("span");
+            pctText.className = "type-pct";
+            pctText.textContent = pct + "%";
+
+            row.append(label, barWrap, pctText);
+            summaryTypeBreakdown.append(row);
+        });
+
+        summarySection.append(summaryTypeBreakdown);
+    }
+
     const menuButton = createButton("📚 Leckék", {
         onClick: () => onBack()
     });
 
-    card.append(title, stats, progressSection, questSection, achievementSection, dailySection, summarySection, menuButton);
+    card.append(avatarDisplay, title, nameDisplay, stats, progressSection, questSection, achievementSection, dailySection, summarySection, menuButton);
     root.append(card);
 }

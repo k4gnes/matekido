@@ -3,26 +3,58 @@ export const ACHIEVEMENTS = [
         id: "first-postman",
         icon: "📯",
         title: "Első postás",
-        lessons: 10
+        category: "lessons",
+        target: 10
     },
     {
         id: "experienced-postman",
         icon: "📮",
         title: "Tapasztalt postás",
-        lessons: 25
+        category: "lessons",
+        target: 25
     },
     {
         id: "master-postman",
         icon: "🏆",
         title: "Mesterpostás",
-        lessons: 50
+        category: "lessons",
+        target: 50
+    },
+    {
+        id: "perfect-one",
+        icon: "🌟",
+        title: "Tökéletes",
+        category: "perfect",
+        target: 1
+    },
+    {
+        id: "perfect-five",
+        icon: "💯",
+        title: "Hibátlan ötös",
+        category: "perfect",
+        target: 5
+    },
+    {
+        id: "perfect-fifteen",
+        icon: "👑",
+        title: "Mesterlövész",
+        category: "perfect",
+        target: 15
     }
 ];
 
 export function getUnlockedAchievements(profile) {
 
-    return ACHIEVEMENTS.filter(
-        achievement => profile.lessonsCompleted >= achievement.lessons
-    );
+    const perfect = profile.perfectLessons || 0;
+
+    return ACHIEVEMENTS.filter(ach => {
+        if (ach.category === "lessons") {
+            return profile.lessonsCompleted >= ach.target;
+        }
+        if (ach.category === "perfect") {
+            return perfect >= ach.target;
+        }
+        return false;
+    });
 
 }

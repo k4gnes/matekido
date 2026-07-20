@@ -1,44 +1,6 @@
-const STORAGE_KEY = "matekido-profile";
-const ONE_DAY = 24 * 60 * 60 * 1000;
+import { getActiveProfile, saveActiveProfile } from "./UserManager.js";
 
-const DEFAULT_PROFILE = {
-    stars: 0,
-    lessonsCompleted: 0,
-    lettersDelivered: 0,
-    streak: 0,
-    lastPlayed: null,
-    unlockedThemes: [
-        "postman"
-    ],
-    dailyQuest: {
-        id: "three-lessons",
-        progress: 0,
-        date: null
-    },
-    dailyStats: {},
-    statistics: {
-        addition: {
-            correct: 0,
-            wrong: 0
-        },
-        subtraction: {
-            correct: 0,
-            wrong: 0
-        },
-        neighbours: {
-            correct: 0,
-            wrong: 0
-        },
-        missingNumber: {
-            correct: 0,
-            wrong: 0
-        },
-        bigger: {
-            correct: 0,
-            wrong: 0
-        }
-    }
-};
+const ONE_DAY = 24 * 60 * 60 * 1000;
 
 function getToday() {
     return new Date().toISOString().split("T")[0];
@@ -60,11 +22,7 @@ function refreshDailyQuest(profile) {
 }
 export function loadProfile() {
 
-    const saved = localStorage.getItem(STORAGE_KEY);
-
-    const profile = saved
-        ? { ...DEFAULT_PROFILE, ...JSON.parse(saved) }
-        : { ...DEFAULT_PROFILE };
+    const profile = getActiveProfile();
 
     if (!profile.dailyQuest) {
         profile.dailyQuest = { id: "three-lessons", progress: 0, date: null };
@@ -87,10 +45,7 @@ export function loadProfile() {
 
 export function saveProfile(profile) {
 
-    localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify(profile)
-    );
+    saveActiveProfile(profile);
 
 }
 
@@ -237,6 +192,20 @@ export function getDailyStats() {
     }
 
     return stats;
+
+}
+
+export function recordPerfectLesson() {
+
+    const profile = loadProfile();
+
+    if (!profile.perfectLessons) {
+        profile.perfectLessons = 0;
+    }
+
+    profile.perfectLessons++;
+
+    saveProfile(profile);
 
 }
 

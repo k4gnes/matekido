@@ -72,3 +72,10 @@
     font-size: .95rem;
 
 }
+
+.lesson-type-badge {
+    font-size: 1.4rem;
+    margin-bottom: .3rem;
+    text-align: center;
+    display: block;
+}

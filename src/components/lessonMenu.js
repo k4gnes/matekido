@@ -1,6 +1,16 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 
+const TYPE_EMOJI = {
+    addition: "➕",
+    subtraction: "➖",
+    mixed: "🔀",
+    "missing-number": "❓",
+    comparison: "⚖️",
+    neighbor: "🔍",
+    decomposition: "🧩"
+};
+
 function createLessonCard(grade, onSelect) {
 
     const card = createCard();
@@ -22,6 +32,8 @@ function createLessonCard(grade, onSelect) {
         const lessonCard = document.createElement("div");
         lessonCard.className = "lesson-card";
 
+        const typeEmoji = TYPE_EMOJI[lesson.type] ?? "";
+
         const title = document.createElement("h3");
         title.className = "lesson-card-title";
         title.textContent = lesson.mission;
@@ -30,7 +42,11 @@ function createLessonCard(grade, onSelect) {
         subtitle.className = "lesson-card-subtitle";
         subtitle.textContent = lesson.subtitle;
 
-        lessonCard.append(title, subtitle);
+        const typeBadge = document.createElement("span");
+        typeBadge.className = "lesson-type-badge";
+        typeBadge.textContent = typeEmoji;
+
+        lessonCard.append(typeBadge, title, subtitle);
 
         lessonCard.addEventListener("click", () => {
             onSelect(lesson.file);
@@ -44,7 +60,7 @@ function createLessonCard(grade, onSelect) {
     return card;
 }
 
-export function renderLessonMenu(index, root, onSelect, onProfile) {
+export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch) {
 
     root.replaceChildren();
 
@@ -59,10 +75,23 @@ export function renderLessonMenu(index, root, onSelect, onProfile) {
         wrapper.append(createLessonCard(grade, onSelect));
     });
 
+    const buttonRow = document.createElement("div");
+    buttonRow.style.cssText = "display:flex; gap:.5rem; justify-content:center; margin-bottom:1rem;";
+
     const profileButton = createButton("👤 Profilom", {
         onClick: () => onProfile?.()
     });
     profileButton.className = "profile-page-button";
 
-    root.append(profileButton, wrapper);
+    buttonRow.append(profileButton);
+
+    if (onSwitch) {
+        const switchButton = createButton("👤 Játékos", {
+            onClick: () => onSwitch?.()
+        });
+        switchButton.className = "profile-page-button";
+        buttonRow.append(switchButton);
+    }
+
+    root.append(buttonRow, wrapper);
 }

@@ -3,12 +3,24 @@ import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=3";
 import { renderLessonMenu } from "./components/lessonMenu.js";
 import { renderProfilePage } from "./components/profilePage.js";
+import { renderWelcomeScreen } from "./components/welcomeScreen.js";
+import { getActiveId, listPlayers } from "./profile/UserManager.js";
 
 const root = document.getElementById("app");
 
 const lessonIndex = await loadLesson("./src/data/lessons/index.json");
 
-showMenu();
+if (getActiveId() && listPlayers().length > 0) {
+    showMenu();
+} else {
+    showWelcome();
+}
+
+function showWelcome() {
+    renderWelcomeScreen(root, () => {
+        showMenu();
+    });
+}
 
 function showMenu() {
 
@@ -16,7 +28,8 @@ function showMenu() {
         lessonIndex,
         root,
         startLesson,
-        showProfile
+        showProfile,
+        showWelcome
     );
 
 }

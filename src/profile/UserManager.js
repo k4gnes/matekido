@@ -30,6 +30,32 @@ function generateId() {
     return "user-" + (nextId++);
 }
 
+function syncNextId(players) {
+
+    let max = 0;
+
+    for (const p of players) {
+
+        const match = p.id.match(/^user-(\d+)$/);
+
+        if (match) {
+
+            const num = parseInt(match[1], 10);
+
+            if (num > max) {
+                max = num;
+            }
+
+        }
+
+    }
+
+    if (max >= nextId) {
+        nextId = max + 1;
+    }
+
+}
+
 function migrateLegacy() {
 
     const legacy = localStorage.getItem(LEGACY_KEY);
@@ -60,12 +86,15 @@ export function loadUsers() {
     const saved = localStorage.getItem(STORAGE_KEY);
 
     if (saved) {
-        return JSON.parse(saved);
+        const data = JSON.parse(saved);
+        syncNextId(data.players);
+        return data;
     }
 
     const migrated = migrateLegacy();
 
     if (migrated) {
+        syncNextId(migrated.players);
         return migrated;
     }
 

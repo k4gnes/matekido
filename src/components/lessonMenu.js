@@ -1,6 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
+import { getLessonStats } from "../profile/Profile.js";
 
 const TYPE_EMOJI = {
     addition: "➕",
@@ -49,6 +50,14 @@ function createLessonCard(grade, onSelect) {
 
         lessonCard.append(typeBadge, title, subtitle);
 
+        const stats = getLessonStats(lesson.file);
+        if (stats) {
+            const statBadge = document.createElement("span");
+            statBadge.className = "lesson-stat-badge";
+            statBadge.textContent = `${stats.percentage}%`;
+            lessonCard.append(statBadge);
+        }
+
         lessonCard.addEventListener("click", () => {
             onSelect(lesson.file);
         });
@@ -92,7 +101,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch) {
 
     if (currentPlayer) {
         const avatar = document.createElement("span");
-        avatar.textContent = currentPlayer.avatar;
+        avatar.textContent = `${currentPlayer.avatar} ${currentPlayer.name}`;
         avatar.style.cssText = "font-size:1.4rem; line-height:1; display:inline-flex; align-items:center;";
         buttonRow.append(avatar);
     }

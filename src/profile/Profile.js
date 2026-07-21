@@ -146,6 +146,48 @@ export function updateStatistics(lessonId, correct, wrong) {
 
 }
 
+export function recordLessonResult(lessonFile, correct, wrong) {
+
+    const profile = loadProfile();
+
+    if (!profile.lessonStats) {
+        profile.lessonStats = {};
+    }
+
+    if (!profile.lessonStats[lessonFile]) {
+        profile.lessonStats[lessonFile] = { correct: 0, wrong: 0 };
+    }
+
+    profile.lessonStats[lessonFile].correct += correct;
+    profile.lessonStats[lessonFile].wrong += wrong;
+
+    saveProfile(profile);
+
+}
+
+export function getLessonStats(lessonFile) {
+
+    const profile = loadProfile();
+    const stats = profile.lessonStats?.[lessonFile];
+
+    if (!stats) {
+        return null;
+    }
+
+    const total = stats.correct + stats.wrong;
+
+    if (total === 0) {
+        return null;
+    }
+
+    return {
+        correct: stats.correct,
+        total,
+        percentage: Math.round((stats.correct / total) * 100)
+    };
+
+}
+
 export function recordDailyResult(correct, wrong, byType = {}) {
 
     const profile = loadProfile();

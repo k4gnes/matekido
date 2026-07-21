@@ -12,15 +12,16 @@ import { renderMissingProgress } from "../components/missingProgress.js";
 import { renderComparisonProgress } from "../components/comparisonProgress.js";
 import { renderNeighborProgress } from "../components/neighborProgress.js";
 
-import { completeLesson, recordDailyResult, recordPerfectLesson } from "../profile/Profile.js";
+import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult } from "../profile/Profile.js";
 
 
 export class Game {
 
-    constructor(lesson, root, actions = {}) {
+    constructor(lesson, root, actions = {}, lessonFile = null) {
 
         this.lesson = lesson;
         this.root = root;
+        this.lessonFile = lessonFile;
         this.currentStep = 0;
         this.correct = 0;
         this.wrong = 0;
@@ -70,6 +71,9 @@ export class Game {
                 try {
                     milestone = completeLesson();
                     recordDailyResult(this.correct, this.wrong, this.byType);
+                    if (this.lessonFile) {
+                        recordLessonResult(this.lessonFile, this.correct, this.wrong);
+                    }
                     if (this.wrong === 0) {
                         recordPerfectLesson();
                     }
@@ -157,6 +161,9 @@ export class Game {
                     try {
                         milestone2 = completeLesson();
                         recordDailyResult(this.correct, this.wrong, this.byType);
+                        if (this.lessonFile) {
+                            recordLessonResult(this.lessonFile, this.correct, this.wrong);
+                        }
                         if (this.wrong === 0) {
                             recordPerfectLesson();
                         }

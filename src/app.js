@@ -51,7 +51,8 @@ async function startLesson(path) {
             onRestart: () => startLesson(path),
             onExit: showMenu,
             onProfile: showProfile
-        }
+        },
+        path
     );
 
     game.start();

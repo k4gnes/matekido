@@ -15,6 +15,7 @@ const DEFAULT_PROFILE = {
         date: null
     },
     dailyStats: {},
+    lessonStats: {},
     statistics: {
         addition: { correct: 0, wrong: 0 },
         subtraction: { correct: 0, wrong: 0 },

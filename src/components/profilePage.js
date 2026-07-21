@@ -36,11 +36,15 @@ export function renderProfilePage(root, onBack, onStats) {
     lessons.className = "profile-page-stat";
     lessons.innerHTML = `<span class="stat-icon">📚</span><span class="stat-value">${profile.lessonsCompleted}</span><span class="stat-label">lecke</span>`;
 
+    const stars = document.createElement("div");
+    stars.className = "profile-page-stat";
+    stars.innerHTML = `<span class="stat-icon">⭐</span><span class="stat-value">${profile.stars}</span><span class="stat-label">csillag</span>`;
+
     const streak = document.createElement("div");
     streak.className = "profile-page-stat";
     streak.innerHTML = `<span class="stat-icon">🔥</span><span class="stat-value">${profile.streak}</span><span class="stat-label">nap</span>`;
 
-    stats.append(lessons, streak);
+    stats.append(lessons, stars, streak);
 
     const progressSection = document.createElement("div");
     progressSection.className = "profile-page-progress";

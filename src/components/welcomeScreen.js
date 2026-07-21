@@ -76,8 +76,10 @@ function createPlayerCard(player, onSelect, onRefresh) {
 
     const lessons = player.profile?.lessonsCompleted ?? 0;
     const streak = player.profile?.streak ?? 0;
+    const stars = player.profile?.stars ?? 0;
 
     stats.innerHTML = `
+        <span class="player-stat">⭐ ${stars}</span>
         <span class="player-stat">📚 ${lessons}</span>
         <span class="player-stat">🔥 ${streak}</span>
     `;

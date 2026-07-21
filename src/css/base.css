@@ -74,3 +74,24 @@ button:hover {
     font-size:64px;
     margin-bottom:8px;
 }
+
+.reward-section{
+    text-align:center;
+    margin:1rem 0;
+}
+
+.reward-stars{
+    font-size:2rem;
+    margin-bottom:.5rem;
+}
+
+.reward-list{
+    display:flex;
+    flex-direction:column;
+    gap:.3rem;
+}
+
+.reward-item{
+    font-size:.9rem;
+    color:#666;
+}

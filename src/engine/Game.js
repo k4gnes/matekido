@@ -13,6 +13,7 @@ import { renderComparisonProgress } from "../components/comparisonProgress.js";
 import { renderNeighborProgress } from "../components/neighborProgress.js";
 
 import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult } from "../profile/Profile.js";
+import { grantRewards } from "../profile/RewardService.js";
 
 
 export class Game {
@@ -66,10 +67,12 @@ export class Game {
 
         if (this.currentStep >= this.lesson.steps.length) {
             let milestone = null;
+            let reward = null;
 
             if (!this.lesson.completed) {
                 try {
-                    milestone = completeLesson();
+                    const profileBefore = completeLesson();
+                    const dailyQuestJustCompleted = profileBefore && !profileBefore.dailyQuestCompleted;
                     recordDailyResult(this.correct, this.wrong, this.byType);
                     if (this.lessonFile) {
                         recordLessonResult(this.lessonFile, this.correct, this.wrong);
@@ -77,6 +80,13 @@ export class Game {
                     if (this.wrong === 0) {
                         recordPerfectLesson();
                     }
+                    milestone = profileBefore?.milestone ?? null;
+                    reward = grantRewards({
+                        correct: this.correct,
+                        wrong: this.wrong,
+                        isMilestone: !!milestone,
+                        dailyQuestJustCompleted
+                    });
                 } catch (e) { console.error(e); }
                 this.lesson.completed = true;
             }
@@ -94,7 +104,8 @@ export class Game {
                     onExit: this.onExit,
                     onProfile: this.onProfile
                 },
-                milestone
+                milestone,
+                reward
             );
 
             return;
@@ -157,9 +168,10 @@ export class Game {
 
             case "celebration": {
                 let milestone2 = null;
+                let reward2 = null;
                 if (!this.lesson.completed) {
                     try {
-                        milestone2 = completeLesson();
+                        const result2 = completeLesson();
                         recordDailyResult(this.correct, this.wrong, this.byType);
                         if (this.lessonFile) {
                             recordLessonResult(this.lessonFile, this.correct, this.wrong);
@@ -167,6 +179,13 @@ export class Game {
                         if (this.wrong === 0) {
                             recordPerfectLesson();
                         }
+                        milestone2 = result2.milestone;
+                        reward2 = grantRewards({
+                            correct: this.correct,
+                            wrong: this.wrong,
+                            isMilestone: !!milestone2,
+                            dailyQuestJustCompleted: result2.dailyQuestJustCompleted
+                        });
                     } catch (e) { console.error(e); }
                     this.lesson.completed = true;
                 }
@@ -175,7 +194,7 @@ export class Game {
                     onRestart: this.onRestart,
                     onExit: this.onExit,
                     onProfile: this.onProfile
-                }, milestone2);
+                }, milestone2, reward2);
 
                 break;
             }

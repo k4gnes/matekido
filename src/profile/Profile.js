@@ -74,6 +74,7 @@ export function completeLesson() {
     const profile = loadProfile();
 
     const prev = profile.lessonsCompleted;
+    const dailyQuestWasCompleted = profile.dailyQuest?.completed ?? false;
 
     profile.lessonsCompleted++;
 
@@ -95,19 +96,26 @@ export function completeLesson() {
 
     }
 
+    let milestone = null;
+
     const goals = [10, 25, 50, 100];
 
     for (const goal of goals) {
 
         if (prev < goal && profile.lessonsCompleted >= goal) {
 
-            return { title: `${goal} lecke teljesítve!` };
+            milestone = { title: `${goal} lecke teljesítve!` };
+            break;
 
         }
 
     }
- 
-    return null;
+
+    return {
+        milestone,
+        dailyQuestCompleted: profile.dailyQuest.completed,
+        dailyQuestJustCompleted: profile.dailyQuest.completed && !dailyQuestWasCompleted
+    };
 
 }
 

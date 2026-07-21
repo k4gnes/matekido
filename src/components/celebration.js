@@ -1,7 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 
-export function renderCelebration(step, root, actions = {}, milestone) {
+export function renderCelebration(step, root, actions = {}, milestone, reward) {
 
     root.replaceChildren();
 
@@ -27,20 +27,50 @@ export function renderCelebration(step, root, actions = {}, milestone) {
 
     if (milestone) {
 
-        const reward = document.createElement("div");
-        reward.className = "milestone";
+        const milestoneEl = document.createElement("div");
+        milestoneEl.className = "milestone";
 
-        reward.innerHTML = `
+        milestoneEl.innerHTML = `
         <div class="milestone-icon">🏅</div>
         <h2>${milestone.title}</h2>
         <p>Új mérföldkövet értél el!</p>
     `;
 
-        card.append(title, text, reward, restartButton, menuButton, profileButton);
+        card.append(title, text, milestoneEl, restartButton, menuButton, profileButton);
 
     } else {
 
         card.append(title, text, restartButton, menuButton, profileButton);
+
+    }
+
+    if (reward && reward.totalStars > 0) {
+
+        const rewardEl = document.createElement("div");
+        rewardEl.className = "reward-section";
+
+        const starsEl = document.createElement("div");
+        starsEl.className = "reward-stars";
+        starsEl.textContent = "⭐".repeat(reward.totalStars);
+
+        const rewardList = document.createElement("div");
+        rewardList.className = "reward-list";
+
+        reward.rewards.forEach(r => {
+            const item = document.createElement("div");
+            item.className = "reward-item";
+            item.textContent = `${r.label} (+${r.stars} ⭐)`;
+            rewardList.append(item);
+        });
+
+        rewardEl.append(starsEl, rewardList);
+
+        if (milestone) {
+            const milestoneEl = card.querySelector(".milestone");
+            milestoneEl.after(rewardEl);
+        } else {
+            text.after(rewardEl);
+        }
 
     }
 

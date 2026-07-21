@@ -4,6 +4,7 @@ import { renderDecomposition } from "../components/decomposition.js";
 import { renderMissingNumber } from "../components/missingNumber.js";
 import { renderComparison } from "../components/comparison.js";
 import { renderNeighbor } from "../components/neighbor.js";
+import { renderNeighborSingle } from "../components/neighborSingle.js";
 
 
 import { renderCelebration } from "../components/celebration.js";
@@ -115,7 +116,7 @@ export class Game {
 
         const step = this.lesson.steps[this.currentStep];
 
-        const isCounted = s => s.type === "exercise" || s.type === "missing-number" || s.type === "comparison" || s.type === "neighbor";
+        const isCounted = s => s.type === "exercise" || s.type === "missing-number" || s.type === "comparison" || s.type === "neighbor" || s.type === "neighbor-single";
 
         const totalExercises = this.lesson.steps.filter(isCounted).length;
         const completedExercises = this.lesson.steps
@@ -128,7 +129,7 @@ export class Game {
 
         const hasMissing = this.lesson.steps.some(s => s.type === "missing-number");
         const hasComparison = this.lesson.steps.some(s => s.type === "comparison");
-        const hasNeighbor = this.lesson.steps.some(s => s.type === "neighbor");
+        const hasNeighbor = this.lesson.steps.some(s => s.type === "neighbor" || s.type === "neighbor-single");
 
         let progress;
         if (hasComparison) {
@@ -165,6 +166,10 @@ export class Game {
 
             case "neighbor":
                 renderNeighbor(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "neighbor"));
+                break;
+
+            case "neighbor-single":
+                renderNeighborSingle(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "neighbor"));
                 break;
 
             case "celebration": {

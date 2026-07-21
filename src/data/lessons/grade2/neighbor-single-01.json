@@ -1,0 +1,47 @@
+{
+  "id": "grade2-neighbor-single-01",
+  "title": "Szomszédok gyakorlása (100-ig)",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔍 Ki a szomszédja?",
+      "text": "Írd be a szám szomszédját!",
+      "worldTitles": {
+        "racing": {
+          "title": "🔍 Ki áll mellette?",
+          "text": "Írd be a szám szomszédját!"
+        },
+        "football": {
+          "title": "🔍 Ki a szomszédja?",
+          "text": "Írd be a szám szomszédját!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "neighbor-single",
+      "options": {
+        "count": 8,
+        "max": 100
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden szomszédot jól megtaláltál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden szomszédot jól megtaláltál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden szomszédot jól megtaláltál!"
+        }
+      }
+    }
+  ]
+}

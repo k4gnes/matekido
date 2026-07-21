@@ -69,6 +69,13 @@ export function buildLesson(lesson) {
                     lowerTen: task.lowerTen,
                     upperTen: task.upperTen
                 });
+            } else if (step.generator === "neighbor-single") {
+                result.push({
+                    type: "neighbor-single",
+                    a: task.a,
+                    question: task.question,
+                    answer: task.answer
+                });
             } else if (step.generator === "subtraction") {
                 result.push({
                     type: "exercise",

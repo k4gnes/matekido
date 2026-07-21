@@ -4,6 +4,7 @@ import { generateMixed } from "./mixedGenerator.js?v=3";
 import { generateMissingTo10, generateMissingRandom } from "./missingNumberGenerator.js?v=3";
 import { generateComparison } from "./comparisonGenerator.js?v=3";
 import { generateNeighbor } from "./neighborGenerator.js?v=3";
+import { generateNeighborSingle } from "./neighborSingleGenerator.js?v=3";
 
 export function generate(step) {
 
@@ -19,6 +20,8 @@ export function generate(step) {
             return generateComparison(step.options);
         case "neighbor":
             return generateNeighbor(step.options);
+        case "neighbor-single":
+            return generateNeighborSingle(step.options);
         case "subtraction":
             return generateSubtraction(step.options);
         case "mixed":

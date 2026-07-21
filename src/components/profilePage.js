@@ -126,10 +126,9 @@ export function renderProfilePage(root, onBack, onStats) {
 
     const allWorlds = getAllWorlds();
     const activeWorldId = getActiveWorld();
-    const unlockedWorldIds = profile.unlockedThemes ?? ["postman"];
 
     allWorlds.forEach(world => {
-        const isUnlocked = unlockedWorldIds.includes(world.id);
+        const isUnlocked = profile.stars >= world.requiredStars;
         const isActive = world.id === activeWorldId;
 
         const item = document.createElement("div");

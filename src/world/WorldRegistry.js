@@ -13,7 +13,7 @@ const WORLDS = [
         name: "Versenyautó",
         icon: "🏎️",
         description: "Gyorsaság és precizitás a pályán",
-        requiredStars: 30
+        requiredStars: 15
     }),
     new World({
         id: "football",

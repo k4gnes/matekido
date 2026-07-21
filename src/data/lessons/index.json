@@ -157,6 +157,16 @@
                         "racing": "🏎️ Hiányos nagy eredménylista",
                         "football": "⚽ Hiányos nagy meccs"
                     }
+                },
+                {
+                    "type": "neighbor",
+                    "mission": "🔍 Számok szomszédai",
+                    "subtitle": "Szomszédok gyakorlása 100-ig",
+                    "file": "./src/data/lessons/grade2/neighbor-single-01.json",
+                    "worldTitles": {
+                        "racing": "🔍 Ki áll mellette?",
+                        "football": "🔍 Ki a szomszédja?"
+                    }
                 }
             ]
         }

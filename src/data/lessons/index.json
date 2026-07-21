@@ -130,6 +130,16 @@
                 },
                 {
                     "type": "addition",
+                    "mission": "📮 Gyors számolás a postán",
+                    "subtitle": "Kétjegyű + egyjegyű összeadás",
+                    "file": "./src/data/lessons/grade2/single-digit-addition-01.json",
+                    "worldTitles": {
+                        "racing": "🏎️ Gyors számolás a pitben",
+                        "football": "⚽ Gyors számolás a kispadon"
+                    }
+                },
+                {
+                    "type": "addition",
                     "mission": "📮 A postás nehéz napja",
                     "subtitle": "Összeadás 100-ig",
                     "file": "./src/data/lessons/grade2/addition-01.json",
@@ -156,6 +166,16 @@
                     "worldTitles": {
                         "racing": "🏎️ Kerek körök kivonása",
                         "football": "⚽ Kerek számok kivonása"
+                    }
+                },
+                {
+                    "type": "subtraction",
+                    "mission": "🎒 Gyors számolás a postán",
+                    "subtitle": "Kétjegyű - egyjegyű kivonás",
+                    "file": "./src/data/lessons/grade2/single-digit-subtraction-01.json",
+                    "worldTitles": {
+                        "racing": "🏎️ Gyors számolás a pitben",
+                        "football": "⚽ Gyors számolás a kispadon"
                     }
                 },
                 {

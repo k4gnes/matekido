@@ -1,0 +1,48 @@
+{
+    "id": "grade2-single-digit-subtraction-01",
+    "title": "🎒 Kétjegyű - egyjegyű kivonás",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🎒 Gyors számolás a postán!",
+            "text": "A postás már kiszállított néhány csomagot. Vond ki a számokat átlépés nélkül!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🏁 Gyors számolás a pitben!",
+                    "text": "A szerelő már kicserélt néhány alkatrészt. Vond ki a számokat átlépés nélkül!"
+                },
+                "football": {
+                    "title": "⚽ Gyors számolás a kispadon!",
+                    "text": "Az edző már lecserélt néhány játékost. Vond ki a számokat átlépés nélkül!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "subtraction",
+            "options": {
+                "count": 5,
+                "min": 10,
+                "max": 99,
+                "subMax": 9,
+                "bMax": 9,
+                "noCrossingTen": true
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Minden kivonást gyorsan megoldottál!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden kivonást gyorsan megoldottál a pitben!"
+                },
+                "football": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden kivonást gyorsan megoldottál a kispadon!"
+                }
+            }
+        }
+    ]
+}

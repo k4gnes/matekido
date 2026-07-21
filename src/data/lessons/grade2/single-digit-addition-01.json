@@ -1,0 +1,51 @@
+{
+    "id": "grade2-single-digit-addition-01",
+    "title": "📮 Kétjegyű + egyjegyű összeadás",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📮 Gyors számolás a postán!",
+            "text": "A postásnak gyorsan kell számolnia. Add össze a számokat átlépés nélkül!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🏁 Gyors számolás a pitben!",
+                    "text": "A szerelőnek gyorsan kell számolnia. Add össze a számokat átlépés nélkül!"
+                },
+                "football": {
+                    "title": "⚽ Gyors számolás a kispadon!",
+                    "text": "Az edzőnek gyorsan kell számolnia. Add össze a számokat átlépés nélkül!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "addition",
+            "options": {
+                "count": 5,
+                "min": 10,
+                "max": 90,
+                "carry": "never",
+                "sumMin": 11,
+                "sumMax": 99,
+                "bMin": 1,
+                "bMax": 9,
+                "noCrossTen": true
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Minden összeadást gyorsan megoldottál!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden összeadást gyorsan megoldottál a pitben!"
+                },
+                "football": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden összeadást gyorsan megoldottál a kispadon!"
+                }
+            }
+        }
+    ]
+}

@@ -7,7 +7,9 @@ export function generateSubtraction(options = {}) {
         min = 10,
         max = 20,
         subMax = 20,
-        multiplesOfTen = false
+        multiplesOfTen = false,
+        bMax = null,
+        noCrossingTen = false
     } = options;
 
     const tasks = [];
@@ -21,7 +23,15 @@ export function generateSubtraction(options = {}) {
 
         const a = random(min, max);
 
-        let b = random(1, Math.min(subMax, a));
+        const bUpper = Math.min(subMax, a);
+        let b = random(1, bMax !== null ? Math.min(bMax, bUpper) : bUpper);
+
+        // Tízesátlépés tiltása: b ne legyen nagyobb, mint a egyesei
+        if (noCrossingTen) {
+            const onesA = a % 10;
+            if (onesA === 0) continue;
+            if (b > onesA) continue;
+        }
 
         // Kerek tízes: mind a, mind b legyen 10-es többszöröse
         if (multiplesOfTen) {

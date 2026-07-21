@@ -15,7 +15,10 @@ export function generateAddition(options = {}) {
         carry = "any",
         sumMin = min * 2,
         sumMax = Number.MAX_SAFE_INTEGER,
-        multiplesOfTen = false
+        multiplesOfTen = false,
+        bMax = null,
+        bMin = null,
+        noCrossTen = false
     } = options;
 
     const validCarryModes = ["never", "always", "any"];
@@ -49,8 +52,11 @@ export function generateAddition(options = {}) {
         }
 
         // Meghatározzuk, milyen tartományból választható a második szám
-        const minB = Math.max(min, sumMin - a);
-        const maxB = Math.min(max, sumMax - a);
+        const minB = bMin !== null ? Math.max(bMin, sumMin - a) : Math.max(min, sumMin - a);
+        let maxB = Math.min(max, sumMax - a);
+        if (bMax !== null) {
+            maxB = Math.min(maxB, bMax);
+        }
 
         // Nincs érvényes második szám ehhez az 'a'-hoz
         if (minB > maxB) {
@@ -63,6 +69,14 @@ export function generateAddition(options = {}) {
         if (multiplesOfTen) {
             b = Math.ceil(b / 10) * 10;
             if (b < minB || b > maxB) continue;
+        }
+
+        // Tízesátlépés tiltása: b ne legyen nagyobb, mint a hiányzó egyesek a következő tizesig
+        if (noCrossTen) {
+            const onesA = a % 10;
+            if (onesA === 0) continue;
+            const remaining = 10 - onesA;
+            if (b > remaining) continue;
         }
 
         // Biztonsági szűrő: az összeg ne haladja meg a megengedett maximumot

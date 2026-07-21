@@ -3,6 +3,7 @@ import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=3";
 import { renderLessonMenu } from "./components/lessonMenu.js";
 import { renderProfilePage } from "./components/profilePage.js";
+import { renderStatsPage } from "./components/statsPage.js";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js";
 import { getActiveId, listPlayers } from "./profile/UserManager.js";
 
@@ -35,7 +36,17 @@ function showMenu() {
 }
 
 function showProfile() {
-    renderProfilePage(root, showMenu);
+    renderProfilePage(root, showMenu, showStats);
+}
+
+function showStats() {
+    renderStatsPage(root, (target) => {
+        if (target === "lessons") {
+            showMenu();
+        } else {
+            showProfile();
+        }
+    });
 }
 
 async function startLesson(path) {

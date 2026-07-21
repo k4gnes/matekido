@@ -90,12 +90,6 @@ export function completeLesson() {
 
     saveProfile(profile);
 
-    if (profile.lessonsCompleted >= 25) {
-
-        unlock("racing");
-
-    }
-
     let milestone = null;
 
     const goals = [10, 25, 50, 100];
@@ -331,5 +325,42 @@ export function getNextGoal() {
         current: profile.lessonsCompleted,
         target: profile.lessonsCompleted
     };
+
+}
+
+export function getActiveWorld() {
+
+    const profile = loadProfile();
+    return profile.activeWorld ?? "postman";
+
+}
+
+export function setActiveWorld(worldId) {
+
+    const profile = loadProfile();
+    profile.activeWorld = worldId;
+    saveProfile(profile);
+
+}
+
+export function getUnlockedWorldIds() {
+
+    const profile = loadProfile();
+    return profile.unlockedThemes ?? ["postman"];
+
+}
+
+export function unlockWorld(worldId) {
+
+    const profile = loadProfile();
+
+    if (!profile.unlockedThemes) {
+        profile.unlockedThemes = ["postman"];
+    }
+
+    if (!profile.unlockedThemes.includes(worldId)) {
+        profile.unlockedThemes.push(worldId);
+        saveProfile(profile);
+    }
 
 }

@@ -6,7 +6,17 @@
     {
       "type": "scene",
       "title": "🏡 Ki lakik mellette?",
-      "text": "Írd be, melyik szám szomszédait látod!"
+      "text": "Írd be, melyik szám szomszédait látod!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏡 Ki áll mellette?",
+          "text": "Írd be, melyik szám szomszédait látod!"
+        },
+        "football": {
+          "title": "🏡 Ki áll mellette?",
+          "text": "Írd be, melyik szám szomszédait látod!"
+        }
+      }
     },
 
     {
@@ -21,7 +31,17 @@
     {
       "type": "celebration",
       "title": "🎉 Ügyes voltál!",
-      "text": "Minden szomszédot jól megtaláltál!"
+      "text": "Minden szomszédot jól megtaláltál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden szomszédot jól megtaláltál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden szomszédot jól megtaláltál!"
+        }
+      }
     }
   ]
 }

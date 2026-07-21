@@ -44,18 +44,18 @@ Jelenleg:
 
 ## 3. Világok előkészítése
 
-- [ ] World modell
-- [ ] WorldRegistry
-- [ ] feloldási feltételek
-- [ ] aktuális világ tárolása
+- [x] World modell
+- [x] WorldRegistry
+- [x] feloldási feltételek
+- [x] aktuális világ tárolása
 
 ---
 
 ## 4. Első világok
 
-- [ ] 📮 Postás
-- [ ] 🏎️ Versenyautó
-- [ ] ⚽ Foci
+- [x] 📮 Postás (0 ⭐)
+- [x] 🏎️ Versenyautó (30 ⭐)
+- [x] ⚽ Foci (80 ⭐)
 
 ---
 

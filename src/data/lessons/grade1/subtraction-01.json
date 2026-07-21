@@ -5,7 +5,17 @@
         {
             "type": "scene",
             "title": "🎒 Mennyi maradt a táskában?",
-            "text": "Számold ki, mennyi levél maradt a táskában!"
+            "text": "Számold ki, mennyi levél maradt a táskában!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🏁 Hány kör maradt hátra?",
+                    "text": "Számold ki, hány kör maradt a versenyből!"
+                },
+                "football": {
+                    "title": "⚽ Hány gól maradt hátra?",
+                    "text": "Számold ki, hány gól maradt a meccsből!"
+                }
+            }
         },
         {
             "type": "exercise",
@@ -20,7 +30,17 @@
         {
             "type": "celebration",
             "title": "🎉 Ügyes voltál!",
-            "text": "Minden táskát sikerült kipakolni!"
+            "text": "Minden táskát sikerült kipakolni!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🎉 Ügyes voltál!",
+                    "text": "Minden kört sikerült teljesíteni!"
+                },
+                "football": {
+                    "title": "🎉 Ügyes voltál!",
+                    "text": "Minden gól a helyére ment!"
+                }
+            }
         }
     ]
 }

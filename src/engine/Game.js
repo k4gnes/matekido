@@ -12,7 +12,7 @@ import { renderMissingProgress } from "../components/missingProgress.js";
 import { renderComparisonProgress } from "../components/comparisonProgress.js";
 import { renderNeighborProgress } from "../components/neighborProgress.js";
 
-import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult } from "../profile/Profile.js";
+import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, getActiveWorld } from "../profile/Profile.js";
 import { grantRewards } from "../profile/RewardService.js";
 
 
@@ -105,7 +105,8 @@ export class Game {
                     onProfile: this.onProfile
                 },
                 milestone,
-                reward
+                reward,
+                getActiveWorld()
             );
 
             return;
@@ -143,7 +144,7 @@ export class Game {
         switch (step.type) {
 
             case "scene":
-                renderScene(step, this.root, () => this.next(), progress);
+                renderScene(step, this.root, () => this.next(), progress, getActiveWorld());
                 break;
 
             case "exercise":
@@ -194,7 +195,7 @@ export class Game {
                     onRestart: this.onRestart,
                     onExit: this.onExit,
                     onProfile: this.onProfile
-                }, milestone2, reward2);
+                }, milestone2, reward2, getActiveWorld());
 
                 break;
             }

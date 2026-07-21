@@ -1,4 +1,30 @@
 import { generate } from "../generators/index.js?v=3";
+import { getActiveWorld } from "../profile/Profile.js";
+
+const WORLD_TITLES = {
+    addition: {
+        postman: (i) => `🏠 ${i}. ház`,
+        racing: (i) => `🏎️ ${i}. kör`,
+        football: (i) => `⚽ ${i}. gól`
+    },
+    subtraction: {
+        postman: (i) => `🎒 ${i}. táska`,
+        racing: (i) => `🛞 ${i}. kerék`,
+        football: (i) => `⚽ ${i}. félidő`
+    }
+};
+
+function getTitle(kind, index) {
+    const world = getActiveWorld();
+    const templates = WORLD_TITLES[kind];
+    if (templates && templates[world]) {
+        return templates[world](index + 1);
+    }
+    if (templates && templates.postman) {
+        return templates.postman(index + 1);
+    }
+    return `❓ ${index + 1}.`;
+}
 
 export function buildLesson(lesson) {
 
@@ -47,7 +73,7 @@ export function buildLesson(lesson) {
                 result.push({
                     type: "exercise",
                     kind: "subtraction",
-                    title: `🎒 ${index + 1}. táska`,
+                    title: getTitle("subtraction", index),
                     a: task.a,
                     b: task.b
                 });
@@ -66,7 +92,7 @@ export function buildLesson(lesson) {
                 result.push({
                     type: "exercise",
                     kind: "addition",
-                    title: `🏠 ${index + 1}. ház`,
+                    title: getTitle("addition", index),
                     a: task.a,
                     b: task.b
                 });

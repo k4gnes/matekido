@@ -1,6 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
-import { getDailyStats } from "../profile/Profile.js";
+import { getDailyStats, getActiveWorld } from "../profile/Profile.js";
 
 function formatDate(dateStr) {
     const d = new Date(dateStr + "T00:00:00");
@@ -34,7 +34,13 @@ export function renderStatsPage(root, onBack) {
     const card = createCard();
 
     const title = document.createElement("h1");
-    title.textContent = "📬 Postai jelentés";
+    const world = getActiveWorld();
+    const WORLD_STATS_TITLE = {
+        postman: "📬 Postai jelentés",
+        racing: "📊 Versenyjelentés",
+        football: "⚽ Meccsjelentés"
+    };
+    title.textContent = WORLD_STATS_TITLE[world] ?? WORLD_STATS_TITLE.postman;
 
     // --- Daily stats with date navigation ---
     const dailySection = document.createElement("div");
@@ -176,7 +182,12 @@ export function renderStatsPage(root, onBack) {
     summarySection.className = "profile-page-daily";
 
     const summaryTitle = document.createElement("h2");
-    summaryTitle.textContent = "📈 Összesítés";
+    const WORLD_SUMMARY_TITLE = {
+        postman: "📈 Összesítés",
+        racing: "📈 Összesítés",
+        football: "📈 Összesítés"
+    };
+    summaryTitle.textContent = WORLD_SUMMARY_TITLE[world] ?? "📈 Összesítés";
 
     const summaryGrid = document.createElement("div");
     summaryGrid.className = "daily-grid";

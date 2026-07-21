@@ -6,7 +6,17 @@
     {
       "type": "scene",
       "title": "📮 Segíts a postásnak!",
-      "text": "Számoljuk ki együtt, hány levelet kell kézbesíteni!"
+      "text": "Számoljuk ki együtt, hány levelet kell kézbesíteni!",
+      "worldTitles": {
+        "racing": {
+          "title": "🚗 Segíts a versenyzőnek!",
+          "text": "Számoljuk ki együtt, hány kört kell megtenni!"
+        },
+        "football": {
+          "title": "⚽ Segíts a játékosnak!",
+          "text": "Számoljuk ki együtt, hány passz kell a gólhoz!"
+        }
+      }
     },
 
     {
@@ -25,7 +35,17 @@
     {
       "type": "celebration",
       "title": "🎉 Ügyes voltál!",
-      "text": "Minden levelet kézbesítettél!"
+      "text": "Minden levelet kézbesítettél!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden kört sikeresen teljesítettél!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden passz a helyére érkezett!"
+        }
+      }
     }
   ]
 }

@@ -6,7 +6,17 @@
     {
       "type": "scene",
       "title": "📮 Segíts a postásnak!",
-      "text": "Ma néhány háznál egy kicsit nehezebb lesz a számolás. Figyelj, mert néha át kell lépned a tízesen!"
+      "text": "Ma néhány háznál egy kicsit nehezebb lesz a számolás. Figyelj, mert néha át kell lépned a tízesen!",
+      "worldTitles": {
+        "racing": {
+          "title": "🚗 Segíts a versenyzőnek!",
+          "text": "Ma a pálya egy kicsit nehezebb lesz. Figyelj, mert néha át kell lépned a tízesen!"
+        },
+        "football": {
+          "title": "⚽ Segíts a játékosnak!",
+          "text": "Ma a meccs egy kicsit nehezebb lesz. Figyelj, mert néha át kell lépned a tízesen!"
+        }
+      }
     },
 
     {
@@ -25,7 +35,17 @@
     {
       "type": "celebration",
       "title": "🎉 Ügyes voltál!",
-      "text": "A postás minden levelet kézbesített. Az átlépős feladatok sem fogtak ki rajtad!"
+      "text": "A postás minden levelet kézbesített. Az átlépős feladatok sem fogtak ki rajtad!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden kört teljesítettél. Az átlépős feladatok sem fogtak ki rajtad!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden gól a helyére ment. Az átlépős feladatok sem fogtak ki rajtad!"
+        }
+      }
     }
   ]
 }

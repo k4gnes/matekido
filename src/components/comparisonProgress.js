@@ -1,4 +1,15 @@
+import { getActiveWorld } from "../profile/Profile.js";
+
+const WORLD_COMPARISON = {
+    postman: { done: "📦", current: "🔍", next: "💰" },
+    racing: { done: "✅", current: "⚖️", next: "⬜" },
+    football: { done: "✅", current: "⚖️", next: "⬜" }
+};
+
 export function renderComparisonProgress({ current, total }) {
+
+    const world = getActiveWorld();
+    const icons = WORLD_COMPARISON[world] ?? WORLD_COMPARISON.postman;
 
     const progress = document.createElement("div");
     progress.className = "progress";
@@ -8,13 +19,13 @@ export function renderComparisonProgress({ current, total }) {
         const item = document.createElement("span");
 
         if (i < current) {
-            item.textContent = "📦";
+            item.textContent = icons.done;
         }
         else if (i === current) {
-            item.textContent = "🔍";
+            item.textContent = icons.current;
         }
         else {
-            item.textContent = "💰";
+            item.textContent = icons.next;
         }
 
         progress.append(item);

@@ -4,21 +4,45 @@ export const ACHIEVEMENTS = [
         icon: "📯",
         title: "Első postás",
         category: "lessons",
-        target: 10
+        target: 10,
+        worldTitles: {
+            racing: "Első pilóta",
+            football: "Első játékos"
+        },
+        worldIcons: {
+            racing: "🏁",
+            football: "⚽"
+        }
     },
     {
         id: "experienced-postman",
         icon: "📮",
         title: "Tapasztalt postás",
         category: "lessons",
-        target: 25
+        target: 25,
+        worldTitles: {
+            racing: "Tapasztalt pilóta",
+            football: "Tapasztalt játékos"
+        },
+        worldIcons: {
+            racing: "🏆",
+            football: "🏆"
+        }
     },
     {
         id: "master-postman",
         icon: "🏆",
         title: "Mesterpostás",
         category: "lessons",
-        target: 50
+        target: 50,
+        worldTitles: {
+            racing: "Bajnok pilóta",
+            football: "Bajnok játékos"
+        },
+        worldIcons: {
+            racing: "🥇",
+            football: "🥇"
+        }
     },
     {
         id: "perfect-one",

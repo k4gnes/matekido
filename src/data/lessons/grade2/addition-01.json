@@ -6,7 +6,17 @@
     {
       "type": "scene",
       "title": "📮 Segíts a postásnak!",
-      "text": "A postásnak ma sok levelet kell kézbesítenie. Számold ki az összegeket, hogy minden házhoz időben odaérjen!"
+      "text": "A postásnak ma sok levelet kell kézbesítenie. Számold ki az összegeket, hogy minden házhoz időben odaérjen!",
+      "worldTitles": {
+        "racing": {
+          "title": "🚗 Segíts a versenyzőnek!",
+          "text": "A versenyzőnek ma sok kört kell teljesítenie. Számold ki az összegeket, hogy minden kör időben meglegyen!"
+        },
+        "football": {
+          "title": "⚽ Segíts a játékosnak!",
+          "text": "A játékosnak ma sok passzt kell adnia. Számold ki az összegeket, hogy minden passz a helyére érkezzen!"
+        }
+      }
     },
 
     {
@@ -25,7 +35,17 @@
     {
       "type": "celebration",
       "title": "🎉 Szép munka!",
-      "text": "Minden levelet sikeresen kézbesítettél!"
+      "text": "Minden levelet sikeresen kézbesítettél!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden kört sikeresen teljesítettél!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden passzt sikeresen adtál!"
+        }
+      }
     }
   ]
 }

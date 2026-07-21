@@ -1,4 +1,5 @@
 import { loadProfile, saveProfile } from "./Profile.js";
+import { getAllWorlds } from "../world/WorldRegistry.js";
 
 const REWARD_TYPES = {
     LESSON_COMPLETE: { stars: 1, label: "Lecke teljesítve" },
@@ -28,8 +29,27 @@ export function grantRewards({ correct, wrong, isMilestone, dailyQuestJustComple
     const totalStars = rewards.reduce((sum, r) => sum + r.stars, 0);
 
     const profile = loadProfile();
+    const prevStars = profile.stars;
     profile.stars += totalStars;
+
+    const allWorlds = getAllWorlds();
+    const newlyUnlocked = [];
+
+    for (const world of allWorlds) {
+        const wasUnlocked = prevStars >= world.requiredStars;
+        const isNowUnlocked = profile.stars >= world.requiredStars;
+        if (!wasUnlocked && isNowUnlocked) {
+            newlyUnlocked.push(world);
+            if (!profile.unlockedThemes) {
+                profile.unlockedThemes = ["postman"];
+            }
+            if (!profile.unlockedThemes.includes(world.id)) {
+                profile.unlockedThemes.push(world.id);
+            }
+        }
+    }
+
     saveProfile(profile);
 
-    return { rewards, totalStars };
+    return { rewards, totalStars, newlyUnlocked };
 }

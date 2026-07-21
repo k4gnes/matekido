@@ -6,7 +6,17 @@
     {
       "type": "scene",
       "title": "📮 Mennyi levél hiányzik?",
-      "text": "Segíts megtalálni a hiányzó leveleket!"
+      "text": "Segíts megtalálni a hiányzó leveleket!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏁 Hány kör hiányzik?",
+          "text": "Segíts megtalálni a hiányzó köröket!"
+        },
+        "football": {
+          "title": "⚽ Hány gól hiányzik?",
+          "text": "Segíts megtalálni a hiányzó gólokat!"
+        }
+      }
     },
 
     {
@@ -22,7 +32,17 @@
     {
       "type": "celebration",
       "title": "🎉 Ügyes voltál!",
-      "text": "Minden hiányzó számot megtaláltál!"
+      "text": "Minden hiányzó számot megtaláltál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden hiányzó számot megtaláltál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden hiányzó számot megtaláltál!"
+        }
+      }
     }
   ]
 }

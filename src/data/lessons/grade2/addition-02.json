@@ -5,7 +5,17 @@
     {
       "type": "scene",
       "title": "📮 Segíts a postásnak!",
-      "text": "A postás ma sok házba visz levelet. Segíts neki!"
+      "text": "A postás ma sok házba visz levelet. Segíts neki!",
+      "worldTitles": {
+        "racing": {
+          "title": "🚗 Segíts a versenyzőnek!",
+          "text": "A versenyző ma sok pályára indul. Segíts neki!"
+        },
+        "football": {
+          "title": "⚽ Segíts a játékosnak!",
+          "text": "A játékos ma sok meccsen játszik. Segíts neki!"
+        }
+      }
     },
     {
       "type": "exercise",
@@ -22,7 +32,17 @@
     {
       "type": "celebration",
       "title": "🎉 Minden levelet kézbesítettél!",
-      "text": "A postás nagyon hálás neked!"
+      "text": "A postás nagyon hálás neked!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Minden kört teljesítettél!",
+          "text": "A versenyző nagyon hálás neked!"
+        },
+        "football": {
+          "title": "🎉 Minden gól a helyére ment!",
+          "text": "A játékos nagyon hálás neked!"
+        }
+      }
     }
   ]
 }

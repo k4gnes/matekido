@@ -5,7 +5,17 @@
         {
             "type": "scene",
             "title": "🎒 Mennyi maradt a csomagból?",
-            "text": "A postás kiszállította a csomagokat. Számold ki, mennyi maradt a táskájában!"
+            "text": "A postás kiszállította a csomagokat. Számold ki, mennyi maradt a táskájában!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🏁 Hány kör maradt hátra?",
+                    "text": "A versenyző teljesítette a köröket. Számold ki, hány kör maradt a versenyből!"
+                },
+                "football": {
+                    "title": "⚽ Hány gól maradt hátra?",
+                    "text": "A játékos lőtt néhány gólt. Számold ki, hány gól maradt a meccsből!"
+                }
+            }
         },
         {
             "type": "exercise",
@@ -20,7 +30,17 @@
         {
             "type": "celebration",
             "title": "🎉 Szép munka!",
-            "text": "A postás minden csomagot sikeresen kiszállított!"
+            "text": "A postás minden csomagot sikeresen kiszállított!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🎉 Szép munka!",
+                    "text": "A versenyző minden kört sikeresen teljesített!"
+                },
+                "football": {
+                    "title": "🎉 Szép munka!",
+                    "text": "A játékos minden gólt sikeresen rúgott!"
+                }
+            }
         }
     ]
 }

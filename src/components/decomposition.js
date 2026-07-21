@@ -1,9 +1,47 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
+import { getActiveWorld } from "../profile/Profile.js";
+
+const WORLD_DECOMPOSITION = {
+    postman: {
+        button: "📮 Bélyegzés után postázd!",
+        alreadyDone: "🙂 Ezt már kézbesítetted.",
+        success: "😊 Ügyes vagy!",
+        itemAlt: "Levél",
+        imgNormal: "./assets/images/mail.svg",
+        imgSelected: "./assets/images/mail-stamped.svg"
+    },
+    racing: {
+        button: "🏁 Rajt!",
+        alreadyDone: "🙂 Ezt már teljesítetted.",
+        success: "😊 Ügyes vagy!",
+        itemAlt: "Gumi",
+        imgNormal: null,
+        imgSelected: null
+    },
+    football: {
+        button: "⚽ Gól!",
+        alreadyDone: "🙂 Ezt már rúgtad.",
+        success: "😊 Ügyes vagy!",
+        itemAlt: "Labda",
+        imgNormal: null,
+        imgSelected: null
+    }
+};
+
+const WORLD_EMOJI = {
+    postman: { normal: "✉️", selected: "💌" },
+    racing: { normal: "🛞", selected: "🏁" },
+    football: { normal: "⚽", selected: "🥅" }
+};
 
 export function renderDecomposition(step, root, onNext, progress, onResult) {
 
     root.innerHTML = "";
+
+    const world = getActiveWorld();
+    const t = WORLD_DECOMPOSITION[world] ?? WORLD_DECOMPOSITION.postman;
+    const emoji = WORLD_EMOJI[world] ?? WORLD_EMOJI.postman;
 
     const number = Math.floor(Math.random() * 10) + 1;
 
@@ -33,7 +71,7 @@ export function renderDecomposition(step, root, onNext, progress, onResult) {
 
     card.append(lettersContainer);
 
-    const mailbox = createButton("📮 Bélyegzés után postázd!", { className: "mailbox" });
+    const mailbox = createButton(t.button, { className: "mailbox" });
 
     const result = document.createElement("div");
     result.className = "decomposition-result";
@@ -74,7 +112,7 @@ export function renderDecomposition(step, root, onNext, progress, onResult) {
 
         if (found.has(key)) {
 
-            result.textContent = "🙂 Ezt már kézbesítetted.";
+            result.textContent = t.alreadyDone;
 
         } else {
 
@@ -85,8 +123,16 @@ export function renderDecomposition(step, root, onNext, progress, onResult) {
             renderFoundList();
 
             if (found.size === number + 1) {
-                result.textContent = "😊 Ügyes vagy!";
+                result.textContent = t.success;
                 result.style.color = "#2e7d32";
+                letters.forEach(l => {
+                    l.selected = false;
+                    if (t.imgNormal && l.element._imageEl) {
+                        l.element._imageEl.src = t.imgNormal;
+                    } else {
+                        l.element.textContent = emoji.normal;
+                    }
+                });
                 onResult?.(true);
                 setTimeout(() => onNext(), 2500);
             }
@@ -97,7 +143,11 @@ export function renderDecomposition(step, root, onNext, progress, onResult) {
 
             letter.selected = false;
 
-            letter.image.src = "./assets/images/mail.svg";
+            if (t.imgNormal && letter.element._imageEl) {
+                letter.element._imageEl.src = t.imgNormal;
+            } else {
+                letter.element.textContent = emoji.normal;
+            }
 
         });
 
@@ -113,11 +163,18 @@ export function renderDecomposition(step, root, onNext, progress, onResult) {
 
         const letter = document.createElement("div");
         letter.className = "letter";
-        const image = document.createElement("img");
-        image.src = "./assets/images/mail.svg";
-        image.alt = "Levél";
 
-        letter.append(image);
+        if (t.imgNormal) {
+            const image = document.createElement("img");
+            image.src = t.imgNormal;
+            image.alt = t.itemAlt;
+            letter.append(image);
+            letter._imageEl = image;
+        } else {
+            letter.textContent = emoji.normal;
+            letter.style.fontSize = "2rem";
+            letter.style.cursor = "pointer";
+        }
 
         letter.addEventListener("click", () => {
             const current = letters[i];
@@ -126,14 +183,19 @@ export function renderDecomposition(step, root, onNext, progress, onResult) {
 
             selectedCount += current.selected ? 1 : -1;
 
-            current.image.src = current.selected
-                ? "./assets/images/mail-stamped.svg"
-                : "./assets/images/mail.svg";
+            if (t.imgNormal && letter._imageEl) {
+                letter._imageEl.src = current.selected
+                    ? t.imgSelected
+                    : t.imgNormal;
+            } else {
+                letter.textContent = current.selected
+                    ? emoji.selected
+                    : emoji.normal;
+            }
 
         });
         letters.push({
             element: letter,
-            image,
             selected: false
         });
         lettersContainer.append(letter);

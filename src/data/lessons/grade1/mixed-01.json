@@ -5,7 +5,17 @@
         {
             "type": "scene",
             "title": "🔍 Valami hiányzik",
-            "text": "Valami hiányzik a műveletből! Találd ki, melyik szám nem látszik!"
+            "text": "Valami hiányzik a műveletből! Találd ki, melyik szám nem látszik!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🔍 Valami hiányzik",
+                    "text": "Valami hiányzik a műveletből! Találd ki, melyik szám nem látszik!"
+                },
+                "football": {
+                    "title": "🔍 Valami hiányzik",
+                    "text": "Valami hiányzik a műveletből! Találd ki, melyik szám nem látszik!"
+                }
+            }
         },
         {
             "type": "exercise",
@@ -18,7 +28,17 @@
         {
             "type": "celebration",
             "title": "🎉 Ügyes voltál!",
-            "text": "Minden hiányzó számot megtaláltál!"
+            "text": "Minden hiányzó számot megtaláltál!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🎉 Ügyes voltál!",
+                    "text": "Minden hiányzó számot megtaláltál!"
+                },
+                "football": {
+                    "title": "🎉 Ügyes voltál!",
+                    "text": "Minden hiányzó számot megtaláltál!"
+                }
+            }
         }
     ]
 }

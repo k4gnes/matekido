@@ -1,8 +1,9 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
-import { loadProfile, getNextGoal } from "../profile/Profile.js";
+import { loadProfile, getNextGoal, getActiveWorld, setActiveWorld } from "../profile/Profile.js";
 import { ACHIEVEMENTS, getUnlockedAchievements } from "../profile/Achievements.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
+import { getAllWorlds } from "../world/WorldRegistry.js";
 
 export function renderProfilePage(root, onBack, onStats) {
 
@@ -23,7 +24,8 @@ export function renderProfilePage(root, onBack, onStats) {
     avatarDisplay.textContent = activePlayer?.avatar ?? "🦊";
 
     const title = document.createElement("h1");
-    title.textContent = "📮 Saját postahivatal";
+    const currentWorld = getAllWorlds().find(w => w.id === getActiveWorld());
+    title.textContent = `${currentWorld?.icon ?? "📮"} Saját ${currentWorld?.name ?? "postahivatal"}`;
 
     const nameDisplay = document.createElement("p");
     nameDisplay.style.cssText = "font-size:1.1rem; font-weight:600; margin:0 0 .6rem; text-align:center;";
@@ -91,9 +93,12 @@ export function renderProfilePage(root, onBack, onStats) {
     achievementSection.append(achievementTitle);
 
     const unlockedIds = new Set(getUnlockedAchievements(profile).map(a => a.id));
+    const activeWorldForAch = getActiveWorld();
 
     ACHIEVEMENTS.forEach(ach => {
         const unlocked = unlockedIds.has(ach.id);
+        const achTitle = ach.worldTitles?.[activeWorldForAch] ?? ach.title;
+        const achIcon = ach.worldIcons?.[activeWorldForAch] ?? ach.icon;
         const reqText = ach.category === "lessons"
             ? `${ach.target} lecke`
             : `${ach.target} tökéletes lecke`;
@@ -101,13 +106,66 @@ export function renderProfilePage(root, onBack, onStats) {
         const item = document.createElement("div");
         item.className = unlocked ? "achievement-item unlocked" : "achievement-item locked";
         item.innerHTML = `
-            <span class="achievement-icon">${ach.icon}</span>
+            <span class="achievement-icon">${achIcon}</span>
             <div class="achievement-info">
-                <span class="achievement-name">${ach.title}</span>
+                <span class="achievement-name">${achTitle}</span>
                 <span class="achievement-req">${reqText}${unlocked ? " ✓" : ""}</span>
             </div>
         `;
         achievementSection.append(item);
+    });
+
+    // --- Worlds ---
+    const worldSection = document.createElement("div");
+    worldSection.className = "profile-page-worlds";
+
+    const worldTitle = document.createElement("h2");
+    worldTitle.textContent = "🌍 Világok";
+
+    worldSection.append(worldTitle);
+
+    const allWorlds = getAllWorlds();
+    const activeWorldId = getActiveWorld();
+    const unlockedWorldIds = profile.unlockedThemes ?? ["postman"];
+
+    allWorlds.forEach(world => {
+        const isUnlocked = unlockedWorldIds.includes(world.id);
+        const isActive = world.id === activeWorldId;
+
+        const item = document.createElement("div");
+        item.className = "world-item" + (isUnlocked ? " unlocked" : " locked") + (isActive ? " active" : "");
+
+        const icon = document.createElement("span");
+        icon.className = "world-icon";
+        icon.textContent = world.icon;
+
+        const info = document.createElement("div");
+        info.className = "world-info";
+
+        const name = document.createElement("span");
+        name.className = "world-name";
+        name.textContent = world.name;
+
+        const desc = document.createElement("span");
+        desc.className = "world-desc";
+        if (isUnlocked) {
+            desc.textContent = isActive ? "Aktív" : "Kattints a váltáshoz";
+        } else {
+            desc.textContent = `⭐ ${world.requiredStars} szükséges (${profile.stars}/${world.requiredStars})`;
+        }
+
+        info.append(name, desc);
+        item.append(icon, info);
+
+        if (isUnlocked && !isActive) {
+            item.style.cursor = "pointer";
+            item.addEventListener("click", () => {
+                setActiveWorld(world.id);
+                renderProfilePage(root, onBack, onStats);
+            });
+        }
+
+        worldSection.append(item);
     });
 
     // --- Navigation buttons ---
@@ -126,6 +184,6 @@ export function renderProfilePage(root, onBack, onStats) {
 
     buttonRow.append(statsButton, menuButton);
 
-    card.append(avatarDisplay, title, nameDisplay, stats, progressSection, questSection, achievementSection, buttonRow);
+    card.append(avatarDisplay, title, nameDisplay, stats, progressSection, questSection, achievementSection, worldSection, buttonRow);
     root.append(card);
 }

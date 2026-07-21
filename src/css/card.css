@@ -278,3 +278,60 @@
     font-size: 0.7rem;
     opacity: 0.7;
 }
+
+.profile-page-worlds {
+    width: 100%;
+    margin-bottom: 0.6rem;
+}
+
+.profile-page-worlds h2 {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+}
+
+.world-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.4rem 0.5rem;
+    border-radius: 6px;
+    margin-bottom: 3px;
+    transition: background .15s;
+}
+
+.world-item.unlocked {
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.world-item.unlocked:hover {
+    background: rgba(76, 175, 80, 0.2);
+}
+
+.world-item.locked {
+    background: #f0f0f0;
+    opacity: 0.6;
+}
+
+.world-item.active {
+    background: rgba(76, 175, 80, 0.2);
+    border: 1px solid rgba(76, 175, 80, 0.4);
+}
+
+.world-icon {
+    font-size: 1.2rem;
+}
+
+.world-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.world-name {
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.world-desc {
+    font-size: 0.7rem;
+    opacity: 0.7;
+}

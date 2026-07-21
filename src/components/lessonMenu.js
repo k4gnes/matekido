@@ -1,7 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
-import { getLessonStats } from "../profile/Profile.js";
+import { getLessonStats, getActiveWorld } from "../profile/Profile.js";
 
 const TYPE_EMOJI = {
     addition: "➕",
@@ -13,7 +13,7 @@ const TYPE_EMOJI = {
     decomposition: "🧩"
 };
 
-function createLessonCard(grade, onSelect) {
+function createLessonCard(grade, onSelect, activeWorld) {
 
     const card = createCard();
 
@@ -36,9 +36,11 @@ function createLessonCard(grade, onSelect) {
 
         const typeEmoji = TYPE_EMOJI[lesson.type] ?? "";
 
+        const mission = lesson.worldTitles?.[activeWorld] ?? lesson.mission;
+
         const title = document.createElement("h3");
         title.className = "lesson-card-title";
-        title.textContent = lesson.mission;
+        title.textContent = mission;
 
         const subtitle = document.createElement("p");
         subtitle.className = "lesson-card-subtitle";
@@ -77,12 +79,16 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch) {
     const wrapper = createCard();
 
     const title = document.createElement("h1");
-    title.textContent = "📚 Matekidő";
+    const worldId = getActiveWorld();
+    const worldEmoji = worldId === "racing" ? "🏎️" : worldId === "football" ? "⚽" : "📚";
+    title.textContent = `${worldEmoji} Matekidő`;
 
     wrapper.append(title);
 
+    const activeWorld = getActiveWorld();
+
     index.grades.forEach(grade => {
-        wrapper.append(createLessonCard(grade, onSelect));
+        wrapper.append(createLessonCard(grade, onSelect, activeWorld));
     });
 
     const buttonRow = document.createElement("div");

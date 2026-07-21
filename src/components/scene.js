@@ -1,14 +1,16 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 
-export function renderScene(step, root, next, progress) {
+export function renderScene(step, root, next, progress, activeWorld) {
     root.innerHTML = "";
 
+    const worldStep = activeWorld ? step.worldTitles?.[activeWorld] : null;
+
     const title = document.createElement("h1");
-    title.textContent = step.title;
+    title.textContent = worldStep?.title ?? step.title;
 
     const text = document.createElement("p");
-    text.textContent = step.text;
+    text.textContent = worldStep?.text ?? step.text;
 
     let done = false;
 

@@ -6,7 +6,17 @@
     {
       "type": "scene",
       "title": "⚖️ Melyik oldalon van több?",
-      "text": "Válaszd ki a helyes relációjelet!"
+      "text": "Válaszd ki a helyes relációjelet!",
+      "worldTitles": {
+        "racing": {
+          "title": "⚖️ Melyik oldalon van több?",
+          "text": "Válaszd ki a helyes relációjelet!"
+        },
+        "football": {
+          "title": "⚖️ Melyik oldalon van több?",
+          "text": "Válaszd ki a helyes relációjelet!"
+        }
+      }
     },
 
     {
@@ -21,7 +31,17 @@
     {
       "type": "celebration",
       "title": "🎉 Ügyes voltál!",
-      "text": "Minden összehasonlítást jól megcsináltál!"
+      "text": "Minden összehasonlítást jól megcsináltál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden összehasonlítást jól megcsináltál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden összehasonlítást jól megcsináltál!"
+        }
+      }
     }
   ]
 }

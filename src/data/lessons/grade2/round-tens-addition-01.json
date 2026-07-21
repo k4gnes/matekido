@@ -1,0 +1,49 @@
+{
+    "id": "grade2-round-tens-addition-01",
+    "title": "📮 Kerek tízesek összeadása",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📮 Kerek számok, kerek út!",
+            "text": "A postás a kerek utcákban szállít. Számold ki az összegeket 10-esekkel!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🏁 Kerek körök, gyors számolás!",
+                    "text": "A versenyző a kerek köröket gyakorolja. Számold ki az összegeket 10-esekkel!"
+                },
+                "football": {
+                    "title": "⚽ Kerek számok a pályán!",
+                    "text": "A játékos a kerek számokkal játszik. Számold ki az összegeket 10-esekkel!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "addition",
+            "options": {
+                "count": 5,
+                "min": 10,
+                "max": 90,
+                "carry": "never",
+                "sumMin": 20,
+                "sumMax": 100,
+                "multiplesOfTen": true
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Minden kerek számot sikeresen összeadtál!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden kerek kört sikeresen teljesítettél!"
+                },
+                "football": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden kerek passzt sikeresen adtál!"
+                }
+            }
+        }
+    ]
+}

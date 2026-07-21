@@ -120,6 +120,16 @@
                 },
                 {
                     "type": "addition",
+                    "mission": "📮 A postás kerek utcája",
+                    "subtitle": "Összeadás kerek tízesekkel",
+                    "file": "./src/data/lessons/grade2/round-tens-addition-01.json",
+                    "worldTitles": {
+                        "racing": "🏎️ Kerek körök gyakorlása",
+                        "football": "⚽ Kerek számok a pályán"
+                    }
+                },
+                {
+                    "type": "addition",
                     "mission": "📮 A postás nehéz napja",
                     "subtitle": "Összeadás 100-ig",
                     "file": "./src/data/lessons/grade2/addition-01.json",
@@ -136,6 +146,16 @@
                     "worldTitles": {
                         "racing": "🏎️ Sokadik kör a pályán",
                         "football": "⚽ Sokadik gól a meccsen"
+                    }
+                },
+                {
+                    "type": "subtraction",
+                    "mission": "🎒 Kerek számokból visszajött",
+                    "subtitle": "Kivonás kerek tízesekkel",
+                    "file": "./src/data/lessons/grade2/round-tens-subtraction-01.json",
+                    "worldTitles": {
+                        "racing": "🏎️ Kerek körök kivonása",
+                        "football": "⚽ Kerek számok kivonása"
                     }
                 },
                 {

@@ -14,7 +14,8 @@ export function generateAddition(options = {}) {
         max = 99,
         carry = "any",
         sumMin = min * 2,
-        sumMax = Number.MAX_SAFE_INTEGER
+        sumMax = Number.MAX_SAFE_INTEGER,
+        multiplesOfTen = false
     } = options;
 
     const validCarryModes = ["never", "always", "any"];
@@ -39,7 +40,13 @@ export function generateAddition(options = {}) {
         }
 
         // Első szám kiválasztása
-        const a = random(min, max);
+        let a = random(min, max);
+
+        // Kerek tízes: csak 10, 20, 30, ...
+        if (multiplesOfTen) {
+            a = Math.ceil(a / 10) * 10;
+            if (a > max) continue;
+        }
 
         // Meghatározzuk, milyen tartományból választható a második szám
         const minB = Math.max(min, sumMin - a);
@@ -50,7 +57,13 @@ export function generateAddition(options = {}) {
             continue;
         }
 
-        const b = random(minB, maxB);
+        let b = random(minB, maxB);
+
+        // Kerek tízes: b is legyen 10-es többszöröse
+        if (multiplesOfTen) {
+            b = Math.ceil(b / 10) * 10;
+            if (b < minB || b > maxB) continue;
+        }
 
         // Biztonsági szűrő: az összeg ne haladja meg a megengedett maximumot
         if (a + b > sumMax || a + b < sumMin) {

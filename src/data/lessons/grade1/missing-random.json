@@ -15,6 +15,10 @@
         "football": {
           "title": "⚽ Hány gól hiányzik?",
           "text": "Segíts megtalálni a hiányzó gólokat!"
+        },
+        "cooking": {
+          "title": "🍳 Segíts a szakácsnak!",
+          "text": "A szakácsnak ma sok ételt kell elkészítenie. Számold ki a műveleteket!"
         }
       }
     },
@@ -41,6 +45,10 @@
         "football": {
           "title": "🎉 Ügyes voltál!",
           "text": "Minden hiányzó számot megtaláltál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden ételt sikeresen elkészítettél!"
         }
       }
     }

@@ -14,6 +14,10 @@
                 "football": {
                     "title": "⚽ Véletlen szám + kerek tizes!",
                     "text": "A játékosnak segítened kell kerek számokkal! Adj hozzá egy kerek tízest a véletlen számhoz!"
+                },
+                "cooking": {
+                    "title": "🍳 Segíts a szakácsnak!",
+                    "text": "A szakácsnak ma sok ételt kell elkészítenie. Számold ki a műveleteket!"
                 }
             }
         },
@@ -42,6 +46,10 @@
                 "football": {
                     "title": "🎉 Szép munka!",
                     "text": "Minden kerek tízest sikeresen hozzáadtál!"
+                },
+                "cooking": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden ételt sikeresen elkészítettél!"
                 }
             }
         }

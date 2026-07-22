@@ -14,6 +14,10 @@
                 "football": {
                     "title": "🔍 Valami hiányzik",
                     "text": "Valami hiányzik a műveletből! Találd ki, melyik szám nem látszik!"
+                },
+                "cooking": {
+                    "title": "🍳 Segíts a szakácsnak!",
+                    "text": "A szakácsnak ma sok ételt kell elkészítenie. Számold ki a műveleteket!"
                 }
             }
         },
@@ -37,6 +41,10 @@
                 "football": {
                     "title": "🎉 Ügyes voltál!",
                     "text": "Minden hiányzó számot megtaláltál 100-ig is!"
+                },
+                "cooking": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden ételt sikeresen elkészítettél!"
                 }
             }
         }

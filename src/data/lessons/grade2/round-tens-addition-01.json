@@ -14,6 +14,10 @@
                 "football": {
                     "title": "⚽ Kerek számok a pályán!",
                     "text": "A játékos a kerek számokkal játszik. Számold ki az összegeket 10-esekkel!"
+                },
+                "cooking": {
+                    "title": "🍳 Segíts a szakácsnak!",
+                    "text": "A szakácsnak ma sok ételt kell elkészítenie. Számold ki a műveleteket!"
                 }
             }
         },
@@ -42,6 +46,10 @@
                 "football": {
                     "title": "🎉 Szép munka!",
                     "text": "Minden kerek passzt sikeresen adtál!"
+                },
+                "cooking": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden ételt sikeresen elkészítettél!"
                 }
             }
         }

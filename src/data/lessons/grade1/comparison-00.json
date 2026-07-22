@@ -15,6 +15,10 @@
         "football": {
           "title": "⚖️ Melyik oldalon van több?",
           "text": "Válaszd ki a helyes relációjelet!"
+        },
+        "cooking": {
+          "title": "🍳 Segíts a szakácsnak!",
+          "text": "A szakácsnak ma sok ételt kell elkészítenie. Számold ki a műveleteket!"
         }
       }
     },
@@ -40,6 +44,10 @@
         "football": {
           "title": "🎉 Ügyes voltál!",
           "text": "Minden összehasonlítást jól megcsináltál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden ételt sikeresen elkészítettél!"
         }
       }
     }

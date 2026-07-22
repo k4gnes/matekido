@@ -16,6 +16,13 @@ const WORLDS = [
         requiredStars: 15
     }),
     new World({
+        id: "cooking",
+        name: "Szakács",
+        icon: "👨‍🍳",
+        description: "Receptek és hozzávalók számolgatása",
+        requiredStars: 40
+    }),
+    new World({
         id: "football",
         name: "Foci",
         icon: "⚽",

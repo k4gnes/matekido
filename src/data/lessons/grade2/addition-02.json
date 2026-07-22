@@ -14,6 +14,10 @@
         "football": {
           "title": "⚽ Segíts a játékosnak!",
           "text": "A játékos ma sok meccsen játszik. Segíts neki!"
+        },
+        "cooking": {
+          "title": "🍳 Segíts a szakácsnak!",
+          "text": "A szakácsnak ma sok ételt kell elkészítenie. Számold ki a műveleteket!"
         }
       }
     },
@@ -41,6 +45,10 @@
         "football": {
           "title": "🎉 Minden gól a helyére ment!",
           "text": "A játékos nagyon hálás neked!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden ételt sikeresen elkészítettél!"
         }
       }
     }

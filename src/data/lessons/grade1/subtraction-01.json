@@ -14,6 +14,10 @@
                 "football": {
                     "title": "⚽ Hány gól maradt hátra?",
                     "text": "Számold ki, hány gól maradt a meccsből!"
+                },
+                "cooking": {
+                    "title": "🍳 Segíts a szakácsnak!",
+                    "text": "A szakácsnak ma sok ételt kell elkészítenie. Számold ki a műveleteket!"
                 }
             }
         },
@@ -39,6 +43,10 @@
                 "football": {
                     "title": "🎉 Ügyes voltál!",
                     "text": "Minden gól a helyére ment!"
+                },
+                "cooking": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden ételt sikeresen elkészítettél!"
                 }
             }
         }

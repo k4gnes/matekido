@@ -14,6 +14,10 @@
                 "football": {
                     "title": "⚽ Gyors számolás a kispadon!",
                     "text": "Az edzőnek gyorsan kell számolnia. Add össze a számokat átlépés nélkül!"
+                },
+                "cooking": {
+                    "title": "🍳 Segíts a szakácsnak!",
+                    "text": "A szakácsnak ma sok ételt kell elkészítenie. Számold ki a műveleteket!"
                 }
             }
         },
@@ -44,6 +48,10 @@
                 "football": {
                     "title": "🎉 Szép munka!",
                     "text": "Minden összeadást gyorsan megoldottál a kispadon!"
+                },
+                "cooking": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden ételt sikeresen elkészítettél!"
                 }
             }
         }

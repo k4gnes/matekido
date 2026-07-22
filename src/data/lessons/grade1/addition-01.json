@@ -15,6 +15,10 @@
         "football": {
           "title": "⚽ Segíts a játékosnak!",
           "text": "Számoljuk ki együtt, hány passz kell a gólhoz!"
+        },
+        "cooking": {
+          "title": "🍳 Segíts a szakácsnak!",
+          "text": "A szakácsnak ma sok ételt kell elkészítenie. Számold ki a műveleteket!"
         }
       }
     },
@@ -44,6 +48,10 @@
         "football": {
           "title": "🎉 Ügyes voltál!",
           "text": "Minden passz a helyére érkezett!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden ételt sikeresen elkészítettél!"
         }
       }
     }

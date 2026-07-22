@@ -7,10 +7,12 @@ export const ACHIEVEMENTS = [
         target: 10,
         worldTitles: {
             racing: "Első pilóta",
+            cooking: "Első szakács",
             football: "Első játékos"
         },
         worldIcons: {
             racing: "🏁",
+            cooking: "🍳",
             football: "⚽"
         }
     },
@@ -22,10 +24,12 @@ export const ACHIEVEMENTS = [
         target: 25,
         worldTitles: {
             racing: "Tapasztalt pilóta",
+            cooking: "Tapasztalt szakács",
             football: "Tapasztalt játékos"
         },
         worldIcons: {
             racing: "🏆",
+            cooking: "👨‍🍳",
             football: "🏆"
         }
     },
@@ -37,10 +41,12 @@ export const ACHIEVEMENTS = [
         target: 50,
         worldTitles: {
             racing: "Bajnok pilóta",
+            cooking: "Séf mester",
             football: "Bajnok játékos"
         },
         worldIcons: {
             racing: "🥇",
+            cooking: "🥇",
             football: "🥇"
         }
     },

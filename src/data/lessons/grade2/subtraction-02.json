@@ -14,6 +14,10 @@
                 "football": {
                     "title": "⚽ Kétjegyű gólok",
                     "text": "A játékos kétjegyű számokkal játszik. Számold ki a különbséget!"
+                },
+                "cooking": {
+                    "title": "🍳 Segíts a szakácsnak!",
+                    "text": "A szakácsnak ma sok ételt kell elkészítenie. Számold ki a műveleteket!"
                 }
             }
         },
@@ -40,6 +44,10 @@
                 "football": {
                     "title": "🎉 Szép munka!",
                     "text": "Minden kétjegyű gólt sikeresen rúgtál!"
+                },
+                "cooking": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden ételt sikeresen elkészítettél!"
                 }
             }
         }

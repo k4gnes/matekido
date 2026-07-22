@@ -5,12 +5,14 @@ const WORLD_TITLES = {
     addition: {
         postman: (i) => `🏠 ${i}. ház`,
         racing: (i) => `🏎️ ${i}. kör`,
-        football: (i) => `⚽ ${i}. gól`
+        football: (i) => `⚽ ${i}. gól`,
+        cooking: (i) => `🍳 ${i}. tányér`
     },
     subtraction: {
         postman: (i) => `🎒 ${i}. táska`,
         racing: (i) => `🛞 ${i}. kerék`,
-        football: (i) => `⚽ ${i}. félidő`
+        football: (i) => `⚽ ${i}. félidő`,
+        cooking: (i) => `🍳 ${i}. étel`
     }
 };
 

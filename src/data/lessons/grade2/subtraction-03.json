@@ -14,6 +14,10 @@
                 "football": {
                     "title": "⚽ Gólok tízesátlépéssel",
                     "text": "A játékos nehezebb gólokat rúg. Most átlépjük a tízest!"
+                },
+                "cooking": {
+                    "title": "🍳 Segíts a szakácsnak!",
+                    "text": "A szakácsnak ma sok ételt kell elkészítenie. Számold ki a műveleteket!"
                 }
             }
         },
@@ -40,6 +44,10 @@
                 "football": {
                     "title": "🎉 Szép munka!",
                     "text": "Minden tízesátlépéses gólt sikeresen rúgtál!"
+                },
+                "cooking": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden ételt sikeresen elkészítettél!"
                 }
             }
         }

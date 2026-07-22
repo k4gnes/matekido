@@ -10,6 +10,7 @@
                     "file": "./src/data/lessons/grade1/decompsition.json",
                     "worldTitles": {
                         "racing": "🔧 Gumik szétválogatása",
+                        "cooking": "🍳 Hozzávalók szétválogatása",
                         "football": "🧩 Csapattagok kiválasztása"
                     }
                 },
@@ -20,6 +21,7 @@
                     "file": "./src/data/lessons/grade1/missing-number.json",
                     "worldTitles": {
                         "racing": "🔧 Hány kerék hiányzik?",
+                        "cooking": "🍳 Hány hozzávaló hiányzik?",
                         "football": "⚽ Hány játékos hiányzik?"
                     }
                 },
@@ -30,6 +32,7 @@
                     "file": "./src/data/lessons/grade1/missing-random.json",
                     "worldTitles": {
                         "racing": "🔧 Hány kerék hiányzik?",
+                        "cooking": "🍳 Hány hozzávaló hiányzik?",
                         "football": "⚽ Hány gól hiányzik?"
                     }
                 },
@@ -40,6 +43,7 @@
                     "file": "./src/data/lessons/grade1/addition-01.json",
                     "worldTitles": {
                         "racing": "🏎️ Első gyakorlókör",
+                        "cooking": "🍳 Első ételkészítés",
                         "football": "⚽ Az első félidő"
                     }
                 },
@@ -50,6 +54,7 @@
                     "file": "./src/data/lessons/grade1/neighbor-01.json",
                     "worldTitles": {
                         "racing": "🏎️ Ki áll mellette a rajtrácsán?",
+                        "cooking": "🍳 Mi áll mellette a polcon?",
                         "football": "⚽ Ki áll mellette a sorfalban?"
                     }
                 },
@@ -60,6 +65,7 @@
                     "file": "./src/data/lessons/grade1/addition-02.json",
                     "worldTitles": {
                         "racing": "🏎️ Gyorsulás a célig",
+                        "cooking": "🍳 Gyors keverés",
                         "football": "⚽ Gólpasszok sorozata"
                     }
                 },
@@ -70,6 +76,7 @@
                     "file": "./src/data/lessons/grade1/subtraction-01.json",
                     "worldTitles": {
                         "racing": "🏎️ Hány pontot veszített?",
+                        "cooking": "🍳 Mennyi alapanyag maradt?",
                         "football": "⚽ Hány gólt rúgtak már?"
                     }
                 },
@@ -80,6 +87,7 @@
                     "file": "./src/data/lessons/grade1/comparison-00.json",
                     "worldTitles": {
                         "racing": "🏎️ Melyik autó gyorsabb?",
+                        "cooking": "🍳 Melyik tál nehezebb?",
                         "football": "⚽ Melyik csapat erősebb?"
                     }
                 },
@@ -90,6 +98,7 @@
                     "file": "./src/data/lessons/grade1/comparison-01.json",
                     "worldTitles": {
                         "racing": "🏎️ Melyik autó gyorsabb?",
+                        "cooking": "🍳 Melyik edény nehezebb?",
                         "football": "⚽ Melyik játékos magasabb?"
                     }
                 },
@@ -100,6 +109,7 @@
                     "file": "./src/data/lessons/grade1/mixed-01.json",
                     "worldTitles": {
                         "racing": "🏎️ Hiányos eredménylista",
+                        "cooking": "🍳 Hiányos recept",
                         "football": "⚽ Hiányos mérkőzés"
                     }
                 }
@@ -115,6 +125,7 @@
                     "file": "./src/data/lessons/grade2/missing-random.json",
                     "worldTitles": {
                         "racing": "🔧 Hány kerék hiányzik?",
+                        "cooking": "🍳 Hány hozzávaló hiányzik?",
                         "football": "⚽ Hány gól hiányzik?"
                     }
                 },
@@ -125,6 +136,7 @@
                     "file": "./src/data/lessons/grade2/round-tens-addition-01.json",
                     "worldTitles": {
                         "racing": "🏎️ Kerek körök gyakorlása",
+                        "cooking": "🍳 Kerek tányérok",
                         "football": "⚽ Kerek számok a pályán"
                     }
                 },
@@ -135,6 +147,7 @@
                     "file": "./src/data/lessons/grade2/round-tens-addition-02.json",
                     "worldTitles": {
                         "racing": "🏎️ Véletlen szám + kerek kör",
+                        "cooking": "🍳 Véletlen mennyiség + kerek tizes",
                         "football": "⚽ Véletlen szám + kerek gól"
                     }
                 },
@@ -145,6 +158,7 @@
                     "file": "./src/data/lessons/grade2/single-digit-addition-01.json",
                     "worldTitles": {
                         "racing": "🏎️ Gyors számolás a pitben",
+                        "cooking": "🍳 Gyors számolás a konyhában",
                         "football": "⚽ Gyors számolás a kispadon"
                     }
                 },
@@ -155,6 +169,7 @@
                     "file": "./src/data/lessons/grade2/addition-01.json",
                     "worldTitles": {
                         "racing": "🏎️ Nehéz kör a dombokon",
+                        "cooking": "🍳 Nehéz nap a konyhában",
                         "football": "⚽ Nehéz mérkőzés"
                     }
                 },
@@ -165,6 +180,7 @@
                     "file": "./src/data/lessons/grade2/addition-02.json",
                     "worldTitles": {
                         "racing": "🏎️ Sokadik kör a pályán",
+                        "cooking": "🍳 Sokadik fogás",
                         "football": "⚽ Sokadik gól a meccsen"
                     }
                 },
@@ -175,6 +191,7 @@
                     "file": "./src/data/lessons/grade2/round-tens-subtraction-01.json",
                     "worldTitles": {
                         "racing": "🏎️ Kerek körök kivonása",
+                        "cooking": "🍳 Kerek tányérok kivonása",
                         "football": "⚽ Kerek számok kivonása"
                     }
                 },
@@ -185,6 +202,7 @@
                     "file": "./src/data/lessons/grade2/round-tens-subtraction-02.json",
                     "worldTitles": {
                         "racing": "🏎️ Véletlen szám - kerek kör",
+                        "cooking": "🍳 Véletlen mennyiség - kerek tizes",
                         "football": "⚽ Véletlen szám - kerek gól"
                     }
                 },
@@ -195,6 +213,7 @@
                     "file": "./src/data/lessons/grade2/single-digit-subtraction-01.json",
                     "worldTitles": {
                         "racing": "🏎️ Gyors számolás a pitben",
+                        "cooking": "🍳 Gyors számolás a konyhában",
                         "football": "⚽ Gyors számolás a kispadon"
                     }
                 },
@@ -205,6 +224,7 @@
                     "file": "./src/data/lessons/grade2/subtraction-01.json",
                     "worldTitles": {
                         "racing": "🏎️ Hány kör van még hátra?",
+                        "cooking": "🍳 Mennyi alapanyag maradt?",
                         "football": "⚽ Hány perc van még?"
                     }
                 },
@@ -215,6 +235,7 @@
                     "file": "./src/data/lessons/grade2/subtraction-02.json",
                     "worldTitles": {
                         "racing": "🏎️ Kétjegyű körök kivonása",
+                        "cooking": "🍳 Kétjegyű mennyiségek kivonása",
                         "football": "⚽ Kétjegyű gólok kivonása"
                     }
                 },
@@ -225,6 +246,7 @@
                     "file": "./src/data/lessons/grade2/subtraction-03.json",
                     "worldTitles": {
                         "racing": "🏎️ Körök átlépéssel",
+                        "cooking": "🍳 Mennyiségek átlépése",
                         "football": "⚽ Gólok átlépéssel"
                     }
                 },
@@ -235,6 +257,7 @@
                     "file": "./src/data/lessons/grade2/mixed-01.json",
                     "worldTitles": {
                         "racing": "🏎️ Hiányos nagy eredménylista",
+                        "cooking": "🍳 Hiányos nagy recept",
                         "football": "⚽ Hiányos nagy meccs"
                     }
                 },
@@ -245,6 +268,7 @@
                     "file": "./src/data/lessons/grade2/neighbor-single-01.json",
                     "worldTitles": {
                         "racing": "🔍 Ki áll mellette?",
+                        "cooking": "🔍 Mi áll mellette a polcon?",
                         "football": "🔍 Ki a szomszédja?"
                     }
                 }

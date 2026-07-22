@@ -15,6 +15,10 @@
         "football": {
           "title": "⚽ Segíts a játékosnak!",
           "text": "Ma a meccs egy kicsit nehezebb lesz. Figyelj, mert néha át kell lépned a tízesen!"
+        },
+        "cooking": {
+          "title": "🍳 Segíts a szakácsnak!",
+          "text": "A szakácsnak ma sok ételt kell elkészítenie. Számold ki a műveleteket!"
         }
       }
     },
@@ -44,6 +48,10 @@
         "football": {
           "title": "🎉 Ügyes voltál!",
           "text": "Minden gól a helyére ment. Az átlépős feladatok sem fogtak ki rajtad!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden ételt sikeresen elkészítettél!"
         }
       }
     }

@@ -80,7 +80,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch) {
 
     const title = document.createElement("h1");
     const worldId = getActiveWorld();
-    const worldEmoji = worldId === "racing" ? "🏎️" : worldId === "football" ? "⚽" : "📚";
+    const worldEmoji = worldId === "racing" ? "🏎️" : worldId === "football" ? "⚽" : worldId === "cooking" ? "👨‍🍳" : "📚";
     title.textContent = `${worldEmoji} Matekidő`;
 
     wrapper.append(title);

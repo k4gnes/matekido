@@ -1,96 +1,214 @@
-# Matekidő TODO
+# TODO - Lesson reorganization
 
-## ✅ Elkészült
+## Cél
 
-- [x] Több felhasználó (UserManager)
-- [x] Profil oldal
-- [x] Avatarok
-- [x] Streak
-- [x] Napi küldetés
-- [x] Mérföldkövek
-- [x] Achievementek
-- [x] Alap statisztikák
-- [x] Profil oldal külön képernyőn
+A feladatok szerkezetének átalakítása úgy, hogy a Matekidő
+első osztálytól akár nyolcadik osztályig könnyen bővíthető legyen.
 
 ---
 
-# Következő cél: Reward rendszer ⭐
+# 1. Metaadatok
 
-## 1. Csillagok újragondolása
+Minden lecke kapjon egységes metaadatokat.
 
-Jelenleg:
+Példa:
 
-- tökéletes lecke
-- elvégzett leckék
-
-Új rendszer:
-
-- [x] Minden befejezett lecke ad csillagot
-- [x] Hibátlan lecke bónusz
-- [x] Napi küldetés jutalma
-- [x] Mérföldkő jutalma
-- [x] Celebration mutassa a megszerzett csillagokat
-- [x] Profil mutassa az összes csillagot
+{
+    "id": "neighbours-dual",
+    "title": "Számszomszédok",
+    "grades": [1,2],
+    "category": "numbers",
+    "skill": "neighbours",
+    "difficulty": 1
+}
 
 ---
 
-## 2. RewardService
+# 2. Kategóriák
 
-- [x] grantRewards()
-- [x] reward típusok
-- [x] jutalmak egy helyen legyenek
+## Numbers (Számok)
+
+- [ ] Számszomszédok
+- [ ] Nagyobb-kisebb
+- [ ] Hiányzó szám
+- [ ] Számsorok
+- [ ] Számrendezés
+- [ ] Páros-páratlan
+- [ ] Helyi érték
+- [ ] Kerekítés (később)
+
+## Operations (Műveletek)
+
+- [ ] Összeadás
+- [ ] Kivonás
+- [ ] Vegyes műveletek
+- [ ] Hiányzó tag
+- [ ] Hiányzó művelet
+- [ ] Tízes átlépés
+
+## Multiplication & Division
+
+- [ ] Szorzás
+- [ ] Osztás
+- [ ] Hiányzó tényező
+
+## Measurement
+
+- [ ] Hosszúság
+- [ ] Tömeg
+- [ ] Űrtartalom
+
+## Time
+
+- [ ] Óra
+- [ ] Perc
+- [ ] Naptár
+
+## Money
+
+- [ ] Érmék
+- [ ] Bankjegyek
+- [ ] Vásárlás
+
+## Geometry
+
+- [ ] Alakzatok
+- [ ] Kerület
+- [ ] Terület
+
+## Word Problems
+
+- [ ] Egylépéses
+- [ ] Kétlépéses
 
 ---
 
-## 3. Világok előkészítése
+# 3. Skill rendszer
 
-- [x] World modell
-- [x] WorldRegistry
-- [x] feloldási feltételek
-- [x] aktuális világ tárolása
+Minden lecke tartozzon egy skillhez.
 
----
+Példák:
 
-## 4. Első világok
-
-- [x] 📮 Postás (0 ⭐)
-- [x] 🏎️ Versenyautó (30 ⭐)
-- [x] ⚽ Foci (80 ⭐)
-
----
-
-## 5. Fejlődési oldal
-
-- [ ] leckénkénti statisztika
-- [ ] legerősebb területek
-- [ ] legtöbb gyakorlást igénylő területek
-- [ ] grafikonok
+- neighbours
+- comparison
+- ordering
+- missing-number
+- addition
+- subtraction
+- multiplication
+- division
+- place-value
+- fractions
+- percentage
 
 ---
 
-## 6. Adaptív gyakorlás
+# 4. Difficulty
 
-- [ ] ajánlott feladatok
-- [ ] gyenge területek gyakorlása
-- [ ] ismétlési algoritmus
+difficulty:
 
----
+1 = alap
 
-## Későbbi ötletek
+2 = gyakorló
 
-- [ ] Napi sorozatok (7 nap, 30 nap...)
-- [ ] Heti kihívások
-- [ ] Időre menő feladatok
-- [ ] Osztályonként új témák
-- [ ] 2–8. osztály feladattípusai
+3 = haladó
+
+4 = mester
 
 ---
 
-# Hosszú távú vízió
+# 5. Grade
 
-A Matekidő nem tanítja meg a matematikát.
+A lecke több évfolyamhoz is tartozhat.
 
-A Matekidő addig gyakoroltatja, amíg a matematika készséggé nem válik.
+Példák:
 
-A Mateking megmutatja.
-A Matekidő edzőként kísér végig.
+grades: [1]
+
+grades: [1,2]
+
+grades: [2,3]
+
+---
+
+# 6. Menü átalakítása
+
+Most:
+
+1. osztály
+    lecke
+    lecke
+    lecke
+
+↓
+
+Később:
+
+1. osztály
+
+Számok
+    Számszomszédok
+    Nagyobb-kisebb
+    Hiányzó szám
+
+Műveletek
+    Összeadás
+    Kivonás
+
+---
+
+# 7. Statisztika
+
+Ne leckéket tároljunk.
+
+Hanem skilleket.
+
+Például:
+
+Számszomszédok
+
+12 ✔
+
+3 ✖
+
+---
+
+# 8. Adaptív gyakorlás
+
+Később ezekből épül fel.
+
+"Ajánlott gyakorlás"
+
+↓
+
+Gyengébb skillek
+
+↓
+
+Ajánlott játékok
+
+---
+
+# 9. Hosszú távú cél
+
+Ne feladatgyűjtemény legyen.
+
+Hanem készségalapú matematikai gyakorlórendszer.
+
+A feladat csak egy megvalósítás.
+
+A skill az igazi tudáselem.
+
+---
+
+# Fejlesztési elvek
+
+✔ Egy feladat több évfolyamhoz is tartozhat.
+
+✔ Egy skillhez több különböző játék tartozhat.
+
+✔ A statisztika a skillt mérje, ne a konkrét játékot.
+
+✔ Az adaptív rendszer skillek alapján ajánljon.
+
+✔ A menü is készségek szerint épüljön fel.

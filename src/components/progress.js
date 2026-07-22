@@ -3,6 +3,7 @@ import { getActiveWorld } from "../profile/Profile.js";
 const WORLD_PROGRESS = {
     postman: { done: "🏠", current: "📡", next: "🏡" },
     racing: { done: "🏁", current: "🏎️", next: "🛣️" },
+    cooking: { done: "🍽️", current: "🍳", next: "🥄" },
     football: { done: "⚽", current: "🥅", next: "🏟️" }
 };
 

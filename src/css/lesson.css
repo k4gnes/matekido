@@ -109,3 +109,99 @@
 .lesson-difficulty-badge {
     font-size: 1rem;
 }
+
+.filter-toggle-btn {
+    display: block;
+    margin: 0.5rem auto;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    background: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.filter-toggle-btn:hover {
+    background: #e0e0e0;
+}
+
+.filter-panel {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    background: #f8f8f8;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.filter-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.filter-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    min-width: 70px;
+    color: #555;
+}
+
+.filter-btn {
+    display: inline-block;
+    margin: 0;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    background: #888;
+    color: white;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.filter-btn:hover {
+    background: #777;
+}
+
+.filter-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.filter-skill-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.filter-clear {
+    margin-top: 0.3rem;
+}
+
+.filter-clear-btn {
+    display: inline-block;
+    margin: 0;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+    background: #ffcccc;
+    color: #333;
+    border: 1px solid #ff9999;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.filter-clear-btn:hover {
+    background: #ff9999;
+}
+
+.filter-result-info {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}

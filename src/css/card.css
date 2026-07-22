@@ -49,9 +49,11 @@
 }
 
 .profile-page-button {
+    display: inline-block;
     margin: 0 auto 1rem;
     padding: 0.4rem 1rem;
     font-size: 0.85rem;
+    color: white !important;
 }
 
 .profile-page {

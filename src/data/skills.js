@@ -5,7 +5,7 @@ export const CATEGORIES = {
         skills: ["neighbours", "comparison", "ordering", "missing-number", "place-value", "rounding"]
     },
     operations: {
-        title: "Műveletek",
+        title: "Összeadás-Kivonás",
         icon: "➕",
         skills: ["addition", "subtraction", "mixed", "missing-operand", "tens-crossing"]
     },

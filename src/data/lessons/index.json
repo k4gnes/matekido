@@ -1,278 +1,416 @@
 {
-    "grades": [
+    "lessons": [
         {
-            "title": "1. osztály",
-            "lessons": [
-                {
-                    "type": "decomposition",
-                    "mission": "✉️ Csomagok szétválogatása",
-                    "subtitle": "Számok bontása 10-ig",
-                    "file": "./src/data/lessons/grade1/decompsition.json",
-                    "worldTitles": {
-                        "racing": "🔧 Gumik szétválogatása",
-                        "cooking": "🍳 Hozzávalók szétválogatása",
-                        "football": "🧩 Csapattagok kiválasztása"
-                    }
-                },
-                {
-                    "type": "missing-number",
-                    "mission": "📮 Mennyi kis levél hiányzik?",
-                    "subtitle": "Kiegészítés 10-ig",
-                    "file": "./src/data/lessons/grade1/missing-number.json",
-                    "worldTitles": {
-                        "racing": "🔧 Hány kerék hiányzik?",
-                        "cooking": "🍳 Hány hozzávaló hiányzik?",
-                        "football": "⚽ Hány játékos hiányzik?"
-                    }
-                },
-                {
-                    "type": "missing-number",
-                    "mission": "📮 Mennyi levél hiányzik?",
-                    "subtitle": "Kiegészítés véletlen számig 20-ig",
-                    "file": "./src/data/lessons/grade1/missing-random.json",
-                    "worldTitles": {
-                        "racing": "🔧 Hány kerék hiányzik?",
-                        "cooking": "🍳 Hány hozzávaló hiányzik?",
-                        "football": "⚽ Hány gól hiányzik?"
-                    }
-                },
-                {
-                    "type": "addition",
-                    "mission": "📮 A postás első útja",
-                    "subtitle": "Összeadás 20-ig",
-                    "file": "./src/data/lessons/grade1/addition-01.json",
-                    "worldTitles": {
-                        "racing": "🏎️ Első gyakorlókör",
-                        "cooking": "🍳 Első ételkészítés",
-                        "football": "⚽ Az első félidő"
-                    }
-                },
-                {
-                    "type": "neighbor",
-                    "mission": "🏡 Ki lakik mellette?",
-                    "subtitle": "Számok szomszédai 100-ig",
-                    "file": "./src/data/lessons/grade1/neighbor-01.json",
-                    "worldTitles": {
-                        "racing": "🏎️ Ki áll mellette a rajtrácsán?",
-                        "cooking": "🍳 Mi áll mellette a polcon?",
-                        "football": "⚽ Ki áll mellette a sorfalban?"
-                    }
-                },
-                {
-                    "type": "addition",
-                    "mission": "📮 A postás rákapcsol",
-                    "subtitle": "Összeadás 20-ig átlépéssel",
-                    "file": "./src/data/lessons/grade1/addition-02.json",
-                    "worldTitles": {
-                        "racing": "🏎️ Gyorsulás a célig",
-                        "cooking": "🍳 Gyors keverés",
-                        "football": "⚽ Gólpasszok sorozata"
-                    }
-                },
-                {
-                    "type": "subtraction",
-                    "mission": "🎒 Mennyi maradt a táskában?",
-                    "subtitle": "Kivonás 20-ig",
-                    "file": "./src/data/lessons/grade1/subtraction-01.json",
-                    "worldTitles": {
-                        "racing": "🏎️ Hány pontot veszített?",
-                        "cooking": "🍳 Mennyi alapanyag maradt?",
-                        "football": "⚽ Hány gólt rúgtak már?"
-                    }
-                },
-                {
-                    "type": "comparison",
-                    "mission": "📦 Melyik kis zsák nehezebb?",
-                    "subtitle": "Összehasonlítás 10-ig",
-                    "file": "./src/data/lessons/grade1/comparison-00.json",
-                    "worldTitles": {
-                        "racing": "🏎️ Melyik autó gyorsabb?",
-                        "cooking": "🍳 Melyik tál nehezebb?",
-                        "football": "⚽ Melyik csapat erősebb?"
-                    }
-                },
-                {
-                    "type": "comparison",
-                    "mission": "📦 Melyik nagy zsák nehezebb?",
-                    "subtitle": "Összehasonlítás 20-ig",
-                    "file": "./src/data/lessons/grade1/comparison-01.json",
-                    "worldTitles": {
-                        "racing": "🏎️ Melyik autó gyorsabb?",
-                        "cooking": "🍳 Melyik edény nehezebb?",
-                        "football": "⚽ Melyik játékos magasabb?"
-                    }
-                },
-                {
-                    "type": "mixed",
-                    "mission": "📮 Hiányos küldemény",
-                    "subtitle": "Vegyes műveletek 20-ig",
-                    "file": "./src/data/lessons/grade1/mixed-01.json",
-                    "worldTitles": {
-                        "racing": "🏎️ Hiányos eredménylista",
-                        "cooking": "🍳 Hiányos recept",
-                        "football": "⚽ Hiányos mérkőzés"
-                    }
-                }
-            ]
+            "id": "decomposition-01",
+            "title": "Számok bontása 10-ig",
+            "grades": [1],
+            "category": "numbers",
+            "skill": "neighbours",
+            "difficulty": 1,
+            "type": "decomposition",
+            "mission": "✉️ Csomagok szétválogatása",
+            "subtitle": "Számok bontása 10-ig",
+            "file": "./src/data/lessons/grade1/decompsition.json",
+            "worldTitles": {
+                "racing": "🔧 Gumik szétválogatása",
+                "cooking": "🍳 Hozzávalók szétválogatása",
+                "football": "🧩 Csapattagok kiválasztása"
+            }
         },
         {
-            "title": "2. osztály",
-            "lessons": [
-                {
-                    "type": "missing-number",
-                    "mission": "📮 Mennyi levél hiányzik?",
-                    "subtitle": "Hiányzó szám véletlen számig 100-ig",
-                    "file": "./src/data/lessons/grade2/missing-random.json",
-                    "worldTitles": {
-                        "racing": "🔧 Hány kerék hiányzik?",
-                        "cooking": "🍳 Hány hozzávaló hiányzik?",
-                        "football": "⚽ Hány gól hiányzik?"
-                    }
-                },
-                {
-                    "type": "addition",
-                    "mission": "📮 A postás kerek utcája",
-                    "subtitle": "Összeadás kerek tízesekkel",
-                    "file": "./src/data/lessons/grade2/round-tens-addition-01.json",
-                    "worldTitles": {
-                        "racing": "🏎️ Kerek körök gyakorlása",
-                        "cooking": "🍳 Kerek tányérok",
-                        "football": "⚽ Kerek számok a pályán"
-                    }
-                },
-                {
-                    "type": "addition",
-                    "mission": "📮 Véletlen szám + kerek tizes",
-                    "subtitle": "Véletlen számhoz kerek tizes hozzáadása",
-                    "file": "./src/data/lessons/grade2/round-tens-addition-02.json",
-                    "worldTitles": {
-                        "racing": "🏎️ Véletlen szám + kerek kör",
-                        "cooking": "🍳 Véletlen mennyiség + kerek tizes",
-                        "football": "⚽ Véletlen szám + kerek gól"
-                    }
-                },
-                {
-                    "type": "addition",
-                    "mission": "📮 Gyors számolás a postán",
-                    "subtitle": "Kétjegyű + egyjegyű összeadás",
-                    "file": "./src/data/lessons/grade2/single-digit-addition-01.json",
-                    "worldTitles": {
-                        "racing": "🏎️ Gyors számolás a pitben",
-                        "cooking": "🍳 Gyors számolás a konyhában",
-                        "football": "⚽ Gyors számolás a kispadon"
-                    }
-                },
-                {
-                    "type": "addition",
-                    "mission": "📮 A postás nehéz napja",
-                    "subtitle": "Összeadás 100-ig átlépés nélkül",
-                    "file": "./src/data/lessons/grade2/addition-01.json",
-                    "worldTitles": {
-                        "racing": "🏎️ Nehéz kör a dombokon",
-                        "cooking": "🍳 Nehéz nap a konyhában",
-                        "football": "⚽ Nehéz mérkőzés"
-                    }
-                },
-                {
-                    "type": "addition",
-                    "mission": "📮 A postás sokadik lépése",
-                    "subtitle": "Összeadás 100-ig átlépéssel is",
-                    "file": "./src/data/lessons/grade2/addition-02.json",
-                    "worldTitles": {
-                        "racing": "🏎️ Sokadik kör a pályán",
-                        "cooking": "🍳 Sokadik fogás",
-                        "football": "⚽ Sokadik gól a meccsen"
-                    }
-                },
-                {
-                    "type": "subtraction",
-                    "mission": "🎒 Kerek számokból visszajött",
-                    "subtitle": "Kivonás kerek tízesekkel",
-                    "file": "./src/data/lessons/grade2/round-tens-subtraction-01.json",
-                    "worldTitles": {
-                        "racing": "🏎️ Kerek körök kivonása",
-                        "cooking": "🍳 Kerek tányérok kivonása",
-                        "football": "⚽ Kerek számok kivonása"
-                    }
-                },
-                {
-                    "type": "subtraction",
-                    "mission": "🎒 Véletlen szám - kerek tizes",
-                    "subtitle": "Véletlen számból kerek tizes kivonása",
-                    "file": "./src/data/lessons/grade2/round-tens-subtraction-02.json",
-                    "worldTitles": {
-                        "racing": "🏎️ Véletlen szám - kerek kör",
-                        "cooking": "🍳 Véletlen mennyiség - kerek tizes",
-                        "football": "⚽ Véletlen szám - kerek gól"
-                    }
-                },
-                {
-                    "type": "subtraction",
-                    "mission": "🎒 Gyors számolás a postán",
-                    "subtitle": "Kétjegyű - egyjegyű kivonás",
-                    "file": "./src/data/lessons/grade2/single-digit-subtraction-01.json",
-                    "worldTitles": {
-                        "racing": "🏎️ Gyors számolás a pitben",
-                        "cooking": "🍳 Gyors számolás a konyhában",
-                        "football": "⚽ Gyors számolás a kispadon"
-                    }
-                },
-                {
-                    "type": "subtraction",
-                    "mission": "🎒 Mennyi maradt a csomagból?",
-                    "subtitle": "Kivonás 100-ig",
-                    "file": "./src/data/lessons/grade2/subtraction-01.json",
-                    "worldTitles": {
-                        "racing": "🏎️ Hány kör van még hátra?",
-                        "cooking": "🍳 Mennyi alapanyag maradt?",
-                        "football": "⚽ Hány perc van még?"
-                    }
-                },
-                {
-                    "type": "subtraction",
-                    "mission": "🎒 Kétjegyű kivonás",
-                    "subtitle": "Kétjegyű - kétjegyű átlépés nélkül",
-                    "file": "./src/data/lessons/grade2/subtraction-02.json",
-                    "worldTitles": {
-                        "racing": "🏎️ Kétjegyű körök kivonása",
-                        "cooking": "🍳 Kétjegyű mennyiségek kivonása",
-                        "football": "⚽ Kétjegyű gólok kivonása"
-                    }
-                },
-                {
-                    "type": "subtraction",
-                    "mission": "🎒 Kivonás átlépéssel",
-                    "subtitle": "Kivonás 100-ig átlépéssel",
-                    "file": "./src/data/lessons/grade2/subtraction-03.json",
-                    "worldTitles": {
-                        "racing": "🏎️ Körök átlépéssel",
-                        "cooking": "🍳 Mennyiségek átlépése",
-                        "football": "⚽ Gólok átlépéssel"
-                    }
-                },
-                {
-                    "type": "mixed",
-                    "mission": "📮 Hiányos nagy küldemény",
-                    "subtitle": "Vegyes műveletek 100-ig",
-                    "file": "./src/data/lessons/grade2/mixed-01.json",
-                    "worldTitles": {
-                        "racing": "🏎️ Hiányos nagy eredménylista",
-                        "cooking": "🍳 Hiányos nagy recept",
-                        "football": "⚽ Hiányos nagy meccs"
-                    }
-                },
-                {
-                    "type": "neighbor",
-                    "mission": "🔍 Számok szomszédai",
-                    "subtitle": "Szomszédok gyakorlása 100-ig",
-                    "file": "./src/data/lessons/grade2/neighbor-single-01.json",
-                    "worldTitles": {
-                        "racing": "🔍 Ki áll mellette?",
-                        "cooking": "🔍 Mi áll mellette a polcon?",
-                        "football": "🔍 Ki a szomszédja?"
-                    }
-                }
-            ]
+            "id": "missing-number-01",
+            "title": "Kiegészítés 10-ig",
+            "grades": [1],
+            "category": "numbers",
+            "skill": "missing-number",
+            "difficulty": 1,
+            "type": "missing-number",
+            "mission": "📮 Mennyi kis levél hiányzik?",
+            "subtitle": "Kiegészítés 10-ig",
+            "file": "./src/data/lessons/grade1/missing-number.json",
+            "worldTitles": {
+                "racing": "🔧 Hány kerék hiányzik?",
+                "cooking": "🍳 Hány hozzávaló hiányzik?",
+                "football": "⚽ Hány játékos hiányzik?"
+            }
+        },
+        {
+            "id": "missing-number-02",
+            "title": "Kiegészítés véletlen számig 20-ig",
+            "grades": [1],
+            "category": "numbers",
+            "skill": "missing-number",
+            "difficulty": 1,
+            "type": "missing-number",
+            "mission": "📮 Mennyi levél hiányzik?",
+            "subtitle": "Kiegészítés véletlen számig 20-ig",
+            "file": "./src/data/lessons/grade1/missing-random.json",
+            "worldTitles": {
+                "racing": "🔧 Hány kerék hiányzik?",
+                "cooking": "🍳 Hány hozzávaló hiányzik?",
+                "football": "⚽ Hány gól hiányzik?"
+            }
+        },
+        {
+            "id": "addition-01",
+            "title": "Összeadás 20-ig",
+            "grades": [1],
+            "category": "operations",
+            "skill": "addition",
+            "difficulty": 1,
+            "type": "addition",
+            "mission": "📮 A postás első útja",
+            "subtitle": "Összeadás 20-ig",
+            "file": "./src/data/lessons/grade1/addition-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Első gyakorlókör",
+                "cooking": "🍳 Első ételkészítés",
+                "football": "⚽ Az első félidő"
+            }
+        },
+        {
+            "id": "neighbor-01",
+            "title": "Számok szomszédai 100-ig",
+            "grades": [1, 2],
+            "category": "numbers",
+            "skill": "neighbours",
+            "difficulty": 1,
+            "type": "neighbor",
+            "mission": "🏡 Ki lakik mellette?",
+            "subtitle": "Számok szomszédai 100-ig",
+            "file": "./src/data/lessons/grade1/neighbor-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Ki áll mellette a rajtrácsán?",
+                "cooking": "🍳 Mi áll mellette a polcon?",
+                "football": "⚽ Ki áll mellette a sorfalban?"
+            }
+        },
+        {
+            "id": "addition-02",
+            "title": "Összeadás 20-ig átlépéssel",
+            "grades": [1],
+            "category": "operations",
+            "skill": "addition",
+            "difficulty": 2,
+            "type": "addition",
+            "mission": "📮 A postás rákapcsol",
+            "subtitle": "Összeadás 20-ig átlépéssel",
+            "file": "./src/data/lessons/grade1/addition-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Gyorsulás a célig",
+                "cooking": "🍳 Gyors keverés",
+                "football": "⚽ Gólpasszok sorozata"
+            }
+        },
+        {
+            "id": "subtraction-01",
+            "title": "Kivonás 20-ig",
+            "grades": [1],
+            "category": "operations",
+            "skill": "subtraction",
+            "difficulty": 1,
+            "type": "subtraction",
+            "mission": "🎒 Mennyi maradt a táskában?",
+            "subtitle": "Kivonás 20-ig",
+            "file": "./src/data/lessons/grade1/subtraction-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Hány pontot veszített?",
+                "cooking": "🍳 Mennyi alapanyag maradt?",
+                "football": "⚽ Hány gólt rúgtak már?"
+            }
+        },
+        {
+            "id": "comparison-01",
+            "title": "Összehasonlítás 10-ig",
+            "grades": [1],
+            "category": "numbers",
+            "skill": "comparison",
+            "difficulty": 1,
+            "type": "comparison",
+            "mission": "📦 Melyik kis zsák nehezebb?",
+            "subtitle": "Összehasonlítás 10-ig",
+            "file": "./src/data/lessons/grade1/comparison-00.json",
+            "worldTitles": {
+                "racing": "🏎️ Melyik autó gyorsabb?",
+                "cooking": "🍳 Melyik tál nehezebb?",
+                "football": "⚽ Melyik csapat erősebb?"
+            }
+        },
+        {
+            "id": "comparison-02",
+            "title": "Összehasonlítás 20-ig",
+            "grades": [1, 2],
+            "category": "numbers",
+            "skill": "comparison",
+            "difficulty": 1,
+            "type": "comparison",
+            "mission": "📦 Melyik nagy zsák nehezebb?",
+            "subtitle": "Összehasonlítás 20-ig",
+            "file": "./src/data/lessons/grade1/comparison-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Melyik autó gyorsabb?",
+                "cooking": "🍳 Melyik edény nehezebb?",
+                "football": "⚽ Melyik játékos magasabb?"
+            }
+        },
+        {
+            "id": "mixed-01",
+            "title": "Vegyes műveletek 20-ig",
+            "grades": [1],
+            "category": "operations",
+            "skill": "mixed",
+            "difficulty": 2,
+            "type": "mixed",
+            "mission": "📮 Hiányos küldemény",
+            "subtitle": "Vegyes műveletek 20-ig",
+            "file": "./src/data/lessons/grade1/mixed-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Hiányos eredménylista",
+                "cooking": "🍳 Hiányos recept",
+                "football": "⚽ Hiányos mérkőzés"
+            }
+        },
+        {
+            "id": "missing-number-03",
+            "title": "Hiányzó szám 100-ig",
+            "grades": [2],
+            "category": "numbers",
+            "skill": "missing-number",
+            "difficulty": 2,
+            "type": "missing-number",
+            "mission": "📮 Mennyi levél hiányzik?",
+            "subtitle": "Hiányzó szám véletlen számig 100-ig",
+            "file": "./src/data/lessons/grade2/missing-random.json",
+            "worldTitles": {
+                "racing": "🔧 Hány kerék hiányzik?",
+                "cooking": "🍳 Hány hozzávaló hiányzik?",
+                "football": "⚽ Hány gól hiányzik?"
+            }
+        },
+        {
+            "id": "round-tens-addition-01",
+            "title": "Összeadás kerek tízesekkel",
+            "grades": [2],
+            "category": "operations",
+            "skill": "addition",
+            "difficulty": 2,
+            "type": "addition",
+            "mission": "📮 A postás kerek utcája",
+            "subtitle": "Összeadás kerek tízesekkel",
+            "file": "./src/data/lessons/grade2/round-tens-addition-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Kerek körök gyakorlása",
+                "cooking": "🍳 Kerek tányérok",
+                "football": "⚽ Kerek számok a pályán"
+            }
+        },
+        {
+            "id": "round-tens-addition-02",
+            "title": "Véletlen szám + kerek tizes",
+            "grades": [2],
+            "category": "operations",
+            "skill": "addition",
+            "difficulty": 2,
+            "type": "addition",
+            "mission": "📮 Véletlen szám + kerek tizes",
+            "subtitle": "Véletlen számhoz kerek tizes hozzáadása",
+            "file": "./src/data/lessons/grade2/round-tens-addition-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Véletlen szám + kerek kör",
+                "cooking": "🍳 Véletlen mennyiség + kerek tizes",
+                "football": "⚽ Véletlen szám + kerek gól"
+            }
+        },
+        {
+            "id": "single-digit-addition-01",
+            "title": "Kétjegyű + egyjegyű összeadás",
+            "grades": [2],
+            "category": "operations",
+            "skill": "addition",
+            "difficulty": 2,
+            "type": "addition",
+            "mission": "📮 Gyors számolás a postán",
+            "subtitle": "Kétjegyű + egyjegyű összeadás",
+            "file": "./src/data/lessons/grade2/single-digit-addition-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Gyors számolás a pitben",
+                "cooking": "🍳 Gyors számolás a konyhában",
+                "football": "⚽ Gyors számolás a kispadon"
+            }
+        },
+        {
+            "id": "addition-03",
+            "title": "Összeadás 100-ig átlépés nélkül",
+            "grades": [2],
+            "category": "operations",
+            "skill": "addition",
+            "difficulty": 2,
+            "type": "addition",
+            "mission": "📮 A postás nehéz napja",
+            "subtitle": "Összeadás 100-ig átlépés nélkül",
+            "file": "./src/data/lessons/grade2/addition-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Nehéz kör a dombokon",
+                "cooking": "🍳 Nehéz nap a konyhában",
+                "football": "⚽ Nehéz mérkőzés"
+            }
+        },
+        {
+            "id": "addition-04",
+            "title": "Összeadás 100-ig átlépéssel is",
+            "grades": [2],
+            "category": "operations",
+            "skill": "addition",
+            "difficulty": 3,
+            "type": "addition",
+            "mission": "📮 A postás sokadik lépése",
+            "subtitle": "Összeadás 100-ig átlépéssel is",
+            "file": "./src/data/lessons/grade2/addition-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Sokadik kör a pályán",
+                "cooking": "🍳 Sokadik fogás",
+                "football": "⚽ Sokadik gól a meccsen"
+            }
+        },
+        {
+            "id": "round-tens-subtraction-01",
+            "title": "Kivonás kerek tízesekkel",
+            "grades": [2],
+            "category": "operations",
+            "skill": "subtraction",
+            "difficulty": 2,
+            "type": "subtraction",
+            "mission": "🎒 Kerek számokból visszajött",
+            "subtitle": "Kivonás kerek tízesekkel",
+            "file": "./src/data/lessons/grade2/round-tens-subtraction-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Kerek körök kivonása",
+                "cooking": "🍳 Kerek tányérok kivonása",
+                "football": "⚽ Kerek számok kivonása"
+            }
+        },
+        {
+            "id": "round-tens-subtraction-02",
+            "title": "Véletlen szám - kerek tizes",
+            "grades": [2],
+            "category": "operations",
+            "skill": "subtraction",
+            "difficulty": 2,
+            "type": "subtraction",
+            "mission": "🎒 Véletlen szám - kerek tizes",
+            "subtitle": "Véletlen számból kerek tizes kivonása",
+            "file": "./src/data/lessons/grade2/round-tens-subtraction-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Véletlen szám - kerek kör",
+                "cooking": "🍳 Véletlen mennyiség - kerek tizes",
+                "football": "⚽ Véletlen szám - kerek gól"
+            }
+        },
+        {
+            "id": "single-digit-subtraction-01",
+            "title": "Kétjegyű - egyjegyű kivonás",
+            "grades": [2],
+            "category": "operations",
+            "skill": "subtraction",
+            "difficulty": 2,
+            "type": "subtraction",
+            "mission": "🎒 Gyors számolás a postán",
+            "subtitle": "Kétjegyű - egyjegyű kivonás",
+            "file": "./src/data/lessons/grade2/single-digit-subtraction-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Gyors számolás a pitben",
+                "cooking": "🍳 Gyors számolás a konyhában",
+                "football": "⚽ Gyors számolás a kispadon"
+            }
+        },
+        {
+            "id": "subtraction-04",
+            "title": "Kivonás 100-ig",
+            "grades": [2],
+            "category": "operations",
+            "skill": "subtraction",
+            "difficulty": 2,
+            "type": "subtraction",
+            "mission": "🎒 Mennyi maradt a csomagból?",
+            "subtitle": "Kivonás 100-ig",
+            "file": "./src/data/lessons/grade2/subtraction-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Hány kör van még hátra?",
+                "cooking": "🍳 Mennyi alapanyag maradt?",
+                "football": "⚽ Hány perc van még?"
+            }
+        },
+        {
+            "id": "subtraction-05",
+            "title": "Kétjegyű - kétjegyű átlépés nélkül",
+            "grades": [2],
+            "category": "operations",
+            "skill": "subtraction",
+            "difficulty": 2,
+            "type": "subtraction",
+            "mission": "🎒 Kétjegyű kivonás",
+            "subtitle": "Kétjegyű - kétjegyű átlépés nélkül",
+            "file": "./src/data/lessons/grade2/subtraction-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Kétjegyű körök kivonása",
+                "cooking": "🍳 Kétjegyű mennyiségek kivonása",
+                "football": "⚽ Kétjegyű gólok kivonása"
+            }
+        },
+        {
+            "id": "subtraction-06",
+            "title": "Kivonás 100-ig átlépéssel",
+            "grades": [2],
+            "category": "operations",
+            "skill": "subtraction",
+            "difficulty": 3,
+            "type": "subtraction",
+            "mission": "🎒 Kivonás átlépéssel",
+            "subtitle": "Kivonás 100-ig átlépéssel",
+            "file": "./src/data/lessons/grade2/subtraction-03.json",
+            "worldTitles": {
+                "racing": "🏎️ Körök átlépéssel",
+                "cooking": "🍳 Mennyiségek átlépése",
+                "football": "⚽ Gólok átlépéssel"
+            }
+        },
+        {
+            "id": "mixed-02",
+            "title": "Vegyes műveletek 100-ig",
+            "grades": [2],
+            "category": "operations",
+            "skill": "mixed",
+            "difficulty": 3,
+            "type": "mixed",
+            "mission": "📮 Hiányos nagy küldemény",
+            "subtitle": "Vegyes műveletek 100-ig",
+            "file": "./src/data/lessons/grade2/mixed-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Hiányos nagy eredménylista",
+                "cooking": "🍳 Hiányos nagy recept",
+                "football": "⚽ Hiányos nagy meccs"
+            }
+        },
+        {
+            "id": "neighbor-02",
+            "title": "Szomszédok gyakorlása 100-ig",
+            "grades": [2],
+            "category": "numbers",
+            "skill": "neighbours",
+            "difficulty": 2,
+            "type": "neighbor",
+            "mission": "🔍 Számok szomszédai",
+            "subtitle": "Szomszédok gyakorlása 100-ig",
+            "file": "./src/data/lessons/grade2/neighbor-single-01.json",
+            "worldTitles": {
+                "racing": "🔍 Ki áll mellette?",
+                "cooking": "🔍 Mi áll mellette a polcon?",
+                "football": "🔍 Ki a szomszédja?"
+            }
         }
+    ],
+    "gradeConfig": [
+        { "grade": 1, "title": "1. osztály" },
+        { "grade": 2, "title": "2. osztály" }
     ]
 }

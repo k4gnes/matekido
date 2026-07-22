@@ -1,6 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
-import { getDailyStats, getActiveWorld } from "../profile/Profile.js";
+import { getDailyStats, getAllSkillStats, getActiveWorld } from "../profile/Profile.js";
+import { SKILLS, CATEGORIES } from "../data/skills.js";
 
 function formatDate(dateStr) {
     const d = new Date(dateStr + "T00:00:00");
@@ -13,14 +14,11 @@ function isToday(dateStr) {
     return dateStr === new Date().toISOString().split("T")[0];
 }
 
-const TYPE_LABELS = {
-    addition: "➕ Összeadás",
-    subtraction: "➖ Kivonás",
-    mixed: "🔀 Vegyes",
-    "missing-number": "❓ Hiányzó szám",
-    comparison: "⚖️ Összehasonlítás",
-    neighbor: "🔍 Szomszéd",
-    decomposition: "🧩 Bontás"
+const WORLD_STATS_TITLE = {
+    postman: "📬 Postai jelentés",
+    racing: "📊 Versenyjelentés",
+    cooking: "👨‍🍳 Szakács jelentés",
+    football: "⚽ Meccsjelentés"
 };
 
 export function renderStatsPage(root, onBack) {
@@ -28,6 +26,7 @@ export function renderStatsPage(root, onBack) {
     root.replaceChildren();
 
     const allStats = getDailyStats();
+    const skillStats = getAllSkillStats();
     const today = new Date().toISOString().split("T")[0];
     let selectedDate = today;
 
@@ -35,11 +34,6 @@ export function renderStatsPage(root, onBack) {
 
     const title = document.createElement("h1");
     const world = getActiveWorld();
-    const WORLD_STATS_TITLE = {
-        postman: "📬 Postai jelentés",
-        racing: "📊 Versenyjelentés",
-        football: "⚽ Meccsjelentés"
-    };
     title.textContent = WORLD_STATS_TITLE[world] ?? WORLD_STATS_TITLE.postman;
 
     // --- Daily stats with date navigation ---
@@ -63,10 +57,7 @@ export function renderStatsPage(root, onBack) {
     const dailyGrid = document.createElement("div");
     dailyGrid.className = "daily-grid";
 
-    const typeBreakdown = document.createElement("div");
-    typeBreakdown.className = "type-breakdown";
-
-    dailySection.append(nav, dailyGrid, typeBreakdown);
+    dailySection.append(nav, dailyGrid);
 
     function changeDate(delta) {
         const parts = selectedDate.split("-").map(Number);
@@ -113,66 +104,93 @@ export function renderStatsPage(root, onBack) {
             item.innerHTML = `<span class="daily-icon">${icon}</span><span class="daily-value">${value}</span><span class="daily-label">${label}</span>`;
             dailyGrid.append(item);
         });
+    }
 
-        typeBreakdown.replaceChildren();
+    renderDailyStats();
 
-        const byType = dayStats.byType || {};
-        const hasAny = Object.keys(byType).length > 0;
-        if (!hasAny) return;
+    // --- Skill stats ---
+    const skillSection = document.createElement("div");
+    skillSection.className = "profile-page-daily";
 
-        Object.entries(byType).forEach(([type, counts]) => {
-            const typeTotal = counts.correct + counts.wrong;
-            const pct = typeTotal > 0 ? Math.round((counts.correct / typeTotal) * 100) : 0;
+    const skillTitle = document.createElement("h2");
+    skillTitle.textContent = "📊 Készségek";
+    skillSection.append(skillTitle);
 
+    const skillGrid = document.createElement("div");
+    skillGrid.className = "skill-grid";
+
+    const categorized = {};
+    for (const [key, cat] of Object.entries(CATEGORIES)) {
+        categorized[key] = { ...cat, skills: [] };
+    }
+
+    for (const [skillId, skillData] of Object.entries(SKILLS)) {
+        const raw = skillStats[skillId];
+        if (raw && categorized[skillData.category]) {
+            const total = raw.correct + raw.wrong;
+            const percentage = total > 0 ? Math.round((raw.correct / total) * 100) : 0;
+            categorized[skillData.category].skills.push({
+                id: skillId,
+                title: skillData.title,
+                stats: { correct: raw.correct, total, percentage }
+            });
+        }
+    }
+
+    for (const [catKey, cat] of Object.entries(categorized)) {
+        if (cat.skills.length === 0) continue;
+
+        const catSection = document.createElement("div");
+        catSection.className = "skill-category";
+
+        const catTitle = document.createElement("h3");
+        catTitle.className = "skill-category-title";
+        catTitle.textContent = `${cat.icon} ${cat.title}`;
+        catSection.append(catTitle);
+
+        cat.skills.forEach(skill => {
             const row = document.createElement("div");
-            row.className = "type-row";
+            row.className = "skill-row";
 
             const label = document.createElement("span");
-            label.className = "type-label";
-            label.textContent = TYPE_LABELS[type] || type;
+            label.className = "skill-label";
+            label.textContent = skill.title;
 
             const barWrap = document.createElement("div");
-            barWrap.className = "type-bar-wrap";
+            barWrap.className = "skill-bar-wrap";
 
             const bar = document.createElement("div");
-            bar.className = "type-bar";
-            bar.style.width = pct + "%";
+            bar.className = "skill-bar";
+            bar.style.width = skill.stats.percentage + "%";
 
             barWrap.append(bar);
 
             const pctText = document.createElement("span");
-            pctText.className = "type-pct";
-            pctText.textContent = pct + "%";
+            pctText.className = "skill-pct";
+            pctText.textContent = skill.stats.percentage + "%";
 
-            row.append(label, barWrap, pctText);
-            typeBreakdown.append(row);
+            const detailText = document.createElement("span");
+            detailText.className = "skill-detail";
+            detailText.textContent = `${skill.stats.correct}/${skill.stats.total}`;
+
+            row.append(label, barWrap, pctText, detailText);
+            catSection.append(row);
         });
+
+        skillGrid.append(catSection);
     }
 
-    renderDailyStats();
+    skillSection.append(skillGrid);
 
     // --- Summary ---
     let totalCorrect = 0;
     let totalWrong = 0;
     let totalLessons = 0;
-    const summaryByType = {};
-
-    const dayCount = Object.keys(allStats).length;
 
     Object.values(allStats).forEach(day => {
         totalCorrect += day.correct;
         totalWrong += day.wrong;
         totalLessons += day.lessonsPlayed;
-
-        if (day.byType) {
-            Object.entries(day.byType).forEach(([type, counts]) => {
-                if (!summaryByType[type]) {
-                    summaryByType[type] = { correct: 0, wrong: 0 };
-                }
-                summaryByType[type].correct += counts.correct;
-                summaryByType[type].wrong += counts.wrong;
-            });
-        }
     });
 
     const totalAll = totalCorrect + totalWrong;
@@ -182,12 +200,7 @@ export function renderStatsPage(root, onBack) {
     summarySection.className = "profile-page-daily";
 
     const summaryTitle = document.createElement("h2");
-    const WORLD_SUMMARY_TITLE = {
-        postman: "📈 Összesítés",
-        racing: "📈 Összesítés",
-        football: "📈 Összesítés"
-    };
-    summaryTitle.textContent = WORLD_SUMMARY_TITLE[world] ?? "📈 Összesítés";
+    summaryTitle.textContent = "📈 Összesítés";
 
     const summaryGrid = document.createElement("div");
     summaryGrid.className = "daily-grid";
@@ -208,41 +221,6 @@ export function renderStatsPage(root, onBack) {
 
     summarySection.append(summaryTitle, summaryGrid);
 
-    if (dayCount > 1 && Object.keys(summaryByType).length > 0) {
-        const summaryTypeBreakdown = document.createElement("div");
-        summaryTypeBreakdown.className = "type-breakdown";
-
-        Object.entries(summaryByType).forEach(([type, counts]) => {
-            const typeTotal = counts.correct + counts.wrong;
-            const pct = typeTotal > 0 ? Math.round((counts.correct / typeTotal) * 100) : 0;
-
-            const row = document.createElement("div");
-            row.className = "type-row";
-
-            const label = document.createElement("span");
-            label.className = "type-label";
-            label.textContent = TYPE_LABELS[type] || type;
-
-            const barWrap = document.createElement("div");
-            barWrap.className = "type-bar-wrap";
-
-            const bar = document.createElement("div");
-            bar.className = "type-bar";
-            bar.style.width = pct + "%";
-
-            barWrap.append(bar);
-
-            const pctText = document.createElement("span");
-            pctText.className = "type-pct";
-            pctText.textContent = pct + "%";
-
-            row.append(label, barWrap, pctText);
-            summaryTypeBreakdown.append(row);
-        });
-
-        summarySection.append(summaryTypeBreakdown);
-    }
-
     // --- Navigation buttons ---
     const buttonRow = document.createElement("div");
     buttonRow.style.cssText = "display:flex; gap:.5rem; justify-content:center; margin-top:1rem;";
@@ -259,6 +237,6 @@ export function renderStatsPage(root, onBack) {
 
     buttonRow.append(profileButton, lessonsButton);
 
-    card.append(title, dailySection, summarySection, buttonRow);
+    card.append(title, dailySection, skillSection, summarySection, buttonRow);
     root.append(card);
 }

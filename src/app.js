@@ -55,6 +55,13 @@ async function startLesson(path) {
 
     const lesson = buildLesson(rawLesson);
 
+    let skill = null;
+    const allLessons = lessonIndex.lessons || [];
+    const found = allLessons.find(l => l.file === path);
+    if (found) {
+        skill = found.skill;
+    }
+
     const game = new Game(
         lesson,
         root,
@@ -63,7 +70,8 @@ async function startLesson(path) {
             onExit: showMenu,
             onProfile: showProfile
         },
-        path
+        path,
+        skill
     );
 
     game.start();

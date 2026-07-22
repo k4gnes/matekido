@@ -167,6 +167,53 @@ export function recordLessonResult(lessonFile, correct, wrong) {
 
 }
 
+export function recordSkillResult(skill, correct, wrong) {
+
+    if (!skill) return;
+
+    const profile = loadProfile();
+
+    if (!profile.skillStats) {
+        profile.skillStats = {};
+    }
+
+    if (!profile.skillStats[skill]) {
+        profile.skillStats[skill] = { correct: 0, wrong: 0 };
+    }
+
+    profile.skillStats[skill].correct += correct;
+    profile.skillStats[skill].wrong += wrong;
+
+    saveProfile(profile);
+
+}
+
+export function getSkillStats(skill) {
+
+    const profile = loadProfile();
+    const stats = profile.skillStats?.[skill];
+
+    if (!stats) return null;
+
+    const total = stats.correct + stats.wrong;
+
+    if (total === 0) return null;
+
+    return {
+        correct: stats.correct,
+        total,
+        percentage: Math.round((stats.correct / total) * 100)
+    };
+
+}
+
+export function getAllSkillStats() {
+
+    const profile = loadProfile();
+    return profile.skillStats || {};
+
+}
+
 export function getLessonStats(lessonFile) {
 
     const profile = loadProfile();

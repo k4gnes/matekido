@@ -87,3 +87,25 @@
     color: #888;
     text-align: right;
 }
+
+.category-section {
+    margin-bottom: 1.5rem;
+}
+
+.category-title {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: .5rem;
+    padding-bottom: .3rem;
+    border-bottom: 1px solid #eee;
+}
+
+.lesson-badges {
+    display: flex;
+    gap: .3rem;
+    margin-bottom: .3rem;
+}
+
+.lesson-difficulty-badge {
+    font-size: 1rem;
+}

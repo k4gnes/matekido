@@ -13,17 +13,18 @@ import { renderMissingProgress } from "../components/missingProgress.js";
 import { renderComparisonProgress } from "../components/comparisonProgress.js";
 import { renderNeighborProgress } from "../components/neighborProgress.js";
 
-import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, getActiveWorld } from "../profile/Profile.js";
+import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, recordSkillResult, getActiveWorld } from "../profile/Profile.js";
 import { grantRewards } from "../profile/RewardService.js";
 
 
 export class Game {
 
-    constructor(lesson, root, actions = {}, lessonFile = null) {
+    constructor(lesson, root, actions = {}, lessonFile = null, skill = null) {
 
         this.lesson = lesson;
         this.root = root;
         this.lessonFile = lessonFile;
+        this.skill = skill;
         this.currentStep = 0;
         this.correct = 0;
         this.wrong = 0;
@@ -82,6 +83,9 @@ export class Game {
                     recordDailyResult(this.correct, this.wrong, this.byType);
                     if (this.lessonFile) {
                         recordLessonResult(this.lessonFile, this.correct, this.wrong);
+                    }
+                    if (this.skill) {
+                        recordSkillResult(this.skill, this.correct, this.wrong);
                     }
                     if (this.wrong === 0) {
                         recordPerfectLesson();
@@ -206,6 +210,9 @@ export class Game {
                         recordDailyResult(this.correct, this.wrong, this.byType);
                         if (this.lessonFile) {
                             recordLessonResult(this.lessonFile, this.correct, this.wrong);
+                        }
+                        if (this.skill) {
+                            recordSkillResult(this.skill, this.correct, this.wrong);
                         }
                         if (this.wrong === 0) {
                             recordPerfectLesson();

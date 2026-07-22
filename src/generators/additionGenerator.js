@@ -16,6 +16,7 @@ export function generateAddition(options = {}) {
         sumMin = min * 2,
         sumMax = Number.MAX_SAFE_INTEGER,
         multiplesOfTen = false,
+        bMultiplesOfTen = false,
         bMax = null,
         bMin = null,
         noCrossTen = false
@@ -67,6 +68,12 @@ export function generateAddition(options = {}) {
 
         // Kerek tízes: b is legyen 10-es többszöröse
         if (multiplesOfTen) {
+            b = Math.ceil(b / 10) * 10;
+            if (b < minB || b > maxB) continue;
+        }
+
+        // Csak b legyen kerek tizes (a véletlen marad)
+        if (bMultiplesOfTen) {
             b = Math.ceil(b / 10) * 10;
             if (b < minB || b > maxB) continue;
         }

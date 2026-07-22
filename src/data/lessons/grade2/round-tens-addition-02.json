@@ -1,0 +1,49 @@
+{
+    "id": "grade2-round-tens-addition-02",
+    "title": "📮 Kerek tízes hozzáadása",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📮 Véletlen szám + kerek tizes!",
+            "text": "A postásnak segítened kell kerek számokkal! Adj hozzá egy kerek tízest a véletlen számhoz!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🏁 Véletlen szám + kerek tizes!",
+                    "text": "A versenyzőnek segítened kell kerek számokkal! Adj hozzá egy kerek tízest a véletlen számhoz!"
+                },
+                "football": {
+                    "title": "⚽ Véletlen szám + kerek tizes!",
+                    "text": "A játékosnak segítened kell kerek számokkal! Adj hozzá egy kerek tízest a véletlen számhoz!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "addition",
+            "options": {
+                "count": 5,
+                "min": 11,
+                "max": 89,
+                "carry": "any",
+                "sumMin": 21,
+                "sumMax": 100,
+                "bMultiplesOfTen": true
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Minden kerek tízest sikeresen hozzáadtál!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden kerek tízest sikeresen hozzáadtál!"
+                },
+                "football": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden kerek tízest sikeresen hozzáadtál!"
+                }
+            }
+        }
+    ]
+}

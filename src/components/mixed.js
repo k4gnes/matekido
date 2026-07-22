@@ -5,11 +5,12 @@ import { createNumberInput } from "./ui/numberInput.js";
 import { createHintBox } from "./ui/hintBox.js";
 import { createExercise } from "./ui/exercise.js";
 
-export function renderMixed(step, root, next, progress, onResult) {
+export function renderMixed(step, root, next, progress, onResult, onAttempt) {
 
     let mistakes = 0;
     let hintShown = false;
     let answered = false;
+    let reported = false;
 
     const title = document.createElement("h1");
     title.textContent = step.title;
@@ -80,6 +81,8 @@ export function renderMixed(step, root, next, progress, onResult) {
                 ? step.b
                 : step.answer;
 
+        onAttempt?.();
+
         if (answer === correctAnswer) {
 
             answered = true;
@@ -88,7 +91,10 @@ export function renderMixed(step, root, next, progress, onResult) {
 
             message.show("😊 Szép munka!", "success");
 
-            onResult?.(true);
+            if (!reported) {
+                reported = true;
+                onResult?.(true);
+            }
             setTimeout(() => next(), 800);
 
         } else {
@@ -105,7 +111,10 @@ export function renderMixed(step, root, next, progress, onResult) {
                 hintButton.style.display = "inline-block";
             }
 
-            onResult?.(false);
+            if (!reported) {
+                reported = true;
+                onResult?.(false);
+            }
             input.focus();
             input.select();
         }

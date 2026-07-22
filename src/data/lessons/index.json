@@ -130,6 +130,16 @@
                 },
                 {
                     "type": "addition",
+                    "mission": "📮 Véletlen szám + kerek tizes",
+                    "subtitle": "Véletlen számhoz kerek tizes hozzáadása",
+                    "file": "./src/data/lessons/grade2/round-tens-addition-02.json",
+                    "worldTitles": {
+                        "racing": "🏎️ Véletlen szám + kerek kör",
+                        "football": "⚽ Véletlen szám + kerek gól"
+                    }
+                },
+                {
+                    "type": "addition",
                     "mission": "📮 Gyors számolás a postán",
                     "subtitle": "Kétjegyű + egyjegyű összeadás",
                     "file": "./src/data/lessons/grade2/single-digit-addition-01.json",
@@ -141,7 +151,7 @@
                 {
                     "type": "addition",
                     "mission": "📮 A postás nehéz napja",
-                    "subtitle": "Összeadás 100-ig",
+                    "subtitle": "Összeadás 100-ig átlépés nélkül",
                     "file": "./src/data/lessons/grade2/addition-01.json",
                     "worldTitles": {
                         "racing": "🏎️ Nehéz kör a dombokon",
@@ -151,7 +161,7 @@
                 {
                     "type": "addition",
                     "mission": "📮 A postás sokadik lépése",
-                    "subtitle": "Összeadás 100-ig átlépéssel",
+                    "subtitle": "Összeadás 100-ig átlépéssel is",
                     "file": "./src/data/lessons/grade2/addition-02.json",
                     "worldTitles": {
                         "racing": "🏎️ Sokadik kör a pályán",
@@ -166,6 +176,16 @@
                     "worldTitles": {
                         "racing": "🏎️ Kerek körök kivonása",
                         "football": "⚽ Kerek számok kivonása"
+                    }
+                },
+                {
+                    "type": "subtraction",
+                    "mission": "🎒 Véletlen szám - kerek tizes",
+                    "subtitle": "Véletlen számból kerek tizes kivonása",
+                    "file": "./src/data/lessons/grade2/round-tens-subtraction-02.json",
+                    "worldTitles": {
+                        "racing": "🏎️ Véletlen szám - kerek kör",
+                        "football": "⚽ Véletlen szám - kerek gól"
                     }
                 },
                 {
@@ -186,6 +206,26 @@
                     "worldTitles": {
                         "racing": "🏎️ Hány kör van még hátra?",
                         "football": "⚽ Hány perc van még?"
+                    }
+                },
+                {
+                    "type": "subtraction",
+                    "mission": "🎒 Kétjegyű kivonás",
+                    "subtitle": "Kétjegyű - kétjegyű átlépés nélkül",
+                    "file": "./src/data/lessons/grade2/subtraction-02.json",
+                    "worldTitles": {
+                        "racing": "🏎️ Kétjegyű körök kivonása",
+                        "football": "⚽ Kétjegyű gólok kivonása"
+                    }
+                },
+                {
+                    "type": "subtraction",
+                    "mission": "🎒 Kivonás átlépéssel",
+                    "subtitle": "Kivonás 100-ig átlépéssel",
+                    "file": "./src/data/lessons/grade2/subtraction-03.json",
+                    "worldTitles": {
+                        "racing": "🏎️ Körök átlépéssel",
+                        "football": "⚽ Gólok átlépéssel"
                     }
                 },
                 {

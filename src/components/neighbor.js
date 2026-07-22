@@ -3,10 +3,11 @@ import { createNumberInput } from "./ui/numberInput.js";
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
 
-export function renderNeighbor(step, root, next, progress, onResult) {
+export function renderNeighbor(step, root, next, progress, onResult, onAttempt) {
 
     let mistakes = 0;
     let answered = false;
+    let reported = false;
 
     root.replaceChildren();
 
@@ -69,6 +70,8 @@ export function renderNeighbor(step, root, next, progress, onResult) {
 
         const answer = Number(input.value);
 
+        onAttempt?.();
+
         if (answer === step.answer) {
 
             answered = true;
@@ -77,7 +80,10 @@ export function renderNeighbor(step, root, next, progress, onResult) {
 
             message.show("😊 Szép munka!", "success");
 
-            onResult?.(true);
+            if (!reported) {
+                reported = true;
+                onResult?.(true);
+            }
             setTimeout(() => next(), 800);
 
         } else {
@@ -90,7 +96,10 @@ export function renderNeighbor(step, root, next, progress, onResult) {
 
             mistakes++;
 
-            onResult?.(false);
+            if (!reported) {
+                reported = true;
+                onResult?.(false);
+            }
             input.focus();
             input.select();
         }

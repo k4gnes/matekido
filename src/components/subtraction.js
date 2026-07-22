@@ -4,11 +4,12 @@ import { createNumberInput } from "./ui/numberInput.js";
 import { createHintBox } from "./ui/hintBox.js";
 import { createExercise } from "./ui/exercise.js";
 
-export function renderSubtraction(step, root, next, progress, onResult) {
+export function renderSubtraction(step, root, next, progress, onResult, onAttempt) {
 
     let mistakes = 0;
     let hintShown = false;
     let answered = false;
+    let reported = false;
 
     const title = document.createElement("h1");
     title.textContent = step.title;
@@ -61,6 +62,8 @@ export function renderSubtraction(step, root, next, progress, onResult) {
         const answer = Number(input.value);
         const correctAnswer = step.a - step.b;
 
+        onAttempt?.();
+
         if (answer === correctAnswer) {
 
             answered = true;
@@ -69,7 +72,10 @@ export function renderSubtraction(step, root, next, progress, onResult) {
 
             message.show("😊 Szép munka!", "success");
 
-            onResult?.(true);
+            if (!reported) {
+                reported = true;
+                onResult?.(true);
+            }
             setTimeout(() => next(), 800);
 
         } else {
@@ -86,7 +92,10 @@ export function renderSubtraction(step, root, next, progress, onResult) {
                 hintButton.style.display = "inline-block";
             }
 
-            onResult?.(false);
+            if (!reported) {
+                reported = true;
+                onResult?.(false);
+            }
             input.focus();
             input.select();
         }

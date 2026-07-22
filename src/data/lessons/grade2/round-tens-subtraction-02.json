@@ -1,0 +1,47 @@
+{
+    "id": "grade2-round-tens-subtraction-02",
+    "title": "🎒 Kerek tízes kivonása",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🎒 Véletlen szám - kerek tizes!",
+            "text": "A postás kiszállított néhány csomagot kerek utcákba! Vonj ki egy kerek tízest a véletlen számból!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🏁 Véletlen szám - kerek tizes!",
+                    "text": "A versenyző teljesített néhány kört! Vonj ki egy kerek tízest a véletlen számból!"
+                },
+                "football": {
+                    "title": "⚽ Véletlen szám - kerek tizes!",
+                    "text": "A játékos lőtt néhány gólt! Vonj ki egy kerek tízest a véletlen számból!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "subtraction",
+            "options": {
+                "count": 5,
+                "min": 21,
+                "max": 99,
+                "subMax": 80,
+                "bMultiplesOfTen": true
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Minden kerek tízest sikeresen kivontál!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden kerek tízest sikeresen kivontál!"
+                },
+                "football": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden kerek tízest sikeresen kivontál!"
+                }
+            }
+        }
+    ]
+}

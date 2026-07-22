@@ -9,10 +9,11 @@ const WORLD_TITLES = {
     football: "⚽ Hány gól hiányzik?"
 };
 
-export function renderMissingNumber(step, root, next, progress, onResult) {
+export function renderMissingNumber(step, root, next, progress, onResult, onAttempt) {
 
     let mistakes = 0;
     let answered = false;
+    let reported = false;
 
     const world = getActiveWorld();
 
@@ -54,6 +55,8 @@ export function renderMissingNumber(step, root, next, progress, onResult) {
 
         const answer = Number(input.value);
 
+        onAttempt?.();
+
         if (answer === step.answer) {
 
             answered = true;
@@ -62,7 +65,10 @@ export function renderMissingNumber(step, root, next, progress, onResult) {
 
             message.show("😊 Szép munka!", "success");
 
-            onResult?.(true);
+            if (!reported) {
+                reported = true;
+                onResult?.(true);
+            }
             setTimeout(() => next(), 800);
 
         } else {
@@ -75,7 +81,10 @@ export function renderMissingNumber(step, root, next, progress, onResult) {
 
             mistakes++;
 
-            onResult?.(false);
+            if (!reported) {
+                reported = true;
+                onResult?.(false);
+            }
             input.focus();
             input.select();
         }

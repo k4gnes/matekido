@@ -8,9 +8,17 @@ export function generateSubtraction(options = {}) {
         max = 20,
         subMax = 20,
         multiplesOfTen = false,
+        bMultiplesOfTen = false,
         bMax = null,
-        noCrossingTen = false
+        noCrossingTen = false,
+        crossingTen = "any"
     } = options;
+
+    const validCrossingModes = ["never", "always", "any"];
+
+    if (!validCrossingModes.includes(crossingTen)) {
+        throw new Error(`Érvénytelen crossingTen érték: ${crossingTen}`);
+    }
 
     const tasks = [];
     let attempts = 0;
@@ -26,13 +34,6 @@ export function generateSubtraction(options = {}) {
         const bUpper = Math.min(subMax, a);
         let b = random(1, bMax !== null ? Math.min(bMax, bUpper) : bUpper);
 
-        // Tízesátlépés tiltása: b ne legyen nagyobb, mint a egyesei
-        if (noCrossingTen) {
-            const onesA = a % 10;
-            if (onesA === 0) continue;
-            if (b > onesA) continue;
-        }
-
         // Kerek tízes: mind a, mind b legyen 10-es többszöröse
         if (multiplesOfTen) {
             const aRound = Math.ceil(a / 10) * 10;
@@ -44,7 +45,26 @@ export function generateSubtraction(options = {}) {
             continue;
         }
 
+        // Csak b legyen kerek tizes (a véletlen marad)
+        if (bMultiplesOfTen) {
+            b = Math.ceil(b / 10) * 10;
+            if (b < 10 || b >= a) continue;
+            if (a - b < 0) continue;
+            tasks.push({ a, b });
+            continue;
+        }
+
         if (a - b < 0) continue;
+
+        // Tízesátlépés ellenőrzése
+        const onesA = a % 10;
+        const onesB = b % 10;
+        const doesCross = onesA < onesB;
+
+        if (noCrossingTen && doesCross) continue;
+
+        if (crossingTen === "always" && !doesCross) continue;
+        if (crossingTen === "never" && doesCross) continue;
 
         tasks.push({ a, b });
     }

@@ -1,0 +1,47 @@
+{
+    "id": "grade2-subtraction-03",
+    "title": "🎒 Kivonás átlépéssel 100-ig",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🎒 Kivonás tízesátlépéssel",
+            "text": "A postás nehezebb csomagokat is szállít. Most átlépjük a tízest! Számold ki a különbséget!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🏁 Körök tízesátlépéssel",
+                    "text": "A versenyző nehezebb köröket teljesít. Most átlépjük a tízest!"
+                },
+                "football": {
+                    "title": "⚽ Gólok tízesátlépéssel",
+                    "text": "A játékos nehezebb gólokat rúg. Most átlépjük a tízest!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "subtraction",
+            "options": {
+                "count": 5,
+                "min": 20,
+                "max": 99,
+                "subMax": 99,
+                "crossingTen": "always"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Minden tízesátlépéses kivonást sikeresen megoldottál!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden tízesátlépéses kört sikeresen teljesítettél!"
+                },
+                "football": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden tízesátlépéses gólt sikeresen rúgtál!"
+                }
+            }
+        }
+    ]
+}

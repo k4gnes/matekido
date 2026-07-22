@@ -27,11 +27,16 @@ export class Game {
         this.currentStep = 0;
         this.correct = 0;
         this.wrong = 0;
+        this.attempts = 0;
         this.byType = {};
 
         this.onRestart = actions.onRestart;
         this.onExit = actions.onExit;
         this.onProfile = actions.onProfile;
+    }
+
+    onAttempt() {
+        this.attempts++;
     }
 
     start() {
@@ -149,7 +154,27 @@ export class Game {
                 break;
 
             case "exercise":
-                renderExercise(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, step.kind));
+                renderExercise(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, step.kind), () => this.onAttempt());
+                break;
+
+            case "decomposition":
+                renderDecomposition(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "decomposition"), () => this.onAttempt());
+                break;
+
+            case "missing-number":
+                renderMissingNumber(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "missing-number"), () => this.onAttempt());
+                break;
+
+            case "comparison":
+                renderComparison(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "comparison"), () => this.onAttempt());
+                break;
+
+            case "neighbor":
+                renderNeighbor(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "neighbor"), () => this.onAttempt());
+                break;
+
+            case "neighbor-single":
+                renderNeighborSingle(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "neighbor"), () => this.onAttempt());
                 break;
 
             case "decomposition":

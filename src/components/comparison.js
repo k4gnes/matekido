@@ -1,7 +1,7 @@
 import { createButton } from "./ui/button.js";
 import { createExercise } from "./ui/exercise.js";
 
-export function renderComparison(step, root, next, progress, onResult) {
+export function renderComparison(step, root, next, progress, onResult, onAttempt) {
 
     let answered = false;
 
@@ -26,6 +26,7 @@ export function renderComparison(step, root, next, progress, onResult) {
                 if (answered) return;
 
                 answered = true;
+                onAttempt?.();
 
                 if (op === step.operator) {
                     message.show("😊 Szép munka!", "success");

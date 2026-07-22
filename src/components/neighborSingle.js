@@ -10,10 +10,11 @@ const WORLD_NEIGHBOR_TITLE = {
     football: "🔍 Ki a szomszédja?"
 };
 
-export function renderNeighborSingle(step, root, next, progress, onResult) {
+export function renderNeighborSingle(step, root, next, progress, onResult, onAttempt) {
 
     let mistakes = 0;
     let answered = false;
+    let reported = false;
 
     const world = getActiveWorld();
 
@@ -58,6 +59,8 @@ export function renderNeighborSingle(step, root, next, progress, onResult) {
 
         const answer = Number(input.value);
 
+        onAttempt?.();
+
         if (answer === step.answer) {
 
             answered = true;
@@ -66,7 +69,10 @@ export function renderNeighborSingle(step, root, next, progress, onResult) {
 
             message.show("😊 Szép munka!", "success");
 
-            onResult?.(true);
+            if (!reported) {
+                reported = true;
+                onResult?.(true);
+            }
             setTimeout(() => next(), 800);
 
         } else {
@@ -79,7 +85,10 @@ export function renderNeighborSingle(step, root, next, progress, onResult) {
 
             mistakes++;
 
-            onResult?.(false);
+            if (!reported) {
+                reported = true;
+                onResult?.(false);
+            }
             input.focus();
             input.select();
         }

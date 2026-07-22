@@ -178,4 +178,8 @@ export function switchPlayer(id) {
     const data = loadUsers();
     data.activeId = id;
     saveUsers(data);
+
+    try {
+        localStorage.removeItem("matekido-lesson-filters");
+    } catch {}
 }

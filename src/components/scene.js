@@ -12,17 +12,19 @@ export function renderScene(step, root, next, progress, activeWorld, onExit) {
     const text = document.createElement("p");
     text.textContent = worldStep?.text ?? step.text;
 
+    const ac = new AbortController();
+
     let done = false;
 
     const button = createButton("Kezdjük!", {
         onClick: () => {
             if (done) return;
             done = true;
+            ac.abort();
             next();
         }
     });
 
-    const ac = new AbortController();
     document.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
             ac.abort();

@@ -181,5 +181,6 @@ export function switchPlayer(id) {
 
     try {
         localStorage.removeItem("matekido-lesson-filters");
+        localStorage.removeItem("matekido-lesson-filters-open");
     } catch {}
 }

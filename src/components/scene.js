@@ -1,7 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 
-export function renderScene(step, root, next, progress, activeWorld) {
+export function renderScene(step, root, next, progress, activeWorld, onExit) {
     root.innerHTML = "";
 
     const worldStep = activeWorld ? step.worldTitles?.[activeWorld] : null;
@@ -34,11 +34,22 @@ export function renderScene(step, root, next, progress, activeWorld) {
 
     const card = createCard();
 
-   if (progress) {
-    card.append(progress);
-}
+    if (progress) {
+        card.append(progress);
+    }
 
-    card.append(title, text, button);
+    const buttonRow = document.createElement("div");
+    buttonRow.style.cssText = "display:flex; gap:.5rem; justify-content:center;";
+    buttonRow.append(button);
+
+    if (onExit) {
+        const exitButton = createButton("📚 Leckék", {
+            onClick: () => onExit()
+        });
+        buttonRow.append(exitButton);
+    }
+
+    card.append(title, text, buttonRow);
 
     root.replaceChildren(card);
 

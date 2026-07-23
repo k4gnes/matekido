@@ -3,12 +3,42 @@
   "title": "✉️ Csomagok szétválogatása",
 
   "steps": [
+    {
+      "type": "scene",
+      "title": "🧩 Bontsd fel a számokat!",
+      "text": "Találd meg az összes lehetséges összeadást!",
+      "worldTitles": {
+        "racing": {
+          "title": "🧩 Bontsd fel a számokat!",
+          "text": "Találd meg az összes lehetséges összeadást a gumikhoz!"
+        },
+        "football": {
+          "title": "🧩 Bontsd fel a számokat!",
+          "text": "Találd meg az összes lehetséges összeadást a labdákhoz!"
+        }
+      }
+    },
 
     {
       "type": "decomposition",
       "number": 8,
       "title": "🧩 Bontsd fel a 8 számot összegekre!"
-    }
+    },
 
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden összeadást megtaláltál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden összeadást megtaláltál a gumikhoz!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden összeadást megtaláltál a labdákhoz!"
+        }
+      }
+    }
   ]
 }

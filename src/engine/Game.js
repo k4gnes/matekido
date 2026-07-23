@@ -154,7 +154,7 @@ export class Game {
         switch (step.type) {
 
             case "scene":
-                renderScene(step, this.root, () => this.next(), progress, getActiveWorld());
+                renderScene(step, this.root, () => this.next(), progress, getActiveWorld(), this.onExit);
                 break;
 
             case "exercise":

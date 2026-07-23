@@ -5,11 +5,27 @@ import { getLessonStats, getActiveWorld } from "../profile/Profile.js";
 import { CATEGORIES, SKILLS } from "../data/skills.js";
 
 const FILTER_STORAGE_KEY = "matekido-lesson-filters";
+const FILTER_OPEN_KEY = "matekido-lesson-filters-open";
 
 function saveFilters(filters) {
     try {
         localStorage.setItem(FILTER_STORAGE_KEY, JSON.stringify(filters));
     } catch {}
+}
+
+function saveFilterOpen(open) {
+    try {
+        localStorage.setItem(FILTER_OPEN_KEY, open ? "1" : "0");
+    } catch {}
+}
+
+function loadFilterOpen() {
+    try {
+        const val = localStorage.getItem(FILTER_OPEN_KEY);
+        if (val === "1") return true;
+        if (val === "0") return false;
+    } catch {}
+    return null;
 }
 
 function loadFilters() {
@@ -392,11 +408,14 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch) {
     const gradeConfig = index.gradeConfig || [];
 
     const filters = loadFilters();
-    let showFilters = filters.difficulty.length > 0 || filters.grade.length > 0 || filters.skills.length > 0 || filters.types.length > 0 || filters.ranges.length > 0 || filters.categories.length > 0;
+    const hasActiveFilters = filters.difficulty.length > 0 || filters.grade.length > 0 || filters.skills.length > 0 || filters.types.length > 0 || filters.ranges.length > 0 || filters.categories.length > 0;
+    const savedOpen = loadFilterOpen();
+    let showFilters = savedOpen !== null ? savedOpen : hasActiveFilters;
 
     const filterToggle = createButton("🔍 Szűrők", {
         onClick: () => {
             showFilters = !showFilters;
+            saveFilterOpen(showFilters);
             rebuildFilterPanel();
             filterPanel.style.display = showFilters ? "flex" : "none";
             filterToggle.textContent = showFilters ? "🔍 Szűrők ▲" : "🔍 Szűrők ▼";

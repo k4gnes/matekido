@@ -6,37 +6,35 @@
     {
       "type": "scene",
       "title": "🧩 Bontsd fel a számokat!",
-      "text": "Találd meg az összes lehetséges összeadást!",
+      "text": "Válaszd ki, mivel egyenlő a szám!",
       "worldTitles": {
         "racing": {
           "title": "🧩 Bontsd fel a számokat!",
-          "text": "Találd meg az összes lehetséges összeadást a gumikhoz!"
+          "text": "Válaszd ki, mivel egyenlő a szám!"
         },
         "football": {
           "title": "🧩 Bontsd fel a számokat!",
-          "text": "Találd meg az összes lehetséges összeadást a labdákhoz!"
+          "text": "Válaszd ki, mivel egyenlő a szám!"
         }
       }
     },
 
     {
-      "type": "decomposition",
-      "number": 8,
-      "title": "🧩 Bontsd fel a 8 számot összegekre!"
+      "type": "decomposition"
     },
 
     {
       "type": "celebration",
       "title": "🎉 Ügyes voltál!",
-      "text": "Minden összeadást megtaláltál!",
+      "text": "Ügyesen kiválasztottad a bontást!",
       "worldTitles": {
         "racing": {
           "title": "🎉 Ügyes voltál!",
-          "text": "Minden összeadást megtaláltál a gumikhoz!"
+          "text": "Ügyesen kiválasztottad a bontást!"
         },
         "football": {
           "title": "🎉 Ügyes voltál!",
-          "text": "Minden összeadást megtaláltál a labdákhoz!"
+          "text": "Ügyesen kiválasztottad a bontást!"
         }
       }
     }

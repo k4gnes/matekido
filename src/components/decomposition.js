@@ -1,63 +1,21 @@
 import { createCard } from "./ui/card.js";
-import { createButton } from "./ui/button.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
-const WORLD_DECOMPOSITION = {
-    postman: {
-        button: "📮 Bélyegzés után postázd!",
-        alreadyDone: "🙂 Ezt már kézbesítetted.",
-        success: "😊 Ügyes vagy!",
-        itemAlt: "Levél",
-        imgNormal: "./assets/images/mail.svg",
-        imgSelected: "./assets/images/mail-stamped.svg"
-    },
-    racing: {
-        button: "🏁 Rajt!",
-        alreadyDone: "🙂 Ezt már teljesítetted.",
-        success: "😊 Ügyes vagy!",
-        itemAlt: "Gumi",
-        imgNormal: null,
-        imgSelected: null
-    },
-    football: {
-        button: "⚽ Gól!",
-        alreadyDone: "🙂 Ezt már rúgtad.",
-        success: "😊 Ügyes vagy!",
-        itemAlt: "Labda",
-        imgNormal: null,
-        imgSelected: null
-    },
-    cooking: {
-        button: "🍳 Tálalás!",
-        alreadyDone: "🙂 Ezt már elkészítetted.",
-        success: "😊 Ügyes vagy!",
-        itemAlt: "Hozzávaló",
-        imgNormal: null,
-        imgSelected: null
-    }
-};
-
 const WORLD_EMOJI = {
-    postman: { normal: "✉️", selected: "💌" },
-    racing: { normal: "🛞", selected: "🏁" },
-    football: { normal: "⚽", selected: "🥅" },
-    cooking: { normal: "🍲", selected: "🍳" }
+    postman: "✉️",
+    racing: "🔧",
+    football: "⚽",
+    cooking: "🥄"
 };
 
-export function renderDecomposition(step, root, onNext, progress, onResult) {
+export function renderDecomposition(step, root, onNext, progress, onResult, onAttempt) {
 
     root.innerHTML = "";
 
     const world = getActiveWorld();
-    const t = WORLD_DECOMPOSITION[world] ?? WORLD_DECOMPOSITION.postman;
-    const emoji = WORLD_EMOJI[world] ?? WORLD_EMOJI.postman;
+    const emoji = WORLD_EMOJI[world] ?? "🍎";
 
-    const number = Math.floor(Math.random() * 10) + 1;
-
-    let selectedCount = 0;
-    const found = new Set();
-    const letters = [];
-    const foundPairs = [];
+    const number = step.number ?? Math.floor(Math.random() * 10) + 1;
 
     const card = createCard("decomposition-card");
 
@@ -66,150 +24,97 @@ export function renderDecomposition(step, root, onNext, progress, onResult) {
     }
 
     const titleElement = document.createElement("h1");
-    titleElement.textContent = `🧩 Bontsd fel a ${number} számot összegekre!`;
+    titleElement.textContent = `🧩 Bontsd fel a ${number} számot!`;
 
-    const numberElement = document.createElement("div");
-    numberElement.className = "decomposition-number";
-    numberElement.textContent = number;
+    const decomposition = document.createElement("div");
+    decomposition.style.cssText = "font-size:1.8rem; font-weight:bold; margin:0.5rem 0; color:#1a1a2e; background:#e0f2fe; padding:0.4rem 1rem; border-radius:10px; text-align:center;";
+    decomposition.textContent = `⭐ ${number} = 0 + ${number}`;
 
-    card.append(titleElement);
-    card.append(numberElement);
+    const emojiContainer = document.createElement("div");
+    emojiContainer.style.cssText = "display:flex; flex-wrap:wrap; gap:0.4rem; justify-content:center; margin:0.5rem 0; font-size:2rem; line-height:1; max-width:400px;";
 
-    const lettersContainer = document.createElement("div");
-    lettersContainer.className = "decomposition-letters";
+    const numberRow = document.createElement("div");
+    numberRow.style.cssText = "display:flex; flex-wrap:wrap; gap:0.4rem; justify-content:center; margin:0.2rem 0 0.5rem; font-size:0.9rem; font-weight:bold; color:#1a1a2e; max-width:400px;";
 
-    card.append(lettersContainer);
-
-    const mailbox = createButton(t.button, { className: "mailbox" });
-
-    const result = document.createElement("div");
-    result.className = "decomposition-result";
-
-    const foundList = document.createElement("div");
-    foundList.className = "found-list";
-
-    function renderFoundList() {
-
-        foundList.replaceChildren();
-
-        for (let first = 0; first <= number; first++) {
-
-            const second = number - first;
-
-            const key = `${first}-${second}`;
-
-            if (!found.has(key)) continue;
-
-            const row = document.createElement("div");
-            row.className = "found-row";
-
-            row.textContent = `✅ ${first} + ${second}`;
-
-            foundList.append(row);
-
-        }
-
-    }
-    renderFoundList();
-
-    mailbox.addEventListener("click", () => {
-
-        const first = selectedCount;
-        const second = number - selectedCount;
-
-        const key = `${first}-${second}`;
-
-        if (found.has(key)) {
-
-            result.textContent = t.alreadyDone;
-
-        } else {
-
-            found.add(key);
-
-            result.textContent = `⭐ ${first} + ${second}`;
-
-            renderFoundList();
-
-            if (found.size === number + 1) {
-                result.textContent = t.success;
-                result.style.color = "#2e7d32";
-                letters.forEach(l => {
-                    l.selected = false;
-                    if (t.imgNormal && l.element._imageEl) {
-                        l.element._imageEl.src = t.imgNormal;
-                    } else {
-                        l.element.textContent = emoji.normal;
-                    }
-                });
-                onResult?.(true);
-                setTimeout(() => onNext(), 2500);
-            }
-
-        }
-
-        letters.forEach(letter => {
-
-            letter.selected = false;
-
-            if (t.imgNormal && letter.element._imageEl) {
-                letter.element._imageEl.src = t.imgNormal;
-            } else {
-                letter.element.textContent = emoji.normal;
-            }
-
-        });
-
-        selectedCount = 0;
-
-    });
-
-    card.append(mailbox);
-    card.append(result);
-    card.append(foundList);
+    const items = [];
 
     for (let i = 0; i < number; i++) {
 
-        const letter = document.createElement("div");
-        letter.className = "letter";
+        const item = document.createElement("span");
+        item.textContent = emoji;
+        item.style.cssText = "cursor:pointer; transition: transform .15s, opacity .15s; user-select:none;";
+        item.dataset.index = i;
 
-        if (t.imgNormal) {
-            const image = document.createElement("img");
-            image.src = t.imgNormal;
-            image.alt = t.itemAlt;
-            letter.append(image);
-            letter._imageEl = image;
-        } else {
-            letter.textContent = emoji.normal;
-            letter.style.fontSize = "2rem";
-            letter.style.cursor = "pointer";
-        }
+        const numLabel = document.createElement("span");
+        numLabel.textContent = i + 1;
+        numLabel.style.cssText = "width:2rem; text-align:center;";
 
-        letter.addEventListener("click", () => {
-            const current = letters[i];
-
-            current.selected = !current.selected;
-
-            selectedCount += current.selected ? 1 : -1;
-
-            if (t.imgNormal && letter._imageEl) {
-                letter._imageEl.src = current.selected
-                    ? t.imgSelected
-                    : t.imgNormal;
-            } else {
-                letter.textContent = current.selected
-                    ? emoji.selected
-                    : emoji.normal;
+        item.addEventListener("mouseenter", () => {
+            if (!item.dataset.selected) {
+                item.style.transform = "scale(1.2)";
             }
+        });
+        item.addEventListener("mouseleave", () => {
+            if (!item.dataset.selected) {
+                item.style.transform = "";
+            }
+        });
 
+        item.addEventListener("click", () => {
+
+            const wasSelected = item.dataset.selected === "true";
+            item.dataset.selected = wasSelected ? "false" : "true";
+            item.style.opacity = wasSelected ? "1" : "0.4";
+            item.style.transform = wasSelected ? "" : "scale(0.9)";
+            numLabel.style.opacity = wasSelected ? "1" : "0.4";
+
+            const selectedCount = items.filter(it => it.dataset.selected === "true").length;
+            decomposition.textContent = `⭐ ${number} = ${selectedCount} + ${number - selectedCount}`;
         });
-        letters.push({
-            element: letter,
-            selected: false
-        });
-        lettersContainer.append(letter);
+
+        items.push(item);
+        emojiContainer.append(item);
+        numberRow.append(numLabel);
     }
 
+    const finishBtn = document.createElement("button");
+    finishBtn.textContent = "✅ Kiválasztom";
+    finishBtn.style.cssText = "padding:0.6rem 1.5rem; font-size:1rem; border:2px solid #4a90d9; border-radius:12px; background:#4a90d9; color:white; cursor:pointer;";
+    finishBtn.addEventListener("click", () => {
+
+        const selectedCount = items.filter(it => it.dataset.selected === "true").length;
+
+        items.forEach(it => it.style.pointerEvents = "none");
+        emojiContainer.style.display = "none";
+        finishBtn.style.display = "none";
+
+        const allDecomps = document.createElement("div");
+        allDecomps.style.cssText = "display:flex; flex-wrap:wrap; gap:0.4rem; justify-content:center; margin:0.5rem 0;";
+
+        for (let i = 0; i <= number; i++) {
+            const tag = document.createElement("span");
+            const isSelected = i === selectedCount;
+            tag.textContent = `${i} + ${number - i}`;
+            tag.style.cssText = `padding:0.3rem 0.7rem; border-radius:8px; font-size:1rem; font-weight:bold; border:2px solid ${isSelected ? "#2e7d32" : "#ccc"}; background:${isSelected ? "#e8f5e9" : "#f5f5f5"}; color:${isSelected ? "#2e7d32" : "#666"};`;
+            allDecomps.append(tag);
+        }
+
+        decomposition.textContent = `🎉 Szuper! ${number} = ${selectedCount} + ${number - selectedCount}`;
+        decomposition.style.color = "#2e7d32";
+
+        const nextBtn = document.createElement("button");
+        nextBtn.textContent = "➡️ Tovább";
+        nextBtn.style.cssText = "padding:0.6rem 1.5rem; font-size:1rem; border:2px solid #4a90d9; border-radius:12px; background:#4a90d9; color:white; cursor:pointer; margin-top:1rem;";
+        nextBtn.addEventListener("click", () => {
+            onAttempt?.();
+            onResult?.(true);
+            onNext();
+        });
+
+        card.append(allDecomps, nextBtn);
+    });
+
+    card.append(titleElement, decomposition, emojiContainer, numberRow, finishBtn);
     root.append(card);
 
 }

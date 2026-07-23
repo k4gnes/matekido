@@ -1,0 +1,40 @@
+{
+  "id": "decomposition-find-wrong-01",
+  "title": "🧩 Melyik a rossz bontás?",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧩 Keresd a rossz bontást!",
+      "text": "Nézd meg az összegeket, és kattints arra, ami nem egyenlő a számmal!",
+      "worldTitles": {
+        "racing": {
+          "title": "🧩 Keresd a rossz bontást!",
+          "text": "Nézd meg az összegeket, és kattints arra, ami nem egyenlő a számmal!"
+        },
+        "football": {
+          "title": "🧩 Keresd a rossz bontást!",
+          "text": "Nézd meg az összegeket, és kattints arra, ami nem egyenlő a számmal!"
+        }
+      }
+    },
+
+    {
+      "type": "decomposition-find-wrong"
+    },
+
+    {
+      "type": "decomposition-find-wrong"
+    },
+
+    {
+      "type": "decomposition-find-wrong"
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Megtaláltad az összes rossz bontást!"
+    }
+  ]
+}

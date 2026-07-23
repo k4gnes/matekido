@@ -54,6 +54,7 @@ const TYPE_EMOJI = {
     comparison: "⚖️",
     neighbor: "🔍",
     decomposition: "🧩",
+    "decomposition-find-wrong": "🔍",
     "place-value": "🔢",
     "place-value-two-input": "🔢"
 };
@@ -66,6 +67,7 @@ const TYPE_LABEL = {
     comparison: "Összehasonlítás",
     neighbor: "Szomszédok",
     decomposition: "Bontás",
+    "decomposition-find-wrong": "Rossz bontás",
     "place-value": "Helyiérték",
     "place-value-two-input": "Helyiérték (2)"
 };

@@ -37,6 +37,42 @@
             }
         },
         {
+            "id": "place-value-01",
+            "title": "Helyiérték 100-ig",
+            "grades": [1],
+            "category": "numbers",
+            "skill": "place-value",
+            "difficulty": 1,
+            "type": "place-value",
+            "range": 100,
+            "mission": "🔢 Hány tízes és egyes?",
+            "subtitle": "Helyiérték 100-ig",
+            "file": "./src/data/lessons/grade1/place-value-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Hány kerék és alkatrész?",
+                "cooking": "🍳 Hány tál és kanál?",
+                "football": "⚽ Hány játékos és csere?"
+            }
+        },
+        {
+            "id": "place-value-02",
+            "title": "Helyiérték – tízes és egyes 100-ig",
+            "grades": [1],
+            "category": "numbers",
+            "skill": "place-value",
+            "difficulty": 1,
+            "type": "place-value-two-input",
+            "range": 100,
+            "mission": "🔢 Hány tízes és egyes?",
+            "subtitle": "Helyiérték – tízes és egyes 100-ig",
+            "file": "./src/data/lessons/grade1/place-value-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Hány kerék és alkatrész?",
+                "cooking": "🍳 Hány tál és kanál?",
+                "football": "⚽ Hány játékos és csere?"
+            }
+        },
+        {
             "id": "missing-number-02",
             "title": "Kiegészítés véletlen számig 20-ig",
             "grades": [1],

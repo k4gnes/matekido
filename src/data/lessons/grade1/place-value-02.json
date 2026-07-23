@@ -1,0 +1,42 @@
+{
+  "id": "place-value-02",
+  "title": "Helyiérték – tízes és egyes 100-ig",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔢 Hány tízes és egyes?",
+      "text": "Számold ki, hány tízes és hány egyes van a számban!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Hány kerék és alkatrész?",
+          "text": "Számold ki, hány darab van belőlük!"
+        },
+        "football": {
+          "title": "⚽ Hány játékos és csere?",
+          "text": "Számold ki, hányan vannak!"
+        },
+        "cooking": {
+          "title": "🍳 Hány tál és kanál?",
+          "text": "Számold ki, hány eszköz kell!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "place-value-two-input",
+
+      "options": {
+        "count": 5,
+        "max": 100
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Szuper vagy!",
+      "text": "Minden feladatot megoldottál!"
+    }
+  ]
+}

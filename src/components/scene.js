@@ -38,6 +38,16 @@ export function renderScene(step, root, next, progress, activeWorld, onExit) {
         card.append(progress);
     }
 
+    card.append(title, text);
+
+    const illustration = worldStep?.illustration ?? step.illustration;
+    if (illustration) {
+        const ill = document.createElement("div");
+        ill.className = "illustration";
+        ill.innerHTML = illustration;
+        card.append(ill);
+    }
+
     const buttonRow = document.createElement("div");
     buttonRow.style.cssText = "display:flex; gap:.5rem; justify-content:center;";
     buttonRow.append(button);
@@ -49,7 +59,7 @@ export function renderScene(step, root, next, progress, activeWorld, onExit) {
         buttonRow.append(exitButton);
     }
 
-    card.append(title, text, buttonRow);
+    card.append(buttonRow);
 
     root.replaceChildren(card);
 

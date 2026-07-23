@@ -1,0 +1,46 @@
+{
+  "id": "place-value-01",
+  "title": "Helyiérték 100-ig",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔢 Hány tízes és egyes?",
+      "text": "Számold ki, mennyi a szám, ha tudod, hány tízes és hány egyes van benne!",
+      "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>📦</span> <span style='font-size:1.1rem;'>= 10 db</span> <span style='font-size:1.8rem;'>✉️</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 csomag = 10 levél</div>",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Hány kerék és alkatrész?",
+          "text": "Számold ki, mennyi a szám!",
+          "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>🛞</span> <span style='font-size:1.1rem;'>= 10 db</span> <span style='font-size:1.8rem;'>🔧</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 kerék = 10 alkatrész</div>"
+        },
+        "football": {
+          "title": "⚽ Hány játékos a pályán?",
+          "text": "Számold ki, hányan vannak!",
+          "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>👨‍🏫</span> <span style='font-size:1.1rem;'>= 10 db</span> <span style='font-size:1.8rem;'>⚽</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 edző = 10 játékos</div>"
+        },
+        "cooking": {
+          "title": "🍳 Hány hozzávaló kell?",
+          "text": "Számold ki, mennyi eszköz kell!",
+          "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>🍲</span> <span style='font-size:1.1rem;'>= 10 db</span> <span style='font-size:1.8rem;'>🥄</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 fazék = 10 kanál</div>"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "place-value",
+
+      "options": {
+        "count": 5,
+        "max": 100
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden helyiértéket jól kitaláltál!"
+    }
+  ]
+}

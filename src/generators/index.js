@@ -5,6 +5,7 @@ import { generateMissingTo10, generateMissingRandom } from "./missingNumberGener
 import { generateComparison } from "./comparisonGenerator.js?v=3";
 import { generateNeighbor } from "./neighborGenerator.js?v=3";
 import { generateNeighborSingle } from "./neighborSingleGenerator.js?v=3";
+import { generatePlaceValue } from "./placeValueGenerator.js?v=3";
 
 export function generate(step) {
 
@@ -26,6 +27,10 @@ export function generate(step) {
             return generateSubtraction(step.options);
         case "mixed":
             return generateMixed(step.options);
+        case "place-value":
+            return generatePlaceValue(step.options);
+        case "place-value-two-input":
+            return generatePlaceValue(step.options);
         case "multiplication":
         case "division":
 

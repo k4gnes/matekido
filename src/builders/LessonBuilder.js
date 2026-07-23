@@ -97,6 +97,20 @@ export function buildLesson(lesson) {
                     answer: task.answer,
                     inputPos: task.inputPos
                 });
+            } else if (step.generator === "place-value") {
+                result.push({
+                    type: "place-value",
+                    tens: task.tens,
+                    ones: task.ones,
+                    answer: task.answer
+                });
+            } else if (step.generator === "place-value-two-input") {
+                result.push({
+                    type: "place-value-two-input",
+                    tens: task.tens,
+                    ones: task.ones,
+                    answer: task.answer
+                });
             } else {
                 result.push({
                     type: "exercise",

@@ -53,7 +53,9 @@ const TYPE_EMOJI = {
     "missing-number": "❓",
     comparison: "⚖️",
     neighbor: "🔍",
-    decomposition: "🧩"
+    decomposition: "🧩",
+    "place-value": "🔢",
+    "place-value-two-input": "🔢"
 };
 
 const TYPE_LABEL = {
@@ -63,7 +65,9 @@ const TYPE_LABEL = {
     "missing-number": "Hiányzó szám",
     comparison: "Összehasonlítás",
     neighbor: "Szomszédok",
-    decomposition: "Bontás"
+    decomposition: "Bontás",
+    "place-value": "Helyiérték",
+    "place-value-two-input": "Helyiérték (2)"
 };
 
 const RANGE_LABEL = {
@@ -275,7 +279,7 @@ function createFilterPanel(filters, onFilterChange) {
     const skillBtns = document.createElement("div");
     skillBtns.className = "filter-skill-btns";
 
-    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed"];
+    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed", "place-value"];
 
     usedSkills.forEach(skillId => {
         const skill = SKILLS[skillId];

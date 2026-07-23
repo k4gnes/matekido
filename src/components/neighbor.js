@@ -9,6 +9,8 @@ export function renderNeighbor(step, root, next, progress, onResult, onAttempt) 
     let answered = false;
     let reported = false;
 
+    const ac = new AbortController();
+
     root.replaceChildren();
 
     const card = createCard();
@@ -84,6 +86,7 @@ export function renderNeighbor(step, root, next, progress, onResult, onAttempt) 
                 reported = true;
                 onResult?.(true);
             }
+            ac.abort();
             setTimeout(() => next(), 800);
 
         } else {
@@ -108,5 +111,5 @@ export function renderNeighbor(step, root, next, progress, onResult, onAttempt) 
     button.addEventListener("click", check);
     input.addEventListener("keydown", (e) => {
         if (e.key === "Enter") check();
-    });
+    }, { signal: ac.signal });
 }

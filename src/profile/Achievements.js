@@ -70,6 +70,13 @@ export const ACHIEVEMENTS = [
         title: "Mesterlövész",
         category: "perfect",
         target: 15
+    },
+    {
+        id: "perfect-fifty",
+        icon: "🏅",
+        title: "Nagymester",
+        category: "perfect",
+        target: 50
     }
 ];
 

@@ -12,6 +12,8 @@ export function renderMixed(step, root, next, progress, onResult, onAttempt) {
     let answered = false;
     let reported = false;
 
+    const ac = new AbortController();
+
     const title = document.createElement("h1");
     title.textContent = step.title;
 
@@ -95,6 +97,7 @@ export function renderMixed(step, root, next, progress, onResult, onAttempt) {
                 reported = true;
                 onResult?.(true);
             }
+            ac.abort();
             setTimeout(() => next(), 800);
 
         } else {
@@ -123,5 +126,5 @@ export function renderMixed(step, root, next, progress, onResult, onAttempt) {
     button.addEventListener("click", check);
     input.addEventListener("keydown", (e) => {
         if (e.key === "Enter") check();
-    });
+    }, { signal: ac.signal });
 }

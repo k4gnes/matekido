@@ -6,7 +6,8 @@ import { getActiveWorld } from "../profile/Profile.js";
 const WORLD_TITLES = {
     postman: "📮 Mennyi levél hiányzik?",
     racing: "🔧 Hány kerék hiányzik?",
-    football: "⚽ Hány gól hiányzik?"
+    football: "⚽ Hány gól hiányzik?",
+    cooking: "🍳 Hány hozzávaló hiányzik?"
 };
 
 export function renderMissingNumber(step, root, next, progress, onResult, onAttempt) {
@@ -14,6 +15,8 @@ export function renderMissingNumber(step, root, next, progress, onResult, onAtte
     let mistakes = 0;
     let answered = false;
     let reported = false;
+
+    const ac = new AbortController();
 
     const world = getActiveWorld();
 
@@ -69,6 +72,7 @@ export function renderMissingNumber(step, root, next, progress, onResult, onAtte
                 reported = true;
                 onResult?.(true);
             }
+            ac.abort();
             setTimeout(() => next(), 800);
 
         } else {
@@ -93,5 +97,5 @@ export function renderMissingNumber(step, root, next, progress, onResult, onAtte
     button.addEventListener("click", check);
     input.addEventListener("keydown", (e) => {
         if (e.key === "Enter") check();
-    });
+    }, { signal: ac.signal });
 }

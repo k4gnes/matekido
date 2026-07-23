@@ -3,7 +3,8 @@ import { getActiveWorld } from "../profile/Profile.js";
 const WORLD_MISSING = {
     postman: { done: "📭", current: "📮", next: "✉️" },
     racing: { done: "✅", current: "🔧", next: "⬜" },
-    football: { done: "✅", current: "⚽", next: "⬜" }
+    football: { done: "✅", current: "⚽", next: "⬜" },
+    cooking: { done: "✅", current: "🍳", next: "⬜" }
 };
 
 export function renderMissingProgress({ current, total }) {

@@ -46,7 +46,11 @@ export function renderProfilePage(root, onBack, onStats) {
     streak.className = "profile-page-stat";
     streak.innerHTML = `<span class="stat-icon">🔥</span><span class="stat-value">${profile.streak}</span><span class="stat-label">nap</span>`;
 
-    stats.append(lessons, stars, streak);
+    const perfect = document.createElement("div");
+    perfect.className = "profile-page-stat";
+    perfect.innerHTML = `<span class="stat-icon">✨</span><span class="stat-value">${profile.perfectLessons || 0}</span><span class="stat-label">hiba nélkül</span>`;
+
+    stats.append(lessons, stars, streak, perfect);
 
     const progressSection = document.createElement("div");
     progressSection.className = "profile-page-progress";
@@ -83,7 +87,9 @@ export function renderProfilePage(root, onBack, onStats) {
 
     questSection.append(questTitle, questBar, questText);
 
-    // --- Achievements ---
+    // --- Achievements + Worlds side by side ---
+    const achWorldRow = document.createElement("div");
+    achWorldRow.style.cssText = "display:flex; gap:0.5rem; width:100%; margin-bottom:0.3rem;";
     const achievementSection = document.createElement("div");
     achievementSection.className = "profile-page-achievements";
 
@@ -167,6 +173,8 @@ export function renderProfilePage(root, onBack, onStats) {
         worldSection.append(item);
     });
 
+    achWorldRow.append(achievementSection, worldSection);
+
     // --- Navigation buttons ---
     const buttonRow = document.createElement("div");
     buttonRow.style.cssText = "display:flex; gap:.5rem; justify-content:center; margin-top:1rem;";
@@ -183,6 +191,6 @@ export function renderProfilePage(root, onBack, onStats) {
 
     buttonRow.append(statsButton, menuButton);
 
-    card.append(avatarDisplay, title, nameDisplay, stats, progressSection, questSection, achievementSection, worldSection, buttonRow);
+    card.append(avatarDisplay, title, nameDisplay, stats, progressSection, questSection, achWorldRow, buttonRow);
     root.append(card);
 }

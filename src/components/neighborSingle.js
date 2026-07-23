@@ -7,7 +7,8 @@ import { getActiveWorld } from "../profile/Profile.js";
 const WORLD_NEIGHBOR_TITLE = {
     postman: "🔍 Szomszédok",
     racing: "🔍 Ki áll mellette?",
-    football: "🔍 Ki a szomszédja?"
+    football: "🔍 Ki a szomszédja?",
+    cooking: "🔍 Ki a szomszédja?"
 };
 
 export function renderNeighborSingle(step, root, next, progress, onResult, onAttempt) {
@@ -15,6 +16,8 @@ export function renderNeighborSingle(step, root, next, progress, onResult, onAtt
     let mistakes = 0;
     let answered = false;
     let reported = false;
+
+    const ac = new AbortController();
 
     const world = getActiveWorld();
 
@@ -73,6 +76,7 @@ export function renderNeighborSingle(step, root, next, progress, onResult, onAtt
                 reported = true;
                 onResult?.(true);
             }
+            ac.abort();
             setTimeout(() => next(), 800);
 
         } else {
@@ -97,5 +101,5 @@ export function renderNeighborSingle(step, root, next, progress, onResult, onAtt
     button.addEventListener("click", check);
     input.addEventListener("keydown", (e) => {
         if (e.key === "Enter") check();
-    });
+    }, { signal: ac.signal });
 }

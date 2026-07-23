@@ -62,10 +62,10 @@
 
 .profile-page-stats {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 4px;
     width: 100%;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
 }
 
 .profile-page-stat {
@@ -73,21 +73,21 @@
     flex-direction: column;
     align-items: center;
     background: rgba(79, 134, 247, 0.08);
-    border-radius: 8px;
-    padding: 0.4rem;
+    border-radius: 6px;
+    padding: 0.25rem 0.3rem;
 }
 
 .stat-icon {
-    font-size: 1.1rem;
+    font-size: 0.85rem;
 }
 
 .stat-value {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 700;
 }
 
 .stat-label {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     opacity: 0.7;
 }
 
@@ -235,22 +235,23 @@
 }
 
 .profile-page-achievements {
-    width: 100%;
-    margin-bottom: 0.6rem;
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 0.3rem;
 }
 
 .profile-page-achievements h2 {
-    font-size: 0.85rem;
-    margin-bottom: 0.3rem;
+    font-size: 0.75rem;
+    margin-bottom: 0.2rem;
 }
 
 .achievement-item {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 0.3rem 0.5rem;
-    border-radius: 6px;
-    margin-bottom: 3px;
+    gap: 4px;
+    padding: 0.2rem 0.35rem;
+    border-radius: 5px;
+    margin-bottom: 2px;
 }
 
 .achievement-item.unlocked {
@@ -263,7 +264,7 @@
 }
 
 .achievement-icon {
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 .achievement-info {
@@ -273,31 +274,32 @@
 
 .achievement-name {
     font-weight: 600;
-    font-size: 0.8rem;
+    font-size: 0.65rem;
 }
 
 .achievement-req {
-    font-size: 0.7rem;
+    font-size: 0.55rem;
     opacity: 0.7;
 }
 
 .profile-page-worlds {
-    width: 100%;
-    margin-bottom: 0.6rem;
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 0.3rem;
 }
 
 .profile-page-worlds h2 {
-    font-size: 0.85rem;
-    margin-bottom: 0.3rem;
+    font-size: 0.75rem;
+    margin-bottom: 0.2rem;
 }
 
 .world-item {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 0.4rem 0.5rem;
-    border-radius: 6px;
-    margin-bottom: 3px;
+    gap: 4px;
+    padding: 0.25rem 0.35rem;
+    border-radius: 5px;
+    margin-bottom: 2px;
     transition: background .15s;
 }
 
@@ -320,7 +322,7 @@
 }
 
 .world-icon {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
 }
 
 .world-info {
@@ -330,11 +332,11 @@
 
 .world-name {
     font-weight: 600;
-    font-size: 0.8rem;
+    font-size: 0.65rem;
 }
 
 .world-desc {
-    font-size: 0.7rem;
+    font-size: 0.55rem;
     opacity: 0.7;
 }
 

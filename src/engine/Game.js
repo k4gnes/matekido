@@ -181,26 +181,6 @@ export class Game {
                 renderNeighborSingle(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "neighbor"), () => this.onAttempt());
                 break;
 
-            case "decomposition":
-                renderDecomposition(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "decomposition"));
-                break;
-
-            case "missing-number":
-                renderMissingNumber(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "missing-number"));
-                break;
-
-            case "comparison":
-                renderComparison(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "comparison"));
-                break;
-
-            case "neighbor":
-                renderNeighbor(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "neighbor"));
-                break;
-
-            case "neighbor-single":
-                renderNeighborSingle(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "neighbor"));
-                break;
-
             case "celebration": {
                 let milestone2 = null;
                 let reward2 = null;

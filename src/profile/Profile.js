@@ -92,7 +92,7 @@ export function completeLesson() {
 
     let milestone = null;
 
-    const goals = [10, 25, 50, 100];
+    const goals = [10, 25, 50, 100, 150];
 
     for (const goal of goals) {
 
@@ -353,7 +353,7 @@ export function getNextGoal() {
 
     const profile = loadProfile();
 
-    const goals = [10, 25, 50, 100];
+    const goals = [10, 25, 50, 100, 150];
 
     for (const goal of goals) {
 

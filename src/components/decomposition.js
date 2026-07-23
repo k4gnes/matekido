@@ -26,13 +26,22 @@ const WORLD_DECOMPOSITION = {
         itemAlt: "Labda",
         imgNormal: null,
         imgSelected: null
+    },
+    cooking: {
+        button: "🍳 Tálalás!",
+        alreadyDone: "🙂 Ezt már elkészítetted.",
+        success: "😊 Ügyes vagy!",
+        itemAlt: "Hozzávaló",
+        imgNormal: null,
+        imgSelected: null
     }
 };
 
 const WORLD_EMOJI = {
     postman: { normal: "✉️", selected: "💌" },
     racing: { normal: "🛞", selected: "🏁" },
-    football: { normal: "⚽", selected: "🥅" }
+    football: { normal: "⚽", selected: "🥅" },
+    cooking: { normal: "🍲", selected: "🍳" }
 };
 
 export function renderDecomposition(step, root, onNext, progress, onResult) {

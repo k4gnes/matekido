@@ -395,3 +395,51 @@
     min-width: 40px;
     text-align: right;
 }
+
+.stats-tab-row {
+    display: flex;
+    gap: 0;
+    margin-bottom: 0.8rem;
+    width: 100%;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.stats-tab {
+    flex: 1;
+    margin: 0;
+    padding: 0.5rem 0;
+    font-size: 0.85rem;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    background: transparent;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.stats-tab:hover {
+    color: #333;
+}
+
+.stats-tab.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+    font-weight: 600;
+}
+
+.stats-section {
+    width: 100%;
+    margin-bottom: 0.6rem;
+}
+
+.stats-section h2 {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+}
+
+.type-breakdown-title {
+    font-size: 0.8rem;
+    margin: 0.6rem 0 0.3rem;
+    color: #666;
+}

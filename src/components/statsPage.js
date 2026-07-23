@@ -21,6 +21,40 @@ const WORLD_STATS_TITLE = {
     football: "⚽ Meccsjelentés"
 };
 
+const TYPE_LABEL = {
+    addition: "Összeadás",
+    subtraction: "Kivonás",
+    mixed: "Vegyes",
+    "missing-number": "Hiányzó szám",
+    comparison: "Összehasonlítás",
+    neighbor: "Szomszédok",
+    decomposition: "Bontás"
+};
+
+const TYPE_EMOJI = {
+    addition: "➕",
+    subtraction: "➖",
+    mixed: "🔀",
+    "missing-number": "❓",
+    comparison: "⚖️",
+    neighbor: "🔍",
+    decomposition: "🧩"
+};
+
+function createStatGrid(items, className) {
+    const grid = document.createElement("div");
+    grid.className = className || "daily-grid";
+
+    items.forEach(({ icon, value, label }) => {
+        const item = document.createElement("div");
+        item.className = "daily-item";
+        item.innerHTML = `<span class="daily-icon">${icon}</span><span class="daily-value">${value}</span><span class="daily-label">${label}</span>`;
+        grid.append(item);
+    });
+
+    return grid;
+}
+
 export function renderStatsPage(root, onBack) {
 
     root.replaceChildren();
@@ -29,6 +63,7 @@ export function renderStatsPage(root, onBack) {
     const skillStats = getAllSkillStats();
     const today = new Date().toISOString().split("T")[0];
     let selectedDate = today;
+    let activeTab = "daily";
 
     const card = createCard();
 
@@ -36,9 +71,21 @@ export function renderStatsPage(root, onBack) {
     const world = getActiveWorld();
     title.textContent = WORLD_STATS_TITLE[world] ?? WORLD_STATS_TITLE.postman;
 
-    // --- Daily stats with date navigation ---
+    // --- Tab buttons ---
+    const tabRow = document.createElement("div");
+    tabRow.className = "stats-tab-row";
+
+    const dailyTab = createButton("📅 Napi", { onClick: () => switchTab("daily") });
+    dailyTab.className = "stats-tab active";
+
+    const summaryTab = createButton("📈 Összesített", { onClick: () => switchTab("summary") });
+    summaryTab.className = "stats-tab";
+
+    tabRow.append(dailyTab, summaryTab);
+
+    // --- Daily section ---
     const dailySection = document.createElement("div");
-    dailySection.className = "profile-page-daily";
+    dailySection.className = "stats-section";
 
     const nav = document.createElement("div");
     nav.className = "daily-nav";
@@ -57,7 +104,10 @@ export function renderStatsPage(root, onBack) {
     const dailyGrid = document.createElement("div");
     dailyGrid.className = "daily-grid";
 
-    dailySection.append(nav, dailyGrid);
+    const typeBreakdown = document.createElement("div");
+    typeBreakdown.className = "type-breakdown";
+
+    dailySection.append(nav, dailyGrid, typeBreakdown);
 
     function changeDate(delta) {
         const parts = selectedDate.split("-").map(Number);
@@ -90,27 +140,96 @@ export function renderStatsPage(root, onBack) {
         nextBtn.style.visibility = selectedDate >= today ? "hidden" : "visible";
 
         dailyGrid.replaceChildren();
-
-        const items = [
+        const statItems = [
             { icon: "✅", value: dayStats.correct, label: "helyes" },
             { icon: "❌", value: dayStats.wrong, label: "hibás" },
             { icon: "📖", value: dayStats.lessonsPlayed, label: "lecke" },
             { icon: "🎯", value: accuracy + "%", label: "pontosság" }
         ];
-
-        items.forEach(({ icon, value, label }) => {
+        statItems.forEach(({ icon, value, label }) => {
             const item = document.createElement("div");
             item.className = "daily-item";
             item.innerHTML = `<span class="daily-icon">${icon}</span><span class="daily-value">${value}</span><span class="daily-label">${label}</span>`;
             dailyGrid.append(item);
         });
+
+        typeBreakdown.replaceChildren();
+        const types = Object.entries(dayStats.byType).filter(([, v]) => v.correct + v.wrong > 0);
+        if (types.length > 0) {
+            const typeTitle = document.createElement("h3");
+            typeTitle.className = "type-breakdown-title";
+            typeTitle.textContent = "Feladatok bontásban";
+            typeBreakdown.append(typeTitle);
+
+            types.sort((a, b) => (b[1].correct + b[1].wrong) - (a[1].correct + a[1].wrong));
+
+            types.forEach(([type, counts]) => {
+                const t = counts.correct + counts.wrong;
+                const pct = t > 0 ? Math.round((counts.correct / t) * 100) : 0;
+
+                const row = document.createElement("div");
+                row.className = "type-row";
+
+                const label = document.createElement("span");
+                label.className = "type-label";
+                label.textContent = `${TYPE_EMOJI[type] ?? ""} ${TYPE_LABEL[type] ?? type}`;
+
+                const barWrap = document.createElement("div");
+                barWrap.className = "type-bar-wrap";
+                const bar = document.createElement("div");
+                bar.className = "type-bar";
+                bar.style.width = pct + "%";
+                barWrap.append(bar);
+
+                const pctText = document.createElement("span");
+                pctText.className = "type-pct";
+                pctText.textContent = pct + "%";
+
+                const detailText = document.createElement("span");
+                detailText.className = "skill-detail";
+                detailText.textContent = `${counts.correct}/${t}`;
+
+                row.append(label, barWrap, pctText, detailText);
+                typeBreakdown.append(row);
+            });
+        }
     }
 
     renderDailyStats();
 
+    // --- Summary section ---
+    const summarySection = document.createElement("div");
+    summarySection.className = "stats-section";
+    summarySection.style.display = "none";
+
+    let totalCorrect = 0;
+    let totalWrong = 0;
+    let totalLessons = 0;
+
+    Object.values(allStats).forEach(day => {
+        totalCorrect += day.correct;
+        totalWrong += day.wrong;
+        totalLessons += day.lessonsPlayed;
+    });
+
+    const totalAll = totalCorrect + totalWrong;
+    const totalAccuracy = totalAll > 0 ? Math.round((totalCorrect / totalAll) * 100) : 0;
+
+    const summaryTitle = document.createElement("h2");
+    summaryTitle.textContent = "📊 Összesített adatok";
+
+    const summaryGrid = createStatGrid([
+        { icon: "✅", value: totalCorrect, label: "helyes" },
+        { icon: "❌", value: totalWrong, label: "hibás" },
+        { icon: "📖", value: totalLessons, label: "lecke" },
+        { icon: "🎯", value: totalAccuracy + "%", label: "pontosság" }
+    ]);
+
+    summarySection.append(summaryTitle, summaryGrid);
+
     // --- Skill stats ---
     const skillSection = document.createElement("div");
-    skillSection.className = "profile-page-daily";
+    skillSection.className = "stats-section";
 
     const skillTitle = document.createElement("h2");
     skillTitle.textContent = "📊 Készségek";
@@ -181,45 +300,16 @@ export function renderStatsPage(root, onBack) {
     }
 
     skillSection.append(skillGrid);
+    summarySection.append(skillSection);
 
-    // --- Summary ---
-    let totalCorrect = 0;
-    let totalWrong = 0;
-    let totalLessons = 0;
-
-    Object.values(allStats).forEach(day => {
-        totalCorrect += day.correct;
-        totalWrong += day.wrong;
-        totalLessons += day.lessonsPlayed;
-    });
-
-    const totalAll = totalCorrect + totalWrong;
-    const totalAccuracy = totalAll > 0 ? Math.round((totalCorrect / totalAll) * 100) : 0;
-
-    const summarySection = document.createElement("div");
-    summarySection.className = "profile-page-daily";
-
-    const summaryTitle = document.createElement("h2");
-    summaryTitle.textContent = "📈 Összesítés";
-
-    const summaryGrid = document.createElement("div");
-    summaryGrid.className = "daily-grid";
-
-    const summaryItems = [
-        { icon: "✅", value: totalCorrect, label: "helyes" },
-        { icon: "❌", value: totalWrong, label: "hibás" },
-        { icon: "📖", value: totalLessons, label: "lecke" },
-        { icon: "🎯", value: totalAccuracy + "%", label: "pontosság" }
-    ];
-
-    summaryItems.forEach(({ icon, value, label }) => {
-        const item = document.createElement("div");
-        item.className = "daily-item summary-item";
-        item.innerHTML = `<span class="daily-icon">${icon}</span><span class="daily-value">${value}</span><span class="daily-label">${label}</span>`;
-        summaryGrid.append(item);
-    });
-
-    summarySection.append(summaryTitle, summaryGrid);
+    // --- Tab switching ---
+    function switchTab(tab) {
+        activeTab = tab;
+        dailyTab.className = "stats-tab" + (tab === "daily" ? " active" : "");
+        summaryTab.className = "stats-tab" + (tab === "summary" ? " active" : "");
+        dailySection.style.display = tab === "daily" ? "" : "none";
+        summarySection.style.display = tab === "summary" ? "" : "none";
+    }
 
     // --- Navigation buttons ---
     const buttonRow = document.createElement("div");
@@ -237,6 +327,6 @@ export function renderStatsPage(root, onBack) {
 
     buttonRow.append(profileButton, lessonsButton);
 
-    card.append(title, dailySection, skillSection, summarySection, buttonRow);
+    card.append(title, tabRow, dailySection, summarySection, buttonRow);
     root.append(card);
 }

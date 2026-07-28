@@ -111,6 +111,17 @@ export function buildLesson(lesson) {
                     ones: task.ones,
                     answer: task.answer
                 });
+            } else if (step.generator === "bridge-to-10") {
+                result.push({
+                    type: "bridge-ten",
+                    a: task.a,
+                    b: task.b,
+                    complement: task.complement,
+                    remainder: task.remainder,
+                    sum: task.sum,
+                    correctDecomp: task.correctDecomp,
+                    options: task.options
+                });
             } else {
                 result.push({
                     type: "exercise",

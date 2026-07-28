@@ -5,16 +5,20 @@
   "steps": [
     {
       "type": "scene",
-      "title": "🧩 Bontsd fel a számokat!",
-      "text": "Válaszd ki, mivel egyenlő a szám!",
+      "title": "🧩 Keresd az összes bontást!",
+      "text": "Kattints a levelekre, és találd meg az összes bontást!",
       "worldTitles": {
         "racing": {
-          "title": "🧩 Bontsd fel a számokat!",
-          "text": "Válaszd ki, mivel egyenlő a szám!"
+          "title": "🧩 Keresd az összes bontást!",
+          "text": "Kattints a szerszámokra, és találd meg az összes bontást!"
         },
         "football": {
-          "title": "🧩 Bontsd fel a számokat!",
-          "text": "Válaszd ki, mivel egyenlő a szám!"
+          "title": "🧩 Keresd az összes bontást!",
+          "text": "Kattints a labdákra, és találd meg az összes bontást!"
+        },
+        "postman": {
+          "title": "📮 Keresd az összes bontást!",
+          "text": "Kattints a levelekre, és találd meg az összes bontást!"
         }
       }
     },
@@ -26,15 +30,19 @@
     {
       "type": "celebration",
       "title": "🎉 Ügyes voltál!",
-      "text": "Ügyesen kiválasztottad a bontást!",
+      "text": "Megtaláltad az összes bontást!",
       "worldTitles": {
         "racing": {
           "title": "🎉 Ügyes voltál!",
-          "text": "Ügyesen kiválasztottad a bontást!"
+          "text": "Megtaláltad az összes bontást!"
         },
         "football": {
           "title": "🎉 Ügyes voltál!",
-          "text": "Ügyesen kiválasztottad a bontást!"
+          "text": "Megtaláltad az összes bontást!"
+        },
+        "postman": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Megtaláltad az összes bontást!"
         }
       }
     }

@@ -2,18 +2,65 @@ import { createCard } from "./ui/card.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_EMOJI = {
-    postman: "✉️",
+    postman: null,
     racing: "🔧",
     football: "⚽",
     cooking: "🥄"
 };
+
+function createEnvelopeSVG() {
+    const ns = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(ns, "svg");
+    svg.setAttribute("viewBox", "0 0 64 48");
+    svg.setAttribute("width", "24");
+    svg.setAttribute("height", "18");
+
+    const rect = document.createElementNS(ns, "rect");
+    rect.setAttribute("x", "2");
+    rect.setAttribute("y", "2");
+    rect.setAttribute("width", "60");
+    rect.setAttribute("height", "44");
+    rect.setAttribute("rx", "5");
+    rect.setAttribute("fill", "#ffffff");
+    rect.setAttribute("stroke", "#64748b");
+    rect.setAttribute("stroke-width", "2");
+
+    const flap = document.createElementNS(ns, "polyline");
+    flap.setAttribute("points", "2,4 32,25 62,4");
+    flap.setAttribute("fill", "none");
+    flap.setAttribute("stroke", "#64748b");
+    flap.setAttribute("stroke-width", "2");
+
+    const stamp = document.createElementNS(ns, "rect");
+    stamp.setAttribute("x", "43");
+    stamp.setAttribute("y", "5");
+    stamp.setAttribute("width", "16");
+    stamp.setAttribute("height", "16");
+    stamp.setAttribute("rx", "2");
+    stamp.setAttribute("fill", "#ef4444");
+    stamp.setAttribute("stroke", "#b91c1c");
+    stamp.setAttribute("stroke-width", "1");
+
+    const stampText = document.createElementNS(ns, "text");
+    stampText.setAttribute("x", "51");
+    stampText.setAttribute("y", "17");
+    stampText.setAttribute("text-anchor", "middle");
+    stampText.setAttribute("font-family", "Arial, sans-serif");
+    stampText.setAttribute("font-size", "11");
+    stampText.setAttribute("font-weight", "bold");
+    stampText.setAttribute("fill", "white");
+    stampText.textContent = "M";
+
+    svg.append(rect, flap, stamp, stampText);
+    return svg;
+}
 
 export function renderDecompositionFindWrong(step, root, onNext, progress, onResult, onAttempt) {
 
     root.innerHTML = "";
 
     const world = getActiveWorld();
-    const emoji = WORLD_EMOJI[world] ?? "🍎";
+    const emoji = WORLD_EMOJI[world] !== undefined ? WORLD_EMOJI[world] : "🍎";
 
     const number = step.number ?? Math.floor(Math.random() * 10) + 1;
 
@@ -70,8 +117,20 @@ export function renderDecompositionFindWrong(step, root, onNext, progress, onRes
         expr.textContent = `${a} + ${b}`;
 
         const emojiRow = document.createElement("span");
-        emojiRow.style.cssText = "font-size:0.85rem; line-height:1.4; word-break:break-all; max-width:180px;";
-        emojiRow.textContent = `${emoji.repeat(a)} ${emoji.repeat(b)}`;
+        emojiRow.style.cssText = "display:flex; flex-wrap:wrap; gap:2px; align-items:center; justify-content:center; max-width:200px;";
+
+        if (emoji) {
+            emojiRow.style.fontSize = "0.85rem";
+            emojiRow.style.lineHeight = "1.4";
+            emojiRow.style.wordBreak = "break-all";
+            emojiRow.textContent = `${emoji.repeat(a)} ${emoji.repeat(b)}`;
+        } else {
+            for (let i = 0; i < a; i++) emojiRow.append(createEnvelopeSVG());
+            const spacer = document.createElement("span");
+            spacer.textContent = " ";
+            emojiRow.append(spacer);
+            for (let i = 0; i < b; i++) emojiRow.append(createEnvelopeSVG());
+        }
 
         btn.append(expr, emojiRow);
 

@@ -15,6 +15,10 @@
         "football": {
           "title": "🧩 Keresd a rossz bontást!",
           "text": "Nézd meg az összegeket, és kattints arra, ami nem egyenlő a számmal!"
+        },
+        "postman": {
+          "title": "📮 Keresd a rossz bontást!",
+          "text": "Nézd meg a levelek összegeit, és kattints arra, ami nem egyenlő a számmal!"
         }
       }
     },

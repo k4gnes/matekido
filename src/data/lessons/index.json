@@ -15,7 +15,8 @@
             "worldTitles": {
                 "racing": "🔧 Gumik szétválogatása",
                 "cooking": "🍳 Hozzávalók szétválogatása",
-                "football": "🧩 Csapattagok kiválasztása"
+                "football": "🧩 Csapattagok kiválasztása",
+                "postman": "📮 Levelek bontása"
             }
         },
         {
@@ -33,7 +34,8 @@
             "worldTitles": {
                 "racing": "🔧 Keresd a rossz bontást!",
                 "cooking": "🍳 Keresd a rossz bontást!",
-                "football": "⚽ Keresd a rossz bontást!"
+                "football": "⚽ Keresd a rossz bontást!",
+                "postman": "📮 Keresd a rossz bontást!"
             }
         },
         {
@@ -52,6 +54,25 @@
                 "racing": "🔧 Hány kerék hiányzik?",
                 "cooking": "🍳 Hány hozzávaló hiányzik?",
                 "football": "⚽ Hány játékos hiányzik?"
+            }
+        },
+        {
+            "id": "bridge-ten-01",
+            "title": "Tízesátlépés 20-ig",
+            "grades": [1],
+            "category": "numbers",
+            "skill": "addition",
+            "difficulty": 2,
+            "type": "bridge-ten",
+            "range": 20,
+            "mission": "🧩 Tízesátlépés",
+            "subtitle": "Tízesátlépés 20-ig",
+            "file": "./src/data/lessons/grade1/bridge-ten.json",
+            "worldTitles": {
+                "postman": "📮 Tízesátlépés a postán",
+                "racing": "🏁 Tízesátlépés",
+                "cooking": "🍳 Tízesátlépés",
+                "football": "⚽ Tízesátlépés"
             }
         },
         {

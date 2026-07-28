@@ -1,0 +1,62 @@
+{
+  "id": "grade1-bridge-ten",
+  "title": "Tízesátlépés",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧩 Tízesátlépés",
+      "text": "Bontsd fel a második számot, hogy 10-re egészítsd ki az elsőt!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Tízesátlépés a postán",
+          "text": "Bontsd fel a második számot, hogy 10-re egészítsd ki az elsőt!"
+        },
+        "racing": {
+          "title": "🏁 Tízesátlépés",
+          "text": "Bontsd fel a második számot, hogy 10-re egészítsd ki az elsőt!"
+        },
+        "football": {
+          "title": "⚽ Tízesátlépés",
+          "text": "Bontsd fel a második számot, hogy 10-re egészítsd ki az elsőt!"
+        },
+        "cooking": {
+          "title": "🍳 Tízesátlépés",
+          "text": "Bontsd fel a második számot, hogy 10-re egészítsd ki az elsőt!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "bridge-to-10",
+      "options": {
+        "count": 5
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Sikeresen áttörtél a tízes határon!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Sikeresen áttörtél a tízes határon!"
+        },
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Sikeresen áttörtél a tízes határon!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Sikeresen áttörtél a tízes határon!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Sikeresen áttörtél a tízes határon!"
+        }
+      }
+    }
+  ]
+}

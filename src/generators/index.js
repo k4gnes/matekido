@@ -6,6 +6,7 @@ import { generateComparison } from "./comparisonGenerator.js?v=3";
 import { generateNeighbor } from "./neighborGenerator.js?v=3";
 import { generateNeighborSingle } from "./neighborSingleGenerator.js?v=3";
 import { generatePlaceValue } from "./placeValueGenerator.js?v=3";
+import { generateBridgeTo10 } from "./bridgeTenGenerator.js?v=3";
 
 export function generate(step) {
 
@@ -31,6 +32,8 @@ export function generate(step) {
             return generatePlaceValue(step.options);
         case "place-value-two-input":
             return generatePlaceValue(step.options);
+        case "bridge-to-10":
+            return generateBridgeTo10(step.options);
         case "multiplication":
         case "division":
 

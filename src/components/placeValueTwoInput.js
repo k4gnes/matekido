@@ -28,7 +28,7 @@ export function renderPlaceValueTwoInput(step, root, next, progress, onResult, o
     emojiArea.style.cssText = "text-align:center; margin:0.5rem 0;";
 
     const emojiRow = document.createElement("div");
-    emojiRow.style.cssText = "display:flex; flex-wrap:wrap; gap:0.3rem; justify-content:center; font-size:1.6rem; line-height:1.8;";
+    emojiRow.style.cssText = "display:flex; flex-wrap:wrap; gap:0.6rem; justify-content:center; font-size:2rem; line-height:2.2;";
     emojiRow.textContent = `${w.tens.repeat(step.tens)} ${w.ones.repeat(step.ones)}`;
 
     const labelRow = document.createElement("div");
@@ -134,9 +134,9 @@ export function renderPlaceValueTwoInput(step, root, next, progress, onResult, o
 
     button.addEventListener("click", check);
     tensInput.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") check();
+        if (e.key === "Enter") { e.preventDefault(); check(); }
     }, { signal: ac.signal });
     onesInput.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") check();
+        if (e.key === "Enter") { e.preventDefault(); check(); }
     }, { signal: ac.signal });
 }

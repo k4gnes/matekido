@@ -9,7 +9,7 @@ import { getActiveId, listPlayers } from "./profile/UserManager.js";
 
 const root = document.getElementById("app");
 
-const lessonIndex = await loadLesson("./src/data/lessons/index.json");
+const lessonIndex = await loadLesson("./data/lessons/index.json");
 
 if (getActiveId() && listPlayers().length > 0) {
     showMenu();

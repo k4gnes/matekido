@@ -5,19 +5,19 @@
   "steps": [
     {
       "type": "scene",
-      "title": "🧩 Keresd az összes bontást!",
+      "title": "🧩 Keresd az összes szétválogatást!",
       "text": "Kattints a levelekre, és találd meg az összes bontást!",
       "worldTitles": {
         "racing": {
-          "title": "🧩 Keresd az összes bontást!",
+          "title": "🧩 Keresd az összes szétválogatást!",
           "text": "Kattints a szerszámokra, és találd meg az összes bontást!"
         },
         "football": {
-          "title": "🧩 Keresd az összes bontást!",
+          "title": "🧩 Keresd az összes szétválogatást!",
           "text": "Kattints a labdákra, és találd meg az összes bontást!"
         },
         "postman": {
-          "title": "📮 Keresd az összes bontást!",
+          "title": "📮 Keresd az összes szétválogatást!",
           "text": "Kattints a levelekre, és találd meg az összes bontást!"
         }
       }

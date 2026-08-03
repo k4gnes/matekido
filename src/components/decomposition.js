@@ -76,7 +76,7 @@ export function renderDecomposition(step, root, onNext, progress, onResult, onAt
     }
 
     const titleElement = document.createElement("h1");
-    titleElement.textContent = `🧩 Keresd az összes bontást! (${number})`;
+    titleElement.textContent = `🧩 Keresd az összes szétválogatást! (${number})`;
 
     const decomposition = document.createElement("div");
     decomposition.style.cssText = "font-size:1.8rem; font-weight:bold; margin:0.5rem 0; color:#1a1a2e; background:#e0f2fe; padding:0.4rem 1rem; border-radius:10px; text-align:center;";

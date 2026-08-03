@@ -19,6 +19,10 @@
         "postman": {
           "title": "📮 Keresd az összes szétválogatást!",
           "text": "Kattints a levelekre, és találd meg az összes bontást!"
+        },
+        "cooking": {
+          "title": "🍳 Keresd az összes szétválogatást!",
+          "text": "Kattints a kanalakra, és találd meg az összes bontást!"
         }
       }
     },
@@ -33,16 +37,20 @@
       "text": "Megtaláltad az összes bontást!",
       "worldTitles": {
         "racing": {
-          "title": "🎉 Ügyes voltál!",
-          "text": "Megtaláltad az összes bontást!"
+          "title": "🎉 Szuper!",
+          "text": "Megszerelted az összes kereket!"
         },
         "football": {
-          "title": "🎉 Ügyes voltál!",
-          "text": "Megtaláltad az összes bontást!"
+          "title": "🎉 Szuper!",
+          "text": "Berúgtad az összes gólt!"
         },
         "postman": {
-          "title": "🎉 Ügyes voltál!",
-          "text": "Megtaláltad az összes bontást!"
+          "title": "🎉 Szuper!",
+          "text": "Feladtad az összes levelet!"
+        },
+        "cooking": {
+          "title": "🎉 Szuper!",
+          "text": "Megfőzted az összes levest!"
         }
       }
     }

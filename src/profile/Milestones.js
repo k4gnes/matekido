@@ -10,6 +10,10 @@ export const MILESTONES = [
     {
         lessons: 50,
         title: "🚀 Űrhajó világ"
+    },
+    {
+        lessons: 500,
+        title: "🏆 500 lecke mestere"
     }
 ];
 

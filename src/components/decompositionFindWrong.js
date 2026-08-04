@@ -184,7 +184,7 @@ export function renderDecompositionFindWrong(step, root, onNext, progress, onRes
                     }
                 });
 
-                result.textContent = `🤔 Nem! ${a} + ${b} = ${a + b}, azaz ${number}. A rossz: ${wrongA} + ${wrongB} = ${wrongA + wrongB}`;
+                result.textContent = `🤔 Nem! ${a} + ${b} = ${a + b}, azaz ${number}. A kakukktojás: ${wrongA} + ${wrongB} = ${wrongA + wrongB}`;
                 result.style.color = "#c62828";
 
                 onResult?.(false);

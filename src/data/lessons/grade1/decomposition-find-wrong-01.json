@@ -1,23 +1,23 @@
 {
   "id": "decomposition-find-wrong-01",
-  "title": "🧩 Melyik a rossz bontás?",
+  "title": "🧩 Melyik a kakukktojás?",
 
   "steps": [
     {
       "type": "scene",
-      "title": "🧩 Keresd a rossz bontást!",
+      "title": "🧩 Keresd a kakukktojást!",
       "text": "Nézd meg az összegeket, és kattints arra, ami nem egyenlő a számmal!",
       "worldTitles": {
         "racing": {
-          "title": "🧩 Keresd a rossz bontást!",
+          "title": "🧩 Keresd a kakukktojást!",
           "text": "Nézd meg az összegeket, és kattints arra, ami nem egyenlő a számmal!"
         },
         "football": {
-          "title": "🧩 Keresd a rossz bontást!",
+          "title": "🧩 Keresd a kakukktojást!",
           "text": "Nézd meg az összegeket, és kattints arra, ami nem egyenlő a számmal!"
         },
         "postman": {
-          "title": "📮 Keresd a rossz bontást!",
+          "title": "📮 Keresd a kakukktojást!",
           "text": "Nézd meg a levelek összegeit, és kattints arra, ami nem egyenlő a számmal!"
         }
       }
@@ -38,7 +38,7 @@
     {
       "type": "celebration",
       "title": "🎉 Ügyes voltál!",
-      "text": "Megtaláltad az összes rossz bontást!"
+      "text": "Megtaláltad az összes kakukktojást!"
     }
   ]
 }

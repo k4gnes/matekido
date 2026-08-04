@@ -56,7 +56,10 @@ export function renderScene(step, root, next, progress, activeWorld, onExit) {
 
     if (onExit) {
         const exitButton = createButton("📚 Leckék", {
-            onClick: () => onExit()
+            onClick: () => {
+                ac.abort();
+                onExit();
+            }
         });
         buttonRow.append(exitButton);
     }

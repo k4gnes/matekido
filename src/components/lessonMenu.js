@@ -37,7 +37,7 @@ function loadFilters() {
                 difficulty: parsed.difficulty || [],
                 grade: parsed.grade || [],
                 skills: parsed.skills || [],
-                types: parsed.types || [],
+                types: (parsed.types || []).map(t => t === "decomposition-find-wrong" ? "decomposition" : t),
                 ranges: parsed.ranges || [],
                 categories: parsed.categories || []
             };
@@ -59,6 +59,10 @@ const TYPE_EMOJI = {
     "place-value-two-input": "🔢"
 };
 
+const TYPE_GROUPS = {
+    decomposition: ["decomposition", "decomposition-find-wrong"]
+};
+
 const TYPE_LABEL = {
     addition: "Összeadás",
     subtraction: "Kivonás",
@@ -67,7 +71,6 @@ const TYPE_LABEL = {
     comparison: "Összehasonlítás",
     neighbor: "Szomszédok",
     decomposition: "Bontás",
-    "decomposition-find-wrong": "Rossz bontás",
     "place-value": "Helyiérték",
     "place-value-two-input": "Helyiérték (2)"
 };
@@ -389,7 +392,13 @@ function filterLessons(lessons, filters) {
         if (filters.difficulty.length > 0 && !filters.difficulty.includes(l.difficulty)) return false;
         if (filters.grade.length > 0 && !l.grades?.some(g => filters.grade.includes(g))) return false;
         if (filters.skills.length > 0 && !filters.skills.includes(l.skill)) return false;
-        if (filters.types.length > 0 && !filters.types.includes(l.type)) return false;
+        if (filters.types.length > 0) {
+            const selectedTypes = new Set();
+            filters.types.forEach(t => {
+                (TYPE_GROUPS[t] || [t]).forEach(x => selectedTypes.add(x));
+            });
+            if (!selectedTypes.has(l.type)) return false;
+        }
         if (filters.ranges.length > 0 && !filters.ranges.includes(l.range)) return false;
         if (filters.categories.length > 0 && !filters.categories.includes(l.category)) return false;
         return true;

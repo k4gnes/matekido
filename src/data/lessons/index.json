@@ -21,21 +21,21 @@
         },
         {
             "id": "decomposition-find-wrong-01",
-            "title": "Keresd a rossz bontást!",
+            "title": "Keresd a kakukktojást!",
             "grades": [1],
             "category": "numbers",
             "skill": "neighbours",
             "difficulty": 1,
             "type": "decomposition-find-wrong",
             "range": 10,
-            "mission": "🧩 Keresd a rossz bontást!",
-            "subtitle": "Keresd a rossz bontást!",
+            "mission": "🧩 Keresd a kakukktojást!",
+            "subtitle": "Keresd a kakukktojást!",
             "file": "./data/lessons/grade1/decomposition-find-wrong-01.json",
             "worldTitles": {
-                "racing": "🔧 Keresd a rossz bontást!",
-                "cooking": "🍳 Keresd a rossz bontást!",
-                "football": "⚽ Keresd a rossz bontást!",
-                "postman": "📮 Keresd a rossz bontást!"
+                "racing": "🔧 Keresd a kakukktojást!",
+                "cooking": "🍳 Keresd a kakukktojást!",
+                "football": "⚽ Keresd a kakukktojást!",
+                "postman": "📮 Keresd a kakukktojást!"
             }
         },
         {

@@ -60,7 +60,7 @@ export function renderBridgeTen(step, root, onNext, progress, onResult, onAttemp
                 equation.style.cssText = "font-size:2rem; font-weight:bold; text-align:center; margin:0.5rem 0; color:#1a1a2e; display:flex; flex-wrap:wrap; gap:0.4rem; align-items:center; justify-content:center;";
 
                 const eqSpan = document.createElement("span");
-                eqSpan.textContent = `${a} + ${b} = ${a} + ${complement} + ${remainder} = 10 + ${remainder} =`;
+                eqSpan.textContent = `${a} + ${b} = (${a} + ${complement}) + ${remainder} =`;
                 equation.append(eqSpan);
 
                 const input = createNumberInput();
@@ -83,7 +83,7 @@ export function renderBridgeTen(step, root, onNext, progress, onResult, onAttemp
                         answered = true;
                         input.disabled = true;
                         checkBtn.disabled = true;
-                        eqSpan.textContent = `${a} + ${b} = ${a} + ${complement} + ${remainder} = 10 + ${remainder} = ${sum}`;
+                        eqSpan.textContent = `${a} + ${b} = (${a} + ${complement}) + ${remainder} = ${sum}`;
                         input.style.display = "none";
                         message.textContent = `😊 Szuper!`;
                         message.style.color = "#2e7d32";

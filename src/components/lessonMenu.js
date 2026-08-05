@@ -60,7 +60,7 @@ const TYPE_EMOJI = {
 };
 
 const TYPE_GROUPS = {
-    decomposition: ["decomposition", "decomposition-find-wrong"]
+    decomposition: ["decomposition", "decomposition-find-wrong", "bridge-ten"]
 };
 
 const TYPE_LABEL = {

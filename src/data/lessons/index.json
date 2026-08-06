@@ -84,13 +84,13 @@
             "difficulty": 1,
             "type": "place-value",
             "range": 100,
-            "mission": "🔢 Hány tízes és egyes?",
+            "mission": "🔢 Rakd össze a számot!",
             "subtitle": "Helyiérték 100-ig",
             "file": "./data/lessons/grade1/place-value-01.json",
             "worldTitles": {
-                "racing": "🏎️ Hány kerék és alkatrész?",
-                "cooking": "🍳 Hány tál és kanál?",
-                "football": "⚽ Hány játékos és csere?"
+                "racing": "🏎️ Hány alkatrész kell?",
+                "cooking": "🍳 Hány kanál kell?",
+                "football": "⚽ Hány játékos ez összesen?"
             }
         },
         {

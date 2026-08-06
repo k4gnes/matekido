@@ -5,9 +5,9 @@ import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD = {
     postman: { title: "📮 Hány levél van a csomagban?", tens: "📦", ones: "✉️" },
-    racing: { title: "🏎️ Hány autó van a garázsban?", tens: "🛞", ones: "🔧" },
-    football: { title: "⚽ Hány játékos a pályán?", tens: "👨‍🏫", ones: "⚽" },
-    cooking: { title: "🍳 Hány hozzávaló kell?", tens: "🍲", ones: "🥄" }
+    racing: { title: "🏎️ Hány szerszám kell összesen?", tens: "🛞", ones: "🔧" },
+    football: { title: "⚽ Hány játékos van a pályán?", tens: "👨‍🏫", ones: "🏃" },
+    cooking: { title: "🍳 Hány kanál kell?", tens: "🍲", ones: "🥄" }
 };
 
 export function renderPlaceValue(step, root, next, progress, onResult, onAttempt) {

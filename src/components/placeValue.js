@@ -50,7 +50,7 @@ export function renderPlaceValue(step, root, next, progress, onResult, onAttempt
     equation.className = "equation";
 
     const desc = document.createElement("span");
-    desc.textContent = "Mennyi?";
+    desc.textContent = `${step.tens} tízes + ${step.ones} egyes =`;
 
     const input = createNumberInput();
 

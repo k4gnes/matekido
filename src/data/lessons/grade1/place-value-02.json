@@ -5,20 +5,20 @@
   "steps": [
     {
       "type": "scene",
-      "title": "🔢 Hány tízes és egyes?",
-      "text": "Számold ki, hány tízes és hány egyes van a számban!",
+      "title": "🔢 Hány doboz és hány levél van?",
+      "text": "Számold ki, hány doboz és hány levél van a számban!",
       "worldTitles": {
         "racing": {
           "title": "🏎️ Hány kerék és alkatrész?",
           "text": "Számold ki, hány darab van belőlük!"
         },
         "football": {
-          "title": "⚽ Hány játékos és csere?",
+          "title": "⚽ Hány edző és hány játékos van a pályán?",
           "text": "Számold ki, hányan vannak!"
         },
         "cooking": {
-          "title": "🍳 Hány tál és kanál?",
-          "text": "Számold ki, hány eszköz kell!"
+          "title": "🍳 Hány fazék és hány kanál van?",
+          "text": "Számold ki, bontsd fel!"
         }
       }
     },

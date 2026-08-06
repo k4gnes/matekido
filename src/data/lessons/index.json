@@ -102,13 +102,13 @@
             "difficulty": 1,
             "type": "place-value-two-input",
             "range": 100,
-            "mission": "🔢 Hány tízes és egyes?",
+            "mission": "🔢 Hány doboz és hány levél?",
             "subtitle": "Helyiérték – tízes és egyes 100-ig",
             "file": "./data/lessons/grade1/place-value-02.json",
             "worldTitles": {
                 "racing": "🏎️ Hány kerék és alkatrész?",
-                "cooking": "🍳 Hány tál és kanál?",
-                "football": "⚽ Hány játékos és csere?"
+                "cooking": "🍳 Hány fazék és kanál?",
+                "football": "⚽ Hány edző és hány játékos van a pályán?"
             }
         },
         {

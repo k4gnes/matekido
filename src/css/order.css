@@ -1,0 +1,96 @@
+.order-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 .5rem;
+}
+
+.order-arrow {
+    font-size: 2.4rem;
+    line-height: 1;
+}
+
+.order-arrow.up {
+    color: #22a049;
+}
+
+.order-arrow.down {
+    color: #e0453a;
+}
+
+.order-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin: 1.5rem 0;
+    min-height: 4.6rem;
+    padding: .75rem;
+    background: #f8f9fc;
+    border: 2px dashed #d5dae5;
+    border-radius: 16px;
+    width: 100%;
+}
+
+.order-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 3.2rem;
+    height: 3.4rem;
+    margin: 0;
+    padding: 0 .7rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    background: white;
+    border: 2px solid #cfd8ec;
+    border-radius: 12px;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .06);
+}
+
+.order-chip:hover {
+    transform: none;
+}
+
+.order-chip:active {
+    cursor: grabbing;
+}
+
+.order-chip.order-hidden {
+    visibility: hidden;
+    box-shadow: none;
+}
+
+.order-chip.order-clone {
+    position: fixed;
+    z-index: 1000;
+    margin: 0;
+    cursor: grabbing;
+    border-color: var(--primary);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
+    transform: scale(1.06);
+}
+
+@media (max-width: 380px) {
+    .order-chip {
+        min-width: 2.8rem;
+        height: 3rem;
+        font-size: 1.3rem;
+        padding: 0 .5rem;
+    }
+
+    .order-board {
+        gap: .35rem;
+        padding: .6rem;
+    }
+}

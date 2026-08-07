@@ -148,6 +148,24 @@
             }
         },
         {
+            "id": "order-01",
+            "title": "Rendezzük sorainkat! 20-ig",
+            "grades": [1],
+            "category": "numbers",
+            "skill": "ordering",
+            "difficulty": 1,
+            "type": "order",
+            "range": 20,
+            "mission": "↕️ Rendezzük sorainkat!",
+            "subtitle": "Számok sorba rendezése 20-ig",
+            "file": "./data/lessons/grade1/order-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Rendezzük sorainkat!",
+                "cooking": "🍳 Rendezzük sorainkat!",
+                "football": "⚽ Rendezzük sorainkat!"
+            }
+        },
+        {
             "id": "addition-01",
             "title": "Összeadás 20-ig",
             "grades": [1],
@@ -541,6 +559,24 @@
                 "racing": "🏎️ Mi a következő?",
                 "cooking": "🍳 Mi a következő?",
                 "football": "⚽ Mi a következő?"
+            }
+        },
+        {
+            "id": "order-02",
+            "title": "Rendezzük sorainkat! 100-ig",
+            "grades": [2],
+            "category": "numbers",
+            "skill": "ordering",
+            "difficulty": 2,
+            "type": "order",
+            "range": 100,
+            "mission": "↕️ Rendezzük sorainkat!",
+            "subtitle": "Számok sorba rendezése 100-ig",
+            "file": "./data/lessons/grade2/order-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Rendezzük sorainkat!",
+                "cooking": "🍳 Rendezzük sorainkat!",
+                "football": "⚽ Rendezzük sorainkat!"
             }
         }
     ],

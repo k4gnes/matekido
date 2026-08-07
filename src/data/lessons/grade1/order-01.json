@@ -1,0 +1,56 @@
+{
+  "id": "grade1-order-01",
+  "title": "Rendezzük sorainkat! (20-ig)",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📮 Rendezzük sorainkat!",
+      "text": "Húzd a házszámokat a helyes sorrendbe!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Rendezzük sorainkat!",
+          "text": "Húzd a rajtszámokat a helyes sorrendbe!"
+        },
+        "football": {
+          "title": "⚽ Rendezzük sorainkat!",
+          "text": "Húzd a gólokat a helyes sorrendbe!"
+        },
+        "cooking": {
+          "title": "🍳 Rendezzük sorainkat!",
+          "text": "Húzd a hozzávalókat a helyes sorrendbe!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "order",
+      "options": {
+        "count": 6,
+        "min": 1,
+        "max": 20
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden házszámsort jól rendeztél!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden rajtszámsort jól rendeztél!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden gólt jól rendeztél!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden ételt sikeresen elkészítettél!"
+        }
+      }
+    }
+  ]
+}

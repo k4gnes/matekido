@@ -8,6 +8,7 @@ import { generateNeighborSingle } from "./neighborSingleGenerator.js?v=3";
 import { generatePlaceValue } from "./placeValueGenerator.js?v=3";
 import { generateBridgeTo10 } from "./bridgeTenGenerator.js?v=3";
 import { generateSequence } from "./sequenceGenerator.js?v=3";
+import { generateOrder } from "./orderGenerator.js?v=3";
 
 export function generate(step) {
 
@@ -37,6 +38,8 @@ export function generate(step) {
             return generateBridgeTo10(step.options);
         case "sequence":
             return generateSequence(step.options);
+        case "order":
+            return generateOrder(step.options);
         case "multiplication":
         case "division":
 

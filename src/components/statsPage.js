@@ -29,7 +29,8 @@ const TYPE_LABEL = {
     comparison: "Összehasonlítás",
     neighbor: "Szomszédok",
     decomposition: "Bontás",
-    sequence: "Számsor"
+    sequence: "Számsor",
+    order: "Sorba rendezés"
 };
 
 const TYPE_EMOJI = {
@@ -40,7 +41,8 @@ const TYPE_EMOJI = {
     comparison: "⚖️",
     neighbor: "🔍",
     decomposition: "🧩",
-    sequence: "🔢"
+    sequence: "🔢",
+    order: "↕️"
 };
 
 function createStatGrid(items, className) {

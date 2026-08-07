@@ -1,0 +1,48 @@
+.sequence {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .4rem;
+    margin: 2rem 0;
+}
+
+.sequence-term {
+    min-width: 3rem;
+    height: 3rem;
+    padding: 0 .6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f4ff;
+    border: 2px solid #dbe6ff;
+    border-radius: 12px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.sequence-sep {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #aaa;
+}
+
+.sequence input {
+    width: 5ch;
+    height: 3rem;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: .3rem;
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    outline: none;
+    color: var(--text);
+    font-family: inherit;
+}
+
+.sequence input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 134, 247, .15);
+}

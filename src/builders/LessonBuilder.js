@@ -122,6 +122,12 @@ export function buildLesson(lesson) {
                     correctDecomp: task.correctDecomp,
                     options: task.options
                 });
+            } else if (step.generator === "sequence") {
+                result.push({
+                    type: "sequence",
+                    terms: task.terms,
+                    answer: task.answer
+                });
             } else {
                 result.push({
                     type: "exercise",

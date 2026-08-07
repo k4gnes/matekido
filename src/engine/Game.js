@@ -9,6 +9,7 @@ import { renderNeighborSingle } from "../components/neighborSingle.js";
 import { renderPlaceValue } from "../components/placeValue.js";
 import { renderPlaceValueTwoInput } from "../components/placeValueTwoInput.js";
 import { renderBridgeTen } from "../components/bridgeTen.js";
+import { renderSequence } from "../components/sequence.js";
 
 
 import { renderCelebration } from "../components/celebration.js";
@@ -129,7 +130,7 @@ export class Game {
 
         const step = this.lesson.steps[this.currentStep];
 
-        const isCounted = s => s.type === "exercise" || s.type === "missing-number" || s.type === "comparison" || s.type === "neighbor" || s.type === "neighbor-single" || s.type === "place-value" || s.type === "place-value-two-input" || s.type === "decomposition-find-wrong" || s.type === "bridge-ten";
+        const isCounted = s => s.type === "exercise" || s.type === "missing-number" || s.type === "comparison" || s.type === "neighbor" || s.type === "neighbor-single" || s.type === "place-value" || s.type === "place-value-two-input" || s.type === "decomposition-find-wrong" || s.type === "bridge-ten" || s.type === "sequence";
 
         const totalExercises = this.lesson.steps.filter(isCounted).length;
         const completedExercises = this.lesson.steps
@@ -175,6 +176,10 @@ export class Game {
 
             case "bridge-ten":
                 renderBridgeTen(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "bridge-ten"), () => this.onAttempt());
+                break;
+
+            case "sequence":
+                renderSequence(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "sequence"), () => this.onAttempt());
                 break;
 
             case "missing-number":

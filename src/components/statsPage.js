@@ -28,7 +28,8 @@ const TYPE_LABEL = {
     "missing-number": "Hiányzó szám",
     comparison: "Összehasonlítás",
     neighbor: "Szomszédok",
-    decomposition: "Bontás"
+    decomposition: "Bontás",
+    sequence: "Számsor"
 };
 
 const TYPE_EMOJI = {
@@ -38,7 +39,8 @@ const TYPE_EMOJI = {
     "missing-number": "❓",
     comparison: "⚖️",
     neighbor: "🔍",
-    decomposition: "🧩"
+    decomposition: "🧩",
+    sequence: "🔢"
 };
 
 function createStatGrid(items, className) {

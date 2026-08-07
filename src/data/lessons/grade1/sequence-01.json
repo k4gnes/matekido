@@ -1,0 +1,55 @@
+{
+  "id": "grade1-sequence-01",
+  "title": "Mi a következő? (50-ig)",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔢 Mi a következő házszám?",
+      "text": "Figyeld meg a számsort, és írd be a következő házszámot!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Mi a következő rajtszám?",
+          "text": "Figyeld meg a számsort, és írd be a következő rajtszámot!"
+        },
+        "football": {
+          "title": "⚽ Mi a következő eredmény?",
+          "text": "Figyeld meg a számsort, és írd be a következő eredményt!"
+        },
+        "cooking": {
+          "title": "🍳 Mi a következő receptoldal?",
+          "text": "Figyeld meg a számsort, és írd be a következő recept oldalszámát!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "sequence",
+      "options": {
+        "count": 6,
+        "max": 50
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden számsort jól kitaláltál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden számsort jól kitaláltál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden számsort jól kitaláltál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden ételt sikeresen elkészítettél!"
+        }
+      }
+    }
+  ]
+}

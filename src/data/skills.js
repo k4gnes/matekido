@@ -2,7 +2,7 @@ export const CATEGORIES = {
     numbers: {
         title: "Számok",
         icon: "🔢",
-        skills: ["neighbours", "comparison", "ordering", "missing-number", "place-value", "rounding"]
+        skills: ["neighbours", "comparison", "ordering", "missing-number", "place-value", "rounding", "number-sequence"]
     },
     operations: {
         title: "Összeadás-Kivonás",
@@ -48,6 +48,7 @@ export const SKILLS = {
     ordering: { title: "Számrendezés", category: "numbers" },
     "missing-number": { title: "Hiányzó szám", category: "numbers" },
     "place-value": { title: "Helyi érték", category: "numbers" },
+    "number-sequence": { title: "Számsor", category: "numbers" },
     rounding: { title: "Kerekítés", category: "numbers" },
 
     // Operations

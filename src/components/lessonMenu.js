@@ -506,7 +506,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch) {
     renderContent();
 
     const buttonRow = document.createElement("div");
-    buttonRow.style.cssText = "display:flex; gap:.5rem; justify-content:center; margin-bottom:1rem;";
+    buttonRow.style.cssText = "display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center; align-items:center; margin-bottom:1rem;";
 
     const allPlayers = listPlayers();
     const activeId = getActiveId();

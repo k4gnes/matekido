@@ -18,6 +18,18 @@
     gap: .8rem;
 }
 
+@media (max-width: 640px) {
+    .lesson-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 420px) {
+    .lesson-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .lesson-button {
 
     display: block;
@@ -204,4 +216,15 @@
     color: #666;
     text-align: center;
     margin-bottom: 0.5rem;
+}
+
+@media (max-width: 640px) {
+    .filter-label {
+        min-width: 100%;
+    }
+
+    .filter-btn {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.8rem;
+    }
 }

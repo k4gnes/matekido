@@ -30,7 +30,8 @@ const TYPE_LABEL = {
     neighbor: "Szomszédok",
     decomposition: "Bontás",
     sequence: "Számsor",
-    order: "Sorba rendezés"
+    order: "Sorba rendezés",
+    "even-odd": "Páros-páratlan"
 };
 
 const TYPE_EMOJI = {
@@ -42,7 +43,8 @@ const TYPE_EMOJI = {
     neighbor: "🔍",
     decomposition: "🧩",
     sequence: "🔢",
-    order: "↕️"
+    order: "↕️",
+    "even-odd": "🎯"
 };
 
 function createStatGrid(items, className) {

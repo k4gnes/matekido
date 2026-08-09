@@ -166,6 +166,24 @@
             }
         },
         {
+            "id": "even-odd-01",
+            "title": "Páros és páratlan 20-ig",
+            "grades": [1],
+            "category": "numbers",
+            "skill": "even-odd",
+            "difficulty": 1,
+            "type": "even-odd",
+            "range": 20,
+            "mission": "🎯 Páros vagy páratlan?",
+            "subtitle": "Páros és páratlan számok 20-ig",
+            "file": "./data/lessons/grade1/even-odd-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Páros vagy páratlan?",
+                "cooking": "🍳 Páros vagy páratlan?",
+                "football": "⚽ Páros vagy páratlan?"
+            }
+        },
+        {
             "id": "addition-01",
             "title": "Összeadás 20-ig",
             "grades": [1],
@@ -577,6 +595,24 @@
                 "racing": "🏎️ Rendezzük sorainkat!",
                 "cooking": "🍳 Rendezzük sorainkat!",
                 "football": "⚽ Rendezzük sorainkat!"
+            }
+        },
+        {
+            "id": "even-odd-02",
+            "title": "Páros és páratlan 100-ig",
+            "grades": [2],
+            "category": "numbers",
+            "skill": "even-odd",
+            "difficulty": 2,
+            "type": "even-odd",
+            "range": 100,
+            "mission": "🎯 Páros vagy páratlan?",
+            "subtitle": "Páros és páratlan számok 100-ig",
+            "file": "./data/lessons/grade2/even-odd-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Páros vagy páratlan?",
+                "cooking": "🍳 Páros vagy páratlan?",
+                "football": "⚽ Páros vagy páratlan?"
             }
         }
     ],

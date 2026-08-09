@@ -1,0 +1,56 @@
+{
+  "id": "grade1-even-odd-01",
+  "title": "Páros és páratlan számok (20-ig)",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🎯 Páros és páratlan",
+      "text": "Döntsd el a számokról, hogy párosak-e! Húzd a kért számokat a megfelelő színű helyre!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Páros és páratlan",
+          "text": "Döntsd el a rajtszámokról, hogy párosak-e! Húzd a kért számokat a megfelelő színű helyre!"
+        },
+        "football": {
+          "title": "⚽ Páros és páratlan",
+          "text": "Döntsd el a gólokról, hogy párosak-e! Húzd a kért számokat a megfelelő színű helyre!"
+        },
+        "cooking": {
+          "title": "🍳 Páros és páratlan",
+          "text": "Döntsd el a hozzávalókról, hogy párosak-e! Húzd a kért számokat a megfelelő színű helyre!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "even-odd",
+      "options": {
+        "count": 5,
+        "min": 1,
+        "max": 20
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden számot jól válogattál szét!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden rajtszámot jól válogattál szét!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden gólt jól válogattál szét!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden hozzávalót jól válogattál szét!"
+        }
+      }
+    }
+  ]
+}

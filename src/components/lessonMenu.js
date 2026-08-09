@@ -58,7 +58,8 @@ const TYPE_EMOJI = {
     "place-value": "🔢",
     "place-value-two-input": "🔢",
     sequence: "🔢",
-    order: "↕️"
+    order: "↕️",
+    "even-odd": "🎯"
 };
 
 const TYPE_GROUPS = {
@@ -76,7 +77,8 @@ const TYPE_LABEL = {
     "place-value": "Helyiérték",
     "place-value-two-input": "Helyiérték (2)",
     sequence: "Számsor",
-    order: "Sorba rendezés"
+    order: "Sorba rendezés",
+    "even-odd": "Páros-páratlan"
 };
 
 const RANGE_LABEL = {
@@ -288,7 +290,7 @@ function createFilterPanel(filters, onFilterChange) {
     const skillBtns = document.createElement("div");
     skillBtns.className = "filter-skill-btns";
 
-    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed", "place-value", "number-sequence", "ordering"];
+    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed", "place-value", "number-sequence", "ordering", "even-odd"];
 
     usedSkills.forEach(skillId => {
         const skill = SKILLS[skillId];

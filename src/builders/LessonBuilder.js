@@ -135,6 +135,13 @@ export function buildLesson(lesson) {
                     direction: task.direction,
                     answer: task.answer
                 });
+            } else if (step.generator === "even-odd") {
+                result.push({
+                    type: "even-odd",
+                    numbers: task.numbers,
+                    question: task.question,
+                    answer: task.answer
+                });
             } else {
                 result.push({
                     type: "exercise",

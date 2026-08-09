@@ -684,6 +684,40 @@
                 "cooking": "🍳 Négyzet és téglalap",
                 "football": "⚽ Négyzet és téglalap"
             }
+        },
+        {
+            "id": "time-01",
+            "title": "Idő – egész és fél óra",
+            "grades": [1],
+            "category": "time",
+            "skill": "hour",
+            "difficulty": 1,
+            "type": "time",
+            "mission": "🕐 Melyik időt mutatja az óra?",
+            "subtitle": "Idő – egész és fél óra",
+            "file": "./data/lessons/grade1/time-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Melyik időt mutatja az óra?",
+                "cooking": "🍳 Melyik időt mutatja az óra?",
+                "football": "⚽ Melyik időt mutatja az óra?"
+            }
+        },
+        {
+            "id": "time-02",
+            "title": "Idő – egész és fél óra (éjszakával is)",
+            "grades": [2],
+            "category": "time",
+            "skill": "hour",
+            "difficulty": 2,
+            "type": "time",
+            "mission": "🕐 Melyik időt mutatja az óra?",
+            "subtitle": "Idő – egész és fél óra (éjszakával is)",
+            "file": "./data/lessons/grade2/time-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Melyik időt mutatja az óra?",
+                "cooking": "🍳 Melyik időt mutatja az óra?",
+                "football": "⚽ Melyik időt mutatja az óra?"
+            }
         }
     ],
     "gradeConfig": [

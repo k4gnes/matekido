@@ -12,6 +12,7 @@ import { generateOrder } from "./orderGenerator.js?v=3";
 import { generateEvenOdd } from "./evenOddGenerator.js?v=3";
 import { generatePattern } from "./patternGenerator.js?v=3";
 import { generateShapeSort } from "./shapeSortGenerator.js?v=3";
+import { generateTime } from "./timeGenerator.js?v=3";
 
 export function generate(step) {
 
@@ -49,6 +50,8 @@ export function generate(step) {
             return generatePattern(step.options);
         case "shape-sort":
             return generateShapeSort(step.options);
+        case "time":
+            return generateTime(step.options);
         case "multiplication":
         case "division":
 

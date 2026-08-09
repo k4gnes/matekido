@@ -1,0 +1,56 @@
+{
+  "id": "grade1-time-01",
+  "title": "Idő – egész és fél óra",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🕐 Idő",
+      "text": "Nézd meg az órát! Találd meg, melyik meghatározás illik hozzá!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Idő",
+          "text": "Nézd meg az órát! Találd meg, melyik meghatározás illik hozzá!"
+        },
+        "football": {
+          "title": "⚽ Idő",
+          "text": "Nézd meg az órát! Találd meg, melyik meghatározás illik hozzá!"
+        },
+        "cooking": {
+          "title": "🍳 Idő",
+          "text": "Nézd meg az órát! Találd meg, melyik meghatározás illik hozzá!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "time",
+      "options": {
+        "count": 5,
+        "minHour": 6,
+        "maxHour": 20
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden időt jól felismertél!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden időt jól felismertél!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden időt jól felismertél!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden időt jól felismertél!"
+        }
+      }
+    }
+  ]
+}

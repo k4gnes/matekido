@@ -1,0 +1,92 @@
+.time-clock-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 1.25rem 0;
+}
+
+.time-clock {
+    width: 160px;
+    height: 160px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .12));
+}
+
+.time-prompt {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 .75rem;
+}
+
+.time-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.time-option {
+    padding: .6rem 1.1rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #1a1a2e;
+    cursor: pointer;
+    transition: transform .15s, border-color .15s, background-color .15s;
+}
+
+.time-option:hover {
+    border-color: #4a90d9;
+}
+
+.time-option.time-option-correct {
+    border-color: #2e7d32;
+    background: #e8f5e9;
+}
+
+.time-option.time-option-wrong {
+    border-color: #c62828;
+    background: #ffebee;
+}
+
+.time-message {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    min-height: 1.5em;
+    text-align: center;
+}
+
+.time-message-good {
+    color: #2e7d32;
+}
+
+.time-message-bad {
+    color: #c62828;
+}
+
+.time-next {
+    display: block;
+    margin: 1rem auto 0;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    border: 2px solid #4a90d9;
+    border-radius: 12px;
+    background: #4a90d9;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 380px) {
+    .time-clock {
+        width: 130px;
+        height: 130px;
+    }
+
+    .time-option {
+        font-size: 1rem;
+        padding: .5rem .8rem;
+    }
+}

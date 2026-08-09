@@ -155,6 +155,14 @@ export function buildLesson(lesson) {
                     categories: task.categories,
                     items: task.items
                 });
+            } else if (step.generator === "time") {
+                result.push({
+                    type: "time",
+                    hour: task.hour,
+                    minute: task.minute,
+                    answer: task.answer,
+                    options: task.options
+                });
             } else {
                 result.push({
                     type: "exercise",

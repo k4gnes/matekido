@@ -33,7 +33,8 @@ const TYPE_LABEL = {
     order: "Sorba rendezés",
     "even-odd": "Páros-páratlan",
     pattern: "Sorminta",
-    "shape-sort": "Alakzatok"
+    "shape-sort": "Alakzatok",
+    time: "Idő"
 };
 
 const TYPE_EMOJI = {
@@ -48,7 +49,8 @@ const TYPE_EMOJI = {
     order: "↕️",
     "even-odd": "🎯",
     pattern: "🔁",
-    "shape-sort": "🟦"
+    "shape-sort": "🟦",
+    time: "🕐"
 };
 
 function createStatGrid(items, className) {

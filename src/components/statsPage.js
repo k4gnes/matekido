@@ -31,7 +31,8 @@ const TYPE_LABEL = {
     decomposition: "Bontás",
     sequence: "Számsor",
     order: "Sorba rendezés",
-    "even-odd": "Páros-páratlan"
+    "even-odd": "Páros-páratlan",
+    pattern: "Sorminta"
 };
 
 const TYPE_EMOJI = {
@@ -44,7 +45,8 @@ const TYPE_EMOJI = {
     decomposition: "🧩",
     sequence: "🔢",
     order: "↕️",
-    "even-odd": "🎯"
+    "even-odd": "🎯",
+    pattern: "🔁"
 };
 
 function createStatGrid(items, className) {

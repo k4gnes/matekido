@@ -1,0 +1,57 @@
+{
+  "id": "grade2-pattern-01",
+  "title": "Sorminta – hosszabb minták",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧩 Sorminta",
+      "text": "Figyeld meg az emojik sorát! Kattints arra, amelyik szerinted a következő lesz!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Sorminta",
+          "text": "Figyeld meg a jelek sorát! Kattints arra, amelyik szerinted a következő lesz!"
+        },
+        "football": {
+          "title": "⚽ Sorminta",
+          "text": "Figyeld meg a jelek sorát! Kattints arra, amelyik szerinted a következő lesz!"
+        },
+        "cooking": {
+          "title": "🍳 Sorminta",
+          "text": "Figyeld meg az alapanyagok sorát! Kattints arra, amelyik szerinted a következő lesz!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "pattern",
+      "options": {
+        "count": 5,
+        "visible": 7,
+        "minPattern": 3,
+        "maxPattern": 3
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden sormintát jól folytattál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden sormintát jól folytattál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden sormintát jól folytattál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden alapanyagot jól folytattál!"
+        }
+      }
+    }
+  ]
+}

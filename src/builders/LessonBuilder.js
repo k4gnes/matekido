@@ -142,6 +142,13 @@ export function buildLesson(lesson) {
                     question: task.question,
                     answer: task.answer
                 });
+            } else if (step.generator === "pattern") {
+                result.push({
+                    type: "pattern",
+                    terms: task.terms,
+                    answer: task.answer,
+                    options: task.options
+                });
             } else {
                 result.push({
                     type: "exercise",

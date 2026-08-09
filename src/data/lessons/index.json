@@ -184,6 +184,24 @@
             }
         },
         {
+            "id": "pattern-01",
+            "title": "Sorminta – mi a következő?",
+            "grades": [1],
+            "category": "numbers",
+            "skill": "pattern",
+            "difficulty": 1,
+            "type": "pattern",
+            "range": 20,
+            "mission": "🧩 Mi a következő a sorban?",
+            "subtitle": "Sorminta – mi a következő?",
+            "file": "./data/lessons/grade1/pattern-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Mi a következő a sorban?",
+                "cooking": "🍳 Mi a következő a sorban?",
+                "football": "⚽ Mi a következő a sorban?"
+            }
+        },
+        {
             "id": "addition-01",
             "title": "Összeadás 20-ig",
             "grades": [1],
@@ -613,6 +631,24 @@
                 "racing": "🏎️ Páros vagy páratlan?",
                 "cooking": "🍳 Páros vagy páratlan?",
                 "football": "⚽ Páros vagy páratlan?"
+            }
+        },
+        {
+            "id": "pattern-02",
+            "title": "Sorminta – hosszabb minták",
+            "grades": [2],
+            "category": "numbers",
+            "skill": "pattern",
+            "difficulty": 2,
+            "type": "pattern",
+            "range": 100,
+            "mission": "🧩 Mi a következő a sorban?",
+            "subtitle": "Sorminta – hosszabb minták",
+            "file": "./data/lessons/grade2/pattern-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Mi a következő a sorban?",
+                "cooking": "🍳 Mi a következő a sorban?",
+                "football": "⚽ Mi a következő a sorban?"
             }
         }
     ],

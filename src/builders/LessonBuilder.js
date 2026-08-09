@@ -149,6 +149,12 @@ export function buildLesson(lesson) {
                     answer: task.answer,
                     options: task.options
                 });
+            } else if (step.generator === "shape-sort") {
+                result.push({
+                    type: "shape-sort",
+                    categories: task.categories,
+                    items: task.items
+                });
             } else {
                 result.push({
                     type: "exercise",

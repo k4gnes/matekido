@@ -1,0 +1,55 @@
+{
+  "id": "grade1-shape-sort-01",
+  "title": "Kerek, szögletes és háromszög",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🟦 Kerek, szögletes és háromszög",
+      "text": "Húzd a kerekeket a körbe, a háromszögeket a háromszögbe, a szögleteseket a téglalapba!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Kerek, szögletes és háromszög",
+          "text": "Húzd a kerekeket a körbe, a háromszögeket a háromszögbe, a szögleteseket a téglalapba!"
+        },
+        "football": {
+          "title": "⚽ Kerek, szögletes és háromszög",
+          "text": "Húzd a kerekeket a körbe, a háromszögeket a háromszögbe, a szögleteseket a téglalapba!"
+        },
+        "cooking": {
+          "title": "🍳 Kerek, szögletes és háromszög",
+          "text": "Húzd a kerekeket a körbe, a háromszögeket a háromszögbe, a szögleteseket a téglalapba!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "shape-sort",
+      "options": {
+        "count": 5,
+        "categories": ["circle", "triangle", "rectangle"]
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden alakzatot jól a helyére raktál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden alakzatot jól a helyére raktál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden alakzatot jól a helyére raktál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden alakzatot jól a helyére raktál!"
+        }
+      }
+    }
+  ]
+}

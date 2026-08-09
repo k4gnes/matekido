@@ -202,6 +202,23 @@
             }
         },
         {
+            "id": "shape-sort-01",
+            "title": "Kerek, szögletes és háromszög",
+            "grades": [1],
+            "category": "geometry",
+            "skill": "shapes",
+            "difficulty": 1,
+            "type": "shape-sort",
+            "mission": "🟦 Rakd a helyére az alakzatokat!",
+            "subtitle": "Kerek, szögletes és háromszög",
+            "file": "./data/lessons/grade1/shape-sort-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Rakd a helyére az alakzatokat!",
+                "cooking": "🍳 Rakd a helyére az alakzatokat!",
+                "football": "⚽ Rakd a helyére az alakzatokat!"
+            }
+        },
+        {
             "id": "addition-01",
             "title": "Összeadás 20-ig",
             "grades": [1],
@@ -649,6 +666,23 @@
                 "racing": "🏎️ Mi a következő a sorban?",
                 "cooking": "🍳 Mi a következő a sorban?",
                 "football": "⚽ Mi a következő a sorban?"
+            }
+        },
+        {
+            "id": "shape-sort-03",
+            "title": "Négyzet és téglalap",
+            "grades": [2],
+            "category": "geometry",
+            "skill": "shapes",
+            "difficulty": 2,
+            "type": "shape-sort",
+            "mission": "🟪 Négyzet és téglalap",
+            "subtitle": "Négyzet és téglalap",
+            "file": "./data/lessons/grade2/shape-sort-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Négyzet és téglalap",
+                "cooking": "🍳 Négyzet és téglalap",
+                "football": "⚽ Négyzet és téglalap"
             }
         }
     ],

@@ -32,7 +32,8 @@ const TYPE_LABEL = {
     sequence: "Számsor",
     order: "Sorba rendezés",
     "even-odd": "Páros-páratlan",
-    pattern: "Sorminta"
+    pattern: "Sorminta",
+    "shape-sort": "Alakzatok"
 };
 
 const TYPE_EMOJI = {
@@ -46,7 +47,8 @@ const TYPE_EMOJI = {
     sequence: "🔢",
     order: "↕️",
     "even-odd": "🎯",
-    pattern: "🔁"
+    pattern: "🔁",
+    "shape-sort": "🟦"
 };
 
 function createStatGrid(items, className) {

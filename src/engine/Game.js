@@ -13,6 +13,7 @@ import { renderSequence } from "../components/sequence.js?v=9";
 import { renderOrder } from "../components/order.js?v=9";
 import { renderEvenOdd } from "../components/evenOdd.js?v=9";
 import { renderPattern } from "../components/pattern.js?v=9";
+import { renderShapeSort } from "../components/shapeSort.js?v=9";
 
 
 import { renderCelebration } from "../components/celebration.js";
@@ -133,7 +134,7 @@ export class Game {
 
         const step = this.lesson.steps[this.currentStep];
 
-        const isCounted = s => s.type === "exercise" || s.type === "missing-number" || s.type === "comparison" || s.type === "neighbor" || s.type === "neighbor-single" || s.type === "place-value" || s.type === "place-value-two-input" || s.type === "decomposition-find-wrong" || s.type === "bridge-ten" || s.type === "sequence" || s.type === "order" || s.type === "even-odd" || s.type === "pattern";
+        const isCounted = s => s.type === "exercise" || s.type === "missing-number" || s.type === "comparison" || s.type === "neighbor" || s.type === "neighbor-single" || s.type === "place-value" || s.type === "place-value-two-input" || s.type === "decomposition-find-wrong" || s.type === "bridge-ten" || s.type === "sequence" || s.type === "order" || s.type === "even-odd" || s.type === "pattern" || s.type === "shape-sort";
 
         const totalExercises = this.lesson.steps.filter(isCounted).length;
         const completedExercises = this.lesson.steps
@@ -195,6 +196,10 @@ export class Game {
 
             case "pattern":
                 renderPattern(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "pattern"), () => this.onAttempt());
+                break;
+
+            case "shape-sort":
+                renderShapeSort(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "shape-sort"), () => this.onAttempt());
                 break;
 
             case "missing-number":

@@ -1,0 +1,55 @@
+{
+  "id": "grade2-shape-sort-01",
+  "title": "Négyzet és téglalap",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🟪 Négyzet és téglalap",
+      "text": "Húzd a négyzeteket a négyzetbe, a téglalapokat a téglalapba!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Négyzet és téglalap",
+          "text": "Húzd a négyzeteket a négyzetbe, a téglalapokat a téglalapba!"
+        },
+        "football": {
+          "title": "⚽ Négyzet és téglalap",
+          "text": "Húzd a négyzeteket a négyzetbe, a téglalapokat a téglalapba!"
+        },
+        "cooking": {
+          "title": "🍳 Négyzet és téglalap",
+          "text": "Húzd a négyzeteket a négyzetbe, a téglalapokat a téglalapba!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "shape-sort",
+      "options": {
+        "count": 5,
+        "categories": ["square", "rectangle"]
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden alakzatot jól a helyére raktál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden alakzatot jól a helyére raktál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden alakzatot jól a helyére raktál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden alakzatot jól a helyére raktál!"
+        }
+      }
+    }
+  ]
+}

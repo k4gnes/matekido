@@ -5,7 +5,7 @@ import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
     postman: "📮 Mennyi levél hiányzik?",
-    racing: "🔧 Hány kerék hiányzik?",
+    racing: "🔧 Hány kör hiányzik?",
     football: "⚽ Hány gól hiányzik?",
     cooking: "🍳 Hány hozzávaló hiányzik?"
 };

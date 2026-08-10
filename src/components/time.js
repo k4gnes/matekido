@@ -56,6 +56,20 @@ function createClock(hour, minute) {
         svg.append(tick);
     }
 
+    for (let i = 0; i < 12; i++) {
+        const rad = i * 30 * Math.PI / 180;
+        const num = document.createElementNS(SVG_NS, "text");
+        num.setAttribute("x", cx + Math.sin(rad) * (r - 17));
+        num.setAttribute("y", cy - Math.cos(rad) * (r - 17));
+        num.setAttribute("text-anchor", "middle");
+        num.setAttribute("dominant-baseline", "central");
+        num.setAttribute("font-size", "11");
+        num.setAttribute("font-weight", "700");
+        num.setAttribute("fill", "#334155");
+        num.textContent = i === 0 ? "12" : String(i);
+        svg.append(num);
+    }
+
     const hourAngle = (hour % 12) * 30 + minute * 0.5;
     const minuteAngle = minute * 6;
 

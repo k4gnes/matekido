@@ -1,0 +1,54 @@
+{
+  "id": "grade1-measure-compare-01",
+  "title": "Melyik hosszabb?",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📏 Melyik hosszabb?",
+      "text": "Olvasd le a két mércéről, milyen hosszú a tárgy, és válaszd ki, melyik a hosszabb!",
+      "worldTitles": {
+        "racing": {
+          "title": "🔧 Melyik hosszabb?",
+          "text": "Olvasd le a két mércéről, milyen hosszú a cső, és válaszd ki, melyik a hosszabb!"
+        },
+        "football": {
+          "title": "⚽ Melyik hosszabb?",
+          "text": "Olvasd le a két mércéről, milyen hosszú a tárgy, és válaszd ki, melyik a hosszabb!"
+        },
+        "cooking": {
+          "title": "🥄 Melyik hosszabb?",
+          "text": "Olvasd le a két mércéről, milyen hosszú az étel, és válaszd ki, melyik a hosszabb!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "measure-compare",
+      "options": {
+        "count": 6
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden hosszúságot jól összehasonlítottál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden hosszúságot jól összehasonlítottál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden hosszúságot jól összehasonlítottál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden hosszúságot jól összehasonlítottál!"
+        }
+      }
+    }
+  ]
+}

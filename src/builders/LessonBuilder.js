@@ -195,6 +195,28 @@ export function buildLesson(lesson) {
                     price: task.price,
                     enough: task.enough
                 });
+            } else if (step.generator === "measure-compare") {
+                result.push({
+                    type: "measure-compare",
+                    objectA: task.objectA,
+                    objectB: task.objectB,
+                    startA: task.startA,
+                    endA: task.endA,
+                    startB: task.startB,
+                    endB: task.endB,
+                    lengthA: task.lengthA,
+                    lengthB: task.lengthB,
+                    answer: task.answer,
+                    options: task.options
+                });
+            } else if (step.generator === "measure-squares") {
+                result.push({
+                    type: "measure-squares",
+                    direction: task.direction,
+                    emoji: task.emoji,
+                    name: task.name,
+                    length: task.length
+                });
             } else {
                 result.push({
                     type: "exercise",

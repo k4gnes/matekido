@@ -17,6 +17,8 @@ import { generatePosition } from "./positionGenerator.js?v=3";
 import { generateMoneyPay } from "./moneyPayGenerator.js?v=3";
 import { generateMoneyCompare } from "./moneyCompareGenerator.js?v=3";
 import { generateMoneyEnough } from "./moneyEnoughGenerator.js?v=3";
+import { generateMeasureCompare } from "./measureCompareGenerator.js?v=3";
+import { generateMeasureSquares } from "./measureSquaresGenerator.js?v=3";
 
 export function generate(step) {
 
@@ -64,6 +66,10 @@ export function generate(step) {
             return generateMoneyCompare(step.options);
         case "money-enough":
             return generateMoneyEnough(step.options);
+        case "measure-compare":
+            return generateMeasureCompare(step.options);
+        case "measure-squares":
+            return generateMeasureSquares(step.options);
         case "multiplication":
         case "division":
 

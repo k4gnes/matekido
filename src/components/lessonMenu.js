@@ -66,7 +66,9 @@ const TYPE_EMOJI = {
     spatial: "🧭",
     "money-pay": "💰",
     "money-compare": "⚖️",
-    "money-enough": "🛒"
+    "money-enough": "🛒",
+    "measure-compare": "📏",
+    "measure-squares": "🧮"
 };
 
 const TYPE_GROUPS = {
@@ -92,7 +94,9 @@ const TYPE_LABEL = {
     spatial: "Térbeli tájékozódás",
     "money-pay": "Pontos kifizetés",
     "money-compare": "Pénz összehasonlítás",
-    "money-enough": "Elég-e a pénz?"
+    "money-enough": "Elég-e a pénz?",
+    "measure-compare": "Hosszúság összehasonlítás",
+    "measure-squares": "Mérés négyzetekkel"
 };
 
 const RANGE_LABEL = {
@@ -304,7 +308,7 @@ function createFilterPanel(filters, onFilterChange) {
     const skillBtns = document.createElement("div");
     skillBtns.className = "filter-skill-btns";
 
-    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed", "place-value", "number-sequence", "ordering", "even-odd", "pattern", "shapes", "hour", "position", "coins"];
+    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed", "place-value", "number-sequence", "ordering", "even-odd", "pattern", "shapes", "hour", "position", "coins", "length"];
 
     usedSkills.forEach(skillId => {
         const skill = SKILLS[skillId];

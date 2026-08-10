@@ -38,7 +38,9 @@ const TYPE_LABEL = {
     spatial: "Térbeli tájékozódás",
     "money-pay": "Pontos kifizetés",
     "money-compare": "Pénz összehasonlítás",
-    "money-enough": "Elég-e a pénz?"
+    "money-enough": "Elég-e a pénz?",
+    "measure-compare": "Hosszúság összehasonlítás",
+    "measure-squares": "Mérés négyzetekkel"
 };
 
 const TYPE_EMOJI = {
@@ -58,7 +60,9 @@ const TYPE_EMOJI = {
     spatial: "🧭",
     "money-pay": "💰",
     "money-compare": "⚖️",
-    "money-enough": "🛒"
+    "money-enough": "🛒",
+    "measure-compare": "📏",
+    "measure-squares": "🧮"
 };
 
 function createStatGrid(items, className) {

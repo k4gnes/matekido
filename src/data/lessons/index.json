@@ -786,6 +786,40 @@
                 "cooking": "🥄 Meg tudod venni?",
                 "football": "⚽ Meg tudod venni?"
             }
+        },
+        {
+            "id": "measure-compare-01",
+            "title": "Melyik hosszabb?",
+            "grades": [1],
+            "category": "measurement",
+            "skill": "length",
+            "difficulty": 1,
+            "type": "measure-compare",
+            "mission": "📏 Melyik hosszabb?",
+            "subtitle": "Melyik hosszabb?",
+            "file": "./data/lessons/grade1/measure-compare-01.json",
+            "worldTitles": {
+                "racing": "🔧 Melyik hosszabb?",
+                "cooking": "🥄 Melyik hosszabb?",
+                "football": "⚽ Melyik hosszabb?"
+            }
+        },
+        {
+            "id": "measure-squares-01",
+            "title": "Mérd meg négyzetekkel!",
+            "grades": [1],
+            "category": "measurement",
+            "skill": "length",
+            "difficulty": 1,
+            "type": "measure-squares",
+            "mission": "📏 Mérd meg négyzetekkel!",
+            "subtitle": "Mérd meg négyzetekkel!",
+            "file": "./data/lessons/grade1/measure-squares-01.json",
+            "worldTitles": {
+                "racing": "🔧 Mérd meg négyzetekkel!",
+                "cooking": "🥄 Mérd meg négyzetekkel!",
+                "football": "⚽ Mérd meg négyzetekkel!"
+            }
         }
     ],
     "gradeConfig": [

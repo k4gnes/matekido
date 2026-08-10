@@ -1,0 +1,54 @@
+{
+  "id": "grade1-measure-squares-01",
+  "title": "Mérd meg négyzetekkel!",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📏 Mérd meg négyzetekkel!",
+      "text": "Rakj mérőnégyzeteket a tárgyra, és számold meg, hányat ér a hossza, magassága vagy mélysége!",
+      "worldTitles": {
+        "racing": {
+          "title": "🔧 Mérd meg négyzetekkel!",
+          "text": "Rakj mérőnégyzeteket az alkatrészre, és számold meg, hányat ér a hossza!"
+        },
+        "football": {
+          "title": "⚽ Mérd meg négyzetekkel!",
+          "text": "Rakj mérőnégyzeteket a tárgyra, és számold meg, hányat ér a hossza!"
+        },
+        "cooking": {
+          "title": "🥄 Mérd meg négyzetekkel!",
+          "text": "Rakj mérőnégyzeteket az ételre, és számold meg, hányat ér a hossza!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "measure-squares",
+      "options": {
+        "count": 6
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden tárgyat jól megmértél négyzetekkel!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden alkatrészt jól megmértél négyzetekkel!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden tárgyat jól megmértél négyzetekkel!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden ételt jól megmértél négyzetekkel!"
+        }
+      }
+    }
+  ]
+}

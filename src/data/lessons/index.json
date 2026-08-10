@@ -219,6 +219,23 @@
             }
         },
         {
+            "id": "spatial-01",
+            "title": "Térbeli tájékozódás",
+            "grades": [1],
+            "category": "geometry",
+            "skill": "position",
+            "difficulty": 1,
+            "type": "spatial",
+            "mission": "🧭 Hol van?",
+            "subtitle": "Térbeli tájékozódás",
+            "file": "./data/lessons/grade1/spatial-01.json",
+            "worldTitles": {
+                "racing": "🏁 Hol van?",
+                "cooking": "🍳 Hol van?",
+                "football": "⚽ Hol van?"
+            }
+        },
+        {
             "id": "addition-01",
             "title": "Összeadás 20-ig",
             "grades": [1],

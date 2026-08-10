@@ -1,0 +1,54 @@
+{
+  "id": "grade1-spatial-01",
+  "title": "Térbeli tájékozódás",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧭 Hol van?",
+      "text": "Nézd meg a képet! Kattints a helyes meghatározásra!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏁 Hol van?",
+          "text": "Nézd meg a képet! Kattints a helyes meghatározásra!"
+        },
+        "football": {
+          "title": "⚽ Hol van?",
+          "text": "Nézd meg a képet! Kattints a helyes meghatározásra!"
+        },
+        "cooking": {
+          "title": "🍳 Hol van?",
+          "text": "Nézd meg a képet! Kattints a helyes meghatározásra!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "position",
+      "options": {
+        "count": 6
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden helyzetet jól felismertél!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden helyzetet jól felismertél!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden helyzetet jól felismertél!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden helyzetet jól felismertél!"
+        }
+      }
+    }
+  ]
+}

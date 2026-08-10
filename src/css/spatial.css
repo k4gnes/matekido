@@ -1,0 +1,101 @@
+.spatial-title {
+    font-size: 1.4rem;
+    margin-bottom: .5rem;
+}
+
+.spatial-scene {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 .5rem;
+}
+
+.spatial-svg {
+    width: min(320px, 90%);
+    height: auto;
+    background: #fff;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+}
+
+.spatial-prompt {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 .75rem;
+    color: #475569;
+}
+
+.spatial-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .6rem;
+    width: 100%;
+    max-width: 440px;
+    margin: 1rem 0;
+}
+
+.spatial-option {
+    margin: 0;
+    padding: .7rem 1rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    background: #fff;
+    color: #1a1a2e;
+    cursor: pointer;
+    transition: transform .15s, border-color .15s, background-color .15s;
+}
+
+.spatial-option:hover {
+    border-color: #4a90d9;
+}
+
+.spatial-option.spatial-option-correct {
+    border-color: #2e7d32;
+    background: #e8f5e9;
+}
+
+.spatial-option.spatial-option-wrong {
+    border-color: #c62828;
+    background: #ffebee;
+}
+
+.spatial-message {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    min-height: 1.5em;
+    text-align: center;
+}
+
+.spatial-message-good {
+    color: #2e7d32;
+}
+
+.spatial-message-bad {
+    color: #c62828;
+}
+
+.spatial-next {
+    display: block;
+    margin: 1rem auto 0;
+    padding: .6rem 1.5rem;
+    font-size: 1rem;
+    border: 2px solid #4a90d9;
+    border-radius: 12px;
+    background: #4a90d9;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 380px) {
+    .spatial-options {
+        grid-template-columns: 1fr;
+    }
+
+    .spatial-svg {
+        width: 250px;
+    }
+}

@@ -34,7 +34,8 @@ const TYPE_LABEL = {
     "even-odd": "Páros-páratlan",
     pattern: "Sorminta",
     "shape-sort": "Alakzatok",
-    time: "Idő"
+    time: "Idő",
+    spatial: "Térbeli tájékozódás"
 };
 
 const TYPE_EMOJI = {
@@ -50,7 +51,8 @@ const TYPE_EMOJI = {
     "even-odd": "🎯",
     pattern: "🔁",
     "shape-sort": "🟦",
-    time: "🕐"
+    time: "🕐",
+    spatial: "🧭"
 };
 
 function createStatGrid(items, className) {

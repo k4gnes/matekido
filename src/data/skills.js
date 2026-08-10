@@ -32,7 +32,7 @@ export const CATEGORIES = {
     geometry: {
         title: "Geometria",
         icon: "📐",
-        skills: ["shapes", "perimeter", "area"]
+        skills: ["shapes", "perimeter", "area", "position"]
     },
     wordProblems: {
         title: "Szöveges feladatok",
@@ -84,6 +84,7 @@ export const SKILLS = {
     shapes: { title: "Alakzatok", category: "geometry" },
     perimeter: { title: "Kerület", category: "geometry" },
     area: { title: "Terület", category: "geometry" },
+    position: { title: "Térbeli tájékozódás", category: "geometry" },
 
     // Word Problems
     "one-step": { title: "Egylépéses", category: "wordProblems" },

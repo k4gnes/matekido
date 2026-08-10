@@ -15,6 +15,7 @@ import { renderEvenOdd } from "../components/evenOdd.js?v=9";
 import { renderPattern } from "../components/pattern.js?v=9";
 import { renderShapeSort } from "../components/shapeSort.js?v=9";
 import { renderTime } from "../components/time.js?v=10";
+import { renderSpatial } from "../components/spatial.js?v=10";
 
 
 import { renderCelebration } from "../components/celebration.js";
@@ -135,7 +136,7 @@ export class Game {
 
         const step = this.lesson.steps[this.currentStep];
 
-        const isCounted = s => s.type === "exercise" || s.type === "missing-number" || s.type === "comparison" || s.type === "neighbor" || s.type === "neighbor-single" || s.type === "place-value" || s.type === "place-value-two-input" || s.type === "decomposition-find-wrong" || s.type === "bridge-ten" || s.type === "sequence" || s.type === "order" || s.type === "even-odd" || s.type === "pattern" || s.type === "shape-sort" || s.type === "time";
+        const isCounted = s => s.type === "exercise" || s.type === "missing-number" || s.type === "comparison" || s.type === "neighbor" || s.type === "neighbor-single" || s.type === "place-value" || s.type === "place-value-two-input" || s.type === "decomposition-find-wrong" || s.type === "bridge-ten" || s.type === "sequence" || s.type === "order" || s.type === "even-odd" || s.type === "pattern" || s.type === "shape-sort" || s.type === "time" || s.type === "spatial";
 
         const totalExercises = this.lesson.steps.filter(isCounted).length;
         const completedExercises = this.lesson.steps
@@ -205,6 +206,10 @@ export class Game {
 
             case "time":
                 renderTime(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "time"), () => this.onAttempt());
+                break;
+
+            case "spatial":
+                renderSpatial(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "spatial"), () => this.onAttempt());
                 break;
 
             case "missing-number":

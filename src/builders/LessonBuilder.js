@@ -163,6 +163,15 @@ export function buildLesson(lesson) {
                     answer: task.answer,
                     options: task.options
                 });
+            } else if (step.generator === "position") {
+                result.push({
+                    type: "spatial",
+                    ref: task.ref,
+                    object: task.object,
+                    position: task.position,
+                    answer: task.answer,
+                    options: task.options
+                });
             } else {
                 result.push({
                     type: "exercise",

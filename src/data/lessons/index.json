@@ -710,13 +710,13 @@
             "skill": "hour",
             "difficulty": 1,
             "type": "time",
-            "mission": "🕐 Melyik időt mutatja az óra?",
+            "mission": "🕐 Mit mutat az óra?",
             "subtitle": "Idő – egész és fél óra",
             "file": "./data/lessons/grade1/time-01.json",
             "worldTitles": {
-                "racing": "🏎️ Melyik időt mutatja az óra?",
-                "cooking": "🍳 Melyik időt mutatja az óra?",
-                "football": "⚽ Melyik időt mutatja az óra?"
+                "racing": "🏎️ Mit mutat az óra?",
+                "cooking": "🍳 Mit mutat az óra?",
+                "football": "⚽ Mit mutat az óra?"
             }
         },
         {
@@ -727,13 +727,64 @@
             "skill": "hour",
             "difficulty": 2,
             "type": "time",
-            "mission": "🕐 Melyik időt mutatja az óra?",
+            "mission": "🕐 Mit mutat az óra?",
             "subtitle": "Idő – egész és fél óra (éjszakával is)",
             "file": "./data/lessons/grade2/time-01.json",
             "worldTitles": {
-                "racing": "🏎️ Melyik időt mutatja az óra?",
-                "cooking": "🍳 Melyik időt mutatja az óra?",
-                "football": "⚽ Melyik időt mutatja az óra?"
+                "racing": "🏎️ Mit mutat az óra?",
+                "cooking": "🍳 Mit mutat az óra?",
+                "football": "⚽ Mit mutat az óra?"
+            }
+        },
+        {
+            "id": "money-pay-01",
+            "title": "Fizesd ki pontosan!",
+            "grades": [1],
+            "category": "money",
+            "skill": "coins",
+            "difficulty": 1,
+            "type": "money-pay",
+            "mission": "💰 Fizesd ki pontosan!",
+            "subtitle": "Fizesd ki pontosan!",
+            "file": "./data/lessons/grade1/money-pay-01.json",
+            "worldTitles": {
+                "racing": "🔧 Fizesd ki pontosan!",
+                "cooking": "🥄 Fizesd ki pontosan!",
+                "football": "⚽ Fizesd ki pontosan!"
+            }
+        },
+        {
+            "id": "money-compare-01",
+            "title": "Melyik pénztárcában van több?",
+            "grades": [1],
+            "category": "money",
+            "skill": "coins",
+            "difficulty": 1,
+            "type": "money-compare",
+            "mission": "💰 Melyik pénztárcában van több?",
+            "subtitle": "Melyik pénztárcában van több?",
+            "file": "./data/lessons/grade1/money-compare-01.json",
+            "worldTitles": {
+                "racing": "🔧 Melyikben van több?",
+                "cooking": "🥄 Melyikben van több?",
+                "football": "⚽ Melyikben van több?"
+            }
+        },
+        {
+            "id": "money-enough-01",
+            "title": "Meg tudod venni?",
+            "grades": [1],
+            "category": "money",
+            "skill": "coins",
+            "difficulty": 1,
+            "type": "money-enough",
+            "mission": "💰 Meg tudod venni?",
+            "subtitle": "Meg tudod venni?",
+            "file": "./data/lessons/grade1/money-enough-01.json",
+            "worldTitles": {
+                "racing": "🔧 Meg tudod venni?",
+                "cooking": "🥄 Meg tudod venni?",
+                "football": "⚽ Meg tudod venni?"
             }
         }
     ],

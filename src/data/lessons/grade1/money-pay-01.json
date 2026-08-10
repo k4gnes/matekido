@@ -1,0 +1,56 @@
+{
+  "id": "grade1-money-pay-01",
+  "title": "Fizesd ki pontosan!",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "💰 Fizesd ki pontosan!",
+      "text": "Válogass érméket a pénztárcába, hogy pontosan annyit fizess, amennyibe a termék kerül!",
+      "worldTitles": {
+        "racing": {
+          "title": "🔧 Fizesd ki pontosan!",
+          "text": "Válogass érméket a pénztárcába, hogy pontosan annyit fizess, amennyibe az alkatrész kerül!"
+        },
+        "football": {
+          "title": "⚽ Fizesd ki pontosan!",
+          "text": "Válogass érméket a pénztárcába, hogy pontosan annyit fizess, amennyibe a cucc kerül!"
+        },
+        "cooking": {
+          "title": "🥄 Fizesd ki pontosan!",
+          "text": "Válogass érméket a pénztárcába, hogy pontosan annyit fizess, amennyibe az étel kerül!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "money-pay",
+      "options": {
+        "count": 6,
+        "minPrice": 8,
+        "maxPrice": 50
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden vásárlást pontosan kifizettél!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden alkatrészt pontosan kifizettél!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden vásárlást pontosan kifizettél!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden hozzávalót pontosan kifizettél!"
+        }
+      }
+    }
+  ]
+}

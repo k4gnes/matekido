@@ -14,6 +14,9 @@ import { generatePattern } from "./patternGenerator.js?v=3";
 import { generateShapeSort } from "./shapeSortGenerator.js?v=3";
 import { generateTime } from "./timeGenerator.js?v=3";
 import { generatePosition } from "./positionGenerator.js?v=3";
+import { generateMoneyPay } from "./moneyPayGenerator.js?v=3";
+import { generateMoneyCompare } from "./moneyCompareGenerator.js?v=3";
+import { generateMoneyEnough } from "./moneyEnoughGenerator.js?v=3";
 
 export function generate(step) {
 
@@ -55,6 +58,12 @@ export function generate(step) {
             return generateTime(step.options);
         case "position":
             return generatePosition(step.options);
+        case "money-pay":
+            return generateMoneyPay(step.options);
+        case "money-compare":
+            return generateMoneyCompare(step.options);
+        case "money-enough":
+            return generateMoneyEnough(step.options);
         case "multiplication":
         case "division":
 

@@ -172,6 +172,29 @@ export function buildLesson(lesson) {
                     answer: task.answer,
                     options: task.options
                 });
+            } else if (step.generator === "money-pay") {
+                result.push({
+                    type: "money-pay",
+                    emoji: task.emoji,
+                    name: task.name,
+                    price: task.price
+                });
+            } else if (step.generator === "money-compare") {
+                result.push({
+                    type: "money-compare",
+                    leftCoins: task.leftCoins,
+                    rightCoins: task.rightCoins,
+                    operator: task.operator
+                });
+            } else if (step.generator === "money-enough") {
+                result.push({
+                    type: "money-enough",
+                    emoji: task.emoji,
+                    name: task.name,
+                    coins: task.coins,
+                    price: task.price,
+                    enough: task.enough
+                });
             } else {
                 result.push({
                     type: "exercise",

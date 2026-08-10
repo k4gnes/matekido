@@ -2,10 +2,10 @@ import { createCard } from "./ui/card.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
-    postman: "📮 Melyik időt mutatja az óra?",
-    racing: "🏎️ Melyik időt mutatja az óra?",
-    football: "⚽ Melyik időt mutatja az óra?",
-    cooking: "🍳 Melyik időt mutatja az óra?"
+    postman: "📮 Mit mutat az óra?",
+    racing: "🏎️ Mit mutat az óra?",
+    football: "⚽ Mit mutat az óra?",
+    cooking: "🍳 Mit mutat az óra?"
 };
 
 const SVG_NS = "http://www.w3.org/2000/svg";

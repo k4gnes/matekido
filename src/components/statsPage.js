@@ -35,7 +35,10 @@ const TYPE_LABEL = {
     pattern: "Sorminta",
     "shape-sort": "Alakzatok",
     time: "Idő",
-    spatial: "Térbeli tájékozódás"
+    spatial: "Térbeli tájékozódás",
+    "money-pay": "Pontos kifizetés",
+    "money-compare": "Pénz összehasonlítás",
+    "money-enough": "Elég-e a pénz?"
 };
 
 const TYPE_EMOJI = {
@@ -52,7 +55,10 @@ const TYPE_EMOJI = {
     pattern: "🔁",
     "shape-sort": "🟦",
     time: "🕐",
-    spatial: "🧭"
+    spatial: "🧭",
+    "money-pay": "💰",
+    "money-compare": "⚖️",
+    "money-enough": "🛒"
 };
 
 function createStatGrid(items, className) {

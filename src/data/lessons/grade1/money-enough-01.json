@@ -1,0 +1,56 @@
+{
+  "id": "grade1-money-enough-01",
+  "title": "Meg tudod venni?",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "💰 Meg tudod venni?",
+      "text": "Nézd meg a terméket és a pénztárcád tartalmát! Elég a pénzed a vásárláshoz?",
+      "worldTitles": {
+        "racing": {
+          "title": "🔧 Meg tudod venni?",
+          "text": "Nézd meg az alkatrészt és a pénztárcád tartalmát! Elég a pénzed a vásárláshoz?"
+        },
+        "football": {
+          "title": "⚽ Meg tudod venni?",
+          "text": "Nézd meg a terméket és a pénztárcád tartalmát! Elég a pénzed a vásárláshoz?"
+        },
+        "cooking": {
+          "title": "🥄 Meg tudod venni?",
+          "text": "Nézd meg az ételt és a pénztárcád tartalmát! Elég a pénzed a vásárláshoz?"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "money-enough",
+      "options": {
+        "count": 6,
+        "minCoins": 2,
+        "maxCoins": 4
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden vásárlást jól eldöntöttél!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden vásárlást jól eldöntöttél!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden vásárlást jól eldöntöttél!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden vásárlást jól eldöntöttél!"
+        }
+      }
+    }
+  ]
+}

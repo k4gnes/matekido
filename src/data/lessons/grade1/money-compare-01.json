@@ -1,0 +1,56 @@
+{
+  "id": "grade1-money-compare-01",
+  "title": "Melyik pénztárcában van több?",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "💰 Melyik pénztárcában van több?",
+      "text": "Számold meg, mennyi pénz van a két pénztárcában, és rakd ki közéjük a helyes jelet!",
+      "worldTitles": {
+        "racing": {
+          "title": "🔧 Melyikben van több?",
+          "text": "Számold meg, mennyi pénz van a két pénztárcában, és rakd ki közéjük a helyes jelet!"
+        },
+        "football": {
+          "title": "⚽ Melyikben van több?",
+          "text": "Számold meg, mennyi pénz van a két pénztárcában, és rakd ki közéjük a helyes jelet!"
+        },
+        "cooking": {
+          "title": "🥄 Melyikben van több?",
+          "text": "Számold meg, mennyi pénz van a két pénztárcában, és rakd ki közéjük a helyes jelet!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "money-compare",
+      "options": {
+        "count": 6,
+        "minCoins": 2,
+        "maxCoins": 4
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden pénztárcát jól hasonlítottál össze!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden pénztárcát jól hasonlítottál össze!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden pénztárcát jól hasonlítottál össze!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden pénztárcát jól hasonlítottál össze!"
+        }
+      }
+    }
+  ]
+}

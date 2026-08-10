@@ -16,6 +16,9 @@ import { renderPattern } from "../components/pattern.js?v=9";
 import { renderShapeSort } from "../components/shapeSort.js?v=9";
 import { renderTime } from "../components/time.js?v=10";
 import { renderSpatial } from "../components/spatial.js?v=10";
+import { renderMoneyPay } from "../components/moneyPay.js?v=10";
+import { renderMoneyCompare } from "../components/moneyCompare.js?v=10";
+import { renderMoneyEnough } from "../components/moneyEnough.js?v=10";
 
 
 import { renderCelebration } from "../components/celebration.js";
@@ -136,7 +139,7 @@ export class Game {
 
         const step = this.lesson.steps[this.currentStep];
 
-        const isCounted = s => s.type === "exercise" || s.type === "missing-number" || s.type === "comparison" || s.type === "neighbor" || s.type === "neighbor-single" || s.type === "place-value" || s.type === "place-value-two-input" || s.type === "decomposition-find-wrong" || s.type === "bridge-ten" || s.type === "sequence" || s.type === "order" || s.type === "even-odd" || s.type === "pattern" || s.type === "shape-sort" || s.type === "time" || s.type === "spatial";
+        const isCounted = s => s.type === "exercise" || s.type === "missing-number" || s.type === "comparison" || s.type === "neighbor" || s.type === "neighbor-single" || s.type === "place-value" || s.type === "place-value-two-input" || s.type === "decomposition-find-wrong" || s.type === "bridge-ten" || s.type === "sequence" || s.type === "order" || s.type === "even-odd" || s.type === "pattern" || s.type === "shape-sort" || s.type === "time" || s.type === "spatial" || s.type === "money-pay" || s.type === "money-compare" || s.type === "money-enough";
 
         const totalExercises = this.lesson.steps.filter(isCounted).length;
         const completedExercises = this.lesson.steps
@@ -210,6 +213,18 @@ export class Game {
 
             case "spatial":
                 renderSpatial(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "spatial"), () => this.onAttempt());
+                break;
+
+            case "money-pay":
+                renderMoneyPay(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "money-pay"), () => this.onAttempt());
+                break;
+
+            case "money-compare":
+                renderMoneyCompare(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "money-compare"), () => this.onAttempt());
+                break;
+
+            case "money-enough":
+                renderMoneyEnough(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "money-enough"), () => this.onAttempt());
                 break;
 
             case "missing-number":

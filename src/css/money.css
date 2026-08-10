@@ -1,0 +1,228 @@
+.money-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+    padding: .9rem 1.2rem;
+    margin: .5rem auto 0;
+    background: #fff7ed;
+    border: 2px solid #fed7aa;
+    border-radius: 16px;
+    max-width: 90%;
+}
+
+.money-item-emoji {
+    font-size: 2.1rem;
+}
+
+.money-item-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.money-item-price {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #b45309;
+    white-space: nowrap;
+}
+
+.money-prompt {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    margin: .8rem 0 .4rem;
+    color: #475569;
+}
+
+.money-coin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border: 2px solid #a87718;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #fff3c4, #f7c948 55%, #c9962e);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .25), inset 0 0 0 3px rgba(255, 255, 255, .28);
+    color: #5b3b00;
+    font-weight: 800;
+    cursor: pointer;
+    line-height: 1;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.money-tray {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .7rem;
+    margin: 1rem 0;
+}
+
+.money-wallet {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: .45rem;
+    min-height: 4rem;
+    padding: 1.4rem .9rem .9rem;
+    margin: .4rem 0;
+    width: 100%;
+}
+
+.money-wallet,
+.money-cmp-wallet {
+    background: linear-gradient(160deg, #a05c2c, #7d4a22 55%, #6b3c1b);
+    border: 3px solid #4c2810;
+    border-radius: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .25), inset 0 2px 3px rgba(255, 255, 255, .18);
+}
+
+.money-wallet::before,
+.money-cmp-wallet::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 62%;
+    height: 13px;
+    background: linear-gradient(180deg, #b56c37, #8a4f24);
+    border: 2px solid #4c2810;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, .25);
+}
+
+.money-wallet::after,
+.money-cmp-wallet::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 13px;
+    height: 13px;
+    background: radial-gradient(circle at 35% 30%, #ffe9a8, #d9a537 60%, #a87718);
+    border: 2px solid #6b4a0f;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+}
+
+.money-wallet-empty {
+    color: #f2d5ab;
+    font-weight: 600;
+}
+
+.money-total {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: .6rem 0;
+}
+
+.money-secondary {
+    margin: .2rem auto 0;
+    padding: .5rem 1.2rem;
+    font-size: .95rem;
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.money-secondary:hover {
+    background: #cbd5e1;
+}
+
+.money-cmp-equation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 1.2rem 0;
+}
+
+.money-cmp-wallet {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .4rem;
+    min-width: 130px;
+    padding: 1.5rem .8rem .8rem;
+}
+
+.money-cmp-label {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #f2d5ab;
+}
+
+.money-cmp-coins {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .35rem;
+    max-width: 150px;
+}
+
+.money-cmp-operators {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+.money-cmp-op {
+    width: 52px;
+    height: 52px;
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 800;
+    border: 2px solid #bbb;
+    border-radius: 12px;
+    background: #fff;
+    color: var(--text);
+    cursor: pointer;
+    transition: transform .15s, background-color .15s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.money-cmp-op:hover {
+    background: #eef6ff;
+    transform: scale(1.08);
+}
+
+.money-enough-btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .7rem;
+    margin: .6rem 0;
+}
+
+.money-enough-btn {
+    margin: 0;
+    padding: .7rem 1.4rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    border: 2px solid #cbd5e1;
+    background: #fff;
+    color: #1a1a2e;
+}
+
+.money-enough-yes:hover {
+    border-color: #2e7d32;
+    background: #e8f5e9;
+}
+
+.money-enough-no:hover {
+    border-color: #c62828;
+    background: #ffebee;
+}

@@ -414,20 +414,20 @@ function filterLessons(lessons, filters) {
     const hasFilters = filters.difficulty.length > 0 || filters.grade.length > 0 || filters.skills.length > 0 || filters.types.length > 0 || filters.ranges.length > 0 || filters.categories.length > 0;
     if (!hasFilters) return lessons;
 
+    const selectedTypes = new Set();
+    filters.types.forEach(t => {
+        (TYPE_GROUPS[t] || [t]).forEach(x => selectedTypes.add(x));
+    });
+
     return lessons.filter(l => {
-        if (filters.difficulty.length > 0 && !filters.difficulty.includes(l.difficulty)) return false;
-        if (filters.grade.length > 0 && !l.grades?.some(g => filters.grade.includes(g))) return false;
-        if (filters.skills.length > 0 && !filters.skills.includes(l.skill)) return false;
-        if (filters.types.length > 0) {
-            const selectedTypes = new Set();
-            filters.types.forEach(t => {
-                (TYPE_GROUPS[t] || [t]).forEach(x => selectedTypes.add(x));
-            });
-            if (!selectedTypes.has(l.type)) return false;
-        }
-        if (filters.ranges.length > 0 && !filters.ranges.includes(l.range)) return false;
-        if (filters.categories.length > 0 && !filters.categories.includes(l.category)) return false;
-        return true;
+        let match = false;
+        if (filters.difficulty.length > 0) match = match || filters.difficulty.includes(l.difficulty);
+        if (filters.grade.length > 0) match = match || l.grades?.some(g => filters.grade.includes(g));
+        if (filters.skills.length > 0) match = match || filters.skills.includes(l.skill);
+        if (selectedTypes.size > 0) match = match || selectedTypes.has(l.type);
+        if (filters.ranges.length > 0) match = match || filters.ranges.includes(l.range);
+        if (filters.categories.length > 0) match = match || filters.categories.includes(l.category);
+        return match;
     });
 }
 

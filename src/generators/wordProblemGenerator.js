@@ -121,6 +121,60 @@ const THEMES = {
             question: "Mennyivel több gól esett az első félidőben?",
             success: (answer) => `😊 Szép munka! ${diffPhrase(answer)} gól esett az első félidőben!`
         }
+    },
+    animals: {
+        join: {
+            title: "🦓 Egyesítés",
+            text: (a, b) => `A karámban ${a} zebra van. A gondozó még ${b} zebrát enged be.`,
+            question: "Hány zebra lesz összesen a karámban?",
+            success: (answer) => `😊 Szép munka! Összesen ${answer} zebra van a karámban!`
+        },
+        remove: {
+            title: "🦓 Elmegy belőle",
+            text: (total, leaving) => `${total} zebra van a kifutóban. ${leaving} sárga nyakörvű zebrát megetetnek és behoznak a ketrecbe.`,
+            question: "Hány zebra marad a kifutóban?",
+            hint: "Húzd a sárga nyakörvű zebrákat a ketrecbe!",
+            success: (answer) => `😊 Szép munka! A kifutóban ${answer} zebra maradt!`
+        },
+        "part-whole": {
+            title: "🦓 Rész és egész",
+            text: (total, part) => `${total} zebra van a kifutóban. Közülük ${part} zebrának sárga a nyakörve, a többinek zöld.`,
+            question: "Hány zöld nyakörvű zebra van?",
+            success: (answer) => `😊 Szép munka! ${answer} zebrának zöld a nyakörve!`
+        },
+        compare: {
+            title: "🦓 Összehasonlítás",
+            text: (a, b) => `Reggel ${a} zebrát, este ${b} zebrát etettek meg.`,
+            question: "Mennyivel több zebrát etettek meg reggel?",
+            success: (answer) => `😊 Szép munka! ${diffPhrase(answer)} zebrát etettek meg reggel!`
+        }
+    },
+    space: {
+        join: {
+            title: "🤖 Egyesítés",
+            text: (a, b) => `A fedélzeten ${a} robot van. A rakéta még ${b} robotot hoz.`,
+            question: "Hány robot lesz összesen a fedélzeten?",
+            success: (answer) => `😊 Szép munka! Összesen ${answer} robot van a fedélzeten!`
+        },
+        remove: {
+            title: "🤖 Elmegy belőle",
+            text: (total, leaving) => `${total} robot van az űrállomáson. ${leaving} szürke robot elindul a bolygóra.`,
+            question: "Hány robot marad az űrállomáson?",
+            hint: "Húzd a szürke robotokat a rakétához!",
+            success: (answer) => `😊 Szép munka! Az űrállomáson ${answer} robot maradt!`
+        },
+        "part-whole": {
+            title: "🤖 Rész és egész",
+            text: (total, part) => `${total} robot van az űrállomáson. Közülük ${part} működik, a többi töltődik.`,
+            question: "Hány robot töltődik?",
+            success: (answer) => `😊 Szép munka! ${answer} robot töltődik!`
+        },
+        compare: {
+            title: "🤖 Összehasonlítás",
+            text: (a, b) => `Az első űrhajóval ${a} robotot, a másodikkal ${b} robotot szállítottak.`,
+            question: "Mennyivel több robotot szállított az első űrhajó?",
+            success: (answer) => `😊 Szép munka! ${diffPhrase(answer)} robotot szállított az első űrhajó!`
+        }
     }
 };
 

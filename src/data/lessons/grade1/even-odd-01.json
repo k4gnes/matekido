@@ -19,6 +19,14 @@
         "cooking": {
           "title": "🍳 Páros és páratlan",
           "text": "Döntsd el a hozzávalókról, hogy párosak-e! Húzd a kért számokat a megfelelő színű helyre!"
+        },
+        "animals": {
+          "title": "🦁 Páros és páratlan állatok",
+          "text": "Döntsd el az állatok számáról, hogy párosak-e! Húzd őket a megfelelő helyre!"
+        },
+        "space": {
+          "title": "🤖 Páros és páratlan robotok",
+          "text": "Döntsd el a robotok számáról, hogy párosak-e! Húzd őket a megfelelő helyre!"
         }
       }
     },
@@ -49,6 +57,14 @@
         "cooking": {
           "title": "🎉 Szép munka!",
           "text": "Minden hozzávalót jól válogattál szét!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden számot jól válogattál szét!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden számot jól válogattál szét!"
         }
       }
     }

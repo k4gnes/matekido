@@ -5,7 +5,9 @@ const WORLD_TITLES = {
     postman: "📮 Mi a következő a sorban?",
     racing: "🏎️ Mi a következő a sorban?",
     football: "⚽ Mi a következő a sorban?",
-    cooking: "🍳 Mi a következő a sorban?"
+    cooking: "🍳 Mi a következő a sorban?",
+    animals: "🦁 Mi a következő a sorban?",
+    space: "🤖 Mi a következő a sorban?"
 };
 
 export function renderPattern(step, root, onNext, progress, onResult, onAttempt) {

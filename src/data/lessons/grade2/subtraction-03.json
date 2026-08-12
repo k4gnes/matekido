@@ -18,6 +18,14 @@
                 "cooking": {
                     "title": "🍳 Segíts a szakácsnak!",
                     "text": "A szakácsnak ma sok ételt kell elkészítenie. Számold ki a műveleteket!"
+                },
+                "animals": {
+                    "title": "🦁 Mennyi takarmány maradt?",
+                    "text": "Számold ki, hány adag takarmány maradt az állatoknak!"
+                },
+                "space": {
+                    "title": "🤖 Mennyi energia maradt?",
+                    "text": "Számold ki, hány energiaegység maradt a robotoknak!"
                 }
             }
         },
@@ -48,6 +56,14 @@
                 "cooking": {
                     "title": "🎉 Szép munka!",
                     "text": "Minden ételt sikeresen elkészítettél!"
+                },
+                "animals": {
+                    "title": "🎉 Ügyes voltál!",
+                    "text": "Minden állatnak jól kiszámoltad a maradékot!"
+                },
+                "space": {
+                    "title": "🎉 Szuper vagy!",
+                    "text": "Minden energiát jól kiszámoltál!"
                 }
             }
         }

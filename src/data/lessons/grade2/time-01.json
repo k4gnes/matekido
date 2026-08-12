@@ -19,6 +19,14 @@
         "cooking": {
           "title": "🍳 Idő",
           "text": "Nézd meg az órát! Találd meg, melyik meghatározás illik hozzá!"
+        },
+        "animals": {
+          "title": "🦁 Mit mutat az óra az állatkertben?",
+          "text": "Nézd meg az órát! Találd meg, melyik meghatározás illik hozzá!"
+        },
+        "space": {
+          "title": "🤖 Mit mutat az óra az űrállomáson?",
+          "text": "Nézd meg az órát! Találd meg, melyik meghatározás illik hozzá!"
         }
       }
     },
@@ -48,6 +56,14 @@
         },
         "cooking": {
           "title": "🎉 Szép munka!",
+          "text": "Minden időt jól felismertél!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden időt jól felismertél!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
           "text": "Minden időt jól felismertél!"
         }
       }

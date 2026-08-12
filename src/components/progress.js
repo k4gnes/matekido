@@ -4,7 +4,9 @@ const WORLD_PROGRESS = {
     postman: { done: "🏠", current: "📡", next: "🏡" },
     racing: { done: "🏁", current: "🏎️", next: "🛣️" },
     cooking: { done: "🍽️", current: "🍳", next: "🥄" },
-    football: { done: "⚽", current: "🥅", next: "🏟️" }
+    football: { done: "⚽", current: "🥅", next: "🏟️" },
+    animals: { done: "🦒", current: "🦁", next: "🐾" },
+    space: { done: "🛰️", current: "🤖", next: "🚀" }
 };
 
 export function renderProgress({ current, total }) {

@@ -5,7 +5,9 @@ const WORLD_EMOJI = {
     postman: null,
     racing: "🔧",
     football: "⚽",
-    cooking: "🥄"
+    cooking: "🥄",
+    animals: "🦁",
+    space: "🤖"
 };
 
 function createEnvelopeSVG() {

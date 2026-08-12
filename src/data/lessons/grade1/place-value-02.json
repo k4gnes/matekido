@@ -19,6 +19,14 @@
         "cooking": {
           "title": "🍳 Hány fazék és hány kanál van?",
           "text": "Számold ki, bontsd fel!"
+        },
+        "animals": {
+          "title": "🦁 Hány karám és hány állat van?",
+          "text": "Számold ki, hány karám és hány állat van a számban!"
+        },
+        "space": {
+          "title": "🤖 Hány tartály és hány robot van?",
+          "text": "Számold ki, hány tartály és hány robot van a számban!"
         }
       }
     },

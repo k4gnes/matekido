@@ -9,7 +9,9 @@ const WORLD_EMOJI = {
     postman: "💰",
     racing: "🔧",
     football: "⚽",
-    cooking: "🥄"
+    cooking: "🥄",
+    animals: "🦁",
+    space: "🤖"
 };
 
 export function renderMoneyPay(step, root, next, progress, onResult, onAttempt) {

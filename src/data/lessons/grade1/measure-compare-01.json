@@ -19,6 +19,14 @@
         "cooking": {
           "title": "🥄 Melyik hosszabb?",
           "text": "Olvasd le a két mércéről, milyen hosszú az étel, és válaszd ki, melyik a hosszabb!"
+        },
+        "animals": {
+          "title": "🦁 Melyik állat hosszabb?",
+          "text": "Olvasd le a két mércéről, milyen hosszú az állat, és válaszd ki, melyik a hosszabb!"
+        },
+        "space": {
+          "title": "🤖 Melyik rakéta hosszabb?",
+          "text": "Olvasd le a két mércéről, milyen hosszú a rakéta, és válaszd ki, melyik a hosszabb!"
         }
       }
     },
@@ -46,6 +54,14 @@
         },
         "cooking": {
           "title": "🎉 Szép munka!",
+          "text": "Minden hosszúságot jól összehasonlítottál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden hosszúságot jól összehasonlítottál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
           "text": "Minden hosszúságot jól összehasonlítottál!"
         }
       }

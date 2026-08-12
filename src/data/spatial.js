@@ -98,21 +98,32 @@ export const OBJECTS = [
     { id: "tojas", name: "tojás", article: "a", emoji: "🥚" },
     { id: "gomba", name: "gomba", article: "a", emoji: "🍄" },
     { id: "jatekos", name: "játékos", article: "a", emoji: "🧑" },
-    { id: "zaszlo", name: "zászló", article: "a", emoji: "🚩" }
+    { id: "zaszlo", name: "zászló", article: "a", emoji: "🚩" },
+    { id: "oroszlan", name: "oroszlán", article: "az", emoji: "🦁" },
+    { id: "zebra", name: "zebra", article: "a", emoji: "🦓" },
+    { id: "majom", name: "majom", article: "a", emoji: "🐒" },
+    { id: "zsiraf", name: "zsiráf", article: "a", emoji: "🦒" },
+    { id: "robot", name: "robot", article: "a", emoji: "🤖" },
+    { id: "muhold", name: "műhold", article: "a", emoji: "🛰️" },
+    { id: "urhajos", name: "űrhajós", article: "az", emoji: "🧑🚀" }
 ];
 
 export const WORLD_REFS = {
     postman: ["postalada", "auto", "haz"],
     racing: ["versenyauto", "garazs", "rajtkapu"],
     cooking: ["tuzhely", "hutosekreny", "tal"],
-    football: ["kapu", "lelato", "labdatarto"]
+    football: ["kapu", "lelato", "labdatarto"],
+    animals: ["ketrec", "itato", "tavacska"],
+    space: ["raketa", "allomas", "tartaly"]
 };
 
 export const WORLD_OBJECTS = {
     postman: ["level", "csomag", "kulcs"],
     racing: ["kerek", "sisak", "kesztyu"],
     cooking: ["tojas", "alma", "gomba"],
-    football: ["labda", "jatekos", "zaszlo"]
+    football: ["labda", "jatekos", "zaszlo"],
+    animals: ["oroszlan", "zebra", "majom"],
+    space: ["robot", "muhold", "urhajos"]
 };
 
 export const WORLD_REFERENCES = {
@@ -268,6 +279,90 @@ export const WORLD_REFERENCES = {
             beside: "a labdatartó mellett",
             left: "a labdatartótól balra",
             right: "a labdatartótól jobbra"
+        }
+    },
+    ketrec: {
+        id: "ketrec",
+        name: "ketrec",
+        bbox: { x: 60, y: 55, w: 100, h: 90 },
+        labels: {
+            above: "a ketrec felett",
+            below: "a ketrec alatt",
+            "in-front": "a ketrec előtt",
+            behind: "a ketrec mögött",
+            beside: "a ketrec mellett",
+            left: "a ketrectől balra",
+            right: "a ketrectől jobbra"
+        }
+    },
+    itato: {
+        id: "itato",
+        name: "itató",
+        bbox: { x: 60, y: 96, w: 100, h: 40 },
+        labels: {
+            above: "az itató felett",
+            below: "az itató alatt",
+            "in-front": "az itató előtt",
+            behind: "az itató mögött",
+            beside: "az itató mellett",
+            left: "az itatótól balra",
+            right: "az itatótól jobbra"
+        }
+    },
+    tavacska: {
+        id: "tavacska",
+        name: "tavacska",
+        bbox: { x: 50, y: 92, w: 120, h: 50 },
+        labels: {
+            above: "a tavacska felett",
+            below: "a tavacska alatt",
+            "in-front": "a tavacska előtt",
+            behind: "a tavacska mögött",
+            beside: "a tavacska mellett",
+            left: "a tavacskától balra",
+            right: "a tavacskától jobbra"
+        }
+    },
+    raketa: {
+        id: "raketa",
+        name: "rakéta",
+        bbox: { x: 85, y: 40, w: 50, h: 100 },
+        labels: {
+            above: "a rakéta felett",
+            below: "a rakéta alatt",
+            "in-front": "a rakéta előtt",
+            behind: "a rakéta mögött",
+            beside: "a rakéta mellett",
+            left: "a rakétától balra",
+            right: "a rakétától jobbra"
+        }
+    },
+    allomas: {
+        id: "allomas",
+        name: "űrállomás",
+        bbox: { x: 60, y: 70, w: 100, h: 42 },
+        labels: {
+            above: "az űrállomás felett",
+            below: "az űrállomás alatt",
+            "in-front": "az űrállomás előtt",
+            behind: "az űrállomás mögött",
+            beside: "az űrállomás mellett",
+            left: "az űrállomástól balra",
+            right: "az űrállomástól jobbra"
+        }
+    },
+    tartaly: {
+        id: "tartaly",
+        name: "tartály",
+        bbox: { x: 70, y: 55, w: 80, h: 90 },
+        labels: {
+            above: "a tartály felett",
+            below: "a tartály alatt",
+            "in-front": "a tartály előtt",
+            behind: "a tartály mögött",
+            beside: "a tartály mellett",
+            left: "a tartálytól balra",
+            right: "a tartálytól jobbra"
         }
     }
 };

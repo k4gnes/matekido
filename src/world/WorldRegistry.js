@@ -28,6 +28,20 @@ const WORLDS = [
         icon: "⚽",
         description: "Gól rúgás és csapatmunka",
         requiredStars: 80
+    }),
+    new World({
+        id: "animals",
+        name: "Állatkert",
+        icon: "🦁",
+        description: "Állatok gondozása az állatkertben",
+        requiredStars: 100
+    }),
+    new World({
+        id: "space",
+        name: "Űr",
+        icon: "🤖",
+        description: "Robotok és utazás a világűrben",
+        requiredStars: 120
     })
 ];
 

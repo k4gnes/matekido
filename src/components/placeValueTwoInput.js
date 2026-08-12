@@ -7,7 +7,9 @@ const WORLD = {
     postman: { title: "📮 Hány levél van a csomagban?", tens: "📦", ones: "✉️" },
     racing: { title: "🏎️ Hány kerék és hány szerszám van a garázsban?", tens: "🛞", ones: "🔧" },
     football: { title: "⚽ Hány edző és hány játékos van a pályán?", tens: "👨‍🏫", ones: "🏃" },
-    cooking: { title: "🍳 Hány fazék és hány kanál kell?", tens: "🍲", ones: "🥄" }
+    cooking: { title: "🍳 Hány fazék és hány kanál kell?", tens: "🍲", ones: "🥄" },
+    animals: { title: "🦁 Hány karám és hány állat van?", tens: "🦒", ones: "🦁" },
+    space: { title: "🤖 Hány tartály és hány robot van?", tens: "🛰️", ones: "🤖" }
 };
 
 export function renderPlaceValueTwoInput(step, root, next, progress, onResult, onAttempt) {

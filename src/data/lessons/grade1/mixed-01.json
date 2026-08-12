@@ -18,6 +18,14 @@
                 "cooking": {
                     "title": "🍳 Segíts a szakácsnak!",
                     "text": "A szakácsnak ma sok ételt kell elkészítenie. Számold ki a műveleteket!"
+                },
+                "animals": {
+                    "title": "🔍 Valami hiányzik a kifutónál",
+                    "text": "Valami hiányzik az állatok számából! Találd ki, melyik szám nem látszik!"
+                },
+                "space": {
+                    "title": "🤖 Rendszerhiba a fedélzeten",
+                    "text": "Valami hiányzik a robotok adataiból! Találd ki, melyik szám nem látszik!"
                 }
             }
         },
@@ -45,6 +53,14 @@
                 "cooking": {
                     "title": "🎉 Szép munka!",
                     "text": "Minden ételt sikeresen elkészítettél!"
+                },
+                "animals": {
+                    "title": "🎉 Ügyes voltál!",
+                    "text": "Minden állatot megtaláltál!"
+                },
+                "space": {
+                    "title": "🎉 Szuper vagy!",
+                    "text": "Minden hibát kijavítottál!"
                 }
             }
         }

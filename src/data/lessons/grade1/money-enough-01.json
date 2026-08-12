@@ -19,6 +19,14 @@
         "cooking": {
           "title": "🥄 Meg tudod venni?",
           "text": "Nézd meg az ételt és a pénztárcád tartalmát! Elég a pénzed a vásárláshoz?"
+        },
+        "animals": {
+          "title": "🦁 Meg tudod venni a jegyet?",
+          "text": "Nézd meg a jegyet és a pénztárcád tartalmát! Elég a pénzed az állatkerti belépőhöz?"
+        },
+        "space": {
+          "title": "🤖 Meg tudod venni az alkatrészt?",
+          "text": "Nézd meg az alkatrészt és a pénztárcád tartalmát! Elég a pénzed a robot megjavításához?"
         }
       }
     },
@@ -48,6 +56,14 @@
         },
         "cooking": {
           "title": "🎉 Szép munka!",
+          "text": "Minden vásárlást jól eldöntöttél!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden vásárlást jól eldöntöttél!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
           "text": "Minden vásárlást jól eldöntöttél!"
         }
       }

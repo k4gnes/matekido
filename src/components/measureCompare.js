@@ -7,7 +7,9 @@ const WORLD_EMOJI = {
     postman: "📏",
     racing: "🔧",
     football: "⚽",
-    cooking: "🥄"
+    cooking: "🥄",
+    animals: "🦁",
+    space: "🤖"
 };
 
 const U = 30;

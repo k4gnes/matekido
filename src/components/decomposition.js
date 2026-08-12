@@ -5,7 +5,9 @@ const WORLD_EMOJI = {
     postman: null,
     racing: "🔧",
     football: "⚽",
-    cooking: "🥄"
+    cooking: "🥄",
+    animals: "🦁",
+    space: "🤖"
 };
 
 function createEnvelopeSVG() {
@@ -89,6 +91,10 @@ export function renderDecomposition(step, root, onNext, progress, onResult, onAt
             item.textContent = selected ? "🌶️" : "🥄";
         } else if (isFootball) {
             item.textContent = selected ? "🥅" : "⚽";
+        } else if (world === "animals") {
+            item.textContent = selected ? "🦒" : "🦁";
+        } else if (world === "space") {
+            item.textContent = selected ? "🛰️" : "🤖";
         } else {
             item.style.opacity = selected ? "0.4" : "1";
         }

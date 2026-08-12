@@ -9,13 +9,17 @@ const SVG_NS = "http://www.w3.org/2000/svg";
 const ITEM_EMOJI = {
     racing: "🛞",
     cooking: "🥚",
-    football: "⚽"
+    football: "⚽",
+    animals: "🦓",
+    space: "🤖"
 };
 
 const FIGURE_EMOJI = {
     racing: "🏎️",
     cooking: "🥞",
-    football: "🧑"
+    football: "🧑",
+    animals: "🦓",
+    space: "🤖"
 };
 
 const FIGURE_COLORS = {
@@ -30,6 +34,14 @@ const FIGURE_COLORS = {
     football: {
         leaving: { bg: "#fee2e2", border: "#ef4444" },
         staying: { bg: "#dbeafe", border: "#3b82f6" }
+    },
+    animals: {
+        leaving: { bg: "#fef3c7", border: "#f59e0b" },
+        staying: { bg: "#ecfccb", border: "#65a30d" }
+    },
+    space: {
+        leaving: { bg: "#e2e8f0", border: "#64748b" },
+        staying: { bg: "#ede9fe", border: "#7c3aed" }
     }
 };
 
@@ -45,6 +57,14 @@ const PART_COLORS = {
     football: {
         part: { bg: "#fee2e2", border: "#ef4444" },
         other: { bg: "#dbeafe", border: "#3b82f6" }
+    },
+    animals: {
+        part: { bg: "#fef3c7", border: "#f59e0b" },
+        other: { bg: "#ecfccb", border: "#65a30d" }
+    },
+    space: {
+        part: { bg: "#e2e8f0", border: "#64748b" },
+        other: { bg: "#ede9fe", border: "#7c3aed" }
     }
 };
 
@@ -52,14 +72,18 @@ const JOIN_LABELS = {
     postman: { before: "A ládában volt", after: "Tibi most hozott" },
     racing: { before: "A garázsban volt", after: "Most hozzászerel" },
     cooking: { before: "A tálban volt", after: "Ancsika most beletesz" },
-    football: { before: "A tartóban volt", after: "Most hoztak" }
+    football: { before: "A tartóban volt", after: "Most hoztak" },
+    animals: { before: "A karámban volt", after: "A gondozó most behoz" },
+    space: { before: "A raktárban volt", after: "A robot most hozzászerel" }
 };
 
 const COMPARE_LABELS = {
     postman: { a: "Páros oldal", b: "Páratlan oldal", unit: "levél" },
     racing: { a: "Első verseny", b: "Második verseny", unit: "kör" },
     cooking: { a: "Reggel", b: "Délben", unit: "palacsinta" },
-    football: { a: "Első félidő", b: "Második félidő", unit: "gól" }
+    football: { a: "Első félidő", b: "Második félidő", unit: "gól" },
+    animals: { a: "Reggel", b: "Este", unit: "zebra" },
+    space: { a: "Első űrhajó", b: "Második űrhajó", unit: "robot" }
 };
 
 const PART_LEGEND = {
@@ -78,6 +102,14 @@ const PART_LEGEND = {
     football: {
         part: (n) => `🔴 ${n} piros mezes`,
         other: "🔵 kék mezes: ?"
+    },
+    animals: {
+        part: (n) => `🟡 ${n} sárga nyakörvű`,
+        other: "🟢 zöld nyakörvű: ?"
+    },
+    space: {
+        part: (n) => `🩶 ${n} működő`,
+        other: "🟣 töltődik: ?"
     }
 };
 
@@ -101,6 +133,16 @@ const REMOVE_LABELS = {
         waiting: "🏟️ A pályán vannak",
         departure: "🔄 Lecserélik (piros mezes)",
         count: (n) => `A pályán maradt: ${n} játékos`
+    },
+    animals: {
+        waiting: "🦓 A kifutóban vannak",
+        departure: "🟡 Megetetni viszik (sárga nyakörvű)",
+        count: (n) => `A kifutóban maradt: ${n} zebra`
+    },
+    space: {
+        waiting: "🛰️ Az űrállomáson vannak",
+        departure: "🚀 Elindulnak (szürke robotok)",
+        count: (n) => `Az űrállomáson maradt: ${n} robot`
     }
 };
 

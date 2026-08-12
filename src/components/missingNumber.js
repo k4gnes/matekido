@@ -7,7 +7,9 @@ const WORLD_TITLES = {
     postman: "📮 Mennyi levél hiányzik?",
     racing: "🔧 Hány kör hiányzik?",
     football: "⚽ Hány gól hiányzik?",
-    cooking: "🍳 Hány hozzávaló hiányzik?"
+    cooking: "🍳 Hány hozzávaló hiányzik?",
+    animals: "🦁 Hány állat hiányzik?",
+    space: "🤖 Hány robot hiányzik?"
 };
 
 export function renderMissingNumber(step, root, next, progress, onResult, onAttempt) {

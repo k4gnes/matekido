@@ -8,7 +8,9 @@ const WORLD_EMOJI = {
     postman: "🧭",
     racing: "🏁",
     football: "⚽",
-    cooking: "🍳"
+    cooking: "🍳",
+    animals: "🦁",
+    space: "🤖"
 };
 
 function el(tag, attrs = {}) {
@@ -142,6 +144,50 @@ const REFERENCE_DRAW = {
         circle(svg, 108, 78, 10, "#3b82f6", "#1d4ed8", 2);
         circle(svg, 124, 66, 10, "#f59e0b", "#b45309", 2);
         rect(svg, 70, 120, 80, 8, "#e2e8f0", "#94a3b8", 2);
+    },
+    ketrec(svg) {
+        rect(svg, 60, 55, 100, 90, "#fef3c7", "#d97706", 3);
+        rect(svg, 60, 55, 100, 8, "#b45309", "#b45309", 0);
+        rect(svg, 60, 137, 100, 8, "#b45309", "#b45309", 0);
+        for (let x = 64; x < 160; x += 12) {
+            rect(svg, x, 63, 3, 74, "#b45309", "#b45309", 0);
+        }
+        rect(svg, 60, 55, 4, 90, "#b45309", "#b45309", 0);
+        rect(svg, 156, 55, 4, 90, "#b45309", "#b45309", 0);
+    },
+    itato(svg) {
+        rect(svg, 55, 100, 110, 24, "#93c5fd", "#2563eb", 3);
+        rect(svg, 55, 100, 110, 8, "#bfdbfe", "#2563eb", 2);
+        rect(svg, 50, 124, 120, 8, "#94a3b8", "#64748b", 2);
+    },
+    tavacska(svg) {
+        svg.append(el("ellipse", { cx: 110, cy: 115, rx: 58, ry: 26, fill: "#93c5fd", stroke: "#2563eb", "stroke-width": 3 }));
+        svg.append(el("ellipse", { cx: 98, cy: 110, rx: 14, ry: 8, fill: "#bfdbfe", stroke: "#2563eb", "stroke-width": 1 }));
+        rect(svg, 48, 138, 124, 8, "#4ade80", "#16a34a", 2);
+    },
+    raketa(svg) {
+        polygon(svg, "110,35 97,72 123,72", "#e2e8f0", "#64748b", 2);
+        rect(svg, 97, 72, 26, 52, "#f8fafc", "#64748b", 3);
+        circle(svg, 110, 92, 9, "#93c5fd", "#2563eb", 2);
+        rect(svg, 97, 124, 26, 8, "#94a3b8", "#64748b", 2);
+        polygon(svg, "97,132 84,150 97,142", "#ef4444", "#b91c1c", 2);
+        polygon(svg, "123,132 136,150 123,142", "#ef4444", "#b91c1c", 2);
+        polygon(svg, "108,132 112,132 110,150", "#f59e0b", "#b45309", 2);
+    },
+    allomas(svg) {
+        rect(svg, 60, 70, 100, 18, "#e2e8f0", "#64748b", 3);
+        rect(svg, 60, 88, 100, 8, "#94a3b8", "#64748b", 2);
+        rect(svg, 70, 96, 80, 16, "#cbd5e1", "#64748b", 2);
+        circle(svg, 100, 79, 5, "#93c5fd", "#2563eb", 2);
+        for (let i = 0; i < 5; i++) {
+            rect(svg, 62 + i * 19, 96, 16, 4, "#3b82f6", "#1d4ed8", 1);
+        }
+    },
+    tartaly(svg) {
+        rect(svg, 70, 55, 80, 90, "#e2e8f0", "#64748b", 3);
+        rect(svg, 70, 55, 80, 10, "#94a3b8", "#64748b", 2);
+        rect(svg, 85, 82, 50, 42, "#cbd5e1", "#64748b", 2);
+        circle(svg, 128, 103, 3, "#334155", "#334155", 0);
     }
 };
 

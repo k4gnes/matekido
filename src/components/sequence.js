@@ -8,7 +8,9 @@ const WORLD_TITLES = {
     postman: "📮 Mi a következő házszám?",
     racing: "🏎️ Mi a következő rajtszám?",
     football: "⚽ Mi a következő eredmény?",
-    cooking: "🍳 Mi a következő oldalszám?"
+    cooking: "🍳 Mi a következő oldalszám?",
+    animals: "🦁 Mi a következő állat?",
+    space: "🤖 Mi a következő robot?"
 };
 
 export function renderSequence(step, root, next, progress, onResult, onAttempt) {

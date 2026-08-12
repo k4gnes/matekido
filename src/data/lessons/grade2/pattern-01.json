@@ -19,6 +19,14 @@
         "cooking": {
           "title": "🍳 Sorminta",
           "text": "Figyeld meg az alapanyagok sorát! Kattints arra, amelyik szerinted a következő lesz!"
+        },
+        "animals": {
+          "title": "🦁 Állatos sorminta",
+          "text": "Figyeld meg az állatos emojik sorát! Kattints arra, amelyik szerinted a következő lesz!"
+        },
+        "space": {
+          "title": "🤖 Robotos sorminta",
+          "text": "Figyeld meg a robotos emojik sorát! Kattints arra, amelyik szerinted a következő lesz!"
         }
       }
     },
@@ -50,6 +58,14 @@
         "cooking": {
           "title": "🎉 Szép munka!",
           "text": "Minden alapanyagot jól folytattál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden sormintát jól folytattál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden sormintát jól folytattál!"
         }
       }
     }

@@ -16,7 +16,9 @@
                 "racing": "🔧 Gumik szétválogatása",
                 "cooking": "🍳 Hozzávalók szétválogatása",
                 "football": "🧩 Csapattagok kiválasztása",
-                "postman": "📮 Levelek bontása"
+                "postman": "📮 Levelek bontása",
+                "animals": "🦁 Állatok szétválogatása",
+                "space": "🤖 Robotok szétválogatása"
             }
         },
         {
@@ -35,7 +37,9 @@
                 "racing": "🔧 Keresd a kakukktojást!",
                 "cooking": "🍳 Keresd a kakukktojást!",
                 "football": "⚽ Keresd a kakukktojást!",
-                "postman": "📮 Keresd a kakukktojást!"
+                "postman": "📮 Keresd a kakukktojást!",
+                "animals": "🦁 Keresd a kakukktojást!",
+                "space": "🤖 Keresd a hibás robotot!"
             }
         },
         {
@@ -53,7 +57,9 @@
             "worldTitles": {
                 "racing": "🔧 Hány kerék hiányzik?",
                 "cooking": "🍳 Hány hozzávaló hiányzik?",
-                "football": "⚽ Hány játékos hiányzik?"
+                "football": "⚽ Hány játékos hiányzik?",
+                "animals": "🦁 Hány állat hiányzik?",
+                "space": "🤖 Hány robot hiányzik?"
             }
         },
         {
@@ -72,7 +78,9 @@
                 "postman": "📮 Tízesátlépés a postán",
                 "racing": "🏁 Tízesátlépés",
                 "cooking": "🍳 Tízesátlépés",
-                "football": "⚽ Tízesátlépés"
+                "football": "⚽ Tízesátlépés",
+                "animals": "🦁 Tízesátlépés az állatkertben",
+                "space": "🤖 Tízesátlépés az űrállomáson"
             }
         },
         {
@@ -90,7 +98,9 @@
             "worldTitles": {
                 "racing": "🏎️ Hány alkatrész kell?",
                 "cooking": "🍳 Hány kanál kell?",
-                "football": "⚽ Hány játékos ez összesen?"
+                "football": "⚽ Hány játékos ez összesen?",
+                "animals": "🦁 Hány állat van a karámokban?",
+                "space": "🤖 Hány robot van a tartályokban?"
             }
         },
         {
@@ -108,7 +118,9 @@
             "worldTitles": {
                 "racing": "🏎️ Hány kerék és alkatrész?",
                 "cooking": "🍳 Hány fazék és kanál?",
-                "football": "⚽ Hány edző és hány játékos van a pályán?"
+                "football": "⚽ Hány edző és hány játékos van a pályán?",
+                "animals": "🦁 Hány karám és állat?",
+                "space": "🤖 Hány tartály és robot?"
             }
         },
         {
@@ -126,7 +138,9 @@
             "worldTitles": {
                 "racing": "🔧 Hány kerék hiányzik?",
                 "cooking": "🍳 Hány hozzávaló hiányzik?",
-                "football": "⚽ Hány gól hiányzik?"
+                "football": "⚽ Hány gól hiányzik?",
+                "animals": "🦁 Hány állat hiányzik?",
+                "space": "🤖 Hány robot hiányzik?"
             }
         },
         {
@@ -144,7 +158,9 @@
             "worldTitles": {
                 "racing": "🏎️ Mi a következő?",
                 "cooking": "🍳 Mi a következő?",
-                "football": "⚽ Mi a következő?"
+                "football": "⚽ Mi a következő?",
+                "animals": "🦁 Mi a következő állat?",
+                "space": "🤖 Mi a következő robot?"
             }
         },
         {
@@ -162,7 +178,9 @@
             "worldTitles": {
                 "racing": "🏎️ Rendezzük sorainkat!",
                 "cooking": "🍳 Rendezzük sorainkat!",
-                "football": "⚽ Rendezzük sorainkat!"
+                "football": "⚽ Rendezzük sorainkat!",
+                "animals": "🦁 Állatok sorba rendezése",
+                "space": "🤖 Robotok sorba rendezése"
             }
         },
         {
@@ -180,7 +198,9 @@
             "worldTitles": {
                 "racing": "🏎️ Páros vagy páratlan?",
                 "cooking": "🍳 Páros vagy páratlan?",
-                "football": "⚽ Páros vagy páratlan?"
+                "football": "⚽ Páros vagy páratlan?",
+                "animals": "🦁 Páros vagy páratlan?",
+                "space": "🤖 Páros vagy páratlan?"
             }
         },
         {
@@ -198,7 +218,9 @@
             "worldTitles": {
                 "racing": "🏎️ Mi a következő a sorban?",
                 "cooking": "🍳 Mi a következő a sorban?",
-                "football": "⚽ Mi a következő a sorban?"
+                "football": "⚽ Mi a következő a sorban?",
+                "animals": "🦁 Állatos sorminta",
+                "space": "🤖 Robotos sorminta"
             }
         },
         {
@@ -215,7 +237,9 @@
             "worldTitles": {
                 "racing": "🏎️ Rakd a helyére az alakzatokat!",
                 "cooking": "🍳 Rakd a helyére az alakzatokat!",
-                "football": "⚽ Rakd a helyére az alakzatokat!"
+                "football": "⚽ Rakd a helyére az alakzatokat!",
+                "animals": "🦁 Rakd a helyére az alakzatokat!",
+                "space": "🤖 Rakd a helyére az alakzatokat!"
             }
         },
         {
@@ -232,7 +256,9 @@
             "worldTitles": {
                 "racing": "🏁 Hol van?",
                 "cooking": "🍳 Hol van?",
-                "football": "⚽ Hol van?"
+                "football": "⚽ Hol van?",
+                "animals": "🦁 Hol van az állat?",
+                "space": "🤖 Hol van a robot?"
             }
         },
         {
@@ -250,7 +276,9 @@
             "worldTitles": {
                 "racing": "🏎️ Első gyakorlókör",
                 "cooking": "🍳 Első ételkészítés",
-                "football": "⚽ Az első félidő"
+                "football": "⚽ Az első félidő",
+                "animals": "🦁 Takarmány számolása",
+                "space": "🤖 Energia számolása"
             }
         },
         {
@@ -268,7 +296,9 @@
             "worldTitles": {
                 "racing": "🏎️ Ki áll mellette a rajtrácsán?",
                 "cooking": "🍳 Mi áll mellette a polcon?",
-                "football": "⚽ Ki áll mellette a sorfalban?"
+                "football": "⚽ Ki áll mellette a sorfalban?",
+                "animals": "🦁 Ki áll mellette a kifutóban?",
+                "space": "🤖 Ki áll mellette a sorban?"
             }
         },
         {
@@ -286,7 +316,9 @@
             "worldTitles": {
                 "racing": "🏎️ Gyorsulás a célig",
                 "cooking": "🍳 Gyors keverés",
-                "football": "⚽ Gólpasszok sorozata"
+                "football": "⚽ Gólpasszok sorozata",
+                "animals": "🦁 Takarmány számolása",
+                "space": "🤖 Energia számolása"
             }
         },
         {
@@ -304,7 +336,9 @@
             "worldTitles": {
                 "racing": "🏎️ Hány pontot veszített?",
                 "cooking": "🍳 Mennyi alapanyag maradt?",
-                "football": "⚽ Hány gólt rúgtak már?"
+                "football": "⚽ Hány gólt rúgtak már?",
+                "animals": "🦁 Maradék takarmány",
+                "space": "🤖 Maradék energia"
             }
         },
         {
@@ -322,7 +356,9 @@
             "worldTitles": {
                 "racing": "🏎️ Melyik autó gyorsabb?",
                 "cooking": "🍳 Melyik tál nehezebb?",
-                "football": "⚽ Melyik csapat erősebb?"
+                "football": "⚽ Melyik csapat erősebb?",
+                "animals": "🦁 Állatok összehasonlítása",
+                "space": "🤖 Bolygók összehasonlítása"
             }
         },
         {
@@ -340,7 +376,9 @@
             "worldTitles": {
                 "racing": "🏎️ Melyik autó gyorsabb?",
                 "cooking": "🍳 Melyik edény nehezebb?",
-                "football": "⚽ Melyik játékos magasabb?"
+                "football": "⚽ Melyik játékos magasabb?",
+                "animals": "🦁 Állatok összehasonlítása",
+                "space": "🤖 Bolygók összehasonlítása"
             }
         },
         {
@@ -358,7 +396,9 @@
             "worldTitles": {
                 "racing": "🏎️ Hiányos eredménylista",
                 "cooking": "🍳 Hiányos recept",
-                "football": "⚽ Hiányos mérkőzés"
+                "football": "⚽ Hiányos mérkőzés",
+                "animals": "🦁 Hiányzó állatok",
+                "space": "🤖 Hibás rendszer"
             }
         },
         {
@@ -376,7 +416,9 @@
             "worldTitles": {
                 "racing": "🔧 Hány kerék hiányzik?",
                 "cooking": "🍳 Hány hozzávaló hiányzik?",
-                "football": "⚽ Hány gól hiányzik?"
+                "football": "⚽ Hány gól hiányzik?",
+                "animals": "🦁 Hány állat hiányzik?",
+                "space": "🤖 Hány robot hiányzik?"
             }
         },
         {
@@ -394,7 +436,9 @@
             "worldTitles": {
                 "racing": "🏎️ Kerek körök gyakorlása",
                 "cooking": "🍳 Kerek tányérok",
-                "football": "⚽ Kerek számok a pályán"
+                "football": "⚽ Kerek számok a pályán",
+                "animals": "🦁 Takarmány számolása",
+                "space": "🤖 Energia számolása"
             }
         },
         {
@@ -412,7 +456,9 @@
             "worldTitles": {
                 "racing": "🏎️ Véletlen szám + kerek kör",
                 "cooking": "🍳 Véletlen mennyiség + kerek tizes",
-                "football": "⚽ Véletlen szám + kerek gól"
+                "football": "⚽ Véletlen szám + kerek gól",
+                "animals": "🦁 Takarmány számolása",
+                "space": "🤖 Energia számolása"
             }
         },
         {
@@ -430,7 +476,9 @@
             "worldTitles": {
                 "racing": "🏎️ Gyors számolás a pitben",
                 "cooking": "🍳 Gyors számolás a konyhában",
-                "football": "⚽ Gyors számolás a kispadon"
+                "football": "⚽ Gyors számolás a kispadon",
+                "animals": "🦁 Takarmány számolása",
+                "space": "🤖 Energia számolása"
             }
         },
         {
@@ -448,7 +496,9 @@
             "worldTitles": {
                 "racing": "🏎️ Nehéz kör a dombokon",
                 "cooking": "🍳 Nehéz nap a konyhában",
-                "football": "⚽ Nehéz mérkőzés"
+                "football": "⚽ Nehéz mérkőzés",
+                "animals": "🦁 Takarmány számolása",
+                "space": "🤖 Energia számolása"
             }
         },
         {
@@ -466,7 +516,9 @@
             "worldTitles": {
                 "racing": "🏎️ Sokadik kör a pályán",
                 "cooking": "🍳 Sokadik fogás",
-                "football": "⚽ Sokadik gól a meccsen"
+                "football": "⚽ Sokadik gól a meccsen",
+                "animals": "🦁 Takarmány számolása",
+                "space": "🤖 Energia számolása"
             }
         },
         {
@@ -484,7 +536,9 @@
             "worldTitles": {
                 "racing": "🏎️ Kerek körök kivonása",
                 "cooking": "🍳 Kerek tányérok kivonása",
-                "football": "⚽ Kerek számok kivonása"
+                "football": "⚽ Kerek számok kivonása",
+                "animals": "🦁 Maradék takarmány",
+                "space": "🤖 Maradék energia"
             }
         },
         {
@@ -502,7 +556,9 @@
             "worldTitles": {
                 "racing": "🏎️ Véletlen szám - kerek kör",
                 "cooking": "🍳 Véletlen mennyiség - kerek tizes",
-                "football": "⚽ Véletlen szám - kerek gól"
+                "football": "⚽ Véletlen szám - kerek gól",
+                "animals": "🦁 Maradék takarmány",
+                "space": "🤖 Maradék energia"
             }
         },
         {
@@ -520,7 +576,9 @@
             "worldTitles": {
                 "racing": "🏎️ Gyors számolás a pitben",
                 "cooking": "🍳 Gyors számolás a konyhában",
-                "football": "⚽ Gyors számolás a kispadon"
+                "football": "⚽ Gyors számolás a kispadon",
+                "animals": "🦁 Maradék takarmány",
+                "space": "🤖 Maradék energia"
             }
         },
         {
@@ -538,7 +596,9 @@
             "worldTitles": {
                 "racing": "🏎️ Hány kör van még hátra?",
                 "cooking": "🍳 Mennyi alapanyag maradt?",
-                "football": "⚽ Hány perc van még?"
+                "football": "⚽ Hány perc van még?",
+                "animals": "🦁 Maradék takarmány",
+                "space": "🤖 Maradék energia"
             }
         },
         {
@@ -556,7 +616,9 @@
             "worldTitles": {
                 "racing": "🏎️ Kétjegyű körök kivonása",
                 "cooking": "🍳 Kétjegyű mennyiségek kivonása",
-                "football": "⚽ Kétjegyű gólok kivonása"
+                "football": "⚽ Kétjegyű gólok kivonása",
+                "animals": "🦁 Maradék takarmány",
+                "space": "🤖 Maradék energia"
             }
         },
         {
@@ -574,7 +636,9 @@
             "worldTitles": {
                 "racing": "🏎️ Körök átlépéssel",
                 "cooking": "🍳 Mennyiségek átlépése",
-                "football": "⚽ Gólok átlépéssel"
+                "football": "⚽ Gólok átlépéssel",
+                "animals": "🦁 Maradék takarmány",
+                "space": "🤖 Maradék energia"
             }
         },
         {
@@ -592,7 +656,9 @@
             "worldTitles": {
                 "racing": "🏎️ Hiányos nagy eredménylista",
                 "cooking": "🍳 Hiányos nagy recept",
-                "football": "⚽ Hiányos nagy meccs"
+                "football": "⚽ Hiányos nagy meccs",
+                "animals": "🦁 Hiányzó állatok",
+                "space": "🤖 Hibás rendszer"
             }
         },
         {
@@ -610,7 +676,9 @@
             "worldTitles": {
                 "racing": "🔍 Ki áll mellette?",
                 "cooking": "🔍 Mi áll mellette a polcon?",
-                "football": "🔍 Ki a szomszédja?"
+                "football": "🔍 Ki a szomszédja?",
+                "animals": "🦁 Ki áll mellette a kifutóban?",
+                "space": "🤖 Ki áll mellette a sorban?"
             }
         },
         {
@@ -628,7 +696,9 @@
             "worldTitles": {
                 "racing": "🏎️ Mi a következő?",
                 "cooking": "🍳 Mi a következő?",
-                "football": "⚽ Mi a következő?"
+                "football": "⚽ Mi a következő?",
+                "animals": "🦁 Mi a következő állat?",
+                "space": "🤖 Mi a következő robot?"
             }
         },
         {
@@ -646,7 +716,9 @@
             "worldTitles": {
                 "racing": "🏎️ Rendezzük sorainkat!",
                 "cooking": "🍳 Rendezzük sorainkat!",
-                "football": "⚽ Rendezzük sorainkat!"
+                "football": "⚽ Rendezzük sorainkat!",
+                "animals": "🦁 Állatok sorba rendezése",
+                "space": "🤖 Robotok sorba rendezése"
             }
         },
         {
@@ -664,7 +736,9 @@
             "worldTitles": {
                 "racing": "🏎️ Páros vagy páratlan?",
                 "cooking": "🍳 Páros vagy páratlan?",
-                "football": "⚽ Páros vagy páratlan?"
+                "football": "⚽ Páros vagy páratlan?",
+                "animals": "🦁 Páros vagy páratlan?",
+                "space": "🤖 Páros vagy páratlan?"
             }
         },
         {
@@ -682,7 +756,9 @@
             "worldTitles": {
                 "racing": "🏎️ Mi a következő a sorban?",
                 "cooking": "🍳 Mi a következő a sorban?",
-                "football": "⚽ Mi a következő a sorban?"
+                "football": "⚽ Mi a következő a sorban?",
+                "animals": "🦁 Állatos sorminta",
+                "space": "🤖 Robotos sorminta"
             }
         },
         {
@@ -699,7 +775,9 @@
             "worldTitles": {
                 "racing": "🏎️ Négyzet és téglalap",
                 "cooking": "🍳 Négyzet és téglalap",
-                "football": "⚽ Négyzet és téglalap"
+                "football": "⚽ Négyzet és téglalap",
+                "animals": "🦁 Rakd a helyére az alakzatokat!",
+                "space": "🤖 Rakd a helyére az alakzatokat!"
             }
         },
         {
@@ -716,7 +794,9 @@
             "worldTitles": {
                 "racing": "🏎️ Mit mutat az óra?",
                 "cooking": "🍳 Mit mutat az óra?",
-                "football": "⚽ Mit mutat az óra?"
+                "football": "⚽ Mit mutat az óra?",
+                "animals": "🦁 Mit mutat az óra?",
+                "space": "🤖 Mit mutat az óra az űrben?"
             }
         },
         {
@@ -733,7 +813,9 @@
             "worldTitles": {
                 "racing": "🏎️ Mit mutat az óra?",
                 "cooking": "🍳 Mit mutat az óra?",
-                "football": "⚽ Mit mutat az óra?"
+                "football": "⚽ Mit mutat az óra?",
+                "animals": "🦁 Mit mutat az óra?",
+                "space": "🤖 Mit mutat az óra az űrben?"
             }
         },
         {
@@ -750,7 +832,9 @@
             "worldTitles": {
                 "racing": "🔧 Fizesd ki pontosan!",
                 "cooking": "🥄 Fizesd ki pontosan!",
-                "football": "⚽ Fizesd ki pontosan!"
+                "football": "⚽ Fizesd ki pontosan!",
+                "animals": "🦁 Fizesd ki a belépőt!",
+                "space": "🤖 Fizesd ki az alkatrészt!"
             }
         },
         {
@@ -767,7 +851,9 @@
             "worldTitles": {
                 "racing": "🔧 Melyikben van több?",
                 "cooking": "🥄 Melyikben van több?",
-                "football": "⚽ Melyikben van több?"
+                "football": "⚽ Melyikben van több?",
+                "animals": "🦁 Melyikben van több?",
+                "space": "🤖 Melyikben van több?"
             }
         },
         {
@@ -784,7 +870,9 @@
             "worldTitles": {
                 "racing": "🔧 Meg tudod venni?",
                 "cooking": "🥄 Meg tudod venni?",
-                "football": "⚽ Meg tudod venni?"
+                "football": "⚽ Meg tudod venni?",
+                "animals": "🦁 Meg tudod venni a jegyet?",
+                "space": "🤖 Meg tudod venni az alkatrészt?"
             }
         },
         {
@@ -801,7 +889,9 @@
             "worldTitles": {
                 "racing": "🔧 Melyik hosszabb?",
                 "cooking": "🥄 Melyik hosszabb?",
-                "football": "⚽ Melyik hosszabb?"
+                "football": "⚽ Melyik hosszabb?",
+                "animals": "🦁 Melyik állat hosszabb?",
+                "space": "🤖 Melyik rakéta hosszabb?"
             }
         },
         {
@@ -818,7 +908,9 @@
             "worldTitles": {
                 "racing": "🔧 Mérd meg négyzetekkel!",
                 "cooking": "🥄 Mérd meg négyzetekkel!",
-                "football": "⚽ Mérd meg négyzetekkel!"
+                "football": "⚽ Mérd meg négyzetekkel!",
+                "animals": "🦁 Mérd meg négyzetekkel!",
+                "space": "🤖 Mérd meg a rakétát!"
             }
         },
         {
@@ -837,7 +929,9 @@
                 "racing": "🏎️ Szöveges feladatok a pályán",
                 "cooking": "🍳 Szöveges feladatok a konyhában",
                 "football": "⚽ Szöveges feladatok a pályán",
-                "postman": "📮 Szöveges feladatok a postán"
+                "postman": "📮 Szöveges feladatok a postán",
+                "animals": "🦁 Szöveges feladatok az állatkertben",
+                "space": "🤖 Szöveges feladatok az űrben"
             }
         }
     ],

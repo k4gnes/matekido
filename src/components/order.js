@@ -7,7 +7,9 @@ const WORLD_TITLES = {
     postman: "📮 Rendezzük sorainkat!",
     racing: "🏎️ Rendezzük sorainkat!",
     football: "⚽ Rendezzük sorainkat!",
-    cooking: "🍳 Rendezzük sorainkat!"
+    cooking: "🍳 Rendezzük sorainkat!",
+    animals: "🦁 Rendezzük sorainkat!",
+    space: "🤖 Rendezzük sorainkat!"
 };
 
 const DIRECTION_TEXT = {

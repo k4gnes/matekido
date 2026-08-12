@@ -18,6 +18,14 @@
                 "cooking": {
                     "title": "🍳 Szöveges feladatok",
                     "text": "Oldd meg a szöveges feladatokat a konyhában!"
+                },
+                "animals": {
+                    "title": "🦁 Szöveges feladatok az állatkertben",
+                    "text": "Az állatkert gondozójának ma sok dolga van. Segíts neki megoldani a szöveges feladatokat!"
+                },
+                "space": {
+                    "title": "🤖 Szöveges feladatok az űrállomáson",
+                    "text": "A robotoknak ma sok dolga van az űrállomáson. Segíts nekik megoldani a szöveges feladatokat!"
                 }
             }
         },

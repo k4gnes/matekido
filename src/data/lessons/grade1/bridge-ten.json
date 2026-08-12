@@ -23,6 +23,14 @@
         "cooking": {
           "title": "🍳 Tízesátlépés",
           "text": "Bontsd fel a második számot, hogy 10-re egészítsd ki az elsőt!"
+        },
+        "animals": {
+          "title": "🦁 Tízesátlépés az állatkertben",
+          "text": "Bontsd fel a második számot, hogy 10-re egészítsd ki az állatok számát!"
+        },
+        "space": {
+          "title": "🤖 Tízesátlépés az űrállomáson",
+          "text": "Bontsd fel a második számot, hogy 10-re egészítsd ki a robotok számát!"
         }
       }
     },
@@ -54,6 +62,14 @@
         },
         "cooking": {
           "title": "🎉 Ügyes voltál!",
+          "text": "Sikeresen áttörtél a tízes határon!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Sikeresen áttörtél a tízes határon!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
           "text": "Sikeresen áttörtél a tízes határon!"
         }
       }

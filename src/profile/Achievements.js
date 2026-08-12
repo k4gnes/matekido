@@ -8,12 +8,16 @@ export const ACHIEVEMENTS = [
         worldTitles: {
             racing: "Első pilóta",
             cooking: "Első szakács",
-            football: "Első játékos"
+            football: "Első játékos",
+            animals: "Első gondozó",
+            space: "Első robotpilóta"
         },
         worldIcons: {
             racing: "🏁",
             cooking: "🍳",
-            football: "⚽"
+            football: "⚽",
+            animals: "🦁",
+            space: "🤖"
         }
     },
     {
@@ -25,12 +29,16 @@ export const ACHIEVEMENTS = [
         worldTitles: {
             racing: "Tapasztalt pilóta",
             cooking: "Tapasztalt szakács",
-            football: "Tapasztalt játékos"
+            football: "Tapasztalt játékos",
+            animals: "Tapasztalt gondozó",
+            space: "Tapasztalt robotpilóta"
         },
         worldIcons: {
             racing: "🏆",
             cooking: "👨‍🍳",
-            football: "🏆"
+            football: "🏆",
+            animals: "🦒",
+            space: "🚀"
         }
     },
     {
@@ -42,12 +50,16 @@ export const ACHIEVEMENTS = [
         worldTitles: {
             racing: "Bajnok pilóta",
             cooking: "Séf mester",
-            football: "Bajnok játékos"
+            football: "Bajnok játékos",
+            animals: "Mestergondozó",
+            space: "Űrkapitány"
         },
         worldIcons: {
             racing: "🥇",
             cooking: "🥇",
-            football: "🥇"
+            football: "🥇",
+            animals: "🦁",
+            space: "🛸"
         }
     },
     {

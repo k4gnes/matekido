@@ -23,6 +23,14 @@
         "cooking": {
           "title": "🍳 Keresd az összes szétválogatást!",
           "text": "Kattints a kanalakra, és találd meg az összes bontást!"
+        },
+        "animals": {
+          "title": "🧩 Keresd az összes szétválogatást!",
+          "text": "Kattints az állatokra, és találd meg az összes bontást!"
+        },
+        "space": {
+          "title": "🤖 Keresd az összes szétválogatást!",
+          "text": "Kattints a robotokra, és találd meg az összes bontást!"
         }
       }
     },
@@ -51,6 +59,14 @@
         "cooking": {
           "title": "🎉 Szuper!",
           "text": "Megfőzted az összes levest!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Megtaláltad az összes bontást!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Megtaláltad az összes bontást!"
         }
       }
     }

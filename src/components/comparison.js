@@ -6,7 +6,9 @@ const WORLD_EMOJI = {
     postman: "✉️",
     racing: "🔧",
     football: "⚽",
-    cooking: "🥄"
+    cooking: "🥄",
+    animals: "🦁",
+    space: "🤖"
 };
 
 function renderEmojiGroup(container, emoji, count) {

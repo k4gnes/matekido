@@ -16,9 +16,21 @@
           "title": "🧩 Keresd a kakukktojást!",
           "text": "Nézd meg az összegeket, és kattints arra, ami nem egyenlő a számmal!"
         },
+        "cooking": {
+          "title": "🍳 Keresd a kakukktojást!",
+          "text": "Nézd meg az összegeket, és kattints arra, ami nem egyenlő a hozzávalók számával!"
+        },
         "postman": {
           "title": "📮 Keresd a kakukktojást!",
           "text": "Nézd meg a levelek összegeit, és kattints arra, ami nem egyenlő a számmal!"
+        },
+        "animals": {
+          "title": "🦁 Keresd a kakukktojást!",
+          "text": "Nézd meg az összegeket, és kattints arra, ami nem egyenlő az állatok számával!"
+        },
+        "space": {
+          "title": "🤖 Keresd a meghibásodott robotot!",
+          "text": "Nézd meg az összegeket, és kattints arra, ami nem egyenlő a robotok számával!"
         }
       }
     },

@@ -19,6 +19,14 @@
         "cooking": {
           "title": "🥄 Melyikben van több?",
           "text": "Számold meg, mennyi pénz van a két pénztárcában, és rakd ki közéjük a helyes jelet!"
+        },
+        "animals": {
+          "title": "🦁 Melyik pénztárcában van több?",
+          "text": "Számold meg, mennyi pénz van a két pénztárcában, és rakd ki közéjük a helyes jelet!"
+        },
+        "space": {
+          "title": "🤖 Melyik kasszában van több?",
+          "text": "Számold meg, mennyi energia van a két kasszában, és rakd ki közéjük a helyes jelet!"
         }
       }
     },
@@ -49,6 +57,14 @@
         "cooking": {
           "title": "🎉 Szép munka!",
           "text": "Minden pénztárcát jól hasonlítottál össze!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden pénztárcát jól hasonlítottál össze!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden kasszát jól hasonlítottál össze!"
         }
       }
     }

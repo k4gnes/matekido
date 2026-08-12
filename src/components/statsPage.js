@@ -18,7 +18,9 @@ const WORLD_STATS_TITLE = {
     postman: "📬 Postai jelentés",
     racing: "📊 Versenyjelentés",
     cooking: "👨‍🍳 Szakács jelentés",
-    football: "⚽ Meccsjelentés"
+    football: "⚽ Meccsjelentés",
+    animals: "🦁 Állatkerti jelentés",
+    space: "🤖 Űrállomás jelentés"
 };
 
 const TYPE_LABEL = {

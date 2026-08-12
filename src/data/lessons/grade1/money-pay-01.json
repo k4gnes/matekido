@@ -19,6 +19,14 @@
         "cooking": {
           "title": "🥄 Fizesd ki pontosan!",
           "text": "Válogass érméket a pénztárcába, hogy pontosan annyit fizess, amennyibe az étel kerül!"
+        },
+        "animals": {
+          "title": "🦁 Fizesd ki pontosan a belépőt!",
+          "text": "Válogass érméket a pénztárcába, hogy pontosan annyit fizess, amennyibe az állatkerti jegy kerül!"
+        },
+        "space": {
+          "title": "🤖 Fizesd ki pontosan az alkatrészt!",
+          "text": "Válogass érméket a pénztárcába, hogy pontosan annyit fizess, amennyibe a robotalkatrész kerül!"
         }
       }
     },
@@ -49,6 +57,14 @@
         "cooking": {
           "title": "🎉 Szép munka!",
           "text": "Minden hozzávalót pontosan kifizettél!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden vásárlást pontosan kifizettél!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden vásárlást pontosan kifizettél!"
         }
       }
     }

@@ -19,6 +19,14 @@
         "cooking": {
           "title": "🥄 Mérd meg négyzetekkel!",
           "text": "Rakj mérőnégyzeteket az ételre, és számold meg, hányat ér a hossza!"
+        },
+        "animals": {
+          "title": "🦁 Mérd meg az állatot négyzetekkel!",
+          "text": "Rakj mérőnégyzeteket az állatra, és számold meg, hányat ér a hossza vagy magassága!"
+        },
+        "space": {
+          "title": "🤖 Mérd meg a rakétát négyzetekkel!",
+          "text": "Rakj mérőnégyzeteket a rakétára, és számold meg, hányat ér a hossza vagy magassága!"
         }
       }
     },
@@ -47,6 +55,14 @@
         "cooking": {
           "title": "🎉 Szép munka!",
           "text": "Minden ételt jól megmértél négyzetekkel!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden állatot jól megmértél négyzetekkel!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden rakétát jól megmértél négyzetekkel!"
         }
       }
     }

@@ -23,6 +23,14 @@
           "title": "🍳 Rakd össze, hogy hány kanál kell!",
           "text": "Számold ki, mennyi kanál kell, ha egy fazék épp 10 kanalat ér!",
           "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>🍲</span> <span style='font-size:1.1rem;'>= 10 db</span> <span style='font-size:1.8rem;'>🥄</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 fazék = 10 kanál</div>"
+        },
+        "animals": {
+          "title": "🦁 Rakd össze az állatok számát!",
+          "text": "Számold ki, hány állat van, ha egy karámba épp tíz állat fér!"
+        },
+        "space": {
+          "title": "🤖 Rakd össze a robotok számát!",
+          "text": "Számold ki, hány robot van, ha egy tartályba épp tíz robot fér!"
         }
       }
     },

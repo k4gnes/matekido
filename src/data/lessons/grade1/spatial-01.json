@@ -19,6 +19,14 @@
         "cooking": {
           "title": "🍳 Hol van?",
           "text": "Nézd meg a képet! Kattints a helyes meghatározásra!"
+        },
+        "animals": {
+          "title": "🦁 Hol van az állat?",
+          "text": "Nézd meg a képet! Kattints a helyes meghatározásra!"
+        },
+        "space": {
+          "title": "🤖 Hol van a robot?",
+          "text": "Nézd meg a képet! Kattints a helyes meghatározásra!"
         }
       }
     },
@@ -46,6 +54,14 @@
         },
         "cooking": {
           "title": "🎉 Szép munka!",
+          "text": "Minden helyzetet jól felismertél!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden helyzetet jól felismertél!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
           "text": "Minden helyzetet jól felismertél!"
         }
       }

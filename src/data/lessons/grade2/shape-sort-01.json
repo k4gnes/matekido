@@ -19,6 +19,14 @@
         "cooking": {
           "title": "🍳 Négyzet és téglalap",
           "text": "Húzd a négyzeteket a négyzetbe, a téglalapokat a téglalapba!"
+        },
+        "animals": {
+          "title": "🦁 Rakd a helyére az alakzatokat!",
+          "text": "Húzd az alakzatokat a megfelelő karámba!"
+        },
+        "space": {
+          "title": "🤖 Rakd a helyére az alakzatokat!",
+          "text": "Húzd az alakzatokat a megfelelő fedélzeti rekeszbe!"
         }
       }
     },
@@ -47,6 +55,14 @@
         },
         "cooking": {
           "title": "🎉 Szép munka!",
+          "text": "Minden alakzatot jól a helyére raktál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden alakzatot jól a helyére raktál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
           "text": "Minden alakzatot jól a helyére raktál!"
         }
       }

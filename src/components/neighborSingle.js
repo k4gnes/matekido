@@ -8,7 +8,9 @@ const WORLD_NEIGHBOR_TITLE = {
     postman: "🔍 Szomszédok",
     racing: "🔍 Ki áll mellette?",
     football: "🔍 Ki a szomszédja?",
-    cooking: "🔍 Ki a szomszédja?"
+    cooking: "🔍 Ki a szomszédja?",
+    animals: "🦁 Ki áll mellette a kifutóban?",
+    space: "🤖 Ki áll mellette a sorban?"
 };
 
 export function renderNeighborSingle(step, root, next, progress, onResult, onAttempt) {

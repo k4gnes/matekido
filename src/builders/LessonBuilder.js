@@ -6,13 +6,17 @@ const WORLD_TITLES = {
         postman: (i) => `🏠 ${i}. ház`,
         racing: (i) => `🏎️ ${i}. kör`,
         football: (i) => `⚽ ${i}. gól`,
-        cooking: (i) => `🍳 ${i}. tányér`
+        cooking: (i) => `🍳 ${i}. tányér`,
+        animals: (i) => `🦁 ${i}. kifutó`,
+        space: (i) => `🤖 ${i}. fedélzet`
     },
     subtraction: {
         postman: (i) => `🎒 ${i}. táska`,
         racing: (i) => `🛞 ${i}. kerék`,
         football: (i) => `⚽ ${i}. félidő`,
-        cooking: (i) => `🍳 ${i}. étel`
+        cooking: (i) => `🍳 ${i}. étel`,
+        animals: (i) => `🦒 ${i}. karám`,
+        space: (i) => `🚀 ${i}. egység`
     }
 };
 

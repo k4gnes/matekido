@@ -19,6 +19,14 @@
         "cooking": {
           "title": "🍳 Rendezzük sorainkat!",
           "text": "Húzd a hozzávalókat a helyes sorrendbe!"
+        },
+        "animals": {
+          "title": "🦁 Rendezd sorba az állatokat!",
+          "text": "Húzd az állatok számát a helyes sorrendbe!"
+        },
+        "space": {
+          "title": "🤖 Rendezd sorba a robotokat!",
+          "text": "Húzd a robotok számát a helyes sorrendbe!"
         }
       }
     },
@@ -49,6 +57,14 @@
         "cooking": {
           "title": "🎉 Szép munka!",
           "text": "Minden ételt sikeresen elkészítettél!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden állatsort jól rendeztél!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden robotsort jól rendeztél!"
         }
       }
     }

@@ -1,0 +1,240 @@
+.wp-story {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    text-align: center;
+    color: #334155;
+    margin: .4rem 0;
+}
+
+.wp-question {
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-align: center;
+    color: #1a1a2e;
+    margin: .7rem 0 .3rem;
+}
+
+.wp-hint {
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    color: #f59e0b;
+    margin: .4rem 0;
+}
+
+.wp-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    margin: .6rem 0;
+}
+
+.wp-visual-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .25rem;
+}
+
+.wp-visual-op {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #475569;
+    line-height: 1;
+}
+
+.wp-visual-label {
+    font-size: .95rem;
+    font-weight: 700;
+    color: #64748b;
+}
+
+.wp-visual-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .1rem;
+    max-width: 480px;
+}
+
+.wp-envelope {
+    flex: 0 0 auto;
+}
+
+.wp-item-emoji {
+    flex: 0 0 auto;
+    font-size: 1.8rem;
+    line-height: 1;
+    display: inline-block;
+    margin: 0 .1rem;
+}
+
+.wp-drag-figure {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 3px solid #3b82f6;
+    background: #dbeafe;
+    font-size: 1.9rem;
+    line-height: 1;
+}
+
+.wp-compare {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: .6rem 0;
+}
+
+.wp-compare-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .3rem;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    padding: .7rem;
+    min-width: 180px;
+}
+
+.wp-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .7rem;
+    margin: .8rem 0;
+}
+
+.wp-option {
+    margin: 0;
+    padding: .8rem 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    background: #fff;
+    color: #1a1a2e;
+    cursor: pointer;
+    transition: transform .15s, border-color .15s, background-color .15s;
+}
+
+.wp-option:hover {
+    border-color: #6366f1;
+    background: #eef2ff;
+    transform: scale(1.06);
+}
+
+.wp-postman-wrap {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wp-postman-figure {
+    display: block;
+}
+
+.wp-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: .4rem 0 .6rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.wp-legend-blue {
+    color: #1d4ed8;
+}
+
+.wp-legend-brown {
+    color: #92400e;
+}
+
+.wp-input {
+    display: block;
+    width: 6ch;
+    margin: .8rem auto 0;
+    text-align: center;
+    font-size: 2rem;
+    padding: .3rem;
+    border: 2px solid #bbb;
+    border-radius: 8px;
+}
+
+.wp-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem;
+    justify-content: center;
+    align-items: center;
+    min-height: 96px;
+    padding: .6rem;
+    margin: .4rem 0;
+    border: 2px dashed #94a3b8;
+    border-radius: 14px;
+    background: #f8fafc;
+    transition: background-color .15s, border-color .15s;
+}
+
+.wp-area-label {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #475569;
+}
+
+.wp-waiting {
+    border-color: #94a3b8;
+}
+
+.wp-departure {
+    border-color: #f59e0b;
+    background: #fffbeb;
+}
+
+.wp-drag-over {
+    background: #fff7ed;
+    border-color: #f59e0b;
+    border-style: solid;
+}
+
+.wp-count {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin: .4rem 0;
+    color: #334155;
+}
+
+.wp-postman {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.wp-postman-hidden {
+    visibility: hidden;
+}
+
+.wp-postman-clone {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 1000;
+    cursor: grabbing;
+    filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .25));
+}

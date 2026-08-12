@@ -1,0 +1,281 @@
+import { getActiveWorld } from "../profile/Profile.js";
+
+const KINDS = ["join", "remove", "part-whole", "compare"];
+
+const DIFF_SUFFIX = {
+    1: "gyel", 2: "vel", 3: "mal", 4: "gyel", 5: "tel",
+    6: "tal", 7: "tel", 8: "cal", 9: "cel", 10: "zel",
+    11: "gyel", 12: "vel", 13: "mal", 14: "gyel", 15: "tel",
+    16: "tal", 17: "tel", 18: "cal", 19: "cel", 20: "zel"
+};
+
+function diffPhrase(n) {
+    return `${n}-${DIFF_SUFFIX[n] ?? "vel"} több`;
+}
+
+const THEMES = {
+    postman: {
+        join: {
+            title: "📮 Egyesítés",
+            text: (a, b) => `A Virág utca 13. postaládájában ${a} levél van. Tibi postás ma újabb ${b} levelet kézbesít ide.`,
+            question: "Mennyi levél van összesen a ládában a kézbesítés után?",
+            success: (answer) => `😊 Szép munka! Összesen ${answer} levél van a ládában!`
+        },
+        remove: {
+            title: "📮 Elmegy belőle",
+            text: (total, leaving) => `${total} postás várakozik a postán. ${leaving} piros sapkás elindul kézbesíteni.`,
+            question: "Hányan maradnak a postán?",
+            hint: "Húzd a piros sapkás postásokat a kézbesítő autóhoz!",
+            success: (answer) => `😊 Szép munka! A postán ${answer} postás maradt!`
+        },
+        "part-whole": {
+            title: "📮 Rész és egész",
+            text: (total, part) => `${total} postás várakozik az indulásra. Közülük ${part} postásnak kék a cipője, a többieknek barna.`,
+            question: "Hány barna cipős van közöttük?",
+            success: (answer) => `😊 Szép munka! ${answer} postásnak barna a cipője!`
+        },
+        compare: {
+            title: "📮 Összehasonlítás",
+            text: (a, b) => `A páros oldalra ma ${a} levelet, a páratlan oldalra ${b} levelet kézbesítettek.`,
+            question: "Mennyivel több levél került az egyik oldalra, mint a másikra?",
+            success: (answer) => `😊 Szép munka! ${diffPhrase(answer)} levél került a páros oldalra!`
+        }
+    },
+    racing: {
+        join: {
+            title: "🔧 Egyesítés",
+            text: (a, b) => `A szerelőgarázsban ${a} kerék van a polcon. A versenyautóhoz még ${b} kereket szerelnek.`,
+            question: "Hány kerék lesz összesen?",
+            success: (answer) => `😊 Szép munka! Összesen ${answer} kerék lesz!`
+        },
+        remove: {
+            title: "🔧 Elmegy belőle",
+            text: (total, leaving) => `${total} versenyautó várakozik a rajtvonalnál. ${leaving} piros autó elindul az első körre.`,
+            question: "Hány autó marad a rajtvonalnál?",
+            hint: "Húzd a piros autókat a pályára!",
+            success: (answer) => `😊 Szép munka! A rajtvonalnál ${answer} autó maradt!`
+        },
+        "part-whole": {
+            title: "🔧 Rész és egész",
+            text: (total, part) => `${total} versenyautó várakozik a rajtvonalnál. Közülük ${part} piros, a többi kék.`,
+            question: "Hány kék autó van?",
+            success: (answer) => `😊 Szép munka! ${answer} kék autó van!`
+        },
+        compare: {
+            title: "🔧 Összehasonlítás",
+            text: (a, b) => `Az első versenyen ${a} kört, a másodikon ${b} kört futottak.`,
+            question: "Mennyivel több kört futottak az első versenyen?",
+            success: (answer) => `😊 Szép munka! ${diffPhrase(answer)} kört futottak az első versenyen!`
+        }
+    },
+    cooking: {
+        join: {
+            title: "🍳 Egyesítés",
+            text: (a, b) => `A konyhapulton ${a} tojás van a tálban. Ancsika szakács még ${b} tojást üt bele.`,
+            question: "Hány tojás lesz összesen a tálban?",
+            success: (answer) => `😊 Szép munka! Összesen ${answer} tojás van a tálban!`
+        },
+        remove: {
+            title: "🍳 Elmegy belőle",
+            text: (total, leaving) => `${total} palacsinta van a tányéron. ${leaving} csokoládésat megesznek.`,
+            question: "Hány palacsinta marad a tányéron?",
+            hint: "Húzd a csokoládés palacsintákat a tányér mellé, ezeket megeszik!",
+            success: (answer) => `😊 Szép munka! A tányéron ${answer} palacsinta maradt!`
+        },
+        "part-whole": {
+            title: "🍳 Rész és egész",
+            text: (total, part) => `${total} palacsinta van a tányéron. Közülük ${part} lekváros, a többi sajtos.`,
+            question: "Hány sajtos palacsinta van?",
+            success: (answer) => `😊 Szép munka! ${answer} sajtos palacsinta van!`
+        },
+        compare: {
+            title: "🍳 Összehasonlítás",
+            text: (a, b) => `Reggel ${a} palacsintát, délben ${b} palacsintát sütöttek.`,
+            question: "Mennyivel több palacsinta sült reggel?",
+            success: (answer) => `😊 Szép munka! ${diffPhrase(answer)} palacsinta sült reggel!`
+        }
+    },
+    football: {
+        join: {
+            title: "⚽ Egyesítés",
+            text: (a, b) => `A labdatartóban ${a} labda van. A csapat még ${b} labdát hoz.`,
+            question: "Hány labda lesz összesen?",
+            success: (answer) => `😊 Szép munka! Összesen ${answer} labda van a tartóban!`
+        },
+        remove: {
+            title: "⚽ Elmegy belőle",
+            text: (total, leaving) => `${total} játékos van a pályán. ${leaving} piros mezes lecserélik a szünetben.`,
+            question: "Hány játékos marad a pályán?",
+            hint: "Húzd a piros mezes játékosokat a kispadra!",
+            success: (answer) => `😊 Szép munka! A pályán ${answer} játékos maradt!`
+        },
+        "part-whole": {
+            title: "⚽ Rész és egész",
+            text: (total, part) => `${total} játékos van a csapatban. Közülük ${part} piros mezes, a többi kék mezes.`,
+            question: "Hány kék mezes játékos van?",
+            success: (answer) => `😊 Szép munka! ${answer} kék mezes játékos van!`
+        },
+        compare: {
+            title: "⚽ Összehasonlítás",
+            text: (a, b) => `Az első félidőben ${a} gólt, a másodikban ${b} gólt rúgtak.`,
+            question: "Mennyivel több gól esett az első félidőben?",
+            success: (answer) => `😊 Szép munka! ${diffPhrase(answer)} gól esett az első félidőben!`
+        }
+    }
+};
+
+export function generateWordProblems(options = {}) {
+
+    const { count = 4, max = 20 } = options;
+
+    if (max < 6) {
+        throw new Error("A max értéknek legalább 6-nak kell lennie.");
+    }
+
+    const world = getActiveWorld();
+
+    const tasks = [];
+
+    for (let i = 0; i < count; i++) {
+        tasks.push(generateTask(KINDS[i % KINDS.length], max, world));
+    }
+
+    return tasks;
+}
+
+function getTheme(world, kind) {
+    return THEMES[world]?.[kind] ?? THEMES.postman[kind];
+}
+
+function generateTask(kind, max, world) {
+    switch (kind) {
+        case "join":
+            return generateJoin(max, world);
+        case "remove":
+            return generateRemove(max, world);
+        case "part-whole":
+            return generatePartWhole(max, world);
+        case "compare":
+            return generateCompare(max, world);
+    }
+}
+
+function generateJoin(max, world) {
+
+    const a = random(3, max - 4);
+    const b = random(2, max - a);
+    const answer = a + b;
+
+    const theme = getTheme(world, "join");
+
+    return {
+        kind: "join",
+        world,
+        title: theme.title,
+        text: theme.text(a, b),
+        question: theme.question,
+        a,
+        b,
+        answer,
+        successText: theme.success(answer),
+        options: makeOptions(answer, 0, max)
+    };
+}
+
+function generateRemove(max, world) {
+
+    const total = random(8, max);
+    const leaving = random(2, Math.min(6, total - 2));
+
+    const theme = getTheme(world, "remove");
+
+    return {
+        kind: "remove",
+        world,
+        title: theme.title,
+        text: theme.text(total, leaving),
+        question: theme.question,
+        hint: theme.hint,
+        total,
+        leaving,
+        answer: total - leaving,
+        successText: theme.success(total - leaving)
+    };
+}
+
+function generatePartWhole(max, world) {
+
+    const total = random(5, max);
+    const part = random(2, total - 2);
+
+    const theme = getTheme(world, "part-whole");
+
+    return {
+        kind: "part-whole",
+        world,
+        title: theme.title,
+        text: theme.text(total, part),
+        question: theme.question,
+        total,
+        part,
+        answer: total - part,
+        successText: theme.success(total - part)
+    };
+}
+
+function generateCompare(max, world) {
+
+    const a = random(5, max);
+    const b = random(2, a - 1);
+    const answer = a - b;
+
+    const theme = getTheme(world, "compare");
+
+    return {
+        kind: "compare",
+        world,
+        title: theme.title,
+        text: theme.text(a, b),
+        question: theme.question,
+        a,
+        b,
+        answer,
+        successText: theme.success(answer),
+        options: makeOptions(answer, 0, max)
+    };
+}
+
+function makeOptions(answer, min, max, count = 4) {
+
+    const options = [answer];
+    const seen = new Set([answer]);
+
+    const deltas = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5];
+
+    for (const d of deltas) {
+        if (options.length >= count) break;
+        const v = answer + d;
+        if (v >= min && v <= max && !seen.has(v)) {
+            seen.add(v);
+            options.push(v);
+        }
+    }
+
+    for (let v = min; v <= max && options.length < count; v++) {
+        if (!seen.has(v)) {
+            seen.add(v);
+            options.push(v);
+        }
+    }
+
+    for (let i = options.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [options[i], options[j]] = [options[j], options[i]];
+    }
+
+    return options;
+}
+
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}

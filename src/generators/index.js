@@ -19,6 +19,7 @@ import { generateMoneyCompare } from "./moneyCompareGenerator.js?v=3";
 import { generateMoneyEnough } from "./moneyEnoughGenerator.js?v=3";
 import { generateMeasureCompare } from "./measureCompareGenerator.js?v=3";
 import { generateMeasureSquares } from "./measureSquaresGenerator.js?v=3";
+import { generateWordProblems } from "./wordProblemGenerator.js?v=4";
 
 export function generate(step) {
 
@@ -70,6 +71,8 @@ export function generate(step) {
             return generateMeasureCompare(step.options);
         case "measure-squares":
             return generateMeasureSquares(step.options);
+        case "word-problem":
+            return generateWordProblems(step.options);
         case "multiplication":
         case "division":
 

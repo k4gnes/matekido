@@ -217,6 +217,11 @@ export function buildLesson(lesson) {
                     name: task.name,
                     length: task.length
                 });
+            } else if (step.generator === "word-problem") {
+                result.push({
+                    type: "word-problem",
+                    ...task
+                });
             } else {
                 result.push({
                     type: "exercise",

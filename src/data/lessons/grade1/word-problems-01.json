@@ -1,0 +1,33 @@
+{
+    "id": "grade1-word-problems-01",
+    "title": "📝 Szöveges feladatok",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📝 Szöveges feladatok",
+            "text": "Tibi postásnak ma sok dolga van. Segíts neki megoldani a szöveges feladatokat!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🏎️ Szöveges feladatok",
+                    "text": "Oldd meg a szöveges feladatokat a pályán!"
+                },
+                "football": {
+                    "title": "⚽ Szöveges feladatok",
+                    "text": "Oldd meg a szöveges feladatokat a pályán!"
+                },
+                "cooking": {
+                    "title": "🍳 Szöveges feladatok",
+                    "text": "Oldd meg a szöveges feladatokat a konyhában!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "word-problem",
+            "options": {
+                "count": 4,
+                "max": 20
+            }
+        }
+    ]
+}

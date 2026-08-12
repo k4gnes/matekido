@@ -68,7 +68,8 @@ const TYPE_EMOJI = {
     "money-compare": "⚖️",
     "money-enough": "🛒",
     "measure-compare": "📏",
-    "measure-squares": "🧮"
+    "measure-squares": "🧮",
+    "word-problem": "📝"
 };
 
 const TYPE_GROUPS = {
@@ -96,7 +97,8 @@ const TYPE_LABEL = {
     "money-compare": "Pénz összehasonlítás",
     "money-enough": "Elég-e a pénz?",
     "measure-compare": "Hosszúság összehasonlítás",
-    "measure-squares": "Mérés négyzetekkel"
+    "measure-squares": "Mérés négyzetekkel",
+    "word-problem": "Szöveges feladat"
 };
 
 const RANGE_LABEL = {

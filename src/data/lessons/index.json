@@ -820,6 +820,25 @@
                 "cooking": "🥄 Mérd meg négyzetekkel!",
                 "football": "⚽ Mérd meg négyzetekkel!"
             }
+        },
+        {
+            "id": "word-problems-01",
+            "title": "Szöveges feladatok",
+            "grades": [1],
+            "category": "wordProblems",
+            "skill": "one-step",
+            "difficulty": 1,
+            "type": "word-problem",
+            "range": 20,
+            "mission": "📝 Szöveges feladatok a postán",
+            "subtitle": "Szöveges feladatok",
+            "file": "./data/lessons/grade1/word-problems-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Szöveges feladatok a pályán",
+                "cooking": "🍳 Szöveges feladatok a konyhában",
+                "football": "⚽ Szöveges feladatok a pályán",
+                "postman": "📮 Szöveges feladatok a postán"
+            }
         }
     ],
     "gradeConfig": [

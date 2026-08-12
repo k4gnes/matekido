@@ -1,4 +1,5 @@
-import { REFERENCES, OBJECTS, POSITION_IDS } from "../data/spatial.js";
+import { getActiveWorld } from "../profile/Profile.js";
+import { REFERENCES, OBJECTS, POSITION_IDS, WORLD_REFS, WORLD_OBJECTS } from "../data/spatial.js";
 
 function shuffle(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
@@ -26,9 +27,22 @@ export function generatePosition(options = {}) {
 
     const { count = 5, refs = null, positions = null, objects = null } = options;
 
-    const refPool = refs ? REFERENCES.filter(r => refs.includes(r.id)) : REFERENCES;
+    const world = getActiveWorld();
+
+    const worldRefs = WORLD_REFS[world] ?? null;
+    const worldObjs = WORLD_OBJECTS[world] ?? null;
+
+    const refPool = refs
+        ? REFERENCES.filter(r => refs.includes(r.id))
+        : worldRefs
+            ? REFERENCES.filter(r => worldRefs.includes(r.id))
+            : REFERENCES;
     const posPool = positions ? POSITION_IDS.filter(p => positions.includes(p)) : [...POSITION_IDS];
-    const objPool = objects ? OBJECTS.filter(o => objects.includes(o.id)) : OBJECTS;
+    const objPool = objects
+        ? OBJECTS.filter(o => objects.includes(o.id))
+        : worldObjs
+            ? OBJECTS.filter(o => worldObjs.includes(o.id))
+            : OBJECTS;
 
     const tasks = [];
 

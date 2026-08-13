@@ -51,6 +51,7 @@ export class Game {
         this.onRestart = actions.onRestart;
         this.onExit = actions.onExit;
         this.onProfile = actions.onProfile;
+        this.onPractice = actions.onPractice;
     }
 
     onAttempt() {
@@ -129,7 +130,8 @@ export class Game {
                 {
                     onRestart: this.onRestart,
                     onExit: this.onExit,
-                    onProfile: this.onProfile
+                    onProfile: this.onProfile,
+                    onPractice: this.onPractice
                 },
                 milestone,
                 reward,
@@ -296,7 +298,8 @@ export class Game {
                 renderCelebration(step, this.root, {
                     onRestart: this.onRestart,
                     onExit: this.onExit,
-                    onProfile: this.onProfile
+                    onProfile: this.onProfile,
+                    onPractice: this.onPractice
                 }, milestone2, reward2, getActiveWorld());
 
                 break;

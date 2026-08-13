@@ -1,5 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
+import { getWeakSkillIds } from "./practicePage.js";
 
 export function renderCelebration(step, root, actions = {}, milestone, reward, activeWorld) {
 
@@ -27,6 +28,13 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
         onClick: () => actions.onProfile?.()
     });
 
+    const weakSkills = getWeakSkillIds();
+    const practiceButton = weakSkills.size > 0
+        ? createButton(`🎯 Gyakorolandóak (${weakSkills.size})`, {
+            onClick: () => actions.onPractice?.()
+        })
+        : null;
+
     if (milestone) {
 
         const milestoneEl = document.createElement("div");
@@ -39,10 +47,12 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
     `;
 
         card.append(title, text, milestoneEl, restartButton, menuButton, profileButton);
+        if (practiceButton) card.append(practiceButton);
 
     } else {
 
         card.append(title, text, restartButton, menuButton, profileButton);
+        if (practiceButton) card.append(practiceButton);
 
     }
 

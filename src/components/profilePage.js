@@ -1,11 +1,12 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { loadProfile, getNextGoal, getActiveWorld, setActiveWorld } from "../profile/Profile.js";
+import { getWeakSkillIds } from "./practicePage.js";
 import { ACHIEVEMENTS, getUnlockedAchievements } from "../profile/Achievements.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getAllWorlds } from "../world/WorldRegistry.js";
 
-export function renderProfilePage(root, onBack, onStats) {
+export function renderProfilePage(root, onBack, onStats, onPractice) {
 
     root.replaceChildren();
 
@@ -191,6 +192,16 @@ export function renderProfilePage(root, onBack, onStats) {
 
     buttonRow.append(statsButton, menuButton);
 
+    const weakSkills = getWeakSkillIds();
+    if (weakSkills.size > 0) {
+        const practiceButton = createButton(`🎯 Gyakorolandóak (${weakSkills.size})`, {
+            onClick: () => onPractice?.()
+        });
+        practiceButton.className = "profile-page-button";
+        buttonRow.append(practiceButton);
+    }
+
     card.append(avatarDisplay, title, nameDisplay, stats, progressSection, questSection, achWorldRow, buttonRow);
+
     root.append(card);
 }

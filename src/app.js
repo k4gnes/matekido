@@ -4,6 +4,7 @@ import { buildLesson } from "./builders/LessonBuilder.js?v=9";
 import { renderLessonMenu } from "./components/lessonMenu.js";
 import { renderProfilePage } from "./components/profilePage.js";
 import { renderStatsPage } from "./components/statsPage.js";
+import { renderPracticePage } from "./components/practicePage.js";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js";
 import { getActiveId, listPlayers } from "./profile/UserManager.js";
 
@@ -36,7 +37,11 @@ function showMenu() {
 }
 
 function showProfile() {
-    renderProfilePage(root, showMenu, showStats);
+    renderProfilePage(root, showMenu, showStats, showPractice);
+}
+
+function showPractice() {
+    renderPracticePage(lessonIndex, root, startLesson, showProfile);
 }
 
 function showStats() {
@@ -68,7 +73,8 @@ async function startLesson(path) {
         {
             onRestart: () => startLesson(path),
             onExit: showMenu,
-            onProfile: showProfile
+            onProfile: showProfile,
+            onPractice: showPractice
         },
         path,
         skill

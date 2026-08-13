@@ -121,7 +121,7 @@ const DIFFICULTY_LABEL = {
     4: "Mester"
 };
 
-function createLessonCard(lesson, onSelect, activeWorld) {
+export function createLessonCard(lesson, onSelect, activeWorld) {
     const lessonCard = document.createElement("div");
     lessonCard.className = "lesson-card";
 

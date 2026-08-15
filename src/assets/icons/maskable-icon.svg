@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <rect width="512" height="512" fill="#4f86f7"/>
+    <g transform="translate(512,512) scale(0.82) translate(-512,-512)">
+        <text x="256" y="261" font-family="DejaVu Sans, Arial, sans-serif" font-size="200" font-weight="700" fill="#ffffff" text-anchor="middle">1+1</text>
+        <text x="256" y="391" font-family="DejaVu Sans, Arial, sans-serif" font-size="150" font-weight="700" fill="#ffd54d" text-anchor="middle">=2</text>
+    </g>
+</svg>

@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interaktív matematikai tanulási platform magyar gyerekeknek.">
+    <meta name="theme-color" content="#4f86f7">
     <title>Matekidő</title>
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="icon" href="/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png">
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Matekidő">
     <link rel="stylesheet" href="css/base.css?v=9">
     <link rel="stylesheet" href="css/card.css?v=9">
     <link rel="stylesheet" href="css/equation.css?v=9">
@@ -32,6 +41,16 @@
     <div id="app"></div>
 
     <script type="module" src="app.js?v=9"></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("/sw.js").catch((error) => {
+                    console.error("Service worker regisztráció sikertelen:", error);
+                });
+            });
+        }
+    </script>
 
 </body>
 </html>

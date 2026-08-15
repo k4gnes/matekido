@@ -7,6 +7,7 @@ Interaktív matematikai tanulási platform magyar gyerekeknek (első osztálytó
 - Nincs build lépés, nincs csomagkezelő, nincs lint/test keretrendszer.
 - `make start` – Python http szerver a `src/`-ből (localhost:8000).
 - `node src/testGenerator.js` – generatorok manuális tesztelése (ESM-et használ, node-dal futtatható).
+- `node src/generateSWCache.js` – az offline precache-lista (`src/sw-cache.js`) újragenerálása; új/eltűnt fájlnál (pl. új lecke) mindig futtatni kell.
 - Minden commit után manuálisan ellenőrizni kell a böngészőben (hibakereséshez nincs automatizált teszt).
 
 ## Web gyökér: `src/`
@@ -51,7 +52,8 @@ Interaktív matematikai tanulási platform magyar gyerekeknek (első osztálytó
 ## PWA
 
 - `sw.js` és `manifest.webmanifest` a `src/` gyökerében – a web gyökér a `src/`, így a `/sw.js` scope a `/`-t, a `/assets/...`-t és az egész appot lefedi.
-- A service worker network-first: online mindig friss tartalom, offline cache. Nincs automatizált verzió-bump – nagy fájlstruktúra-változásnál a `sw.js` tetején lévő `CACHE` (`matekido-v1`) értékét növeld.
+- A service worker network-first: online mindig friss tartalom, offline cache. Az install során az EGÉSZ appot precache-eli a generált `sw-cache.js` lista alapján, így offline rögtön az összes lecke elérhető.
+- Új/eltűnt fájl (pl. új lecke) után futtatni kell a `node src/generateSWCache.js`-t. Nincs automatizált verzió-bump – nagy fájlstruktúra-változásnál a `sw.js` tetején lévő `CACHE` (`matekido-v2`) értékét növeld.
 - Ha a `src/index.html`-ben `?v=` paramétert emelsz, a SW online módban automatikusan az új fájlt adja.
 - Ikonok: `src/assets/icons/` (`icon-*`, `maskable-*`, `apple-touch-icon.png`, SVG források).
 - Telepíthetőséghez HTTPS kell (localhoston a `make start` is jó). Deploy: nincs konfigurálva, pl. GitHub Pages / Netlify.

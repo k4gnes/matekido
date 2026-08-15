@@ -1,15 +1,11 @@
-const CACHE = "matekido-v1";
+importScripts("./sw-cache.js");
 
-const CORE_URLS = [
-    "/",
-    "/index.html",
-    "/manifest.webmanifest"
-];
+const CACHE = "matekido-v2";
 
 self.addEventListener("install", (event) => {
     event.waitUntil(
         caches.open(CACHE)
-            .then((cache) => cache.addAll(CORE_URLS))
+            .then((cache) => cache.addAll(SW_CACHE_LIST))
             .then(() => self.skipWaiting())
     );
 });
@@ -29,15 +25,17 @@ self.addEventListener("fetch", (event) => {
 
     if (request.method !== "GET") return;
 
+    const url = new URL(request.url);
+
     if (request.mode === "navigate") {
         event.respondWith(
             fetch(request)
                 .then((response) => {
-                    cachePut(request, response);
+                    cachePut(url.pathname, response);
                     return response;
                 })
                 .catch(() =>
-                    caches.match(request).then(
+                    caches.match(url.pathname).then(
                         (match) => match || caches.match("/index.html")
                     )
                 )
@@ -48,30 +46,23 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(
         fetch(request)
             .then((response) => {
-                if (response.ok) cachePut(request, response);
+                if (response.ok) cachePut(url.pathname, response);
                 return response;
             })
             .catch(() =>
-                caches.match(request).then((match) => {
-                    if (match) return match;
-
-                    const withoutQuery = new URL(request.url);
-                    withoutQuery.search = "";
-                    return caches.match(withoutQuery.pathname)
-                        .then((m) => m || Response.error());
-                })
+                caches.match(url.pathname).then((match) => match || Response.error())
             )
     );
 });
 
-function cachePut(request, response) {
+function cachePut(pathname, response) {
     const clone = response.clone();
 
     caches.open(CACHE).then(async (cache) => {
-        await cache.put(request, clone);
+        await cache.put(pathname, clone);
 
         const keys = await cache.keys();
-        if (keys.length > 300) {
+        if (keys.length > 500) {
             await cache.delete(keys[0]);
         }
     });

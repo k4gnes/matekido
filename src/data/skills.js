@@ -14,20 +14,10 @@ export const CATEGORIES = {
         icon: "✖️",
         skills: ["multiplication", "division", "missing-factor"]
     },
-    measurement: {
-        title: "Mérés",
-        icon: "📏",
-        skills: ["length", "mass", "volume"]
-    },
-    time: {
-        title: "Idő",
-        icon: "🕐",
-        skills: ["hour", "minute", "calendar"]
-    },
-    money: {
-        title: "Pénz",
-        icon: "💰",
-        skills: ["coins", "banknotes", "shopping"]
+    practical: {
+        title: "Gyakorlati matek",
+        icon: "🧮",
+        skills: ["length", "mass", "volume", "hour", "minute", "calendar", "coins", "banknotes", "shopping"]
     },
     geometry: {
         title: "Geometria",
@@ -66,19 +56,19 @@ export const SKILLS = {
     "missing-factor": { title: "Hiányzó tényező", category: "multiplication" },
 
     // Measurement
-    length: { title: "Hosszúság", category: "measurement" },
-    mass: { title: "Tömeg", category: "measurement" },
-    volume: { title: "Űrtartalom", category: "measurement" },
+    length: { title: "Hosszúság", category: "practical" },
+    mass: { title: "Tömeg", category: "practical" },
+    volume: { title: "Űrtartalom", category: "practical" },
 
     // Time
-    hour: { title: "Óra", category: "time" },
-    minute: { title: "Perc", category: "time" },
-    calendar: { title: "Naptár", category: "time" },
+    hour: { title: "Óra", category: "practical" },
+    minute: { title: "Perc", category: "practical" },
+    calendar: { title: "Naptár", category: "practical" },
 
     // Money
-    coins: { title: "Érmék", category: "money" },
-    banknotes: { title: "Bankjegyek", category: "money" },
-    shopping: { title: "Vásárlás", category: "money" },
+    coins: { title: "Érmék", category: "practical" },
+    banknotes: { title: "Bankjegyek", category: "practical" },
+    shopping: { title: "Vásárlás", category: "practical" },
 
     // Geometry
     shapes: { title: "Alakzatok", category: "geometry" },

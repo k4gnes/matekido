@@ -39,7 +39,7 @@ function loadFilters() {
                 skills: parsed.skills || [],
                 types: (parsed.types || []).map(t => t === "decomposition-find-wrong" ? "decomposition" : t),
                 ranges: parsed.ranges || [],
-                categories: parsed.categories || []
+                categories: (parsed.categories || []).map(c => ["time", "money", "measurement"].includes(c) ? "practical" : c)
             };
         }
     } catch {}
@@ -154,9 +154,11 @@ export function createLessonCard(lesson, onSelect, activeWorld) {
 
     const stats = getLessonStats(lesson.file);
     if (stats) {
+        const mastered = stats.percentage >= 90;
         const statBadge = document.createElement("span");
-        statBadge.className = "lesson-stat-badge";
-        statBadge.textContent = `${stats.percentage}%`;
+        statBadge.className = "lesson-stat-badge " + (mastered ? "mastered" : "done");
+        statBadge.textContent = (mastered ? "⭐ " : "✓ ") + `${stats.percentage}%`;
+        lessonCard.classList.add(mastered ? "lesson-mastered" : "lesson-done");
         lessonCard.append(statBadge);
     }
 

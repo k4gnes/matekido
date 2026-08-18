@@ -1,0 +1,69 @@
+{
+  "id": "grade2-multiplication-02",
+  "title": "✖️ Szorzás 3, 4-es táblával",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "✖️ Szorzás 3, 4-es táblával",
+      "text": "Most jön a nehezebb szorzás! Válaszd ki a helyes eredményt!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Nehezebb szorzás",
+          "text": "A versenyautók nehezebb szorzásokat oldanak meg! Válaszd ki a helyes eredményt!"
+        },
+        "football": {
+          "title": "⚽ Nehezebb szorzás",
+          "text": "A játékosok nehezebb szorzásokat oldanak meg! Válaszd ki a helyes eredményt!"
+        },
+        "cooking": {
+          "title": "🍳 Nehezebb szorzás",
+          "text": "A szakács nehezebb szorzásokat old meg! Válaszd ki a helyes eredményt!"
+        },
+        "animals": {
+          "title": "🦁 Nehezebb szorzás",
+          "text": "Az állatok nehezebb szorzásokat oldanak meg! Válaszd ki a helyes eredményt!"
+        },
+        "space": {
+          "title": "🤖 Nehezebb szorzás",
+          "text": "A robotok nehezebb szorzásokat oldanak meg! Válaszd ki a helyes eredményt!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "multiplication",
+      "options": {
+        "count": 6,
+        "tables": [3, 4],
+        "type": "table"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megoldottad a nehezebb szorzásokat!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a nehezebb szorzásokat!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a nehezebb szorzásokat!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a nehezebb szorzásokat!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megoldottad a nehezebb szorzásokat!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad a nehezebb szorzásokat!"
+        }
+      }
+    }
+  ]
+}

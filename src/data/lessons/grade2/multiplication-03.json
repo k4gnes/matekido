@@ -1,0 +1,69 @@
+{
+  "id": "grade2-multiplication-03",
+  "title": "✖️ Vegyes szorzásgyakorlás",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "✖️ Vegyes szorzásgyakorlás",
+      "text": "Most mindent összemosunk! Válaszd ki a helyes eredményt!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Vegyes szorzás",
+          "text": "A versenyautók vegyes szorzásokat oldanak meg! Válaszd ki a helyes eredményt!"
+        },
+        "football": {
+          "title": "⚽ Vegyes szorzás",
+          "text": "A játékosok vegyes szorzásokat oldanak meg! Válaszd ki a helyes eredményt!"
+        },
+        "cooking": {
+          "title": "🍳 Vegyes szorzás",
+          "text": "A szakács vegyes szorzásokat old meg! Válaszd ki a helyes eredményt!"
+        },
+        "animals": {
+          "title": "🦁 Vegyes szorzás",
+          "text": "Az állatok vegyes szorzásokat oldanak meg! Válaszd ki a helyes eredményt!"
+        },
+        "space": {
+          "title": "🤖 Vegyes szorzás",
+          "text": "A robotok vegyes szorzásokat oldanak meg! Válaszd ki a helyes eredményt!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "multiplication",
+      "options": {
+        "count": 8,
+        "tables": [2, 3, 4, 5, 10],
+        "type": "table"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Tökéletesen megoldottad a vegyes szorzásokat!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Tökéletesen megoldottad a vegyes szorzásokat!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Tökéletesen megoldottad a vegyes szorzásokat!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Tökéletesen megoldottad a vegyes szorzásokat!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Tökéletesen megoldottad a vegyes szorzásokat!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Tökéletesen megoldottad a vegyes szorzásokat!"
+        }
+      }
+    }
+  ]
+}

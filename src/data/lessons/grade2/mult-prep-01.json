@@ -1,0 +1,70 @@
+{
+  "id": "grade2-mult-prep-01",
+  "title": "🧩 Egyenlő csoportok",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧩 Egyenlő csoportok",
+      "text": "Nézd meg a csoportokat! Minden csoportban ugyanannyi elem van. Hány elem van összesen?",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Egyenlő csoportok",
+          "text": "Nézd meg a kerék-csoportokat! Minden csoportban ugyanannyi kerék van. Hány kerék van összesen?"
+        },
+        "football": {
+          "title": "⚽ Egyenlő csoportok",
+          "text": "Nézd meg a játékos-csoportokat! Minden csoportban ugyanannyi játékos van. Hány játékos van összesen?"
+        },
+        "cooking": {
+          "title": "🍳 Egyenlő csoportok",
+          "text": "Nézd meg a hozzávaló-csoportokat! Minden csoportban ugyanannyi hozzávaló van. Hány hozzávaló van összesen?"
+        },
+        "animals": {
+          "title": "🦁 Egyenlő csoportok",
+          "text": "Nézd meg az állat-csoportokat! Minden csoportban ugyanannyi állat van. Hány állat van összesen?"
+        },
+        "space": {
+          "title": "🤖 Egyenlő csoportok",
+          "text": "Nézd meg a robot-csoportokat! Minden csoportban ugyanannyi robot van. Hány robot van összesen?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "mult-prep",
+      "options": {
+        "count": 5,
+        "type": "equal-groups",
+        "tables": [2, 5],
+        "max": 30
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megszámoltad a csoportokat!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megszámoltad a kerék-csoportokat!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megszámoltad a játékos-csoportokat!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megszámoltad a hozzávaló-csoportokat!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megszámoltad az állat-csoportokat!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megszámoltad a robot-csoportokat!"
+        }
+      }
+    }
+  ]
+}

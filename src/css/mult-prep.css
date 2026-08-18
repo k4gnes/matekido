@@ -1,0 +1,116 @@
+.mp-hint {
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 .75rem;
+}
+
+.mp-groups {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1.25rem 0;
+}
+
+.mp-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .3rem;
+    padding: .5rem .7rem;
+    background: rgba(79, 134, 247, 0.08);
+    border-radius: 12px;
+    border: 2px solid rgba(79, 134, 247, 0.2);
+}
+
+.mp-item {
+    font-size: 1.6rem;
+    line-height: 1.2;
+}
+
+.mp-expression {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 1.5rem 0;
+    letter-spacing: .05em;
+}
+
+.mp-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.mp-option {
+    padding: .6rem 1.1rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #1a1a2e;
+    cursor: pointer;
+    transition: transform .15s, border-color .15s, background-color .15s;
+    min-width: 3.5rem;
+}
+
+.mp-option:hover {
+    border-color: #4a90d9;
+    transform: scale(1.05);
+}
+
+.mp-sequence {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.mp-term {
+    min-width: 2ch;
+    text-align: center;
+}
+
+.mp-sep {
+    color: #999;
+}
+
+.mp-input {
+    width: 5ch;
+    text-align: center;
+    font-size: 2rem;
+    padding: .3rem;
+    border: 2px solid #bbb;
+    border-radius: 8px;
+}
+
+.mp-input:focus {
+    border-color: #4a90d9;
+    outline: none;
+}
+
+@media (max-width: 380px) {
+    .mp-item {
+        font-size: 1.3rem;
+    }
+
+    .mp-option {
+        font-size: 1rem;
+        padding: .5rem .8rem;
+    }
+
+    .mp-expression {
+        font-size: 1.6rem;
+    }
+
+    .mp-sequence {
+        font-size: 1.6rem;
+    }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "grade2-mult-prep-03",
+  "title": "🧩 Számolás kettesével, ötösével, tizesével",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧩 Számolás kettesével, ötösével, tizesével",
+      "text": "Ismered a számsorokat? Találd ki, mi a hiányzó szám!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Számolás kettesével",
+          "text": "A rajtszámok sorban jönnek! Találd ki, mi a hiányzó szám!"
+        },
+        "football": {
+          "title": "⚽ Számolás ötösével",
+          "text": "A gólok ötösével jönnek! Találd ki, mi a hiányzó szám!"
+        },
+        "cooking": {
+          "title": "🍳 Számolás tizesével",
+          "text": "A tányérok tizesével jönnek! Találd ki, mi a hiányzó szám!"
+        },
+        "animals": {
+          "title": "🦁 Számolás kettesével",
+          "text": "Az állatok kettesével jönnek! Találd ki, mi a hiányzó szám!"
+        },
+        "space": {
+          "title": "🤖 Számolás ötösével",
+          "text": "Az egységek ötösével jönnek! Találd ki, mi a hiányzó szám!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "mult-prep",
+      "options": {
+        "count": 5,
+        "type": "skip-counting",
+        "tables": [2, 5, 10],
+        "max": 50
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megtaláltad a hiányzó számokat!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a rajtszámokat!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a gólokat!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a tányérok számát!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megtaláltad az állatok számát!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megtaláltad az egységek számát!"
+        }
+      }
+    }
+  ]
+}

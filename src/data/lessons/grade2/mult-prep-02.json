@@ -1,0 +1,70 @@
+{
+  "id": "grade2-mult-prep-02",
+  "title": "🧩 Ismételt összeadás",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧩 Ismételt összeadás",
+      "text": "Ugyanaz a szám ismétlődik! Számold ki, mennyi az összeg!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Ismételt összeadás",
+          "text": "A versenyautók ugyanannyi kört futnak! Számold ki, hány kör összesen!"
+        },
+        "football": {
+          "title": "⚽ Ismételt összeadás",
+          "text": "A játékosok ugyanannyi gólt rúgnak! Számold ki, hány gól összesen!"
+        },
+        "cooking": {
+          "title": "🍳 Ismételt összeadás",
+          "text": "A szakács ugyanannyi adagot készít! Számold ki, hány adag összesen!"
+        },
+        "animals": {
+          "title": "🦁 Ismételt összeadás",
+          "text": "Az állatok ugyanannyi almát esznek! Számold ki, hány alma összesen!"
+        },
+        "space": {
+          "title": "🤖 Ismételt összeadás",
+          "text": "A robotok ugyanannyi egységet dolgoznak fel! Számold ki, hány egység összesen!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "mult-prep",
+      "options": {
+        "count": 5,
+        "type": "repeated-addition",
+        "tables": [2, 5, 10],
+        "max": 50
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen kiszámoltad az ismételt összeadásokat!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiszámoltad a köröket!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiszámoltad a gólokat!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiszámoltad az adagokat!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen kiszámoltad az almákat!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen kiszámoltad az egységeket!"
+        }
+      }
+    }
+  ]
+}

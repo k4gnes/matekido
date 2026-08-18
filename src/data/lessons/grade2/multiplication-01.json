@@ -1,0 +1,69 @@
+{
+  "id": "grade2-multiplication-01",
+  "title": "✖️ Szorzás 2, 5, 10-es táblával",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "✖️ Szorzás 2, 5, 10-es táblával",
+      "text": "Itt az ideje a szorzásnak! Válaszd ki a helyes eredményt!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Szorzás a pályán",
+          "text": "A versenyautók szorzásban mérik össze magukat! Válaszd ki a helyes eredményt!"
+        },
+        "football": {
+          "title": "⚽ Szorzás a pályán",
+          "text": "A játékosok szorzásban mérik össze magukat! Válaszd ki a helyes eredményt!"
+        },
+        "cooking": {
+          "title": "🍳 Szorzás a konyhában",
+          "text": "A szakács szorzásban számol! Válaszd ki a helyes eredményt!"
+        },
+        "animals": {
+          "title": "🦁 Szorzás az állatkertben",
+          "text": "Az állatok szorzásban mérik össze magukat! Válaszd ki a helyes eredményt!"
+        },
+        "space": {
+          "title": "🤖 Szorzás az űrben",
+          "text": "A robotok szorzásban számolnak! Válaszd ki a helyes eredményt!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "multiplication",
+      "options": {
+        "count": 6,
+        "tables": [2, 5, 10],
+        "type": "table"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megoldottad a szorzásokat!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a szorzásokat a pályán!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a szorzásokat a meccsen!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a szorzásokat a konyhában!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megoldottad a szorzásokat az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad a szorzásokat az űrben!"
+        }
+      }
+    }
+  ]
+}

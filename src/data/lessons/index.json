@@ -933,6 +933,126 @@
                 "animals": "🦁 Szöveges feladatok az állatkertben",
                 "space": "🤖 Szöveges feladatok az űrben"
             }
+        },
+        {
+            "id": "mult-prep-01",
+            "title": "Egyenlő csoportok",
+            "grades": [2],
+            "category": "operations",
+            "skill": "multiplication",
+            "difficulty": 2,
+            "type": "equal-groups",
+            "range": 30,
+            "mission": "🧩 Egyenlő csoportok",
+            "subtitle": "Egyenlő csoportok felismerése",
+            "file": "./data/lessons/grade2/mult-prep-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Egyenlő csoportok",
+                "cooking": "🍳 Egyenlő csoportok",
+                "football": "⚽ Egyenlő csoportok",
+                "animals": "🦁 Egyenlő csoportok",
+                "space": "🤖 Egyenlő csoportok"
+            }
+        },
+        {
+            "id": "mult-prep-02",
+            "title": "Ismételt összeadás",
+            "grades": [2],
+            "category": "operations",
+            "skill": "multiplication",
+            "difficulty": 2,
+            "type": "repeated-addition",
+            "range": 50,
+            "mission": "🧩 Ismételt összeadás",
+            "subtitle": "Ismételt összeadás gyakorlása",
+            "file": "./data/lessons/grade2/mult-prep-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Ismételt összeadás",
+                "cooking": "🍳 Ismételt összeadás",
+                "football": "⚽ Ismételt összeadás",
+                "animals": "🦁 Ismételt összeadás",
+                "space": "🤖 Ismételt összeadás"
+            }
+        },
+        {
+            "id": "mult-prep-03",
+            "title": "Számolás kettesével, ötösével, tizesével",
+            "grades": [2],
+            "category": "operations",
+            "skill": "multiplication",
+            "difficulty": 2,
+            "type": "skip-counting",
+            "range": 50,
+            "mission": "🧩 Számolás kettesével",
+            "subtitle": "Számolás 2, 5, 10-esével",
+            "file": "./data/lessons/grade2/mult-prep-03.json",
+            "worldTitles": {
+                "racing": "🏎️ Számolás kettesével",
+                "cooking": "🍳 Számolás tizesével",
+                "football": "⚽ Számolás ötösével",
+                "animals": "🦁 Számolás kettesével",
+                "space": "🤖 Számolás ötösével"
+            }
+        },
+        {
+            "id": "multiplication-01",
+            "title": "Szorzás 2, 5, 10-es táblával",
+            "grades": [2],
+            "category": "operations",
+            "skill": "multiplication",
+            "difficulty": 2,
+            "type": "table",
+            "range": 100,
+            "mission": "✖️ Szorzás 2, 5, 10",
+            "subtitle": "Szorzás 2, 5, 10-es táblával",
+            "file": "./data/lessons/grade2/multiplication-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Szorzás a pályán",
+                "cooking": "🍳 Szorzás a konyhában",
+                "football": "⚽ Szorzás a pályán",
+                "animals": "🦁 Szorzás az állatkertben",
+                "space": "🤖 Szorzás az űrben"
+            }
+        },
+        {
+            "id": "multiplication-02",
+            "title": "Szorzás 3, 4-es táblával",
+            "grades": [2],
+            "category": "operations",
+            "skill": "multiplication",
+            "difficulty": 2,
+            "type": "table",
+            "range": 100,
+            "mission": "✖️ Szorzás 3, 4",
+            "subtitle": "Szorzás 3, 4-es táblával",
+            "file": "./data/lessons/grade2/multiplication-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Nehezebb szorzás",
+                "cooking": "🍳 Nehezebb szorzás",
+                "football": "⚽ Nehezebb szorzás",
+                "animals": "🦁 Nehezebb szorzás",
+                "space": "🤖 Nehezebb szorzás"
+            }
+        },
+        {
+            "id": "multiplication-03",
+            "title": "Vegyes szorzásgyakorlás",
+            "grades": [2],
+            "category": "operations",
+            "skill": "multiplication",
+            "difficulty": 3,
+            "type": "table",
+            "range": 100,
+            "mission": "✖️ Vegyes szorzás",
+            "subtitle": "Vegyes szorzásgyakorlás",
+            "file": "./data/lessons/grade2/multiplication-03.json",
+            "worldTitles": {
+                "racing": "🏎️ Vegyes szorzás",
+                "cooking": "🍳 Vegyes szorzás",
+                "football": "⚽ Vegyes szorzás",
+                "animals": "🦁 Vegyes szorzás",
+                "space": "🤖 Vegyes szorzás"
+            }
         }
     ],
     "gradeConfig": [

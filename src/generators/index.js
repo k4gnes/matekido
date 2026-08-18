@@ -20,6 +20,8 @@ import { generateMoneyEnough } from "./moneyEnoughGenerator.js?v=3";
 import { generateMeasureCompare } from "./measureCompareGenerator.js?v=3";
 import { generateMeasureSquares } from "./measureSquaresGenerator.js?v=3";
 import { generateWordProblems } from "./wordProblemGenerator.js?v=4";
+import { generateMultPrep } from "./multPrepGenerator.js?v=1";
+import { generateMultiplication } from "./multiplicationGenerator.js?v=1";
 
 export function generate(step) {
 
@@ -73,7 +75,10 @@ export function generate(step) {
             return generateMeasureSquares(step.options);
         case "word-problem":
             return generateWordProblems(step.options);
+        case "mult-prep":
+            return generateMultPrep(step.options);
         case "multiplication":
+            return generateMultiplication(step.options);
         case "division":
 
         default:

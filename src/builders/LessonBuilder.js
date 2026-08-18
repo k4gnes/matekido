@@ -226,6 +226,32 @@ export function buildLesson(lesson) {
                     type: "word-problem",
                     ...task
                 });
+            } else if (step.generator === "mult-prep") {
+                result.push({
+                    type: task.type,
+                    groups: task.groups,
+                    perGroup: task.perGroup,
+                    total: task.total,
+                    emoji: task.emoji,
+                    options: task.options,
+                    addend: task.addend,
+                    times: task.times,
+                    expression: task.expression,
+                    answer: task.answer,
+                    terms: task.terms,
+                    missingIndex: task.missingIndex
+                });
+            } else if (step.generator === "multiplication") {
+                result.push({
+                    type: task.type,
+                    a: task.a,
+                    b: task.b,
+                    answer: task.answer,
+                    options: task.options,
+                    expression: task.expression,
+                    total: task.total,
+                    groups: task.groups
+                });
             } else {
                 result.push({
                     type: "exercise",

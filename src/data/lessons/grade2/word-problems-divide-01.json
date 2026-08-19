@@ -1,0 +1,69 @@
+{
+  "id": "grade2-word-problems-divide-01",
+  "title": "📝 Osztásos szöveges feladatok",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📝 Osztásos történetek",
+      "text": "Olvasd el a történetet, és szold meg a feladatot!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Osztásos történetek",
+          "text": "Olvasd el a versenytörténetet, és szold meg a feladatot!"
+        },
+        "cooking": {
+          "title": "🍳 Osztásos történetek",
+          "text": "Olvasd el a receptet, és szold meg a feladatot!"
+        },
+        "football": {
+          "title": "⚽ Osztásos történetek",
+          "text": "Olvasd el a meccstörténetet, és szold meg a feladatot!"
+        },
+        "animals": {
+          "title": "🦁 Osztásos történetek",
+          "text": "Olvasd el az állatok történetét, és szold meg a feladatot!"
+        },
+        "space": {
+          "title": "🤖 Osztásos történetek",
+          "text": "Olvasd el az űrtörténetet, és szold meg a feladatot!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 6,
+        "max": 30,
+        "kind": "divide"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megoldottad az osztásos szöveges feladatokat!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad az osztásos feladatokat!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad az osztásos feladatokat!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad az osztásos feladatokat!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megoldottad az osztásos feladatokat!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad az osztásos feladatokat!"
+        }
+      }
+    }
+  ]
+}

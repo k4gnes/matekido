@@ -2,6 +2,8 @@ import { getActiveWorld } from "../profile/Profile.js";
 
 const KINDS = ["join", "remove", "part-whole", "compare"];
 
+const MULT_DIV_KINDS = ["multiply", "divide"];
+
 const DIFF_SUFFIX = {
     1: "gyel", 2: "vel", 3: "mal", 4: "gyel", 5: "tel",
     6: "tal", 7: "tel", 8: "cal", 9: "cel", 10: "zel",
@@ -39,6 +41,18 @@ const THEMES = {
             text: (a, b) => `A páros oldalra ma ${a} levelet, a páratlan oldalra ${b} levelet kézbesítettek.`,
             question: "Mennyivel több levél került az egyik oldalra, mint a másikra?",
             success: (answer) => `😊 Szép munka! ${diffPhrase(answer)} levél került a páros oldalra!`
+        },
+        multiply: {
+            title: "📮 Szorzás",
+            text: (groups, perGroup) => `${groups} postaládába egyformán ${perGroup} levelet tesznek.`,
+            question: "Hány levelet tesznek ki összesen?",
+            success: (answer) => `😊 Szép munka! Összesen ${answer} levelet tesznek ki!`
+        },
+        divide: {
+            title: "📮 Osztás",
+            text: (total, groups) => `${total} levelet kell szétosztani ${groups} postaládába egyenlően.`,
+            question: "Hány levél kerül egy postaládába?",
+            success: (answer) => `😊 Szép munka! Minden postaládába ${answer} levél kerül!`
         }
     },
     racing: {
@@ -66,6 +80,18 @@ const THEMES = {
             text: (a, b) => `Az első versenyen ${a} kört, a másodikon ${b} kört futottak.`,
             question: "Mennyivel több kört futottak az első versenyen?",
             success: (answer) => `😊 Szép munka! ${diffPhrase(answer)} kört futottak az első versenyen!`
+        },
+        multiply: {
+            title: "🔧 Szorzás",
+            text: (groups, perGroup) => `${groups} versenyautó mindegyikére ${perGroup} alkatrész kell.`,
+            question: "Hány alkatrész kell összesen?",
+            success: (answer) => `😊 Szép munka! Összesen ${answer} alkatrész kell!`
+        },
+        divide: {
+            title: "🔧 Osztás",
+            text: (total, groups) => `${total} alkatrészt kell szétosztani ${groups} autó között egyenlően.`,
+            question: "Hány alkatrész jut egy autóra?",
+            success: (answer) => `😊 Szép munka! Minden autóra ${answer} alkatrész jut!`
         }
     },
     cooking: {
@@ -93,6 +119,18 @@ const THEMES = {
             text: (a, b) => `Reggel ${a} palacsintát, délben ${b} palacsintát sütöttek.`,
             question: "Mennyivel több palacsinta sült reggel?",
             success: (answer) => `😊 Szép munka! ${diffPhrase(answer)} palacsinta sült reggel!`
+        },
+        multiply: {
+            title: "🍳 Szorzás",
+            text: (groups, perGroup) => `${groups} tányérra egyformán ${perGroup} palacsintát tesznek.`,
+            question: "Hány palacsintát sütöttek összesen?",
+            success: (answer) => `😊 Szép munka! Összesen ${answer} palacsintát sütöttek!`
+        },
+        divide: {
+            title: "🍳 Osztás",
+            text: (total, groups) => `${total} palacsintát kell szétosztani ${groups} tányérra egyenlően.`,
+            question: "Hány palacsinta kerül egy tányérra?",
+            success: (answer) => `😊 Szép munka! Minden tányérra ${answer} palacsinta kerül!`
         }
     },
     football: {
@@ -120,6 +158,18 @@ const THEMES = {
             text: (a, b) => `Az első félidőben ${a} gólt, a másodikban ${b} gólt rúgtak.`,
             question: "Mennyivel több gól esett az első félidőben?",
             success: (answer) => `😊 Szép munka! ${diffPhrase(answer)} gól esett az első félidőben!`
+        },
+        multiply: {
+            title: "⚽ Szorzás",
+            text: (groups, perGroup) => `${groups} csapat mindegyike ${perGroup} gólt rúg.`,
+            question: "Hány gól esett összesen?",
+            success: (answer) => `😊 Szép munka! Összesen ${answer} gól esett!`
+        },
+        divide: {
+            title: "⚽ Osztás",
+            text: (total, groups) => `${total} labdát kell szétosztani ${groups} csapat között egyenlően.`,
+            question: "Hány labda jut egy csapatra?",
+            success: (answer) => `😊 Szép munka! Minden csapatra ${answer} labda jut!`
         }
     },
     animals: {
@@ -147,6 +197,18 @@ const THEMES = {
             text: (a, b) => `Reggel ${a} zebrát, este ${b} zebrát etettek meg.`,
             question: "Mennyivel több zebrát etettek meg reggel?",
             success: (answer) => `😊 Szép munka! ${diffPhrase(answer)} zebrát etettek meg reggel!`
+        },
+        multiply: {
+            title: "🦓 Szorzás",
+            text: (groups, perGroup) => `${groups} karámban egyformán ${perGroup} zebra van.`,
+            question: "Hány zebra van összesen?",
+            success: (answer) => `😊 Szép munka! Összesen ${answer} zebra van!`
+        },
+        divide: {
+            title: "🦓 Osztás",
+            text: (total, groups) => `${total} zebrát kell szétosztani ${groups} karámba egyenlően.`,
+            question: "Hány zebra kerül egy karámba?",
+            success: (answer) => `😊 Szép munka! Minden karámba ${answer} zebra kerül!`
         }
     },
     space: {
@@ -174,13 +236,25 @@ const THEMES = {
             text: (a, b) => `Az első űrhajóval ${a} robotot, a másodikkal ${b} robotot szállítottak.`,
             question: "Mennyivel több robotot szállított az első űrhajó?",
             success: (answer) => `😊 Szép munka! ${diffPhrase(answer)} robotot szállított az első űrhajó!`
+        },
+        multiply: {
+            title: "🤖 Szorzás",
+            text: (groups, perGroup) => `${groups} rakétára egyformán ${perGroup} robotot szerelnek.`,
+            question: "Hány robotot szerelnek összesen?",
+            success: (answer) => `😊 Szép munka! Összesen ${answer} robotot szerelnek!`
+        },
+        divide: {
+            title: "🤖 Osztás",
+            text: (total, groups) => `${total} robotot kell szétosztani ${groups} bolygó között egyenlően.`,
+            question: "Hány robot jut egy bolygóra?",
+            success: (answer) => `😊 Szép munka! Minden bolygóra ${answer} robot jut!`
         }
     }
 };
 
 export function generateWordProblems(options = {}) {
 
-    const { count = 4, max = 20 } = options;
+    const { count = 4, max = 20, kind } = options;
 
     if (max < 6) {
         throw new Error("A max értéknek legalább 6-nak kell lennie.");
@@ -190,8 +264,18 @@ export function generateWordProblems(options = {}) {
 
     const tasks = [];
 
-    for (let i = 0; i < count; i++) {
-        tasks.push(generateTask(KINDS[i % KINDS.length], max, world));
+    if (kind === "multiply") {
+        for (let i = 0; i < count; i++) {
+            tasks.push(generateMultiply(max, world));
+        }
+    } else if (kind === "divide") {
+        for (let i = 0; i < count; i++) {
+            tasks.push(generateDivide(max, world));
+        }
+    } else {
+        for (let i = 0; i < count; i++) {
+            tasks.push(generateTask(KINDS[i % KINDS.length], max, world));
+        }
     }
 
     return tasks;
@@ -328,6 +412,44 @@ function makeOptions(answer, min, max, count = 4) {
     }
 
     return options;
+}
+
+function generateMultiply(max, world) {
+    const perGroup = random(2, 5);
+    const groups = random(2, Math.min(6, Math.floor(max / perGroup)));
+    const answer = perGroup * groups;
+    const theme = getTheme(world, "multiply");
+    return {
+        kind: "multiply",
+        world,
+        title: theme.title,
+        text: theme.text(groups, perGroup),
+        question: theme.question,
+        a: groups,
+        b: perGroup,
+        answer,
+        successText: theme.success(answer),
+        options: makeOptions(answer, 1, max + 10)
+    };
+}
+
+function generateDivide(max, world) {
+    const groups = random(2, 5);
+    const perGroup = random(2, Math.min(5, Math.floor(max / groups)));
+    const total = groups * perGroup;
+    const theme = getTheme(world, "divide");
+    return {
+        kind: "divide",
+        world,
+        title: theme.title,
+        text: theme.text(total, groups),
+        question: theme.question,
+        a: total,
+        b: groups,
+        answer: perGroup,
+        successText: theme.success(perGroup),
+        options: makeOptions(perGroup, 1, max)
+    };
 }
 
 function random(min, max) {

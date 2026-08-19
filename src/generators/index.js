@@ -23,6 +23,7 @@ import { generateWordProblems } from "./wordProblemGenerator.js?v=4";
 import { generateMultPrep } from "./multPrepGenerator.js?v=2";
 import { generateMultiplication } from "./multiplicationGenerator.js?v=1";
 import { generateDivision } from "./divisionGenerator.js?v=2";
+import { generateMissingOperand } from "./missingOperandGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -86,6 +87,8 @@ export function generate(step) {
             return generateMultiplication(opts);
         case "division":
             return generateDivision(opts);
+        case "missing-operand":
+            return generateMissingOperand(opts);
 
         default:
             throw new Error(

@@ -1227,6 +1227,94 @@
                 "animals": "🦁 Vegyes osztás",
                 "space": "🤖 Vegyes osztás"
             }
+        },
+        {
+            "id": "missing-operand-01",
+            "title": "❓ Hiányzó tag",
+            "grades": [
+                2
+            ],
+            "category": "operations",
+            "skill": "addition",
+            "difficulty": 2,
+            "type": "missing-operand",
+            "range": 20,
+            "mission": "❓ Melyik szám hiányzik?",
+            "subtitle": "Hiányzó tag 20-ig",
+            "file": "./data/lessons/grade2/missing-operand-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Hiányzó szám",
+                "cooking": "🍳 Hiányzó szám",
+                "football": "⚽ Hiányzó szám",
+                "animals": "🦁 Hiányzó szám",
+                "space": "🤖 Hiányzó szám"
+            }
+        },
+        {
+            "id": "missing-factor-01",
+            "title": "❓ Hiányzó tényező",
+            "grades": [
+                2
+            ],
+            "category": "multiplication",
+            "skill": "missing-factor",
+            "difficulty": 2,
+            "type": "missing-factor",
+            "range": 100,
+            "mission": "✖️ Melyik szám hiányzik?",
+            "subtitle": "Hiányzó tényező 100-ig",
+            "file": "./data/lessons/grade2/missing-factor-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Hiányzó tényező",
+                "cooking": "🍳 Hiányzó tényező",
+                "football": "⚽ Hiányzó tényező",
+                "animals": "🦁 Hiányzó tényező",
+                "space": "🤖 Hiányzó tényező"
+            }
+        },
+        {
+            "id": "word-problems-multiply-01",
+            "title": "📝 Szorzásos szöveges feladatok",
+            "grades": [
+                2
+            ],
+            "category": "wordProblems",
+            "skill": "one-step",
+            "difficulty": 2,
+            "type": "word-problem",
+            "range": 30,
+            "mission": "📝 Szorzásos történetek",
+            "subtitle": "Szorzásos szöveges feladatok",
+            "file": "./data/lessons/grade2/word-problems-multiply-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Szorzásos történetek",
+                "cooking": "🍳 Szorzásos történetek",
+                "football": "⚽ Szorzásos történetek",
+                "animals": "🦁 Szorzásos történetek",
+                "space": "🤖 Szorzásos történetek"
+            }
+        },
+        {
+            "id": "word-problems-divide-01",
+            "title": "📝 Osztásos szöveges feladatok",
+            "grades": [
+                2
+            ],
+            "category": "wordProblems",
+            "skill": "one-step",
+            "difficulty": 2,
+            "type": "word-problem",
+            "range": 30,
+            "mission": "📝 Osztásos történetek",
+            "subtitle": "Osztásos szöveges feladatok",
+            "file": "./data/lessons/grade2/word-problems-divide-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Osztásos történetek",
+                "cooking": "🍳 Osztásos történetek",
+                "football": "⚽ Osztásos történetek",
+                "animals": "🦁 Osztásos történetek",
+                "space": "🤖 Osztásos történetek"
+            }
         }
     ],
     "gradeConfig": [

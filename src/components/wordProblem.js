@@ -457,6 +457,50 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
 
         requestAnimationFrame(() => input.focus());
 
+    } else if (step.kind === "multiply") {
+
+        const question = document.createElement("p");
+        question.className = "wp-question";
+        question.textContent = step.question;
+        card.append(question);
+
+        const options = document.createElement("div");
+        options.className = "wp-options";
+        step.options.forEach(value => {
+            const btn = createButton(String(value), { className: "wp-option" });
+            btn.addEventListener("click", () => {
+                if (value === step.answer) {
+                    reportSuccess(step.successText);
+                } else {
+                    reportRetry();
+                }
+            });
+            options.append(btn);
+        });
+        card.append(options);
+
+    } else if (step.kind === "divide") {
+
+        const question = document.createElement("p");
+        question.className = "wp-question";
+        question.textContent = step.question;
+        card.append(question);
+
+        const options = document.createElement("div");
+        options.className = "wp-options";
+        step.options.forEach(value => {
+            const btn = createButton(String(value), { className: "wp-option" });
+            btn.addEventListener("click", () => {
+                if (value === step.answer) {
+                    reportSuccess(step.successText);
+                } else {
+                    reportRetry();
+                }
+            });
+            options.append(btn);
+        });
+        card.append(options);
+
     } else if (step.kind === "remove") {
 
         const labels = REMOVE_LABELS[world] ?? REMOVE_LABELS.postman;

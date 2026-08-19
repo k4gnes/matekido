@@ -279,6 +279,16 @@ export function buildLesson(lesson) {
                     statement: task.statement,
                     tfAnswer: task.tfAnswer
                 });
+            } else if (step.generator === "missing-operand") {
+                result.push({
+                    type: "missing-operand",
+                    op: task.op,
+                    a: task.a,
+                    b: task.b,
+                    answer: task.answer,
+                    expression: task.expression,
+                    interaction: task.interaction
+                });
             } else {
                 result.push({
                     type: "exercise",

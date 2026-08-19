@@ -1,0 +1,69 @@
+{
+  "id": "grade2-missing-factor-01",
+  "title": "❓ Hiányzó tényező",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "❓ Hiányzó tényező",
+      "text": "Melyik szám hiányzik a szorzásból? Írd be a választ!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Hiányzó tényező",
+          "text": "Melyik szám hiányzik a szorzásból a pályán?"
+        },
+        "cooking": {
+          "title": "🍳 Hiányzó tényező",
+          "text": "Melyik szám hiányzik a szorzásból a konyhában?"
+        },
+        "football": {
+          "title": "⚽ Hiányzó tényező",
+          "text": "Melyik szám hiányzik a szorzásból a pályán?"
+        },
+        "animals": {
+          "title": "🦁 Hiányzó tényező",
+          "text": "Melyik szám hiányzik a szorzásból az állatkertben?"
+        },
+        "space": {
+          "title": "🤖 Hiányzó tényező",
+          "text": "Melyik szám hiányzik a szorzásból az űrben?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "multiplication",
+      "options": {
+        "count": 8,
+        "tables": [2, 3, 4, 5, 10],
+        "type": "missing-factor"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megtaláltad a hiányzó tényezőket!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a hiányzó tényezőket!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a hiányzó tényezőket!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a hiányzó tényezőket!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megtaláltad a hiányzó tényezőket!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megtaláltad a hiányzó tényezőket!"
+        }
+      }
+    }
+  ]
+}

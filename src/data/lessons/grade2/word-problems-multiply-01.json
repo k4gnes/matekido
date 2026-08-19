@@ -1,0 +1,69 @@
+{
+  "id": "grade2-word-problems-multiply-01",
+  "title": "📝 Szorzásos szöveges feladatok",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📝 Szorzásos történetek",
+      "text": "Olvasd el a történetet, és szold meg a feladatot!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Szorzásos történetek",
+          "text": "Olvasd el a versenytörténetet, és szold meg a feladatot!"
+        },
+        "cooking": {
+          "title": "🍳 Szorzásos történetek",
+          "text": "Olvasd el a receptet, és szold meg a feladatot!"
+        },
+        "football": {
+          "title": "⚽ Szorzásos történetek",
+          "text": "Olvasd el a meccstörténetet, és szold meg a feladatot!"
+        },
+        "animals": {
+          "title": "🦁 Szorzásos történetek",
+          "text": "Olvasd el az állatok történetét, és szold meg a feladatot!"
+        },
+        "space": {
+          "title": "🤖 Szorzásos történetek",
+          "text": "Olvasd el az űrtörténetet, és szold meg a feladatot!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 6,
+        "max": 30,
+        "kind": "multiply"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megoldottad a szorzásos szöveges feladatokat!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a szorzásos feladatokat!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a szorzásos feladatokat!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a szorzásos feladatokat!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megoldottad a szorzásos feladatokat!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad a szorzásos feladatokat!"
+        }
+      }
+    }
+  ]
+}

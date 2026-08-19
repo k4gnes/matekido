@@ -25,6 +25,7 @@ import { renderWordProblem } from "../components/wordProblem.js?v=12";
 import { renderMultPrep } from "../components/multPrep.js?v=1";
 import { renderMultiplication } from "../components/multiplication.js?v=1";
 import { renderDivision } from "../components/division.js?v=1";
+import { renderMissingOperand } from "../components/missingOperand.js?v=1";
 
 
 import { renderCelebration } from "../components/celebration.js";
@@ -147,7 +148,7 @@ export class Game {
 
         const step = this.lesson.steps[this.currentStep];
 
-        const isCounted = s => s.type === "exercise" || s.type === "missing-number" || s.type === "comparison" || s.type === "neighbor" || s.type === "neighbor-single" || s.type === "place-value" || s.type === "place-value-two-input" || s.type === "decomposition-find-wrong" || s.type === "bridge-ten" || s.type === "sequence" || s.type === "order" || s.type === "even-odd" || s.type === "pattern" || s.type === "shape-sort" || s.type === "time" || s.type === "spatial" || s.type === "money-pay" || s.type === "money-compare" || s.type === "money-enough" || s.type === "measure-compare" || s.type === "measure-squares" || s.type === "word-problem" || s.type === "equal-groups" || s.type === "repeated-addition" || s.type === "skip-counting" || s.type === "table" || s.type === "missing-factor" || s.type === "match-groups" || s.type === "sharing" || s.type === "grouping" || s.type === "division-table";
+        const isCounted = s => s.type === "exercise" || s.type === "missing-number" || s.type === "comparison" || s.type === "neighbor" || s.type === "neighbor-single" || s.type === "place-value" || s.type === "place-value-two-input" || s.type === "decomposition-find-wrong" || s.type === "bridge-ten" || s.type === "sequence" || s.type === "order" || s.type === "even-odd" || s.type === "pattern" || s.type === "shape-sort" || s.type === "time" || s.type === "spatial" || s.type === "money-pay" || s.type === "money-compare" || s.type === "money-enough" || s.type === "measure-compare" || s.type === "measure-squares" || s.type === "word-problem" || s.type === "equal-groups" || s.type === "repeated-addition" || s.type === "skip-counting" || s.type === "table" || s.type === "missing-factor" || s.type === "match-groups" || s.type === "sharing" || s.type === "grouping" || s.type === "division-table" || s.type === "missing-operand";
 
         const totalExercises = this.lesson.steps.filter(isCounted).length;
         const completedExercises = this.lesson.steps
@@ -267,6 +268,10 @@ export class Game {
 
             case "missing-number":
                 renderMissingNumber(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "missing-number"), () => this.onAttempt());
+                break;
+
+            case "missing-operand":
+                renderMissingOperand(step, this.root, () => this.next(), progress, (isCorrect) => this.onResult(isCorrect, "missing-operand"), () => this.onAttempt());
                 break;
 
             case "comparison":

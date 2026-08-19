@@ -245,6 +245,10 @@ export function renderMultiplication(step, root, next, progress, onResult, onAtt
 
     root.append(card);
 
+    if (isInputMode && interactiveElement.input) {
+        requestAnimationFrame(() => interactiveElement.input.focus());
+    }
+
     function checkAnswer(isCorrect) {
         if (answered) return;
 

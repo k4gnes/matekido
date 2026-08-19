@@ -1,0 +1,69 @@
+{
+  "id": "grade2-missing-operand-01",
+  "title": "❓ Hiányzó tag",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "❓ Hiányzó tag",
+      "text": "Melyik szám hiányzik a műveletből? Írd be vagy válaszd ki!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Hiányzó szám",
+          "text": "Melyik szám hiányzik a versenyeredményből?"
+        },
+        "cooking": {
+          "title": "🍳 Hiányzó szám",
+          "text": "Melyik szám hiányzik a receptből?"
+        },
+        "football": {
+          "title": "⚽ Hiányzó szám",
+          "text": "Melyik szám hiányzik az eredményből?"
+        },
+        "animals": {
+          "title": "🦁 Hiányzó szám",
+          "text": "Melyik szám hiányzik a számlálásból?"
+        },
+        "space": {
+          "title": "🤖 Hiányzó szám",
+          "text": "Melyik szám hiányzik a számításból?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "missing-operand",
+      "options": {
+        "count": 10,
+        "max": 20,
+        "type": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megtaláltad a hiányzó számokat!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a hiányzó számokat!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a hiányzó számokat!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a hiányzó számokat!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megtaláltad a hiányzó számokat!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megtaláltad a hiányzó számokat!"
+        }
+      }
+    }
+  ]
+}

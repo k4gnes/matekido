@@ -10,7 +10,7 @@ import { generateBridgeTo10 } from "./bridgeTenGenerator.js?v=3";
 import { generateSequence } from "./sequenceGenerator.js?v=3";
 import { generateOrder } from "./orderGenerator.js?v=3";
 import { generateEvenOdd } from "./evenOddGenerator.js?v=3";
-import { generatePattern } from "./patternGenerator.js?v=3";
+import { generatePattern } from "./patternGenerator.js?v=4";
 import { generateShapeSort } from "./shapeSortGenerator.js?v=3";
 import { generateTime } from "./timeGenerator.js?v=3";
 import { generatePosition } from "./positionGenerator.js?v=4";
@@ -20,66 +20,72 @@ import { generateMoneyEnough } from "./moneyEnoughGenerator.js?v=3";
 import { generateMeasureCompare } from "./measureCompareGenerator.js?v=3";
 import { generateMeasureSquares } from "./measureSquaresGenerator.js?v=3";
 import { generateWordProblems } from "./wordProblemGenerator.js?v=4";
-import { generateMultPrep } from "./multPrepGenerator.js?v=1";
+import { generateMultPrep } from "./multPrepGenerator.js?v=2";
 import { generateMultiplication } from "./multiplicationGenerator.js?v=1";
+import { generateDivision } from "./divisionGenerator.js?v=2";
+import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
+
+    const world = getActiveWorld();
+    const opts = { ...step.options, world };
 
     switch (step.generator) {
 
         case "addition":
-            return generateAddition(step.options);
+            return generateAddition(opts);
         case "missing-to-10":
-            return generateMissingTo10(step.options);
+            return generateMissingTo10(opts);
         case "missing-random":
-            return generateMissingRandom(step.options);
+            return generateMissingRandom(opts);
         case "comparison":
-            return generateComparison(step.options);
+            return generateComparison(opts);
         case "neighbor":
-            return generateNeighbor(step.options);
+            return generateNeighbor(opts);
         case "neighbor-single":
-            return generateNeighborSingle(step.options);
+            return generateNeighborSingle(opts);
         case "subtraction":
-            return generateSubtraction(step.options);
+            return generateSubtraction(opts);
         case "mixed":
-            return generateMixed(step.options);
+            return generateMixed(opts);
         case "place-value":
-            return generatePlaceValue(step.options);
+            return generatePlaceValue(opts);
         case "place-value-two-input":
-            return generatePlaceValue(step.options);
+            return generatePlaceValue(opts);
         case "bridge-to-10":
-            return generateBridgeTo10(step.options);
+            return generateBridgeTo10(opts);
         case "sequence":
-            return generateSequence(step.options);
+            return generateSequence(opts);
         case "order":
-            return generateOrder(step.options);
+            return generateOrder(opts);
         case "even-odd":
-            return generateEvenOdd(step.options);
+            return generateEvenOdd(opts);
         case "pattern":
-            return generatePattern(step.options);
+            return generatePattern(opts);
         case "shape-sort":
-            return generateShapeSort(step.options);
+            return generateShapeSort(opts);
         case "time":
-            return generateTime(step.options);
+            return generateTime(opts);
         case "position":
-            return generatePosition(step.options);
+            return generatePosition(opts);
         case "money-pay":
-            return generateMoneyPay(step.options);
+            return generateMoneyPay(opts);
         case "money-compare":
-            return generateMoneyCompare(step.options);
+            return generateMoneyCompare(opts);
         case "money-enough":
-            return generateMoneyEnough(step.options);
+            return generateMoneyEnough(opts);
         case "measure-compare":
-            return generateMeasureCompare(step.options);
+            return generateMeasureCompare(opts);
         case "measure-squares":
-            return generateMeasureSquares(step.options);
+            return generateMeasureSquares(opts);
         case "word-problem":
-            return generateWordProblems(step.options);
+            return generateWordProblems(opts);
         case "mult-prep":
-            return generateMultPrep(step.options);
+            return generateMultPrep(opts);
         case "multiplication":
-            return generateMultiplication(step.options);
+            return generateMultiplication(opts);
         case "division":
+            return generateDivision(opts);
 
         default:
             throw new Error(

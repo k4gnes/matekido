@@ -1,6 +1,10 @@
+function pick(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
 export function generateNeighborSingle(options = {}) {
 
-    const { count = 10, max = 100 } = options;
+    const { count = 10, max = 100, interaction = "mixed" } = options;
 
     const tasks = [];
 
@@ -38,7 +42,8 @@ export function generateNeighborSingle(options = {}) {
             type: "neighbor-single",
             a,
             question,
-            answer
+            answer,
+            interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction
         });
     }
 

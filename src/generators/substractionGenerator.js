@@ -1,5 +1,9 @@
 const MAX_GENERATION_ATTEMPTS = 10000;
 
+function pick(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
 export function generateSubtraction(options = {}) {
 
     const {
@@ -11,7 +15,8 @@ export function generateSubtraction(options = {}) {
         bMultiplesOfTen = false,
         bMax = null,
         noCrossingTen = false,
-        crossingTen = "any"
+        crossingTen = "any",
+        interaction = "mixed"
     } = options;
 
     const validCrossingModes = ["never", "always", "any"];
@@ -41,7 +46,7 @@ export function generateSubtraction(options = {}) {
             const bRound = Math.ceil(b / 10) * 10;
             if (bRound < 10 || bRound >= aRound) continue;
             if (aRound - bRound < 0) continue;
-            tasks.push({ a: aRound, b: bRound });
+            tasks.push({ a: aRound, b: bRound, interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction });
             continue;
         }
 
@@ -50,7 +55,7 @@ export function generateSubtraction(options = {}) {
             b = Math.ceil(b / 10) * 10;
             if (b < 10 || b >= a) continue;
             if (a - b < 0) continue;
-            tasks.push({ a, b });
+            tasks.push({ a, b, interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction });
             continue;
         }
 
@@ -66,7 +71,7 @@ export function generateSubtraction(options = {}) {
         if (crossingTen === "always" && !doesCross) continue;
         if (crossingTen === "never" && doesCross) continue;
 
-        tasks.push({ a, b });
+        tasks.push({ a, b, interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction });
     }
 
     return tasks;

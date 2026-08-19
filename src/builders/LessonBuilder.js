@@ -54,7 +54,8 @@ export function buildLesson(lesson) {
                     type: "missing-number",
                     a: task.a,
                     sum: task.sum,
-                    answer: task.answer
+                    answer: task.answer,
+                    interaction: task.interaction
                 });
             } else if (step.generator === "comparison") {
                 result.push({
@@ -73,14 +74,16 @@ export function buildLesson(lesson) {
                     right: task.right,
                     answer: task.answer,
                     lowerTen: task.lowerTen,
-                    upperTen: task.upperTen
+                    upperTen: task.upperTen,
+                    interaction: task.interaction
                 });
             } else if (step.generator === "neighbor-single") {
                 result.push({
                     type: "neighbor-single",
                     a: task.a,
                     question: task.question,
-                    answer: task.answer
+                    answer: task.answer,
+                    interaction: task.interaction
                 });
             } else if (step.generator === "subtraction") {
                 result.push({
@@ -88,7 +91,8 @@ export function buildLesson(lesson) {
                     kind: "subtraction",
                     title: getTitle("subtraction", index),
                     a: task.a,
-                    b: task.b
+                    b: task.b,
+                    interaction: task.interaction
                 });
             } else if (step.generator === "mixed") {
                 result.push({
@@ -99,7 +103,8 @@ export function buildLesson(lesson) {
                     a: task.a,
                     b: task.b,
                     answer: task.answer,
-                    inputPos: task.inputPos
+                    inputPos: task.inputPos,
+                    interaction: task.interaction
                 });
             } else if (step.generator === "place-value") {
                 result.push({
@@ -130,7 +135,8 @@ export function buildLesson(lesson) {
                 result.push({
                     type: "sequence",
                     terms: task.terms,
-                    answer: task.answer
+                    answer: task.answer,
+                    interaction: task.interaction
                 });
             } else if (step.generator === "order") {
                 result.push({
@@ -239,7 +245,8 @@ export function buildLesson(lesson) {
                     expression: task.expression,
                     answer: task.answer,
                     terms: task.terms,
-                    missingIndex: task.missingIndex
+                    missingIndex: task.missingIndex,
+                    interaction: task.interaction
                 });
             } else if (step.generator === "multiplication") {
                 result.push({
@@ -250,7 +257,27 @@ export function buildLesson(lesson) {
                     options: task.options,
                     expression: task.expression,
                     total: task.total,
-                    groups: task.groups
+                    groups: task.groups,
+                    interaction: task.interaction,
+                    statement: task.statement,
+                    tfAnswer: task.tfAnswer
+                });
+            } else if (step.generator === "division") {
+                result.push({
+                    type: task.type,
+                    total: task.total,
+                    groups: task.groups,
+                    perGroup: task.perGroup,
+                    groupSize: task.groupSize,
+                    numGroups: task.numGroups,
+                    answer: task.answer,
+                    emoji: task.emoji,
+                    options: task.options,
+                    a: task.a,
+                    b: task.b,
+                    interaction: task.interaction,
+                    statement: task.statement,
+                    tfAnswer: task.tfAnswer
                 });
             } else {
                 result.push({
@@ -258,7 +285,8 @@ export function buildLesson(lesson) {
                     kind: "addition",
                     title: getTitle("addition", index),
                     a: task.a,
-                    b: task.b
+                    b: task.b,
+                    interaction: task.interaction
                 });
             }
 

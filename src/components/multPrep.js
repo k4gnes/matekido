@@ -41,6 +41,46 @@ function getTitle(world, type) {
     return TITLES[world]?.[type] ?? TITLES.postman[type];
 }
 
+function makeOptions(answer, min, max, count = 4) {
+    const options = [answer];
+    const seen = new Set([answer]);
+    const deltas = [1, -1, 2, -2, 3, -3, 5, -5];
+    for (const d of deltas) {
+        if (options.length >= count) break;
+        const v = answer + d;
+        if (v >= min && v <= max && !seen.has(v)) {
+            seen.add(v);
+            options.push(v);
+        }
+    }
+    for (let v = min; v <= max && options.length < count; v++) {
+        if (!seen.has(v)) {
+            seen.add(v);
+            options.push(v);
+        }
+    }
+    for (let i = options.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [options[i], options[j]] = [options[j], options[i]];
+    }
+    return options;
+}
+
+function renderChoiceButtons(answer, min, max, className) {
+    const opts = makeOptions(answer, min, max);
+    const container = document.createElement("div");
+    container.className = className;
+    opts.forEach(value => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = className.replace("-options", "-option");
+        btn.textContent = value;
+        btn.dataset.value = value;
+        container.append(btn);
+    });
+    return container;
+}
+
 function renderEqualGroups(step, card) {
     const hint = document.createElement("p");
     hint.className = "mp-hint";
@@ -64,21 +104,18 @@ function renderEqualGroups(step, card) {
 
     card.append(groupsContainer);
 
-    const optionsContainer = document.createElement("div");
-    optionsContainer.className = "mp-options";
+    if (step.interaction === "choice") {
+        const el = renderChoiceButtons(step.answer, 1, 50, "mp-options");
+        card.append(el);
+        return { element: el, isInput: false };
+    }
 
-    step.options.forEach(value => {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "mp-option";
-        btn.textContent = value;
-        btn.dataset.value = value;
-        optionsContainer.append(btn);
-    });
-
-    card.append(optionsContainer);
-
-    return optionsContainer;
+    const input = createNumberInput();
+    input.className = "mp-input";
+    card.append(input);
+    const button = createButton("Ellenőrzöm");
+    card.append(button);
+    return { input, button, isInput: true };
 }
 
 function renderRepeatedAddition(step, card) {
@@ -92,21 +129,18 @@ function renderRepeatedAddition(step, card) {
     expr.textContent = step.expression + " = ?";
     card.append(expr);
 
-    const optionsContainer = document.createElement("div");
-    optionsContainer.className = "mp-options";
+    if (step.interaction === "choice") {
+        const el = renderChoiceButtons(step.answer, 1, 50, "mp-options");
+        card.append(el);
+        return { element: el, isInput: false };
+    }
 
-    step.options.forEach(value => {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "mp-option";
-        btn.textContent = value;
-        btn.dataset.value = value;
-        optionsContainer.append(btn);
-    });
-
-    card.append(optionsContainer);
-
-    return optionsContainer;
+    const input = createNumberInput();
+    input.className = "mp-input";
+    card.append(input);
+    const button = createButton("Ellenőrzöm");
+    card.append(button);
+    return { input, button, isInput: true };
 }
 
 function renderSkipCounting(step, card) {
@@ -120,10 +154,19 @@ function renderSkipCounting(step, card) {
 
     step.terms.forEach((num, index) => {
         if (index === step.missingIndex) {
-            const input = createNumberInput();
-            input.className = "mp-input";
-            input.dataset.index = index;
-            sequence.append(input);
+            if (step.interaction === "choice") {
+                const span = document.createElement("span");
+                span.className = "mp-term";
+                span.textContent = "?";
+                span.style.fontWeight = "bold";
+                span.style.color = "#4a90d9";
+                sequence.append(span);
+            } else {
+                const input = createNumberInput();
+                input.className = "mp-input";
+                input.dataset.index = index;
+                sequence.append(input);
+            }
         } else {
             const term = document.createElement("span");
             term.className = "mp-term";
@@ -141,7 +184,13 @@ function renderSkipCounting(step, card) {
 
     card.append(sequence);
 
-    return null;
+    if (step.interaction === "choice") {
+        const el = renderChoiceButtons(step.answer, step.answer - 10, step.answer + 10, "mp-options");
+        card.append(el);
+        return { element: el, isInput: false };
+    }
+
+    return { input: null, isInput: true, needsButton: true };
 }
 
 export function renderMultPrep(step, root, next, progress, onResult, onAttempt) {
@@ -165,14 +214,14 @@ export function renderMultPrep(step, root, next, progress, onResult, onAttempt) 
     title.textContent = getTitle(world, step.type);
     card.append(title);
 
-    let optionsContainer;
+    let result;
 
     if (step.type === "skip-counting") {
-        renderSkipCounting(step, card);
+        result = renderSkipCounting(step, card);
     } else if (step.type === "repeated-addition") {
-        optionsContainer = renderRepeatedAddition(step, card);
+        result = renderRepeatedAddition(step, card);
     } else {
-        optionsContainer = renderEqualGroups(step, card);
+        result = renderEqualGroups(step, card);
     }
 
     const message = createMessageBox();
@@ -180,16 +229,20 @@ export function renderMultPrep(step, root, next, progress, onResult, onAttempt) 
 
     root.append(card);
 
-    function checkAnswer(answer) {
+    function checkAnswer(isCorrect) {
         if (answered) return;
 
         onAttempt?.();
 
-        if (answer === step.answer) {
+        if (isCorrect) {
             answered = true;
 
-            if (optionsContainer) {
-                optionsContainer.querySelectorAll("button").forEach(b => b.style.pointerEvents = "none");
+            if (result.isInput) {
+                if (result.input) result.input.disabled = true;
+                if (result.button) result.button.disabled = true;
+            }
+            if (result.element && result.element.tagName === "DIV") {
+                result.element.querySelectorAll("button").forEach(b => b.style.pointerEvents = "none");
             }
 
             message.show("😊 Szép munka!", "success");
@@ -212,33 +265,53 @@ export function renderMultPrep(step, root, next, progress, onResult, onAttempt) 
                 reported = true;
                 onResult?.(false);
             }
+
+            if (result.isInput && result.input) {
+                result.input.focus();
+                result.input.select();
+            }
         }
     }
 
-    if (optionsContainer) {
-        optionsContainer.addEventListener("click", (e) => {
-            const btn = e.target.closest(".mp-option");
-            if (!btn || answered) return;
-            checkAnswer(Number(btn.dataset.value));
-        });
-    } else {
-        const input = card.querySelector(".mp-input");
-        if (input) {
-            requestAnimationFrame(() => input.focus());
+    if (result.isInput) {
+        if (result.needsButton) {
+            const input = card.querySelector(".mp-input");
+            if (input) {
+                const button = createButton("Ellenőrzöm");
+                card.append(button);
 
-            const button = createButton("Ellenőrzöm");
-            card.append(button);
+                function checkInput() {
+                    const answer = Number(input.value);
+                    if (isNaN(answer)) return;
+                    checkAnswer(answer === step.answer);
+                }
+
+                button.addEventListener("click", checkInput);
+                input.addEventListener("keydown", (e) => {
+                    if (e.key === "Enter") checkInput();
+                }, { signal: ac.signal });
+
+                requestAnimationFrame(() => input.focus());
+            }
+        } else if (result.input) {
+            requestAnimationFrame(() => result.input.focus());
 
             function checkInput() {
-                const answer = Number(input.value);
+                const answer = Number(result.input.value);
                 if (isNaN(answer)) return;
-                checkAnswer(answer);
+                checkAnswer(answer === step.answer);
             }
 
-            button.addEventListener("click", checkInput);
-            input.addEventListener("keydown", (e) => {
+            result.button.addEventListener("click", checkInput);
+            result.input.addEventListener("keydown", (e) => {
                 if (e.key === "Enter") checkInput();
             }, { signal: ac.signal });
         }
+    } else if (result.element) {
+        result.element.addEventListener("click", (e) => {
+            const btn = e.target.closest(".mp-option");
+            if (!btn || answered) return;
+            checkAnswer(Number(btn.dataset.value) === step.answer);
+        });
     }
 }

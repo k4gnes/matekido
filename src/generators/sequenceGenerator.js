@@ -1,6 +1,10 @@
+function pick(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
 export function generateSequence(options = {}) {
 
-    const { count = 5, max = 100 } = options;
+    const { count = 5, max = 100, interaction = "mixed" } = options;
 
     const maxStep = Math.min(10, Math.floor(max / 5));
 
@@ -29,7 +33,8 @@ export function generateSequence(options = {}) {
             terms,
             answer: start + direction * step * 5,
             step,
-            direction
+            direction,
+            interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction
         });
     }
 

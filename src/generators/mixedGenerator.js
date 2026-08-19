@@ -1,10 +1,15 @@
 const MAX_GENERATION_ATTEMPTS = 10000;
 
+function pick(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
 export function generateMixed(options = {}) {
 
     const {
         count = 10,
-        max = 20
+        max = 20,
+        interaction = "mixed"
     } = options;
 
     const tasks = [];
@@ -38,7 +43,8 @@ export function generateMixed(options = {}) {
             a,
             b,
             answer,
-            inputPos
+            inputPos,
+            interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction
         });
     }
 

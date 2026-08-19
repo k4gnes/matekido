@@ -35,69 +35,88 @@ function makeOptions(answer, min, max, count = 4) {
     return shuffle(options);
 }
 
-function generateTable(count, tables) {
+function assignInteraction(task, modes, interaction) {
+    const mode = interaction === "mixed" ? pick(modes) : interaction;
+    task.interaction = mode;
+    if (mode === "choice") {
+        task.options = makeOptions(task.answer, 1, 100);
+    }
+    if (mode === "tf") {
+        const isCorrect = Math.random() < 0.5;
+        if (isCorrect) {
+            task.statement = `${task.a} × ${task.b} = ${task.answer}`;
+            task.tfAnswer = true;
+        } else {
+            const wrong = task.answer + pick([-2, -1, 1, 2]);
+            task.statement = `${task.a} × ${task.b} = ${wrong}`;
+            task.tfAnswer = false;
+        }
+    }
+}
+
+function generateTable(count, tables, interaction) {
     const tasks = [];
     for (let i = 0; i < count; i++) {
         const a = pick(tables);
         const b = randint(1, 10);
         const answer = a * b;
-        tasks.push({
-            type: "table",
-            a,
-            b,
-            answer,
-            options: makeOptions(answer, 1, 100)
-        });
+        const task = { type: "table", a, b, answer };
+        assignInteraction(task, ["input", "choice", "tf"], interaction);
+        tasks.push(task);
     }
     return tasks;
 }
 
-function generateMissingFactor(count, tables) {
+function generateMissingFactor(count, tables, interaction) {
     const tasks = [];
     for (let i = 0; i < count; i++) {
         const a = pick(tables);
         const b = randint(1, 10);
         const answer = a * b;
         const missingFirst = Math.random() < 0.5;
-        tasks.push({
+        const task = {
             type: "missing-factor",
             a,
             b,
             answer: missingFirst ? a : b,
             expression: missingFirst ? `? × ${b} = ${answer}` : `${a} × ? = ${answer}`
-        });
+        };
+        assignInteraction(task, ["input", "choice"], interaction);
+        tasks.push(task);
     }
     return tasks;
 }
 
-function generateMatchGroups(count, tables) {
+function generateMatchGroups(count, tables, interaction) {
     const tasks = [];
     for (let i = 0; i < count; i++) {
         const a = pick(tables);
         const b = randint(2, 6);
         const total = a * b;
-        tasks.push({
+        const task = {
             type: "match-groups",
             a,
             b,
             total,
             groups: Array(b).fill(a)
-        });
+        };
+        assignInteraction(task, ["choice"], interaction);
+        tasks.push(task);
     }
     return tasks;
 }
 
 export function generateMultiplication(options = {}) {
-    const { count = 6, tables = [2, 5, 10], type = "table" } = options;
+    const { count = 6, tables = [2, 5, 10], type = "table", interaction = "mixed" } = options;
 
     switch (type) {
         case "table":
-            return generateTable(count, tables);
+            return generateTable(count, tables, interaction);
         case "missing-factor":
-            return generateMissingFactor(count, tables);
+            return generateMissingFactor(count, tables, interaction);
         case "match-groups":
-            return generateMatchGroups(count, tables);
+            return generateMatchGroups(count, tables, interaction);
         default:
-            return generateTable(count, tables);
+            return generateTable(count, tables, interaction);
     }
 }

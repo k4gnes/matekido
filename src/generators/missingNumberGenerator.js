@@ -1,6 +1,10 @@
+function pick(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
 export function generateMissingTo10(options = {}) {
 
-    const { count = 10, sum = 10 } = options;
+    const { count = 10, sum = 10, interaction = "mixed" } = options;
 
     const max = sum - 1;
     const tasks = [];
@@ -23,7 +27,8 @@ export function generateMissingTo10(options = {}) {
             type: "missing-number",
             a,
             sum,
-            answer: sum - a
+            answer: sum - a,
+            interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction
         });
     }
 
@@ -32,7 +37,7 @@ export function generateMissingTo10(options = {}) {
 
 export function generateMissingRandom(options = {}) {
 
-    const { count = 10, min = 10, max = 20 } = options;
+    const { count = 10, min = 10, max = 20, interaction = "mixed" } = options;
 
     const tasks = [];
 
@@ -45,7 +50,8 @@ export function generateMissingRandom(options = {}) {
             type: "missing-number",
             a,
             sum,
-            answer: sum - a
+            answer: sum - a,
+            interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction
         });
     }
 

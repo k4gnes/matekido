@@ -1,6 +1,15 @@
 const TABLES = [2, 5, 10];
 
-const EMOJIS = ["🍎", "⭐", "🐟", "🌸", "🍋", "🐝", "🦉", "🍄", "🎈", "🍭"];
+const EMOJIS_DEFAULT = ["🍎", "⭐", "🐟", "🌸", "🍋", "🐝", "🦉", "🍄", "🎈", "🍭"];
+
+const EMOJIS_WORLD = {
+    animals: ["🥕", "🍎", "🥬", "🍇", "🍌", "🥒", "🌽", "🐟", "🌿", "🍓"],
+    cooking: ["🍳", "🥘", "🍖", "🍗", "🍎", "🍌", "🥕", "🍕", "🌮", "🥗"],
+};
+
+function getEmojis(world) {
+    return EMOJIS_WORLD[world] || EMOJIS_DEFAULT;
+}
 
 function pick(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
@@ -39,13 +48,15 @@ function makeOptions(answer, min, max, count = 4) {
     return shuffle(options);
 }
 
-function generateEqualGroups(count, tables, max) {
+function generateEqualGroups(count, tables, max, interaction, world) {
+    const emojis = getEmojis(world);
     const tasks = [];
     for (let i = 0; i < count; i++) {
         const perGroup = pick(tables);
         const numGroups = randint(2, Math.min(6, Math.floor(max / perGroup)));
         const total = perGroup * numGroups;
-        const emoji = pick(EMOJIS);
+        const emoji = pick(emojis);
+        const mode = interaction === "mixed" ? pick(["input", "choice"]) : interaction;
         tasks.push({
             type: "equal-groups",
             groups: numGroups,
@@ -53,13 +64,14 @@ function generateEqualGroups(count, tables, max) {
             total,
             answer: total,
             emoji,
-            options: makeOptions(total, 1, max + 10)
+            interaction: mode,
+            options: mode === "choice" ? makeOptions(total, 1, max + 10) : undefined
         });
     }
     return tasks;
 }
 
-function generateRepeatedAddition(count, tables, max) {
+function generateRepeatedAddition(count, tables, max, interaction) {
     const tasks = [];
     for (let i = 0; i < count; i++) {
         const addend = pick(tables);
@@ -67,19 +79,21 @@ function generateRepeatedAddition(count, tables, max) {
         const parts = Array(times).fill(addend);
         const expression = parts.join(" + ");
         const answer = addend * times;
+        const mode = interaction === "mixed" ? pick(["input", "choice"]) : interaction;
         tasks.push({
             type: "repeated-addition",
             addend,
             times,
             expression,
             answer,
-            options: makeOptions(answer, 1, max + 10)
+            interaction: mode,
+            options: mode === "choice" ? makeOptions(answer, 1, max + 10) : undefined
         });
     }
     return tasks;
 }
 
-function generateSkipCounting(count, tables, max) {
+function generateSkipCounting(count, tables, max, interaction) {
     const tasks = [];
     for (let i = 0; i < count; i++) {
         const step = pick(tables);
@@ -96,23 +110,24 @@ function generateSkipCounting(count, tables, max) {
             terms,
             missingIndex,
             answer,
-            step
+            step,
+            interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction
         });
     }
     return tasks;
 }
 
 export function generateMultPrep(options = {}) {
-    const { count = 5, type = "equal-groups", tables = TABLES, max = 50 } = options;
+    const { count = 5, type = "equal-groups", tables = TABLES, max = 50, interaction = "mixed", world } = options;
 
     switch (type) {
         case "equal-groups":
-            return generateEqualGroups(count, tables, max);
+            return generateEqualGroups(count, tables, max, interaction, world);
         case "repeated-addition":
-            return generateRepeatedAddition(count, tables, max);
+            return generateRepeatedAddition(count, tables, max, interaction);
         case "skip-counting":
-            return generateSkipCounting(count, tables, max);
+            return generateSkipCounting(count, tables, max, interaction);
         default:
-            return generateEqualGroups(count, tables, max);
+            return generateEqualGroups(count, tables, max, interaction, world);
     }
 }

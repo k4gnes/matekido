@@ -1,0 +1,87 @@
+{
+  "id": "grade2-division-03",
+  "title": "➗ Vegyes osztás",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "➗ Vegyes osztás",
+      "text": "Vegyes osztásos feladatok! Mindhárom típus keveredik!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Vegyes osztás",
+          "text": "Vegyes osztásos feladatok a pályán! Készülj!"
+        },
+        "football": {
+          "title": "⚽ Vegyes osztás",
+          "text": "Vegyes osztásos feladatok a meccsen! Készülj!"
+        },
+        "cooking": {
+          "title": "🍳 Vegyes osztás",
+          "text": "Vegyes osztásos feladatok a konyhában! Készülj!"
+        },
+        "animals": {
+          "title": "🦁 Vegyes osztás",
+          "text": "Vegyes osztásos feladatok az állatkertben! Készülj!"
+        },
+        "space": {
+          "title": "🤖 Vegyes osztás",
+          "text": "Vegyes osztásos feladatok az űrben! Készülj!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "division",
+      "options": {
+        "count": 3,
+        "tables": [2, 3, 4, 5, 10],
+        "type": "sharing"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "division",
+      "options": {
+        "count": 3,
+        "tables": [2, 3, 4, 5, 10],
+        "type": "grouping"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "division",
+      "options": {
+        "count": 4,
+        "tables": [2, 3, 4, 5, 10],
+        "type": "division-table"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megoldottad a vegyes osztásokat!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a vegyes osztásokat a pályán!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a vegyes osztásokat a meccsen!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a vegyes osztásokat a konyhában!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megoldottad a vegyes osztásokat az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad a vegyes osztásokat az űrben!"
+        }
+      }
+    }
+  ]
+}

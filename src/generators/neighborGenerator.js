@@ -1,6 +1,10 @@
+function pick(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
 export function generateNeighbor(options = {}) {
 
-    const { count = 10, max = 20 } = options;
+    const { count = 10, max = 20, interaction = "mixed" } = options;
 
     const tasks = [];
 
@@ -21,7 +25,8 @@ export function generateNeighbor(options = {}) {
             right: a + 1,
             answer: a,
             lowerTen,
-            upperTen
+            upperTen,
+            interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction
         });
     }
 

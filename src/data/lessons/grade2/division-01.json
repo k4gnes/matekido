@@ -1,0 +1,105 @@
+{
+  "id": "grade2-division-01",
+  "title": "➗ Egyenlő elosztás és csoportosítás",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "➗ Egyenlő elosztás",
+      "text": "Osztunk szét egyenlő részekre! Figyelj a csoportokra!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Szétosztás a pályán",
+          "text": "Az autók alkatrészeit kell szétosztani! Figyelj a csoportokra!"
+        },
+        "football": {
+          "title": "⚽ Szétosztás a pályán",
+          "text": "A labdákat kell szétosztani a játékosok között! Figyelj a csoportokra!"
+        },
+        "cooking": {
+          "title": "🍳 Szétosztás a konyhában",
+          "text": "Az alapanyagokat kell szétosztani a tálak között! Figyelj a csoportokra!"
+        },
+        "animals": {
+          "title": "🦁 Szétosztás az állatkertben",
+          "text": "A takarmányt kell szétosztani a karámok között! Figyelj a csoportokra!"
+        },
+        "space": {
+          "title": "🤖 Szétosztás az űrben",
+          "text": "Az energiát kell szétosztani a robotok között! Figyelj a csoportokra!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "division",
+      "options": {
+        "count": 4,
+        "tables": [2, 5, 10],
+        "type": "sharing"
+      }
+    },
+    {
+      "type": "scene",
+      "title": "➗ Csoportosítás",
+      "text": "Most csoportokat kell kialakítani! Hány csoport lesz?",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Csoportosítás",
+          "text": "Az autókat kell csoportokba rendezni! Hány csoport lesz?"
+        },
+        "football": {
+          "title": "⚽ Csoportosítás",
+          "text": "A játékosokat kell csapatokba rendezni! Hány csoport lesz?"
+        },
+        "cooking": {
+          "title": "🍳 Csoportosítás",
+          "text": "Az edényeket kell csoportokba rendezni! Hány csoport lesz?"
+        },
+        "animals": {
+          "title": "🦁 Csoportosítás",
+          "text": "Az állatokat kell karámokba rendezni! Hány csoport lesz?"
+        },
+        "space": {
+          "title": "🤖 Csoportosítás",
+          "text": "A robotokat kell egységekbe rendezni! Hány csoport lesz?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "division",
+      "options": {
+        "count": 4,
+        "tables": [2, 5, 10],
+        "type": "grouping"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megtanultad az egyenlő elosztást és csoportosítást!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen szétosztottad az alkatrészeket a pályán!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen szétosztottad a labdákat a meccsen!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen szétosztottad az alapanyagokat a konyhában!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen szétosztottad a takarmányt az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen szétosztottad az energiát az űrben!"
+        }
+      }
+    }
+  ]
+}

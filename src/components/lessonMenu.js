@@ -312,7 +312,7 @@ function createFilterPanel(filters, onFilterChange) {
     const skillBtns = document.createElement("div");
     skillBtns.className = "filter-skill-btns";
 
-    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed", "place-value", "number-sequence", "ordering", "even-odd", "pattern", "shapes", "hour", "position", "coins", "length"];
+    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed", "place-value", "number-sequence", "ordering", "even-odd", "pattern", "shapes", "hour", "position", "coins", "length", "multiplication", "division", "missing-factor"];
 
     usedSkills.forEach(skillId => {
         const skill = SKILLS[skillId];
@@ -422,14 +422,13 @@ function filterLessons(lessons, filters) {
     });
 
     return lessons.filter(l => {
-        let match = false;
-        if (filters.difficulty.length > 0) match = match || filters.difficulty.includes(l.difficulty);
-        if (filters.grade.length > 0) match = match || l.grades?.some(g => filters.grade.includes(g));
-        if (filters.skills.length > 0) match = match || filters.skills.includes(l.skill);
-        if (selectedTypes.size > 0) match = match || selectedTypes.has(l.type);
-        if (filters.ranges.length > 0) match = match || filters.ranges.includes(l.range);
-        if (filters.categories.length > 0) match = match || filters.categories.includes(l.category);
-        return match;
+        if (filters.difficulty.length > 0 && !filters.difficulty.includes(l.difficulty)) return false;
+        if (filters.grade.length > 0 && !l.grades?.some(g => filters.grade.includes(g))) return false;
+        if (filters.skills.length > 0 && !filters.skills.includes(l.skill)) return false;
+        if (selectedTypes.size > 0 && !selectedTypes.has(l.type)) return false;
+        if (filters.ranges.length > 0 && !filters.ranges.includes(l.range)) return false;
+        if (filters.categories.length > 0 && !filters.categories.includes(l.category)) return false;
+        return true;
     });
 }
 

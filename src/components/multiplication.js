@@ -1,6 +1,4 @@
 import { createCard } from "./ui/card.js";
-import { createButton } from "./ui/button.js";
-import { createNumberInput } from "./ui/numberInput.js";
 import { createMessageBox } from "./ui/messageBox.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -69,6 +67,65 @@ function renderTable(step, card) {
     return optionsContainer;
 }
 
+function renderTableInput(step, card) {
+    const expr = document.createElement("div");
+    expr.className = "mult-expression";
+    expr.textContent = `${step.a} × ${step.b} = ?`;
+    card.append(expr);
+
+    const prompt = document.createElement("p");
+    prompt.className = "mult-prompt";
+    prompt.textContent = "Írd be az eredményt!";
+    card.append(prompt);
+
+    const input = document.createElement("input");
+    input.type = "number";
+    input.className = "mult-input";
+    input.placeholder = "?";
+    card.append(input);
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "mult-option";
+    button.textContent = "Ellenőrzöm";
+    card.append(button);
+
+    return { input, button };
+}
+
+function renderTableTF(step, card) {
+    const expr = document.createElement("div");
+    expr.className = "mult-expression";
+    expr.textContent = step.statement;
+    card.append(expr);
+
+    const prompt = document.createElement("p");
+    prompt.className = "mult-prompt";
+    prompt.textContent = "Igaz vagy hamis?";
+    card.append(prompt);
+
+    const optionsContainer = document.createElement("div");
+    optionsContainer.className = "mult-options";
+
+    const trueBtn = document.createElement("button");
+    trueBtn.type = "button";
+    trueBtn.className = "mult-option";
+    trueBtn.textContent = "Igaz";
+    trueBtn.dataset.value = "true";
+    optionsContainer.append(trueBtn);
+
+    const falseBtn = document.createElement("button");
+    falseBtn.type = "button";
+    falseBtn.className = "mult-option";
+    falseBtn.textContent = "Hamis";
+    falseBtn.dataset.value = "false";
+    optionsContainer.append(falseBtn);
+
+    card.append(optionsContainer);
+
+    return optionsContainer;
+}
+
 function renderMissingFactor(step, card) {
     const expr = document.createElement("div");
     expr.className = "mult-expression";
@@ -80,11 +137,19 @@ function renderMissingFactor(step, card) {
     prompt.textContent = "Írd be a hiányzó számot!";
     card.append(prompt);
 
-    const input = createNumberInput();
+    const input = document.createElement("input");
+    input.type = "number";
     input.className = "mult-input";
+    input.placeholder = "?";
     card.append(input);
 
-    return input;
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "mult-option";
+    button.textContent = "Ellenőrzöm";
+    card.append(button);
+
+    return { input, button };
 }
 
 function renderMatchGroups(step, card) {
@@ -159,11 +224,18 @@ export function renderMultiplication(step, root, next, progress, onResult, onAtt
     card.append(title);
 
     let interactiveElement;
+    let isInputMode = false;
 
     if (step.type === "missing-factor") {
         interactiveElement = renderMissingFactor(step, card);
+        isInputMode = true;
     } else if (step.type === "match-groups") {
         interactiveElement = renderMatchGroups(step, card);
+    } else if (step.interaction === "input") {
+        interactiveElement = renderTableInput(step, card);
+        isInputMode = true;
+    } else if (step.interaction === "tf") {
+        interactiveElement = renderTableTF(step, card);
     } else {
         interactiveElement = renderTable(step, card);
     }
@@ -181,8 +253,12 @@ export function renderMultiplication(step, root, next, progress, onResult, onAtt
         if (isCorrect) {
             answered = true;
 
-            if (interactiveElement && interactiveElement.tagName === "DIV") {
+            if (!isInputMode && interactiveElement && interactiveElement.tagName === "DIV") {
                 interactiveElement.querySelectorAll("button").forEach(b => b.style.pointerEvents = "none");
+            }
+            if (isInputMode && interactiveElement.input) {
+                interactiveElement.input.disabled = true;
+                interactiveElement.button.disabled = true;
             }
 
             message.show("😊 Szép munka!", "success");
@@ -205,33 +281,40 @@ export function renderMultiplication(step, root, next, progress, onResult, onAtt
                 reported = true;
                 onResult?.(false);
             }
+
+            if (isInputMode && interactiveElement.input) {
+                interactiveElement.input.focus();
+                interactiveElement.input.select();
+            }
         }
     }
 
-    if (step.type === "missing-factor") {
-        requestAnimationFrame(() => interactiveElement.focus());
-
-        const button = createButton("Ellenőrzöm");
-        card.append(button);
-
-        function checkInput() {
-            const answer = Number(interactiveElement.value);
+    if (isInputMode && interactiveElement.input) {
+        interactiveElement.button.addEventListener("click", () => {
+            const answer = Number(interactiveElement.input.value);
             if (isNaN(answer)) return;
-            checkAnswer(answer === step.answer);
-        }
-
-        button.addEventListener("click", checkInput);
-        interactiveElement.addEventListener("keydown", (e) => {
-            if (e.key === "Enter") checkInput();
+            if (step.type === "missing-factor") {
+                checkAnswer(answer === step.answer);
+            } else {
+                checkAnswer(answer === step.answer);
+            }
+        });
+        interactiveElement.input.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                const answer = Number(interactiveElement.input.value);
+                if (isNaN(answer)) return;
+                checkAnswer(answer === step.answer);
+            }
         }, { signal: ac.signal });
-
-    } else {
+    } else if (interactiveElement && interactiveElement.tagName === "DIV") {
         interactiveElement.addEventListener("click", (e) => {
             const btn = e.target.closest(".mult-option");
             if (!btn || answered) return;
 
             if (step.type === "match-groups") {
                 checkAnswer(btn.dataset.correct === "1");
+            } else if (step.interaction === "tf") {
+                checkAnswer((btn.dataset.value === "true") === step.tfAnswer);
             } else {
                 checkAnswer(Number(btn.dataset.value) === step.answer);
             }

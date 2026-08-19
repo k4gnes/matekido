@@ -6,6 +6,39 @@
 
 const MAX_GENERATION_ATTEMPTS = 10000;
 
+function pick(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
+function makeOptions(answer, min, max, count = 4) {
+    const options = [answer];
+    const seen = new Set([answer]);
+    const deltas = [1, -1, 2, -2, 3, -3, 5, -5, 10, -10];
+    for (const d of deltas) {
+        if (options.length >= count) break;
+        const v = answer + d;
+        if (v >= min && v <= max && !seen.has(v)) {
+            seen.add(v);
+            options.push(v);
+        }
+    }
+    for (let v = min; v <= max && options.length < count; v++) {
+        if (!seen.has(v)) {
+            seen.add(v);
+            options.push(v);
+        }
+    }
+    return shuffle(options);
+}
+
 export function generateAddition(options = {}) {
 
     const {
@@ -19,7 +52,8 @@ export function generateAddition(options = {}) {
         bMultiplesOfTen = false,
         bMax = null,
         bMin = null,
-        noCrossTen = false
+        noCrossTen = false,
+        interaction = "mixed"
     } = options;
 
     const validCarryModes = ["never", "always", "any"];
@@ -104,7 +138,8 @@ export function generateAddition(options = {}) {
 
         tasks.push({
             a,
-            b
+            b,
+            interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction
         });
     }
 

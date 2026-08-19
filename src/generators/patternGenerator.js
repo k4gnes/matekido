@@ -1,9 +1,27 @@
-const EMOJI_POOL = [
+const EMOJI_POOL_DEFAULT = [
     "🍎", "🍌", "🍇", "🍓", "🍉", "🍋",
     "🐶", "🐱", "🦊", "🐼", "🐸", "🐵",
     "🚗", "🚀", "⚽", "🏀", "🎈", "⭐",
     "🌙", "🌞", "🌈", "🍄", "🐞", "🌸"
 ];
+
+const EMOJI_POOL_WORLD = {
+    animals: [
+        "🐶", "🐱", "🦊", "🐼", "🐸", "🐵",
+        "🐫", "🐘", "🦒", "🐒", "🦧", "🦥",
+        "🍎", "🍌", "🍇", "🍓", "🥕", "🥒",
+        "🌽", "🥬", "🍉", "🍋"
+    ],
+    cooking: [
+        "🍳", "🥘", "🍖", "🍗", "🍕", "🌮",
+        "🍎", "🍌", "🥕", "🥗", "🍲", "🥪",
+        "🍇", "🍓", "🍉", "🍋", "🍔", "🍣"
+    ],
+};
+
+function getPool(world) {
+    return EMOJI_POOL_WORLD[world] || EMOJI_POOL_DEFAULT;
+}
 
 function shuffle(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
@@ -15,16 +33,17 @@ function shuffle(arr) {
 
 export function generatePattern(options = {}) {
 
-    const { count = 5, visible = 7, minPattern = 2, maxPattern = 3 } = options;
+    const { count = 5, visible = 7, minPattern = 2, maxPattern = 3, world } = options;
 
+    const pool = getPool(world);
     const tasks = [];
 
     for (let i = 0; i < count; i++) {
 
-        const pool = shuffle([...EMOJI_POOL]);
+        const shuffled = shuffle([...pool]);
 
         const baseLen = minPattern + Math.floor(Math.random() * (maxPattern - minPattern + 1));
-        const base = pool.slice(0, baseLen);
+        const base = shuffled.slice(0, baseLen);
 
         let pattern = [...base];
         if (Math.random() < 0.6) {

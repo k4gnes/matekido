@@ -3,7 +3,9 @@
         {
             "id": "decomposition-01",
             "title": "Számok bontása 10-ig",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "numbers",
             "skill": "neighbours",
             "difficulty": 1,
@@ -24,7 +26,9 @@
         {
             "id": "decomposition-find-wrong-01",
             "title": "Keresd a kakukktojást!",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "numbers",
             "skill": "neighbours",
             "difficulty": 1,
@@ -45,7 +49,9 @@
         {
             "id": "missing-number-01",
             "title": "Kiegészítés 10-ig",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "numbers",
             "skill": "missing-number",
             "difficulty": 1,
@@ -65,7 +71,9 @@
         {
             "id": "bridge-ten-01",
             "title": "Tízesátlépés 20-ig",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "numbers",
             "skill": "addition",
             "difficulty": 2,
@@ -86,7 +94,9 @@
         {
             "id": "place-value-01",
             "title": "Helyiérték 100-ig",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "numbers",
             "skill": "place-value",
             "difficulty": 1,
@@ -106,7 +116,9 @@
         {
             "id": "place-value-02",
             "title": "Helyiérték – tízes és egyes 100-ig",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "numbers",
             "skill": "place-value",
             "difficulty": 1,
@@ -126,7 +138,9 @@
         {
             "id": "missing-number-02",
             "title": "Kiegészítés véletlen számig 20-ig",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "numbers",
             "skill": "missing-number",
             "difficulty": 1,
@@ -146,7 +160,9 @@
         {
             "id": "sequence-01",
             "title": "Mi a következő? 50-ig",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "numbers",
             "skill": "number-sequence",
             "difficulty": 1,
@@ -166,7 +182,9 @@
         {
             "id": "order-01",
             "title": "Rendezzük sorainkat! 20-ig",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "numbers",
             "skill": "ordering",
             "difficulty": 1,
@@ -186,7 +204,9 @@
         {
             "id": "even-odd-01",
             "title": "Páros és páratlan 20-ig",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "numbers",
             "skill": "even-odd",
             "difficulty": 1,
@@ -206,7 +226,9 @@
         {
             "id": "pattern-01",
             "title": "Sorminta – mi a következő?",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "numbers",
             "skill": "pattern",
             "difficulty": 1,
@@ -226,7 +248,9 @@
         {
             "id": "shape-sort-01",
             "title": "Kerek, szögletes és háromszög",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "geometry",
             "skill": "shapes",
             "difficulty": 1,
@@ -245,7 +269,9 @@
         {
             "id": "spatial-01",
             "title": "Térbeli tájékozódás",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "geometry",
             "skill": "position",
             "difficulty": 1,
@@ -264,7 +290,9 @@
         {
             "id": "addition-01",
             "title": "Összeadás 20-ig",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "operations",
             "skill": "addition",
             "difficulty": 1,
@@ -284,7 +312,10 @@
         {
             "id": "neighbor-01",
             "title": "Számok szomszédai 100-ig",
-            "grades": [1, 2],
+            "grades": [
+                1,
+                2
+            ],
             "category": "numbers",
             "skill": "neighbours",
             "difficulty": 1,
@@ -304,7 +335,9 @@
         {
             "id": "addition-02",
             "title": "Összeadás 20-ig átlépéssel",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "operations",
             "skill": "addition",
             "difficulty": 2,
@@ -324,7 +357,9 @@
         {
             "id": "subtraction-01",
             "title": "Kivonás 20-ig",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "operations",
             "skill": "subtraction",
             "difficulty": 1,
@@ -344,7 +379,9 @@
         {
             "id": "comparison-01",
             "title": "Összehasonlítás 10-ig",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "numbers",
             "skill": "comparison",
             "difficulty": 1,
@@ -364,7 +401,10 @@
         {
             "id": "comparison-02",
             "title": "Összehasonlítás 20-ig",
-            "grades": [1, 2],
+            "grades": [
+                1,
+                2
+            ],
             "category": "numbers",
             "skill": "comparison",
             "difficulty": 1,
@@ -384,7 +424,9 @@
         {
             "id": "mixed-01",
             "title": "Vegyes műveletek 20-ig",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "operations",
             "skill": "mixed",
             "difficulty": 2,
@@ -404,7 +446,9 @@
         {
             "id": "missing-number-03",
             "title": "Hiányzó szám 100-ig",
-            "grades": [2],
+            "grades": [
+                2
+            ],
             "category": "numbers",
             "skill": "missing-number",
             "difficulty": 2,
@@ -424,7 +468,9 @@
         {
             "id": "round-tens-addition-01",
             "title": "Összeadás kerek tízesekkel",
-            "grades": [2],
+            "grades": [
+                2
+            ],
             "category": "operations",
             "skill": "addition",
             "difficulty": 2,
@@ -444,7 +490,9 @@
         {
             "id": "round-tens-addition-02",
             "title": "Véletlen szám + kerek tizes",
-            "grades": [2],
+            "grades": [
+                2
+            ],
             "category": "operations",
             "skill": "addition",
             "difficulty": 2,
@@ -464,7 +512,9 @@
         {
             "id": "single-digit-addition-01",
             "title": "Kétjegyű + egyjegyű összeadás",
-            "grades": [2],
+            "grades": [
+                2
+            ],
             "category": "operations",
             "skill": "addition",
             "difficulty": 2,
@@ -484,7 +534,9 @@
         {
             "id": "addition-03",
             "title": "Összeadás 100-ig átlépés nélkül",
-            "grades": [2],
+            "grades": [
+                2
+            ],
             "category": "operations",
             "skill": "addition",
             "difficulty": 2,
@@ -504,7 +556,9 @@
         {
             "id": "addition-04",
             "title": "Összeadás 100-ig átlépéssel is",
-            "grades": [2],
+            "grades": [
+                2
+            ],
             "category": "operations",
             "skill": "addition",
             "difficulty": 3,
@@ -524,7 +578,9 @@
         {
             "id": "round-tens-subtraction-01",
             "title": "Kivonás kerek tízesekkel",
-            "grades": [2],
+            "grades": [
+                2
+            ],
             "category": "operations",
             "skill": "subtraction",
             "difficulty": 2,
@@ -544,7 +600,9 @@
         {
             "id": "round-tens-subtraction-02",
             "title": "Véletlen szám - kerek tizes",
-            "grades": [2],
+            "grades": [
+                2
+            ],
             "category": "operations",
             "skill": "subtraction",
             "difficulty": 2,
@@ -564,7 +622,9 @@
         {
             "id": "single-digit-subtraction-01",
             "title": "Kétjegyű - egyjegyű kivonás",
-            "grades": [2],
+            "grades": [
+                2
+            ],
             "category": "operations",
             "skill": "subtraction",
             "difficulty": 2,
@@ -584,7 +644,9 @@
         {
             "id": "subtraction-04",
             "title": "Kivonás 100-ig",
-            "grades": [2],
+            "grades": [
+                2
+            ],
             "category": "operations",
             "skill": "subtraction",
             "difficulty": 2,
@@ -604,7 +666,9 @@
         {
             "id": "subtraction-05",
             "title": "Kétjegyű - kétjegyű átlépés nélkül",
-            "grades": [2],
+            "grades": [
+                2
+            ],
             "category": "operations",
             "skill": "subtraction",
             "difficulty": 2,
@@ -624,7 +688,9 @@
         {
             "id": "subtraction-06",
             "title": "Kivonás 100-ig átlépéssel",
-            "grades": [2],
+            "grades": [
+                2
+            ],
             "category": "operations",
             "skill": "subtraction",
             "difficulty": 3,
@@ -644,7 +710,9 @@
         {
             "id": "mixed-02",
             "title": "Vegyes műveletek 100-ig",
-            "grades": [2],
+            "grades": [
+                2
+            ],
             "category": "operations",
             "skill": "mixed",
             "difficulty": 3,
@@ -664,7 +732,9 @@
         {
             "id": "neighbor-02",
             "title": "Szomszédok gyakorlása 100-ig",
-            "grades": [2],
+            "grades": [
+                2
+            ],
             "category": "numbers",
             "skill": "neighbours",
             "difficulty": 2,
@@ -684,7 +754,9 @@
         {
             "id": "sequence-02",
             "title": "Mi a következő? 100-ig",
-            "grades": [2],
+            "grades": [
+                2
+            ],
             "category": "numbers",
             "skill": "number-sequence",
             "difficulty": 2,
@@ -704,7 +776,9 @@
         {
             "id": "order-02",
             "title": "Rendezzük sorainkat! 100-ig",
-            "grades": [2],
+            "grades": [
+                2
+            ],
             "category": "numbers",
             "skill": "ordering",
             "difficulty": 2,
@@ -724,7 +798,9 @@
         {
             "id": "even-odd-02",
             "title": "Páros és páratlan 100-ig",
-            "grades": [2],
+            "grades": [
+                2
+            ],
             "category": "numbers",
             "skill": "even-odd",
             "difficulty": 2,
@@ -744,7 +820,9 @@
         {
             "id": "pattern-02",
             "title": "Sorminta – hosszabb minták",
-            "grades": [2],
+            "grades": [
+                2
+            ],
             "category": "numbers",
             "skill": "pattern",
             "difficulty": 2,
@@ -764,7 +842,9 @@
         {
             "id": "shape-sort-03",
             "title": "Négyzet és téglalap",
-            "grades": [2],
+            "grades": [
+                2
+            ],
             "category": "geometry",
             "skill": "shapes",
             "difficulty": 2,
@@ -783,7 +863,9 @@
         {
             "id": "time-01",
             "title": "Idő – egész és fél óra",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "practical",
             "skill": "hour",
             "difficulty": 1,
@@ -802,7 +884,9 @@
         {
             "id": "time-02",
             "title": "Idő – egész és fél óra (éjszakával is)",
-            "grades": [2],
+            "grades": [
+                2
+            ],
             "category": "practical",
             "skill": "hour",
             "difficulty": 2,
@@ -821,7 +905,9 @@
         {
             "id": "money-pay-01",
             "title": "Fizesd ki pontosan!",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "practical",
             "skill": "coins",
             "difficulty": 1,
@@ -840,7 +926,9 @@
         {
             "id": "money-compare-01",
             "title": "Melyik pénztárcában van több?",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "practical",
             "skill": "coins",
             "difficulty": 1,
@@ -859,7 +947,9 @@
         {
             "id": "money-enough-01",
             "title": "Meg tudod venni?",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "practical",
             "skill": "coins",
             "difficulty": 1,
@@ -878,7 +968,9 @@
         {
             "id": "measure-compare-01",
             "title": "Melyik hosszabb?",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "practical",
             "skill": "length",
             "difficulty": 1,
@@ -897,7 +989,9 @@
         {
             "id": "measure-squares-01",
             "title": "Mérd meg négyzetekkel!",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "practical",
             "skill": "length",
             "difficulty": 1,
@@ -916,7 +1010,9 @@
         {
             "id": "word-problems-01",
             "title": "Szöveges feladatok",
-            "grades": [1],
+            "grades": [
+                1
+            ],
             "category": "wordProblems",
             "skill": "one-step",
             "difficulty": 1,
@@ -937,8 +1033,10 @@
         {
             "id": "mult-prep-01",
             "title": "Egyenlő csoportok",
-            "grades": [2],
-            "category": "operations",
+            "grades": [
+                2
+            ],
+            "category": "multiplication",
             "skill": "multiplication",
             "difficulty": 2,
             "type": "equal-groups",
@@ -957,8 +1055,10 @@
         {
             "id": "mult-prep-02",
             "title": "Ismételt összeadás",
-            "grades": [2],
-            "category": "operations",
+            "grades": [
+                2
+            ],
+            "category": "multiplication",
             "skill": "multiplication",
             "difficulty": 2,
             "type": "repeated-addition",
@@ -977,8 +1077,10 @@
         {
             "id": "mult-prep-03",
             "title": "Számolás kettesével, ötösével, tizesével",
-            "grades": [2],
-            "category": "operations",
+            "grades": [
+                2
+            ],
+            "category": "multiplication",
             "skill": "multiplication",
             "difficulty": 2,
             "type": "skip-counting",
@@ -997,8 +1099,10 @@
         {
             "id": "multiplication-01",
             "title": "Szorzás 2, 5, 10-es táblával",
-            "grades": [2],
-            "category": "operations",
+            "grades": [
+                2
+            ],
+            "category": "multiplication",
             "skill": "multiplication",
             "difficulty": 2,
             "type": "table",
@@ -1017,8 +1121,10 @@
         {
             "id": "multiplication-02",
             "title": "Szorzás 3, 4-es táblával",
-            "grades": [2],
-            "category": "operations",
+            "grades": [
+                2
+            ],
+            "category": "multiplication",
             "skill": "multiplication",
             "difficulty": 2,
             "type": "table",
@@ -1037,8 +1143,10 @@
         {
             "id": "multiplication-03",
             "title": "Vegyes szorzásgyakorlás",
-            "grades": [2],
-            "category": "operations",
+            "grades": [
+                2
+            ],
+            "category": "multiplication",
             "skill": "multiplication",
             "difficulty": 3,
             "type": "table",
@@ -1053,10 +1161,82 @@
                 "animals": "🦁 Vegyes szorzás",
                 "space": "🤖 Vegyes szorzás"
             }
+        },
+        {
+            "id": "division-01",
+            "title": "Egyenlő elosztás és csoportosítás",
+            "grades": [
+                2
+            ],
+            "category": "multiplication",
+            "skill": "division",
+            "difficulty": 2,
+            "type": "sharing",
+            "range": 100,
+            "mission": "➗ Szétosztás",
+            "subtitle": "Egyenlő elosztás és csoportosítás",
+            "file": "./data/lessons/grade2/division-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Szétosztás",
+                "cooking": "🍳 Szétosztás",
+                "football": "⚽ Szétosztás",
+                "animals": "🦁 Szétosztás",
+                "space": "🤖 Szétosztás"
+            }
+        },
+        {
+            "id": "division-02",
+            "title": "Osztás 2, 5, 10-es táblával",
+            "grades": [
+                2
+            ],
+            "category": "multiplication",
+            "skill": "division",
+            "difficulty": 2,
+            "type": "division-table",
+            "range": 100,
+            "mission": "➗ Osztás",
+            "subtitle": "Osztás 2, 5, 10-es táblával",
+            "file": "./data/lessons/grade2/division-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Osztás",
+                "cooking": "🍳 Osztás",
+                "football": "⚽ Osztás",
+                "animals": "🦁 Osztás",
+                "space": "🤖 Osztás"
+            }
+        },
+        {
+            "id": "division-03",
+            "title": "Vegyes osztás",
+            "grades": [
+                2
+            ],
+            "category": "multiplication",
+            "skill": "division",
+            "difficulty": 3,
+            "type": "division-table",
+            "range": 100,
+            "mission": "➗ Vegyes osztás",
+            "subtitle": "Vegyes osztásos feladatok",
+            "file": "./data/lessons/grade2/division-03.json",
+            "worldTitles": {
+                "racing": "🏎️ Vegyes osztás",
+                "cooking": "🍳 Vegyes osztás",
+                "football": "⚽ Vegyes osztás",
+                "animals": "🦁 Vegyes osztás",
+                "space": "🤖 Vegyes osztás"
+            }
         }
     ],
     "gradeConfig": [
-        { "grade": 1, "title": "1. osztály" },
-        { "grade": 2, "title": "2. osztály" }
+        {
+            "grade": 1,
+            "title": "1. osztály"
+        },
+        {
+            "grade": 2,
+            "title": "2. osztály"
+        }
     ]
 }

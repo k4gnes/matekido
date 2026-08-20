@@ -1,0 +1,69 @@
+{
+  "id": "grade2-estimate-01",
+  "title": "🧮 Becslés – Melyik lehet?",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧮 Becslés",
+      "text": "Kerekítsd a számokat tízesre, és gondold ki az eredményt! Nem kell pontosan kiszámolni!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Becslés a pályán",
+          "text": "Kerekítsd a számokat tízesre, és gondold ki az eredményt! Nem kell pontosan kiszámolni!"
+        },
+        "cooking": {
+          "title": "🍳 Becslés a konyhában",
+          "text": "Kerekítsd a számokat tízesre, és gondold ki az eredményt! Nem kell pontosan kiszámolni!"
+        },
+        "football": {
+          "title": "⚽ Becslés a meccsen",
+          "text": "Kerekítsd a számokat tízesre, és gondold ki az eredményt! Nem kell pontosan kiszámolni!"
+        },
+        "animals": {
+          "title": "🦁 Becslés az állatkertben",
+          "text": "Kerekítsd a számokat tízesre, és gondold ki az eredményt! Nem kell pontosan kiszámolni!"
+        },
+        "space": {
+          "title": "🤖 Becslés az űrben",
+          "text": "Kerekítsd a számokat tízesre, és gondold ki az eredményt! Nem kell pontosan kiszámolni!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "estimate",
+      "options": {
+        "count": 8,
+        "max": 50,
+        "op": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megbecsülted az eredményeket!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megbecsülted az eredményeket a pályán!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megbecsülted az eredményeket a konyhában!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megbecsülted az eredményeket a meccsen!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megbecsülted az eredményeket az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megbecsülted az eredményeket az űrben!"
+        }
+      }
+    }
+  ]
+}

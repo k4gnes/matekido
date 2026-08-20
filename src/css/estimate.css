@@ -1,0 +1,56 @@
+.est-expression {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    color: #1a1a2e;
+    margin: .5rem 0;
+    letter-spacing: .05em;
+}
+
+.est-prompt {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    color: #475569;
+    margin: .3rem 0 .6rem;
+}
+
+.est-hint {
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    color: #6366f1;
+    background: #eef2ff;
+    border: 1px solid #c7d2fe;
+    border-radius: 8px;
+    padding: .4rem .8rem;
+    margin: .3rem auto .4rem;
+    max-width: 320px;
+}
+
+.est-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .7rem;
+    margin: .8rem 0;
+}
+
+.est-option {
+    margin: 0;
+    padding: .9rem 1.8rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    background: #fff;
+    color: #1a1a2e;
+    cursor: pointer;
+    transition: transform .15s, border-color .15s, background-color .15s;
+}
+
+.est-option:hover {
+    border-color: #6366f1;
+    background: #eef2ff;
+    transform: scale(1.06);
+}

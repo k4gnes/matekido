@@ -295,6 +295,31 @@ function createIconColumn(count, label, iconFactory) {
     return col;
 }
 
+function makeStepOptions(answer, min, max, count = 4) {
+    const options = [answer];
+    const seen = new Set([answer]);
+    const deltas = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5];
+    for (const d of deltas) {
+        if (options.length >= count) break;
+        const v = answer + d;
+        if (v >= min && v <= max && !seen.has(v)) {
+            seen.add(v);
+            options.push(v);
+        }
+    }
+    for (let v = min; v <= max && options.length < count; v++) {
+        if (!seen.has(v)) {
+            seen.add(v);
+            options.push(v);
+        }
+    }
+    for (let i = options.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [options[i], options[j]] = [options[j], options[i]];
+    }
+    return options;
+}
+
 export function renderWordProblem(step, root, next, progress, onResult, onAttempt) {
 
     root.replaceChildren();
@@ -499,6 +524,81 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
             });
             options.append(btn);
         });
+        card.append(options);
+
+    } else if (step.kind === "two-step") {
+
+        const visual = document.createElement("div");
+        visual.className = "wp-visual";
+
+        const step1Row = document.createElement("div");
+        step1Row.className = "wp-two-step-row";
+        const step1Label = document.createElement("span");
+        step1Label.className = "wp-two-step-label";
+        step1Label.textContent = "1. lépés:";
+        const step1Expr = document.createElement("span");
+        step1Expr.className = "wp-two-step-expr";
+        step1Expr.textContent = `${step.a} + ${step.b} = ?`;
+        step1Row.append(step1Label, step1Expr);
+        visual.append(step1Row);
+
+        const step2Row = document.createElement("div");
+        step2Row.className = "wp-two-step-row wp-two-step-pending";
+        const step2Label = document.createElement("span");
+        step2Label.className = "wp-two-step-label";
+        step2Label.textContent = "2. lépés:";
+        const step2Expr = document.createElement("span");
+        step2Expr.className = "wp-two-step-expr";
+        step2Expr.textContent = `? − ${step.c} = ?`;
+        step2Row.append(step2Label, step2Expr);
+        visual.append(step2Row);
+
+        card.append(visual);
+
+        const question = document.createElement("p");
+        question.className = "wp-question";
+        question.textContent = step.question;
+        card.append(question);
+
+        let phase = 1;
+        let intermediateValue = null;
+
+        const options = document.createElement("div");
+        options.className = "wp-options";
+
+        function showOptionsForPhase(p) {
+            options.replaceChildren();
+            const opts = p === 1
+                ? makeStepOptions(step.firstAnswer, 0, step.a + step.b + 5)
+                : makeStepOptions(step.answer, 0, step.firstAnswer + 5);
+            opts.forEach(value => {
+                const btn = createButton(String(value), { className: "wp-option" });
+                btn.addEventListener("click", () => {
+                    if (phase === 1) {
+                        if (value === step.firstAnswer) {
+                            phase = 2;
+                            intermediateValue = step.firstAnswer;
+                            step1Expr.textContent = `${step.a} + ${step.b} = ${intermediateValue}`;
+                            step2Expr.textContent = `${intermediateValue} − ${step.c} = ?`;
+                            step2Row.classList.remove("wp-two-step-pending");
+                            onAttempt?.();
+                            showOptionsForPhase(2);
+                        } else {
+                            reportRetry();
+                        }
+                    } else {
+                        if (value === step.answer) {
+                            reportSuccess(step.successText);
+                        } else {
+                            reportRetry();
+                        }
+                    }
+                });
+                options.append(btn);
+            });
+        }
+
+        showOptionsForPhase(1);
         card.append(options);
 
     } else if (step.kind === "remove") {

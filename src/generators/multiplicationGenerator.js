@@ -106,6 +106,30 @@ function generateMatchGroups(count, tables, interaction) {
     return tasks;
 }
 
+function generateLink(count, tables, interaction) {
+    const tasks = [];
+    for (let i = 0; i < count; i++) {
+        const a = pick(tables);
+        const b = randint(2, 10);
+        const answer = a * b;
+        const divideByFirst = Math.random() < 0.5;
+        const divisor = divideByFirst ? a : b;
+        const correctResult = divideByFirst ? b : a;
+        const task = {
+            type: "link",
+            a,
+            b,
+            answer: correctResult,
+            multAnswer: answer,
+            divisor,
+            expression: `${answer} ÷ ${divisor} = ?`
+        };
+        assignInteraction(task, ["input", "choice"], interaction);
+        tasks.push(task);
+    }
+    return tasks;
+}
+
 export function generateMultiplication(options = {}) {
     const { count = 6, tables = [2, 5, 10], type = "table", interaction = "mixed" } = options;
 
@@ -116,6 +140,8 @@ export function generateMultiplication(options = {}) {
             return generateMissingFactor(count, tables, interaction);
         case "match-groups":
             return generateMatchGroups(count, tables, interaction);
+        case "link":
+            return generateLink(count, tables, interaction);
         default:
             return generateTable(count, tables, interaction);
     }

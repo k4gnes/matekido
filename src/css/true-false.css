@@ -1,0 +1,51 @@
+.tf-expression {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    color: #1a1a2e;
+    margin: .5rem 0;
+    letter-spacing: .05em;
+}
+
+.tf-prompt {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    color: #475569;
+    margin: .3rem 0 .6rem;
+}
+
+.tf-options {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: .8rem 0;
+}
+
+.tf-option {
+    margin: 0;
+    padding: 1rem 2.2rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    border: 2px solid #cbd5e1;
+    border-radius: 14px;
+    background: #fff;
+    color: #1a1a2e;
+    cursor: pointer;
+    transition: transform .15s, border-color .15s, background-color .15s;
+    min-width: 140px;
+}
+
+.tf-option:hover {
+    transform: scale(1.06);
+}
+
+.tf-true:hover {
+    border-color: #22c55e;
+    background: #f0fdf4;
+}
+
+.tf-false:hover {
+    border-color: #ef4444;
+    background: #fef2f2;
+}

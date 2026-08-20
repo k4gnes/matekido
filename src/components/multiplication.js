@@ -6,32 +6,38 @@ const TITLES = {
     postman: {
         "table": "📮 Mennyi?",
         "missing-factor": "📮 Melyik szám hiányzik?",
-        "match-groups": "📮 Melyik szorzás felel meg?"
+        "match-groups": "📮 Melyik szorzás felel meg?",
+        "link": "📮 Szorzás és osztás"
     },
     racing: {
         "table": "🏎️ Mennyi?",
         "missing-factor": "🏎️ Melyik szám hiányzik?",
-        "match-groups": "🏎️ Melyik szorzás felel meg?"
+        "match-groups": "🏎️ Melyik szorzás felel meg?",
+        "link": "🏎️ Szorzás és osztás"
     },
     football: {
         "table": "⚽ Mennyi?",
         "missing-factor": "⚽ Melyik szám hiányzik?",
-        "match-groups": "⚽ Melyik szorzás felel meg?"
+        "match-groups": "⚽ Melyik szorzás felel meg?",
+        "link": "⚽ Szorzás és osztás"
     },
     cooking: {
         "table": "🍳 Mennyi?",
         "missing-factor": "🍳 Melyik szám hiányzik?",
-        "match-groups": "🍳 Melyik szorzás felel meg?"
+        "match-groups": "🍳 Melyik szorzás felel meg?",
+        "link": "🍳 Szorzás és osztás"
     },
     animals: {
         "table": "🦁 Mennyi?",
         "missing-factor": "🦁 Melyik szám hiányzik?",
-        "match-groups": "🦁 Melyik szorzás felel meg?"
+        "match-groups": "🦁 Melyik szorzás felel meg?",
+        "link": "🦁 Szorzás és osztás"
     },
     space: {
         "table": "🤖 Mennyi?",
         "missing-factor": "🤖 Melyik szám hiányzik?",
-        "match-groups": "🤖 Melyik szorzás felel meg?"
+        "match-groups": "🤖 Melyik szorzás felel meg?",
+        "link": "🤖 Szorzás és osztás"
     }
 };
 
@@ -202,6 +208,80 @@ function renderMatchGroups(step, card) {
     return optionsContainer;
 }
 
+function renderLinkChoice(step, card) {
+    const fact = document.createElement("div");
+    fact.className = "mult-expression";
+    fact.textContent = `${step.a} × ${step.b} = ${step.multAnswer}`;
+    card.append(fact);
+
+    const arrow = document.createElement("div");
+    arrow.className = "mult-hint";
+    arrow.textContent = "⬇️";
+    card.append(arrow);
+
+    const expr = document.createElement("div");
+    expr.className = "mult-expression";
+    expr.textContent = step.expression;
+    card.append(expr);
+
+    const prompt = document.createElement("p");
+    prompt.className = "mult-prompt";
+    prompt.textContent = "Válaszd ki a helyes választ!";
+    card.append(prompt);
+
+    const optionsContainer = document.createElement("div");
+    optionsContainer.className = "mult-options";
+
+    step.options.forEach(value => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "mult-option";
+        btn.textContent = value;
+        btn.dataset.value = value;
+        optionsContainer.append(btn);
+    });
+
+    card.append(optionsContainer);
+
+    return optionsContainer;
+}
+
+function renderLinkInput(step, card) {
+    const fact = document.createElement("div");
+    fact.className = "mult-expression";
+    fact.textContent = `${step.a} × ${step.b} = ${step.multAnswer}`;
+    card.append(fact);
+
+    const arrow = document.createElement("div");
+    arrow.className = "mult-hint";
+    arrow.textContent = "⬇️";
+    card.append(arrow);
+
+    const expr = document.createElement("div");
+    expr.className = "mult-expression";
+    expr.textContent = step.expression;
+    card.append(expr);
+
+    const prompt = document.createElement("p");
+    prompt.className = "mult-prompt";
+    prompt.textContent = "Írd be az eredményt!";
+    card.append(prompt);
+
+    const input = document.createElement("input");
+    input.type = "number";
+    input.className = "mult-input";
+    input.placeholder = "?";
+    card.append(input);
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "mult-option";
+    button.textContent = "Ellenőrzöm";
+    card.append(button);
+
+    return { input, button };
+}
+
 export function renderMultiplication(step, root, next, progress, onResult, onAttempt) {
 
     let mistakes = 0;
@@ -231,6 +311,11 @@ export function renderMultiplication(step, root, next, progress, onResult, onAtt
         isInputMode = true;
     } else if (step.type === "match-groups") {
         interactiveElement = renderMatchGroups(step, card);
+    } else if (step.type === "link" && step.interaction === "input") {
+        interactiveElement = renderLinkInput(step, card);
+        isInputMode = true;
+    } else if (step.type === "link") {
+        interactiveElement = renderLinkChoice(step, card);
     } else if (step.interaction === "input") {
         interactiveElement = renderTableInput(step, card);
         isInputMode = true;

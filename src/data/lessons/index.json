@@ -1315,6 +1315,94 @@
                 "animals": "🦁 Osztásos történetek",
                 "space": "🤖 Osztásos történetek"
             }
+        },
+        {
+            "id": "multiplication-link-01",
+            "title": "✖️➗ Szorzás és osztás kapcsolata",
+            "grades": [
+                2
+            ],
+            "category": "multiplication",
+            "skill": "multiplication",
+            "difficulty": 2,
+            "type": "link",
+            "range": 100,
+            "mission": "✖️➗ Szorzás és osztás",
+            "subtitle": "Szorzás és osztás kapcsolata",
+            "file": "./data/lessons/grade2/multiplication-link-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Szorzás és osztás",
+                "cooking": "🍳 Szorzás és osztás",
+                "football": "⚽ Szorzás és osztás",
+                "animals": "🦁 Szorzás és osztás",
+                "space": "🤖 Szorzás és osztás"
+            }
+        },
+        {
+            "id": "word-problems-two-step-01",
+            "title": "📝 Kétlépéses szöveges feladatok",
+            "grades": [
+                2
+            ],
+            "category": "wordProblems",
+            "skill": "two-step",
+            "difficulty": 3,
+            "type": "word-problem",
+            "range": 20,
+            "mission": "📝 Kétlépéses történetek",
+            "subtitle": "Kétlépéses szöveges feladatok",
+            "file": "./data/lessons/grade2/word-problems-two-step-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Kétlépéses versenyfeladatok",
+                "cooking": "🍳 Kétlépéses receptek",
+                "football": "⚽ Kétlépéses meccsfeladatok",
+                "animals": "🦁 Kétlépéses állatfeladatok",
+                "space": "🤖 Kétlépéses űrfeladatok"
+            }
+        },
+        {
+            "id": "estimate-01",
+            "title": "🧮 Becslés – Melyik lehet?",
+            "grades": [
+                2
+            ],
+            "category": "numbers",
+            "skill": "estimation",
+            "difficulty": 2,
+            "type": "estimate",
+            "range": 50,
+            "mission": "� Becslés",
+            "subtitle": "Számérzék és becslés",
+            "file": "./data/lessons/grade2/estimate-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Becslés a pályán",
+                "cooking": "🍳 Becslés a konyhában",
+                "football": "⚽ Becslés a meccsen",
+                "animals": "🦁 Becslés az állatkertben",
+                "space": "🤖 Becslés az űrben"
+            }
+        },
+        {
+            "id": "true-false-01",
+            "title": "✅ Igaz vagy hamis?",
+            "grades": [
+                2
+            ],
+            "category": "operations",
+            "skill": "true-false",
+            "difficulty": 2,
+            "type": "true-false",
+            "range": 50,
+            "mission": "✅ Igaz vagy hamis?",
+            "subtitle": "Igaz vagy hamis műveletek",
+            "file": "./data/lessons/grade2/true-false-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Igaz vagy hamis?",
+                "cooking": "🍳 Igaz vagy hamis?",
+                "football": "⚽ Igaz vagy hamis?",
+                "animals": "🦁 Igaz vagy hamis?",
+                "space": "🤖 Igaz vagy hamis?"
+            }
         }
     ],
     "gradeConfig": [

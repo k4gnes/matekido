@@ -1,0 +1,69 @@
+{
+  "id": "grade2-true-false-01",
+  "title": "✅ Igaz vagy hamis?",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "✅ Igaz vagy hamis?",
+      "text": "Nézd meg a számolást, és döntsd el, hogy igaz-e vagy hamis!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Igaz vagy hamis?",
+          "text": "Nézd meg a számolást a versenyeredményen, és döntsd el, hogy igaz-e vagy hamis!"
+        },
+        "cooking": {
+          "title": "🍳 Igaz vagy hamis?",
+          "text": "Nézd meg a számolást a recepten, és döntsd el, hogy igaz-e vagy hamis!"
+        },
+        "football": {
+          "title": "⚽ Igaz vagy hamis?",
+          "text": "Nézd meg a számolást az eredményjelzőn, és döntsd el, hogy igaz-e vagy hamis!"
+        },
+        "animals": {
+          "title": "🦁 Igaz vagy hamis?",
+          "text": "Nézd meg a számolást, és döntsd el, hogy igaz-e vagy hamis!"
+        },
+        "space": {
+          "title": "🤖 Igaz vagy hamis?",
+          "text": "Nézd meg a számolást a számítógépen, és döntsd el, hogy igaz-e vagy hamis!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "true-false",
+      "options": {
+        "count": 8,
+        "max": 50,
+        "op": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen eldöntötted, mi igaz és mi hamis!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen eldöntötted, mi igaz és mi hamis a versenyen!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen eldöntötted, mi igaz és mi hamis a konyhában!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen eldöntötted, mi igaz és mi hamis a meccsen!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen eldöntötted, mi igaz és mi hamis az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen eldöntötted, mi igaz és mi hamis az űrben!"
+        }
+      }
+    }
+  ]
+}

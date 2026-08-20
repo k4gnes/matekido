@@ -271,6 +271,10 @@ export function renderDivision(step, root, next, progress, onResult, onAttempt) 
 
     root.append(card);
 
+    if (result.isInput && result.input) {
+        requestAnimationFrame(() => result.input.focus());
+    }
+
     function checkAnswer(isCorrect) {
         if (answered) return;
 

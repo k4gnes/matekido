@@ -19,11 +19,13 @@ import { generateMoneyCompare } from "./moneyCompareGenerator.js?v=3";
 import { generateMoneyEnough } from "./moneyEnoughGenerator.js?v=3";
 import { generateMeasureCompare } from "./measureCompareGenerator.js?v=3";
 import { generateMeasureSquares } from "./measureSquaresGenerator.js?v=3";
-import { generateWordProblems } from "./wordProblemGenerator.js?v=4";
+import { generateWordProblems } from "./wordProblemGenerator.js?v=5";
 import { generateMultPrep } from "./multPrepGenerator.js?v=2";
-import { generateMultiplication } from "./multiplicationGenerator.js?v=1";
+import { generateMultiplication } from "./multiplicationGenerator.js?v=2";
 import { generateDivision } from "./divisionGenerator.js?v=2";
 import { generateMissingOperand } from "./missingOperandGenerator.js?v=1";
+import { generateEstimate } from "./estimateGenerator.js?v=1";
+import { generateTrueFalse } from "./trueFalseGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -89,6 +91,10 @@ export function generate(step) {
             return generateDivision(opts);
         case "missing-operand":
             return generateMissingOperand(opts);
+        case "estimate":
+            return generateEstimate(opts);
+        case "true-false":
+            return generateTrueFalse(opts);
 
         default:
             throw new Error(

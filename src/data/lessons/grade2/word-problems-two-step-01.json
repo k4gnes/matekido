@@ -1,0 +1,69 @@
+{
+  "id": "grade2-word-problems-two-step-01",
+  "title": "📝 Kétlépéses szöveges feladatok",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📝 Kétlépéses történetek",
+      "text": "Ezek a feladatok két lépésből állnak! Először az első lépést oldd meg, aztán a másodikat!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Kétlépéses versenyfeladatok",
+          "text": "Ezek a feladatok két lépésből állnak! Először az első lépést oldd meg, aztán a másodikat!"
+        },
+        "cooking": {
+          "title": "🍳 Kétlépéses receptek",
+          "text": "Ezek a feladatok két lépésből állnak! Először az első lépést oldd meg, aztán a másodikat!"
+        },
+        "football": {
+          "title": "⚽ Kétlépéses meccsfeladatok",
+          "text": "Ezek a feladatok két lépésből állnak! Először az első lépést oldd meg, aztán a másodikat!"
+        },
+        "animals": {
+          "title": "🦁 Kétlépéses állatfeladatok",
+          "text": "Ezek a feladatok két lépésből állnak! Először az első lépést oldd meg, aztán a másodikat!"
+        },
+        "space": {
+          "title": "🤖 Kétlépéses űrfeladatok",
+          "text": "Ezek a feladatok két lépésből állnak! Először az első lépést oldd meg, aztán a másodikat!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 5,
+        "max": 20,
+        "kind": "two-step"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megoldottad a kétlépéses feladatokat!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a kétlépéses versenyfeladatokat!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a kétlépéses recepteket!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a kétlépéses meccsfeladatokat!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megoldottad a kétlépéses állatfeladatokat!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad a kétlépéses űrfeladatokat!"
+        }
+      }
+    }
+  ]
+}

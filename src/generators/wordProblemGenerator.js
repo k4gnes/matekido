@@ -272,6 +272,10 @@ export function generateWordProblems(options = {}) {
         for (let i = 0; i < count; i++) {
             tasks.push(generateDivide(max, world));
         }
+    } else if (kind === "two-step") {
+        for (let i = 0; i < count; i++) {
+            tasks.push(generateTwoStep(max, world));
+        }
     } else {
         for (let i = 0; i < count; i++) {
             tasks.push(generateTask(KINDS[i % KINDS.length], max, world));
@@ -454,4 +458,58 @@ function generateDivide(max, world) {
 
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const TWO_STEP_THEMES = {
+    postman: [
+        { text: (a, b, c) => `A postán ${a} csomag van. ${b} újabb csomag érkezik. Aztán ${c} csomagot visznek el. Hány csomag van most a postán?`, question: "Hány csomag van most a postán?", success: (ans) => `😊 Szép munka! Most ${ans} csomag van a postán!` },
+        { text: (a, b, c) => `A postaládában ${a} levél van. Tibi ${b} levelet tesz bele. Aztán ${c} levelet kivesz. Hány levél van a ládában?`, question: "Hány levél van a ládában?", success: (ans) => `😊 Szép munka! Most ${ans} levél van a ládában!` }
+    ],
+    racing: [
+        { text: (a, b, c) => `A versenyautó ${a} km-t ment az első körben. A második körben ${b} km-t. Aztán ${c} km-t visszafelé. Hány km-t ment összesen?`, question: "Hány km-t ment összesen?", success: (ans) => `😊 Szép munka! Összesen ${ans} km-t ment!` },
+        { text: (a, b, c) => `A garázsban ${a} kerék van. ${b} új kerék érkezik. Aztán ${c} kereket szerelnek fel. Hány kerék marad a garázsban?`, question: "Hány kerék marad a garázsban?", success: (ans) => `😊 Szép munka! ${ans} kerék maradt a garázsban!` }
+    ],
+    cooking: [
+        { text: (a, b, c) => `A tálban ${a} tojás van. Ancsika ${b} tojást üt bele. Aztán ${c} tojást félretesz. Hány tojás marad a tálban?`, question: "Hány tojás marad a tálban?", success: (ans) => `😊 Szép munka! ${ans} tojás maradt a tálban!` },
+        { text: (a, b, c) => `${a} palacsinta van a tányéron. ${b} palacsintát megsütünk még. Aztán ${c}-t megesznek. Hány palacsinta van a tányéron?`, question: "Hány palacsinta van a tányéron?", success: (ans) => `😊 Szép munka! ${ans} palacsinta van a tányéron!` }
+    ],
+    football: [
+        { text: (a, b, c) => `A csapatban ${a} játékos van. ${b} játékos csatlakozik. Aztán ${c} játékos lecserélik. Hány játékos van a pályán?`, question: "Hány játékos van a pályán?", success: (ans) => `😊 Szép munka! ${ans} játékos van a pályán!` },
+        { text: (a, b, c) => `${a} gól esett az első félidőben. A második félidőben ${b} gól. Aztán ${c} gólt érvénytelenítettek. Hány gól maradt?`, question: "Hány gól maradt?", success: (ans) => `😊 Szép munka! ${ans} gól maradt!` }
+    ],
+    animals: [
+        { text: (a, b, c) => `A kifutóban ${a} zebra van. ${b} zebra érkezik. Aztán ${c} zebrát bezárnak a ketrecbe. Hány zebra marad a kifutóban?`, question: "Hány zebra marad a kifutóban?", success: (ans) => `😊 Szép munka! ${ans} zebra maradt a kifutóban!` },
+        { text: (a, b, c) => `${a} madár ül a fán. ${b} madár Repül oda. Aztán ${c} madár elrepül. Hány madár marad a fán?`, question: "Hány madár marad a fán?", success: (ans) => `😊 Szép munka! ${ans} madár maradt a fán!` }
+    ],
+    space: [
+        { text: (a, b, c) => `Az űrállomáson ${a} robot van. ${b} robot érkezik a rakétával. Aztán ${c} robotot a bolygóra küldenek. Hány robot marad az űrállomáson?`, question: "Hány robot marad az űrállomáson?", success: (ans) => `😊 Szép munka! ${ans} robot maradt az űrállomáson!` },
+        { text: (a, b, c) => `${a} rakéta van a dokkban. ${b} rakéta indul el. Aztán ${c} rakéta érkezik. Hány rakéta van most a dokkban?`, question: "Hány rakéta van most a dokkban?", success: (ans) => `😊 Szép munka! ${ans} rakéta van a dokkban!` }
+    ]
+};
+
+function generateTwoStep(max, world) {
+    const templates = TWO_STEP_THEMES[world] ?? TWO_STEP_THEMES.postman;
+    const template = templates[Math.floor(Math.random() * templates.length)];
+
+    const a = random(5, Math.floor(max * 0.5));
+    const b = random(3, Math.floor(max * 0.4));
+    const intermediate = a + b;
+    const c = random(2, Math.min(intermediate - 1, 8));
+    const answer = intermediate - c;
+
+    return {
+        kind: "two-step",
+        world,
+        title: "📝 Kétlépéses feladat",
+        text: template.text(a, b, c),
+        question: template.question,
+        a,
+        b,
+        c,
+        intermediate,
+        answer,
+        firstAnswer: intermediate,
+        successText: template.success(answer),
+        options: makeOptions(answer, 0, max + 5)
+    };
 }

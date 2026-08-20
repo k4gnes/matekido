@@ -249,19 +249,33 @@ export function buildLesson(lesson) {
                     interaction: task.interaction
                 });
             } else if (step.generator === "multiplication") {
-                result.push({
-                    type: task.type,
-                    a: task.a,
-                    b: task.b,
-                    answer: task.answer,
-                    options: task.options,
-                    expression: task.expression,
-                    total: task.total,
-                    groups: task.groups,
-                    interaction: task.interaction,
-                    statement: task.statement,
-                    tfAnswer: task.tfAnswer
-                });
+                if (task.type === "link") {
+                    result.push({
+                        type: "link",
+                        a: task.a,
+                        b: task.b,
+                        answer: task.answer,
+                        multAnswer: task.multAnswer,
+                        divisor: task.divisor,
+                        expression: task.expression,
+                        options: task.options,
+                        interaction: task.interaction
+                    });
+                } else {
+                    result.push({
+                        type: task.type,
+                        a: task.a,
+                        b: task.b,
+                        answer: task.answer,
+                        options: task.options,
+                        expression: task.expression,
+                        total: task.total,
+                        groups: task.groups,
+                        interaction: task.interaction,
+                        statement: task.statement,
+                        tfAnswer: task.tfAnswer
+                    });
+                }
             } else if (step.generator === "division") {
                 result.push({
                     type: task.type,
@@ -288,6 +302,20 @@ export function buildLesson(lesson) {
                     answer: task.answer,
                     expression: task.expression,
                     interaction: task.interaction
+                });
+            } else if (step.generator === "estimate") {
+                result.push({
+                    type: "estimate",
+                    expression: task.expression,
+                    hint: task.hint,
+                    answer: task.answer,
+                    options: task.options
+                });
+            } else if (step.generator === "true-false") {
+                result.push({
+                    type: "true-false",
+                    statement: task.statement,
+                    answer: task.answer
                 });
             } else {
                 result.push({

@@ -112,10 +112,10 @@ export function renderDecompositionFindWrong(step, root, onNext, progress, onRes
         const isWrong = opt === wrongKey;
 
         const btn = document.createElement("button");
-        btn.style.cssText = "display:flex; flex-direction:column; align-items:center; gap:0.3rem; padding:0.8rem 1.2rem; border:2px solid #ccc; border-radius:12px; background:white; cursor:pointer; font-size:1.2rem; font-weight:bold; transition: transform .15s, border-color .15s;";
+        btn.style.cssText = "display:flex; flex-direction:column; align-items:center; gap:0.3rem; padding:0.8rem 1.2rem; border:2px solid #4F86F7; border-radius:12px; background:#4F86F7; cursor:pointer; font-size:1.2rem; font-weight:bold; color:#fff; transition: transform .15s, border-color .15s;";
 
         const expr = document.createElement("span");
-        expr.style.cssText = "color:#1a1a2e; font-size:1.2rem; font-weight:bold;";
+        expr.style.cssText = "color:inherit; font-size:1.2rem; font-weight:bold;";
         expr.textContent = `${a} + ${b}`;
 
         const emojiRow = document.createElement("span");
@@ -156,6 +156,7 @@ export function renderDecompositionFindWrong(step, root, onNext, progress, onRes
             if (isWrong) {
                 btn.style.borderColor = "#2e7d32";
                 btn.style.background = "#e8f5e9";
+                btn.style.color = "#1a1a2e";
 
                 const star = document.createElement("span");
                 star.textContent = " ⭐";
@@ -168,6 +169,7 @@ export function renderDecompositionFindWrong(step, root, onNext, progress, onRes
             } else {
                 btn.style.borderColor = "#c62828";
                 btn.style.background = "#ffebee";
+                btn.style.color = "#1a1a2e";
 
                 const cross = document.createElement("span");
                 cross.textContent = " ❌";
@@ -179,6 +181,7 @@ export function renderDecompositionFindWrong(step, root, onNext, progress, onRes
                         if (bText === wrongKey) {
                             b.style.borderColor = "#2e7d32";
                             b.style.background = "#e8f5e9";
+                            b.style.color = "#1a1a2e";
                             const star = document.createElement("span");
                             star.textContent = " ⭐";
                             b.querySelector("span").append(star);

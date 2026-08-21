@@ -178,7 +178,7 @@ export function renderProfilePage(root, onBack, onStats, onPractice) {
 
     // --- Navigation buttons ---
     const buttonRow = document.createElement("div");
-    buttonRow.style.cssText = "display:flex; gap:.5rem; justify-content:center; margin-top:1rem;";
+    buttonRow.style.cssText = "display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center; margin-top:1rem;";
 
     const statsButton = createButton("📋 Eredményeim", {
         onClick: () => onStats?.()

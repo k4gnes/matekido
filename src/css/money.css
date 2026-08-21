@@ -182,10 +182,10 @@
     margin: 0;
     font-size: 1.6rem;
     font-weight: 800;
-    border: 2px solid #bbb;
+    border: 2px solid var(--primary);
     border-radius: 12px;
-    background: #fff;
-    color: var(--text);
+    background: var(--primary);
+    color: #fff;
     cursor: pointer;
     transition: transform .15s, background-color .15s;
     display: inline-flex;
@@ -194,7 +194,7 @@
 }
 
 .money-cmp-op:hover {
-    background: #eef6ff;
+    background: #2563eb;
     transform: scale(1.08);
 }
 
@@ -212,17 +212,17 @@
     font-size: 1.1rem;
     font-weight: 700;
     border-radius: 12px;
-    border: 2px solid #cbd5e1;
-    background: #fff;
-    color: #1a1a2e;
+    border: 2px solid var(--primary);
+    background: var(--primary);
+    color: #fff;
 }
 
 .money-enough-yes:hover {
     border-color: #2e7d32;
-    background: #e8f5e9;
+    background: #2e7d32;
 }
 
 .money-enough-no:hover {
     border-color: #c62828;
-    background: #ffebee;
+    background: #c62828;
 }

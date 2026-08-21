@@ -356,7 +356,8 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
             reported = true;
             onResult?.(true);
         }
-        setTimeout(() => next(), 900);
+        const nextBtn = createButton("➡️ Tovább", { className: "wp-next", onClick: () => next() });
+        card.append(nextBtn);
     }
 
     function reportRetry() {

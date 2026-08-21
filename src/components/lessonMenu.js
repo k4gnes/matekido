@@ -533,7 +533,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch) {
     renderContent();
 
     const buttonRow = document.createElement("div");
-    buttonRow.style.cssText = "display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center; align-items:center; margin-bottom:1rem;";
+    buttonRow.className = "menu-player-row";
 
     const allPlayers = listPlayers();
     const activeId = getActiveId();
@@ -548,8 +548,8 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch) {
 
     if (currentPlayer) {
         const avatar = document.createElement("span");
+        avatar.className = "menu-player-name";
         avatar.textContent = `${currentPlayer.avatar} ${currentPlayer.name}`;
-        avatar.style.cssText = "font-size:1.4rem; line-height:1; display:inline-flex; align-items:center;";
         buttonRow.append(avatar);
     }
 

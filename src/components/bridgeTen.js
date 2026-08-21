@@ -30,7 +30,7 @@ export function renderBridgeTen(step, root, onNext, progress, onResult, onAttemp
     options.forEach(opt => {
         const [x, y] = opt.text.split("+").map(Number);
         const btn = document.createElement("button");
-        btn.style.cssText = "padding:0.6rem 1.2rem; border:2px solid #ccc; border-radius:12px; background:white; cursor:pointer; font-size:1.1rem; font-weight:bold; color:#1a1a2e; transition: transform .15s, border-color .15s;";
+        btn.style.cssText = "padding:0.6rem 1.2rem; border:2px solid #4F86F7; border-radius:12px; background:#4F86F7; cursor:pointer; font-size:1.1rem; font-weight:bold; color:#fff; transition: transform .15s, border-color .15s;";
         btn.textContent = `${x} + ${y}`;
 
         btn.addEventListener("mouseenter", () => {
@@ -51,6 +51,7 @@ export function renderBridgeTen(step, root, onNext, progress, onResult, onAttemp
             if (opt.correct) {
                 btn.style.borderColor = "#2e7d32";
                 btn.style.background = "#e8f5e9";
+                btn.style.color = "#1a1a2e";
                 message.textContent = "🎉 Jó bontás!";
                 message.style.color = "#2e7d32";
 
@@ -74,6 +75,7 @@ export function renderBridgeTen(step, root, onNext, progress, onResult, onAttemp
             } else {
                 btn.style.borderColor = "#c62828";
                 btn.style.background = "#ffebee";
+                btn.style.color = "#1a1a2e";
                 message.textContent = "🤔 Ez nem jó bontás!";
                 message.style.color = "#c62828";
 

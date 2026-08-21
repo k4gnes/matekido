@@ -40,26 +40,29 @@
     padding: .7rem 1rem;
     font-size: 1.15rem;
     font-weight: 700;
-    border: 2px solid #cbd5e1;
+    border: 2px solid var(--primary);
     border-radius: 12px;
-    background: #fff;
-    color: #1a1a2e;
+    background: var(--primary);
+    color: #fff;
     cursor: pointer;
     transition: transform .15s, border-color .15s, background-color .15s;
 }
 
 .spatial-option:hover {
-    border-color: #4a90d9;
+    border-color: #2563eb;
+    background: #2563eb;
 }
 
 .spatial-option.spatial-option-correct {
     border-color: #2e7d32;
     background: #e8f5e9;
+    color: #1a1a2e;
 }
 
 .spatial-option.spatial-option-wrong {
     border-color: #c62828;
     background: #ffebee;
+    color: #1a1a2e;
 }
 
 .spatial-message {

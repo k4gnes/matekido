@@ -81,7 +81,12 @@ export function renderTrueFalse(step, root, next, progress, onResult, onAttempt)
                 onResult?.(true);
             }
             ac.abort();
-            setTimeout(() => next(), 800);
+            const nextBtn = document.createElement("button");
+            nextBtn.type = "button";
+            nextBtn.className = "tf-next";
+            nextBtn.textContent = "➡️ Tovább";
+            nextBtn.addEventListener("click", () => next());
+            card.append(nextBtn);
         } else {
             if (mistakes === 1) {
                 message.show("🙂 Majdnem! Próbáld meg még egyszer!", "retry");

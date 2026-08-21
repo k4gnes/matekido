@@ -1,14 +1,14 @@
 import { renderScene } from "../components/scene.js";
 import { renderExercise } from "../components/exercise.js";
 import { renderDecomposition } from "../components/decomposition.js";
-import { renderDecompositionFindWrong } from "../components/decompositionFindWrong.js";
+import { renderDecompositionFindWrong } from "../components/decompositionFindWrong.js?v=2";
 import { renderMissingNumber } from "../components/missingNumber.js";
 import { renderComparison } from "../components/comparison.js";
 import { renderNeighbor } from "../components/neighbor.js";
 import { renderNeighborSingle } from "../components/neighborSingle.js";
 import { renderPlaceValue } from "../components/placeValue.js";
 import { renderPlaceValueTwoInput } from "../components/placeValueTwoInput.js";
-import { renderBridgeTen } from "../components/bridgeTen.js";
+import { renderBridgeTen } from "../components/bridgeTen.js?v=2";
 import { renderSequence } from "../components/sequence.js?v=9";
 import { renderOrder } from "../components/order.js?v=9";
 import { renderEvenOdd } from "../components/evenOdd.js?v=9";
@@ -21,13 +21,13 @@ import { renderMoneyCompare } from "../components/moneyCompare.js?v=10";
 import { renderMoneyEnough } from "../components/moneyEnough.js?v=10";
 import { renderMeasureCompare } from "../components/measureCompare.js?v=10";
 import { renderMeasureSquares } from "../components/measureSquares.js?v=10";
-import { renderWordProblem } from "../components/wordProblem.js?v=13";
+import { renderWordProblem } from "../components/wordProblem.js?v=14";
 import { renderMultPrep } from "../components/multPrep.js?v=1";
 import { renderMultiplication } from "../components/multiplication.js?v=2";
 import { renderDivision } from "../components/division.js?v=1";
 import { renderMissingOperand } from "../components/missingOperand.js?v=1";
-import { renderEstimate } from "../components/estimate.js?v=1";
-import { renderTrueFalse } from "../components/trueFalse.js?v=1";
+import { renderEstimate } from "../components/estimate.js?v=2";
+import { renderTrueFalse } from "../components/trueFalse.js?v=2";
 
 
 import { renderCelebration } from "../components/celebration.js";

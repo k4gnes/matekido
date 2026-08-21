@@ -5,27 +5,27 @@
     {
       "type": "scene",
       "title": "📝 Osztásos történetek",
-      "text": "Olvasd el a történetet, és szold meg a feladatot!",
+      "text": "Olvasd el a történetet, és oldd meg a feladatot!",
       "worldTitles": {
         "racing": {
           "title": "🏎️ Osztásos történetek",
-          "text": "Olvasd el a versenytörténetet, és szold meg a feladatot!"
+          "text": "Olvasd el a versenytörténetet, és oldd meg a feladatot!"
         },
         "cooking": {
           "title": "🍳 Osztásos történetek",
-          "text": "Olvasd el a receptet, és szold meg a feladatot!"
+          "text": "Olvasd el a receptet, és oldd meg a feladatot!"
         },
         "football": {
           "title": "⚽ Osztásos történetek",
-          "text": "Olvasd el a meccstörténetet, és szold meg a feladatot!"
+          "text": "Olvasd el a meccstörténetet, és oldd meg a feladatot!"
         },
         "animals": {
           "title": "🦁 Osztásos történetek",
-          "text": "Olvasd el az állatok történetét, és szold meg a feladatot!"
+          "text": "Olvasd el az állatok történetét, és oldd meg a feladatot!"
         },
         "space": {
           "title": "🤖 Osztásos történetek",
-          "text": "Olvasd el az űrtörténetet, és szold meg a feladatot!"
+          "text": "Olvasd el az űrtörténetet, és oldd meg a feladatot!"
         }
       }
     },

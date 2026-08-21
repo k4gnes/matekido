@@ -47,9 +47,10 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #ccc;
+    border: 2px solid var(--primary);
     border-radius: 12px;
-    background: white;
+    background: var(--primary);
+    color: #fff;
     cursor: pointer;
     transition: transform .15s, border-color .15s, background .15s;
     padding: 0;
@@ -62,11 +63,13 @@
 .pattern-option.pattern-correct {
     border-color: #2e7d32;
     background: #e8f5e9;
+    color: #1a1a2e;
 }
 
 .pattern-option.pattern-wrong {
     border-color: #c62828;
     background: #ffebee;
+    color: #1a1a2e;
 }
 
 .pattern-message {

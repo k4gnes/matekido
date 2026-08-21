@@ -1,6 +1,6 @@
 import { createButton } from "./ui/button.js";
-import { createExercise } from "./ui/exercise.js";
-import { createFeedback } from "./ui/feedback.js";
+import { createExercise } from "./ui/exerciseShell.js";
+import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_EMOJI = {
@@ -88,6 +88,7 @@ export function renderComparison(step, root, next, progress, onResult, onAttempt
                 if (feedback.isAnswered()) return;
 
                 if (op === step.operator) {
+                    markCorrect(btn);
                     feedback.success();
                 } else {
                     feedback.retry();

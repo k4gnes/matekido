@@ -1,12 +1,12 @@
 import { createButton } from "./ui/button.js";
 import { createNumberInput } from "./ui/numberInput.js";
-import { createExercise } from "./ui/exercise.js";
+import { createExercise } from "./ui/exerciseShell.js";
 import { createFeedback } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD = {
     postman: { title: "📮 Hány levél van a csomagban?", tens: "📦", ones: "✉️" },
-    racing: { title: "🏎️ Hány szerszám kell összesen?", tens: "🛞", ones: "🔧" },
+    racing: { title: "🏎️ Hány szerszám kell összesen?", tens: "⚙️", ones: "🔧" },
     football: { title: "⚽ Hány játékos van a pályán?", tens: "👨‍🏫", ones: "🏃" },
     cooking: { title: "🍳 Hány kanál kell?", tens: "🍲", ones: "🥄" },
     animals: { title: "🦁 Hány állat van a karámban?", tens: "🦒", ones: "🦁" },

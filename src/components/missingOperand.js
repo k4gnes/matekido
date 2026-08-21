@@ -1,6 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
-import { createFeedback } from "./ui/feedback.js";
+import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -146,7 +146,12 @@ export function renderMissingOperand(step, root, next, progress, onResult, onAtt
         interactiveElement.addEventListener("click", (e) => {
             const btn = e.target.closest(".mult-option");
             if (!btn || feedback.isAnswered()) return;
-            checkAnswer(Number(btn.dataset.value) === step.answer);
+            const value = Number(btn.dataset.value);
+            const ok = value === step.answer;
+
+            if (ok) markCorrect(btn);
+
+            checkAnswer(ok);
         });
     }
 }

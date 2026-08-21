@@ -133,3 +133,8 @@ button:hover {
 .world-unlock-icon{
     font-size:1.5rem;
 }
+.option-correct{
+    border-color:#2e7d32 !important;
+    background:#e8f5e9 !important;
+    color:#1a1a2e !important;
+}

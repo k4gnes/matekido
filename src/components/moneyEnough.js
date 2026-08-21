@@ -1,7 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createMessageBox } from "./ui/messageBox.js";
-import { createFeedback } from "./ui/feedback.js";
+import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { createCoin } from "./ui/coin.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -55,11 +55,11 @@ export function renderMoneyEnough(step, root, next, progress, onResult, onAttemp
 
     const yesBtn = createButton("✅ Igen", {
         className: "money-enough-btn money-enough-yes",
-        onClick: () => answer(true)
+        onClick: () => answer(true, yesBtn)
     });
     const noBtn = createButton("❌ Nem", {
         className: "money-enough-btn money-enough-no",
-        onClick: () => answer(false)
+        onClick: () => answer(false, noBtn)
     });
     buttons.append(yesBtn, noBtn);
     card.append(buttons);
@@ -77,10 +77,11 @@ export function renderMoneyEnough(step, root, next, progress, onResult, onAttemp
         onAttempt
     });
 
-    function answer(guessed) {
+    function answer(guessed, btn) {
         if (feedback.isAnswered()) return;
 
         if (guessed === step.enough) {
+            markCorrect(btn);
             feedback.success(step.enough ? "🎉 Igen, meg tudod venni!" : "🎉 Nem, nincs elég pénz!");
         } else {
             feedback.retry();

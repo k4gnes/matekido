@@ -1,5 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
+import { loadJSON, saveJSON, loadRaw, saveRaw } from "../storage.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getLessonStats, getActiveWorld } from "../profile/Profile.js";
 import { CATEGORIES, SKILLS } from "../data/skills.js";
@@ -8,41 +9,32 @@ const FILTER_STORAGE_KEY = "matekido-lesson-filters";
 const FILTER_OPEN_KEY = "matekido-lesson-filters-open";
 
 function saveFilters(filters) {
-    try {
-        localStorage.setItem(FILTER_STORAGE_KEY, JSON.stringify(filters));
-    } catch {}
+    saveJSON(FILTER_STORAGE_KEY, filters);
 }
 
 function saveFilterOpen(open) {
-    try {
-        localStorage.setItem(FILTER_OPEN_KEY, open ? "1" : "0");
-    } catch {}
+    saveRaw(FILTER_OPEN_KEY, open ? "1" : "0");
 }
 
 function loadFilterOpen() {
-    try {
-        const val = localStorage.getItem(FILTER_OPEN_KEY);
-        if (val === "1") return true;
-        if (val === "0") return false;
-    } catch {}
+    const val = loadRaw(FILTER_OPEN_KEY);
+    if (val === "1") return true;
+    if (val === "0") return false;
     return null;
 }
 
 function loadFilters() {
-    try {
-        const saved = localStorage.getItem(FILTER_STORAGE_KEY);
-        if (saved) {
-            const parsed = JSON.parse(saved);
-            return {
-                difficulty: parsed.difficulty || [],
-                grade: parsed.grade || [],
-                skills: parsed.skills || [],
-                types: (parsed.types || []).map(t => t === "decomposition-find-wrong" ? "decomposition" : t),
-                ranges: parsed.ranges || [],
-                categories: (parsed.categories || []).map(c => ["time", "money", "measurement"].includes(c) ? "practical" : c)
-            };
-        }
-    } catch {}
+    const parsed = loadJSON(FILTER_STORAGE_KEY);
+    if (parsed) {
+        return {
+            difficulty: parsed.difficulty || [],
+            grade: parsed.grade || [],
+            skills: parsed.skills || [],
+            types: (parsed.types || []).map(t => t === "decomposition-find-wrong" ? "decomposition" : t),
+            ranges: parsed.ranges || [],
+            categories: (parsed.categories || []).map(c => ["time", "money", "measurement"].includes(c) ? "practical" : c)
+        };
+    }
     return { difficulty: [], grade: [], skills: [], types: [], ranges: [], categories: [] };
 }
 

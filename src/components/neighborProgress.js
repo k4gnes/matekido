@@ -2,11 +2,11 @@ import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_NEIGHBOR = {
     postman: { done: "🧑", current: "🚪", next: "👤" },
-    racing: { done: "✅", current: "🏁", next: "⬜" },
-    football: { done: "✅", current: "⚽", next: "⬜" },
-    cooking: { done: "✅", current: "🍳", next: "⬜" },
-    animals: { done: "✅", current: "🦁", next: "⬜" },
-    space: { done: "✅", current: "🤖", next: "⬜" }
+    racing: { done: "✅", current: "🏁", next: "⚙️" },
+    football: { done: "✅", current: "⚽", next: "🥅" },
+    cooking: { done: "✅", current: "🍳", next: "🥄" },
+    animals: { done: "✅", current: "🦁", next: "🦒" },
+    space: { done: "✅", current: "🤖", next: "🚀" }
 };
 
 export function renderNeighborProgress({ current, total }) {

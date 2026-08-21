@@ -1,6 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
-import { createFeedback } from "./ui/feedback.js";
+import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const TITLES = {
@@ -86,7 +86,11 @@ export function renderTrueFalse(step, root, next, progress, onResult, onAttempt)
     optionsContainer.addEventListener("click", (e) => {
         const btn = e.target.closest(".tf-option");
         if (!btn || feedback.isAnswered()) return;
-        const selected = btn.dataset.value === "true";
-        checkAnswer(selected === step.answer);
+
+        const ok = (btn.dataset.value === "true") === step.answer;
+
+        if (ok) markCorrect(btn);
+
+        checkAnswer(ok);
     }, { signal: ac.signal });
 }

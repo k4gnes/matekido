@@ -1,8 +1,9 @@
 import { createButton } from "./ui/button.js";
 import { createNumberInput } from "./ui/numberInput.js";
-import { createExercise } from "./ui/exercise.js";
-import { createFeedback } from "./ui/feedback.js";
+import { createExercise } from "./ui/exerciseShell.js";
+import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
+import { makeOptions } from "./ui/optionHelper.js";
 
 const WORLD_TITLES = {
     postman: "📮 Mennyi levél hiányzik?",
@@ -12,31 +13,6 @@ const WORLD_TITLES = {
     animals: "🦁 Hány állat hiányzik?",
     space: "🤖 Hány robot hiányzik?"
 };
-
-function makeOptions(answer, min, max, count = 4) {
-    const options = [answer];
-    const seen = new Set([answer]);
-    const deltas = [1, -1, 2, -2, 3, -3, 5, -5];
-    for (const d of deltas) {
-        if (options.length >= count) break;
-        const v = answer + d;
-        if (v >= min && v <= max && !seen.has(v)) {
-            seen.add(v);
-            options.push(v);
-        }
-    }
-    for (let v = min; v <= max && options.length < count; v++) {
-        if (!seen.has(v)) {
-            seen.add(v);
-            options.push(v);
-        }
-    }
-    for (let i = options.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [options[i], options[j]] = [options[j], options[i]];
-    }
-    return options;
-}
 
 export function renderMissingNumber(step, root, next, progress, onResult, onAttempt) {
 
@@ -66,9 +42,15 @@ export function renderMissingNumber(step, root, next, progress, onResult, onAtte
 
     let input;
     let optionsContainer;
+    let placeholder = null;
 
     if (useChoice) {
-        equation.append(first, plus, equal, result);
+        placeholder = document.createElement("span");
+        placeholder.textContent = "?";
+        placeholder.style.fontWeight = "bold";
+        placeholder.style.color = "#4a90d9";
+
+        equation.append(first, plus, placeholder, equal, result);
 
         const options = makeOptions(step.answer, Math.max(0, step.answer - 10), step.answer + 10);
         optionsContainer = document.createElement("div");
@@ -137,7 +119,18 @@ export function renderMissingNumber(step, root, next, progress, onResult, onAtte
         optionsContainer.addEventListener("click", (e) => {
             const btn = e.target.closest(".mult-option");
             if (!btn || feedback.isAnswered()) return;
-            checkAnswer(Number(btn.dataset.value) === step.answer);
+
+            const value = Number(btn.dataset.value);
+
+            if (value === step.answer) {
+                markCorrect(btn);
+                if (placeholder) {
+                    placeholder.textContent = String(value);
+                    placeholder.style.color = "#2e7d32";
+                }
+            }
+
+            checkAnswer(value === step.answer);
         });
     } else if (input && button) {
         function check() {

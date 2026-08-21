@@ -1,7 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createMessageBox } from "./ui/messageBox.js";
-import { createFeedback } from "./ui/feedback.js";
+import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { createCoin } from "./ui/coin.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -75,6 +75,7 @@ export function renderMoneyCompare(step, root, next, progress, onResult, onAttem
                 if (feedback.isAnswered()) return;
 
                 if (op === step.operator) {
+                    markCorrect(btn);
                     feedback.success();
                 } else {
                     feedback.retry();

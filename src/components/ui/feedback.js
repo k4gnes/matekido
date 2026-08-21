@@ -1,5 +1,9 @@
 import { createButton } from "./button.js";
 
+export function markCorrect(el) {
+    if (el) el.classList.add("option-correct");
+}
+
 export function createFeedback({ message, container, onNext, onResult, onAttempt }) {
 
     let answered = false;

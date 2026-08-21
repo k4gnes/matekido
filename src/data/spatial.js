@@ -92,7 +92,7 @@ export const OBJECTS = [
     { id: "level", name: "levél", article: "a", emoji: "✉️" },
     { id: "csomag", name: "csomag", article: "a", emoji: "📦" },
     { id: "kulcs", name: "kulcs", article: "a", emoji: "🗝️" },
-    { id: "kerek", name: "kerék", article: "a", emoji: "🛞" },
+    { id: "kerek", name: "kerék", article: "a", emoji: "⚙️" },
     { id: "sisak", name: "sisak", article: "a", emoji: "⛑️" },
     { id: "kesztyu", name: "kesztyű", article: "a", emoji: "🧤" },
     { id: "tojas", name: "tojás", article: "a", emoji: "🥚" },

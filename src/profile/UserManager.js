@@ -1,3 +1,5 @@
+import { loadJSON, saveJSON, loadRaw, removeKeys } from "../storage.js";
+
 const STORAGE_KEY = "matekido-users";
 const LEGACY_KEY = "matekido-profile";
 
@@ -60,13 +62,20 @@ function syncNextId(players) {
 
 function migrateLegacy() {
 
-    const legacy = localStorage.getItem(LEGACY_KEY);
+    const legacy = loadRaw(LEGACY_KEY);
 
     if (!legacy) {
         return null;
     }
 
-    const profile = { ...DEFAULT_PROFILE, ...JSON.parse(legacy) };
+    let legacyProfile;
+    try {
+        legacyProfile = JSON.parse(legacy);
+    } catch {
+        return null;
+    }
+
+    const profile = { ...DEFAULT_PROFILE, ...legacyProfile };
 
     const player = {
         id: generateId(),
@@ -77,18 +86,17 @@ function migrateLegacy() {
 
     const data = { players: [player], activeId: player.id };
 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-    localStorage.removeItem(LEGACY_KEY);
+    saveJSON(STORAGE_KEY, data);
+    removeKeys(LEGACY_KEY);
 
     return data;
 }
 
 export function loadUsers() {
 
-    const saved = localStorage.getItem(STORAGE_KEY);
+    const data = loadJSON(STORAGE_KEY);
 
-    if (saved) {
-        const data = JSON.parse(saved);
+    if (data && Array.isArray(data.players)) {
         syncNextId(data.players);
         return data;
     }
@@ -100,14 +108,14 @@ export function loadUsers() {
         return migrated;
     }
 
-    const data = { players: [], activeId: null };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    const fresh = { players: [], activeId: null };
+    saveJSON(STORAGE_KEY, fresh);
 
-    return data;
+    return fresh;
 }
 
 export function saveUsers(data) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    saveJSON(STORAGE_KEY, data);
 }
 
 export function listPlayers() {
@@ -179,8 +187,5 @@ export function switchPlayer(id) {
     data.activeId = id;
     saveUsers(data);
 
-    try {
-        localStorage.removeItem("matekido-lesson-filters");
-        localStorage.removeItem("matekido-lesson-filters-open");
-    } catch {}
+    removeKeys("matekido-lesson-filters", "matekido-lesson-filters-open");
 }

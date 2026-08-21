@@ -2,8 +2,9 @@ import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createNumberInput } from "./ui/numberInput.js";
 import { createMessageBox } from "./ui/messageBox.js";
-import { createFeedback } from "./ui/feedback.js";
+import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
+import { makeOptions } from "./ui/optionHelper.js";
 
 const TITLES = {
     postman: {
@@ -40,31 +41,6 @@ const TITLES = {
 
 function getTitle(world, type) {
     return TITLES[world]?.[type] ?? TITLES.postman[type];
-}
-
-function makeOptions(answer, min, max, count = 4) {
-    const options = [answer];
-    const seen = new Set([answer]);
-    const deltas = [1, -1, 2, -2, 3, -3, 5, -5];
-    for (const d of deltas) {
-        if (options.length >= count) break;
-        const v = answer + d;
-        if (v >= min && v <= max && !seen.has(v)) {
-            seen.add(v);
-            options.push(v);
-        }
-    }
-    for (let v = min; v <= max && options.length < count; v++) {
-        if (!seen.has(v)) {
-            seen.add(v);
-            options.push(v);
-        }
-    }
-    for (let i = options.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [options[i], options[j]] = [options[j], options[i]];
-    }
-    return options;
 }
 
 function renderChoiceButtons(answer, min, max, className) {
@@ -153,15 +129,17 @@ function renderSkipCounting(step, card) {
     const sequence = document.createElement("div");
     sequence.className = "mp-sequence";
 
+    let missingSpan = null;
+
     step.terms.forEach((num, index) => {
         if (index === step.missingIndex) {
             if (step.interaction === "choice") {
-                const span = document.createElement("span");
-                span.className = "mp-term";
-                span.textContent = "?";
-                span.style.fontWeight = "bold";
-                span.style.color = "#4a90d9";
-                sequence.append(span);
+                missingSpan = document.createElement("span");
+                missingSpan.className = "mp-term";
+                missingSpan.textContent = "?";
+                missingSpan.style.fontWeight = "bold";
+                missingSpan.style.color = "#4a90d9";
+                sequence.append(missingSpan);
             } else {
                 const input = createNumberInput();
                 input.className = "mp-input";
@@ -188,7 +166,7 @@ function renderSkipCounting(step, card) {
     if (step.interaction === "choice") {
         const el = renderChoiceButtons(step.answer, step.answer - 10, step.answer + 10, "mp-options");
         card.append(el);
-        return { element: el, isInput: false };
+        return { element: el, isInput: false, missingSpan };
     }
 
     return { input: null, isInput: true, needsButton: true };
@@ -295,7 +273,18 @@ export function renderMultPrep(step, root, next, progress, onResult, onAttempt) 
         result.element.addEventListener("click", (e) => {
             const btn = e.target.closest(".mp-option");
             if (!btn || feedback.isAnswered()) return;
-            checkAnswer(Number(btn.dataset.value) === step.answer);
+
+            const value = Number(btn.dataset.value);
+
+            if (value === step.answer) {
+                markCorrect(btn);
+                if (result.missingSpan) {
+                    result.missingSpan.textContent = String(value);
+                    result.missingSpan.style.color = "#2e7d32";
+                }
+            }
+
+            checkAnswer(value === step.answer);
         });
     }
 }

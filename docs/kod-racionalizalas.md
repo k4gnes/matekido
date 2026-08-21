@@ -70,6 +70,15 @@ Olvashatóbb, új típusnál egy sor hozzáadás. (Hosszabb távon a renderer-sw
 
 - ✅ **1. pont kész:** `src/components/ui/feedback.js` (`createFeedback`) – 25 komponens migrálva (`addition`, `subtraction`, `mixed`, `missingNumber`, `neighbor`, `neighborSingle`, `sequence`, `placeValue`, `placeValueTwoInput`, `missingOperand`, `multPrep`, `multiplication`, `division`, `comparison`, `moneyCompare`, `measureCompare`, `moneyEnough`, `evenOdd`, `order`, `shapeSort`, `moneyPay`, `measureSquares`, `wordProblem`, `estimate`, `trueFalse`). A `retry(customText)` opcionális egyedi üzenetet is fogad (pl. `moneyPay`, `measureSquares`). A `.wp-next` / `.est-next` / `.tf-next` CSS-osztályok törölve, helyette a közös `.next-btn` (`base.css`).
 - ⚠️ Nem migrált (szándékosan): `bridgeTen.js` és `decompositionFindWrong.js` – saját kizárásos mechanikájuk van (rossz opció kiszürkül), a Tovább gomb náluk már korábban megvolt; `pattern.js`, `time.js`, `spatial.js` – saját Tovább-implementációval működnek, később egységesíthetők.
+- ✅ **2. pont kész:** a `makeOptions` helyi másolatok törölve 8 fájlból (`addition`, `subtraction`, `mixed`, `missingNumber`, `neighbor`, `neighborSingle`, `sequence`, `multPrep`), mind az `ui/optionHelper.js`-ből importál (~190 sor duplikáció eltűnt). A ±10-es delta-eltérés (a közös helper extra csali-lehetősége a tartomány szélén) elfogadva.
+- ✅ **3. pont kész:** `Game.js` – az `isCounted` 35 tagú lánc modul-szintű `COUNTED_TYPES` Set-té alakítva (tartalom ellenőrzötten azonos).
+- ✅ **Renderer-regisztrációs térkép:** a `Game.js` 170 soros switch helyett `RENDERERS` Map + `SKILL_BY_TYPE` kivételek (scene/celebration külön korai visszatéréssel); a fájl 390 → ~325 sor.
+- ✅ **`src/storage.js` util:** `loadJSON` / `saveJSON` / `loadRaw` / `saveRaw` / `removeKeys` – a localStorage try/catch boilerplate eltűnt a `lessonMenu.js`-ből és a `UserManager.js`-ből (utóbbi eddig nagyrészt védetlen volt, most hibatűrő; a sérült legacy JSON migrációja biztonságosan elutasul).
+- ✅ **`ui/exercise.js` → `ui/exerciseShell.js` átnevezve** – nem ütközik többé a `components/exercise.js` diszpécszerrel.
+- ✅ **Egységes `?v=`:** minden `Game.js`-beli és a diszpécszer komponens-importja verzióparaméteres.
+- ✅ **aria-live:** a `messageBox` `aria-live="polite"` attribútumot kapott – a képernyőolvasók jelzik a visszajelzéseket.
+- ✅ **SW cache:** `matekido-v4` – a korábbi verziókból fennmaradt elavult URL-ek törlődnek.
+- ✅ **Helyes válasz kiemelése választós feladatoknál:** a jó gomb zöldre vált (`.option-correct`, base.css), és ahol kérdőjel jelöli a hiányzó számot (`missingNumber`, `mixed`, `multPrep` skip-counting), a helyes szám kerül a helyére zölden. Minden kattintós választós komponens egységesen (`markCorrect` a `feedback.js`-ből).
 - ✅ Kék válaszgombok egységesen minden választós feladattípusnál
 - ⚠️ `optionHelper.js` létezik, de csak részben használt (2. pont)
 

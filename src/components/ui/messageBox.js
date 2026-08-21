@@ -2,6 +2,7 @@ export function createMessageBox() {
 
     const element = document.createElement("p");
     element.className = "message";
+    element.setAttribute("aria-live", "polite");
 
     function show(text, state = "") {
 

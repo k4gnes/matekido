@@ -12,7 +12,7 @@
         "racing": {
           "title": "🏎️ Rakd össze, hány szerszám kell!",
           "text": "Számold ki, mennyi szerszámra van szükség, ha egy kerék épp 10 szerszámot ér!",
-          "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>🛞</span> <span style='font-size:1.1rem;'>= 10 db</span> <span style='font-size:1.8rem;'>🔧</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 kerék = 10 alkatrész</div>"
+          "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>⚙️</span> <span style='font-size:1.1rem;'>= 10 db</span> <span style='font-size:1.8rem;'>🔧</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 kerék = 10 alkatrész</div>"
         },
         "football": {
           "title": "⚽ Rakd össze, hogy hány játékos van a pályán!",

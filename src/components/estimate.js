@@ -1,6 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
-import { createFeedback } from "./ui/feedback.js";
+import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const TITLES = {
@@ -88,6 +88,11 @@ export function renderEstimate(step, root, next, progress, onResult, onAttempt) 
     optionsContainer.addEventListener("click", (e) => {
         const btn = e.target.closest(".est-option");
         if (!btn || feedback.isAnswered()) return;
-        checkAnswer(Number(btn.dataset.value) === step.answer);
+
+        const ok = Number(btn.dataset.value) === step.answer;
+
+        if (ok) markCorrect(btn);
+
+        checkAnswer(ok);
     }, { signal: ac.signal });
 }

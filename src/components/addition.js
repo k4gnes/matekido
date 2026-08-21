@@ -2,33 +2,9 @@ import { renderAdditionHint } from "./hints/additionHint.js";
 import { createButton } from "./ui/button.js";
 import { createNumberInput } from "./ui/numberInput.js";
 import { createHintBox } from "./ui/hintBox.js";
-import { createExercise } from "./ui/exercise.js";
-import { createFeedback } from "./ui/feedback.js";
-
-function makeOptions(answer, min, max, count = 4) {
-    const options = [answer];
-    const seen = new Set([answer]);
-    const deltas = [1, -1, 2, -2, 3, -3, 5, -5, 10, -10];
-    for (const d of deltas) {
-        if (options.length >= count) break;
-        const v = answer + d;
-        if (v >= min && v <= max && !seen.has(v)) {
-            seen.add(v);
-            options.push(v);
-        }
-    }
-    for (let v = min; v <= max && options.length < count; v++) {
-        if (!seen.has(v)) {
-            seen.add(v);
-            options.push(v);
-        }
-    }
-    for (let i = options.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [options[i], options[j]] = [options[j], options[i]];
-    }
-    return options;
-}
+import { createExercise } from "./ui/exerciseShell.js";
+import { createFeedback, markCorrect } from "./ui/feedback.js";
+import { makeOptions } from "./ui/optionHelper.js";
 
 export function renderAddition(step, root, next, progress, onResult, onAttempt) {
 
@@ -147,7 +123,13 @@ export function renderAddition(step, root, next, progress, onResult, onAttempt) 
         optionsContainer.addEventListener("click", (e) => {
             const btn = e.target.closest(".mult-option");
             if (!btn || feedback.isAnswered()) return;
-            checkAnswer(Number(btn.dataset.value) === correctAnswer);
+            const value = Number(btn.dataset.value);
+
+            if (value === correctAnswer) {
+                markCorrect(btn);
+            }
+
+            checkAnswer(value === correctAnswer);
         });
     } else if (input && button) {
         function check() {

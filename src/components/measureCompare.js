@@ -1,7 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createMessageBox } from "./ui/messageBox.js";
-import { createFeedback } from "./ui/feedback.js";
+import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_EMOJI = {
@@ -131,6 +131,7 @@ export function renderMeasureCompare(step, root, next, progress, onResult, onAtt
                 if (feedback.isAnswered()) return;
 
                 if (opt.correct) {
+                    markCorrect(btn);
                     feedback.success(
                         step.answer === "equal"
                             ? `🎉 Igen, egyformán hosszúak: mindkettő ${step.lengthA} négyzet!`

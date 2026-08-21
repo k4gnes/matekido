@@ -2,13 +2,13 @@ import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createMessageBox } from "./ui/messageBox.js";
 import { createNumberInput } from "./ui/numberInput.js";
-import { createFeedback } from "./ui/feedback.js";
+import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
 
 const ITEM_EMOJI = {
-    racing: "🛞",
+    racing: "⚙️",
     cooking: "🥚",
     football: "⚽",
     animals: "🦓",
@@ -109,7 +109,7 @@ const PART_LEGEND = {
         other: "🟢 zöld nyakörvű: ?"
     },
     space: {
-        part: (n) => `🩶 ${n} működő`,
+        part: (n) => `🤖 ${n} működő`,
         other: "🟣 töltődik: ?"
     }
 };
@@ -401,6 +401,7 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
             const btn = createButton(String(value), { className: "wp-option" });
             btn.addEventListener("click", () => {
                 if (value === step.answer) {
+                    markCorrect(btn);
                     reportSuccess(step.successText);
                 } else {
                     reportRetry();
@@ -483,6 +484,7 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
             const btn = createButton(String(value), { className: "wp-option" });
             btn.addEventListener("click", () => {
                 if (value === step.answer) {
+                    markCorrect(btn);
                     reportSuccess(step.successText);
                 } else {
                     reportRetry();
@@ -505,6 +507,7 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
             const btn = createButton(String(value), { className: "wp-option" });
             btn.addEventListener("click", () => {
                 if (value === step.answer) {
+                    markCorrect(btn);
                     reportSuccess(step.successText);
                 } else {
                     reportRetry();
@@ -576,6 +579,7 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
                         }
                     } else {
                         if (value === step.answer) {
+                            markCorrect(btn);
                             reportSuccess(step.successText);
                         } else {
                             reportRetry();

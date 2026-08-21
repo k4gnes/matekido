@@ -14,7 +14,7 @@ export const ITEMS = [
     { id: "lufi", emoji: "🎈", name: "lufi" },
     { id: "virag", emoji: "🌸", name: "virág" },
     { id: "zokni", emoji: "🧦", name: "zokni" },
-    { id: "le", emoji: "🧃", name: "lé" },
+    { id: "le", emoji: "🥤", name: "lé" },
     { id: "perec", emoji: "🥨", name: "perec" },
     { id: "csokolade", emoji: "🍫", name: "csokoládé" }
 ];

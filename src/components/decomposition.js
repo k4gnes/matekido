@@ -86,7 +86,7 @@ export function renderDecomposition(step, root, onNext, progress, onResult, onAt
         if (isPostman && item._stamp) {
             item._stamp.style.opacity = selected ? "1" : "0";
         } else if (isRacing) {
-            item.textContent = selected ? "🛞" : "🔧";
+            item.textContent = selected ? "⚙️" : "🔧";
         } else if (isCooking) {
             item.textContent = selected ? "🌶️" : "🥄";
         } else if (isFootball) {

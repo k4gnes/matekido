@@ -12,7 +12,7 @@ const WORLD_TITLES = {
     },
     subtraction: {
         postman: (i) => `🎒 ${i}. táska`,
-        racing: (i) => `🛞 ${i}. kerék`,
+        racing: (i) => `⚙️ ${i}. kerék`,
         football: (i) => `⚽ ${i}. félidő`,
         cooking: (i) => `🍳 ${i}. étel`,
         animals: (i) => `🦒 ${i}. karám`,

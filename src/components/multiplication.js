@@ -1,6 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
-import { createFeedback } from "./ui/feedback.js";
+import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const TITLES = {
@@ -384,13 +384,18 @@ export function renderMultiplication(step, root, next, progress, onResult, onAtt
             const btn = e.target.closest(".mult-option");
             if (!btn || feedback.isAnswered()) return;
 
+            let ok;
             if (step.type === "match-groups") {
-                checkAnswer(btn.dataset.correct === "1");
+                ok = btn.dataset.correct === "1";
             } else if (step.interaction === "tf") {
-                checkAnswer((btn.dataset.value === "true") === step.tfAnswer);
+                ok = (btn.dataset.value === "true") === step.tfAnswer;
             } else {
-                checkAnswer(Number(btn.dataset.value) === step.answer);
+                ok = Number(btn.dataset.value) === step.answer;
             }
+
+            if (ok) markCorrect(btn);
+
+            checkAnswer(ok);
         });
     }
 }

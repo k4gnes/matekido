@@ -1,6 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
-import { createFeedback } from "./ui/feedback.js";
+import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const TITLES = {
@@ -320,11 +320,13 @@ export function renderDivision(step, root, next, progress, onResult, onAttempt) 
             const btn = e.target.closest(".div-option");
             if (!btn || feedback.isAnswered()) return;
 
-            if (step.interaction === "tf") {
-                checkAnswer((btn.dataset.value === "true") === step.tfAnswer);
-            } else {
-                checkAnswer(Number(btn.dataset.value) === step.answer);
-            }
+            const ok = step.interaction === "tf"
+                ? (btn.dataset.value === "true") === step.tfAnswer
+                : Number(btn.dataset.value) === step.answer;
+
+            if (ok) markCorrect(btn);
+
+            checkAnswer(ok);
         });
     }
 }

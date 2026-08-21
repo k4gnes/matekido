@@ -150,6 +150,14 @@ export function createLessonCard(lesson, onSelect, activeWorld) {
         badges.append(diffBadge);
     }
 
+    if (lesson.grades?.length) {
+        const gradeBadge = document.createElement("span");
+        gradeBadge.className = "lesson-grade-badge";
+        const g = lesson.grades;
+        gradeBadge.textContent = g.length === 1 ? `${g[0]}. osztály` : `${g[0]}–${g[g.length - 1]}. osztály`;
+        badges.append(gradeBadge);
+    }
+
     lessonCard.append(badges, title, subtitle);
 
     const stats = getLessonStats(lesson.file);

@@ -61,7 +61,18 @@ const TYPE_EMOJI = {
     "money-enough": "🛒",
     "measure-compare": "📏",
     "measure-squares": "🧮",
-    "word-problem": "📝"
+    "word-problem": "📝",
+    estimate: "🧮",
+    "true-false": "✅",
+    table: "✖️",
+    "division-table": "➗",
+    sharing: "🍕",
+    "equal-groups": "🍅",
+    "repeated-addition": "➕",
+    "skip-counting": "🔢",
+    link: "🔗",
+    "missing-operand": "❓",
+    "missing-factor": "❓"
 };
 
 const TYPE_GROUPS = {
@@ -90,7 +101,18 @@ const TYPE_LABEL = {
     "money-enough": "Elég-e a pénz?",
     "measure-compare": "Hosszúság összehasonlítás",
     "measure-squares": "Mérés négyzetekkel",
-    "word-problem": "Szöveges feladat"
+    "word-problem": "Szöveges feladat",
+    estimate: "Becslés",
+    "true-false": "Igaz/Hamis",
+    table: "Szorzótábla",
+    "division-table": "Osztás",
+    sharing: "Elosztás",
+    "equal-groups": "Egyenlő csoportok",
+    "repeated-addition": "Ismételt összeadás",
+    "skip-counting": "Lépegető számolás",
+    link: "Szorzás–osztás kapcsolat",
+    "missing-operand": "Hiányzó tag",
+    "missing-factor": "Hiányzó tényező"
 };
 
 const RANGE_LABEL = {
@@ -432,7 +454,7 @@ function filterLessons(lessons, filters) {
     });
 }
 
-export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch) {
+export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onSkillMap) {
 
     root.replaceChildren();
 
@@ -465,6 +487,15 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch) {
     });
     filterToggle.className = "filter-toggle-btn";
 
+    const infoButton = createButton("📚 Készségtérkép", {
+        onClick: () => onSkillMap()
+    });
+    infoButton.className = "filter-toggle-btn";
+
+    const menuToolbar = document.createElement("div");
+    menuToolbar.className = "menu-toolbar";
+    menuToolbar.append(filterToggle, infoButton);
+
     const filterPanel = document.createElement("div");
     filterPanel.className = "filter-panel";
     filterPanel.style.display = "none";
@@ -478,7 +509,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch) {
     const contentArea = document.createElement("div");
     contentArea.className = "content-area";
 
-    wrapper.append(filterToggle, filterPanel, contentArea);
+    wrapper.append(menuToolbar, filterPanel, contentArea);
 
     if (showFilters) {
         rebuildFilterPanel();

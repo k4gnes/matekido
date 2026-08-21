@@ -49,6 +49,7 @@ const SW_CACHE_LIST = [
     "/components/scene.js",
     "/components/sequence.js",
     "/components/shapeSort.js",
+    "/components/skillMap.js",
     "/components/spatial.js",
     "/components/statsPage.js",
     "/components/subtraction.js",
@@ -89,6 +90,7 @@ const SW_CACHE_LIST = [
     "/css/progress.css",
     "/css/sequence.css",
     "/css/shape-sort.css",
+    "/css/skill-map.css",
     "/css/spatial.css",
     "/css/time.css",
     "/css/true-false.css",
@@ -164,6 +166,8 @@ const SW_CACHE_LIST = [
     "/data/shapes.js",
     "/data/skills.js",
     "/data/spatial.js",
+    "/docs/elso-osztaly.md",
+    "/docs/masodik-osztaly.md",
     "/engine/Game.js",
     "/engine/LessonBuilder.js",
     "/engine/LessonLoader.js",
@@ -215,6 +219,7 @@ const SW_CACHE_LIST = [
     "/storage.js",
     "/sw.js",
     "/testGenerator.js",
+    "/utils/markdown.js",
     "/world/World.js",
     "/world/WorldRegistry.js"
 ];

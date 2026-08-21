@@ -1,7 +1,8 @@
 import { Game } from "./engine/Game.js?v=10";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=10";
-import { renderLessonMenu } from "./components/lessonMenu.js";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=2";
+import { renderSkillMap } from "./components/skillMap.js?v=2";
 import { renderProfilePage } from "./components/profilePage.js";
 import { renderStatsPage } from "./components/statsPage.js";
 import { renderPracticePage } from "./components/practicePage.js";
@@ -31,9 +32,14 @@ function showMenu() {
         root,
         startLesson,
         showProfile,
-        showWelcome
+        showWelcome,
+        showSkillMap
     );
 
+}
+
+function showSkillMap() {
+    renderSkillMap(root, showMenu);
 }
 
 function showProfile() {

@@ -171,6 +171,18 @@
     background: #e0e0e0;
 }
 
+.menu-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.menu-toolbar .filter-toggle-btn {
+    margin: 0.5rem 0;
+}
+
 .menu-player-row {
     display: flex;
     flex-wrap: wrap;

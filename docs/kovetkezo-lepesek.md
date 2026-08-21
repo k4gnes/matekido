@@ -2,7 +2,40 @@
 
 ## Jelenlegi állapot
 
-**39 lecke** készült a 2. osztályból. Az 1. lépés (első hullám befejezése + két új komponens) **kész**.
+**64 lecke** van regisztrálva összesen (**27** első + **37** második osztályos). Az 1. lépés (első hullám befejezése + két új komponens) **kész**.
+
+---
+
+## ✅ 2026-08-21 – Technikai frissítés (kész)
+
+Részletes leírás: `docs/kod-racionalizalas.md`
+
+### Kód-racionalizálás – mindhárom pont kész
+- **Visszajelzés egységesítése:** 25 komponens migrálva a közös `components/ui/feedback.js`-re (`createFeedback` + `markCorrect`).
+- **`makeOptions` duplikáció megszüntetve:** 8 fájlban közös `utils/options.js` (~190 sor duplikáció eltűnt).
+- **Számolt feladattípusok:** `Game.js`-ben `COUNTED_TYPES` Set + `isCounted()` segéd (35 típus ellenőrizve).
+
+### Technikai javítások
+- `Game.js`: `RENDERERS` registry Map + `SKILL_BY_TYPE` (390 → 325 sor).
+- Új `src/storage.js` util (`loadJSON` / `saveJSON` / `loadRaw` / `saveRaw` / `removeKeys`) – `UserManager.js`, `lessonMenu.js` átírva.
+- `ui/exercise.js` → `ui/exerciseShell.js` átnevezés (névütközés a feladat-komponensekkel).
+- Konzisztens `?v=` verzióparaméter minden `Game.js`-importon.
+- `messageBox` kapott `aria-live="polite"` attribútumot.
+
+### Új funkció: helyes válasz jelölése
+- Választós feladatoknál a jó válasz **zölden** kiemelődik (`.option-correct`), a hiányzó szám („?") helyére beíródik a helyes érték, majd jön a Tovább gomb.
+- 18 komponens / 21 hívási pont; a húzásos és beírósos feladatoknál nem érintett.
+
+### Hibajavítások
+- „4 += 11" típusú felirat → „4 + ? = 11" választós módban (`missingNumber.js`, `mixed.js`).
+- `missingNumber.js` scope-hiba: a kattintáskezelő blokkon kívülről nem látta a `placeholdert` → `ReferenceError` (zöld volt a gomb, de nem töltődött a szám és nem jött Tovább). Javítva függvényszintű `let placeholder = null`-lal.
+
+### Emoji-támogatottság
+- Nem mindenhol támogatott emojik cserélve régi, univerzálisakra: 🩶 → 🤖, 🛞 → ⚙️, 🧃 → 🥤.
+- A hiányzó/összehasonlító/szomszéd sávok ⬜ négyzetei világspecifikus emojikra (verseny ⚙️, foci 🥅, konyha 🥄, állatkert 🦒, űr 🚀).
+
+### PWA
+- `sw-cache.js` újragenerálva (218 fájl), `CACHE` bump: `matekido-v4`.
 
 ---
 
@@ -150,6 +183,8 @@
 ---
 
 ## Készség → Lecke lefedettség (második osztály)
+
+*(2026-08-21-i állapot szerint ellenőrizve)*
 
 | Készség | Státusz | Leckék |
 |---|---|---|

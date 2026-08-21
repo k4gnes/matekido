@@ -1,6 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createFeedback } from "./ui/feedback.js";
 import { SHAPE_CATEGORIES } from "../data/shapes.js";
 
 function createZone(category) {
@@ -17,10 +18,6 @@ function createZone(category) {
 }
 
 export function renderShapeSort(step, root, next, progress, onResult, onAttempt) {
-
-    let mistakes = 0;
-    let answered = false;
-    let reported = false;
 
     root.replaceChildren();
 
@@ -77,13 +74,21 @@ export function renderShapeSort(step, root, next, progress, onResult, onAttempt)
 
     root.append(card);
 
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext: next,
+        onResult,
+        onAttempt
+    });
+
     const zoneElements = step.categories.map(cat => zoneFor[cat].element);
 
     let drag = null;
 
     card.addEventListener("pointerdown", (e) => {
         const chip = e.target.closest(".shape-chip");
-        if (!chip || answered || drag) return;
+        if (!chip || feedback.isAnswered() || drag) return;
         e.preventDefault();
 
         const rect = chip.getBoundingClientRect();
@@ -163,7 +168,7 @@ export function renderShapeSort(step, root, next, progress, onResult, onAttempt)
     }
 
     function check() {
-        if (answered) return;
+        if (feedback.isAnswered()) return;
 
         let correct = true;
 
@@ -175,31 +180,12 @@ export function renderShapeSort(step, root, next, progress, onResult, onAttempt)
             }
         }
 
-        onAttempt?.();
-
         if (correct) {
-            answered = true;
             button.disabled = true;
 
-            message.show("😊 Szép munka!", "success");
-
-            if (!reported) {
-                reported = true;
-                onResult?.(true);
-            }
-            setTimeout(() => next(), 800);
+            feedback.success();
         } else {
-            if (mistakes === 1) {
-                message.show("🙂 Majdnem! Próbáld meg még egyszer!", "retry");
-            } else {
-                message.show("🤔 Még nem sikerült.", "retry");
-            }
-            mistakes++;
-
-            if (!reported) {
-                reported = true;
-                onResult?.(false);
-            }
+            feedback.retry();
         }
     }
 

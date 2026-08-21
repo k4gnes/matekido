@@ -1,6 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createFeedback } from "./ui/feedback.js";
 import { createCoin } from "./ui/coin.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -14,8 +15,6 @@ const WORLD_EMOJI = {
 };
 
 export function renderMoneyEnough(step, root, next, progress, onResult, onAttempt) {
-
-    let answered = false;
 
     const card = createCard();
 
@@ -70,20 +69,21 @@ export function renderMoneyEnough(step, root, next, progress, onResult, onAttemp
 
     root.replaceChildren(card);
 
-    function answer(guessed) {
-        if (answered) return;
-        answered = true;
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext: next,
+        onResult,
+        onAttempt
+    });
 
-        onAttempt?.();
+    function answer(guessed) {
+        if (feedback.isAnswered()) return;
 
         if (guessed === step.enough) {
-            message.show(step.enough ? "🎉 Igen, meg tudod venni!" : "🎉 Nem, nincs elég pénz!", "success");
-            onResult?.(true);
-            setTimeout(() => next(), 900);
+            feedback.success(step.enough ? "🎉 Igen, meg tudod venni!" : "🎉 Nem, nincs elég pénz!");
         } else {
-            message.show(step.enough ? "🤔 De igen! Meg tudod venni." : "🤔 Nem! Nincs elég pénz.", "retry");
-            onResult?.(false);
-            setTimeout(() => next(), 1600);
+            feedback.retry();
         }
     }
 }

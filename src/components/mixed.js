@@ -4,6 +4,7 @@ import { createButton } from "./ui/button.js";
 import { createNumberInput } from "./ui/numberInput.js";
 import { createHintBox } from "./ui/hintBox.js";
 import { createExercise } from "./ui/exercise.js";
+import { createFeedback } from "./ui/feedback.js";
 
 function makeOptions(answer, min, max, count = 4) {
     const options = [answer];
@@ -32,10 +33,7 @@ function makeOptions(answer, min, max, count = 4) {
 
 export function renderMixed(step, root, next, progress, onResult, onAttempt) {
 
-    let mistakes = 0;
     let hintShown = false;
-    let answered = false;
-    let reported = false;
 
     const ac = new AbortController();
 
@@ -127,9 +125,17 @@ export function renderMixed(step, root, next, progress, onResult, onAttempt) {
     if (button) children.push(button);
     children.push(hintButton, hint);
 
-    const { message } = createExercise({
+    const { message, card } = createExercise({
         root, title, progress,
         children
+    });
+
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext: next,
+        onResult,
+        onAttempt
     });
 
     if (input) {
@@ -137,12 +143,9 @@ export function renderMixed(step, root, next, progress, onResult, onAttempt) {
     }
 
     function checkAnswer(isCorrect) {
-        if (answered) return;
-
-        onAttempt?.();
+        if (feedback.isAnswered()) return;
 
         if (isCorrect) {
-            answered = true;
             if (input) {
                 input.disabled = true;
                 if (button) button.disabled = true;
@@ -151,31 +154,14 @@ export function renderMixed(step, root, next, progress, onResult, onAttempt) {
                 optionsContainer.querySelectorAll("button").forEach(b => b.style.pointerEvents = "none");
             }
 
-            message.show("😊 Szép munka!", "success");
-
-            if (!reported) {
-                reported = true;
-                onResult?.(true);
-            }
-            ac.abort();
-            setTimeout(() => next(), 800);
+            feedback.success();
         } else {
-            if (mistakes === 1) {
-                message.show("🙂 Majdnem! Próbáld meg még egyszer!", "retry");
-            } else {
-                message.show("🤔 Még nem sikerült.", "retry");
-            }
+            feedback.retry();
 
-            mistakes++;
-
-            if (mistakes >= 2 && !hintShown) {
+            if (feedback.getMistakes() >= 2 && !hintShown) {
                 hintButton.style.display = "inline-block";
             }
 
-            if (!reported) {
-                reported = true;
-                onResult?.(false);
-            }
             if (input) {
                 input.focus();
                 input.select();
@@ -186,7 +172,7 @@ export function renderMixed(step, root, next, progress, onResult, onAttempt) {
     if (useChoice && optionsContainer) {
         optionsContainer.addEventListener("click", (e) => {
             const btn = e.target.closest(".mult-option");
-            if (!btn || answered) return;
+            if (!btn || feedback.isAnswered()) return;
             checkAnswer(Number(btn.dataset.value) === correctAnswer);
         });
     } else if (input && button) {

@@ -1,6 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createFeedback } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_EMOJI = {
@@ -59,7 +60,6 @@ function drawRow(svg, { emoji, name }, start, end, fill, stroke) {
 
 export function renderMeasureCompare(step, root, next, progress, onResult, onAttempt) {
 
-    let answered = false;
 
     const card = createCard();
 
@@ -111,27 +111,33 @@ export function renderMeasureCompare(step, root, next, progress, onResult, onAtt
     const options = document.createElement("div");
     options.className = "meas-options";
 
+    const message = createMessageBox();
+    card.append(message.element);
+
+    root.replaceChildren(card);
+
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext: next,
+        onResult,
+        onAttempt
+    });
+
     step.options.forEach(opt => {
         const btn = createButton(opt.text, {
             className: "meas-option",
             onClick: () => {
-                if (answered) return;
-                answered = true;
-                onAttempt?.();
+                if (feedback.isAnswered()) return;
 
                 if (opt.correct) {
-                    message.show(
+                    feedback.success(
                         step.answer === "equal"
                             ? `🎉 Igen, egyformán hosszúak: mindkettő ${step.lengthA} négyzet!`
-                            : `🎉 Jó válasz! ${opt.text} ${step.answer === "A" ? step.lengthA : step.lengthB} négyzet hosszú.`,
-                        "success"
+                            : `🎉 Jó válasz! ${opt.text} ${step.answer === "A" ? step.lengthA : step.lengthB} négyzet hosszú.`
                     );
-                    onResult?.(true);
-                    setTimeout(() => next(), 900);
                 } else {
-                    message.show(`🤔 Nézd meg újra a mércéket!`, "retry");
-                    onResult?.(false);
-                    setTimeout(() => next(), 1600);
+                    feedback.retry();
                 }
             }
         });
@@ -139,9 +145,4 @@ export function renderMeasureCompare(step, root, next, progress, onResult, onAtt
     });
 
     card.append(options);
-
-    const message = createMessageBox();
-    card.append(message.element);
-
-    root.replaceChildren(card);
 }

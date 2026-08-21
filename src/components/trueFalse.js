@@ -1,5 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createFeedback } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const TITLES = {
@@ -12,10 +13,6 @@ const TITLES = {
 };
 
 export function renderTrueFalse(step, root, next, progress, onResult, onAttempt) {
-
-    let answered = false;
-    let reported = false;
-    let mistakes = 0;
 
     const ac = new AbortController();
     const world = getActiveWorld();
@@ -65,46 +62,30 @@ export function renderTrueFalse(step, root, next, progress, onResult, onAttempt)
 
     root.append(card);
 
-    function checkAnswer(isCorrect) {
-        if (answered) return;
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext: next,
+        onResult,
+        onAttempt
+    });
 
-        onAttempt?.();
+    function checkAnswer(isCorrect) {
+        if (feedback.isAnswered()) return;
 
         if (isCorrect) {
-            answered = true;
             trueBtn.style.pointerEvents = "none";
             falseBtn.style.pointerEvents = "none";
-            message.show("😊 Szép munka!", "success");
 
-            if (!reported) {
-                reported = true;
-                onResult?.(true);
-            }
-            ac.abort();
-            const nextBtn = document.createElement("button");
-            nextBtn.type = "button";
-            nextBtn.className = "tf-next";
-            nextBtn.textContent = "➡️ Tovább";
-            nextBtn.addEventListener("click", () => next());
-            card.append(nextBtn);
+            feedback.success();
         } else {
-            if (mistakes === 1) {
-                message.show("🙂 Majdnem! Próbáld meg még egyszer!", "retry");
-            } else {
-                message.show("🤔 Még nem sikerült.", "retry");
-            }
-            mistakes++;
-
-            if (!reported) {
-                reported = true;
-                onResult?.(false);
-            }
+            feedback.retry();
         }
     }
 
     optionsContainer.addEventListener("click", (e) => {
         const btn = e.target.closest(".tf-option");
-        if (!btn || answered) return;
+        if (!btn || feedback.isAnswered()) return;
         const selected = btn.dataset.value === "true";
         checkAnswer(selected === step.answer);
     }, { signal: ac.signal });

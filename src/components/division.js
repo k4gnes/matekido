@@ -1,5 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createFeedback } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const TITLES = {
@@ -236,10 +237,6 @@ function renderCSS(card) {
 
 export function renderDivision(step, root, next, progress, onResult, onAttempt) {
 
-    let mistakes = 0;
-    let answered = false;
-    let reported = false;
-
     const ac = new AbortController();
     const world = getActiveWorld();
 
@@ -271,18 +268,22 @@ export function renderDivision(step, root, next, progress, onResult, onAttempt) 
 
     root.append(card);
 
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext: next,
+        onResult,
+        onAttempt
+    });
+
     if (result.isInput && result.input) {
         requestAnimationFrame(() => result.input.focus());
     }
 
     function checkAnswer(isCorrect) {
-        if (answered) return;
-
-        onAttempt?.();
+        if (feedback.isAnswered()) return;
 
         if (isCorrect) {
-            answered = true;
-
             if (result.isInput) {
                 result.input.disabled = true;
                 result.button.disabled = true;
@@ -290,26 +291,9 @@ export function renderDivision(step, root, next, progress, onResult, onAttempt) 
                 result.element.querySelectorAll("button").forEach(b => b.style.pointerEvents = "none");
             }
 
-            message.show("😊 Szép munka!", "success");
-
-            if (!reported) {
-                reported = true;
-                onResult?.(true);
-            }
-            ac.abort();
-            setTimeout(() => next(), 800);
+            feedback.success();
         } else {
-            if (mistakes === 1) {
-                message.show("🙂 Majdnem! Próbáld meg még egyszer!", "retry");
-            } else {
-                message.show("🤔 Még nem sikerült.", "retry");
-            }
-            mistakes++;
-
-            if (!reported) {
-                reported = true;
-                onResult?.(false);
-            }
+            feedback.retry();
 
             if (result.isInput && result.input) {
                 result.input.focus();
@@ -334,7 +318,7 @@ export function renderDivision(step, root, next, progress, onResult, onAttempt) 
     } else if (result.element && result.element.tagName === "DIV") {
         result.element.addEventListener("click", (e) => {
             const btn = e.target.closest(".div-option");
-            if (!btn || answered) return;
+            if (!btn || feedback.isAnswered()) return;
 
             if (step.interaction === "tf") {
                 checkAnswer((btn.dataset.value === "true") === step.tfAnswer);

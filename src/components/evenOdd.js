@@ -1,6 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createFeedback } from "./ui/feedback.js";
 
 const QUESTION_TEXT = {
     even: "Húzd a páros számokat a piros helyre!",
@@ -20,10 +21,6 @@ function createZone(label, kind) {
 }
 
 export function renderEvenOdd(step, root, next, progress, onResult, onAttempt) {
-
-    let mistakes = 0;
-    let answered = false;
-    let reported = false;
 
     root.replaceChildren();
 
@@ -76,11 +73,19 @@ export function renderEvenOdd(step, root, next, progress, onResult, onAttempt) {
 
     root.append(card);
 
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext: next,
+        onResult,
+        onAttempt
+    });
+
     let drag = null;
 
     card.addEventListener("pointerdown", (e) => {
         const chip = e.target.closest(".eo-chip");
-        if (!chip || answered || drag) return;
+        if (!chip || feedback.isAnswered() || drag) return;
         e.preventDefault();
 
         const rect = chip.getBoundingClientRect();
@@ -157,7 +162,7 @@ export function renderEvenOdd(step, root, next, progress, onResult, onAttempt) {
     }
 
     function check() {
-        if (answered) return;
+        if (feedback.isAnswered()) return;
 
         const isEvenQuestion = step.question === "even";
         const zoneElement = targetZone.element;
@@ -180,31 +185,12 @@ export function renderEvenOdd(step, root, next, progress, onResult, onAttempt) {
             }
         }
 
-        onAttempt?.();
-
         if (correct) {
-            answered = true;
             button.disabled = true;
 
-            message.show("😊 Szép munka!", "success");
-
-            if (!reported) {
-                reported = true;
-                onResult?.(true);
-            }
-            setTimeout(() => next(), 800);
+            feedback.success();
         } else {
-            if (mistakes === 1) {
-                message.show("🙂 Majdnem! Próbáld meg még egyszer!", "retry");
-            } else {
-                message.show("🤔 Még nem sikerült.", "retry");
-            }
-            mistakes++;
-
-            if (!reported) {
-                reported = true;
-                onResult?.(false);
-            }
+            feedback.retry();
         }
     }
 

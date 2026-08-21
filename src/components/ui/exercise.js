@@ -15,5 +15,5 @@ export function createExercise({ root, title, progress, children }) {
 
     root.append(card);
 
-    return { message };
+    return { message, card };
 }

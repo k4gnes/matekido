@@ -2,6 +2,7 @@ import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createMessageBox } from "./ui/messageBox.js";
 import { createNumberInput } from "./ui/numberInput.js";
+import { createFeedback } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
@@ -343,34 +344,20 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
 
     const message = createMessageBox();
 
-    let answered = false;
-    let reported = false;
-    let mistakes = 0;
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext: next,
+        onResult,
+        onAttempt
+    });
 
     function reportSuccess(successText) {
-        if (answered) return;
-        answered = true;
-        onAttempt?.();
-        message.show(successText, "success");
-        if (!reported) {
-            reported = true;
-            onResult?.(true);
-        }
-        const nextBtn = createButton("➡️ Tovább", { className: "wp-next", onClick: () => next() });
-        card.append(nextBtn);
+        feedback.success(successText);
     }
 
     function reportRetry() {
-        if (answered) return;
-        onAttempt?.();
-        message.show(mistakes === 1
-            ? "🙂 Majdnem! Próbáld meg még egyszer!"
-            : "🤔 Még nem sikerült.", "retry");
-        mistakes++;
-        if (!reported) {
-            reported = true;
-            onResult?.(false);
-        }
+        feedback.retry();
     }
 
     const itemIcon = () => createItemIcon(world);
@@ -465,7 +452,7 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
         card.append(input, button);
 
         function check() {
-            if (answered) return;
+            if (feedback.isAnswered()) return;
             const answer = Number(input.value);
             if (answer === step.answer) {
                 reportSuccess(step.successText);
@@ -655,7 +642,7 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
 
         card.addEventListener("pointerdown", (e) => {
             const postman = e.target.closest(".wp-postman");
-            if (!postman || answered || drag) return;
+            if (!postman || feedback.isAnswered() || drag) return;
             e.preventDefault();
 
             const rect = postman.getBoundingClientRect();
@@ -735,7 +722,7 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
         }
 
         function check() {
-            if (answered) return;
+            if (feedback.isAnswered()) return;
             const left = postmen.filter(p => p.parentElement === departure);
             const correct = left.length === step.leaving
                 && left.every(p => p.dataset.leaving === "true");

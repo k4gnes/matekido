@@ -1,5 +1,6 @@
 import { createButton } from "./ui/button.js";
 import { createExercise } from "./ui/exercise.js";
+import { createFeedback } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_EMOJI = {
@@ -32,8 +33,6 @@ function renderEmojiGroup(container, emoji, count) {
 
 export function renderComparison(step, root, next, progress, onResult, onAttempt) {
 
-    let answered = false;
-
     const world = getActiveWorld();
     const emoji = WORLD_EMOJI[world] ?? "🍎";
 
@@ -56,31 +55,6 @@ export function renderComparison(step, root, next, progress, onResult, onAttempt
     const operators = document.createElement("div");
     operators.className = "comparison-operators";
 
-    ["<", "=", ">"].forEach(op => {
-
-        const btn = createButton(op, {
-            className: "comparison-op",
-            onClick: () => {
-                if (answered) return;
-
-                answered = true;
-                onAttempt?.();
-
-                if (op === step.operator) {
-                    message.show("😊 Szép munka!", "success");
-                    onResult?.(true);
-                    setTimeout(() => next(), 800);
-                } else {
-                    message.show(`🤔 Nem, a helyes válasz: ${step.operator}`, "retry");
-                    onResult?.(false);
-                    setTimeout(() => next(), 1500);
-                }
-            }
-        });
-
-        operators.append(btn);
-    });
-
     const rightWrap = document.createElement("div");
     rightWrap.style.cssText = "display:flex; flex-direction:column; align-items:center;";
     const right = document.createElement("span");
@@ -93,8 +67,34 @@ export function renderComparison(step, root, next, progress, onResult, onAttempt
 
     equation.append(leftWrap, operators, rightWrap);
 
-    const { message } = createExercise({
+    const { message, card } = createExercise({
         root, title, progress,
         children: [equation]
+    });
+
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext: next,
+        onResult,
+        onAttempt
+    });
+
+    ["<", "=", ">"].forEach(op => {
+
+        const btn = createButton(op, {
+            className: "comparison-op",
+            onClick: () => {
+                if (feedback.isAnswered()) return;
+
+                if (op === step.operator) {
+                    feedback.success();
+                } else {
+                    feedback.retry();
+                }
+            }
+        });
+
+        operators.append(btn);
     });
 }

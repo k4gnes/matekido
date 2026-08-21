@@ -1,6 +1,7 @@
 import { createButton } from "./ui/button.js";
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createFeedback } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -18,10 +19,6 @@ const DIRECTION_TEXT = {
 };
 
 export function renderOrder(step, root, next, progress, onResult, onAttempt) {
-
-    let mistakes = 0;
-    let answered = false;
-    let reported = false;
 
     const world = getActiveWorld();
 
@@ -72,11 +69,19 @@ export function renderOrder(step, root, next, progress, onResult, onAttempt) {
 
     root.append(card);
 
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext: next,
+        onResult,
+        onAttempt
+    });
+
     let drag = null;
 
     board.addEventListener("pointerdown", (e) => {
         const chip = e.target.closest(".order-chip");
-        if (!chip || answered || drag) return;
+        if (!chip || feedback.isAnswered() || drag) return;
         e.preventDefault();
 
         const rect = chip.getBoundingClientRect();
@@ -159,39 +164,19 @@ export function renderOrder(step, root, next, progress, onResult, onAttempt) {
     }
 
     function check() {
-        if (answered) return;
+        if (feedback.isAnswered()) return;
 
         const current = [...board.querySelectorAll(".order-chip")].map(c => Number(c.dataset.value));
 
-        onAttempt?.();
-
         if (current.every((v, i) => v === step.answer[i])) {
 
-            answered = true;
             button.disabled = true;
 
-            message.show("😊 Szép munka!", "success");
-
-            if (!reported) {
-                reported = true;
-                onResult?.(true);
-            }
-            setTimeout(() => next(), 800);
+            feedback.success();
 
         } else {
 
-            if (mistakes === 1) {
-                message.show("🙂 Majdnem! Próbáld meg még egyszer!", "retry");
-            } else {
-                message.show("🤔 Még nem sikerült.", "retry");
-            }
-
-            mistakes++;
-
-            if (!reported) {
-                reported = true;
-                onResult?.(false);
-            }
+            feedback.retry();
         }
     }
 

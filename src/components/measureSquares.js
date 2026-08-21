@@ -1,6 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createFeedback } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_EMOJI = {
@@ -27,8 +28,6 @@ export function renderMeasureSquares(step, root, next, progress, onResult, onAtt
     const N = step.length;
 
     let placed = 0;
-    let reported = false;
-    let solved = false;
 
     const card = createCard();
 
@@ -78,6 +77,15 @@ export function renderMeasureSquares(step, root, next, progress, onResult, onAtt
     card.append(message.element);
 
     root.replaceChildren(card);
+
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext: next,
+        onResult,
+        onAttempt
+    });
+
     render();
 
     function addSquare() {
@@ -185,38 +193,21 @@ export function renderMeasureSquares(step, root, next, progress, onResult, onAtt
     }
 
     function check() {
-        if (solved) return;
-
-        onAttempt?.();
+        if (feedback.isAnswered()) return;
 
         if (placed === N) {
-            solved = true;
             checkBtn.disabled = true;
             addBtn.disabled = true;
             removeBtn.disabled = true;
-            message.show(`🎉 A ${step.name} ${N} négyzet ${WORD[step.direction]}!`, "success");
-
-            if (!reported) {
-                reported = true;
-                onResult?.(true);
-            }
-            setTimeout(() => next(), 900);
+            feedback.success(`🎉 A ${step.name} ${N} négyzet ${WORD[step.direction]}!`);
+        } else if (placed < N) {
+            feedback.retry(
+                placed === 0
+                    ? "🤔 Előbb rakj négyzeteket a tárgyra!"
+                    : `🤔 Még nincs tele! ${N - placed} négyzet hiányzik.`
+            );
         } else {
-            if (!reported) {
-                reported = true;
-                onResult?.(false);
-            }
-
-            if (placed < N) {
-                message.show(
-                    placed === 0
-                        ? "🤔 Előbb rakj négyzeteket a tárgyra!"
-                        : `🤔 Még nincs tele! ${N - placed} négyzet hiányzik.`,
-                    "retry"
-                );
-            } else {
-                message.show(`🤔 Túlságosan sok! A ${step.name} csak ${N} négyzet hosszú.`, "retry");
-            }
+            feedback.retry(`🤔 Túlságosan sok! A ${step.name} csak ${N} négyzet hosszú.`);
         }
     }
 }

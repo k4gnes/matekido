@@ -1,6 +1,7 @@
 import { createButton } from "./ui/button.js";
 import { createNumberInput } from "./ui/numberInput.js";
 import { createExercise } from "./ui/exercise.js";
+import { createFeedback } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -38,10 +39,6 @@ function makeOptions(answer, min, max, count = 4) {
 }
 
 export function renderMissingNumber(step, root, next, progress, onResult, onAttempt) {
-
-    let mistakes = 0;
-    let answered = false;
-    let reported = false;
 
     const ac = new AbortController();
 
@@ -96,9 +93,17 @@ export function renderMissingNumber(step, root, next, progress, onResult, onAtte
     if (optionsContainer) children.push(optionsContainer);
     if (button) children.push(button);
 
-    const { message } = createExercise({
+    const { message, card } = createExercise({
         root, title, progress,
         children
+    });
+
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext: next,
+        onResult,
+        onAttempt
     });
 
     if (input) {
@@ -106,12 +111,9 @@ export function renderMissingNumber(step, root, next, progress, onResult, onAtte
     }
 
     function checkAnswer(isCorrect) {
-        if (answered) return;
-
-        onAttempt?.();
+        if (feedback.isAnswered()) return;
 
         if (isCorrect) {
-            answered = true;
             if (input) {
                 input.disabled = true;
                 if (button) button.disabled = true;
@@ -120,27 +122,10 @@ export function renderMissingNumber(step, root, next, progress, onResult, onAtte
                 optionsContainer.querySelectorAll("button").forEach(b => b.style.pointerEvents = "none");
             }
 
-            message.show("😊 Szép munka!", "success");
-
-            if (!reported) {
-                reported = true;
-                onResult?.(true);
-            }
-            ac.abort();
-            setTimeout(() => next(), 800);
+            feedback.success();
         } else {
-            if (mistakes === 1) {
-                message.show("🙂 Majdnem! Próbáld meg még egyszer!", "retry");
-            } else {
-                message.show("🤔 Még nem sikerült.", "retry");
-            }
+            feedback.retry();
 
-            mistakes++;
-
-            if (!reported) {
-                reported = true;
-                onResult?.(false);
-            }
             if (input) {
                 input.focus();
                 input.select();
@@ -151,7 +136,7 @@ export function renderMissingNumber(step, root, next, progress, onResult, onAtte
     if (useChoice && optionsContainer) {
         optionsContainer.addEventListener("click", (e) => {
             const btn = e.target.closest(".mult-option");
-            if (!btn || answered) return;
+            if (!btn || feedback.isAnswered()) return;
             checkAnswer(Number(btn.dataset.value) === step.answer);
         });
     } else if (input && button) {

@@ -1,6 +1,7 @@
 import { createButton } from "./ui/button.js";
 import { createNumberInput } from "./ui/numberInput.js";
 import { createExercise } from "./ui/exercise.js";
+import { createFeedback } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD = {
@@ -13,10 +14,6 @@ const WORLD = {
 };
 
 export function renderPlaceValueTwoInput(step, root, next, progress, onResult, onAttempt) {
-
-    let mistakes = 0;
-    let answered = false;
-    let reported = false;
 
     const ac = new AbortController();
 
@@ -82,9 +79,17 @@ export function renderPlaceValueTwoInput(step, root, next, progress, onResult, o
 
     const button = createButton("Ellenőrzöm");
 
-    const { message } = createExercise({
+    const { message, card } = createExercise({
         root, title, progress,
         children: [emojiArea, wrapper, button]
+    });
+
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext: next,
+        onResult,
+        onAttempt
     });
 
     requestAnimationFrame(() => {
@@ -92,43 +97,23 @@ export function renderPlaceValueTwoInput(step, root, next, progress, onResult, o
     });
 
     function check() {
-        if (answered) return;
+        if (feedback.isAnswered()) return;
 
         const tens = Number(tensInput.value);
         const ones = Number(onesInput.value);
 
-        onAttempt?.();
-
         if (tens === step.tens && ones === step.ones) {
 
-            answered = true;
             tensInput.disabled = true;
             onesInput.disabled = true;
             button.disabled = true;
 
-            message.show("😊 Szép munka!", "success");
-
-            if (!reported) {
-                reported = true;
-                onResult?.(true);
-            }
-            ac.abort();
-            setTimeout(() => next(), 800);
+            feedback.success();
 
         } else {
 
-            if (mistakes === 1) {
-                message.show("🙂 Majdnem! Próbáld meg még egyszer!", "retry");
-            } else {
-                message.show("🤔 Még nem sikerült.", "retry");
-            }
+            feedback.retry();
 
-            mistakes++;
-
-            if (!reported) {
-                reported = true;
-                onResult?.(false);
-            }
             tensInput.focus();
             tensInput.select();
         }

@@ -1,5 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createFeedback } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const TITLES = {
@@ -284,10 +285,6 @@ function renderLinkInput(step, card) {
 
 export function renderMultiplication(step, root, next, progress, onResult, onAttempt) {
 
-    let mistakes = 0;
-    let answered = false;
-    let reported = false;
-
     const ac = new AbortController();
     const world = getActiveWorld();
 
@@ -330,18 +327,22 @@ export function renderMultiplication(step, root, next, progress, onResult, onAtt
 
     root.append(card);
 
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext: next,
+        onResult,
+        onAttempt
+    });
+
     if (isInputMode && interactiveElement.input) {
         requestAnimationFrame(() => interactiveElement.input.focus());
     }
 
     function checkAnswer(isCorrect) {
-        if (answered) return;
-
-        onAttempt?.();
+        if (feedback.isAnswered()) return;
 
         if (isCorrect) {
-            answered = true;
-
             if (!isInputMode && interactiveElement && interactiveElement.tagName === "DIV") {
                 interactiveElement.querySelectorAll("button").forEach(b => b.style.pointerEvents = "none");
             }
@@ -350,26 +351,9 @@ export function renderMultiplication(step, root, next, progress, onResult, onAtt
                 interactiveElement.button.disabled = true;
             }
 
-            message.show("😊 Szép munka!", "success");
-
-            if (!reported) {
-                reported = true;
-                onResult?.(true);
-            }
-            ac.abort();
-            setTimeout(() => next(), 800);
+            feedback.success();
         } else {
-            if (mistakes === 1) {
-                message.show("🙂 Majdnem! Próbáld meg még egyszer!", "retry");
-            } else {
-                message.show("🤔 Még nem sikerült.", "retry");
-            }
-            mistakes++;
-
-            if (!reported) {
-                reported = true;
-                onResult?.(false);
-            }
+            feedback.retry();
 
             if (isInputMode && interactiveElement.input) {
                 interactiveElement.input.focus();
@@ -398,7 +382,7 @@ export function renderMultiplication(step, root, next, progress, onResult, onAtt
     } else if (interactiveElement && interactiveElement.tagName === "DIV") {
         interactiveElement.addEventListener("click", (e) => {
             const btn = e.target.closest(".mult-option");
-            if (!btn || answered) return;
+            if (!btn || feedback.isAnswered()) return;
 
             if (step.type === "match-groups") {
                 checkAnswer(btn.dataset.correct === "1");

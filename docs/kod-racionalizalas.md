@@ -68,7 +68,8 @@ Olvashatóbb, új típusnál egy sor hozzáadás. (Hosszabb távon a renderer-sw
 
 ## Elvégezett részlegesen (2026-08)
 
-- ✅ Tovább gomb: `wordProblem.js`, `estimate.js`, `trueFalse.js` (a többi komponens még vár az 1. pontra)
+- ✅ **1. pont kész:** `src/components/ui/feedback.js` (`createFeedback`) – 25 komponens migrálva (`addition`, `subtraction`, `mixed`, `missingNumber`, `neighbor`, `neighborSingle`, `sequence`, `placeValue`, `placeValueTwoInput`, `missingOperand`, `multPrep`, `multiplication`, `division`, `comparison`, `moneyCompare`, `measureCompare`, `moneyEnough`, `evenOdd`, `order`, `shapeSort`, `moneyPay`, `measureSquares`, `wordProblem`, `estimate`, `trueFalse`). A `retry(customText)` opcionális egyedi üzenetet is fogad (pl. `moneyPay`, `measureSquares`). A `.wp-next` / `.est-next` / `.tf-next` CSS-osztályok törölve, helyette a közös `.next-btn` (`base.css`).
+- ⚠️ Nem migrált (szándékosan): `bridgeTen.js` és `decompositionFindWrong.js` – saját kizárásos mechanikájuk van (rossz opció kiszürkül), a Tovább gomb náluk már korábban megvolt; `pattern.js`, `time.js`, `spatial.js` – saját Tovább-implementációval működnek, később egységesíthetők.
 - ✅ Kék válaszgombok egységesen minden választós feladattípusnál
 - ⚠️ `optionHelper.js` létezik, de csak részben használt (2. pont)
 

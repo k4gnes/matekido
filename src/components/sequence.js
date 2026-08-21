@@ -2,6 +2,7 @@ import { createButton } from "./ui/button.js";
 import { createNumberInput } from "./ui/numberInput.js";
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createFeedback } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -39,10 +40,6 @@ function makeOptions(answer, min, max, count = 4) {
 }
 
 export function renderSequence(step, root, next, progress, onResult, onAttempt) {
-
-    let mistakes = 0;
-    let answered = false;
-    let reported = false;
 
     const ac = new AbortController();
     const world = getActiveWorld();
@@ -121,17 +118,22 @@ export function renderSequence(step, root, next, progress, onResult, onAttempt) 
 
     root.append(card);
 
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext: next,
+        onResult,
+        onAttempt
+    });
+
     if (input) {
         requestAnimationFrame(() => input.focus());
     }
 
     function checkAnswer(isCorrect) {
-        if (answered) return;
-
-        onAttempt?.();
+        if (feedback.isAnswered()) return;
 
         if (isCorrect) {
-            answered = true;
             if (input) {
                 input.disabled = true;
             }
@@ -139,27 +141,10 @@ export function renderSequence(step, root, next, progress, onResult, onAttempt) 
                 optionsContainer.querySelectorAll("button").forEach(b => b.style.pointerEvents = "none");
             }
 
-            message.show("😊 Szép munka!", "success");
-
-            if (!reported) {
-                reported = true;
-                onResult?.(true);
-            }
-            ac.abort();
-            setTimeout(() => next(), 800);
+            feedback.success();
         } else {
-            if (mistakes === 1) {
-                message.show("🙂 Majdnem! Próbáld meg még egyszer!", "retry");
-            } else {
-                message.show("🤔 Még nem sikerült.", "retry");
-            }
+            feedback.retry();
 
-            mistakes++;
-
-            if (!reported) {
-                reported = true;
-                onResult?.(false);
-            }
             if (input) {
                 input.focus();
                 input.select();
@@ -168,7 +153,7 @@ export function renderSequence(step, root, next, progress, onResult, onAttempt) 
     }
 
     function check() {
-        if (answered) return;
+        if (feedback.isAnswered()) return;
         const answer = Number(input.value);
         if (isNaN(answer)) return;
         checkAnswer(answer === step.answer);
@@ -177,7 +162,7 @@ export function renderSequence(step, root, next, progress, onResult, onAttempt) 
     if (useChoice && optionsContainer) {
         optionsContainer.addEventListener("click", (e) => {
             const btn = e.target.closest(".mult-option");
-            if (!btn || answered) return;
+            if (!btn || feedback.isAnswered()) return;
             checkAnswer(Number(btn.dataset.value) === step.answer);
         });
     }

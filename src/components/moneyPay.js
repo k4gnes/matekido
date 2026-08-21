@@ -1,6 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createFeedback } from "./ui/feedback.js";
 import { createCoin } from "./ui/coin.js";
 import { COINS } from "../data/money.js";
 import { getActiveWorld } from "../profile/Profile.js";
@@ -15,10 +16,6 @@ const WORLD_EMOJI = {
 };
 
 export function renderMoneyPay(step, root, next, progress, onResult, onAttempt) {
-
-    let mistakes = 0;
-    let reported = false;
-    let solved = false;
 
     const wallet = [];
 
@@ -85,6 +82,14 @@ export function renderMoneyPay(step, root, next, progress, onResult, onAttempt) 
 
     root.replaceChildren(card);
 
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext: next,
+        onResult,
+        onAttempt
+    });
+
     function renderWallet() {
         walletBox.replaceChildren();
         const total = wallet.reduce((s, v) => s + v, 0);
@@ -111,35 +116,16 @@ export function renderMoneyPay(step, root, next, progress, onResult, onAttempt) 
     }
 
     function check() {
-        if (solved) return;
+        if (feedback.isAnswered()) return;
 
         const total = wallet.reduce((s, v) => s + v, 0);
 
-        onAttempt?.();
-
         if (total === step.price) {
-            solved = true;
             checkBtn.disabled = true;
             clearBtn.disabled = true;
-            message.show(`🎉 Pontosan ${total} Ft-ot fizettél ki!`, "success");
-
-            if (!reported) {
-                reported = true;
-                onResult?.(true);
-            }
-            setTimeout(() => next(), 900);
+            feedback.success(`🎉 Pontosan ${total} Ft-ot fizettél ki!`);
         } else {
-            if (!reported) {
-                reported = true;
-                onResult?.(false);
-            }
-
-            if (mistakes === 1) {
-                message.show(`🙂 Majdnem! Most ${total} Ft van a tárcában, a termék ára ${step.price} Ft.`, "retry");
-            } else {
-                message.show(`🤔 Most ${total} Ft van a tárcában, a termék ára ${step.price} Ft.`, "retry");
-            }
-            mistakes++;
+            feedback.retry(`${feedback.getMistakes() === 1 ? "🙂 Majdnem!" : "🤔"} Most ${total} Ft van a tárcában, a termék ára ${step.price} Ft.`);
         }
     }
 

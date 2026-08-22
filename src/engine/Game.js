@@ -29,6 +29,8 @@ import { renderMissingOperand } from "../components/missingOperand.js?v=3";
 import { renderEstimate } from "../components/estimate.js?v=4";
 import { renderTrueFalse } from "../components/trueFalse.js?v=4";
 import { renderFindError } from "../components/findError.js?v=1";
+import { renderShapeCompare } from "../components/shapeCompare.js?v=1";
+import { renderSolidShape } from "../components/solidShape.js?v=1";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -66,7 +68,9 @@ const COUNTED_TYPES = new Set([
     "missing-operand",
     "estimate",
     "true-false",
-    "find-error"
+    "find-error",
+    "shape-compare",
+    "solid-shape"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -120,6 +124,8 @@ const RENDERERS = new Map([
     ["estimate", renderEstimate],
     ["true-false", renderTrueFalse],
     ["find-error", renderFindError],
+    ["shape-compare", renderShapeCompare],
+    ["solid-shape", renderSolidShape],
     ["comparison", renderComparison],
     ["neighbor", renderNeighbor],
     ["neighbor-single", renderNeighborSingle],

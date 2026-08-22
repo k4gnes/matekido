@@ -1,6 +1,6 @@
 # Matekidő – 2. osztályos készségtérkép
 
-**38 lecke**, 5 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**40 lecke**, 5 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
@@ -61,11 +61,13 @@ Tananyag-logikai háttér: `docs/masodik-osztaly-terv.md` · Fejlesztési ütemt
 | Osztás | Osztás 2, 5, 10-es táblával | Osztótábla | 100 | 2 |
 | Osztás | Vegyes osztás | Osztótábla | 100 | 3 |
 
-## Geometria (1 lecke)
+## Geometria (3 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
 | Alakzatok | Négyzet és téglalap | Alakzatok rendezése | — | 2 |
+| Alakzatok összehasonlítása | 📐 Alakzatok összehasonlítása | Alakzatok összehasonlítása | — | 2 |
+| Térbeli alakzatok | 🧊 Térbeli alakzatok | Térbeli alakzatok felismerése | — | 2 |
 
 ## Gyakorlati tudások (1 lecke)
 
@@ -89,11 +91,9 @@ Tananyag-logikai háttér: `docs/masodik-osztaly-terv.md` · Fejlesztési ütemt
 |---|---|---|
 | Helyiérték (2. o. szint) | ❌ | csak 1. osztályos lecke van |
 | Összehasonlítás 100-ig | ⚠️ | csak 10/20-ig van |
-| Alakzatok összehasonlítása | ❌ | `shapeCompare` komponens kell |
-| Térbeli alakzatok | ❌ | `solidShape` komponens kell |
 | Idő – negyedóra | ❌ | `time.js` bővítése (`quarter`) |
 | Tömeg | ❌ | `weight` komponens kell |
 | Űrtartalom | ❌ | `volume` komponens kell |
 | Pénz 100 Ft-ig + visszajáró | ❌ | új leckék + `moneyChange` komponens |
 
-Részletes tervek: `docs/kovetkezo-lepesek.md` (3–5. lépés).
+Részletes tervek: `docs/kovetkezo-lepesek.md` (4–5. lépés).

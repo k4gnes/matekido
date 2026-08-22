@@ -1,0 +1,68 @@
+{
+  "id": "grade2-solid-shapes-01",
+  "title": "🧊 Térbeli alakzatok",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧊 Térbeli alakzatok",
+      "text": "Ismerd fel a testeket! Kocka, téglatest, gömb, henger és kúp – hány lapja van nekik?",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Testek a boxutcában",
+          "text": "A szerelőknél különböző testek vannak: dobozok, hengerek! Ismerd fel őket!"
+        },
+        "cooking": {
+          "title": "🍳 Testek a konyhában",
+          "text": "A konyhában mindenféle test van: kockacukor, dobózos doboz, sodrófa! Ismerd fel őket!"
+        },
+        "football": {
+          "title": "⚽ Testek a pályán",
+          "text": "A labda, a kapu és a dobók is testek! Nézd meg jól őket, és ismerd fel!"
+        },
+        "animals": {
+          "title": "🦁 Testek az állatkertben",
+          "text": "Az állatok játékai különböző testekből készültek! Ismerd fel őket!"
+        },
+        "space": {
+          "title": "🤖 Testek az űrhajón",
+          "text": "Az űrhajón minden alkatrész valamilyen test! Ismerd fel őket!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "solid-shape",
+      "options": {
+        "count": 8,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden testet felismertél!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden testet felismertél a boxutcában!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden testet felismertél a konyhában!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden testet felismertél a pályán!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden testet felismertél az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden testet felismertél az űrhajón!"
+        }
+      }
+    }
+  ]
+}

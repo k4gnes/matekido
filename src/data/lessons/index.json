@@ -1425,6 +1425,48 @@
                 "animals": "🦁 Hibás számolás az állatkertben?",
                 "space": "🤖 Hibás számolás a fedélzeten?"
             }
+        },
+        {
+            "id": "shape-compare-01",
+            "title": "📐 Alakzatok összehasonlítása",
+            "grades": [
+                2
+            ],
+            "category": "geometry",
+            "skill": "shape-compare",
+            "difficulty": 2,
+            "type": "shape-compare",
+            "mission": "📐 Alakzatok összehasonlítása",
+            "subtitle": "Alakzatok összehasonlítása",
+            "file": "./data/lessons/grade2/shape-compare-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Alakzatok a versenypályán",
+                "cooking": "🍳 Alakzatok a konyhában",
+                "football": "⚽ Alakzatok a meccsen",
+                "animals": "🦁 Alakzatok az állatkertben",
+                "space": "🤖 Alakzatok az űrben"
+            }
+        },
+        {
+            "id": "solid-shapes-01",
+            "title": "🧊 Térbeli alakzatok",
+            "grades": [
+                2
+            ],
+            "category": "geometry",
+            "skill": "solid-shapes",
+            "difficulty": 2,
+            "type": "solid-shape",
+            "mission": "🧊 Térbeli alakzatok",
+            "subtitle": "Térbeli alakzatok",
+            "file": "./data/lessons/grade2/solid-shapes-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Testek a boxutcában",
+                "cooking": "🍳 Testek a konyhában",
+                "football": "⚽ Testek a pályán",
+                "animals": "🦁 Testek az állatkertben",
+                "space": "🤖 Testek az űrhajón"
+            }
         }
     ],
     "gradeConfig": [

@@ -1,0 +1,68 @@
+{
+  "id": "grade2-shape-compare-01",
+  "title": "📐 Alakzatok összehasonlítása",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📐 Alakzatok összehasonlítása",
+      "text": "Nézd meg jól a két alakzatot! Melyiknek van több oldala, és melyik a nagyobb?",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Alakzatok a versenypályán",
+          "text": "A pálya tábláin alakzatok vannak! Nézd meg jól, és válaszolj a kérdésekre!"
+        },
+        "cooking": {
+          "title": "🍳 Alakzatok a konyhában",
+          "text": "A sütik és a tányérok különböző formájúak! Nézd meg jól, és válaszolj a kérdésekre!"
+        },
+        "football": {
+          "title": "⚽ Alakzatok a meccsen",
+          "text": "A zászlókon és a táblákon alakzatok vannak! Nézd meg jól, és válaszolj a kérdésekre!"
+        },
+        "animals": {
+          "title": "🦁 Alakzatok az állatkertben",
+          "text": "A kifutók tábláin alakzatok vannak! Nézd meg jól, és válaszolj a kérdésekre!"
+        },
+        "space": {
+          "title": "🤖 Alakzatok az űrben",
+          "text": "Az űrhajó ablakain alakzatok vannak! Nézd meg jól, és válaszolj a kérdésekre!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "shape-compare",
+      "options": {
+        "count": 8,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden alakzatot jól összehasonlítottál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden alakzatot jól összehasonlítottál a pályán!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden alakzatot jól összehasonlítottál a konyhában!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden alakzatot jól összehasonlítottál a meccsen!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden alakzatot jól összehasonlítottál az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden alakzatot jól összehasonlítottál az űrben!"
+        }
+      }
+    }
+  ]
+}

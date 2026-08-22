@@ -1,0 +1,44 @@
+.ss-figure {
+    display: flex;
+    justify-content: center;
+    margin: .6rem 0;
+}
+
+.ss-figure svg {
+    width: 150px;
+    height: 150px;
+}
+
+.ss-prompt {
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: center;
+    color: #475569;
+    margin: .3rem 0 .6rem;
+}
+
+.ss-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .7rem;
+    margin: .8rem 0;
+}
+
+.ss-option {
+    padding: .8rem 1.4rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    background: #fff;
+    color: #1a1a2e;
+    cursor: pointer;
+    min-width: 96px;
+    transition: transform .15s, box-shadow .15s;
+}
+
+.ss-option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
+}

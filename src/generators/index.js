@@ -27,6 +27,8 @@ import { generateMissingOperand } from "./missingOperandGenerator.js?v=1";
 import { generateEstimate } from "./estimateGenerator.js?v=2";
 import { generateTrueFalse } from "./trueFalseGenerator.js?v=1";
 import { generateFindError } from "./findErrorGenerator.js?v=1";
+import { generateShapeCompare } from "./shapeCompareGenerator.js?v=1";
+import { generateSolidShape } from "./solidShapeGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -98,6 +100,10 @@ export function generate(step) {
             return generateTrueFalse(opts);
         case "find-error":
             return generateFindError(opts);
+        case "shape-compare":
+            return generateShapeCompare(opts);
+        case "solid-shape":
+            return generateSolidShape(opts);
 
         default:
             throw new Error(

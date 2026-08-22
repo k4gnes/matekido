@@ -54,6 +54,8 @@ const TYPE_EMOJI = {
     "even-odd": "🎯",
     pattern: "🔁",
     "shape-sort": "🟦",
+    "shape-compare": "📐",
+    "solid-shape": "🧊",
     time: "🕐",
     spatial: "🧭",
     "money-pay": "💰",
@@ -95,6 +97,8 @@ const TYPE_LABEL = {
     "even-odd": "Páros-páratlan",
     pattern: "Sorminta",
     "shape-sort": "Alakzatok",
+    "shape-compare": "Alakzatok összehasonlítása",
+    "solid-shape": "Térbeli alakzatok",
     time: "Idő",
     spatial: "Térbeli tájékozódás",
     "money-pay": "Pontos kifizetés",
@@ -336,7 +340,7 @@ function createFilterPanel(filters, onFilterChange) {
     const skillBtns = document.createElement("div");
     skillBtns.className = "filter-skill-btns";
 
-    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed", "true-false", "find-error", "place-value", "number-sequence", "ordering", "even-odd", "pattern", "estimation", "shapes", "hour", "position", "coins", "length", "multiplication", "division", "missing-factor"];
+    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed", "true-false", "find-error", "place-value", "number-sequence", "ordering", "even-odd", "pattern", "estimation", "shapes", "shape-compare", "solid-shapes", "hour", "position", "coins", "length", "multiplication", "division", "missing-factor"];
 
     usedSkills.forEach(skillId => {
         const skill = SKILLS[skillId];

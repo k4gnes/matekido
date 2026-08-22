@@ -2,7 +2,7 @@
 
 ## Jelenlegi állapot
 
-**65 lecke** van regisztrálva összesen (**27** első + **38** második osztályos). Az 1–2. lépés **kész**.
+**67 lecke** van regisztrálva összesen (**27** első + **40** második osztályos). Az 1–3. lépés **kész**.
 
 ---
 
@@ -55,7 +55,7 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 - Készségtérkép: 2. osztályos kártya „37 lecke" → „38 lecke" (`skillMap.js`).
 
 ### PWA
-- `sw-cache.js` újragenerálva (227 fájl), `CACHE` bump: `matekido-v5`.
+- `sw-cache.js` újragenerálva (235 fájl), `CACHE` bump: `matekido-v6`.
 
 ---
 
@@ -103,23 +103,20 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 
 ---
 
-## 🟡 3. lépés – Geometria
+## ✅ 3. lépés – Kész
 
 ### 7.2. Alakzatok összehasonlítása
-- **Generátor:** `shapeCompareGenerator.js` (új)
-  - Adott: 2 alakzat képe
-  - Kérdés: „Melyiknek van több oldala?" / „Melyik a nagyobb?"
-  - Választós
-- **Komponens:** `shapeCompare.js` (új) – SVG alakzatok megjelenítése, választós gombok
-- **Lecke:** `grade2/shape-compare-01.json`
+- **Generátor:** `shapeCompareGenerator.js` (új) – két mód: `sides` („Melyiknek van több oldala/sarka?" – háromszög, négyzet, ötszög, hatszög) és `size` (azonos alakzat két méretben: „Melyik a nagyobb?")
+- **Komponens:** `shapeCompare.js` (új) – SVG síkidomok gombként kattinthatók; jó válasznál kiírja az oldal-/sarokszámokat
+- **Lecke:** `grade2/shape-compare-01.json` – 8 feladat, vegyes módok
+- **Státusz:** ✅ Kész, regisztrálva
 
 ### 7.4. Térbeli alakzatok
-- **Generátor:** `solidShapeGenerator.js` (új)
-  - Adott: kocka / téglatest / gömb / henger képe
-  - Kérdés: „Mi ennek a neve?" vagy „Hány lapja van ennek?"
-  - Választós
-- **Komponens:** `solidShape.js` (új) – SVG 3D alakzatok, választós
-- **Lecke:** `grade2/solid-shapes-01.json`
+- **Generátor:** `solidShapeGenerator.js` (új) – két mód: `name` („Mi ez a test?" – kocka, téglatest, gömb, henger, kúp) és `faces` („Hány lapja van?" – csak egyértelmű testekre: kocka/téglatest 6, henger 3, kúp 2; a gömb kimarad)
+- **Komponens:** `solidShape.js` (új) – SVG testábrázolások (kettős vonalas izometrikus rajz), választós
+- **Lecke:** `grade2/solid-shapes-01.json` – 8 feladat, vegyes módok
+- **Új készségek:** `shape-compare` és `solid-shapes` a `data/skills.js`-ben (geometria kategória) – statisztika és szűrők azonnal látják
+- **Státusz:** ✅ Kész, regisztrálva
 
 ---
 
@@ -165,21 +162,15 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 ## Hátralevő munka
 
 ### Generátorok (új)
-- `src/generators/shapeCompareGenerator.js`
-- `src/generators/solidShapeGenerator.js`
 - `src/generators/weightGenerator.js`
 - `src/generators/volumeGenerator.js`
 
 ### Komponensek (új)
-- `src/components/shapeCompare.js`
-- `src/components/solidShape.js`
 - `src/components/weight.js`
 - `src/components/volume.js`
 - `src/components/moneyChange.js`
 
 ### Leckék (új)
-- `src/data/lessons/grade2/shape-compare-01.json`
-- `src/data/lessons/grade2/solid-shapes-01.json`
 - `src/data/lessons/grade2/weight-01.json`
 - `src/data/lessons/grade2/volume-01.json`
 - `src/data/lessons/grade2/time-02.json`
@@ -227,8 +218,8 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 | Szöveges feladatok (osztás) | ✅ Kész | word-problems-divide-01 |
 | Kétlépéses feladatok | ✅ Kész | word-problems-two-step-01 |
 | Alakzatok | ✅ Kész | shape-sort-03 |
-| Alakzatok összehasonlítása | ❌ Hiányzik | — |
-| Térbeli alakzatok | ❌ Hiányzik | — |
+| Alakzatok összehasonlítása | ✅ Kész | shape-compare-01 |
+| Térbeli alakzatok | ✅ Kész | solid-shapes-01 |
 | Idő | ⚠️ Részleges | time-02 (negyedóra kell) |
 | Hosszúság | ⚠️ 1. osztályos | measure-compare-01, measure-squares-01 |
 | Tömeg | ❌ Hiányzik | — |

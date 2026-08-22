@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=4";
+import { generate } from "../generators/index.js?v=5";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -320,6 +320,16 @@ export function buildLesson(lesson) {
             } else if (step.generator === "find-error") {
                 result.push({
                     type: "find-error",
+                    ...task
+                });
+            } else if (step.generator === "shape-compare") {
+                result.push({
+                    type: "shape-compare",
+                    ...task
+                });
+            } else if (step.generator === "solid-shape") {
+                result.push({
+                    type: "solid-shape",
                     ...task
                 });
             } else {

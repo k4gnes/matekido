@@ -6,7 +6,7 @@ import { ACHIEVEMENTS, getUnlockedAchievements } from "../profile/Achievements.j
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getAllWorlds } from "../world/WorldRegistry.js";
 
-export function renderProfilePage(root, onBack, onStats, onPractice) {
+export function renderProfilePage(root, onBack, onStats, onPractice, onHelp) {
 
     root.replaceChildren();
 
@@ -200,6 +200,12 @@ export function renderProfilePage(root, onBack, onStats, onPractice) {
         practiceButton.className = "profile-page-button";
         buttonRow.append(practiceButton);
     }
+
+    const helpButton = createButton("❓ Súgó", {
+        onClick: () => onHelp?.()
+    });
+    helpButton.className = "profile-page-button";
+    buttonRow.append(helpButton);
 
     card.append(avatarDisplay, title, nameDisplay, stats, progressSection, questSection, achWorldRow, buttonRow);
 

@@ -460,7 +460,7 @@ function filterLessons(lessons, filters) {
     });
 }
 
-export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onSkillMap) {
+export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onSkillMap, onHelp) {
 
     root.replaceChildren();
 
@@ -498,9 +498,14 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     });
     infoButton.className = "filter-toggle-btn";
 
+    const helpButton = createButton("❓ Súgó", {
+        onClick: () => onHelp()
+    });
+    helpButton.className = "filter-toggle-btn";
+
     const menuToolbar = document.createElement("div");
     menuToolbar.className = "menu-toolbar";
-    menuToolbar.append(filterToggle, infoButton);
+    menuToolbar.append(filterToggle, infoButton, helpButton);
 
     const filterPanel = document.createElement("div");
     filterPanel.className = "filter-panel";

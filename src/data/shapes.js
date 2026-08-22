@@ -17,6 +17,6 @@ export const SHAPE_CATEGORIES = {
     rectangle: {
         label: "Téglalap",
         symbol: "▭",
-        emojis: ["📱", "📺", "💳", "📄", "📚", "🚪", "📷", "🧱", "📰"]
+        emojis: ["📱", "📺", "💳", "📄", "📚", "🚪", "📷", "📰"]
     }
 };

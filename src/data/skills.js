@@ -2,12 +2,12 @@ export const CATEGORIES = {
     numbers: {
         title: "Számok",
         icon: "🔢",
-        skills: ["neighbours", "comparison", "ordering", "missing-number", "place-value", "rounding", "number-sequence", "even-odd", "pattern"]
+        skills: ["neighbours", "comparison", "ordering", "missing-number", "place-value", "rounding", "number-sequence", "even-odd", "pattern", "estimation"]
     },
     operations: {
         title: "Összeadás-Kivonás",
         icon: "➕",
-        skills: ["addition", "subtraction", "mixed", "missing-operand", "tens-crossing"]
+        skills: ["addition", "subtraction", "mixed", "missing-operand", "tens-crossing", "true-false", "find-error"]
     },
     multiplication: {
         title: "Szorzás & Osztás",
@@ -42,6 +42,7 @@ export const SKILLS = {
     "even-odd": { title: "Páros és páratlan", category: "numbers" },
     pattern: { title: "Sorminta", category: "numbers" },
     rounding: { title: "Kerekítés", category: "numbers" },
+    estimation: { title: "Becslés", category: "numbers" },
 
     // Operations
     addition: { title: "Összeadás", category: "operations" },
@@ -49,6 +50,8 @@ export const SKILLS = {
     mixed: { title: "Vegyes műveletek", category: "operations" },
     "missing-operand": { title: "Hiányzó tag", category: "operations" },
     "tens-crossing": { title: "Tízes átlépés", category: "operations" },
+    "true-false": { title: "Igaz vagy hamis?", category: "operations" },
+    "find-error": { title: "Hibás számolás felismerése", category: "operations" },
 
     // Multiplication & Division
     multiplication: { title: "Szorzás", category: "multiplication" },

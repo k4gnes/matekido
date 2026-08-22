@@ -1,6 +1,6 @@
 # Matekidő – 2. osztályos készségtérkép
 
-**37 lecke**, 5 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**38 lecke**, 5 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
@@ -38,11 +38,12 @@ Tananyag-logikai háttér: `docs/masodik-osztaly-terv.md` · Fejlesztési ütemt
 | Kivonás | Kivonás 100-ig átlépéssel | Kivonás | 100 | 3 |
 | Vegyes műveletek | Vegyes műveletek 100-ig | Vegyes műveletek | 100 | 3 |
 
-## Igaz/Hamis (1 lecke)
+## Igaz/Hamis és hibás számolás (2 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
 | Számolási hiba felismerése | ✅ Igaz vagy hamis? | Igaz/Hamis | 50 | 2 |
+| Hibás számolás felismerése | 🕵️ Hibás számolás? | Hibás számolás | 50 | 3 |
 
 ## Szorzás és osztás (11 lecke)
 
@@ -94,6 +95,5 @@ Tananyag-logikai háttér: `docs/masodik-osztaly-terv.md` · Fejlesztési ütemt
 | Tömeg | ❌ | `weight` komponens kell |
 | Űrtartalom | ❌ | `volume` komponens kell |
 | Pénz 100 Ft-ig + visszajáró | ❌ | új leckék + `moneyChange` komponens |
-| Hibás számolás felismerése | ❌ | `findError` komponens kell |
 
-Részletes tervek: `docs/kovetkezo-lepesek.md` (2–5. lépés).
+Részletes tervek: `docs/kovetkezo-lepesek.md` (3–5. lépés).

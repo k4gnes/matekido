@@ -2,7 +2,7 @@
 
 ## Jelenlegi állapot
 
-**64 lecke** van regisztrálva összesen (**27** első + **37** második osztályos). Az 1. lépés (első hullám befejezése + két új komponens) **kész**.
+**65 lecke** van regisztrálva összesen (**27** első + **38** második osztályos). Az 1–2. lépés **kész**.
 
 ---
 
@@ -39,6 +39,26 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 
 ---
 
+## ✅ 2026-08-22 – Becslés-javítás + hibás számolás (kész)
+
+### Hibajavítások
+- **Becslés:** a helyes válasz eddig a *pontos eredmény* kerekítésével számolódott (`round10(48 − 34) = 10`), miközben a súgó a *tagok* kerekítését tanította (`50 − 30 = 20`) – a súgót követő jó választ elutasította az app. Mostantól a válasz is a tagok kerekítéséből készül (`round10(a) ± round10(b)`); kivonásnál újrapároztat, ha a kerekített különbség ≤ 0 lenne. `estimateGenerator.js` `?v=2`.
+- **Alakzatok:** 🧱 (téglafal) emoji kivéve a téglalap kategóriából (`data/shapes.js`) – apró kockáknak látszik, nem egyértelmű téglalap.
+
+### Új lecke: 10c. Hibás számolás
+- Részletesen a **2. lépés** szekcióban lentebb. Új fájlok: `findErrorGenerator.js`, `findError.js`, `find-error.css`, `grade2/find-error-01.json`.
+
+### Statisztika oldal
+- A napi nézet „Feladatok bontásban" listáján a régebbi feladattípusok nyers angol azonosítóként jelentek meg (pl. `table`, `true-false`). A `statsPage.js` típuscímkéi szinkronban a `lessonMenu.js` magyar neveivel, plusz három kimaradót pótoltunk: `bridge-ten` → Tízes átlépés, `grouping` → Csoportosítás, `match-groups` → Csoportok párosítása.
+
+### Egyéb
+- Készségtérkép: 2. osztályos kártya „37 lecke" → „38 lecke" (`skillMap.js`).
+
+### PWA
+- `sw-cache.js` újragenerálva (227 fájl), `CACHE` bump: `matekido-v5`.
+
+---
+
 ## ✅ 1. lépés – Kész
 
 ### 5.3. Szorzás és osztás kapcsolata
@@ -58,7 +78,7 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 - **Generátor:** `estimateGenerator.js` (új) – kerekítés-alapú becslés
 - **Komponens:** `estimate.js` (új) – választós gombok + kerekítési segítség
 - **Lecke:** `grade2/estimate-01.json` – 8 feladat
-- **Design:** A helyes válasz a kerekített eredmény (pl. `23 + 18 ≈ 40`, nem 41). A segítség mutatja a kerekítést: `20 + 20 = ?`
+- **Design:** A helyes válasz a tagok tizesekre kerekítéséből adódik (pl. `48 − 34 ≈ 50 − 30 = 20`), ugyanúgy, ahogy a súgó mutatja. *(2026-08-22-ig az eredményt kerekítettük – 48 − 34 esetén ez 10-et adott volna, és a súgót követő jó választ elutasította. Javítva.)*
 - **Státusz:** ✅ Kész, regisztrálva
 
 ### 10b. Igaz/Hamis műveletek
@@ -72,15 +92,14 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 
 ---
 
-## 🟠 2. lépés – Hibás számolás felismerése
+## ✅ 2. lépés – Kész
 
 ### 10c. Hibás számolás felismerése
-- **Generátor:** `findErrorGenerator.js` (új)
-  - Adott: `24 + 17 = 31` (a helyes 41)
-  - Kérdés: „Hibás-e a számolás?"
-  - Vagy: „Melyik számolás hibás?" – 3 számolásból kell kiválasztani a hibásat
-- **Komponens:** `findError.js` (új) – választós, 3 számolás jelenik meg
-- **Lecke:** `grade2/find-error-01.json`
+- **Generátor:** `findErrorGenerator.js` (új) – két mód: `single` („Hibás-e a számolás?" Helyes/Hibás gombok) és `pick` (3 számolás közül melyik a hibás). Tipikus gyereki hibákat szimulál (elfelejtett átviitel ≈ ±10, eggyel tévedés)
+- **Komponens:** `findError.js` (új) – választós; hibánál kiírja a helyes eredményt a sikeres válasz után
+- **Lecke:** `grade2/find-error-01.json` – 8 feladat, vegyes összeadás/kivonás 50-ig
+- **Nehézség:** haladó (difficulty 3)
+- **Státusz:** ✅ Kész, regisztrálva
 
 ---
 
@@ -146,14 +165,12 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 ## Hátralevő munka
 
 ### Generátorok (új)
-- `src/generators/findErrorGenerator.js`
 - `src/generators/shapeCompareGenerator.js`
 - `src/generators/solidShapeGenerator.js`
 - `src/generators/weightGenerator.js`
 - `src/generators/volumeGenerator.js`
 
 ### Komponensek (új)
-- `src/components/findError.js`
 - `src/components/shapeCompare.js`
 - `src/components/solidShape.js`
 - `src/components/weight.js`
@@ -161,7 +178,6 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 - `src/components/moneyChange.js`
 
 ### Leckék (új)
-- `src/data/lessons/grade2/find-error-01.json`
 - `src/data/lessons/grade2/shape-compare-01.json`
 - `src/data/lessons/grade2/solid-shapes-01.json`
 - `src/data/lessons/grade2/weight-01.json`
@@ -184,7 +200,7 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 
 ## Készség → Lecke lefedettség (második osztály)
 
-*(2026-08-21-i állapot szerint ellenőrizve)*
+*(2026-08-22-i állapot szerint ellenőrizve)*
 
 | Készség | Státusz | Leckék |
 |---|---|---|
@@ -221,4 +237,4 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 | Pénz (visszajáró) | ❌ Hiányzik | — |
 | Számérzék és becslés | ✅ Kész | estimate-01 |
 | Igaz/Hamis műveletek | ✅ Kész | true-false-01 |
-| Hibás számolás | ❌ Hiányzik | — |
+| Hibás számolás | ✅ Kész | find-error-01 |

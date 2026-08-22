@@ -28,6 +28,7 @@ import { renderDivision } from "../components/division.js?v=3";
 import { renderMissingOperand } from "../components/missingOperand.js?v=3";
 import { renderEstimate } from "../components/estimate.js?v=4";
 import { renderTrueFalse } from "../components/trueFalse.js?v=4";
+import { renderFindError } from "../components/findError.js?v=1";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -64,7 +65,8 @@ const COUNTED_TYPES = new Set([
     "division-table",
     "missing-operand",
     "estimate",
-    "true-false"
+    "true-false",
+    "find-error"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -117,6 +119,7 @@ const RENDERERS = new Map([
     ["missing-operand", renderMissingOperand],
     ["estimate", renderEstimate],
     ["true-false", renderTrueFalse],
+    ["find-error", renderFindError],
     ["comparison", renderComparison],
     ["neighbor", renderNeighbor],
     ["neighbor-single", renderNeighborSingle],

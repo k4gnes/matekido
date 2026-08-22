@@ -1,0 +1,77 @@
+.fe-expression {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    color: #1a1a2e;
+    margin: .5rem 0;
+    letter-spacing: .05em;
+}
+
+.fe-prompt {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    color: #475569;
+    margin: .3rem 0 .6rem;
+}
+
+.fe-options {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: .8rem 0;
+}
+
+.fe-option {
+    margin: 0;
+    padding: 1rem 2.2rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    border: 2px solid var(--primary);
+    border-radius: 14px;
+    background: var(--primary);
+    color: #fff;
+    cursor: pointer;
+    transition: transform .15s, border-color .15s, background-color .15s;
+    min-width: 140px;
+}
+
+.fe-option:hover {
+    transform: scale(1.06);
+}
+
+.fe-ok:hover {
+    border-color: #22c55e;
+    background: #22c55e;
+}
+
+.fe-err:hover {
+    border-color: #ef4444;
+    background: #ef4444;
+}
+
+.fe-calcs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .7rem;
+    margin: .8rem 0;
+}
+
+.fe-calc {
+    width: min(320px, 100%);
+    padding: .9rem 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: .05em;
+    border: 2px solid var(--primary);
+    border-radius: 14px;
+    background: #fff;
+    color: #1a1a2e;
+    cursor: pointer;
+    transition: transform .15s, border-color .15s, background-color .15s;
+}
+
+.fe-calc:hover {
+    transform: scale(1.03);
+}

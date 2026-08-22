@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=3";
+import { generate } from "../generators/index.js?v=4";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -316,6 +316,11 @@ export function buildLesson(lesson) {
                     type: "true-false",
                     statement: task.statement,
                     answer: task.answer
+                });
+            } else if (step.generator === "find-error") {
+                result.push({
+                    type: "find-error",
+                    ...task
                 });
             } else {
                 result.push({

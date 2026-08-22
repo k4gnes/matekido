@@ -1,0 +1,69 @@
+{
+  "id": "grade2-find-error-01",
+  "title": "🕵️ Hibás számolás?",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🕵️ Hibás számolás?",
+      "text": "Egy számolás becsúszott! Nézd meg jól a műveleteket, és találd meg, melyik nem igaz!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Hibás számolás a boxutcában?",
+          "text": "A szerelők rosszul számoltak! Nézd meg az időeredményeket, és találd meg a hibát!"
+        },
+        "cooking": {
+          "title": "🍳 Hibás számolás a receptben?",
+          "text": "Elrontott valaki egy számolást a receptben? Nézd meg a mennyiségeket, és találd meg a hibát!"
+        },
+        "football": {
+          "title": "⚽ Hibás számolás az eredményjelzőn?",
+          "text": "Az eredményjelző elszámolta magát! Nézd meg a pontszámokat, és találd meg a hibát!"
+        },
+        "animals": {
+          "title": "🦁 Hibás számolás az állatkertben?",
+          "text": "A gondozó megszámolta az állatokat, de lehet, hogy hibázott! Találd meg a hibás számolást!"
+        },
+        "space": {
+          "title": "🤖 Hibás számolás a fedélzeten?",
+          "text": "A robot számológépe hibásan számolt! Nézd meg a kijelzőt, és találd meg a hibát!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "find-error",
+      "options": {
+        "count": 8,
+        "max": 50,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes nyomozó voltál!",
+      "text": "Minden hibás számolást megtaláltál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes nyomozó voltál!",
+          "text": "Minden hibát megtaláltál a boxutcában!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden hibát megtaláltál a receptekben!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden hibát megtaláltál az eredményjelzőn!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden hibát megtaláltál az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden hibát megtaláltál az űrhajón!"
+        }
+      }
+    }
+  ]
+}

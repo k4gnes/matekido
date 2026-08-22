@@ -31,6 +31,7 @@ const TYPE_LABEL = {
     comparison: "Összehasonlítás",
     neighbor: "Szomszédok",
     decomposition: "Bontás",
+    "place-value": "Helyi érték",
     sequence: "Számsor",
     order: "Sorba rendezés",
     "even-odd": "Páros-páratlan",
@@ -42,7 +43,23 @@ const TYPE_LABEL = {
     "money-compare": "Pénz összehasonlítás",
     "money-enough": "Elég-e a pénz?",
     "measure-compare": "Hosszúság összehasonlítás",
-    "measure-squares": "Mérés négyzetekkel"
+    "measure-squares": "Mérés négyzetekkel",
+    "word-problem": "Szöveges feladat",
+    "bridge-ten": "Tízes átlépés",
+    "equal-groups": "Egyenlő csoportok",
+    "repeated-addition": "Ismételt összeadás",
+    "skip-counting": "Lépegető számolás",
+    table: "Szorzótábla",
+    "missing-factor": "Hiányzó tényező",
+    "match-groups": "Csoportok párosítása",
+    link: "Szorzás–osztás kapcsolat",
+    sharing: "Elosztás",
+    grouping: "Csoportosítás",
+    "division-table": "Osztótábla",
+    "missing-operand": "Hiányzó tag",
+    estimate: "Becslés",
+    "true-false": "Igaz/Hamis",
+    "find-error": "Hibás számolás"
 };
 
 const TYPE_EMOJI = {
@@ -53,6 +70,7 @@ const TYPE_EMOJI = {
     comparison: "⚖️",
     neighbor: "🔍",
     decomposition: "🧩",
+    "place-value": "🔢",
     sequence: "🔢",
     order: "↕️",
     "even-odd": "🎯",
@@ -64,7 +82,23 @@ const TYPE_EMOJI = {
     "money-compare": "⚖️",
     "money-enough": "🛒",
     "measure-compare": "📏",
-    "measure-squares": "🧮"
+    "measure-squares": "🧮",
+    "word-problem": "📝",
+    "bridge-ten": "🧩",
+    "equal-groups": "🍅",
+    "repeated-addition": "➕",
+    "skip-counting": "🔢",
+    table: "✖️",
+    "missing-factor": "❓",
+    "match-groups": "🧩",
+    link: "🔗",
+    sharing: "🍕",
+    grouping: "📦",
+    "division-table": "➗",
+    "missing-operand": "❓",
+    estimate: "🧮",
+    "true-false": "✅",
+    "find-error": "🕵️"
 };
 
 function createStatGrid(items, className) {

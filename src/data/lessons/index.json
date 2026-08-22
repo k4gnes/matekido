@@ -1403,6 +1403,28 @@
                 "animals": "🦁 Igaz vagy hamis?",
                 "space": "🤖 Igaz vagy hamis?"
             }
+        },
+        {
+            "id": "find-error-01",
+            "title": "🕵️ Hibás számolás?",
+            "grades": [
+                2
+            ],
+            "category": "operations",
+            "skill": "find-error",
+            "difficulty": 3,
+            "type": "find-error",
+            "range": 50,
+            "mission": "🕵️ Hibás számolás?",
+            "subtitle": "Hibás számolás felismerése",
+            "file": "./data/lessons/grade2/find-error-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Hibás számolás a boxutcában?",
+                "cooking": "🍳 Hibás számolás a receptben?",
+                "football": "⚽ Hibás számolás az eredményjelzőn?",
+                "animals": "🦁 Hibás számolás az állatkertben?",
+                "space": "🤖 Hibás számolás a fedélzeten?"
+            }
         }
     ],
     "gradeConfig": [

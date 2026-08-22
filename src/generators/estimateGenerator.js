@@ -57,8 +57,7 @@ function generateAdditionEstimate(count, max) {
     for (let i = 0; i < count; i++) {
         const a = randint(11, max - 11);
         const b = randint(11, max - a);
-        const exact = a + b;
-        const estimate = round10(exact);
+        const estimate = round10(a) + round10(b);
         tasks.push({
             type: "estimate",
             expression: `${a} + ${b} ≈ ?`,
@@ -74,9 +73,12 @@ function generateSubtractionEstimate(count, max) {
     const tasks = [];
     for (let i = 0; i < count; i++) {
         const a = randint(15, max);
-        const b = randint(6, a - 5);
-        const exact = a - b;
-        const estimate = round10(exact);
+        let b;
+        let estimate;
+        do {
+            b = randint(6, a - 5);
+            estimate = round10(a) - round10(b);
+        } while (estimate <= 0);
         tasks.push({
             type: "estimate",
             expression: `${a} − ${b} ≈ ?`,
@@ -94,8 +96,7 @@ function generateMixedEstimate(count, max) {
         if (Math.random() < 0.5) {
             const a = randint(11, max - 11);
             const b = randint(11, max - a);
-            const exact = a + b;
-            const estimate = round10(exact);
+            const estimate = round10(a) + round10(b);
             tasks.push({
                 type: "estimate",
                 expression: `${a} + ${b} ≈ ?`,
@@ -105,9 +106,12 @@ function generateMixedEstimate(count, max) {
             });
         } else {
             const a = randint(15, max);
-            const b = randint(6, a - 5);
-            const exact = a - b;
-            const estimate = round10(exact);
+            let b;
+            let estimate;
+            do {
+                b = randint(6, a - 5);
+                estimate = round10(a) - round10(b);
+            } while (estimate <= 0);
             tasks.push({
                 type: "estimate",
                 expression: `${a} − ${b} ≈ ?`,

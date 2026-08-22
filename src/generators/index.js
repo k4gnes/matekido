@@ -24,7 +24,7 @@ import { generateMultPrep } from "./multPrepGenerator.js?v=2";
 import { generateMultiplication } from "./multiplicationGenerator.js?v=2";
 import { generateDivision } from "./divisionGenerator.js?v=2";
 import { generateMissingOperand } from "./missingOperandGenerator.js?v=1";
-import { generateEstimate } from "./estimateGenerator.js?v=1";
+import { generateEstimate } from "./estimateGenerator.js?v=2";
 import { generateTrueFalse } from "./trueFalseGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 

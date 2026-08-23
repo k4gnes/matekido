@@ -128,13 +128,11 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 - **Lecke:** `grade2/weight-01.json` (index: `weight-01`, skill: `mass`, difficulty 2) – regisztrálva
 - **Egyéb:** új `weight.css` (`?v=1` az index.html-ben), Game.js renderer + COUNTED_TYPES, LessonBuilder/generators case-ek, sw-cache (244 fájl), `CACHE`: `matekido-v11`
 
-### 8.3. Űrtartalom
-- **Generátor:** `volumeGenerator.js` (új)
-  - Adott: 2 edény képe (kisebb/nagyobb)
-  - Kérdés: „Több fér bele?"
-  - Választós
-- **Komponens:** `volume.js` (új) – egyszerű választós
-- **Lecke:** `grade2/volume-01.json`
+### ✅ 8.3. Űrtartalom (kész – 2026-08-23)
+- **Generátor:** `volumeGenerator.js` (új) – 6 edény valós űrtartalommal (kanál 0,5 dl … fürdőkád 150 l); csak legalább 4× különbségű párok kerülnek feladatba. Kérdés váltakozik: „Melyikbe fér több?" / „kevesebb?"
+- **Komponens:** `volume.js` (új) – a weight komponens mintájára két nagy kártya, választós
+- **Lecke:** `grade2/volume-01.json` (index: `volume-01`, skill: `volume`, difficulty 2) – regisztrálva
+- **Egyéb:** új `volume.css`, sw-cache (252 fájl), `CACHE`: `matekido-v12`
 
 ### ✅ 8.4. Idő bővítése – negyedóra (kész – 2026-08-23)
 - **`timeGenerator.js` bővítve:** új `quarter: true` opció – a percek közé kerül a 15 és 45; `describeTime` magyar megnevezései: *negyed X / fél X / háromnegyed X* (a következő óra számával). A zavaró válaszok ugyanazon óra testvér-formáit (negyed/fél/háromnegyed/egész) preferálják.
@@ -161,27 +159,26 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 - **Hibajavítás:** `moneyEnoughGenerator` – kis tárcánál (< 5 Ft) az „elég a pénzed" ág téves, teljesíthetetlen árat adott (pl. 2 Ft-tal egy 5 Ft-os termékről) → az ág csak 5 Ft felett jön létre.
 - **Egyéb:** `LessonBuilder` coins átvitele, generátor importok `?v=4`, sw-cache (240 fájl), `CACHE`: `matekido-v10`.
 
-### 🟡 9.4. Visszajáró
-- **Visszajáró komponens:** `moneyChange.js` (új) – „Fizetsz X Ft-ot, a termék Y Ft. Mennyi a visszajáró?"
-- **Lecke:** `grade2/money-change-01.json`
+### ✅ 9.4. Visszajáró (kész – 2026-08-23)
+- **Generátor:** `moneyChangeGenerator.js` (új) – termék 11–99 Ft között, fizetés nagyobb címlettel (50/100/200 Ft); a visszajáró a kivonás eredménye
+- **Komponens:** `moneyChange.js` (új) – input mezős válasz (Enter is működik), `createFeedback`; a termék sor a meglévő `.money-item` stílust használja
+- **Lecke:** `grade2/money-change-01.json` (index: `money-change-01`, skill: `shopping`, difficulty 3) – regisztrálva
+- **Egyéb:** új `money-change.css`, Game.js rendererek + COUNTED_TYPES (`volume`, `money-change`), sw-cache, `CACHE`: `matekido-v12`
+
+### 🎉 A 4–5. lépés ezzel kész – a 2. osztályos tananyag lefedettségi táblázatában minden készség elérhető.
 
 ---
 
 ## Hátralevő munka
 
 ### Generátorok (új)
-- `src/generators/weightGenerator.js`
-- `src/generators/volumeGenerator.js`
+- *(a 4–5. lépés generátorai elkészültek)*
 
 ### Komponensek (új)
-- `src/components/weight.js`
-- `src/components/volume.js`
-- `src/components/moneyChange.js`
+- *(a 4–5. lépés komponensei elkészültek)*
 
 ### Leckék (új)
-- `src/data/lessons/grade2/weight-01.json`
-- `src/data/lessons/grade2/volume-01.json`
-- `src/data/lessons/grade2/money-change-01.json`
+- *(a 4–5. lépés leckéi elkészültek és regisztrálva)*
 
 ### Módosítandó meglévő fájlok
 - `src/engine/Game.js` – új case-ek a hátralevő típusokhoz
@@ -225,10 +222,10 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 | Térbeli alakzatok | ✅ Kész | solid-shapes-01 |
 | Idő | ✅ Kész | 1. oszt: egész/fél óra (6–20) + negyedóra lecke |
 | Hosszúság | ⚠️ 1. osztályos | measure-compare-01, measure-squares-01 |
-| Tömeg | ❌ Hiányzik | — |
-| Űrtartalom | ❌ Hiányzik | — |
-| Pénz (alap) | ⚠️ 1. osztályos | money-pay-01, money-compare-01, money-enough-01 |
-| Pénz (visszajáró) | ❌ Hiányzik | — |
+| Tömeg | ✅ Kész | weight-01 |
+| Űrtartalom | ✅ Kész | volume-01 |
+| Pénz (alap) | ⚠️ 1. osztályos | money-pay-01, money-compare-01, money-enough-01 + 2. oszt: pay/compare/enough-02 (100 Ft felett) |
+| Pénz (visszajáró) | ✅ Kész | money-change-01 |
 | Számérzék és becslés | ✅ Kész | estimate-01 |
 | Igaz/Hamis műveletek | ✅ Kész | true-false-01 |
 | Hibás számolás | ✅ Kész | find-error-01 |

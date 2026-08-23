@@ -32,6 +32,8 @@ import { renderFindError } from "../components/findError.js?v=1";
 import { renderShapeCompare } from "../components/shapeCompare.js?v=1";
 import { renderSolidShape } from "../components/solidShape.js?v=1";
 import { renderWeight } from "../components/weight.js?v=1";
+import { renderVolume } from "../components/volume.js?v=1";
+import { renderMoneyChange } from "../components/moneyChange.js?v=1";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -72,7 +74,9 @@ const COUNTED_TYPES = new Set([
     "find-error",
     "shape-compare",
     "solid-shape",
-    "weight"
+    "weight",
+    "volume",
+    "money-change"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -129,6 +133,8 @@ const RENDERERS = new Map([
     ["shape-compare", renderShapeCompare],
     ["solid-shape", renderSolidShape],
     ["weight", renderWeight],
+    ["volume", renderVolume],
+    ["money-change", renderMoneyChange],
     ["comparison", renderComparison],
     ["neighbor", renderNeighbor],
     ["neighbor-single", renderNeighborSingle],

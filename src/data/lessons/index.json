@@ -1050,6 +1050,48 @@
             }
         },
         {
+            "id": "volume-01",
+            "title": "Melyikbe fér több?",
+            "grades": [
+                2
+            ],
+            "category": "practical",
+            "skill": "volume",
+            "difficulty": 2,
+            "type": "volume",
+            "mission": "🥤 Melyikbe fér több?",
+            "subtitle": "Űrtartalom összehasonlítása",
+            "file": "./data/lessons/grade2/volume-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Mennyi fér bele?",
+                "cooking": "🍳 Mennyi fér bele?",
+                "football": "⚽ Mennyi fér bele?",
+                "animals": "🦁 Mennyi fér bele?",
+                "space": "🤖 Mennyi fér bele?"
+            }
+        },
+        {
+            "id": "money-change-01",
+            "title": "Mennyi a visszajáró?",
+            "grades": [
+                2
+            ],
+            "category": "practical",
+            "skill": "shopping",
+            "difficulty": 3,
+            "type": "money-change",
+            "mission": "💰 Visszajáró",
+            "subtitle": "Visszajáró számítása vásárláskor",
+            "file": "./data/lessons/grade2/money-change-01.json",
+            "worldTitles": {
+                "racing": "🔧 Visszajáró a műhelyboltban",
+                "cooking": "🥄 Visszajáró a pékségben",
+                "football": "⚽ Visszajáró a szurkolói boltban",
+                "animals": "🦁 Visszajáró a jegypénztárnál",
+                "space": "🤖 Visszajáró az űrboltban"
+            }
+        },
+        {
             "id": "measure-compare-01",
             "title": "Melyik hosszabb?",
             "grades": [

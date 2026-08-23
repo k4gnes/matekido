@@ -338,6 +338,16 @@ export function buildLesson(lesson) {
                     type: "weight",
                     ...task
                 });
+            } else if (step.generator === "volume") {
+                result.push({
+                    type: "volume",
+                    ...task
+                });
+            } else if (step.generator === "money-change") {
+                result.push({
+                    type: "money-change",
+                    ...task
+                });
             } else {
                 result.push({
                     type: "exercise",

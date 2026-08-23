@@ -1,0 +1,43 @@
+.volume-prompt {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    color: #475569;
+    margin: .3rem 0 .6rem;
+}
+
+.volume-options {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.2rem;
+    margin: .8rem 0;
+    width: 100%;
+}
+
+.volume-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .4rem;
+    margin: 0;
+    padding: 1.2rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    background: rgba(79, 134, 247, 0.08);
+    border: 2px solid transparent;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform .15s, border-color .15s;
+}
+
+.volume-option:hover {
+    transform: scale(1.06);
+    border-color: var(--primary);
+}
+
+.volume-item-emoji {
+    font-size: 3.4rem;
+    line-height: 1;
+}

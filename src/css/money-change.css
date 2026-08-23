@@ -1,0 +1,40 @@
+.mc-paid {
+    font-size: 1.15rem;
+    font-weight: 800;
+    text-align: center;
+    color: #1a1a2e;
+    margin: .6rem 0 .2rem;
+}
+
+.mc-prompt {
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    color: #475569;
+    margin: .2rem 0 .6rem;
+}
+
+.mc-input-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .6rem;
+}
+
+.mc-input {
+    width: 6ch;
+    text-align: center;
+    font-size: 1.8rem;
+    padding: .3rem;
+    border: 2px solid #bbb;
+    border-radius: 8px;
+}
+
+.mc-input:focus {
+    border-color: #4a90d9;
+    outline: none;
+}
+
+.mc-check {
+    margin: 0;
+}

@@ -1,0 +1,70 @@
+{
+  "id": "grade2-volume-01",
+  "title": "Melyikbe fér több?",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🥤 Mennyi fér bele?",
+      "text": "Nézd meg jól a két edényt! Találd ki, melyikbe fér több és melyikbe kevesebb!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Mennyi fér bele?",
+          "text": "Nézd meg jól a két edényt! Találd ki, melyikbe fér több és melyikbe kevesebb!"
+        },
+        "football": {
+          "title": "⚽ Mennyi fér bele?",
+          "text": "Nézd meg jól a két edényt! Találd ki, melyikbe fér több és melyikbe kevesebb!"
+        },
+        "cooking": {
+          "title": "🍳 Mennyi fér bele?",
+          "text": "Nézd meg jól a két edényt! Találd ki, melyikbe fér több és melyikbe kevesebb!"
+        },
+        "animals": {
+          "title": "🦁 Mennyi fér bele?",
+          "text": "Nézd meg jól a két edényt! Találd ki, melyikbe fér több és melyikbe kevesebb!"
+        },
+        "space": {
+          "title": "🤖 Mennyi fér bele?",
+          "text": "Nézd meg jól a két tartályt! Találd ki, melyikbe fér több és melyikbe kevesebb!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "volume",
+      "options": {
+        "count": 6
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden edényt jól összehasonlítottál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes vagy!",
+          "text": "Minden edényt jól összehasonlítottál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes vagy!",
+          "text": "Minden edényt jól összehasonlítottál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden edényt jól összehasonlítottál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden edényt jól összehasonlítottál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden tartályt jól összehasonlítottál!"
+        }
+      }
+    }
+  ]
+}

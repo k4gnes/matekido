@@ -1,0 +1,70 @@
+{
+  "id": "grade2-money-change-01",
+  "title": "Mennyi a visszajáró?",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "💰 Visszajáró",
+      "text": "Vásárolni tanulunk! Fizess nagyobb címlettel, és számold ki, mennyi visszajárót kapsz!",
+      "worldTitles": {
+        "racing": {
+          "title": "🔧 Visszajáró a műhelyboltban",
+          "text": "Vásárolni tanulunk! Fizess nagyobb címlettel, és számold ki, mennyi visszajárót kapsz!"
+        },
+        "football": {
+          "title": "⚽ Visszajáró a szurkolói boltban",
+          "text": "Vásárolni tanulunk! Fizess nagyobb címlettel, és számold ki, mennyi visszajárót kapsz!"
+        },
+        "cooking": {
+          "title": "🥄 Visszajáró a pékségben",
+          "text": "Vásárolni tanulunk! Fizess nagyobb címlettel, és számold ki, mennyi visszajárót kapsz!"
+        },
+        "animals": {
+          "title": "🦁 Visszajáró a jegypénztárnál",
+          "text": "Belépőt veszünk! Fizess nagyobb címlettel, és számold ki, mennyi visszajárót kapsz!"
+        },
+        "space": {
+          "title": "🤖 Visszajáró az űrboltban",
+          "text": "Alkatrészt vásárolunk! Fizess nagyobb címlettel, és számold ki, mennyi visszajárót kapsz!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "money-change",
+      "options": {
+        "count": 6
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden visszajárót pontosan kiszámoltál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes vagy!",
+          "text": "Minden visszajárót pontosan kiszámoltál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes vagy!",
+          "text": "Minden visszajárót pontosan kiszámoltál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden visszajárót pontosan kiszámoltál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden visszajárót pontosan kiszámoltál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden visszajárót pontosan kiszámoltál!"
+        }
+      }
+    }
+  ]
+}

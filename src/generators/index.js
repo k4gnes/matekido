@@ -30,6 +30,8 @@ import { generateFindError } from "./findErrorGenerator.js?v=1";
 import { generateShapeCompare } from "./shapeCompareGenerator.js?v=1";
 import { generateSolidShape } from "./solidShapeGenerator.js?v=1";
 import { generateWeight } from "./weightGenerator.js?v=1";
+import { generateVolume } from "./volumeGenerator.js?v=1";
+import { generateMoneyChange } from "./moneyChangeGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -107,6 +109,10 @@ export function generate(step) {
             return generateSolidShape(opts);
         case "weight":
             return generateWeight(opts);
+        case "volume":
+            return generateVolume(opts);
+        case "money-change":
+            return generateMoneyChange(opts);
 
         default:
             throw new Error(

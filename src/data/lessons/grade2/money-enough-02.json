@@ -1,0 +1,73 @@
+{
+  "id": "grade2-money-enough-02",
+  "title": "Meg tudod venni? 100 felett",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "💰 Meg tudod venni?",
+      "text": "Nagyobb termékek, nagyobb pénztárca! Nézd meg a terméket és a pénztárcád tartalmát! Elég a pénzed a vásárláshoz?",
+      "worldTitles": {
+        "racing": {
+          "title": "🔧 Meg tudod venni?",
+          "text": "Nagyobb alkatrészek, nagyobb pénztárca! Nézd meg az alkatrészt és a pénztárcád tartalmát! Elég a pénzed a vásárláshoz?"
+        },
+        "football": {
+          "title": "⚽ Meg tudod venni?",
+          "text": "Nagyobb felszerelések, nagyobb pénztárca! Nézd meg a terméket és a pénztárcád tartalmát! Elég a pénzed a vásárláshoz?"
+        },
+        "cooking": {
+          "title": "🥄 Meg tudod venni?",
+          "text": "Nagyobb bevásárlás, nagyobb pénztárca! Nézd meg az ételt és a pénztárcád tartalmát! Elég a pénzed a vásárláshoz?"
+        },
+        "animals": {
+          "title": "🦁 Meg tudod venni a jegyet?",
+          "text": "Nagyobb élmények, nagyobb pénztárca! Nézd meg a jegyet és a pénztárcád tartalmát! Elég a pénzed az állatkerti belépőhöz?"
+        },
+        "space": {
+          "title": "🤖 Meg tudod venni az alkatrészt?",
+          "text": "Nagyobb robotalkatrészek, nagyobb kassza! Nézd meg az alkatrészt és a kassza tartalmát! Elég az energiád a vásárláshoz?"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "money-enough",
+      "options": {
+        "count": 6,
+        "minCoins": 2,
+        "maxCoins": 4,
+        "coins": [1, 2, 5, 10, 20, 50]
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden nagyobb vásárlást jól eldöntöttél!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden nagyobb vásárlást jól eldöntöttél!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden nagyobb vásárlást jól eldöntöttél!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden nagyobb vásárlást jól eldöntöttél!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden nagyobb vásárlást jól eldöntöttél!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden nagyobb vásárlást jól eldöntöttél!"
+        }
+      }
+    }
+  ]
+}

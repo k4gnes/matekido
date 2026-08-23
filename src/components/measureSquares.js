@@ -64,7 +64,7 @@ export function renderMeasureSquares(step, root, next, progress, onResult, onAtt
     const removeBtn = createButton("🗑️ Elveszek", {
         className: "meas-remove",
         onClick: () => {
-            if (solved) return;
+            if (feedback.isAnswered()) return;
             if (placed > 0) placed--;
             render();
         }
@@ -89,7 +89,7 @@ export function renderMeasureSquares(step, root, next, progress, onResult, onAtt
     render();
 
     function addSquare() {
-        if (solved) return;
+        if (feedback.isAnswered()) return;
         if (placed >= N + 3) return;
         placed++;
         render();

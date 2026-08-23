@@ -1,0 +1,73 @@
+{
+  "id": "grade2-money-compare-02",
+  "title": "Melyik pénztárcában van több? 100 felett",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "💰 Melyik pénztárcában van több?",
+      "text": "Most 50 forintosok is vannak a pénztárcákban! Számold meg, mennyi pénz van a két pénztárcában, és rakd ki közéjük a helyes jelet!",
+      "worldTitles": {
+        "racing": {
+          "title": "🔧 Melyikben van több?",
+          "text": "Most 50 forintosok is vannak a pénztárcákban! Számold meg, mennyi pénz van a két pénztárcában, és rakd ki közéjük a helyes jelet!"
+        },
+        "football": {
+          "title": "⚽ Melyikben van több?",
+          "text": "Most 50 forintosok is vannak a pénztárcákban! Számold meg, mennyi pénz van a két pénztárcában, és rakd ki közéjük a helyes jelet!"
+        },
+        "cooking": {
+          "title": "🥄 Melyikben van több?",
+          "text": "Most 50 forintosok is vannak a pénztárcákban! Számold meg, mennyi pénz van a két pénztárcában, és rakd ki közéjük a helyes jelet!"
+        },
+        "animals": {
+          "title": "🦁 Melyik pénztárcában van több?",
+          "text": "Most 50 forintosok is vannak a pénztárcákban! Számold meg, mennyi pénz van a két pénztárcában, és rakd ki közéjük a helyes jelet!"
+        },
+        "space": {
+          "title": "🤖 Melyik kasszában van több?",
+          "text": "Most nagyobb energia-kristályok is vannak a kasszákban! Számold meg, mennyi energia van a két kasszában, és rakd ki közéjük a helyes jelet!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "money-compare",
+      "options": {
+        "count": 6,
+        "minCoins": 2,
+        "maxCoins": 4,
+        "coins": [1, 2, 5, 10, 20, 50]
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden nagyobb pénztárcát jól hasonlítottál össze!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden nagyobb pénztárcát jól hasonlítottál össze!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden nagyobb pénztárcát jól hasonlítottál össze!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden nagyobb pénztárcát jól hasonlítottál össze!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden nagyobb pénztárcát jól hasonlítottál össze!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden nagyobb kasszát jól hasonlítottál össze!"
+        }
+      }
+    }
+  ]
+}

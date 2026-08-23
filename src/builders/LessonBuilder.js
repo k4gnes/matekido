@@ -187,7 +187,8 @@ export function buildLesson(lesson) {
                     type: "money-pay",
                     emoji: task.emoji,
                     name: task.name,
-                    price: task.price
+                    price: task.price,
+                    coins: task.coins
                 });
             } else if (step.generator === "money-compare") {
                 result.push({

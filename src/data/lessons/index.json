@@ -966,6 +966,69 @@
             }
         },
         {
+            "id": "money-pay-02",
+            "title": "Fizesd ki pontosan! 100-ig",
+            "grades": [
+                2
+            ],
+            "category": "practical",
+            "skill": "coins",
+            "difficulty": 2,
+            "type": "money-pay",
+            "mission": "💰 Fizesd ki pontosan!",
+            "subtitle": "Fizetés 50 forintossal is",
+            "file": "./data/lessons/grade2/money-pay-02.json",
+            "worldTitles": {
+                "racing": "🔧 Fizesd ki pontosan!",
+                "cooking": "🥄 Fizesd ki pontosan!",
+                "football": "⚽ Fizesd ki pontosan!",
+                "animals": "🦁 Fizesd ki pontosan a belépőt!",
+                "space": "🤖 Fizesd ki pontosan az alkatrészt!"
+            }
+        },
+        {
+            "id": "money-compare-02",
+            "title": "Melyik pénztárcában van több? 100 felett",
+            "grades": [
+                2
+            ],
+            "category": "practical",
+            "skill": "coins",
+            "difficulty": 2,
+            "type": "money-compare",
+            "mission": "💰 Melyikben van több?",
+            "subtitle": "Összehasonlítás 50 forintossal is",
+            "file": "./data/lessons/grade2/money-compare-02.json",
+            "worldTitles": {
+                "racing": "🔧 Melyikben van több?",
+                "cooking": "🥄 Melyikben van több?",
+                "football": "⚽ Melyikben van több?",
+                "animals": "🦁 Melyik pénztárcában van több?",
+                "space": "🤖 Melyik kasszában van több?"
+            }
+        },
+        {
+            "id": "money-enough-02",
+            "title": "Meg tudod venni? 100 felett",
+            "grades": [
+                2
+            ],
+            "category": "practical",
+            "skill": "coins",
+            "difficulty": 2,
+            "type": "money-enough",
+            "mission": "💰 Meg tudod venni?",
+            "subtitle": "Elég a pénzed? Nagyobb összegekkel",
+            "file": "./data/lessons/grade2/money-enough-02.json",
+            "worldTitles": {
+                "racing": "🔧 Meg tudod venni?",
+                "cooking": "🥄 Meg tudod venni?",
+                "football": "⚽ Meg tudod venni?",
+                "animals": "🦁 Meg tudod venni a jegyet?",
+                "space": "🤖 Meg tudod venni az alkatrészt?"
+            }
+        },
+        {
             "id": "measure-compare-01",
             "title": "Melyik hosszabb?",
             "grades": [

@@ -45,11 +45,12 @@ export function renderMoneyPay(step, root, next, progress, onResult, onAttempt) 
 
     const tray = document.createElement("div");
     tray.className = "money-tray";
-    COINS.forEach(value => {
+    const coinValues = step.coins ?? COINS;
+    coinValues.forEach(value => {
         tray.append(createCoin(value, {
             size: 58,
             onClick: () => {
-                if (solved) return;
+                if (feedback.isAnswered()) return;
                 wallet.push(value);
                 renderWallet();
             }
@@ -68,7 +69,7 @@ export function renderMoneyPay(step, root, next, progress, onResult, onAttempt) 
     const clearBtn = createButton("🗑️ Kiürítem", {
         className: "money-secondary",
         onClick: () => {
-            if (solved) return;
+            if (feedback.isAnswered()) return;
             wallet.length = 0;
             renderWallet();
         }
@@ -98,7 +99,7 @@ export function renderMoneyPay(step, root, next, progress, onResult, onAttempt) 
             walletBox.append(createCoin(value, {
                 size: 46,
                 onClick: () => {
-                    if (solved) return;
+                    if (feedback.isAnswered()) return;
                     wallet.splice(index, 1);
                     renderWallet();
                 }

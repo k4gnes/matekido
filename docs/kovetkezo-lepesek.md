@@ -153,14 +153,19 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 
 ## 🟡 5. lépés – Pénz bővítése
 
-### 9.1–9.3. Pénz bővítése 2. osztályra
-- **Meglévő komponensek:** `moneyPay.js`, `moneyCompare.js`, `moneyEnough.js`
-- **Új leckék:**
-  - `grade2/money-pay-02.json` – nagyobb összegek (100 Ft-ig)
-  - `grade2/money-compare-02.json` – nagyobb összegek összehasonlítása
-  - `grade2/money-enough-02.json` – nagyobb összegek
-  - `grade2/money-change-01.json` – visszajáró számítás (új komponens kell hozzá)
+### ✅ 9.1–9.3. Pénz bővítése 100 Ft-ig (kész – 2026-08-23)
+- **Új leckék** (`skill: coins`, difficulty 2):
+  - `grade2/money-pay-02.json` – pontos fizetés 20–100 Ft között
+  - `grade2/money-compare-02.json` – pénztárcák összehasonlítása nagyobb összegekkel
+  - `grade2/money-enough-02.json` – elég-e a pénz nagyobb vásárláshoz
+- **Generátorok bővítve:** a három money-generátor kapott opcionális `coins` listát – a 2. osztályos leckékben `[1,2,5,10,20,50]` (50 forintos is), az 1. osztályos órák változatlanul `[1,2,5,10,20]`.
+- **Komponens:** `moneyPay.js` a tálcát mostantól a feladat `coins` listájából építi (`step.coins ?? COINS`); a compare/enough komponensek nem változtak.
+- **Hibajavítás:** `moneyEnoughGenerator` – kis tárcánál (< 5 Ft) az „elég a pénzed" ág téves, teljesíthetetlen árat adott (pl. 2 Ft-tal egy 5 Ft-os termékről) → az ág csak 5 Ft felett jön létre.
+- **Egyéb:** `LessonBuilder` coins átvitele, generátor importok `?v=4`, sw-cache (240 fájl), `CACHE`: `matekido-v10`.
+
+### 🟡 9.4. Visszajáró
 - **Visszajáró komponens:** `moneyChange.js` (új) – „Fizetsz X Ft-ot, a termék Y Ft. Mennyi a visszajáró?"
+- **Lecke:** `grade2/money-change-01.json`
 
 ---
 
@@ -178,9 +183,6 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 ### Leckék (új)
 - `src/data/lessons/grade2/weight-01.json`
 - `src/data/lessons/grade2/volume-01.json`
-- `src/data/lessons/grade2/money-pay-02.json`
-- `src/data/lessons/grade2/money-compare-02.json`
-- `src/data/lessons/grade2/money-enough-02.json`
 - `src/data/lessons/grade2/money-change-01.json`
 
 ### Módosítandó meglévő fájlok

@@ -10,7 +10,7 @@ function randint(min, max) {
 
 export function generateMoneyPay(options = {}) {
 
-    const { count = 5, minPrice = 8, maxPrice = 50, items = null } = options;
+    const { count = 5, minPrice = 8, maxPrice = 50, items = null, coins = null } = options;
 
     const pool = items ? ITEMS.filter(i => items.includes(i.id)) : ITEMS;
 
@@ -23,7 +23,8 @@ export function generateMoneyPay(options = {}) {
             item: item.id,
             emoji: item.emoji,
             name: item.name,
-            price: randint(minPrice, maxPrice)
+            price: randint(minPrice, maxPrice),
+            ...(coins ? { coins } : {})
         });
     }
 

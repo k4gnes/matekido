@@ -1,0 +1,73 @@
+{
+  "id": "grade2-money-pay-02",
+  "title": "Fizesd ki pontosan! 100-ig",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "💰 Fizesd ki pontosan!",
+      "text": "Most már nagyobb vásárlások jönnek, 50 forintossal is! Fizess ki pontosan annyit, amennyibe a termék kerül!",
+      "worldTitles": {
+        "racing": {
+          "title": "🔧 Fizesd ki pontosan!",
+          "text": "Most már nagyobb vásárlások jönnek, 50 forintossal is! Fizess ki pontosan annyit, amennyibe az alkatrész kerül!"
+        },
+        "football": {
+          "title": "⚽ Fizesd ki pontosan!",
+          "text": "Most már nagyobb vásárlások jönnek, 50 forintossal is! Fizess ki pontosan annyit, amennyibe a cucc kerül!"
+        },
+        "cooking": {
+          "title": "🥄 Fizesd ki pontosan!",
+          "text": "Most már nagyobb vásárlások jönnek, 50 forintossal is! Fizess ki pontosan annyit, amennyibe az étel kerül!"
+        },
+        "animals": {
+          "title": "🦁 Fizesd ki pontosan a belépőt!",
+          "text": "Most már nagyobb jegyek jönnek, 50 forintossal is! Fizess ki pontosan annyit, amennyibe az állatkerti jegy kerül!"
+        },
+        "space": {
+          "title": "🤖 Fizesd ki pontosan az alkatrészt!",
+          "text": "Most már nagyobb alkatrészek jönnek, 50 forintossal is! Fizess ki pontosan annyit, amennyibe a robotalkatrész kerül!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "money-pay",
+      "options": {
+        "count": 6,
+        "minPrice": 20,
+        "maxPrice": 100,
+        "coins": [1, 2, 5, 10, 20, 50]
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden nagyobb vásárlást pontosan kifizettél!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden nagyobb alkatrészt pontosan kifizettél!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden nagyobb vásárlást pontosan kifizettél!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden nagyobb beszerzést pontosan kifizettél!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden belépőt pontosan kifizettél!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden robotalkatrészt pontosan kifizettél!"
+        }
+      }
+    }
+  ]
+}

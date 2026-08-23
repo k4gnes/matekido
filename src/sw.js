@@ -1,6 +1,6 @@
 importScripts("./sw-cache.js");
 
-const CACHE = "matekido-v9";
+const CACHE = "matekido-v10";
 
 self.addEventListener("install", (event) => {
     event.waitUntil(

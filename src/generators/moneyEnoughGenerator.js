@@ -12,30 +12,31 @@ function sum(arr) {
     return arr.reduce((s, v) => s + v, 0);
 }
 
-function randomWallet(minCoins, maxCoins) {
+function randomWallet(minCoins, maxCoins, values) {
     const n = randint(minCoins, maxCoins);
     const coins = [];
     for (let i = 0; i < n; i++) {
-        coins.push(pick(COINS));
+        coins.push(pick(values));
     }
     return coins;
 }
 
 export function generateMoneyEnough(options = {}) {
 
-    const { count = 5, minCoins = 2, maxCoins = 4, items = null } = options;
+    const { count = 5, minCoins = 2, maxCoins = 4, items = null, coins = null } = options;
 
     const itemPool = items ? ITEMS.filter(i => items.includes(i.id)) : ITEMS;
+    const values = coins ?? COINS;
 
     const tasks = [];
 
     for (let i = 0; i < count; i++) {
 
         const item = pick(itemPool);
-        const coins = randomWallet(minCoins, maxCoins);
-        const total = sum(coins);
+        const coins2 = randomWallet(minCoins, maxCoins, values);
+        const total = sum(coins2);
 
-        const enough = Math.random() < 0.5;
+        const enough = Math.random() < 0.5 && total > 5;
         let price;
 
         if (enough) {
@@ -50,7 +51,7 @@ export function generateMoneyEnough(options = {}) {
             item: item.id,
             emoji: item.emoji,
             name: item.name,
-            coins,
+            coins: coins2,
             total,
             price,
             enough

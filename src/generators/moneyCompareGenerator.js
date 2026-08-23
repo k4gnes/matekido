@@ -20,30 +20,32 @@ function shuffle(arr) {
     return arr;
 }
 
-function randomWallet(minCoins, maxCoins) {
+function randomWallet(minCoins, maxCoins, values) {
     const n = randint(minCoins, maxCoins);
     const coins = [];
     for (let i = 0; i < n; i++) {
-        coins.push(pick(COINS));
+        coins.push(pick(values));
     }
     return { coins, total: sum(coins) };
 }
 
 export function generateMoneyCompare(options = {}) {
 
-    const { count = 5, minCoins = 2, maxCoins = 4 } = options;
+    const { count = 5, minCoins = 2, maxCoins = 4, coins = null } = options;
+
+    const values = coins ?? COINS;
 
     const tasks = [];
 
     for (let i = 0; i < count; i++) {
 
-        const left = randomWallet(minCoins, maxCoins);
+        const left = randomWallet(minCoins, maxCoins, values);
         let right;
 
         if (Math.random() < 0.2) {
             right = { coins: shuffle([...left.coins]), total: left.total };
         } else {
-            right = randomWallet(minCoins, maxCoins);
+            right = randomWallet(minCoins, maxCoins, values);
         }
 
         const operator = left.total === right.total

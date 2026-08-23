@@ -1,0 +1,72 @@
+{
+    "id": "grade2-comparison-02",
+    "title": "Összehasonlítás 100-ig",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📦 Melyik nagyobb?",
+            "text": "Most már 100-ig hasonlítunk össze! Döntsd el, melyik oldal nagyobb, kisebb, vagy egyenlő!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🏎️ Melyik autó gyorsabb?",
+                    "text": "Most már 100-ig hasonlítunk! Nézd meg a számokat, és válaszd ki a jelet!"
+                },
+                "football": {
+                    "title": "⚽ Melyik csapat erősebb?",
+                    "text": "Most már 100-ig hasonlítunk! Nézd meg a számokat, és válaszd ki a jelet!"
+                },
+                "cooking": {
+                    "title": "🍲 Melyik tál nagyobb?",
+                    "text": "Most már 100-ig hasonlítunk! Nézd meg a számokat, és válaszd ki a jelet!"
+                },
+                "animals": {
+                    "title": "🦁 Melyik állatcsapat nagyobb?",
+                    "text": "Most már 100-ig hasonlítunk! Nézd meg a számokat, és válaszd ki a jelet!"
+                },
+                "space": {
+                    "title": "🤖 Melyik bolygón többen vannak?",
+                    "text": "Most már 100-ig hasonlítunk! Nézd meg a számokat, és válaszd ki a jelet!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "comparison",
+
+            "options": {
+                "count": 6,
+                "max": 100
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "100-ig is tökéletesen összehasonlítod a számokat!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden autót jól összehasonlítottál!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden csapatot jól összehasonlítottál!"
+                },
+                "cooking": {
+                    "title": "🏆 Szép munka!",
+                    "text": "Minden tálat jól összehasonlítottál!"
+                },
+                "animals": {
+                    "title": "🏆 Ügyes voltál!",
+                    "text": "Minden csapatot jól összehasonlítottál!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden bolygót jól összehasonlítottál!"
+                }
+            }
+        }
+    ]
+}

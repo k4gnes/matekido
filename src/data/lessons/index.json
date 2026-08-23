@@ -136,6 +136,28 @@
             }
         },
         {
+            "id": "place-value-03",
+            "title": "Helyiérték 100-ig",
+            "grades": [
+                2
+            ],
+            "category": "numbers",
+            "skill": "place-value",
+            "difficulty": 2,
+            "type": "place-value",
+            "range": 100,
+            "mission": "🔢 Tízesek és egyesek 100-ig",
+            "subtitle": "Számok bontása és összeállítása 100-ig",
+            "file": "./data/lessons/grade2/place-value-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Alkatrészes dobozok",
+                "cooking": "🍲 Fazekak és kanalak",
+                "football": "⚽ Csapatok és edzők",
+                "animals": "🦁 Karámok és állatok",
+                "space": "🤖 Tartályok és robotok"
+            }
+        },
+        {
             "id": "missing-number-02",
             "title": "Kiegészítés véletlen számig 20-ig",
             "grades": [
@@ -419,6 +441,28 @@
                 "football": "⚽ Melyik játékos magasabb?",
                 "animals": "🦁 Állatok összehasonlítása",
                 "space": "🤖 Bolygók összehasonlítása"
+            }
+        },
+        {
+            "id": "comparison-03",
+            "title": "Összehasonlítás 100-ig",
+            "grades": [
+                2
+            ],
+            "category": "numbers",
+            "skill": "comparison",
+            "difficulty": 2,
+            "type": "comparison",
+            "range": 100,
+            "mission": "📦 Összehasonlítás 100-ig",
+            "subtitle": "Nagyobb, kisebb vagy egyenlő 100-ig",
+            "file": "./data/lessons/grade2/comparison-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Melyik autó gyorsabb?",
+                "cooking": "🍲 Melyik tál nagyobb?",
+                "football": "⚽ Melyik csapat erősebb?",
+                "animals": "🦁 Melyik állatcsapat nagyobb?",
+                "space": "🤖 Melyik bolygón többen vannak?"
             }
         },
         {

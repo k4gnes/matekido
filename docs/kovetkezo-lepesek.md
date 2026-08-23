@@ -120,7 +120,7 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 
 ---
 
-## 🟡 4. lépés – Mérés
+## ✅ 4. lépés – Mérés (kész – 2026-08-23)
 
 ### ✅ 8.2. Tömeg (kész – 2026-08-23)
 - **Generátor:** `weightGenerator.js` (új) – 8 hétköznapi tárgy valós tömeg-renddel (lufi 5 g … liter tej 1 kg); csak legalább 4× különbségű párok kerülnek feladatba, hogy közérzettel is eldönthető legyen. A kérdés váltakozik: „Melyik nehezebb?" / „Melyik könnyebb?"
@@ -147,7 +147,7 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 
 ---
 
-## 🟡 5. lépés – Pénz bővítése
+## ✅ 5. lépés – Pénz bővítése (kész – 2026-08-23)
 
 ### ✅ 9.1–9.3. Pénz bővítése 100 Ft-ig (kész – 2026-08-23)
 - **Új leckék** (`skill: coins`, difficulty 2):
@@ -169,23 +169,26 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 
 ---
 
+## ✅ 6. lépés – Utolsó hiányzó készségek (kész – 2026-08-23)
+
+A `masodik-osztaly.md` hiányzó-készségek táblázatának utolsó két sora:
+
+### ✅ Helyiérték 100-ig
+- **Nincs új kód:** a meglévő `place-value` és `place-value-two-input` generátorok már támogatják a `max: 100` opciót
+- **Lecke:** `grade2/place-value-01.json` (index: `place-value-03`, skill: `place-value`, difficulty 2) – 4 feladat bontásra + 4 feladat összeállításra
+
+### ✅ Összehasonlítás 100-ig
+- **Nincs új kód:** a meglévő `generateComparison` már támogatja a `max: 100` opciót (a kifejezések összege/különbsége mindig ≤ 100)
+- **Lecke:** `grade2/comparison-02.json` (index: `comparison-03`, skill: `comparison`, difficulty 2)
+- sw-cache (254 fájl), `CACHE`: `matekido-v13`
+
+### 🎉 A 2. osztályos tananyag teljes – minden szám-fogalmi és gyakorlati készséghez van lecke.
+
+---
+
 ## Hátralevő munka
 
-### Generátorok (új)
-- *(a 4–5. lépés generátorai elkészültek)*
-
-### Komponensek (új)
-- *(a 4–5. lépés komponensei elkészültek)*
-
-### Leckék (új)
-- *(a 4–5. lépés leckéi elkészültek és regisztrálva)*
-
-### Módosítandó meglévő fájlok
-- `src/engine/Game.js` – új case-ek a hátralevő típusokhoz
-- `src/builders/LessonBuilder.js` – új generátor ágak
-- `src/generators/index.js` – új importok + case-ek
-- `src/data/lessons/index.json` – új leckék
-- `src/css/` – új stílusok ha kell
+*(a 2. osztályos roadmap lezárva – a következő irányok: 3. osztályos tananyag, app-funkciók)*
 
 ---
 
@@ -196,13 +199,13 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 | Készség | Státusz | Leckék |
 |---|---|---|
 | Számszomszédok | ✅ Kész | neighbor-01, neighbor-02 |
-| Összehasonlítás | ⚠️ Részleges | comparison-02 (20-ig kellene 100-ig is) |
+| Összehasonlítás | ✅ Kész | comparison-02 (20-ig) + comparison-03 (100-ig) |
 | Hiányzó szám | ✅ Kész | missing-number-03 |
 | Számsor | ✅ Kész | sequence-02 |
 | Sorba rendezés | ✅ Kész | order-02 |
 | Páros/páratlan | ✅ Kész | even-odd-02 |
 | Sorminta | ✅ Kész | pattern-02 |
-| Helyiérték | ⚠️ 1. osztályos | place-value-01, place-value-02 |
+| Helyiérték | ✅ Kész | place-value-01, place-value-02 (1. o.) + place-value-03 (2. o.) |
 | Összeadás 100-ig | ✅ Kész | 5 lecke |
 | Kivonás 100-ig | ✅ Kész | 6 lecke |
 | Vegyes műveletek | ✅ Kész | mixed-02 |

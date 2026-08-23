@@ -1,6 +1,6 @@
 # Matekidő – 2. osztályos készségtérkép
 
-**46 lecke**, 5 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**48 lecke**, 5 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
@@ -8,7 +8,7 @@ Tananyag-logikai háttér: `docs/masodik-osztaly-terv.md` · Fejlesztési ütemt
 
 ---
 
-## Számfogalom (7 lecke)
+## Számfogalom (9 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
@@ -19,6 +19,8 @@ Tananyag-logikai háttér: `docs/masodik-osztaly-terv.md` · Fejlesztési ütemt
 | Számsor | Mi a következő? 100-ig | Számsor | 100 | 2 |
 | Sorba rendezés | Rendezzük sorainkat! 100-ig | Sorba rendezés | 100 | 2 |
 | Sorminta | Sorminta – hosszabb minták | Sorminta | 100 | 2 |
+| Helyiérték | Helyiérték 100-ig | Tízesek és egyesek (bontás + összeállítás) | 100 | 2 |
+| Összehasonlítás | Összehasonlítás 100-ig | Nagyobb, kisebb vagy egyenlő | 100 | 2 |
 
 ## Műveletek (13 lecke)
 
@@ -91,11 +93,8 @@ Tananyag-logikai háttér: `docs/masodik-osztaly-terv.md` · Fejlesztési ütemt
 
 ---
 
-## Hiányzó készségek (a teljes 2. osztályos tananyaghoz)
+## Hiányzó készségek
 
-| Készség | Állapot | Terv |
-|---|---|---|
-| Helyiérték (2. o. szint) | ❌ | csak 1. osztályos lecke van |
-| Összehasonlítás 100-ig | ⚠️ | csak 10/20-ig van |
+*(nincs – a teljes 2. osztályos tananyag lefedve ✅)*
 
-Részletes tervek: `docs/kovetkezo-lepesek.md` (4–5. lépés).
+Részletes tervek: `docs/kovetkezo-lepesek.md` (1–6. lépés).

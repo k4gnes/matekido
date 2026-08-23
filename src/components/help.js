@@ -23,7 +23,7 @@ export function renderHelp(root, onBack) {
 
     async function loadDoc(target) {
         try {
-            const response = await fetch("/docs/sugo.md");
+            const response = await fetch("/docs/sugo.md", { cache: "reload" });
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}`);
             }

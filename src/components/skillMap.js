@@ -70,7 +70,7 @@ export function renderSkillMap(root, onBackToLessons) {
         wrapper.append(title, body, createBackButton("⬅️ Vissza", showChoice), createFooter());
 
         try {
-            const response = await fetch(`/docs/${doc.id}.md`);
+            const response = await fetch(`/docs/${doc.id}.md`, { cache: "reload" });
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}`);
             }

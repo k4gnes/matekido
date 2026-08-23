@@ -138,11 +138,16 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 - **Komponens:** `volume.js` (új) – egyszerű választós
 - **Lecke:** `grade2/volume-01.json`
 
-### 8.4. Idő bővítése – negyedóra
-- **Meglévő komponens:** `time.js` bővítése
-  - Új generátor opció: `quarter: true` – negyedóra bevezetése
-  - Új lecke: `grade2/time-02.json` (negyedóra)
-- **Nincs új komponens kell**, csak a meglévő bővítése
+### ✅ 8.4. Idő bővítése – negyedóra (kész – 2026-08-23)
+- **`timeGenerator.js` bővítve:** új `quarter: true` opció – a percek közé kerül a 15 és 45; `describeTime` magyar megnevezései: *negyed X / fél X / háromnegyed X* (a következő óra számával). A zavaró válaszok ugyanazon óra testvér-formáit (negyed/fél/háromnegyed/egész) preferálják.
+- **Nem kellett új komponens** – a `time.js` SVG óra 15/45 percre is pontos.
+- **Lecke:** `grade2/time-02.json` (index: `time-03`, difficulty 3) – regisztrálva.
+- **Egyéb:** `skillMap.js` `timeGenerator` import `?v=5`, sw-cache + `CACHE` bump (`matekido-v9`).
+
+### 🗑️ Eltávolítás: „Idő – egész és fél óra (éjszakával is)" (`grade2/time-01.json`)
+- A napszak-előtagos megoldás (hajnali/délelőtti/délutáni…) félreérthető volt: az analóg órán nem látszik, hogy délelőtt vagy délután van, így pl. „hajnali kettő óra" és „délutáni kettő óra" között lehetetlen dönteni.
+- **Generátor-javítás mindkét órára:** egész órás feladatoknál a napszak-ikrek (u.a. mutatóállás, pl. reggeli 7 vs. esti 7, dél vs. éjfél) soha nem kerülhetnek egymás zavaró válaszai közé.
+- `sw-cache.js` újragenerálva (237 fájl).
 
 ---
 
@@ -173,14 +178,12 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 ### Leckék (új)
 - `src/data/lessons/grade2/weight-01.json`
 - `src/data/lessons/grade2/volume-01.json`
-- `src/data/lessons/grade2/time-02.json`
 - `src/data/lessons/grade2/money-pay-02.json`
 - `src/data/lessons/grade2/money-compare-02.json`
 - `src/data/lessons/grade2/money-enough-02.json`
 - `src/data/lessons/grade2/money-change-01.json`
 
 ### Módosítandó meglévő fájlok
-- `src/components/time.js` – negyedóra támogatás
 - `src/engine/Game.js` – új case-ek a hátralevő típusokhoz
 - `src/builders/LessonBuilder.js` – új generátor ágak
 - `src/generators/index.js` – új importok + case-ek
@@ -220,7 +223,7 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 | Alakzatok | ✅ Kész | shape-sort-03 |
 | Alakzatok összehasonlítása | ✅ Kész | shape-compare-01 |
 | Térbeli alakzatok | ✅ Kész | solid-shapes-01 |
-| Idő | ⚠️ Részleges | time-02 (negyedóra kell) |
+| Idő | ✅ Kész | 1. oszt: egész/fél óra (6–20) + negyedóra lecke |
 | Hosszúság | ⚠️ 1. osztályos | measure-compare-01, measure-squares-01 |
 | Tömeg | ❌ Hiányzik | — |
 | Űrtartalom | ❌ Hiányzik | — |

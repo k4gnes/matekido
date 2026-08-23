@@ -1,5 +1,7 @@
 const HOUR_WORDS = ["", "egy", "kettő", "három", "négy", "öt", "hat", "hét", "nyolc", "kilenc", "tíz", "tizenegy", "tizenkettő"];
 
+const QUARTER_PREFIXES = { 15: "negyed", 30: "fél", 45: "háromnegyed" };
+
 function shuffle(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -23,9 +25,9 @@ function daypart(h) {
 }
 
 export function describeTime(h, m) {
-    if (m === 30) {
+    if (QUARTER_PREFIXES[m]) {
         const next = (displayHour(h) % 12) + 1;
-        return `fél ${HOUR_WORDS[next]}`;
+        return `${QUARTER_PREFIXES[m]} ${HOUR_WORDS[next]}`;
     }
     if (h === 0) return "éjfél";
     if (h === 12) return "dél";
@@ -34,11 +36,13 @@ export function describeTime(h, m) {
 
 export function generateTime(options = {}) {
 
-    const { count = 5, minHour = 0, maxHour = 23 } = options;
+    const { count = 5, minHour = 0, maxHour = 23, quarter = false } = options;
+
+    const minutes = quarter ? [0, 15, 30, 45] : [0, 30];
 
     const times = [];
     for (let h = minHour; h <= maxHour; h++) {
-        for (const m of [0, 30]) {
+        for (const m of minutes) {
             times.push({ h, m });
         }
     }
@@ -52,9 +56,24 @@ export function generateTime(options = {}) {
         const { h, m } = times[Math.floor(Math.random() * times.length)];
         const correct = describeTime(h, m);
 
-        const distractors = shuffle([...descPool]).filter(d => d !== correct).slice(0, 3);
+        let siblings = [];
+        let forbidden = [correct];
+        if (m !== 0) {
+            const next = HOUR_WORDS[(displayHour(h) % 12) + 1];
+            siblings = [`negyed ${next}`, `fél ${next}`, `háromnegyed ${next}`, describeTime(h, 0)];
+        } else {
+            const twin = (h + 12) % 24;
+            if (twin >= minHour && twin <= maxHour) {
+                forbidden.push(describeTime(twin, 0));
+            }
+        }
 
-        const options = shuffle([
+        const nearMiss = [...new Set(siblings)].filter(d => !forbidden.includes(d));
+        const rest = shuffle(descPool.filter(d => !forbidden.includes(d) && !nearMiss.includes(d)));
+
+        const distractors = shuffle([...nearMiss, ...rest]).slice(0, 3);
+
+        const choices = shuffle([
             { text: correct, correct: true },
             ...distractors.map(d => ({ text: d, correct: false }))
         ]);
@@ -64,7 +83,7 @@ export function generateTime(options = {}) {
             hour: h,
             minute: m,
             answer: correct,
-            options
+            options: choices
         });
     }
 

@@ -73,7 +73,7 @@ Tananyag-logikai háttér: `docs/masodik-osztaly-terv.md` · Fejlesztési ütemt
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
-| Idő | Idő – egész és fél óra (éjszakával is) | Óra olvasása | — | 2 |
+| Idő | Idő – negyedóra | Óra olvasása (negyed, fél, háromnegyed) | — | 3 |
 
 ## Szöveges feladatok (3 lecke)
 
@@ -91,7 +91,6 @@ Tananyag-logikai háttér: `docs/masodik-osztaly-terv.md` · Fejlesztési ütemt
 |---|---|---|
 | Helyiérték (2. o. szint) | ❌ | csak 1. osztályos lecke van |
 | Összehasonlítás 100-ig | ⚠️ | csak 10/20-ig van |
-| Idő – negyedóra | ❌ | `time.js` bővítése (`quarter`) |
 | Tömeg | ❌ | `weight` komponens kell |
 | Űrtartalom | ❌ | `volume` komponens kell |
 | Pénz 100 Ft-ig + visszajáró | ❌ | új leckék + `moneyChange` komponens |

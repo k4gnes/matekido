@@ -1,0 +1,73 @@
+{
+  "id": "grade2-time-02",
+  "title": "Idő – negyedóra",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🕐 Idő – negyedóra",
+      "text": "Nézd meg az órát! Mutasd meg, hogy negyed, fél vagy háromnegyed!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Idő – negyedóra",
+          "text": "Nézd meg az órát! Mutasd meg, hogy negyed, fél vagy háromnegyed!"
+        },
+        "football": {
+          "title": "⚽ Idő – negyedóra",
+          "text": "Nézd meg az órát! Mutasd meg, hogy negyed, fél vagy háromnegyed!"
+        },
+        "cooking": {
+          "title": "🍳 Idő – negyedóra",
+          "text": "Nézd meg az órát! Mutasd meg, hogy negyed, fél vagy háromnegyed!"
+        },
+        "animals": {
+          "title": "🦁 Mennyi az idő az állatkertben?",
+          "text": "Nézd meg az órát! Mutasd meg, hogy negyed, fél vagy háromnegyed!"
+        },
+        "space": {
+          "title": "🤖 Mennyi az idő az űrállomáson?",
+          "text": "Nézd meg az órát! Mutasd meg, hogy negyed, fél vagy háromnegyed!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "time",
+      "options": {
+        "count": 5,
+        "minHour": 1,
+        "maxHour": 23,
+        "quarter": true
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden negyedórát jól felismertél!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden negyedórát jól felismertél!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden negyedórát jól felismertél!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden negyedórát jól felismertél!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden negyedórát jól felismertél!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden negyedórát jól felismertél!"
+        }
+      }
+    }
+  ]
+}

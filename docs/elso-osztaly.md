@@ -65,4 +65,4 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 - **Helyiérték, összehasonlítás, hiányzó szám, számsor, rendezés, sorminta, páros/páratlan** – mindegyiknek van 100-ig bővített 2. osztályos párja.
 - **Összeadás/kivonás** – 20-igról 100-ig lép tovább (átlépés nélkül → átlépéssel).
 - **Alakzatok** – shape-sort folytatódik négyzet/téglalap témával.
-- **Pénz, idő, hosszúság** – a 2. osztályban nagyobb összegekkel, éjszakai órákkal folytatódik.
+- **Pénz, idő, hosszúság** – a 2. osztályban nagyobb összegekkel és negyedórákkal folytatódik.

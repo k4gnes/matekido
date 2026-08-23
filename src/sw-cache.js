@@ -165,7 +165,7 @@ const SW_CACHE_LIST = [
     "/data/lessons/grade2/subtraction-01.json",
     "/data/lessons/grade2/subtraction-02.json",
     "/data/lessons/grade2/subtraction-03.json",
-    "/data/lessons/grade2/time-01.json",
+    "/data/lessons/grade2/time-02.json",
     "/data/lessons/grade2/true-false-01.json",
     "/data/lessons/grade2/word-problems-divide-01.json",
     "/data/lessons/grade2/word-problems-multiply-01.json",

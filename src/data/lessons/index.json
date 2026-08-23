@@ -882,24 +882,24 @@
             }
         },
         {
-            "id": "time-02",
-            "title": "Idő – egész és fél óra (éjszakával is)",
+            "id": "time-03",
+            "title": "Idő – negyedóra",
             "grades": [
                 2
             ],
             "category": "practical",
             "skill": "hour",
-            "difficulty": 2,
+            "difficulty": 3,
             "type": "time",
             "mission": "🕐 Mit mutat az óra?",
-            "subtitle": "Idő – egész és fél óra (éjszakával is)",
-            "file": "./data/lessons/grade2/time-01.json",
+            "subtitle": "Idő – negyed, fél és háromnegyed",
+            "file": "./data/lessons/grade2/time-02.json",
             "worldTitles": {
                 "racing": "🏎️ Mit mutat az óra?",
                 "cooking": "🍳 Mit mutat az óra?",
                 "football": "⚽ Mit mutat az óra?",
-                "animals": "🦁 Mit mutat az óra?",
-                "space": "🤖 Mit mutat az óra az űrben?"
+                "animals": "🦁 Mit mutat az óra az állatkertben?",
+                "space": "🤖 Mit mutat az óra az űrállomáson?"
             }
         },
         {

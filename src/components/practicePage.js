@@ -32,7 +32,7 @@ export function renderPracticePage(lessonIndex, root, onSelect, onBack) {
     const card = createCard();
 
     const title = document.createElement("h1");
-    title.textContent = "🎯 Gyakorolandó leckék";
+    title.textContent = "🎯 Gyakorlás";
 
     const subtitle = document.createElement("p");
     subtitle.className = "lesson-card-subtitle";
@@ -45,7 +45,7 @@ export function renderPracticePage(lessonIndex, root, onSelect, onBack) {
     if (lessons.length === 0) {
         const empty = document.createElement("p");
         empty.className = "lesson-card-subtitle";
-        empty.textContent = "Nincs gyakorolandó feladat. 🎉";
+        empty.textContent = "Nincs gyakorlandó feladat. 🎉";
         card.append(empty);
     } else {
         const categorized = {};

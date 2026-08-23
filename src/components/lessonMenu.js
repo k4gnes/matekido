@@ -493,7 +493,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     });
     filterToggle.className = "filter-toggle-btn";
 
-    const infoButton = createButton("📚 Készségtérkép", {
+    const infoButton = createButton("📚 Készségek", {
         onClick: () => onSkillMap()
     });
     infoButton.className = "filter-toggle-btn";

@@ -22,7 +22,7 @@ export function renderSkillMap(root, onBackToLessons) {
         wrapper.replaceChildren();
 
         const title = document.createElement("h1");
-        title.textContent = "📚 Készségtérkép";
+        title.textContent = "📚 Készségek";
 
         const subtitle = document.createElement("p");
         subtitle.className = "skill-map-subtitle";
@@ -61,7 +61,7 @@ export function renderSkillMap(root, onBackToLessons) {
         wrapper.replaceChildren();
 
         const title = document.createElement("h1");
-        title.textContent = `${doc.emoji} ${doc.label} – készségtérkép`;
+        title.textContent = `${doc.emoji} ${doc.label} – készségek`;
 
         const body = document.createElement("div");
         body.className = "skill-map-body";

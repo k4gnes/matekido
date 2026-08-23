@@ -30,7 +30,7 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
 
     const weakSkills = getWeakSkillIds();
     const practiceButton = weakSkills.size > 0
-        ? createButton(`🎯 Gyakorolandóak (${weakSkills.size})`, {
+        ? createButton(`🎯 Gyakorlás (${weakSkills.size})`, {
             onClick: () => actions.onPractice?.()
         })
         : null;

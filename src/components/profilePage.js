@@ -178,9 +178,9 @@ export function renderProfilePage(root, onBack, onStats, onPractice, onHelp) {
 
     // --- Navigation buttons ---
     const buttonRow = document.createElement("div");
-    buttonRow.style.cssText = "display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center; margin-top:1rem;";
+    buttonRow.className = "profile-page-buttons";
 
-    const statsButton = createButton("📋 Eredményeim", {
+    const statsButton = createButton("📋 Értékek", {
         onClick: () => onStats?.()
     });
     statsButton.className = "profile-page-button";
@@ -194,7 +194,7 @@ export function renderProfilePage(root, onBack, onStats, onPractice, onHelp) {
 
     const weakSkills = getWeakSkillIds();
     if (weakSkills.size > 0) {
-        const practiceButton = createButton(`🎯 Gyakorolandóak (${weakSkills.size})`, {
+        const practiceButton = createButton(`🎯 Gyakorlás (${weakSkills.size})`, {
             onClick: () => onPractice?.()
         });
         practiceButton.className = "profile-page-button";

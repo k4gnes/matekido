@@ -333,6 +333,11 @@ export function buildLesson(lesson) {
                     type: "solid-shape",
                     ...task
                 });
+            } else if (step.generator === "weight") {
+                result.push({
+                    type: "weight",
+                    ...task
+                });
             } else {
                 result.push({
                     type: "exercise",

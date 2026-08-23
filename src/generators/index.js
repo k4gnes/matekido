@@ -29,6 +29,7 @@ import { generateTrueFalse } from "./trueFalseGenerator.js?v=1";
 import { generateFindError } from "./findErrorGenerator.js?v=1";
 import { generateShapeCompare } from "./shapeCompareGenerator.js?v=1";
 import { generateSolidShape } from "./solidShapeGenerator.js?v=1";
+import { generateWeight } from "./weightGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -104,6 +105,8 @@ export function generate(step) {
             return generateShapeCompare(opts);
         case "solid-shape":
             return generateSolidShape(opts);
+        case "weight":
+            return generateWeight(opts);
 
         default:
             throw new Error(

@@ -1029,6 +1029,27 @@
             }
         },
         {
+            "id": "weight-01",
+            "title": "Melyik nehezebb?",
+            "grades": [
+                2
+            ],
+            "category": "practical",
+            "skill": "mass",
+            "difficulty": 2,
+            "type": "weight",
+            "mission": "⚖️ Melyik nehezebb?",
+            "subtitle": "Tömeg összehasonlítása",
+            "file": "./data/lessons/grade2/weight-01.json",
+            "worldTitles": {
+                "racing": "🔧 Mérlegelés a műhelyben",
+                "cooking": "🍳 Mérlegelés a konyhában",
+                "football": "⚽ Mérlegelés az öltözőben",
+                "animals": "🦁 Mérlegelés az állatkertben",
+                "space": "🤖 Mérlegelés az űrállomáson"
+            }
+        },
+        {
             "id": "measure-compare-01",
             "title": "Melyik hosszabb?",
             "grades": [

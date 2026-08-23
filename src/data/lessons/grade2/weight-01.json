@@ -1,0 +1,70 @@
+{
+  "id": "grade2-weight-01",
+  "title": "Melyik nehezebb?",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "⚖️ Mérlegelés",
+      "text": "Nézd meg jól a két tárgyat! Találd ki, melyik nehezebb és melyik könnyebb!",
+      "worldTitles": {
+        "racing": {
+          "title": "🔧 Mérlegelés a műhelyben",
+          "text": "Nézd meg jól a két alkatrészt! Találd ki, melyik nehezebb és melyik könnyebb!"
+        },
+        "football": {
+          "title": "⚽ Mérlegelés az öltözőben",
+          "text": "Nézd meg jól a két felszerelést! Találd ki, melyik nehezebb és melyik könnyebb!"
+        },
+        "cooking": {
+          "title": "🍳 Mérlegelés a konyhában",
+          "text": "Nézd meg jól a két hozzávalót! Találd ki, melyik nehezebb és melyik könnyebb!"
+        },
+        "animals": {
+          "title": "🦁 Mérlegelés az állatkertben",
+          "text": "Nézd meg jól a két tárgyat! Találd ki, melyik nehezebb és melyik könnyebb!"
+        },
+        "space": {
+          "title": "🤖 Mérlegelés az űrállomáson",
+          "text": "Nézd meg jól a két tárgyat! Találd ki, melyik nehezebb és melyik könnyebb!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "weight",
+      "options": {
+        "count": 6
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden tárgyat jól mérlegeltél!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes szerelő vagy!",
+          "text": "Minden alkatrészt jól mérlegeltél!"
+        },
+        "football": {
+          "title": "🎉 Ügyes vagy!",
+          "text": "Minden felszerelést jól mérlegeltél!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden hozzávalót jól mérlegeltél!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden tárgyat jól mérlegeltél!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden tárgyat jól mérlegeltél!"
+        }
+      }
+    }
+  ]
+}

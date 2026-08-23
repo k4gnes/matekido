@@ -1,6 +1,6 @@
 # Matekidő – 2. osztályos készségtérkép
 
-**43 lecke**, 5 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**44 lecke**, 5 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
@@ -69,11 +69,12 @@ Tananyag-logikai háttér: `docs/masodik-osztaly-terv.md` · Fejlesztési ütemt
 | Alakzatok összehasonlítása | 📐 Alakzatok összehasonlítása | Alakzatok összehasonlítása | — | 2 |
 | Térbeli alakzatok | 🧊 Térbeli alakzatok | Térbeli alakzatok felismerése | — | 2 |
 
-## Gyakorlati tudások (4 lecke)
+## Gyakorlati tudások (5 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
 | Idő | Idő – negyedóra | Óra olvasása (negyed, fél, háromnegyed) | — | 3 |
+| Tömeg | Melyik nehezebb? | Tömeg összehasonlítása | — | 2 |
 | Pénz – fizetés | Fizesd ki pontosan! 100-ig | Pontos kifizetés 50 forintossal | 100 | 2 |
 | Pénz – összehasonlítás | Melyik pénztárcában van több? 100 felett | Pénz összehasonlítása 50 forintossal | 100+ | 2 |
 | Pénz – elegendő? | Meg tudod venni? 100 felett | Elegendő pénz? nagyobb összegekkel | 100+ | 2 |
@@ -94,7 +95,6 @@ Tananyag-logikai háttér: `docs/masodik-osztaly-terv.md` · Fejlesztési ütemt
 |---|---|---|
 | Helyiérték (2. o. szint) | ❌ | csak 1. osztályos lecke van |
 | Összehasonlítás 100-ig | ⚠️ | csak 10/20-ig van |
-| Tömeg | ❌ | `weight` komponens kell |
 | Űrtartalom | ❌ | `volume` komponens kell |
 | Pénz – visszajáró | ❌ | `moneyChange` komponens kell |
 

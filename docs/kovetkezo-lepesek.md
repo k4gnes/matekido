@@ -122,13 +122,11 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 
 ## 🟡 4. lépés – Mérés
 
-### 8.2. Tömeg
-- **Generátor:** `weightGenerator.js` (új)
-  - Adott: 2 tárgy képe (pl. toll és tégla)
-  - Kérdés: „Melyik nehezebb?"
-  - Választós
-- **Komponens:** `weight.js` (új) – egyszerű választós, képekkel
-- **Lecke:** `grade2/weight-01.json`
+### ✅ 8.2. Tömeg (kész – 2026-08-23)
+- **Generátor:** `weightGenerator.js` (új) – 8 hétköznapi tárgy valós tömeg-renddel (lufi 5 g … liter tej 1 kg); csak legalább 4× különbségű párok kerülnek feladatba, hogy közérzettel is eldönthető legyen. A kérdés váltakozik: „Melyik nehezebb?" / „Melyik könnyebb?"
+- **Komponens:** `weight.js` (új) – két nagy kártya (emoji + név), választós, `createFeedback` + `markCorrect`
+- **Lecke:** `grade2/weight-01.json` (index: `weight-01`, skill: `mass`, difficulty 2) – regisztrálva
+- **Egyéb:** új `weight.css` (`?v=1` az index.html-ben), Game.js renderer + COUNTED_TYPES, LessonBuilder/generators case-ek, sw-cache (244 fájl), `CACHE`: `matekido-v11`
 
 ### 8.3. Űrtartalom
 - **Generátor:** `volumeGenerator.js` (új)

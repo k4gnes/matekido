@@ -46,12 +46,15 @@ export function renderMixed(step, root, next, progress, onResult, onAttempt) {
         placeholder.style.fontWeight = "bold";
         placeholder.style.color = "#4a90d9";
 
+        const answerSpan = document.createElement("span");
+        answerSpan.textContent = step.answer;
+
         if (step.inputPos === "left") {
-            equation.append(placeholder, opSpan, right, equal);
+            equation.append(placeholder, opSpan, right, equal, answerSpan);
         } else if (step.inputPos === "right") {
-            equation.append(left, opSpan, placeholder, equal);
+            equation.append(left, opSpan, placeholder, equal, answerSpan);
         } else {
-            equation.append(left, opSpan, right, equal);
+            equation.append(left, opSpan, right, equal, placeholder);
         }
 
         const options = makeOptions(correctAnswer, Math.max(0, correctAnswer - 15), correctAnswer + 15);

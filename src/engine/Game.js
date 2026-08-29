@@ -1,5 +1,5 @@
 import { renderScene } from "../components/scene.js?v=1";
-import { renderExercise } from "../components/exercise.js?v=1";
+import { renderExercise } from "../components/exercise.js?v=2";
 import { renderDecomposition } from "../components/decomposition.js?v=2";
 import { renderDecompositionFindWrong } from "../components/decompositionFindWrong.js?v=2";
 import { renderMissingNumber } from "../components/missingNumber.js?v=5";

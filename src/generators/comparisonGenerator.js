@@ -1,6 +1,8 @@
 export function generateComparison(options = {}) {
 
-    const { count = 10, max = 20 } = options;
+    const { count = 10, max = 20, emoji } = options;
+
+    const showEmoji = emoji ?? (max <= 100);
 
     const tasks = [];
 
@@ -25,7 +27,8 @@ export function generateComparison(options = {}) {
             rightExpr: right.expr,
             leftValue: left.value,
             rightValue: right.value,
-            operator
+            operator,
+            emoji: showEmoji
         });
     }
 

@@ -1,0 +1,71 @@
+{
+  "id": "grade3-comparison-01",
+  "title": "Összehasonlítás 1000-ig",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "⚖️ Melyik a nagyobb?",
+      "text": "Hasonlítsd össze a számokat és a műveleteket!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Melyik a gyorsabb?",
+          "text": "Hasonlítsd össze a számokat és a műveleteket!"
+        },
+        "football": {
+          "title": "⚽ Melyik csapat erősebb?",
+          "text": "Hasonlítsd össze a számokat és a műveleteket!"
+        },
+        "cooking": {
+          "title": "🍳 Melyik tál nagyobb?",
+          "text": "Hasonlítsd össze a számokat és a műveleteket!"
+        },
+        "animals": {
+          "title": "🦁 Melyik állatcsapat nagyobb?",
+          "text": "Hasonlítsd össze a számokat és a műveleteket!"
+        },
+        "space": {
+          "title": "🤖 Melyik bolygón többen vannak?",
+          "text": "Hasonlítsd össze a számokat és a műveleteket!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "comparison",
+      "options": {
+        "count": 8,
+        "max": 1000
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden hasonlítást jól elvégeztél!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden hasonlítást jól elvégeztél!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden hasonlítást jól elvégeztél!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden hasonlítást jól elvégeztél!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden hasonlítást jól elvégeztél!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden hasonlítást jól elvégeztél!"
+        }
+      }
+    }
+  ]
+}

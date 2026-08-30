@@ -34,6 +34,10 @@ import { renderSolidShape } from "../components/solidShape.js?v=1";
 import { renderWeight } from "../components/weight.js?v=1";
 import { renderVolume } from "../components/volume.js?v=1";
 import { renderMoneyChange } from "../components/moneyChange.js?v=1";
+import { renderPlaceValueHundreds } from "../components/placeValueHundreds.js?v=1";
+import { renderNumberName } from "../components/numberName.js?v=1";
+import { renderRounding } from "../components/rounding.js?v=1";
+import { renderRoman } from "../components/roman.js?v=1";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -76,7 +80,11 @@ const COUNTED_TYPES = new Set([
     "solid-shape",
     "weight",
     "volume",
-    "money-change"
+    "money-change",
+    "place-value-hundreds",
+    "number-name",
+    "rounding",
+    "roman"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -139,7 +147,11 @@ const RENDERERS = new Map([
     ["neighbor", renderNeighbor],
     ["neighbor-single", renderNeighborSingle],
     ["place-value", renderPlaceValue],
-    ["place-value-two-input", renderPlaceValueTwoInput]
+    ["place-value-two-input", renderPlaceValueTwoInput],
+    ["place-value-hundreds", renderPlaceValueHundreds],
+    ["number-name", renderNumberName],
+    ["rounding", renderRounding],
+    ["roman", renderRoman]
 ]);
 
 

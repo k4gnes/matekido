@@ -1,0 +1,73 @@
+{
+  "id": "grade3-place-value-hundreds-01",
+  "title": "Helyiérték 1000-ig",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔢 Százasok, tízesek, egyesek",
+      "text": "Számold össze a százasokat, tízeseket és egyeseket!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Hány alkatrész kell összesen?",
+          "text": "Számold össze a százasokat, tízeseket és egyeseket!"
+        },
+        "football": {
+          "title": "⚽ Hány játékos van a pályán?",
+          "text": "Számold össze a százasokat, tízeseket és egyeseket!"
+        },
+        "cooking": {
+          "title": "🍳 Hány hozzávaló kell?",
+          "text": "Számold össze a százasokat, tízeseket és egyeseket!"
+        },
+        "animals": {
+          "title": "🦁 Hány állat van a karámokban?",
+          "text": "Számold össze a százasokat, tízeseket és egyeseket!"
+        },
+        "space": {
+          "title": "🤖 Hány robot van az egységekben?",
+          "text": "Számold össze a százasokat, tízeseket és egyeseket!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "place-value-hundreds",
+      "options": {
+        "count": 8,
+        "min": 100,
+        "max": 999,
+        "interaction": "mixed"
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden számot jól leolvastad!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden számot jól leolvastad!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden számot jól leolvastad!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden hozzávalót jól megszámoltál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden állatot jól megszámoltál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden robotot jól megszámoltál!"
+        }
+      }
+    }
+  ]
+}

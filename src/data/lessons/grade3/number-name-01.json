@@ -1,0 +1,73 @@
+{
+  "id": "grade3-number-name-01",
+  "title": "Számnevek 1000-ig",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔤 Számok és szavak",
+      "text": "Melyik számot mondjuk hangosan? Melyik írásmód a helyes?",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Számok és szavak",
+          "text": "Melyik számot mondjuk hangosan? Melyik írásmód a helyes?"
+        },
+        "football": {
+          "title": "⚽ Számok és szavak",
+          "text": "Melyik számot mondjuk hangosan? Melyik írásmód a helyes?"
+        },
+        "cooking": {
+          "title": "🍳 Számok és szavak",
+          "text": "Melyik számot mondjuk hangosan? Melyik írásmód a helyes?"
+        },
+        "animals": {
+          "title": "🦁 Számok és szavak",
+          "text": "Melyik számot mondjuk hangosan? Melyik írásmód a helyes?"
+        },
+        "space": {
+          "title": "🤖 Számok és szavak",
+          "text": "Melyik számot mondjuk hangosan? Melyik írásmód a helyes?"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "number-name",
+      "options": {
+        "count": 8,
+        "min": 10,
+        "max": 999,
+        "direction": "mixed"
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden számnevet jól elsajátítottál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden számnevet jól elsajátítottál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden számnevet jól elsajátítottál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden számnevet jól elsajátítottál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden számnevet jól elsajátítottál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden számnevet jól elsajátítottál!"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "grade3-order-01",
+  "title": "Rendezzük sorainkat! 1000-ig",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "↕️ Rendezzük sorainkat!",
+      "text": "Húzd a számokat a helyes sorrendbe!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Rendezzük sorainkat!",
+          "text": "Húzd a rajtszámokat a helyes sorrendbe!"
+        },
+        "football": {
+          "title": "⚽ Rendezzük sorainkat!",
+          "text": "Húzd a gólokat a helyes sorrendbe!"
+        },
+        "cooking": {
+          "title": "🍳 Rendezzük sorainkat!",
+          "text": "Húzd a hozzávalókat a helyes sorrendbe!"
+        },
+        "animals": {
+          "title": "🦁 Rendezd sorba az állatokat!",
+          "text": "Húzd az állatok számát a helyes sorrendbe!"
+        },
+        "space": {
+          "title": "🤖 Rendezd sorba a robotokat!",
+          "text": "Húzd a robotok számát a helyes sorrendbe!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "order",
+      "options": {
+        "count": 6,
+        "min": 100,
+        "max": 1000
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden számot jól sorba rendeztél!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden rajtszámsort jól rendeztél!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden gólt jól rendeztél!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden hozzávalót jól rendeztél!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden állatsort jól rendeztél!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden robotsort jól rendeztél!"
+        }
+      }
+    }
+  ]
+}

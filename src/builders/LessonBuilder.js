@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=5";
+import { generate } from "../generators/index.js?v=6";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -64,7 +64,8 @@ export function buildLesson(lesson) {
                     rightExpr: task.rightExpr,
                     leftValue: task.leftValue,
                     rightValue: task.rightValue,
-                    operator: task.operator
+                    operator: task.operator,
+                    emoji: task.emoji
                 });
             } else if (step.generator === "neighbor") {
                 result.push({
@@ -347,6 +348,42 @@ export function buildLesson(lesson) {
                 result.push({
                     type: "money-change",
                     ...task
+                });
+            } else if (step.generator === "place-value-hundreds") {
+                result.push({
+                    type: "place-value-hundreds",
+                    hundreds: task.hundreds,
+                    tens: task.tens,
+                    ones: task.ones,
+                    answer: task.answer,
+                    interaction: task.interaction
+                });
+            } else if (step.generator === "number-name") {
+                result.push({
+                    type: "number-name",
+                    number: task.number,
+                    word: task.word,
+                    options: task.options,
+                    answer: task.answer,
+                    direction: task.direction
+                });
+            } else if (step.generator === "rounding") {
+                result.push({
+                    type: "rounding",
+                    number: task.number,
+                    target: task.target,
+                    answer: task.answer,
+                    options: task.options,
+                    interaction: task.interaction
+                });
+            } else if (step.generator === "roman") {
+                result.push({
+                    type: "roman",
+                    number: task.number,
+                    roman: task.roman,
+                    options: task.options,
+                    answer: task.answer,
+                    direction: task.direction
                 });
             } else {
                 result.push({

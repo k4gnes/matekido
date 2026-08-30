@@ -1,0 +1,73 @@
+{
+  "id": "grade3-roman-01",
+  "title": "Római számok",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🏛️ Római számok",
+      "text": "A rómaiak jelekkel írták a számokat: I = 1, V = 5, X = 10. Ismerd meg a jeleket!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Római számok",
+          "text": "A rómaiak jelekkel írták a számokat: I = 1, V = 5, X = 10. Ismerd meg a jeleket!"
+        },
+        "football": {
+          "title": "⚽ Római számok",
+          "text": "A rómaiak jelekkel írták a számokat: I = 1, V = 5, X = 10. Ismerd meg a jeleket!"
+        },
+        "cooking": {
+          "title": "🍳 Római számok",
+          "text": "A rómaiak jelekkel írták a számokat: I = 1, V = 5, X = 10. Ismerd meg a jeleket!"
+        },
+        "animals": {
+          "title": "🦁 Római számok",
+          "text": "A rómaiak jelekkel írták a számokat: I = 1, V = 5, X = 10. Ismerd meg a jeleket!"
+        },
+        "space": {
+          "title": "🤖 Római számok",
+          "text": "A rómaiak jelekkel írták a számokat: I = 1, V = 5, X = 10. Ismerd meg a jeleket!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "roman",
+      "options": {
+        "count": 8,
+        "min": 1,
+        "max": 100,
+        "direction": "mixed"
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden római számot felismertél!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden római számot felismertél!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden római számot felismertél!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden római számot felismertél!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden római számot felismertél!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden római számot felismertél!"
+        }
+      }
+    }
+  ]
+}

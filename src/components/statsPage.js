@@ -61,7 +61,11 @@ const TYPE_LABEL = {
     "missing-operand": "Hiányzó tag",
     estimate: "Becslés",
     "true-false": "Igaz/Hamis",
-    "find-error": "Hibás számolás"
+    "find-error": "Hibás számolás",
+    "place-value-hundreds": "Helyiérték (1000)",
+    "number-name": "Számnevek",
+    rounding: "Kerekítés",
+    roman: "Római számok"
 };
 
 const TYPE_EMOJI = {
@@ -102,7 +106,11 @@ const TYPE_EMOJI = {
     "missing-operand": "❓",
     estimate: "🧮",
     "true-false": "✅",
-    "find-error": "🕵️"
+    "find-error": "🕵️",
+    "place-value-hundreds": "🔢",
+    "number-name": "🔤",
+    rounding: "🎯",
+    roman: "🏛️"
 };
 
 function createStatGrid(items, className) {

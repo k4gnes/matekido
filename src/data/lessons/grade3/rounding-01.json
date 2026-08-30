@@ -1,0 +1,74 @@
+{
+  "id": "grade3-rounding-01",
+  "title": "Kerekítsük kerekre!",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🎯 Kerekítsük kerekre!",
+      "text": "Kerekítsd a számokat tízesre és százasra!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Kerekítsük kerekre!",
+          "text": "Kerekítsd a számokat tízesre és százasra!"
+        },
+        "football": {
+          "title": "⚽ Kerekítsük kerekre!",
+          "text": "Kerekítsd a számokat tízesre és százasra!"
+        },
+        "cooking": {
+          "title": "🍳 Kerekítsük kerekre!",
+          "text": "Kerekítsd a számokat tízesre és százasra!"
+        },
+        "animals": {
+          "title": "🦁 Kerekítsük kerekre!",
+          "text": "Kerekítsd a számokat tízesre és százasra!"
+        },
+        "space": {
+          "title": "🤖 Kerekítsük kerekre!",
+          "text": "Kerekítsd a számokat tízesre és százasra!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "rounding",
+      "options": {
+        "count": 8,
+        "min": 10,
+        "max": 999,
+        "target": "mixed",
+        "interaction": "mixed"
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden kerekítés jól sikerült!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden kerekítés jól sikerült!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden kerekítés jól sikerült!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden kerekítés jól sikerült!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden kerekítés jól sikerült!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden kerekítés jól sikerült!"
+        }
+      }
+    }
+  ]
+}

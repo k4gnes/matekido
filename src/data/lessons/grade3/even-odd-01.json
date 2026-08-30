@@ -1,0 +1,73 @@
+{
+  "id": "grade3-even-odd-01",
+  "title": "Páros és páratlan 1000-ig",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🎯 Páros vagy páratlan?",
+      "text": "Húzd a páros számokat a sárga helyre, a páratlanokat a kékre!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Páros vagy páratlan?",
+          "text": "Húzd a páros számokat a sárga helyre, a páratlanokat a kékre!"
+        },
+        "football": {
+          "title": "⚽ Páros vagy páratlan?",
+          "text": "Húzd a páros számokat a sárga helyre, a páratlanokat a kékre!"
+        },
+        "cooking": {
+          "title": "🍳 Páros vagy páratlan?",
+          "text": "Húzd a páros számokat a sárga helyre, a páratlanokat a kékre!"
+        },
+        "animals": {
+          "title": "🦁 Páros vagy páratlan?",
+          "text": "Húzd a páros számokat a sárga helyre, a páratlanokat a kékre!"
+        },
+        "space": {
+          "title": "🤖 Páros vagy páratlan?",
+          "text": "Húzd a páros számokat a sárga helyre, a páratlanokat a kékre!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "even-odd",
+      "options": {
+        "count": 6,
+        "min": 100,
+        "max": 1000,
+        "numbersPerRound": 8
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden számot jól szétválogattál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden számot jól szétválogattál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden számot jól szétválogattál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden számot jól szétválogattál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden számot jól szétválogattál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden számot jól szétválogattál!"
+        }
+      }
+    }
+  ]
+}

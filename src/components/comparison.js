@@ -49,8 +49,12 @@ export function renderComparison(step, root, next, progress, onResult, onAttempt
     left.textContent = step.leftExpr;
     const leftEmoji = document.createElement("div");
     leftEmoji.style.cssText = "font-size:1.2rem; line-height:1.4; margin-top:0.3rem;";
-    renderEmojiGroup(leftEmoji, emoji, step.leftValue);
-    leftWrap.append(left, leftEmoji);
+    if (step.emoji !== false) {
+        renderEmojiGroup(leftEmoji, emoji, step.leftValue);
+        leftWrap.append(left, leftEmoji);
+    } else {
+        leftWrap.append(left);
+    }
 
     const operators = document.createElement("div");
     operators.className = "comparison-operators";
@@ -62,8 +66,12 @@ export function renderComparison(step, root, next, progress, onResult, onAttempt
     right.textContent = step.rightExpr;
     const rightEmoji = document.createElement("div");
     rightEmoji.style.cssText = "font-size:1.2rem; line-height:1.4; margin-top:0.3rem;";
-    renderEmojiGroup(rightEmoji, emoji, step.rightValue);
-    rightWrap.append(right, rightEmoji);
+    if (step.emoji !== false) {
+        renderEmojiGroup(rightEmoji, emoji, step.rightValue);
+        rightWrap.append(right, rightEmoji);
+    } else {
+        rightWrap.append(right);
+    }
 
     equation.append(leftWrap, operators, rightWrap);
 

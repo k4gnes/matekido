@@ -32,6 +32,10 @@ import { generateSolidShape } from "./solidShapeGenerator.js?v=1";
 import { generateWeight } from "./weightGenerator.js?v=1";
 import { generateVolume } from "./volumeGenerator.js?v=1";
 import { generateMoneyChange } from "./moneyChangeGenerator.js?v=1";
+import { generatePlaceValueHundreds } from "./placeValueHundredsGenerator.js?v=1";
+import { generateNumberName } from "./numberNameGenerator.js?v=1";
+import { generateRounding } from "./roundingGenerator.js?v=1";
+import { generateRoman } from "./romanGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -113,6 +117,14 @@ export function generate(step) {
             return generateVolume(opts);
         case "money-change":
             return generateMoneyChange(opts);
+        case "place-value-hundreds":
+            return generatePlaceValueHundreds(opts);
+        case "number-name":
+            return generateNumberName(opts);
+        case "rounding":
+            return generateRounding(opts);
+        case "roman":
+            return generateRoman(opts);
 
         default:
             throw new Error(

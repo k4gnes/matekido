@@ -1637,6 +1637,182 @@
                 "animals": "🦁 Testek az állatkertben",
                 "space": "🤖 Testek az űrhajón"
             }
+        },
+        {
+            "id": "place-value-hundreds-01",
+            "title": "Helyiérték 1000-ig",
+            "grades": [
+                3
+            ],
+            "category": "numbers",
+            "skill": "place-value",
+            "difficulty": 2,
+            "type": "place-value-hundreds",
+            "range": 1000,
+            "mission": "🔢 Százasok, tízesek, egyesek",
+            "subtitle": "Helyiérték 1000-ig – százasok, tízesek, egyesek",
+            "file": "./data/lessons/grade3/place-value-hundreds-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Hány alkatrész kell összesen?",
+                "cooking": "🍳 Hány hozzávaló kell?",
+                "football": "⚽ Hány játékos van a pályán?",
+                "animals": "🦁 Hány állat van a karámokban?",
+                "space": "🤖 Hány robot van az egységekben?"
+            }
+        },
+        {
+            "id": "number-name-01",
+            "title": "Számnevek 1000-ig",
+            "grades": [
+                3
+            ],
+            "category": "numbers",
+            "skill": "number-names",
+            "difficulty": 1,
+            "type": "number-name",
+            "range": 1000,
+            "mission": "🔤 Számok és szavak",
+            "subtitle": "Szám ↔ szöveg párosítása 1000-ig",
+            "file": "./data/lessons/grade3/number-name-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Számok és szavak",
+                "cooking": "🍳 Számok és szavak",
+                "football": "⚽ Számok és szavak",
+                "animals": "🦁 Számok és szavak",
+                "space": "🤖 Számok és szavak"
+            }
+        },
+        {
+            "id": "neighbor-1000-01",
+            "title": "Szomszédok 1000-ig",
+            "grades": [
+                3
+            ],
+            "category": "numbers",
+            "skill": "neighbours",
+            "difficulty": 2,
+            "type": "neighbor",
+            "range": 1000,
+            "mission": "🔍 Számszomszédok",
+            "subtitle": "Szomszédok 1000-ig",
+            "file": "./data/lessons/grade3/neighbor-single-01.json",
+            "worldTitles": {
+                "racing": "🔍 Ki áll mellette?",
+                "cooking": "🔍 Mi áll mellette a polcon?",
+                "football": "🔍 Ki a szomszédja?",
+                "animals": "🦁 Ki áll mellette a kifutóban?",
+                "space": "🤖 Ki áll mellette a sorban?"
+            }
+        },
+        {
+            "id": "comparison-1000-01",
+            "title": "Összehasonlítás 1000-ig",
+            "grades": [
+                3
+            ],
+            "category": "numbers",
+            "skill": "comparison",
+            "difficulty": 2,
+            "type": "comparison",
+            "range": 1000,
+            "mission": "⚖️ Nagyobb, kisebb vagy egyenlő",
+            "subtitle": "Összehasonlítás 1000-ig",
+            "file": "./data/lessons/grade3/comparison-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Melyik a gyorsabb?",
+                "cooking": "🍲 Melyik tál nagyobb?",
+                "football": "⚽ Melyik csapat erősebb?",
+                "animals": "🦁 Melyik állatcsapat nagyobb?",
+                "space": "🤖 Melyik bolygón többen vannak?"
+            }
+        },
+        {
+            "id": "order-1000-01",
+            "title": "Rendezzük sorainkat! 1000-ig",
+            "grades": [
+                3
+            ],
+            "category": "numbers",
+            "skill": "ordering",
+            "difficulty": 2,
+            "type": "order",
+            "range": 1000,
+            "mission": "↕️ Sorba rendezés",
+            "subtitle": "Sorba rendezés 1000-ig",
+            "file": "./data/lessons/grade3/order-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Rendezzük sorainkat!",
+                "cooking": "🍳 Rendezzük sorainkat!",
+                "football": "⚽ Rendezzük sorainkat!",
+                "animals": "🦁 Állatok sorba rendezése",
+                "space": "🤖 Robotok sorba rendezése"
+            }
+        },
+        {
+            "id": "even-odd-1000-01",
+            "title": "Páros és páratlan 1000-ig",
+            "grades": [
+                3
+            ],
+            "category": "numbers",
+            "skill": "even-odd",
+            "difficulty": 1,
+            "type": "even-odd",
+            "range": 1000,
+            "mission": "🎯 Páros/páratlan",
+            "subtitle": "Páros és páratlan számok 1000-ig",
+            "file": "./data/lessons/grade3/even-odd-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Páros vagy páratlan?",
+                "cooking": "🍳 Páros vagy páratlan?",
+                "football": "⚽ Páros vagy páratlan?",
+                "animals": "🦁 Páros vagy páratlan?",
+                "space": "🤖 Páros vagy páratlan?"
+            }
+        },
+        {
+            "id": "rounding-01",
+            "title": "Kerekítsük kerekre!",
+            "grades": [
+                3
+            ],
+            "category": "numbers",
+            "skill": "rounding",
+            "difficulty": 2,
+            "type": "rounding",
+            "range": 1000,
+            "mission": "🎯 Kerekítés tízesre és százasra",
+            "subtitle": "Kerekítés 1000-ig",
+            "file": "./data/lessons/grade3/rounding-01.json",
+            "worldTitles": {
+                "racing": "🎯 Kerekítsük kerekre!",
+                "cooking": "🎯 Kerekítsük kerekre!",
+                "football": "🎯 Kerekítsük kerekre!",
+                "animals": "🎯 Kerekítsük kerekre!",
+                "space": "🎯 Kerekítsük kerekre!"
+            }
+        },
+        {
+            "id": "roman-01",
+            "title": "Római számok",
+            "grades": [
+                3
+            ],
+            "category": "numbers",
+            "skill": "roman",
+            "difficulty": 2,
+            "type": "roman",
+            "range": 100,
+            "mission": "🏛️ I, V, X jelek",
+            "subtitle": "Római számok 100-ig",
+            "file": "./data/lessons/grade3/roman-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Római számok",
+                "cooking": "🍳 Római számok",
+                "football": "⚽ Római számok",
+                "animals": "🦁 Római számok",
+                "space": "🤖 Római számok"
+            }
         }
     ],
     "gradeConfig": [
@@ -1647,6 +1823,10 @@
         {
             "grade": 2,
             "title": "2. osztály"
+        },
+        {
+            "grade": 3,
+            "title": "3. osztály"
         }
     ]
 }

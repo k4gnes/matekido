@@ -1,0 +1,72 @@
+{
+  "id": "grade3-neighbor-single-01",
+  "title": "Szomszédok 1000-ig",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔍 Ki a szomszédja?",
+      "text": "Írd be a szám kisebb és nagyobb szomszédját!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Ki áll mellette?",
+          "text": "Írd be a szám kisebb és nagyobb szomszédját!"
+        },
+        "football": {
+          "title": "⚽ Ki a szomszédja?",
+          "text": "Írd be a szám kisebb és nagyobb szomszédját!"
+        },
+        "cooking": {
+          "title": "🍳 Mi áll mellette a polcon?",
+          "text": "Írd be a szám kisebb és nagyobb szomszédját!"
+        },
+        "animals": {
+          "title": "🦁 Ki áll mellette a kifutóban?",
+          "text": "Írd be a szám kisebb és nagyobb szomszédját!"
+        },
+        "space": {
+          "title": "🤖 Ki áll mellette a sorban?",
+          "text": "Írd be a szám kisebb és nagyobb szomszédját!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "neighbor-single",
+      "options": {
+        "count": 8,
+        "max": 1000,
+        "interaction": "mixed"
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden szomszédot jól megtaláltál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden szomszédot jól megtaláltál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden szomszédot jól megtaláltál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden szomszédot jól megtaláltál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden szomszédot jól megtaláltál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden szomszédot jól megtaláltál!"
+        }
+      }
+    }
+  ]
+}

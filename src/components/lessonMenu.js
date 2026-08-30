@@ -75,7 +75,11 @@ const TYPE_EMOJI = {
     "skip-counting": "🔢",
     link: "🔗",
     "missing-operand": "❓",
-    "missing-factor": "❓"
+    "missing-factor": "❓",
+    "place-value-hundreds": "🔢",
+    "number-name": "🔤",
+    rounding: "🎯",
+    roman: "🏛️"
 };
 
 const TYPE_GROUPS = {
@@ -118,13 +122,18 @@ const TYPE_LABEL = {
     "skip-counting": "Lépegető számolás",
     link: "Szorzás–osztás kapcsolat",
     "missing-operand": "Hiányzó tag",
-    "missing-factor": "Hiányzó tényező"
+    "missing-factor": "Hiányzó tényező",
+    "place-value-hundreds": "Helyiérték (1000)",
+    "number-name": "Számnevek",
+    rounding: "Kerekítés",
+    roman: "Római számok"
 };
 
 const RANGE_LABEL = {
     10: "10-ig",
     20: "20-ig",
-    100: "100-ig"
+    100: "100-ig",
+    1000: "1000-ig"
 };
 
 const DIFFICULTY_BADGE = {
@@ -314,7 +323,7 @@ function createFilterPanel(filters, onFilterChange) {
     gradeLabel.textContent = "Évfolyam:";
     gradeRow.append(gradeLabel);
 
-    [1, 2].forEach(g => {
+    [1, 2, 3].forEach(g => {
         const btn = document.createElement("button");
         btn.className = "filter-btn" + (filters.grade.includes(g) ? " active" : "");
         btn.textContent = `${g}. osztály`;
@@ -340,7 +349,7 @@ function createFilterPanel(filters, onFilterChange) {
     const skillBtns = document.createElement("div");
     skillBtns.className = "filter-skill-btns";
 
-    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed", "true-false", "find-error", "place-value", "number-sequence", "ordering", "even-odd", "pattern", "estimation", "shapes", "shape-compare", "solid-shapes", "hour", "position", "coins", "length", "multiplication", "division", "missing-factor"];
+    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed", "true-false", "find-error", "place-value", "number-sequence", "ordering", "even-odd", "pattern", "estimation", "shapes", "shape-compare", "solid-shapes", "hour", "position", "coins", "length", "multiplication", "division", "missing-factor", "rounding", "number-names", "roman"];
 
     usedSkills.forEach(skillId => {
         const skill = SKILLS[skillId];

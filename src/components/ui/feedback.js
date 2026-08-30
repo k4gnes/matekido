@@ -9,6 +9,7 @@ export function createFeedback({ message, container, onNext, onResult, onAttempt
     let answered = false;
     let reported = false;
     let mistakes = 0;
+    let navigated = false;
 
     function success(text = "😊 Szép munka!") {
         if (answered) return;
@@ -25,7 +26,11 @@ export function createFeedback({ message, container, onNext, onResult, onAttempt
 
         const nextBtn = createButton("➡️ Tovább", {
             className: "next-btn",
-            onClick: () => onNext?.()
+            onClick: () => {
+                if (navigated) return;
+                navigated = true;
+                onNext?.();
+            }
         });
         container.append(nextBtn);
     }

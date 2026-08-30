@@ -191,6 +191,7 @@ const SW_CACHE_LIST = [
     "/data/skills.js",
     "/data/spatial.js",
     "/docs/elso-osztaly.md",
+    "/docs/harmadik-osztaly.md",
     "/docs/masodik-osztaly.md",
     "/docs/sugo.md",
     "/engine/Game.js",

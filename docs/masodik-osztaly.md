@@ -4,8 +4,6 @@
 
 Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
-Tananyag-logikai háttér: `docs/masodik-osztaly-terv.md` · Fejlesztési ütemterv: `docs/kovetkezo-lepesek.md`
-
 ---
 
 ## Számfogalom (9 lecke)
@@ -97,4 +95,4 @@ Tananyag-logikai háttér: `docs/masodik-osztaly-terv.md` · Fejlesztési ütemt
 
 *(nincs – a teljes 2. osztályos tananyag lefedve ✅)*
 
-Részletes tervek: `docs/kovetkezo-lepesek.md` (1–6. lépés).
+

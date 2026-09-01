@@ -1,0 +1,73 @@
+{
+  "id": "grade3-addition-01",
+  "title": "Összeadás 1000-ig átlépés nélkül",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔢 Összeadás 1000-ig",
+      "text": "Add össze a számokat! Nem kell átlépnünk a százashatárt. Például: 250 + 320 = ?",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Összeadás a pályán",
+          "text": "Add össze a számokat! Nem kell átlépnünk a százashatárt. Például: 250 + 320 = ?"
+        },
+        "football": {
+          "title": "⚽ Összeadás a meccsen",
+          "text": "Add össze a számokat! Nem kell átlépnünk a százashatárt. Például: 250 + 320 = ?"
+        },
+        "cooking": {
+          "title": "🍳 Összeadás a konyhában",
+          "text": "Add össze a számokat! Nem kell átlépnünk a százashatárt. Például: 250 + 320 = ?"
+        },
+        "animals": {
+          "title": "🦁 Összeadás az állatkertben",
+          "text": "Add össze a számokat! Nem kell átlépnünk a százashatárt. Például: 250 + 320 = ?"
+        },
+        "space": {
+          "title": "🤖 Összeadás az űrben",
+          "text": "Add össze a számokat! Nem kell átlépnünk a százashatárt. Például: 250 + 320 = ?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "addition",
+      "options": {
+        "count": 8,
+        "min": 10,
+        "max": 900,
+        "carry": "never",
+        "crossHundred": "never",
+        "sumMin": 100,
+        "sumMax": 1000
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden összeadást jól megoldottál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden összeadást jól megoldottál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden összeadást jól megoldottál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden összeadást jól megoldottál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden összeadást jól megoldottál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden összeadást jól megoldottál!"
+        }
+      }
+    }
+  ]
+}

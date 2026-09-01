@@ -3,15 +3,19 @@
  */
 
 /**
- * Egy kétjegyű szám felbontása tízesekre és egyesekre.
+ * Egy szám felbontása százasokra, tízesekre és egyesekre.
  *
  * splitNumber(43)
- * → { tens: 40, ones: 3 }
+ * → { hundreds: 0, tens: 40, ones: 3 }
+ *
+ * splitNumber(345)
+ * → { hundreds: 300, tens: 40, ones: 5 }
  */
 export function splitNumber(number) {
 
     return {
-        tens: Math.floor(number / 10) * 10,
+        hundreds: Math.floor(number / 100) * 100,
+        tens: Math.floor((number % 100) / 10) * 10,
         ones: number % 10
     };
 

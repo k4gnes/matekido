@@ -1813,6 +1813,204 @@
                 "animals": "🦁 Római számok",
                 "space": "🤖 Római számok"
             }
+        },
+        {
+            "id": "round-hundreds-addition-01",
+            "title": "Összeadás kerek százasokkal",
+            "grades": [
+                3
+            ],
+            "category": "operations",
+            "skill": "addition",
+            "difficulty": 2,
+            "type": "addition",
+            "range": 1000,
+            "mission": "🔢 Kerek százasok összeadása",
+            "subtitle": "Összeadás kerek százasokkal 1000-ig",
+            "file": "./data/lessons/grade3/addition-round-hundreds-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Kerek százasok a pályán",
+                "cooking": "🍳 Kerek százasok a konyhában",
+                "football": "⚽ Kerek százasok a meccsen",
+                "animals": "🦁 Kerek százasok az állatkertben",
+                "space": "🤖 Kerek százasok az űrben"
+            }
+        },
+        {
+            "id": "round-hundreds-addition-02",
+            "title": "Véletlen szám + kerek százas",
+            "grades": [
+                3
+            ],
+            "category": "operations",
+            "skill": "addition",
+            "difficulty": 2,
+            "type": "addition",
+            "range": 1000,
+            "mission": "🔢 Véletlen szám + kerek százas",
+            "subtitle": "Véletlen szám + kerek százas 1000-ig",
+            "file": "./data/lessons/grade3/addition-round-hundreds-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Véletlen szám + kerek százas",
+                "cooking": "🍳 Véletlen szám + kerek százas",
+                "football": "⚽ Véletlen szám + kerek százas",
+                "animals": "🦁 Véletlen szám + kerek százas",
+                "space": "🤖 Véletlen szám + kerek százas"
+            }
+        },
+        {
+            "id": "addition-1000-01",
+            "title": "Összeadás 1000-ig átlépés nélkül",
+            "grades": [
+                3
+            ],
+            "category": "operations",
+            "skill": "addition",
+            "difficulty": 2,
+            "type": "addition",
+            "range": 1000,
+            "mission": "🔢 Összeadás 1000-ig",
+            "subtitle": "Összeadás 1000-ig százasátlépés nélkül",
+            "file": "./data/lessons/grade3/addition-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Összeadás a pályán",
+                "cooking": "🍳 Összeadás a konyhában",
+                "football": "⚽ Összeadás a meccsen",
+                "animals": "🦁 Összeadás az állatkertben",
+                "space": "🤖 Összeadás az űrben"
+            }
+        },
+        {
+            "id": "addition-1000-02",
+            "title": "Összeadás 1000-ig átlépéssel",
+            "grades": [
+                3
+            ],
+            "category": "operations",
+            "skill": "addition",
+            "difficulty": 3,
+            "type": "addition",
+            "range": 1000,
+            "mission": "🔢 Összeadás százasátlépéssel",
+            "subtitle": "Összeadás 1000-ig százasátlépéssel",
+            "file": "./data/lessons/grade3/addition-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Százasátlépés a pályán",
+                "cooking": "🍳 Százasátlépés a konyhában",
+                "football": "⚽ Százasátlépés a meccsen",
+                "animals": "🦁 Százasátlépés az állatkertben",
+                "space": "🤖 Százasátlépés az űrben"
+            }
+        },
+        {
+            "id": "round-hundreds-subtraction-01",
+            "title": "Kivonás kerek százasokkal",
+            "grades": [
+                3
+            ],
+            "category": "operations",
+            "skill": "subtraction",
+            "difficulty": 2,
+            "type": "subtraction",
+            "range": 1000,
+            "mission": "🔢 Kerek százasok kivonása",
+            "subtitle": "Kivonás kerek százasokkal 1000-ig",
+            "file": "./data/lessons/grade3/subtraction-round-hundreds-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Kerek százasok kivonása",
+                "cooking": "🍳 Kerek százasok kivonása",
+                "football": "⚽ Kerek százasok kivonása",
+                "animals": "🦁 Kerek százasok kivonása",
+                "space": "🤖 Kerek százasok kivonása"
+            }
+        },
+        {
+            "id": "round-hundreds-subtraction-02",
+            "title": "Véletlen szám - kerek százas",
+            "grades": [
+                3
+            ],
+            "category": "operations",
+            "skill": "subtraction",
+            "difficulty": 2,
+            "type": "subtraction",
+            "range": 1000,
+            "mission": "🔢 Véletlen szám - kerek százas",
+            "subtitle": "Véletlen szám - kerek százas 1000-ig",
+            "file": "./data/lessons/grade3/subtraction-round-hundreds-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Véletlen szám - kerek százas",
+                "cooking": "🍳 Véletlen szám - kerek százas",
+                "football": "⚽ Véletlen szám - kerek százas",
+                "animals": "🦁 Véletlen szám - kerek százas",
+                "space": "🤖 Véletlen szám - kerek százas"
+            }
+        },
+        {
+            "id": "subtraction-1000-01",
+            "title": "Kivonás 1000-ig átlépés nélkül",
+            "grades": [
+                3
+            ],
+            "category": "operations",
+            "skill": "subtraction",
+            "difficulty": 2,
+            "type": "subtraction",
+            "range": 1000,
+            "mission": "🔢 Kivonás 1000-ig",
+            "subtitle": "Kivonás 1000-ig százasátlépés nélkül",
+            "file": "./data/lessons/grade3/subtraction-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Kivonás a pályán",
+                "cooking": "🍳 Kivonás a konyhában",
+                "football": "⚽ Kivonás a meccsen",
+                "animals": "🦁 Kivonás az állatkertben",
+                "space": "🤖 Kivonás az űrben"
+            }
+        },
+        {
+            "id": "subtraction-1000-02",
+            "title": "Kivonás 1000-ig átlépéssel",
+            "grades": [
+                3
+            ],
+            "category": "operations",
+            "skill": "subtraction",
+            "difficulty": 3,
+            "type": "subtraction",
+            "range": 1000,
+            "mission": "🔢 Kivonás százasátlépéssel",
+            "subtitle": "Kivonás 1000-ig százasátlépéssel",
+            "file": "./data/lessons/grade3/subtraction-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Százasátlépés kivonásnál",
+                "cooking": "🍳 Százasátlépés kivonásnál",
+                "football": "⚽ Százasátlépés kivonásnál",
+                "animals": "🦁 Százasátlépés kivonásnál",
+                "space": "🤖 Százasátlépés kivonásnál"
+            }
+        },
+        {
+            "id": "mixed-1000-01",
+            "title": "Vegyes műveletek 1000-ig",
+            "grades": [
+                3
+            ],
+            "category": "operations",
+            "skill": "mixed",
+            "difficulty": 3,
+            "type": "mixed",
+            "range": 1000,
+            "mission": "🔢 Vegyes műveletek",
+            "subtitle": "Vegyes műveletek 1000-ig",
+            "file": "./data/lessons/grade3/mixed-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Vegyes műveletek a pályán",
+                "cooking": "🍳 Vegyes műveletek a konyhában",
+                "football": "⚽ Vegyes műveletek a meccsen",
+                "animals": "🦁 Vegyes műveletek az állatkertben",
+                "space": "🤖 Vegyes műveletek az űrben"
+            }
         }
     ],
     "gradeConfig": [

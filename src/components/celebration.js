@@ -1,8 +1,8 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
-import { getWeakSkillIds } from "./practicePage.js";
+import { getWeakLessonFiles } from "./practicePage.js";
 
-export function renderCelebration(step, root, actions = {}, milestone, reward, activeWorld) {
+export function renderCelebration(step, root, actions = {}, milestone, reward, activeWorld, lessonIndex) {
 
     root.replaceChildren();
 
@@ -28,9 +28,9 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
         onClick: () => actions.onProfile?.()
     });
 
-    const weakSkills = getWeakSkillIds();
-    const practiceButton = weakSkills.size > 0
-        ? createButton(`🎯 Gyakorlás (${weakSkills.size})`, {
+    const weakLessonFiles = lessonIndex ? getWeakLessonFiles(lessonIndex) : new Set();
+    const practiceButton = weakLessonFiles.size > 0
+        ? createButton(`🎯 Gyakorlás (${weakLessonFiles.size})`, {
             onClick: () => actions.onPractice?.()
         })
         : null;

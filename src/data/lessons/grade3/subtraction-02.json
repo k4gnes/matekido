@@ -1,0 +1,72 @@
+{
+  "id": "grade3-subtraction-02",
+  "title": "Kivonás 1000-ig átlépéssel",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔢 Kivonás százasátlépéssel",
+      "text": "Vond ki a számokat! Most a százashatárt is átlépjük. Például: 520 - 380 = ?",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Százasátlépés kivonásnál",
+          "text": "Vond ki a számokat! Most a százashatárt is átlépjük. Például: 520 - 380 = ?"
+        },
+        "football": {
+          "title": "⚽ Százasátlépés kivonásnál",
+          "text": "Vond ki a számokat! Most a százashatárt is átlépjük. Például: 520 - 380 = ?"
+        },
+        "cooking": {
+          "title": "🍳 Százasátlépés kivonásnál",
+          "text": "Vond ki a számokat! Most a százashatárt is átlépjük. Például: 520 - 380 = ?"
+        },
+        "animals": {
+          "title": "🦁 Százasátlépés kivonásnál",
+          "text": "Vond ki a számokat! Most a százashatárt is átlépjük. Például: 520 - 380 = ?"
+        },
+        "space": {
+          "title": "🤖 Százasátlépés kivonásnál",
+          "text": "Vond ki a számokat! Most a százashatárt is átlépjük. Például: 520 - 380 = ?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "subtraction",
+      "options": {
+        "count": 8,
+        "min": 100,
+        "max": 999,
+        "subMax": 999,
+        "crossingTen": "any",
+        "crossHundreds": "always"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden százasátlépéses kivonást jól megoldottál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden százasátlépéses kivonást jól megoldottál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden százasátlépéses kivonást jól megoldottál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden százasátlépéses kivonást jól megoldottál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden százasátlépéses kivonást jól megoldottál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden százasátlépéses kivonást jól megoldottál!"
+        }
+      }
+    }
+  ]
+}

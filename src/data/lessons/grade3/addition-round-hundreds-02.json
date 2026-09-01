@@ -1,0 +1,75 @@
+{
+  "id": "grade3-addition-round-hundreds-02",
+  "title": "Véletlen szám + kerek százas",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔢 Véletlen szám + kerek százas",
+      "text": "Add hozzá a kerek százasokat a véletlen számokhoz! Például: 350 + 400 = ?",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Véletlen szám + kerek százas",
+          "text": "Add hozzá a kerek százasokat a véletlen számokhoz! Például: 350 + 400 = ?"
+        },
+        "football": {
+          "title": "⚽ Véletlen szám + kerek százas",
+          "text": "Add hozzá a kerek százasokat a véletlen számokhoz! Például: 350 + 400 = ?"
+        },
+        "cooking": {
+          "title": "🍳 Véletlen szám + kerek százas",
+          "text": "Add hozzá a kerek százasokat a véletlen számokhoz! Például: 350 + 400 = ?"
+        },
+        "animals": {
+          "title": "🦁 Véletlen szám + kerek százas",
+          "text": "Add hozzá a kerek százasokat a véletlen számokhoz! Például: 350 + 400 = ?"
+        },
+        "space": {
+          "title": "🤖 Véletlen szám + kerek százas",
+          "text": "Add hozzá a kerek százasokat a véletlen számokhoz! Például: 350 + 400 = ?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "addition",
+      "options": {
+        "count": 8,
+        "min": 10,
+        "max": 999,
+        "carry": "never",
+        "crossHundred": "never",
+        "bMultiplesOfHundred": true,
+        "bMin": 100,
+        "sumMin": 200,
+        "sumMax": 1000
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden feladatot jól megoldottál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden feladatot jól megoldottál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden feladatot jól megoldottál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden feladatot jól megoldottál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden feladatot jól megoldottál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden feladatot jól megoldottál!"
+        }
+      }
+    }
+  ]
+}

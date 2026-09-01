@@ -1,0 +1,73 @@
+{
+  "id": "grade3-addition-02",
+  "title": "Összeadás 1000-ig átlépéssel",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔢 Összeadás százasátlépéssel",
+      "text": "Add össze a számokat! Most a százashatárt is átlépjük. Például: 350 + 280 = ?",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Százasátlépés a pályán",
+          "text": "Add össze a számokat! Most a százashatárt is átlépjük. Például: 350 + 280 = ?"
+        },
+        "football": {
+          "title": "⚽ Százasátlépés a meccsen",
+          "text": "Add össze a számokat! Most a százashatárt is átlépjük. Például: 350 + 280 = ?"
+        },
+        "cooking": {
+          "title": "🍳 Százasátlépés a konyhában",
+          "text": "Add össze a számokat! Most a százashatárt is átlépjük. Például: 350 + 280 = ?"
+        },
+        "animals": {
+          "title": "🦁 Százasátlépés az állatkertben",
+          "text": "Add össze a számokat! Most a százashatárt is átlépjük. Például: 350 + 280 = ?"
+        },
+        "space": {
+          "title": "🤖 Százasátlépés az űrben",
+          "text": "Add össze a számokat! Most a százashatárt is átlépjük. Például: 350 + 280 = ?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "addition",
+      "options": {
+        "count": 8,
+        "min": 10,
+        "max": 900,
+        "carry": "any",
+        "crossHundred": "always",
+        "sumMin": 100,
+        "sumMax": 1000
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden százasátlépéses összeadást jól megoldottál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden százasátlépéses összeadást jól megoldottál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden százasátlépéses összeadást jól megoldottál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden százasátlépéses összeadást jól megoldottál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden százasátlépéses összeadást jól megoldottál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden százasátlépéses összeadást jól megoldottál!"
+        }
+      }
+    }
+  ]
+}

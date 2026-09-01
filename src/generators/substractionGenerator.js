@@ -12,10 +12,13 @@ export function generateSubtraction(options = {}) {
         max = 20,
         subMax = 20,
         multiplesOfTen = false,
+        multiplesOfHundred = false,
         bMultiplesOfTen = false,
+        bMultiplesOfHundred = false,
         bMax = null,
         noCrossingTen = false,
         crossingTen = "any",
+        crossHundreds = "any",
         interaction = "mixed"
     } = options;
 
@@ -23,6 +26,12 @@ export function generateSubtraction(options = {}) {
 
     if (!validCrossingModes.includes(crossingTen)) {
         throw new Error(`Érvénytelen crossingTen érték: ${crossingTen}`);
+    }
+
+    const validCrossHundredsModes = ["never", "always", "any"];
+
+    if (!validCrossHundredsModes.includes(crossHundreds)) {
+        throw new Error(`Érvénytelen crossHundreds érték: ${crossHundreds}`);
     }
 
     const tasks = [];
@@ -50,10 +59,30 @@ export function generateSubtraction(options = {}) {
             continue;
         }
 
+        // Kerek százas: mind a, mind b legyen 100-as többszöröse
+        if (multiplesOfHundred) {
+            const aRound = Math.ceil(a / 100) * 100;
+            if (aRound > max) continue;
+            const bRound = Math.ceil(b / 100) * 100;
+            if (bRound < 100 || bRound >= aRound) continue;
+            if (aRound - bRound < 0) continue;
+            tasks.push({ a: aRound, b: bRound, interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction });
+            continue;
+        }
+
         // Csak b legyen kerek tizes (a véletlen marad)
         if (bMultiplesOfTen) {
             b = Math.ceil(b / 10) * 10;
             if (b < 10 || b >= a) continue;
+            if (a - b < 0) continue;
+            tasks.push({ a, b, interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction });
+            continue;
+        }
+
+        // Csak b legyen kerek százas (a véletlen marad)
+        if (bMultiplesOfHundred) {
+            b = Math.ceil(b / 100) * 100;
+            if (b < 100 || b >= a) continue;
             if (a - b < 0) continue;
             tasks.push({ a, b, interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction });
             continue;
@@ -70,6 +99,12 @@ export function generateSubtraction(options = {}) {
 
         if (crossingTen === "always" && !doesCross) continue;
         if (crossingTen === "never" && doesCross) continue;
+
+        // Százasátlépés (tens column crossing) – 1000-ig
+        const doesCrossHundreds = Math.floor((a % 100) / 10) < Math.floor((b % 100) / 10);
+
+        if (crossHundreds === "always" && !doesCrossHundreds) continue;
+        if (crossHundreds === "never" && doesCrossHundreds) continue;
 
         tasks.push({ a, b, interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction });
     }

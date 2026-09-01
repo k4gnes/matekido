@@ -1,0 +1,71 @@
+{
+  "id": "grade3-subtraction-round-hundreds-01",
+  "title": "Kivonás kerek százasokkal",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔢 Kerek százasok kivonása",
+      "text": "Vond ki a kerek százasokat! Például: 700 - 300 = ?",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Kerek százasok kivonása",
+          "text": "Vond ki a kerek százasokat! Például: 700 - 300 = ?"
+        },
+        "football": {
+          "title": "⚽ Kerek százasok kivonása",
+          "text": "Vond ki a kerek százasokat! Például: 700 - 300 = ?"
+        },
+        "cooking": {
+          "title": "🍳 Kerek százasok kivonása",
+          "text": "Vond ki a kerek százasokat! Például: 700 - 300 = ?"
+        },
+        "animals": {
+          "title": "🦁 Kerek százasok kivonása",
+          "text": "Vond ki a kerek százasokat! Például: 700 - 300 = ?"
+        },
+        "space": {
+          "title": "🤖 Kerek százasok kivonása",
+          "text": "Vond ki a kerek százasokat! Például: 700 - 300 = ?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "subtraction",
+      "options": {
+        "count": 8,
+        "min": 200,
+        "max": 900,
+        "subMax": 900,
+        "multiplesOfHundred": true
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden kerek százas kivonást jól megoldottál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden kerek százas kivonást jól megoldottál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden kerek százas kivonást jól megoldottál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden kerek százas kivonást jól megoldottál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden kerek százas kivonást jól megoldottál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden kerek százas kivonást jól megoldottál!"
+        }
+      }
+    }
+  ]
+}

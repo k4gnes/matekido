@@ -1,0 +1,74 @@
+{
+  "id": "grade3-addition-round-hundreds-01",
+  "title": "Összeadás kerek százasokkal",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔢 Kerek százasok összeadása",
+      "text": "Add össze a kerek százasokat! Például: 300 + 400 = ?",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Kerek százasok a pályán",
+          "text": "Add össze a kerek százasokat! Például: 300 + 400 = ?"
+        },
+        "football": {
+          "title": "⚽ Kerek százasok a meccsen",
+          "text": "Add össze a kerek százasokat! Például: 300 + 400 = ?"
+        },
+        "cooking": {
+          "title": "🍳 Kerek százasok a konyhában",
+          "text": "Add össze a kerek százasokat! Például: 300 + 400 = ?"
+        },
+        "animals": {
+          "title": "🦁 Kerek százasok az állatkertben",
+          "text": "Add össze a kerek százasokat! Például: 300 + 400 = ?"
+        },
+        "space": {
+          "title": "🤖 Kerek százasok az űrben",
+          "text": "Add össze a kerek százasokat! Például: 300 + 400 = ?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "addition",
+      "options": {
+        "count": 8,
+        "min": 100,
+        "max": 900,
+        "carry": "never",
+        "crossHundred": "never",
+        "multiplesOfHundred": true,
+        "sumMin": 200,
+        "sumMax": 1000
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden kerek százas összeadást jól megoldottál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden kerek százas összeadást jól megoldottál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden kerek százas összeadást jól megoldottál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden kerek százas összeadást jól megoldottál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden kerek százas összeadást jól megoldottál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden kerek százas összeadást jól megoldottál!"
+        }
+      }
+    }
+  ]
+}

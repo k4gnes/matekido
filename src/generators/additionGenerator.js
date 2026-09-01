@@ -46,10 +46,13 @@ export function generateAddition(options = {}) {
         min = 10,
         max = 99,
         carry = "any",
+        crossHundred = "any",
         sumMin = min * 2,
         sumMax = Number.MAX_SAFE_INTEGER,
         multiplesOfTen = false,
+        multiplesOfHundred = false,
         bMultiplesOfTen = false,
+        bMultiplesOfHundred = false,
         bMax = null,
         bMin = null,
         noCrossTen = false,
@@ -61,6 +64,14 @@ export function generateAddition(options = {}) {
     if (!validCarryModes.includes(carry)) {
         throw new Error(
             `Érvénytelen carry érték: ${carry}`
+        );
+    }
+
+    const validCrossHundredModes = ["never", "always", "any"];
+
+    if (!validCrossHundredModes.includes(crossHundred)) {
+        throw new Error(
+            `Érvénytelen crossHundred érték: ${crossHundred}`
         );
     }
 
@@ -83,6 +94,12 @@ export function generateAddition(options = {}) {
         // Kerek tízes: csak 10, 20, 30, ...
         if (multiplesOfTen) {
             a = Math.ceil(a / 10) * 10;
+            if (a > max) continue;
+        }
+
+        // Kerek százas: csak 100, 200, 300, ...
+        if (multiplesOfHundred) {
+            a = Math.ceil(a / 100) * 100;
             if (a > max) continue;
         }
 
@@ -112,6 +129,18 @@ export function generateAddition(options = {}) {
             if (b < minB || b > maxB) continue;
         }
 
+        // Kerek százas: b is legyen 100-as többszöröse
+        if (multiplesOfHundred) {
+            b = Math.ceil(b / 100) * 100;
+            if (b < minB || b > maxB) continue;
+        }
+
+        // Csak b legyen kerek százas (a véletlen marad)
+        if (bMultiplesOfHundred) {
+            b = Math.ceil(b / 100) * 100;
+            if (b < minB || b > maxB) continue;
+        }
+
         // Tízesátlépés tiltása: b ne legyen nagyobb, mint a hiányzó egyesek a következő tizesig
         if (noCrossTen) {
             const onesA = a % 10;
@@ -136,6 +165,17 @@ export function generateAddition(options = {}) {
             continue;
         }
 
+        // Százasátlépés (tens column carry) – 1000-ig
+        const carryHundredsResult = hasCarryHundreds(a, b);
+
+        if (crossHundred === "never" && carryHundredsResult) {
+            continue;
+        }
+
+        if (crossHundred === "always" && !carryHundredsResult) {
+            continue;
+        }
+
         tasks.push({
             a,
             b,
@@ -156,4 +196,12 @@ function hasCarry(a, b) {
     const onesB = b % 10;
 
     return onesA + onesB >= 10;
+}
+
+function hasCarryHundreds(a, b) {
+
+    const tensA = Math.floor((a % 100) / 10);
+    const tensB = Math.floor((b % 100) / 10);
+
+    return tensA + tensB >= 10;
 }

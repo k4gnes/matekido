@@ -1,0 +1,72 @@
+{
+  "id": "grade3-subtraction-01",
+  "title": "Kivonás 1000-ig átlépés nélkül",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔢 Kivonás 1000-ig",
+      "text": "Vond ki a számokat! Nem kell átlépnünk a százashatárt. Például: 570 - 240 = ?",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Kivonás a pályán",
+          "text": "Vond ki a számokat! Nem kell átlépnünk a százashatárt. Például: 570 - 240 = ?"
+        },
+        "football": {
+          "title": "⚽ Kivonás a meccsen",
+          "text": "Vond ki a számokat! Nem kell átlépnünk a százashatárt. Például: 570 - 240 = ?"
+        },
+        "cooking": {
+          "title": "🍳 Kivonás a konyhában",
+          "text": "Vond ki a számokat! Nem kell átlépnünk a százashatárt. Például: 570 - 240 = ?"
+        },
+        "animals": {
+          "title": "🦁 Kivonás az állatkertben",
+          "text": "Vond ki a számokat! Nem kell átlépnünk a százashatárt. Például: 570 - 240 = ?"
+        },
+        "space": {
+          "title": "🤖 Kivonás az űrben",
+          "text": "Vond ki a számokat! Nem kell átlépnünk a százashatárt. Például: 570 - 240 = ?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "subtraction",
+      "options": {
+        "count": 8,
+        "min": 100,
+        "max": 999,
+        "subMax": 999,
+        "crossingTen": "never",
+        "crossHundreds": "never"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden kivonást jól megoldottál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden kivonást jól megoldottál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden kivonást jól megoldottál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden kivonást jól megoldottál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden kivonást jól megoldottál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden kivonást jól megoldottál!"
+        }
+      }
+    }
+  ]
+}

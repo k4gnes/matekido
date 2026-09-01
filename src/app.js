@@ -1,4 +1,4 @@
-import { Game } from "./engine/Game.js?v=14";
+import { Game } from "./engine/Game.js?v=15";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=11";
 import { renderLessonMenu } from "./components/lessonMenu.js?v=5";
@@ -49,7 +49,7 @@ function showHelp(onBack) {
 }
 
 function showProfile() {
-    renderProfilePage(root, showMenu, showStats, showPractice, () => showHelp(showProfile));
+    renderProfilePage(lessonIndex, root, showMenu, showStats, showPractice, () => showHelp(showProfile));
 }
 
 function showPractice() {
@@ -89,7 +89,8 @@ async function startLesson(path) {
             onPractice: showPractice
         },
         path,
-        skill
+        skill,
+        lessonIndex
     );
 
     game.start();

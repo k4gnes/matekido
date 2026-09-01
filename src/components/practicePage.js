@@ -1,6 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
-import { getAllSkillStats, getActiveWorld } from "../profile/Profile.js";
+import { getAllSkillStats, getLessonStats, getActiveWorld } from "../profile/Profile.js";
 import { CATEGORIES } from "../data/skills.js";
 import { createLessonCard } from "./lessonMenu.js";
 
@@ -22,11 +22,31 @@ export function getWeakSkillIds() {
 
 }
 
+export function getWeakLessonFiles(lessonIndex) {
+
+    const weakSkills = getWeakSkillIds();
+    const weak = new Set();
+
+    for (const lesson of lessonIndex.lessons || []) {
+        if (weakSkills.has(lesson.skill)) {
+            weak.add(lesson.file);
+            continue;
+        }
+        const stats = getLessonStats(lesson.file);
+        if (stats && stats.percentage < 90) {
+            weak.add(lesson.file);
+        }
+    }
+
+    return weak;
+
+}
+
 export function renderPracticePage(lessonIndex, root, onSelect, onBack) {
 
     root.replaceChildren();
 
-    const weakSkills = getWeakSkillIds();
+    const weakLessonFiles = getWeakLessonFiles(lessonIndex);
     const activeWorld = getActiveWorld();
 
     const card = createCard();
@@ -40,7 +60,7 @@ export function renderPracticePage(lessonIndex, root, onSelect, onBack) {
 
     card.append(title, subtitle);
 
-    const lessons = (lessonIndex.lessons || []).filter(l => weakSkills.has(l.skill));
+    const lessons = (lessonIndex.lessons || []).filter(l => weakLessonFiles.has(l.file));
 
     if (lessons.length === 0) {
         const empty = document.createElement("p");

@@ -90,7 +90,7 @@ const COUNTED_TYPES = new Set([
 const isCounted = s => COUNTED_TYPES.has(s.type);
 
 
-import { renderCelebration } from "../components/celebration.js?v=1";
+import { renderCelebration } from "../components/celebration.js?v=2";
 import { renderProgress } from "../components/progress.js?v=1";
 import { renderMissingProgress } from "../components/missingProgress.js?v=2";
 import { renderComparisonProgress } from "../components/comparisonProgress.js?v=2";
@@ -157,12 +157,13 @@ const RENDERERS = new Map([
 
 export class Game {
 
-    constructor(lesson, root, actions = {}, lessonFile = null, skill = null) {
+    constructor(lesson, root, actions = {}, lessonFile = null, skill = null, lessonIndex = null) {
 
         this.lesson = lesson;
         this.root = root;
         this.lessonFile = lessonFile;
         this.skill = skill;
+        this.lessonIndex = lessonIndex;
         this.currentStep = 0;
         this.correct = 0;
         this.wrong = 0;
@@ -256,7 +257,8 @@ export class Game {
                 },
                 milestone,
                 reward,
-                getActiveWorld()
+                getActiveWorld(),
+                this.lessonIndex
             );
 
             return;
@@ -326,7 +328,7 @@ export class Game {
                 onExit: this.onExit,
                 onProfile: this.onProfile,
                 onPractice: this.onPractice
-            }, milestone2, reward2, getActiveWorld());
+            }, milestone2, reward2, getActiveWorld(), this.lessonIndex);
 
             return;
         }

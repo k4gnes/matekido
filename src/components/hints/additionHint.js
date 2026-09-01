@@ -52,17 +52,36 @@ export function renderAdditionHint(step, container) {
     const left = splitNumber(big);
     const right = splitNumber(small);
 
-    box.innerHTML = `
-        <p><strong>💡 Segítség</strong></p>
+    const hasHundreds = left.hundreds > 0 || right.hundreds > 0;
 
-        <p>Bontsd fel a számokat!</p>
+    let splitText;
+    if (hasHundreds) {
+        splitText = `
+            <p><strong>💡 Segítség</strong></p>
 
-        <p>${big} = ${left.tens} + ${left.ones}</p>
+            <p>Bontsd fel a számokat!</p>
 
-        <p>${small} = ${right.tens} + ${right.ones}</p>
+            <p>${big} = ${left.hundreds} + ${left.tens} + ${left.ones}</p>
 
-        <p>Most add össze külön a tízeseket és az egyeseket!</p>
-    `;
+            <p>${small} = ${right.hundreds} + ${right.tens} + ${right.ones}</p>
+
+            <p>Most add össze külön a százasokat, tízeseket és egyeseket!</p>
+        `;
+    } else {
+        splitText = `
+            <p><strong>💡 Segítség</strong></p>
+
+            <p>Bontsd fel a számokat!</p>
+
+            <p>${big} = ${left.tens} + ${left.ones}</p>
+
+            <p>${small} = ${right.tens} + ${right.ones}</p>
+
+            <p>Most add össze külön a tízeseket és az egyeseket!</p>
+        `;
+    }
+
+    box.innerHTML = splitText;
 
     container.append(box);
 

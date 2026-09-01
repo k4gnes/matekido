@@ -1,0 +1,68 @@
+{
+  "id": "grade3-mixed-01",
+  "title": "Vegyes műveletek 1000-ig",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔢 Vegyes műveletek",
+      "text": "Oldd meg a vegyes feladatokat! Néha összeadunk, néha kivonunk. Például: 350 + 280 vagy 600 - 250",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Vegyes műveletek a pályán",
+          "text": "Oldd meg a vegyes feladatokat! Néha összeadunk, néha kivonunk. Például: 350 + 280 vagy 600 - 250"
+        },
+        "football": {
+          "title": "⚽ Vegyes műveletek a meccsen",
+          "text": "Oldd meg a vegyes feladatokat! Néha összeadunk, néha kivonunk. Például: 350 + 280 vagy 600 - 250"
+        },
+        "cooking": {
+          "title": "🍳 Vegyes műveletek a konyhában",
+          "text": "Oldd meg a vegyes feladatokat! Néha összeadunk, néha kivonunk. Például: 350 + 280 vagy 600 - 250"
+        },
+        "animals": {
+          "title": "🦁 Vegyes műveletek az állatkertben",
+          "text": "Oldd meg a vegyes feladatokat! Néha összeadunk, néha kivonunk. Például: 350 + 280 vagy 600 - 250"
+        },
+        "space": {
+          "title": "🤖 Vegyes műveletek az űrben",
+          "text": "Oldd meg a vegyes feladatokat! Néha összeadunk, néha kivonunk. Például: 350 + 280 vagy 600 - 250"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "mixed",
+      "options": {
+        "count": 8,
+        "max": 1000
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden vegyes feladatot jól megoldottál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden vegyes feladatot jól megoldottál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden vegyes feladatot jól megoldottál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden vegyes feladatot jól megoldottál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden vegyes feladatot jól megoldottál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden vegyes feladatot jól megoldottál!"
+        }
+      }
+    }
+  ]
+}

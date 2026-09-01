@@ -1,0 +1,71 @@
+{
+  "id": "grade3-subtraction-round-hundreds-02",
+  "title": "Véletlen szám - kerek százas",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔢 Véletlen szám - kerek százas",
+      "text": "Vond ki a kerek százast a véletlen számból! Például: 780 - 300 = ?",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Véletlen szám - kerek százas",
+          "text": "Vond ki a kerek százast a véletlen számból! Például: 780 - 300 = ?"
+        },
+        "football": {
+          "title": "⚽ Véletlen szám - kerek százas",
+          "text": "Vond ki a kerek százast a véletlen számból! Például: 780 - 300 = ?"
+        },
+        "cooking": {
+          "title": "🍳 Véletlen szám - kerek százas",
+          "text": "Vond ki a kerek százast a véletlen számból! Például: 780 - 300 = ?"
+        },
+        "animals": {
+          "title": "🦁 Véletlen szám - kerek százas",
+          "text": "Vond ki a kerek százast a véletlen számból! Például: 780 - 300 = ?"
+        },
+        "space": {
+          "title": "🤖 Véletlen szám - kerek százas",
+          "text": "Vond ki a kerek százast a véletlen számból! Például: 780 - 300 = ?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "subtraction",
+      "options": {
+        "count": 8,
+        "min": 100,
+        "max": 999,
+        "subMax": 900,
+        "bMultiplesOfHundred": true
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden feladatot jól megoldottál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden feladatot jól megoldottál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden feladatot jól megoldottál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden feladatot jól megoldottál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden feladatot jól megoldottál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden feladatot jól megoldottál!"
+        }
+      }
+    }
+  ]
+}

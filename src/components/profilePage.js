@@ -1,12 +1,12 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { loadProfile, getNextGoal, getActiveWorld, setActiveWorld } from "../profile/Profile.js";
-import { getWeakSkillIds } from "./practicePage.js";
+import { getWeakLessonFiles } from "./practicePage.js";
 import { ACHIEVEMENTS, getUnlockedAchievements } from "../profile/Achievements.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getAllWorlds } from "../world/WorldRegistry.js";
 
-export function renderProfilePage(root, onBack, onStats, onPractice, onHelp) {
+export function renderProfilePage(lessonIndex, root, onBack, onStats, onPractice, onHelp) {
 
     root.replaceChildren();
 
@@ -192,9 +192,9 @@ export function renderProfilePage(root, onBack, onStats, onPractice, onHelp) {
 
     buttonRow.append(statsButton, menuButton);
 
-    const weakSkills = getWeakSkillIds();
-    if (weakSkills.size > 0) {
-        const practiceButton = createButton(`🎯 Gyakorlás (${weakSkills.size})`, {
+    const weakLessonFiles = getWeakLessonFiles(lessonIndex);
+    if (weakLessonFiles.size > 0) {
+        const practiceButton = createButton(`🎯 Gyakorlás (${weakLessonFiles.size})`, {
             onClick: () => onPractice?.()
         });
         practiceButton.className = "profile-page-button";

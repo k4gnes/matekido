@@ -22,7 +22,7 @@ Finomabb, tantervi bontás: egy kategórián belül több készség van (pl. Geo
 Ez a réteg jelenik meg:
 
 - az összesítő fül „Készségek" szekciójában (`statsPage.js`),
-- a „Gyakorolandó leckék" oldalon (`practicePage.js` – a 90% alatti készségek leckéi),
+- a „Gyakorolandó leckék" oldalon (`practicePage.js` – a 90% alatti készségek leckéi, plusz a 90% alatti leckeeredményű leckék),
 - és rögzítésre kerül a profilban (`recordSkillResult`, kulcs = a lecke `skill` mezője).
 
 Fontos: minden leckében használt `skill` azonosítónak benne kell lennie a `SKILLS` regiszterben, különben a statisztika nem írja ki magyarul / egyáltalán nem jelenik meg.

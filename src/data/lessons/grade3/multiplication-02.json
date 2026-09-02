@@ -1,0 +1,69 @@
+{
+  "id": "grade3-multiplication-02",
+  "title": "❓ Hiányzó tényező 6, 7, 8, 9",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "❓ Hiányzó tényező",
+      "text": "Melyik szám hiányzik a szorzatból? Például: 6 × ? = 42. Melyik számot szorozd 6-tal, hogy 42 legyen?",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Hiányzó tényező a pályán",
+          "text": "Melyik szám hiányzik a versenyeredményből? Például: 6 × ? = 42. Melyik számot szorozd 6-tal, hogy 42 legyen?"
+        },
+        "football": {
+          "title": "⚽ Hiányzó tényező a meccsen",
+          "text": "Melyik szám hiányzik az eredményből? Például: 6 × ? = 42. Melyik számot szorozd 6-tal, hogy 42 legyen?"
+        },
+        "cooking": {
+          "title": "🍳 Hiányzó tényező a konyhában",
+          "text": "Melyik szám hiányzik a receptből? Például: 6 × ? = 42. Melyik számot szorozd 6-tal, hogy 42 legyen?"
+        },
+        "animals": {
+          "title": "🦁 Hiányzó tényező az állatkertben",
+          "text": "Melyik szám hiányzik a számlálásból? Például: 6 × ? = 42. Melyik számot szorozd 6-tal, hogy 42 legyen?"
+        },
+        "space": {
+          "title": "🤖 Hiányzó tényező az űrben",
+          "text": "Melyik szám hiányzik a számításból? Például: 6 × ? = 42. Melyik számot szorozd 6-tal, hogy 42 legyen?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "multiplication",
+      "options": {
+        "count": 8,
+        "tables": [6, 7, 8, 9],
+        "type": "missing-factor"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megtaláltad a hiányzó tényezőket!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a hiányzó tényezőket a pályán!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a hiányzó tényezőket a meccsen!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a hiányzó tényezőket a konyhában!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megtaláltad a hiányzó tényezőket az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megtaláltad a hiányzó tényezőket az űrben!"
+        }
+      }
+    }
+  ]
+}

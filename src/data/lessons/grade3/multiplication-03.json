@@ -1,0 +1,69 @@
+{
+  "id": "grade3-multiplication-03",
+  "title": "✖️➗ Szorzás és osztás kapcsolata 6-9",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "✖️➗ Szorzás és osztás kapcsolata",
+      "text": "Ha tudod, hogy 7 × 8 = 56, akkor azt is tudod, hogy 56 ÷ 7 = 8! A szorzás és az osztás fordítottja egymásnak!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Szorzás és osztás a pályán",
+          "text": "Ha tudod, hogy 7 × 8 = 56, akkor azt is tudod, hogy 56 ÷ 7 = 8! A szorzás és az osztás fordítottja egymásnak!"
+        },
+        "football": {
+          "title": "⚽ Szorzás és osztás a meccsen",
+          "text": "Ha tudod, hogy 7 × 8 = 56, akkor azt is tudod, hogy 56 ÷ 7 = 8! A szorzás és az osztás fordítottja egymásnak!"
+        },
+        "cooking": {
+          "title": "🍳 Szorzás és osztás a konyhában",
+          "text": "Ha tudod, hogy 7 × 8 = 56, akkor azt is tudod, hogy 56 ÷ 7 = 8! A szorzás és az osztás fordítottja egymásnak!"
+        },
+        "animals": {
+          "title": "🦁 Szorzás és osztás az állatkertben",
+          "text": "Ha tudod, hogy 7 × 8 = 56, akkor azt is tudod, hogy 56 ÷ 7 = 8! A szorzás és az osztás fordítottja egymásnak!"
+        },
+        "space": {
+          "title": "🤖 Szorzás és osztás az űrben",
+          "text": "Ha tudod, hogy 7 × 8 = 56, akkor azt is tudod, hogy 56 ÷ 7 = 8! A szorzás és az osztás fordítottja egymásnak!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "multiplication",
+      "options": {
+        "count": 8,
+        "tables": [6, 7, 8, 9],
+        "type": "link"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megoldottad a szorzás-osztás feladatokat!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a szorzás-osztás feladatokat a pályán!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a szorzás-osztás feladatokat a meccsen!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a szorzás-osztás feladatokat a konyhában!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megoldottad a szorzás-osztás feladatokat az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad a szorzás-osztás feladatokat az űrben!"
+        }
+      }
+    }
+  ]
+}

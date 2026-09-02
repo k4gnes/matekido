@@ -1,0 +1,69 @@
+{
+  "id": "grade3-multiplication-01",
+  "title": "✖️ Szorzás 6, 7, 8, 9-es táblával",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "✖️ Szorzás 6, 7, 8, 9-es táblával",
+      "text": "Most a nagyobb szorzótáblák következnek: 6, 7, 8, 9! Válaszd ki a helyes eredményt!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Nagyobb szorzás a pályán",
+          "text": "A versenyautók a 6, 7, 8, 9-es táblákkal szoroznak! Válaszd ki a helyes eredményt!"
+        },
+        "football": {
+          "title": "⚽ Nagyobb szorzás a meccsen",
+          "text": "A játékosok a 6, 7, 8, 9-es táblákkal szoroznak! Válaszd ki a helyes eredményt!"
+        },
+        "cooking": {
+          "title": "🍳 Nagyobb szorzás a konyhában",
+          "text": "A szakács a 6, 7, 8, 9-es táblákkal szoroz! Válaszd ki a helyes eredményt!"
+        },
+        "animals": {
+          "title": "🦁 Nagyobb szorzás az állatkertben",
+          "text": "Az állatok a 6, 7, 8, 9-es táblákkal szoroznak! Válaszd ki a helyes eredményt!"
+        },
+        "space": {
+          "title": "🤖 Nagyobb szorzás az űrben",
+          "text": "A robotok a 6, 7, 8, 9-es táblákkal szoroznak! Válaszd ki a helyes eredményt!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "multiplication",
+      "options": {
+        "count": 8,
+        "tables": [6, 7, 8, 9],
+        "type": "table"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megszoroztad a nagyobb táblákkal!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megszoroztad a nagyobb táblákkal a pályán!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megszoroztad a nagyobb táblákkal a meccsen!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megszoroztad a nagyobb táblákkal a konyhában!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megszoroztad a nagyobb táblákkal az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megszoroztad a nagyobb táblákkal az űrben!"
+        }
+      }
+    }
+  ]
+}

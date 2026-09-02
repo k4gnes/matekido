@@ -1,0 +1,78 @@
+{
+  "id": "grade3-mixed-mult-div-01",
+  "title": "➗✖️ Vegyes szorzás és osztás",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "➗✖️ Vegyes szorzás és osztás",
+      "text": "Keverjük a szorzást és az osztást! Figyelj a jelekre, mindig a műveletet kövesd!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Vegyes szorzás és osztás a pályán",
+          "text": "Keverjük a szorzást és az osztást! Figyelj a jelekre a pályán, mindig a műveletet kövesd!"
+        },
+        "football": {
+          "title": "⚽ Vegyes szorzás és osztás a meccsen",
+          "text": "Keverjük a szorzást és az osztást! Figyelj a jelekre a meccsen, mindig a műveletet kövesd!"
+        },
+        "cooking": {
+          "title": "🍳 Vegyes szorzás és osztás a konyhában",
+          "text": "Keverjük a szorzást és az osztást! Figyelj a jelekre a konyhában, mindig a műveletet kövesd!"
+        },
+        "animals": {
+          "title": "🦁 Vegyes szorzás és osztás az állatkertben",
+          "text": "Keverjük a szorzást és az osztást! Figyelj a jelekre az állatkertben, mindig a műveletet kövesd!"
+        },
+        "space": {
+          "title": "🤖 Vegyes szorzás és osztás az űrben",
+          "text": "Keverjük a szorzást és az osztást! Figyelj a jelekre az űrben, mindig a műveletet kövesd!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "multiplication",
+      "options": {
+        "count": 5,
+        "tables": [6, 7, 8, 9],
+        "type": "table"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "division",
+      "options": {
+        "count": 5,
+        "tables": [6, 7, 8, 9],
+        "type": "division-table"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megoldottad a vegyes feladatokat!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a vegyes feladatokat a pályán!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a vegyes feladatokat a meccsen!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a vegyes feladatokat a konyhában!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megoldottad a vegyes feladatokat az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad a vegyes feladatokat az űrben!"
+        }
+      }
+    }
+  ]
+}

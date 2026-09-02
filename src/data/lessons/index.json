@@ -2011,6 +2011,116 @@
                 "animals": "🦁 Vegyes műveletek az állatkertben",
                 "space": "🤖 Vegyes műveletek az űrben"
             }
+        },
+        {
+            "id": "multiplication-6789-01",
+            "title": "Szorzás 6, 7, 8, 9-es táblával",
+            "grades": [
+                3
+            ],
+            "category": "multiplication",
+            "skill": "multiplication",
+            "difficulty": 2,
+            "type": "table",
+            "range": 100,
+            "mission": "✖️ Szorzás 6, 7, 8, 9",
+            "subtitle": "Szorzás 6, 7, 8, 9-es táblával",
+            "file": "./data/lessons/grade3/multiplication-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Szorzás a pályán",
+                "cooking": "🍳 Szorzás a konyhában",
+                "football": "⚽ Szorzás a meccsen",
+                "animals": "🦁 Szorzás az állatkertben",
+                "space": "🤖 Szorzás az űrben"
+            }
+        },
+        {
+            "id": "missing-factor-6789-01",
+            "title": "Hiányzó tényező 6, 7, 8, 9",
+            "grades": [
+                3
+            ],
+            "category": "multiplication",
+            "skill": "missing-factor",
+            "difficulty": 2,
+            "type": "missing-factor",
+            "range": 100,
+            "mission": "❓ Hiányzó tényező",
+            "subtitle": "Melyik szám hiányzik a szorzatból?",
+            "file": "./data/lessons/grade3/multiplication-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Hiányzó tényező a pályán",
+                "cooking": "🍳 Hiányzó tényező a konyhában",
+                "football": "⚽ Hiányzó tényező a meccsen",
+                "animals": "🦁 Hiányzó tényező az állatkertben",
+                "space": "🤖 Hiányzó tényező az űrben"
+            }
+        },
+        {
+            "id": "multiplication-link-6789-01",
+            "title": "Szorzás és osztás kapcsolata 6-9",
+            "grades": [
+                3
+            ],
+            "category": "multiplication",
+            "skill": "multiplication",
+            "difficulty": 3,
+            "type": "link",
+            "range": 100,
+            "mission": "✖️➗ Kapcsolat",
+            "subtitle": "Szorzás és osztás kapcsolata",
+            "file": "./data/lessons/grade3/multiplication-03.json",
+            "worldTitles": {
+                "racing": "🏎️ Kapcsolat a pályán",
+                "cooking": "🍳 Kapcsolat a konyhában",
+                "football": "⚽ Kapcsolat a meccsen",
+                "animals": "🦁 Kapcsolat az állatkertben",
+                "space": "🤖 Kapcsolat az űrben"
+            }
+        },
+        {
+            "id": "division-6789-01",
+            "title": "Osztás 6, 7, 8, 9-es táblával",
+            "grades": [
+                3
+            ],
+            "category": "multiplication",
+            "skill": "division",
+            "difficulty": 3,
+            "type": "division-table",
+            "range": 100,
+            "mission": "➗ Osztás 6, 7, 8, 9",
+            "subtitle": "Osztás 6, 7, 8, 9-es táblával",
+            "file": "./data/lessons/grade3/division-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Osztás a pályán",
+                "cooking": "🍳 Osztás a konyhában",
+                "football": "⚽ Osztás a meccsen",
+                "animals": "🦁 Osztás az állatkertben",
+                "space": "🤖 Osztás az űrben"
+            }
+        },
+        {
+            "id": "mixed-mult-div-6789-01",
+            "title": "Vegyes szorzás és osztás 6-9",
+            "grades": [
+                3
+            ],
+            "category": "multiplication",
+            "skill": "mixed",
+            "difficulty": 3,
+            "type": "mixed-mult-div",
+            "range": 100,
+            "mission": "➗✖️ Vegyes",
+            "subtitle": "Vegyes szorzás és osztás",
+            "file": "./data/lessons/grade3/mixed-mult-div-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Vegyes a pályán",
+                "cooking": "🍳 Vegyes a konyhában",
+                "football": "⚽ Vegyes a meccsen",
+                "animals": "🦁 Vegyes az állatkertben",
+                "space": "🤖 Vegyes az űrben"
+            }
         }
     ],
     "gradeConfig": [

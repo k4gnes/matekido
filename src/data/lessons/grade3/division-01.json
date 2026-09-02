@@ -1,0 +1,69 @@
+{
+  "id": "grade3-division-01",
+  "title": "➗ Osztás 6, 7, 8, 9-es táblával",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "➗ Osztás 6, 7, 8, 9-es táblával",
+      "text": "Gyakoroljuk az osztást a nagyobb táblákkal! Válaszd ki a helyes eredményt!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Osztás a pályán",
+          "text": "Az autók a 6, 7, 8, 9-es táblákkal osztanak! Válaszd ki a helyes eredményt!"
+        },
+        "football": {
+          "title": "⚽ Osztás a meccsen",
+          "text": "A játékosok a 6, 7, 8, 9-es táblákkal osztanak! Válaszd ki a helyes eredményt!"
+        },
+        "cooking": {
+          "title": "🍳 Osztás a konyhában",
+          "text": "A szakács a 6, 7, 8, 9-es táblákkal oszt! Válaszd ki a helyes eredményt!"
+        },
+        "animals": {
+          "title": "🦁 Osztás az állatkertben",
+          "text": "Az állatok a 6, 7, 8, 9-es táblákkal osztanak! Válaszd ki a helyes eredményt!"
+        },
+        "space": {
+          "title": "🤖 Osztás az űrben",
+          "text": "A robotok a 6, 7, 8, 9-es táblákkal osztanak! Válaszd ki a helyes eredményt!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "division",
+      "options": {
+        "count": 8,
+        "tables": [6, 7, 8, 9],
+        "type": "division-table"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megoldottad az osztásokat!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad az osztásokat a pályán!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad az osztásokat a meccsen!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad az osztásokat a konyhában!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megoldottad az osztásokat az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad az osztásokat az űrben!"
+        }
+      }
+    }
+  ]
+}

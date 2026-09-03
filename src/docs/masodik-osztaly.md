@@ -1,6 +1,6 @@
 # Matekidő – 2. osztályos készségtérkép
 
-**48 lecke**, 5 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**50 lecke**, 5 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 

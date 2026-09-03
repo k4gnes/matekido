@@ -1,7 +1,7 @@
-import { Game } from "./engine/Game.js?v=15";
+import { Game } from "./engine/Game.js?v=16";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=11";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=5";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=6";
 import { renderSkillMap } from "./components/skillMap.js?v=6";
 import { renderHelp } from "./components/help.js?v=2";
 import { renderProfilePage } from "./components/profilePage.js";
@@ -86,7 +86,11 @@ async function startLesson(path) {
             onRestart: () => startLesson(path),
             onExit: showMenu,
             onProfile: showProfile,
-            onPractice: showPractice
+            onPractice: showPractice,
+            onNext: () => {
+                const next = getNextLesson(path);
+                if (next) startLesson(next.file);
+            }
         },
         path,
         skill,
@@ -94,5 +98,24 @@ async function startLesson(path) {
     );
 
     game.start();
+
+}
+
+function getNextLesson(path) {
+
+    const allLessons = lessonIndex.lessons || [];
+    const idx = allLessons.findIndex(l => l.file === path);
+    if (idx === -1) return null;
+
+    const grade = allLessons[idx].grades?.[0];
+
+    for (let i = idx + 1; i < allLessons.length; i++) {
+        const candidate = allLessons[i];
+        if (candidate.grades?.includes(grade)) {
+            return candidate;
+        }
+    }
+
+    return null;
 
 }

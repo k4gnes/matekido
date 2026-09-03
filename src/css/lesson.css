@@ -18,9 +18,18 @@
     gap: .8rem;
 }
 
+.next-lesson-card {
+    max-width: 22rem;
+    margin: 0 auto;
+}
+
 @media (max-width: 640px) {
     .lesson-grid {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .next-lesson-card {
+        max-width: 100%;
     }
 }
 

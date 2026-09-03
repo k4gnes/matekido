@@ -20,6 +20,12 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
         onClick: () => actions.onRestart?.()
     });
 
+    const nextButton = actions.onNext
+        ? createButton("➡️ Következő feladat", {
+            onClick: () => actions.onNext()
+        })
+        : null;
+
     const menuButton = createButton("📚 Leckék", {
         onClick: () => actions.onExit?.()
     });
@@ -46,12 +52,16 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
         <p>Új mérföldkövet értél el!</p>
     `;
 
-        card.append(title, text, milestoneEl, restartButton, menuButton, profileButton);
+        card.append(title, text, milestoneEl);
+        if (nextButton) card.append(nextButton);
+        card.append(restartButton, menuButton, profileButton);
         if (practiceButton) card.append(practiceButton);
 
     } else {
 
-        card.append(title, text, restartButton, menuButton, profileButton);
+        card.append(title, text);
+        if (nextButton) card.append(nextButton);
+        card.append(restartButton, menuButton, profileButton);
         if (practiceButton) card.append(practiceButton);
 
     }

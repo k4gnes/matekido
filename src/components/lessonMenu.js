@@ -7,6 +7,7 @@ import { CATEGORIES, SKILLS } from "../data/skills.js";
 
 const FILTER_STORAGE_KEY = "matekido-lesson-filters";
 const FILTER_OPEN_KEY = "matekido-lesson-filters-open";
+const SELECTED_GRADE_KEY = "matekido-selected-grade";
 
 function saveFilters(filters) {
     saveJSON(FILTER_STORAGE_KEY, filters);
@@ -21,6 +22,16 @@ function loadFilterOpen() {
     if (val === "1") return true;
     if (val === "0") return false;
     return null;
+}
+
+function loadSelectedGrade() {
+    const val = loadRaw(SELECTED_GRADE_KEY);
+    const grade = Number(val);
+    return Number.isInteger(grade) ? grade : null;
+}
+
+function saveSelectedGrade(grade) {
+    saveRaw(SELECTED_GRADE_KEY, grade == null ? "" : String(grade));
 }
 
 function loadFilters() {
@@ -469,8 +480,27 @@ function filterLessons(lessons, filters) {
     });
 }
 
-export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onSkillMap, onHelp) {
+function pickNextForGrade(gradeLessons) {
 
+    if (gradeLessons.length === 0) return null;
+
+    let next = gradeLessons[0];
+    let worst = Infinity;
+
+    for (const lesson of gradeLessons) {
+        const stats = getLessonStats(lesson.file);
+        const percentage = stats ? stats.percentage : 0;
+        if (percentage < worst) {
+            worst = percentage;
+            next = lesson;
+        }
+    }
+
+    return next;
+
+}
+
+export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onSkillMap, onHelp) {
     root.replaceChildren();
 
     const wrapper = createCard();
@@ -501,6 +531,21 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     const activeWorld = getActiveWorld();
     const allLessons = index.lessons || [];
     const gradeConfig = index.gradeConfig || [];
+    let selectedGrade = loadSelectedGrade();
+    if (!gradeConfig.some(gc => gc.grade === selectedGrade)) {
+        selectedGrade = null;
+    }
+
+    function chooseGrade(grade) {
+        selectedGrade = grade;
+        saveSelectedGrade(grade);
+        showFilters = false;
+        saveFilterOpen(false);
+        filterToggle.textContent = "🔍 Szűrők ▼";
+        filterPanel.style.display = "none";
+        gradeBackButton.style.display = grade == null ? "none" : "inline-block";
+        renderContent();
+    }
 
     const filters = loadFilters();
     const hasActiveFilters = filters.difficulty.length > 0 || filters.grade.length > 0 || filters.skills.length > 0 || filters.types.length > 0 || filters.ranges.length > 0 || filters.categories.length > 0;
@@ -528,9 +573,15 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     });
     helpButton.className = "filter-toggle-btn";
 
+    const gradeBackButton = createButton("🔙 Osztály", {
+        onClick: () => chooseGrade(null)
+    });
+    gradeBackButton.className = "filter-toggle-btn";
+    gradeBackButton.style.display = selectedGrade == null ? "none" : "inline-block";
+
     const menuToolbar = document.createElement("div");
     menuToolbar.className = "menu-toolbar";
-    menuToolbar.append(filterToggle, infoButton, helpButton);
+    menuToolbar.append(filterToggle, infoButton, helpButton, gradeBackButton);
 
     const filterPanel = document.createElement("div");
     filterPanel.className = "filter-panel";
@@ -559,17 +610,88 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
         renderContent();
     }
 
-    function renderContent() {
-        contentArea.replaceChildren();
+    function renderGradePicker() {
+        const pick = createCard();
 
-        const filtered = filterLessons(allLessons, filters);
+        const pickTitle = document.createElement("h2");
+        pickTitle.className = "lesson-group";
+        pickTitle.textContent = "Melyik osztályban játszol?";
+        pick.append(pickTitle);
+
+        const grid = document.createElement("div");
+        grid.className = "lesson-grid";
+
+        gradeConfig.forEach(gc => {
+            const btn = createButton(gc.title, {
+                onClick: () => chooseGrade(gc.grade)
+            });
+            btn.className = "profile-page-button";
+            grid.append(btn);
+        });
+
+        pick.append(grid);
+        contentArea.append(pick);
+    }
+
+    function renderGradeContent() {
+        const gradeConfigEntry = gradeConfig.find(gc => gc.grade === selectedGrade);
+        const gradeLessons = allLessons.filter(l => l.grades?.includes(selectedGrade));
+
+        const gradeTitle = document.createElement("h2");
+        gradeTitle.className = "lesson-group";
+        gradeTitle.textContent = gradeConfigEntry ? gradeConfigEntry.title : `${selectedGrade}. osztály`;
+        contentArea.append(gradeTitle);
+
+        const next = pickNextForGrade(gradeLessons);
+        if (next) {
+            const nextCard = createCard();
+
+            const nextHeading = document.createElement("h3");
+            nextHeading.className = "category-title";
+            nextHeading.textContent = "➡️ Következő feladat";
+            nextCard.append(nextHeading);
+
+            const grid = document.createElement("div");
+            grid.className = "next-lesson-card";
+            grid.append(createLessonCard(next, onSelect, activeWorld));
+            nextCard.append(grid);
+            contentArea.append(nextCard);
+        }
+
+        const browseWrap = document.createElement("div");
+        browseWrap.hidden = true;
+
+        const listButton = createButton(`📚 Feladatok listája (${gradeLessons.length})`, {
+            onClick: () => {
+                const showing = !browseWrap.hidden;
+                browseWrap.hidden = showing;
+                listButton.textContent = showing
+                    ? `📚 Feladatok listája (${gradeLessons.length})`
+                    : "🔽 Elrejtés";
+            }
+        });
+        listButton.className = "profile-page-button";
+
+        const listButtonRow = document.createElement("div");
+        listButtonRow.style.cssText = "display:flex; gap:.5rem; justify-content:center; margin-top:1rem;";
+        listButtonRow.append(listButton);
+        contentArea.append(listButtonRow);
+
+        browseWrap.append(renderBrowseLessons(gradeLessons));
+        contentArea.append(browseWrap);
+    }
+
+    function renderBrowseLessons(gradeLessons) {
+        const container = document.createElement("div");
+
+        const filtered = filterLessons(gradeLessons, filters);
         const hasFilters = filters.difficulty.length > 0 || filters.grade.length > 0 || filters.skills.length > 0 || filters.types.length > 0 || filters.ranges.length > 0 || filters.categories.length > 0;
 
         if (hasFilters) {
             const resultInfo = document.createElement("div");
             resultInfo.className = "filter-result-info";
             resultInfo.textContent = `${filtered.length} találat`;
-            contentArea.append(resultInfo);
+            container.append(resultInfo);
 
             if (filtered.length > 0) {
                 const categorized = {};
@@ -587,13 +709,26 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
                     const section = createCategorySection(categoryKey, catLessons, onSelect, activeWorld);
                     if (section) flatCard.append(section);
                 }
-                contentArea.append(flatCard);
+                container.append(flatCard);
             }
         } else {
-            gradeConfig.forEach(gc => {
-                const gradeLessons = allLessons.filter(l => l.grades?.includes(gc.grade));
-                contentArea.append(createGradeSection(gc, gradeLessons, onSelect, activeWorld));
-            });
+            const gc = gradeConfig.find(g => g.grade === selectedGrade) || { grade: selectedGrade, title: `${selectedGrade}. osztály` };
+            container.append(createGradeSection(gc, gradeLessons, onSelect, activeWorld));
+        }
+
+        return container;
+    }
+
+    function renderContent() {
+        contentArea.replaceChildren();
+
+        if (selectedGrade == null) {
+            filterToggle.style.display = "none";
+            filterPanel.style.display = "none";
+            renderGradePicker();
+        } else {
+            filterToggle.style.display = "inline-block";
+            renderGradeContent();
         }
     }
 

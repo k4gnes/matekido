@@ -5,7 +5,7 @@ import { renderMarkdown } from "../utils/markdown.js";
 const DOCS = [
     { id: "elso-osztaly", emoji: "🌱", label: "1. osztály", desc: "27 lecke – számfogalom, műveletek 20-ig" },
     { id: "masodik-osztaly", emoji: "🚀", label: "2. osztály", desc: "50 lecke – számok 100-ig, szorzás és osztás" },
-    { id: "harmadik-osztaly", emoji: "🪐", label: "3. osztály", desc: "tervezett – számok 1000-ig, írásbeli műveletek" }
+    { id: "harmadik-osztaly", emoji: "🪐", label: "3. osztály", desc: "22 lecke – számok 1000-ig, szorzás és osztás" }
 ];
 
 export function renderSkillMap(root, onBackToLessons) {

@@ -1,23 +1,25 @@
 # Matekidő – 2. osztályos készségtérkép
 
-**50 lecke**, 5 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**50 lecke**, 7 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 ---
 
-## Számfogalom (9 lecke)
+## Számfogalom (11 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
 | Becslés | 🧮 Becslés – Melyik lehet? | Becslés | 50 | 2 |
 | Páros/páratlan | Páros és páratlan 100-ig | Páros/páratlan | 100 | 2 |
 | Hiányzó szám | Hiányzó szám 100-ig | Hiányzó szám | 100 | 2 |
+| Számszomszédok | Számok szomszédai 100-ig | Számszomszédok | 100 | 1 |
 | Számszomszédok | Szomszédok gyakorlása 100-ig | Számszomszédok | 100 | 2 |
 | Számsor | Mi a következő? 100-ig | Számsor | 100 | 2 |
 | Sorba rendezés | Rendezzük sorainkat! 100-ig | Sorba rendezés | 100 | 2 |
 | Sorminta | Sorminta – hosszabb minták | Sorminta | 100 | 2 |
 | Helyiérték | Helyiérték 100-ig | Tízesek és egyesek (bontás + összeállítás) | 100 | 2 |
+| Összehasonlítás | Összehasonlítás 20-ig | Nagyobb, kisebb vagy egyenlő | 20 | 1 |
 | Összehasonlítás | Összehasonlítás 100-ig | Nagyobb, kisebb vagy egyenlő | 100 | 2 |
 
 ## Műveletek (13 lecke)
@@ -88,11 +90,5 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Egy lépéses – szorzás | 📝 Szorzásos szöveges feladatok | Szöveges feladat | 30 | 2 |
 | Egy lépéses – osztás | 📝 Osztásos szöveges feladatok | Szöveges feladat | 30 | 2 |
 | Kétlépéses | 📝 Kétlépéses szöveges feladatok | Kétlépéses szöveges feladat | 20 | 3 |
-
----
-
-## Hiányzó készségek
-
-*(nincs – a teljes 2. osztályos tananyag lefedve ✅)*
 
 

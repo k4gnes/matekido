@@ -2,7 +2,7 @@ import { Game } from "./engine/Game.js?v=17";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=12";
 import { renderLessonMenu } from "./components/lessonMenu.js?v=7";
-import { renderSkillMap } from "./components/skillMap.js?v=6";
+import { renderSkillMap } from "./components/skillMap.js?v=7";
 import { renderHelp } from "./components/help.js?v=2";
 import { renderProfilePage } from "./components/profilePage.js";
 import { renderStatsPage } from "./components/statsPage.js?v=1";

@@ -148,6 +148,17 @@
     margin-bottom: .3rem;
 }
 
+.lesson-position-badge {
+    font-size: .72rem;
+    font-weight: 700;
+    color: #555;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 999px;
+    padding: .12rem .5rem;
+    white-space: nowrap;
+}
+
 .lesson-grade-badge {
     margin-left: auto;
     font-size: .72rem;

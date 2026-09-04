@@ -1,7 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 
-export function renderScene(step, root, next, progress, activeWorld, onExit) {
+export function renderScene(step, root, next, progress, activeWorld, onExit, lessonPos) {
     root.innerHTML = "";
 
     const worldStep = activeWorld ? step.worldTitles?.[activeWorld] : null;
@@ -38,6 +38,13 @@ export function renderScene(step, root, next, progress, activeWorld, onExit) {
 
     if (progress) {
         card.append(progress);
+    }
+
+    if (lessonPos) {
+        const posText = document.createElement("p");
+        posText.className = "scene-lesson-pos";
+        posText.textContent = `${lessonPos.position}. lecke a ${lessonPos.total}-ből`;
+        card.append(posText);
     }
 
     card.append(title, text);

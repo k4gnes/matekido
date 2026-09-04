@@ -14,6 +14,9 @@ export function renderProgress({ current, total }) {
     const world = getActiveWorld();
     const icons = WORLD_PROGRESS[world] ?? WORLD_PROGRESS.postman;
 
+    const container = document.createElement("div");
+    container.className = "progress-wrapper";
+
     const progress = document.createElement("div");
     progress.className = "progress";
 
@@ -35,6 +38,13 @@ export function renderProgress({ current, total }) {
 
     }
 
-    return progress;
+    container.append(progress);
+
+    const counter = document.createElement("div");
+    counter.className = "progress-counter";
+    counter.textContent = `${current} / ${total}`;
+    container.append(counter);
+
+    return container;
 
 }

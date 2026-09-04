@@ -161,7 +161,7 @@ const DIFFICULTY_LABEL = {
     4: "Mester"
 };
 
-export function createLessonCard(lesson, onSelect, activeWorld) {
+export function createLessonCard(lesson, onSelect, activeWorld, position, total) {
     const lessonCard = document.createElement("div");
     lessonCard.className = "lesson-card";
 
@@ -177,6 +177,13 @@ export function createLessonCard(lesson, onSelect, activeWorld) {
 
     const badges = document.createElement("div");
     badges.className = "lesson-badges";
+
+    if (position != null && total != null) {
+        const posBadge = document.createElement("span");
+        posBadge.className = "lesson-position-badge";
+        posBadge.textContent = `${position} / ${total}`;
+        badges.append(posBadge);
+    }
 
     const typeBadge = document.createElement("span");
     typeBadge.className = "lesson-type-badge";
@@ -217,7 +224,7 @@ export function createLessonCard(lesson, onSelect, activeWorld) {
     return lessonCard;
 }
 
-function createCategorySection(categoryKey, lessons, onSelect, activeWorld) {
+function createCategorySection(categoryKey, lessons, onSelect, activeWorld, positionMap) {
     const category = CATEGORIES[categoryKey];
     if (!category || lessons.length === 0) return null;
 
@@ -233,7 +240,8 @@ function createCategorySection(categoryKey, lessons, onSelect, activeWorld) {
     lessonGrid.className = "lesson-grid";
 
     lessons.forEach(lesson => {
-        lessonGrid.append(createLessonCard(lesson, onSelect, activeWorld));
+        const pos = positionMap?.get(lesson.file);
+        lessonGrid.append(createLessonCard(lesson, onSelect, activeWorld, pos?.position, pos?.total));
     });
 
     section.append(lessonGrid);
@@ -252,6 +260,11 @@ function createGradeSection(gradeConfig, lessons, onSelect, activeWorld) {
 
     card.append(gradeTitle, separator);
 
+    const positionMap = new Map();
+    lessons.forEach((lesson, index) => {
+        positionMap.set(lesson.file, { position: index + 1, total: lessons.length });
+    });
+
     const categorized = {};
     for (const key of Object.keys(CATEGORIES)) {
         categorized[key] = [];
@@ -264,7 +277,7 @@ function createGradeSection(gradeConfig, lessons, onSelect, activeWorld) {
     });
 
     for (const [categoryKey, catLessons] of Object.entries(categorized)) {
-        const section = createCategorySection(categoryKey, catLessons, onSelect, activeWorld);
+        const section = createCategorySection(categoryKey, catLessons, onSelect, activeWorld, positionMap);
         if (section) card.append(section);
     }
 
@@ -651,9 +664,10 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
             nextHeading.textContent = "➡️ Következő feladat";
             nextCard.append(nextHeading);
 
+            const nextIdx = gradeLessons.findIndex(l => l.file === next.file);
             const grid = document.createElement("div");
             grid.className = "next-lesson-card";
-            grid.append(createLessonCard(next, onSelect, activeWorld));
+            grid.append(createLessonCard(next, onSelect, activeWorld, nextIdx + 1, gradeLessons.length));
             nextCard.append(grid);
             contentArea.append(nextCard);
         }
@@ -705,8 +719,12 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
                 });
 
                 const flatCard = createCard();
+                const positionMap = new Map();
+                gradeLessons.forEach((lesson, index) => {
+                    positionMap.set(lesson.file, { position: index + 1, total: gradeLessons.length });
+                });
                 for (const [categoryKey, catLessons] of Object.entries(categorized)) {
-                    const section = createCategorySection(categoryKey, catLessons, onSelect, activeWorld);
+                    const section = createCategorySection(categoryKey, catLessons, onSelect, activeWorld, positionMap);
                     if (section) flatCard.append(section);
                 }
                 container.append(flatCard);

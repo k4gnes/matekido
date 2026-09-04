@@ -1,4 +1,4 @@
-import { renderScene } from "../components/scene.js?v=1";
+import { renderScene } from "../components/scene.js?v=2";
 import { renderExercise } from "../components/exercise.js?v=2";
 import { renderDecomposition } from "../components/decomposition.js?v=2";
 import { renderDecompositionFindWrong } from "../components/decompositionFindWrong.js?v=2";
@@ -91,10 +91,10 @@ const isCounted = s => COUNTED_TYPES.has(s.type);
 
 
 import { renderCelebration } from "../components/celebration.js?v=3";
-import { renderProgress } from "../components/progress.js?v=1";
-import { renderMissingProgress } from "../components/missingProgress.js?v=2";
-import { renderComparisonProgress } from "../components/comparisonProgress.js?v=2";
-import { renderNeighborProgress } from "../components/neighborProgress.js?v=2";
+import { renderProgress } from "../components/progress.js?v=2";
+import { renderMissingProgress } from "../components/missingProgress.js?v=3";
+import { renderComparisonProgress } from "../components/comparisonProgress.js?v=3";
+import { renderNeighborProgress } from "../components/neighborProgress.js?v=3";
 
 import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, recordSkillResult, getActiveWorld } from "../profile/Profile.js";
 import { grantRewards } from "../profile/RewardService.js";
@@ -175,6 +175,17 @@ export class Game {
         this.onProfile = actions.onProfile;
         this.onPractice = actions.onPractice;
         this.onNext = actions.onNext;
+    }
+
+    getLessonPosition() {
+        if (!this.lessonIndex || !this.lessonFile) return null;
+        const allLessons = this.lessonIndex.lessons || [];
+        const idx = allLessons.findIndex(l => l.file === this.lessonFile);
+        if (idx === -1) return null;
+        const grade = allLessons[idx].grades?.[0];
+        const gradeLessons = allLessons.filter(l => l.grades?.includes(grade));
+        const posInGrade = gradeLessons.findIndex(l => l.file === this.lessonFile);
+        return { position: posInGrade + 1, total: gradeLessons.length };
     }
 
     onAttempt() {
@@ -294,7 +305,8 @@ export class Game {
         }
 
         if (step.type === "scene") {
-            renderScene(step, this.root, () => this.next(), progress, getActiveWorld(), this.onExit);
+            const lessonPos = this.getLessonPosition();
+            renderScene(step, this.root, () => this.next(), progress, getActiveWorld(), this.onExit, lessonPos);
             return;
         }
 

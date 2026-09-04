@@ -1,5 +1,9 @@
 import { createCard } from "./ui/card.js";
 
+const DECOMP_COLOR = "#e65100";
+const TEN_COLOR = "#1565c0";
+const RESULT_COLOR = "#6a1b9a";
+
 export function renderBridgeTen(step, root, onNext, progress, onResult, onAttempt) {
     root.innerHTML = "";
 
@@ -17,9 +21,59 @@ export function renderBridgeTen(step, root, onNext, progress, onResult, onAttemp
     const title = document.createElement("h1");
     title.textContent = `🧩 ${a} + ${b} = ?`;
 
+    const eqWrap = document.createElement("div");
+    eqWrap.style.cssText = "text-align:center; margin:0.5rem 0;";
+
     const equation = document.createElement("div");
-    equation.style.cssText = "font-size:2rem; font-weight:bold; text-align:center; margin:0.5rem 0; color:#1a1a2e;";
-    equation.textContent = `${a} + ${b} = ${a} + ( ? + ? )`;
+    equation.style.cssText = "font-size:2rem; font-weight:bold; color:#1a1a2e; display:inline-flex; flex-wrap:wrap; gap:0.3rem; align-items:center; justify-content:center;";
+
+    const aSpan = document.createElement("span");
+    aSpan.textContent = `${a} +`;
+
+    const bSpan = document.createElement("span");
+    bSpan.textContent = b;
+    bSpan.style.color = DECOMP_COLOR;
+
+    const eq1 = document.createElement("span");
+    eq1.textContent = "=";
+
+    const tenBlock = document.createElement("span");
+    tenBlock.style.cssText = "position:relative; display:inline-block;";
+
+    const tenLabel = document.createElement("span");
+    tenLabel.style.cssText = `position:absolute; bottom:100%; left:50%; transform:translateX(-50%); font-size:.75rem; color:${TEN_COLOR}; font-weight:900; letter-spacing:.5px; line-height:1; white-space:nowrap;`;
+    tenLabel.textContent = "= 10";
+
+    const tenRow = document.createElement("span");
+    tenRow.style.cssText = "display:inline;";
+
+    const tenA = document.createElement("span");
+    tenA.textContent = `${a} + `;
+
+    const openParen = document.createElement("span");
+    openParen.textContent = "(";
+    openParen.style.color = DECOMP_COLOR;
+
+    const q1 = document.createElement("span");
+    q1.textContent = " ?";
+    q1.style.color = DECOMP_COLOR;
+
+    tenRow.append(tenA, openParen, q1);
+
+    const underline = document.createElement("span");
+    underline.style.cssText = `position:absolute; top:100%; left:0; right:0; height:3px; background:${TEN_COLOR};`;
+
+    tenBlock.append(tenLabel, tenRow, underline);
+
+    const decompRest = document.createElement("span");
+    decompRest.style.color = DECOMP_COLOR;
+    decompRest.textContent = "+ ? )";
+
+    const eq2 = document.createElement("span");
+    eq2.textContent = "= ?";
+
+    equation.append(aSpan, bSpan, eq1, tenBlock, decompRest, eq2);
+    eqWrap.append(equation);
 
     const optsContainer = document.createElement("div");
     optsContainer.style.cssText = "display:flex; flex-wrap:wrap; gap:0.6rem; justify-content:center; margin:1rem 0;";
@@ -58,9 +112,17 @@ export function renderBridgeTen(step, root, onNext, progress, onResult, onAttemp
                 equation.innerHTML = "";
                 equation.style.cssText = "font-size:2rem; font-weight:bold; text-align:center; margin:0.5rem 0; color:#1a1a2e; display:flex; flex-wrap:wrap; gap:0.4rem; align-items:center; justify-content:center;";
 
-                const eqSpan = document.createElement("span");
-                eqSpan.textContent = `${a} + ${b} = (${a} + ${complement}) + ${remainder} = ${sum}`;
-                equation.append(eqSpan);
+                const r1 = document.createElement("span");
+                r1.textContent = `${a} + ${b} = `;
+                const r2 = document.createElement("span");
+                r2.textContent = `(${a} + ${complement})`;
+                r2.style.cssText = `color:${RESULT_COLOR}; font-weight:bold;`;
+                const r3 = document.createElement("span");
+                r3.textContent = ` + ${remainder} = `;
+                const r4 = document.createElement("span");
+                r4.textContent = sum;
+                r4.style.cssText = "color:#2e7d32; font-weight:bold;";
+                equation.append(r1, r2, r3, r4);
 
                 if (!reported) {
                     reported = true;
@@ -101,6 +163,6 @@ export function renderBridgeTen(step, root, onNext, progress, onResult, onAttemp
         optsContainer.append(btn);
     });
 
-    card.append(title, equation, optsContainer, message);
+    card.append(title, eqWrap, optsContainer, message);
     root.append(card);
 }

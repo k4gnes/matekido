@@ -58,7 +58,7 @@ export function renderMoneyChange(step, root, next, progress, onResult, onAttemp
     const checkBtn = document.createElement("button");
     checkBtn.type = "button";
     checkBtn.className = "mc-check";
-    checkBtn.textContent = "✅ Ellenőrzöm";
+    checkBtn.textContent = "Ellenőrzöm";
 
     inputRow.append(input, checkBtn);
     card.append(inputRow);

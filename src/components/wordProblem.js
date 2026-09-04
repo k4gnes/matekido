@@ -632,7 +632,7 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
 
         card.append(hint, waiting, countEl, departure);
 
-        const button = createButton("✅ Ellenőrzöm");
+        const button = createButton("Ellenőrzöm");
         card.append(button);
 
         function updateCount() {

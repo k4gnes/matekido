@@ -75,7 +75,7 @@ export function renderMoneyPay(step, root, next, progress, onResult, onAttempt) 
         }
     });
 
-    const checkBtn = createButton("✅ Ellenőrzöm");
+    const checkBtn = createButton("Ellenőrzöm");
     checkBtn.addEventListener("click", check);
 
     const message = createMessageBox();

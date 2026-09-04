@@ -66,7 +66,7 @@ export function renderShapeSort(step, root, next, progress, onResult, onAttempt)
     });
     card.append(zones);
 
-    const button = createButton("✅ Ellenőrzöm");
+    const button = createButton("Ellenőrzöm");
     card.append(button);
 
     const message = createMessageBox();

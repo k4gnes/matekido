@@ -14,7 +14,7 @@ const AVATARS = [
     "🐒"
 ];
 
-export function renderWelcomeScreen(root, onSelect) {
+export function renderWelcomeScreen(root, onSelect, onParent) {
 
     root.replaceChildren();
 
@@ -35,7 +35,7 @@ export function renderWelcomeScreen(root, onSelect) {
 
     players.forEach(player => {
         grid.append(createPlayerCard(player, onSelect, () => {
-            renderWelcomeScreen(root, onSelect);
+            renderWelcomeScreen(root, onSelect, onParent);
         }));
     });
 
@@ -44,6 +44,16 @@ export function renderWelcomeScreen(root, onSelect) {
     }));
 
     wrapper.append(grid);
+
+    const parentButton = document.createElement("button");
+    parentButton.type = "button";
+    parentButton.className = "parent-link";
+    parentButton.textContent = "👨‍👩‍👧 Szülőknek";
+    parentButton.addEventListener("click", () => {
+        onParent?.();
+    });
+
+    wrapper.append(parentButton);
     root.append(wrapper);
 }
 

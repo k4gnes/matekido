@@ -7,7 +7,8 @@ import { renderHelp } from "./components/help.js?v=2";
 import { renderProfilePage } from "./components/profilePage.js";
 import { renderStatsPage } from "./components/statsPage.js?v=1";
 import { renderPracticePage } from "./components/practicePage.js";
-import { renderWelcomeScreen } from "./components/welcomeScreen.js";
+import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=2";
+import { renderParentDashboard } from "./components/parentDashboard.js?v=2";
 import { getActiveId, listPlayers } from "./profile/UserManager.js";
 
 const root = document.getElementById("app");
@@ -23,7 +24,13 @@ if (getActiveId() && listPlayers().length > 0) {
 function showWelcome() {
     renderWelcomeScreen(root, () => {
         showMenu();
-    });
+    }, showParentDashboard);
+}
+
+function showParentDashboard() {
+    renderParentDashboard(root, () => {
+        showWelcome();
+    }, lessonIndex);
 }
 
 function showMenu() {

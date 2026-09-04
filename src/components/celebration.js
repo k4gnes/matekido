@@ -30,7 +30,7 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
         onClick: () => actions.onExit?.()
     });
 
-    const profileButton = createButton("👤 Profilom", {
+    const profileButton = createButton("👤 Profil", {
         onClick: () => actions.onProfile?.()
     });
 

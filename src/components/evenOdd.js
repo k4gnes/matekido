@@ -65,7 +65,7 @@ export function renderEvenOdd(step, root, next, progress, onResult, onAttempt) {
     zones.append(targetZone.element);
     card.append(zones);
 
-    const button = createButton("✅ Ellenőrzöm");
+    const button = createButton("Ellenőrzöm");
     card.append(button);
 
     const message = createMessageBox();

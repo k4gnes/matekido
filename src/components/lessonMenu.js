@@ -585,6 +585,16 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
 
     wrapper.append(menuToolbar, filterPanel, contentArea);
 
+    const footer = document.createElement("p");
+    footer.className = "skill-map-footer";
+    const footerLink = document.createElement("a");
+    footerLink.href = "https://iconet.hu";
+    footerLink.target = "_blank";
+    footerLink.rel = "noopener";
+    footerLink.textContent = "💻 Iconet Informatika 2026";
+    footer.append(footerLink);
+    wrapper.append(footer);
+
     if (showFilters) {
         rebuildFilterPanel();
         filterPanel.style.display = "flex";
@@ -733,7 +743,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     const activeId = getActiveId();
     const currentPlayer = allPlayers.find(p => p.id === activeId);
 
-    const profileButton = createButton("👤 Profilom", {
+    const profileButton = createButton("👤 Profil", {
         onClick: () => onProfile?.()
     });
     profileButton.className = "profile-page-button";

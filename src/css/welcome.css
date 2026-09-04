@@ -13,6 +13,25 @@
     margin-bottom: 1rem;
 }
 
+.parent-link {
+    margin: .2rem auto 0;
+    padding: .5rem 1.4rem;
+    font-size: .85rem;
+    background: transparent;
+    color: #999;
+    border: 1.5px solid #ddd;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: color .15s, border-color .15s, background .15s;
+}
+
+.parent-link:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    background: rgba(79, 134, 247, .05);
+    transform: none;
+}
+
 .player-card {
     position: relative;
     background: white;

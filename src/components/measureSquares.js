@@ -69,7 +69,7 @@ export function renderMeasureSquares(step, root, next, progress, onResult, onAtt
             render();
         }
     });
-    const checkBtn = createButton("✅ Ellenőrzöm", { onClick: check });
+    const checkBtn = createButton("Ellenőrzöm", { onClick: check });
     controls.append(addBtn, removeBtn, checkBtn);
     card.append(controls);
 

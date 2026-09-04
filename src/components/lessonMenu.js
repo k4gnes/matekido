@@ -39,14 +39,13 @@ function loadFilters() {
     if (parsed) {
         return {
             difficulty: parsed.difficulty || [],
-            grade: parsed.grade || [],
             skills: parsed.skills || [],
             types: (parsed.types || []).map(t => t === "decomposition-find-wrong" ? "decomposition" : t),
             ranges: parsed.ranges || [],
             categories: (parsed.categories || []).map(c => ["time", "money", "measurement"].includes(c) ? "practical" : c)
         };
     }
-    return { difficulty: [], grade: [], skills: [], types: [], ranges: [], categories: [] };
+    return { difficulty: [], skills: [], types: [], ranges: [], categories: [] };
 }
 
 const TYPE_EMOJI = {
@@ -340,29 +339,6 @@ function createFilterPanel(filters, onFilterChange) {
     catRow.append(catBtns);
     panel.append(catRow);
 
-    const gradeRow = document.createElement("div");
-    gradeRow.className = "filter-row";
-    const gradeLabel = document.createElement("span");
-    gradeLabel.className = "filter-label";
-    gradeLabel.textContent = "Évfolyam:";
-    gradeRow.append(gradeLabel);
-
-    [1, 2, 3].forEach(g => {
-        const btn = document.createElement("button");
-        btn.className = "filter-btn" + (filters.grade.includes(g) ? " active" : "");
-        btn.textContent = `${g}. osztály`;
-        btn.addEventListener("click", () => {
-            if (filters.grade.includes(g)) {
-                filters.grade = filters.grade.filter(gr => gr !== g);
-            } else {
-                filters.grade.push(g);
-            }
-            onFilterChange();
-        });
-        gradeRow.append(btn);
-    });
-    panel.append(gradeRow);
-
     const skillRow = document.createElement("div");
     skillRow.className = "filter-row";
     const skillLabel = document.createElement("span");
@@ -460,7 +436,6 @@ function createFilterPanel(filters, onFilterChange) {
     clearBtn.textContent = "✕ Szűrők törlése";
     clearBtn.addEventListener("click", () => {
         filters.difficulty = [];
-        filters.grade = [];
         filters.skills = [];
         filters.types = [];
         filters.ranges = [];
@@ -474,7 +449,7 @@ function createFilterPanel(filters, onFilterChange) {
 }
 
 function filterLessons(lessons, filters) {
-    const hasFilters = filters.difficulty.length > 0 || filters.grade.length > 0 || filters.skills.length > 0 || filters.types.length > 0 || filters.ranges.length > 0 || filters.categories.length > 0;
+    const hasFilters = filters.difficulty.length > 0 || filters.skills.length > 0 || filters.types.length > 0 || filters.ranges.length > 0 || filters.categories.length > 0;
     if (!hasFilters) return lessons;
 
     const selectedTypes = new Set();
@@ -484,7 +459,6 @@ function filterLessons(lessons, filters) {
 
     return lessons.filter(l => {
         if (filters.difficulty.length > 0 && !filters.difficulty.includes(l.difficulty)) return false;
-        if (filters.grade.length > 0 && !l.grades?.some(g => filters.grade.includes(g))) return false;
         if (filters.skills.length > 0 && !filters.skills.includes(l.skill)) return false;
         if (selectedTypes.size > 0 && !selectedTypes.has(l.type)) return false;
         if (filters.ranges.length > 0 && !filters.ranges.includes(l.range)) return false;
@@ -561,7 +535,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     }
 
     const filters = loadFilters();
-    const hasActiveFilters = filters.difficulty.length > 0 || filters.grade.length > 0 || filters.skills.length > 0 || filters.types.length > 0 || filters.ranges.length > 0 || filters.categories.length > 0;
+    const hasActiveFilters = filters.difficulty.length > 0 || filters.skills.length > 0 || filters.types.length > 0 || filters.ranges.length > 0 || filters.categories.length > 0;
     const savedOpen = loadFilterOpen();
     let showFilters = savedOpen !== null ? savedOpen : hasActiveFilters;
 
@@ -699,7 +673,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
         const container = document.createElement("div");
 
         const filtered = filterLessons(gradeLessons, filters);
-        const hasFilters = filters.difficulty.length > 0 || filters.grade.length > 0 || filters.skills.length > 0 || filters.types.length > 0 || filters.ranges.length > 0 || filters.categories.length > 0;
+    const hasFilters = filters.difficulty.length > 0 || filters.skills.length > 0 || filters.types.length > 0 || filters.ranges.length > 0 || filters.categories.length > 0;
 
         if (hasFilters) {
             const resultInfo = document.createElement("div");

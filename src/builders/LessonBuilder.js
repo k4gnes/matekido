@@ -303,7 +303,8 @@ export function buildLesson(lesson) {
                     b: task.b,
                     answer: task.answer,
                     expression: task.expression,
-                    interaction: task.interaction
+                    interaction: task.interaction,
+                    options: task.options
                 });
             } else if (step.generator === "estimate") {
                 result.push({

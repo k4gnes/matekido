@@ -67,17 +67,17 @@ function generateAddMissing(max, interaction) {
 function generateSubMissing(max, interaction) {
     const tasks = [];
     for (let i = 0; i < 8; i++) {
-        const answer = randint(1, max - 3);
-        const b = randint(1, max - answer);
-        const a = answer + b;
+        const result = randint(1, max - 3);
+        const b = randint(1, max - result);
+        const a = result + b;
         const missingMinuend = Math.random() < 0.5;
         const task = {
             type: "missing-operand",
             op: "-",
             a: missingMinuend ? null : a,
             b: missingMinuend ? null : b,
-            answer: missingMinuend ? a : answer,
-            expression: missingMinuend ? `? - ${b} = ${answer}` : `${a} - ? = ${answer}`
+            answer: missingMinuend ? a : b,
+            expression: missingMinuend ? `? - ${b} = ${result}` : `${a} - ? = ${result}`
         };
         assignInteraction(task, ["input", "choice"], interaction);
         tasks.push(task);
@@ -104,17 +104,17 @@ function generateMixed(max, interaction) {
             assignInteraction(task, ["input", "choice"], interaction);
             tasks.push(task);
         } else {
-            const answer = randint(1, max - 3);
-            const b = randint(1, max - answer);
-            const a = answer + b;
+            const result = randint(1, max - 3);
+            const b = randint(1, max - result);
+            const a = result + b;
             const missingMinuend = Math.random() < 0.5;
             const task = {
                 type: "missing-operand",
                 op: "-",
                 a: missingMinuend ? null : a,
                 b: missingMinuend ? null : b,
-                answer: missingMinuend ? a : answer,
-                expression: missingMinuend ? `? - ${b} = ${answer}` : `${a} - ? = ${answer}`
+                answer: missingMinuend ? a : b,
+                expression: missingMinuend ? `? - ${b} = ${result}` : `${a} - ? = ${result}`
             };
             assignInteraction(task, ["input", "choice"], interaction);
             tasks.push(task);

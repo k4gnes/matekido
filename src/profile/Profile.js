@@ -390,6 +390,21 @@ export function setActiveWorld(worldId) {
 
 }
 
+export function getActiveGrade() {
+
+    const profile = loadProfile();
+    return profile.grade ?? null;
+
+}
+
+export function setActiveGrade(grade) {
+
+    const profile = loadProfile();
+    profile.grade = grade;
+    saveProfile(profile);
+
+}
+
 export function getUnlockedWorldIds() {
 
     const profile = loadProfile();

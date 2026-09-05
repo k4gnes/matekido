@@ -72,6 +72,7 @@ const SW_CACHE_LIST = [
     "/components/ui/feedback.js",
     "/components/ui/hintBox.js",
     "/components/ui/inputHelper.js",
+    "/components/ui/instruction.js",
     "/components/ui/messageBox.js",
     "/components/ui/numberInput.js",
     "/components/ui/optionHelper.js",

@@ -2,12 +2,11 @@ import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { loadJSON, saveJSON, loadRaw, saveRaw } from "../storage.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
-import { getLessonStats, getActiveWorld } from "../profile/Profile.js";
+import { getLessonStats, getActiveWorld, getActiveGrade, setActiveGrade } from "../profile/Profile.js";
 import { CATEGORIES, SKILLS } from "../data/skills.js";
 
 const FILTER_STORAGE_KEY = "matekido-lesson-filters";
 const FILTER_OPEN_KEY = "matekido-lesson-filters-open";
-const SELECTED_GRADE_KEY = "matekido-selected-grade";
 
 function saveFilters(filters) {
     saveJSON(FILTER_STORAGE_KEY, filters);
@@ -25,13 +24,11 @@ function loadFilterOpen() {
 }
 
 function loadSelectedGrade() {
-    const val = loadRaw(SELECTED_GRADE_KEY);
-    const grade = Number(val);
-    return Number.isInteger(grade) ? grade : null;
+    return getActiveGrade();
 }
 
 function saveSelectedGrade(grade) {
-    saveRaw(SELECTED_GRADE_KEY, grade == null ? "" : String(grade));
+    setActiveGrade(grade);
 }
 
 function loadFilters() {

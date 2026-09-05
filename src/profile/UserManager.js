@@ -12,6 +12,7 @@ const DEFAULT_PROFILE = {
     lastPlayed: null,
     unlockedThemes: ["postman"],
     activeWorld: "postman",
+    grade: null,
     dailyQuest: {
         id: "three-lessons",
         progress: 0,

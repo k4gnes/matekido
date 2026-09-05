@@ -155,7 +155,7 @@ export function renderProfilePage(lessonIndex, root, onBack, onStats, onPractice
         const desc = document.createElement("span");
         desc.className = "world-desc";
         if (isUnlocked) {
-            desc.textContent = isActive ? "Aktív" : "Kattints a váltáshoz";
+            desc.textContent = isActive ? "✅ Aktív" : "Kattints a váltáshoz";
         } else {
             desc.textContent = `⭐ ${world.requiredStars} szükséges (${profile.stars}/${world.requiredStars})`;
         }
@@ -167,7 +167,7 @@ export function renderProfilePage(lessonIndex, root, onBack, onStats, onPractice
             item.style.cursor = "pointer";
             item.addEventListener("click", () => {
                 setActiveWorld(world.id);
-                renderProfilePage(root, onBack, onStats);
+                renderProfilePage(lessonIndex, root, onBack, onStats, onPractice, onHelp);
             });
         }
 

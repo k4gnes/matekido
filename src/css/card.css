@@ -5,6 +5,69 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    position: relative;
+}
+
+.instruction-help {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: help;
+    margin: 0;
+    padding: 0;
+    border: none;
+    user-select: none;
+    z-index: 5;
+}
+
+.instruction-help:hover,
+.instruction-help:focus-visible {
+    transform: scale(1.1);
+}
+
+.instruction-tooltip {
+    position: absolute;
+    top: calc(100% + .4rem);
+    right: 0;
+    width: max-content;
+    max-width: 260px;
+    background: #2b2b2b;
+    color: #fff;
+    padding: .6rem .8rem;
+    border-radius: 8px;
+    font-size: .9rem;
+    line-height: 1.4;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .15s ease, visibility .15s ease;
+    z-index: 6;
+}
+
+.instruction-tooltip.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.instruction-tooltip strong {
+    display: block;
+    margin-bottom: .2rem;
+}
+
+.instruction-tooltip p {
+    margin: 0;
 }
 
 .scene-lesson-pos {
@@ -335,7 +398,7 @@
     padding: 0.25rem 0.35rem;
     border-radius: 5px;
     margin-bottom: 2px;
-    transition: background .15s;
+    transition: background .15s ease;
 }
 
 .world-item.unlocked {
@@ -352,8 +415,31 @@
 }
 
 .world-item.active {
-    background: rgba(76, 175, 80, 0.2);
-    border: 1px solid rgba(76, 175, 80, 0.4);
+    background: rgba(76, 175, 80, 0.3);
+    border: 2px solid #4caf50;
+    animation: world-activate .45s ease;
+}
+
+.world-item.active .world-name,
+.world-item.active .world-desc {
+    color: #1b5e20;
+}
+
+.world-item.active .world-desc {
+    font-weight: 700;
+    opacity: 1;
+}
+
+@keyframes world-activate {
+    0% {
+        transform: scale(.96);
+        background: rgba(76, 175, 80, 0.55);
+        border-color: #2e7d32;
+    }
+    100% {
+        transform: scale(1);
+        background: rgba(76, 175, 80, 0.3);
+    }
 }
 
 .world-icon {

@@ -13,21 +13,11 @@ const WORLD_EMOJI = {
 };
 
 function renderEmojiGroup(container, emoji, count) {
-    if (count <= 10) {
-        container.textContent = emoji.repeat(count);
-        return;
-    }
-    const fullGroups = Math.floor(count / 10);
-    const remainder = count % 10;
-    for (let i = 0; i < fullGroups; i++) {
-        const group = document.createElement("div");
-        group.textContent = emoji.repeat(10);
-        container.append(group);
-    }
-    if (remainder > 0) {
-        const group = document.createElement("div");
-        group.textContent = emoji.repeat(remainder);
-        container.append(group);
+    for (let i = 0; i < count; i++) {
+        const chip = document.createElement("span");
+        chip.className = "comparison-chip";
+        chip.textContent = emoji;
+        container.append(chip);
     }
 }
 
@@ -48,7 +38,7 @@ export function renderComparison(step, root, next, progress, onResult, onAttempt
     left.className = "comparison-side";
     left.textContent = step.leftExpr;
     const leftEmoji = document.createElement("div");
-    leftEmoji.style.cssText = "font-size:1.2rem; line-height:1.4; margin-top:0.3rem;";
+    leftEmoji.className = "comparison-emojis";
     if (step.emoji !== false) {
         renderEmojiGroup(leftEmoji, emoji, step.leftValue);
         leftWrap.append(left, leftEmoji);
@@ -65,7 +55,7 @@ export function renderComparison(step, root, next, progress, onResult, onAttempt
     right.className = "comparison-side";
     right.textContent = step.rightExpr;
     const rightEmoji = document.createElement("div");
-    rightEmoji.style.cssText = "font-size:1.2rem; line-height:1.4; margin-top:0.3rem;";
+    rightEmoji.className = "comparison-emojis";
     if (step.emoji !== false) {
         renderEmojiGroup(rightEmoji, emoji, step.rightValue);
         rightWrap.append(right, rightEmoji);

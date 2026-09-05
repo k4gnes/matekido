@@ -1,9 +1,10 @@
 import { renderScene } from "../components/scene.js?v=2";
+import { createInstructionHelp } from "../components/ui/instruction.js";
 import { renderExercise } from "../components/exercise.js?v=3";
 import { renderDecomposition } from "../components/decomposition.js?v=2";
 import { renderDecompositionFindWrong } from "../components/decompositionFindWrong.js?v=2";
 import { renderMissingNumber } from "../components/missingNumber.js?v=6";
-import { renderComparison } from "../components/comparison.js?v=4";
+import { renderComparison } from "../components/comparison.js?v=5";
 import { renderNeighbor } from "../components/neighbor.js?v=4";
 import { renderNeighborSingle } from "../components/neighborSingle.js?v=4";
 import { renderPlaceValue } from "../components/placeValue.js?v=4";
@@ -165,6 +166,8 @@ export class Game {
         this.skill = skill;
         this.lessonIndex = lessonIndex;
         this.currentStep = 0;
+        this.instructionTitle = null;
+        this.instructionText = null;
         this.correct = 0;
         this.wrong = 0;
         this.attempts = 0;
@@ -305,6 +308,9 @@ export class Game {
         }
 
         if (step.type === "scene") {
+            const worldStep = step.worldTitles?.[getActiveWorld()] ?? null;
+            this.instructionTitle = worldStep?.title ?? step.title;
+            this.instructionText = worldStep?.text ?? step.text;
             const lessonPos = this.getLessonPosition();
             renderScene(step, this.root, () => this.next(), progress, getActiveWorld(), this.onExit, lessonPos);
             return;
@@ -367,6 +373,13 @@ export class Game {
             (isCorrect) => this.onResult(isCorrect, skill),
             () => this.onAttempt()
         );
+
+        const card = this.root.querySelector(".card");
+        const helpTitle = this.instructionTitle ?? step.title;
+        const helpText = this.instructionText ?? step.text;
+        if (card && (helpTitle || helpText)) {
+            card.append(createInstructionHelp(helpTitle, helpText));
+        }
 
     }
 

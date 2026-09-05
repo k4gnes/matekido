@@ -39,7 +39,7 @@ Menübe lépve van egy 📮-jellegű világcím (világfüggő), a „Matekidő�
 | # | Lépés | Várt eredmény | Eredmény |
 |---|-------|---------------|----------|
 | 2.1 | Nézd meg a menü felépítését | Osztályok szerinti szekciók: „1. osztály”, „2. osztály”, „3. osztály”, minden lecke kártyával (neve, globusz, csillag) | |
-| 2.2 | Kövesd a „Matekidő” cimben lévő ☕ linket | Hoverre világosabb lesz, és megjelenik a „Tetszik? Támogasd!” tooltip; kattintva új fülön a ko-fi.com oldal nyílik | |
+| 2.2 | Kövesd a „Matekidő” cimben lévő ☕ linket | Hoverre világosabb lesz, és megjelenik a „Tetszik? Tippelj meg!” tooltip; kattintva új fülön a ko-fi.com oldal nyílik | |
 | 2.3 | Kattints a `🔍 Szűrők` gombra | Megnyílik a szűrőpanel, a gomb „Szűrők ▲”-ra vált | |
 | 2.4 | Szűrj „3. osztály” osztályra | Csak a 3. osztályos leckék látszanak, felül „N találat” | |
 | 2.5 | Szűrj nehézségre/ típusra is (pl. „Szorzótábla”) | A találatok ennek megfelelően szűrődnek | |

@@ -24,6 +24,12 @@ export function createFeedback({ message, container, onNext, onResult, onAttempt
             onResult?.(true);
         }
 
+        container.querySelectorAll("button").forEach(btn => {
+            if (btn.textContent.trim() === "Ellenőrzöm") {
+                btn.remove();
+            }
+        });
+
         const nextBtn = createButton("➡️ Tovább", {
             className: "next-btn",
             onClick: () => {
@@ -33,6 +39,7 @@ export function createFeedback({ message, container, onNext, onResult, onAttempt
             }
         });
         container.append(nextBtn);
+        setTimeout(() => nextBtn.focus(), 0);
     }
 
     function retry(customText) {

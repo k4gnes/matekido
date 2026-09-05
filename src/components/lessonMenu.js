@@ -497,22 +497,6 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     const worldEmoji = worldId === "racing" ? "🏎️" : worldId === "football" ? "⚽" : worldId === "cooking" ? "👨‍🍳" : worldId === "animals" ? "🦁" : worldId === "space" ? "🤖" : "📚";
     title.textContent = `${worldEmoji} Matekidő`;
 
-    const koFi = document.createElement("a");
-    koFi.href = "https://ko-fi.com/agnes84442";
-    koFi.target = "_blank";
-    koFi.rel = "noopener";
-
-    const koFiLabel = document.createElement("span");
-    koFiLabel.className = "ko-fi-label";
-    koFiLabel.textContent = "Tetszik? Támogasd!";
-
-    koFi.append("☕", koFiLabel);
-    koFi.classList.add("ko-fi");
-    koFi.style.cssText = "font-size:1.1rem; opacity:0.55; margin-left:0.5rem; vertical-align:middle; text-decoration:none; transition:opacity .2s;";
-    koFi.addEventListener("mouseenter", () => { koFi.style.opacity = "1"; });
-    koFi.addEventListener("mouseleave", () => { koFi.style.opacity = "0.55"; });
-    title.append(koFi);
-
     wrapper.append(title);
 
     const activeWorld = getActiveWorld();

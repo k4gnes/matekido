@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/equation.css?v=9">
     <link rel="stylesheet" href="css/message.css?v=9">
     <link rel="stylesheet" href="css/progress.css?v=10">
-    <link rel="stylesheet" href="css/lesson.css?v=14">
+    <link rel="stylesheet" href="css/lesson.css?v=15">
     <link rel="stylesheet" href="css/skill-map.css?v=3">
     <link rel="stylesheet" href="css/hint.css?v=9">
     <link rel="stylesheet" href="css/decomposition.css?v=9">
@@ -51,11 +51,41 @@
 </head>
 <body>
 
+    <noscript>
+        <main style="width:min(90%,700px);margin:2rem auto;padding:1.5rem;background:#FFFDF8;border:2px solid #F59E0B;border-radius:12px;font-family:system-ui,sans-serif;color:#333;">
+            <h1 style="margin-top:0;text-align:center;">☕ Matekidő</h1>
+            <p style="font-size:1.1rem;line-height:1.6;text-align:left;">
+                <strong>Az oldal használatához engedélyezned kell a JavaScriptet.</strong>
+                Matekidő egy olyan interaktív matematikai tanulási platform, amely a böngésződben fut, ezért JavaScript nélkül sajnos nem tud működni.
+                Kapcsold be a JavaScriptet a böngésződ beállításaiban, majd töltsd újra az oldalt.
+            </p>
+            <h2 style="margin-top:1.5rem;margin-bottom:.5rem;">Mit találsz itt? 🎓</h2>
+            <p style="font-size:1rem;line-height:1.6;text-align:left;">
+                Interaktív, játékos matematikafeladatok magyar gyerekeknek az első, második és harmadik osztályos tananyag szerint:
+            </p>
+            <ul style="font-size:1rem;line-height:1.6;text-align:left;padding-left:1.3rem;">
+                <li><strong>1. osztály:</strong> számok bontása, kiegészítés, tízesátlépés, helyiérték, összeadás és kivonás 20-ig, összehasonlítás, számsorok, rendezés, páros-páratlan, sorminták, alakzatok, térbeli tájékozódás, idő (egész és fél óra), pénz, mérés, szöveges feladatok.</li>
+                <li><strong>2. osztály:</strong> összeadás és kivonás 100-ig (kerek tízesekkel, átlépéssel), hiányzó számok, vegyes műveletek, szorzás és osztás (2, 3, 4, 5, 10-es tábla), szorzás és osztás kapcsolata, hiányzó tag és tényező, szöveges feladatok (összeadásos, szorzásos, osztásos, kétlépéses), becslés, igaz-hamis, hibás számolás keresése, alakzatok és térbeli alakzatok, idő (negyedóra), pénz és visszajáró, tömeg, űrtartalom, hosszúság.</li>
+                <li><strong>3. osztály:</strong> helyiérték, számnevek, szomszédok és összehasonlítás 1000-ig, kerekítés, római számok, összeadás és kivonás 1000-ig (kerek százasokkal, átlépéssel), vegyes műveletek 1000-ig, szorzás és osztás a 6, 7, 8, 9-es táblával, hiányzó tényező, szorzás és osztás kapcsolata, vegyes szorzás és osztás.</li>
+            </ul>
+            <p style="font-size:1rem;line-height:1.6;text-align:left;">
+                Az egyes feladatok vidám történetekbe ágyazva jelennek meg (versenypálya, konyha, focipálya, állatkert, űrállomás), és minden gyerek a saját tempójában haladhat, sosem büntetjük őt. Az elért eredményeket, pontszámokat és statisztikákat a profilodban követheted nyomon.
+            </p>
+            <p style="font-size:0.9rem;line-height:1.5;text-align:left;opacity:0.7;">
+                <em>A fenti leírás csak az oldal tartalmának rövid összefoglalója. A teljes, interaktív élmény megtekintéséhez engedélyezd a JavaScriptet.</em>
+            </p>
+        </main>
+    </noscript>
+
     <div id="app"></div>
 
     <img src="https://www.iconet.hu/matekido.gif" width="1" height="1" alt="" style="display:none" loading="eager" referrerpolicy="strict-origin-when-cross-origin">
 
-    <script type="module" src="app.js?v=15"></script>
+    <p style="text-align:center;margin:0 0 .5rem;">
+        <a href="https://ko-fi.com/agnes84442" target="_blank" rel="noopener" style="font-size:1.2rem;color:#4F86F7;text-decoration:none;opacity:1;font-weight:600;">☕ Tetszik? Tippelj meg! 💛</a>
+    </p>
+
+    <script type="module" src="app.js?v=18"></script>
 
     <script>
         if ("serviceWorker" in navigator) {

@@ -77,6 +77,18 @@ button:hover {
     cursor: pointer;
 }
 
+.celebration-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .8rem;
+    margin-top: 1.5rem;
+}
+
+.celebration-buttons button {
+    margin: 0;
+}
+
 .milestone{
     margin:20px 0;
     text-align:center;

@@ -4,8 +4,8 @@ import { createMessageBox } from "./ui/messageBox.js";
 import { createFeedback } from "./ui/feedback.js";
 
 const QUESTION_TEXT = {
-    even: "Húzd a páros számokat a piros helyre!",
-    odd: "Húzd a páratlan számokat a kék helyre!"
+    even: "Kattints a páros számokra, hogy a piros helyre kerüljenek!",
+    odd: "Kattints a páratlan számokra, hogy a kék helyre kerüljenek!"
 };
 
 function createZone(label, kind) {
@@ -81,85 +81,16 @@ export function renderEvenOdd(step, root, next, progress, onResult, onAttempt) {
         onAttempt
     });
 
-    let drag = null;
-
-    card.addEventListener("pointerdown", (e) => {
+    card.addEventListener("click", (e) => {
+        if (feedback.isAnswered()) return;
         const chip = e.target.closest(".eo-chip");
-        if (!chip || feedback.isAnswered() || drag) return;
-        e.preventDefault();
-
-        const rect = chip.getBoundingClientRect();
-
-        const clone = chip.cloneNode(true);
-        clone.classList.add("eo-clone");
-        clone.style.width = rect.width + "px";
-        clone.style.height = rect.height + "px";
-        document.body.append(clone);
-
-        chip.classList.add("eo-hidden");
-
-        drag = {
-            chip,
-            clone,
-            offsetX: e.clientX - rect.left,
-            offsetY: e.clientY - rect.top
-        };
-
-        moveClone(e);
-
-        document.addEventListener("pointermove", onMove);
-        document.addEventListener("pointerup", onUp);
-        document.addEventListener("pointercancel", onUp);
-    });
-
-    function onMove(e) {
-        e.preventDefault();
-        if (!drag) return;
-        moveClone(e);
-        highlightZone(e);
-    }
-
-    function moveClone(e) {
-        drag.clone.style.left = (e.clientX - drag.offsetX) + "px";
-        drag.clone.style.top = (e.clientY - drag.offsetY) + "px";
-    }
-
-    function getZoneAt(x, y) {
-        const r = targetZone.element.getBoundingClientRect();
-        if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) {
-            return targetZone.element;
-        }
-        return null;
-    }
-
-    function highlightZone(e) {
-        targetZone.element.classList.toggle("eo-drag-over", getZoneAt(e.clientX, e.clientY) === targetZone.element);
-    }
-
-    function clearHighlight() {
-        targetZone.element.classList.remove("eo-drag-over");
-    }
-
-    function onUp(e) {
-        if (!drag) return;
-
-        drag.clone.remove();
-        clearHighlight();
-
-        const zone = getZoneAt(e.clientX, e.clientY);
-        if (zone) {
-            zone.append(drag.chip);
+        if (!chip) return;
+        if (chip.parentElement === targetZone.element) {
+            board.append(chip);
         } else {
-            board.append(drag.chip);
+            targetZone.element.append(chip);
         }
-
-        drag.chip.classList.remove("eo-hidden");
-        drag = null;
-
-        document.removeEventListener("pointermove", onMove);
-        document.removeEventListener("pointerup", onUp);
-        document.removeEventListener("pointercancel", onUp);
-    }
+    });
 
     function check() {
         if (feedback.isAnswered()) return;

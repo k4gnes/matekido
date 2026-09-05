@@ -6,27 +6,27 @@
     {
       "type": "scene",
       "title": "🎯 Páros és páratlan",
-      "text": "Döntsd el a számokról, hogy párosak-e! Húzd a kért számokat a megfelelő színű helyre!",
+      "text": "Döntsd el a számokról, hogy párosak-e! Kattints a kért számokra, hogy a helyükre kerüljenek!",
       "worldTitles": {
         "racing": {
           "title": "🏎️ Páros és páratlan",
-          "text": "Döntsd el a rajtszámokról, hogy párosak-e! Húzd a kért számokat a megfelelő színű helyre!"
+          "text": "Döntsd el a rajtszámokról, hogy párosak-e! Kattints a kért rajtszámokra, hogy a helyükre kerüljenek!"
         },
         "football": {
           "title": "⚽ Páros és páratlan",
-          "text": "Döntsd el a gólokról, hogy párosak-e! Húzd a kért számokat a megfelelő színű helyre!"
+          "text": "Döntsd el a gólokról, hogy párosak-e! Kattints a kért gólszámokra, hogy a helyükre kerüljenek!"
         },
         "cooking": {
           "title": "🍳 Páros és páratlan",
-          "text": "Döntsd el a hozzávalókról, hogy párosak-e! Húzd a kért számokat a megfelelő színű helyre!"
+          "text": "Döntsd el a hozzávalókról, hogy párosak-e! Kattints a kért hozzávalókra, hogy a helyükre kerüljenek!"
         },
         "animals": {
           "title": "🦁 Páros és páratlan állatok",
-          "text": "Döntsd el az állatok számáról, hogy párosak-e! Húzd őket a megfelelő helyre!"
+          "text": "Döntsd el az állatok számáról, hogy párosak-e! Kattints a kért állatszámokra, hogy a helyükre kerüljenek!"
         },
         "space": {
           "title": "🤖 Páros és páratlan robotok",
-          "text": "Döntsd el a robotok számáról, hogy párosak-e! Húzd őket a megfelelő helyre!"
+          "text": "Döntsd el a robotok számáról, hogy párosak-e! Kattints a kért robotszámokra, hogy a helyükre kerüljenek!"
         }
       }
     },

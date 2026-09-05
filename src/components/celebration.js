@@ -21,7 +21,7 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
     });
 
     const nextButton = actions.onNext
-        ? createButton("➡️ Következő feladat", {
+        ? createButton("➡️ Következő", {
             onClick: () => actions.onNext()
         })
         : null;
@@ -53,18 +53,21 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
     `;
 
         card.append(title, text, milestoneEl);
-        if (nextButton) card.append(nextButton);
-        card.append(restartButton, menuButton, profileButton);
-        if (practiceButton) card.append(practiceButton);
 
     } else {
 
         card.append(title, text);
-        if (nextButton) card.append(nextButton);
-        card.append(restartButton, menuButton, profileButton);
-        if (practiceButton) card.append(practiceButton);
 
     }
+
+    const buttons = document.createElement("div");
+    buttons.className = "celebration-buttons";
+
+    if (nextButton) buttons.append(nextButton);
+    buttons.append(restartButton, menuButton, profileButton);
+    if (practiceButton) buttons.append(practiceButton);
+
+    card.append(buttons);
 
     if (reward && reward.totalStars > 0) {
 

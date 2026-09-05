@@ -6,27 +6,27 @@
     {
       "type": "scene",
       "title": "🎯 Páros vagy páratlan?",
-      "text": "Húzd a páros számokat a sárga helyre, a páratlanokat a kékre!",
+      "text": "Kattints a kért számokra, hogy a megfelelő helyre kerüljenek!",
       "worldTitles": {
         "racing": {
           "title": "🏎️ Páros vagy páratlan?",
-          "text": "Húzd a páros számokat a sárga helyre, a páratlanokat a kékre!"
+          "text": "Kattints a kért számokra, hogy a megfelelő helyre kerüljenek!"
         },
         "football": {
           "title": "⚽ Páros vagy páratlan?",
-          "text": "Húzd a páros számokat a sárga helyre, a páratlanokat a kékre!"
+          "text": "Kattints a kért számokra, hogy a megfelelő helyre kerüljenek!"
         },
         "cooking": {
           "title": "🍳 Páros vagy páratlan?",
-          "text": "Húzd a páros számokat a sárga helyre, a páratlanokat a kékre!"
+          "text": "Kattints a kért számokra, hogy a megfelelő helyre kerüljenek!"
         },
         "animals": {
           "title": "🦁 Páros vagy páratlan?",
-          "text": "Húzd a páros számokat a sárga helyre, a páratlanokat a kékre!"
+          "text": "Kattints a kért számokra, hogy a megfelelő helyre kerüljenek!"
         },
         "space": {
           "title": "🤖 Páros vagy páratlan?",
-          "text": "Húzd a páros számokat a sárga helyre, a páratlanokat a kékre!"
+          "text": "Kattints a kért számokra, hogy a megfelelő helyre kerüljenek!"
         }
       }
     },

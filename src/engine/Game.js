@@ -11,7 +11,7 @@ import { renderPlaceValueTwoInput } from "../components/placeValueTwoInput.js?v=
 import { renderBridgeTen } from "../components/bridgeTen.js?v=3";
 import { renderSequence } from "../components/sequence.js?v=13";
 import { renderOrder } from "../components/order.js?v=11";
-import { renderEvenOdd } from "../components/evenOdd.js?v=11";
+import { renderEvenOdd } from "../components/evenOdd.js?v=12";
 import { renderPattern } from "../components/pattern.js?v=9";
 import { renderShapeSort } from "../components/shapeSort.js?v=11";
 import { renderTime } from "../components/time.js?v=10";
@@ -90,7 +90,7 @@ const COUNTED_TYPES = new Set([
 const isCounted = s => COUNTED_TYPES.has(s.type);
 
 
-import { renderCelebration } from "../components/celebration.js?v=3";
+import { renderCelebration } from "../components/celebration.js?v=5";
 import { renderProgress } from "../components/progress.js?v=2";
 import { renderMissingProgress } from "../components/missingProgress.js?v=3";
 import { renderComparisonProgress } from "../components/comparisonProgress.js?v=3";

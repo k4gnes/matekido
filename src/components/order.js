@@ -61,6 +61,15 @@ export function renderOrder(step, root, next, progress, onResult, onAttempt) {
 
     card.append(board);
 
+    const sortedLabel = document.createElement("p");
+    sortedLabel.className = "order-label " + (step.direction === "desc" ? "order-desc" : "order-asc");
+    sortedLabel.textContent = "Rendezett sor";
+    card.append(sortedLabel);
+
+    const sortedBoard = document.createElement("div");
+    sortedBoard.className = "order-board order-sorted " + (step.direction === "desc" ? "order-desc" : "order-asc");
+    card.append(sortedBoard);
+
     const button = createButton("Ellenőrzöm");
     card.append(button);
 
@@ -77,98 +86,27 @@ export function renderOrder(step, root, next, progress, onResult, onAttempt) {
         onAttempt
     });
 
-    let drag = null;
-
-    board.addEventListener("pointerdown", (e) => {
-        const chip = e.target.closest(".order-chip");
-        if (!chip || feedback.isAnswered() || drag) return;
-        e.preventDefault();
-
-        const rect = chip.getBoundingClientRect();
-
-        const clone = chip.cloneNode(true);
-        clone.classList.add("order-clone");
-        clone.style.width = rect.width + "px";
-        clone.style.height = rect.height + "px";
-        document.body.append(clone);
-
-        chip.classList.add("order-hidden");
-
-        drag = {
-            chip,
-            clone,
-            offsetX: e.clientX - rect.left,
-            offsetY: e.clientY - rect.top
-        };
-
-        moveClone(e);
-
-        document.addEventListener("pointermove", onMove);
-        document.addEventListener("pointerup", onUp);
-        document.addEventListener("pointercancel", onUp);
-    });
-
-    function onMove(e) {
-        e.preventDefault();
-        if (!drag) return;
-        moveClone(e);
-        placeChip(e);
-    }
-
-    function moveClone(e) {
-        drag.clone.style.left = (e.clientX - drag.offsetX) + "px";
-        drag.clone.style.top = (e.clientY - drag.offsetY) + "px";
-    }
-
-    function placeChip(e) {
-        const visible = [...board.querySelectorAll(".order-chip:not(.order-hidden)")];
-
-        let target = null;
-        let bestDist = Infinity;
-        for (const c of visible) {
-            const r = c.getBoundingClientRect();
-            const cx = r.left + r.width / 2;
-            const cy = r.top + r.height / 2;
-            const d = (e.clientX - cx) ** 2 + (e.clientY - cy) ** 2;
-            if (d < bestDist) {
-                bestDist = d;
-                target = c;
-            }
-        }
-        if (!target) return;
-
-        const r = target.getBoundingClientRect();
-        const tc = r.left + r.width / 2;
-        const tcy = r.top + r.height / 2;
-        const dx = e.clientX - tc;
-        const dy = e.clientY - tcy;
-        const before = Math.abs(dx) >= Math.abs(dy)
-            ? e.clientX < tc
-            : e.clientY < tcy;
-
-        if (before) {
-            board.insertBefore(drag.chip, target);
+    function moveChip(chip) {
+        if (chip.parentElement === sortedBoard) {
+            board.append(chip);
         } else {
-            board.insertBefore(drag.chip, target.nextSibling);
+            sortedBoard.append(chip);
         }
     }
 
-    function onUp() {
-        if (!drag) return;
-        drag.clone.remove();
-        drag.chip.classList.remove("order-hidden");
-        drag = null;
-        document.removeEventListener("pointermove", onMove);
-        document.removeEventListener("pointerup", onUp);
-        document.removeEventListener("pointercancel", onUp);
-    }
+    card.addEventListener("click", (e) => {
+        if (feedback.isAnswered()) return;
+        const chip = e.target.closest(".order-chip");
+        if (!chip) return;
+        moveChip(chip);
+    });
 
     function check() {
         if (feedback.isAnswered()) return;
 
-        const current = [...board.querySelectorAll(".order-chip")].map(c => Number(c.dataset.value));
+        const current = [...sortedBoard.querySelectorAll(".order-chip")].map(c => Number(c.dataset.value));
 
-        if (current.every((v, i) => v === step.answer[i])) {
+        if (current.length === step.answer.length && current.every((v, i) => v === step.answer[i])) {
 
             button.disabled = true;
 

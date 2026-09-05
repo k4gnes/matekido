@@ -6,27 +6,27 @@
     {
       "type": "scene",
       "title": "📮 Rendezzük sorainkat!",
-      "text": "Húzd a házszámokat a helyes sorrendbe!",
+      "text": "Kattints a számokra a helyes sorrendben!",
       "worldTitles": {
         "racing": {
           "title": "🏎️ Rendezzük sorainkat!",
-          "text": "Húzd a rajtszámokat a helyes sorrendbe!"
+          "text": "Kattints a rajtszámokra a helyes sorrendben!"
         },
         "football": {
           "title": "⚽ Rendezzük sorainkat!",
-          "text": "Húzd a gőlokat a helyes sorrendbe!"
+          "text": "Kattints a gólokra a helyes sorrendben!"
         },
         "cooking": {
           "title": "🍳 Rendezzük sorainkat!",
-          "text": "Húzd a hozzávalókat a helyes sorrendbe!"
+          "text": "Kattints a hozzávalókra a helyes sorrendben!"
         },
         "animals": {
           "title": "🦁 Rendezd sorba az állatokat!",
-          "text": "Húzd az állatok számát a helyes sorrendbe!"
+          "text": "Kattints az állatok számaira a helyes sorrendben!"
         },
         "space": {
           "title": "🤖 Rendezd sorba a robotokat!",
-          "text": "Húzd a robotok számát a helyes sorrendbe!"
+          "text": "Kattints a robotok számaira a helyes sorrendben!"
         }
       }
     },

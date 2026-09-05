@@ -27,13 +27,40 @@
     align-items: center;
     flex-wrap: wrap;
     gap: .5rem;
-    margin: 1.5rem 0;
+    margin: .75rem 0;
     min-height: 4.6rem;
     padding: .75rem;
     background: #f8f9fc;
     border: 2px dashed #d5dae5;
     border-radius: 16px;
     width: 100%;
+}
+
+.order-label {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: .5rem 0 0;
+}
+
+.order-label.order-asc {
+    color: #22a049;
+}
+
+.order-label.order-desc {
+    color: #e0453a;
+}
+
+.order-sorted.order-asc {
+    border-style: solid;
+    border-color: #a5d6a7;
+    background: #f4fbf6;
+}
+
+.order-sorted.order-desc {
+    border-style: solid;
+    border-color: #ef9a9a;
+    background: #fff5f5;
 }
 
 .order-chip {
@@ -50,35 +77,21 @@
     background: white;
     border: 2px solid #cfd8ec;
     border-radius: 12px;
-    cursor: grab;
+    cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
-    touch-action: none;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .06);
+    transition: transform .15s, border-color .15s, background .15s;
 }
 
 .order-chip:hover {
-    transform: none;
+    transform: scale(1.05);
+    border-color: var(--primary);
 }
 
 .order-chip:active {
-    cursor: grabbing;
-}
-
-.order-chip.order-hidden {
-    visibility: hidden;
-    box-shadow: none;
-}
-
-.order-chip.order-clone {
-    position: fixed;
-    z-index: 1000;
-    margin: 0;
-    cursor: grabbing;
-    border-color: var(--primary);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
-    transform: scale(1.06);
+    transform: scale(.95);
 }
 
 @media (max-width: 380px) {

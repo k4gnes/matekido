@@ -150,7 +150,7 @@ export function generateAddition(options = {}) {
         }
 
         // Biztonsági szűrő: az összeg ne haladja meg a megengedett maximumot
-        if (a + b > sumMax || a + b < sumMin) {
+        if (a + b > sumMax || a + b < Math.max(sumMin, 1)) {
             continue;
         }
 

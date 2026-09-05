@@ -1,5 +1,5 @@
-import { generateAddition } from "./additionGenerator.js?v=4";
-import { generateSubtraction } from "./substractionGenerator.js?v=4";
+import { generateAddition } from "./additionGenerator.js?v=5";
+import { generateSubtraction } from "./substractionGenerator.js?v=5";
 import { generateMixed } from "./mixedGenerator.js?v=3";
 import { generateMissingTo10, generateMissingRandom } from "./missingNumberGenerator.js?v=3";
 import { generateComparison } from "./comparisonGenerator.js?v=3";

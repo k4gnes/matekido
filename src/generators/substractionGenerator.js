@@ -45,7 +45,9 @@ export function generateSubtraction(options = {}) {
 
         const a = random(min, max);
 
-        const bUpper = Math.min(subMax, a);
+        const bUpper = Math.min(subMax, a - 1);
+        if (bUpper < 1) continue;
+
         let b = random(1, bMax !== null ? Math.min(bMax, bUpper) : bUpper);
 
         // Kerek tízes: mind a, mind b legyen 10-es többszöröse
@@ -88,7 +90,7 @@ export function generateSubtraction(options = {}) {
             continue;
         }
 
-        if (a - b < 0) continue;
+        if (a - b < 1) continue;
 
         // Tízesátlépés ellenőrzése
         const onesA = a % 10;

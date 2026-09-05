@@ -66,3 +66,23 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 - **Összeadás/kivonás** – 20-igról 100-ig lép tovább (átlépés nélkül → átlépéssel).
 - **Alakzatok** – shape-sort folytatódik négyzet/téglalap témával.
 - **Pénz, idő, hosszúság** – a 2. osztályban nagyobb összegekkel és negyedórákkal folytatódik.
+
+---
+
+## Hiányzó készségek – tervezett leckék
+
+A fenti 27 lecke elkészült és regisztrálva van. A tantervben szereplő, még nem fedett készségek (a leckéket később tervezzük):
+
+- [ ] **Naptár és időbeli tájékozódás**
+    - Hét napjai, hónapok, évszakok
+    - Tegnap / ma / holnap, napok és hetek
+- [ ] **Tömeg bevezetése** (kg, nehezebb–könnyebb)
+- [ ] **Űrtartalom bevezetése** (liter, több–kevesebb)
+- [ ] **Testek felismerése** (kocka, gömb, téglatest, henger)
+- [ ] **Tükrözés / szimmetria bevezetése** (tengelyes tükrözés)
+
+---
+
+## Státusz
+
+*(27 lecke kész. Hátralévő: 5 hiányzó készség a fenti listából – a leckék megtervezése későbbre ütemezve.)*

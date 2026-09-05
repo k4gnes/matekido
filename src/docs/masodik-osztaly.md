@@ -91,4 +91,22 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Egy lépéses – osztás | 📝 Osztásos szöveges feladatok | Szöveges feladat | 30 | 2 |
 | Kétlépéses | 📝 Kétlépéses szöveges feladatok | Kétlépéses szöveges feladat | 20 | 3 |
 
+---
+
+## Hiányzó készségek – tervezett leckék
+
+A fenti 50 lecke elkészült és regisztrálva van. A tantervben szereplő, még nem fedett készségek (a leckéket később tervezzük):
+
+- [ ] **Naptár és időbeli tájékozódás** (hét, hónap, napok, évszakok)
+- [ ] **Hosszúság-mérés** (m, dm, cm; mérés vonalzóval)
+- [ ] **Idő – pontos idő olvasása** (percre pontosan)
+- [ ] **Törtek előkészítése** (fele, harmada, negyede)
+- [ ] **Tükrözés / szimmetria** (tengelyes tükrözés)
+
+---
+
+## Státusz
+
+*(50 lecke kész. Hátralévő: 5 hiányzó készség a fenti listából – a leckék megtervezése későbbre ütemezve.)*
+
 

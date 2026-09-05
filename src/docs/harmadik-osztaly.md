@@ -49,17 +49,32 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 ## Tervezett kiegészítések
 
-A 3. osztályos tananyag további tervezett leckéi, még nem regisztrálva:
+A fenti 22 lecke elkészült és regisztrálva van. Tovább tervezett leckék:
 
-- Írásbeli összeadás és kivonás
-- Maradékos osztás
-- Törtek – bevezetés (fele, harmad, negyed)
-- Geometria bővítése (kerület, terület, tükrözés, kör és szögek)
-- Gyakorlati tudások bővítése (mértékegység-átváltás, idő, pénz 1000-ig)
-- Szöveges feladatok (összetett, arányos, maradékos osztásos)
+- [ ] **Írásbeli összeadás és kivonás**
+    - Írásbeli összeadás 1000-ig (átlépéssel, háromjegyű + háromjegyű)
+    - Írásbeli kivonás 1000-ig (átlépéssel, háromjegyű − háromjegyű)
+- [ ] **Maradékos osztás**
+    - Maradékos osztás felismerése és lejegyzése (pl. 17 : 5)
+    - Tevékenység-alapú: hány teljes csoport + mennyi maradék
+- [ ] **Törtek – bevezetés** (fele, harmad, negyed)
+    - Tört képének és jele társítása
+    - Egész törtrészei: fele, harmada, negyede
+- [ ] **Geometria bővítése** (kerület, terület, tükrözés, kör és szögek)
+    - Kerület és terület számolása egyszerű alakzatokon
+    - Tengelyes tükrözés
+    - Kör és szögek alapjai
+- [ ] **Gyakorlati tudások bővítése** (mértékegység-átváltás, idő, pénz 1000-ig)
+    - Mértékegység-átváltás (m, cm, dm; kg, dkg; l, dl)
+    - Idő: perc–óra, naptár 1000-ig
+    - Pénz: váltás és vásárlás 1000-ig
+- [ ] **Szöveges feladatok** (összetett, arányos, maradékos osztásos)
+    - Kétlépéses szöveges feladatok
+    - Arányos osztás (pl. felezés, hármas csoportok)
+    - Maradékos osztásos szöveges feladatok
 
 ---
 
 ## Státusz
 
-*(Folyamatban – az 1–3. osztályos tananyag fő része lefedve, a kiegészítések tervezés alatt.)*
+*(Az 1–3. osztályos tananyag fő része lefedve: a 22 tervezett 3. osztályos lecke kész. Hátralévő: a 6 kiegészítő tétel a fenti listából – javasolt sorrend: írásbeli összeadás/kivonás → maradékos osztás → törtek → gyakorlati tudások → szöveges feladatok → geometria.)*

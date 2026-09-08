@@ -2,25 +2,29 @@ function pick(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
+function randint(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 export function generateSequence(options = {}) {
 
     const { count = 5, max = 100, interaction = "mixed" } = options;
 
-    const maxStep = Math.min(10, Math.floor(max / 5));
+    const maxStep = Math.min(10, Math.max(1, Math.floor((max - 1) / 5)));
 
     const tasks = [];
 
     for (let i = 0; i < count; i++) {
 
-        const step = Math.floor(Math.random() * maxStep) + 1;
+        const step = randint(1, maxStep);
 
         const direction = Math.random() < 0.5 ? 1 : -1;
 
         let start;
         if (direction === 1) {
-            start = Math.floor(Math.random() * (max - 5 * step + 1));
+            start = randint(1, max - 5 * step);
         } else {
-            start = 5 * step + Math.floor(Math.random() * (max - 5 * step + 1));
+            start = randint(5 * step + 1, max);
         }
 
         const terms = [];

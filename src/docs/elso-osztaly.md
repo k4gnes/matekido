@@ -1,6 +1,6 @@
 # Matekidő – 1. osztályos készségtérkép
 
-**27 lecke**, 5 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**33 lecke**, 6 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
@@ -25,7 +25,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Helyiérték | Helyiérték – tízes és egyes 100-ig | Helyiérték (tízes + egyes) | 100 | 1 |
 | Tízesátlépés | Tízesátlépés 20-ig | Tízesátlépés | 20 | 2 |
 
-## Műveletek (4 lecke)
+## Műveletek (7 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
@@ -33,6 +33,17 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Összeadás | Összeadás 20-ig átlépéssel | Összeadás | 20 | 2 |
 | Kivonás | Kivonás 20-ig | Kivonás | 20 | 1 |
 | Vegyes műveletek | Vegyes műveletek 20-ig | Vegyes műveletek | 20 | 2 |
+| Igaz/hamis | Igaz vagy hamis? 20-ig | Igaz/hamis | 20 | 1 |
+| Hibás számolás | Hibás számolás? 20-ig | Hibás számolás keresése | 20 | 1 |
+| Hiányzó tag | Hiányzó tag 20-ig | Hiányzó tag | 20 | 1 |
+
+## Szorzás-előkészítés (3 lecke)
+
+| Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|
+| Egyenlő csoportok | Egyenlő csoportok 20-ig | Egyenlő csoportok | 20 | 1 |
+| Ismételt összeadás | Ismételt összeadás 20-ig | Ismételt összeadás | 20 | 1 |
+| Kettesével számolás | Számolás kettesével | Lépegetéses számolás | 20 | 1 |
 
 ## Geometria (2 lecke)
 
@@ -71,7 +82,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 ## Hiányzó készségek – tervezett leckék
 
-A fenti 27 lecke elkészült és regisztrálva van. A tantervben szereplő, még nem fedett készségek (a leckéket később tervezzük):
+A fenti 33 lecke elkészült és regisztrálva van. A tantervben szereplő, még nem fedett készségek (a leckéket később tervezzük):
 
 - [ ] **Naptár és időbeli tájékozódás**
     - Hét napjai, hónapok, évszakok
@@ -85,4 +96,4 @@ A fenti 27 lecke elkészült és regisztrálva van. A tantervben szereplő, még
 
 ## Státusz
 
-*(27 lecke kész. Hátralévő: 5 hiányzó készség a fenti listából – a leckék megtervezése későbbre ütemezve.)*
+*(33 lecke kész. Hátralévő: 5 hiányzó készség a fenti listából – a leckék megtervezése későbbre ütemezve.)*

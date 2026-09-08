@@ -1201,6 +1201,72 @@
             }
         },
         {
+            "id": "mult-prep-01-grade1",
+            "title": "🧩 Egyenlő csoportok 20-ig",
+            "grades": [
+                1
+            ],
+            "category": "multiplication",
+            "skill": "multiplication",
+            "difficulty": 1,
+            "type": "equal-groups",
+            "range": 20,
+            "mission": "🧩 Egyenlő csoportok",
+            "subtitle": "Egyenlő csoportok felismerése 20-ig",
+            "file": "./data/lessons/grade1/mult-prep-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Egyenlő csoportok",
+                "cooking": "🍳 Egyenlő csoportok",
+                "football": "⚽ Egyenlő csoportok",
+                "animals": "🦁 Egyenlő csoportok",
+                "space": "🤖 Egyenlő csoportok"
+            }
+        },
+        {
+            "id": "mult-prep-02-grade1",
+            "title": "🧩 Ismételt összeadás 20-ig",
+            "grades": [
+                1
+            ],
+            "category": "multiplication",
+            "skill": "multiplication",
+            "difficulty": 1,
+            "type": "repeated-addition",
+            "range": 20,
+            "mission": "🧩 Ismételt összeadás",
+            "subtitle": "Ismételt összeadás gyakorlása 20-ig",
+            "file": "./data/lessons/grade1/mult-prep-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Ismételt összeadás",
+                "cooking": "🍳 Ismételt összeadás",
+                "football": "⚽ Ismételt összeadás",
+                "animals": "🦁 Ismételt összeadás",
+                "space": "🤖 Ismételt összeadás"
+            }
+        },
+        {
+            "id": "mult-prep-03-grade1",
+            "title": "🧩 Számolás kettesével, ötösével",
+            "grades": [
+                1
+            ],
+            "category": "multiplication",
+            "skill": "multiplication",
+            "difficulty": 1,
+            "type": "skip-counting",
+            "range": 20,
+            "mission": "🧩 Számolás kettesével",
+            "subtitle": "Számolás 2, 5-ösével 20-ig",
+            "file": "./data/lessons/grade1/mult-prep-03.json",
+            "worldTitles": {
+                "racing": "🏎️ Számolás kettesével",
+                "cooking": "🍳 Számolás kettesével",
+                "football": "⚽ Számolás ötösével",
+                "animals": "🦁 Számolás kettesével",
+                "space": "🤖 Számolás ötösével"
+            }
+        },
+        {
             "id": "mult-prep-01",
             "title": "Egyenlő csoportok",
             "grades": [
@@ -1399,6 +1465,28 @@
             }
         },
         {
+            "id": "missing-operand-01-grade1",
+            "title": "❓ Hiányzó tag 20-ig",
+            "grades": [
+                1
+            ],
+            "category": "operations",
+            "skill": "addition",
+            "difficulty": 1,
+            "type": "missing-operand",
+            "range": 20,
+            "mission": "❓ Melyik szám hiányzik?",
+            "subtitle": "Hiányzó tag 20-ig",
+            "file": "./data/lessons/grade1/missing-operand-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Hiányzó szám",
+                "cooking": "🍳 Hiányzó szám",
+                "football": "⚽ Hiányzó szám",
+                "animals": "🦁 Hiányzó szám",
+                "space": "🤖 Hiányzó szám"
+            }
+        },
+        {
             "id": "missing-operand-01",
             "title": "❓ Hiányzó tag",
             "grades": [
@@ -1553,6 +1641,28 @@
             }
         },
         {
+            "id": "true-false-01-grade1",
+            "title": "✅ Igaz vagy hamis? 20-ig",
+            "grades": [
+                1
+            ],
+            "category": "operations",
+            "skill": "true-false",
+            "difficulty": 1,
+            "type": "true-false",
+            "range": 20,
+            "mission": "✅ Igaz vagy hamis?",
+            "subtitle": "Igaz vagy hamis műveletek 20-ig",
+            "file": "./data/lessons/grade1/true-false-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Igaz vagy hamis?",
+                "cooking": "🍳 Igaz vagy hamis?",
+                "football": "⚽ Igaz vagy hamis?",
+                "animals": "🦁 Igaz vagy hamis?",
+                "space": "🤖 Igaz vagy hamis?"
+            }
+        },
+        {
             "id": "true-false-01",
             "title": "✅ Igaz vagy hamis?",
             "grades": [
@@ -1572,6 +1682,72 @@
                 "football": "⚽ Igaz vagy hamis?",
                 "animals": "🦁 Igaz vagy hamis?",
                 "space": "🤖 Igaz vagy hamis?"
+            }
+        },
+        {
+            "id": "find-error-01-grade1",
+            "title": "🕵️ Hibás számolás? 20-ig",
+            "grades": [
+                1
+            ],
+            "category": "operations",
+            "skill": "find-error",
+            "difficulty": 1,
+            "type": "find-error",
+            "range": 20,
+            "mission": "🕵️ Hibás számolás?",
+            "subtitle": "Hibás számolás felismerése 20-ig",
+            "file": "./data/lessons/grade1/find-error-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Hibás számolás a boxutcában?",
+                "cooking": "🍳 Hibás számolás a receptben?",
+                "football": "⚽ Hibás számolás az eredményjelzőn?",
+                "animals": "🦁 Hibás számolás az állatkertben?",
+                "space": "🤖 Hibás számolás a fedélzeten?"
+            }
+        },
+        {
+            "id": "estimate-01",
+            "title": "Becslés 30-ig",
+            "grades": [
+                1
+            ],
+            "category": "numbers",
+            "skill": "estimation",
+            "difficulty": 1,
+            "type": "estimate",
+            "range": 30,
+            "mission": "🔢 Becsüld meg!",
+            "subtitle": "Számok kerekítése és becslése 30-ig",
+            "file": "./data/lessons/grade1/estimate-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Becslés a versenypályán",
+                "cooking": "🍳 Becslés a konyhában",
+                "football": "⚽ Becslés a meccsen",
+                "animals": "🦁 Becslés az állatkertben",
+                "space": "🤖 Becslés a űrben"
+            }
+        },
+        {
+            "id": "rounding-01",
+            "title": "Kerekítés tízesre 100-ig",
+            "grades": [
+                1
+            ],
+            "category": "numbers",
+            "skill": "rounding",
+            "difficulty": 1,
+            "type": "rounding",
+            "range": 100,
+            "mission": "🔄 Kerekítsd!",
+            "subtitle": "Számok kerekítése tízesre 100-ig",
+            "file": "./data/lessons/grade1/rounding-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Kerekítés a versenypályán",
+                "cooking": "🍳 Kerekítés a konyhában",
+                "football": "⚽ Kerekítés a meccsen",
+                "animals": "🦁 Kerekítés az állatkertben",
+                "space": "🤖 Kerekítés az űrben"
             }
         },
         {

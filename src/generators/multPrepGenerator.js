@@ -97,7 +97,7 @@ function generateSkipCounting(count, tables, max, interaction) {
     const tasks = [];
     for (let i = 0; i < count; i++) {
         const step = pick(tables);
-        const maxStart = max - step * 5;
+        const maxStart = max - step * 4;
         const start = randint(1, Math.max(1, maxStart));
         const terms = [];
         for (let t = 0; t < 5; t++) {

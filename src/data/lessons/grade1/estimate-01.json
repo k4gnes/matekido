@@ -1,0 +1,72 @@
+{
+  "id": "grade1-estimate-01",
+  "title": "Becslés 30-ig",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔢 Becsüld meg!",
+      "text": "Nem kell mindig pontosan számolni! Kerekítsd a számokat tízesre, és becsüld meg az eredményt!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Becslés a versenypályán",
+          "text": "Nem kell pontosan számolni! Kerekítsd a számokat, és tippeld meg, mennyi lesz!"
+        },
+        "football": {
+          "title": "⚽ Becslés a pályán",
+          "text": "Nem kell pontosan számolni! Kerekítsd a számokat, és becsüld meg az eredményt!"
+        },
+        "cooking": {
+          "title": "🍳 Becslés a konyhában",
+          "text": "A szakácsnak nem mindig kell pontosan számolnia. Kerekítsd a hozzávalókat, és becsüld meg, mennyi kell!"
+        },
+        "animals": {
+          "title": "🦁 Becslés az állatkertben",
+          "text": "Az állatok gondozójának sokszor kell becslnie. Kerekítsd a számokat, és tippeld meg az eredményt!"
+        },
+        "space": {
+          "title": "🤖 Becslés a űrben",
+          "text": "A robotok gyorsan becslik a számokat. Kerekítsd te is a számokat tízesre!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "estimate",
+      "options": {
+        "count": 5,
+        "max": 30,
+        "op": "addition"
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes becslés!",
+      "text": "Remekül megbecsülted az eredményeket! Most már tudod, hogy a kerekítés nagy segítség a számolásban!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szuper becslés!",
+          "text": "Gyorsan és jól becsültél, mint egy igazi versenyző!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Pontosan becsültél, mint egy edző a mérkőzés előtt!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Most már te is olyan ügyesen becsülsz, mint a szakács!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Az állatok gondozója is büszke lenne rád!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "A robotok is elismeréssel adóznak a becslésednek!"
+        }
+      }
+    }
+  ]
+}

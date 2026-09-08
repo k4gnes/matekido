@@ -1,0 +1,74 @@
+{
+  "id": "grade1-rounding-01",
+  "title": "Kerekítés tízesre 100-ig",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔄 Kerekítés tízesre",
+      "text": "Ha egy szám közelebb van egy tízessel osztható számhoz, akkor ahhoz kerekítjük! Például a 27 közelebb van a 30-hoz, mint a 20-hoz, tehát 30-ra kerekítjük.",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Kerekítés a versenypályán",
+          "text": "A köridőket is szokták kerekíteni! Ha egy szám közelebb van egy tízessel osztható számhoz, kerekítjük oda."
+        },
+        "football": {
+          "title": "⚽ Kerekítés a meccsen",
+          "text": "A szurkolók számát is könnyebb kerekítve mondani! Ha egy szám közelebb van egy tízessel osztható számhoz, oda kerekítjük."
+        },
+        "cooking": {
+          "title": "🍳 Kerekítés a konyhában",
+          "text": "A szakácsnak nem mindig kell pontos szám. Ha a hozzávaló közelebb van egy tízeshez, kerekítjük!"
+        },
+        "animals": {
+          "title": "🦁 Kerekítés az állatkertben",
+          "text": "Az állatok gondozójának könnyebb, ha kerek számokkal dolgozik. Kerekítsd a számokat tízesre!"
+        },
+        "space": {
+          "title": "🤖 Kerekítés az űrben",
+          "text": "A robotok gyorsan kerekítenek. Te is tudod? Ha a szám közelebb van egy tízeshez, oda kerekítjük!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "rounding",
+      "options": {
+        "count": 6,
+        "min": 11,
+        "max": 99,
+        "target": "tens",
+        "interaction": "choice"
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyesen kerekítettél!",
+      "text": "Most már tudod, hogyan kell kerekíteni tízesre! Ez nagy segítség a fejszámolásban és a becslésben!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szuper kerekítés!",
+          "text": "Most már te is gyorsan kerekitész, mint egy profi versenyző!"
+        },
+        "football": {
+          "title": "🎉 Ügyes vagy!",
+          "text": "Most már könnyebben számolhatsz, ha kerekítesz!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "A szakács is megirigyelné a kerekítéseidet!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Az állatok gondozója is dicsérne!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "A robotok is elismeréssel adóznak a kerekítésednek!"
+        }
+      }
+    }
+  ]
+}

@@ -1,6 +1,112 @@
 {
     "lessons": [
         {
+            "id": "set-match-01-grade1",
+            "title": "🧺 Halmazok és válogatás",
+            "grades": [
+                1
+            ],
+            "category": "numbers",
+            "skill": "sets",
+            "difficulty": 1,
+            "type": "set-match",
+            "mission": "🧺 Halmazok és válogatás",
+            "subtitle": "Melyik alakzat illik a halmazba?",
+            "file": "./data/lessons/grade1/set-match-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Halmazválogatás a boxutcában",
+                "cooking": "🍳 Halmazválogatás a konyhában",
+                "football": "⚽ Halmazválogatás a pályán",
+                "animals": "🦁 Halmazválogatás az állatkertben",
+                "space": "🤖 Halmazválogatás az űrhajón"
+            }
+        },
+        {
+            "id": "shape-sort-01",
+            "title": "Kerek, szögletes és háromszög",
+            "grades": [
+                1
+            ],
+            "category": "geometry",
+            "skill": "shapes",
+            "difficulty": 1,
+            "type": "shape-sort",
+            "mission": "🟦 Rakd a helyére az alakzatokat!",
+            "subtitle": "Kerek, szögletes és háromszög",
+            "file": "./data/lessons/grade1/shape-sort-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Rakd a helyére az alakzatokat!",
+                "cooking": "🍳 Rakd a helyére az alakzatokat!",
+                "football": "⚽ Rakd a helyére az alakzatokat!",
+                "animals": "🦁 Rakd a helyére az alakzatokat!",
+                "space": "🤖 Rakd a helyére az alakzatokat!"
+            }
+        },
+        {
+            "id": "spatial-01",
+            "title": "Térbeli tájékozódás",
+            "grades": [
+                1
+            ],
+            "category": "geometry",
+            "skill": "position",
+            "difficulty": 1,
+            "type": "spatial",
+            "mission": "🧭 Hol van?",
+            "subtitle": "Térbeli tájékozódás",
+            "file": "./data/lessons/grade1/spatial-01.json",
+            "worldTitles": {
+                "racing": "🏁 Hol van?",
+                "cooking": "🍳 Hol van?",
+                "football": "⚽ Hol van?",
+                "animals": "🦁 Hol van az állat?",
+                "space": "🤖 Hol van a robot?"
+            }
+        },
+        {
+            "id": "calendar-01-grade1",
+            "title": "🗓️ Naptár",
+            "grades": [
+                1
+            ],
+            "category": "practical",
+            "skill": "calendar",
+            "difficulty": 1,
+            "type": "calendar",
+            "mission": "🗓️ Naptár és időbeli tájékozódás",
+            "subtitle": "Hét napjai, hónapok és évszakok",
+            "file": "./data/lessons/grade1/calendar-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Naptár a boxutcában",
+                "cooking": "🍳 Naptár a konyhában",
+                "football": "⚽ Naptár a pályán",
+                "animals": "🦁 Naptár az állatkertben",
+                "space": "🤖 Naptár az űrhajón"
+            }
+        },
+        {
+            "id": "pattern-01",
+            "title": "Sorminta – mi a következő?",
+            "grades": [
+                1
+            ],
+            "category": "numbers",
+            "skill": "pattern",
+            "difficulty": 1,
+            "type": "pattern",
+            "range": 20,
+            "mission": "🧩 Mi a következő a sorban?",
+            "subtitle": "Sorminta – mi a következő?",
+            "file": "./data/lessons/grade1/pattern-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Mi a következő a sorban?",
+                "cooking": "🍳 Mi a következő a sorban?",
+                "football": "⚽ Mi a következő a sorban?",
+                "animals": "🦁 Állatos sorminta",
+                "space": "🤖 Robotos sorminta"
+            }
+        },
+        {
             "id": "decomposition-01",
             "title": "Számok bontása 10-ig",
             "grades": [
@@ -69,117 +175,6 @@
             }
         },
         {
-            "id": "bridge-ten-01",
-            "title": "Tízesátlépés 20-ig",
-            "grades": [
-                1
-            ],
-            "category": "numbers",
-            "skill": "addition",
-            "difficulty": 2,
-            "type": "bridge-ten",
-            "range": 20,
-            "mission": "🧩 Tízesátlépés",
-            "subtitle": "Tízesátlépés 20-ig",
-            "file": "./data/lessons/grade1/bridge-ten.json",
-            "worldTitles": {
-                "postman": "📮 Tízesátlépés a postán",
-                "racing": "🏁 Tízesátlépés",
-                "cooking": "🍳 Tízesátlépés",
-                "football": "⚽ Tízesátlépés",
-                "animals": "🦁 Tízesátlépés az állatkertben",
-                "space": "🤖 Tízesátlépés az űrállomáson"
-            }
-        },
-        {
-            "id": "place-value-01",
-            "title": "Helyiérték 100-ig",
-            "grades": [
-                1
-            ],
-            "category": "numbers",
-            "skill": "place-value",
-            "difficulty": 1,
-            "type": "place-value",
-            "range": 100,
-            "mission": "🔢 Rakd össze a számot!",
-            "subtitle": "Helyiérték 100-ig",
-            "file": "./data/lessons/grade1/place-value-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Hány alkatrész kell?",
-                "cooking": "🍳 Hány kanál kell?",
-                "football": "⚽ Hány játékos ez összesen?",
-                "animals": "🦁 Hány állat van a karámokban?",
-                "space": "🤖 Hány robot van a tartályokban?"
-            }
-        },
-        {
-            "id": "place-value-02",
-            "title": "Helyiérték – tízes és egyes 100-ig",
-            "grades": [
-                1
-            ],
-            "category": "numbers",
-            "skill": "place-value",
-            "difficulty": 1,
-            "type": "place-value-two-input",
-            "range": 100,
-            "mission": "🔢 Hány doboz és hány levél?",
-            "subtitle": "Helyiérték – tízes és egyes 100-ig",
-            "file": "./data/lessons/grade1/place-value-02.json",
-            "worldTitles": {
-                "racing": "🏎️ Hány kerék és alkatrész?",
-                "cooking": "🍳 Hány fazék és kanál?",
-                "football": "⚽ Hány edző és hány játékos van a pályán?",
-                "animals": "🦁 Hány karám és állat?",
-                "space": "🤖 Hány tartály és robot?"
-            }
-        },
-        {
-            "id": "place-value-03",
-            "title": "Helyiérték 100-ig",
-            "grades": [
-                2
-            ],
-            "category": "numbers",
-            "skill": "place-value",
-            "difficulty": 2,
-            "type": "place-value",
-            "range": 100,
-            "mission": "🔢 Tízesek és egyesek 100-ig",
-            "subtitle": "Számok bontása és összeállítása 100-ig",
-            "file": "./data/lessons/grade2/place-value-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Alkatrészes dobozok",
-                "cooking": "🍲 Fazekak és kanalak",
-                "football": "⚽ Csapatok és edzők",
-                "animals": "🦁 Karámok és állatok",
-                "space": "🤖 Tartályok és robotok"
-            }
-        },
-        {
-            "id": "missing-number-02",
-            "title": "Kiegészítés véletlen számig 20-ig",
-            "grades": [
-                1
-            ],
-            "category": "numbers",
-            "skill": "missing-number",
-            "difficulty": 1,
-            "type": "missing-number",
-            "range": 20,
-            "mission": "📮 Mennyi levél hiányzik?",
-            "subtitle": "Kiegészítés véletlen számig 20-ig",
-            "file": "./data/lessons/grade1/missing-random.json",
-            "worldTitles": {
-                "racing": "🔧 Hány kerék hiányzik?",
-                "cooking": "🍳 Hány hozzávaló hiányzik?",
-                "football": "⚽ Hány gól hiányzik?",
-                "animals": "🦁 Hány állat hiányzik?",
-                "space": "🤖 Hány robot hiányzik?"
-            }
-        },
-        {
             "id": "sequence-01",
             "title": "Mi a következő? 50-ig",
             "grades": [
@@ -221,181 +216,6 @@
                 "football": "⚽ Rendezzük sorainkat!",
                 "animals": "🦁 Állatok sorba rendezése",
                 "space": "🤖 Robotok sorba rendezése"
-            }
-        },
-        {
-            "id": "even-odd-01",
-            "title": "Páros és páratlan 20-ig",
-            "grades": [
-                1
-            ],
-            "category": "numbers",
-            "skill": "even-odd",
-            "difficulty": 1,
-            "type": "even-odd",
-            "range": 20,
-            "mission": "🎯 Páros vagy páratlan?",
-            "subtitle": "Páros és páratlan számok 20-ig",
-            "file": "./data/lessons/grade1/even-odd-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Páros vagy páratlan?",
-                "cooking": "🍳 Páros vagy páratlan?",
-                "football": "⚽ Páros vagy páratlan?",
-                "animals": "🦁 Páros vagy páratlan?",
-                "space": "🤖 Páros vagy páratlan?"
-            }
-        },
-        {
-            "id": "pattern-01",
-            "title": "Sorminta – mi a következő?",
-            "grades": [
-                1
-            ],
-            "category": "numbers",
-            "skill": "pattern",
-            "difficulty": 1,
-            "type": "pattern",
-            "range": 20,
-            "mission": "🧩 Mi a következő a sorban?",
-            "subtitle": "Sorminta – mi a következő?",
-            "file": "./data/lessons/grade1/pattern-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Mi a következő a sorban?",
-                "cooking": "🍳 Mi a következő a sorban?",
-                "football": "⚽ Mi a következő a sorban?",
-                "animals": "🦁 Állatos sorminta",
-                "space": "🤖 Robotos sorminta"
-            }
-        },
-        {
-            "id": "shape-sort-01",
-            "title": "Kerek, szögletes és háromszög",
-            "grades": [
-                1
-            ],
-            "category": "geometry",
-            "skill": "shapes",
-            "difficulty": 1,
-            "type": "shape-sort",
-            "mission": "🟦 Rakd a helyére az alakzatokat!",
-            "subtitle": "Kerek, szögletes és háromszög",
-            "file": "./data/lessons/grade1/shape-sort-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Rakd a helyére az alakzatokat!",
-                "cooking": "🍳 Rakd a helyére az alakzatokat!",
-                "football": "⚽ Rakd a helyére az alakzatokat!",
-                "animals": "🦁 Rakd a helyére az alakzatokat!",
-                "space": "🤖 Rakd a helyére az alakzatokat!"
-            }
-        },
-        {
-            "id": "spatial-01",
-            "title": "Térbeli tájékozódás",
-            "grades": [
-                1
-            ],
-            "category": "geometry",
-            "skill": "position",
-            "difficulty": 1,
-            "type": "spatial",
-            "mission": "🧭 Hol van?",
-            "subtitle": "Térbeli tájékozódás",
-            "file": "./data/lessons/grade1/spatial-01.json",
-            "worldTitles": {
-                "racing": "🏁 Hol van?",
-                "cooking": "🍳 Hol van?",
-                "football": "⚽ Hol van?",
-                "animals": "🦁 Hol van az állat?",
-                "space": "🤖 Hol van a robot?"
-            }
-        },
-        {
-            "id": "addition-01",
-            "title": "Összeadás 20-ig",
-            "grades": [
-                1
-            ],
-            "category": "operations",
-            "skill": "addition",
-            "difficulty": 1,
-            "type": "addition",
-            "range": 20,
-            "mission": "📮 A postás első útja",
-            "subtitle": "Összeadás 20-ig",
-            "file": "./data/lessons/grade1/addition-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Első gyakorlókör",
-                "cooking": "🍳 Első ételkészítés",
-                "football": "⚽ Az első félidő",
-                "animals": "🦁 Takarmány számolása",
-                "space": "🤖 Energia számolása"
-            }
-        },
-        {
-            "id": "neighbor-01",
-            "title": "Számok szomszédai 100-ig",
-            "grades": [
-                1,
-                2
-            ],
-            "category": "numbers",
-            "skill": "neighbours",
-            "difficulty": 1,
-            "type": "neighbor",
-            "range": 100,
-            "mission": "🏡 Ki lakik mellette?",
-            "subtitle": "Számok szomszédai 100-ig",
-            "file": "./data/lessons/grade1/neighbor-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Ki áll mellette a rajtrácsán?",
-                "cooking": "🍳 Mi áll mellette a polcon?",
-                "football": "⚽ Ki áll mellette a sorfalban?",
-                "animals": "🦁 Ki áll mellette a kifutóban?",
-                "space": "🤖 Ki áll mellette a sorban?"
-            }
-        },
-        {
-            "id": "addition-02",
-            "title": "Összeadás 20-ig átlépéssel",
-            "grades": [
-                1
-            ],
-            "category": "operations",
-            "skill": "addition",
-            "difficulty": 2,
-            "type": "addition",
-            "range": 20,
-            "mission": "📮 A postás rákapcsol",
-            "subtitle": "Összeadás 20-ig átlépéssel",
-            "file": "./data/lessons/grade1/addition-02.json",
-            "worldTitles": {
-                "racing": "🏎️ Gyorsulás a célig",
-                "cooking": "🍳 Gyors keverés",
-                "football": "⚽ Gólpasszok sorozata",
-                "animals": "🦁 Takarmány számolása",
-                "space": "🤖 Energia számolása"
-            }
-        },
-        {
-            "id": "subtraction-01",
-            "title": "Kivonás 20-ig",
-            "grades": [
-                1
-            ],
-            "category": "operations",
-            "skill": "subtraction",
-            "difficulty": 1,
-            "type": "subtraction",
-            "range": 20,
-            "mission": "🎒 Mennyi maradt a táskában?",
-            "subtitle": "Kivonás 20-ig",
-            "file": "./data/lessons/grade1/subtraction-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Hány pontot veszített?",
-                "cooking": "🍳 Mennyi alapanyag maradt?",
-                "football": "⚽ Hány gólt rúgtak már?",
-                "animals": "🦁 Maradék takarmány",
-                "space": "🤖 Maradék energia"
             }
         },
         {
@@ -444,25 +264,203 @@
             }
         },
         {
-            "id": "comparison-03",
-            "title": "Összehasonlítás 100-ig",
+            "id": "even-odd-01",
+            "title": "Páros és páratlan 20-ig",
             "grades": [
+                1
+            ],
+            "category": "numbers",
+            "skill": "even-odd",
+            "difficulty": 1,
+            "type": "even-odd",
+            "range": 20,
+            "mission": "🎯 Páros vagy páratlan?",
+            "subtitle": "Páros és páratlan számok 20-ig",
+            "file": "./data/lessons/grade1/even-odd-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Páros vagy páratlan?",
+                "cooking": "🍳 Páros vagy páratlan?",
+                "football": "⚽ Páros vagy páratlan?",
+                "animals": "🦁 Páros vagy páratlan?",
+                "space": "🤖 Páros vagy páratlan?"
+            }
+        },
+        {
+            "id": "place-value-01",
+            "title": "Helyiérték 100-ig",
+            "grades": [
+                1
+            ],
+            "category": "numbers",
+            "skill": "place-value",
+            "difficulty": 1,
+            "type": "place-value",
+            "range": 100,
+            "mission": "🔢 Rakd össze a számot!",
+            "subtitle": "Helyiérték 100-ig",
+            "file": "./data/lessons/grade1/place-value-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Hány alkatrész kell?",
+                "cooking": "🍳 Hány kanál kell?",
+                "football": "⚽ Hány játékos ez összesen?",
+                "animals": "🦁 Hány állat van a karámokban?",
+                "space": "🤖 Hány robot van a tartályokban?"
+            }
+        },
+        {
+            "id": "place-value-02",
+            "title": "Helyiérték – tízes és egyes 100-ig",
+            "grades": [
+                1
+            ],
+            "category": "numbers",
+            "skill": "place-value",
+            "difficulty": 1,
+            "type": "place-value-two-input",
+            "range": 100,
+            "mission": "🔢 Hány doboz és hány levél?",
+            "subtitle": "Helyiérték – tízes és egyes 100-ig",
+            "file": "./data/lessons/grade1/place-value-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Hány kerék és alkatrész?",
+                "cooking": "🍳 Hány fazék és kanál?",
+                "football": "⚽ Hány edző és hány játékos van a pályán?",
+                "animals": "🦁 Hány karám és állat?",
+                "space": "🤖 Hány tartály és robot?"
+            }
+        },
+        {
+            "id": "missing-number-02",
+            "title": "Kiegészítés véletlen számig 20-ig",
+            "grades": [
+                1
+            ],
+            "category": "numbers",
+            "skill": "missing-number",
+            "difficulty": 1,
+            "type": "missing-number",
+            "range": 20,
+            "mission": "📮 Mennyi levél hiányzik?",
+            "subtitle": "Kiegészítés véletlen számig 20-ig",
+            "file": "./data/lessons/grade1/missing-random.json",
+            "worldTitles": {
+                "racing": "🔧 Hány kerék hiányzik?",
+                "cooking": "🍳 Hány hozzávaló hiányzik?",
+                "football": "⚽ Hány gól hiányzik?",
+                "animals": "🦁 Hány állat hiányzik?",
+                "space": "🤖 Hány robot hiányzik?"
+            }
+        },
+        {
+            "id": "neighbor-01",
+            "title": "Számok szomszédai 100-ig",
+            "grades": [
+                1,
                 2
             ],
             "category": "numbers",
-            "skill": "comparison",
-            "difficulty": 2,
-            "type": "comparison",
+            "skill": "neighbours",
+            "difficulty": 1,
+            "type": "neighbor",
             "range": 100,
-            "mission": "📦 Összehasonlítás 100-ig",
-            "subtitle": "Nagyobb, kisebb vagy egyenlő 100-ig",
-            "file": "./data/lessons/grade2/comparison-02.json",
+            "mission": "🏡 Ki lakik mellette?",
+            "subtitle": "Számok szomszédai 100-ig",
+            "file": "./data/lessons/grade1/neighbor-01.json",
             "worldTitles": {
-                "racing": "🏎️ Melyik autó gyorsabb?",
-                "cooking": "🍲 Melyik tál nagyobb?",
-                "football": "⚽ Melyik csapat erősebb?",
-                "animals": "🦁 Melyik állatcsapat nagyobb?",
-                "space": "🤖 Melyik bolygón többen vannak?"
+                "racing": "🏎️ Ki áll mellette a rajtrácsán?",
+                "cooking": "🍳 Mi áll mellette a polcon?",
+                "football": "⚽ Ki áll mellette a sorfalban?",
+                "animals": "🦁 Ki áll mellette a kifutóban?",
+                "space": "🤖 Ki áll mellette a sorban?"
+            }
+        },
+        {
+            "id": "addition-01",
+            "title": "Összeadás 20-ig",
+            "grades": [
+                1
+            ],
+            "category": "operations",
+            "skill": "addition",
+            "difficulty": 1,
+            "type": "addition",
+            "range": 20,
+            "mission": "📮 A postás első útja",
+            "subtitle": "Összeadás 20-ig",
+            "file": "./data/lessons/grade1/addition-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Első gyakorlókör",
+                "cooking": "🍳 Első ételkészítés",
+                "football": "⚽ Az első félidő",
+                "animals": "🦁 Takarmány számolása",
+                "space": "🤖 Energia számolása"
+            }
+        },
+        {
+            "id": "addition-02",
+            "title": "Összeadás 20-ig átlépéssel",
+            "grades": [
+                1
+            ],
+            "category": "operations",
+            "skill": "addition",
+            "difficulty": 2,
+            "type": "addition",
+            "range": 20,
+            "mission": "📮 A postás rákapcsol",
+            "subtitle": "Összeadás 20-ig átlépéssel",
+            "file": "./data/lessons/grade1/addition-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Gyorsulás a célig",
+                "cooking": "🍳 Gyors keverés",
+                "football": "⚽ Gólpasszok sorozata",
+                "animals": "🦁 Takarmány számolása",
+                "space": "🤖 Energia számolása"
+            }
+        },
+        {
+            "id": "subtraction-01",
+            "title": "Kivonás 20-ig",
+            "grades": [
+                1
+            ],
+            "category": "operations",
+            "skill": "subtraction",
+            "difficulty": 1,
+            "type": "subtraction",
+            "range": 20,
+            "mission": "🎒 Mennyi maradt a táskában?",
+            "subtitle": "Kivonás 20-ig",
+            "file": "./data/lessons/grade1/subtraction-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Hány pontot veszített?",
+                "cooking": "🍳 Mennyi alapanyag maradt?",
+                "football": "⚽ Hány gólt rúgtak már?",
+                "animals": "🦁 Maradék takarmány",
+                "space": "🤖 Maradék energia"
+            }
+        },
+        {
+            "id": "bridge-ten-01",
+            "title": "Tízesátlépés 20-ig",
+            "grades": [
+                1
+            ],
+            "category": "numbers",
+            "skill": "addition",
+            "difficulty": 2,
+            "type": "bridge-ten",
+            "range": 20,
+            "mission": "🧩 Tízesátlépés",
+            "subtitle": "Tízesátlépés 20-ig",
+            "file": "./data/lessons/grade1/bridge-ten.json",
+            "worldTitles": {
+                "postman": "📮 Tízesátlépés a postán",
+                "racing": "🏁 Tízesátlépés",
+                "cooking": "🍳 Tízesátlépés",
+                "football": "⚽ Tízesátlépés",
+                "animals": "🦁 Tízesátlépés az állatkertben",
+                "space": "🤖 Tízesátlépés az űrállomáson"
             }
         },
         {
@@ -485,6 +483,480 @@
                 "football": "⚽ Hiányos mérkőzés",
                 "animals": "🦁 Hiányzó állatok",
                 "space": "🤖 Hibás rendszer"
+            }
+        },
+        {
+            "id": "missing-operand-01-grade1",
+            "title": "❓ Hiányzó tag 20-ig",
+            "grades": [
+                1
+            ],
+            "category": "operations",
+            "skill": "addition",
+            "difficulty": 1,
+            "type": "missing-operand",
+            "range": 20,
+            "mission": "❓ Melyik szám hiányzik?",
+            "subtitle": "Hiányzó tag 20-ig",
+            "file": "./data/lessons/grade1/missing-operand-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Hiányzó szám",
+                "cooking": "🍳 Hiányzó szám",
+                "football": "⚽ Hiányzó szám",
+                "animals": "🦁 Hiányzó szám",
+                "space": "🤖 Hiányzó szám"
+            }
+        },
+        {
+            "id": "true-false-01-grade1",
+            "title": "✅ Igaz vagy hamis? 20-ig",
+            "grades": [
+                1
+            ],
+            "category": "operations",
+            "skill": "true-false",
+            "difficulty": 1,
+            "type": "true-false",
+            "range": 20,
+            "mission": "✅ Igaz vagy hamis?",
+            "subtitle": "Igaz vagy hamis műveletek 20-ig",
+            "file": "./data/lessons/grade1/true-false-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Igaz vagy hamis?",
+                "cooking": "🍳 Igaz vagy hamis?",
+                "football": "⚽ Igaz vagy hamis?",
+                "animals": "🦁 Igaz vagy hamis?",
+                "space": "🤖 Igaz vagy hamis?"
+            }
+        },
+        {
+            "id": "find-error-01-grade1",
+            "title": "🕵️ Hibás számolás? 20-ig",
+            "grades": [
+                1
+            ],
+            "category": "operations",
+            "skill": "find-error",
+            "difficulty": 1,
+            "type": "find-error",
+            "range": 20,
+            "mission": "🕵️ Hibás számolás?",
+            "subtitle": "Hibás számolás felismerése 20-ig",
+            "file": "./data/lessons/grade1/find-error-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Hibás számolás a boxutcában?",
+                "cooking": "🍳 Hibás számolás a receptben?",
+                "football": "⚽ Hibás számolás az eredményjelzőn?",
+                "animals": "🦁 Hibás számolás az állatkertben?",
+                "space": "🤖 Hibás számolás a fedélzeten?"
+            }
+        },
+        {
+            "id": "measure-compare-01",
+            "title": "Melyik hosszabb?",
+            "grades": [
+                1
+            ],
+            "category": "practical",
+            "skill": "length",
+            "difficulty": 1,
+            "type": "measure-compare",
+            "mission": "📏 Melyik hosszabb?",
+            "subtitle": "Melyik hosszabb?",
+            "file": "./data/lessons/grade1/measure-compare-01.json",
+            "worldTitles": {
+                "racing": "🔧 Melyik hosszabb?",
+                "cooking": "🥄 Melyik hosszabb?",
+                "football": "⚽ Melyik hosszabb?",
+                "animals": "🦁 Melyik állat hosszabb?",
+                "space": "🤖 Melyik rakéta hosszabb?"
+            }
+        },
+        {
+            "id": "measure-squares-01",
+            "title": "Mérd meg négyzetekkel!",
+            "grades": [
+                1
+            ],
+            "category": "practical",
+            "skill": "length",
+            "difficulty": 1,
+            "type": "measure-squares",
+            "mission": "📏 Mérd meg négyzetekkel!",
+            "subtitle": "Mérd meg négyzetekkel!",
+            "file": "./data/lessons/grade1/measure-squares-01.json",
+            "worldTitles": {
+                "racing": "🔧 Mérd meg négyzetekkel!",
+                "cooking": "🥄 Mérd meg négyzetekkel!",
+                "football": "⚽ Mérd meg négyzetekkel!",
+                "animals": "🦁 Mérd meg négyzetekkel!",
+                "space": "🤖 Mérd meg a rakétát!"
+            }
+        },
+        {
+            "id": "volume-01-grade1",
+            "title": "Mennyi fér bele? 1. osztály",
+            "grades": [
+                1
+            ],
+            "category": "practical",
+            "skill": "volume",
+            "difficulty": 1,
+            "type": "volume",
+            "mission": "🥤 Mennyi fér bele?",
+            "subtitle": "Űrtartalom összehasonlítása hétköznapi edényekkel",
+            "file": "./data/lessons/grade1/volume-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Mennyi fér bele?",
+                "cooking": "🍳 Mennyi fér bele?",
+                "football": "⚽ Mennyi fér bele?",
+                "animals": "🦁 Mennyi fér bele?",
+                "space": "🤖 Mennyi fér a tartályba?"
+            }
+        },
+        {
+            "id": "time-01",
+            "title": "Idő – egész és fél óra",
+            "grades": [
+                1
+            ],
+            "category": "practical",
+            "skill": "hour",
+            "difficulty": 1,
+            "type": "time",
+            "mission": "🕐 Mit mutat az óra?",
+            "subtitle": "Idő – egész és fél óra",
+            "file": "./data/lessons/grade1/time-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Mit mutat az óra?",
+                "cooking": "🍳 Mit mutat az óra?",
+                "football": "⚽ Mit mutat az óra?",
+                "animals": "🦁 Mit mutat az óra?",
+                "space": "🤖 Mit mutat az óra az űrben?"
+            }
+        },
+        {
+            "id": "money-pay-01",
+            "title": "Fizesd ki pontosan!",
+            "grades": [
+                1
+            ],
+            "category": "practical",
+            "skill": "coins",
+            "difficulty": 1,
+            "type": "money-pay",
+            "mission": "💰 Fizesd ki pontosan!",
+            "subtitle": "Fizesd ki pontosan!",
+            "file": "./data/lessons/grade1/money-pay-01.json",
+            "worldTitles": {
+                "racing": "🔧 Fizesd ki pontosan!",
+                "cooking": "🥄 Fizesd ki pontosan!",
+                "football": "⚽ Fizesd ki pontosan!",
+                "animals": "🦁 Fizesd ki a belépőt!",
+                "space": "🤖 Fizesd ki az alkatrészt!"
+            }
+        },
+        {
+            "id": "money-compare-01",
+            "title": "Melyik pénztárcában van több?",
+            "grades": [
+                1
+            ],
+            "category": "practical",
+            "skill": "coins",
+            "difficulty": 1,
+            "type": "money-compare",
+            "mission": "💰 Melyik pénztárcában van több?",
+            "subtitle": "Melyik pénztárcában van több?",
+            "file": "./data/lessons/grade1/money-compare-01.json",
+            "worldTitles": {
+                "racing": "🔧 Melyikben van több?",
+                "cooking": "🥄 Melyikben van több?",
+                "football": "⚽ Melyikben van több?",
+                "animals": "🦁 Melyikben van több?",
+                "space": "🤖 Melyikben van több?"
+            }
+        },
+        {
+            "id": "money-enough-01",
+            "title": "Meg tudod venni?",
+            "grades": [
+                1
+            ],
+            "category": "practical",
+            "skill": "coins",
+            "difficulty": 1,
+            "type": "money-enough",
+            "mission": "💰 Meg tudod venni?",
+            "subtitle": "Meg tudod venni?",
+            "file": "./data/lessons/grade1/money-enough-01.json",
+            "worldTitles": {
+                "racing": "🔧 Meg tudod venni?",
+                "cooking": "🥄 Meg tudod venni?",
+                "football": "⚽ Meg tudod venni?",
+                "animals": "🦁 Meg tudod venni a jegyet?",
+                "space": "🤖 Meg tudod venni az alkatrészt?"
+            }
+        },
+        {
+            "id": "word-problems-01",
+            "title": "Szöveges feladatok",
+            "grades": [
+                1
+            ],
+            "category": "wordProblems",
+            "skill": "one-step",
+            "difficulty": 1,
+            "type": "word-problem",
+            "range": 20,
+            "mission": "📝 Szöveges feladatok a postán",
+            "subtitle": "Szöveges feladatok",
+            "file": "./data/lessons/grade1/word-problems-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Szöveges feladatok a pályán",
+                "cooking": "🍳 Szöveges feladatok a konyhában",
+                "football": "⚽ Szöveges feladatok a pályán",
+                "postman": "📮 Szöveges feladatok a postán",
+                "animals": "🦁 Szöveges feladatok az állatkertben",
+                "space": "🤖 Szöveges feladatok az űrben"
+            }
+        },
+        {
+            "id": "mult-prep-01-grade1",
+            "title": "🧩 Egyenlő csoportok 20-ig",
+            "grades": [
+                1
+            ],
+            "category": "multiplication",
+            "skill": "multiplication",
+            "difficulty": 1,
+            "type": "equal-groups",
+            "range": 20,
+            "mission": "🧩 Egyenlő csoportok",
+            "subtitle": "Egyenlő csoportok felismerése 20-ig",
+            "file": "./data/lessons/grade1/mult-prep-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Egyenlő csoportok",
+                "cooking": "🍳 Egyenlő csoportok",
+                "football": "⚽ Egyenlő csoportok",
+                "animals": "🦁 Egyenlő csoportok",
+                "space": "🤖 Egyenlő csoportok"
+            }
+        },
+        {
+            "id": "mult-prep-02-grade1",
+            "title": "🧩 Ismételt összeadás 20-ig",
+            "grades": [
+                1
+            ],
+            "category": "multiplication",
+            "skill": "multiplication",
+            "difficulty": 1,
+            "type": "repeated-addition",
+            "range": 20,
+            "mission": "🧩 Ismételt összeadás",
+            "subtitle": "Ismételt összeadás gyakorlása 20-ig",
+            "file": "./data/lessons/grade1/mult-prep-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Ismételt összeadás",
+                "cooking": "🍳 Ismételt összeadás",
+                "football": "⚽ Ismételt összeadás",
+                "animals": "🦁 Ismételt összeadás",
+                "space": "🤖 Ismételt összeadás"
+            }
+        },
+        {
+            "id": "mult-prep-03-grade1",
+            "title": "🧩 Számolás kettesével, ötösével",
+            "grades": [
+                1
+            ],
+            "category": "multiplication",
+            "skill": "multiplication",
+            "difficulty": 1,
+            "type": "skip-counting",
+            "range": 20,
+            "mission": "🧩 Számolás kettesével",
+            "subtitle": "Számolás 2, 5-ösével 20-ig",
+            "file": "./data/lessons/grade1/mult-prep-03.json",
+            "worldTitles": {
+                "racing": "🏎️ Számolás kettesével",
+                "cooking": "🍳 Számolás kettesével",
+                "football": "⚽ Számolás ötösével",
+                "animals": "🦁 Számolás kettesével",
+                "space": "🤖 Számolás ötösével"
+            }
+        },
+        {
+            "id": "shape-compare-01-grade1",
+            "title": "📐 Hány oldala van?",
+            "grades": [
+                1
+            ],
+            "category": "geometry",
+            "skill": "shape-compare",
+            "difficulty": 1,
+            "type": "shape-compare",
+            "mission": "📐 Hány oldala van?",
+            "subtitle": "Háromszög és négyzet oldalai",
+            "file": "./data/lessons/grade1/shape-compare-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Hány oldala van a táblának?",
+                "cooking": "🍳 Hány oldala van a sütinek?",
+                "football": "⚽ Hány oldala van a zászlónak?",
+                "animals": "🦁 Hány oldala van a táblának?",
+                "space": "🤖 Hány oldala van az ablaknak?"
+            }
+        },
+        {
+            "id": "solid-shapes-01-grade1",
+            "title": "🧊 Térbeli testek",
+            "grades": [
+                1
+            ],
+            "category": "geometry",
+            "skill": "solid-shapes",
+            "difficulty": 1,
+            "type": "solid-shape",
+            "mission": "🧊 Térbeli testek",
+            "subtitle": "Testek felismerése",
+            "file": "./data/lessons/grade1/solid-shapes-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Testek a boxutcában",
+                "cooking": "🍳 Testek a konyhában",
+                "football": "⚽ Testek a pályán",
+                "animals": "🦁 Testek az állatkertben",
+                "space": "🤖 Testek az űrhajón"
+            }
+        },
+        {
+            "id": "transform-01-grade1",
+            "title": "🌀 Forgatás",
+            "grades": [
+                1
+            ],
+            "category": "geometry",
+            "skill": "transform",
+            "difficulty": 1,
+            "type": "transform",
+            "mission": "🌀 Forgatás",
+            "subtitle": "Elforgatott alakzatok felismerése",
+            "file": "./data/lessons/grade1/transform-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Forgatás a boxutcában",
+                "cooking": "🍳 Forgatás a konyhában",
+                "football": "⚽ Forgatás a pályán",
+                "animals": "🦁 Forgatás az állatkertben",
+                "space": "🤖 Forgatás az űrhajón"
+            }
+        },
+        {
+            "id": "estimate-01-grade1",
+            "title": "Becslés 30-ig",
+            "grades": [
+                1
+            ],
+            "category": "numbers",
+            "skill": "estimation",
+            "difficulty": 1,
+            "type": "estimate",
+            "range": 30,
+            "mission": "🔢 Becsüld meg!",
+            "subtitle": "Számok kerekítése és becslése 30-ig",
+            "file": "./data/lessons/grade1/estimate-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Becslés a versenypályán",
+                "cooking": "🍳 Becslés a konyhában",
+                "football": "⚽ Becslés a meccsen",
+                "animals": "🦁 Becslés az állatkertben",
+                "space": "🤖 Becslés a űrben"
+            }
+        },
+        {
+            "id": "rounding-01-grade1",
+            "title": "Kerekítés tízesre 100-ig",
+            "grades": [
+                1
+            ],
+            "category": "numbers",
+            "skill": "rounding",
+            "difficulty": 1,
+            "type": "rounding",
+            "range": 100,
+            "mission": "🔄 Kerekítsd!",
+            "subtitle": "Számok kerekítése tízesre 100-ig",
+            "file": "./data/lessons/grade1/rounding-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Kerekítés a versenypályán",
+                "cooking": "🍳 Kerekítés a konyhában",
+                "football": "⚽ Kerekítés a meccsen",
+                "animals": "🦁 Kerekítés az állatkertben",
+                "space": "🤖 Kerekítés az űrben"
+            }
+        },
+        {
+            "id": "data-chart-01-grade1",
+            "title": "📊 Melyikből van több?",
+            "grades": [
+                1
+            ],
+            "category": "numbers",
+            "skill": "data-charts",
+            "difficulty": 1,
+            "type": "data-chart",
+            "mission": "📊 Adatok és diagramok",
+            "subtitle": "Olvasd le az oszlopdiagramot",
+            "file": "./data/lessons/grade1/data-chart-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Diagram a boxutcában",
+                "cooking": "🍳 Diagram a konyhában",
+                "football": "⚽ Diagram a pályán",
+                "animals": "🦁 Diagram az állatkertben",
+                "space": "🤖 Diagram az űrhajón"
+            }
+        },
+        {
+            "id": "place-value-03",
+            "title": "Helyiérték 100-ig",
+            "grades": [
+                2
+            ],
+            "category": "numbers",
+            "skill": "place-value",
+            "difficulty": 2,
+            "type": "place-value",
+            "range": 100,
+            "mission": "🔢 Tízesek és egyesek 100-ig",
+            "subtitle": "Számok bontása és összeállítása 100-ig",
+            "file": "./data/lessons/grade2/place-value-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Alkatrészes dobozok",
+                "cooking": "🍲 Fazekak és kanalak",
+                "football": "⚽ Csapatok és edzők",
+                "animals": "🦁 Karámok és állatok",
+                "space": "🤖 Tartályok és robotok"
+            }
+        },
+        {
+            "id": "comparison-03",
+            "title": "Összehasonlítás 100-ig",
+            "grades": [
+                2
+            ],
+            "category": "numbers",
+            "skill": "comparison",
+            "difficulty": 2,
+            "type": "comparison",
+            "range": 100,
+            "mission": "📦 Összehasonlítás 100-ig",
+            "subtitle": "Nagyobb, kisebb vagy egyenlő 100-ig",
+            "file": "./data/lessons/grade2/comparison-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Melyik autó gyorsabb?",
+                "cooking": "🍲 Melyik tál nagyobb?",
+                "football": "⚽ Melyik csapat erősebb?",
+                "animals": "🦁 Melyik állatcsapat nagyobb?",
+                "space": "🤖 Melyik bolygón többen vannak?"
             }
         },
         {
@@ -905,27 +1377,6 @@
             }
         },
         {
-            "id": "time-01",
-            "title": "Idő – egész és fél óra",
-            "grades": [
-                1
-            ],
-            "category": "practical",
-            "skill": "hour",
-            "difficulty": 1,
-            "type": "time",
-            "mission": "🕐 Mit mutat az óra?",
-            "subtitle": "Idő – egész és fél óra",
-            "file": "./data/lessons/grade1/time-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Mit mutat az óra?",
-                "cooking": "🍳 Mit mutat az óra?",
-                "football": "⚽ Mit mutat az óra?",
-                "animals": "🦁 Mit mutat az óra?",
-                "space": "🤖 Mit mutat az óra az űrben?"
-            }
-        },
-        {
             "id": "time-03",
             "title": "Idő – negyedóra",
             "grades": [
@@ -944,69 +1395,6 @@
                 "football": "⚽ Mit mutat az óra?",
                 "animals": "🦁 Mit mutat az óra az állatkertben?",
                 "space": "🤖 Mit mutat az óra az űrállomáson?"
-            }
-        },
-        {
-            "id": "money-pay-01",
-            "title": "Fizesd ki pontosan!",
-            "grades": [
-                1
-            ],
-            "category": "practical",
-            "skill": "coins",
-            "difficulty": 1,
-            "type": "money-pay",
-            "mission": "💰 Fizesd ki pontosan!",
-            "subtitle": "Fizesd ki pontosan!",
-            "file": "./data/lessons/grade1/money-pay-01.json",
-            "worldTitles": {
-                "racing": "🔧 Fizesd ki pontosan!",
-                "cooking": "🥄 Fizesd ki pontosan!",
-                "football": "⚽ Fizesd ki pontosan!",
-                "animals": "🦁 Fizesd ki a belépőt!",
-                "space": "🤖 Fizesd ki az alkatrészt!"
-            }
-        },
-        {
-            "id": "money-compare-01",
-            "title": "Melyik pénztárcában van több?",
-            "grades": [
-                1
-            ],
-            "category": "practical",
-            "skill": "coins",
-            "difficulty": 1,
-            "type": "money-compare",
-            "mission": "💰 Melyik pénztárcában van több?",
-            "subtitle": "Melyik pénztárcában van több?",
-            "file": "./data/lessons/grade1/money-compare-01.json",
-            "worldTitles": {
-                "racing": "🔧 Melyikben van több?",
-                "cooking": "🥄 Melyikben van több?",
-                "football": "⚽ Melyikben van több?",
-                "animals": "🦁 Melyikben van több?",
-                "space": "🤖 Melyikben van több?"
-            }
-        },
-        {
-            "id": "money-enough-01",
-            "title": "Meg tudod venni?",
-            "grades": [
-                1
-            ],
-            "category": "practical",
-            "skill": "coins",
-            "difficulty": 1,
-            "type": "money-enough",
-            "mission": "💰 Meg tudod venni?",
-            "subtitle": "Meg tudod venni?",
-            "file": "./data/lessons/grade1/money-enough-01.json",
-            "worldTitles": {
-                "racing": "🔧 Meg tudod venni?",
-                "cooking": "🥄 Meg tudod venni?",
-                "football": "⚽ Meg tudod venni?",
-                "animals": "🦁 Meg tudod venni a jegyet?",
-                "space": "🤖 Meg tudod venni az alkatrészt?"
             }
         },
         {
@@ -1073,27 +1461,6 @@
             }
         },
         {
-            "id": "volume-01-grade1",
-            "title": "Mennyi fér bele? 1. osztály",
-            "grades": [
-                1
-            ],
-            "category": "practical",
-            "skill": "volume",
-            "difficulty": 1,
-            "type": "volume",
-            "mission": "🥤 Mennyi fér bele?",
-            "subtitle": "Űrtartalom összehasonlítása hétköznapi edényekkel",
-            "file": "./data/lessons/grade1/volume-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Mennyi fér bele?",
-                "cooking": "🍳 Mennyi fér bele?",
-                "football": "⚽ Mennyi fér bele?",
-                "animals": "🦁 Mennyi fér bele?",
-                "space": "🤖 Mennyi fér a tartályba?"
-            }
-        },
-        {
             "id": "volume-01",
             "title": "Melyikbe fér több?",
             "grades": [
@@ -1133,137 +1500,6 @@
                 "football": "⚽ Visszajáró a szurkolói boltban",
                 "animals": "🦁 Visszajáró a jegypénztárnál",
                 "space": "🤖 Visszajáró az űrboltban"
-            }
-        },
-        {
-            "id": "measure-compare-01",
-            "title": "Melyik hosszabb?",
-            "grades": [
-                1
-            ],
-            "category": "practical",
-            "skill": "length",
-            "difficulty": 1,
-            "type": "measure-compare",
-            "mission": "📏 Melyik hosszabb?",
-            "subtitle": "Melyik hosszabb?",
-            "file": "./data/lessons/grade1/measure-compare-01.json",
-            "worldTitles": {
-                "racing": "🔧 Melyik hosszabb?",
-                "cooking": "🥄 Melyik hosszabb?",
-                "football": "⚽ Melyik hosszabb?",
-                "animals": "🦁 Melyik állat hosszabb?",
-                "space": "🤖 Melyik rakéta hosszabb?"
-            }
-        },
-        {
-            "id": "measure-squares-01",
-            "title": "Mérd meg négyzetekkel!",
-            "grades": [
-                1
-            ],
-            "category": "practical",
-            "skill": "length",
-            "difficulty": 1,
-            "type": "measure-squares",
-            "mission": "📏 Mérd meg négyzetekkel!",
-            "subtitle": "Mérd meg négyzetekkel!",
-            "file": "./data/lessons/grade1/measure-squares-01.json",
-            "worldTitles": {
-                "racing": "🔧 Mérd meg négyzetekkel!",
-                "cooking": "🥄 Mérd meg négyzetekkel!",
-                "football": "⚽ Mérd meg négyzetekkel!",
-                "animals": "🦁 Mérd meg négyzetekkel!",
-                "space": "🤖 Mérd meg a rakétát!"
-            }
-        },
-        {
-            "id": "word-problems-01",
-            "title": "Szöveges feladatok",
-            "grades": [
-                1
-            ],
-            "category": "wordProblems",
-            "skill": "one-step",
-            "difficulty": 1,
-            "type": "word-problem",
-            "range": 20,
-            "mission": "📝 Szöveges feladatok a postán",
-            "subtitle": "Szöveges feladatok",
-            "file": "./data/lessons/grade1/word-problems-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Szöveges feladatok a pályán",
-                "cooking": "🍳 Szöveges feladatok a konyhában",
-                "football": "⚽ Szöveges feladatok a pályán",
-                "postman": "📮 Szöveges feladatok a postán",
-                "animals": "🦁 Szöveges feladatok az állatkertben",
-                "space": "🤖 Szöveges feladatok az űrben"
-            }
-        },
-        {
-            "id": "mult-prep-01-grade1",
-            "title": "🧩 Egyenlő csoportok 20-ig",
-            "grades": [
-                1
-            ],
-            "category": "multiplication",
-            "skill": "multiplication",
-            "difficulty": 1,
-            "type": "equal-groups",
-            "range": 20,
-            "mission": "🧩 Egyenlő csoportok",
-            "subtitle": "Egyenlő csoportok felismerése 20-ig",
-            "file": "./data/lessons/grade1/mult-prep-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Egyenlő csoportok",
-                "cooking": "🍳 Egyenlő csoportok",
-                "football": "⚽ Egyenlő csoportok",
-                "animals": "🦁 Egyenlő csoportok",
-                "space": "🤖 Egyenlő csoportok"
-            }
-        },
-        {
-            "id": "mult-prep-02-grade1",
-            "title": "🧩 Ismételt összeadás 20-ig",
-            "grades": [
-                1
-            ],
-            "category": "multiplication",
-            "skill": "multiplication",
-            "difficulty": 1,
-            "type": "repeated-addition",
-            "range": 20,
-            "mission": "🧩 Ismételt összeadás",
-            "subtitle": "Ismételt összeadás gyakorlása 20-ig",
-            "file": "./data/lessons/grade1/mult-prep-02.json",
-            "worldTitles": {
-                "racing": "🏎️ Ismételt összeadás",
-                "cooking": "🍳 Ismételt összeadás",
-                "football": "⚽ Ismételt összeadás",
-                "animals": "🦁 Ismételt összeadás",
-                "space": "🤖 Ismételt összeadás"
-            }
-        },
-        {
-            "id": "mult-prep-03-grade1",
-            "title": "🧩 Számolás kettesével, ötösével",
-            "grades": [
-                1
-            ],
-            "category": "multiplication",
-            "skill": "multiplication",
-            "difficulty": 1,
-            "type": "skip-counting",
-            "range": 20,
-            "mission": "🧩 Számolás kettesével",
-            "subtitle": "Számolás 2, 5-ösével 20-ig",
-            "file": "./data/lessons/grade1/mult-prep-03.json",
-            "worldTitles": {
-                "racing": "🏎️ Számolás kettesével",
-                "cooking": "🍳 Számolás kettesével",
-                "football": "⚽ Számolás ötösével",
-                "animals": "🦁 Számolás kettesével",
-                "space": "🤖 Számolás ötösével"
             }
         },
         {
@@ -1465,28 +1701,6 @@
             }
         },
         {
-            "id": "missing-operand-01-grade1",
-            "title": "❓ Hiányzó tag 20-ig",
-            "grades": [
-                1
-            ],
-            "category": "operations",
-            "skill": "addition",
-            "difficulty": 1,
-            "type": "missing-operand",
-            "range": 20,
-            "mission": "❓ Melyik szám hiányzik?",
-            "subtitle": "Hiányzó tag 20-ig",
-            "file": "./data/lessons/grade1/missing-operand-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Hiányzó szám",
-                "cooking": "🍳 Hiányzó szám",
-                "football": "⚽ Hiányzó szám",
-                "animals": "🦁 Hiányzó szám",
-                "space": "🤖 Hiányzó szám"
-            }
-        },
-        {
             "id": "missing-operand-01",
             "title": "❓ Hiányzó tag",
             "grades": [
@@ -1641,28 +1855,6 @@
             }
         },
         {
-            "id": "true-false-01-grade1",
-            "title": "✅ Igaz vagy hamis? 20-ig",
-            "grades": [
-                1
-            ],
-            "category": "operations",
-            "skill": "true-false",
-            "difficulty": 1,
-            "type": "true-false",
-            "range": 20,
-            "mission": "✅ Igaz vagy hamis?",
-            "subtitle": "Igaz vagy hamis műveletek 20-ig",
-            "file": "./data/lessons/grade1/true-false-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Igaz vagy hamis?",
-                "cooking": "🍳 Igaz vagy hamis?",
-                "football": "⚽ Igaz vagy hamis?",
-                "animals": "🦁 Igaz vagy hamis?",
-                "space": "🤖 Igaz vagy hamis?"
-            }
-        },
-        {
             "id": "true-false-01",
             "title": "✅ Igaz vagy hamis?",
             "grades": [
@@ -1682,72 +1874,6 @@
                 "football": "⚽ Igaz vagy hamis?",
                 "animals": "🦁 Igaz vagy hamis?",
                 "space": "🤖 Igaz vagy hamis?"
-            }
-        },
-        {
-            "id": "find-error-01-grade1",
-            "title": "🕵️ Hibás számolás? 20-ig",
-            "grades": [
-                1
-            ],
-            "category": "operations",
-            "skill": "find-error",
-            "difficulty": 1,
-            "type": "find-error",
-            "range": 20,
-            "mission": "🕵️ Hibás számolás?",
-            "subtitle": "Hibás számolás felismerése 20-ig",
-            "file": "./data/lessons/grade1/find-error-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Hibás számolás a boxutcában?",
-                "cooking": "🍳 Hibás számolás a receptben?",
-                "football": "⚽ Hibás számolás az eredményjelzőn?",
-                "animals": "🦁 Hibás számolás az állatkertben?",
-                "space": "🤖 Hibás számolás a fedélzeten?"
-            }
-        },
-        {
-            "id": "estimate-01-grade1",
-            "title": "Becslés 30-ig",
-            "grades": [
-                1
-            ],
-            "category": "numbers",
-            "skill": "estimation",
-            "difficulty": 1,
-            "type": "estimate",
-            "range": 30,
-            "mission": "🔢 Becsüld meg!",
-            "subtitle": "Számok kerekítése és becslése 30-ig",
-            "file": "./data/lessons/grade1/estimate-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Becslés a versenypályán",
-                "cooking": "🍳 Becslés a konyhában",
-                "football": "⚽ Becslés a meccsen",
-                "animals": "🦁 Becslés az állatkertben",
-                "space": "🤖 Becslés a űrben"
-            }
-        },
-        {
-            "id": "rounding-01-grade1",
-            "title": "Kerekítés tízesre 100-ig",
-            "grades": [
-                1
-            ],
-            "category": "numbers",
-            "skill": "rounding",
-            "difficulty": 1,
-            "type": "rounding",
-            "range": 100,
-            "mission": "🔄 Kerekítsd!",
-            "subtitle": "Számok kerekítése tízesre 100-ig",
-            "file": "./data/lessons/grade1/rounding-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Kerekítés a versenypályán",
-                "cooking": "🍳 Kerekítés a konyhában",
-                "football": "⚽ Kerekítés a meccsen",
-                "animals": "🦁 Kerekítés az állatkertben",
-                "space": "🤖 Kerekítés az űrben"
             }
         },
         {
@@ -1773,27 +1899,6 @@
             }
         },
         {
-            "id": "shape-compare-01-grade1",
-            "title": "📐 Hány oldala van?",
-            "grades": [
-                1
-            ],
-            "category": "geometry",
-            "skill": "shape-compare",
-            "difficulty": 1,
-            "type": "shape-compare",
-            "mission": "📐 Hány oldala van?",
-            "subtitle": "Háromszög és négyzet oldalai",
-            "file": "./data/lessons/grade1/shape-compare-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Hány oldala van a táblának?",
-                "cooking": "🍳 Hány oldala van a sütinek?",
-                "football": "⚽ Hány oldala van a zászlónak?",
-                "animals": "🦁 Hány oldala van a táblának?",
-                "space": "🤖 Hány oldala van az ablaknak?"
-            }
-        },
-        {
             "id": "shape-compare-01",
             "title": "📐 Alakzatok összehasonlítása",
             "grades": [
@@ -1812,111 +1917,6 @@
                 "football": "⚽ Alakzatok a meccsen",
                 "animals": "🦁 Alakzatok az állatkertben",
                 "space": "🤖 Alakzatok az űrben"
-            }
-        },
-        {
-"id": "solid-shapes-01-grade1",
-            "title": "🧊 Térbeli testek",
-            "grades": [
-                1
-            ],
-            "category": "geometry",
-            "skill": "solid-shapes",
-            "difficulty": 1,
-            "type": "solid-shape",
-            "mission": "🧊 Térbeli testek",
-            "subtitle": "Testek felismerése",
-            "file": "./data/lessons/grade1/solid-shapes-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Testek a boxutcában",
-                "cooking": "🍳 Testek a konyhában",
-                "football": "⚽ Testek a pályán",
-                "animals": "🦁 Testek az állatkertben",
-                "space": "🤖 Testek az űrhajón"
-            }
-        },
-        {
-            "id": "transform-01-grade1",
-            "title": "🌀 Forgatás",
-            "grades": [
-                1
-            ],
-            "category": "geometry",
-            "skill": "transform",
-            "difficulty": 1,
-            "type": "transform",
-            "mission": "🌀 Forgatás",
-            "subtitle": "Elforgatott alakzatok felismerése",
-            "file": "./data/lessons/grade1/transform-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Forgatás a boxutcában",
-                "cooking": "🍳 Forgatás a konyhában",
-                "football": "⚽ Forgatás a pályán",
-                "animals": "🦁 Forgatás az állatkertben",
-                "space": "🤖 Forgatás az űrhajón"
-            }
-        },
-        {
-            "id": "set-match-01-grade1",
-            "title": "🧺 Halmazok és válogatás",
-            "grades": [
-                1
-            ],
-            "category": "numbers",
-            "skill": "sets",
-            "difficulty": 1,
-            "type": "set-match",
-            "mission": "🧺 Halmazok és válogatás",
-            "subtitle": "Melyik alakzat illik a halmazba?",
-            "file": "./data/lessons/grade1/set-match-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Halmazválogatás a boxutcában",
-                "cooking": "🍳 Halmazválogatás a konyhában",
-                "football": "⚽ Halmazválogatás a pályán",
-                "animals": "🦁 Halmazválogatás az állatkertben",
-                "space": "🤖 Halmazválogatás az űrhajón"
-            }
-        },
-        {
-            "id": "data-chart-01-grade1",
-            "title": "📊 Melyikből van több?",
-            "grades": [
-                1
-            ],
-            "category": "numbers",
-            "skill": "data-charts",
-            "difficulty": 1,
-            "type": "data-chart",
-            "mission": "📊 Adatok és diagramok",
-            "subtitle": "Olvasd le az oszlopdiagramot",
-            "file": "./data/lessons/grade1/data-chart-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Diagram a boxutcában",
-                "cooking": "🍳 Diagram a konyhában",
-                "football": "⚽ Diagram a pályán",
-                "animals": "🦁 Diagram az állatkertben",
-                "space": "🤖 Diagram az űrhajón"
-            }
-        },
-        {
-            "id": "calendar-01-grade1",
-            "title": "🗓️ Naptár",
-            "grades": [
-                1
-            ],
-            "category": "practical",
-            "skill": "calendar",
-            "difficulty": 1,
-            "type": "calendar",
-            "mission": "🗓️ Naptár és időbeli tájékozódás",
-            "subtitle": "Hét napjai, hónapok és évszakok",
-            "file": "./data/lessons/grade1/calendar-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Naptár a boxutcában",
-                "cooking": "🍳 Naptár a konyhában",
-                "football": "⚽ Naptár a pályán",
-                "animals": "🦁 Naptár az állatkertben",
-                "space": "🤖 Naptár az űrhajón"
             }
         },
         {

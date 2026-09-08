@@ -3,6 +3,14 @@ import { createButton } from "./ui/button.js";
 import { createMessageBox } from "./ui/messageBox.js";
 import { createFeedback } from "./ui/feedback.js";
 import { SHAPE_CATEGORIES } from "../data/shapes.js";
+import { createShapeSvg } from "./ui/shapeSvg.js";
+
+const ZONE_COLORS = {
+    circle: "#e53935",
+    triangle: "#f57c00",
+    square: "#7e57c2",
+    rectangle: "#1e88e5"
+};
 
 function createZone(category) {
     const info = SHAPE_CATEGORIES[category];
@@ -11,7 +19,8 @@ function createZone(category) {
 
     const badge = document.createElement("span");
     badge.className = "shape-zone-label";
-    badge.textContent = `${info.symbol} ${info.label}`;
+    badge.append(createShapeSvg({ kind: info.kind, color: ZONE_COLORS[category], size: 16 }));
+    badge.append(document.createTextNode(info.label));
     element.append(badge);
 
     return { element, category };
@@ -51,7 +60,7 @@ export function renderShapeSort(step, root, next, progress, onResult, onAttempt)
         chip.type = "button";
         chip.className = "shape-chip";
         chip.dataset.value = item.value;
-        chip.textContent = item.value;
+        chip.append(createShapeSvg({ kind: item.kind, color: item.color, size: item.size }));
         board.append(chip);
         chips.push(chip);
         chipsByValue[item.value] = chip;

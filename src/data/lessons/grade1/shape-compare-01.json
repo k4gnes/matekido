@@ -1,0 +1,72 @@
+{
+  "id": "grade1-shape-compare-01",
+  "title": "Hány oldala van? 1. osztály",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📐 Hány oldala van?",
+      "text": "A háromszögnek 3, a négyzetnek 4, az ötszögnek 5, a hatszögnek 6 oldala van! Találd ki, melyik alakzatnak van több oldala!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Hány oldala van a táblának?",
+          "text": "A versenypálya táblái alakzatokból állnak! Nézd meg jól, és keress oldalakat!"
+        },
+        "cooking": {
+          "title": "🍳 Hány oldala van a sütinek?",
+          "text": "A sütik háromszög vagy négyzet alakúak! Nézd meg jól, hány oldaluk van!"
+        },
+        "football": {
+          "title": "⚽ Hány oldala van a zászlónak?",
+          "text": "A zászlók háromszög vagy négyzet alakúak! Nézd meg jól, hány oldaluk van!"
+        },
+        "animals": {
+          "title": "🦁 Hány oldala van a táblának?",
+          "text": "Az állatkert táblái alakzatokból állnak! Nézd meg jól, hány oldaluk van!"
+        },
+        "space": {
+          "title": "🤖 Hány oldala van az ablaknak?",
+          "text": "Az űrhajó ablakai alakzatok! Nézd meg jól, hány oldaluk van!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "shape-compare",
+      "options": {
+        "count": 5,
+        "mode": "sides",
+        "kinds": ["triangle", "square"]
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "A háromszögnek 3, a négyzetnek 4 oldala és sarka van! Jól számoltál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes vagy!",
+          "text": "Minden alakzatot jól megszámoltál a pályán!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden sütit jól megszámoltál a konyhában!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden zászlót jól megszámoltál a meccsen!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden táblát jól megszámoltál az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden ablakot jól megszámoltál az űrben!"
+        }
+      }
+    }
+  ]
+}

@@ -28,11 +28,10 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 3.4rem;
-    height: 3.6rem;
+    width: 3.4rem;
+    height: 3.4rem;
     margin: 0;
-    padding: 0 .6rem;
-    font-size: 2rem;
+    padding: .35rem;
     background: white;
     border: 2px solid #cfd8ec;
     border-radius: 12px;
@@ -46,6 +45,12 @@
 
 .shape-chip:active {
     cursor: grabbing;
+}
+
+.shape-chip svg {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 .shape-chip.shape-hidden {
@@ -145,6 +150,12 @@
     gap: .3rem;
 }
 
+.shape-zone-label svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: block;
+}
+
 .shape-circle .shape-zone-label {
     color: #c62828;
 }
@@ -163,10 +174,9 @@
 
 @media (max-width: 380px) {
     .shape-chip {
-        min-width: 2.8rem;
-        height: 3rem;
-        font-size: 1.6rem;
-        padding: 0 .4rem;
+        width: 2.8rem;
+        height: 2.8rem;
+        padding: .25rem;
     }
 
     .shape-zone {

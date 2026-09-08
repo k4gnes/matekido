@@ -1073,24 +1073,24 @@
             }
         },
         {
-            "id": "weight-01",
-            "title": "Melyik nehezebb?",
+            "id": "volume-01-grade1",
+            "title": "Mennyi fér bele? 1. osztály",
             "grades": [
-                2
+                1
             ],
             "category": "practical",
-            "skill": "mass",
-            "difficulty": 2,
-            "type": "weight",
-            "mission": "⚖️ Melyik nehezebb?",
-            "subtitle": "Tömeg összehasonlítása",
-            "file": "./data/lessons/grade2/weight-01.json",
+            "skill": "volume",
+            "difficulty": 1,
+            "type": "volume",
+            "mission": "🥤 Mennyi fér bele?",
+            "subtitle": "Űrtartalom összehasonlítása hétköznapi edényekkel",
+            "file": "./data/lessons/grade1/volume-01.json",
             "worldTitles": {
-                "racing": "🔧 Mérlegelés a műhelyben",
-                "cooking": "🍳 Mérlegelés a konyhában",
-                "football": "⚽ Mérlegelés az öltözőben",
-                "animals": "🦁 Mérlegelés az állatkertben",
-                "space": "🤖 Mérlegelés az űrállomáson"
+                "racing": "🏎️ Mennyi fér bele?",
+                "cooking": "🍳 Mennyi fér bele?",
+                "football": "⚽ Mennyi fér bele?",
+                "animals": "🦁 Mennyi fér bele?",
+                "space": "🤖 Mennyi fér a tartályba?"
             }
         },
         {
@@ -1707,7 +1707,7 @@
             }
         },
         {
-            "id": "estimate-01",
+            "id": "estimate-01-grade1",
             "title": "Becslés 30-ig",
             "grades": [
                 1
@@ -1729,7 +1729,7 @@
             }
         },
         {
-            "id": "rounding-01",
+            "id": "rounding-01-grade1",
             "title": "Kerekítés tízesre 100-ig",
             "grades": [
                 1
@@ -1773,6 +1773,27 @@
             }
         },
         {
+            "id": "shape-compare-01-grade1",
+            "title": "📐 Hány oldala van?",
+            "grades": [
+                1
+            ],
+            "category": "geometry",
+            "skill": "shape-compare",
+            "difficulty": 1,
+            "type": "shape-compare",
+            "mission": "📐 Hány oldala van?",
+            "subtitle": "Háromszög és négyzet oldalai",
+            "file": "./data/lessons/grade1/shape-compare-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Hány oldala van a táblának?",
+                "cooking": "🍳 Hány oldala van a sütinek?",
+                "football": "⚽ Hány oldala van a zászlónak?",
+                "animals": "🦁 Hány oldala van a táblának?",
+                "space": "🤖 Hány oldala van az ablaknak?"
+            }
+        },
+        {
             "id": "shape-compare-01",
             "title": "📐 Alakzatok összehasonlítása",
             "grades": [
@@ -1794,6 +1815,111 @@
             }
         },
         {
+"id": "solid-shapes-01-grade1",
+            "title": "🧊 Térbeli testek",
+            "grades": [
+                1
+            ],
+            "category": "geometry",
+            "skill": "solid-shapes",
+            "difficulty": 1,
+            "type": "solid-shape",
+            "mission": "🧊 Térbeli testek",
+            "subtitle": "Testek felismerése",
+            "file": "./data/lessons/grade1/solid-shapes-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Testek a boxutcában",
+                "cooking": "🍳 Testek a konyhában",
+                "football": "⚽ Testek a pályán",
+                "animals": "🦁 Testek az állatkertben",
+                "space": "🤖 Testek az űrhajón"
+            }
+        },
+        {
+            "id": "transform-01-grade1",
+            "title": "🌀 Forgatás",
+            "grades": [
+                1
+            ],
+            "category": "geometry",
+            "skill": "transform",
+            "difficulty": 1,
+            "type": "transform",
+            "mission": "🌀 Forgatás",
+            "subtitle": "Elforgatott alakzatok felismerése",
+            "file": "./data/lessons/grade1/transform-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Forgatás a boxutcában",
+                "cooking": "🍳 Forgatás a konyhában",
+                "football": "⚽ Forgatás a pályán",
+                "animals": "🦁 Forgatás az állatkertben",
+                "space": "🤖 Forgatás az űrhajón"
+            }
+        },
+        {
+            "id": "set-match-01-grade1",
+            "title": "🧺 Halmazok és válogatás",
+            "grades": [
+                1
+            ],
+            "category": "numbers",
+            "skill": "sets",
+            "difficulty": 1,
+            "type": "set-match",
+            "mission": "🧺 Halmazok és válogatás",
+            "subtitle": "Melyik alakzat illik a halmazba?",
+            "file": "./data/lessons/grade1/set-match-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Halmazválogatás a boxutcában",
+                "cooking": "🍳 Halmazválogatás a konyhában",
+                "football": "⚽ Halmazválogatás a pályán",
+                "animals": "🦁 Halmazválogatás az állatkertben",
+                "space": "🤖 Halmazválogatás az űrhajón"
+            }
+        },
+        {
+            "id": "data-chart-01-grade1",
+            "title": "📊 Melyikből van több?",
+            "grades": [
+                1
+            ],
+            "category": "numbers",
+            "skill": "data-charts",
+            "difficulty": 1,
+            "type": "data-chart",
+            "mission": "📊 Adatok és diagramok",
+            "subtitle": "Olvasd le az oszlopdiagramot",
+            "file": "./data/lessons/grade1/data-chart-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Diagram a boxutcában",
+                "cooking": "🍳 Diagram a konyhában",
+                "football": "⚽ Diagram a pályán",
+                "animals": "🦁 Diagram az állatkertben",
+                "space": "🤖 Diagram az űrhajón"
+            }
+        },
+        {
+            "id": "calendar-01-grade1",
+            "title": "🗓️ Naptár",
+            "grades": [
+                1
+            ],
+            "category": "practical",
+            "skill": "calendar",
+            "difficulty": 1,
+            "type": "calendar",
+            "mission": "🗓️ Naptár és időbeli tájékozódás",
+            "subtitle": "Hét napjai, hónapok és évszakok",
+            "file": "./data/lessons/grade1/calendar-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Naptár a boxutcában",
+                "cooking": "🍳 Naptár a konyhában",
+                "football": "⚽ Naptár a pályán",
+                "animals": "🦁 Naptár az állatkertben",
+                "space": "🤖 Naptár az űrhajón"
+            }
+        },
+        {
             "id": "solid-shapes-01",
             "title": "🧊 Térbeli alakzatok",
             "grades": [
@@ -1804,7 +1930,7 @@
             "difficulty": 2,
             "type": "solid-shape",
             "mission": "🧊 Térbeli alakzatok",
-            "subtitle": "Térbeli alakzatok",
+            "subtitle": "Testek felismerése és lapjai",
             "file": "./data/lessons/grade2/solid-shapes-01.json",
             "worldTitles": {
                 "racing": "🏎️ Testek a boxutcában",

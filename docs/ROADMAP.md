@@ -14,6 +14,6 @@
 - [ ] JSON alapú feladatok
 
 ## v1.0
-- [ ] Első osztály
+- [x] Első osztály
 - [ ] Negyedik osztály
 - [ ] Szülői felület

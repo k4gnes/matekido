@@ -14,7 +14,7 @@ import { renderSequence } from "../components/sequence.js?v=13";
 import { renderOrder } from "../components/order.js?v=14";
 import { renderEvenOdd } from "../components/evenOdd.js?v=12";
 import { renderPattern } from "../components/pattern.js?v=9";
-import { renderShapeSort } from "../components/shapeSort.js?v=11";
+import { renderShapeSort } from "../components/shapeSort.js?v=12";
 import { renderTime } from "../components/time.js?v=10";
 import { renderSpatial } from "../components/spatial.js?v=11";
 import { renderMoneyPay } from "../components/moneyPay.js?v=13";
@@ -39,6 +39,10 @@ import { renderPlaceValueHundreds } from "../components/placeValueHundreds.js?v=
 import { renderNumberName } from "../components/numberName.js?v=2";
 import { renderRounding } from "../components/rounding.js?v=2";
 import { renderRoman } from "../components/roman.js?v=2";
+import { renderTransform } from "../components/transform.js?v=1";
+import { renderSetMatch } from "../components/setMatch.js?v=1";
+import { renderDataChart } from "../components/dataChart.js?v=2";
+import { renderCalendar } from "../components/calendar.js?v=1";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -85,13 +89,17 @@ const COUNTED_TYPES = new Set([
     "place-value-hundreds",
     "number-name",
     "rounding",
-    "roman"
+    "roman",
+    "transform",
+    "set-match",
+    "data-chart",
+    "calendar"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
 
 
-import { renderCelebration } from "../components/celebration.js?v=5";
+import { renderCelebration } from "../components/celebration.js?v=6";
 import { renderProgress } from "../components/progress.js?v=2";
 import { renderMissingProgress } from "../components/missingProgress.js?v=3";
 import { renderComparisonProgress } from "../components/comparisonProgress.js?v=3";
@@ -152,7 +160,11 @@ const RENDERERS = new Map([
     ["place-value-hundreds", renderPlaceValueHundreds],
     ["number-name", renderNumberName],
     ["rounding", renderRounding],
-    ["roman", renderRoman]
+    ["roman", renderRoman],
+    ["transform", renderTransform],
+    ["set-match", renderSetMatch],
+    ["data-chart", renderDataChart],
+    ["calendar", renderCalendar]
 ]);
 
 

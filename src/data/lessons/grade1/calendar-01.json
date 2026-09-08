@@ -1,0 +1,70 @@
+{
+  "id": "grade1-calendar-01",
+  "title": "🗓️ Naptár 1. osztály",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🗓️ Naptár",
+      "text": "Egy hétben 7 nap van: hétfő, kedd, szerda, csütörtök, péntek, szombat, vasárnap. Egy évben 12 hónap, és négy évszak: tavasz, nyár, ősz, tél!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Naptár a boxutcában",
+          "text": "A szerelők a naptárt nézik, mikor van a következő futam! Tanuld meg rendben a napokat és a hónapokat!"
+        },
+        "football": {
+          "title": "⚽ Naptár a pályán",
+          "text": "A csapat a naptárban tervezi a meccseket! Játszunk a napokkal, a hónapokkal és az évszakokkal!"
+        },
+        "cooking": {
+          "title": "🍳 Naptár a konyhában",
+          "text": "A szakácsok minden nap más menüt főznek! Keresd meg, melyik nap és hónap jön soron!"
+        },
+        "animals": {
+          "title": "🦁 Naptár az állatkertben",
+          "text": "Az állatgondozók vezetik, melyik nap érkezik az új takarmány! Segíts a naptárban igazodni!"
+        },
+        "space": {
+          "title": "🤖 Naptár az űrhajón",
+          "text": "A bázis komputer a naptár szerint ütemezi a küldetéseket! Ismerd meg a napokat, hónapokat és évszakokat!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "calendar",
+      "options": {
+        "count": 5
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Egy hétben 7 nap, egy évben 12 hónap és 4 évszak van! Remekül igazodsz a naptárban!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ A startra már készen!",
+          "text": "Remekül ismered a naptárat, a verseny nemsokára indul! 🏁"
+        },
+        "football": {
+          "title": "⚽ Meccs jöhet!",
+          "text": "Jól tájékozódsz a naptárban, a csapat vár a pályán! 🎉"
+        },
+        "cooking": {
+          "title": "🍳 Finom heti menü!",
+          "text": "Ügyesen rendezted a napokat és hónapokat, a konyha készen áll! 🥖"
+        },
+        "animals": {
+          "title": "🦁 Minden állat elégedett!",
+          "text": "Jól igazodtál a naptárban, az állatoknak minden rendben! 🐾"
+        },
+        "space": {
+          "title": "🤖 Küldetés engedélyezve!",
+          "text": "A bázis szerint már minden a helyén van, indulhat a küldetés! 🛰️"
+        }
+      }
+    }
+  ]
+}

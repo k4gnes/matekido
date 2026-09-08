@@ -1,0 +1,36 @@
+.cal-prompt {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0.8rem 0 0.4rem;
+}
+
+.cal-options {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0.8rem 0;
+}
+
+.cal-option {
+    min-width: 88px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e293b;
+    background: #ffffff;
+    border: 2px solid #cbd5e1;
+    border-radius: 14px;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    transition: transform 0.1s ease, border-color 0.1s ease;
+}
+
+.cal-option:hover {
+    transform: scale(1.05);
+    border-color: #94a3b8;
+}
+
+.cal-option:disabled {
+    opacity: 0.7;
+}

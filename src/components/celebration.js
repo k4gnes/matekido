@@ -129,4 +129,8 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
     }
 
     root.append(card);
+
+    if (nextButton) {
+        nextButton.focus();
+    }
 }

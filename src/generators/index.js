@@ -11,7 +11,7 @@ import { generateSequence } from "./sequenceGenerator.js?v=4";
 import { generateOrder } from "./orderGenerator.js?v=3";
 import { generateEvenOdd } from "./evenOddGenerator.js?v=3";
 import { generatePattern } from "./patternGenerator.js?v=4";
-import { generateShapeSort } from "./shapeSortGenerator.js?v=3";
+import { generateShapeSort } from "./shapeSortGenerator.js?v=4";
 import { generateTime } from "./timeGenerator.js?v=5";
 import { generatePosition } from "./positionGenerator.js?v=4";
 import { generateMoneyPay } from "./moneyPayGenerator.js?v=4";
@@ -27,15 +27,19 @@ import { generateMissingOperand } from "./missingOperandGenerator.js?v=2";
 import { generateEstimate } from "./estimateGenerator.js?v=2";
 import { generateTrueFalse } from "./trueFalseGenerator.js?v=1";
 import { generateFindError } from "./findErrorGenerator.js?v=1";
-import { generateShapeCompare } from "./shapeCompareGenerator.js?v=1";
+import { generateShapeCompare } from "./shapeCompareGenerator.js?v=2";
 import { generateSolidShape } from "./solidShapeGenerator.js?v=1";
 import { generateWeight } from "./weightGenerator.js?v=1";
-import { generateVolume } from "./volumeGenerator.js?v=1";
+import { generateVolume } from "./volumeGenerator.js?v=2";
 import { generateMoneyChange } from "./moneyChangeGenerator.js?v=1";
 import { generatePlaceValueHundreds } from "./placeValueHundredsGenerator.js?v=1";
 import { generateNumberName } from "./numberNameGenerator.js?v=1";
 import { generateRounding } from "./roundingGenerator.js?v=2";
 import { generateRoman } from "./romanGenerator.js?v=1";
+import { generateTransform } from "./transformGenerator.js?v=1";
+import { generateSetMatch } from "./setMatchGenerator.js?v=1";
+import { generateDataChart } from "./dataChartGenerator.js?v=1";
+import { generateCalendar } from "./calendarGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -125,6 +129,14 @@ export function generate(step) {
             return generateRounding(opts);
         case "roman":
             return generateRoman(opts);
+        case "transform":
+            return generateTransform(opts);
+        case "set-match":
+            return generateSetMatch(opts);
+        case "data-chart":
+            return generateDataChart(opts);
+        case "calendar":
+            return generateCalendar(opts);
 
         default:
             throw new Error(

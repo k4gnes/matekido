@@ -1,0 +1,54 @@
+.tf-base {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .2rem;
+    margin: .5rem 0;
+}
+
+.tf-base svg {
+    width: 150px;
+    height: 150px;
+}
+
+.tf-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #475569;
+}
+
+.tf-prompt {
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: center;
+    color: #475569;
+    margin: .3rem 0 .6rem;
+}
+
+.tf-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .7rem;
+    margin: .8rem 0;
+}
+
+.tf-option {
+    background: #fff;
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    padding: .55rem;
+    cursor: pointer;
+    transition: transform .15s, box-shadow .15s;
+}
+
+.tf-option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
+}
+
+.tf-option svg {
+    display: block;
+    width: 110px;
+    height: 110px;
+}

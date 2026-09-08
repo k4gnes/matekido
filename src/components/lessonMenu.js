@@ -133,7 +133,12 @@ const TYPE_LABEL = {
     "place-value-hundreds": "Helyiérték (1000)",
     "number-name": "Számnevek",
     rounding: "Kerekítés",
-    roman: "Római számok"
+    roman: "Római számok",
+    volume: "Űrtartalom",
+    transform: "Forgatás",
+    "set-match": "Halmazok és válogatás",
+    "data-chart": "Adatok és diagramok",
+    calendar: "Naptár"
 };
 
 const RANGE_LABEL = {
@@ -346,7 +351,7 @@ function createFilterPanel(filters, onFilterChange) {
     const skillBtns = document.createElement("div");
     skillBtns.className = "filter-skill-btns";
 
-    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed", "true-false", "find-error", "place-value", "number-sequence", "ordering", "even-odd", "pattern", "estimation", "shapes", "shape-compare", "solid-shapes", "hour", "position", "coins", "length", "multiplication", "division", "missing-factor", "rounding", "number-names", "roman"];
+    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed", "true-false", "find-error", "place-value", "number-sequence", "ordering", "even-odd", "pattern", "estimation", "shapes", "shape-compare", "solid-shapes", "hour", "position", "coins", "length", "volume", "calendar", "multiplication", "division", "missing-factor", "rounding", "number-names", "roman", "transform", "sets", "data-charts"];
 
     usedSkills.forEach(skillId => {
         const skill = SKILLS[skillId];

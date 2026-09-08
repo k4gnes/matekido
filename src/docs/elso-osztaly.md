@@ -1,12 +1,12 @@
 # Matekidő – 1. osztályos készségtérkép
 
-**33 lecke**, 6 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**42 lecke**, 6 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 ---
 
-## Számfogalom (14 lecke)
+## Számfogalom (18 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
@@ -24,6 +24,10 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Helyiérték | Helyiérték 100-ig | Helyiérték | 100 | 1 |
 | Helyiérték | Helyiérték – tízes és egyes 100-ig | Helyiérték (tízes + egyes) | 100 | 1 |
 | Tízesátlépés | Tízesátlépés 20-ig | Tízesátlépés | 20 | 2 |
+| Becslés | Becslés 30-ig | Becslés | 30 | 1 |
+| Kerekítés | Kerekítés tízesre 100-ig | Kerekítés | 100 | 1 |
+| Halmazok | 🧺 Halmazok és válogatás | Halmazba illesztés (SVG alakzatok) | — | 1 |
+| Adatok | 📊 Melyikből van több? | Oszlopdiagram olvasása (SVG) | — | 1 |
 
 ## Műveletek (7 lecke)
 
@@ -33,26 +37,29 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Összeadás | Összeadás 20-ig átlépéssel | Összeadás | 20 | 2 |
 | Kivonás | Kivonás 20-ig | Kivonás | 20 | 1 |
 | Vegyes műveletek | Vegyes műveletek 20-ig | Vegyes műveletek | 20 | 2 |
-| Igaz/hamis | Igaz vagy hamis? 20-ig | Igaz/hamis | 20 | 1 |
-| Hibás számolás | Hibás számolás? 20-ig | Hibás számolás keresése | 20 | 1 |
-| Hiányzó tag | Hiányzó tag 20-ig | Hiányzó tag | 20 | 1 |
+| Igaz/hamis | ✅ Igaz vagy hamis? 20-ig | Igaz/hamis | 20 | 1 |
+| Hibás számolás | 🕵️ Hibás számolás? 20-ig | Hibás számolás keresése | 20 | 1 |
+| Hiányzó tag | ❓ Hiányzó tag 20-ig | Hiányzó tag | 20 | 1 |
 
 ## Szorzás-előkészítés (3 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
-| Egyenlő csoportok | Egyenlő csoportok 20-ig | Egyenlő csoportok | 20 | 1 |
-| Ismételt összeadás | Ismételt összeadás 20-ig | Ismételt összeadás | 20 | 1 |
-| Kettesével számolás | Számolás kettesével | Lépegetéses számolás | 20 | 1 |
+| Egyenlő csoportok | 🧩 Egyenlő csoportok 20-ig | Egyenlő csoportok | 20 | 1 |
+| Ismételt összeadás | 🧩 Ismételt összeadás 20-ig | Ismételt összeadás | 20 | 1 |
+| Kettesével számolás | 🧩 Számolás kettesével, ötösével | Lépegetéses számolás | 20 | 1 |
 
-## Geometria (2 lecke)
+## Geometria (5 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
 | Térbeli tájékozódás | Térbeli tájékozódás | Térbeli tájékozódás | — | 1 |
-| Alakzatok | Kerek, szögletes és háromszög | Alakzatok rendezése | — | 1 |
+| Alakzatok | Kerek, szögletes és háromszög | Alakzatok rendezése (SVG) | — | 1 |
+| Alakzat-tulajdonságok | 📐 Hány oldala van? | Oldalak számlálása (SVG) | — | 1 |
+| Térbeli testek | 🧊 Térbeli testek | Testek felismerése | — | 1 |
+| Forgatás | 🌀 Forgatás | Forgatás és tükrözés (L betű) | — | 1 |
 
-## Gyakorlati tudások (6 lecke)
+## Gyakorlati tudások (8 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
@@ -60,8 +67,10 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Pénz – összehasonlítás | Melyik pénztárcában van több? | Pénz összehasonlítása | — | 1 |
 | Pénz – elegendő? | Meg tudod venni? | Elegendő pénz? | — | 1 |
 | Idő | Idő – egész és fél óra | Óra olvasása | — | 1 |
+| Naptár | 🗓️ Naptár | Hét napjai, hónapok, évszakok, tegnap/ma/holnap | — | 1 |
 | Hosszúság | Melyik hosszabb? | Hosszúság összehasonlítása | — | 1 |
 | Hosszúság – mérés | Mérd meg négyzetekkel! | Mérés négyzetekkel | — | 1 |
+| Űrtartalom | Mennyi fér bele? 1. osztály | Űrtartalom ismerete | — | 1 |
 
 ## Szöveges feladatok (1 lecke)
 
@@ -75,25 +84,22 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 - **Helyiérték, összehasonlítás, hiányzó szám, számsor, rendezés, sorminta, páros/páratlan** – mindegyiknek van 100-ig bővített 2. osztályos párja.
 - **Összeadás/kivonás** – 20-igról 100-ig lép tovább (átlépés nélkül → átlépéssel).
-- **Alakzatok** – shape-sort folytatódik négyzet/téglalap témával.
-- **Pénz, idő, hosszúság** – a 2. osztályban nagyobb összegekkel és negyedórákkal folytatódik.
+- **Alakzatok és testek** – a shape-sort négyzet/téglalap témával, az alakzat-tulajdonságok és a testek a 2. osztályban lapok/élek számlálásával bővülnek.
+- **Becslés, kerekítés** – nagyobb számkörre (50 / 1000) és további kerekítési fokokra lép tovább.
+- **Pénz, idő, hosszúság** – a 2. osztályban nagyobb összegekkel és negyedórákkal folytatódik; az űrtartalom-témára a tömeg érkezik.
 
 ---
 
 ## Hiányzó készségek – tervezett leckék
 
-A fenti 33 lecke elkészült és regisztrálva van. A tantervben szereplő, még nem fedett készségek (a leckéket később tervezzük):
+A fenti 42 lecke elkészült és regisztrálva van. A tantervben szereplő, még nem fedett készség (a leckét később tervezzük):
 
-- [ ] **Naptár és időbeli tájékozódás**
-    - Hét napjai, hónapok, évszakok
-    - Tegnap / ma / holnap, napok és hetek
-- [ ] **Tömeg bevezetése** (kg, nehezebb–könnyebb)
-- [ ] **Űrtartalom bevezetése** (liter, több–kevesebb)
-- [ ] **Testek felismerése** (kocka, gömb, téglatest, henger)
-- [ ] **Tükrözés / szimmetria bevezetése** (tengelyes tükrözés)
+- [ ] **Tömeg bevezetése** (kg, nehezebb–könnyebb) – a súlypont a 2. osztályban
+
+A korábbi hiánylistából elkészült: űrtartalom (`Mennyi fér bele?`), térbeli testek (`🧊 Térbeli testek`), tükrözés/szimmetria (`🌀 Forgatás`), naptár (`🗓️ Naptár`), valamint két további tantervi készség (halmazok, adatok/diagramok).
 
 ---
 
 ## Státusz
 
-*(33 lecke kész. Hátralévő: 5 hiányzó készség a fenti listából – a leckék megtervezése későbbre ütemezve.)*
+*(42 lecke kész. Hátralévő: 1 hiányzó készség a fenti listából – tömeg, amely a 2. osztályos tömegleckéhez kapcsolódik.)*

@@ -10,6 +10,9 @@ import { renderPracticePage } from "./components/practicePage.js";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=2";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=2";
 import { getActiveId, listPlayers } from "./profile/UserManager.js";
+import { setActiveGrade } from "./profile/Profile.js";
+import { createCard } from "./components/ui/card.js";
+import { createButton } from "./components/ui/button.js";
 
 const root = document.getElementById("app");
 
@@ -96,7 +99,16 @@ async function startLesson(path) {
             onPractice: showPractice,
             onNext: () => {
                 const next = getNextLesson(path);
-                if (next) startLesson(next.file);
+                if (next) {
+                    startLesson(next.file);
+                    return;
+                }
+                const nextGrade = getNextGradeStart(path);
+                if (nextGrade) {
+                    showGradeChange(path, nextGrade);
+                    return;
+                }
+                showMenu();
             }
         },
         path,
@@ -119,6 +131,70 @@ function getNextLesson(path) {
     for (let i = idx + 1; i < allLessons.length; i++) {
         const candidate = allLessons[i];
         if (candidate.grades?.includes(grade)) {
+            return candidate;
+        }
+    }
+
+    return null;
+
+}
+
+function gradeLabel(grade) {
+    if (grade === 1) return "az 1. osztállyal";
+    if (grade === 2) return "a 2. osztállyal";
+    return "a 3. osztállyal";
+}
+
+function nextGradeLabel(grade) {
+    if (grade === 1) return "az 1. osztály";
+    if (grade === 2) return "a 2. osztály";
+    return "a 3. osztály";
+}
+
+function showGradeChange(path, next) {
+
+    const allLessons = lessonIndex.lessons || [];
+    const idx = allLessons.findIndex(l => l.file === path);
+    const grade = idx !== -1 ? allLessons[idx].grades?.[0] : null;
+
+    if (grade) {
+        setActiveGrade(grade + 1);
+    }
+
+    root.replaceChildren();
+
+    const card = createCard();
+
+    const title = document.createElement("h1");
+    title.textContent = grade ? `🎉 Elkészültél ${gradeLabel(grade)}!` : "🎉 Elkészültél!";
+
+    const text = document.createElement("p");
+    text.textContent = grade
+        ? `Most ${nextGradeLabel(grade + 1)} tananyaga következik!`
+        : "Következik a következő tananyag!";
+
+    const button = createButton("➡️ Következő", {
+        onClick: () => startLesson(next.file)
+    });
+
+    card.append(title, text, button);
+    root.append(card);
+
+    button.focus();
+
+}
+
+function getNextGradeStart(path) {
+
+    const allLessons = lessonIndex.lessons || [];
+    const idx = allLessons.findIndex(l => l.file === path);
+    if (idx === -1) return null;
+
+    const grade = allLessons[idx].grades?.[0];
+
+    for (let i = 0; i < allLessons.length; i++) {
+        const candidate = allLessons[i];
+        if (candidate.grades?.[0] === grade + 1) {
             return candidate;
         }
     }

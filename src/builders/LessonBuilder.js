@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=8";
+import { generate } from "../generators/index.js?v=12";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -385,6 +385,26 @@ export function buildLesson(lesson) {
                     options: task.options,
                     answer: task.answer,
                     direction: task.direction
+                });
+            } else if (step.generator === "transform") {
+                result.push({
+                    type: "transform",
+                    ...task
+                });
+            } else if (step.generator === "set-match") {
+                result.push({
+                    type: "set-match",
+                    ...task
+                });
+            } else if (step.generator === "data-chart") {
+                result.push({
+                    type: "data-chart",
+                    ...task
+                });
+            } else if (step.generator === "calendar") {
+                result.push({
+                    type: "calendar",
+                    ...task
                 });
             } else {
                 result.push({

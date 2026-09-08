@@ -2,7 +2,7 @@ export const CATEGORIES = {
     numbers: {
         title: "Számok",
         icon: "🔢",
-        skills: ["neighbours", "comparison", "ordering", "missing-number", "place-value", "rounding", "number-sequence", "even-odd", "pattern", "estimation", "number-names", "roman"]
+        skills: ["neighbours", "comparison", "ordering", "missing-number", "place-value", "rounding", "number-sequence", "even-odd", "pattern", "estimation", "number-names", "roman", "sets", "data-charts"]
     },
     operations: {
         title: "Összeadás-Kivonás",
@@ -22,7 +22,7 @@ export const CATEGORIES = {
     geometry: {
         title: "Geometria",
         icon: "📐",
-        skills: ["shapes", "shape-compare", "solid-shapes", "perimeter", "area", "position"]
+        skills: ["shapes", "shape-compare", "solid-shapes", "transform", "perimeter", "area", "position"]
     },
     wordProblems: {
         title: "Szöveges feladatok",
@@ -45,6 +45,8 @@ export const SKILLS = {
     estimation: { title: "Becslés", category: "numbers" },
     "number-names": { title: "Számnevek", category: "numbers" },
     roman: { title: "Római számok", category: "numbers" },
+    sets: { title: "Halmazok és válogatás", category: "numbers" },
+    "data-charts": { title: "Adatok és diagramok", category: "numbers" },
 
     // Operations
     addition: { title: "Összeadás", category: "operations" },
@@ -79,6 +81,7 @@ export const SKILLS = {
     shapes: { title: "Alakzatok", category: "geometry" },
     "shape-compare": { title: "Alakzatok összehasonlítása", category: "geometry" },
     "solid-shapes": { title: "Térbeli alakzatok", category: "geometry" },
+    transform: { title: "Forgatás és tükrözés", category: "geometry" },
     perimeter: { title: "Kerület", category: "geometry" },
     area: { title: "Terület", category: "geometry" },
     position: { title: "Térbeli tájékozódás", category: "geometry" },

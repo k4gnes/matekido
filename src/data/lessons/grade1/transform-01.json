@@ -1,0 +1,70 @@
+{
+  "id": "grade1-transform-01",
+  "title": "🌀 Forgatás 1. osztály",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🌀 Forgatás",
+      "text": "Nézd meg jól a mintát! Egy alakzatot el lehet forgatni – az ettől még ugyanaz az alakzat marad! De a tükörképe már más!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Forgatás a boxutcában",
+          "text": "A szerelők elforgatják az alkatrészeket, hogy a helyükre illenek! Találd ki, melyik ugyanaz, csak elforgatva!"
+        },
+        "football": {
+          "title": "⚽ Forgatás a pályán",
+          "text": "A zászlókat elforgatják a szélben! Találd ki, melyik ugyanaz, csak elforgatva!"
+        },
+        "cooking": {
+          "title": "🍳 Forgatás a konyhában",
+          "text": "A tepsit és a keverőt is el lehet forgatni! Találd ki, melyik ugyanaz, csak elforgatva!"
+        },
+        "animals": {
+          "title": "🦁 Forgatás az állatkertben",
+          "text": "Az állatok megforgatják a játékaikat! Találd ki, melyik ugyanaz, csak elforgatva!"
+        },
+        "space": {
+          "title": "🤖 Forgatás az űrhajón",
+          "text": "Az űrhajóban mindent el kell forgatni, hogy beférjen! Találd ki, melyik ugyanaz, csak elforgatva!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "transform",
+      "options": {
+        "count": 5
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Az elforgatott alakzat ugyanaz marad! De a tükörkép már más alakzat!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes vagy!",
+          "text": "Minden alkatrészt jól felismertél a boxutcában!"
+        },
+        "football": {
+          "title": "🎉 Ügyes vagy!",
+          "text": "Minden zászlót jól felismertél a pályán!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden eszközt jól felismertél a konyhában!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden játékot jól felismertél az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden alkatrészt jól felismertél az űrhajón!"
+        }
+      }
+    }
+  ]
+}

@@ -13,7 +13,9 @@ function pick(arr) {
 
 export function generateVolume(options = {}) {
 
-    const { count = 6, minRatio = 4 } = options;
+    const { count = 6, minRatio = 4, containers } = options;
+
+    const pool = containers ? CONTAINERS.filter(c => containers.includes(c.id)) : CONTAINERS;
 
     const tasks = [];
     const usedPairs = new Set();
@@ -22,8 +24,8 @@ export function generateVolume(options = {}) {
     while (tasks.length < count && attempts < count * 50) {
         attempts++;
 
-        const a = pick(CONTAINERS);
-        const b = pick(CONTAINERS);
+        const a = pick(pool);
+        const b = pick(pool);
 
         if (a.id === b.id) continue;
         if (a.dl > b.dl ? a.dl / b.dl < minRatio : b.dl / a.dl < minRatio) continue;

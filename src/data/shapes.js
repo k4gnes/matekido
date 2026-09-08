@@ -2,21 +2,21 @@ export const SHAPE_CATEGORIES = {
     circle: {
         label: "Kör",
         symbol: "⬤",
-        emojis: ["⚽", "🏀", "🎈", "🌍", "🍩", "🥎", "🍪", "⭕"]
+        kind: "circle"
     },
     triangle: {
         label: "Háromszög",
         symbol: "△",
-        emojis: ["🔺", "🔻", "📐", "⚠️", "🍕", "🔼", "🔽"]
+        kind: "triangle"
     },
     square: {
         label: "Négyzet",
         symbol: "□",
-        emojis: ["⬛", "⬜", "🟥", "🟦", "🟨", "🟩", "🟪", "🎲", "🧊"]
+        kind: "square"
     },
     rectangle: {
         label: "Téglalap",
         symbol: "▭",
-        emojis: ["📱", "📺", "💳", "📄", "📚", "🚪", "📷", "📰"]
+        kind: "rectangle"
     }
 };

@@ -1,0 +1,71 @@
+{
+  "id": "grade1-solid-shapes-01",
+  "title": "🧊 Térbeli testek 1. osztály",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧊 Térbeli testek",
+      "text": "Nézd meg jól a testeket! A kocka ugrálós, a labda egy gömb, a sodrófa egy henger! Ismerd fel, melyik testet látod!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Testek a boxutcában",
+          "text": "A szerelőknél mindenféle test van: dobozok, hengerek, labdák! Ismerd fel őket!"
+        },
+        "cooking": {
+          "title": "🍳 Testek a konyhában",
+          "text": "Kockacukor, tojás, sodrófa, tölcsér! Keresd meg, melyik testet látod!"
+        },
+        "football": {
+          "title": "⚽ Testek a pályán",
+          "text": "A labda gömb, a dobók dobókocka! Ismerd fel, melyik testet látod!"
+        },
+        "animals": {
+          "title": "🦁 Testek az állatkertben",
+          "text": "Az állatok játékai mind testek: kocka, gömb, henger! Ismerd fel őket!"
+        },
+        "space": {
+          "title": "🤖 Testek az űrhajón",
+          "text": "Az űrhajó alkatrészei testek! Ismerd fel, melyik testet látod!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "solid-shape",
+      "options": {
+        "count": 5,
+        "mode": "name"
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden testet felismertél! A kocka, a gömb, a henger, a kúp és a téglatest mind testek!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes vagy!",
+          "text": "Minden testet felismertél a boxutcában!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden testet felismertél a konyhában!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden testet felismertél a pályán!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden testet felismertél az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden testet felismertél az űrhajón!"
+        }
+      }
+    }
+  ]
+}

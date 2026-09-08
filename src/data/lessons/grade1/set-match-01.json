@@ -1,0 +1,70 @@
+{
+  "id": "grade1-set-match-01",
+  "title": "🧺 Halmazok és válogatás 1. osztály",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧺 Milyen alakzatok tartoznak ide?",
+      "text": "Nézd meg jól a halmazt a szaggatott dobozban! Találd ki, melyik alakzat illik bele!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Halmazválogatás a boxutcában",
+          "text": "A szerelők szépen csoportosítják az alkatrészeket! Találd ki, melyik illik a dobozba!"
+        },
+        "football": {
+          "title": "⚽ Halmazválogatás a pályán",
+          "text": "A felszerelést szépen el kell pakolni! Találd ki, melyik illik a dobozba!"
+        },
+        "cooking": {
+          "title": "🍳 Halmazválogatás a konyhában",
+          "text": "A konyhában mindent a helyére kell tenni! Találd ki, melyik illik a dobozba!"
+        },
+        "animals": {
+          "title": "🦁 Halmazválogatás az állatkertben",
+          "text": "Az állatok takarmányát csoportosítják! Találd ki, melyik illik a dobozba!"
+        },
+        "space": {
+          "title": "🤖 Halmazválogatás az űrhajón",
+          "text": "Az űrhajón minden alkatrésznek megvan a helye! Találd ki, melyik illik a dobozba!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "set-match",
+      "options": {
+        "count": 5
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden alakzatot jól a halmazba válogattál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes vagy!",
+          "text": "Minden alkatrészt jól válogattál a boxutcában!"
+        },
+        "football": {
+          "title": "🎉 Ügyes vagy!",
+          "text": "Minden felszerelést jól válogattál a pályán!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden eszközt jól válogattál a konyhában!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden takarmányt jól válogattál az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden alkatrészt jól válogattál az űrhajón!"
+        }
+      }
+    }
+  ]
+}

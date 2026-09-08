@@ -1,0 +1,70 @@
+{
+  "id": "grade1-data-chart-01",
+  "title": "📊 Melyikből van több? 1. osztály",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📊 Melyikből van több?",
+      "text": "A diagram oszlopai megmutatják, miből mennyi van! Aki magasabbra nyúlik, azzal van a több.",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Diagram a boxutcában",
+          "text": "A szerelők egy diagramon vezetik, mennyi műszerük van! Nézd meg a magasabb és az alacsonyabb oszlopokat!"
+        },
+        "football": {
+          "title": "⚽ Diagram a pályán",
+          "text": "A csapat egy diagramon számolja a felszerelést! Találd ki, miből van a legtöbb!"
+        },
+        "cooking": {
+          "title": "🍳 Diagram a konyhában",
+          "text": "A szakácsok egy diagramon írják össze a készleteket! Olvasd le a diagramról!"
+        },
+        "animals": {
+          "title": "🦁 Diagram az állatkertben",
+          "text": "Az állatgondozók diagramon jegyzik az állatok takarmányát! Nézd meg a diagramot!"
+        },
+        "space": {
+          "title": "🤖 Diagram az űrhajón",
+          "text": "A bázis komputer egy diagramon mutatja a készleteket! Olvasd le az oszlopokról!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "data-chart",
+      "options": {
+        "count": 5
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "A legmagasabb oszlop mutatja a legtöbbet, a legalacsonyabb a legkevesebbet! Jól olvastad a diagramot!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Nagyon ügyes csapat!",
+          "text": "Remekül leolvastad a diagramot a boxutcában! 🏁"
+        },
+        "football": {
+          "title": "⚽ Remek meccs!",
+          "text": "Jól olvastad a diagramot, a csapat büszke rád! GOOOL! 🎉"
+        },
+        "cooking": {
+          "title": "🍳 Finom lett a munka!",
+          "text": "Ügyesen számostad le a konyhai készleteket! 🥖"
+        },
+        "animals": {
+          "title": "🦁 Az állatok hálásak!",
+          "text": "Jól leolvastad a diagramot, minden állat elégedett! 🐾"
+        },
+        "space": {
+          "title": "🤖 Kapcsolat visszaállt!",
+          "text": "A bázis jól fogadta az űrhajó jelzését, ügyesen leolvastad a diagramot! 🛰️"
+        }
+      }
+    }
+  ]
+}

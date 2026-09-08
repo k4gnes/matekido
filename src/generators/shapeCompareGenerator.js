@@ -19,18 +19,18 @@ const POLYGONS = {
 
 const KINDS = Object.keys(POLYGONS);
 
-function buildSides() {
-    const kinds = shuffle([...KINDS]);
+function buildSides(kinds) {
+    const pool = shuffle([...kinds]);
     const flip = Math.random() < 0.5;
-    const left = flip ? kinds[1] : kinds[0];
-    const right = flip ? kinds[0] : kinds[1];
+    const left = flip ? pool[1] : pool[0];
+    const right = flip ? pool[0] : pool[1];
 
     return {
         type: "shape-compare",
         mode: "sides",
         question: Math.random() < 0.5
             ? "Melyik alakzatnak van több oldala?"
-            : "Melyik alakzatnak vannak több sarka?",
+            : "Melyik alakzatnak van több sarka?",
         left: { kind: left, size: 64 },
         right: { kind: right, size: 64 },
         answer: POLYGONS[left].sides > POLYGONS[right].sides ? "left" : "right"
@@ -54,12 +54,12 @@ function buildSize() {
 }
 
 export function generateShapeCompare(options = {}) {
-    const { count = 8, mode = "mixed" } = options;
+    const { count = 8, mode = "mixed", kinds = KINDS } = options;
 
     const tasks = [];
     for (let i = 0; i < count; i++) {
         const m = mode === "mixed" ? (Math.random() < 0.6 ? "sides" : "size") : mode;
-        tasks.push(m === "size" ? buildSize() : buildSides());
+        tasks.push(m === "size" ? buildSize() : buildSides(kinds));
     }
     return tasks;
 }

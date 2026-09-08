@@ -1,0 +1,72 @@
+{
+  "id": "grade1-volume-01",
+  "title": "Mennyi fér bele? 1. osztály",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧴 Mennyi fér bele?",
+      "text": "A bögre, a palack, a liter tej és a kancsó – mind mindennapi edények! Találd ki, melyikbe fér több!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Mennyi fér a tankba?",
+          "text": "Nézd meg a két edényt! Találd ki, melyikbe fér több és melyikbe kevesebb!"
+        },
+        "football": {
+          "title": "⚽ Mennyi víz kell?",
+          "text": "Nézd meg a két edényt! Találd ki, melyikbe fér több és melyikbe kevesebb!"
+        },
+        "cooking": {
+          "title": "🍳 Mennyi fér bele?",
+          "text": "A konyhában sok edény van. Találd ki a két edény közül, melyikbe fér több!"
+        },
+        "animals": {
+          "title": "🦁 Mennyi vizet isznak?",
+          "text": "Az állatoknak sok víz kell! Találd ki a két edény közül, melyikbe fér több!"
+        },
+        "space": {
+          "title": "🤖 Mennyi fér a tartályba?",
+          "text": "Nézd meg a két tartályt! Találd ki, melyikbe fér több és melyikbe kevesebb!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "volume",
+      "options": {
+        "count": 5,
+        "minRatio": 4,
+        "containers": ["kanal", "bogre", "palack", "tej", "kancso"]
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden edényt jól összehasonlítottál! A bögre, a palack és a kancsó mind mindennapi edények!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes vagy!",
+          "text": "Minden edényt jól összehasonlítottál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes vagy!",
+          "text": "Minden edényt jól összehasonlítottál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden edényt jól összehasonlítottál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden edényt jól összehasonlítottál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden tartályt jól összehasonlítottál!"
+        }
+      }
+    }
+  ]
+}

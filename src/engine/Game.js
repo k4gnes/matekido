@@ -1,5 +1,6 @@
-import { renderScene } from "../components/scene.js?v=2";
+import { renderScene } from "../components/scene.js?v=3";
 import { createInstructionHelp } from "../components/ui/instruction.js";
+import { createExitButton } from "../components/ui/exit.js";
 import { renderExercise } from "../components/exercise.js?v=3";
 import { renderDecomposition } from "../components/decomposition.js?v=2";
 import { renderDecompositionFindWrong } from "../components/decompositionFindWrong.js?v=2";
@@ -39,7 +40,7 @@ import { renderPlaceValueHundreds } from "../components/placeValueHundreds.js?v=
 import { renderNumberName } from "../components/numberName.js?v=2";
 import { renderRounding } from "../components/rounding.js?v=2";
 import { renderRoman } from "../components/roman.js?v=2";
-import { renderTransform } from "../components/transform.js?v=1";
+import { renderTransform } from "../components/transform.js?v=2";
 import { renderSetMatch } from "../components/setMatch.js?v=1";
 import { renderDataChart } from "../components/dataChart.js?v=2";
 import { renderCalendar } from "../components/calendar.js?v=1";
@@ -99,7 +100,7 @@ const COUNTED_TYPES = new Set([
 const isCounted = s => COUNTED_TYPES.has(s.type);
 
 
-import { renderCelebration } from "../components/celebration.js?v=6";
+import { renderCelebration } from "../components/celebration.js?v=7";
 import { renderProgress } from "../components/progress.js?v=2";
 import { renderMissingProgress } from "../components/missingProgress.js?v=3";
 import { renderComparisonProgress } from "../components/comparisonProgress.js?v=3";
@@ -389,8 +390,16 @@ export class Game {
         const card = this.root.querySelector(".card");
         const helpTitle = this.instructionTitle ?? step.title;
         const helpText = this.instructionText ?? step.text;
-        if (card && (helpTitle || helpText)) {
-            card.append(createInstructionHelp(helpTitle, helpText));
+        if (card) {
+            const cornerBar = document.createElement("div");
+            cornerBar.className = "corner-buttons";
+            if (helpTitle || helpText) {
+                cornerBar.append(createInstructionHelp(helpTitle, helpText));
+            }
+            if (this.onExit) {
+                cornerBar.append(createExitButton(this.onExit));
+            }
+            card.insertBefore(cornerBar, card.firstChild);
         }
 
     }

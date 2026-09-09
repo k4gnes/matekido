@@ -26,7 +26,7 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
         })
         : null;
 
-    const menuButton = createButton("📚 Leckék", {
+    const menuButton = createButton("📚 Feladatok", {
         onClick: () => actions.onExit?.()
     });
 

@@ -76,26 +76,26 @@ export function renderTransform(step, root, next, progress, onResult, onAttempt)
     card.append(title);
 
     const baseWrap = document.createElement("div");
-    baseWrap.className = "tf-base";
+    baseWrap.className = "tr-base";
     baseWrap.append(createShapeSvg(step.base, "#f59e0b"));
     const baseLabel = document.createElement("span");
-    baseLabel.className = "tf-label";
+    baseLabel.className = "tr-label";
     baseLabel.textContent = "minta";
     baseWrap.append(baseLabel);
     card.append(baseWrap);
 
     const prompt = document.createElement("p");
-    prompt.className = "tf-prompt";
+    prompt.className = "tr-prompt";
     prompt.textContent = "Melyik alakzat ugyanaz, mint a minta, csak elforgatva?";
     card.append(prompt);
 
     const optionsContainer = document.createElement("div");
-    optionsContainer.className = "tf-options";
+    optionsContainer.className = "tr-options";
 
     step.options.forEach((cells, index) => {
         const btn = document.createElement("button");
         btn.type = "button";
-        btn.className = "tf-option";
+        btn.className = "tr-option";
         btn.dataset.index = index;
         btn.append(createShapeSvg(cells, "#3b82f6"));
         optionsContainer.append(btn);
@@ -133,7 +133,7 @@ export function renderTransform(step, root, next, progress, onResult, onAttempt)
     }
 
     optionsContainer.addEventListener("click", (e) => {
-        const btn = e.target.closest(".tf-option");
+        const btn = e.target.closest(".tr-option");
         if (!btn || feedback.isAnswered()) return;
 
         const ok = Number(btn.dataset.index) === step.answer;

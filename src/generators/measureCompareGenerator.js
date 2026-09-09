@@ -1,4 +1,4 @@
-import { COMPARE_OBJECTS } from "../data/measure.js?v=3";
+import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "../data/measure.js?v=4";
 
 const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
@@ -10,8 +10,8 @@ function shuffle(arr) {
     return arr;
 }
 
-function makeCompareTask() {
-    const pool = [...COMPARE_OBJECTS];
+function makeCompareTask(world) {
+    const pool = [...(COMPARE_OBJECTS_WORLD[world] || COMPARE_OBJECTS)];
     const a = pool.splice(Math.floor(Math.random() * pool.length), 1)[0];
     const b = pool[Math.floor(Math.random() * pool.length)];
 
@@ -51,5 +51,5 @@ function makeCompareTask() {
 
 export function generateMeasureCompare(options = {}) {
     const count = options.count ?? 6;
-    return Array.from({ length: count }, makeCompareTask);
+    return Array.from({ length: count }, () => makeCompareTask(options.world));
 }

@@ -397,7 +397,7 @@ export function renderStatsPage(root, onBack) {
     });
     profileButton.className = "profile-page-button";
 
-    const lessonsButton = createButton("📚 Leckék", {
+    const lessonsButton = createButton("📚 Feladatok", {
         onClick: () => onBack("lessons")
     });
     lessonsButton.className = "profile-page-button";

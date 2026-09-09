@@ -73,6 +73,7 @@ const SW_CACHE_LIST = [
     "/components/ui/card.js",
     "/components/ui/coin.js",
     "/components/ui/exerciseShell.js",
+    "/components/ui/exit.js",
     "/components/ui/feedback.js",
     "/components/ui/hintBox.js",
     "/components/ui/inputHelper.js",

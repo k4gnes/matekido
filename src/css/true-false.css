@@ -24,16 +24,16 @@
 
 .tf-option {
     margin: 0;
-    padding: 1rem 2.2rem;
-    font-size: 1.4rem;
-    font-weight: 800;
-    border: 2px solid var(--primary);
-    border-radius: 14px;
-    background: var(--primary);
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+    border: none;
+    border-radius: 12px;
+    background: #4F86F7;
+    background: var(--primary, #4F86F7);
     color: #fff;
     cursor: pointer;
-    transition: transform .15s, border-color .15s, background-color .15s;
-    min-width: 140px;
+    transition: transform .15s, background-color .15s;
 }
 
 .tf-option:hover {
@@ -41,11 +41,15 @@
 }
 
 .tf-true:hover {
-    border-color: #22c55e;
     background: #22c55e;
 }
 
 .tf-false:hover {
-    border-color: #ef4444;
     background: #ef4444;
+}
+
+.tf-options .option-correct {
+    background: #22c55e !important;
+    border-color: #22c55e !important;
+    color: #fff !important;
 }

@@ -185,7 +185,7 @@ export function renderProfilePage(lessonIndex, root, onBack, onStats, onPractice
     });
     statsButton.className = "profile-page-button";
 
-    const menuButton = createButton("📚 Leckék", {
+    const menuButton = createButton("📚 Feladatok", {
         onClick: () => onBack()
     });
     menuButton.className = "profile-page-button";

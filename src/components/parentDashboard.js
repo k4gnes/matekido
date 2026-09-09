@@ -129,6 +129,29 @@ function computeWeakLessons(player, lessonIndex) {
 
 }
 
+function computeSkippedLessons(player, lessonIndex) {
+
+    const skipped = player.profile?.skippedLessons ?? [];
+    if (!Array.isArray(skipped) || skipped.length === 0) return [];
+
+    const byFile = new Map((lessonIndex.lessons || []).map(l => [l.file, l]));
+
+    return skipped.map(file => {
+        const lesson = byFile.get(file);
+        return lesson ? lesson.title : file;
+    });
+
+}
+
+function createSkippedNote(skippedTitles) {
+
+    const note = document.createElement("p");
+    note.className = "parent-weekly-note";
+    note.textContent = `⏭️ Kihagyott feladatok (${skippedTitles.length}): ${skippedTitles.join(", ")} – csak ezek pótlása után léphet a 2. osztályra.`;
+    return note;
+
+}
+
 function createWeakRow(title, detail, percentage) {
 
     const row = document.createElement("div");
@@ -325,6 +348,11 @@ function createPlayerCard(player, accent, lessonIndex) {
         : "Nincs még heti adat ehhez a játékoshoz.";
 
     card.append(chartLabel, chart, legend, note, createWeakSection(player, lessonIndex));
+
+    const skippedTitles = computeSkippedLessons(player, lessonIndex);
+    if (skippedTitles.length > 0) {
+        card.append(createSkippedNote(skippedTitles));
+    }
 
     return card;
 }

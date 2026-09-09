@@ -105,6 +105,7 @@ export function renderPracticePage(lessonIndex, root, onSelect, onBack) {
         empty.textContent = "Nincs gyakorlandó feladat. 🎉";
         card.append(empty);
     } else {
+
         const next = pickNextLesson(lessonIndex, weakLessonFiles);
 
         const nextTitle = document.createElement("h2");

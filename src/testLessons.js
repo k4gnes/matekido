@@ -15,6 +15,7 @@ const ROOT = new URL("./", import.meta.url);
 import { buildLesson } from "./builders/LessonBuilder.js?v=14";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
+import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
 
 const INDEX_ANSWER_TYPES = new Set(["calendar", "data-chart"]);
 
@@ -279,6 +280,16 @@ function validateLesson(built, ctx) {
 
 const index = readJson("data/lessons/index.json");
 const lessons = index.lessons.filter(l => l.grades && l.grades.includes(1));
+
+const indexIds = new Set(index.lessons.map(l => l.id));
+
+for (const [grade, ids] of Object.entries(CONSOLIDATION_LESSONS)) {
+    for (const id of ids) {
+        if (!indexIds.has(id)) {
+            fail(`consolidation/grade${grade}`, `nem létező lecke: ${id}`);
+        }
+    }
+}
 
 let builds = 0;
 

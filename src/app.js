@@ -1,16 +1,17 @@
-import { Game } from "./engine/Game.js?v=31";
+import { Game } from "./engine/Game.js?v=34";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=14";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=9";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=14";
 import { renderSkillMap } from "./components/skillMap.js?v=8";
 import { renderHelp } from "./components/help.js?v=2";
 import { renderProfilePage } from "./components/profilePage.js";
 import { renderStatsPage } from "./components/statsPage.js?v=2";
-import { renderPracticePage } from "./components/practicePage.js";
+import { renderPracticePage } from "./components/practicePage.js?v=4";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=2";
-import { renderParentDashboard } from "./components/parentDashboard.js?v=2";
+import { renderParentDashboard } from "./components/parentDashboard.js?v=3";
 import { getActiveId, listPlayers } from "./profile/UserManager.js";
-import { setActiveGrade } from "./profile/Profile.js";
+import { setActiveGrade, getActiveGrade, getFavoriteLessons, recordLessonSkip, getSkippedLessons } from "./profile/Profile.js";
+import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
 import { createCard } from "./components/ui/card.js";
 import { createButton } from "./components/ui/button.js";
 
@@ -76,7 +77,7 @@ function showStats() {
     });
 }
 
-async function startLesson(path) {
+async function startLesson(path, opts = {}) {
 
     const rawLesson = await loadLesson(path);
 
@@ -93,22 +94,16 @@ async function startLesson(path) {
         lesson,
         root,
         {
-            onRestart: () => startLesson(path),
+            onRestart: () => startLesson(path, opts),
             onExit: showMenu,
             onProfile: showProfile,
             onPractice: showPractice,
-            onNext: () => {
-                const next = getNextLesson(path);
-                if (next) {
-                    startLesson(next.file);
-                    return;
+            onNext: () => continueToNext(path, opts),
+            onSkipNext: () => {
+                if (!opts.from) {
+                    recordLessonSkip(path);
                 }
-                const nextGrade = getNextGradeStart(path);
-                if (nextGrade) {
-                    showGradeChange(path, nextGrade);
-                    return;
-                }
-                showMenu();
+                continueToNext(path, opts);
             }
         },
         path,
@@ -117,6 +112,52 @@ async function startLesson(path) {
     );
 
     game.start();
+
+}
+
+function continueToNext(path, opts = {}) {
+
+    if (opts.from === "consolidation" || opts.from === "favorites") {
+        const files = opts.from === "consolidation" ? getConsolidationFiles() : getFavoriteFiles();
+        const idx = files.indexOf(path);
+        if (idx !== -1) {
+            const next = files[idx + 1];
+            if (next) {
+                startLesson(next, opts);
+                return;
+            }
+        }
+        showMenu();
+        return;
+    }
+
+    const next = getNextLesson(path);
+    if (next) {
+        startLesson(next.file);
+        return;
+    }
+    const nextGrade = getNextGradeStart(path);
+    if (nextGrade) {
+        showGradeChange(path, nextGrade);
+        return;
+    }
+    showMenu();
+
+}
+
+function getConsolidationFiles() {
+
+    const grade = getActiveGrade();
+    const ids = CONSOLIDATION_LESSONS[grade] || CONSOLIDATION_LESSONS[1] || [];
+    const byId = new Map((lessonIndex.lessons || []).map(l => [l.id, l]));
+    return ids.map(id => byId.get(id)?.file).filter(Boolean);
+
+}
+
+function getFavoriteFiles() {
+
+    const files = new Set((lessonIndex.lessons || []).map(l => l.file));
+    return getFavoriteLessons().filter(f => files.has(f));
 
 }
 
@@ -158,6 +199,33 @@ function showGradeChange(path, next) {
     const grade = idx !== -1 ? allLessons[idx].grades?.[0] : null;
 
     if (grade) {
+        const skippedCount = getSkippedLessons().filter(file =>
+            allLessons.some(l => l.grades?.includes(grade) && l.file === file)
+        ).length;
+
+        if (skippedCount > 0) {
+            root.replaceChildren();
+
+            const card = createCard();
+
+            const title = document.createElement("h1");
+            title.textContent = `🔒 Még nem léphetsz ${nextGradeLabel(grade + 1)}ra!`;
+
+            const text = document.createElement("p");
+            text.textContent = `A feladatlistán kihagytál ${skippedCount} feladatot. Előbb oldd meg őket, csak utána jöhet a ${nextGradeLabel(grade + 1)}.`;
+
+            const button = createButton("🔙 Vissza a feladatokhoz", {
+                onClick: showMenu
+            });
+
+            card.append(title, text, button);
+            root.append(card);
+
+            button.focus();
+
+            return;
+        }
+
         setActiveGrade(grade + 1);
     }
 

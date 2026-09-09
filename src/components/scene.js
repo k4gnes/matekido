@@ -1,7 +1,8 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
+import { isFavoriteLesson, toggleFavoriteLesson } from "../profile/Profile.js";
 
-export function renderScene(step, root, next, progress, activeWorld, onExit, lessonPos) {
+export function renderScene(step, root, next, progress, activeWorld, onExit, lessonPos, onSkipNext, lessonFile) {
     root.innerHTML = "";
 
     const worldStep = activeWorld ? step.worldTitles?.[activeWorld] : null;
@@ -35,6 +36,41 @@ export function renderScene(step, root, next, progress, activeWorld, onExit, les
     }, { signal: ac.signal });
 
     const card = createCard();
+
+    const cornerBar = document.createElement("div");
+    cornerBar.className = "corner-buttons";
+
+    if (lessonFile) {
+        const isFav = isFavoriteLesson(lessonFile);
+        const favBtn = document.createElement("button");
+        favBtn.type = "button";
+        favBtn.className = "exercise-fav";
+        favBtn.textContent = isFav ? "❤️" : "🤍";
+        favBtn.title = isFav ? "Kedvencekből törlés" : "Kedvencekhez adás";
+        favBtn.setAttribute("aria-label", "Kedvenc váltása");
+        favBtn.addEventListener("click", () => {
+            const nowFav = toggleFavoriteLesson(lessonFile);
+            favBtn.textContent = nowFav ? "❤️" : "🤍";
+            favBtn.title = nowFav ? "Kedvencekből törlés" : "Kedvencekhez adás";
+        });
+        cornerBar.append(favBtn);
+    }
+
+    if (onSkipNext) {
+        const skipBtn = document.createElement("button");
+        skipBtn.type = "button";
+        skipBtn.className = "exercise-fav";
+        skipBtn.textContent = "⏭️";
+        skipBtn.title = "Következő feladat – kihagyom ezt most";
+        skipBtn.setAttribute("aria-label", "Következő feladat");
+        skipBtn.addEventListener("click", () => {
+            ac.abort();
+            onSkipNext();
+        });
+        cornerBar.append(skipBtn);
+    }
+
+    card.insertBefore(cornerBar, card.firstChild);
 
     if (progress) {
         card.append(progress);

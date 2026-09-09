@@ -1,4 +1,4 @@
-import { renderScene } from "../components/scene.js?v=3";
+import { renderScene } from "../components/scene.js?v=4";
 import { createInstructionHelp } from "../components/ui/instruction.js";
 import { createExitButton } from "../components/ui/exit.js";
 import { renderExercise } from "../components/exercise.js?v=3";
@@ -22,7 +22,7 @@ import { renderMoneyPay } from "../components/moneyPay.js?v=13";
 import { renderMoneyCompare } from "../components/moneyCompare.js?v=13";
 import { renderMoneyEnough } from "../components/moneyEnough.js?v=13";
 import { renderMeasureCompare } from "../components/measureCompare.js?v=13";
-import { renderMeasureSquares } from "../components/measureSquares.js?v=13";
+import { renderMeasureSquares } from "../components/measureSquares.js?v=14";
 import { renderWordProblem } from "../components/wordProblem.js?v=18";
 import { renderMultPrep } from "../components/multPrep.js?v=7";
 import { renderMultiplication } from "../components/multiplication.js?v=5";
@@ -106,7 +106,7 @@ import { renderMissingProgress } from "../components/missingProgress.js?v=3";
 import { renderComparisonProgress } from "../components/comparisonProgress.js?v=3";
 import { renderNeighborProgress } from "../components/neighborProgress.js?v=3";
 
-import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, recordSkillResult, getActiveWorld } from "../profile/Profile.js";
+import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, recordSkillResult, getActiveWorld, isFavoriteLesson, toggleFavoriteLesson } from "../profile/Profile.js";
 import { grantRewards } from "../profile/RewardService.js";
 
 const SKILL_BY_TYPE = {
@@ -191,6 +191,7 @@ export class Game {
         this.onProfile = actions.onProfile;
         this.onPractice = actions.onPractice;
         this.onNext = actions.onNext;
+        this.onSkipNext = actions.onSkipNext;
     }
 
     getLessonPosition() {
@@ -325,7 +326,7 @@ export class Game {
             this.instructionTitle = worldStep?.title ?? step.title;
             this.instructionText = worldStep?.text ?? step.text;
             const lessonPos = this.getLessonPosition();
-            renderScene(step, this.root, () => this.next(), progress, getActiveWorld(), this.onExit, lessonPos);
+            renderScene(step, this.root, () => this.next(), progress, getActiveWorld(), this.onExit, lessonPos, this.onSkipNext, this.lessonFile);
             return;
         }
 
@@ -395,6 +396,21 @@ export class Game {
             cornerBar.className = "corner-buttons";
             if (helpTitle || helpText) {
                 cornerBar.append(createInstructionHelp(helpTitle, helpText));
+            }
+            if (this.lessonFile) {
+                const isFav = isFavoriteLesson(this.lessonFile);
+                const favBtn = document.createElement("button");
+                favBtn.type = "button";
+                favBtn.className = "exercise-fav";
+                favBtn.textContent = isFav ? "❤️" : "🤍";
+                favBtn.title = isFav ? "Kedvencekből törlés" : "Kedvencekhez adás";
+                favBtn.setAttribute("aria-label", "Kedvenc váltása");
+                favBtn.addEventListener("click", () => {
+                    const nowFav = toggleFavoriteLesson(this.lessonFile);
+                    favBtn.textContent = nowFav ? "❤️" : "🤍";
+                    favBtn.title = nowFav ? "Kedvencekből törlés" : "Kedvencekhez adás";
+                });
+                cornerBar.append(favBtn);
             }
             if (this.onExit) {
                 cornerBar.append(createExitButton(this.onExit));

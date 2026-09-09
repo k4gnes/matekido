@@ -100,6 +100,28 @@
     transform: scale(1.1);
 }
 
+.exercise-fav {
+    width: 2rem;
+    height: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    border: none;
+    user-select: none;
+    z-index: 5;
+}
+
+.exercise-fav:hover {
+    transform: scale(1.1);
+}
+
 .confirm-exit {
     background: var(--primary);
     color: #fff;

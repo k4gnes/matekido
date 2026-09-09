@@ -2,8 +2,9 @@ import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { loadJSON, saveJSON, loadRaw, saveRaw } from "../storage.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
-import { getLessonStats, getActiveWorld, getActiveGrade, setActiveGrade } from "../profile/Profile.js";
+import { getLessonStats, getActiveWorld, getActiveGrade, setActiveGrade, getFavoriteLessons, isFavoriteLesson, toggleFavoriteLesson } from "../profile/Profile.js";
 import { CATEGORIES, SKILLS } from "../data/skills.js";
+import { CONSOLIDATION_LESSONS } from "../data/consolidation.js";
 
 const FILTER_STORAGE_KEY = "matekido-lesson-filters";
 const FILTER_OPEN_KEY = "matekido-lesson-filters-open";
@@ -162,7 +163,7 @@ const DIFFICULTY_LABEL = {
     4: "Mester"
 };
 
-export function createLessonCard(lesson, onSelect, activeWorld, position, total) {
+export function createLessonCard(lesson, onSelect, activeWorld, position, total, selectOpts) {
     const lessonCard = document.createElement("div");
     lessonCard.className = "lesson-card";
 
@@ -206,6 +207,21 @@ export function createLessonCard(lesson, onSelect, activeWorld, position, total)
         badges.append(gradeBadge);
     }
 
+    const isFav = isFavoriteLesson(lesson.file);
+    const favBtn = document.createElement("button");
+    favBtn.className = "lesson-fav-btn" + (isFav ? " active" : "");
+    favBtn.textContent = isFav ? "❤️" : "🤍";
+    favBtn.title = isFav ? "Kedvencekből törlés" : "Kedvencekhez adás";
+    favBtn.setAttribute("aria-label", "Kedvenc váltása");
+    favBtn.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const nowFav = toggleFavoriteLesson(lesson.file);
+        favBtn.textContent = nowFav ? "❤️" : "🤍";
+        favBtn.classList.toggle("active", nowFav);
+        favBtn.title = nowFav ? "Kedvencekből törlés" : "Kedvencekhez adás";
+    });
+    badges.append(favBtn);
+
     lessonCard.append(badges, title, subtitle);
 
     const stats = getLessonStats(lesson.file);
@@ -219,10 +235,45 @@ export function createLessonCard(lesson, onSelect, activeWorld, position, total)
     }
 
     lessonCard.addEventListener("click", () => {
-        onSelect(lesson.file);
+        onSelect(lesson.file, selectOpts);
     });
 
     return lessonCard;
+}
+
+function createPickerSection(title, lessons, onSelect, activeWorld, selectOpts) {
+    const card = createCard("picker-card");
+
+    const heading = document.createElement("h3");
+    heading.className = "category-title";
+    heading.textContent = title;
+    card.append(heading);
+
+    const grid = document.createElement("div");
+    grid.className = "next-lesson-card";
+    grid.append(createLessonCard(lessons[0], onSelect, activeWorld, undefined, undefined, selectOpts));
+    card.append(grid);
+
+    if (lessons.length > 1) {
+        const note = document.createElement("p");
+        note.className = "lesson-card-subtitle";
+        note.textContent = "Folytatásként a lista következő feladata jön, a végéig.";
+        card.append(note);
+    }
+
+    return card;
+}
+
+function createPickerRow(sections) {
+    const row = document.createElement("div");
+    row.className = "picker-row";
+    sections.forEach(section => {
+        const column = document.createElement("div");
+        column.className = "picker-column";
+        column.append(section);
+        row.append(column);
+    });
+    return row;
 }
 
 function createCategorySection(categoryKey, lessons, onSelect, activeWorld, positionMap) {
@@ -639,6 +690,12 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
             grid.className = "next-lesson-card";
             grid.append(createLessonCard(next, onSelect, activeWorld, nextIdx + 1, gradeLessons.length));
             nextCard.append(grid);
+
+            const nextNote = document.createElement("p");
+            nextNote.className = "lesson-card-subtitle";
+            nextNote.textContent = "Ez az, ami legközelebb rád vár.";
+            nextCard.append(nextNote);
+
             contentArea.append(nextCard);
         }
 
@@ -663,6 +720,39 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
 
         browseWrap.append(renderBrowseLessons(gradeLessons));
         contentArea.append(browseWrap);
+
+        const byId = new Map(allLessons.map(l => [l.id, l]));
+        const consolidationIds = CONSOLIDATION_LESSONS[selectedGrade] || CONSOLIDATION_LESSONS[1] || [];
+        const consolidationLessons = consolidationIds.map(id => byId.get(id)).filter(Boolean);
+
+        const byFile = new Map(allLessons.map(l => [l.file, l]));
+        const favoriteLessons = getFavoriteLessons().map(f => byFile.get(f)).filter(Boolean);
+
+        const pickerSections = [];
+
+        if (consolidationLessons.length > 0) {
+            pickerSections.push(createPickerSection(
+                `🔁 Erősítő feladatok (${consolidationLessons.length}) – ezeket érdemes ismételni`,
+                consolidationLessons,
+                onSelect,
+                activeWorld,
+                { from: "consolidation" }
+            ));
+        }
+
+        if (favoriteLessons.length > 0) {
+            pickerSections.push(createPickerSection(
+                `❤️ Kedvenceim (${favoriteLessons.length})`,
+                favoriteLessons,
+                onSelect,
+                activeWorld,
+                { from: "favorites" }
+            ));
+        }
+
+        if (pickerSections.length > 0) {
+            contentArea.append(createPickerRow(pickerSections));
+        }
     }
 
     function renderBrowseLessons(gradeLessons) {

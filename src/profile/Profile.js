@@ -237,6 +237,64 @@ export function getLessonStats(lessonFile) {
 
 }
 
+export function getFavoriteLessons() {
+
+    const profile = loadProfile();
+    return Array.isArray(profile.favorites) ? profile.favorites : [];
+
+}
+
+export function isFavoriteLesson(lessonFile) {
+
+    return getFavoriteLessons().includes(lessonFile);
+
+}
+
+export function toggleFavoriteLesson(lessonFile) {
+
+    const profile = loadProfile();
+
+    if (!Array.isArray(profile.favorites)) {
+        profile.favorites = [];
+    }
+
+    const idx = profile.favorites.indexOf(lessonFile);
+
+    if (idx >= 0) {
+        profile.favorites.splice(idx, 1);
+    } else {
+        profile.favorites.push(lessonFile);
+    }
+
+    saveProfile(profile);
+
+    return isFavoriteLesson(lessonFile);
+
+}
+
+export function getSkippedLessons() {
+
+    const profile = loadProfile();
+    return Array.isArray(profile.skippedLessons) ? profile.skippedLessons : [];
+
+}
+
+export function recordLessonSkip(lessonFile) {
+
+    const profile = loadProfile();
+
+    if (!Array.isArray(profile.skippedLessons)) {
+        profile.skippedLessons = [];
+    }
+
+    if (!profile.skippedLessons.includes(lessonFile)) {
+        profile.skippedLessons.push(lessonFile);
+    }
+
+    saveProfile(profile);
+
+}
+
 export function recordDailyResult(correct, wrong, byType = {}) {
 
     const profile = loadProfile();

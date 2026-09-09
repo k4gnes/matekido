@@ -126,6 +126,7 @@ const SW_CACHE_LIST = [
     "/css/weight.css",
     "/css/welcome.css",
     "/css/word-problem.css",
+    "/data/consolidation.js",
     "/data/lessons/grade1/addition-01.json",
     "/data/lessons/grade1/addition-02.json",
     "/data/lessons/grade1/bridge-ten.json",

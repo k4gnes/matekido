@@ -285,8 +285,13 @@ const indexIds = new Set(index.lessons.map(l => l.id));
 
 for (const [grade, ids] of Object.entries(CONSOLIDATION_LESSONS)) {
     for (const id of ids) {
-        if (!indexIds.has(id)) {
+        const lessonMeta = index.lessons.find(l => l.id === id);
+        if (!lessonMeta) {
             fail(`consolidation/grade${grade}`, `nem létező lecke: ${id}`);
+            continue;
+        }
+        if (!lessonMeta.grades?.includes(Number(grade))) {
+            fail(`consolidation/grade${grade}`, `${id} nem ${grade}. osztályos (grades: ${lessonMeta.grades})`);
         }
     }
 }

@@ -12,11 +12,30 @@ export const CONSOLIDATION_LESSONS = {
         "subtraction-01",
         "bridge-ten-01",
         "addition-02",
-        "missing-operand-01",
-        "mixed-01",
+        "mixed-01"
+    ],
+    2: [
+        "place-value-03",
+        "neighbor-01",
+        "comparison-03",
+        "missing-number-03",
+        "sequence-02",
+        "even-odd-02",
+        "round-tens-addition-01",
+        "single-digit-addition-01",
+        "addition-04",
+        "round-tens-subtraction-01",
+        "subtraction-05",
+        "subtraction-06",
+        "mixed-02",
+        "money-change-01",
         "true-false-01",
         "mult-prep-01",
         "mult-prep-02",
-        "mult-prep-03"
+        "mult-prep-03",
+        "multiplication-01",
+        "multiplication-02",
+        "division-01",
+        "missing-operand-01"
     ]
 };

@@ -2,7 +2,7 @@ import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { loadJSON, saveJSON, loadRaw, saveRaw } from "../storage.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
-import { getLessonStats, getActiveWorld, getActiveGrade, setActiveGrade, getFavoriteLessons, isFavoriteLesson, toggleFavoriteLesson } from "../profile/Profile.js";
+import { getLessonStats, getActiveWorld, getActiveGrade, setActiveGrade, getFavoriteLessons, getSkippedLessons, isFavoriteLesson, toggleFavoriteLesson } from "../profile/Profile.js";
 import { CATEGORIES, SKILLS } from "../data/skills.js";
 import { CONSOLIDATION_LESSONS } from "../data/consolidation.js";
 
@@ -524,19 +524,13 @@ function pickNextForGrade(gradeLessons) {
 
     if (gradeLessons.length === 0) return null;
 
-    let next = gradeLessons[0];
-    let worst = Infinity;
-
-    for (const lesson of gradeLessons) {
-        const stats = getLessonStats(lesson.file);
-        const percentage = stats ? stats.percentage : 0;
-        if (percentage < worst) {
-            worst = percentage;
-            next = lesson;
-        }
+    const skippedFiles = new Set(getSkippedLessons());
+    const skipped = gradeLessons.find(l => skippedFiles.has(l.file));
+    if (skipped) {
+        return skipped;
     }
 
-    return next;
+    return gradeLessons.find(l => !getLessonStats(l.file)) ?? null;
 
 }
 
@@ -697,6 +691,32 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
             nextCard.append(nextNote);
 
             contentArea.append(nextCard);
+        } else {
+            const nextGradeStart = allLessons.find(l => l.grades?.includes(selectedGrade + 1));
+            if (nextGradeStart) {
+                const nextCard = createCard();
+
+                const nextHeading = document.createElement("h3");
+                nextHeading.className = "category-title";
+                nextHeading.textContent = "🎉 Következő feladat";
+                nextCard.append(nextHeading);
+
+                const nextNote = document.createElement("p");
+                nextNote.className = "lesson-card-subtitle";
+                nextNote.textContent = `Elkészültél az ${selectedGrade}. osztállyal! A következő feladat már a ${selectedGrade + 1}. osztályból való.`;
+                nextCard.append(nextNote);
+
+                const grid = document.createElement("div");
+                grid.className = "next-lesson-card";
+                grid.append(createLessonCard(nextGradeStart, () => {
+                    setActiveGrade(selectedGrade + 1);
+                    saveSelectedGrade(selectedGrade + 1);
+                    onSelect(nextGradeStart.file);
+                }, activeWorld));
+                nextCard.append(grid);
+
+                contentArea.append(nextCard);
+            }
         }
 
         const browseWrap = document.createElement("div");
@@ -722,13 +742,27 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
         contentArea.append(browseWrap);
 
         const byId = new Map(allLessons.map(l => [l.id, l]));
-        const consolidationIds = CONSOLIDATION_LESSONS[selectedGrade] || CONSOLIDATION_LESSONS[1] || [];
-        const consolidationLessons = consolidationIds.map(id => byId.get(id)).filter(Boolean);
+        const consolidationIds = CONSOLIDATION_LESSONS[selectedGrade] || [];
+        const consolidationLessons = consolidationIds.map(id => byId.get(id)).filter(l => l && l.grades?.includes(selectedGrade));
 
         const byFile = new Map(allLessons.map(l => [l.file, l]));
         const favoriteLessons = getFavoriteLessons().map(f => byFile.get(f)).filter(Boolean);
 
         const pickerSections = [];
+
+        const skippedLessonFiles = new Set(getSkippedLessons());
+        const skippedLessons = allLessons.filter(l =>
+            l.grades?.includes(selectedGrade) && skippedLessonFiles.has(l.file)
+        );
+
+        if (skippedLessons.length > 0) {
+            pickerSections.push(createPickerSection(
+                `⏭️ Átugrott feladatok (${skippedLessons.length}) – amíg itt van feladat, nem léphetsz tovább`,
+                skippedLessons,
+                onSelect,
+                activeWorld
+            ));
+        }
 
         if (consolidationLessons.length > 0) {
             pickerSections.push(createPickerSection(

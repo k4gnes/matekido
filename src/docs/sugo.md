@@ -82,6 +82,7 @@ A feladatlista oldalon (a profil-avatárról nyitható) sorban a következők j�
 
 - **➡️ Következő feladat** – az, amit legközelebb érdemes megoldani.
 - **📚 Feladatok listája** gomb – a teljes, szűréssel böngészhető feladatlista nyílik ki alatta.
+- **⏭️ Átugrott feladatok** – ha voltak kihagyott feladatok, itt látszanak, és amíg van ilyen, nem léphetsz tovább. Egy átugrott feladat megoldásával azonnal lekerül a listáról.
 - **🔁 Erősítő feladatok** – a kurátori csapat által kiválasztott, ismétlésre javasolt feladatok. A nyitó feladat után a következő erősítő feladat jön automatikusan, a lista végén a menübe tér vissza.
 - **❤️ Kedvenceim** – azok a feladatok, amelyeket a sor jobb oldalán lévő szív gombbal (**🤍 → ❤️**) megjelöltél. Ugyanígy játszólistaként megy végig a kedvenceken.
 

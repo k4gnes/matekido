@@ -295,6 +295,23 @@ export function recordLessonSkip(lessonFile) {
 
 }
 
+export function resolveSkippedLesson(lessonFile) {
+
+    const profile = loadProfile();
+
+    if (!Array.isArray(profile.skippedLessons)) {
+        profile.skippedLessons = [];
+    }
+
+    const idx = profile.skippedLessons.indexOf(lessonFile);
+    if (idx >= 0) {
+        profile.skippedLessons.splice(idx, 1);
+    }
+
+    saveProfile(profile);
+
+}
+
 export function recordDailyResult(correct, wrong, byType = {}) {
 
     const profile = loadProfile();

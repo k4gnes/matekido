@@ -106,7 +106,7 @@ import { renderMissingProgress } from "../components/missingProgress.js?v=3";
 import { renderComparisonProgress } from "../components/comparisonProgress.js?v=3";
 import { renderNeighborProgress } from "../components/neighborProgress.js?v=3";
 
-import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, recordSkillResult, getActiveWorld, isFavoriteLesson, toggleFavoriteLesson } from "../profile/Profile.js";
+import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, recordSkillResult, resolveSkippedLesson, getActiveWorld, isFavoriteLesson, toggleFavoriteLesson } from "../profile/Profile.js";
 import { grantRewards } from "../profile/RewardService.js";
 
 const SKILL_BY_TYPE = {
@@ -252,6 +252,7 @@ export class Game {
                     recordDailyResult(this.correct, this.wrong, this.byType);
                     if (this.lessonFile) {
                         recordLessonResult(this.lessonFile, this.correct, this.wrong);
+                        resolveSkippedLesson(this.lessonFile);
                     }
                     if (this.skill) {
                         recordSkillResult(this.skill, this.correct, this.wrong);
@@ -339,6 +340,7 @@ export class Game {
                     recordDailyResult(this.correct, this.wrong, this.byType);
                     if (this.lessonFile) {
                         recordLessonResult(this.lessonFile, this.correct, this.wrong);
+                        resolveSkippedLesson(this.lessonFile);
                     }
                     if (this.skill) {
                         recordSkillResult(this.skill, this.correct, this.wrong);

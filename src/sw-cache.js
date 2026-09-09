@@ -313,6 +313,7 @@ const SW_CACHE_LIST = [
     "/storage.js",
     "/sw.js",
     "/testGenerator.js",
+    "/testLessons.js",
     "/utils/markdown.js",
     "/world/World.js",
     "/world/WorldRegistry.js"

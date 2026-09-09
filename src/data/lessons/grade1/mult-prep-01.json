@@ -9,11 +9,11 @@
       "worldTitles": {
         "racing": {
           "title": "🏎️ Egyenlő csoportok",
-          "text": "Nézd meg a kerék-csoportokat! Minden csoportban ugyanannyi kerék van. Hány kerék van összesen?"
+          "text": "Nézd meg a csoportokat! Minden csoportban ugyanannyi elem van. Hány elem van összesen?"
         },
         "football": {
           "title": "⚽ Egyenlő csoportok",
-          "text": "Nézd meg a játékos-csoportokat! Minden csoportban ugyanannyi játékos van. Hány játékos van összesen?"
+          "text": "Nézd meg a csoportokat! Minden csoportban ugyanannyi elem van. Hány elem van összesen?"
         },
         "cooking": {
           "title": "🍳 Egyenlő csoportok",
@@ -25,7 +25,7 @@
         },
         "space": {
           "title": "🤖 Egyenlő csoportok",
-          "text": "Nézd meg a robot-csoportokat! Minden csoportban ugyanannyi robot van. Hány robot van összesen?"
+          "text": "Nézd meg a csoportokat! Minden csoportban ugyanannyi elem van. Hány elem van összesen?"
         }
       }
     },
@@ -46,11 +46,11 @@
       "worldTitles": {
         "racing": {
           "title": "🎉 Szép munka!",
-          "text": "Ügyesen megszámoltad a kerék-csoportokat!"
+          "text": "Ügyesen megszámoltad a csoportokat!"
         },
         "football": {
           "title": "🎉 Szép munka!",
-          "text": "Ügyesen megszámoltad a játékos-csoportokat!"
+          "text": "Ügyesen megszámoltad a csoportokat!"
         },
         "cooking": {
           "title": "🎉 Szép munka!",
@@ -62,7 +62,7 @@
         },
         "space": {
           "title": "🎉 Szuper vagy!",
-          "text": "Ügyesen megszámoltad a robot-csoportokat!"
+          "text": "Ügyesen megszámoltad a csoportokat!"
         }
       }
     }

@@ -13,12 +13,12 @@ const TITLES = {
         "skip-counting": "📮 Mi a következő szám?"
     },
     racing: {
-        "equal-groups": "🏎️ Hány kerék van összesen?",
+        "equal-groups": "🏎️ Hány elem van összesen?",
         "repeated-addition": "🏎️ Számold ki az összeget!",
         "skip-counting": "🏎️ Mi a következő szám?"
     },
     football: {
-        "equal-groups": "⚽ Hány játékos van összesen?",
+        "equal-groups": "⚽ Hány elem van összesen?",
         "repeated-addition": "⚽ Számold ki az összeget!",
         "skip-counting": "⚽ Mi a következő szám?"
     },
@@ -33,7 +33,7 @@ const TITLES = {
         "skip-counting": "🦁 Mi a következő szám?"
     },
     space: {
-        "equal-groups": "🤖 Hány robot van összesen?",
+        "equal-groups": "🤖 Hány elem van összesen?",
         "repeated-addition": "🤖 Számold ki az összeget!",
         "skip-counting": "🤖 Mi a következő szám?"
     }
@@ -59,10 +59,6 @@ function renderChoiceButtons(answer, min, max, className) {
 }
 
 function renderEqualGroups(step, card) {
-    const hint = document.createElement("p");
-    hint.className = "mp-hint";
-    hint.textContent = "Hány elem van összesen?";
-    card.append(hint);
 
     const groupsContainer = document.createElement("div");
     groupsContainer.className = "mp-groups";

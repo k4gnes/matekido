@@ -9,7 +9,7 @@
       "worldTitles": {
         "racing": {
           "title": "🏎️ Egyenlő csoportok",
-          "text": "Nézd meg a kerék-csoportokat! Minden csoportban ugyanannyi kerék van. Hány kerék van összesen?"
+          "text": "Nézd meg a csoportokat! Minden csoportban ugyanannyi elem van. Hány elem van összesen?"
         },
         "football": {
           "title": "⚽ Egyenlő csoportok",
@@ -46,7 +46,7 @@
       "worldTitles": {
         "racing": {
           "title": "🎉 Szép munka!",
-          "text": "Ügyesen megszámoltad a kerék-csoportokat!"
+          "text": "Ügyesen megszámoltad a csoportokat!"
         },
         "football": {
           "title": "🎉 Szép munka!",

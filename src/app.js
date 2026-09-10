@@ -1,7 +1,7 @@
 import { Game } from "./engine/Game.js?v=35";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=14";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=18";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=19";
 import { renderSkillMap } from "./components/skillMap.js?v=8";
 import { renderHelp } from "./components/help.js?v=2";
 import { renderProfilePage } from "./components/profilePage.js";
@@ -157,7 +157,10 @@ function getConsolidationFiles() {
 
 function getFavoriteFiles() {
 
-    const files = new Set((lessonIndex.lessons || []).map(l => l.file));
+    const grade = getActiveGrade();
+    const files = new Set((lessonIndex.lessons || [])
+        .filter(l => l.grades?.includes(grade))
+        .map(l => l.file));
     return getFavoriteLessons().filter(f => files.has(f));
 
 }
@@ -171,7 +174,7 @@ function getNextLesson(path) {
     const grade = allLessons[idx].grades?.[0];
 
     const skipped = getSkippedLessons().filter(file =>
-        allLessons.some(l => l.grades?.includes(grade) && l.file === file)
+        file !== path && allLessons.some(l => l.grades?.includes(grade) && l.file === file)
     );
     if (skipped.length > 0) {
         const firstSkipped = allLessons.find(l => l.grades?.includes(grade) && l.file === skipped[0]);

@@ -746,7 +746,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
         const consolidationLessons = consolidationIds.map(id => byId.get(id)).filter(l => l && l.grades?.includes(selectedGrade));
 
         const byFile = new Map(allLessons.map(l => [l.file, l]));
-        const favoriteLessons = getFavoriteLessons().map(f => byFile.get(f)).filter(Boolean);
+        const favoriteLessons = getFavoriteLessons().map(f => byFile.get(f)).filter(l => l && l.grades?.includes(selectedGrade));
 
         const pickerSections = [];
 

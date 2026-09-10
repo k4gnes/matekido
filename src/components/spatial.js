@@ -1,6 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { getActiveWorld } from "../profile/Profile.js";
-import { REFERENCES, OBJECTS } from "../data/spatial.js";
+import { REFERENCES, OBJECTS } from "../data/spatial.js?v=1";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
 
@@ -37,163 +37,18 @@ function ellipse(svg, cx, cy, rx, ry, fill, stroke, sw) {
     svg.append(el("ellipse", { cx, cy, rx, ry, fill, stroke, "stroke-width": sw }));
 }
 
-const REFERENCE_DRAW = {
-    doboz(svg) {
-        rect(svg, 80, 40, 60, 100, "#fbbf24", "#b45309", 3);
-        rect(svg, 80, 40, 60, 16, "#f59e0b", "#b45309", 2);
-        rect(svg, 106, 40, 8, 100, "#fde68a", "#b45309", 2);
-    },
-    fa(svg) {
-        rect(svg, 102, 90, 16, 75, "#92400e", "#78350f", 2);
-        circle(svg, 110, 62, 34, "#22c55e", "#15803d", 2);
-        circle(svg, 97, 74, 20, "#16a34a", "#15803d", 2);
-    },
-    szek(svg) {
-        rect(svg, 80, 58, 14, 47, "#a78bfa", "#6d28d9", 2);
-        rect(svg, 80, 105, 60, 14, "#a78bfa", "#6d28d9", 2);
-        rect(svg, 84, 119, 8, 46, "#8b5cf6", "#6d28d9", 2);
-        rect(svg, 128, 119, 8, 46, "#8b5cf6", "#6d28d9", 2);
-    },
-    asztal(svg) {
-        rect(svg, 55, 85, 110, 14, "#f59e0b", "#b45309", 3);
-        rect(svg, 70, 99, 10, 66, "#b45309", "#92400e", 2);
-        rect(svg, 140, 99, 10, 66, "#b45309", "#92400e", 2);
-    },
-    haz(svg) {
-        rect(svg, 80, 90, 60, 75, "#fb923c", "#c2410c", 3);
-        polygon(svg, "70,90 110,45 150,90", "#ef4444", "#b91c1c", 2);
-        rect(svg, 103, 130, 14, 35, "#7c2d12", "#7c2d12", 0);
-        rect(svg, 88, 108, 14, 14, "#fff7ed", "#c2410c", 2);
-    },
-    postalada(svg) {
-        rect(svg, 106, 92, 8, 53, "#475569", "#334155", 2);
-        rect(svg, 80, 50, 60, 44, "#3b82f6", "#1d4ed8", 3);
-        rect(svg, 90, 60, 40, 24, "#60a5fa", "#1d4ed8", 2);
-        circle(svg, 106, 84, 3, "#1e3a8a", "#1e3a8a", 0);
-        rect(svg, 140, 54, 5, 18, "#1d4ed8", "#1d4ed8", 0);
-        rect(svg, 145, 54, 18, 12, "#ef4444", "#b91c1c", 2);
-    },
-    auto(svg) {
-        rect(svg, 60, 88, 34, 7, "#f97316", "#c2410c", 2);
-        rect(svg, 60, 95, 100, 35, "#f97316", "#c2410c", 3);
-        rect(svg, 88, 99, 30, 14, "#bfdbfe", "#1d4ed8", 2);
-        circle(svg, 84, 130, 11, "#334155", "#1f2937", 2);
-        circle(svg, 136, 130, 11, "#334155", "#1f2937", 2);
-    },
-    versenyauto(svg) {
-        rect(svg, 60, 118, 100, 18, "#ef4444", "#b91c1c", 3);
-        rect(svg, 100, 104, 30, 15, "#fecaca", "#b91c1c", 2);
-        rect(svg, 60, 120, 16, 10, "#f87171", "#b91c1c", 2);
-        rect(svg, 146, 110, 10, 14, "#ef4444", "#b91c1c", 2);
-        circle(svg, 98, 109, 3, "#1e3a8a", "#1e3a8a", 0);
-        circle(svg, 82, 136, 10, "#1f2937", "#111827", 2);
-        circle(svg, 140, 136, 10, "#1f2937", "#111827", 2);
-    },
-    garazs(svg) {
-        rect(svg, 60, 55, 100, 90, "#d6d3d1", "#78716c", 3);
-        polygon(svg, "52,55 110,22 168,55", "#92400e", "#78350f", 2);
-        rect(svg, 78, 95, 64, 50, "#1c1917", "#44403c", 2);
-        rect(svg, 82, 120, 56, 16, "#ef4444", "#b91c1c", 2);
-        circle(svg, 92, 137, 6, "#1f2937", "#111827", 2);
-        circle(svg, 128, 137, 6, "#1f2937", "#111827", 2);
-    },
-    rajtkapu(svg) {
-        rect(svg, 60, 58, 100, 34, "#dc2626", "#991b1b", 3);
-        rect(svg, 60, 82, 100, 8, "#f8fafc", "#94a3b8", 1);
-        for (let i = 0; i < 10; i++) {
-            if (i % 2 === 0) {
-                rect(svg, 62 + i * 10, 82, 8, 8, "#1f2937", "#1f2937", 0);
-            }
-        }
-        rect(svg, 62, 92, 10, 43, "#1f2937", "#111827", 2);
-        rect(svg, 148, 92, 10, 43, "#1f2937", "#111827", 2);
-    },
-    tuzhely(svg) {
-        rect(svg, 60, 70, 100, 80, "#f1f5f9", "#94a3b8", 3);
-        circle(svg, 85, 92, 15, "#e2e8f0", "#94a3b8", 2);
-        circle(svg, 135, 92, 15, "#e2e8f0", "#94a3b8", 2);
-        rect(svg, 75, 112, 70, 28, "#cbd5e1", "#94a3b8", 2);
-        rect(svg, 103, 120, 14, 12, "#64748b", "#475569", 2);
-    },
-    hutosekreny(svg) {
-        rect(svg, 80, 45, 60, 110, "#e2e8f0", "#94a3b8", 3);
-        rect(svg, 80, 70, 60, 5, "#94a3b8", "#94a3b8", 0);
-        rect(svg, 128, 56, 6, 10, "#64748b", "#475569", 2);
-        rect(svg, 128, 84, 6, 56, "#64748b", "#475569", 2);
-    },
-    tal(svg) {
-        circle(svg, 110, 105, 45, "#fca5a5", "#f87171", 3);
-        circle(svg, 110, 98, 35, "#fecaca", "#f87171", 2);
-        rect(svg, 100, 130, 20, 10, "#e2e8f0", "#94a3b8", 2);
-    },
-    kapu(svg) {
-        rect(svg, 60, 50, 8, 100, "#e2e8f0", "#94a3b8", 2);
-        rect(svg, 152, 50, 8, 100, "#e2e8f0", "#94a3b8", 2);
-        rect(svg, 60, 50, 100, 8, "#e2e8f0", "#94a3b8", 2);
-        for (let x = 68; x < 160; x += 10) {
-            rect(svg, x, 58, 2, 92, "#cbd5e1", "#cbd5e1", 0);
-        }
-        for (let y = 58; y < 150; y += 10) {
-            rect(svg, 68, y, 92, 2, "#cbd5e1", "#cbd5e1", 0);
-        }
-    },
-    lelato(svg) {
-        polygon(svg, "60,150 160,150 166,134 74,134", "#f8fafc", "#94a3b8", 2);
-        polygon(svg, "70,134 166,134 172,114 86,114", "#e2e8f0", "#94a3b8", 2);
-        polygon(svg, "82,114 172,114 178,94 96,94", "#cbd5e1", "#94a3b8", 2);
-    },
-    labdatarto(svg) {
-        rect(svg, 70, 45, 80, 80, "#f8fafc", "#94a3b8", 3);
-        circle(svg, 92, 70, 10, "#ef4444", "#b91c1c", 2);
-        circle(svg, 108, 78, 10, "#3b82f6", "#1d4ed8", 2);
-        circle(svg, 124, 66, 10, "#f59e0b", "#b45309", 2);
-        rect(svg, 70, 120, 80, 8, "#e2e8f0", "#94a3b8", 2);
-    },
-    ketrec(svg) {
-        rect(svg, 60, 55, 100, 90, "#fef3c7", "#d97706", 3);
-        rect(svg, 60, 55, 100, 8, "#b45309", "#b45309", 0);
-        rect(svg, 60, 137, 100, 8, "#b45309", "#b45309", 0);
-        for (let x = 64; x < 160; x += 12) {
-            rect(svg, x, 63, 3, 74, "#b45309", "#b45309", 0);
-        }
-        rect(svg, 60, 55, 4, 90, "#b45309", "#b45309", 0);
-        rect(svg, 156, 55, 4, 90, "#b45309", "#b45309", 0);
-    },
-    itato(svg) {
-        rect(svg, 55, 100, 110, 24, "#93c5fd", "#2563eb", 3);
-        rect(svg, 55, 100, 110, 8, "#bfdbfe", "#2563eb", 2);
-        rect(svg, 50, 124, 120, 8, "#94a3b8", "#64748b", 2);
-    },
-    tavacska(svg) {
-        svg.append(el("ellipse", { cx: 110, cy: 115, rx: 58, ry: 26, fill: "#93c5fd", stroke: "#2563eb", "stroke-width": 3 }));
-        svg.append(el("ellipse", { cx: 98, cy: 110, rx: 14, ry: 8, fill: "#bfdbfe", stroke: "#2563eb", "stroke-width": 1 }));
-        rect(svg, 48, 138, 124, 8, "#4ade80", "#16a34a", 2);
-    },
-    raketa(svg) {
-        polygon(svg, "110,35 97,72 123,72", "#e2e8f0", "#64748b", 2);
-        rect(svg, 97, 72, 26, 52, "#f8fafc", "#64748b", 3);
-        circle(svg, 110, 92, 9, "#93c5fd", "#2563eb", 2);
-        rect(svg, 97, 124, 26, 8, "#94a3b8", "#64748b", 2);
-        polygon(svg, "97,132 84,150 97,142", "#ef4444", "#b91c1c", 2);
-        polygon(svg, "123,132 136,150 123,142", "#ef4444", "#b91c1c", 2);
-        polygon(svg, "108,132 112,132 110,150", "#f59e0b", "#b45309", 2);
-    },
-    allomas(svg) {
-        rect(svg, 60, 70, 100, 18, "#e2e8f0", "#64748b", 3);
-        rect(svg, 60, 88, 100, 8, "#94a3b8", "#64748b", 2);
-        rect(svg, 70, 96, 80, 16, "#cbd5e1", "#64748b", 2);
-        circle(svg, 100, 79, 5, "#93c5fd", "#2563eb", 2);
-        for (let i = 0; i < 5; i++) {
-            rect(svg, 62 + i * 19, 96, 16, 4, "#3b82f6", "#1d4ed8", 1);
-        }
-    },
-    tartaly(svg) {
-        rect(svg, 70, 55, 80, 90, "#e2e8f0", "#64748b", 3);
-        rect(svg, 70, 55, 80, 10, "#94a3b8", "#64748b", 2);
-        rect(svg, 85, 82, 50, 42, "#cbd5e1", "#64748b", 2);
-        circle(svg, 128, 103, 3, "#334155", "#334155", 0);
-    }
-};
+
+function drawReference(svg, ref) {
+    const emoji = el("text", {
+        x: ref.bbox.x + ref.bbox.w / 2,
+        y: ref.bbox.y + ref.bbox.h / 2,
+        "font-size": Math.min(ref.bbox.w, ref.bbox.h) * 0.95,
+        "text-anchor": "middle",
+        "dominant-baseline": "central"
+    });
+    emoji.textContent = ref.emoji;
+    svg.append(emoji);
+}
 
 const OBJECT_DRAW = {
     labda(n, x, y) {
@@ -392,29 +247,46 @@ function createScene(step) {
     shadow(svg, cx, floorY, b.w * 0.55);
 
     if (pos === "behind") {
-        const cy = Math.max(b.y - 14, 24);
-        drawObject(svg, obj, cx, cy + 26, 1);
-        mark(svg, cx, cy, 30);
-        REFERENCE_DRAW[ref.id](svg);
+        const cy = b.y + b.h / 2;
+        const ox = cx + b.w * 0.3;
+        const s = 0.85;
+        drawObject(svg, obj, ox, cy + 26 * s, s);
+        mark(svg, ox, cy, 24);
+        const emojiEl = el("text", {
+            x: cx, y: cy,
+            "font-size": Math.min(b.w, b.h) * 0.95,
+            "text-anchor": "middle",
+            "dominant-baseline": "central",
+            transform: `rotate(10, ${cx}, ${cy})`
+        });
+        emojiEl.textContent = ref.emoji;
+        svg.append(emojiEl);
     } else if (pos === "below") {
-        drawObject(svg, obj, cx, floorY + 20, 0.9);
-        mark(svg, cx, floorY - 6, 28);
-        REFERENCE_DRAW[ref.id](svg);
-        shadow(svg, cx, floorY + 6, 40);
+        const centerY = Math.min(floorY + 30, 185);
+        const baseY = centerY + 26 * 0.9;
+        drawObject(svg, obj, cx, baseY, 0.9);
+        mark(svg, cx, centerY, 28);
+        drawReference(svg, ref);
+        shadow(svg, cx, Math.min(centerY + 26, 200), 36);
     } else if (pos === "in-front") {
-        REFERENCE_DRAW[ref.id](svg);
+        drawReference(svg, ref);
         shadow(svg, cx, floorY, 46);
-        drawObject(svg, obj, cx, floorY, 1.25);
-        mark(svg, cx, floorY - 32, 31);
+        const centerY = floorY - 18;
+        const baseY = centerY + 26 * 1.15;
+        drawObject(svg, obj, cx, baseY, 1.15);
+        mark(svg, cx, centerY, 31);
     } else if (pos === "above") {
-        REFERENCE_DRAW[ref.id](svg);
-        shadow(svg, cx, floorY, 30);
-        const cy = Math.max(b.y - 34, 22);
-        drawObject(svg, obj, cx, cy + 26 * 0.95, 0.95);
+        drawReference(svg, ref);
+        const cy = Math.max(b.y - 58, 22);
+        const baseY = cy + 26 * 0.95;
+        drawObject(svg, obj, cx, baseY, 0.95);
         mark(svg, cx, cy, 27);
     } else {
-        const ox = Math.max(28, Math.min(192, pos === "left" ? b.x - 34 : b.x + b.w + 34));
-        REFERENCE_DRAW[ref.id](svg);
+        const emojiW = Math.min(b.w, b.h) * 0.95;
+        const leftEdge = cx - emojiW / 2;
+        const rightEdge = cx + emojiW / 2;
+        const ox = pos === "left" ? leftEdge - 18 : rightEdge + 18;
+        drawReference(svg, ref);
         shadow(svg, ox, floorY, 38);
         drawObject(svg, obj, ox, floorY, 1);
         mark(svg, ox, floorY - 27, 28);

@@ -1,5 +1,5 @@
 import { getActiveWorld } from "../profile/Profile.js";
-import { REFERENCES, OBJECTS, POSITION_IDS, WORLD_REFS, WORLD_OBJECTS } from "../data/spatial.js";
+import { REFERENCES, OBJECTS, POSITION_IDS, WORLD_REFS, WORLD_OBJECTS } from "../data/spatial.js?v=1";
 
 function shuffle(arr) {
     for (let i = arr.length - 1; i > 0; i--) {

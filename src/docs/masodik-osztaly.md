@@ -1,6 +1,6 @@
 # Matekidő – 2. osztályos készségtérkép
 
-**51 lecke**, 7 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**52 lecke**, 7 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
@@ -72,10 +72,11 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Térbeli alakzatok | 🧊 Térbeli alakzatok | Térbeli alakzatok felismerése | — | 2 |
 | Tükrözés / szimmetria | 🪞 Tükrözés és szimmetria | Tükörkép felismerése | — | 2 |
 
-## Gyakorlati tudások (7 lecke)
+## Gyakorlati tudások (8 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
+| Naptár | 🗓️ Naptár 2. osztály | Hónapok napjai, hetek, hétvégék | — | 2 |
 | Idő | Idő – negyedóra | Óra olvasása (negyed, fél, háromnegyed) | — | 3 |
 | Tömeg | Melyik nehezebb? | Tömeg összehasonlítása | — | 2 |
 | Űrtartalom | Melyikbe fér több? | Űrtartalom összehasonlítása | — | 2 |
@@ -98,7 +99,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 A fenti leckék elkészültek és regisztrálva vannak. A tantervben szereplő, még nem fedett készségek (a leckéket később tervezzük):
 
-- [ ] **Naptár és időbeli tájékozódás** (hét, hónap, napok, évszakok)
+- [x] **Naptár és időbeli tájékozódás** (hét, hónap, napok, évszakok)
 - [ ] **Hosszúság-mérés** (m, dm, cm; mérés vonalzóval)
 - [ ] **Idő – pontos idő olvasása** (percre pontosan)
 - [ ] **Törtek előkészítése** (fele, harmada, negyede)
@@ -107,6 +108,6 @@ A fenti leckék elkészültek és regisztrálva vannak. A tantervben szereplő, 
 
 ## Státusz
 
-*(51 lecke kész, 51 regisztrálva. Hátralévő: 4 hiányzó készség a fenti listából – a leckék megtervezése későbbre ütemezve.)*
+*(52 lecke kész, 52 regisztrálva. Hátralévő: 3 hiányzó készség a fenti listából – a leckék megtervezése későbbre ütemezve.)*
 
 

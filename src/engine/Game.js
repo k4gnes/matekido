@@ -44,7 +44,7 @@ import { renderTransform } from "../components/transform.js?v=3";
 import { renderMirror } from "../components/mirror.js?v=3";
 import { renderSetMatch } from "../components/setMatch.js?v=1";
 import { renderDataChart } from "../components/dataChart.js?v=2";
-import { renderCalendar } from "../components/calendar.js?v=1";
+import { renderCalendar } from "../components/calendar.js?v=2";
 
 const COUNTED_TYPES = new Set([
     "exercise",

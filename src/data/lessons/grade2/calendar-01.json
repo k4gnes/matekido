@@ -1,0 +1,71 @@
+{
+  "id": "grade2-calendar-01",
+  "title": "🗓️ Naptár 2. osztály",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🗓️ Naptár",
+      "text": "Egy évben 12 hónap van, egy hétben 7 nap. A hónapoknak 28, 30 vagy 31 napjuk van, kivéve szökőévben februárt, ami 29 napos! A hétvégén nincs tanítás: szombat és vasárnap!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Naptár a boxutcában",
+          "text": "A szerelők a naptárból tervezik a futamokat! Segíts nekik a napokkal és a hónapokkal!"
+        },
+        "football": {
+          "title": "⚽ Naptár a pályán",
+          "text": "A csapat a naptárban keresi a meccsnapokat! Játszunk a hónapok napjaival!"
+        },
+        "cooking": {
+          "title": "🍳 Naptár a konyhában",
+          "text": "A szakácsok minden hónapban mást sütnek! Segíts a naptárban igazodni!"
+        },
+        "animals": {
+          "title": "🦁 Naptár az állatkertben",
+          "text": "Az állatgondozók vezetik, mikor érkezik a takarmány! Játszunk a naptárral!"
+        },
+        "space": {
+          "title": "🤖 Naptár az űrhajón",
+          "text": "A bázis komputer a naptár szerint ütemezi a küldetéseket! Ismerd meg a hónapokat és a heteket!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "calendar",
+      "options": {
+        "count": 5,
+        "advanced": true
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Remekül igazodsz a naptárban! Tudod a hónapok napjait, a heteket és a hétvégéket is!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 A startra készen!",
+          "text": "Remekül ismered a naptárat, a verseny nemsokára indul! 🏁"
+        },
+        "football": {
+          "title": "⚽ Meccs jöhet!",
+          "text": "Jól tájékozódsz a naptárban, a csapat vár a pályán! 🎉"
+        },
+        "cooking": {
+          "title": "🍳 Finom heti menü!",
+          "text": "Ügyesen igazodtál a naptárban, a konyha készen áll! 🥖"
+        },
+        "animals": {
+          "title": "🦁 Minden állat elégedett!",
+          "text": "Jól ismered a hónapokat, az állatoknak minden rendben! 🐾"
+        },
+        "space": {
+          "title": "🤖 Küldetés engedélyezve!",
+          "text": "A bázis szerint minden a helyén van, indulhat a küldetés! 🛰️"
+        }
+      }
+    }
+  ]
+}

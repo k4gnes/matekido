@@ -40,7 +40,7 @@ import { generateTransform } from "./transformGenerator.js?v=2";
 import { generateMirror } from "./mirrorGenerator.js?v=2";
 import { generateSetMatch } from "./setMatchGenerator.js?v=1";
 import { generateDataChart } from "./dataChartGenerator.js?v=1";
-import { generateCalendar } from "./calendarGenerator.js?v=1";
+import { generateCalendar } from "./calendarGenerator.js?v=2";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {

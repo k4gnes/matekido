@@ -1983,6 +1983,27 @@
             }
         },
         {
+            "id": "calendar-01",
+            "title": "🗓️ Naptár 2. osztály",
+            "grades": [
+                2
+            ],
+            "category": "practical",
+            "skill": "calendar",
+            "difficulty": 2,
+            "type": "calendar",
+            "mission": "🗓️ Naptár és időbeli tájékozódás",
+            "subtitle": "Hónapok napjai, hetek és hétvégék",
+            "file": "./data/lessons/grade2/calendar-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Naptár a boxutcában",
+                "cooking": "🍳 Naptár a konyhában",
+                "football": "⚽ Naptár a pályán",
+                "animals": "🦁 Naptár az állatkertben",
+                "space": "🤖 Naptár az űrhajón"
+            }
+        },
+        {
             "id": "place-value-hundreds-01",
             "title": "Helyiérték 1000-ig",
             "grades": [

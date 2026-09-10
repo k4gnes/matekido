@@ -17,7 +17,12 @@ function successText(mode) {
     if (mode === "prev-day" || mode === "yesterday") return "😊 Ügyes! Jól visszafelé is számoltál a napokon!";
     if (mode === "between-days") return "😊 Ügyes! Jól sorba rendezted a napokat!";
     if (mode === "next-month" || mode === "prev-month") return "😊 Ügyes! Pontos a hónapok sorrendje!";
-    if (mode === "season-of-month" || mode === "next-season") return "😊 Ügyes! Rendben ismered az évszakokat!";
+    if (mode === "season-of-month" || mode === "next-season" || mode === "month-of-season") return "😊 Ügyes! Rendben ismered az évszakokat!";
+    if (mode === "days-in-month" || mode === "leap-february") return "😊 Ügyes! Tudod, hány napja van a hónapoknak!";
+    if (mode === "weekend-workday") return "😊 Ügyes! Jól különbséget teszel hétköznap és hétvége között!";
+    if (mode === "season-months") return "😊 Ügyes! Ismered a hónapok évszakait!";
+    if (mode === "two-weeks-days") return "😊 Ügyes! Jól számolsz a hetekkel!";
+    if (mode === "long-month") return "😊 Ügyes! Tudod, melyik hónapnak van 31 napja!";
     return "😊 Ügyes! Jól ismered a naptárat!";
 }
 

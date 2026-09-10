@@ -1,0 +1,73 @@
+{
+  "id": "grade2-time-04",
+  "title": "Idő – pontos idő olvasása",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🕐 Idő – pontos idő olvasása",
+      "text": "Az óra most nem csak negyedórákat mutat: olvasd le pontosan, hány óra és hány perc van!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Idő – pontos idő olvasása",
+          "text": "Nézd meg pontosan az órát! Hány óra és hány perc van?"
+        },
+        "football": {
+          "title": "⚽ Idő – pontos idő olvasása",
+          "text": "Nézd meg pontosan az órát! Hány óra és hány perc van?"
+        },
+        "cooking": {
+          "title": "🍳 Idő – pontos idő olvasása",
+          "text": "Nézd meg pontosan az órát! Hány óra és hány perc van?"
+        },
+        "animals": {
+          "title": "🦁 Mennyi az idő az állatkertben?",
+          "text": "Olvasd le pontosan, hány óra és hány perc van!"
+        },
+        "space": {
+          "title": "🤖 Mennyi az idő az űrállomáson?",
+          "text": "Olvasd le pontosan, hány óra és hány perc van!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "time",
+      "options": {
+        "count": 5,
+        "minHour": 1,
+        "maxHour": 23,
+        "exact": true
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden időt pontosan le tudtál olvasni!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden időt pontosan le tudtál olvasni!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden időt pontosan le tudtál olvasni!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden időt pontosan le tudtál olvasni!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden időt pontosan le tudtál olvasni!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden időt pontosan le tudtál olvasni!"
+        }
+      }
+    }
+  ]
+}

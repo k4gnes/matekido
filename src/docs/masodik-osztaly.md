@@ -1,6 +1,6 @@
 # Matekidő – 2. osztályos készségtérkép
 
-**54 lecke**, 7 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**55 lecke**, 7 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
@@ -73,11 +73,12 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Térbeli alakzatok | 🧊 Térbeli alakzatok | Térbeli alakzatok felismerése | — | 2 |
 | Tükrözés / szimmetria | 🪞 Tükrözés és szimmetria | Tükörkép felismerése | — | 2 |
 
-## Gyakorlati tudások (9 lecke)
+## Gyakorlati tudások (10 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
 | Hosszúság | 📏 Hosszúság-mérés | m, dm, cm átváltása | 100 | 2 |
+| Idő | 🕐 Idő – pontos idő olvasása | Percre pontosan | — | 3 |
 | Naptár | 🗓️ Naptár 2. osztály | Hónapok napjai, hetek, hétvégék | — | 2 |
 | Idő | Idő – negyedóra | Óra olvasása (negyed, fél, háromnegyed) | — | 3 |
 | Tömeg | Melyik nehezebb? | Tömeg összehasonlítása | — | 2 |
@@ -94,22 +95,5 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Egy lépéses – szorzás | 📝 Szorzásos szöveges feladatok | Szöveges feladat | 30 | 2 |
 | Egy lépéses – osztás | 📝 Osztásos szöveges feladatok | Szöveges feladat | 30 | 2 |
 | Kétlépéses | 📝 Kétlépéses szöveges feladatok | Kétlépéses szöveges feladat | 20 | 3 |
-
----
-
-## Hiányzó készségek – tervezett leckék
-
-A fenti leckék elkészültek és regisztrálva vannak. A tantervben szereplő, még nem fedett készségek (a leckéket később tervezzük):
-
-- [x] **Naptár és időbeli tájékozódás** (hét, hónap, napok, évszakok)
-- [x] **Hosszúság-mérés** (m, dm, cm; mérés vonalzóval)
-- [ ] **Idő – pontos idő olvasása** (percre pontosan)
-- [x] **Törtek előkészítése** (fele, harmada, negyede)
-
----
-
-## Státusz
-
-*(54 lecke kész, 54 regisztrálva. Hátralévő: 1 hiányzó készség a fenti listából – a leckék megtervezése későbbre ütemezve.)*
 
 

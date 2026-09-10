@@ -1398,6 +1398,27 @@
             }
         },
         {
+            "id": "time-04",
+            "title": "Idő – pontos idő olvasása",
+            "grades": [
+                2
+            ],
+            "category": "practical",
+            "skill": "hour",
+            "difficulty": 3,
+            "type": "time",
+            "mission": "🕐 Mit mutat az óra?",
+            "subtitle": "Idő – pontos idő olvasása (percre pontosan)",
+            "file": "./data/lessons/grade2/time-04.json",
+            "worldTitles": {
+                "racing": "🏎️ Mit mutat az óra?",
+                "cooking": "🍳 Mit mutat az óra?",
+                "football": "⚽ Mit mutat az óra?",
+                "animals": "🦁 Mennyi az idő az állatkertben?",
+                "space": "🤖 Mennyi az idő az űrállomáson?"
+            }
+        },
+        {
             "id": "money-pay-02",
             "title": "Fizesd ki pontosan! 100-ig",
             "grades": [

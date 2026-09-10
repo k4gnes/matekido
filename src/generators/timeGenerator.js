@@ -34,11 +34,21 @@ export function describeTime(h, m) {
     return `${daypart(h)} ${HOUR_WORDS[displayHour(h)]} óra`;
 }
 
+function describeExact(h, m) {
+    if (m === 0) return describeTime(h, 0);
+    if (h === 0 && m === 0) return "éjfél";
+    return `${daypart(h)} ${HOUR_WORDS[displayHour(h)]} óra ${m} perc`;
+}
+
 export function generateTime(options = {}) {
 
-    const { count = 5, minHour = 0, maxHour = 23, quarter = false } = options;
+    const { count = 5, minHour = 0, maxHour = 23, quarter = false, exact = false } = options;
 
-    const minutes = quarter ? [0, 15, 30, 45] : [0, 30];
+    const minutes = exact
+        ? Array.from({ length: 59 }, (_, i) => i + 1)
+        : (quarter ? [0, 15, 30, 45] : [0, 30]);
+
+    const describe = exact ? describeExact : describeTime;
 
     const times = [];
     for (let h = minHour; h <= maxHour; h++) {
@@ -47,28 +57,36 @@ export function generateTime(options = {}) {
         }
     }
 
-    const descPool = [...new Set(times.map(t => describeTime(t.h, t.m)))];
+    const descPool = [...new Set(times.map(t => describe(t.h, t.m)))];
 
     const tasks = [];
 
     for (let i = 0; i < count; i++) {
 
         const { h, m } = times[Math.floor(Math.random() * times.length)];
-        const correct = describeTime(h, m);
+        const correct = describe(h, m);
 
-        let siblings = [];
+        let nearMiss = [];
         let forbidden = [correct];
-        if (m !== 0) {
+
+        if (exact) {
+            const siblingMinutes = [m - 5, m + 5, m - 10, m + 10].map(x => ((x % 60) + 60) % 60)
+                .filter(x => x !== m && x !== 0);
+            nearMiss = [
+                ...siblingMinutes.map(sm => `${daypart(h)} ${HOUR_WORDS[displayHour(h)]} óra ${sm} perc`),
+                ...([-1, 1].map(d => h + d).filter(hh => hh >= minHour && hh <= maxHour).map(hh => describe(hh, m)))
+            ];
+        } else if (m !== 0) {
             const next = HOUR_WORDS[(displayHour(h) % 12) + 1];
-            siblings = [`negyed ${next}`, `fél ${next}`, `háromnegyed ${next}`, describeTime(h, 0)];
+            nearMiss = [`negyed ${next}`, `fél ${next}`, `háromnegyed ${next}`, describe(h, 0)];
         } else {
             const twin = (h + 12) % 24;
             if (twin >= minHour && twin <= maxHour) {
-                forbidden.push(describeTime(twin, 0));
+                forbidden.push(describe(twin, 0));
             }
         }
 
-        const nearMiss = [...new Set(siblings)].filter(d => !forbidden.includes(d));
+        nearMiss = [...new Set(nearMiss)].filter(d => !forbidden.includes(d));
         const rest = shuffle(descPool.filter(d => !forbidden.includes(d) && !nearMiss.includes(d)));
 
         const distractors = shuffle([...nearMiss, ...rest]).slice(0, 3);

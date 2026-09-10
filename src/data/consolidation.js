@@ -36,6 +36,11 @@ export const CONSOLIDATION_LESSONS = {
         "multiplication-01",
         "multiplication-02",
         "division-01",
-        "missing-operand-01"
+        "missing-operand-01",
+        "mirror-01",
+        "calendar-01",
+        "fraction-01",
+        "measure-units-01",
+        "time-04"
     ]
 };

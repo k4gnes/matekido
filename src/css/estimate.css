@@ -15,19 +15,6 @@
     margin: .3rem 0 .6rem;
 }
 
-.est-hint {
-    font-size: 1rem;
-    font-weight: 600;
-    text-align: center;
-    color: #6366f1;
-    background: #eef2ff;
-    border: 1px solid #c7d2fe;
-    border-radius: 8px;
-    padding: .4rem .8rem;
-    margin: .3rem auto .4rem;
-    max-width: 320px;
-}
-
 .est-options {
     display: flex;
     flex-wrap: wrap;

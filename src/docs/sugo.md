@@ -48,7 +48,8 @@ A Matekidő **hat világban** játszódik, és a leckék történetei mindig az 
 Egy feladat közben:
 
 - A kártya jobb felső sarkában lévő kis **❓** gombra (vagy ráhúzással) előjön a feladat utasítása – hogy ilyenkor mit kell csinálni.
-- Sok feladatnál van **💡 Segítséget kérek** gomb – kattints rá, és lépésről lépésre vezető segítséget kapsz.
+- Sok feladatnál van **💡 Segítséget kérek** gomb – kattints rá, és lépésről lépésre vezető segítséget kapsz. A segítség csak akkor jelenik meg, ha kérsz: néhány hiba után bukkan fel a gomb.
+- A **tízesátlépés** feladatok lépésről lépésre vezetnek: először a tízesre pótlást, majd a szétbontást, végül az összeadást kell megoldanod – a korábbi lépések mindvégig láthatók.
 - **Soha nem büntetünk**: hibás válasznál nincs büntetés, csak újrapróbálhatod, amíg sikerül.
 
 ## ⭐ Csillagok, mérföldkövek, napi küldetés és kitűzők
@@ -65,7 +66,7 @@ Ha új világ szabadul fel, az ünneplés automatikusan jelzi.
 ## 👤 Saját oldal és 📊 Értékek
 
 - A **Saját oldal** (a menüben a profil-avatárra vagy a lecke végén a **👤 Profil** gombra kattintva) mutatja: csillagok, teljesített leckék, sorozat (🔥 napok), hibátlan leckék, a következő cél, a napi küldetés állása, a kitűzők és a világok.
-- A **📋 Értékek** oldal (Saját oldal → 📋 Értékek) a napi és az összesített statisztikát mutatja, valamint azt, hogy melyik készség megy jól és melyik szorul gyakorlásra.
+- A **📋 Értékek** oldal (Saját oldal → 📋 Értékek) a napi és az összesített statisztikát mutatja, valamint azt, hogy melyik készség megy jól és melyik szorul gyakorlásra. Itt találod az **🏆 Osztályok** részt is, amely megmutatja, melyik osztályt sikerült már sikeresen (átlagosan 90% fölött) befejezni, és mennyi lecke maradt hátra belőle.
 - A **📚 Készségek** gomb az évfolyami készségtérképet nyitja meg, ahol az összes lecke látszik készségenként.
 
 ## 🎯 Gyakorlás – a gyengébb leckék
@@ -74,6 +75,7 @@ Ha egy leckében az eredmény **90% alatt** van, az bekerül a **Gyakorlás** li
 
 - A Saját oldalon (és az ünneplő képernyőn) látszik a **🎯 Gyakorlás (szám)** gomb.
 - A gyakorlásnál pontosan azokat a leckéket ajánlja fel az app, amelyekben még bizonytalan a gyerek.
+- A lista mindig az **aktívan választott osztály** leckéit mutatja: ha átváltasz például 1. osztályról 2. osztályra, a gyakorlás is csak az éppen választott osztály leckéit ajánlja.
 - Ezzel mindig azt erősítjük, ami még gyenge – nem azt, ami már megy.
 
 ## 📚 Feladatlista – Erősítő feladatok és Kedvenceim

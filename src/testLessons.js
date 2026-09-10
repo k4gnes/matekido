@@ -12,7 +12,7 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=14";
+import { buildLesson } from "./builders/LessonBuilder.js?v=15";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
@@ -185,8 +185,16 @@ function validateStep(step, ctx) {
         case "bridge-ten": {
             if (!isInt(step.a) || !isInt(step.b) || !isInt(step.sum)) fail(ctx, "a/b/sum hibás");
             if (step.sum !== step.a + step.b) fail(ctx, `sum != a+b (${step.sum})`);
-            if (!Array.isArray(step.options) || !step.options.some(o => o && o.text === step.correctDecomp)) {
-                fail(ctx, "options nem tartalmazza a correctDecomp-ot");
+            if (!Array.isArray(step.steps) || step.steps.length !== 3) {
+                fail(ctx, "steps nem 3 elemű");
+                break;
+            }
+            const stepAnswers = step.steps.map(s => s.answer);
+            if (stepAnswers[0] !== 10 - step.a) fail(ctx, `1. lépés answer != 10-a (${stepAnswers[0]})`);
+            if (stepAnswers[1] !== step.b - (10 - step.a)) fail(ctx, `2. lépés answer != b-(10-a) (${stepAnswers[1]})`);
+            if (stepAnswers[2] !== step.a + step.b) fail(ctx, `3. lépés answer != a+b (${stepAnswers[2]})`);
+            if (!step.steps.every(s => Array.isArray(s.options) && s.options.includes(s.answer))) {
+                fail(ctx, "egy lépés options nem tartalmazza az answer-t");
             }
             break;
         }

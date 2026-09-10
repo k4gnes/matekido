@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=13";
+import { generate } from "../generators/index.js?v=14";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -129,8 +129,7 @@ export function buildLesson(lesson) {
                     complement: task.complement,
                     remainder: task.remainder,
                     sum: task.sum,
-                    correctDecomp: task.correctDecomp,
-                    options: task.options
+                    steps: task.steps
                 });
             } else if (step.generator === "sequence") {
                 result.push({

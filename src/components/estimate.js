@@ -1,6 +1,8 @@
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
+import { createButton } from "./ui/button.js";
+import { createHintBox } from "./ui/hintBox.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const TITLES = {
@@ -34,13 +36,6 @@ export function renderEstimate(step, root, next, progress, onResult, onAttempt) 
     expr.textContent = step.expression;
     card.append(expr);
 
-    if (step.hint) {
-        const hint = document.createElement("p");
-        hint.className = "est-hint";
-        hint.textContent = step.hint;
-        card.append(hint);
-    }
-
     const prompt = document.createElement("p");
     prompt.className = "est-prompt";
     prompt.textContent = "Melyik a legjobb becslés?";
@@ -59,6 +54,23 @@ export function renderEstimate(step, root, next, progress, onResult, onAttempt) 
     });
 
     card.append(optionsContainer);
+
+    const hint = createHintBox();
+
+    let hintShown = false;
+
+    const hintButton = createButton("💡 Segítséget kérek", {
+        onClick: () => {
+            hintShown = true;
+            if (step.hint) {
+                hint.textContent = step.hint;
+            }
+            hintButton.style.display = "none";
+        }
+    });
+    hintButton.style.display = "none";
+
+    card.append(hintButton, hint);
 
     const message = createMessageBox();
     card.append(message.element);
@@ -82,6 +94,10 @@ export function renderEstimate(step, root, next, progress, onResult, onAttempt) 
             feedback.success();
         } else {
             feedback.retry();
+
+            if (feedback.getMistakes() >= 2 && !hintShown) {
+                hintButton.style.display = "inline-block";
+            }
         }
     }
 

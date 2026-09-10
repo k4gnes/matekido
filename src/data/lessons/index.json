@@ -798,7 +798,7 @@
             "difficulty": 1,
             "type": "shape-compare",
             "mission": "📐 Hány oldala van?",
-            "subtitle": "Háromszög és négyzet oldalai",
+            "subtitle": "Oldalak és sarkok összehasonlítása",
             "file": "./data/lessons/grade1/shape-compare-01.json",
             "worldTitles": {
                 "racing": "🏎️ Hány oldala van a táblának?",

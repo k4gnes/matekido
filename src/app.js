@@ -1,12 +1,12 @@
-import { Game } from "./engine/Game.js?v=35";
+import { Game } from "./engine/Game.js?v=36";
 import { loadLesson } from "./engine/LessonLoader.js";
-import { buildLesson } from "./builders/LessonBuilder.js?v=14";
+import { buildLesson } from "./builders/LessonBuilder.js?v=15";
 import { renderLessonMenu } from "./components/lessonMenu.js?v=19";
 import { renderSkillMap } from "./components/skillMap.js?v=8";
 import { renderHelp } from "./components/help.js?v=2";
 import { renderProfilePage } from "./components/profilePage.js";
-import { renderStatsPage } from "./components/statsPage.js?v=2";
-import { renderPracticePage } from "./components/practicePage.js?v=4";
+import { renderStatsPage } from "./components/statsPage.js?v=3";
+import { renderPracticePage } from "./components/practicePage.js?v=5";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=2";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=3";
 import { getActiveId, listPlayers } from "./profile/UserManager.js";
@@ -74,7 +74,7 @@ function showStats() {
         } else {
             showProfile();
         }
-    });
+    }, lessonIndex);
 }
 
 async function startLesson(path, opts = {}) {

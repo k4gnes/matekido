@@ -1,6 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
-import { getDailyStats, getAllSkillStats, getActiveWorld } from "../profile/Profile.js";
+import { getDailyStats, getAllSkillStats, getActiveWorld, getLessonStats } from "../profile/Profile.js";
 import { SKILLS, CATEGORIES } from "../data/skills.js";
 
 function formatDate(dateStr) {
@@ -132,7 +132,89 @@ function createStatGrid(items, className) {
     return grid;
 }
 
-export function renderStatsPage(root, onBack) {
+function getGradeCompletion(lessonIndex) {
+
+    const lessons = (lessonIndex?.lessons) || [];
+    const grades = (lessonIndex?.gradeConfig) || [];
+
+    return grades.map(gc => {
+        const gradeLessons = lessons.filter(l => l.grades?.includes(gc.grade));
+        const total = gradeLessons.length;
+        let done = 0;
+        let sumPct = 0;
+
+        gradeLessons.forEach(l => {
+            const stats = getLessonStats(l.file);
+            if (stats && stats.total > 0) {
+                done++;
+                sumPct += stats.percentage;
+            }
+        });
+
+        const avgPct = done > 0 ? Math.round(sumPct / done) : 0;
+
+        return {
+            grade: gc.grade,
+            title: gc.title || `${gc.grade}. osztály`,
+            total,
+            done,
+            completed: total > 0 && done === total,
+            successful: total > 0 && done === total && avgPct >= 90
+        };
+    });
+
+}
+
+function createGradeCompletionSection(lessonIndex) {
+
+    const section = document.createElement("div");
+    section.className = "stats-section";
+
+    const title = document.createElement("h2");
+    title.textContent = "🏆 Osztályok";
+    section.append(title);
+
+    const rows = getGradeCompletion(lessonIndex);
+
+    if (rows.length === 0) return null;
+
+    const container = document.createElement("div");
+    container.className = "grade-completion";
+
+    rows.forEach(row => {
+        const rowEl = document.createElement("div");
+        rowEl.className = "grade-completion-row";
+
+        const label = document.createElement("span");
+        label.className = "grade-completion-label";
+        label.textContent = row.title;
+
+        const state = document.createElement("span");
+        state.className = "grade-completion-state";
+
+        if (row.total === 0) {
+            state.textContent = "—";
+        } else if (row.successful) {
+            state.textContent = "✅ Sikeresen befejezve";
+        } else if (row.completed) {
+            state.textContent = "🔁 Befejezve, érdemes gyakorolni";
+        } else {
+            state.textContent = `${row.done}/${row.total} lecke`;
+        }
+
+        rowEl.append(label, state);
+        container.append(rowEl);
+    });
+
+    if (container.children.length > 0) {
+        section.append(container);
+    }
+
+    return section;
+
+}
+
+export function renderStatsPage(root, onBack, lessonIndex) {
 
     root.replaceChildren();
 
@@ -303,6 +385,11 @@ export function renderStatsPage(root, onBack) {
     ]);
 
     summarySection.append(summaryTitle, summaryGrid);
+
+    const gradeCompletionSection = createGradeCompletionSection(lessonIndex);
+    if (gradeCompletionSection) {
+        summarySection.append(gradeCompletionSection);
+    }
 
     // --- Skill stats ---
     const skillSection = document.createElement("div");

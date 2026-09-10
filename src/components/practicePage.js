@@ -1,14 +1,16 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
-import { getLessonStats, getActiveWorld } from "../profile/Profile.js";
+import { getLessonStats, getActiveWorld, getActiveGrade } from "../profile/Profile.js";
 import { CATEGORIES } from "../data/skills.js";
 import { createLessonCard } from "./lessonMenu.js";
 
-export function getWeakLessonFiles(lessonIndex) {
+export function getWeakLessonFiles(lessonIndex, grade) {
 
     const weak = new Set();
+    const activeGrade = grade ?? getActiveGrade();
 
     for (const lesson of lessonIndex.lessons || []) {
+        if (activeGrade != null && !(lesson.grades?.includes(activeGrade))) continue;
         const stats = getLessonStats(lesson.file);
         if (stats && stats.percentage < 90) {
             weak.add(lesson.file);

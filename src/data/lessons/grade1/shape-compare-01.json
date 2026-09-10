@@ -6,7 +6,7 @@
     {
       "type": "scene",
       "title": "📐 Hány oldala van?",
-      "text": "A háromszögnek 3, a négyzetnek 4, az ötszögnek 5, a hatszögnek 6 oldala van! Találd ki, melyik alakzatnak van több oldala!",
+      "text": "A háromszögnek 3, a négyzetnek 4, az ötszögnek 5, a hatszögnek 6 oldala van! Találd ki, melyik alakzatnak van több oldala vagy sarka, és melyik a nagyobb!",
       "worldTitles": {
         "racing": {
           "title": "🏎️ Hány oldala van a táblának?",
@@ -14,11 +14,11 @@
         },
         "cooking": {
           "title": "🍳 Hány oldala van a sütinek?",
-          "text": "A sütik háromszög vagy négyzet alakúak! Nézd meg jól, hány oldaluk van!"
+          "text": "A sütik sokféle alakúak! Nézd meg jól, hány oldaluk van!"
         },
         "football": {
           "title": "⚽ Hány oldala van a zászlónak?",
-          "text": "A zászlók háromszög vagy négyzet alakúak! Nézd meg jól, hány oldaluk van!"
+          "text": "A zászlók sokféle alakúak! Nézd meg jól, hány oldaluk van!"
         },
         "animals": {
           "title": "🦁 Hány oldala van a táblának?",
@@ -36,15 +36,14 @@
       "generator": "shape-compare",
       "options": {
         "count": 5,
-        "mode": "sides",
-        "kinds": ["triangle", "square"]
+        "mode": "mixed"
       }
     },
 
     {
       "type": "celebration",
       "title": "🎉 Ügyes voltál!",
-      "text": "A háromszögnek 3, a négyzetnek 4 oldala és sarka van! Jól számoltál!",
+      "text": "Szuperül megszámoltad az oldalakat és sarkokat! A háromszögnek 3, a négyzetnek 4, az ötszögnek 5, a hatszögnek 6 van!",
       "worldTitles": {
         "racing": {
           "title": "🎉 Ügyes vagy!",

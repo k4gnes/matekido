@@ -67,7 +67,9 @@ const TYPE_LABEL = {
     rounding: "Kerekítés",
     roman: "Római számok",
     volume: "Űrtartalom",
+    weight: "Tömeg",
     transform: "Forgatás",
+    mirror: "Tükrözés",
     "set-match": "Halmazok és válogatás",
     "data-chart": "Adatok és diagramok",
     calendar: "Naptár"
@@ -115,7 +117,9 @@ const TYPE_EMOJI = {
     "place-value-hundreds": "🔢",
     "number-name": "🔤",
     rounding: "🎯",
-    roman: "🏛️"
+    roman: "🏛️",
+    weight: "⚖️",
+    mirror: "🪞"
 };
 
 function createStatGrid(items, className) {

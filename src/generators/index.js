@@ -36,7 +36,8 @@ import { generatePlaceValueHundreds } from "./placeValueHundredsGenerator.js?v=1
 import { generateNumberName } from "./numberNameGenerator.js?v=1";
 import { generateRounding } from "./roundingGenerator.js?v=2";
 import { generateRoman } from "./romanGenerator.js?v=1";
-import { generateTransform } from "./transformGenerator.js?v=1";
+import { generateTransform } from "./transformGenerator.js?v=2";
+import { generateMirror } from "./mirrorGenerator.js?v=2";
 import { generateSetMatch } from "./setMatchGenerator.js?v=1";
 import { generateDataChart } from "./dataChartGenerator.js?v=1";
 import { generateCalendar } from "./calendarGenerator.js?v=1";
@@ -131,6 +132,8 @@ export function generate(step) {
             return generateRoman(opts);
         case "transform":
             return generateTransform(opts);
+        case "mirror":
+            return generateMirror(opts);
         case "set-match":
             return generateSetMatch(opts);
         case "data-chart":

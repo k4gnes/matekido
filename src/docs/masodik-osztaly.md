@@ -1,6 +1,6 @@
 # Matekidő – 2. osztályos készségtérkép
 
-**50 lecke**, 7 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**51 lecke**, 7 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
@@ -63,13 +63,14 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Osztás | Osztás 2, 5, 10-es táblával | Osztótábla | 100 | 2 |
 | Osztás | Vegyes osztás | Osztótábla | 100 | 3 |
 
-## Geometria (3 lecke)
+## Geometria (4 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
 | Alakzatok | Négyzet és téglalap | Alakzatok rendezése | — | 2 |
 | Alakzatok összehasonlítása | 📐 Alakzatok összehasonlítása | Alakzatok összehasonlítása | — | 2 |
 | Térbeli alakzatok | 🧊 Térbeli alakzatok | Térbeli alakzatok felismerése | — | 2 |
+| Tükrözés / szimmetria | 🪞 Tükrözés és szimmetria | Tükörkép felismerése | — | 2 |
 
 ## Gyakorlati tudások (7 lecke)
 
@@ -95,18 +96,17 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 ## Hiányzó készségek – tervezett leckék
 
-A fenti 50 lecke elkészült és regisztrálva van. A tantervben szereplő, még nem fedett készségek (a leckéket később tervezzük):
+A fenti leckék elkészültek és regisztrálva vannak. A tantervben szereplő, még nem fedett készségek (a leckéket később tervezzük):
 
 - [ ] **Naptár és időbeli tájékozódás** (hét, hónap, napok, évszakok)
 - [ ] **Hosszúság-mérés** (m, dm, cm; mérés vonalzóval)
 - [ ] **Idő – pontos idő olvasása** (percre pontosan)
 - [ ] **Törtek előkészítése** (fele, harmada, negyede)
-- [ ] **Tükrözés / szimmetria** (tengelyes tükrözés)
 
 ---
 
 ## Státusz
 
-*(50 lecke kész. Hátralévő: 5 hiányzó készség a fenti listából – a leckék megtervezése későbbre ütemezve.)*
+*(51 lecke kész, 51 regisztrálva. Hátralévő: 4 hiányzó készség a fenti listából – a leckék megtervezése későbbre ütemezve.)*
 
 

@@ -38,19 +38,41 @@ function rotations(cells) {
     return out;
 }
 
-const L_TETROMINO = [[0, 0], [0, 1], [0, 2], [1, 2]];
-const L_ROTS = rotations(L_TETROMINO);
-const J_ROTS = rotations(mirrorCells(L_TETROMINO));
+function distinctRotations(cells) {
+    const seen = new Set();
+    const out = [];
+    rotations(cells).forEach(r => {
+        const key = cellsKey(r);
+        if (!seen.has(key)) {
+            seen.add(key);
+            out.push(r);
+        }
+    });
+    return out;
+}
 
 function cellsKey(cells) {
     return JSON.stringify([...cells].sort());
 }
 
+const FAMILIES = [
+    [[0, 0], [0, 1], [0, 2], [1, 2]],
+    [[1, 0], [2, 0], [0, 1], [1, 1]],
+    [[0, 1], [1, 0], [1, 1], [1, 2], [2, 2]],
+    [[0, 0], [0, 1], [0, 2], [0, 3], [1, 3]],
+    [[0, 0], [1, 0], [1, 1], [2, 1], [3, 1]],
+    [[0, 0], [0, 1], [0, 2], [0, 3], [1, 1]]
+];
+
+const MIRRORS = FAMILIES.map(mirrorCells);
+
 function buildTurn() {
-    const base = pick(L_ROTS);
-    const same = L_ROTS.filter(c => cellsKey(c) !== cellsKey(base));
+    const idx = Math.floor(Math.random() * FAMILIES.length);
+    const base = pick(distinctRotations(FAMILIES[idx]));
+    const same = distinctRotations(FAMILIES[idx]).filter(c => cellsKey(c) !== cellsKey(base));
     const answer = pick(same);
-    const distractors = shuffle([...J_ROTS]).slice(0, 2);
+    const distractorPool = distinctRotations(MIRRORS[idx]).filter(c => cellsKey(c) !== cellsKey(answer));
+    const distractors = shuffle(distractorPool).slice(0, 2);
     const options = shuffle([answer, ...distractors]);
 
     return {

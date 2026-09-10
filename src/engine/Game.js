@@ -10,7 +10,7 @@ import { renderNeighbor } from "../components/neighbor.js?v=4";
 import { renderNeighborSingle } from "../components/neighborSingle.js?v=4";
 import { renderPlaceValue } from "../components/placeValue.js?v=4";
 import { renderPlaceValueTwoInput } from "../components/placeValueTwoInput.js?v=4";
-import { renderBridgeTen } from "../components/bridgeTen.js?v=5";
+import { renderBridgeTen } from "../components/bridgeTen.js?v=12";
 import { renderSequence } from "../components/sequence.js?v=13";
 import { renderOrder } from "../components/order.js?v=14";
 import { renderEvenOdd } from "../components/evenOdd.js?v=12";
@@ -40,7 +40,8 @@ import { renderPlaceValueHundreds } from "../components/placeValueHundreds.js?v=
 import { renderNumberName } from "../components/numberName.js?v=2";
 import { renderRounding } from "../components/rounding.js?v=2";
 import { renderRoman } from "../components/roman.js?v=2";
-import { renderTransform } from "../components/transform.js?v=2";
+import { renderTransform } from "../components/transform.js?v=3";
+import { renderMirror } from "../components/mirror.js?v=3";
 import { renderSetMatch } from "../components/setMatch.js?v=1";
 import { renderDataChart } from "../components/dataChart.js?v=2";
 import { renderCalendar } from "../components/calendar.js?v=1";
@@ -92,6 +93,7 @@ const COUNTED_TYPES = new Set([
     "rounding",
     "roman",
     "transform",
+    "mirror",
     "set-match",
     "data-chart",
     "calendar"
@@ -163,6 +165,7 @@ const RENDERERS = new Map([
     ["rounding", renderRounding],
     ["roman", renderRoman],
     ["transform", renderTransform],
+    ["mirror", renderMirror],
     ["set-match", renderSetMatch],
     ["data-chart", renderDataChart],
     ["calendar", renderCalendar]

@@ -1482,6 +1482,27 @@
             }
         },
         {
+            "id": "weight-01",
+            "title": "Melyik nehezebb?",
+            "grades": [
+                2
+            ],
+            "category": "practical",
+            "skill": "weight",
+            "difficulty": 2,
+            "type": "weight",
+            "mission": "⚖️ Melyik nehezebb?",
+            "subtitle": "Tömeg összehasonlítása",
+            "file": "./data/lessons/grade2/weight-01.json",
+            "worldTitles": {
+                "racing": "🔧 Melyik alkatrész nehezebb?",
+                "cooking": "🍳 Melyik hozzávaló nehezebb?",
+                "football": "⚽ Melyik felszerelés nehezebb?",
+                "animals": "🦁 Melyik tárgy nehezebb?",
+                "space": "🤖 Melyik tárgy nehezebb?"
+            }
+        },
+        {
             "id": "money-change-01",
             "title": "Mennyi a visszajáró?",
             "grades": [
@@ -1938,6 +1959,27 @@
                 "football": "⚽ Testek a pályán",
                 "animals": "🦁 Testek az állatkertben",
                 "space": "🤖 Testek az űrhajón"
+            }
+        },
+        {
+            "id": "mirror-01",
+            "title": "🪞 Tükrözés és szimmetria",
+            "grades": [
+                2
+            ],
+            "category": "geometry",
+            "skill": "transform",
+            "difficulty": 2,
+            "type": "mirror",
+            "mission": "🪞 Tükrözés és szimmetria",
+            "subtitle": "Tükörkép felismerése",
+            "file": "./data/lessons/grade2/mirror-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Tükrözés a boxutcában",
+                "cooking": "🍳 Tükrözés a konyhában",
+                "football": "⚽ Tükrözés a pályán",
+                "animals": "🦁 Tükrözés az állatkertben",
+                "space": "🤖 Tükrözés az űrhajón"
             }
         },
         {

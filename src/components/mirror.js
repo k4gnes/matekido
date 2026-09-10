@@ -4,12 +4,12 @@ import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const TITLES = {
-    postman: "🌀 Mozgatás és forgatás",
-    racing: "🏎️ Forgatás a boxutcában",
-    football: "⚽ Forgatás a pályán",
-    cooking: "🍳 Forgatás a konyhában",
-    animals: "🦁 Forgatás az állatkertben",
-    space: "🤖 Forgatás az űrhajón"
+    postman: "🪞 Tükrözés és szimmetria",
+    racing: "🏎️ Tükrözés a boxutcában",
+    football: "⚽ Tükrözés a pályán",
+    cooking: "🍳 Tükrözés a konyhában",
+    animals: "🦁 Tükrözés az állatkertben",
+    space: "🤖 Tükrözés az űrhajón"
 };
 
 const SVG_NS = "http://www.w3.org/2000/svg";
@@ -25,7 +25,39 @@ function svgEl(name, attrs = {}) {
     return el;
 }
 
-function createShapeSvg(cells, color) {
+function maxCoord(cells, idx) {
+    return Math.max(...cells.map(c => c[idx]));
+}
+
+function createMirrorLine(svg, axis) {
+    if (axis === "vertical") {
+        const x = ORIGIN + 2 * CELL;
+        svg.append(svgEl("line", {
+            x1: x, y1: ORIGIN - 8,
+            x2: x, y2: ORIGIN + 4 * CELL + 8,
+            stroke: "#ef4444", "stroke-width": "10", "stroke-opacity": ".25"
+        }));
+        svg.append(svgEl("line", {
+            x1: x, y1: ORIGIN - 8,
+            x2: x, y2: ORIGIN + 4 * CELL + 8,
+            stroke: "#ef4444", "stroke-width": "5", "stroke-dasharray": "9 6"
+        }));
+    } else {
+        const y = ORIGIN + 2 * CELL;
+        svg.append(svgEl("line", {
+            x1: ORIGIN - 8, y1: y,
+            x2: ORIGIN + 4 * CELL + 8, y2: y,
+            stroke: "#ef4444", "stroke-width": "10", "stroke-opacity": ".25"
+        }));
+        svg.append(svgEl("line", {
+            x1: ORIGIN - 8, y1: y,
+            x2: ORIGIN + 4 * CELL + 8, y2: y,
+            stroke: "#ef4444", "stroke-width": "5", "stroke-dasharray": "9 6"
+        }));
+    }
+}
+
+function createShapeSvg(cells, color, axis, alignToMirror) {
     const svg = svgEl("svg", { viewBox: "0 0 150 150" });
 
     for (let i = 0; i < 4; i++) {
@@ -41,10 +73,15 @@ function createShapeSvg(cells, color) {
         }
     }
 
+    createMirrorLine(svg, axis);
+
+    const dx = axis === "vertical" && alignToMirror ? 3 - maxCoord(cells, 0) : 0;
+    const dy = axis === "horizontal" && alignToMirror ? 3 - maxCoord(cells, 1) : 0;
+
     for (const [x, y] of cells) {
         svg.append(svgEl("rect", {
-            x: ORIGIN + x * CELL,
-            y: ORIGIN + y * CELL,
+            x: ORIGIN + (x + dx) * CELL,
+            y: ORIGIN + (y + dy) * CELL,
             width: CELL,
             height: CELL,
             rx: 5,
@@ -58,7 +95,11 @@ function createShapeSvg(cells, color) {
     return svg;
 }
 
-export function renderTransform(step, root, next, progress, onResult, onAttempt) {
+function createBaseSvg(step) {
+    return createShapeSvg(step.base, "#f59e0b", step.axis, false);
+}
+
+export function renderMirror(step, root, next, progress, onResult, onAttempt) {
 
     const ac = new AbortController();
     const world = getActiveWorld();
@@ -76,28 +117,28 @@ export function renderTransform(step, root, next, progress, onResult, onAttempt)
     card.append(title);
 
     const baseWrap = document.createElement("div");
-    baseWrap.className = "tr-base";
-    baseWrap.append(createShapeSvg(step.base, "#f59e0b"));
+    baseWrap.className = "mr-base";
+    baseWrap.append(createBaseSvg(step));
     const baseLabel = document.createElement("span");
-    baseLabel.className = "tr-label";
+    baseLabel.className = "mr-label";
     baseLabel.textContent = "minta";
     baseWrap.append(baseLabel);
     card.append(baseWrap);
 
     const prompt = document.createElement("p");
-    prompt.className = "tr-prompt";
-    prompt.textContent = "Melyik alakzat ugyanaz, mint a minta, csak elforgatva?";
+    prompt.className = "mr-prompt";
+    prompt.textContent = "Melyik a minta tükörképe? A piros szaggatott vonal a tükör!";
     card.append(prompt);
 
     const optionsContainer = document.createElement("div");
-    optionsContainer.className = "tr-options";
+    optionsContainer.className = "mr-options";
 
     step.options.forEach((cells, index) => {
         const btn = document.createElement("button");
         btn.type = "button";
-        btn.className = "tr-option";
+        btn.className = "mr-option";
         btn.dataset.index = index;
-        btn.append(createShapeSvg(cells, "#3b82f6"));
+        btn.append(createShapeSvg(cells, "#3b82f6", step.axis, true));
         optionsContainer.append(btn);
     });
 
@@ -117,7 +158,7 @@ export function renderTransform(step, root, next, progress, onResult, onAttempt)
     });
 
     function successText() {
-        return "😊 Ügyes! Ez valóban ugyanaz az alakzat, csak elforgatva!";
+        return "😊 Ügyes! A tükörkép úgy néz ki, mintha a tükörben látnád!";
     }
 
     function checkAnswer(isCorrect) {
@@ -133,7 +174,7 @@ export function renderTransform(step, root, next, progress, onResult, onAttempt)
     }
 
     optionsContainer.addEventListener("click", (e) => {
-        const btn = e.target.closest(".tr-option");
+        const btn = e.target.closest(".mr-option");
         if (!btn || feedback.isAnswered()) return;
 
         const ok = Number(btn.dataset.index) === step.answer;

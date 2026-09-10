@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=14";
+import { generate } from "../generators/index.js?v=15";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -388,6 +388,11 @@ export function buildLesson(lesson) {
             } else if (step.generator === "transform") {
                 result.push({
                     type: "transform",
+                    ...task
+                });
+            } else if (step.generator === "mirror") {
+                result.push({
+                    type: "mirror",
                     ...task
                 });
             } else if (step.generator === "set-match") {

@@ -1,0 +1,70 @@
+{
+  "id": "grade2-mirror-01",
+  "title": "🪞 Tükrözés 2. osztály",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🪞 Tükrözés",
+      "text": "Egy alakzatot a tükörben másnak látsz! A piros szaggatott vonal a tükör vonala. Találd ki, melyik a minta tükörképe!",
+      "worldTitles": {
+        "racing": {
+          "title": "🪞 Tükrözés a boxutcában",
+          "text": "A szerelők tükrös alkatrészeket raknak össze! Találd ki, melyik a minta tükörképe!"
+        },
+        "football": {
+          "title": "🪞 Tükrözés a pályán",
+          "text": "A bírók tükrös alakzatokat keresnek a zászlókon! Találd ki, melyik a minta tükörképe!"
+        },
+        "cooking": {
+          "title": "🪞 Tükrözés a konyhában",
+          "text": "A szakács tükörtortát készít! Találd ki, melyik a minta tükörképe!"
+        },
+        "animals": {
+          "title": "🪞 Tükrözés az állatkertben",
+          "text": "Az állatok tükörjátékot játszanak! Találd ki, melyik a minta tükörképe!"
+        },
+        "space": {
+          "title": "🪞 Tükrözés az űrhajón",
+          "text": "Az űrhajósok tükrös paneleket illesztenek! Találd ki, melyik a minta tükörképe!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "mirror",
+      "options": {
+        "count": 5
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden tükörképet megtaláltál! A tükörkép olyan, mintha tükörben látnád a mintát!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes vagy!",
+          "text": "Minden tükörképet megtaláltál a boxutcában!"
+        },
+        "football": {
+          "title": "🎉 Ügyes vagy!",
+          "text": "Minden tükörképet megtaláltál a pályán!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden tükörképet megtaláltál a konyhában!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden tükörképet megtaláltál az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden tükörképet megtaláltál az űrhajón!"
+        }
+      }
+    }
+  ]
+}

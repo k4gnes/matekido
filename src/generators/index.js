@@ -42,6 +42,7 @@ import { generateSetMatch } from "./setMatchGenerator.js?v=1";
 import { generateDataChart } from "./dataChartGenerator.js?v=1";
 import { generateCalendar } from "./calendarGenerator.js?v=2";
 import { generateFraction } from "./fractionGenerator.js?v=1";
+import { generateMeasureUnits } from "./measureUnitsGenerator.js?v=2";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -143,6 +144,8 @@ export function generate(step) {
             return generateCalendar(opts);
         case "fraction":
             return generateFraction(opts);
+        case "measure-units":
+            return generateMeasureUnits(opts);
 
         default:
             throw new Error(

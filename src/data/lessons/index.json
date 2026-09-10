@@ -2025,6 +2025,27 @@
             }
         },
         {
+            "id": "measure-units-01",
+            "title": "📏 Hosszúság-mérés – méter, deciméter, centiméter",
+            "grades": [
+                2
+            ],
+            "category": "practical",
+            "skill": "length",
+            "difficulty": 2,
+            "type": "measure-units",
+            "mission": "📏 Hosszúság-mérés",
+            "subtitle": "hosszúság m, dm, cm átváltása",
+            "file": "./data/lessons/grade2/measure-units-01.json",
+            "worldTitles": {
+                "racing": "🔧 Hosszúság-mérés a boxutcában",
+                "cooking": "🥄 Hosszúság-mérés a konyhában",
+                "football": "⚽ Hosszúság-mérés a pályán",
+                "animals": "🦁 Hosszúság-mérés az állatkertben",
+                "space": "🤖 Hosszúság-mérés az űrhajón"
+            }
+        },
+        {
             "id": "place-value-hundreds-01",
             "title": "Helyiérték 1000-ig",
             "grades": [

@@ -46,6 +46,7 @@ import { renderSetMatch } from "../components/setMatch.js?v=1";
 import { renderDataChart } from "../components/dataChart.js?v=2";
 import { renderCalendar } from "../components/calendar.js?v=2";
 import { renderFraction } from "../components/fraction.js?v=4";
+import { renderMeasureUnits } from "../components/measureUnits.js?v=1";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -98,7 +99,8 @@ const COUNTED_TYPES = new Set([
     "set-match",
     "data-chart",
     "calendar",
-    "fraction"
+    "fraction",
+    "measure-units"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -171,7 +173,8 @@ const RENDERERS = new Map([
     ["set-match", renderSetMatch],
     ["data-chart", renderDataChart],
     ["calendar", renderCalendar],
-    ["fraction", renderFraction]
+    ["fraction", renderFraction],
+    ["measure-units", renderMeasureUnits]
 ]);
 
 

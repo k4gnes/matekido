@@ -88,7 +88,8 @@ const TYPE_EMOJI = {
     "number-name": "🔤",
     rounding: "🎯",
     roman: "🏛️",
-    fraction: "🍕"
+    fraction: "🍕",
+    "measure-units": "📏"
 };
 
 const TYPE_GROUPS = {
@@ -142,7 +143,8 @@ const TYPE_LABEL = {
     "set-match": "Halmazok és válogatás",
     "data-chart": "Adatok és diagramok",
     calendar: "Naptár",
-    fraction: "Törtek"
+    fraction: "Törtek",
+    "measure-units": "Hosszúság-mérés"
 };
 
 const RANGE_LABEL = {

@@ -1,0 +1,48 @@
+.mu-hint {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    color: #b45309;
+    background: #fef3c7;
+    border: 1px solid #fcd34d;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin: 0.6rem 0;
+}
+
+.mu-prompt {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0.8rem 0 0.4rem;
+}
+
+.mu-options {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0.8rem 0;
+}
+
+.mu-option {
+    min-width: 88px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e293b;
+    background: #ffffff;
+    border: 2px solid #cbd5e1;
+    border-radius: 14px;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    transition: transform 0.1s ease, border-color 0.1s ease;
+}
+
+.mu-option:hover {
+    transform: scale(1.05);
+    border-color: #94a3b8;
+}
+
+.mu-option:disabled {
+    opacity: 0.7;
+}

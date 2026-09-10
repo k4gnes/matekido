@@ -1,0 +1,70 @@
+{
+  "id": "grade2-measure-units-01",
+  "title": "📏 Hosszúság-mérés – méter, deciméter, centiméter",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📏 Hosszúság-mérés",
+      "text": "A hosszúságot méterben (m), deciméterben (dm) és centiméterben (cm) mérjük. 1 méter 10 dm, 1 déciméter 10 cm, tehát 1 méter 100 cm!",
+      "worldTitles": {
+        "racing": {
+          "title": "🔧 Hosszúság-mérés a boxutcában",
+          "text": "A szerelők mérik a pálya hosszát! 1 méter 10 dm, 1 dm 10 cm. Számoljuk át együtt!"
+        },
+        "football": {
+          "title": "⚽ Hosszúság-mérés a pályán",
+          "text": "A labda vonalzóval mérik az összes távolságot! Segíts az átváltásokkal!"
+        },
+        "cooking": {
+          "title": "🥄 Hosszúság-mérés a konyhában",
+          "text": "A szakácsok megmérik a tésztát és a kolbászt! Méter, deciméter, centiméter – jöjjenek az átváltások!"
+        },
+        "animals": {
+          "title": "🦁 Hosszúság-mérés az állatkertben",
+          "text": "Az állatgondozók mérik le a kígyókat és a kecskéket! Hány cm valójában?"
+        },
+        "space": {
+          "title": "🤖 Hosszúság-mérés az űrhajón",
+          "text": "A mérnökök megmérik a rakéta alkatrészeit! 1 m 10 dm, 1 dm 10 cm, menjünk!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 5
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Remekül átváltod a métert, decimétert és centimétert!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Irány a pálya!",
+          "text": "Jól számoltál, mehet a futam! 🏁"
+        },
+        "football": {
+          "title": "⚽ Felszabadult a pálya!",
+          "text": "Ügyesen mértél, kezdődhet a meccs! 🎉"
+        },
+        "cooking": {
+          "title": "🥄 Finom a menü!",
+          "text": "Jól adtad át a mértékegységeket, a konyha kész! 🍽️"
+        },
+        "animals": {
+          "title": "🦁 Minden állat megmérve!",
+          "text": "Minden állatot sikerült megmérned, nagyszerű! 🐾"
+        },
+        "space": {
+          "title": "🤖 Indulhat a küldetés!",
+          "text": "Az alkatrészek pontosan meg vannak mérve, indulhat a rakéta! 🚀"
+        }
+      }
+    }
+  ]
+}

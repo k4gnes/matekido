@@ -41,6 +41,7 @@ import { generateMirror } from "./mirrorGenerator.js?v=2";
 import { generateSetMatch } from "./setMatchGenerator.js?v=1";
 import { generateDataChart } from "./dataChartGenerator.js?v=1";
 import { generateCalendar } from "./calendarGenerator.js?v=2";
+import { generateFraction } from "./fractionGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -140,6 +141,8 @@ export function generate(step) {
             return generateDataChart(opts);
         case "calendar":
             return generateCalendar(opts);
+        case "fraction":
+            return generateFraction(opts);
 
         default:
             throw new Error(

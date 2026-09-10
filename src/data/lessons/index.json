@@ -2004,6 +2004,27 @@
             }
         },
         {
+            "id": "fraction-01",
+            "title": "🍕 Törtek – fele, harmada, negyede",
+            "grades": [
+                2
+            ],
+            "category": "numbers",
+            "skill": "fraction",
+            "difficulty": 1,
+            "type": "fraction",
+            "mission": "🍕 Törtek előkészítése",
+            "subtitle": "Fele, harmada és negyede",
+            "file": "./data/lessons/grade2/fraction-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Törtek a boxutcában",
+                "cooking": "🍳 Törtek a konyhában",
+                "football": "⚽ Törtek a pályán",
+                "animals": "🦁 Törtek az állatkertben",
+                "space": "🤖 Törtek az űrhajón"
+            }
+        },
+        {
             "id": "place-value-hundreds-01",
             "title": "Helyiérték 1000-ig",
             "grades": [

@@ -1,0 +1,70 @@
+{
+  "id": "grade2-fraction-01",
+  "title": "🍕 Törtek – fele, harmada, negyede",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🍕 Törtek",
+      "text": "Ha egy egészet két egyenlő részre osztunk, az a fele. Háromra az a harmada, négyre pedig a negyede. Nézzük meg pizzán, csokin, szendvicsen és tortán!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Törtek a boxutcában",
+          "text": "A szerelők egyenlő részekre osztják a szendvicseket a szünetben! Segítesz nekik?"
+        },
+        "football": {
+          "title": "⚽ Törtek a pályán",
+          "text": "A csapat félidőben pizzát oszt el egyenlően! Válaszd ki a helyes részeket!"
+        },
+        "cooking": {
+          "title": "🍳 Törtek a konyhában",
+          "text": "A szakácsok tortát vágnak egyenlő szeletekre! Keresd meg, hol van a fele, harmada vagy negyede!"
+        },
+        "animals": {
+          "title": "🦁 Törtek az állatkertben",
+          "text": "Az állatok tortát és szendvicset kapnak, mindenki egyenlő részt! Játszunk a törtekkel!"
+        },
+        "space": {
+          "title": "🤖 Törtek az űrhajón",
+          "text": "Az űrhajósok egyenlően osztják el a csokit! Találd meg a fele, harmada vagy negyede!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "fraction",
+      "options": {
+        "count": 5
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Remekül ismered a felet, a harmadot és a negyedet! Egyenlően osztod az egészet!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Irány a pálya!",
+          "text": "Ügyesen osztottad a szendvicseket, mehet a futam! 🏁"
+        },
+        "football": {
+          "title": "⚽ Felszabadult a csapat!",
+          "text": "Egyenlően osztottad a pizzát, kezdődhet a második félidő! 🎉"
+        },
+        "cooking": {
+          "title": "🍳 Finom torta vár!",
+          "text": "Ügyesen osztottad el a tortát, mindenkinek jut belőle! 🎂"
+        },
+        "animals": {
+          "title": "🦁 Minden állat elégedett!",
+          "text": "Mindenki egyenlő részt kapott, az állatok nagyon örülnek! 🐾"
+        },
+        "space": {
+          "title": "🤖 Csoki az egész legénységnek!",
+          "text": "Ügyesen osztottad a csokit, a legénység jól éheztetett! 🛰️"
+        }
+      }
+    }
+  ]
+}

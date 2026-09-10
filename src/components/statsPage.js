@@ -72,7 +72,8 @@ const TYPE_LABEL = {
     mirror: "Tükrözés",
     "set-match": "Halmazok és válogatás",
     "data-chart": "Adatok és diagramok",
-    calendar: "Naptár"
+    calendar: "Naptár",
+    fraction: "Törtek"
 };
 
 const TYPE_EMOJI = {
@@ -119,7 +120,8 @@ const TYPE_EMOJI = {
     rounding: "🎯",
     roman: "🏛️",
     weight: "⚖️",
-    mirror: "🪞"
+    mirror: "🪞",
+    fraction: "🍕"
 };
 
 function createStatGrid(items, className) {

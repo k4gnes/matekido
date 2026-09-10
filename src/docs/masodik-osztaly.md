@@ -1,12 +1,12 @@
 # Matekidő – 2. osztályos készségtérkép
 
-**52 lecke**, 7 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**53 lecke**, 7 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 ---
 
-## Számfogalom (11 lecke)
+## Számfogalom (12 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
@@ -21,6 +21,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Helyiérték | Helyiérték 100-ig | Tízesek és egyesek (bontás + összeállítás) | 100 | 2 |
 | Összehasonlítás | Összehasonlítás 20-ig | Nagyobb, kisebb vagy egyenlő | 20 | 1 |
 | Összehasonlítás | Összehasonlítás 100-ig | Nagyobb, kisebb vagy egyenlő | 100 | 2 |
+| Törtek | 🍕 Törtek – fele, harmada, negyede | Fele, harmada és negyede képekkel | — | 1 |
 
 ## Műveletek (13 lecke)
 
@@ -102,12 +103,12 @@ A fenti leckék elkészültek és regisztrálva vannak. A tantervben szereplő, 
 - [x] **Naptár és időbeli tájékozódás** (hét, hónap, napok, évszakok)
 - [ ] **Hosszúság-mérés** (m, dm, cm; mérés vonalzóval)
 - [ ] **Idő – pontos idő olvasása** (percre pontosan)
-- [ ] **Törtek előkészítése** (fele, harmada, negyede)
+- [x] **Törtek előkészítése** (fele, harmada, negyede)
 
 ---
 
 ## Státusz
 
-*(52 lecke kész, 52 regisztrálva. Hátralévő: 3 hiányzó készség a fenti listából – a leckék megtervezése későbbre ütemezve.)*
+*(53 lecke kész, 53 regisztrálva. Hátralévő: 2 hiányzó készség a fenti listából – a leckék megtervezése későbbre ütemezve.)*
 
 

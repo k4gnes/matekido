@@ -45,6 +45,7 @@ import { renderMirror } from "../components/mirror.js?v=3";
 import { renderSetMatch } from "../components/setMatch.js?v=1";
 import { renderDataChart } from "../components/dataChart.js?v=2";
 import { renderCalendar } from "../components/calendar.js?v=2";
+import { renderFraction } from "../components/fraction.js?v=4";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -96,7 +97,8 @@ const COUNTED_TYPES = new Set([
     "mirror",
     "set-match",
     "data-chart",
-    "calendar"
+    "calendar",
+    "fraction"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -168,7 +170,8 @@ const RENDERERS = new Map([
     ["mirror", renderMirror],
     ["set-match", renderSetMatch],
     ["data-chart", renderDataChart],
-    ["calendar", renderCalendar]
+    ["calendar", renderCalendar],
+    ["fraction", renderFraction]
 ]);
 
 

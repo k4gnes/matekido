@@ -9,7 +9,7 @@ Interaktív matematikai tanulási platform magyar gyerekeknek (első osztálytó
 - `make test` / `node src/testLessons.js` – az összes osztályos lecke (1–3.) automatizált ellenőrzése (minden lecke felépül több világban és sorozatban, a generált feladatok struktúrája helyes).
 - `node src/testGenerator.js` – generatorok manuális tesztelése (ESM-et használ, node-dal futtatható).
 - `node src/generateSWCache.js` – az offline precache-lista (`src/sw-cache.js`) újragenerálása; új/eltűnt fájlnál (pl. új lecke) mindig futtatni kell.
-- Minden commit után manuálisan ellenőrizni kell a böngészőben (hibakereséshez nincs automatizált teszt).
+- Minden commit után manuálisan ellenőrizni kell a böngészőben (hibakereséshez nincs automatizált teszt). Ehhez használható: `docs/tesztelés.md` (teljes app-átfutás) és az osztályonkénti forgatókönyvek `docs/teszt-forgatokonyv-{1,2,3}-osztaly.md`.
 
 ## Web gyökér: `src/`
 

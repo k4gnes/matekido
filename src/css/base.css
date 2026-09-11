@@ -156,3 +156,41 @@ button:hover {
         display: none;
     }
 }
+
+body[data-world] {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, .35), rgba(255, 255, 255, 0) 65%),
+        var(--world-bg-image);
+    background-size: cover, 170px 170px;
+    background-attachment: fixed, fixed;
+}
+
+body[data-world="postman"] {
+    --world-bg-image: url("../assets/images/bg-postman.svg");
+    background-color: #f2f7ff;
+}
+
+body[data-world="racing"] {
+    --world-bg-image: url("../assets/images/bg-racing.svg");
+    background-color: #fff3e8;
+}
+
+body[data-world="cooking"] {
+    --world-bg-image: url("../assets/images/bg-cooking.svg");
+    background-color: #fff7ed;
+}
+
+body[data-world="football"] {
+    --world-bg-image: url("../assets/images/bg-football.svg");
+    background-color: #f3fbf3;
+}
+
+body[data-world="animals"] {
+    --world-bg-image: url("../assets/images/bg-animals.svg");
+    background-color: #fcfaf0;
+}
+
+body[data-world="space"] {
+    --world-bg-image: url("../assets/images/bg-space.svg");
+    background-color: #eef1fb;
+}

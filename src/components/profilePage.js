@@ -26,7 +26,7 @@ export function renderProfilePage(lessonIndex, root, onBack, onStats, onPractice
 
     const title = document.createElement("h1");
     const currentWorld = getAllWorlds().find(w => w.id === getActiveWorld());
-    title.textContent = `${currentWorld?.icon ?? "📮"} Saját ${currentWorld?.name ?? "postahivatal"}`;
+    title.textContent = `${currentWorld?.icon ?? "📮"} ${currentWorld?.name ?? "postahivatal"}`;
 
     const nameDisplay = document.createElement("p");
     nameDisplay.style.cssText = "font-size:1.1rem; font-weight:600; margin:0 0 .6rem; text-align:center;";

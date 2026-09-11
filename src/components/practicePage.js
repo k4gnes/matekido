@@ -21,6 +21,16 @@ export function getWeakLessonFiles(lessonIndex, grade) {
 
 }
 
+export function getNextPracticeLesson(lessonIndex, path) {
+
+    const weak = getWeakLessonFiles(lessonIndex);
+
+    weak.delete(path);
+
+    return pickNextLesson(lessonIndex, weak);
+
+}
+
 function pickNextLesson(lessonIndex, weakLessonFiles) {
 
     const lessons = (lessonIndex.lessons || []).filter(l => weakLessonFiles.has(l.file));

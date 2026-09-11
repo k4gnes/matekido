@@ -6,42 +6,48 @@ const WORLDS = [
         name: "Postás",
         icon: "📮",
         description: "Levelek és csomagok kézbesítése",
-        requiredStars: 0
+        requiredStars: 0,
+        tagline: "Postám van 📮"
     }),
     new World({
         id: "racing",
         name: "Versenyautó",
         icon: "🏎️",
         description: "Gyorsaság és precizitás a pályán",
-        requiredStars: 15
+        requiredStars: 15,
+        tagline: "A versenypályám vár 🏎️"
     }),
     new World({
         id: "cooking",
         name: "Szakács",
         icon: "👨‍🍳",
         description: "Receptek és hozzávalók számolgatása",
-        requiredStars: 40
+        requiredStars: 40,
+        tagline: "Az én konyhám forr 👨‍🍳"
     }),
     new World({
         id: "football",
         name: "Foci",
         icon: "⚽",
         description: "Gól rúgás és csapatmunka",
-        requiredStars: 80
+        requiredStars: 80,
+        tagline: "A csapatom győzni jött ⚽"
     }),
     new World({
         id: "animals",
         name: "Állatkert",
         icon: "🦁",
         description: "Állatok gondozása az állatkertben",
-        requiredStars: 100
+        requiredStars: 100,
+        tagline: "Az én állataim várnak 🦁"
     }),
     new World({
         id: "space",
         name: "Űr",
         icon: "🤖",
         description: "Robotok és utazás a világűrben",
-        requiredStars: 120
+        requiredStars: 120,
+        tagline: "Az űrhajóm ránk vár 🤖"
     })
 ];
 

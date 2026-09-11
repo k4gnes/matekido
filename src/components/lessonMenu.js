@@ -5,6 +5,7 @@ import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getLessonStats, getActiveWorld, getActiveGrade, setActiveGrade, getFavoriteLessons, getSkippedLessons, isFavoriteLesson, toggleFavoriteLesson } from "../profile/Profile.js";
 import { CATEGORIES, SKILLS } from "../data/skills.js";
 import { CONSOLIDATION_LESSONS } from "../data/consolidation.js";
+import { getWorld } from "../world/WorldRegistry.js";
 
 const FILTER_STORAGE_KEY = "matekido-lesson-filters";
 const FILTER_OPEN_KEY = "matekido-lesson-filters-open";
@@ -546,10 +547,20 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
 
     const title = document.createElement("h1");
     const worldId = getActiveWorld();
-    const worldEmoji = worldId === "racing" ? "🏎️" : worldId === "football" ? "⚽" : worldId === "cooking" ? "👨‍🍳" : worldId === "animals" ? "🦁" : worldId === "space" ? "🤖" : "📚";
-    title.textContent = `${worldEmoji} Matekidő`;
+    const logo = document.createElement("img");
+    logo.src = "assets/icons/icon.svg";
+    logo.alt = "Matekidő";
+    logo.style.height = "2em";
+    logo.style.width = "auto";
+    logo.style.verticalAlign = "middle";
+    title.append(logo, " Matekidő");
 
-    wrapper.append(title);
+    const worldSub = document.createElement("p");
+    worldSub.style.cssText = "margin:.1rem 0 0; font-size:1.1rem; color:var(--text-secondary, #666);";
+    const wData = getWorld(worldId);
+    worldSub.textContent = wData.tagline || `${wData.icon} ${wData.name} világ`;
+
+    wrapper.append(title, worldSub);
 
     const activeWorld = getActiveWorld();
     const allLessons = index.lessons || [];
@@ -676,6 +687,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
         contentArea.append(gradeTitle);
 
         const next = pickNextForGrade(gradeLessons);
+        const gradeFinished = gradeLessons.length > 0 && !next;
         if (next) {
             const nextCard = createCard();
 
@@ -697,45 +709,50 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
 
             contentArea.append(nextCard);
         } else {
+            const doneCard = createCard();
+
+            const doneHeading = document.createElement("h3");
+            doneHeading.className = "category-title";
+            doneHeading.textContent = "🎉 Minddel elkészültél!";
+            doneCard.append(doneHeading);
+
+            const doneNote = document.createElement("p");
+            doneNote.className = "lesson-card-subtitle";
+            doneNote.textContent = gradeFinished
+                ? `Elkészültél az ${selectedGrade}. osztály minden feladatával. Gyakorolhatsz kedved szerint, vagy az alábbi gombbal folytathatod.`
+                : "Elkészültél az adott osztály feladataival.";
+            doneCard.append(doneNote);
+
             const nextGradeStart = allLessons.find(l => l.grades?.includes(selectedGrade + 1));
             if (nextGradeStart) {
-                const nextCard = createCard();
-
-                const nextHeading = document.createElement("h3");
-                nextHeading.className = "category-title";
-                nextHeading.textContent = "🎉 Következő feladat";
-                nextCard.append(nextHeading);
-
-                const nextNote = document.createElement("p");
-                nextNote.className = "lesson-card-subtitle";
-                nextNote.textContent = `Elkészültél az ${selectedGrade}. osztállyal! A következő feladat már a ${selectedGrade + 1}. osztályból való.`;
-                nextCard.append(nextNote);
-
-                const grid = document.createElement("div");
-                grid.className = "next-lesson-card";
-                grid.append(createLessonCard(nextGradeStart, () => {
-                    setActiveGrade(selectedGrade + 1);
-                    saveSelectedGrade(selectedGrade + 1);
-                    onSelect(nextGradeStart.file);
-                }, activeWorld));
-                nextCard.append(grid);
-
-                contentArea.append(nextCard);
+                const continueButton = createButton(`➡️ Folytatás a ${selectedGrade + 1}. osztályban`, {
+                    onClick: () => chooseGrade(selectedGrade + 1)
+                });
+                continueButton.className = "profile-page-button";
+                doneCard.append(continueButton);
             }
+
+            contentArea.append(doneCard);
         }
 
         const browseWrap = document.createElement("div");
-        browseWrap.hidden = true;
+        const browseHidden = !gradeFinished;
+        browseWrap.hidden = browseHidden;
 
-        const listButton = createButton(`📚 Feladatok listája (${gradeLessons.length})`, {
-            onClick: () => {
-                const showing = !browseWrap.hidden;
-                browseWrap.hidden = showing;
-                listButton.textContent = showing
-                    ? `📚 Feladatok listája (${gradeLessons.length})`
-                    : "🔽 Elrejtés";
+        const listButton = createButton(
+            browseHidden
+                ? `📚 Feladatok listája (${gradeLessons.length})`
+                : "🔽 Elrejtés",
+            {
+                onClick: () => {
+                    const showing = !browseWrap.hidden;
+                    browseWrap.hidden = showing;
+                    listButton.textContent = showing
+                        ? `📚 Feladatok listája (${gradeLessons.length})`
+                        : "🔽 Elrejtés";
+                }
             }
-        });
+        );
         listButton.className = "profile-page-button";
 
         const listButtonRow = document.createElement("div");

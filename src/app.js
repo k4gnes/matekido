@@ -1,16 +1,16 @@
 import { Game } from "./engine/Game.js?v=57";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=16";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=20";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=24";
 import { renderSkillMap } from "./components/skillMap.js?v=8";
 import { renderHelp } from "./components/help.js?v=2";
 import { renderProfilePage } from "./components/profilePage.js";
 import { renderStatsPage } from "./components/statsPage.js?v=5";
-import { renderPracticePage } from "./components/practicePage.js?v=5";
+import { renderPracticePage, getNextPracticeLesson } from "./components/practicePage.js?v=6";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=2";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=3";
 import { getActiveId, listPlayers } from "./profile/UserManager.js";
-import { setActiveGrade, getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons } from "./profile/Profile.js";
+import { setActiveGrade, getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld } from "./profile/Profile.js";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
 import { createCard } from "./components/ui/card.js";
 import { createButton } from "./components/ui/button.js";
@@ -25,19 +25,34 @@ if (getActiveId() && listPlayers().length > 0) {
     showWelcome();
 }
 
+function setWorldBackground() {
+    const worldId = getActiveWorld();
+    if (worldId) {
+        document.body.dataset.world = worldId;
+    }
+}
+
+function clearWorldBackground() {
+    delete document.body.dataset.world;
+}
+
 function showWelcome() {
+    clearWorldBackground();
     renderWelcomeScreen(root, () => {
         showMenu();
     }, showParentDashboard);
 }
 
 function showParentDashboard() {
+    clearWorldBackground();
     renderParentDashboard(root, () => {
         showWelcome();
     }, lessonIndex);
 }
 
 function showMenu() {
+
+    setWorldBackground();
 
     renderLessonMenu(
         lessonIndex,
@@ -52,22 +67,27 @@ function showMenu() {
 }
 
 function showSkillMap() {
+    clearWorldBackground();
     renderSkillMap(root, showMenu);
 }
 
 function showHelp(onBack) {
+    clearWorldBackground();
     renderHelp(root, onBack ?? showMenu);
 }
 
 function showProfile() {
+    clearWorldBackground();
     renderProfilePage(lessonIndex, root, showMenu, showStats, showPractice, () => showHelp(showProfile));
 }
 
 function showPractice() {
-    renderPracticePage(lessonIndex, root, startLesson, showProfile);
+    clearWorldBackground();
+    renderPracticePage(lessonIndex, root, (file) => startLesson(file, { from: "practice" }), showProfile);
 }
 
 function showStats() {
+    clearWorldBackground();
     renderStatsPage(root, (target) => {
         if (target === "lessons") {
             showMenu();
@@ -78,6 +98,7 @@ function showStats() {
 }
 
 async function startLesson(path, opts = {}) {
+    clearWorldBackground();
 
     const rawLesson = await loadLesson(path);
 
@@ -116,6 +137,16 @@ async function startLesson(path, opts = {}) {
 }
 
 function continueToNext(path, opts = {}) {
+
+    if (opts.from === "practice") {
+        const next = getNextPracticeLesson(lessonIndex, path);
+        if (next) {
+            startLesson(next.file, { from: "practice" });
+            return;
+        }
+        showPractice();
+        return;
+    }
 
     if (opts.from === "consolidation" || opts.from === "favorites") {
         const files = opts.from === "consolidation" ? getConsolidationFiles() : getFavoriteFiles();
@@ -239,8 +270,6 @@ function showGradeChange(path, next) {
 
             return;
         }
-
-        setActiveGrade(grade + 1);
     }
 
     root.replaceChildren();
@@ -255,14 +284,32 @@ function showGradeChange(path, next) {
         ? `Most ${nextGradeLabel(grade + 1)} tananyaga következik!`
         : "Következik a következő tananyag!";
 
-    const button = createButton("➡️ Következő", {
-        onClick: () => startLesson(next.file)
+    const buttonRow = document.createElement("div");
+    buttonRow.style.cssText = "display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; margin-top:1rem;";
+
+    const continueButton = createButton("➡️ Folytatom a következő osztályban", {
+        onClick: () => {
+            if (grade) {
+                setActiveGrade(grade + 1);
+            }
+            startLesson(next.file);
+        }
     });
 
-    card.append(title, text, button);
+    const backButton = createButton("🔁 Visszatérek a gyakorláshoz", {
+        onClick: () => {
+            if (grade && getActiveGrade() !== grade) {
+                setActiveGrade(grade);
+            }
+            showMenu();
+        }
+    });
+
+    buttonRow.append(continueButton, backButton);
+    card.append(title, text, buttonRow);
     root.append(card);
 
-    button.focus();
+    continueButton.focus();
 
 }
 

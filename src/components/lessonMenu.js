@@ -608,7 +608,36 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     const wData = getWorld(worldId);
     worldSub.textContent = wData.tagline || `${wData.icon} ${wData.name} világ`;
 
-    wrapper.append(title, worldSub);
+    const buttonRow = document.createElement("div");
+    buttonRow.className = "menu-player-row";
+
+    const allPlayers = listPlayers();
+    const activeId = getActiveId();
+    const currentPlayer = allPlayers.find(p => p.id === activeId);
+
+    const profileButton = createButton("👤 Profil", {
+        onClick: () => onProfile?.()
+    });
+    profileButton.className = "profile-page-button";
+
+    buttonRow.append(profileButton);
+
+    if (currentPlayer) {
+        const avatar = document.createElement("span");
+        avatar.className = "menu-player-name";
+        avatar.textContent = `${currentPlayer.avatar} ${currentPlayer.name}`;
+        buttonRow.append(avatar);
+    }
+
+    if (onSwitch) {
+        const switchButton = createButton("👤 Játékos", {
+            onClick: () => onSwitch?.()
+        });
+        switchButton.className = "profile-page-button";
+        buttonRow.append(switchButton);
+    }
+
+    wrapper.append(title, buttonRow, worldSub);
 
     const activeWorld = getActiveWorld();
     const allLessons = index.lessons || [];
@@ -914,34 +943,5 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
 
     renderContent();
 
-    const buttonRow = document.createElement("div");
-    buttonRow.className = "menu-player-row";
-
-    const allPlayers = listPlayers();
-    const activeId = getActiveId();
-    const currentPlayer = allPlayers.find(p => p.id === activeId);
-
-    const profileButton = createButton("👤 Profil", {
-        onClick: () => onProfile?.()
-    });
-    profileButton.className = "profile-page-button";
-
-    buttonRow.append(profileButton);
-
-    if (currentPlayer) {
-        const avatar = document.createElement("span");
-        avatar.className = "menu-player-name";
-        avatar.textContent = `${currentPlayer.avatar} ${currentPlayer.name}`;
-        buttonRow.append(avatar);
-    }
-
-    if (onSwitch) {
-        const switchButton = createButton("👤 Játékos", {
-            onClick: () => onSwitch?.()
-        });
-        switchButton.className = "profile-page-button";
-        buttonRow.append(switchButton);
-    }
-
-    root.append(buttonRow, wrapper);
+    root.append(wrapper);
 }

@@ -25,7 +25,13 @@ export function getNextPracticeLesson(lessonIndex, path) {
 
     const weak = getWeakLessonFiles(lessonIndex);
 
+    const currentStillWeak = weak.has(path);
+
     weak.delete(path);
+
+    if (currentStillWeak) {
+        return pickNextLesson(lessonIndex, weak);
+    }
 
     return pickNextLesson(lessonIndex, weak);
 

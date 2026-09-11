@@ -9,6 +9,18 @@ import { getWorld } from "../world/WorldRegistry.js";
 
 const FILTER_STORAGE_KEY = "matekido-lesson-filters";
 const FILTER_OPEN_KEY = "matekido-lesson-filters-open";
+const LIST_HIDDEN_KEY = "matekido-lesson-list-hidden";
+
+function saveListHidden(hidden) {
+    saveRaw(LIST_HIDDEN_KEY, hidden ? "1" : "0");
+}
+
+function loadListHidden() {
+    const val = loadRaw(LIST_HIDDEN_KEY);
+    if (val === "1") return true;
+    if (val === "0") return false;
+    return null;
+}
 
 function saveFilters(filters) {
     saveJSON(FILTER_STORAGE_KEY, filters);
@@ -666,7 +678,9 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
         grid.className = "lesson-grid";
 
         gradeConfig.forEach(gc => {
-            const btn = createButton(gc.title, {
+            const gradeLessons = allLessons.filter(l => l.grades?.includes(gc.grade));
+            const done = gradeLessons.length > 0 && pickNextForGrade(gradeLessons) === null;
+            const btn = createButton(done ? `🎉 ${gc.title} – minden feladat kész!` : gc.title, {
                 onClick: () => chooseGrade(gc.grade)
             });
             btn.className = "profile-page-button";
@@ -713,30 +727,22 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
 
             const doneHeading = document.createElement("h3");
             doneHeading.className = "category-title";
-            doneHeading.textContent = "🎉 Minddel elkészültél!";
+            doneHeading.textContent = "🎉 Mindent teljesítettél!";
             doneCard.append(doneHeading);
 
             const doneNote = document.createElement("p");
             doneNote.className = "lesson-card-subtitle";
             doneNote.textContent = gradeFinished
-                ? `Elkészültél az ${selectedGrade}. osztály minden feladatával. Gyakorolhatsz kedved szerint, vagy az alábbi gombbal folytathatod.`
+                ? "🎉 Ügyes vagy, minden feladatot teljesítettél! Ha szeretnél, az osztályválasztóval továbbléphetsz a következőre."
                 : "Elkészültél az adott osztály feladataival.";
             doneCard.append(doneNote);
-
-            const nextGradeStart = allLessons.find(l => l.grades?.includes(selectedGrade + 1));
-            if (nextGradeStart) {
-                const continueButton = createButton(`➡️ Folytatás a ${selectedGrade + 1}. osztályban`, {
-                    onClick: () => chooseGrade(selectedGrade + 1)
-                });
-                continueButton.className = "profile-page-button";
-                doneCard.append(continueButton);
-            }
 
             contentArea.append(doneCard);
         }
 
         const browseWrap = document.createElement("div");
-        const browseHidden = !gradeFinished;
+        const savedHidden = loadListHidden();
+        const browseHidden = savedHidden !== null ? savedHidden : !gradeFinished;
         browseWrap.hidden = browseHidden;
 
         const listButton = createButton(
@@ -747,6 +753,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
                 onClick: () => {
                     const showing = !browseWrap.hidden;
                     browseWrap.hidden = showing;
+                    saveListHidden(showing);
                     listButton.textContent = showing
                         ? `📚 Feladatok listája (${gradeLessons.length})`
                         : "🔽 Elrejtés";

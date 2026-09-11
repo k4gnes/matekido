@@ -10,7 +10,7 @@ import { renderPracticePage, getNextPracticeLesson } from "./components/practice
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=2";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=3";
 import { getActiveId, listPlayers } from "./profile/UserManager.js";
-import { setActiveGrade, getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld } from "./profile/Profile.js";
+import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld } from "./profile/Profile.js";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
 import { createCard } from "./components/ui/card.js";
 import { createButton } from "./components/ui/button.js";
@@ -116,7 +116,7 @@ async function startLesson(path, opts = {}) {
         root,
         {
             onRestart: () => startLesson(path, opts),
-            onExit: showMenu,
+            onExit: opts.from === "practice" ? showPractice : showMenu,
             onProfile: showProfile,
             onPractice: showPractice,
             onNext: () => continueToNext(path, opts),
@@ -281,35 +281,17 @@ function showGradeChange(path, next) {
 
     const text = document.createElement("p");
     text.textContent = grade
-        ? `Most ${nextGradeLabel(grade + 1)} tananyaga következik!`
-        : "Következik a következő tananyag!";
+        ? "Ügyes vagy, minden feladatot teljesítettél! Ha szeretnél, az osztályválasztóval továbbléphetsz a következőre."
+        : "Ügyes vagy, minden feladatot teljesítettél!";
 
-    const buttonRow = document.createElement("div");
-    buttonRow.style.cssText = "display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; margin-top:1rem;";
-
-    const continueButton = createButton("➡️ Folytatom a következő osztályban", {
-        onClick: () => {
-            if (grade) {
-                setActiveGrade(grade + 1);
-            }
-            startLesson(next.file);
-        }
+    const button = createButton("📚 Vissza a feladatokhoz", {
+        onClick: showMenu
     });
 
-    const backButton = createButton("🔁 Visszatérek a gyakorláshoz", {
-        onClick: () => {
-            if (grade && getActiveGrade() !== grade) {
-                setActiveGrade(grade);
-            }
-            showMenu();
-        }
-    });
-
-    buttonRow.append(continueButton, backButton);
-    card.append(title, text, buttonRow);
+    card.append(title, text, button);
     root.append(card);
 
-    continueButton.focus();
+    button.focus();
 
 }
 

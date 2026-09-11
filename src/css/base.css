@@ -150,3 +150,9 @@ button:hover {
     background:#e8f5e9 !important;
     color:#1a1a2e !important;
 }
+
+@media (max-width: 700px) {
+    .donate-tip {
+        display: none;
+    }
+}

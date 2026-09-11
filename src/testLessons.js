@@ -17,7 +17,7 @@ import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
 
-const INDEX_ANSWER_TYPES = new Set(["calendar", "data-chart"]);
+const INDEX_ANSWER_TYPES = new Set(["calendar", "data-chart", "solid-shape"]);
 
 const WORLDS = ["postman", "racing", "football", "cooking", "animals", "space"];
 const PASSES = { postman: 12, racing: 4, football: 4, cooking: 4, animals: 4, space: 4 };
@@ -198,6 +198,20 @@ function validateStep(step, ctx) {
             }
             break;
         }
+        case "solid-shape": {
+            if (!["cube", "cuboid", "cylinder", "cone"].includes(step.solid)) fail(ctx, `solid hibás: ${step.solid}`);
+            if (!["name", "faces"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!Array.isArray(step.options) || step.options.length < 2) fail(ctx, "options hiányos");
+            if (!isInt(step.answer) || step.answer < 0 || step.answer >= step.options.length) {
+                fail(ctx, `answer index hibás: ${step.answer}`);
+            }
+            if (step.mode === "name") {
+                if (!step.options.every(o => typeof o === "string" && o.length > 0)) fail(ctx, "name options nem stringek");
+            } else {
+                if (!step.options.every(o => isInt(o) && o > 0)) fail(ctx, "faces options nem pozitív egészek");
+            }
+            break;
+        }
         case "true-false": {
             if (typeof step.statement !== "string" || step.statement.length === 0) fail(ctx, "statement hiányzik");
             if (typeof step.answer !== "boolean") fail(ctx, "answer nem boolean");
@@ -287,7 +301,7 @@ function validateLesson(built, ctx) {
 }
 
 const index = readJson("data/lessons/index.json");
-const lessons = index.lessons.filter(l => l.grades && l.grades.includes(1));
+const lessons = index.lessons;
 
 const indexIds = new Set(index.lessons.map(l => l.id));
 
@@ -348,7 +362,18 @@ for (const key of ["A", "B"]) {
     }
 }
 
-console.log(`Épített leckék: ${builds}/${builds} (${lessons.length} lecke, ${WORLDS.length} világ, több sorozat)`);
+const gradesCount = {};
+for (const l of lessons) {
+    for (const g of l.grades) {
+        gradesCount[g] = (gradesCount[g] || 0) + 1;
+    }
+}
+const gradesLabel = Object.entries(gradesCount)
+    .sort((a, b) => Number(a[0]) - Number(b[0]))
+    .map(([g, c]) => `${g}. osztály: ${c}`)
+    .join(", ");
+
+console.log(`Épített leckék: ${builds}/${builds} (${lessons.length} lecke — ${gradesLabel}; ${WORLDS.length} világ, több sorozat)`);
 console.log(`Világ-specifikus hossz-összehasonlítások: ${(Object.keys(WORLD_POOLS).length * 100 + 1)} ellenőrzés`);
 
 if (errors.length > 0) {

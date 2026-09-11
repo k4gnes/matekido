@@ -34,7 +34,8 @@
       "generator": "shape-compare",
       "options": {
         "count": 8,
-        "mode": "mixed"
+        "mode": "mixed",
+        "kinds": ["triangle", "square", "pentagon", "hexagon", "heptagon", "octagon"]
       }
     },
     {

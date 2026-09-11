@@ -16,14 +16,18 @@ const SIDES = {
     triangle: { label: "háromszög", dative: "háromszögnek", sides: 3 },
     square: { label: "négyzet", dative: "négyzetnek", sides: 4 },
     pentagon: { label: "ötszög", dative: "ötszögnek", sides: 5 },
-    hexagon: { label: "hatszög", dative: "hatszögnek", sides: 6 }
+    hexagon: { label: "hatszög", dative: "hatszögnek", sides: 6 },
+    heptagon: { label: "hétszög", dative: "hétszögnek", sides: 7 },
+    octagon: { label: "nyolcszög", dative: "nyolcszögnek", sides: 8 }
 };
 
 const COLORS = {
     triangle: "#f59e0b",
     square: "#3b82f6",
     pentagon: "#a855f7",
-    hexagon: "#10b981"
+    hexagon: "#10b981",
+    heptagon: "#ec4899",
+    octagon: "#6366f1"
 };
 
 function polygonPoints(kind, size) {

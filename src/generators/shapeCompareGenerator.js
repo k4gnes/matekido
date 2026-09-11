@@ -14,10 +14,13 @@ const POLYGONS = {
     triangle: { label: "háromszög", dative: "háromszögnek", sides: 3 },
     square: { label: "négyzet", dative: "négyzetnek", sides: 4 },
     pentagon: { label: "ötszög", dative: "ötszögnek", sides: 5 },
-    hexagon: { label: "hatszög", dative: "hatszögnek", sides: 6 }
+    hexagon: { label: "hatszög", dative: "hatszögnek", sides: 6 },
+    heptagon: { label: "hétszög", dative: "hétszögnek", sides: 7 },
+    octagon: { label: "nyolcszög", dative: "nyolcszögnek", sides: 8 }
 };
 
-const KINDS = Object.keys(POLYGONS);
+const KINDS = ["triangle", "square", "pentagon", "hexagon"];
+const ALL_KINDS = Object.keys(POLYGONS);
 
 function buildSides(kinds) {
     const pool = shuffle([...kinds]);
@@ -37,8 +40,8 @@ function buildSides(kinds) {
     };
 }
 
-function buildSize() {
-    const kind = pick(KINDS);
+function buildSize(kinds) {
+    const kind = pick(kinds);
     const big = pick([72, 80]);
     const small = pick([40, 48]);
     const flip = Math.random() < 0.5;
@@ -59,7 +62,7 @@ export function generateShapeCompare(options = {}) {
     const tasks = [];
     for (let i = 0; i < count; i++) {
         const m = mode === "mixed" ? (Math.random() < 0.6 ? "sides" : "size") : mode;
-        tasks.push(m === "size" ? buildSize() : buildSides(kinds));
+        tasks.push(m === "size" ? buildSize(kinds) : buildSides(kinds));
     }
     return tasks;
 }

@@ -1,6 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { getActiveWorld } from "../profile/Profile.js";
-import { REFERENCES, OBJECTS } from "../data/spatial.js?v=1";
+import { REFERENCES, OBJECTS } from "../data/spatial.js?v=2";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
 
@@ -39,6 +39,18 @@ function ellipse(svg, cx, cy, rx, ry, fill, stroke, sw) {
 
 
 function drawReference(svg, ref) {
+    if (ref.draw === "garage") {
+        drawGarage(svg, ref.bbox);
+        return;
+    }
+    if (ref.draw === "cage") {
+        drawCage(svg, ref.bbox);
+        return;
+    }
+    if (ref.draw === "gate") {
+        drawStartGate(svg, ref.bbox);
+        return;
+    }
     const emoji = el("text", {
         x: ref.bbox.x + ref.bbox.w / 2,
         y: ref.bbox.y + ref.bbox.h / 2,
@@ -48,6 +60,56 @@ function drawReference(svg, ref) {
     });
     emoji.textContent = ref.emoji;
     svg.append(emoji);
+}
+
+function drawGarage(svg, b) {
+    const x0 = b.x + 4;
+    const x1 = b.x + b.w - 4;
+    const y0 = b.y + b.h * 0.16;
+    const y1 = b.y + b.h;
+    polygon(svg, `${x0 - 7},${y0} ${x0},${y0 - 9} ${x1},${y0 - 9} ${x1 + 7},${y0}`, "#64748b", "#475569", 1.5);
+    rect(svg, x0, y0, x1 - x0, y1 - y0, "#dbeafe", "#64748b", 1.5);
+    polygon(svg, `${x0},${y0} ${x0},${y1} ${x1},${y1} ${x1},${y0}`, "none", "none", 0);
+    const doorTop = y0 + 16;
+    const doorW = (x1 - x0) * 0.32;
+    rect(svg, x0 + 12, doorTop, doorW, y1 - doorTop, "#f59e0b", "#b45309", 1.5);
+    rect(svg, x0 + 12 + doorW + 8, doorTop, 5, y1 - doorTop, "#94a3b8", "#94a3b8", 0);
+    rect(svg, x1 - 12 - doorW, doorTop, doorW, y1 - doorTop, "#f59e0b", "#b45309", 1.5);
+}
+
+function drawCage(svg, b) {
+    const x0 = b.x + 2;
+    const x1 = b.x + b.w - 2;
+    const y0 = b.y + b.h * 0.14;
+    const y1 = b.y + b.h;
+    rect(svg, x0, y0 - 5, x1 - x0, y1 - y0, "#fef3c7", "#d97706", 2);
+    const bars = 9;
+    for (let i = 0; i <= bars; i++) {
+        const x = x0 + ((x1 - x0) * i) / bars;
+        rect(svg, x - 1.5, y0, 3, y1 - y0, "#94a3b8", "#94a3b8", 0);
+    }
+    rect(svg, x0, y0 + (y1 - y0) / 3, x1 - x0, 3, "#94a3b8", "#94a3b8", 0);
+    rect(svg, x0, y0 + (2 * (y1 - y0)) / 3, x1 - x0, 3, "#94a3b8", "#94a3b8", 0);
+    rect(svg, x0, y0 - 5, x1 - x0, 6, "#64748b", "#475569", 1.5);
+}
+
+function drawStartGate(svg, b) {
+    const x0 = b.x + 2;
+    const x1 = b.x + b.w - 2;
+    const y0 = b.y + b.h * 0.18;
+    const y1 = b.y + b.h;
+    rect(svg, x0 + 4, y0 + 12, 8, y1 - y0 - 12, "#475569", "#334155", 1.5);
+    rect(svg, x1 - 12, y0 + 12, 8, y1 - y0 - 12, "#475569", "#334155", 1.5);
+    rect(svg, x0, y0, x1 - x0, 13, "#f8fafc", "#334155", 1.5);
+    const cells = Math.round((x1 - x0) / 11);
+    const cellW = (x1 - x0) / cells;
+    for (let i = 0; i < cells; i++) {
+        if (i % 2 === 0) {
+            rect(svg, x0 + i * cellW, y0, cellW, 13, "#334155", "#334155", 0);
+        }
+    }
+    rect(svg, x0 + 2, y0 - 20, 4, 20, "#64748b", "#475569", 1);
+    polygon(svg, `${x0 + 6},${y0 - 20} ${x0 + 20},${y0 - 22} ${x0 + 6},${y0 - 13}`, "#ef4444", "#b91c1c", 1);
 }
 
 const OBJECT_DRAW = {
@@ -127,9 +189,18 @@ const OBJECT_DRAW = {
         rect(n, x - 4, y - 24, 8, 8, "#fde68a", "#a16207", 1);
     },
     kesztyu(n, x, y) {
-        rect(n, x - 8, y - 13, 23, 27, "#f43f5e", "#be123c", 2);
-        rect(n, x - 2, y - 22, 6, 9, "#be123c", "#be123c", 0);
-        rect(n, x - 8, y + 14, 23, 8, "#fecdd3", "#be123c", 2);
+        rect(n, x - 7, y + 10, 17, 7, "#fecdd3", "#be123c", 1.5);
+        rect(n, x - 6, y + 12, 15, 3, "#be123c", "#be123c", 0);
+        rect(n, x - 8, y - 4, 19, 15, "#f43f5e", "#be123c", 1.5);
+        rect(n, x + 2, y + 7, 10, 7, "#f43f5e", "#be123c", 1.2);
+        const fw = 3.4;
+        for (let i = 0; i < 4; i++) {
+            const fx = x - 6.5 + i * fw;
+            const fh = 10 + (i % 2);
+            rect(n, fx, y - 6 - fh, fw, fh, "#f43f5e", "#be123c", 1);
+            circle(n, fx + fw / 2, y - 6 - fh, fw / 2, "#f43f5e", "#be123c", 0.8);
+        }
+        ellipse(n, x - 12, y + 2, 4.5, 7, "#f43f5e", "#be123c", 1.2);
     },
     tojas(n, x, y) {
         ellipse(n, x, y, 12, 17, "#fef3c7", "#f59e0b", 2);

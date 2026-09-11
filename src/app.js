@@ -1,7 +1,7 @@
 import { Game } from "./engine/Game.js?v=57";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=16";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=24";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=25";
 import { renderSkillMap } from "./components/skillMap.js?v=8";
 import { renderHelp } from "./components/help.js?v=2";
 import { renderProfilePage } from "./components/profilePage.js";
@@ -77,7 +77,7 @@ function showHelp(onBack) {
 }
 
 function showProfile() {
-    clearWorldBackground();
+    setWorldBackground();
     renderProfilePage(lessonIndex, root, showMenu, showStats, showPractice, () => showHelp(showProfile));
 }
 
@@ -219,6 +219,12 @@ function getNextLesson(path) {
         if (candidate.grades?.includes(grade) && !getLessonStats(candidate.file)) {
             return candidate;
         }
+    }
+
+    const gradeLessons = allLessons.filter(l => l.grades?.includes(grade));
+    const pos = gradeLessons.findIndex(l => l.file === path);
+    if (gradeLessons.length > 0 && pos !== -1) {
+        return gradeLessons[(pos + 1) % gradeLessons.length];
     }
 
     return null;

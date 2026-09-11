@@ -162,6 +162,7 @@ export function recordLessonResult(lessonFile, correct, wrong) {
 
     profile.lessonStats[lessonFile].correct += correct;
     profile.lessonStats[lessonFile].wrong += wrong;
+    profile.lessonStats[lessonFile].lastDoneAt = Date.now();
 
     saveProfile(profile);
 
@@ -232,7 +233,8 @@ export function getLessonStats(lessonFile) {
     return {
         correct: stats.correct,
         total,
-        percentage: Math.round((stats.correct / total) * 100)
+        percentage: Math.round((stats.correct / total) * 100),
+        lastDoneAt: stats.lastDoneAt || 0
     };
 
 }

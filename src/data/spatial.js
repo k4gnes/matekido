@@ -181,6 +181,7 @@ export const WORLD_REFERENCES = {
         id: "garazs",
         name: "garázs",
         emoji: "🏠",
+        draw: "garage",
         bbox: { x: 60, y: 55, w: 100, h: 90 },
         labels: {
             above: "a garázs felett",
@@ -196,6 +197,7 @@ export const WORLD_REFERENCES = {
         id: "rajtkapu",
         name: "rajtkapu",
         emoji: "🏁",
+        draw: "gate",
         bbox: { x: 60, y: 58, w: 100, h: 77 },
         labels: {
             above: "a rajtkapu felett",
@@ -301,6 +303,7 @@ export const WORLD_REFERENCES = {
         id: "ketrec",
         name: "ketrec",
         emoji: "🦁",
+        draw: "cage",
         bbox: { x: 60, y: 55, w: 100, h: 90 },
         labels: {
             above: "a ketrec felett",

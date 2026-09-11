@@ -548,7 +548,21 @@ function pickNextForGrade(gradeLessons) {
         return skipped;
     }
 
-    return gradeLessons.find(l => !getLessonStats(l.file)) ?? null;
+    const undone = gradeLessons.find(l => !getLessonStats(l.file));
+    if (undone) {
+        return undone;
+    }
+
+    const withTime = gradeLessons
+        .map(l => ({ lesson: l, time: getLessonStats(l.file)?.lastDoneAt || 0 }))
+        .sort((a, b) => b.time - a.time);
+    const lastDone = withTime[0]?.lesson;
+    if (!lastDone) {
+        return gradeLessons[0];
+    }
+
+    const lastIdx = gradeLessons.findIndex(l => l.file === lastDone.file);
+    return gradeLessons[(lastIdx + 1) % gradeLessons.length];
 
 }
 
@@ -701,7 +715,24 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
         contentArea.append(gradeTitle);
 
         const next = pickNextForGrade(gradeLessons);
-        const gradeFinished = gradeLessons.length > 0 && !next;
+        const gradeFinished = gradeLessons.length > 0 && gradeLessons.every(l => getLessonStats(l.file));
+
+        if (gradeFinished) {
+            const doneCard = createCard();
+
+            const doneHeading = document.createElement("h3");
+            doneHeading.className = "category-title";
+            doneHeading.textContent = "🎉 Mindent teljesítettél!";
+            doneCard.append(doneHeading);
+
+            const doneNote = document.createElement("p");
+            doneNote.className = "lesson-card-subtitle";
+            doneNote.textContent = "🎉 Ügyes vagy, minden feladatot teljesítettél! Ha szeretnél, az osztályválasztóval továbbléphetsz a következőre.";
+            doneCard.append(doneNote);
+
+            contentArea.append(doneCard);
+        }
+
         if (next) {
             const nextCard = createCard();
 
@@ -718,26 +749,12 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
 
             const nextNote = document.createElement("p");
             nextNote.className = "lesson-card-subtitle";
-            nextNote.textContent = "Ez az, ami legközelebb rád vár.";
+            nextNote.textContent = gradeFinished
+                ? "Az összes feladaton túl vagy – kezdheted elölről az elsővel."
+                : "Ez az, ami legközelebb rád vár.";
             nextCard.append(nextNote);
 
             contentArea.append(nextCard);
-        } else {
-            const doneCard = createCard();
-
-            const doneHeading = document.createElement("h3");
-            doneHeading.className = "category-title";
-            doneHeading.textContent = "🎉 Mindent teljesítettél!";
-            doneCard.append(doneHeading);
-
-            const doneNote = document.createElement("p");
-            doneNote.className = "lesson-card-subtitle";
-            doneNote.textContent = gradeFinished
-                ? "🎉 Ügyes vagy, minden feladatot teljesítettél! Ha szeretnél, az osztályválasztóval továbbléphetsz a következőre."
-                : "Elkészültél az adott osztály feladataival.";
-            doneCard.append(doneNote);
-
-            contentArea.append(doneCard);
         }
 
         const browseWrap = document.createElement("div");

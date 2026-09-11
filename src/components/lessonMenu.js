@@ -259,6 +259,26 @@ export function createLessonCard(lesson, onSelect, activeWorld, position, total,
     return lessonCard;
 }
 
+function pickNextFromList(lessons) {
+
+    const undone = lessons.find(l => !getLessonStats(l.file));
+    if (undone) {
+        return undone;
+    }
+
+    const withTime = lessons
+        .map(l => ({ lesson: l, time: getLessonStats(l.file)?.lastDoneAt || 0 }))
+        .sort((a, b) => b.time - a.time);
+    const lastDone = withTime[0]?.lesson;
+    if (lastDone) {
+        const lastIdx = lessons.findIndex(l => l.file === lastDone.file);
+        return lessons[(lastIdx + 1) % lessons.length];
+    }
+
+    return lessons[0];
+
+}
+
 function createPickerSection(title, lessons, onSelect, activeWorld, selectOpts) {
     const card = createCard("picker-card");
 
@@ -267,9 +287,11 @@ function createPickerSection(title, lessons, onSelect, activeWorld, selectOpts) 
     heading.textContent = title;
     card.append(heading);
 
+    const next = pickNextFromList(lessons);
+    const pos = lessons.findIndex(l => l.file === next.file);
     const grid = document.createElement("div");
     grid.className = "next-lesson-card";
-    grid.append(createLessonCard(lessons[0], onSelect, activeWorld, undefined, undefined, selectOpts));
+    grid.append(createLessonCard(next, onSelect, activeWorld, pos + 1, lessons.length, selectOpts));
     card.append(grid);
 
     if (lessons.length > 1) {

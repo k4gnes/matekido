@@ -828,7 +828,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
                 }
             }
         );
-        listButton.className = "profile-page-button";
+        listButton.className = "filter-toggle-btn";
 
         const listButtonRow = document.createElement("div");
         listButtonRow.style.cssText = "display:flex; gap:.5rem; justify-content:center; margin-top:1rem;";

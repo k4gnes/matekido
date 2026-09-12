@@ -6,7 +6,7 @@ import { ACHIEVEMENTS, getUnlockedAchievements } from "../profile/Achievements.j
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getAllWorlds } from "../world/WorldRegistry.js";
 
-export function renderProfilePage(lessonIndex, root, onBack, onStats, onPractice, onHelp) {
+export function renderProfilePage(lessonIndex, root, onBack, onStats, onPractice, onHelp, onSwitch) {
 
     root.replaceChildren();
 
@@ -16,21 +16,26 @@ export function renderProfilePage(lessonIndex, root, onBack, onStats, onPractice
     const card = createCard();
     card.classList.add("profile-page");
 
-    const avatarDisplay = document.createElement("div");
-    avatarDisplay.style.cssText = "font-size:3rem; text-align:center; margin-bottom:.2rem;";
-
     const allPlayers = listPlayers();
     const activeId = getActiveId();
     const activePlayer = allPlayers.find(p => p.id === activeId);
+
+    const headerRow = document.createElement("div");
+    headerRow.style.cssText = "display:flex; justify-content:center; align-items:center; gap:.5rem; margin-bottom:.6rem;";
+
+    const avatarDisplay = document.createElement("span");
+    avatarDisplay.style.cssText = "font-size:1.6rem; line-height:1;";
     avatarDisplay.textContent = activePlayer?.avatar ?? "🦊";
 
     const title = document.createElement("h1");
     const currentWorld = getAllWorlds().find(w => w.id === getActiveWorld());
     title.textContent = `${currentWorld?.icon ?? "📮"} ${currentWorld?.name ?? "postahivatal"}`;
 
-    const nameDisplay = document.createElement("p");
-    nameDisplay.style.cssText = "font-size:1.1rem; font-weight:600; margin:0 0 .6rem; text-align:center;";
+    const nameDisplay = document.createElement("span");
+    nameDisplay.style.cssText = "font-size:1.1rem; font-weight:600;";
     nameDisplay.textContent = activePlayer?.name ?? "Játékos";
+
+    headerRow.append(avatarDisplay, nameDisplay);
 
     const stats = document.createElement("div");
     stats.className = "profile-page-stats";
@@ -168,7 +173,7 @@ export function renderProfilePage(lessonIndex, root, onBack, onStats, onPractice
             item.addEventListener("click", () => {
                 setActiveWorld(world.id);
                 document.body.dataset.world = world.id;
-                renderProfilePage(lessonIndex, root, onBack, onStats, onPractice, onHelp);
+                renderProfilePage(lessonIndex, root, onBack, onStats, onPractice, onHelp, onSwitch);
             });
         }
 
@@ -205,10 +210,18 @@ export function renderProfilePage(lessonIndex, root, onBack, onStats, onPractice
     const helpButton = createButton("❓ Súgó", {
         onClick: () => onHelp?.()
     });
-    helpButton.className = "profile-page-button";
+    helpButton.className = "filter-toggle-btn";
     buttonRow.append(helpButton);
 
-    card.append(avatarDisplay, title, nameDisplay, stats, progressSection, questSection, achWorldRow, buttonRow);
+    if (onSwitch) {
+        const switchButton = createButton("👤 Játékos", {
+            onClick: () => onSwitch?.()
+        });
+        switchButton.className = "profile-page-button";
+        buttonRow.append(switchButton);
+    }
+
+    card.append(headerRow, title, buttonRow, stats, progressSection, questSection, achWorldRow);
 
     root.append(card);
 }

@@ -196,11 +196,16 @@
     gap: 0.5rem;
     width: 100%;
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .profile-page-buttons .profile-page-button {
     flex: 1 1 calc(50% - 0.5rem);
     max-width: calc(50% - 0.25rem);
+    margin: 0;
+}
+
+.profile-page-buttons .filter-toggle-btn {
     margin: 0;
 }
 

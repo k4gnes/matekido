@@ -499,6 +499,6 @@ export function renderStatsPage(root, onBack, lessonIndex) {
 
     buttonRow.append(profileButton, lessonsButton);
 
-    card.append(title, tabRow, dailySection, summarySection, buttonRow);
+    card.append(title, buttonRow, tabRow, dailySection, summarySection);
     root.append(card);
 }

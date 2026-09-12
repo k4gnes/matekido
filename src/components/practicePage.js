@@ -101,7 +101,7 @@ function buildLessonSections(lessons, onSelect, activeWorld) {
 
 }
 
-export function renderPracticePage(lessonIndex, root, onSelect, onBack) {
+export function renderPracticePage(lessonIndex, root, onSelect, onBack, onMenu) {
 
     root.replaceChildren();
 
@@ -113,7 +113,25 @@ export function renderPracticePage(lessonIndex, root, onSelect, onBack) {
     const title = document.createElement("h1");
     title.textContent = "🎯 Gyakorlás";
 
-    card.append(title);
+    const buttonRow = document.createElement("div");
+    buttonRow.style.cssText = "display:flex; gap:.5rem; justify-content:center; margin-top:1rem;";
+
+    const backButton = createButton("👤 Profil", {
+        onClick: () => onBack()
+    });
+    backButton.className = "profile-page-button";
+
+    buttonRow.append(backButton);
+
+    if (onMenu) {
+        const menuButton = createButton("📚 Feladatok", {
+            onClick: () => onMenu()
+        });
+        menuButton.className = "profile-page-button";
+        buttonRow.append(menuButton);
+    }
+
+    card.append(title, buttonRow);
 
     const weakLessons = (lessonIndex.lessons || []).filter(l => weakLessonFiles.has(l.file));
 
@@ -143,17 +161,6 @@ export function renderPracticePage(lessonIndex, root, onSelect, onBack) {
 
         card.append(buildLessonSections(weakLessons, onSelect, activeWorld));
     }
-
-    const buttonRow = document.createElement("div");
-    buttonRow.style.cssText = "display:flex; gap:.5rem; justify-content:center; margin-top:1rem;";
-
-    const backButton = createButton("👤 Profil", {
-        onClick: () => onBack()
-    });
-    backButton.className = "profile-page-button";
-
-    buttonRow.append(backButton);
-    card.append(buttonRow);
 
     root.append(card);
 

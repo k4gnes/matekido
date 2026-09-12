@@ -157,6 +157,10 @@ button:hover {
     }
 }
 
+body.hide-tip .donate-tip {
+    display: none !important;
+}
+
 body[data-world] {
     background-image:
         linear-gradient(rgba(255, 255, 255, .35), rgba(255, 255, 255, 0) 65%),

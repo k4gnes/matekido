@@ -1,12 +1,12 @@
 import { Game } from "./engine/Game.js?v=57";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=16";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=30";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=31";
 import { renderSkillMap } from "./components/skillMap.js?v=8";
 import { renderHelp } from "./components/help.js?v=2";
-import { renderProfilePage } from "./components/profilePage.js";
-import { renderStatsPage } from "./components/statsPage.js?v=5";
-import { renderPracticePage, getNextPracticeLesson } from "./components/practicePage.js?v=6";
+import { renderProfilePage } from "./components/profilePage.js?v=4";
+import { renderStatsPage } from "./components/statsPage.js?v=6";
+import { renderPracticePage, getNextPracticeLesson } from "./components/practicePage.js?v=8";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=2";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=3";
 import { getActiveId, listPlayers } from "./profile/UserManager.js";
@@ -32,12 +32,17 @@ function setWorldBackground() {
     }
 }
 
+function setTipVisible(visible) {
+    document.body.classList.toggle("hide-tip", !visible);
+}
+
 function clearWorldBackground() {
     delete document.body.dataset.world;
 }
 
 function showWelcome() {
     clearWorldBackground();
+    setTipVisible(true);
     renderWelcomeScreen(root, () => {
         showMenu();
     }, showParentDashboard);
@@ -45,6 +50,7 @@ function showWelcome() {
 
 function showParentDashboard() {
     clearWorldBackground();
+    setTipVisible(true);
     renderParentDashboard(root, () => {
         showWelcome();
     }, lessonIndex);
@@ -53,6 +59,7 @@ function showParentDashboard() {
 function showMenu() {
 
     setWorldBackground();
+    setTipVisible(true);
 
     renderLessonMenu(
         lessonIndex,
@@ -68,26 +75,31 @@ function showMenu() {
 
 function showSkillMap() {
     clearWorldBackground();
+    setTipVisible(true);
     renderSkillMap(root, showMenu);
 }
 
 function showHelp(onBack) {
     clearWorldBackground();
+    setTipVisible(true);
     renderHelp(root, onBack ?? showMenu);
 }
 
 function showProfile() {
     setWorldBackground();
-    renderProfilePage(lessonIndex, root, showMenu, showStats, showPractice, () => showHelp(showProfile));
+    setTipVisible(true);
+    renderProfilePage(lessonIndex, root, showMenu, showStats, showPractice, () => showHelp(showProfile), showWelcome);
 }
 
 function showPractice() {
     clearWorldBackground();
-    renderPracticePage(lessonIndex, root, (file) => startLesson(file, { from: "practice" }), showProfile);
+    setTipVisible(true);
+    renderPracticePage(lessonIndex, root, (file) => startLesson(file, { from: "practice" }), showProfile, showMenu);
 }
 
 function showStats() {
     clearWorldBackground();
+    setTipVisible(true);
     renderStatsPage(root, (target) => {
         if (target === "lessons") {
             showMenu();
@@ -99,6 +111,7 @@ function showStats() {
 
 async function startLesson(path, opts = {}) {
     clearWorldBackground();
+    setTipVisible(false);
 
     const rawLesson = await loadLesson(path);
 
@@ -256,6 +269,7 @@ function showGradeChange(path, next) {
 
         if (skippedCount > 0) {
             root.replaceChildren();
+            setTipVisible(true);
 
             const card = createCard();
 
@@ -279,6 +293,7 @@ function showGradeChange(path, next) {
     }
 
     root.replaceChildren();
+    setTipVisible(true);
 
     const card = createCard();
 

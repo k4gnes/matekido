@@ -34,7 +34,7 @@ Ez a dokumentum a Matekidő **teljes újbóli teszteléséhez** készült, előr
 
 ## 2. Lecke menü és szűrők
 
-Menübe lépve van egy 📮-jellegű világcím (világfüggő), a „Matekidő” felirat, a támogató kiscsésze és három gomb: `🔍 Szűrők`, `📚 Készségek`, `❓ Súgó`. Lent: `👤 Profilom` és a játékosavatár-név.
+Menübe lépve van egy 📮-jellegű világcím (világfüggő), a „Matekidő” felirat, a támogató kiscsésze, felül a `👤 Profilom` gomb a játékosavatár-névvel, alatta három gomb: `🔍 Szűrők`, `📚 Készségek`, `❓ Súgó`.
 
 | # | Lépés | Várt eredmény | Eredmény |
 |---|-------|---------------|----------|

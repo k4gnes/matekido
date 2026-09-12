@@ -2,7 +2,7 @@ import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { isFavoriteLesson, toggleFavoriteLesson } from "../profile/Profile.js";
 
-export function renderScene(step, root, next, progress, activeWorld, onExit, lessonPos, onSkipNext, lessonFile) {
+export function renderScene(step, root, next, progress, activeWorld, onExit, lessonPos, onSkipNext, lessonFile, source) {
     root.innerHTML = "";
 
     const worldStep = activeWorld ? step.worldTitles?.[activeWorld] : null;
@@ -57,11 +57,12 @@ export function renderScene(step, root, next, progress, activeWorld, onExit, les
     }
 
     if (onSkipNext) {
+        const isNavigate = source === "consolidation" || source === "favorites" || source === "practice";
         const skipBtn = document.createElement("button");
         skipBtn.type = "button";
-        skipBtn.className = "exercise-fav";
-        skipBtn.textContent = "⏭️";
-        skipBtn.title = "Következő feladat – kihagyom ezt most";
+        skipBtn.className = isNavigate ? "exercise-next" : "exercise-fav";
+        skipBtn.textContent = isNavigate ? "Tovább ▶" : "⏭️";
+        skipBtn.title = isNavigate ? "Következő feladat" : "Következő feladat – kihagyom ezt most";
         skipBtn.setAttribute("aria-label", "Következő feladat");
         skipBtn.addEventListener("click", () => {
             ac.abort();

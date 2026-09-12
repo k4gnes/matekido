@@ -122,6 +122,27 @@
     transform: scale(1.1);
 }
 
+.exercise-next {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    padding: .2rem .7rem;
+    border-radius: 999px;
+    background: var(--background);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    font-size: .85rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 0;
+    user-select: none;
+    z-index: 5;
+}
+
+.exercise-next:hover {
+    transform: scale(1.08);
+}
+
 .confirm-exit {
     background: var(--primary);
     color: #fff;

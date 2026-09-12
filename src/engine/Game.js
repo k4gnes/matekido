@@ -1,4 +1,4 @@
-import { renderScene } from "../components/scene.js?v=4";
+import { renderScene } from "../components/scene.js?v=5";
 import { createInstructionHelp } from "../components/ui/instruction.js";
 import { createExitButton } from "../components/ui/exit.js";
 import { renderExercise } from "../components/exercise.js?v=3";
@@ -180,13 +180,14 @@ const RENDERERS = new Map([
 
 export class Game {
 
-    constructor(lesson, root, actions = {}, lessonFile = null, skill = null, lessonIndex = null) {
+    constructor(lesson, root, actions = {}, lessonFile = null, skill = null, lessonIndex = null, source = null) {
 
         this.lesson = lesson;
         this.root = root;
         this.lessonFile = lessonFile;
         this.skill = skill;
         this.lessonIndex = lessonIndex;
+        this.source = source;
         this.currentStep = 0;
         this.instructionTitle = null;
         this.instructionText = null;
@@ -336,7 +337,7 @@ export class Game {
             this.instructionTitle = worldStep?.title ?? step.title;
             this.instructionText = worldStep?.text ?? step.text;
             const lessonPos = this.getLessonPosition();
-            renderScene(step, this.root, () => this.next(), progress, getActiveWorld(), this.onExit, lessonPos, this.onSkipNext, this.lessonFile);
+            renderScene(step, this.root, () => this.next(), progress, getActiveWorld(), this.onExit, lessonPos, this.onSkipNext, this.lessonFile, this.source);
             return;
         }
 

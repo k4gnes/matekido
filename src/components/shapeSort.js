@@ -42,7 +42,7 @@ export function renderShapeSort(step, root, next, progress, onResult, onAttempt)
 
     const hint = document.createElement("p");
     hint.className = "shape-hint";
-    hint.textContent = "Húzd az alakzatokat a megfelelő helyre!";
+    hint.textContent = "Kattints egy alakzatra, majd a helyére!";
     card.append(hint);
 
     const board = document.createElement("div");
@@ -93,88 +93,45 @@ export function renderShapeSort(step, root, next, progress, onResult, onAttempt)
 
     const zoneElements = step.categories.map(cat => zoneFor[cat].element);
 
-    let drag = null;
+    let selected = null;
 
-    card.addEventListener("pointerdown", (e) => {
-        const chip = e.target.closest(".shape-chip");
-        if (!chip || feedback.isAnswered() || drag) return;
-        e.preventDefault();
-
-        const rect = chip.getBoundingClientRect();
-
-        const clone = chip.cloneNode(true);
-        clone.classList.add("shape-clone");
-        clone.style.width = rect.width + "px";
-        clone.style.height = rect.height + "px";
-        document.body.append(clone);
-
-        chip.classList.add("shape-hidden");
-
-        drag = {
-            chip,
-            clone,
-            offsetX: e.clientX - rect.left,
-            offsetY: e.clientY - rect.top
-        };
-
-        moveClone(e);
-
-        document.addEventListener("pointermove", onMove);
-        document.addEventListener("pointerup", onUp);
-        document.addEventListener("pointercancel", onUp);
-    });
-
-    function onMove(e) {
-        e.preventDefault();
-        if (!drag) return;
-        moveClone(e);
-        highlightZone(e);
-    }
-
-    function moveClone(e) {
-        drag.clone.style.left = (e.clientX - drag.offsetX) + "px";
-        drag.clone.style.top = (e.clientY - drag.offsetY) + "px";
-    }
-
-    function getZoneAt(x, y) {
-        for (const el of zoneElements) {
-            const r = el.getBoundingClientRect();
-            if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) {
-                return el;
-            }
-        }
-        return null;
-    }
-
-    function highlightZone(e) {
-        const zone = getZoneAt(e.clientX, e.clientY);
-        zoneElements.forEach(el => el.classList.toggle("shape-drag-over", el === zone));
-    }
-
-    function clearHighlight() {
+    function clearTargets() {
         zoneElements.forEach(el => el.classList.remove("shape-drag-over"));
     }
 
-    function onUp(e) {
-        if (!drag) return;
-
-        drag.clone.remove();
-        clearHighlight();
-
-        const zone = getZoneAt(e.clientX, e.clientY);
-        if (zone) {
-            zone.append(drag.chip);
-        } else {
-            board.append(drag.chip);
+    function selectChip(chip) {
+        if (feedback.isAnswered()) return;
+        if (selected === chip) {
+            selected.classList.remove("shape-selected");
+            selected = null;
+            clearTargets();
+            return;
         }
-
-        drag.chip.classList.remove("shape-hidden");
-        drag = null;
-
-        document.removeEventListener("pointermove", onMove);
-        document.removeEventListener("pointerup", onUp);
-        document.removeEventListener("pointercancel", onUp);
+        if (selected) {
+            selected.classList.remove("shape-selected");
+        }
+        selected = chip;
+        selected.classList.add("shape-selected");
+        zoneElements.forEach(el => el.classList.add("shape-drag-over"));
     }
+
+    chips.forEach(chip => {
+        chip.addEventListener("click", (e) => {
+            e.stopPropagation();
+            selectChip(chip);
+        });
+    });
+
+    zoneElements.forEach(el => {
+        el.addEventListener("click", (e) => {
+            if (e.target.closest(".shape-chip")) return;
+            if (!selected || feedback.isAnswered()) return;
+            el.append(selected);
+            selected.classList.remove("shape-selected");
+            selected = null;
+            clearTargets();
+        });
+    });
 
     function check() {
         if (feedback.isAnswered()) return;

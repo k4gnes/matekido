@@ -6,27 +6,27 @@
     {
       "type": "scene",
       "title": "🟦 Kerek, szögletes és háromszög",
-      "text": "Húzd a kerekeket a körbe, a háromszögeket a háromszögbe, a szögleteseket a téglalapba!",
+      "text": "Kattints egy alakzatra, majd a helyére! A kerekek a körbe, a háromszögek a háromszögbe, a szögletesek a téglalapba valók!",
       "worldTitles": {
         "racing": {
           "title": "🏎️ Kerek, szögletes és háromszög",
-          "text": "Húzd a kerekeket a körbe, a háromszögeket a háromszögbe, a szögleteseket a téglalapba!"
+          "text": "Kattints egy alakzatra, majd a helyére! A kerekek a körbe, a háromszögek a háromszögbe, a szögletesek a téglalapba valók!"
         },
         "football": {
           "title": "⚽ Kerek, szögletes és háromszög",
-          "text": "Húzd a kerekeket a körbe, a háromszögeket a háromszögbe, a szögleteseket a téglalapba!"
+          "text": "Kattints egy alakzatra, majd a helyére! A kerekek a körbe, a háromszögek a háromszögbe, a szögletesek a téglalapba valók!"
         },
         "cooking": {
           "title": "🍳 Kerek, szögletes és háromszög",
-          "text": "Húzd a kerekeket a körbe, a háromszögeket a háromszögbe, a szögleteseket a téglalapba!"
+          "text": "Kattints egy alakzatra, majd a helyére! A kerekek a körbe, a háromszögek a háromszögbe, a szögletesek a téglalapba valók!"
         },
         "animals": {
           "title": "🦁 Rakd a helyére az alakzatokat!",
-          "text": "Húzd az alakzatokat a megfelelő karámba!"
+          "text": "Kattints az alakzatokra, majd a megfelelő karámba!"
         },
         "space": {
           "title": "🤖 Rakd a helyére az alakzatokat!",
-          "text": "Húzd az alakzatokat a megfelelő fedélzeti rekeszbe!"
+          "text": "Kattints az alakzatokra, majd a megfelelő fedélzeti rekeszbe!"
         }
       }
     },

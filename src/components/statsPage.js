@@ -1,5 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
+import { createNavBar } from "./ui/navbar.js";
 import { getDailyStats, getAllSkillStats, getActiveWorld, getLessonStats } from "../profile/Profile.js";
 import { SKILLS, CATEGORIES } from "../data/skills.js";
 
@@ -222,7 +223,7 @@ function createGradeCompletionSection(lessonIndex) {
 
 }
 
-export function renderStatsPage(root, onBack, lessonIndex) {
+export function renderStatsPage(root, navConfig, lessonIndex) {
 
     root.replaceChildren();
 
@@ -230,7 +231,7 @@ export function renderStatsPage(root, onBack, lessonIndex) {
     const skillStats = getAllSkillStats();
     const today = new Date().toISOString().split("T")[0];
     let selectedDate = today;
-    let activeTab = "daily";
+    let activeTab = "summary";
 
     const card = createCard();
 
@@ -243,10 +244,10 @@ export function renderStatsPage(root, onBack, lessonIndex) {
     tabRow.className = "stats-tab-row";
 
     const dailyTab = createButton("📅 Napi", { onClick: () => switchTab("daily") });
-    dailyTab.className = "stats-tab active";
+    dailyTab.className = "stats-tab";
 
     const summaryTab = createButton("📈 Összesített", { onClick: () => switchTab("summary") });
-    summaryTab.className = "stats-tab";
+    summaryTab.className = "stats-tab active";
 
     tabRow.append(dailyTab, summaryTab);
 
@@ -275,6 +276,7 @@ export function renderStatsPage(root, onBack, lessonIndex) {
     typeBreakdown.className = "type-breakdown";
 
     dailySection.append(nav, dailyGrid, typeBreakdown);
+    dailySection.style.display = "none";
 
     function changeDate(delta) {
         const parts = selectedDate.split("-").map(Number);
@@ -367,7 +369,7 @@ export function renderStatsPage(root, onBack, lessonIndex) {
     // --- Summary section ---
     const summarySection = document.createElement("div");
     summarySection.className = "stats-section";
-    summarySection.style.display = "none";
+    summarySection.style.display = "";
 
     let totalCorrect = 0;
     let totalWrong = 0;
@@ -484,21 +486,8 @@ export function renderStatsPage(root, onBack, lessonIndex) {
     }
 
     // --- Navigation buttons ---
-    const buttonRow = document.createElement("div");
-    buttonRow.style.cssText = "display:flex; gap:.5rem; justify-content:center; margin-top:1rem;";
+    const navbar = createNavBar({ ...navConfig, current: "stats" });
 
-    const profileButton = createButton("👤 Profil", {
-        onClick: () => onBack()
-    });
-    profileButton.className = "profile-page-button";
-
-    const lessonsButton = createButton("📚 Feladatok", {
-        onClick: () => onBack("lessons")
-    });
-    lessonsButton.className = "profile-page-button";
-
-    buttonRow.append(profileButton, lessonsButton);
-
-    card.append(title, buttonRow, tabRow, dailySection, summarySection);
+    card.append(navbar, title, tabRow, dailySection, summarySection);
     root.append(card);
 }

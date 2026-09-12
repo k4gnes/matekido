@@ -1,12 +1,12 @@
 import { Game } from "./engine/Game.js?v=59";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=16";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=35";
-import { renderSkillMap } from "./components/skillMap.js?v=8";
-import { renderHelp } from "./components/help.js?v=2";
-import { renderProfilePage } from "./components/profilePage.js?v=4";
-import { renderStatsPage } from "./components/statsPage.js?v=6";
-import { renderPracticePage, getNextPracticeLesson } from "./components/practicePage.js?v=8";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=38";
+import { renderSkillMap } from "./components/skillMap.js?v=10";
+import { renderHelp } from "./components/help.js?v=3";
+import { renderProfilePage } from "./components/profilePage.js?v=7";
+import { renderStatsPage } from "./components/statsPage.js?v=8";
+import { getNextPracticeLesson } from "./components/practicePage.js?v=8";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=2";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=4";
 import { getActiveId, listPlayers } from "./profile/UserManager.js";
@@ -68,45 +68,44 @@ function showMenu() {
         showProfile,
         showWelcome,
         showSkillMap,
-        () => showHelp(showMenu)
+        () => showHelp(),
+        showStats
     );
 
+}
+
+function navFor() {
+    return {
+        onLessons: showMenu,
+        onProfile: showProfile,
+        onStats: showStats,
+        onHelp: () => showHelp(),
+        onSwitch: showWelcome
+    };
 }
 
 function showSkillMap() {
     clearWorldBackground();
     setTipVisible(true);
-    renderSkillMap(root, showMenu);
+    renderSkillMap(root, navFor());
 }
 
-function showHelp(onBack) {
+function showHelp() {
     clearWorldBackground();
     setTipVisible(true);
-    renderHelp(root, onBack ?? showMenu);
+    renderHelp(root, navFor());
 }
 
 function showProfile() {
     setWorldBackground();
     setTipVisible(true);
-    renderProfilePage(lessonIndex, root, showMenu, showStats, showPractice, () => showHelp(showProfile), showWelcome);
-}
-
-function showPractice() {
-    clearWorldBackground();
-    setTipVisible(true);
-    renderPracticePage(lessonIndex, root, (file) => startLesson(file, { from: "practice" }), showProfile, showMenu);
+    renderProfilePage(lessonIndex, root, showMenu, showStats, () => showHelp(), showWelcome);
 }
 
 function showStats() {
     clearWorldBackground();
     setTipVisible(true);
-    renderStatsPage(root, (target) => {
-        if (target === "lessons") {
-            showMenu();
-        } else {
-            showProfile();
-        }
-    }, lessonIndex);
+    renderStatsPage(root, navFor(), lessonIndex);
 }
 
 async function startLesson(path, opts = {}) {
@@ -129,9 +128,8 @@ async function startLesson(path, opts = {}) {
         root,
         {
             onRestart: () => startLesson(path, opts),
-            onExit: opts.from === "practice" ? showPractice : showMenu,
+            onExit: showMenu,
             onProfile: showProfile,
-            onPractice: showPractice,
             onNext: () => continueToNext(path, opts),
             onSkipNext: !opts.from && getSkippedLessons().includes(path) ? null : () => {
                 if (!opts.from) {
@@ -158,7 +156,7 @@ function continueToNext(path, opts = {}) {
             startLesson(next.file, { from: "practice" });
             return;
         }
-        showPractice();
+        showMenu();
         return;
     }
 

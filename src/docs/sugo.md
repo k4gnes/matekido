@@ -8,7 +8,7 @@ Az alkalmazás megnyitásakor válaszd ki, **ki játszik ma**:
 
 - Ha még nincs profil, kattints a **➕** kártyára, add meg a nevet és válassz avatárt.
 - **Több játékosnak** is lehet saját profilja (pl. testvérnek).
-- A **👤 Játékos** gombbal bármikor visszatérsz a profilválasztóhoz – ez a főmenüben és a Saját oldal tetején is megtalálható.
+- A **👤 Játékos** gombbal bármikor visszatérsz a profilválasztóhoz – a navigációs sávban minden képernyőn megtalálható.
 - A profilját mindenki a magáétól folytatja: saját csillagjai, saját szintje, saját eredményei vannak.
 - Profilt törölni a választóképernyőn a profil kártyáján lévő **×** gombbal lehet. Bár erre nincs megerősítés utáni visszaállás – a törlés végleges!
 
@@ -65,27 +65,27 @@ Ha új világ szabadul fel, az ünneplés automatikusan jelzi.
 
 ## 👤 Saját oldal és 📊 Értékek
 
-- A **Saját oldal** (a menüben a profil-avatárra vagy a lecke végén a **👤 Profil** gombra kattintva) mutatja: csillagok, teljesített leckék, sorozat (🔥 napok), hibátlan leckék, a következő cél, a napi küldetés állása, a kitűzők és a világok.
-- A **Saját oldal tetején kék gombsor** található: **👤 Játékos** (profilváltás), **📋 Értékek**, **📚 Leckék**, **🎯 Gyakorlás**, **❓ Súgó** – ugyanez a gombsor vezet az Értékek és a Gyakorlás oldal tetején is, így egy koppintással elérhető a többi képernyő.
+- A **Saját oldal** (a navigációs sávban a nevedre/avatárodra kattintva, vagy a lecke végén a **👤 Profil** gombra) mutatja: csillagok, teljesített leckék, sorozat (🔥 napok), hibátlan leckék, a következő cél, a napi küldetés állása, a kitűzők és a világok.
+- A **képernyők tetején egységes navigációs sáv** van: **🦊 neved** (Saját oldal), **📚 Leckék**, **📋 Értékek**, **❓ Súgó**, **👤 Játékos** (profilváltás) – minden képernyőn ugyanaz a sor, az éppen látogatott képernyő gombja kiemelve, így egy koppintással bárhonnan elérhető a többi képernyő.
 - A **📋 Értékek** oldal (Saját oldal → 📋 Értékek) a napi és az összesített statisztikát mutatja, valamint azt, hogy melyik készség megy jól és melyik szorul gyakorlásra. Itt találod az **🏆 Osztályok** részt is, amely megmutatja, melyik osztályt sikerült már sikeresen (átlagosan 90% fölött) befejezni, és mennyi lecke maradt hátra belőle.
-- A **📚 Készségek** gomb az évfolyami készségtérképet nyitja meg, ahol az összes lecke látszik készségenként.
+- A **📚 Témakörök** gomb osztályonkénti tananyagtérképet nyit, ahol az összes lecke látszik témakörönként.
 
 ## 🎯 Gyakorlás – a gyengébb leckék
 
-Ha egy leckében az eredmény **90% alatt** van, az bekerül a **Gyakorlás** listára:
+Ha egy leckében az eredmény **90% alatt** van, az bekerül a **Gyakorlásra javasolt** listára:
 
-- A Saját oldalon (és az ünneplő képernyőn) látszik a **🎯 Gyakorlás (szám)** gomb.
+- A feladatlista oldalon van a **🎯 Gyakorlásra javasolt** rész, amíg van 90% alatti lecke.
 - A gyakorlásnál pontosan azokat a leckéket ajánlja fel az app, amelyekben még bizonytalan a gyerek.
-- A gyakorlás oldal tetején a **📚 Feladatok** gombbal egyenesen a feladatlista oldalra juthatsz.
 - A lista mindig az **aktívan választott osztály** leckéit mutatja: ha átváltasz például 1. osztályról 2. osztályra, a gyakorlás is csak az éppen választott osztály leckéit ajánlja.
 - Ezzel mindig azt erősítjük, ami még gyenge – nem azt, ami már megy.
 
-## 📚 Feladatlista – Erősítő feladatok és Kedvenceim
+## 📚 Feladatlista – Gyakorlás, Erősítő feladatok és Kedvenceim
 
 A feladatlista oldalon (a profil-avatárról nyitható) sorban a következők jönnek:
 
 - **➡️ Következő feladat** – az, amit legközelebb érdemes megoldani.
 - **📚 Feladatok listája** gomb – a teljes, szűréssel böngészhető feladatlista nyílik ki alatta.
+- **🎯 Gyakorlásra javasolt** – azok a leckék, amelyekben az eredmény **90% alatti**. A nyitó feladat után a következő gyakorló feladat jön automatikusan, a lista végén a menübe tér vissza.
 - **⏭️ Átugrott feladatok** – ha voltak kihagyott feladatok, itt látszanak. Érdemes pótolni őket, mert a sorrendjükben a végén úgyis visszajönnek (részletek az alábbi ⏭️ szakaszban).
 - **🔁 Erősítő feladatok** – a kurátori csapat által kiválasztott, ismétlésre javasolt feladatok. A nyitó feladat után a következő erősítő feladat jön automatikusan, a lista végén a menübe tér vissza.
 - **❤️ Kedvenceim** – azok a feladatok, amelyeket a sor jobb oldalán lévő szív gombbal (**🤍 → ❤️**) megjelöltél. Ugyanígy játszólistaként megy végig a kedvenceken.

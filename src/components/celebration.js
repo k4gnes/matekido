@@ -1,6 +1,5 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
-import { getWeakLessonFiles } from "./practicePage.js";
 
 export function renderCelebration(step, root, actions = {}, milestone, reward, activeWorld, lessonIndex) {
 
@@ -34,13 +33,6 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
         onClick: () => actions.onProfile?.()
     });
 
-    const weakLessonFiles = lessonIndex ? getWeakLessonFiles(lessonIndex) : new Set();
-    const practiceButton = weakLessonFiles.size > 0
-        ? createButton(`🎯 Gyakorlás (${weakLessonFiles.size})`, {
-            onClick: () => actions.onPractice?.()
-        })
-        : null;
-
     if (milestone) {
 
         const milestoneEl = document.createElement("div");
@@ -65,7 +57,6 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
 
     if (nextButton) buttons.append(nextButton);
     buttons.append(restartButton, menuButton, profileButton);
-    if (practiceButton) buttons.append(practiceButton);
 
     card.append(buttons);
 

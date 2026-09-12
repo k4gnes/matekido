@@ -1,12 +1,11 @@
 import { createCard } from "./ui/card.js";
-import { createButton } from "./ui/button.js";
+import { createNavBar } from "./ui/navbar.js";
 import { loadProfile, getNextGoal, getActiveWorld, setActiveWorld } from "../profile/Profile.js";
-import { getWeakLessonFiles } from "./practicePage.js";
 import { ACHIEVEMENTS, getUnlockedAchievements } from "../profile/Achievements.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getAllWorlds } from "../world/WorldRegistry.js";
 
-export function renderProfilePage(lessonIndex, root, onBack, onStats, onPractice, onHelp, onSwitch) {
+export function renderProfilePage(lessonIndex, root, onBack, onStats, onHelp, onSwitch) {
 
     root.replaceChildren();
 
@@ -20,22 +19,9 @@ export function renderProfilePage(lessonIndex, root, onBack, onStats, onPractice
     const activeId = getActiveId();
     const activePlayer = allPlayers.find(p => p.id === activeId);
 
-    const headerRow = document.createElement("div");
-    headerRow.style.cssText = "display:flex; justify-content:center; align-items:center; gap:.5rem; margin-bottom:.6rem;";
-
-    const avatarDisplay = document.createElement("span");
-    avatarDisplay.style.cssText = "font-size:1.6rem; line-height:1;";
-    avatarDisplay.textContent = activePlayer?.avatar ?? "🦊";
-
     const title = document.createElement("h1");
     const currentWorld = getAllWorlds().find(w => w.id === getActiveWorld());
     title.textContent = `${currentWorld?.icon ?? "📮"} ${currentWorld?.name ?? "postahivatal"}`;
-
-    const nameDisplay = document.createElement("span");
-    nameDisplay.style.cssText = "font-size:1.1rem; font-weight:600;";
-    nameDisplay.textContent = activePlayer?.name ?? "Játékos";
-
-    headerRow.append(avatarDisplay, nameDisplay);
 
     const stats = document.createElement("div");
     stats.className = "profile-page-stats";
@@ -173,7 +159,7 @@ export function renderProfilePage(lessonIndex, root, onBack, onStats, onPractice
             item.addEventListener("click", () => {
                 setActiveWorld(world.id);
                 document.body.dataset.world = world.id;
-                renderProfilePage(lessonIndex, root, onBack, onStats, onPractice, onHelp, onSwitch);
+                renderProfilePage(lessonIndex, root, onBack, onStats, onHelp, onSwitch);
             });
         }
 
@@ -182,46 +168,16 @@ export function renderProfilePage(lessonIndex, root, onBack, onStats, onPractice
 
     achWorldRow.append(achievementSection, worldSection);
 
-    // --- Navigation buttons ---
-    const buttonRow = document.createElement("div");
-    buttonRow.className = "profile-page-buttons";
-
-    const statsButton = createButton("📋 Értékek", {
-        onClick: () => onStats?.()
+    const navbar = createNavBar({
+        current: "profile",
+        player: activePlayer,
+        onLessons: onBack,
+        onStats,
+        onHelp,
+        onSwitch
     });
-    statsButton.className = "profile-page-button";
 
-    const menuButton = createButton("📚 Feladatok", {
-        onClick: () => onBack()
-    });
-    menuButton.className = "profile-page-button";
-
-    buttonRow.append(statsButton, menuButton);
-
-    const weakLessonFiles = getWeakLessonFiles(lessonIndex);
-    if (weakLessonFiles.size > 0) {
-        const practiceButton = createButton(`🎯 Gyakorlás (${weakLessonFiles.size})`, {
-            onClick: () => onPractice?.()
-        });
-        practiceButton.className = "profile-page-button";
-        buttonRow.append(practiceButton);
-    }
-
-    const helpButton = createButton("❓ Súgó", {
-        onClick: () => onHelp?.()
-    });
-    helpButton.className = "filter-toggle-btn";
-    buttonRow.append(helpButton);
-
-    if (onSwitch) {
-        const switchButton = createButton("👤 Játékos", {
-            onClick: () => onSwitch?.()
-        });
-        switchButton.className = "profile-page-button";
-        buttonRow.append(switchButton);
-    }
-
-    card.append(headerRow, title, buttonRow, stats, progressSection, questSection, achWorldRow);
+    card.append(navbar, title, stats, progressSection, questSection, achWorldRow);
 
     root.append(card);
 }

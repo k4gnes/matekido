@@ -1,5 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
+import { createNavBar } from "./ui/navbar.js";
 import { loadJSON, saveJSON, loadRaw, saveRaw } from "../storage.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getLessonStats, getActiveWorld, getActiveGrade, setActiveGrade, getFavoriteLessons, getSkippedLessons, isFavoriteLesson, toggleFavoriteLesson } from "../profile/Profile.js";
@@ -589,7 +590,7 @@ function pickNextForGrade(gradeLessons) {
 
 }
 
-export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onSkillMap, onHelp) {
+export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onSkillMap, onHelp, onStats) {
     root.replaceChildren();
 
     const wrapper = createCard();
@@ -609,36 +610,20 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     const wData = getWorld(worldId);
     worldSub.textContent = wData.tagline || `${wData.icon} ${wData.name} világ`;
 
-    const buttonRow = document.createElement("div");
-    buttonRow.className = "menu-player-row";
-
     const allPlayers = listPlayers();
     const activeId = getActiveId();
     const currentPlayer = allPlayers.find(p => p.id === activeId);
 
-    const profileButton = createButton("👤 Profil", {
-        onClick: () => onProfile?.()
+    const navbar = createNavBar({
+        current: "lessons",
+        player: currentPlayer,
+        onProfile,
+        onStats,
+        onHelp,
+        onSwitch
     });
-    profileButton.className = "profile-page-button";
 
-    buttonRow.append(profileButton);
-
-    if (currentPlayer) {
-        const avatar = document.createElement("span");
-        avatar.className = "menu-player-name";
-        avatar.textContent = `${currentPlayer.avatar} ${currentPlayer.name}`;
-        buttonRow.append(avatar);
-    }
-
-    if (onSwitch) {
-        const switchButton = createButton("👤 Játékos", {
-            onClick: () => onSwitch?.()
-        });
-        switchButton.className = "profile-page-button";
-        buttonRow.append(switchButton);
-    }
-
-    wrapper.append(title, buttonRow, worldSub);
+    wrapper.append(title, navbar, worldSub);
 
     const activeWorld = getActiveWorld();
     const allLessons = index.lessons || [];
@@ -675,15 +660,10 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     });
     filterToggle.className = "filter-toggle-btn";
 
-    const infoButton = createButton("📚 Készségek", {
+    const infoButton = createButton("📚 Témakörök", {
         onClick: () => onSkillMap()
     });
     infoButton.className = "filter-toggle-btn";
-
-    const helpButton = createButton("❓ Súgó", {
-        onClick: () => onHelp()
-    });
-    helpButton.className = "filter-toggle-btn";
 
     const gradeBackButton = createButton("🔙 Osztály", {
         onClick: () => chooseGrade(null)
@@ -693,7 +673,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
 
     const menuToolbar = document.createElement("div");
     menuToolbar.className = "menu-toolbar";
-    menuToolbar.append(filterToggle, infoButton, helpButton, gradeBackButton);
+    menuToolbar.append(filterToggle, infoButton, gradeBackButton);
 
     const filterPanel = document.createElement("div");
     filterPanel.className = "filter-panel";
@@ -847,6 +827,22 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
         const favoriteLessons = getFavoriteLessons().map(f => byFile.get(f)).filter(l => l && l.grades?.includes(selectedGrade));
 
         const pickerSections = [];
+
+        const weakLessons = allLessons.filter(l => {
+            if (!l.grades?.includes(selectedGrade)) return false;
+            const stats = getLessonStats(l.file);
+            return stats !== null && stats.percentage < 90;
+        });
+
+        if (weakLessons.length > 0) {
+            pickerSections.push(createPickerSection(
+                `🎯 Gyakorlásra javasolt (${weakLessons.length}) – 90% alatt vannak`,
+                weakLessons,
+                onSelect,
+                activeWorld,
+                { from: "practice" }
+            ));
+        }
 
         const skippedLessonFiles = new Set(getSkippedLessons());
         const skippedLessons = allLessons.filter(l =>

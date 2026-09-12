@@ -106,7 +106,7 @@ const COUNTED_TYPES = new Set([
 const isCounted = s => COUNTED_TYPES.has(s.type);
 
 
-import { renderCelebration } from "../components/celebration.js?v=7";
+import { renderCelebration } from "../components/celebration.js?v=8";
 import { renderProgress } from "../components/progress.js?v=2";
 import { renderMissingProgress } from "../components/missingProgress.js?v=3";
 import { renderComparisonProgress } from "../components/comparisonProgress.js?v=3";
@@ -199,7 +199,6 @@ export class Game {
         this.onRestart = actions.onRestart;
         this.onExit = actions.onExit;
         this.onProfile = actions.onProfile;
-        this.onPractice = actions.onPractice;
         this.onNext = actions.onNext;
         this.onSkipNext = actions.onSkipNext;
     }
@@ -293,7 +292,6 @@ export class Game {
                     onRestart: this.onRestart,
                     onExit: this.onExit,
                     onProfile: this.onProfile,
-                    onPractice: this.onPractice,
                     onNext: this.onNext
                 },
                 milestone,
@@ -373,7 +371,6 @@ export class Game {
                 onRestart: this.onRestart,
                 onExit: this.onExit,
                 onProfile: this.onProfile,
-                onPractice: this.onPractice,
                 onNext: this.onNext
             }, milestone2, reward2, getActiveWorld(), this.lessonIndex);
 

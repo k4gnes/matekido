@@ -1,5 +1,6 @@
 import { createButton } from "./ui/button.js";
 import { createCard } from "./ui/card.js";
+import { createNavBar } from "./ui/navbar.js";
 import { renderMarkdown } from "../utils/markdown.js";
 
 const DOCS = [
@@ -8,7 +9,7 @@ const DOCS = [
     { id: "harmadik-osztaly", emoji: "🪐", label: "3. osztály", desc: "22 lecke – számok 1000-ig, szorzás és osztás" }
 ];
 
-export function renderSkillMap(root, onBackToLessons) {
+export function renderSkillMap(root, nav = {}) {
 
     root.replaceChildren();
 
@@ -16,18 +17,20 @@ export function renderSkillMap(root, onBackToLessons) {
 
     root.append(wrapper);
 
+    const navbar = createNavBar({ ...nav, current: "lessons" });
+
     showChoice();
 
     function showChoice() {
 
-        wrapper.replaceChildren();
+        wrapper.replaceChildren(navbar);
 
         const title = document.createElement("h1");
-        title.textContent = "📚 Készségek";
+        title.textContent = "📚 Témakörök";
 
         const subtitle = document.createElement("p");
         subtitle.className = "skill-map-subtitle";
-        subtitle.textContent = "Nézd meg az évfolyamod készségeit!";
+        subtitle.textContent = "Nézd meg az évfolyamod tananyagát!";
 
         const grid = document.createElement("div");
         grid.className = "skill-map-grid";
@@ -53,16 +56,16 @@ export function renderSkillMap(root, onBackToLessons) {
             grid.append(btn);
         });
 
-        wrapper.append(title, subtitle, grid, createBackButton("⬅️ Leckék", onBackToLessons), createFooter());
+        wrapper.append(title, subtitle, grid, createFooter());
 
     }
 
     async function showDoc(doc) {
 
-        wrapper.replaceChildren();
+        wrapper.replaceChildren(navbar);
 
         const title = document.createElement("h1");
-        title.textContent = `${doc.emoji} ${doc.label} – készségek`;
+        title.textContent = `${doc.emoji} ${doc.label} – témakörök`;
 
         const body = document.createElement("div");
         body.className = "skill-map-body";

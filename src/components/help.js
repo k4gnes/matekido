@@ -1,14 +1,16 @@
-import { createButton } from "./ui/button.js";
 import { createCard } from "./ui/card.js";
+import { createNavBar } from "./ui/navbar.js";
 import { renderMarkdown } from "../utils/markdown.js";
 
-export function renderHelp(root, onBack) {
+export function renderHelp(root, nav = {}) {
 
     root.replaceChildren();
 
     const wrapper = createCard("skill-map-card");
 
     root.append(wrapper);
+
+    const navbar = createNavBar({ ...nav, current: "help" });
 
     const title = document.createElement("h1");
     title.textContent = "❓ Súgó";
@@ -17,7 +19,7 @@ export function renderHelp(root, onBack) {
     body.className = "skill-map-body";
     body.innerHTML = "<p class='skill-map-loading'>Betöltés…</p>";
 
-    wrapper.append(title, body, createBackButton(onBack));
+    wrapper.append(navbar, title, body);
 
     loadDoc(body);
 
@@ -33,11 +35,4 @@ export function renderHelp(root, onBack) {
         }
     }
 
-}
-
-function createBackButton(onBack) {
-    return createButton("⬅️ Vissza", {
-        className: "skill-map-back",
-        onClick: () => onBack()
-    });
 }

@@ -602,7 +602,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     logo.style.height = "2em";
     logo.style.width = "auto";
     logo.style.verticalAlign = "middle";
-    title.append(logo, " Matekidő");
+    title.append(logo, " atekidő");
 
     const worldSub = document.createElement("p");
     worldSub.style.cssText = "margin:.1rem 0 0; font-size:1.1rem; color:var(--text-secondary, #666);";
@@ -745,11 +745,11 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
 
         gradeConfig.forEach(gc => {
             const gradeLessons = allLessons.filter(l => l.grades?.includes(gc.grade));
-            const done = gradeLessons.length > 0 && pickNextForGrade(gradeLessons) === null;
-            const btn = createButton(done ? `🎉 ${gc.title} – minden feladat kész!` : gc.title, {
+            const done = gradeLessons.length > 0 && gradeLessons.every(l => getLessonStats(l.file));
+            const btn = createButton(done ? `✅ ${gc.title} – kész!` : gc.title, {
                 onClick: () => chooseGrade(gc.grade)
             });
-            btn.className = "profile-page-button";
+            btn.className = "profile-page-button" + (done ? " grade-done" : "");
             grid.append(btn);
         });
 

@@ -247,6 +247,12 @@
     background: #d0d0d0;
 }
 
+.profile-page-button.grade-done {
+    background: #4caf50;
+    color: white !important;
+    border: 2px solid #388e3c;
+}
+
 .menu-toolbar {
     display: flex;
     flex-wrap: wrap;

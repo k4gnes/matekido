@@ -236,15 +236,15 @@
     margin: 0.5rem auto;
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
-    background: #f0f0f0;
+    background: #e0e0e0;
     color: #333;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     border-radius: 8px;
     cursor: pointer;
 }
 
 .filter-toggle-btn:hover {
-    background: #e0e0e0;
+    background: #d0d0d0;
 }
 
 .menu-toolbar {

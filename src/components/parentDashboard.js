@@ -147,7 +147,7 @@ function createSkippedNote(skippedTitles) {
 
     const note = document.createElement("p");
     note.className = "parent-weekly-note";
-    note.textContent = `⏭️ Kihagyott feladatok (${skippedTitles.length}): ${skippedTitles.join(", ")} – csak ezek pótlása után léphet a 2. osztályra.`;
+    note.textContent = `⏭️ Kihagyott feladatok (${skippedTitles.length}): ${skippedTitles.join(", ")} – az osztályváltóval tovább lehet lépni, de ajánlott utóbb pótolni.`;
     return note;
 
 }

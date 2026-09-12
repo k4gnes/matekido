@@ -1,14 +1,14 @@
 import { Game } from "./engine/Game.js?v=58";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=16";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=31";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=33";
 import { renderSkillMap } from "./components/skillMap.js?v=8";
 import { renderHelp } from "./components/help.js?v=2";
 import { renderProfilePage } from "./components/profilePage.js?v=4";
 import { renderStatsPage } from "./components/statsPage.js?v=6";
 import { renderPracticePage, getNextPracticeLesson } from "./components/practicePage.js?v=8";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=2";
-import { renderParentDashboard } from "./components/parentDashboard.js?v=3";
+import { renderParentDashboard } from "./components/parentDashboard.js?v=4";
 import { getActiveId, listPlayers } from "./profile/UserManager.js";
 import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld } from "./profile/Profile.js";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
@@ -217,30 +217,34 @@ function getNextLesson(path) {
 
     const grade = allLessons[idx].grades?.[0];
 
-    const skipped = getSkippedLessons().filter(file =>
-        file !== path && allLessons.some(l => l.grades?.includes(grade) && l.file === file)
-    );
-    if (skipped.length > 0) {
-        const firstSkipped = allLessons.find(l => l.grades?.includes(grade) && l.file === skipped[0]);
-        if (firstSkipped) {
-            return firstSkipped;
-        }
-    }
+    const gradeLessons = allLessons.filter(l => l.grades?.includes(grade));
+    const pos = gradeLessons.findIndex(l => l.file === path);
+    if (pos === -1) return null;
 
-    for (let i = idx + 1; i < allLessons.length; i++) {
-        const candidate = allLessons[i];
-        if (candidate.grades?.includes(grade) && !getLessonStats(candidate.file)) {
+    const skippedSet = new Set(getSkippedLessons().filter(file =>
+        gradeLessons.some(l => l.file === file)
+    ));
+
+    for (let i = pos + 1; i < gradeLessons.length; i++) {
+        const candidate = gradeLessons[i];
+        if (!skippedSet.has(candidate.file) && !getLessonStats(candidate.file)) {
             return candidate;
         }
     }
 
-    const gradeLessons = allLessons.filter(l => l.grades?.includes(grade));
-    const pos = gradeLessons.findIndex(l => l.file === path);
-    if (gradeLessons.length > 0 && pos !== -1) {
-        return gradeLessons[(pos + 1) % gradeLessons.length];
+    for (let i = 0; i < pos; i++) {
+        const candidate = gradeLessons[i];
+        if (!skippedSet.has(candidate.file) && !getLessonStats(candidate.file)) {
+            return candidate;
+        }
     }
 
-    return null;
+    const undoneSkipped = gradeLessons.find(l => skippedSet.has(l.file) && !getLessonStats(l.file));
+    if (undoneSkipped) {
+        return undoneSkipped;
+    }
+
+    return gradeLessons[(pos + 1) % gradeLessons.length];
 
 }
 
@@ -274,10 +278,10 @@ function showGradeChange(path, next) {
             const card = createCard();
 
             const title = document.createElement("h1");
-            title.textContent = `🔒 Még nem léphetsz ${nextGradeLabel(grade + 1)}ra!`;
+            title.textContent = "⏭️ Van még kihagyott feladatod";
 
             const text = document.createElement("p");
-            text.textContent = `A feladatlistán kihagytál ${skippedCount} feladatot. Előbb oldd meg őket, csak utána jöhet a ${nextGradeLabel(grade + 1)}.`;
+            text.textContent = `Minden feladatot megoldottál, de ${skippedCount} feladatot kihagytál a feladatlistán. Ha szeretnéd, előbb pótolhatod őket – az osztályváltóval viszont bármikor továbbléphetsz a ${nextGradeLabel(grade + 1)}ra.`;
 
             const button = createButton("🔙 Vissza a feladatokhoz", {
                 onClick: showMenu

@@ -35,7 +35,7 @@
       "type": "exercise",
       "generator": "shape-sort",
       "options": {
-        "count": 5,
+        "count": 3,
         "categories": ["circle", "triangle", "rectangle"]
       }
     },

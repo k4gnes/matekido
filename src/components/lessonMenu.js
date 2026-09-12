@@ -565,14 +565,15 @@ function pickNextForGrade(gradeLessons) {
     if (gradeLessons.length === 0) return null;
 
     const skippedFiles = new Set(getSkippedLessons());
-    const skipped = gradeLessons.find(l => skippedFiles.has(l.file));
-    if (skipped) {
-        return skipped;
-    }
 
-    const undone = gradeLessons.find(l => !getLessonStats(l.file));
+    const undone = gradeLessons.find(l => !skippedFiles.has(l.file) && !getLessonStats(l.file));
     if (undone) {
         return undone;
+    }
+
+    const undoneSkipped = gradeLessons.find(l => skippedFiles.has(l.file) && !getLessonStats(l.file));
+    if (undoneSkipped) {
+        return undoneSkipped;
     }
 
     const withTime = gradeLessons
@@ -854,7 +855,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
 
         if (skippedLessons.length > 0) {
             pickerSections.push(createPickerSection(
-                `⏭️ Átugrott feladatok (${skippedLessons.length}) – amíg itt van feladat, nem léphetsz tovább`,
+                `⏭️ Átugrott feladatok (${skippedLessons.length}) – érdemes pótolni, a végén úgyis visszajönnek`,
                 skippedLessons,
                 onSelect,
                 activeWorld

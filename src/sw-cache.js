@@ -266,6 +266,8 @@ const SW_CACHE_LIST = [
     "/docs/elso-osztaly.md",
     "/docs/harmadik-osztaly.md",
     "/docs/masodik-osztaly.md",
+    "/docs/negyedik-osztaly.md",
+    "/docs/otodik-osztaly.md",
     "/docs/sugo.md",
     "/engine/Game.js",
     "/engine/LessonLoader.js",

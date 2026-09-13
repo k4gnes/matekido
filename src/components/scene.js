@@ -18,6 +18,7 @@ export function renderScene(step, root, next, progress, activeWorld, onExit, les
     let done = false;
 
     const button = createButton("Kezdjük!", {
+        className: "nav-bar-btn",
         onClick: () => {
             if (done) return;
             done = true;
@@ -95,11 +96,12 @@ export function renderScene(step, root, next, progress, activeWorld, onExit, les
     }
 
     const buttonRow = document.createElement("div");
-    buttonRow.style.cssText = "display:flex; gap:.5rem; justify-content:center;";
+    buttonRow.style.cssText = "display:flex; gap:.4rem; justify-content:center; margin-top:1.5rem;";
     buttonRow.append(button);
 
     if (onExit) {
-        const exitButton = createButton("📚 Feladatok", {
+        const exitButton = createButton("📚 Leckék", {
+            className: "nav-bar-btn",
             onClick: () => {
                 ac.abort();
                 onExit();

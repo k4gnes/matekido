@@ -103,7 +103,7 @@ export function renderMixed(step, root, next, progress, onResult, onAttempt) {
     });
     hintButton.style.display = "none";
 
-    const button = useChoice ? null : createButton("Ellenőrzöm");
+    const button = useChoice ? null : createButton("Ellenőrzöm", { className: "nav-bar-btn" });
 
     const children = [equation];
     if (optionsContainer) children.push(optionsContainer);

@@ -57,7 +57,7 @@ export function renderMoneyChange(step, root, next, progress, onResult, onAttemp
 
     const checkBtn = document.createElement("button");
     checkBtn.type = "button";
-    checkBtn.className = "mc-check";
+    checkBtn.className = "nav-bar-btn";
     checkBtn.textContent = "Ellenőrzöm";
 
     inputRow.append(input, checkBtn);

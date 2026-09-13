@@ -70,7 +70,7 @@ export function renderOrder(step, root, next, progress, onResult, onAttempt) {
     sortedBoard.className = "order-board order-sorted " + (step.direction === "desc" ? "order-desc" : "order-asc");
     card.append(sortedBoard);
 
-    const button = createButton("Ellenőrzöm");
+    const button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
     card.append(button);
 
     const message = createMessageBox();

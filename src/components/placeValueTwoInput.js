@@ -77,7 +77,7 @@ export function renderPlaceValueTwoInput(step, root, next, progress, onResult, o
 
     wrapper.append(numberLine);
 
-    const button = createButton("Ellenőrzöm");
+    const button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
 
     const { message, card } = createExercise({
         root, title, progress,

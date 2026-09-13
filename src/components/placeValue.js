@@ -55,7 +55,7 @@ export function renderPlaceValue(step, root, next, progress, onResult, onAttempt
 
     equation.append(desc, input);
 
-    const button = createButton("Ellenőrzöm");
+    const button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
 
     const { message, card } = createExercise({
         root, title, progress,

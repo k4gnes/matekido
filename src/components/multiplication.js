@@ -93,7 +93,7 @@ function renderTableInput(step, card) {
 
     const button = document.createElement("button");
     button.type = "button";
-    button.className = "mult-option";
+    button.className = "nav-bar-btn";
     button.textContent = "Ellenőrzöm";
     card.append(button);
 
@@ -152,7 +152,7 @@ function renderMissingFactor(step, card) {
 
     const button = document.createElement("button");
     button.type = "button";
-    button.className = "mult-option";
+    button.className = "nav-bar-btn";
     button.textContent = "Ellenőrzöm";
     card.append(button);
 
@@ -276,7 +276,7 @@ function renderLinkInput(step, card) {
 
     const button = document.createElement("button");
     button.type = "button";
-    button.className = "mult-option";
+    button.className = "nav-bar-btn";
     button.textContent = "Ellenőrzöm";
     card.append(button);
 

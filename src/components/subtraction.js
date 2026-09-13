@@ -68,7 +68,7 @@ export function renderSubtraction(step, root, next, progress, onResult, onAttemp
     });
     hintButton.style.display = "none";
 
-    const button = useChoice ? null : createButton("Ellenőrzöm");
+    const button = useChoice ? null : createButton("Ellenőrzöm", { className: "nav-bar-btn" });
 
     const children = [equation];
     if (optionsContainer) children.push(optionsContainer);

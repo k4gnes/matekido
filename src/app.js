@@ -2,13 +2,13 @@ import { Game } from "./engine/Game.js?v=59";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=16";
 import { renderLessonMenu } from "./components/lessonMenu.js?v=38";
-import { renderSkillMap } from "./components/skillMap.js?v=10";
+import { renderSkillMap } from "./components/skillMap.js?v=11";
 import { renderHelp } from "./components/help.js?v=3";
 import { renderProfilePage } from "./components/profilePage.js?v=7";
 import { renderStatsPage } from "./components/statsPage.js?v=8";
 import { getNextPracticeLesson } from "./components/practicePage.js?v=8";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=2";
-import { renderParentDashboard } from "./components/parentDashboard.js?v=4";
+import { renderParentDashboard } from "./components/parentDashboard.js?v=5";
 import { getActiveId, listPlayers } from "./profile/UserManager.js";
 import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld } from "./profile/Profile.js";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
@@ -283,6 +283,7 @@ function showGradeChange(path, next) {
             text.textContent = `Minden feladatot megoldottál, de ${skippedCount} feladatot kihagytál a feladatlistán. Ha szeretnéd, előbb pótolhatod őket – az osztályváltóval viszont bármikor továbbléphetsz a ${nextGradeLabel(grade + 1)}ra.`;
 
             const button = createButton("🔙 Vissza a feladatokhoz", {
+                className: "nav-bar-btn",
                 onClick: showMenu
             });
 
@@ -309,6 +310,7 @@ function showGradeChange(path, next) {
         : "Ügyes vagy, minden feladatot teljesítettél!";
 
     const button = createButton("📚 Vissza a feladatokhoz", {
+        className: "nav-bar-btn",
         onClick: showMenu
     });
 

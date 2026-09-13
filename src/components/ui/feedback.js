@@ -31,7 +31,7 @@ export function createFeedback({ message, container, onNext, onResult, onAttempt
         });
 
         const nextBtn = createButton("➡️ Tovább", {
-            className: "next-btn",
+            className: "nav-bar-btn",
             onClick: () => {
                 if (navigated) return;
                 navigated = true;

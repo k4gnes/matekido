@@ -137,7 +137,7 @@ function renderInputMode(step, card) {
 
     const button = document.createElement("button");
     button.type = "button";
-    button.className = "div-option";
+    button.className = "nav-bar-btn";
     button.textContent = "Ellenőrzöm";
     card.append(button);
 

@@ -76,7 +76,7 @@ export function renderPlaceValueHundreds(step, root, next, progress, onResult, o
         input = createNumberInput();
         equation.append(desc, input);
 
-        button = createButton("Ellenőrzöm");
+        button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
     }
 
     const children = [emojiArea, equation];

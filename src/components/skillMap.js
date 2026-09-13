@@ -88,7 +88,7 @@ export function renderSkillMap(root, nav = {}) {
 }
 
 function createBackButton(text, onClick) {
-    return createButton(text, { className: "skill-map-back", onClick });
+    return createButton(text, { className: "nav-bar-btn", onClick });
 }
 
 function createFooter() {

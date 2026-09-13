@@ -86,7 +86,7 @@ function renderEqualGroups(step, card) {
     const input = createNumberInput();
     input.className = "mp-input";
     card.append(input);
-    const button = createButton("Ellenőrzöm");
+    const button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
     card.append(button);
     return { input, button, isInput: true };
 }
@@ -111,7 +111,7 @@ function renderRepeatedAddition(step, card) {
     const input = createNumberInput();
     input.className = "mp-input";
     card.append(input);
-    const button = createButton("Ellenőrzöm");
+    const button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
     card.append(button);
     return { input, button, isInput: true };
 }
@@ -235,7 +235,7 @@ export function renderMultPrep(step, root, next, progress, onResult, onAttempt) 
         if (result.needsButton) {
             const input = card.querySelector(".mp-input");
             if (input) {
-                const button = createButton("Ellenőrzöm");
+                const button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
                 card.append(button);
 
                 function checkInput() {

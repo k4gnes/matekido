@@ -66,7 +66,7 @@ export function renderNeighborSingle(step, root, next, progress, onResult, onAtt
         question.append(qText, input);
         card.append(question);
 
-        const button = createButton("Ellenőrzöm");
+        const button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
         card.append(button);
 
         button.addEventListener("click", check);

@@ -449,7 +449,7 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
         const input = createNumberInput("?");
         input.className = "wp-input";
 
-        const button = createButton("Ellenőrzöm");
+        const button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
         card.append(input, button);
 
         function check() {
@@ -632,7 +632,7 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
 
         card.append(hint, waiting, countEl, departure);
 
-        const button = createButton("Ellenőrzöm");
+        const button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
         card.append(button);
 
         function updateCount() {

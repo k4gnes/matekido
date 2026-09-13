@@ -389,7 +389,7 @@ export function renderParentDashboard(root, onBack, lessonIndex) {
     const backButton = createButton("⬅️ Vissza", {
         onClick: () => onBack()
     });
-    backButton.className = "profile-page-button";
+    backButton.className = "nav-bar-btn";
     backButton.style.marginTop = "1rem";
 
     wrapper.append(backButton);

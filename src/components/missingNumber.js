@@ -69,7 +69,7 @@ export function renderMissingNumber(step, root, next, progress, onResult, onAtte
         equation.append(first, plus, input, equal, result);
     }
 
-    const button = useChoice ? null : createButton("Ellenőrzöm");
+    const button = useChoice ? null : createButton("Ellenőrzöm", { className: "nav-bar-btn" });
 
     const children = [equation];
     if (optionsContainer) children.push(optionsContainer);

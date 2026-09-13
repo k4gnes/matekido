@@ -52,22 +52,6 @@
     color: #667;
 }
 
-.skill-map-back {
-    display: block;
-    margin: 0 auto;
-    padding: 0.5rem 1.2rem;
-    font-size: 0.95rem;
-    background: #f0f0f0;
-    color: #333;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.skill-map-back:hover {
-    background: #e0e0e0;
-}
-
 .skill-map-footer {
     text-align: center;
     margin: 1.2rem 0 0;

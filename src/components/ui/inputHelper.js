@@ -6,7 +6,7 @@ export function renderNumberInputWithSubmit(card, onCheck, signal) {
     input.className = "mult-input";
     card.append(input);
 
-    const button = createButton("Ellenőrzöm");
+    const button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
     card.append(button);
 
     function check() {

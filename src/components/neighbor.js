@@ -80,7 +80,7 @@ export function renderNeighbor(step, root, next, progress, onResult, onAttempt) 
         row.append(lowerTen, dotsLeft, left, input, right, dotsRight, upperTen);
         card.append(row);
 
-        const button = createButton("Ellenőrzöm");
+        const button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
         card.append(button);
 
         button.addEventListener("click", check);

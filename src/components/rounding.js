@@ -62,7 +62,7 @@ export function renderRounding(step, root, next, progress, onResult, onAttempt) 
         input.className = "mult-input";
         card.append(input);
 
-        button = createButton("Ellenőrzöm");
+        button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
         card.append(button);
     }
 

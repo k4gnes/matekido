@@ -80,7 +80,7 @@ export function renderSequence(step, root, next, progress, onResult, onAttempt) 
         sequence.append(input);
         card.append(sequence);
 
-        const button = createButton("Ellenőrzöm");
+        const button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
         card.append(button);
 
         button.addEventListener("click", check);

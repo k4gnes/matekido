@@ -81,12 +81,8 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: .8rem;
+    gap: .4rem;
     margin-top: 1.5rem;
-}
-
-.celebration-buttons button {
-    margin: 0;
 }
 
 .milestone{

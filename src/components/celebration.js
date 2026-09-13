@@ -1,5 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
+import { listPlayers, getActiveId } from "../profile/UserManager.js";
 
 export function renderCelebration(step, root, actions = {}, milestone, reward, activeWorld, lessonIndex) {
 
@@ -16,22 +17,39 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
     text.textContent = worldStep?.text ?? step.text ?? "Ügyesen megoldottad az összes feladatot!";
 
     const restartButton = createButton("🔁 Újra", {
+        className: "nav-bar-btn",
         onClick: () => actions.onRestart?.()
     });
 
     const nextButton = actions.onNext
         ? createButton("➡️ Következő", {
+            className: "nav-bar-btn",
             onClick: () => actions.onNext()
         })
         : null;
 
-    const menuButton = createButton("📚 Feladatok", {
+    const menuButton = createButton("📚 Leckék", {
+        className: "nav-bar-btn",
         onClick: () => actions.onExit?.()
     });
 
-    const profileButton = createButton("👤 Profil", {
-        onClick: () => actions.onProfile?.()
-    });
+    const activePlayer = actions.onProfile ? listPlayers().find(p => p.id === getActiveId()) ?? null : null;
+
+    const profileButton = activePlayer
+        ? (() => {
+            const chip = document.createElement("button");
+            chip.type = "button";
+            chip.className = "nav-bar-player";
+            chip.textContent = `${activePlayer.avatar} ${activePlayer.name}`;
+            chip.title = "Profil";
+            chip.setAttribute("aria-label", "Profil: " + activePlayer.name);
+            chip.addEventListener("click", () => actions.onProfile());
+            return chip;
+        })()
+        : createButton("👤 Profil", {
+            className: "nav-bar-btn",
+            onClick: () => actions.onProfile?.()
+        });
 
     if (milestone) {
 

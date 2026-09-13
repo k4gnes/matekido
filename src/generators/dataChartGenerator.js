@@ -10,21 +10,55 @@ function shuffle(arr) {
     return arr;
 }
 
-const EMOJI_SETS = [
+const EMOJI_SETS_DEFAULT = [
     ["🍎", "🍌", "🍇"],
     ["🐱", "🐶", "🐰"],
     ["⚽", "🏀", "🎾"],
     ["🌷", "🌸", "🌻"]
 ];
 
-function buildChart() {
-    const emojis = pick(EMOJI_SETS);
+const EMOJI_SETS_WORLD = {
+    postman: [
+        ["💌", "📩", "📦"],
+        ["✉️", "📨", "📮"],
+        ["📮", "📬", "📭"]
+    ],
+    racing: [
+        ["🏎️", "🏁", "🔧"],
+        ["🚗", "🏎️", "⛽"],
+        ["🏆", "🏁", "⚙️"]
+    ],
+    cooking: [
+        ["🥕", "🍅", "🍎"],
+        ["🥚", "🍳", "🥖"],
+        ["🍓", "🍌", "🍇"]
+    ],
+    football: [
+        ["⚽", "🏀", "🎾"],
+        ["🥅", "⚽", "👟"],
+        ["🏆", "⚽", "🎽"]
+    ],
+    animals: [
+        ["🦁", "🐯", "🐻"],
+        ["🐱", "🐶", "🐰"],
+        ["🐴", "🦓", "🐘"]
+    ],
+    space: [
+        ["🚀", "🛰️", "⭐"],
+        ["🛸", "👽", "🌍"],
+        ["🌙", "⭐", "🪐"]
+    ]
+};
+
+function buildChart(world) {
+    const sets = EMOJI_SETS_WORLD[world] ?? EMOJI_SETS_DEFAULT;
+    const emojis = pick(sets);
     const values = shuffle([1, 2, 3, 4, 5, 6]).slice(0, 3);
     return emojis.map((emoji, i) => ({ emoji, value: values[i] }));
 }
 
-function buildTask() {
-    const chart = buildChart();
+function buildTask(world) {
+    const chart = buildChart(world);
     const mode = pick(["top", "least", "count", "compare"]);
 
     if (mode === "top") {
@@ -97,7 +131,7 @@ export function generateDataChart(options = {}) {
 
     const tasks = [];
     for (let i = 0; i < count; i++) {
-        tasks.push(buildTask());
+        tasks.push(buildTask(options.world));
     }
     return tasks;
 }

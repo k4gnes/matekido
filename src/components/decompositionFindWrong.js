@@ -124,8 +124,19 @@ export function renderDecompositionFindWrong(step, root, onNext, progress, onRes
         if (emoji) {
             emojiRow.style.fontSize = "0.85rem";
             emojiRow.style.lineHeight = "1.4";
-            emojiRow.style.wordBreak = "break-all";
-            emojiRow.textContent = `${emoji.repeat(a)} ${emoji.repeat(b)}`;
+            const appendChip = (count) => {
+                for (let i = 0; i < count; i++) {
+                    const chip = document.createElement("span");
+                    chip.style.cssText = "display:inline-flex; align-items:center; justify-content:center; background:#fff; border-radius:6px; padding:2px; line-height:1;";
+                    chip.textContent = emoji;
+                    emojiRow.append(chip);
+                }
+            };
+            appendChip(a);
+            const spacer = document.createElement("span");
+            spacer.style.width = "4px";
+            emojiRow.append(spacer);
+            appendChip(b);
         } else {
             for (let i = 0; i < a; i++) emojiRow.append(createEnvelopeSVG());
             const spacer = document.createElement("span");

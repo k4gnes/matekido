@@ -466,7 +466,7 @@ const TWO_STEP_THEMES = {
         { text: (a, b, c) => `A postaládában ${a} levél van. Tibi ${b} levelet tesz bele. Aztán ${c} levelet kivesz. Hány levél van a ládában?`, question: "Hány levél van a ládában?", success: (ans) => `😊 Szép munka! Most ${ans} levél van a ládában!` }
     ],
     racing: [
-        { text: (a, b, c) => `A versenyautó ${a} km-t ment az első körben. A második körben ${b} km-t. Aztán ${c} km-t visszafelé. Hány km-t ment összesen?`, question: "Hány km-t ment összesen?", success: (ans) => `😊 Szép munka! Összesen ${ans} km-t ment!` },
+        { text: (a, b, c) => `A versenyautó ${a} km-t ment az első körben. A második körben ${b} km-t. Aztán ${c} km-t visszafelé. Hány km-re van most a rajttól?`, question: "Hány km-re van a rajttól?", success: (ans) => `😊 Szép munka! Most ${ans} km-re van a rajttól!` },
         { text: (a, b, c) => `A garázsban ${a} kerék van. ${b} új kerék érkezik. Aztán ${c} kereket szerelnek fel. Hány kerék marad a garázsban?`, question: "Hány kerék marad a garázsban?", success: (ans) => `😊 Szép munka! ${ans} kerék maradt a garázsban!` }
     ],
     cooking: [

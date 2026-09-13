@@ -3,7 +3,7 @@ import { createInstructionHelp } from "../components/ui/instruction.js";
 import { createExitButton } from "../components/ui/exit.js";
 import { renderExercise } from "../components/exercise.js?v=4";
 import { renderDecomposition } from "../components/decomposition.js?v=2";
-import { renderDecompositionFindWrong } from "../components/decompositionFindWrong.js?v=2";
+import { renderDecompositionFindWrong } from "../components/decompositionFindWrong.js?v=3";
 import { renderMissingNumber } from "../components/missingNumber.js?v=7";
 import { renderComparison } from "../components/comparison.js?v=5";
 import { renderNeighbor } from "../components/neighbor.js?v=5";

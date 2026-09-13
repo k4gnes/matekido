@@ -1,7 +1,7 @@
-import { Game } from "./engine/Game.js?v=59";
+import { Game } from "./engine/Game.js?v=60";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=16";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=38";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=40";
 import { renderSkillMap } from "./components/skillMap.js?v=11";
 import { renderHelp } from "./components/help.js?v=3";
 import { renderProfilePage } from "./components/profilePage.js?v=7";
@@ -10,7 +10,7 @@ import { getNextPracticeLesson } from "./components/practicePage.js?v=8";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=2";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=5";
 import { getActiveId, listPlayers } from "./profile/UserManager.js";
-import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld } from "./profile/Profile.js";
+import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld, setActiveGrade } from "./profile/Profile.js";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
 import { createCard } from "./components/ui/card.js";
 import { createButton } from "./components/ui/button.js";
@@ -131,6 +131,7 @@ async function startLesson(path, opts = {}) {
             onExit: showMenu,
             onProfile: showProfile,
             onNext: () => continueToNext(path, opts),
+            onGradeComplete: () => showGradeComplete(path),
             onSkipNext: !opts.from && getSkippedLessons().includes(path) ? null : () => {
                 if (!opts.from) {
                     recordLessonSkip(path);
@@ -318,6 +319,52 @@ function showGradeChange(path, next) {
     root.append(card);
 
     button.focus();
+
+}
+
+function showGradeComplete(path) {
+
+    const allLessons = lessonIndex.lessons || [];
+    const idx = allLessons.findIndex(l => l.file === path);
+    const grade = idx !== -1 ? allLessons[idx].grades?.[0] : null;
+
+    root.replaceChildren();
+
+    const card = createCard();
+
+    const title = document.createElement("h1");
+    title.textContent = grade ? `🎉 Gratulálunk, a ${grade}. osztályt befejezted!` : "🎉 Gratulálunk!";
+
+    const text = document.createElement("p");
+    text.textContent = "Ügyes vagy, az összes feladatot teljesítetted ebben az osztályban!";
+
+    const buttons = document.createElement("div");
+    buttons.className = "celebration-buttons";
+
+    if (grade != null && grade < 3) {
+        const nextBtn = createButton(`➡️ ${grade + 1}. osztály feladatai`, {
+            className: "nav-bar-btn",
+            onClick: () => {
+                const next = getNextGradeStart(path);
+                if (next) {
+                    setActiveGrade(grade + 1);
+                    startLesson(next.file);
+                }
+            }
+        });
+        buttons.append(nextBtn);
+    }
+
+    const menuBtn = createButton("📚 Leckék", {
+        className: "nav-bar-btn",
+        onClick: showMenu
+    });
+    buttons.append(menuBtn);
+
+    card.append(title, text, buttons);
+    root.append(card);
+
+    buttons.firstChild?.focus();
 
 }
 

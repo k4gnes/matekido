@@ -112,7 +112,7 @@ import { renderMissingProgress } from "../components/missingProgress.js?v=3";
 import { renderComparisonProgress } from "../components/comparisonProgress.js?v=3";
 import { renderNeighborProgress } from "../components/neighborProgress.js?v=3";
 
-import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, recordSkillResult, resolveSkippedLesson, getActiveWorld, isFavoriteLesson, toggleFavoriteLesson } from "../profile/Profile.js";
+import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, recordSkillResult, resolveSkippedLesson, getLessonStats, getActiveWorld, isFavoriteLesson, toggleFavoriteLesson } from "../profile/Profile.js";
 import { grantRewards } from "../profile/RewardService.js";
 
 const SKILL_BY_TYPE = {
@@ -201,6 +201,7 @@ export class Game {
         this.onProfile = actions.onProfile;
         this.onNext = actions.onNext;
         this.onSkipNext = actions.onSkipNext;
+        this.onGradeComplete = actions.onGradeComplete;
     }
 
     getLessonPosition() {
@@ -212,6 +213,22 @@ export class Game {
         const gradeLessons = allLessons.filter(l => l.grades?.includes(grade));
         const posInGrade = gradeLessons.findIndex(l => l.file === this.lessonFile);
         return { position: posInGrade + 1, total: gradeLessons.length };
+    }
+
+    getLessonGrade() {
+        if (!this.lessonIndex || !this.lessonFile) return null;
+        const allLessons = this.lessonIndex.lessons || [];
+        const entry = allLessons.find(l => l.file === this.lessonFile);
+        return entry?.grades?.[0] ?? null;
+    }
+
+    isGradeComplete() {
+        if (!this.lessonIndex || !this.lessonFile) return false;
+        const allLessons = this.lessonIndex.lessons || [];
+        const grade = this.getLessonGrade();
+        if (grade == null) return false;
+        const gradeLessons = allLessons.filter(l => l.grades?.includes(grade));
+        return gradeLessons.length > 0 && gradeLessons.every(l => getLessonStats(l.file));
     }
 
     onAttempt() {
@@ -342,7 +359,9 @@ export class Game {
         if (step.type === "celebration") {
             let milestone2 = null;
             let reward2 = null;
+            let gradeJustCompleted = false;
             if (!this.lesson.completed) {
+                const gradeWasComplete = this.isGradeComplete();
                 try {
                     const result2 = completeLesson();
                     recordDailyResult(this.correct, this.wrong, this.byType);
@@ -365,13 +384,14 @@ export class Game {
                     });
                 } catch (e) { console.error(e); }
                 this.lesson.completed = true;
+                gradeJustCompleted = !gradeWasComplete && this.isGradeComplete();
             }
 
             renderCelebration(step, this.root, {
                 onRestart: this.onRestart,
                 onExit: this.onExit,
                 onProfile: this.onProfile,
-                onNext: this.onNext
+                onNext: gradeJustCompleted && this.onGradeComplete ? this.onGradeComplete : this.onNext
             }, milestone2, reward2, getActiveWorld(), this.lessonIndex);
 
             return;

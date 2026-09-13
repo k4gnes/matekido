@@ -768,12 +768,15 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
         if (next) {
             const nextCard = createCard();
 
+            const nextIdx = gradeLessons.findIndex(l => l.file === next.file);
             const nextHeading = document.createElement("h3");
             nextHeading.className = "category-title";
-            nextHeading.textContent = "➡️ Következő feladat";
+            const remaining = gradeLessons.filter(l => !getLessonStats(l.file)).length;
+            nextHeading.textContent = remaining > 0
+                ? `➡️ Következő feladat (még ${remaining} van hátra)`
+                : "➡️ Következő feladat";
             nextCard.append(nextHeading);
 
-            const nextIdx = gradeLessons.findIndex(l => l.file === next.file);
             const grid = document.createElement("div");
             grid.className = "next-lesson-card";
             grid.append(createLessonCard(next, onSelect, activeWorld, nextIdx + 1, gradeLessons.length));

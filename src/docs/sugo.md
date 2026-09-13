@@ -63,11 +63,11 @@ Egy feladat közben:
 
 Ha új világ szabadul fel, az ünneplés automatikusan jelzi.
 
-## 👤 Saját oldal és 📊 Értékek
+## 👤 Saját oldal és 📊 Százalék
 
 - A **Saját oldal** (a navigációs sávban a nevedre/avatárodra kattintva, vagy a lecke végén a **👤 Profil** gombra) mutatja: csillagok, teljesített leckék, sorozat (🔥 napok), hibátlan leckék, a következő cél, a napi küldetés állása, a kitűzők és a világok.
-- A **képernyők tetején egységes navigációs sáv** van: **🦊 neved** (Saját oldal), **📚 Leckék**, **📋 Értékek**, **❓ Súgó**, **👤 Játékos** (profilváltás) – minden képernyőn ugyanaz a sor, az éppen látogatott képernyő gombja kiemelve, így egy koppintással bárhonnan elérhető a többi képernyő.
-- A **📋 Értékek** oldal (Saját oldal → 📋 Értékek) a napi és az összesített statisztikát mutatja, valamint azt, hogy melyik készség megy jól és melyik szorul gyakorlásra. Itt találod az **🏆 Osztályok** részt is, amely megmutatja, melyik osztályt sikerült már sikeresen (átlagosan 90% fölött) befejezni, és mennyi lecke maradt hátra belőle.
+- A **képernyők tetején egységes navigációs sáv** van: **🦊 neved** (Saját oldal), **📚 Leckék**, **📊 Százalék**, **❓ Súgó**, **👤 Játékos** (profilváltás) – minden képernyőn ugyanaz a sor, az éppen látogatott képernyő gombja kiemelve, így egy koppintással bárhonnan elérhető a többi képernyő.
+- A **📊 Százalék** oldal (Saját oldal → 📊 Százalék) a napi és az összesített statisztikát mutatja, valamint azt, hogy melyik készség megy jól és melyik szorul gyakorlásra. Itt találod az **🏆 Osztályok** részt is, amely megmutatja, melyik osztályt sikerült már sikeresen (átlagosan 90% fölött) befejezni, és mennyi lecke maradt hátra belőle.
 - A **📚 Témakörök** gomb osztályonkénti tananyagtérképet nyit, ahol az összes lecke látszik témakörönként.
 
 ## 🎯 Gyakorlás – a gyengébb leckék

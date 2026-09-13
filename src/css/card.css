@@ -332,6 +332,31 @@
     margin-bottom: 0.6rem;
 }
 
+.profile-page-grade {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    background: rgba(79, 134, 247, 0.08);
+    border-radius: 6px;
+    padding: 0.35rem 0.5rem;
+}
+
+.profile-page-grade.done {
+    background: rgba(34, 197, 94, 0.12);
+}
+
+.profile-page-grade-label {
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.profile-page-grade-info {
+    font-size: 0.8rem;
+    opacity: 0.85;
+}
+
 .profile-page-quest-title {
     font-weight: 600;
     font-size: 0.85rem;

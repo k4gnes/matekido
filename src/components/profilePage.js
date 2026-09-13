@@ -1,9 +1,24 @@
 import { createCard } from "./ui/card.js";
 import { createNavBar } from "./ui/navbar.js";
-import { loadProfile, getNextGoal, getActiveWorld, setActiveWorld } from "../profile/Profile.js";
+import { loadProfile, getNextGoal, getActiveWorld, setActiveWorld, getLessonStats, getActiveGrade } from "../profile/Profile.js";
 import { ACHIEVEMENTS, getUnlockedAchievements } from "../profile/Achievements.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getAllWorlds } from "../world/WorldRegistry.js";
+
+function getGradeProgress(lessonIndex, grade) {
+    const lessons = (lessonIndex?.lessons || []).filter(l => l.grades?.includes(grade));
+    const total = lessons.length;
+    let done = 0;
+
+    lessons.forEach(l => {
+        const stats = getLessonStats(l.file);
+        if (stats && stats.total > 0) {
+            done++;
+        }
+    });
+
+    return { total, done, completed: total > 0 && done === total };
+}
 
 export function renderProfilePage(lessonIndex, root, onBack, onStats, onHelp, onSwitch) {
 
@@ -43,6 +58,33 @@ export function renderProfilePage(lessonIndex, root, onBack, onStats, onHelp, on
     perfect.innerHTML = `<span class="stat-icon">✨</span><span class="stat-value">${profile.perfectLessons || 0}</span><span class="stat-label">hiba nélkül</span>`;
 
     stats.append(lessons, stars, streak, perfect);
+
+    const activeGrade = getActiveGrade();
+    const gradeCard = document.createElement("div");
+    gradeCard.className = "profile-page-grade";
+
+    const gradeLabel = document.createElement("span");
+    gradeLabel.className = "profile-page-grade-label";
+    gradeLabel.textContent = `${activeGrade ?? "–"}. osztály`;
+
+    const gradeInfo = document.createElement("span");
+    gradeInfo.className = "profile-page-grade-info";
+
+    const gradeStats = activeGrade != null ? getGradeProgress(lessonIndex, activeGrade) : { total: 0, done: 0, completed: false };
+
+    if (activeGrade != null && gradeStats.total > 0) {
+        if (gradeStats.completed) {
+            gradeLabel.textContent = `${activeGrade}. osztály`;
+            gradeInfo.textContent = "✅ Kész!";
+            gradeCard.classList.add("done");
+        } else {
+            gradeInfo.textContent = `${gradeStats.done}/${gradeStats.total} lecke`;
+        }
+    } else {
+        gradeInfo.textContent = "Még nem kezdted.";
+    }
+
+    gradeCard.append(gradeLabel, gradeInfo);
 
     const progressSection = document.createElement("div");
     progressSection.className = "profile-page-progress";
@@ -177,7 +219,7 @@ export function renderProfilePage(lessonIndex, root, onBack, onStats, onHelp, on
         onSwitch
     });
 
-    card.append(navbar, title, stats, progressSection, questSection, achWorldRow);
+    card.append(navbar, title, stats, gradeCard, progressSection, questSection, achWorldRow);
 
     root.append(card);
 }

@@ -1,0 +1,67 @@
+{
+  "id": "grade3-fraction-of-01",
+  "title": "🧮 Egész törtrészei",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧮 Törtrészek egész számnál",
+      "text": "Ha van 12 szív, és a harmadát akarjuk, 3 egyenlő részre osztjuk, és egyet kiválasztunk. A harmad 4 darab!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Szétosztás a boxutcában",
+          "text": "A szerelők 12 szendvicset osztanak el egymás között – mennyi a harmada? Próbáld ki!"
+        },
+        "football": {
+          "title": "⚽ Szétosztás a pályán",
+          "text": "A csapat 12 pizzát kap. Mennyi a harmada? Számold ki!"
+        },
+        "cooking": {
+          "title": "🍳 Szétosztás a konyhában",
+          "text": "A szakács 12 tortaszeletet oszt 3 tányérra – mennyi a harmada? Számolj velünk!"
+        },
+        "animals": {
+          "title": "🦁 Szétosztás az állatkertben",
+          "text": "Az állatok 12 almát kapnak. Ha a harmadát akarjuk, mennyi lesz?"
+        },
+        "space": {
+          "title": "🤖 Szétosztás az űrhajón",
+          "text": "Az űrhajósok 12 csokit osztanak 3 részre – mennyi a harmada? Számolj velünk!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-of",
+      "options": {
+        "count": 10
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Megtanultad a számok törtrészeit: fele, harmada, negyede! Most már tudod, mennyi a harmada a 12-nek, vagy a fele a 10-nek!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Vége a futamnak!",
+          "text": "Ügyesen osztottál, mehet a következő verseny! 🏁"
+        },
+        "football": {
+          "title": "⚽ Felszabadult a csapat!",
+          "text": "Mindenki megkapta a maga részét, kezdődhet a játék! 🎉"
+        },
+        "cooking": {
+          "title": "🍳 Finom torta vár!",
+          "text": "Ügyesen elosztottad a szeleteket, mindenkinek jut belőle! 🎂"
+        },
+        "animals": {
+          "title": "🦁 Minden állat elégedett!",
+          "text": "Mindenki a neki való részt kapta, az állatok örülnek! 🐾"
+        },
+        "space": {
+          "title": "🤖 Csoki az egész legénységnek!",
+          "text": "Ügyesen szétosztottad az adagokat, a legénység jól lakott! 🛰️"
+        }
+      }
+    }
+  ]
+}

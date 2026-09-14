@@ -2679,6 +2679,27 @@
                 "animals": "🦁 Kép a jelhez az állatkertben",
                 "space": "🤖 Kép a jelhez az űrhajón"
             }
+        },
+        {
+            "id": "fraction-of-01",
+            "title": "🧮 Egész törtrészei",
+            "grades": [
+                3
+            ],
+            "category": "numbers",
+            "skill": "fraction",
+            "difficulty": 1,
+            "type": "fraction-of",
+            "mission": "🧮 Törtrészek",
+            "subtitle": "Fele, harmada, negyede egészeknél",
+            "file": "./data/lessons/grade3/fraction-of-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Szétosztás a boxutcában",
+                "cooking": "🍳 Szétosztás a konyhában",
+                "football": "⚽ Szétosztás a pályán",
+                "animals": "🦁 Szétosztás az állatkertben",
+                "space": "🤖 Szétosztás az űrhajón"
+            }
         }
     ],
     "gradeConfig": [

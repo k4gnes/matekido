@@ -415,6 +415,11 @@ export function buildLesson(lesson) {
                     type: "fraction",
                     ...task
                 });
+            } else if (step.generator === "fraction-of") {
+                result.push({
+                    type: "fraction-of",
+                    ...task
+                });
             } else if (step.generator === "measure-units") {
                 result.push({
                     type: "measure-units",

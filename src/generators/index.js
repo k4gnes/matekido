@@ -45,6 +45,7 @@ import { generateFraction } from "./fractionGenerator.js?v=3";
 import { generateMeasureUnits } from "./measureUnitsGenerator.js?v=2";
 import { generateWrittenOperation } from "./writtenOperationGenerator.js?v=1";
 import { generateRemainderDivision } from "./remainderDivisionGenerator.js?v=3";
+import { generateFractionOf } from "./fractionOfGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -146,6 +147,8 @@ export function generate(step) {
             return generateCalendar(opts);
         case "fraction":
             return generateFraction(opts);
+        case "fraction-of":
+            return generateFractionOf(opts);
         case "measure-units":
             return generateMeasureUnits(opts);
         case "written-operation":

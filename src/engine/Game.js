@@ -46,6 +46,7 @@ import { renderSetMatch } from "../components/setMatch.js?v=1";
 import { renderDataChart } from "../components/dataChart.js?v=2";
 import { renderCalendar } from "../components/calendar.js?v=2";
 import { renderFraction } from "../components/fraction.js?v=6";
+import { renderFractionOf } from "../components/fractionOf.js?v=1";
 import { renderMeasureUnits } from "../components/measureUnits.js?v=1";
 import { renderWrittenOperation } from "../components/writtenOperation.js?v=3";
 import { renderRemainderDivision } from "../components/remainderDivision.js?v=6";
@@ -101,7 +102,8 @@ const COUNTED_TYPES = new Set([
     "set-match",
     "data-chart",
     "calendar",
-    "fraction",
+"fraction",
+    "fraction-of",
     "measure-units",
     "written-operation",
     "remainder-division"
@@ -178,6 +180,7 @@ const RENDERERS = new Map([
     ["data-chart", renderDataChart],
     ["calendar", renderCalendar],
     ["fraction", renderFraction],
+    ["fraction-of", renderFractionOf],
     ["measure-units", renderMeasureUnits],
     ["written-operation", renderWrittenOperation],
     ["remainder-division", renderRemainderDivision]

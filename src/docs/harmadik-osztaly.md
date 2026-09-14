@@ -1,6 +1,6 @@
 # Matekidő – 3. osztályos készségtérkép
 
-**26 lecke**, 3 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**27 lecke**, 3 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 A 2. osztályos tananyag lezárult – a 3. osztály **nagyobb számkörre (1000-ig)**, a **szorzás és osztás bővítésére** épül.
 
@@ -53,9 +53,9 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 ## Tervezett kiegészítések
 
-A fenti 26 lecke elkészült és regisztrálva van. Tovább tervezett leckék:
+A fenti 27 lecke elkészült és regisztrálva van. Tovább tervezett leckék:
 - [ ] **Törtek – bevezetés** (fele, harmad, negyed)
-    - Tört képének és jele társítása
+    - ~~Tört képének és jele társítása~~ (kész: `fraction-02` – ½, ⅓, ¼)
     - Egész törtrészei: fele, harmada, negyede
 - [ ] **Geometria bővítése** (kerület, terület, tükrözés, kör és szögek)
     - Kerület és terület számolása egyszerű alakzatokon
@@ -74,4 +74,4 @@ A fenti 26 lecke elkészült és regisztrálva van. Tovább tervezett leckék:
 
 ## Státusz
 
-*(Az 1–3. osztályos tananyag fő része lefedve: a 26 3. osztályos lecke kész (lett írásbeli összeadás és kivonás is). Hátralévő: 4 kiegészítő tétel – javasolt sorrend: törtek → gyakorlati tudások → szöveges feladatok → geometria.)*
+*(Az 1–3. osztályos tananyag fő része lefedve: a 27 3. osztályos lecke kész (lett írásbeli összeadás/kivonás, maradékos osztás, tört jele is). Hátralévő: 4 kiegészítő tétel – javasolt sorrend: törtek → gyakorlati tudások → szöveges feladatok → geometria.)*

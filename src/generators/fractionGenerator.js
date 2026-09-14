@@ -14,6 +14,7 @@ const KINDS = ["pizza", "csoki", "szendvics", "torta"];
 
 const FRACTION_NAMES = { 2: "fele", 3: "harmada", 4: "negyede" };
 const FRACTION_ACCUS = { 2: "felét", 3: "harmadát", 4: "negyedét" };
+const FRACTION_SYMBOLS = { 2: "½", 3: "⅓", 4: "¼" };
 
 function buildPickTask() {
     const kind = pick(KINDS);
@@ -53,12 +54,38 @@ function buildNameTask() {
     };
 }
 
+function buildSymbolTask() {
+    const kind = pick(KINDS);
+    const total = pick([2, 3, 4]);
+    const options = shuffle(Object.keys(FRACTION_SYMBOLS).map(t => ({
+        text: FRACTION_SYMBOLS[t],
+        correct: FRACTION_SYMBOLS[t] === FRACTION_SYMBOLS[total]
+    })));
+    return {
+        type: "fraction",
+        mode: "symbol",
+        kind,
+        total,
+        drawing: { kind, total, filled: 1 },
+        question: `Melyik jel illik a képre?`,
+        options
+    };
+}
+
 export function generateFraction(options = {}) {
-    const { count = 5 } = options;
+    const { count = 5, mode = "mixed" } = options;
 
     const tasks = [];
     for (let i = 0; i < count; i++) {
-        tasks.push(Math.random() < 0.55 ? buildPickTask() : buildNameTask());
+        if (mode === "symbol") {
+            tasks.push(buildSymbolTask());
+        } else if (mode === "name") {
+            tasks.push(buildNameTask());
+        } else if (mode === "pick") {
+            tasks.push(buildPickTask());
+        } else {
+            tasks.push(Math.random() < 0.55 ? buildPickTask() : buildNameTask());
+        }
     }
     return tasks;
 }

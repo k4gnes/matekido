@@ -2637,6 +2637,27 @@
                 "animals": "🦁 Maradékos osztás csoportokkal",
                 "space": "🤖 Maradékos osztás csoportokkal"
             }
+        },
+        {
+            "id": "fraction-02",
+            "title": "🍕 Tört jele – ½, ⅓, ¼",
+            "grades": [
+                3
+            ],
+            "category": "numbers",
+            "skill": "fraction",
+            "difficulty": 1,
+            "type": "fraction",
+            "mission": "🍕 A tört jele",
+            "subtitle": "Kép és jel összekötése",
+            "file": "./data/lessons/grade3/fraction-symbol-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Törtek jelölése a szerelőben",
+                "cooking": "🍳 A tört jele a konyhában",
+                "football": "⚽ A tört jele a pályán",
+                "animals": "🦁 A tört jele az állatkertben",
+                "space": "🤖 A tört jele az űrhajón"
+            }
         }
     ],
     "gradeConfig": [

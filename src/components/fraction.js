@@ -187,6 +187,9 @@ export function renderFraction(step, root, next, progress, onResult, onAttempt) 
         const btn = document.createElement("button");
         btn.type = "button";
         btn.className = "fraction-option";
+        if (step.mode === "symbol") {
+            btn.classList.add("fraction-option-symbol");
+        }
 
         const content = opt.kind ? createItemSvg(opt) : document.createTextNode(opt.text);
 

@@ -1,0 +1,68 @@
+{
+  "id": "grade3-fraction-symbol-01",
+  "title": "🍕 Tört jele ½, ⅓, ¼",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🍕 A tört jele",
+      "text": "A felet, harmadot és negyedet számjegyekkel is leírhatjuk: ½, ⅓, ¼. Nézd meg a képet, és válaszd ki a hozzá illő jelet!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Törtek jelölése a szerelőben",
+          "text": "A szerelők jellel jelölik, mekkora részt kaptak a szendvicsből! Válaszd ki a hozzá illő jelet!"
+        },
+        "football": {
+          "title": "⚽ A tört jele a pályán",
+          "text": "A csapat jellel jelöli, mekkora pizzaszeletet kaptak! Melyik jel illik a képhez?"
+        },
+        "cooking": {
+          "title": "🍳 A tört jele a konyhában",
+          "text": "A szakácsok fölírták a tortaszeleteket: ½, ⅓, ¼. Válaszd ki a képre illő jelet!"
+        },
+        "animals": {
+          "title": "🦁 A tört jele az állatkertben",
+          "text": "Az állatok jelekkel jelölik az adagjaikat! Melyik jel mutatja, mekkora rész kiszínezve?"
+        },
+        "space": {
+          "title": "🤖 A tört jele az űrhajón",
+          "text": "Az űrhajósok fölírták a csokiadagokat: ½, ⅓, ¼. Melyik jel illik a képhez?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction",
+      "options": {
+        "count": 8,
+        "mode": "symbol"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Ismered a tört jeleit: ½, ⅓, ¼! Így már számokkal is le tudod írni, mekkora részt látsz.",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Irány a pálya!",
+          "text": "Ügyesen választottad a jeleket, mehet a futam! 🏁"
+        },
+        "football": {
+          "title": "⚽ Felszabadult a csapat!",
+          "text": "Mindenki megkapta a jénak megfelelő szeletet! 🎉"
+        },
+        "cooking": {
+          "title": "🍳 Finom torta vár!",
+          "text": "Ügyesen fölírtad a szeleteket, mindenkinek jut belőle! 🎂"
+        },
+        "animals": {
+          "title": "🦁 Minden állat elégedett!",
+          "text": "Mindenki a neki való részt kapta, az állatok nagyon örülnek! 🐾"
+        },
+        "space": {
+          "title": "🤖 Csoki az egész legénységnek!",
+          "text": "Ügyesen jelölted a csokiadagokat, a legénység jól lakott! 🛰️"
+        }
+      }
+    }
+  ]
+}

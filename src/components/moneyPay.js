@@ -15,6 +15,12 @@ const WORLD_EMOJI = {
     space: "🤖"
 };
 
+const NOTE_VALUES = new Set([200, 500, 1000]);
+
+function isNote(value) {
+    return NOTE_VALUES.has(value);
+}
+
 export function renderMoneyPay(step, root, next, progress, onResult, onAttempt) {
 
     const wallet = [];
@@ -40,15 +46,19 @@ export function renderMoneyPay(step, root, next, progress, onResult, onAttempt) 
 
     const prompt = document.createElement("p");
     prompt.className = "money-prompt";
-    prompt.textContent = "Válogass érméket a pénztárcába, hogy pontosan kifizesd!";
+    const coinValues = step.coins ?? COINS;
+    const hasNotes = coinValues.some(isNote);
+    prompt.textContent = hasNotes
+        ? "Válogass érméket és bankjegyeket a pénztárcába, hogy pontosan kifizesd!"
+        : "Válogass érméket a pénztárcába, hogy pontosan kifizesd!";
     card.append(prompt);
 
     const tray = document.createElement("div");
     tray.className = "money-tray";
-    const coinValues = step.coins ?? COINS;
     coinValues.forEach(value => {
         tray.append(createCoin(value, {
-            size: 58,
+            size: isNote(value) ? 72 : 58,
+            note: isNote(value),
             onClick: () => {
                 if (feedback.isAnswered()) return;
                 wallet.push(value);
@@ -97,7 +107,8 @@ export function renderMoneyPay(step, root, next, progress, onResult, onAttempt) 
 
         wallet.forEach((value, index) => {
             walletBox.append(createCoin(value, {
-                size: 46,
+                size: isNote(value) ? 60 : 46,
+                note: isNote(value),
                 onClick: () => {
                     if (feedback.isAnswered()) return;
                     wallet.splice(index, 1);

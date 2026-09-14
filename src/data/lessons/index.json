@@ -2109,6 +2109,27 @@
             }
         },
         {
+            "id": "money-pay-03",
+            "title": "💰 Vásárlás 1000-ig",
+            "grades": [
+                3
+            ],
+            "category": "practical",
+            "skill": "coins",
+            "difficulty": 2,
+            "type": "money-pay",
+            "mission": "💰 Vásárlás bankjegyekkel",
+            "subtitle": "Fizetés 200 és 500 forintos bankjegyekkel 1000-ig",
+            "file": "./data/lessons/grade3/money-pay-03.json",
+            "worldTitles": {
+                "racing": "🔧 Vásárlás 1000-ig",
+                "cooking": "🥄 Vásárlás 1000-ig",
+                "football": "⚽ Vásárlás 1000-ig",
+                "animals": "🦁 Vásárlás 1000-ig",
+                "space": "🤖 Vásárlás 1000-ig"
+            }
+        },
+        {
             "id": "place-value-hundreds-01",
             "title": "Helyiérték 1000-ig",
             "grades": [

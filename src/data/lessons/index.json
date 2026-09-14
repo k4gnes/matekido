@@ -2658,6 +2658,27 @@
                 "animals": "🦁 A tört jele az állatkertben",
                 "space": "🤖 A tört jele az űrhajón"
             }
+        },
+        {
+            "id": "fraction-03",
+            "title": "🍕 Kép a tört jeléhez",
+            "grades": [
+                3
+            ],
+            "category": "numbers",
+            "skill": "fraction",
+            "difficulty": 1,
+            "type": "fraction",
+            "mission": "🍕 Tört jelek",
+            "subtitle": "Jel és kép összekötése",
+            "file": "./data/lessons/grade3/fraction-symbol-pick-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Kép a jelhez a szerelőben",
+                "cooking": "🍳 Kép a jelhez a konyhában",
+                "football": "⚽ Kép a jelhez a pályán",
+                "animals": "🦁 Kép a jelhez az állatkertben",
+                "space": "🤖 Kép a jelhez az űrhajón"
+            }
         }
     ],
     "gradeConfig": [

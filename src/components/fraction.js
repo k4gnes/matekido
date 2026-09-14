@@ -167,6 +167,13 @@ export function renderFraction(step, root, next, progress, onResult, onAttempt) 
         card.append(drawing);
     }
 
+    if (step.symbol) {
+        const symbolBox = document.createElement("div");
+        symbolBox.className = "fraction-symbol-box";
+        symbolBox.textContent = step.symbol;
+        card.append(symbolBox);
+    }
+
     const options = document.createElement("div");
     options.className = "fraction-options";
 
@@ -200,7 +207,9 @@ export function renderFraction(step, root, next, progress, onResult, onAttempt) 
 
             if (opt.correct) {
                 markCorrect(btn);
-                feedback.success(`🎉 Ügyes! Ez a ${FRACTION_NAMES[step.total]}!`);
+                feedback.success(step.symbol
+                    ? `🎉 Ügyes! Ez a ${step.symbol} (${FRACTION_NAMES[step.total]})!`
+                    : `🎉 Ügyes! Ez a ${FRACTION_NAMES[step.total]}!`);
             } else {
                 feedback.retry();
             }

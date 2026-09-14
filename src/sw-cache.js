@@ -247,6 +247,7 @@ const SW_CACHE_LIST = [
     "/data/lessons/grade3/division-01.json",
     "/data/lessons/grade3/even-odd-01.json",
     "/data/lessons/grade3/fraction-symbol-01.json",
+    "/data/lessons/grade3/fraction-symbol-pick-01.json",
     "/data/lessons/grade3/mixed-01.json",
     "/data/lessons/grade3/mixed-mult-div-01.json",
     "/data/lessons/grade3/multiplication-01.json",

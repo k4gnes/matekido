@@ -72,6 +72,26 @@ function buildSymbolTask() {
     };
 }
 
+function buildSymbolPickTask() {
+    const kind = pick(KINDS);
+    const total = pick([2, 3, 4]);
+    const options = shuffle([2, 3, 4].map(t => ({
+        kind,
+        total: t,
+        filled: 1,
+        correct: t === total
+    })));
+    return {
+        type: "fraction",
+        mode: "symbol-pick",
+        kind,
+        total,
+        symbol: FRACTION_SYMBOLS[total],
+        question: `Melyik képen látszik a ${FRACTION_NAMES[total]}?`,
+        options
+    };
+}
+
 export function generateFraction(options = {}) {
     const { count = 5, mode = "mixed" } = options;
 
@@ -79,6 +99,8 @@ export function generateFraction(options = {}) {
     for (let i = 0; i < count; i++) {
         if (mode === "symbol") {
             tasks.push(buildSymbolTask());
+        } else if (mode === "symbol-pick") {
+            tasks.push(buildSymbolPickTask());
         } else if (mode === "name") {
             tasks.push(buildNameTask());
         } else if (mode === "pick") {

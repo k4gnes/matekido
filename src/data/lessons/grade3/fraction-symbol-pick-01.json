@@ -1,0 +1,68 @@
+{
+  "id": "grade3-fraction-symbol-pick-01",
+  "title": "🍕 Kép a tört jeléhez",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🍕 A jel is mutatja",
+      "text": "A ½, ⅓, ¼ jel is elárulja, mekkora a rész. Nézd meg a jelet, és találd meg a hozzá illő képet!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Kép a jelhez a szerelőben",
+          "text": "A szerelők a jel alapján keresik meg a szendvicsüket! Válaszd ki a jelet is mutató képet!"
+        },
+        "football": {
+          "title": "⚽ Kép a jelhez a pályán",
+          "text": "A csapat a pizza jeléből tudja, mekkora részt kapott! Melyik képen látszik ugyanaz a rész?"
+        },
+        "cooking": {
+          "title": "🍳 Kép a jelhez a konyhában",
+          "text": "A szakács a felírt jelet keresi a tortán! Válaszd ki a hozzá illő képet!"
+        },
+        "animals": {
+          "title": "🦁 Kép a jelhez az állatkertben",
+          "text": "Az állatok a jeléből tudják, mekkora adag jár nekik! Melyik képen látszik a jel része?"
+        },
+        "space": {
+          "title": "🤖 Kép a jelhez az űrhajón",
+          "text": "Az űrhajósok a jelhez keresik a csokidarabot! Válaszd ki a hozzá illő képet!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction",
+      "options": {
+        "count": 8,
+        "mode": "symbol-pick"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "A jelekről már a képet is megtalálod: ½, ⅓, ¼! Remek jelolvasó vagy!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Irány a pálya!",
+          "text": "Ügyesen találtad meg a képeket, mehet a futam! 🏁"
+        },
+        "football": {
+          "title": "⚽ Felszabadult a csapat!",
+          "text": "Mindenki megtalálta a jeléhez illő szeletet! 🎉"
+        },
+        "cooking": {
+          "title": "🍳 Finom torta vár!",
+          "text": "Ügyesen olvastad a jeleket, mindenkinek jut belőle! 🎂"
+        },
+        "animals": {
+          "title": "🦁 Minden állat elégedett!",
+          "text": "Mindenki megkapta a neki jelölt részt, az állatok örülnek! 🐾"
+        },
+        "space": {
+          "title": "🤖 Csoki az egész legénységnek!",
+          "text": "Ügyesen olvastad a jeleket, a legénység jól lakott! 🛰️"
+        }
+      }
+    }
+  ]
+}

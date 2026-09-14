@@ -51,6 +51,21 @@
     margin: 0.8rem 0 0.2rem;
 }
 
+.fraction-symbol-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.8rem auto 0.2rem;
+    width: 150px;
+    height: 96px;
+    font-size: 3.4rem;
+    font-weight: 700;
+    color: #1e293b;
+    background: #f1f5f9;
+    border: 3px solid #cbd5e1;
+    border-radius: 16px;
+}
+
 .fraction-drawing .fraction-svg {
     width: 180px;
     height: 96px;

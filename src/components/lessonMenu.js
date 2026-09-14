@@ -131,6 +131,7 @@ const TYPE_LABEL = {
     "shape-compare": "Alakzatok összehasonlítása",
     "solid-shape": "Térbeli alakzatok",
     time: "Idő",
+    "time-convert": "Idő – perc és óra",
     spatial: "Térbeli tájékozódás",
     "money-pay": "Pontos kifizetés",
     "money-compare": "Pénz összehasonlítás",
@@ -448,7 +449,7 @@ function createFilterPanel(filters, onFilterChange) {
     const skillBtns = document.createElement("div");
     skillBtns.className = "filter-skill-btns";
 
-    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed", "true-false", "find-error", "place-value", "number-sequence", "ordering", "even-odd", "pattern", "estimation", "shapes", "shape-compare", "solid-shapes", "hour", "position", "coins", "length", "volume", "calendar", "multiplication", "division", "missing-factor", "rounding", "number-names", "roman", "transform", "sets", "data-charts", "fraction"];
+    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed", "true-false", "find-error", "place-value", "number-sequence", "ordering", "even-odd", "pattern", "estimation", "shapes", "shape-compare", "solid-shapes", "hour", "minute", "position", "coins", "length", "volume", "calendar", "multiplication", "division", "missing-factor", "rounding", "number-names", "roman", "transform", "sets", "data-charts", "fraction"];
 
     usedSkills.forEach(skillId => {
         const skill = SKILLS[skillId];

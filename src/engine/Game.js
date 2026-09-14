@@ -17,6 +17,7 @@ import { renderEvenOdd } from "../components/evenOdd.js?v=13";
 import { renderPattern } from "../components/pattern.js?v=9";
 import { renderShapeSort } from "../components/shapeSort.js?v=14";
 import { renderTime } from "../components/time.js?v=10";
+import { renderTimeConvert } from "../components/timeConvert.js?v=1";
 import { renderSpatial } from "../components/spatial.js?v=17";
 import { renderMoneyPay } from "../components/moneyPay.js?v=14";
 import { renderMoneyCompare } from "../components/moneyCompare.js?v=13";
@@ -67,6 +68,7 @@ const COUNTED_TYPES = new Set([
     "pattern",
     "shape-sort",
     "time",
+    "time-convert",
     "spatial",
     "money-pay",
     "money-compare",
@@ -138,6 +140,7 @@ const RENDERERS = new Map([
     ["pattern", renderPattern],
     ["shape-sort", renderShapeSort],
     ["time", renderTime],
+    ["time-convert", renderTimeConvert],
     ["spatial", renderSpatial],
     ["money-pay", renderMoneyPay],
     ["money-compare", renderMoneyCompare],

@@ -13,6 +13,7 @@ import { generateEvenOdd } from "./evenOddGenerator.js?v=3";
 import { generatePattern } from "./patternGenerator.js?v=5";
 import { generateShapeSort } from "./shapeSortGenerator.js?v=4";
 import { generateTime } from "./timeGenerator.js?v=6";
+import { generateTimeConvert } from "./timeConvertGenerator.js?v=1";
 import { generatePosition } from "./positionGenerator.js?v=5";
 import { generateMoneyPay } from "./moneyPayGenerator.js?v=4";
 import { generateMoneyCompare } from "./moneyCompareGenerator.js?v=4";
@@ -89,6 +90,8 @@ export function generate(step) {
             return generateShapeSort(opts);
         case "time":
             return generateTime(opts);
+        case "time-convert":
+            return generateTimeConvert(opts);
         case "position":
             return generatePosition(opts);
         case "money-pay":

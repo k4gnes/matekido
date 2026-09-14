@@ -2088,6 +2088,27 @@
             }
         },
         {
+            "id": "time-convert-01",
+            "title": "🕐 Idő – perc és óra",
+            "grades": [
+                3
+            ],
+            "category": "practical",
+            "skill": "minute",
+            "difficulty": 2,
+            "type": "time-convert",
+            "mission": "🕐 Időátváltás",
+            "subtitle": "perc és óra átváltása",
+            "file": "./data/lessons/grade3/time-convert-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Perc és óra a boxutcában",
+                "cooking": "🍳 Perc és óra a konyhában",
+                "football": "⚽ Perc és óra a pályán",
+                "animals": "🦁 Perc és óra az állatkertben",
+                "space": "🤖 Perc és óra az űrhajón"
+            }
+        },
+        {
             "id": "place-value-hundreds-01",
             "title": "Helyiérték 1000-ig",
             "grades": [

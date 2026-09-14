@@ -1,4 +1,4 @@
-import { Game } from "./engine/Game.js?v=72";
+import { Game } from "./engine/Game.js?v=73";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=19";
 import { renderLessonMenu } from "./components/lessonMenu.js?v=44";

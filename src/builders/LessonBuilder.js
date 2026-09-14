@@ -425,6 +425,11 @@ export function buildLesson(lesson) {
                     type: "measure-units",
                     ...task
                 });
+            } else if (step.generator === "time-convert") {
+                result.push({
+                    type: "time-convert",
+                    ...task
+                });
             } else if (step.generator === "written-operation") {
                 result.push({
                     type: "written-operation",

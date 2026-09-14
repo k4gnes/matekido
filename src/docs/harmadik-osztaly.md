@@ -1,6 +1,6 @@
 # Matekidő – 3. osztályos készségtérkép
 
-**30 lecke**, 3 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**31 lecke**, 3 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 A 2. osztályos tananyag lezárult – a 3. osztály **nagyobb számkörre (1000-ig)**, a **szorzás és osztás bővítésére** épül.
 
@@ -53,7 +53,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 ## Tervezett kiegészítések
 
-A fenti 30 lecke elkészült és regisztrálva van. Tovább tervezett leckék:
+A fenti 31 lecke elkészült és regisztrálva van. Tovább tervezett leckék:
 - [x] **Törtek – bevezetés** (fele, harmad, negyed)
     - Tört képének és jele társítása (kész: `fraction-02` – ½, ⅓, ¼)
     - Jel és kép összekötése (kész: `fraction-03`)
@@ -65,7 +65,7 @@ A fenti 30 lecke elkészült és regisztrálva van. Tovább tervezett leckék:
     - Kör és szögek alapjai
 - [ ] **Gyakorlati tudások bővítése** (mértékegység-átváltás, idő, pénz 1000-ig)
     - Mértékegység-átváltás (kész: `measure-units-02` – m, cm, dm; kg, dkg; l, dl)
-    - Idő: perc–óra, naptár 1000-ig
+    - Idő: perc–óra, naptár 1000-ig (kész: `time-convert-01` – perc↔óra)
     - Pénz: váltás és vásárlás 1000-ig
 - [ ] **Szöveges feladatok** (összetett, arányos, maradékos osztásos)
     - Kétlépéses szöveges feladatok
@@ -76,4 +76,4 @@ A fenti 30 lecke elkészült és regisztrálva van. Tovább tervezett leckék:
 
 ## Státusz
 
-*(Az 1–3. osztályos tananyag fő része lefedve: a 30 3. osztályos lecke kész (törtek bevezetése teljes, gyakorlati tudások megkezdve: mértékegység-átváltás). Hátralévő: 3 kiegészítő tétel – javasolt sorrend: gyakorlati tudások → szöveges feladatok → geometria.)*
+*(Az 1–3. osztályos tananyag fő része lefedve: a 31 3. osztályos lecke kész (törtek bevezetése teljes, gyakorlati tudások: mértékegység-átváltás, idő perc↔óra). Hátralévő: 3 kiegészítő tétel – javasolt sorrend: gyakorlati tudások → szöveges feladatok → geometria.)*

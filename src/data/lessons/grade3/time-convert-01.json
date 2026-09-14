@@ -1,0 +1,69 @@
+{
+  "id": "grade3-time-convert-01",
+  "title": "🕐 Idő – perc és óra",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🕐 Perc és óra",
+      "text": "1 óra 60 perc. Ha 3 óra eltelt, az 180 perc! Számoljuk át az órákat percekre és a perceket órákra!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Perc és óra a boxutcában",
+          "text": "A szerelők mérik a köridőt! 1 óra 60 perc – számoljuk át a perceket!"
+        },
+        "football": {
+          "title": "⚽ Perc és óra a pályán",
+          "text": "A meccs 90 perc! Hány óra az? Segíts az átváltásban!"
+        },
+        "cooking": {
+          "title": "🍳 Perc és óra a konyhában",
+          "text": "A sütéshez idő kell! Mennyi az 1 óra és mennyi a 60 perc?"
+        },
+        "animals": {
+          "title": "🦁 Perc és óra az állatkertben",
+          "text": "Az állatok etetése percben mérhető! Számoljuk át az órákat percekre!"
+        },
+        "space": {
+          "title": "🤖 Perc és óra az űrhajón",
+          "text": "A küldetés ideje percekben! Mennyi az 1 óra percekben?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "time-convert",
+      "options": {
+        "count": 8,
+        "direction": "mixed",
+        "interaction": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Ügyesen átváltod az órákat és perceket! Most már tudod, hogy 1 óra az 60 perc.",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Vége a futamnak!",
+          "text": "Ügyesen számoltál, mehet a következő kör! 🏁"
+        },
+        "football": {
+          "title": "⚽ Felszabadult a csapat!",
+          "text": "Mindenkinek megvan a játékideje, kezdődhet a meccs! 🎉"
+        },
+        "cooking": {
+          "title": "🍳 Finom sütemény vár!",
+          "text": "Ügyesen mérted az időt, kész a finomság! 🍪"
+        },
+        "animals": {
+          "title": "🦁 Minden állat jóllakott!",
+          "text": "Minden állat pontosan időben kapott enni! 🐾"
+        },
+        "space": {
+          "title": "🤖 Indulhat a küldetés!",
+          "text": "Az időpontok pontosak, indulhat a rakéta! 🚀"
+        }
+      }
+    }
+  ]
+}

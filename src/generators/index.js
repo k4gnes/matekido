@@ -46,6 +46,7 @@ import { generateFraction } from "./fractionGenerator.js?v=3";
 import { generateMeasureUnits } from "./measureUnitsGenerator.js?v=3";
 import { generateWrittenOperation } from "./writtenOperationGenerator.js?v=1";
 import { generateRemainderDivision } from "./remainderDivisionGenerator.js?v=3";
+import { generatePerimeter } from "./perimeterGenerator.js?v=1";
 import { generateFractionOf } from "./fractionOfGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -158,6 +159,8 @@ export function generate(step) {
             return generateWrittenOperation(opts);
         case "remainder-division":
             return generateRemainderDivision(opts);
+        case "perimeter":
+            return generatePerimeter(opts);
 
         default:
             throw new Error(

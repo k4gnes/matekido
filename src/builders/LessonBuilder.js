@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=25";
+import { generate } from "../generators/index.js?v=26";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -451,6 +451,11 @@ export function buildLesson(lesson) {
                     emoji: task.emoji,
                     quotientOptions: task.quotientOptions,
                     remainderOptions: task.remainderOptions
+                });
+            } else if (step.generator === "perimeter") {
+                result.push({
+                    type: "perimeter",
+                    ...task
                 });
             } else {
                 result.push({

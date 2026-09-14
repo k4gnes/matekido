@@ -2807,6 +2807,28 @@
                 "animals": "🦁 Beszállásos történetek",
                 "space": "🤖 Űrhajós történetek"
             }
+        },
+        {
+            "id": "perimeter-01",
+            "title": "📐 Kerület",
+            "grades": [
+                3
+            ],
+            "category": "geometry",
+            "skill": "perimeter",
+            "difficulty": 2,
+            "type": "perimeter",
+            "range": 20,
+            "mission": "📐 Kerület",
+            "subtitle": "Kerület számolása egyszerű alakzatokon",
+            "file": "./data/lessons/grade3/perimeter-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Kerület a boxutcában",
+                "cooking": "🍳 Kerület a konyhában",
+                "football": "⚽ Kerület a pályán",
+                "animals": "🦁 Kerület az állatkertben",
+                "space": "🤖 Kerület az űrhajón"
+            }
         }
     ],
     "gradeConfig": [

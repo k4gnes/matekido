@@ -51,6 +51,7 @@ import { renderFractionOf } from "../components/fractionOf.js?v=1";
 import { renderMeasureUnits } from "../components/measureUnits.js?v=2";
 import { renderWrittenOperation } from "../components/writtenOperation.js?v=3";
 import { renderRemainderDivision } from "../components/remainderDivision.js?v=6";
+import { renderPerimeter } from "../components/perimeter.js?v=1";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -108,7 +109,8 @@ const COUNTED_TYPES = new Set([
     "fraction-of",
     "measure-units",
     "written-operation",
-    "remainder-division"
+    "remainder-division",
+    "perimeter"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -186,7 +188,8 @@ const RENDERERS = new Map([
     ["fraction-of", renderFractionOf],
     ["measure-units", renderMeasureUnits],
     ["written-operation", renderWrittenOperation],
-    ["remainder-division", renderRemainderDivision]
+    ["remainder-division", renderRemainderDivision],
+    ["perimeter", renderPerimeter]
 ]);
 
 

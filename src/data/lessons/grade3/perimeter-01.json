@@ -1,0 +1,68 @@
+{
+  "id": "grade3-perimeter-01",
+  "title": "📐 Kerület",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📐 Kerület",
+      "text": "A kerület az alakzatot határoló vonal hossza! Számold meg a piros vonal szakaszait!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Kerület a boxutcában",
+          "text": "A szerelők kerítést rajzolnak a boxutca köré. Számold meg a piros vonal hosszát!"
+        },
+        "cooking": {
+          "title": "🍳 Kerület a konyhában",
+          "text": "A szakács tálcát rendez be. Számold meg a piros vonal hosszát!"
+        },
+        "football": {
+          "title": "⚽ Kerület a pályán",
+          "text": "A focipálya körül kerítést húznak. Számold meg a piros vonal hosszát!"
+        },
+        "animals": {
+          "title": "🦁 Kerület az állatkertben",
+          "text": "A kifutó köré kerítést építenek. Számold meg a piros vonal hosszát!"
+        },
+        "space": {
+          "title": "🤖 Kerület az űrhajón",
+          "text": "A robotok paneleket rak ki az űrállomáson. Számold meg a piros vonal hosszát!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "perimeter",
+      "options": {
+        "count": 6,
+        "shape": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megszámoltad a kerületeket!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megszámoltad a kerületeket a boxutcában!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megszámoltad a kerületeket a konyhában!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megszámoltad a kerületeket a pályán!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megszámoltad a kerületeket az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megszámoltad a kerületeket az űrhajón!"
+        }
+      }
+    }
+  ]
+}

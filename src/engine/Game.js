@@ -47,6 +47,7 @@ import { renderDataChart } from "../components/dataChart.js?v=2";
 import { renderCalendar } from "../components/calendar.js?v=2";
 import { renderFraction } from "../components/fraction.js?v=4";
 import { renderMeasureUnits } from "../components/measureUnits.js?v=1";
+import { renderWrittenOperation } from "../components/writtenOperation.js?v=3";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -100,7 +101,8 @@ const COUNTED_TYPES = new Set([
     "data-chart",
     "calendar",
     "fraction",
-    "measure-units"
+    "measure-units",
+    "written-operation"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -174,7 +176,8 @@ const RENDERERS = new Map([
     ["data-chart", renderDataChart],
     ["calendar", renderCalendar],
     ["fraction", renderFraction],
-    ["measure-units", renderMeasureUnits]
+    ["measure-units", renderMeasureUnits],
+    ["written-operation", renderWrittenOperation]
 ]);
 
 

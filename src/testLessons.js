@@ -12,7 +12,7 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=15";
+import { buildLesson } from "./builders/LessonBuilder.js?v=16";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
@@ -285,6 +285,30 @@ function validateStep(step, ctx) {
             if (!isInt(step.price) || step.price < 0) fail(ctx, "price hibás");
             if (!Array.isArray(step.coins) || step.coins.length === 0) fail(ctx, "coins hibás");
             if (typeof step.enough !== "boolean") fail(ctx, "enough nem boolean");
+            break;
+        }
+        case "written-operation": {
+            if (!["add", "sub"].includes(step.op)) {
+                fail(ctx, `op hibás: ${step.op}`);
+            }
+            if (!isInt(step.a) || !isInt(step.b) || step.a < 100 || step.b < 100) {
+                fail(ctx, "a/b nem háromjegyű");
+            }
+            if (step.a > 999 || step.b > 999) {
+                fail(ctx, "a/b 999 fölötti");
+            }
+            if (step.op === "add" && step.answer !== step.a + step.b) {
+                fail(ctx, `answer != a+b (${step.answer})`);
+            }
+            if (step.op === "sub" && step.answer !== step.a - step.b) {
+                fail(ctx, `answer != a-b (${step.answer})`);
+            }
+            if (step.answer < 100 || step.answer > 999) {
+                fail(ctx, `answer nem háromjegyű: ${step.answer}`);
+            }
+            if (!["input", "choice"].includes(step.interaction)) {
+                fail(ctx, `interaction hibás: ${step.interaction}`);
+            }
             break;
         }
     }

@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=22";
+import { generate } from "../generators/index.js?v=23";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -419,6 +419,15 @@ export function buildLesson(lesson) {
                 result.push({
                     type: "measure-units",
                     ...task
+                });
+            } else if (step.generator === "written-operation") {
+                result.push({
+                    type: "written-operation",
+                    op: task.op,
+                    a: task.a,
+                    b: task.b,
+                    answer: task.answer,
+                    interaction: task.interaction
                 });
             } else {
                 result.push({

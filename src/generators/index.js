@@ -43,6 +43,7 @@ import { generateDataChart } from "./dataChartGenerator.js?v=2";
 import { generateCalendar } from "./calendarGenerator.js?v=2";
 import { generateFraction } from "./fractionGenerator.js?v=1";
 import { generateMeasureUnits } from "./measureUnitsGenerator.js?v=2";
+import { generateWrittenOperation } from "./writtenOperationGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -146,6 +147,8 @@ export function generate(step) {
             return generateFraction(opts);
         case "measure-units":
             return generateMeasureUnits(opts);
+        case "written-operation":
+            return generateWrittenOperation(opts);
 
         default:
             throw new Error(

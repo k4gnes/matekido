@@ -1,6 +1,6 @@
 # Matekidő – 3. osztályos készségtérkép
 
-**22 lecke**, 3 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**24 lecke**, 3 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 A 2. osztályos tananyag lezárult – a 3. osztály **nagyobb számkörre (1000-ig)**, a **szorzás és osztás bővítésére** épül.
 
@@ -21,7 +21,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Kerekítés | Kerekítsük kerekre! | Kerekítés tízesre és százasra | 1000 | 2 |
 | Római számok | Római számok | I, V, X, L, C jelek | 100 | 2 |
 
-## Műveletek 1000-ig (9 lecke)
+## Műveletek 1000-ig (11 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
@@ -29,10 +29,12 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Összeadás | Véletlen szám + kerek százas | Összeadás | 1000 | 2 |
 | Összeadás | Összeadás 1000-ig átlépés nélkül | Összeadás | 1000 | 2 |
 | Összeadás | Összeadás 1000-ig átlépéssel | Összeadás | 1000 | 3 |
+| Írásbeli összeadás | Írásbeli összeadás 1000-ig | Írásbeli összeadás | 1000 | 3 |
 | Kivonás | Kivonás kerek százasokkal | Kivonás | 1000 | 2 |
 | Kivonás | Véletlen szám − kerek százas | Kivonás | 1000 | 2 |
 | Kivonás | Kivonás 1000-ig átlépés nélkül | Kivonás | 1000 | 2 |
 | Kivonás | Kivonás 1000-ig átlépéssel | Kivonás | 1000 | 3 |
+| Írásbeli kivonás | Írásbeli kivonás 1000-ig | Írásbeli kivonás | 1000 | 3 |
 | Vegyes műveletek | Vegyes műveletek 1000-ig | Vegyes műveletek | 1000 | 3 |
 
 ## Szorzás és osztás bővítése (5 lecke)
@@ -49,11 +51,8 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 ## Tervezett kiegészítések
 
-A fenti 22 lecke elkészült és regisztrálva van. Tovább tervezett leckék:
+A fenti 24 lecke elkészült és regisztrálva van. Tovább tervezett leckék:
 
-- [ ] **Írásbeli összeadás és kivonás**
-    - Írásbeli összeadás 1000-ig (átlépéssel, háromjegyű + háromjegyű)
-    - Írásbeli kivonás 1000-ig (átlépéssel, háromjegyű − háromjegyű)
 - [ ] **Maradékos osztás**
     - Maradékos osztás felismerése és lejegyzése (pl. 17 : 5)
     - Tevékenység-alapú: hány teljes csoport + mennyi maradék
@@ -77,4 +76,4 @@ A fenti 22 lecke elkészült és regisztrálva van. Tovább tervezett leckék:
 
 ## Státusz
 
-*(Az 1–3. osztályos tananyag fő része lefedve: a 22 tervezett 3. osztályos lecke kész. Hátralévő: a 6 kiegészítő tétel a fenti listából – javasolt sorrend: írásbeli összeadás/kivonás → maradékos osztás → törtek → gyakorlati tudások → szöveges feladatok → geometria.)*
+*(Az 1–3. osztályos tananyag fő része lefedve: a 24 3. osztályos lecke kész (lett írásbeli összeadás és kivonás is). Hátralévő: 5 kiegészítő tétel – javasolt sorrend: maradékos osztás → törtek → gyakorlati tudások → szöveges feladatok → geometria.)*

@@ -1,0 +1,66 @@
+.wo-table {
+    display: grid;
+    grid-template-columns: 3.2rem repeat(3, 4.2rem);
+    grid-template-rows: auto auto auto auto auto;
+    gap: 0.3rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0.6rem auto;
+}
+
+.wo-place {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #64748b;
+    text-align: center;
+    padding-bottom: 0.2rem;
+}
+
+.wo-digit {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #334155;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.wo-op {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #E53935;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.wo-line {
+    grid-column: 1 / 5;
+    border-top: 3px solid #334155;
+    margin: 0.2rem 0;
+}
+
+.wo-input {
+    width: 100%;
+    min-width: 0;
+    height: 3.4rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #334155;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.wo-input::-webkit-outer-spin-button,
+.wo-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.wo-input.option-correct {
+    border-color: #22c55e;
+    background: #dcfce7;
+    color: #166534;
+}

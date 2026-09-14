@@ -1,0 +1,73 @@
+{
+  "id": "grade3-written-sub-01",
+  "title": "Írásbeli kivonás 1000-ig",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "✍️ Írásbeli kivonás",
+      "text": "Írd egymás alá a számokat, és számolj jobbról balra, egyesekkel kezdve! Ha kell, kérj kölcsön a tízesektől. Például: 642 − 357 = ?",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Írásbeli kivonás a pályán",
+          "text": "Írd egymás alá a számokat, és számolj jobbról balra, egyesekkel kezdve! Ha kell, kérj kölcsön a tízesektől. Például: 642 − 357 = ?"
+        },
+        "football": {
+          "title": "⚽ Írásbeli kivonás a meccsen",
+          "text": "Írd egymás alá a számokat, és számolj jobbról balra, egyesekkel kezdve! Ha kell, kérj kölcsön a tízesektől. Például: 642 − 357 = ?"
+        },
+        "cooking": {
+          "title": "🍳 Írásbeli kivonás a konyhában",
+          "text": "Írd egymás alá a számokat, és számolj jobbról balra, egyesekkel kezdve! Ha kell, kérj kölcsön a tízesektől. Például: 642 − 357 = ?"
+        },
+        "animals": {
+          "title": "🦁 Írásbeli kivonás az állatkertben",
+          "text": "Írd egymás alá a számokat, és számolj jobbról balra, egyesekkel kezdve! Ha kell, kérj kölcsön a tízesektől. Például: 642 − 357 = ?"
+        },
+        "space": {
+          "title": "🤖 Írásbeli kivonás az űrben",
+          "text": "Írd egymás alá a számokat, és számolj jobbról balra, egyesekkel kezdve! Ha kell, kérj kölcsön a tízesektől. Például: 642 − 357 = ?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "written-operation",
+      "options": {
+        "count": 8,
+        "op": "sub",
+        "min": 100,
+        "max": 999,
+        "borrow": "always",
+        "resultMin": 100,
+        "resultMax": 899
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden írásbeli kivonást jól megoldottál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden írásbeli kivonást jól megoldottál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden írásbeli kivonást jól megoldottál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden írásbeli kivonást jól megoldottál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden írásbeli kivonást jól megoldottál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden írásbeli kivonást jól megoldottál!"
+        }
+      }
+    }
+  ]
+}

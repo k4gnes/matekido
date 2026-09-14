@@ -1,0 +1,73 @@
+{
+  "id": "grade3-written-add-01",
+  "title": "Írásbeli összeadás 1000-ig",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "✍️ Írásbeli összeadás",
+      "text": "Írd egymás alá a számokat, és számolj jobbról balra, egyesekkel kezdve! Például: 256 + 388 = ?",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Írásbeli összeadás a pályán",
+          "text": "Írd egymás alá a számokat, és számolj jobbról balra, egyesekkel kezdve! Például: 256 + 388 = ?"
+        },
+        "football": {
+          "title": "⚽ Írásbeli összeadás a meccsen",
+          "text": "Írd egymás alá a számokat, és számolj jobbról balra, egyesekkel kezdve! Például: 256 + 388 = ?"
+        },
+        "cooking": {
+          "title": "🍳 Írásbeli összeadás a konyhában",
+          "text": "Írd egymás alá a számokat, és számolj jobbról balra, egyesekkel kezdve! Például: 256 + 388 = ?"
+        },
+        "animals": {
+          "title": "🦁 Írásbeli összeadás az állatkertben",
+          "text": "Írd egymás alá a számokat, és számolj jobbról balra, egyesekkel kezdve! Például: 256 + 388 = ?"
+        },
+        "space": {
+          "title": "🤖 Írásbeli összeadás az űrben",
+          "text": "Írd egymás alá a számokat, és számolj jobbról balra, egyesekkel kezdve! Például: 256 + 388 = ?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "written-operation",
+      "options": {
+        "count": 8,
+        "op": "add",
+        "min": 100,
+        "max": 899,
+        "carry": "always",
+        "resultMin": 100,
+        "resultMax": 999
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden írásbeli összeadást jól megoldottál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden írásbeli összeadást jól megoldottál!"
+        },
+        "football": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden írásbeli összeadást jól megoldottál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden írásbeli összeadást jól megoldottál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden írásbeli összeadást jól megoldottál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden írásbeli összeadást jól megoldottál!"
+        }
+      }
+    }
+  ]
+}

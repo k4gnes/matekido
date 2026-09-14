@@ -4,6 +4,7 @@ import { createNavBar } from "./ui/navbar.js";
 import { loadJSON, saveJSON, loadRaw, saveRaw } from "../storage.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getLessonStats, getActiveWorld, getActiveGrade, setActiveGrade, getFavoriteLessons, getSkippedLessons, isFavoriteLesson, toggleFavoriteLesson } from "../profile/Profile.js";
+import { renderMarkdown } from "../utils/markdown.js";
 import { CATEGORIES, SKILLS } from "../data/skills.js";
 import { CONSOLIDATION_LESSONS } from "../data/consolidation.js";
 import { getWorld } from "../world/WorldRegistry.js";
@@ -853,7 +854,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
 
         const skippedLessonFiles = new Set(getSkippedLessons());
         const skippedLessons = allLessons.filter(l =>
-            l.grades?.includes(selectedGrade) && skippedLessonFiles.has(l.file)
+            l.grades?.includes(selectedGrade) && skippedLessonFiles.has(l.file) && !getLessonStats(l.file)
         );
 
         if (skippedLessons.length > 0) {

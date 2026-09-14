@@ -1,7 +1,7 @@
 import { Game } from "./engine/Game.js?v=68";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=19";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=43";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=44";
 import { renderSkillMap } from "./components/skillMap.js?v=15";
 import { renderHelp } from "./components/help.js?v=3";
 import { renderProfilePage } from "./components/profilePage.js?v=8";
@@ -133,7 +133,7 @@ async function startLesson(path, opts = {}) {
             onNext: () => continueToNext(path, opts),
             onGradeComplete: () => showGradeComplete(path),
             onSkipNext: !opts.from && getSkippedLessons().includes(path) ? null : () => {
-                if (!opts.from) {
+                if (!opts.from && !getLessonStats(path)) {
                     recordLessonSkip(path);
                 }
                 continueToNext(path, opts);

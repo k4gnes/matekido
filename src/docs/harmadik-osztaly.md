@@ -1,6 +1,6 @@
 # Matekidő – 3. osztályos készségtérkép
 
-**24 lecke**, 3 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**26 lecke**, 3 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 A 2. osztályos tananyag lezárult – a 3. osztály **nagyobb számkörre (1000-ig)**, a **szorzás és osztás bővítésére** épül.
 
@@ -37,7 +37,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Írásbeli kivonás | Írásbeli kivonás 1000-ig | Írásbeli kivonás | 1000 | 3 |
 | Vegyes műveletek | Vegyes műveletek 1000-ig | Vegyes műveletek | 1000 | 3 |
 
-## Szorzás és osztás bővítése (5 lecke)
+## Szorzás és osztás bővítése (7 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
@@ -46,16 +46,14 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Szorzás–osztás kapcsolat | Szorzás és osztás kapcsolata 6-9 | Szorzás–osztás kapcsolat | 100 | 3 |
 | Osztás | Osztás 6, 7, 8, 9-es táblával | Osztótábla | 100 | 3 |
 | Vegyes szorzás-osztás | Vegyes szorzás és osztás 6-9 | Vegyes szorzás-osztás | 100 | 3 |
+| Maradékos osztás | Maradékos osztás | Kifejezés és maradékkal való osztás | 100 | 3 |
+| Maradékos osztás | Maradékos osztás csoportokkal | Tevékenység-alapú csoportok és maradék | 100 | 3 |
 
 ---
 
 ## Tervezett kiegészítések
 
-A fenti 24 lecke elkészült és regisztrálva van. Tovább tervezett leckék:
-
-- [ ] **Maradékos osztás**
-    - Maradékos osztás felismerése és lejegyzése (pl. 17 : 5)
-    - Tevékenység-alapú: hány teljes csoport + mennyi maradék
+A fenti 26 lecke elkészült és regisztrálva van. Tovább tervezett leckék:
 - [ ] **Törtek – bevezetés** (fele, harmad, negyed)
     - Tört képének és jele társítása
     - Egész törtrészei: fele, harmada, negyede
@@ -76,4 +74,4 @@ A fenti 24 lecke elkészült és regisztrálva van. Tovább tervezett leckék:
 
 ## Státusz
 
-*(Az 1–3. osztályos tananyag fő része lefedve: a 24 3. osztályos lecke kész (lett írásbeli összeadás és kivonás is). Hátralévő: 5 kiegészítő tétel – javasolt sorrend: maradékos osztás → törtek → gyakorlati tudások → szöveges feladatok → geometria.)*
+*(Az 1–3. osztályos tananyag fő része lefedve: a 26 3. osztályos lecke kész (lett írásbeli összeadás és kivonás is). Hátralévő: 4 kiegészítő tétel – javasolt sorrend: törtek → gyakorlati tudások → szöveges feladatok → geometria.)*

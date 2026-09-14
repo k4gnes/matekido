@@ -104,7 +104,8 @@ const TYPE_EMOJI = {
     roman: "🏛️",
     fraction: "🍕",
     "measure-units": "📏",
-    "written-operation": "✍️"
+    "written-operation": "✍️",
+    "remainder-division": "➗"
 };
 
 const TYPE_GROUPS = {
@@ -160,7 +161,8 @@ const TYPE_LABEL = {
     calendar: "Naptár",
     fraction: "Törtek",
     "measure-units": "Hosszúság-mérés",
-    "written-operation": "Írásbeli művelet"
+    "written-operation": "Írásbeli művelet",
+    "remainder-division": "Maradékos osztás"
 };
 
 const RANGE_LABEL = {

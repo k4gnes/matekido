@@ -44,6 +44,7 @@ import { generateCalendar } from "./calendarGenerator.js?v=2";
 import { generateFraction } from "./fractionGenerator.js?v=1";
 import { generateMeasureUnits } from "./measureUnitsGenerator.js?v=2";
 import { generateWrittenOperation } from "./writtenOperationGenerator.js?v=1";
+import { generateRemainderDivision } from "./remainderDivisionGenerator.js?v=3";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -149,6 +150,8 @@ export function generate(step) {
             return generateMeasureUnits(opts);
         case "written-operation":
             return generateWrittenOperation(opts);
+        case "remainder-division":
+            return generateRemainderDivision(opts);
 
         default:
             throw new Error(

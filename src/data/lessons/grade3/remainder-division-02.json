@@ -1,0 +1,72 @@
+{
+  "id": "grade3-remainder-division-02",
+  "title": "Maradékos osztás csoportokkal",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧮 Maradékos osztás csoportokkal",
+      "text": "Számolj jól meg! Hány teljes csoportot látsz, és hány darab marad ki?",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Autók a pályán",
+          "text": "Számold meg, hány teljes csapat autót látsz, és hány autó marad ki!"
+        },
+        "football": {
+          "title": "⚽ Labdák a meccsen",
+          "text": "Számold meg, hány teljes csoport lábdát látsz, és hány labda marad ki!"
+        },
+        "cooking": {
+          "title": "🍳 Falatok a konyhában",
+          "text": "Számold meg, hány teljes tál falatot látsz, és hány falat marad ki!"
+        },
+        "animals": {
+          "title": "🦁 Ételek az állatkertben",
+          "text": "Számold meg, hány teljes rekesz ételt látsz, és hány darab marad ki!"
+        },
+        "space": {
+          "title": "🤖 Robotok az űrben",
+          "text": "Számold meg, hány teljes legénységet látsz, és hány robot marad ki!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "remainder-division",
+      "options": {
+        "count": 8,
+        "divisors": [2, 3, 4, 5, 6],
+        "maxQuotient": 6,
+        "mode": "groups",
+        "withZeroRemainder": false,
+        "interaction": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Remekül megszámoltad a csoportokat és a maradékot!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Remekül megszámoltad a csapatokat és a maradék autókat!"
+        },
+        "football": {
+          "title": "🎉 Ügyes vagy!",
+          "text": "Remekül megszámoltad a labdacsoportokat és a maradék labdákat!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Remekül megszámoltad a falatcsoportokat és a maradék falatokat!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Remekül megszámoltad az ételeket és a maradékot!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Remekül megszámoltad a legénységeket és a maradék robotokat!"
+        }
+      }
+    }
+  ]
+}

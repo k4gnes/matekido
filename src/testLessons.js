@@ -12,7 +12,7 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=16";
+import { buildLesson } from "./builders/LessonBuilder.js?v=18";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
@@ -308,6 +308,47 @@ function validateStep(step, ctx) {
             }
             if (!["input", "choice"].includes(step.interaction)) {
                 fail(ctx, `interaction hibás: ${step.interaction}`);
+            }
+            break;
+        }
+        case "remainder-division": {
+            if (!isInt(step.a) || !isInt(step.b) || !isInt(step.quotient) || !isInt(step.remainder)) {
+                fail(ctx, "a/b/quotient/remainder nem egész");
+                break;
+            }
+            if (step.a !== step.quotient * step.b + step.remainder) {
+                fail(ctx, `a != quotient*b+remainder (${step.a} != ${step.quotient}*${step.b}+${step.remainder})`);
+            }
+            if (step.remainder < 0 || step.remainder >= step.b) {
+                fail(ctx, `remainder tartomány hibás: ${step.remainder} (b=${step.b})`);
+            }
+            if (!["notation", "groups"].includes(step.mode)) {
+                fail(ctx, `mode hibás: ${step.mode}`);
+            }
+            if (!["input", "choice"].includes(step.interaction)) {
+                fail(ctx, `interaction hibás: ${step.interaction}`);
+            }
+            if (step.interaction === "choice") {
+                if (!Array.isArray(step.quotientOptions) || step.quotientOptions.length < 2) {
+                    fail(ctx, `quotientOptions hiányos (choice esetén) ${step.quotientOptions}`);
+                } else {
+                    step.quotientOptions.forEach((o, i) => {
+                        if (!isInt(o)) fail(ctx, `quotientOptions[${i}] hibás: ${JSON.stringify(o)}`);
+                    });
+                    if (!step.quotientOptions.includes(step.quotient)) {
+                        fail(ctx, `quotientOptions nem tartalmazza a hányadost (${step.quotient})`);
+                    }
+                }
+                if (!Array.isArray(step.remainderOptions) || step.remainderOptions.length < 2) {
+                    fail(ctx, `remainderOptions hiányos (choice esetén) ${step.remainderOptions}`);
+                } else {
+                    step.remainderOptions.forEach((o, i) => {
+                        if (!isInt(o)) fail(ctx, `remainderOptions[${i}] hibás: ${JSON.stringify(o)}`);
+                    });
+                    if (!step.remainderOptions.includes(step.remainder)) {
+                        fail(ctx, `remainderOptions nem tartalmazza a maradékot (${step.remainder})`);
+                    }
+                }
             }
             break;
         }

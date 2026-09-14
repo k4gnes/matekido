@@ -1,0 +1,72 @@
+{
+  "id": "grade3-remainder-division-01",
+  "title": "Maradékos osztás",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "➗ Maradékos osztás",
+      "text": "Ha az osztás nem jön ki maradék nélkül, maradékot írunk. Például: 17 : 5 = 3, és marad 2.",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Maradékos osztás a pályán",
+          "text": "Ha az osztás nem jön ki maradék nélkül, maradékot írunk. Például: 17 : 5 = 3, és marad 2."
+        },
+        "football": {
+          "title": "⚽ Maradékos osztás a meccsen",
+          "text": "Ha az osztás nem jön ki maradék nélkül, maradékot írunk. Például: 17 : 5 = 3, és marad 2."
+        },
+        "cooking": {
+          "title": "🍳 Maradékos osztás a konyhában",
+          "text": "Ha az osztás nem jön ki maradék nélkül, maradékot írunk. Például: 17 : 5 = 3, és marad 2."
+        },
+        "animals": {
+          "title": "🦁 Maradékos osztás az állatkertben",
+          "text": "Ha az osztás nem jön ki maradék nélkül, maradékot írunk. Például: 17 : 5 = 3, és marad 2."
+        },
+        "space": {
+          "title": "🤖 Maradékos osztás az űrben",
+          "text": "Ha az osztás nem jön ki maradék nélkül, maradékot írunk. Például: 17 : 5 = 3, és marad 2."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "remainder-division",
+      "options": {
+        "count": 8,
+        "divisors": [2, 3, 4, 5, 6, 7, 8, 9],
+        "maxQuotient": 9,
+        "mode": "notation",
+        "withZeroRemainder": false,
+        "interaction": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Minden maradékos osztást jól megoldottál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden maradékos osztást jól megoldottál a pályán!"
+        },
+        "football": {
+          "title": "🎉 Ügyes vagy!",
+          "text": "Minden maradékos osztást jól megoldottál a meccsen!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden maradékos osztást jól megoldottál a konyhában!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden maradékos osztást jól megoldottál az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden maradékos osztást jól megoldottál az űrben!"
+        }
+      }
+    }
+  ]
+}

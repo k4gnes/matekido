@@ -2593,6 +2593,50 @@
                 "animals": "🦁 Írásbeli kivonás az állatkertben",
                 "space": "🤖 Írásbeli kivonás az űrben"
             }
+        },
+        {
+            "id": "remainder-division-01",
+            "title": "Maradékos osztás",
+            "grades": [
+                3
+            ],
+            "category": "multiplication",
+            "skill": "division",
+            "difficulty": 3,
+            "type": "remainder-division",
+            "range": 100,
+            "mission": "➗ Maradékos osztás",
+            "subtitle": "Maradékos osztás lejegyzése",
+            "file": "./data/lessons/grade3/remainder-division-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Maradékos osztás a pályán",
+                "cooking": "🍳 Maradékos osztás a konyhában",
+                "football": "⚽ Maradékos osztás a meccsen",
+                "animals": "🦁 Maradékos osztás az állatkertben",
+                "space": "🤖 Maradékos osztás az űrben"
+            }
+        },
+        {
+            "id": "remainder-division-02",
+            "title": "Maradékos osztás csoportokkal",
+            "grades": [
+                3
+            ],
+            "category": "multiplication",
+            "skill": "division",
+            "difficulty": 3,
+            "type": "remainder-division",
+            "range": 100,
+            "mission": "🧮 Maradékos osztás csoportokkal",
+            "subtitle": "Maradékos osztás csoportokkal",
+            "file": "./data/lessons/grade3/remainder-division-02.json",
+            "worldTitles": {
+                "racing": "🏎️ Maradékos osztás csoportokkal",
+                "cooking": "🍳 Maradékos osztás csoportokkal",
+                "football": "⚽ Maradékos osztás csoportokkal",
+                "animals": "🦁 Maradékos osztás csoportokkal",
+                "space": "🤖 Maradékos osztás csoportokkal"
+            }
         }
     ],
     "gradeConfig": [

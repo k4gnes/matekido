@@ -48,6 +48,7 @@ import { renderCalendar } from "../components/calendar.js?v=2";
 import { renderFraction } from "../components/fraction.js?v=4";
 import { renderMeasureUnits } from "../components/measureUnits.js?v=1";
 import { renderWrittenOperation } from "../components/writtenOperation.js?v=3";
+import { renderRemainderDivision } from "../components/remainderDivision.js?v=6";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -102,7 +103,8 @@ const COUNTED_TYPES = new Set([
     "calendar",
     "fraction",
     "measure-units",
-    "written-operation"
+    "written-operation",
+    "remainder-division"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -177,7 +179,8 @@ const RENDERERS = new Map([
     ["calendar", renderCalendar],
     ["fraction", renderFraction],
     ["measure-units", renderMeasureUnits],
-    ["written-operation", renderWrittenOperation]
+    ["written-operation", renderWrittenOperation],
+    ["remainder-division", renderRemainderDivision]
 ]);
 
 

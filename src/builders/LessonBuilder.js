@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=23";
+import { generate } from "../generators/index.js?v=25";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -428,6 +428,19 @@ export function buildLesson(lesson) {
                     b: task.b,
                     answer: task.answer,
                     interaction: task.interaction
+                });
+            } else if (step.generator === "remainder-division") {
+                result.push({
+                    type: "remainder-division",
+                    a: task.a,
+                    b: task.b,
+                    quotient: task.quotient,
+                    remainder: task.remainder,
+                    mode: task.mode,
+                    interaction: task.interaction,
+                    emoji: task.emoji,
+                    quotientOptions: task.quotientOptions,
+                    remainderOptions: task.remainderOptions
                 });
             } else {
                 result.push({

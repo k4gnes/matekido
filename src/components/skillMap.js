@@ -6,7 +6,7 @@ import { renderMarkdown } from "../utils/markdown.js";
 const DOCS = [
     { id: "elso-osztaly", emoji: "🌱", label: "1. osztály", desc: "42 lecke – számfogalom, halmazok, naptár, mérések, geometria" },
     { id: "masodik-osztaly", emoji: "🚀", label: "2. osztály", desc: "50 lecke – számok 100-ig, szorzás és osztás" },
-    { id: "harmadik-osztaly", emoji: "🪐", label: "3. osztály", desc: "24 lecke – számok 1000-ig, írásbeli műveletek, szorzás és osztás" },
+    { id: "harmadik-osztaly", emoji: "🪐", label: "3. osztály", desc: "26 lecke – számok 1000-ig, írásbeli műveletek, szorzás és osztás" },
     { id: "negyedik-osztaly", emoji: "🍀", label: "4. osztály", desc: "30 tervezett lecke – 10 000-ig, írásbeli műveletek, törtek, geometria" },
     { id: "otodik-osztaly", emoji: "🌌", label: "5. osztály", desc: "32 tervezett lecke – 1 000 000-ig, oszthatóság, tizedes törtek, százalék" }
 ];

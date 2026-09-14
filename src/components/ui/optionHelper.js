@@ -10,19 +10,19 @@ function shuffle(arr) {
     return arr;
 }
 
-export function makeOptions(answer, min, max, count = 4) {
+export function makeOptions(answer, min, max, count = 4, step = 1) {
     const options = [answer];
     const seen = new Set([answer]);
     const deltas = [1, -1, 2, -2, 3, -3, 5, -5, 10, -10];
     for (const d of deltas) {
         if (options.length >= count) break;
-        const v = answer + d;
+        const v = answer + d * step;
         if (v >= min && v <= max && !seen.has(v)) {
             seen.add(v);
             options.push(v);
         }
     }
-    for (let v = min; v <= max && options.length < count; v++) {
+    for (let v = min; v <= max && options.length < count; v += step) {
         if (!seen.has(v)) {
             seen.add(v);
             options.push(v);

@@ -1,7 +1,7 @@
 import { renderScene } from "../components/scene.js?v=6";
 import { createInstructionHelp } from "../components/ui/instruction.js";
 import { createExitButton } from "../components/ui/exit.js";
-import { renderExercise } from "../components/exercise.js?v=4";
+import { renderExercise } from "../components/exercise.js?v=5";
 import { renderDecomposition } from "../components/decomposition.js?v=2";
 import { renderDecompositionFindWrong } from "../components/decompositionFindWrong.js?v=3";
 import { renderMissingNumber } from "../components/missingNumber.js?v=7";

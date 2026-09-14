@@ -6,6 +6,12 @@ import { createExercise } from "./ui/exerciseShell.js";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { makeOptions } from "./ui/optionHelper.js";
 
+function answerStep(answer) {
+    if (answer % 100 === 0) return 100;
+    if (answer % 10 === 0) return 10;
+    return 1;
+}
+
 export function renderAddition(step, root, next, progress, onResult, onAttempt) {
 
     let hintShown = false;
@@ -39,7 +45,9 @@ export function renderAddition(step, root, next, progress, onResult, onAttempt) 
     if (useChoice) {
         equation.append(first, plus, second, equal);
 
-        const options = makeOptions(correctAnswer, Math.max(0, correctAnswer - 15), correctAnswer + 15);
+        const optionStep = answerStep(correctAnswer);
+        const range = Math.max(15, optionStep * 2);
+        const options = makeOptions(correctAnswer, Math.max(0, correctAnswer - range), correctAnswer + range, 4, optionStep);
         optionsContainer = document.createElement("div");
         optionsContainer.className = "mult-options";
 

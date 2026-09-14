@@ -12,6 +12,21 @@ const WORLD_EMOJI = {
     space: "🤖"
 };
 
+const KIND_CONFIG = {
+    length: {
+        title: "Hosszúság-mérés",
+        hint: "1 m = 10 dm = 100 cm, 1 dm = 10 cm"
+    },
+    weight: {
+        title: "Súly-mérés",
+        hint: "1 kg = 100 dkg, 1 dkg = 10 g"
+    },
+    volume: {
+        title: "Űrtartalom-mérés",
+        hint: "1 l = 10 dl, 1 dl = 10 cl"
+    }
+};
+
 export function renderMeasureUnits(step, root, next, progress, onResult, onAttempt) {
 
     const ac = new AbortController();
@@ -24,13 +39,16 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
         card.append(progress);
     }
 
+    const emoji = WORLD_EMOJI[getActiveWorld()] ?? "📏";
+    const config = KIND_CONFIG[step.kind] ?? KIND_CONFIG.length;
+
     const title = document.createElement("h1");
-    title.textContent = `${WORLD_EMOJI[getActiveWorld()] ?? "📏"} Hosszúság-mérés`;
+    title.textContent = `${emoji} ${config.title}`;
     card.append(title);
 
     const hint = document.createElement("p");
     hint.className = "mu-hint";
-    hint.textContent = "1 m = 10 dm = 100 cm, 1 dm = 10 cm";
+    hint.textContent = config.hint;
     card.append(hint);
 
     const prompt = document.createElement("p");

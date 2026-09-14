@@ -47,7 +47,7 @@ import { renderDataChart } from "../components/dataChart.js?v=2";
 import { renderCalendar } from "../components/calendar.js?v=2";
 import { renderFraction } from "../components/fraction.js?v=6";
 import { renderFractionOf } from "../components/fractionOf.js?v=1";
-import { renderMeasureUnits } from "../components/measureUnits.js?v=1";
+import { renderMeasureUnits } from "../components/measureUnits.js?v=2";
 import { renderWrittenOperation } from "../components/writtenOperation.js?v=3";
 import { renderRemainderDivision } from "../components/remainderDivision.js?v=6";
 

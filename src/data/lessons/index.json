@@ -2067,6 +2067,27 @@
             }
         },
         {
+            "id": "measure-units-02",
+            "title": "📏 Mértékegység-átváltás",
+            "grades": [
+                3
+            ],
+            "category": "practical",
+            "skill": "length",
+            "difficulty": 2,
+            "type": "measure-units",
+            "mission": "📏 Mértékegység-átváltás",
+            "subtitle": "m, dm, cm, kg, dkg, l, dl átváltása",
+            "file": "./data/lessons/grade3/measure-units-02.json",
+            "worldTitles": {
+                "racing": "🔧 Mértékegység-átváltás a boxutcában",
+                "cooking": "🥄 Mértékegység-átváltás a konyhában",
+                "football": "⚽ Mértékegység-átváltás a pályán",
+                "animals": "🦁 Mértékegység-átváltás az állatkertben",
+                "space": "🤖 Mértékegység-átváltás az űrhajón"
+            }
+        },
+        {
             "id": "place-value-hundreds-01",
             "title": "Helyiérték 1000-ig",
             "grades": [

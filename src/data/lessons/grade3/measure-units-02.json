@@ -1,0 +1,68 @@
+{
+  "id": "grade3-measure-units-02",
+  "title": "📏 Mértékegység-átváltás",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📏 Mértékegységek",
+      "text": "A hosszúságot méterben (m), deciméterben (dm) és centiméterben (cm) mérjük. A súlyt kilogrammban (kg) és dekagrammban (dkg). Az űrtartalmat literben (l) és deciliterben (dl). Átváltásra fel!",
+      "worldTitles": {
+        "racing": {
+          "title": "🔧 Mértékegység-átváltás a boxutcában",
+          "text": "A szerelőknek át kell váltaniuk a méreteket! Méter, kilogramm, liter – számoljuk át!"
+        },
+        "football": {
+          "title": "⚽ Mértékegység-átváltás a pályán",
+          "text": "A csapat méri a hosszúságot és a súlyt! Segíts az átváltásokkal!"
+        },
+        "cooking": {
+          "title": "🥄 Mértékegység-átváltás a konyhában",
+          "text": "A szakácsok mérik a hozzávalókat! Liter, dekagramm, méter – számoljuk át!"
+        },
+        "animals": {
+          "title": "🦁 Mértékegység-átváltás az állatkertben",
+          "text": "Az állatgondozók mérik az állatok súlyát és az étel mennyiségét! Segíts az átváltásokkal!"
+        },
+        "space": {
+          "title": "🤖 Mértékegység-átváltás az űrhajón",
+          "text": "Az űrhajósok mérik az alkatrészeket és az üzemanyagot! Méter, kilogramm, liter – menjünk!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 10,
+        "kind": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Remekül átváltod a mértékegységeket: hosszúságot, súlyt és űrtartalmat is!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Irány a pálya!",
+          "text": "Jól számoltál, mehet a futam! 🏁"
+        },
+        "football": {
+          "title": "⚽ Felszabadult a pálya!",
+          "text": "Ügyesen mértél, kezdődhet a meccs! 🎉"
+        },
+        "cooking": {
+          "title": "🥄 Finom a menü!",
+          "text": "Jól adtad át a mértékegységeket, a konyha kész! 🍽️"
+        },
+        "animals": {
+          "title": "🦁 Minden állat megmérve!",
+          "text": "Minden állatot sikerült megmérned, nagyszerű! 🐾"
+        },
+        "space": {
+          "title": "🤖 Indulhat a küldetés!",
+          "text": "Az alkatrészek pontosan meg vannak mérve, indulhat a rakéta! 🚀"
+        }
+      }
+    }
+  ]
+}

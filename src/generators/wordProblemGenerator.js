@@ -53,6 +53,20 @@ const THEMES = {
             text: (total, groups) => `${total} levelet kell szétosztani ${groups} postaládába egyenlően.`,
             question: "Hány levél kerül egy postaládába?",
             success: (answer) => `😊 Szép munka! Minden postaládába ${answer} levél kerül!`
+        },
+        proportion: {
+            title: "📮 Arányos osztás",
+            textHalf: (total) => `${total} levelet hoz a postás. A felét expressz levél, a másik felét sima.`,
+            textThird: (total) => `${total} levelet hoz a postás. A harmadát expressz levél.`,
+            question: "Hány expressz levél van?",
+            successHalf: (answer) => `😊 Szép munka! ${answer} expressz levél van!`,
+            successThird: (answer) => `😊 Szép munka! ${answer} expressz levél van!`
+        },
+        remainder: {
+            title: "📮 Maradékos osztás",
+            text: (total, groups) => `${total} levelet kell ${groups}-os csoportokba rendezni.`,
+            question: "Hány teljes csoport lesz, és hány levél marad ki?",
+            success: (quotient, remainder) => `😊 Szép munka! ${quotient} teljes csoport, és ${remainder} levél marad ki!`
         }
     },
     racing: {
@@ -92,6 +106,20 @@ const THEMES = {
             text: (total, groups) => `${total} alkatrészt kell szétosztani ${groups} autó között egyenlően.`,
             question: "Hány alkatrész jut egy autóra?",
             success: (answer) => `😊 Szép munka! Minden autóra ${answer} alkatrész jut!`
+        },
+        proportion: {
+            title: "🔧 Arányos osztás",
+            textHalf: (total) => `${total} alkatrészt szerelnek a garázsba. A felét ma szerelik be, a másik felét holnap.`,
+            textThird: (total) => `${total} alkatrészt szerelnek a garázsba. A harmadát ma szerelik be.`,
+            question: "Hány alkatrészt szerelnek be ma?",
+            successHalf: (answer) => `😊 Szép munka! Ma ${answer} alkatrészt szerelnek be!`,
+            successThird: (answer) => `😊 Szép munka! Ma ${answer} alkatrészt szerelnek be!`
+        },
+        remainder: {
+            title: "🔧 Maradékos osztás",
+            text: (total, groups) => `${total} kereket kell felszerelni az autókra. Minden autóhoz ${groups} kerék kell.`,
+            question: "Hány autóra jut elég kerék, és hány marad ki?",
+            success: (quotient, remainder) => `😊 Szép munka! ${quotient} autóra jut elég kerék, és ${remainder} kerék marad ki!`
         }
     },
     cooking: {
@@ -131,6 +159,20 @@ const THEMES = {
             text: (total, groups) => `${total} palacsintát kell szétosztani ${groups} tányérra egyenlően.`,
             question: "Hány palacsinta kerül egy tányérra?",
             success: (answer) => `😊 Szép munka! Minden tányérra ${answer} palacsinta kerül!`
+        },
+        proportion: {
+            title: "🍳 Arányos osztás",
+            textHalf: (total) => `${total} palacsinta sül a konyhán. A felét lekvárosan, a másik felét sajtosan töltik.`,
+            textThird: (total) => `${total} palacsinta sül a konyhán. A harmadát lekvárosan töltik.`,
+            question: "Hány lekváros palacsinta van?",
+            successHalf: (answer) => `😊 Szép munka! ${answer} lekváros palacsinta van!`,
+            successThird: (answer) => `😊 Szép munka! ${answer} lekváros palacsinta van!`
+        },
+        remainder: {
+            title: "🍳 Maradékos osztás",
+            text: (total, groups) => `${total} palacsintát kell ${groups}-es csomagokba tenni.`,
+            question: "Hány teljes csomag lesz, és hány palacsinta marad ki?",
+            success: (quotient, remainder) => `😊 Szép munka! ${quotient} teljes csomag, és ${remainder} palacsinta marad ki!`
         }
     },
     football: {
@@ -170,6 +212,20 @@ const THEMES = {
             text: (total, groups) => `${total} labdát kell szétosztani ${groups} csapat között egyenlően.`,
             question: "Hány labda jut egy csapatra?",
             success: (answer) => `😊 Szép munka! Minden csapatra ${answer} labda jut!`
+        },
+        proportion: {
+            title: "⚽ Arányos osztás",
+            textHalf: (total) => `${total} labda van a raktárban. A felét a sportcsarnokba viszik, a másik felét az iskolába.`,
+            textThird: (total) => `${total} labda van a raktárban. A harmadát a sportcsarnokba viszik.`,
+            question: "Hány labdát visznek a sportcsarnokba?",
+            successHalf: (answer) => `😊 Szép munka! ${answer} labdát visznek a sportcsarnokba!`,
+            successThird: (answer) => `😊 Szép munka! ${answer} labdát visznek a sportcsarnokba!`
+        },
+        remainder: {
+            title: "⚽ Maradékos osztás",
+            text: (total, groups) => `${total} labdát kell ${groups}-es csoportokba rakni.`,
+            question: "Hány teljes csoport lesz, és hány labda marad a padon?",
+            success: (quotient, remainder) => `😊 Szép munka! ${quotient} teljes csoport, és ${remainder} labda marad a padon!`
         }
     },
     animals: {
@@ -209,6 +265,20 @@ const THEMES = {
             text: (total, groups) => `${total} zebrát kell szétosztani ${groups} karámba egyenlően.`,
             question: "Hány zebra kerül egy karámba?",
             success: (answer) => `😊 Szép munka! Minden karámba ${answer} zebra kerül!`
+        },
+        proportion: {
+            title: "🦓 Arányos osztás",
+            textHalf: (total) => `${total} zebra van a kifutóban. A fele csíkos, a másik fele foltos.`,
+            textThird: (total) => `${total} zebra van a kifutóban. A harmada csíkos.`,
+            question: "Hány csíkos zebra van?",
+            successHalf: (answer) => `😊 Szép munka! ${answer} csíkos zebra van!`,
+            successThird: (answer) => `😊 Szép munka! ${answer} csíkos zebra van!`
+        },
+remainder: {
+            title: "🦓 Maradékos osztás",
+            text: (total, groups) => `${total} zebrát kell ${groups}-es csoportokba hajtani.`,
+            question: "Hány teljes csoport lesz, és hány zebra marad az udvaron?",
+            success: (quotient, remainder) => `😊 Szép munka! ${quotient} teljes csoport, és ${remainder} zebra marad az udvaron!`
         }
     },
     space: {
@@ -248,6 +318,20 @@ const THEMES = {
             text: (total, groups) => `${total} robotot kell szétosztani ${groups} bolygó között egyenlően.`,
             question: "Hány robot jut egy bolygóra?",
             success: (answer) => `😊 Szép munka! Minden bolygóra ${answer} robot jut!`
+        },
+        proportion: {
+            title: "🤖 Arányos osztás",
+            textHalf: (total) => `${total} robot van az űrállomáson. A felét karbantartják, a másik felét feltöltik.`,
+            textThird: (total) => `${total} robot van az űrállomáson. A harmadát karbantartják.`,
+            question: "Hány robotot karbantartanak?",
+            successHalf: (answer) => `😊 Szép munka! ${answer} robotot karbantartanak!`,
+            successThird: (answer) => `😊 Szép munka! ${answer} robotot karbantartanak!`
+        },
+remainder: {
+            title: "🤖 Maradékos osztás",
+            text: (total, groups) => `${total} robotot kell ${groups}-es csoportba küldeni.`,
+            question: "Hány teljes csoport lesz, és hány robot marad a dokkban?",
+            success: (quotient, remainder) => `😊 Szép munka! ${quotient} teljes csoport, és ${remainder} robot marad a dokkban!`
         }
     }
 };
@@ -275,6 +359,14 @@ export function generateWordProblems(options = {}) {
     } else if (kind === "two-step") {
         for (let i = 0; i < count; i++) {
             tasks.push(generateTwoStep(max, world));
+        }
+    } else if (kind === "proportion") {
+        for (let i = 0; i < count; i++) {
+            tasks.push(generateProportion(max, world));
+        }
+    } else if (kind === "remainder") {
+        for (let i = 0; i < count; i++) {
+            tasks.push(generateRemainder(max, world));
         }
     } else {
         for (let i = 0; i < count; i++) {
@@ -453,6 +545,46 @@ function generateDivide(max, world) {
         answer: perGroup,
         successText: theme.success(perGroup),
         options: makeOptions(perGroup, 1, max)
+    };
+}
+
+function generateProportion(max, world) {
+    const theme = getTheme(world, "proportion");
+    const useThird = Math.random() < 0.5;
+    const divisor = useThird ? 3 : 2;
+    const multiplier = random(2, Math.floor(max / divisor));
+    const total = divisor * multiplier;
+    const answer = multiplier;
+    return {
+        kind: "proportion",
+        world,
+        title: theme.title,
+        text: useThird ? theme.textThird(total) : theme.textHalf(total),
+        question: theme.question,
+        answer,
+        successText: useThird ? theme.successThird(answer) : theme.successHalf(answer),
+        options: makeOptions(answer, 1, max)
+    };
+}
+
+function generateRemainder(max, world) {
+    const b = random(3, 6);
+    const q = random(2, Math.floor(max / b));
+    const r = random(1, b - 1);
+    const a = b * q + r;
+    const theme = getTheme(world, "remainder");
+    return {
+        kind: "remainder",
+        world,
+        title: theme.title,
+        text: theme.text(a, b),
+        question: theme.question,
+        a, b,
+        quotient: q,
+        remainder: r,
+        successText: theme.success(q, r),
+        quotientOptions: makeOptions(q, 1, Math.floor(max / 2)),
+        remainderOptions: makeOptions(r, 0, b - 1)
     };
 }
 

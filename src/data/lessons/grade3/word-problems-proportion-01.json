@@ -1,0 +1,69 @@
+{
+  "id": "grade3-word-problems-proportion-01",
+  "title": "📝 Osztással kapcsolatos szöveges feladatok",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📝 A felét, a harmadát…",
+      "text": "Olvasd el a történetet, és keresd meg, mennyi a felét, a harmadát!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Karbantartási történetek",
+          "text": "Olvasd el a garázstörténetet, és keresd meg, mennyi a fél, a harmad!"
+        },
+        "cooking": {
+          "title": "🍳 Konyhai történetek",
+          "text": "Olvasd el a receptet, és keresd meg, mennyi a fél, a harmad!"
+        },
+        "football": {
+          "title": "⚽ Raktári történetek",
+          "text": "Olvasd el a meccstörténetet, és keresd meg, mennyi a fél, a harmad!"
+        },
+        "animals": {
+          "title": "🦓 Kifutós történetek",
+          "text": "Olvasd el az állatok történetét, és keresd meg, mennyi a fél, a harmad!"
+        },
+        "space": {
+          "title": "🤖 Űrállomásos történetek",
+          "text": "Olvasd el az űrtörténetet, és keresd meg, mennyi a fél, a harmad!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 6,
+        "max": 60,
+        "kind": "proportion"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megoldottad az arányos szöveges feladatokat!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a karbantartási feladatokat!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a konyhai feladatokat!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a raktári feladatokat!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megoldottad a kifutós feladatokat!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad az űrállomásos feladatokat!"
+        }
+      }
+    }
+  ]
+}

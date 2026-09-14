@@ -2763,6 +2763,50 @@
                 "animals": "🦁 Szétosztás az állatkertben",
                 "space": "🤖 Szétosztás az űrhajón"
             }
+        },
+        {
+            "id": "word-problems-proportion-01",
+            "title": "📝 A felét, a harmadát…",
+            "grades": [
+                3
+            ],
+            "category": "wordProblems",
+            "skill": "one-step",
+            "difficulty": 2,
+            "type": "word-problem",
+            "range": 60,
+            "mission": "📝 Arányos történetek",
+            "subtitle": "A felét, a harmadát…",
+            "file": "./data/lessons/grade3/word-problems-proportion-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Karbantartási történetek",
+                "cooking": "🍳 Konyhai történetek",
+                "football": "⚽ Raktári történetek",
+                "animals": "🦁 Kifutós történetek",
+                "space": "🤖 Űrállomásos történetek"
+            }
+        },
+        {
+            "id": "word-problems-remainder-01",
+            "title": "📝 Osztás maradékkal",
+            "grades": [
+                3
+            ],
+            "category": "wordProblems",
+            "skill": "one-step",
+            "difficulty": 2,
+            "type": "word-problem",
+            "range": 60,
+            "mission": "📝 Maradékos történetek",
+            "subtitle": "Osztás maradékkal – szöveges feladatok",
+            "file": "./data/lessons/grade3/word-problems-remainder-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Szerelési történetek",
+                "cooking": "🍳 Adagolási történetek",
+                "football": "⚽ Pakolási történetek",
+                "animals": "🦁 Beszállásos történetek",
+                "space": "🤖 Űrhajós történetek"
+            }
         }
     ],
     "gradeConfig": [

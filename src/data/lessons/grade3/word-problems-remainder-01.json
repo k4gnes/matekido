@@ -1,0 +1,69 @@
+{
+  "id": "grade3-word-problems-remainder-01",
+  "title": "📝 Osztás maradékkal – szöveges feladatok",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📝 Mennyi marad?",
+      "text": "Olvasd el a történetet, és találd meg, mi fér bele, és mi marad ki!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Szerelési történetek",
+          "text": "Olvasd el a garázstörténetet, és találd meg, mi fér bele, és mi marad ki!"
+        },
+        "cooking": {
+          "title": "🍳 Adagolási történetek",
+          "text": "Olvasd el a receptet, és találd meg, hány adag van, és mi marad!"
+        },
+        "football": {
+          "title": "⚽ Pakolási történetek",
+          "text": "Olvasd el a meccstörténetet, és találd meg, mi fér a hálóba, és mi marad a padon!"
+        },
+        "animals": {
+          "title": "🦓 Beszállásos történetek",
+          "text": "Olvasd el az állatok történetét, és találd meg, mi fér be, és mi marad az udvaron!"
+        },
+        "space": {
+          "title": "🤖 Űrhajós történetek",
+          "text": "Olvasd el az űrtörténetet, és találd meg, mi fér az űrhajóba, és mi marad a dokkban!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 6,
+        "max": 60,
+        "kind": "remainder"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megoldottad a maradékos szöveges feladatokat!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a szerelési feladatokat!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad az adagolási feladatokat!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a pakolási feladatokat!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megoldottad a beszállásos feladatokat!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad az űrhajós feladatokat!"
+        }
+      }
+    }
+  ]
+}

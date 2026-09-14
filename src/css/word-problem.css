@@ -130,6 +130,18 @@
     transform: scale(1.06);
 }
 
+.wp-option:disabled {
+    opacity: .45;
+    cursor: default;
+    transform: none;
+}
+
+.wp-option:disabled:hover {
+    border-color: var(--primary);
+    background: var(--primary);
+    transform: none;
+}
+
 .wp-postman-wrap {
     display: inline-flex;
     flex-direction: column;
@@ -270,4 +282,20 @@
     font-size: 1.2rem;
     font-weight: 800;
     color: #1a1a2e;
+}
+
+.wp-q-label {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #166534;
+}
+
+.wp-r-label {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #92400e;
 }

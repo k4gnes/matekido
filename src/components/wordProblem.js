@@ -739,6 +739,82 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
         }
 
         button.addEventListener("click", check);
+    } else if (step.kind === "proportion" || step.kind === "multiply" || step.kind === "divide") {
+
+        const question = document.createElement("p");
+        question.className = "wp-question";
+        question.textContent = step.question;
+        card.append(question);
+
+        const options = document.createElement("div");
+        options.className = "wp-options";
+        step.options.forEach(value => {
+            const btn = createButton(String(value), { className: "wp-option" });
+            btn.addEventListener("click", () => {
+                if (value === step.answer) {
+                    markCorrect(btn);
+                    reportSuccess(step.successText);
+                } else {
+                    reportRetry();
+                }
+            });
+            options.append(btn);
+        });
+        card.append(options);
+
+    } else if (step.kind === "remainder") {
+
+        const question = document.createElement("p");
+        question.className = "wp-question";
+        question.textContent = step.question;
+        card.append(question);
+
+        const qRow = document.createElement("div");
+        qRow.className = "wp-options";
+        const qLabel = document.createElement("p");
+        qLabel.className = "wp-q-label";
+        qLabel.textContent = "1. Kattints arra, hányszor fér bele!";
+        qRow.append(qLabel);
+
+        const rRow = document.createElement("div");
+        rRow.className = "wp-options";
+        const rLabel = document.createElement("p");
+        rLabel.className = "wp-r-label";
+        rLabel.textContent = "2. Kattints arra, mennyi marad ki!";
+        rRow.append(rLabel);
+        rRow.style.display = "none";
+
+        function disable(listEl) {
+            listEl.querySelectorAll(".wp-option").forEach(b => b.disabled = true);
+        }
+
+        function buildOptions(list, correct, onSolved, listEl) {
+            list.forEach(value => {
+                const btn = createButton(String(value), { className: "wp-option" });
+                btn.addEventListener("click", () => {
+                    if (feedback.isAnswered()) return;
+                    if (value === correct) {
+                        markCorrect(btn);
+                        onSolved();
+                    } else {
+                        reportRetry();
+                    }
+                });
+                listEl.append(btn);
+            });
+        }
+
+        buildOptions(step.quotientOptions, step.quotient, () => {
+            disable(qRow);
+            rRow.style.display = "";
+            buildOptions(step.remainderOptions, step.remainder, () => {
+                disable(rRow);
+                reportSuccess(step.successText);
+            }, rRow);
+        }, qRow);
+
+        card.append(qRow, rRow);
+
     }
 
     card.append(message.element);

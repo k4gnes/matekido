@@ -271,6 +271,8 @@ const SW_CACHE_LIST = [
     "/data/lessons/grade3/subtraction-round-hundreds-01.json",
     "/data/lessons/grade3/subtraction-round-hundreds-02.json",
     "/data/lessons/grade3/time-convert-01.json",
+    "/data/lessons/grade3/word-problems-proportion-01.json",
+    "/data/lessons/grade3/word-problems-remainder-01.json",
     "/data/lessons/grade3/written-add-01.json",
     "/data/lessons/grade3/written-sub-01.json",
     "/data/lessons/index.json",

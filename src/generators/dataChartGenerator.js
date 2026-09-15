@@ -77,14 +77,16 @@ function buildNumericOptions(value, lo = 1, hi = 10) {
     return options;
 }
 
-function buildTask(world, max = 6, modes = ["top", "least", "count", "compare"]) {
+function buildTask(world, max = 6, modes = ["top", "least", "count", "compare"], chartTypes = ["bar"]) {
     const chart = buildChart(world, max);
     const mode = pick(modes);
+    const chartType = pick(chartTypes);
 
     if (mode === "top") {
         const target = chart.reduce((a, b) => a.value > b.value ? a : b);
         return {
             type: "data-chart",
+            chartType,
             mode,
             chart,
             question: "Melyikből van a legtöbb?",
@@ -97,6 +99,7 @@ function buildTask(world, max = 6, modes = ["top", "least", "count", "compare"])
         const target = chart.reduce((a, b) => a.value < b.value ? a : b);
         return {
             type: "data-chart",
+            chartType,
             mode,
             chart,
             question: "Melyikből van a legkevesebb?",
@@ -111,6 +114,7 @@ function buildTask(world, max = 6, modes = ["top", "least", "count", "compare"])
         const options = buildNumericOptions(value, 1, max);
         return {
             type: "data-chart",
+            chartType,
             mode,
             chart,
             question: `Hány darab van ebből: ${target.emoji}?`,
@@ -124,6 +128,7 @@ function buildTask(world, max = 6, modes = ["top", "least", "count", "compare"])
         const options = buildNumericOptions(value, 1, max * 3);
         return {
             type: "data-chart",
+            chartType,
             mode,
             chart,
             question: "Hány darab van összesen?",
@@ -138,6 +143,7 @@ function buildTask(world, max = 6, modes = ["top", "least", "count", "compare"])
         const options = buildNumericOptions(value, 1, max * 2);
         return {
             type: "data-chart",
+            chartType,
             mode,
             chart,
             question: `Hány darab van ${two[0].emoji} és ${two[1].emoji} összesen?`,
@@ -155,6 +161,7 @@ function buildTask(world, max = 6, modes = ["top", "least", "count", "compare"])
         const q = `Mennyivel van több ${bigger.emoji}, mint ${smaller.emoji}?`;
         return {
             type: "data-chart",
+            chartType,
             mode,
             chart,
             question: q,
@@ -169,6 +176,7 @@ function buildTask(world, max = 6, modes = ["top", "least", "count", "compare"])
     const options = shuffle([a.emoji, b.emoji]);
     return {
         type: "data-chart",
+        chartType,
         mode,
         chart,
         question: `Melyikből van több: ${a.emoji} vagy ${b.emoji}?`,
@@ -178,11 +186,11 @@ function buildTask(world, max = 6, modes = ["top", "least", "count", "compare"])
 }
 
 export function generateDataChart(options = {}) {
-    const { count = 5, max = 6, modes } = options;
+    const { count = 5, max = 6, modes, chartTypes = ["bar"] } = options;
 
     const tasks = [];
     for (let i = 0; i < count; i++) {
-        tasks.push(buildTask(options.world, max, modes));
+        tasks.push(buildTask(options.world, max, modes, chartTypes));
     }
     return tasks;
 }

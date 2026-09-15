@@ -14,6 +14,34 @@
     height: auto;
 }
 
+.dt-table {
+    border-collapse: collapse;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.dt-table th,
+.dt-table td {
+    border: 2px solid #cbd5e1;
+    padding: 0.4rem 1rem;
+    text-align: center;
+    background: #ffffff;
+}
+
+.dt-table th {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.dt-table-emoji {
+    font-size: 1.6rem;
+}
+
+.dt-table-value {
+    color: #1e293b;
+    min-width: 48px;
+}
+
 .dt-prompt {
     font-size: 1.4rem;
     font-weight: 700;

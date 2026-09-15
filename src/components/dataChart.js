@@ -109,6 +109,94 @@ function createChartSvg(chart) {
     return svg;
 }
 
+function createPictogramSvg(chart) {
+    const maxVal = Math.max(...chart.map(c => c.value));
+
+    const svg = svgEl("svg", { viewBox: "0 0 176 150" });
+
+    const rowH = 30;
+    const fontSize = 16;
+
+    const scale = maxVal > 40 ? 10 : maxVal > 20 ? 5 : 1;
+
+    chart.forEach((c, i) => {
+        const y = 22 + i * rowH;
+
+        const label = svgEl("text", {
+            x: 14,
+            y: y,
+            "font-size": "16",
+            "text-anchor": "middle"
+        });
+        label.textContent = c.emoji;
+        svg.append(label);
+
+        const count = Math.max(1, Math.round(c.value / scale));
+        const maxShown = 14;
+        const shown = Math.min(count, maxShown);
+        for (let j = 0; j < shown; j++) {
+            const icon = svgEl("text", { x: 30 + j * 10, y, "font-size": String(fontSize) });
+            icon.textContent = c.emoji;
+            svg.append(icon);
+        }
+
+        const val = svgEl("text", {
+            x: 168,
+            y: y,
+            "text-anchor": "end",
+            "font-size": "14",
+            "font-weight": "700",
+            fill: "#334155"
+        });
+        val.textContent = String(c.value);
+        svg.append(val);
+
+        if (scale > 1 && i === 0) {
+            const legend = svgEl("text", {
+                x: 14,
+                y: 8,
+                "font-size": "10",
+                fill: "#64748b"
+            });
+            legend.textContent = `1 ikon = ${scale} darab`;
+            svg.append(legend);
+        }
+    });
+
+    return svg;
+}
+
+function createTableChart(chart) {
+    const table = document.createElement("table");
+    table.className = "dt-table";
+
+    const thead = document.createElement("thead");
+    const hr = document.createElement("tr");
+    const h1 = document.createElement("th");
+    h1.textContent = "Mi?";
+    const h2 = document.createElement("th");
+    h2.textContent = "Hány?";
+    hr.append(h1, h2);
+    thead.append(hr);
+    table.append(thead);
+
+    const tbody = document.createElement("tbody");
+    chart.forEach(c => {
+        const tr = document.createElement("tr");
+        const td1 = document.createElement("td");
+        td1.className = "dt-table-emoji";
+        td1.textContent = c.emoji;
+        const td2 = document.createElement("td");
+        td2.className = "dt-table-value";
+        td2.textContent = String(c.value);
+        tr.append(td1, td2);
+        tbody.append(tr);
+    });
+    table.append(tbody);
+
+    return table;
+}
+
 export function renderDataChart(step, root, next, progress, onResult, onAttempt) {
 
     const ac = new AbortController();
@@ -128,7 +216,13 @@ export function renderDataChart(step, root, next, progress, onResult, onAttempt)
 
     const chartBox = document.createElement("div");
     chartBox.className = "dt-chart-box";
-    chartBox.append(createChartSvg(step.chart));
+    if (step.chartType === "pictogram") {
+        chartBox.append(createPictogramSvg(step.chart));
+    } else if (step.chartType === "table") {
+        chartBox.append(createTableChart(step.chart));
+    } else {
+        chartBox.append(createChartSvg(step.chart));
+    }
     card.append(chartBox);
 
     const prompt = document.createElement("p");

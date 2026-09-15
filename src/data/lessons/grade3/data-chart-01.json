@@ -35,7 +35,8 @@
       "options": {
         "count": 6,
         "max": 100,
-        "modes": ["sum", "sum2", "diff"]
+        "modes": ["sum", "sum2", "diff"],
+        "chartTypes": ["bar", "pictogram", "table"]
       }
     },
     {

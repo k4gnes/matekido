@@ -621,7 +621,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     logo.style.height = "2em";
     logo.style.width = "auto";
     logo.style.verticalAlign = "middle";
-    title.append(logo, " atekidő");
+    title.append(logo, " matekidő");
 
     const worldSub = document.createElement("p");
     worldSub.style.cssText = "margin:.1rem 0 0; font-size:1.1rem; color:var(--text-secondary, #666);";

@@ -32,7 +32,7 @@ function createChartSvg(chart) {
     const plotW = 150;
     const plotH = 92;
     const marginLeft = 13;
-    const marginTop = 30;
+    const marginTop = 44;
     const baseline = marginTop + plotH;
     const unitH = plotH / maxVal;
 
@@ -66,12 +66,23 @@ function createChartSvg(chart) {
 
         const emojiLabel = svgEl("text", {
             x: cx,
-            y: marginTop,
+            y: 16,
             "text-anchor": "middle",
             "font-size": "20"
         });
         emojiLabel.textContent = c.emoji;
         svg.append(emojiLabel);
+
+        const valLabel = svgEl("text", {
+            x: cx,
+            y: 36,
+            "text-anchor": "middle",
+            "font-size": "14",
+            "font-weight": "800",
+            fill: "#1e293b"
+        });
+        valLabel.textContent = String(c.value);
+        svg.append(valLabel);
 
         svg.append(svgEl("rect", {
             x: cx - barW / 2,
@@ -84,17 +95,6 @@ function createChartSvg(chart) {
             stroke: "#1e293b",
             "stroke-width": "1.5"
         }));
-
-        const valLabel = svgEl("text", {
-            x: cx,
-            y: baseline - h - 4,
-            "text-anchor": "middle",
-            "font-size": "12",
-            "font-weight": "700",
-            fill: "#1e293b"
-        });
-        valLabel.textContent = String(c.value);
-        svg.append(valLabel);
     });
 
     svg.append(svgEl("line", {
@@ -114,7 +114,7 @@ function createPictogramSvg(chart) {
 
     const rowH = 30;
     const fontSize = 16;
-    const maxShown = 14;
+    const maxShown = 9;
 
     chart.forEach((c, i) => {
         const y = 22 + i * rowH;

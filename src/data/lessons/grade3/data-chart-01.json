@@ -34,7 +34,8 @@
       "generator": "data-chart",
       "options": {
         "count": 6,
-        "max": 10
+        "max": 10,
+        "modes": ["top", "least", "count", "compare", "sum", "sum2", "diff"]
       }
     },
     {

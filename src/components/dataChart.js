@@ -146,6 +146,9 @@ export function renderDataChart(step, root, next, progress, onResult, onAttempt)
         if (step.mode === "top") return "😊 Ügyes! A legmagasabb oszlopé a legtöbb!";
         if (step.mode === "least") return "😊 Ügyes! A legalacsonyabb oszlopé a legkevesebb!";
         if (step.mode === "count") return "😊 Ügyes! Jól megszámoltad az oszlopon!";
+        if (step.mode === "sum") return "😊 Ügyes! Helyesen összeadtad az összes oszlopot!";
+        if (step.mode === "sum2") return "😊 Ügyes! Helyesen összeadtad a két oszlopot!";
+        if (step.mode === "diff") return "😊 Ügyes! Helyesen kivontad a kisebbet a nagyobból!";
         return "😊 Ügyes! Jól összehasonlítottad az oszlopokat!";
     }
 

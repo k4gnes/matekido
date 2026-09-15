@@ -1983,27 +1983,6 @@
             }
         },
         {
-            "id": "mirror-01",
-            "title": "🪞 Tükrözés és szimmetria",
-            "grades": [
-                2
-            ],
-            "category": "geometry",
-            "skill": "transform",
-            "difficulty": 2,
-            "type": "mirror",
-            "mission": "🪞 Tükrözés és szimmetria",
-            "subtitle": "Tükörkép felismerése",
-            "file": "./data/lessons/grade2/mirror-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Tükrözés a boxutcában",
-                "cooking": "🍳 Tükrözés a konyhában",
-                "football": "⚽ Tükrözés a pályán",
-                "animals": "🦁 Tükrözés az állatkertben",
-                "space": "🤖 Tükrözés az űrhajón"
-            }
-        },
-        {
             "id": "calendar-01",
             "title": "🗓️ Naptár 2. osztály",
             "grades": [
@@ -2064,69 +2043,6 @@
                 "football": "⚽ Hosszúság-mérés a pályán",
                 "animals": "🦁 Hosszúság-mérés az állatkertben",
                 "space": "🤖 Hosszúság-mérés az űrhajón"
-            }
-        },
-        {
-            "id": "measure-units-02",
-            "title": "📏 Mértékegység-átváltás",
-            "grades": [
-                3
-            ],
-            "category": "practical",
-            "skill": "length",
-            "difficulty": 2,
-            "type": "measure-units",
-            "mission": "📏 Mértékegység-átváltás",
-            "subtitle": "m, dm, cm, kg, dkg, l, dl átváltása",
-            "file": "./data/lessons/grade3/measure-units-02.json",
-            "worldTitles": {
-                "racing": "🔧 Mértékegység-átváltás a boxutcában",
-                "cooking": "🥄 Mértékegység-átváltás a konyhában",
-                "football": "⚽ Mértékegység-átváltás a pályán",
-                "animals": "🦁 Mértékegység-átváltás az állatkertben",
-                "space": "🤖 Mértékegység-átváltás az űrhajón"
-            }
-        },
-        {
-            "id": "time-convert-01",
-            "title": "🕐 Idő – perc és óra",
-            "grades": [
-                3
-            ],
-            "category": "practical",
-            "skill": "minute",
-            "difficulty": 2,
-            "type": "time-convert",
-            "mission": "🕐 Időátváltás",
-            "subtitle": "perc és óra átváltása",
-            "file": "./data/lessons/grade3/time-convert-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Perc és óra a boxutcában",
-                "cooking": "🍳 Perc és óra a konyhában",
-                "football": "⚽ Perc és óra a pályán",
-                "animals": "🦁 Perc és óra az állatkertben",
-                "space": "🤖 Perc és óra az űrhajón"
-            }
-        },
-        {
-            "id": "money-pay-03",
-            "title": "💰 Vásárlás 1000-ig",
-            "grades": [
-                3
-            ],
-            "category": "practical",
-            "skill": "coins",
-            "difficulty": 2,
-            "type": "money-pay",
-            "mission": "💰 Vásárlás bankjegyekkel",
-            "subtitle": "Fizetés 200 és 500 forintos bankjegyekkel 1000-ig",
-            "file": "./data/lessons/grade3/money-pay-03.json",
-            "worldTitles": {
-                "racing": "🔧 Vásárlás 1000-ig",
-                "cooking": "🥄 Vásárlás 1000-ig",
-                "football": "⚽ Vásárlás 1000-ig",
-                "animals": "🦁 Vásárlás 1000-ig",
-                "space": "🤖 Vásárlás 1000-ig"
             }
         },
         {
@@ -2394,6 +2310,28 @@
             }
         },
         {
+            "id": "written-add-1000-01",
+            "title": "Írásbeli összeadás 1000-ig",
+            "grades": [
+                3
+            ],
+            "category": "operations",
+            "skill": "addition",
+            "difficulty": 3,
+            "type": "written-operation",
+            "range": 1000,
+            "mission": "✍️ Írásbeli összeadás",
+            "subtitle": "Írásbeli összeadás 1000-ig",
+            "file": "./data/lessons/grade3/written-add-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Írásbeli összeadás a pályán",
+                "cooking": "🍳 Írásbeli összeadás a konyhában",
+                "football": "⚽ Írásbeli összeadás a meccsen",
+                "animals": "🦁 Írásbeli összeadás az állatkertben",
+                "space": "🤖 Írásbeli összeadás az űrben"
+            }
+        },
+        {
             "id": "round-hundreds-subtraction-01",
             "title": "Kivonás kerek százasokkal",
             "grades": [
@@ -2479,6 +2417,28 @@
                 "football": "⚽ Százasátlépés kivonásnál",
                 "animals": "🦁 Százasátlépés kivonásnál",
                 "space": "🤖 Százasátlépés kivonásnál"
+            }
+        },
+        {
+            "id": "written-sub-1000-01",
+            "title": "Írásbeli kivonás 1000-ig",
+            "grades": [
+                3
+            ],
+            "category": "operations",
+            "skill": "subtraction",
+            "difficulty": 3,
+            "type": "written-operation",
+            "range": 1000,
+            "mission": "✍️ Írásbeli kivonás",
+            "subtitle": "Írásbeli kivonás 1000-ig",
+            "file": "./data/lessons/grade3/written-sub-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Írásbeli kivonás a pályán",
+                "cooking": "🍳 Írásbeli kivonás a konyhában",
+                "football": "⚽ Írásbeli kivonás a meccsen",
+                "animals": "🦁 Írásbeli kivonás az állatkertben",
+                "space": "🤖 Írásbeli kivonás az űrben"
             }
         },
         {
@@ -2611,50 +2571,6 @@
                 "football": "⚽ Vegyes a meccsen",
                 "animals": "🦁 Vegyes az állatkertben",
                 "space": "🤖 Vegyes az űrben"
-            }
-        },
-        {
-            "id": "written-add-1000-01",
-            "title": "Írásbeli összeadás 1000-ig",
-            "grades": [
-                3
-            ],
-            "category": "operations",
-            "skill": "addition",
-            "difficulty": 3,
-            "type": "written-operation",
-            "range": 1000,
-            "mission": "✍️ Írásbeli összeadás",
-            "subtitle": "Írásbeli összeadás 1000-ig",
-            "file": "./data/lessons/grade3/written-add-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Írásbeli összeadás a pályán",
-                "cooking": "🍳 Írásbeli összeadás a konyhában",
-                "football": "⚽ Írásbeli összeadás a meccsen",
-                "animals": "🦁 Írásbeli összeadás az állatkertben",
-                "space": "🤖 Írásbeli összeadás az űrben"
-            }
-        },
-        {
-            "id": "written-sub-1000-01",
-            "title": "Írásbeli kivonás 1000-ig",
-            "grades": [
-                3
-            ],
-            "category": "operations",
-            "skill": "subtraction",
-            "difficulty": 3,
-            "type": "written-operation",
-            "range": 1000,
-            "mission": "✍️ Írásbeli kivonás",
-            "subtitle": "Írásbeli kivonás 1000-ig",
-            "file": "./data/lessons/grade3/written-sub-01.json",
-            "worldTitles": {
-                "racing": "🏎️ Írásbeli kivonás a pályán",
-                "cooking": "🍳 Írásbeli kivonás a konyhában",
-                "football": "⚽ Írásbeli kivonás a meccsen",
-                "animals": "🦁 Írásbeli kivonás az állatkertben",
-                "space": "🤖 Írásbeli kivonás az űrben"
             }
         },
         {
@@ -2872,6 +2788,91 @@
                 "football": "⚽ Szögek a pályán",
                 "animals": "🦁 Szögek az állatkertben",
                 "space": "🤖 Szögek az űrhajón"
+            }
+        },
+        {
+            "id": "mirror-01",
+            "title": "🪞 Tükrözés és szimmetria",
+            "grades": [
+                2,
+                3
+            ],
+            "category": "geometry",
+            "skill": "transform",
+            "difficulty": 2,
+            "type": "mirror",
+            "mission": "🪞 Tükrözés és szimmetria",
+            "subtitle": "Tükörkép felismerése",
+            "file": "./data/lessons/grade2/mirror-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Tükrözés a boxutcában",
+                "cooking": "🍳 Tükrözés a konyhában",
+                "football": "⚽ Tükrözés a pályán",
+                "animals": "🦁 Tükrözés az állatkertben",
+                "space": "🤖 Tükrözés az űrhajón"
+            }
+        },
+        {
+            "id": "measure-units-02",
+            "title": "📏 Mértékegység-átváltás",
+            "grades": [
+                3
+            ],
+            "category": "practical",
+            "skill": "length",
+            "difficulty": 2,
+            "type": "measure-units",
+            "mission": "📏 Mértékegység-átváltás",
+            "subtitle": "m, dm, cm, kg, dkg, l, dl átváltása",
+            "file": "./data/lessons/grade3/measure-units-02.json",
+            "worldTitles": {
+                "racing": "🔧 Mértékegység-átváltás a boxutcában",
+                "cooking": "🥄 Mértékegység-átváltás a konyhában",
+                "football": "⚽ Mértékegység-átváltás a pályán",
+                "animals": "🦁 Mértékegység-átváltás az állatkertben",
+                "space": "🤖 Mértékegység-átváltás az űrhajón"
+            }
+        },
+        {
+            "id": "time-convert-01",
+            "title": "🕐 Idő – perc és óra",
+            "grades": [
+                3
+            ],
+            "category": "practical",
+            "skill": "minute",
+            "difficulty": 2,
+            "type": "time-convert",
+            "mission": "🕐 Időátváltás",
+            "subtitle": "perc és óra átváltása",
+            "file": "./data/lessons/grade3/time-convert-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Perc és óra a boxutcában",
+                "cooking": "🍳 Perc és óra a konyhában",
+                "football": "⚽ Perc és óra a pályán",
+                "animals": "🦁 Perc és óra az állatkertben",
+                "space": "🤖 Perc és óra az űrhajón"
+            }
+        },
+        {
+            "id": "money-pay-03",
+            "title": "💰 Vásárlás 1000-ig",
+            "grades": [
+                3
+            ],
+            "category": "practical",
+            "skill": "coins",
+            "difficulty": 2,
+            "type": "money-pay",
+            "mission": "💰 Vásárlás bankjegyekkel",
+            "subtitle": "Fizetés 200 és 500 forintos bankjegyekkel 1000-ig",
+            "file": "./data/lessons/grade3/money-pay-03.json",
+            "worldTitles": {
+                "racing": "🔧 Vásárlás 1000-ig",
+                "cooking": "🥄 Vásárlás 1000-ig",
+                "football": "⚽ Vásárlás 1000-ig",
+                "animals": "🦁 Vásárlás 1000-ig",
+                "space": "🤖 Vásárlás 1000-ig"
             }
         }
     ],

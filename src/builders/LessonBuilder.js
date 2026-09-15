@@ -462,6 +462,11 @@ export function buildLesson(lesson) {
                     type: "area",
                     ...task
                 });
+            } else if (step.generator === "angles") {
+                result.push({
+                    type: "angles",
+                    ...task
+                });
             } else {
                 result.push({
                     type: "exercise",

@@ -2851,6 +2851,28 @@
                 "animals": "🦁 Terület az állatkertben",
                 "space": "🤖 Terület az űrhajón"
             }
+        },
+        {
+            "id": "angles-01",
+            "title": "📐 Szögek",
+            "grades": [
+                3
+            ],
+            "category": "geometry",
+            "skill": "angles",
+            "difficulty": 1,
+            "type": "angles",
+            "range": 180,
+            "mission": "📐 Szögek",
+            "subtitle": "Hegyes, derék és tompa szög felismerése",
+            "file": "./data/lessons/grade3/angles-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Szögek a boxutcában",
+                "cooking": "🍳 Szögek a konyhában",
+                "football": "⚽ Szögek a pályán",
+                "animals": "🦁 Szögek az állatkertben",
+                "space": "🤖 Szögek az űrhajón"
+            }
         }
     ],
     "gradeConfig": [

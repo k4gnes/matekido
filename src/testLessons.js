@@ -275,6 +275,26 @@ function validateStep(step, ctx) {
             }
             break;
         }
+        case "angles": {
+            if (!isInt(step.angle) || step.angle <= 0 || step.angle >= 180) {
+                fail(ctx, `angle tartomány hibás: ${step.angle}`);
+            }
+            const expected = step.angle === 90 ? "right" : step.angle < 90 ? "acute" : "obtuse";
+            if (step.category !== expected) {
+                fail(ctx, `category (${step.category}) nem illik a szögéhez (${step.angle})`);
+            }
+            if (!Array.isArray(step.options) || step.options.length !== 3) {
+                fail(ctx, "options nem 3 elemű");
+            }
+            if (!isInt(step.answer) || step.answer < 0 || step.answer >= step.options.length) {
+                fail(ctx, `answer index hibás: ${step.answer}`);
+            }
+            const nameByCategory = { acute: "Hegyes", right: "Derékszög", obtuse: "Tompa" };
+            if (step.options[step.answer] !== nameByCategory[step.category]) {
+                fail(ctx, `answer nem a helyes opcióra mutat: ${step.answer} (${step.options[step.answer]})`);
+            }
+            break;
+        }
         case "repeated-addition": {
             if (!isInt(step.addend) || !isInt(step.times) || step.addend < 1 || step.times < 2) fail(ctx, "addend/times hibás");
             if (!isInt(step.answer) || step.answer !== step.addend * step.times) fail(ctx, "answer != addend*times");

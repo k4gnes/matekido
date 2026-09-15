@@ -53,6 +53,7 @@ import { renderWrittenOperation } from "../components/writtenOperation.js?v=3";
 import { renderRemainderDivision } from "../components/remainderDivision.js?v=6";
 import { renderPerimeter } from "../components/perimeter.js?v=1";
 import { renderArea } from "../components/area.js?v=1";
+import { renderAngles } from "../components/angles.js?v=1";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -112,7 +113,8 @@ const COUNTED_TYPES = new Set([
     "written-operation",
     "remainder-division",
     "perimeter",
-    "area"
+    "area",
+    "angles"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -192,7 +194,8 @@ const RENDERERS = new Map([
     ["written-operation", renderWrittenOperation],
     ["remainder-division", renderRemainderDivision],
     ["perimeter", renderPerimeter],
-    ["area", renderArea]
+    ["area", renderArea],
+    ["angles", renderAngles]
 ]);
 
 

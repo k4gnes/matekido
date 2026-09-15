@@ -58,12 +58,13 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Arányos osztás | A felét, a harmadát… | Választós szöveges (fele, harmada) | 60 | 2 |
 | Maradékos osztás | Osztás maradékkal | Kétlépésű választós (hányados + maradék) | 60 | 2 |
 
-## Geometria 3. osztály (2 lecke)
+## Geometria 3. osztály (3 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
 | Kerület | Kerület | Rácsos alakzat kerületének számolása | 20 | 2 |
 | Terület | Terület | Rácsos alakzat területének számolása | 25 | 2 |
+| Szögek | Szögek | Hegyes/derék/tompa szög felismerése | 180 | 1 |
 
 ---
 
@@ -80,7 +81,7 @@ A fenti 35 lecke elkészült és regisztrálva van. Tovább tervezett leckék:
     - Kerület (kész: `perimeter-01` – rácsos alakzat kerülete)
     - Terület számolása egyszerű alakzatokon (kész: `area-01` – rácsos alakzat területe)
     - Tengelyes tükrözés (már kész a 2. osztályban: `mirror-01`)
-    - Kör és szögek alapjai
+    - Kör és szögek alapjai (kész: `angles-01` – hegyes/derék/tompa szög felismerése)
 - [ ] **Gyakorlati tudások bővítése** (mértékegység-átváltás, idő, pénz 1000-ig)
     - Mértékegység-átváltás (kész: `measure-units-02` – m, cm, dm; kg, dkg; l, dl)
     - Idő: perc–óra, naptár 1000-ig (kész: `time-convert-01` – perc↔óra)
@@ -94,4 +95,4 @@ A fenti 35 lecke elkészült és regisztrálva van. Tovább tervezett leckék:
 
 ## Státusz
 
-*(Az 1–3. osztályos tananyag fő része lefedve: a 36 3. osztályos lecke kész (törtek bevezetése teljes, gyakorlati tudások: mértékegység-átváltás, idő perc↔óra; szöveges feladatok: arányos + maradékos; geometria: kerület, terület). Hátralévő: geometria – kör és szögek.)*
+*(Az 1–3. osztályos tananyag fő része lefedve: a 37 3. osztályos lecke kész (törtek bevezetése teljes, gyakorlati tudások: mértékegység-átváltás, idő perc↔óra; szöveges feladatok: arányos + maradékos; geometria: kerület, terület, szögek). A tervezett geometria-bővítés lezárva.)*

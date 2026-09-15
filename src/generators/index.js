@@ -48,6 +48,7 @@ import { generateWrittenOperation } from "./writtenOperationGenerator.js?v=1";
 import { generateRemainderDivision } from "./remainderDivisionGenerator.js?v=3";
 import { generatePerimeter } from "./perimeterGenerator.js?v=1";
 import { generateArea } from "./areaGenerator.js?v=1";
+import { generateAngles } from "./anglesGenerator.js?v=1";
 import { generateFractionOf } from "./fractionOfGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -164,6 +165,8 @@ export function generate(step) {
             return generatePerimeter(opts);
         case "area":
             return generateArea(opts);
+        case "angles":
+            return generateAngles(opts);
 
         default:
             throw new Error(

@@ -1,0 +1,67 @@
+{
+  "id": "grade3-angles-01",
+  "title": "📐 Szögek",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📐 Szögek",
+      "text": "A szög a két egyenes találkozásánál keletkezik! A hegyes szög kisebb, mint a derékszög, a tompa szög pedig nagyobb nála.",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Szögek a boxutcában",
+          "text": "A szerelők rúdakat hegesztenek össze. Nézd meg, milyen szöget zárnak be egymással!"
+        },
+        "cooking": {
+          "title": "🍳 Szögek a konyhában",
+          "text": "A szakács tésztát szel. Nézd meg, milyen szög keletkezik a késsel!"
+        },
+        "football": {
+          "title": "⚽ Szögek a pályán",
+          "text": "A focipályán sarokrúgáshoz készülődnek. Nézd meg, milyen szöget zárnak be az emberek!"
+        },
+        "animals": {
+          "title": "🦁 Szögek az állatkertben",
+          "text": "Az állatkertben kerítéseket javítanak. Nézd meg, milyen szöget zárnak be a lécek!"
+        },
+        "space": {
+          "title": "🤖 Szögek az űrhajón",
+          "text": "A robotok antennákat szerelnek. Nézd meg, milyen szöget zárnak be egymással!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "angles",
+      "options": {
+        "count": 6
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen felismerted a szögeket!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen felismerted a szögeket a boxutcában!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen felismerted a szögeket a konyhában!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen felismerted a szögeket a pályán!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen felismerted a szögeket az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen felismerted a szögeket az űrhajón!"
+        }
+      }
+    }
+  ]
+}

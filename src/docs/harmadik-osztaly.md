@@ -23,7 +23,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Becslés | Becslés 1000-ig | Százasra kerekített becslés | 500 | 2 |
 | Számsorozatok | Számsorozatok 1000-ig | Szabályfelismerés és folytatás | 1000 | 2 |
 
-## Műveletek 1000-ig (11 lecke)
+## Műveletek 1000-ig (12 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|

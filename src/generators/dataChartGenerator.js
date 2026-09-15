@@ -50,15 +50,17 @@ const EMOJI_SETS_WORLD = {
     ]
 };
 
-function buildChart(world) {
+function buildChart(world, max = 6) {
     const sets = EMOJI_SETS_WORLD[world] ?? EMOJI_SETS_DEFAULT;
     const emojis = pick(sets);
-    const values = shuffle([1, 2, 3, 4, 5, 6]).slice(0, 3);
+    const pool = [];
+    for (let i = 1; i <= max; i++) pool.push(i);
+    const values = shuffle(pool).slice(0, 3);
     return emojis.map((emoji, i) => ({ emoji, value: values[i] }));
 }
 
-function buildTask(world) {
-    const chart = buildChart(world);
+function buildTask(world, max = 6) {
+    const chart = buildChart(world, max);
     const mode = pick(["top", "least", "count", "compare"]);
 
     if (mode === "top") {
@@ -127,11 +129,11 @@ function buildTask(world) {
 }
 
 export function generateDataChart(options = {}) {
-    const { count = 5 } = options;
+    const { count = 5, max = 6 } = options;
 
     const tasks = [];
     for (let i = 0; i < count; i++) {
-        tasks.push(buildTask(options.world));
+        tasks.push(buildTask(options.world, max));
     }
     return tasks;
 }

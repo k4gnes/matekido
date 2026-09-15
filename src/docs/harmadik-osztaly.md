@@ -1,6 +1,6 @@
 # Matekidő – 3. osztályos készségtérkép
 
-**41 lecke**, 6 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**42 lecke**, 7 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 A 2. osztályos tananyag lezárult – a 3. osztály **nagyobb számkörre (1000-ig)**, a **szorzás és osztás bővítésére** épül.
 
@@ -63,6 +63,12 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
 | Valószínűség | Biztos, lehetséges, lehetetlen | Események osztályozása | – | 1 |
+
+## Adatok és diagramok (1 lecke)
+
+| Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|
+| Adatok | Táblázatok és diagramok | Oszlopdiagram, táblázat olvasása | 10 | 2 |
 
 ## Szöveges feladatok 3. osztály (2 lecke)
 

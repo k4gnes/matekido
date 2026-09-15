@@ -2725,6 +2725,29 @@
             "range": 1
         },
         {
+            "id": "data-chart-01",
+            "title": "📊 Táblázatok és diagramok",
+            "grades": [
+                3,
+                4
+            ],
+            "category": "numbers",
+            "skill": "data-charts",
+            "difficulty": 2,
+            "type": "data-chart",
+            "range": 10,
+            "mission": "📊 Táblázatok és diagramok",
+            "subtitle": "Oszlopdiagram és táblázat olvasása",
+            "file": "./data/lessons/grade3/data-chart-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Adatok a boxutcában",
+                "cooking": "🍳 Adatok a konyhában",
+                "football": "⚽ Adatok a pályán",
+                "animals": "🦁 Adatok az állatkertben",
+                "space": "🤖 Adatok az űrhajón"
+            }
+        },
+        {
             "id": "word-problems-proportion-01",
             "title": "📝 A felét, a harmadát…",
             "grades": [
@@ -2772,7 +2795,8 @@
             "id": "perimeter-01",
             "title": "📐 Kerület",
             "grades": [
-                3
+                3,
+                4
             ],
             "category": "geometry",
             "skill": "perimeter",
@@ -2794,7 +2818,8 @@
             "id": "area-01",
             "title": "🟦 Terület",
             "grades": [
-                3
+                3,
+                4
             ],
             "category": "geometry",
             "skill": "area",
@@ -2816,7 +2841,8 @@
             "id": "angles-01",
             "title": "📐 Szögek",
             "grades": [
-                3
+                3,
+                4
             ],
             "category": "geometry",
             "skill": "angles",
@@ -2839,7 +2865,8 @@
             "title": "🪞 Tükrözés és szimmetria",
             "grades": [
                 2,
-                3
+                3,
+                4
             ],
             "category": "geometry",
             "skill": "transform",

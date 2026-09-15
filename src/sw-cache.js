@@ -261,6 +261,7 @@ const SW_CACHE_LIST = [
     "/data/lessons/grade3/area-01.json",
     "/data/lessons/grade3/circle-01.json",
     "/data/lessons/grade3/comparison-01.json",
+    "/data/lessons/grade3/data-chart-01.json",
     "/data/lessons/grade3/division-01.json",
     "/data/lessons/grade3/even-odd-01.json",
     "/data/lessons/grade3/fraction-of-01.json",

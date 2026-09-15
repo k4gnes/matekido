@@ -1,6 +1,6 @@
 # Matekidő – 4. osztályos tanmenet
 
-**Tervezett 28 lecke**, 7 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**Tervezett 30 lecke**, 7 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 A 3. osztályos tananyag (1000-es számkör) lezárult – a 4. osztály a **10 000-ig bővülő számkörre**, az **írásbeli műveletekre**, a **törtek bevezetésére** és a **geometria** terület/kerület felé forduló kiszélesítésére épül.
 
@@ -39,15 +39,17 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Törtek jelölése | Törtek: számláló, nevező | Tört képéhez jel, jelhez kép | 20 | 2 |
 | Azonos nevezőjű törtek | Azonos nevezőjű törtek összehasonlítása, összeadása | Összeadás és kivonás | 20 | 3 |
 
-## Geometria (5 lecke)
+## Geometria (7 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
 | Sokszögek | Sokszögek és tulajdonságaik | Oldalak, csúcsok, átlók | — | 2 |
-| Kerület | Kerület mérése és számítása | Kerület négyzetrácson | 100 | 2 |
-| Terület | Terület négyzetráccsal és számolással | Terület (cm², m²) | 100 | 2 |
-| Szögek | Derék-, hegyes- és tompaszög | Szög felismerése | — | 2 |
-| Tükrözés | Tengelyes tükrözés és szimmetria | Szimmetrikus alakzatok | — | 2 |
+| Kerület | Kerület (közös a 3. osztállyal) | Rácsos alakzat kerületének számolása | 20 | 2 |
+| Terület | Terület (közös a 3. osztállyal) | Rácsos alakzat területének számolása | 25 | 2 |
+| Szögek | Szögek (közös a 3. osztállyal) | Hegyes/derék/tompa szög felismerése | 180 | 1 |
+| Tükrözés | Tükrözés és szimmetria (közös a 3. osztállyal) | Tükörkép felismerése | — | 2 |
+| Összetett alakzatok | Összetett alakzatok kerülete és területe | L- és lépcsős alakzatok felbontása | 100 | 3 |
+| Számolásos geometria | Kerület és terület számolással | Képletek használata téglalapnál, négyzetnél | 100 | 3 |
 
 ## Gyakorlati tudások (4 lecke)
 
@@ -62,7 +64,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
-| Adatok | Táblázatok és diagramok | Oszlopdiagram, táblázat olvasása | 1000 | 2 |
+| Adatok | Táblázatok és diagramok | Oszlopdiagram, táblázat olvasása (közös a 3. osztállyal) | 10 | 2 |
 
 ## Szöveges feladatok (2 lecke)
 
@@ -75,11 +77,10 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 ## Tervezett kiegészítések
 
-A fenti 28 lecke a 4. osztályos tanmenet terve. Tovább tervezett leckék:
+A fenti 30 lecke a 4. osztályos tanmenet terve. Tovább tervezett leckék:
 
 - [ ] **Tizedes törtek előkészítése** (fejezd ki tízedben, században – az 5. osztályos tananyag bevezetése)
 - [ ] **Szögek mérése** (a szögmérő használata, fokban mérés)
-- [ ] **Négyzetek és téglalapok területe** számolással (a kerület–terület összekötése)
 - [ ] **Osztó és többszörös** alapfogalmai (az 5. osztályos oszthatóság előkészítése)
 
 ---

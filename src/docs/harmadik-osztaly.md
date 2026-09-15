@@ -1,6 +1,6 @@
 # Matekidő – 3. osztályos készségtérkép
 
-**38 lecke**, 6 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**41 lecke**, 6 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 A 2. osztályos tananyag lezárult – a 3. osztály **nagyobb számkörre (1000-ig)**, a **szorzás és osztás bővítésére** épül.
 
@@ -36,6 +36,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Kivonás | Kivonás 1000-ig átlépéssel | Kivonás | 1000 | 3 |
 | Írásbeli kivonás | Írásbeli kivonás 1000-ig | Írásbeli kivonás | 1000 | 3 |
 | Vegyes műveletek | Vegyes műveletek 1000-ig | Vegyes műveletek | 1000 | 3 |
+| Műveleti sorrend | Műveleti sorrend | Sorrend és zárójelek | 100 | 2 |
 
 ## Szorzás és osztás bővítése (7 lecke)
 
@@ -57,6 +58,12 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Törtek | Kép a tört jeléhez | Jel → kép társítása | ½, ⅓, ¼ | 1 |
 | Törtek | Egész törtrészei | Fele, harmada, negyede egész számnál | 48 | 1 |
 
+## Valószínűség (1 lecke)
+
+| Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|
+| Valószínűség | Biztos, lehetséges, lehetetlen | Események osztályozása | – | 1 |
+
 ## Szöveges feladatok 3. osztály (2 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
@@ -64,7 +71,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Arányos osztás | A felét, a harmadát… | Választós szöveges (fele, harmada) | 60 | 2 |
 | Maradékos osztás | Osztás maradékkal | Kétlépésű választós (hányados + maradék) | 60 | 2 |
 
-## Geometria 3. osztály (4 lecke)
+## Geometria 3. osztály (5 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
@@ -72,11 +79,12 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Terület | Terület | Rácsos alakzat területének számolása | 25 | 2 |
 | Szögek | Szögek | Hegyes/derék/tompa szög felismerése | 180 | 1 |
 | Tükrözés | Tükrözés és szimmetria | Tükörkép felismerése (közös a 2. osztállyal) | – | 2 |
+| Kör | Kör – középpont, sugár, átmérő | A kör részeinek felismerése | – | 1 |
 
 ## Gyakorlati tudások (3 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
-| Mértékegység | Mértékegység-átváltás | m/dm/cm, kg/dkg, l/dl (mixed) | – | 2 |
+| Mértékegység | Mértékegység-átváltás | km/m, m/dm/cm/mm, kg/dkg, l/dl (mixed) | – | 2 |
 | Idő | Idő – perc és óra | Perc és óra átváltása (choice + input) | – | 2 |
 | Pénz | Vásárlás 1000-ig | Fizetés 200 és 500 forintos bankjegyekkel | 1000 | 2 |

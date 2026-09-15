@@ -1,0 +1,67 @@
+{
+  "id": "grade3-probability-01",
+  "title": "🎲 Biztos, lehetséges, lehetetlen",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🎲 Mi történhet?",
+      "text": "Az események háromfélék lehetnek. Biztos, ami mindig megtörténik. Lehetséges, ami megtörténhet, de nem biztos. Lehetetlen, ami sohasem történhet meg.",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Mit hoz a futam?",
+          "text": "A versenypályán is kérdezhetjük: mi lesz biztos, lehetséges és lehetetlen?"
+        },
+        "cooking": {
+          "title": "🍳 Mit hoz a konyha?",
+          "text": "A konyhában sok esemény történik. Gondold meg, mi biztos, mi lehetséges és mi lehetetlen!"
+        },
+        "football": {
+          "title": "⚽ Mit hoz a meccs?",
+          "text": "A meccs előtt találgathatunk: mi biztos, mi lehetséges és mi lehetetlen?"
+        },
+        "animals": {
+          "title": "🦁 Az állatkert eseményei",
+          "text": "Az állatkertben mi biztos, mi lehetséges és mi lehetetlen?"
+        },
+        "space": {
+          "title": "🤖 Mit hoz az űr?",
+          "text": "Az űrhajón gondolkodj el: mi biztos, mi lehetséges és mi lehetetlen?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "probability",
+      "options": {
+        "count": 6
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen eldöntötted, mi biztos, lehetséges és lehetetlen!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen mérlegeltél a pályán!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen mérlegeltél a konyhában!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen mérlegeltél a meccsen!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen mérlegeltél az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen mérlegeltél az űrhajón!"
+        }
+      }
+    }
+  ]
+}

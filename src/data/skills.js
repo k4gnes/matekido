@@ -2,12 +2,12 @@ export const CATEGORIES = {
     numbers: {
         title: "Számok",
         icon: "🔢",
-        skills: ["neighbours", "comparison", "ordering", "missing-number", "place-value", "rounding", "number-sequence", "even-odd", "pattern", "estimation", "number-names", "roman", "sets", "data-charts", "fraction"]
+        skills: ["neighbours", "comparison", "ordering", "missing-number", "place-value", "rounding", "number-sequence", "even-odd", "pattern", "estimation", "number-names", "roman", "sets", "data-charts", "fraction", "probability"]
     },
     operations: {
         title: "Összeadás-Kivonás",
         icon: "➕",
-        skills: ["addition", "subtraction", "mixed", "missing-operand", "tens-crossing", "true-false", "find-error"]
+        skills: ["addition", "subtraction", "mixed", "missing-operand", "tens-crossing", "true-false", "find-error", "operation-order"]
     },
     multiplication: {
         title: "Szorzás & Osztás",
@@ -22,7 +22,7 @@ export const CATEGORIES = {
     geometry: {
         title: "Geometria",
         icon: "📐",
-        skills: ["shapes", "shape-compare", "solid-shapes", "transform", "perimeter", "area", "angles", "position"]
+        skills: ["shapes", "shape-compare", "solid-shapes", "transform", "perimeter", "area", "angles", "circle", "position"]
     },
     wordProblems: {
         title: "Szöveges feladatok",
@@ -48,6 +48,7 @@ export const SKILLS = {
     sets: { title: "Halmazok és válogatás", category: "numbers" },
     "data-charts": { title: "Adatok és diagramok", category: "numbers" },
     fraction: { title: "Törtek", category: "numbers" },
+    probability: { title: "Valószínűség", category: "numbers" },
 
     // Operations
     addition: { title: "Összeadás", category: "operations" },
@@ -57,6 +58,7 @@ export const SKILLS = {
     "tens-crossing": { title: "Tízes átlépés", category: "operations" },
     "true-false": { title: "Igaz vagy hamis?", category: "operations" },
     "find-error": { title: "Hibás számolás felismerése", category: "operations" },
+    "operation-order": { title: "Műveleti sorrend", category: "operations" },
 
     // Multiplication & Division
     multiplication: { title: "Szorzás", category: "multiplication" },
@@ -86,6 +88,7 @@ export const SKILLS = {
     perimeter: { title: "Kerület", category: "geometry" },
     area: { title: "Terület", category: "geometry" },
     angles: { title: "Szögek", category: "geometry" },
+    circle: { title: "Kör", category: "geometry" },
     position: { title: "Térbeli tájékozódás", category: "geometry" },
 
     // Word Problems

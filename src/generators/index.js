@@ -50,6 +50,9 @@ import { generatePerimeter } from "./perimeterGenerator.js?v=1";
 import { generateArea } from "./areaGenerator.js?v=1";
 import { generateAngles } from "./anglesGenerator.js?v=1";
 import { generateFractionOf } from "./fractionOfGenerator.js?v=1";
+import { generateCircle } from "./circleGenerator.js?v=1";
+import { generateProbability } from "./probabilityGenerator.js?v=1";
+import { generateOperationOrder } from "./operationOrderGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -167,6 +170,12 @@ export function generate(step) {
             return generateArea(opts);
         case "angles":
             return generateAngles(opts);
+        case "circle":
+            return generateCircle(opts);
+        case "probability":
+            return generateProbability(opts);
+        case "operation-order":
+            return generateOperationOrder(opts);
 
         default:
             throw new Error(

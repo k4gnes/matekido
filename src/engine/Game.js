@@ -54,6 +54,9 @@ import { renderRemainderDivision } from "../components/remainderDivision.js?v=6"
 import { renderPerimeter } from "../components/perimeter.js?v=1";
 import { renderArea } from "../components/area.js?v=1";
 import { renderAngles } from "../components/angles.js?v=1";
+import { renderCircle } from "../components/circle.js?v=1";
+import { renderProbability } from "../components/probability.js?v=1";
+import { renderOperationOrder } from "../components/operationOrder.js?v=1";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -114,7 +117,10 @@ const COUNTED_TYPES = new Set([
     "remainder-division",
     "perimeter",
     "area",
-    "angles"
+    "angles",
+    "circle",
+    "probability",
+    "operation-order"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -195,7 +201,10 @@ const RENDERERS = new Map([
     ["remainder-division", renderRemainderDivision],
     ["perimeter", renderPerimeter],
     ["area", renderArea],
-    ["angles", renderAngles]
+    ["angles", renderAngles],
+    ["circle", renderCircle],
+    ["probability", renderProbability],
+    ["operation-order", renderOperationOrder]
 ]);
 
 

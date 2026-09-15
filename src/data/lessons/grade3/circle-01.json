@@ -1,0 +1,67 @@
+{
+  "id": "grade3-circle-01",
+  "title": "⭕ Körök",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "⭕ A kör",
+      "text": "A kör közepén van a középpont. A középpontot a körvonallal összekötő szakasz a sugár. A körvonal egyik pontját a másikkal, a középponton át összekötő szakasz az átmérő.",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Körök a boxutcában",
+          "text": "A versenyautó kerekei körök. Nézd meg, hol van a középpont, a sugár és az átmérő!"
+        },
+        "cooking": {
+          "title": "🍳 Körök a konyhában",
+          "text": "A szakács tortát süt. A torta is egy kör! Nézd meg a középpontot, a sugarat és az átmérőt!"
+        },
+        "football": {
+          "title": "⚽ Körök a pályán",
+          "text": "A focipálya középső köre segíti a játékot. Nézd meg a kör részeit!"
+        },
+        "animals": {
+          "title": "🦁 Körök az állatkertben",
+          "text": "Az állatkertben kerek medencét és futókarámot építenek. Nézd meg a kör részeit!"
+        },
+        "space": {
+          "title": "🤖 Körök az űrhajón",
+          "text": "Az űrhajó ablakai kör alakúak. Nézd meg a kör részeit!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "circle",
+      "options": {
+        "count": 6
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen felismerted a kör részeit!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen felismerted a kör részeit a boxutcában!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen felismerted a kör részeit a konyhában!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen felismerted a kör részeit a pályán!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen felismerted a kör részeit az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen felismerted a kör részeit az űrhajón!"
+        }
+      }
+    }
+  ]
+}

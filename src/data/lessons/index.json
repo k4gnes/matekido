@@ -2464,6 +2464,28 @@
             }
         },
         {
+            "id": "operation-order-01",
+            "title": "🧮 Műveleti sorrend",
+            "grades": [
+                3
+            ],
+            "category": "operations",
+            "skill": "operation-order",
+            "difficulty": 2,
+            "type": "operation-order",
+            "mission": "🧮 Műveleti sorrend",
+            "subtitle": "Szorzás-osztás az összeadás-kivonás előtt, zárójelek",
+            "file": "./data/lessons/grade3/operation-order-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Műveleti sorrend a boxutcában",
+                "cooking": "🍳 Műveleti sorrend a konyhában",
+                "football": "⚽ Műveleti sorrend a pályán",
+                "animals": "🦁 Műveleti sorrend az állatkertben",
+                "space": "🤖 Műveleti sorrend az űrhajón"
+            },
+            "range": 100
+        },
+        {
             "id": "multiplication-6789-01",
             "title": "Szorzás 6, 7, 8, 9-es táblával",
             "grades": [
@@ -2681,6 +2703,28 @@
             }
         },
         {
+            "id": "probability-01",
+            "title": "🎲 Biztos, lehetséges, lehetetlen",
+            "grades": [
+                3
+            ],
+            "category": "numbers",
+            "skill": "probability",
+            "difficulty": 1,
+            "type": "probability",
+            "mission": "🎲 Biztos, lehetséges, lehetetlen",
+            "subtitle": "Események osztályozása",
+            "file": "./data/lessons/grade3/probability-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Biztos, lehetséges, lehetetlen a boxutcában",
+                "cooking": "🍳 Biztos, lehetséges, lehetetlen a konyhában",
+                "football": "⚽ Biztos, lehetséges, lehetetlen a pályán",
+                "animals": "🦁 Biztos, lehetséges, lehetetlen az állatkertben",
+                "space": "🤖 Biztos, lehetséges, lehetetlen az űrhajón"
+            },
+            "range": 1
+        },
+        {
             "id": "word-problems-proportion-01",
             "title": "📝 A felét, a harmadát…",
             "grades": [
@@ -2811,6 +2855,28 @@
                 "animals": "🦁 Tükrözés az állatkertben",
                 "space": "🤖 Tükrözés az űrhajón"
             }
+        },
+        {
+            "id": "circle-01",
+            "title": "⭕ Kör – középpont, sugár, átmérő",
+            "grades": [
+                3
+            ],
+            "category": "geometry",
+            "skill": "circle",
+            "difficulty": 1,
+            "type": "circle",
+            "mission": "⭕ A kör részei",
+            "subtitle": "Középpont, sugár és átmérő felismerése",
+            "file": "./data/lessons/grade3/circle-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Kör a boxutcában",
+                "cooking": "🍳 Kör a konyhában",
+                "football": "⚽ Kör a pályán",
+                "animals": "🦁 Kör az állatkertben",
+                "space": "🤖 Kör az űrhajón"
+            },
+            "range": 1
         },
         {
             "id": "measure-units-02",

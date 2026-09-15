@@ -1,0 +1,40 @@
+.cir-prompt {
+    font-size: 1.15rem;
+    text-align: center;
+    color: #475569;
+    margin: .4rem 0 .8rem;
+}
+
+.cir-svg {
+    display: block;
+    margin: 0 auto .8rem;
+    width: 220px;
+    height: 220px;
+}
+
+.cir-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .7rem;
+    margin: .6rem 0;
+}
+
+.cir-option {
+    margin: 0;
+    padding: .8rem 1.4rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    background: var(--primary);
+    color: #fff;
+    cursor: pointer;
+    transition: transform .15s, border-color .15s, background-color .15s;
+}
+
+.cir-option:hover {
+    border-color: #2563eb;
+    background: #2563eb;
+    transform: scale(1.06);
+}

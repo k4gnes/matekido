@@ -1,0 +1,67 @@
+{
+  "id": "grade3-operation-order-01",
+  "title": "🧮 Műveleti sorrend",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧮 Műveleti sorrend",
+      "text": "Ha egy feladatban szorzás vagy osztás is van, azt mindig előbb végezzük el, mint az összeadást vagy a kivonást. A zárójel pedig valamennyit megelőzi!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Műveleti sorrend a boxutcában",
+          "text": "A szerelőknek gyorsan és pontosan kell számolniuk. Figyelj a műveleti sorrendre!"
+        },
+        "cooking": {
+          "title": "🍳 Műveleti sorrend a konyhában",
+          "text": "A szakács receptjeihez pontos számolás kell. Előbb a szorzás, aztán az összeadás!"
+        },
+        "football": {
+          "title": "⚽ Műveleti sorrend a pályán",
+          "text": "Az edző kombinációkat tervez. Segíts neki a műveleti sorrenddel!"
+        },
+        "animals": {
+          "title": "🦁 Műveleti sorrend az állatkertben",
+          "text": "Az állatgondozók az élelmiszert osszák el. Figyelj a műveleti sorrendre!"
+        },
+        "space": {
+          "title": "🤖 Műveleti sorrend az űrhajón",
+          "text": "A robotok számolják az üzemanyagot. Előbb a szorzás-osztás, aztán az összeadás-kivonás!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "operation-order",
+      "options": {
+        "count": 6
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen használtad a műveleti sorrendet!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen használtad a műveleti sorrendet a boxutcában!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen használtad a műveleti sorrendet a konyhában!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen használtad a műveleti sorrendet a pályán!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen használtad a műveleti sorrendet az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen használtad a műveleti sorrendet az űrhajón!"
+        }
+      }
+    }
+  ]
+}

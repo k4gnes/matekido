@@ -74,6 +74,39 @@ function checkOptions(step, ctx) {
     }
 }
 
+function applyOp(op, a, b) {
+    switch (op) {
+        case "+": return a + b;
+        case "−": return a - b;
+        case "×": return a * b;
+        case "÷": return a / b;
+        default: return null;
+    }
+}
+
+function operationOrderAnswer(step) {
+    const { form, a, b, c } = step;
+    switch (form) {
+        case "mult-add": return a + b * c;
+        case "mult-add-rev": return a * b + c;
+        case "mult-sub": return a - b * c;
+        case "paren-add": return (a + b) * c;
+        case "paren-sub": return (a - b) * c;
+        case "div-add": return a + b / c;
+        default: return null;
+    }
+}
+
+const UNIT_FACTORS = {
+    "km-m": 1000, "m-dm": 10, "m-cm": 100, "m-mm": 1000, "dm-cm": 10,
+    "kg-dkg": 100, "kg-g": 1000, "dkg-g": 10,
+    "l-dl": 10, "l-cl": 100, "dl-cl": 10
+};
+
+function measureUnitFactor(unit, target) {
+    return UNIT_FACTORS[`${unit}-${target}`] ?? null;
+}
+
 function validateStep(step, ctx) {
     if (!step || typeof step !== "object") {
         fail(ctx, "lépés nem objektum");
@@ -292,6 +325,71 @@ function validateStep(step, ctx) {
             const nameByCategory = { acute: "Hegyes", right: "Derékszög", obtuse: "Tompa" };
             if (step.options[step.answer] !== nameByCategory[step.category]) {
                 fail(ctx, `answer nem a helyes opcióra mutat: ${step.answer} (${step.options[step.answer]})`);
+            }
+            break;
+        }
+        case "circle": {
+            const labels = { center: "Középpont", radius: "Sugár", diameter: "Átmérő" };
+            if (!Object.keys(labels).includes(step.variant)) {
+                fail(ctx, `variant hibás: ${step.variant}`);
+            }
+            if (!Array.isArray(step.options) || step.options.length !== 3) {
+                fail(ctx, "options nem 3 elemű");
+            }
+            if (!isInt(step.answer) || step.answer < 0 || step.answer >= step.options.length) {
+                fail(ctx, `answer index hibás: ${step.answer}`);
+            }
+            if (step.options[step.answer] !== labels[step.variant]) {
+                fail(ctx, `answer nem a helyes opcióra mutat: ${step.answer} (${step.options[step.answer]})`);
+            }
+            break;
+        }
+        case "probability": {
+            const labels = { certain: "Biztos", possible: "Lehetséges", impossible: "Lehetetlen" };
+            if (!Object.keys(labels).includes(step.category)) {
+                fail(ctx, `category hibás: ${step.category}`);
+            }
+            if (typeof step.text !== "string" || step.text.length === 0) {
+                fail(ctx, "text hiányzik");
+            }
+            if (!Array.isArray(step.options) || step.options.length !== 3) {
+                fail(ctx, "options nem 3 elemű");
+            }
+            if (!isInt(step.answer) || step.answer < 0 || step.answer >= step.options.length) {
+                fail(ctx, `answer index hibás: ${step.answer}`);
+            }
+            if (step.options[step.answer] !== labels[step.category]) {
+                fail(ctx, `answer nem a helyes opcióra mutat: ${step.answer} (${step.options[step.answer]})`);
+            }
+            break;
+        }
+        case "operation-order": {
+            if (typeof step.expression !== "string" || step.expression.length === 0) {
+                fail(ctx, "expression hiányzik");
+            }
+            const expected = operationOrderAnswer(step);
+            if (!isFiniteNum(expected) || step.answer !== expected) {
+                fail(ctx, `answer (${step.answer}) nem a helyes érték (${expected})`);
+            }
+            if (!Array.isArray(step.options) || step.options.length < 3) {
+                fail(ctx, "options túl kevés elemű");
+            }
+            break;
+        }
+        case "measure-units": {
+            if (!isInt(step.value) || step.value < 1) fail(ctx, `value hibás: ${step.value}`);
+            if (!["length", "weight", "volume"].includes(step.kind)) fail(ctx, `kind hibás: ${step.kind}`);
+            if (!["km", "m", "dm", "cm", "kg", "dkg", "g", "l", "dl", "cl", "mm"].includes(step.unit) ||
+                !["km", "m", "dm", "cm", "kg", "dkg", "g", "l", "dl", "cl", "mm"].includes(step.target)) {
+                fail(ctx, `unit/target ismeretlen: ${step.unit} → ${step.target}`);
+            }
+            const factor = measureUnitFactor(step.unit, step.target);
+            if (!factor) fail(ctx, `nincs átszámítás: ${step.unit} → ${step.target}`);
+            if (step.answer !== step.value * factor) {
+                fail(ctx, `answer (${step.answer}) != ${step.value} × ${factor}`);
+            }
+            if (!Array.isArray(step.options) || !step.options.includes(step.answer)) {
+                fail(ctx, "options nem tartalmazza a helyes választ");
             }
             break;
         }

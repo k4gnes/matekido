@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=26";
+import { generate } from "../generators/index.js?v=27";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -465,6 +465,21 @@ export function buildLesson(lesson) {
             } else if (step.generator === "angles") {
                 result.push({
                     type: "angles",
+                    ...task
+                });
+            } else if (step.generator === "circle") {
+                result.push({
+                    type: "circle",
+                    ...task
+                });
+            } else if (step.generator === "probability") {
+                result.push({
+                    type: "probability",
+                    ...task
+                });
+            } else if (step.generator === "operation-order") {
+                result.push({
+                    type: "operation-order",
                     ...task
                 });
             } else {

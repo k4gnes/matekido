@@ -4,6 +4,10 @@ const CONVERSIONS = {
         { unit: "m", target: "cm", factor: 100, max: 3 },
         { unit: "dm", target: "cm", factor: 10, max: 10 }
     ],
+    lengthAdvanced: [
+        { unit: "km", target: "m", factor: 1000, max: 5 },
+        { unit: "m", target: "mm", factor: 1000, max: 5 }
+    ],
     weight: [
         { unit: "kg", target: "dkg", factor: 100, max: 10 },
         { unit: "kg", target: "g", factor: 1000, max: 5 },
@@ -50,7 +54,7 @@ function buildNumberOptions(correct, value) {
 }
 
 export function generateMeasureUnits(options = {}) {
-    const { count = 5, kind = "length" } = options;
+    const { count = 5, kind = "length", advanced = false } = options;
 
     const kinds = kind === "mixed"
         ? ["length", "weight", "volume"]
@@ -60,7 +64,10 @@ export function generateMeasureUnits(options = {}) {
 
     for (let i = 0; i < count; i++) {
         const k = pick(kinds);
-        const conv = pick(CONVERSIONS[k]);
+        const pool = (k === "length" && advanced)
+            ? [...CONVERSIONS[k], ...CONVERSIONS.lengthAdvanced]
+            : CONVERSIONS[k];
+        const conv = pick(pool);
         const value = rand(1, conv.max);
         const correct = value * conv.factor;
 
@@ -73,6 +80,7 @@ export function generateMeasureUnits(options = {}) {
             value,
             answer: correct,
             kind: k,
+            advanced,
             question: `Hány ${conv.target} a ${value} ${conv.unit}?`,
             options: optionsArr
         });

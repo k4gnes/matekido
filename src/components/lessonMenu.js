@@ -109,7 +109,10 @@ const TYPE_EMOJI = {
     "remainder-division": "➗",
     "perimeter": "📐",
     "area": "🟦",
-    "angles": "📐"
+    "angles": "📐",
+    "circle": "⭕",
+    "probability": "🎲",
+    "operation-order": "🧮"
 };
 
 const TYPE_GROUPS = {
@@ -170,7 +173,10 @@ const TYPE_LABEL = {
     "remainder-division": "Maradékos osztás",
     "perimeter": "Kerület",
     "area": "Terület",
-    "angles": "Szögek"
+    "angles": "Szögek",
+    "circle": "Kör",
+    "probability": "Valószínűség",
+    "operation-order": "Műveleti sorrend"
 };
 
 const RANGE_LABEL = {
@@ -455,7 +461,7 @@ function createFilterPanel(filters, onFilterChange) {
     const skillBtns = document.createElement("div");
     skillBtns.className = "filter-skill-btns";
 
-    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed", "true-false", "find-error", "place-value", "number-sequence", "ordering", "even-odd", "pattern", "estimation", "shapes", "shape-compare", "solid-shapes", "hour", "minute", "position", "coins", "length", "volume", "calendar", "multiplication", "division", "missing-factor", "rounding", "number-names", "roman", "transform", "sets", "data-charts", "fraction", "perimeter", "area", "angles"];
+    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed", "true-false", "find-error", "place-value", "number-sequence", "ordering", "even-odd", "pattern", "estimation", "shapes", "shape-compare", "solid-shapes", "hour", "minute", "position", "coins", "length", "volume", "calendar", "multiplication", "division", "missing-factor", "rounding", "number-names", "roman", "transform", "sets", "data-charts", "fraction", "perimeter", "area", "angles", "circle", "probability", "operation-order"];
 
     usedSkills.forEach(skillId => {
         const skill = SKILLS[skillId];

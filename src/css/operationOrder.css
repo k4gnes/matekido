@@ -1,0 +1,46 @@
+.oo-prompt {
+    font-size: 1.15rem;
+    text-align: center;
+    color: #475569;
+    margin: .4rem 0 .8rem;
+}
+
+.oo-expression {
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-align: center;
+    color: #1e293b;
+    padding: 1rem;
+    background: #f1f5f9;
+    border-radius: 12px;
+    margin: 0 auto 1rem;
+    max-width: 320px;
+}
+
+.oo-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .7rem;
+    margin: .6rem 0;
+}
+
+.oo-option {
+    margin: 0;
+    min-width: 3.6rem;
+    padding: .8rem 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    background: var(--primary);
+    color: #fff;
+    cursor: pointer;
+    transition: transform .15s, border-color .15s, background-color .15s;
+}
+
+.oo-option:hover {
+    border-color: #2563eb;
+    background: #2563eb;
+    transform: scale(1.06);
+}

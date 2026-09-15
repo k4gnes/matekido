@@ -1,0 +1,41 @@
+.prob-event {
+    font-size: 1.3rem;
+    text-align: center;
+    color: #1e293b;
+    margin: .8rem 0 .4rem;
+    line-height: 1.5;
+}
+
+.prob-prompt {
+    font-size: 1.15rem;
+    text-align: center;
+    color: #475569;
+    margin: .4rem 0 .8rem;
+}
+
+.prob-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .7rem;
+    margin: .6rem 0;
+}
+
+.prob-option {
+    margin: 0;
+    padding: .8rem 1.2rem;
+    font-size: 1.15rem;
+    font-weight: 800;
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    background: var(--primary);
+    color: #fff;
+    cursor: pointer;
+    transition: transform .15s, border-color .15s, background-color .15s;
+}
+
+.prob-option:hover {
+    border-color: #2563eb;
+    background: #2563eb;
+    transform: scale(1.06);
+}

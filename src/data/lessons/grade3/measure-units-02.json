@@ -5,7 +5,7 @@
     {
       "type": "scene",
       "title": "📏 Mértékegységek",
-      "text": "A hosszúságot méterben (m), deciméterben (dm) és centiméterben (cm) mérjük. A súlyt kilogrammban (kg) és dekagrammban (dkg). Az űrtartalmat literben (l) és deciliterben (dl). Átváltásra fel!",
+      "text": "A hosszúságot kilométerben (km), méterben (m), deciméterben (dm) és centiméterben (cm) mérjük. A súlyt kilogrammban (kg) és dekagrammban (dkg). Az űrtartalmat literben (l) és deciliterben (dl). Átváltásra fel!",
       "worldTitles": {
         "racing": {
           "title": "🔧 Mértékegység-átváltás a boxutcában",
@@ -34,7 +34,8 @@
       "generator": "measure-units",
       "options": {
         "count": 10,
-        "kind": "mixed"
+        "kind": "mixed",
+        "advanced": true
       }
     },
     {

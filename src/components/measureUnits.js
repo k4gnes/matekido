@@ -15,7 +15,8 @@ const WORLD_EMOJI = {
 const KIND_CONFIG = {
     length: {
         title: "Hosszúság-mérés",
-        hint: "1 m = 10 dm = 100 cm, 1 dm = 10 cm"
+        hint: "1 m = 10 dm = 100 cm, 1 dm = 10 cm",
+        hintAdvanced: "1 km = 1000 m, 1 m = 1000 mm, 1 m = 10 dm = 100 cm"
     },
     weight: {
         title: "Súly-mérés",
@@ -48,7 +49,7 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
 
     const hint = document.createElement("p");
     hint.className = "mu-hint";
-    hint.textContent = config.hint;
+    hint.textContent = (step.advanced && config.hintAdvanced) ? config.hintAdvanced : config.hint;
     card.append(hint);
 
     const prompt = document.createElement("p");

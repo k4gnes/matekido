@@ -1,0 +1,68 @@
+{
+  "id": "grade3-area-01",
+  "title": "🟦 Terület",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🟦 Terület",
+      "text": "A terület az alakzat által kitöltött része! Számold meg a kék négyzeteket!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Terület a boxutcában",
+          "text": "A szerelők padlólapokat raknak a boxutcába. Számold meg a kék négyzeteket!"
+        },
+        "cooking": {
+          "title": "🍳 Terület a konyhában",
+          "text": "A szakács asztalterítőt terít. Számold meg a kék négyzeteket!"
+        },
+        "football": {
+          "title": "⚽ Terület a pályán",
+          "text": "A focipályán füvet telepítenek. Számold meg a kék négyzeteket!"
+        },
+        "animals": {
+          "title": "🦁 Terület az állatkertben",
+          "text": "A kifutóban füvet ültetnek. Számold meg a kék négyzeteket!"
+        },
+        "space": {
+          "title": "🤖 Terület az űrhajón",
+          "text": "A robotok napelemeket raknak ki az űrállomáson. Számold meg a kék négyzeteket!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "area",
+      "options": {
+        "count": 6,
+        "shape": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megszámoltad a területeket!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megszámoltad a területeket a boxutcában!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megszámoltad a területeket a konyhában!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megszámoltad a területeket a pályán!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megszámoltad a területeket az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megszámoltad a területeket az űrhajón!"
+        }
+      }
+    }
+  ]
+}

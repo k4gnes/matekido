@@ -2829,6 +2829,28 @@
                 "animals": "🦁 Kerület az állatkertben",
                 "space": "🤖 Kerület az űrhajón"
             }
+        },
+        {
+            "id": "area-01",
+            "title": "🟦 Terület",
+            "grades": [
+                3
+            ],
+            "category": "geometry",
+            "skill": "area",
+            "difficulty": 2,
+            "type": "area",
+            "range": 25,
+            "mission": "🟦 Terület",
+            "subtitle": "Terület számolása egyszerű alakzatokon",
+            "file": "./data/lessons/grade3/area-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Terület a boxutcában",
+                "cooking": "🍳 Terület a konyhában",
+                "football": "⚽ Terület a pályán",
+                "animals": "🦁 Terület az állatkertben",
+                "space": "🤖 Terület az űrhajón"
+            }
         }
     ],
     "gradeConfig": [

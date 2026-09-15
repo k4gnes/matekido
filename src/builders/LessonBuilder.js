@@ -457,6 +457,11 @@ export function buildLesson(lesson) {
                     type: "perimeter",
                     ...task
                 });
+            } else if (step.generator === "area") {
+                result.push({
+                    type: "area",
+                    ...task
+                });
             } else {
                 result.push({
                     type: "exercise",

@@ -1,0 +1,41 @@
+.area-prompt {
+    font-size: 1.15rem;
+    text-align: center;
+    color: #475569;
+    margin: .4rem 0 .8rem;
+}
+
+.area-svg {
+    display: block;
+    margin: 0 auto .8rem;
+    width: auto;
+    max-width: 280px;
+    height: auto;
+}
+
+.area-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .7rem;
+    margin: .6rem 0;
+}
+
+.area-option {
+    margin: 0;
+    padding: .8rem 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    background: var(--primary);
+    color: #fff;
+    cursor: pointer;
+    transition: transform .15s, border-color .15s, background-color .15s;
+}
+
+.area-option:hover {
+    border-color: #2563eb;
+    background: #2563eb;
+    transform: scale(1.06);
+}

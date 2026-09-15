@@ -52,6 +52,7 @@ import { renderMeasureUnits } from "../components/measureUnits.js?v=2";
 import { renderWrittenOperation } from "../components/writtenOperation.js?v=3";
 import { renderRemainderDivision } from "../components/remainderDivision.js?v=6";
 import { renderPerimeter } from "../components/perimeter.js?v=1";
+import { renderArea } from "../components/area.js?v=1";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -110,7 +111,8 @@ const COUNTED_TYPES = new Set([
     "measure-units",
     "written-operation",
     "remainder-division",
-    "perimeter"
+    "perimeter",
+    "area"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -189,7 +191,8 @@ const RENDERERS = new Map([
     ["measure-units", renderMeasureUnits],
     ["written-operation", renderWrittenOperation],
     ["remainder-division", renderRemainderDivision],
-    ["perimeter", renderPerimeter]
+    ["perimeter", renderPerimeter],
+    ["area", renderArea]
 ]);
 
 

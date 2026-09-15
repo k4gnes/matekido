@@ -257,6 +257,24 @@ function validateStep(step, ctx) {
             if (step.answer !== step.total) fail(ctx, "answer != total");
             break;
         }
+        case "perimeter": {
+            if (!isInt(step.rows) || !isInt(step.cols) || step.rows < 2 || step.cols < 2) {
+                fail(ctx, "rows/cols hibás");
+            }
+            if (step.answer !== 2 * (step.rows + step.cols)) {
+                fail(ctx, `answer (${step.answer}) != 2*(rows+cols) (${2 * (step.rows + step.cols)})`);
+            }
+            break;
+        }
+        case "area": {
+            if (!isInt(step.rows) || !isInt(step.cols) || step.rows < 2 || step.cols < 2) {
+                fail(ctx, "rows/cols hibás");
+            }
+            if (step.answer !== step.rows * step.cols) {
+                fail(ctx, `answer (${step.answer}) != rows*cols (${step.rows * step.cols})`);
+            }
+            break;
+        }
         case "repeated-addition": {
             if (!isInt(step.addend) || !isInt(step.times) || step.addend < 1 || step.times < 2) fail(ctx, "addend/times hibás");
             if (!isInt(step.answer) || step.answer !== step.addend * step.times) fail(ctx, "answer != addend*times");

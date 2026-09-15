@@ -2735,9 +2735,9 @@
             "skill": "data-charts",
             "difficulty": 2,
             "type": "data-chart",
-            "range": 10,
+            "range": 100,
             "mission": "📊 Táblázatok és diagramok",
-            "subtitle": "Oszlopdiagram és táblázat olvasása",
+            "subtitle": "Oszlopdiagram, összeadás és kivonás az adatokon",
             "file": "./data/lessons/grade3/data-chart-01.json",
             "worldTitles": {
                 "racing": "🏎️ Adatok a boxutcában",

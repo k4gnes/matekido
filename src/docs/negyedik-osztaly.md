@@ -64,7 +64,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
-| Adatok | Táblázatok és diagramok | Oszlopdiagram olvasása, összeadás és kivonás az adatokon (közös a 3. osztállyal) | 10 | 2 |
+| Adatok | Táblázatok és diagramok | Oszlopdiagram értékeivel összeadás és kivonás (közös a 3. osztállyal) | 100 | 2 |
 
 ## Szöveges feladatok (2 lecke)
 

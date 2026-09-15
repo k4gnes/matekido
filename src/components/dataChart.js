@@ -24,7 +24,8 @@ function svgEl(name, attrs = {}) {
 }
 
 function createChartSvg(chart) {
-    const max = Math.max(...chart.map(c => c.value));
+    const maxVal = Math.max(...chart.map(c => c.value));
+    const gridStep = maxVal <= 10 ? 1 : maxVal <= 20 ? 2 : maxVal <= 50 ? 10 : 20;
 
     const svg = svgEl("svg", { viewBox: "0 0 176 150" });
 
@@ -33,9 +34,9 @@ function createChartSvg(chart) {
     const marginLeft = 13;
     const marginTop = 30;
     const baseline = marginTop + plotH;
-    const unitH = plotH / max;
+    const unitH = plotH / maxVal;
 
-    for (let i = 1; i <= max; i++) {
+    for (let i = gridStep; i <= maxVal; i += gridStep) {
         const y = baseline - i * unitH;
         svg.append(svgEl("line", {
             x1: marginLeft,
@@ -43,8 +44,17 @@ function createChartSvg(chart) {
             x2: marginLeft + plotW,
             y2: y,
             stroke: "#94a3b8",
-            "stroke-width": "1.6"
+            "stroke-width": "1.2"
         }));
+        const tickLabel = svgEl("text", {
+            x: marginLeft - 3,
+            y: y + 4,
+            "text-anchor": "end",
+            "font-size": "8",
+            fill: "#94a3b8"
+        });
+        tickLabel.textContent = String(i);
+        svg.append(tickLabel);
     }
 
     const colW = plotW / chart.length;
@@ -54,14 +64,14 @@ function createChartSvg(chart) {
         const barW = Math.min(30, colW - 12);
         const h = c.value * unitH;
 
-        const label = svgEl("text", {
+        const emojiLabel = svgEl("text", {
             x: cx,
             y: marginTop,
             "text-anchor": "middle",
             "font-size": "20"
         });
-        label.textContent = c.emoji;
-        svg.append(label);
+        emojiLabel.textContent = c.emoji;
+        svg.append(emojiLabel);
 
         svg.append(svgEl("rect", {
             x: cx - barW / 2,
@@ -74,6 +84,17 @@ function createChartSvg(chart) {
             stroke: "#1e293b",
             "stroke-width": "1.5"
         }));
+
+        const valLabel = svgEl("text", {
+            x: cx,
+            y: baseline - h - 4,
+            "text-anchor": "middle",
+            "font-size": "12",
+            "font-weight": "700",
+            fill: "#1e293b"
+        });
+        valLabel.textContent = String(c.value);
+        svg.append(valLabel);
     });
 
     svg.append(svgEl("line", {

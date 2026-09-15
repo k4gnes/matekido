@@ -110,14 +110,11 @@ function createChartSvg(chart) {
 }
 
 function createPictogramSvg(chart) {
-    const maxVal = Math.max(...chart.map(c => c.value));
-
     const svg = svgEl("svg", { viewBox: "0 0 176 150" });
 
     const rowH = 30;
     const fontSize = 16;
-
-    const scale = maxVal > 40 ? 10 : maxVal > 20 ? 5 : 1;
+    const maxShown = 14;
 
     chart.forEach((c, i) => {
         const y = 22 + i * rowH;
@@ -131,13 +128,22 @@ function createPictogramSvg(chart) {
         label.textContent = c.emoji;
         svg.append(label);
 
-        const count = Math.max(1, Math.round(c.value / scale));
-        const maxShown = 14;
-        const shown = Math.min(count, maxShown);
+        const shown = Math.min(c.value, maxShown);
         for (let j = 0; j < shown; j++) {
             const icon = svgEl("text", { x: 30 + j * 10, y, "font-size": String(fontSize) });
             icon.textContent = c.emoji;
             svg.append(icon);
+        }
+
+        if (c.value > maxShown) {
+            const dot = svgEl("text", {
+                x: 30 + maxShown * 10 + 4,
+                y: y,
+                "font-size": "16",
+                fill: "#94a3b8"
+            });
+            dot.textContent = "…";
+            svg.append(dot);
         }
 
         const val = svgEl("text", {
@@ -150,17 +156,6 @@ function createPictogramSvg(chart) {
         });
         val.textContent = String(c.value);
         svg.append(val);
-
-        if (scale > 1 && i === 0) {
-            const legend = svgEl("text", {
-                x: 14,
-                y: 8,
-                "font-size": "10",
-                fill: "#64748b"
-            });
-            legend.textContent = `1 ikon = ${scale} darab`;
-            svg.append(legend);
-        }
     });
 
     return svg;

@@ -1,6 +1,6 @@
 # Matekidő – 3. osztály manuális tesztforgatókönyv
 
-Ennek a dokumentumnak a célja, hogy a **3. osztályos tananyagot** (22 lecke, 6 világ, számkör 1000-ig + szorzás/osztás 6, 7, 8, 9-es táblákkal) a böngészőben kézzel végigteszteljük: minden lecke helyesen épül fel, a feladatok a megjelölt tartományban vannak, a jó/rossz válasz kezelése helyes, és a lecke a celebrációval zárul.
+Ennek a dokumentumnak a célja, hogy a **3. osztályos tananyagot** (45 lecke, 6 világ, számkör 1000-ig + szorzás/osztás 6, 7, 8, 9-es táblákkal) a böngészőben kézzel végigteszteljük: minden lecke helyesen épül fel, a feladatok a megjelölt tartományban vannak, a jó/rossz válasz kezelése helyes, és a lecke a celebrációval zárul.
 
 - **Szerver:** `make start` (localhost:8000) – a `src/` mappát szolgálja ki.
 - **Böngésző:** Asztali (Chrome / Firefox / Edge) + legalább egyszer telefon méretű nézet.
@@ -44,6 +44,8 @@ Ennek a dokumentumnak a célja, hogy a **3. osztályos tananyagot** (22 lecke, 6
 | 2.1.6 | Páros és páratlan 1000-ig | `even-odd` / 1000 | Besorolás helyes 1000-ig | |
 | 2.1.7 | Kerekítsük kerekre! | `rounding` / 1000 | A kerekítés **tízesre és százasra** is (célfelirat követi: „tízesre”/„százasra”) | |
 | 2.1.8 | Római számok | `roman` / 100 | I, V, X, L, C jelek; mindkét irány (szám → római, római → szám) | |
+| 2.1.9 | Becslés 1000-ig | `estimate` / 500 (százas kerekítés) | A válasz százasra kerekített összeg/különbség; a legjobb becslés kiválasztható | |
+| 2.1.10 | Számsorozatok 1000-ig | `pattern` / 1000 | Jól felismerhető szabály (pozitív lépés 2–200); a „?” mindig 1000 alatt marad | |
 
 ### 2.2 Műveletek 1000-ig
 
@@ -68,6 +70,15 @@ Ennek a dokumentumnak a célja, hogy a **3. osztályos tananyagot** (22 lecke, 6
 | 2.3.3 | Szorzás és osztás kapcsolata 6-9 | `link` / 100 | Szorzatból osztás (pl. 9 × 7 = 63 → 63 ÷ 9 = 7) | |
 | 2.3.4 | Osztás 6, 7, 8, 9-es táblával | `division-table` / 100 | Az osztó 6/7/8/9, az eredmény egész | |
 | 2.3.5 | Vegyes szorzás és osztás 6-9 | `mixed-mult-div` / 100 | Szorzás és osztás keverve (6–9-es tábla) | |
+
+### 2.4 Gyakorlati tudások
+
+| # | Lecke | Típus / tartomány | Amire figyelj | Eredmény |
+|---|-------|-------------------|---------------|----------|
+| 2.4.1 | Mértékegység-átváltás | `measure-units` | km/m, m/dm/cm/mm, kg/dkg, l/dl átváltás | |
+| 2.4.2 | Idő – perc és óra | `time-convert` | perc ↔ óra átváltás | |
+| 2.4.3 | Vásárlás 1000-ig | `money-pay` / 1000 | Fizetés 200/500 Ft-os bankjegyekkel | |
+| 2.4.4 | Naptár és év | `calendar` (advanced) | Év hossza 365 (366 szökőév), kb. 52 hét; hónap napjai; egy hónap kb. 4 hét; évszakonként 3 hónap | |
 
 ---
 

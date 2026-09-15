@@ -1,6 +1,6 @@
 # Matekidő – 3. osztályos készségtérkép
 
-**42 lecke**, 7 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**45 lecke**, 7 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 A 2. osztályos tananyag lezárult – a 3. osztály **nagyobb számkörre (1000-ig)**, a **szorzás és osztás bővítésére** épül.
 
@@ -8,7 +8,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 ---
 
-## Számfogalom 1000-ig (8 lecke)
+## Számfogalom 1000-ig (10 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
@@ -20,6 +20,8 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Páros/páratlan | Páros és páratlan 1000-ig | Páros/páratlan | 1000 | 1 |
 | Kerekítés | Kerekítsük kerekre! | Kerekítés tízesre és százasra | 1000 | 2 |
 | Római számok | Római számok | I, V, X, L, C jelek | 100 | 2 |
+| Becslés | Becslés 1000-ig | Százasra kerekített becslés | 500 | 2 |
+| Számsorozatok | Számsorozatok 1000-ig | Szabályfelismerés és folytatás | 1000 | 2 |
 
 ## Műveletek 1000-ig (11 lecke)
 
@@ -87,10 +89,11 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Tükrözés | Tükrözés és szimmetria | Tükörkép felismerése (közös a 2. osztállyal) | – | 2 |
 | Kör | Kör – középpont, sugár, átmérő | A kör részeinek felismerése | – | 1 |
 
-## Gyakorlati tudások (3 lecke)
+## Gyakorlati tudások (4 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
 | Mértékegység | Mértékegység-átváltás | km/m, m/dm/cm/mm, kg/dkg, l/dl (mixed) | – | 2 |
 | Idő | Idő – perc és óra | Perc és óra átváltása (choice + input) | – | 2 |
 | Pénz | Vásárlás 1000-ig | Fizetés 200 és 500 forintos bankjegyekkel | 1000 | 2 |
+| Naptár | Naptár és év | Év, hónap, hét, nap kapcsolata | – | 2 |

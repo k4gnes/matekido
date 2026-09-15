@@ -18,16 +18,22 @@ function round10(n) {
     return Math.round(n / 10) * 10;
 }
 
-function generateEstimateOptions(estimate, max) {
+function round100(n) {
+    return Math.round(n / 100) * 100;
+}
+
+function generateEstimateOptions(estimate, max, rounding) {
     const options = [estimate];
     const seen = new Set([estimate]);
     const wrongCandidates = [];
 
-    const offsets = [10, -10, 20, -20, 30, -30, 15, -15, 25, -25];
+    const offsets = rounding === 100
+        ? [100, -100, 200, -200, 300, -300, 150, -150, 250, -250]
+        : [10, -10, 20, -20, 30, -30, 15, -15, 25, -25];
 
     for (const d of offsets) {
         const v = estimate + d;
-        if (v > 0 && v <= max + 30 && !seen.has(v)) {
+        if (v > 0 && v <= max + 300 && !seen.has(v)) {
             wrongCandidates.push(v);
         }
     }
@@ -42,7 +48,8 @@ function generateEstimateOptions(estimate, max) {
         }
     }
 
-    for (let v = 10; v <= max + 30 && options.length < 4; v += 10) {
+    const step = rounding === 100 ? 100 : 10;
+    for (let v = step; v <= max + 300 && options.length < 4; v += step) {
         if (!seen.has(v)) {
             seen.add(v);
             options.push(v);
@@ -52,72 +59,75 @@ function generateEstimateOptions(estimate, max) {
     return shuffle(options);
 }
 
-function generateAdditionEstimate(count, max) {
+function generateAdditionEstimate(count, max, rounding) {
+    const r = rounding === 100 ? round100 : round10;
     const tasks = [];
     for (let i = 0; i < count; i++) {
-        const a = randint(11, max - 11);
-        const b = randint(11, max - a);
-        const estimate = round10(a) + round10(b);
+        const a = randint(rounding === 100 ? 101 : 11, max - (rounding === 100 ? 101 : 11));
+        const b = randint(rounding === 100 ? 101 : 11, max - a);
+        const estimate = r(a) + r(b);
         tasks.push({
             type: "estimate",
             expression: `${a} + ${b} ≈ ?`,
-            hint: `Gondold meg: ${round10(a)} + ${round10(b)} = ?`,
+            hint: `Gondold meg: ${r(a)} + ${r(b)} = ?`,
             answer: estimate,
-            options: generateEstimateOptions(estimate, max)
+            options: generateEstimateOptions(estimate, max, rounding)
         });
     }
     return tasks;
 }
 
-function generateSubtractionEstimate(count, max) {
+function generateSubtractionEstimate(count, max, rounding) {
+    const r = rounding === 100 ? round100 : round10;
     const tasks = [];
     for (let i = 0; i < count; i++) {
-        const a = randint(15, max);
+        const a = randint(rounding === 100 ? 201 : 15, max);
         let b;
         let estimate;
         do {
-            b = randint(6, a - 5);
-            estimate = round10(a) - round10(b);
+            b = randint(rounding === 100 ? 101 : 6, a - (rounding === 100 ? 101 : 5));
+            estimate = r(a) - r(b);
         } while (estimate <= 0);
         tasks.push({
             type: "estimate",
             expression: `${a} − ${b} ≈ ?`,
-            hint: `Gondold meg: ${round10(a)} − ${round10(b)} = ?`,
+            hint: `Gondold meg: ${r(a)} − ${r(b)} = ?`,
             answer: estimate,
-            options: generateEstimateOptions(estimate, max)
+            options: generateEstimateOptions(estimate, max, rounding)
         });
     }
     return tasks;
 }
 
-function generateMixedEstimate(count, max) {
+function generateMixedEstimate(count, max, rounding) {
+    const r = rounding === 100 ? round100 : round10;
     const tasks = [];
     for (let i = 0; i < count; i++) {
         if (Math.random() < 0.5) {
-            const a = randint(11, max - 11);
-            const b = randint(11, max - a);
-            const estimate = round10(a) + round10(b);
+            const a = randint(rounding === 100 ? 101 : 11, max - (rounding === 100 ? 101 : 11));
+            const b = randint(rounding === 100 ? 101 : 11, max - a);
+            const estimate = r(a) + r(b);
             tasks.push({
                 type: "estimate",
                 expression: `${a} + ${b} ≈ ?`,
-                hint: `Gondold meg: ${round10(a)} + ${round10(b)} = ?`,
+                hint: `Gondold meg: ${r(a)} + ${r(b)} = ?`,
                 answer: estimate,
-                options: generateEstimateOptions(estimate, max)
+                options: generateEstimateOptions(estimate, max, rounding)
             });
         } else {
-            const a = randint(15, max);
+            const a = randint(rounding === 100 ? 201 : 15, max);
             let b;
             let estimate;
             do {
-                b = randint(6, a - 5);
-                estimate = round10(a) - round10(b);
+                b = randint(rounding === 100 ? 101 : 6, a - (rounding === 100 ? 101 : 5));
+                estimate = r(a) - r(b);
             } while (estimate <= 0);
             tasks.push({
                 type: "estimate",
                 expression: `${a} − ${b} ≈ ?`,
-                hint: `Gondold meg: ${round10(a)} − ${round10(b)} = ?`,
+                hint: `Gondold meg: ${r(a)} − ${r(b)} = ?`,
                 answer: estimate,
-                options: generateEstimateOptions(estimate, max)
+                options: generateEstimateOptions(estimate, max, rounding)
             });
         }
     }
@@ -125,15 +135,15 @@ function generateMixedEstimate(count, max) {
 }
 
 export function generateEstimate(options = {}) {
-    const { count = 6, max = 50, op = "mixed" } = options;
+    const { count = 6, max = 50, op = "mixed", rounding = 10 } = options;
 
     switch (op) {
         case "addition":
-            return generateAdditionEstimate(count, max);
+            return generateAdditionEstimate(count, max, rounding);
         case "subtraction":
-            return generateSubtractionEstimate(count, max);
+            return generateSubtractionEstimate(count, max, rounding);
         case "mixed":
         default:
-            return generateMixedEstimate(count, max);
+            return generateMixedEstimate(count, max, rounding);
     }
 }

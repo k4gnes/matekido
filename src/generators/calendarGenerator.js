@@ -56,7 +56,7 @@ function withNumberDistractors(correct, numbers, count) {
 
 function buildTask(advanced) {
     const modes = advanced
-        ? ["days-in-month", "leap-february", "weekend-workday", "month-of-season", "season-months", "two-weeks-days", "long-month"]
+        ? ["days-in-month", "leap-february", "weekend-workday", "month-of-season", "season-months", "two-weeks-days", "long-month", "days-in-year", "weeks-in-year", "season-long", "count-weeks-month"]
         : ["next-day", "prev-day", "tomorrow", "yesterday", "between-days", "next-month", "prev-month", "season-of-month", "next-season", "count-days", "count-months"];
     const mode = pick(modes);
 
@@ -178,6 +178,28 @@ function buildTask(advanced) {
         const shortMonths = MONTHS.filter(m => MONTH_DAYS[m] !== 31);
         const { options, answer } = withDistractors(correct, shortMonths.map(m => m), 2);
         return { type: "calendar", mode, question: "Melyik hónapnak van 31 napja?", options, answer };
+    }
+
+    if (mode === "days-in-year") {
+        const { options, answer } = withNumberDistractors(365, [360, 365, 366, 370], 2);
+        return { type: "calendar", mode, question: "Hány nap van egy évben?", options, answer };
+    }
+
+    if (mode === "weeks-in-year") {
+        const { options, answer } = withNumberDistractors(52, [48, 50, 52, 54], 2);
+        return { type: "calendar", mode, question: "Hány hét van egy évben (kb.)?", options, answer };
+    }
+
+    if (mode === "season-long") {
+        const season = pick(SEASONS);
+        const seasonMonths = MONTHS.filter(m => SEASON_OF[m] === season);
+        const { options, answer } = withNumberDistractors(3, [2, 3, 4, 5], 2);
+        return { type: "calendar", mode, question: `Hány hónapig tart a(z) ${season}?`, options, answer };
+    }
+
+    if (mode === "count-weeks-month") {
+        const { options, answer } = withNumberDistractors(4, [3, 4, 5, 6], 2);
+        return { type: "calendar", mode, question: "Hány hét van egy hónapban (kb.)?", options, answer };
     }
 
     const { options, answer } = withNumberDistractors(12, [10, 11, 12, 13, 14], 2);

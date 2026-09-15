@@ -17,6 +17,22 @@
     border: 2px solid #dbe6ff;
     border-radius: 12px;
     font-size: 1.8rem;
+    white-space: nowrap;
+}
+
+.pattern-numeric .pattern-term,
+.pattern-numeric .pattern-question {
+    min-width: 3.6rem;
+    height: 3.6rem;
+    padding: 0 .9rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.pattern-numeric .pattern-question {
+    min-width: 3.6rem;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .pattern-question {
@@ -54,6 +70,14 @@
     cursor: pointer;
     transition: transform .15s, border-color .15s, background .15s;
     padding: 0;
+}
+
+.pattern-numeric .pattern-option {
+    min-width: 4.2rem;
+    height: 4.2rem;
+    font-size: 1.8rem;
+    border-radius: 14px;
+    padding: 0 .4rem;
 }
 
 .pattern-option:hover {
@@ -108,9 +132,23 @@
         font-size: 1.5rem;
     }
 
+    .pattern-numeric .pattern-term,
+    .pattern-numeric .pattern-question {
+        min-width: 3rem;
+        height: 3rem;
+        padding: 0 .6rem;
+        font-size: 1.4rem;
+    }
+
     .pattern-option {
         min-width: 3.2rem;
         height: 3.2rem;
         font-size: 1.8rem;
+    }
+
+    .pattern-numeric .pattern-option {
+        min-width: 3.6rem;
+        height: 3.6rem;
+        font-size: 1.6rem;
     }
 }

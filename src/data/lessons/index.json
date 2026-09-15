@@ -2222,6 +2222,50 @@
             }
         },
         {
+            "id": "estimate-1000-01",
+            "title": "🔍 Becslés 1000-ig",
+            "grades": [
+                3
+            ],
+            "category": "numbers",
+            "skill": "estimation",
+            "difficulty": 2,
+            "type": "estimate",
+            "range": 500,
+            "mission": "🔍 Becslés",
+            "subtitle": "Becslés százasra kerekítve",
+            "file": "./data/lessons/grade3/estimate-1000-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Becslés a boxutcában",
+                "cooking": "🍳 Becslés a konyhában",
+                "football": "⚽ Becslés a pályán",
+                "animals": "🦁 Becslés az állatkertben",
+                "space": "🤖 Becslés az űrhajón"
+            }
+        },
+        {
+            "id": "pattern-1000-01",
+            "title": "🔢 Számsorozatok 1000-ig",
+            "grades": [
+                3
+            ],
+            "category": "numbers",
+            "skill": "pattern",
+            "difficulty": 2,
+            "type": "pattern",
+            "range": 1000,
+            "mission": "🔢 Számsorozatok",
+            "subtitle": "Szabályfelismerés és folytatás 1000-ig",
+            "file": "./data/lessons/grade3/pattern-1000-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Számsorozat a versenypályán",
+                "cooking": "🍳 Számsorozat a konyhában",
+                "football": "⚽ Számsorozat a táblázaton",
+                "animals": "🦁 Számsorozat az állatkertben",
+                "space": "🤖 Számsorozat az űrben"
+            }
+        },
+        {
             "id": "round-hundreds-addition-01",
             "title": "Összeadás kerek százasokkal",
             "grades": [
@@ -2966,6 +3010,27 @@
                 "football": "⚽ Vásárlás 1000-ig",
                 "animals": "🦁 Vásárlás 1000-ig",
                 "space": "🤖 Vásárlás 1000-ig"
+            }
+        },
+        {
+            "id": "calendar-1000-01",
+            "title": "📅 Naptár és év",
+            "grades": [
+                3
+            ],
+            "category": "practical",
+            "skill": "calendar",
+            "difficulty": 2,
+            "type": "calendar",
+            "mission": "📅 Naptár és év",
+            "subtitle": "Év, hónap, hét, nap kapcsolata",
+            "file": "./data/lessons/grade3/calendar-01.json",
+            "worldTitles": {
+                "racing": "🏎️ Naptár a boxutcában",
+                "cooking": "🍳 Naptár a konyhában",
+                "football": "⚽ Naptár a bajnokságban",
+                "animals": "🦁 Naptár az állatkertben",
+                "space": "🤖 Naptár az űrhajón"
             }
         }
     ],

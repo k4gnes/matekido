@@ -1,0 +1,70 @@
+{
+  "id": "grade3-estimate-1000",
+  "title": "🔍 Becslés 1000-ig",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔍 Becslés",
+      "text": "Becsülni nem pontosan, hanem nagyjából számolni! Kerekítsük százra a számokat, így gyorsan hozzávetőleges eredményt kapunk.",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Becslés a boxutcában",
+          "text": "A szerelők is becsülik a szükséges alkatrészeket. Kerekíts százra!"
+        },
+        "cooking": {
+          "title": "🍳 Becslés a konyhában",
+          "text": "A szakács becsüli, mennyi alapanyag kell. Becsülj te is százra kerekítve!"
+        },
+        "football": {
+          "title": "⚽ Becslés a pályán",
+          "text": "Az edző becsüli a szurkolók számát. Kerekíts százra!"
+        },
+        "animals": {
+          "title": "🦁 Becslés az állatkertben",
+          "text": "Az állatgondozók becsülik az eledelt. Becsüld meg te is százra kerekítve!"
+        },
+        "space": {
+          "title": "🤖 Becslés az űrhajón",
+          "text": "A robotok becsülik az üzemanyagot. Kerekíts százra!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "estimate",
+      "options": {
+        "count": 6,
+        "max": 500,
+        "op": "mixed",
+        "rounding": 100
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen becsültél százra kerekítve!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen becsültél a boxutcában!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen becsültél a konyhában!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen becsültél a pályán!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen becsültél az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen becsültél az űrhajón!"
+        }
+      }
+    }
+  ]
+}

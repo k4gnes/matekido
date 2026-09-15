@@ -29,6 +29,11 @@ export function renderPattern(step, root, onNext, progress, onResult, onAttempt)
     const sequence = document.createElement("div");
     sequence.className = "pattern-sequence";
 
+    const isNumeric = typeof step.terms[0] === "number";
+    if (isNumeric) {
+        sequence.classList.add("pattern-numeric");
+    }
+
     step.terms.forEach(emoji => {
         const term = document.createElement("span");
         term.className = "pattern-term";
@@ -45,6 +50,9 @@ export function renderPattern(step, root, onNext, progress, onResult, onAttempt)
 
     const optionsContainer = document.createElement("div");
     optionsContainer.className = "pattern-options";
+    if (isNumeric) {
+        optionsContainer.classList.add("pattern-numeric");
+    }
 
     let answered = false;
     let reported = false;

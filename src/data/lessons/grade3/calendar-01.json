@@ -1,0 +1,68 @@
+{
+  "id": "grade3-calendar-01",
+  "title": "📅 Naptár és év – év, hónap, hét, nap",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📅 Naptár",
+      "text": "Egy évben 365 nap van (szökőévben 366), körülbelül 52 hét. Egy hónapban kb. 4 hét, és 28, 30 vagy 31 nap. Egy hónapos évszakban 3 hónap van.",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Naptár a boxutcában",
+          "text": "A szerelők az évből és a hónapokból számolják ki a versenyeket! Segíts nekik!"
+        },
+        "cooking": {
+          "title": "🍳 Naptár a konyhában",
+          "text": "A szakácsok az éves készletet tervezik a naptárral! Játszunk az év napjaival!"
+        },
+        "football": {
+          "title": "⚽ Naptár a bajnokságban",
+          "text": "A bajnokság hónapokig tart! Tájékozódj az években és a hetekben!"
+        },
+        "animals": {
+          "title": "🦁 Naptár az állatkertben",
+          "text": "Az állatgondozók éves tervet készítenek! Segíts az év, hónap, hét és nap váltásokban!"
+        },
+        "space": {
+          "title": "🤖 Naptár az űrhajón",
+          "text": "A bázis egy egész évet tervez előre! Ismerd meg az év, hónap, hét és nap kapcsolatát!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "calendar",
+      "options": {
+        "count": 8,
+        "advanced": true
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Remekül ismered az évet: a hónapok és hetek számát, az évszakok hosszát!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 A verseny indulhat!",
+          "text": "Remekül számolsz az évvel és a hetekkel, a boxutca készen áll!"
+        },
+        "cooking": {
+          "title": "🎉 Az éves készlet kész!",
+          "text": "Ügyesen tájékozódsz az évben, a konyha megtervezve!"
+        },
+        "football": {
+          "title": "🎉 A bajnokság elindulhat!",
+          "text": "Jól igazodsz a hónapokhoz és hetekhez, a csapat vár!"
+        },
+        "animals": {
+          "title": "🎉 Az éves terv kész!",
+          "text": "Ügyesen számolsz az év napjaival, az állatoknak minden adott!"
+        },
+        "space": {
+          "title": "🎉 A küldetés elindulhat!",
+          "text": "Remekül ismered az év hosszát, a bázis készen áll a repülésre!"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "grade3-pattern-1000",
+  "title": "🔢 Számsorozatok 1000-ig",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔢 Számsorozatok",
+      "text": "Ismerd fel a mintát a számok között! Melyik szám következik?",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Számsorozat a versenypályán",
+          "text": "A métertáblák mintát alkotnak. Melyik szám következik?"
+        },
+        "cooking": {
+          "title": "🍳 Számsorozat a konyhában",
+          "text": "A hozzávalók mennyisége mintát követ. Melyik szám következik?"
+        },
+        "football": {
+          "title": "⚽ Számsorozat a táblázaton",
+          "text": "A játékosok pontszámai mintát alkotnak. Melyik szám következik?"
+        },
+        "animals": {
+          "title": "🦁 Számsorozat az állatkertben",
+          "text": "Az állatok száma mintát követ. Melyik szám következik?"
+        },
+        "space": {
+          "title": "🤖 Számsorozat az űrben",
+          "text": "A bolygók távolságai mintát alkotnak. Melyik szám következik?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "pattern",
+      "options": {
+        "count": 8,
+        "visible": 5,
+        "numeric": true
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen felismerted a számsorozatok mintáit!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen felismerted a versenypálya számsorozatait!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen felismerted a konyhai számsorozatokat!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen felismerted a számsorozatokat a táblázaton!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen felismerted az állatok számsorozatait!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen felismerted az űrbeli számsorozatokat!"
+        }
+      }
+    }
+  ]
+}

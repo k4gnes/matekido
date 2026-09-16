@@ -3055,6 +3055,29 @@
                 "animals": "🦛 Hány állat van a füves pusztán?",
                 "space": "🛸 Hány robotot küld az űrflotta?"
             }
+        },
+        {
+            "id": "number-name-02",
+            "title": "Számnevek 10 000-ig",
+            "grades": [
+                4
+            ],
+            "category": "numbers",
+            "skill": "number-names",
+            "difficulty": 1,
+            "type": "number-name",
+            "range": 10000,
+            "mission": "🔤 Számok és szavak",
+            "subtitle": "Szám ↔ szöveg párosítása 10 000-ig",
+            "file": "./data/lessons/grade4/number-name-01.json",
+            "worldTitles": {
+                "postman": "📮 Számok és szavak",
+                "racing": "🏎️ Számok és szavak",
+                "cooking": "🍳 Számok és szavak",
+                "football": "⚽ Számok és szavak",
+                "animals": "🦁 Számok és szavak",
+                "space": "🤖 Számok és szavak"
+            }
         }
     ],
     "gradeConfig": [

@@ -40,15 +40,23 @@ const TENS_BASE = ["", "", "huszon", "harminc", "negyven", "ötven", "hatvan", "
 const TENS_ROUND = ["", "tíz", "húsz", "harminc", "negyven", "ötven", "hatvan", "hetven", "nyolcvan", "kilencven"];
 
 /**
- * Egy szám magyar neve (1–1000).
+ * Egy szám magyar neve (1–9999), iskolai (helyiérték szerinti) olvasatban.
+ *
+ * numberToWords(125)
+ * → "egyszázhuszonöt"
  *
  * numberToWords(345)
  * → "háromszáznegyvenöt"
+ *
+ * numberToWords(1145)
+ * → "ezeregyszáznegyvenöt"
+ *
+ * numberToWords(5326)
+ * → "ötezerháromszázhuszonhat"
  */
 export function numberToWords(number) {
 
     if (number === 0) return "nulla";
-    if (number === 1000) return "ezer";
     if (number < 10) return ONES[number];
 
     if (number < 20) {
@@ -61,16 +69,36 @@ export function numberToWords(number) {
         return ones === 0 ? TENS_ROUND[tens] : TENS_BASE[tens] + ONES[ones];
     }
 
-    const hundreds = Math.floor(number / 100);
-    const rest = number % 100;
+    if (number < 1000) {
+        const hundreds = Math.floor(number / 100);
+        const rest = number % 100;
+
+        let result;
+        if (hundreds === 1) {
+            result = "egyszáz";
+        } else if (hundreds === 2) {
+            result = "kétszáz";
+        } else {
+            result = ONES[hundreds] + "száz";
+        }
+
+        if (rest > 0) {
+            result += numberToWords(rest);
+        }
+
+        return result;
+    }
+
+    const thousands = Math.floor(number / 1000);
+    const rest = number % 1000;
 
     let result;
-    if (hundreds === 1) {
-        result = "száz";
-    } else if (hundreds === 2) {
-        result = "kétszáz";
+    if (thousands === 1) {
+        result = "ezer";
+    } else if (thousands === 2) {
+        result = "kétezer";
     } else {
-        result = ONES[hundreds] + "száz";
+        result = ONES[thousands] + "ezer";
     }
 
     if (rest > 0) {

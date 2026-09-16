@@ -1,0 +1,81 @@
+{
+    "id": "grade4-number-name-01",
+    "title": "Számnevek 10 000-ig",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🔤 Számok és szavak",
+            "text": "Melyik számot mondjuk hangosan? Melyik írásmód a helyes? Most már 10 000-ig párosítjuk a számokat a szavaikkal!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Számok és szavak",
+                    "text": "Melyik számot mondjuk hangosan? Most már 10 000-ig párosítjuk a számokat a szavaikkal!"
+                },
+                "racing": {
+                    "title": "🏎️ Számok és szavak",
+                    "text": "Melyik számot mondjuk hangosan? Most már 10 000-ig párosítjuk a számokat a szavaikkal!"
+                },
+                "football": {
+                    "title": "⚽ Számok és szavak",
+                    "text": "Melyik számot mondjuk hangosan? Most már 10 000-ig párosítjuk a számokat a szavaikkal!"
+                },
+                "cooking": {
+                    "title": "🍳 Számok és szavak",
+                    "text": "Melyik számot mondjuk hangosan? Most már 10 000-ig párosítjuk a számokat a szavaikkal!"
+                },
+                "animals": {
+                    "title": "🦁 Számok és szavak",
+                    "text": "Melyik számot mondjuk hangosan? Most már 10 000-ig párosítjuk a számokat a szavaikkal!"
+                },
+                "space": {
+                    "title": "🤖 Számok és szavak",
+                    "text": "Melyik számot mondjuk hangosan? Most már 10 000-ig párosítjuk a számokat a szavaikkal!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "number-name",
+            "options": {
+                "count": 8,
+                "min": 1000,
+                "max": 9999,
+                "direction": "mixed"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Minden számnevet jól elsajátítottál 10 000-ig!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Ügyes voltál!",
+                    "text": "Minden számnevet jól elsajátítottál!"
+                },
+                "racing": {
+                    "title": "🎉 Ügyes voltál!",
+                    "text": "Minden számnevet jól elsajátítottál!"
+                },
+                "football": {
+                    "title": "🎉 Ügyes voltál!",
+                    "text": "Minden számnevet jól elsajátítottál!"
+                },
+                "cooking": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden számnevet jól elsajátítottál!"
+                },
+                "animals": {
+                    "title": "🎉 Ügyes voltál!",
+                    "text": "Minden számnevet jól elsajátítottál!"
+                },
+                "space": {
+                    "title": "🎉 Szuper vagy!",
+                    "text": "Minden számnevet jól elsajátítottál!"
+                }
+            }
+        }
+    ]
+}

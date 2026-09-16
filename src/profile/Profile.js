@@ -482,6 +482,17 @@ export function setActiveGrade(grade) {
 
 }
 
+export function resolveLessonGrade(entry) {
+
+    const grades = entry?.grades || [];
+    const active = getActiveGrade();
+    if (active != null && grades.includes(active)) {
+        return active;
+    }
+    return grades[0] ?? active ?? null;
+
+}
+
 export function getUnlockedWorldIds() {
 
     const profile = loadProfile();

@@ -1,4 +1,4 @@
-import { Game } from "./engine/Game.js?v=76";
+import { Game } from "./engine/Game.js?v=77";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=20";
 import { renderLessonMenu } from "./components/lessonMenu.js?v=45";
@@ -10,7 +10,7 @@ import { getNextPracticeLesson } from "./components/practicePage.js?v=8";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=2";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=5";
 import { getActiveId, listPlayers } from "./profile/UserManager.js";
-import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld, setActiveGrade } from "./profile/Profile.js";
+import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld, setActiveGrade, resolveLessonGrade } from "./profile/Profile.js";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
 import { createCard } from "./components/ui/card.js";
 import { createButton } from "./components/ui/button.js";
@@ -215,7 +215,7 @@ function getNextLesson(path) {
     const idx = allLessons.findIndex(l => l.file === path);
     if (idx === -1) return null;
 
-    const grade = allLessons[idx].grades?.[0];
+    const grade = resolveLessonGrade(allLessons[idx]);
 
     const gradeLessons = allLessons.filter(l => l.grades?.includes(grade));
     const pos = gradeLessons.findIndex(l => l.file === path);
@@ -264,7 +264,7 @@ function showGradeChange(path, next) {
 
     const allLessons = lessonIndex.lessons || [];
     const idx = allLessons.findIndex(l => l.file === path);
-    const grade = idx !== -1 ? allLessons[idx].grades?.[0] : null;
+    const grade = idx !== -1 ? resolveLessonGrade(allLessons[idx]) : null;
 
     if (grade) {
         const skippedCount = getSkippedLessons().filter(file =>
@@ -326,7 +326,7 @@ function showGradeComplete(path) {
 
     const allLessons = lessonIndex.lessons || [];
     const idx = allLessons.findIndex(l => l.file === path);
-    const grade = idx !== -1 ? allLessons[idx].grades?.[0] : null;
+    const grade = idx !== -1 ? resolveLessonGrade(allLessons[idx]) : null;
 
     root.replaceChildren();
 
@@ -374,7 +374,7 @@ function getNextGradeStart(path) {
     const idx = allLessons.findIndex(l => l.file === path);
     if (idx === -1) return null;
 
-    const grade = allLessons[idx].grades?.[0];
+    const grade = resolveLessonGrade(allLessons[idx]);
 
     for (let i = 0; i < allLessons.length; i++) {
         const candidate = allLessons[i];

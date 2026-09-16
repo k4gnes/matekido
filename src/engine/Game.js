@@ -136,7 +136,7 @@ import { renderMissingProgress } from "../components/missingProgress.js?v=3";
 import { renderComparisonProgress } from "../components/comparisonProgress.js?v=3";
 import { renderNeighborProgress } from "../components/neighborProgress.js?v=3";
 
-import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, recordSkillResult, resolveSkippedLesson, getLessonStats, getActiveWorld, isFavoriteLesson, toggleFavoriteLesson } from "../profile/Profile.js";
+import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, recordSkillResult, resolveSkippedLesson, getLessonStats, getActiveWorld, isFavoriteLesson, toggleFavoriteLesson, resolveLessonGrade } from "../profile/Profile.js";
 import { grantRewards } from "../profile/RewardService.js";
 
 const SKILL_BY_TYPE = {
@@ -247,7 +247,8 @@ export class Game {
         const allLessons = this.lessonIndex.lessons || [];
         const idx = allLessons.findIndex(l => l.file === this.lessonFile);
         if (idx === -1) return null;
-        const grade = allLessons[idx].grades?.[0];
+        const grade = resolveLessonGrade(allLessons[idx]);
+        if (grade == null) return null;
         const gradeLessons = allLessons.filter(l => l.grades?.includes(grade));
         const posInGrade = gradeLessons.findIndex(l => l.file === this.lessonFile);
         return { position: posInGrade + 1, total: gradeLessons.length };
@@ -257,7 +258,7 @@ export class Game {
         if (!this.lessonIndex || !this.lessonFile) return null;
         const allLessons = this.lessonIndex.lessons || [];
         const entry = allLessons.find(l => l.file === this.lessonFile);
-        return entry?.grades?.[0] ?? null;
+        return resolveLessonGrade(entry);
     }
 
     isGradeComplete() {

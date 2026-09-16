@@ -174,6 +174,15 @@ function validateStep(step, ctx) {
             if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
             break;
         }
+        case "neighbor-round": {
+            if (!isInt(step.number) || !isInt(step.lower) || !isInt(step.upper)) fail(ctx, "number/lower/upper hibás");
+            if (!["ten", "hundred", "thousand"].includes(step.unit)) fail(ctx, `unit hibás (${step.unit})`);
+            const stepVal = step.unit === "ten" ? 10 : step.unit === "hundred" ? 100 : 1000;
+            if (step.lower % stepVal !== 0 || step.upper % stepVal !== 0) fail(ctx, "lower/upper nem kerek");
+            if (step.lower >= step.number || step.upper <= step.number) fail(ctx, "lower/upper nem szomszédok");
+            if (step.unitLabel !== { ten: "tízes", hundred: "százas", thousand: "ezres" }[step.unit]) fail(ctx, "unitLabel hibás");
+            break;
+        }
         case "place-value":
         case "place-value-two-input": {
             if (!isInt(step.tens) || !isInt(step.ones) || step.tens < 0 || step.ones < 0) fail(ctx, "tens/ones hibás");

@@ -3078,6 +3078,29 @@
                 "animals": "🦁 Számok és szavak",
                 "space": "🤖 Számok és szavak"
             }
+        },
+        {
+            "id": "neighbor-10000-01",
+            "title": "Szomszédok 10 000-ig",
+            "grades": [
+                4
+            ],
+            "category": "numbers",
+            "skill": "neighbours",
+            "difficulty": 2,
+            "type": "neighbor",
+            "range": 10000,
+            "mission": "🔍 Számszomszédok",
+            "subtitle": "Tízes-, százas- és ezres szomszédok",
+            "file": "./data/lessons/grade4/neighbor-10000-01.json",
+            "worldTitles": {
+                "postman": "📮 Ki áll mellette?",
+                "racing": "🏎️ Ki áll mellette a pályán?",
+                "football": "⚽ Ki a szomszédja a meccsen?",
+                "cooking": "🍳 Ki áll mellette a polcon?",
+                "animals": "🦁 Ki áll mellette a kifutóban?",
+                "space": "🤖 Ki áll mellette a sorban?"
+            }
         }
     ],
     "gradeConfig": [

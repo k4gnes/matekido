@@ -5,6 +5,7 @@ import { generateMissingTo10, generateMissingRandom } from "./missingNumberGener
 import { generateComparison } from "./comparisonGenerator.js?v=3";
 import { generateNeighbor } from "./neighborGenerator.js?v=3";
 import { generateNeighborSingle } from "./neighborSingleGenerator.js?v=3";
+import { generateNeighborRound } from "./neighborRoundGenerator.js?v=1";
 import { generatePlaceValue } from "./placeValueGenerator.js?v=3";
 import { generateBridgeTo10 } from "./bridgeTenGenerator.js?v=4";
 import { generateSequence } from "./sequenceGenerator.js?v=4";
@@ -35,7 +36,7 @@ import { generateVolume } from "./volumeGenerator.js?v=2";
 import { generateMoneyChange } from "./moneyChangeGenerator.js?v=1";
 import { generatePlaceValueHundreds } from "./placeValueHundredsGenerator.js?v=1";
 import { generatePlaceValueThousands } from "./placeValueThousandsGenerator.js?v=1";
-import { generateNumberName } from "./numberNameGenerator.js?v=4";
+import { generateNumberName } from "./numberNameGenerator.js?v=5";
 import { generateRounding } from "./roundingGenerator.js?v=2";
 import { generateRoman } from "./romanGenerator.js?v=1";
 import { generateTransform } from "./transformGenerator.js?v=2";
@@ -75,6 +76,8 @@ export function generate(step) {
             return generateNeighbor(opts);
         case "neighbor-single":
             return generateNeighborSingle(opts);
+        case "neighbor-round":
+            return generateNeighborRound(opts);
         case "subtraction":
             return generateSubtraction(opts);
         case "mixed":

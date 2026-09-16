@@ -86,6 +86,15 @@ export function buildLesson(lesson) {
                     answer: task.answer,
                     interaction: task.interaction
                 });
+            } else if (step.generator === "neighbor-round") {
+                result.push({
+                    type: "neighbor-round",
+                    number: task.number,
+                    unit: task.unit,
+                    unitLabel: task.unitLabel,
+                    lower: task.lower,
+                    upper: task.upper
+                });
             } else if (step.generator === "subtraction") {
                 result.push({
                     type: "exercise",

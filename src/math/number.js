@@ -45,14 +45,14 @@ const TENS_ROUND = ["", "tíz", "húsz", "harminc", "negyven", "ötven", "hatvan
  * numberToWords(125)
  * → "egyszázhuszonöt"
  *
- * numberToWords(345)
- * → "háromszáznegyvenöt"
- *
  * numberToWords(1145)
  * → "ezeregyszáznegyvenöt"
  *
+ * numberToWords(5444)
+ * → "ötezer-négyszáznegyvennégy"
+ *
  * numberToWords(5326)
- * → "ötezerháromszázhuszonhat"
+ * → "ötezer-háromszázhuszonhat"
  */
 export function numberToWords(number) {
 
@@ -102,7 +102,7 @@ export function numberToWords(number) {
     }
 
     if (rest > 0) {
-        result += numberToWords(rest);
+        result += (thousands >= 2 ? "-" : "") + numberToWords(rest);
     }
 
     return result;

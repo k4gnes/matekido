@@ -1,0 +1,93 @@
+{
+    "id": "grade4-neighbor-10000-01",
+    "title": "Szomszédok 10 000-ig",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🔍 Kerek szomszédok",
+            "text": "A tízes, százas és ezres szomszédok a kerek számok, amelyek közelebb állnak a számhoz! Írd be a kisebb és a nagyobb szomszédot is!",
+            "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>5326</span></div><div style='font-size:0.95rem; opacity:0.8;'>tízes szomszédok: 5320 · 5330 &nbsp;|&nbsp; százas szomszédok: 5300 · 5400 &nbsp;|&nbsp; ezres szomszédok: 5000 · 6000</div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "🔍 Kerek szomszédok a postán",
+                    "text": "Melyik kerek szám áll a szám előtt és után? Írd be mindkét szomszédot!"
+                },
+                "racing": {
+                    "title": "🏎️ Kerek szomszédok a pályán",
+                    "text": "Melyik kerek szám áll a szám előtt és után a boxutcában? Írd be mindkét szomszédot!"
+                },
+                "football": {
+                    "title": "⚽ Kerek szomszédok a bajnokságban",
+                    "text": "Melyik kerek szám áll a szám előtt és után a táblázaton? Írd be mindkét szomszédot!"
+                },
+                "cooking": {
+                    "title": "🍳 Kerek szomszédok a konyhában",
+                    "text": "Melyik kerek szám áll a szám előtt és után a polcon? Írd be mindkét szomszédot!"
+                },
+                "animals": {
+                    "title": "🦁 Kerek szomszédok az állatkertben",
+                    "text": "Melyik kerek szám áll a szám előtt és után a kifutóban? Írd be mindkét szomszédot!"
+                },
+                "space": {
+                    "title": "🤖 Kerek szomszédok az űrben",
+                    "text": "Melyik kerek szám áll a szám előtt és után a sorban? Írd be mindkét szomszédot!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "neighbor-round",
+            "options": {
+                "count": 4,
+                "min": 1000,
+                "max": 9999,
+                "units": ["ten", "hundred"]
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "neighbor-round",
+            "options": {
+                "count": 4,
+                "min": 1000,
+                "max": 9999,
+                "units": ["ten", "hundred", "thousand"]
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Minden kerek szomszédot jól megtaláltál!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden kerek szomszédot jól megtaláltál!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden kerek szomszédot jól megtaláltál a pályán!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden kerek szomszédot jól megtaláltál a bajnokságban!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden kerek szomszédot jól megtaláltál a konyhában!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden kerek szomszédot jól megtaláltál az állatkertben!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden kerek szomszédot jól megtaláltál az űrben!"
+                }
+            }
+        }
+    ]
+}

@@ -8,6 +8,7 @@ import { renderMissingNumber } from "../components/missingNumber.js?v=7";
 import { renderComparison } from "../components/comparison.js?v=5";
 import { renderNeighbor } from "../components/neighbor.js?v=5";
 import { renderNeighborSingle } from "../components/neighborSingle.js?v=5";
+import { renderNeighborRound } from "../components/neighborRound.js?v=2";
 import { renderPlaceValue } from "../components/placeValue.js?v=5";
 import { renderPlaceValueTwoInput } from "../components/placeValueTwoInput.js?v=5";
 import { renderBridgeTen } from "../components/bridgeTen.js?v=12";
@@ -65,6 +66,7 @@ const COUNTED_TYPES = new Set([
     "comparison",
     "neighbor",
     "neighbor-single",
+    "neighbor-round",
     "place-value",
     "place-value-two-input",
     "decomposition-find-wrong",
@@ -140,6 +142,7 @@ import { grantRewards } from "../profile/RewardService.js";
 const SKILL_BY_TYPE = {
     "decomposition-find-wrong": "decomposition",
     "neighbor-single": "neighbor",
+    "neighbor-round": "neighbor",
     "place-value-two-input": "place-value",
     "place-value-thousands": "place-value"
 };
@@ -186,6 +189,7 @@ const RENDERERS = new Map([
     ["comparison", renderComparison],
     ["neighbor", renderNeighbor],
     ["neighbor-single", renderNeighborSingle],
+    ["neighbor-round", renderNeighborRound],
     ["place-value", renderPlaceValue],
     ["place-value-two-input", renderPlaceValueTwoInput],
     ["place-value-hundreds", renderPlaceValueHundreds],

@@ -358,6 +358,16 @@ export function buildLesson(lesson) {
                     answer: task.answer,
                     interaction: task.interaction
                 });
+            } else if (step.generator === "place-value-thousands") {
+                result.push({
+                    type: "place-value-thousands",
+                    thousands: task.thousands,
+                    hundreds: task.hundreds,
+                    tens: task.tens,
+                    ones: task.ones,
+                    answer: task.answer,
+                    interaction: task.interaction
+                });
             } else if (step.generator === "number-name") {
                 result.push({
                     type: "number-name",

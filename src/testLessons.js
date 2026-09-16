@@ -185,6 +185,11 @@ function validateStep(step, ctx) {
             if (step.answer !== 100 * step.hundreds + 10 * step.tens + step.ones) fail(ctx, "answer hibás");
             break;
         }
+        case "place-value-thousands": {
+            if (!isInt(step.thousands) || !isInt(step.hundreds) || !isInt(step.tens) || !isInt(step.ones)) fail(ctx, "ezres/százas/tízes/egyes hibás");
+            if (step.answer !== 1000 * step.thousands + 100 * step.hundreds + 10 * step.tens + step.ones) fail(ctx, "answer hibás");
+            break;
+        }
         case "sequence": {
             if (!Array.isArray(step.terms) || step.terms.length < 3 || step.terms.some(t => !isInt(t))) fail(ctx, "terms hibás");
             if (!isInt(step.answer)) fail(ctx, "answer hibás");

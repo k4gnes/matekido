@@ -3032,6 +3032,29 @@
                 "animals": "🦁 Naptár az állatkertben",
                 "space": "🤖 Naptár az űrhajón"
             }
+        },
+        {
+            "id": "place-value-thousands-01",
+            "title": "Helyiérték 10 000-ig",
+            "grades": [
+                4
+            ],
+            "category": "numbers",
+            "skill": "place-value",
+            "difficulty": 2,
+            "type": "place-value-thousands",
+            "range": 10000,
+            "mission": "🔢 Ezresek, százasok, tízesek, egyesek",
+            "subtitle": "Helyiérték 10 000-ig – ezresek, százasok, tízesek, egyesek",
+            "file": "./data/lessons/grade4/place-value-thousands-01.json",
+            "worldTitles": {
+                "postman": "🚚 Hány levél van a rakocsikban?",
+                "racing": "🏁 Hány alkatrész kell a pályára?",
+                "cooking": "🥘 Hány hozzávaló kell a nagy ebédhez?",
+                "football": "🏆 Hány játékos van a bajnokságban?",
+                "animals": "🦛 Hány állat van a füves pusztán?",
+                "space": "🛸 Hány robotot küld az űrflotta?"
+            }
         }
     ],
     "gradeConfig": [
@@ -3046,6 +3069,10 @@
         {
             "grade": 3,
             "title": "3. osztály"
+        },
+        {
+            "grade": 4,
+            "title": "4. osztály"
         }
     ]
 }

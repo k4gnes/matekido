@@ -38,6 +38,7 @@ import { renderWeight } from "../components/weight.js?v=2";
 import { renderVolume } from "../components/volume.js?v=2";
 import { renderMoneyChange } from "../components/moneyChange.js?v=3";
 import { renderPlaceValueHundreds } from "../components/placeValueHundreds.js?v=3";
+import { renderPlaceValueThousands } from "../components/placeValueThousands.js?v=2";
 import { renderNumberName } from "../components/numberName.js?v=2";
 import { renderRounding } from "../components/rounding.js?v=3";
 import { renderRoman } from "../components/roman.js?v=2";
@@ -101,7 +102,8 @@ const COUNTED_TYPES = new Set([
     "weight",
     "volume",
     "money-change",
-    "place-value-hundreds",
+"place-value-hundreds",
+    "place-value-thousands",
     "number-name",
     "rounding",
     "roman",
@@ -138,7 +140,8 @@ import { grantRewards } from "../profile/RewardService.js";
 const SKILL_BY_TYPE = {
     "decomposition-find-wrong": "decomposition",
     "neighbor-single": "neighbor",
-    "place-value-two-input": "place-value"
+    "place-value-two-input": "place-value",
+    "place-value-thousands": "place-value"
 };
 
 const RENDERERS = new Map([
@@ -186,6 +189,7 @@ const RENDERERS = new Map([
     ["place-value", renderPlaceValue],
     ["place-value-two-input", renderPlaceValueTwoInput],
     ["place-value-hundreds", renderPlaceValueHundreds],
+    ["place-value-thousands", renderPlaceValueThousands],
     ["number-name", renderNumberName],
     ["rounding", renderRounding],
     ["roman", renderRoman],

@@ -1,0 +1,99 @@
+{
+    "id": "grade4-place-value-thousands-01",
+    "title": "Helyiérték 10 000-ig",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🔢 Ezresek, százasok, tízesek, egyesek",
+            "text": "Egy rakományba mindig 1000 levél fér! Most már 10 000-ig bontjuk a számokat ezresekre, százasokra, tízesekre és egyesekre!",
+            "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>🚚</span> <span style='font-size:1.1rem;'>= 1000 db</span> <span style='font-size:1.5rem;'>🧺✉️</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 rakomány = 1000 levél · 3 rakomány, 2 láda és 4 levél = 3024</div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "🚚 Hány levél van a rakocsikban?",
+                    "text": "Egy rakományba mindig 1000 levél fér! Most már 10 000-ig bontjuk a számokat!",
+                    "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>🚚</span> <span style='font-size:1.1rem;'>= 1000 db</span> <span style='font-size:1.5rem;'>✉️</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 rakomány = 1000 levél</div>"
+                },
+                "racing": {
+                    "title": "🏁 Hány alkatrész kell a pályára?",
+                    "text": "Egy raktárba mindig 1000 alkatrész fér! Most már 10 000-ig bontjuk a számokat!",
+                    "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>🏁</span> <span style='font-size:1.1rem;'>= 1000 db</span> <span style='font-size:1.5rem;'>⚙️</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 raktár = 1000 alkatrész</div>"
+                },
+                "football": {
+                    "title": "🏆 Hány játékos van a bajnokságban?",
+                    "text": "Egy bajnokságban mindig 1000 játékos játszik! Most már 10 000-ig bontjuk a számokat!",
+                    "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>🏆</span> <span style='font-size:1.1rem;'>= 1000 db</span> <span style='font-size:1.5rem;'>🏃</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 bajnokság = 1000 játékos</div>"
+                },
+                "cooking": {
+                    "title": "🥘 Hány hozzávaló kell a nagy ebédhez?",
+                    "text": "Egy nagy üstbe mindig 1000 hozzávaló fér! Most már 10 000-ig bontjuk a számokat!",
+                    "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>🥘</span> <span style='font-size:1.1rem;'>= 1000 db</span> <span style='font-size:1.5rem;'>🥄</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 üst = 1000 hozzávaló</div>"
+                },
+                "animals": {
+                    "title": "🦛 Hány állat van a füves pusztán?",
+                    "text": "Egy puszta legelőjén mindig 1000 állat legel! Most már 10 000-ig bontjuk a számokat!"
+                },
+                "space": {
+                    "title": "🛸 Hány robotot küld az űrflotta?",
+                    "text": "Egy űrflotta mindig 1000 robotot szállít! Most már 10 000-ig bontjuk a számokat!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "place-value-thousands",
+
+            "options": {
+                "count": 4,
+                "min": 1000,
+                "max": 9999,
+                "interaction": "input"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "place-value-thousands",
+
+            "options": {
+                "count": 4,
+                "min": 1000,
+                "max": 9999,
+                "interaction": "choice"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "10 000-ig is tökéletesen bontod a számokat ezresekre, százasokra, tízesekre és egyesekre!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🚚 Nagy vagy!",
+                    "text": "Minden rakományt jól megszámoltál!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden alkatrészt jól megszámoltál a raktárban!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden játékost jól megszámoltál a bajnokságban!"
+                },
+                "cooking": {
+                    "title": "🥘 Szép munka!",
+                    "text": "Minden hozzávalót jól megszámoltál a nagy üsthöz!"
+                },
+                "animals": {
+                    "title": "🦛 Ügyes voltál!",
+                    "text": "Minden állatot jól megszámoltál a füves pusztán!"
+                },
+                "space": {
+                    "title": "🛸 Szuper vagy!",
+                    "text": "Minden robotot jól megszámoltál az űrflottában!"
+                }
+            }
+        }
+    ]
+}

@@ -34,6 +34,7 @@ import { generateWeight } from "./weightGenerator.js?v=1";
 import { generateVolume } from "./volumeGenerator.js?v=2";
 import { generateMoneyChange } from "./moneyChangeGenerator.js?v=1";
 import { generatePlaceValueHundreds } from "./placeValueHundredsGenerator.js?v=1";
+import { generatePlaceValueThousands } from "./placeValueThousandsGenerator.js?v=1";
 import { generateNumberName } from "./numberNameGenerator.js?v=1";
 import { generateRounding } from "./roundingGenerator.js?v=2";
 import { generateRoman } from "./romanGenerator.js?v=1";
@@ -138,6 +139,8 @@ export function generate(step) {
             return generateMoneyChange(opts);
         case "place-value-hundreds":
             return generatePlaceValueHundreds(opts);
+        case "place-value-thousands":
+            return generatePlaceValueThousands(opts);
         case "number-name":
             return generateNumberName(opts);
         case "rounding":

@@ -1,0 +1,91 @@
+{
+    "id": "grade4-comparison-10000-01",
+    "title": "Összehasonlítás 10 000-ig",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "⚖️ Melyik a nagyobb?",
+            "text": "Hasonlítsd össze a két számot, és válaszd ki a helyes jelet: <, = vagy >!",
+            "illustration": "<div style='font-size:1.8rem; margin:0.5rem 0;'>5432 &nbsp;?&nbsp; 7891</div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Melyik a nagyobb?",
+                    "text": "Hasonlítsd össze a két számot, és válaszd ki a helyes jelet: <, = vagy >!"
+                },
+                "racing": {
+                    "title": "🏎️ Melyik a gyorsabb szám?",
+                    "text": "Hasonlítsd össze a két számot, és válaszd ki a helyes jelet: <, = vagy >!"
+                },
+                "football": {
+                    "title": "⚽ Melyik a nagyobb szám?",
+                    "text": "Hasonlítsd össze a két számot, és válaszd ki a helyes jelet: <, = vagy >!"
+                },
+                "cooking": {
+                    "title": "🍳 Melyik a nagyobb?",
+                    "text": "Hasonlítsd össze a két számot, és válaszd ki a helyes jelet: <, = vagy >!"
+                },
+                "animals": {
+                    "title": "🦁 Melyik a nagyobb?",
+                    "text": "Hasonlítsd össze a két számot, és válaszd ki a helyes jelet: <, = vagy >!"
+                },
+                "space": {
+                    "title": "🤖 Melyik a nagyobb szám?",
+                    "text": "Hasonlítsd össze a két számot, és válaszd ki a helyes jelet: <, = vagy >!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "comparison",
+            "options": {
+                "count": 5,
+                "max": 5000,
+                "plain": true
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "comparison",
+            "options": {
+                "count": 5,
+                "max": 10000,
+                "plain": true
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Minden összehasonlítást jól megoldottál!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden összehasonlítást jól megoldottál a postán!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden összehasonlítást jól megoldottál a pályán!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden összehasonlítást jól megoldottál a meccsen!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden összehasonlítást jól megoldottál a konyhában!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden összehasonlítást jól megoldottál az állatkertben!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden összehasonlítást jól megoldottál az űrben!"
+                }
+            }
+        }
+    ]
+}

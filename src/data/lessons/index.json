@@ -3101,6 +3101,29 @@
                 "animals": "🦁 Ki áll mellette a kifutóban?",
                 "space": "🤖 Ki áll mellette a sorban?"
             }
+        },
+        {
+            "id": "comparison-10000-01",
+            "title": "Összehasonlítás 10 000-ig",
+            "grades": [
+                4
+            ],
+            "category": "numbers",
+            "skill": "comparison",
+            "difficulty": 2,
+            "type": "comparison",
+            "range": 10000,
+            "mission": "⚖️ Melyik a nagyobb?",
+            "subtitle": "Két szám összehasonlítása 10 000-ig",
+            "file": "./data/lessons/grade4/comparison-10000-01.json",
+            "worldTitles": {
+                "postman": "📮 Melyik a nagyobb?",
+                "racing": "🏎️ Melyik a gyorsabb szám?",
+                "football": "⚽ Melyik a nagyobb szám?",
+                "cooking": "🍳 Melyik a nagyobb?",
+                "animals": "🦁 Melyik a nagyobb?",
+                "space": "🤖 Melyik a nagyobb szám?"
+            }
         }
     ],
     "gradeConfig": [

@@ -3193,6 +3193,29 @@
                 "animals": "🦁 Írásbeli összeadás az állatkertben",
                 "space": "🤖 Írásbeli összeadás az űrben"
             }
+        },
+        {
+            "id": "written-sub-10000-01",
+            "title": "Írásbeli kivonás négyjegyűekkel",
+            "grades": [
+                4
+            ],
+            "category": "operations",
+            "skill": "subtraction",
+            "difficulty": 2,
+            "type": "written-operation",
+            "range": 10000,
+            "mission": "✍️ Írásbeli számolás",
+            "subtitle": "Négyjegyű számok kivonása",
+            "file": "./data/lessons/grade4/written-sub-01.json",
+            "worldTitles": {
+                "postman": "📮 Írásbeli kivonás a postán",
+                "racing": "🏎️ Írásbeli kivonás a pályán",
+                "football": "⚽ Írásbeli kivonás a bajnokságban",
+                "cooking": "🍳 Írásbeli kivonás a konyhában",
+                "animals": "🦁 Írásbeli kivonás az állatkertben",
+                "space": "🤖 Írásbeli kivonás az űrben"
+            }
         }
     ],
     "gradeConfig": [

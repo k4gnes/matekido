@@ -154,8 +154,8 @@ export function renderWrittenOperation(step, root, next, progress, onResult, onA
         onClick: () => {
             hintShown = true;
             hint.textContent = step.op === "sub"
-                ? "Egyesektől balra haladj! Ha nem elég a tízes, kérj kölcsön a százasoktól!"
-                : "Egyesektől balra haladj! Amikor 10 fölé visz, írd le az egyest, és vidd tovább a tízesátlépést!";
+                ? "Egyesektől haladj balra! Ha egy oszlopban nem elég a felső szám, kérj kölcsön egyet a tőle balra lévő oszlopból, és a maradékot számold ki azzal!"
+                : "Egyesektől haladj balra! Ha egy oszlopban az összeg 10 vagy több, írd le az egyesét, a többit pedig vidd tovább a balra lévő oszlopba!";
             hintButton.style.display = "none";
             if (!useChoice && inputs.length > 0) inputs[inputs.length - 1].focus();
         }

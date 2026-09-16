@@ -1,0 +1,101 @@
+{
+    "id": "grade4-written-sub-01",
+    "title": "Írásbeli kivonás négyjegyűekkel",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "✍️ Írásbeli kivonás",
+            "text": "Írd be a hiányzó számjegyeket! Az egyesektől haladj balra, és ha nem elég a számjegy, kérj kölcsön balról!",
+            "illustration": "<div class='wo-table' style='--wo-cols:4; margin:0.5rem auto; font-size:1.6rem;'><div></div><div>ezres</div><div>százas</div><div>tízes</div><div>egyes</div><div></div><div class='wo-digit'>5</div><div class='wo-digit'>3</div><div class='wo-digit'>2</div><div class='wo-digit'>6</div><div class='wo-op'>−</div><div class='wo-digit'>2</div><div class='wo-digit'>4</div><div class='wo-digit'>5</div><div class='wo-digit'>8</div><div class='wo-line'></div></div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Írásbeli kivonás a postán",
+                    "text": "Vond ki az írásbeli kivonásban a leveleket! Az egyesektől haladj balra!"
+                },
+                "racing": {
+                    "title": "🏎️ Írásbeli kivonás a pályán",
+                    "text": "Számold ki a különbséget írásban! Az egyesektől haladj balra!"
+                },
+                "football": {
+                    "title": "⚽ Írásbeli kivonás a bajnokságban",
+                    "text": "Vond ki a meccsre nem érkezőket írásban! Az egyesektől haladj balra!"
+                },
+                "cooking": {
+                    "title": "🍳 Írásbeli kivonás a konyhában",
+                    "text": "Vond ki a felhasznált hozzávalókat írásban! Az egyesektől haladj balra!"
+                },
+                "animals": {
+                    "title": "🦁 Írásbeli kivonás az állatkertben",
+                    "text": "Vond ki az eladott jegyeket írásban! Az egyesektől haladj balra!"
+                },
+                "space": {
+                    "title": "🤖 Írásbeli kivonás az űrben",
+                    "text": "Vond ki a felhasznált energiát írásban! Az egyesektől haladj balra!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "written-operation",
+            "options": {
+                "count": 4,
+                "op": "sub",
+                "min": 2000,
+                "max": 9999,
+                "borrow": "never",
+                "resultMin": 1000,
+                "resultMax": 9999,
+                "interaction": "mixed"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "written-operation",
+            "options": {
+                "count": 4,
+                "op": "sub",
+                "min": 3000,
+                "max": 9999,
+                "borrow": "always",
+                "resultMin": 1000,
+                "resultMax": 9999,
+                "interaction": "mixed"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Minden írásbeli kivonás jól sikerült!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden írásbeli kivonás jól sikerült a postán!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden írásbeli kivonás jól sikerült a pályán!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden írásbeli kivonás jól sikerült a meccsen!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden írásbeli kivonás jól sikerült a konyhában!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden írásbeli kivonás jól sikerült az állatkertben!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden írásbeli kivonás jól sikerült az űrben!"
+                }
+            }
+        }
+    ]
+}

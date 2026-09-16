@@ -3170,6 +3170,29 @@
                 "animals": "🦁 Kerekítés az állatkertben",
                 "space": "🤖 Kerekítés az űrben"
             }
+        },
+        {
+            "id": "written-add-10000-01",
+            "title": "Írásbeli összeadás négyjegyűekkel",
+            "grades": [
+                4
+            ],
+            "category": "operations",
+            "skill": "addition",
+            "difficulty": 2,
+            "type": "written-operation",
+            "range": 10000,
+            "mission": "✍️ Írásbeli számolás",
+            "subtitle": "Négyjegyű számok összeadása",
+            "file": "./data/lessons/grade4/written-add-01.json",
+            "worldTitles": {
+                "postman": "📮 Írásbeli összeadás a postán",
+                "racing": "🏎️ Írásbeli összeadás a pályán",
+                "football": "⚽ Írásbeli összeadás a bajnokságban",
+                "cooking": "🍳 Írásbeli összeadás a konyhában",
+                "animals": "🦁 Írásbeli összeadás az állatkertben",
+                "space": "🤖 Írásbeli összeadás az űrben"
+            }
         }
     ],
     "gradeConfig": [

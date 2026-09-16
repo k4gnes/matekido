@@ -442,10 +442,10 @@ function validateStep(step, ctx) {
                 fail(ctx, `op hibás: ${step.op}`);
             }
             if (!isInt(step.a) || !isInt(step.b) || step.a < 100 || step.b < 100) {
-                fail(ctx, "a/b nem háromjegyű");
+                fail(ctx, "a/b nem >=100");
             }
-            if (step.a > 999 || step.b > 999) {
-                fail(ctx, "a/b 999 fölötti");
+            if (step.a > 9999 || step.b > 9999) {
+                fail(ctx, "a/b 9999 fölötti");
             }
             if (step.op === "add" && step.answer !== step.a + step.b) {
                 fail(ctx, `answer != a+b (${step.answer})`);
@@ -453,8 +453,8 @@ function validateStep(step, ctx) {
             if (step.op === "sub" && step.answer !== step.a - step.b) {
                 fail(ctx, `answer != a-b (${step.answer})`);
             }
-            if (step.answer < 100 || step.answer > 999) {
-                fail(ctx, `answer nem háromjegyű: ${step.answer}`);
+            if (step.answer < 100 || step.answer > 9999) {
+                fail(ctx, `answer 100..9999 nélküli: ${step.answer}`);
             }
             if (!["input", "choice"].includes(step.interaction)) {
                 fail(ctx, `interaction hibás: ${step.interaction}`);

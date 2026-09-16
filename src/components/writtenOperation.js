@@ -13,12 +13,16 @@ const WORLD = {
     space: { emoji: "🤖" }
 };
 
-function digits(n) {
-    return [
-        Math.floor(n / 100) % 10,
-        Math.floor(n / 10) % 10,
-        n % 10
-    ];
+function digitCount(n) {
+    return String(n).length;
+}
+
+function padDigits(n, width) {
+    const arr = [];
+    for (let d = width - 1; d >= 0; d--) {
+        arr.push(Math.floor(n / Math.pow(10, d)) % 10);
+    }
+    return arr;
 }
 
 function shuffle(arr) {
@@ -61,16 +65,20 @@ export function renderWrittenOperation(step, root, next, progress, onResult, onA
     const title = document.createElement("h1");
     title.textContent = `${w.emoji} Írásbeli ${opLabel.toLowerCase()}`;
 
-    const aD = digits(step.a);
-    const bD = digits(step.b);
-    const correctD = digits(step.answer);
+    const PLACE_NAMES = ["tízezres", "ezres", "százas", "tízes", "egyes"];
+
+    const width = Math.max(digitCount(step.a), digitCount(step.b), digitCount(step.answer));
+    const aD = padDigits(step.a, width);
+    const bD = padDigits(step.b, width);
+    const correctD = padDigits(step.answer, width);
 
     const useChoice = step.interaction === "choice";
 
     const table = document.createElement("div");
     table.className = "wo-table";
+    table.style.setProperty("--wo-cols", width);
 
-    const places = ["százas", "tízes", "egyes"];
+    const places = PLACE_NAMES.slice(PLACE_NAMES.length - width);
 
     table.append(document.createElement("div"));
 
@@ -114,7 +122,9 @@ export function renderWrittenOperation(step, root, next, progress, onResult, onA
         optionsContainer = document.createElement("div");
         optionsContainer.className = "mult-options";
 
-        const options = makeWrittenOptions(step.answer, 100, 999);
+        const choiceMin = step.answer >= 1000 ? 1000 : 100;
+        const choiceMax = step.answer >= 1000 ? 9999 : 999;
+        const options = makeWrittenOptions(step.answer, choiceMin, choiceMax);
         options.forEach(value => {
             const btn = document.createElement("button");
             btn.type = "button";
@@ -184,7 +194,7 @@ export function renderWrittenOperation(step, root, next, progress, onResult, onA
 
         if (values.some(v => v === null || isNaN(v) || v < 0 || v > 9)) return;
 
-        const guess = values[0] * 100 + values[1] * 10 + values[2];
+        const guess = values.reduce((acc, v) => acc * 10 + v, 0);
 
         if (guess === step.answer) {
             inputs.forEach((input, i) => {

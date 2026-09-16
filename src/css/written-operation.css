@@ -1,6 +1,6 @@
 .wo-table {
     display: grid;
-    grid-template-columns: 3.2rem repeat(3, 4.2rem);
+    grid-template-columns: 3.2rem repeat(var(--wo-cols, 3), 4.2rem);
     grid-template-rows: auto auto auto auto auto;
     gap: 0.3rem;
     justify-content: center;
@@ -33,7 +33,7 @@
 }
 
 .wo-line {
-    grid-column: 1 / 5;
+    grid-column: 1 / calc(var(--wo-cols, 3) + 2);
     border-top: 3px solid #334155;
     margin: 0.2rem 0;
 }

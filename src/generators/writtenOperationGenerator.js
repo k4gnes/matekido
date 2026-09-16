@@ -8,6 +8,41 @@ function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function carryColumns(left, right) {
+    const cols = [];
+    let carry = 0;
+    let l = left;
+    let r = right;
+    let col = 1;
+    while (l > 0 || r > 0 || carry > 0) {
+        const sum = (l % 10) + (r % 10) + carry;
+        carry = sum >= 10 ? 1 : 0;
+        if (carry) cols.push(col);
+        l = Math.floor(l / 10);
+        r = Math.floor(r / 10);
+        col++;
+    }
+    return cols;
+}
+
+function borrowColumns(minuend, subtrahend) {
+    const cols = [];
+    let borrow = 0;
+    let l = minuend;
+    let r = subtrahend;
+    let col = 1;
+    while (l > 0 || r > 0) {
+        const ld = (l % 10) - borrow;
+        const rd = r % 10;
+        borrow = ld < rd ? 1 : 0;
+        if (borrow) cols.push(col);
+        l = Math.floor(l / 10);
+        r = Math.floor(r / 10);
+        col++;
+    }
+    return cols;
+}
+
 export function generateWrittenOperation(options = {}) {
 
     const {
@@ -63,11 +98,7 @@ export function generateWrittenOperation(options = {}) {
                 continue;
             }
 
-            const onesCarry = (a % 10) + (b % 10) >= 10;
-            const tensA = Math.floor(a / 10) % 10;
-            const tensB = Math.floor(b / 10) % 10;
-            const tensCarry = tensA + tensB + (onesCarry ? 1 : 0) >= 10;
-            const carryResult = onesCarry || tensCarry;
+            const carryResult = carryColumns(a, b).length > 0;
 
             if (carry === "always" && !carryResult) {
                 continue;
@@ -101,11 +132,7 @@ export function generateWrittenOperation(options = {}) {
                 continue;
             }
 
-            const onesBorrow = (a % 10) < (b % 10);
-            const tensA = Math.floor(a / 10) % 10;
-            const tensB = Math.floor(b / 10) % 10;
-            const tensBorrow = tensA - (onesBorrow ? 1 : 0) < tensB;
-            const borrowResult = onesBorrow || tensBorrow;
+            const borrowResult = borrowColumns(a, b).length > 0;
 
             if (borrow === "always" && !borrowResult) {
                 continue;

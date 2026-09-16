@@ -1,0 +1,101 @@
+{
+    "id": "grade4-written-add-01",
+    "title": "Írásbeli összeadás négyjegyűekkel",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "✍️ Írásbeli összeadás",
+            "text": "Írd be a hiányzó számjegyeket! Az egyesektől haladj balra, és a tízesátlépéseket írd le soronként!",
+            "illustration": "<div class='wo-table' style='--wo-cols:4; margin:0.5rem auto; font-size:1.6rem;'><div></div><div>ezres</div><div>százas</div><div>tízes</div><div>egyes</div><div></div><div class='wo-digit'>5</div><div class='wo-digit'>3</div><div class='wo-digit'>2</div><div class='wo-digit'>6</div><div class='wo-op'>+</div><div class='wo-digit'>2</div><div class='wo-digit'>4</div><div class='wo-digit'>5</div><div class='wo-digit'>8</div><div class='wo-line'></div></div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Írásbeli összeadás a postán",
+                    "text": "Add össze az írásbeli összeadásban a leveleket! Az egyesektől haladj balra!"
+                },
+                "racing": {
+                    "title": "🏎️ Írásbeli összeadás a pályán",
+                    "text": "Számold ki a köridőket írásban! Az egyesektől haladj balra!"
+                },
+                "football": {
+                    "title": "⚽ Írásbeli összeadás a bajnokságban",
+                    "text": "Add össze a meccsekre járó nézőket írásban! Az egyesektől haladj balra!"
+                },
+                "cooking": {
+                    "title": "🍳 Írásbeli összeadás a konyhában",
+                    "text": "Add össze a hozzávalók darabszámát írásban! Az egyesektől haladj balra!"
+                },
+                "animals": {
+                    "title": "🦁 Írásbeli összeadás az állatkertben",
+                    "text": "Add össze az állatok létszámát írásban! Az egyesektől haladj balra!"
+                },
+                "space": {
+                    "title": "🤖 Írásbeli összeadás az űrben",
+                    "text": "Add össze az energiát írásban! Az egyesektől haladj balra!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "written-operation",
+            "options": {
+                "count": 4,
+                "op": "add",
+                "min": 1000,
+                "max": 2999,
+                "carry": "never",
+                "resultMin": 1000,
+                "resultMax": 9999,
+                "interaction": "mixed"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "written-operation",
+            "options": {
+                "count": 4,
+                "op": "add",
+                "min": 2000,
+                "max": 5999,
+                "carry": "always",
+                "resultMin": 1000,
+                "resultMax": 9999,
+                "interaction": "mixed"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Minden írásbeli összeadás jól sikerült!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden írásbeli összeadás jól sikerült a postán!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden írásbeli összeadás jól sikerült a pályán!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden írásbeli összeadás jól sikerült a meccsen!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden írásbeli összeadás jól sikerült a konyhában!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden írásbeli összeadás jól sikerült az állatkertben!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden írásbeli összeadás jól sikerült az űrben!"
+                }
+            }
+        }
+    ]
+}

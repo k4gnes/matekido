@@ -1,0 +1,95 @@
+{
+    "id": "grade4-rounding-01",
+    "title": "Kerekítés 10 000-ig",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🎯 Kerekítsük kerekre!",
+            "text": "A kerekítésnél a legközelebbi tízesre, százasra vagy ezresre kerekítünk! Ha épp félúton van a szám, felfelé kerekítünk.",
+            "illustration": "<div style='font-size:1.4rem; margin:0.5rem 0;'>5326 → tízesre <strong>5330</strong> &nbsp;|&nbsp; százasra <strong>5300</strong> &nbsp;|&nbsp; ezresre <strong>5000</strong></div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Kerekítés a postán",
+                    "text": "Kerekítsd a számot a legközelebbi kerek számra! Ha épp félúton van, felfelé kerekítünk."
+                },
+                "racing": {
+                    "title": "🏎️ Kerekítés a pályán",
+                    "text": "Kerekítsd a számot a legközelebbi kerek számra! Ha épp félúton van, felfelé kerekítünk."
+                },
+                "football": {
+                    "title": "⚽ Kerekítés a bajnokságban",
+                    "text": "Kerekítsd a számot a legközelebbi kerek számra! Ha épp félúton van, felfelé kerekítünk."
+                },
+                "cooking": {
+                    "title": "🍳 Kerekítés a konyhában",
+                    "text": "Kerekítsd a számot a legközelebbi kerek számra! Ha épp félúton van, felfelé kerekítünk."
+                },
+                "animals": {
+                    "title": "🦁 Kerekítés az állatkertben",
+                    "text": "Kerekítsd a számot a legközelebbi kerek számra! Ha épp félúton van, felfelé kerekítünk."
+                },
+                "space": {
+                    "title": "🤖 Kerekítés az űrben",
+                    "text": "Kerekítsd a számot a legközelebbi kerek számra! Ha épp félúton van, felfelé kerekítünk."
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "rounding",
+            "options": {
+                "count": 4,
+                "min": 1000,
+                "max": 4999,
+                "targets": ["tens", "hundreds"],
+                "interaction": "mixed"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "rounding",
+            "options": {
+                "count": 4,
+                "min": 1000,
+                "max": 9999,
+                "targets": ["tens", "hundreds", "thousands"],
+                "interaction": "mixed"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Minden kerekítés jól sikerült!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden kerekítés jól sikerült a postán!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden kerekítés jól sikerült a pályán!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden kerekítés jól sikerült a meccsen!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden kerekítés jól sikerült a konyhában!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden kerekítés jól sikerült az állatkertben!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden kerekítés jól sikerült az űrben!"
+                }
+            }
+        }
+    ]
+}

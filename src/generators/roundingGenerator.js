@@ -18,6 +18,10 @@ function roundToHundred(n) {
     return Math.round(n / 100) * 100;
 }
 
+function roundToThousand(n) {
+    return Math.round(n / 1000) * 1000;
+}
+
 function makeRoundOptions(answer, step, min, max) {
     const candidates = [];
     for (let v = min; v <= max; v += step) {
@@ -46,39 +50,61 @@ function makeRoundOptions(answer, step, min, max) {
 
 export function generateRounding(options = {}) {
 
-    const { count = 10, min = 10, max = 999, target = "mixed", interaction = "mixed" } = options;
+    const { count = 10, min = 10, max = 999, target = "mixed", targets = null, interaction = "mixed" } = options;
+
+    let pool;
+    if (targets) {
+        pool = targets;
+    } else if (target === "tens") {
+        pool = ["tens"];
+    } else if (target === "hundreds") {
+        pool = ["hundreds"];
+    } else if (target === "thousands") {
+        pool = ["thousands"];
+    } else {
+        pool = max >= 1000 ? ["tens", "hundreds", "thousands"] : ["tens", "hundreds"];
+    }
 
     const tasks = [];
 
     for (let i = 0; i < count; i++) {
 
-        const useHundreds = target === "hundreds" || (target === "mixed" && Math.random() < 0.5);
+        const useTarget = pick(pool);
 
         let number;
         let answer;
+        let step;
 
-        if (useHundreds) {
+        if (useTarget === "thousands") {
             do {
-                number = Math.floor(Math.random() * (max - 50 + 1)) + 50;
+                number = Math.floor(Math.random() * (max - min + 1)) + min;
+            } while (number % 1000 === 0 || number % 1000 === 500);
+            step = 1000;
+            answer = roundToThousand(number);
+        } else if (useTarget === "hundreds") {
+            do {
+                number = Math.floor(Math.random() * (max - 100 + 1)) + 100;
             } while (number % 100 === 0 || number % 100 === 50);
+            step = 100;
             answer = roundToHundred(number);
         } else {
             do {
                 number = Math.floor(Math.random() * (max - min + 1)) + min;
             } while (number % 10 === 0);
+            step = 10;
             answer = roundToTen(number);
         }
 
         tasks.push({
             type: "rounding",
             number,
-            target: useHundreds ? "hundreds" : "tens",
+            target: useTarget,
             answer,
             options: makeRoundOptions(
                 answer,
-                useHundreds ? 100 : 10,
-                useHundreds ? Math.max(0, answer - 200) : Math.max(10, answer - 50),
-                useHundreds ? Math.min(max, answer + 200) : Math.min(max, answer + 50)
+                step,
+                Math.max(min, answer - step * 2),
+                Math.min(max, answer + step * 2)
             ),
             interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction
         });

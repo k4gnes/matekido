@@ -3147,6 +3147,29 @@
                 "animals": "🦁 Római számok az állatkertben",
                 "space": "🤖 Római számok az űrben"
             }
+        },
+        {
+            "id": "rounding-02",
+            "title": "Kerekítés 10 000-ig",
+            "grades": [
+                4
+            ],
+            "category": "numbers",
+            "skill": "rounding",
+            "difficulty": 2,
+            "type": "rounding",
+            "range": 10000,
+            "mission": "🎯 Kerekítés",
+            "subtitle": "Tízesre, százasra, ezresre",
+            "file": "./data/lessons/grade4/rounding-01.json",
+            "worldTitles": {
+                "postman": "📮 Kerekítés a postán",
+                "racing": "🏎️ Kerekítés a pályán",
+                "football": "⚽ Kerekítés a bajnokságban",
+                "cooking": "🍳 Kerekítés a konyhában",
+                "animals": "🦁 Kerekítés az állatkertben",
+                "space": "🤖 Kerekítés az űrben"
+            }
         }
     ],
     "gradeConfig": [

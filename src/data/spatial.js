@@ -73,6 +73,7 @@ export const REFERENCES = [
         id: "haz",
         name: "ház",
         emoji: "🏠",
+        draw: "house",
         bbox: { x: 70, y: 45, w: 80, h: 120 },
         labels: {
             above: "a ház felett",
@@ -136,6 +137,7 @@ export const WORLD_REFERENCES = {
         id: "postalada",
         name: "postaláda",
         emoji: "📮",
+        draw: "mailbox",
         bbox: { x: 80, y: 50, w: 60, h: 90 },
         labels: {
             above: "a postaláda felett",
@@ -151,6 +153,7 @@ export const WORLD_REFERENCES = {
         id: "auto",
         name: "autó",
         emoji: "🚗",
+        draw: "car",
         bbox: { x: 60, y: 88, w: 100, h: 53 },
         labels: {
             above: "az autó felett",
@@ -166,6 +169,7 @@ export const WORLD_REFERENCES = {
         id: "versenyauto",
         name: "versenyautó",
         emoji: "🏎️",
+        draw: "racecar",
         bbox: { x: 60, y: 104, w: 100, h: 42 },
         labels: {
             above: "a versenyautó felett",
@@ -213,6 +217,7 @@ export const WORLD_REFERENCES = {
         id: "tuzhely",
         name: "tűzhely",
         emoji: "🍳",
+        draw: "stove",
         bbox: { x: 60, y: 70, w: 100, h: 80 },
         labels: {
             above: "a tűzhely felett",
@@ -228,6 +233,7 @@ export const WORLD_REFERENCES = {
         id: "hutosekreny",
         name: "hűtőszekrény",
         emoji: "🧊",
+        draw: "fridge",
         bbox: { x: 80, y: 45, w: 60, h: 110 },
         labels: {
             above: "a hűtőszekrény felett",
@@ -243,6 +249,7 @@ export const WORLD_REFERENCES = {
         id: "tal",
         name: "tál",
         emoji: "🥣",
+        draw: "bowl",
         bbox: { x: 70, y: 60, w: 80, h: 85 },
         labels: {
             above: "a tál felett",
@@ -258,6 +265,7 @@ export const WORLD_REFERENCES = {
         id: "kapu",
         name: "kapu",
         emoji: "🥅",
+        draw: "goal",
         bbox: { x: 60, y: 50, w: 100, h: 100 },
         labels: {
             above: "a kapu felett",
@@ -273,6 +281,7 @@ export const WORLD_REFERENCES = {
         id: "lelato",
         name: "lelátó",
         emoji: "🏟️",
+        draw: "stands",
         bbox: { x: 60, y: 94, w: 100, h: 56 },
         labels: {
             above: "a lelátó felett",
@@ -288,6 +297,7 @@ export const WORLD_REFERENCES = {
         id: "labdatarto",
         name: "labdatartó",
         emoji: "🧺",
+        draw: "rack",
         bbox: { x: 70, y: 45, w: 80, h: 83 },
         labels: {
             above: "a labdatartó felett",
@@ -319,6 +329,7 @@ export const WORLD_REFERENCES = {
         id: "itato",
         name: "itató",
         emoji: "💧",
+        draw: "trough",
         bbox: { x: 60, y: 96, w: 100, h: 40 },
         labels: {
             above: "az itató felett",
@@ -334,6 +345,7 @@ export const WORLD_REFERENCES = {
         id: "tavacska",
         name: "tavacska",
         emoji: "🐟",
+        draw: "pond",
         bbox: { x: 50, y: 92, w: 120, h: 50 },
         labels: {
             above: "a tavacska felett",
@@ -349,6 +361,7 @@ export const WORLD_REFERENCES = {
         id: "raketa",
         name: "rakéta",
         emoji: "🚀",
+        draw: "rocket",
         bbox: { x: 85, y: 40, w: 50, h: 100 },
         labels: {
             above: "a rakéta felett",
@@ -364,6 +377,7 @@ export const WORLD_REFERENCES = {
         id: "allomas",
         name: "űrállomás",
         emoji: "🛰️",
+        draw: "station",
         bbox: { x: 60, y: 70, w: 100, h: 42 },
         labels: {
             above: "az űrállomás felett",
@@ -379,6 +393,7 @@ export const WORLD_REFERENCES = {
         id: "tartaly",
         name: "tartály",
         emoji: "🛢️",
+        draw: "tank",
         bbox: { x: 70, y: 55, w: 80, h: 90 },
         labels: {
             above: "a tartály felett",

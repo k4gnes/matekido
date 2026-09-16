@@ -3124,6 +3124,29 @@
                 "animals": "🦁 Melyik a nagyobb?",
                 "space": "🤖 Melyik a nagyobb szám?"
             }
+        },
+        {
+            "id": "roman-02",
+            "title": "Római számok bővítve",
+            "grades": [
+                4
+            ],
+            "category": "numbers",
+            "skill": "roman",
+            "difficulty": 2,
+            "type": "roman",
+            "range": 4000,
+            "mission": "🏛️ Római számok",
+            "subtitle": "M, D, C, L, X, V, I jelek – 3999-ig",
+            "file": "./data/lessons/grade4/roman-01.json",
+            "worldTitles": {
+                "postman": "🏛️ Római számok a postán",
+                "racing": "🏛️ Római számok a pályán",
+                "football": "🏛️ Római számok a bajnokságban",
+                "cooking": "🏛️ Római számok a konyhában",
+                "animals": "🦁 Római számok az állatkertben",
+                "space": "🤖 Római számok az űrben"
+            }
         }
     ],
     "gradeConfig": [

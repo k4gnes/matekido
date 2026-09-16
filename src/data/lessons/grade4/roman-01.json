@@ -1,0 +1,93 @@
+{
+    "id": "grade4-roman-01",
+    "title": "Római számok bővítve",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🏛️ Római számok bővítve",
+            "text": "Most már az M (1000), D (500), C (100) jellemzőket is használhatjuk! A római számok 3999-ig terjednek.",
+            "illustration": "<div style='font-size:1.6rem; margin:0.5rem 0;'>I · V · X · L · C · D · M</div><div style='font-size:0.95rem; opacity:0.85; margin-top:0.5rem;'>1 &nbsp; 5 &nbsp; 10 &nbsp; 50 &nbsp; 100 &nbsp; 500 &nbsp; 1000</div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "🏛️ Római számok a postán",
+                    "text": "Most már az M, D, C jellemzőket is használhatjuk! Olvasd ki vagy írd római számokkal!"
+                },
+                "racing": {
+                    "title": "🏎️ Római számok a pályán",
+                    "text": "Most már az M, D, C jellemzőket is használhatjuk! Olvasd ki vagy írd római számokkal!"
+                },
+                "football": {
+                    "title": "⚽ Római számok a bajnokságban",
+                    "text": "Most már az M, D, C jellemzőket is használhatjuk! Olvasd ki vagy írd római számokkal!"
+                },
+                "cooking": {
+                    "title": "🍳 Római számok a konyhában",
+                    "text": "Most már az M, D, C jellemzőket is használhatjuk! Olvasd ki vagy írd római számokkal!"
+                },
+                "animals": {
+                    "title": "🦁 Római számok az állatkertben",
+                    "text": "Most már az M, D, C jellemzőket is használhatjuk! Olvasd ki vagy írd római számokkal!"
+                },
+                "space": {
+                    "title": "🤖 Római számok az űrben",
+                    "text": "Most már az M, D, C jellemzőket is használhatjuk! Olvasd ki vagy írd római számokkal!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "roman",
+            "options": {
+                "count": 4,
+                "min": 1,
+                "max": 100,
+                "direction": "toRoman"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "roman",
+            "options": {
+                "count": 4,
+                "min": 1,
+                "max": 3999,
+                "direction": "mixed"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Minden római számot jól megoldottál!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden római számot jól megoldottál a postán!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden római számot jól megoldottál a pályán!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden római számot jól megoldottál a bajnokságban!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden római számot jól megoldottál a konyhában!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden római számot jól megoldottál az állatkertben!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden római számot jól megoldottál az űrben!"
+                }
+            }
+        }
+    ]
+}

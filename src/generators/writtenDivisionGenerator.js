@@ -39,6 +39,8 @@ export function generateWrittenDivision(options = {}) {
         throw new Error(`Érvénytelen osztótartomány: ${divisors}`);
     }
 
+    const twoDigit = divisors.some(b => b >= 10);
+
     const tasks = [];
     let attempts = 0;
 
@@ -51,12 +53,19 @@ export function generateWrittenDivision(options = {}) {
         }
 
         const b = divisors[Math.floor(Math.random() * divisors.length)];
-        const firstDigitMin = firstDigitGe ? b : 1;
-        const maxFirst = 9;
-        const first = random(firstDigitMin, maxFirst);
-        const second = random(0, 9);
-        const third = random(0, 9);
-        const a = first * 100 + second * 10 + third;
+
+        let a;
+
+        if (twoDigit) {
+            a = random(min, max);
+        } else {
+            const firstDigitMin = firstDigitGe ? b : 1;
+            const maxFirst = 9;
+            const first = random(firstDigitMin, maxFirst);
+            const second = random(0, 9);
+            const third = random(0, 9);
+            a = first * 100 + second * 10 + third;
+        }
 
         if (a < min || a > max) {
             continue;
@@ -64,7 +73,11 @@ export function generateWrittenDivision(options = {}) {
 
         const { quotient, steps } = dividerSteps(a, b);
 
-        if (quotient < 100 || quotient > 999) {
+        if (twoDigit) {
+            if (quotient < 10 || quotient > 999) {
+                continue;
+            }
+        } else if (quotient < 100 || quotient > 999) {
             continue;
         }
 

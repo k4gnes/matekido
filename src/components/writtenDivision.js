@@ -42,15 +42,17 @@ export function renderWrittenDivision(step, root, next, progress, onResult, onAt
     title.textContent = `${w.emoji} Írásbeli osztás`;
 
     const n = digitCount(step.a);
+    const q = digitCount(step.quotient);
+    const total = n + 3 + q;
 
     const table = document.createElement("div");
     table.className = "wd-table";
-    table.style.gridTemplateColumns = `repeat(${n}, 4.2rem) 1.8rem 4.2rem 1.8rem repeat(${n}, 4.2rem)`;
+    table.style.gridTemplateColumns = `repeat(${n}, 4.2rem) 1.8rem 4.2rem 1.8rem repeat(${q}, 4.2rem)`;
 
     const line = () => {
         const l = document.createElement("div");
         l.className = "wd-line";
-        l.style.gridColumn = `1 / ${2 * n + 4}`;
+        l.style.gridColumn = `1 / ${total + 1}`;
         table.append(l);
     };
 
@@ -60,7 +62,7 @@ export function renderWrittenDivision(step, root, next, progress, onResult, onAt
         for (let i = 0; i < k; i++) {
             addCell(table, Number(String(value)[i]), cls);
         }
-        addEmptyCells(table, 2 * n + 2 - endCol);
+        addEmptyCells(table, total - endCol - 1);
     };
 
     String(step.a).split("").forEach(d => addCell(table, d, "wo-digit"));
@@ -69,7 +71,7 @@ export function renderWrittenDivision(step, root, next, progress, onResult, onAt
     addCell(table, "=", "wd-sym");
 
     const qInputs = [];
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < q; i++) {
         const input = document.createElement("input");
         input.type = "number";
         input.min = "0";
@@ -82,9 +84,11 @@ export function renderWrittenDivision(step, root, next, progress, onResult, onAt
 
     line();
 
-    for (let i = 0; i < n; i++) {
+    const start = Math.max(0, step.steps.findIndex(st => st.qd > 0));
+
+    for (let i = start; i < n; i++) {
         const st = step.steps[i];
-        if (i === 0) {
+        if (i === start) {
             showNumberRow(st.product, i, "wo-digit");
             line();
         } else {
@@ -104,7 +108,7 @@ export function renderWrittenDivision(step, root, next, progress, onResult, onAt
     rInput.type = "number";
     rInput.min = "0";
     rInput.max = String(step.b - 1);
-    rInput.maxLength = "1";
+    rInput.maxLength = String(step.b - 1).length;
     rInput.className = "wo-input wd-remainder-input";
     rInput.setAttribute("aria-label", "maradék");
     rInput.style.gridColumn = String(n);
@@ -146,12 +150,12 @@ export function renderWrittenDivision(step, root, next, progress, onResult, onAt
     function check() {
         if (feedback.isAnswered()) return;
 
-        const q = qInputs.map(inp => inp.value.trim()).join("");
+        const qValue = qInputs.map(inp => inp.value.trim()).join("");
         const r = rInput.value.trim();
 
-        if (q.length !== n || r === "") return;
+        if (qValue.length !== q || r === "") return;
 
-        if (Number(q) === step.quotient && Number(r) === step.remainder) {
+        if (Number(qValue) === step.quotient && Number(r) === step.remainder) {
             inputs.forEach(inp => {
                 inp.disabled = true;
                 markCorrect(inp);
@@ -178,7 +182,7 @@ export function renderWrittenDivision(step, root, next, progress, onResult, onAt
             const last = digits[digits.length - 1];
             if (last !== undefined) {
                 input.value = last;
-                const next = i + 1 < n ? qInputs[i + 1] : rInput;
+                const next = i + 1 < q ? qInputs[i + 1] : rInput;
                 next.focus();
             }
         }, { signal: ac.signal });

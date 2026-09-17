@@ -311,6 +311,7 @@ const SW_CACHE_LIST = [
     "/data/lessons/grade4/rounding-01.json",
     "/data/lessons/grade4/written-add-01.json",
     "/data/lessons/grade4/written-div-01.json",
+    "/data/lessons/grade4/written-div2-01.json",
     "/data/lessons/grade4/written-mul-01.json",
     "/data/lessons/grade4/written-mul2-01.json",
     "/data/lessons/grade4/written-sub-01.json",

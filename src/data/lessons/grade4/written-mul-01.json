@@ -1,0 +1,105 @@
+{
+    "id": "grade4-written-mul-01",
+    "title": "Írásbeli szorzás egyjegyűvel",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "✍️ Írásbeli szorzás",
+            "text": "Írd be a hiányzó számjegyeket! Az egyesektől haladj balra! Szorozd meg a szorzóval a felső szám minden számjegyét, és ha 10 vagy több a szorzat, vidd tovább a tízeseket balra!",
+            "illustration": "<div class='wo-table' style='--wo-cols:5; margin:0.5rem auto; font-size:1.6rem;'><div></div><div>százas</div><div>tízes</div><div>egyes</div><div></div><div></div><div></div><div class='wo-digit'>3</div><div class='wo-digit'>1</div><div class='wo-digit'>2</div><div class='wo-op'>×</div><div class='wo-digit'>3</div><div class='wo-line'></div></div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Írásbeli szorzás a postán",
+                    "text": "Szorozd meg a csomagok darabszámát írásban! Az egyesektől haladj balra!"
+                },
+                "racing": {
+                    "title": "🏎️ Írásbeli szorzás a pályán",
+                    "text": "Számold ki a körök szorzatát írásban! Az egyesektől haladj balra!"
+                },
+                "football": {
+                    "title": "⚽ Írásbeli szorzás a bajnokságban",
+                    "text": "Szorozd meg a csapatok létszámát írásban! Az egyesektől haladj balra!"
+                },
+                "cooking": {
+                    "title": "🍳 Írásbeli szorzás a konyhában",
+                    "text": "Szorozd meg a hozzávalók mennyiségét írásban! Az egyesektől haladj balra!"
+                },
+                "animals": {
+                    "title": "🦁 Írásbeli szorzás az állatkertben",
+                    "text": "Szorozd meg az állatok lábainak számát írásban! Az egyesektől haladj balra!"
+                },
+                "space": {
+                    "title": "🤖 Írásbeli szorzás az űrben",
+                    "text": "Szorozd meg az energia-egységeket írásban! Az egyesektől haladj balra!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "written-operation",
+            "options": {
+                "count": 4,
+                "op": "mul",
+                "min": 100,
+                "max": 333,
+                "bMin": 2,
+                "bMax": 3,
+                "carry": "never",
+                "resultMin": 100,
+                "resultMax": 9999,
+                "interaction": "mixed"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "written-operation",
+            "options": {
+                "count": 4,
+                "op": "mul",
+                "min": 100,
+                "max": 999,
+                "bMin": 4,
+                "bMax": 9,
+                "carry": "always",
+                "resultMin": 100,
+                "resultMax": 9999,
+                "interaction": "mixed"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Minden írásbeli szorzás jól sikerült!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden írásbeli szorzás jól sikerült a postán!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden írásbeli szorzás jól sikerült a pályán!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden írásbeli szorzás jól sikerült a meccsen!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden írásbeli szorzás jól sikerült a konyhában!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden írásbeli szorzás jól sikerült az állatkertben!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden írásbeli szorzás jól sikerült az űrben!"
+                }
+            }
+        }
+    ]
+}

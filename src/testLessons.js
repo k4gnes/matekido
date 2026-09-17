@@ -438,23 +438,32 @@ function validateStep(step, ctx) {
             break;
         }
         case "written-operation": {
-            if (!["add", "sub"].includes(step.op)) {
+            if (!["add", "sub", "mul"].includes(step.op)) {
                 fail(ctx, `op hibás: ${step.op}`);
             }
-            if (!isInt(step.a) || !isInt(step.b) || step.a < 100 || step.b < 100) {
-                fail(ctx, "a/b nem >=100");
+            if (!isInt(step.a) || !isInt(step.b) || step.a < 100 || step.b < 1) {
+                fail(ctx, "a/b nem érvényes egész");
             }
-            if (step.a > 9999 || step.b > 9999) {
-                fail(ctx, "a/b 9999 fölötti");
-            }
-            if (step.op === "add" && step.answer !== step.a + step.b) {
-                fail(ctx, `answer != a+b (${step.answer})`);
-            }
-            if (step.op === "sub" && step.answer !== step.a - step.b) {
-                fail(ctx, `answer != a-b (${step.answer})`);
-            }
-            if (step.answer < 100 || step.answer > 9999) {
-                fail(ctx, `answer 100..9999 nélküli: ${step.answer}`);
+            if (step.op === "mul") {
+                if (step.a > 9999) fail(ctx, `a 9999 fölötti (${step.a})`);
+                if (step.b < 2 || step.b > 9) fail(ctx, `b nem 2..9 szorzó (${step.b})`);
+                if (step.answer !== step.a * step.b) {
+                    fail(ctx, `answer != a*b (${step.answer} vs ${step.a * step.b})`);
+                }
+                if (step.answer > 99999) {
+                    fail(ctx, `answer 99999 fölötti: ${step.answer}`);
+                }
+            } else {
+                if (step.a > 9999 || step.b > 9999) fail(ctx, "a/b 9999 fölötti");
+                if (step.op === "add" && step.answer !== step.a + step.b) {
+                    fail(ctx, `answer != a+b (${step.answer})`);
+                }
+                if (step.op === "sub" && step.answer !== step.a - step.b) {
+                    fail(ctx, `answer != a-b (${step.answer})`);
+                }
+                if (step.answer < 100 || step.answer > 9999) {
+                    fail(ctx, `answer 100..9999 nélküli: ${step.answer}`);
+                }
             }
             if (!["input", "choice"].includes(step.interaction)) {
                 fail(ctx, `interaction hibás: ${step.interaction}`);

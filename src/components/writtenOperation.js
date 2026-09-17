@@ -25,6 +25,16 @@ function padDigits(n, width) {
     return arr;
 }
 
+function rightAlignDigits(n, width) {
+    const cells = new Array(width).fill(null);
+    const s = String(n);
+    const start = width - s.length;
+    for (let i = 0; i < s.length; i++) {
+        cells[start + i] = Number(s[i]);
+    }
+    return cells;
+}
+
 function shuffle(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -61,55 +71,77 @@ export function renderWrittenOperation(step, root, next, progress, onResult, onA
     const world = getActiveWorld();
     const w = WORLD[world] ?? WORLD.postman;
 
-    const opLabel = step.op === "sub" ? "Kivonás" : "Összeadás";
+    const OP_LABELS = { add: "Összeadás", sub: "Kivonás", mul: "Szorzás" };
+    const OP_SIGNS = { add: "+", sub: "−", mul: "×" };
+    const opLabel = OP_LABELS[step.op] ?? "Művelet";
+    const opSign = OP_SIGNS[step.op] ?? "+";
     const title = document.createElement("h1");
     title.textContent = `${w.emoji} Írásbeli ${opLabel.toLowerCase()}`;
 
     const PLACE_NAMES = ["tízezres", "ezres", "százas", "tízes", "egyes"];
 
-    const width = Math.max(digitCount(step.a), digitCount(step.b), digitCount(step.answer));
-    const aD = padDigits(step.a, width);
-    const bD = padDigits(step.b, width);
+    const isMul = step.op === "mul";
+    const aLen = digitCount(step.a);
+    const bLen = digitCount(step.b);
+    const answerDigits = digitCount(step.answer);
+
+    const width = isMul
+        ? Math.max(aLen, answerDigits)
+        : Math.max(aLen, bLen, answerDigits);
+
+    const extraCols = isMul ? 1 + bLen : 0;
+    const cols = width + extraCols;
+
+    const aD = rightAlignDigits(step.a, width);
+    const bD = isMul
+        ? String(step.b).split("").map(Number)
+        : rightAlignDigits(step.b, width);
     const correctD = padDigits(step.answer, width);
 
     const useChoice = step.interaction === "choice";
 
     const table = document.createElement("div");
     table.className = "wo-table";
-    table.style.setProperty("--wo-cols", width);
+    table.style.setProperty("--wo-cols", cols);
 
     const places = PLACE_NAMES.slice(PLACE_NAMES.length - width);
 
+    function addCell(value, className) {
+        const cell = document.createElement("div");
+        if (value !== null && value !== "") {
+            cell.textContent = value;
+        }
+        if (className) {
+            cell.className = className;
+        }
+        table.append(cell);
+    }
+
     table.append(document.createElement("div"));
 
-    places.forEach(p => {
-        const cell = document.createElement("div");
-        cell.className = "wo-place";
-        cell.textContent = p;
-        table.append(cell);
-    });
+    places.forEach(p => addCell(p, "wo-place"));
+
+    for (let i = 0; i < extraCols; i++) {
+        table.append(document.createElement("div"));
+    }
 
     table.append(document.createElement("div"));
 
-    aD.forEach(d => {
-        const cell = document.createElement("div");
-        cell.className = "wo-digit";
-        cell.textContent = d;
-        table.append(cell);
-    });
+    aD.forEach(d => addCell(d, d === null ? null : "wo-digit"));
 
-    const sign = document.createElement("div");
-    sign.className = "wo-op";
-    sign.textContent = step.op === "sub" ? "−" : "+";
-
-    table.append(sign);
-
-    bD.forEach(d => {
-        const cell = document.createElement("div");
-        cell.className = "wo-digit";
-        cell.textContent = d;
-        table.append(cell);
-    });
+    if (isMul) {
+        const sign = document.createElement("div");
+        sign.className = "wo-op";
+        sign.textContent = opSign;
+        table.append(sign);
+        bD.forEach(d => addCell(d, "wo-digit"));
+    } else {
+        const sign = document.createElement("div");
+        sign.className = "wo-op";
+        sign.textContent = opSign;
+        table.append(sign);
+        bD.forEach(d => addCell(d, d === null ? null : "wo-digit"));
+    }
 
     const line = document.createElement("div");
     line.className = "wo-line";
@@ -122,8 +154,8 @@ export function renderWrittenOperation(step, root, next, progress, onResult, onA
         optionsContainer = document.createElement("div");
         optionsContainer.className = "mult-options";
 
-        const choiceMin = step.answer >= 1000 ? 1000 : 100;
-        const choiceMax = step.answer >= 1000 ? 9999 : 999;
+        const choiceMin = width <= 1 ? 0 : Math.pow(10, width - 1);
+        const choiceMax = Math.pow(10, width) - 1;
         const options = makeWrittenOptions(step.answer, choiceMin, choiceMax);
         options.forEach(value => {
             const btn = document.createElement("button");
@@ -146,6 +178,10 @@ export function renderWrittenOperation(step, root, next, progress, onResult, onA
             table.append(input);
             inputs.push(input);
         });
+
+        for (let i = 0; i < extraCols; i++) {
+            table.append(document.createElement("div"));
+        }
     }
 
     const hint = createHintBox();
@@ -155,7 +191,9 @@ export function renderWrittenOperation(step, root, next, progress, onResult, onA
             hintShown = true;
             hint.textContent = step.op === "sub"
                 ? "Egyesektől haladj balra! Ha egy oszlopban nem elég a felső szám, kérj kölcsön egyet a tőle balra lévő oszlopból, és a maradékot számold ki azzal!"
-                : "Egyesektől haladj balra! Ha egy oszlopban az összeg 10 vagy több, írd le az egyesét, a többit pedig vidd tovább a balra lévő oszlopba!";
+                : step.op === "mul"
+                    ? "Egyesektől haladj balra! Szorozd meg a szorzóval a felső szám minden számjegyét, és ha 10 vagy több a szorzat, vidd tovább a tízeseket balra!"
+                    : "Egyesektől haladj balra! Ha egy oszlopban az összeg 10 vagy több, írd le az egyesét, a többit pedig vidd tovább a balra lévő oszlopba!";
             hintButton.style.display = "none";
             if (!useChoice && inputs.length > 0) inputs[inputs.length - 1].focus();
         }
@@ -219,14 +257,28 @@ export function renderWrittenOperation(step, root, next, progress, onResult, onA
 
     if (inputs.length > 0) {
         inputs.forEach((input, i) => {
+            input.addEventListener("input", () => {
+                const v = input.value;
+                const digits = v.replace(/\D/g, "");
+                const last = digits[digits.length - 1];
+                if (last !== undefined) {
+                    input.value = last;
+                    const prev = inputs[i - 1];
+                    if (prev) prev.focus();
+                }
+            }, { signal: ac.signal });
+
             input.addEventListener("keydown", (e) => {
                 if (e.key === "Enter") {
                     check();
-                } else if (e.key >= "0" && e.key <= "9" && input.value === "") {
-                    requestAnimationFrame(() => {
-                        const prevInput = inputs[i - 1];
-                        if (prevInput) prevInput.focus();
-                    });
+                } else if (e.key === "Backspace") {
+                    if (input.value === "") {
+                        const neighbor = inputs[i + 1];
+                        if (neighbor) {
+                            neighbor.focus();
+                            neighbor.select();
+                        }
+                    }
                 }
             }, { signal: ac.signal });
         });

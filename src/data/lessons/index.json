@@ -3216,6 +3216,29 @@
                 "animals": "🦁 Írásbeli kivonás az állatkertben",
                 "space": "🤖 Írásbeli kivonás az űrben"
             }
+        },
+        {
+            "id": "written-mul-1000-01",
+            "title": "Írásbeli szorzás egyjegyűvel",
+            "grades": [
+                4
+            ],
+            "category": "operations",
+            "skill": "multiplication",
+            "difficulty": 2,
+            "type": "written-operation",
+            "range": 1000,
+            "mission": "✍️ Írásbeli számolás",
+            "subtitle": "Írásbeli szorzás egyjegyűvel",
+            "file": "./data/lessons/grade4/written-mul-01.json",
+            "worldTitles": {
+                "postman": "📮 Írásbeli szorzás a postán",
+                "racing": "🏎️ Írásbeli szorzás a pályán",
+                "football": "⚽ Írásbeli szorzás a bajnokságban",
+                "cooking": "🍳 Írásbeli szorzás a konyhában",
+                "animals": "🦁 Írásbeli szorzás az állatkertben",
+                "space": "🤖 Írásbeli szorzás az űrben"
+            }
         }
     ],
     "gradeConfig": [

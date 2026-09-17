@@ -8,6 +8,10 @@ function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function isInt(x) {
+    return Number.isInteger(x);
+}
+
 function carryColumns(left, right) {
     const cols = [];
     let carry = 0;
@@ -43,6 +47,15 @@ function borrowColumns(minuend, subtrahend) {
     return cols;
 }
 
+function mulCarryColumns(a, b) {
+    const cols = [];
+    const digits = String(a).split("").map(Number);
+    digits.forEach((d, i) => {
+        if (d * b >= 10) cols.push(digits.length - i);
+    });
+    return cols;
+}
+
 export function generateWrittenOperation(options = {}) {
 
     const {
@@ -54,6 +67,8 @@ export function generateWrittenOperation(options = {}) {
         borrow = "any",
         resultMin = 100,
         resultMax = 999,
+        bMin = 2,
+        bMax = 9,
         interaction = "mixed"
     } = options;
 
@@ -67,6 +82,10 @@ export function generateWrittenOperation(options = {}) {
 
     if (!validBorrowModes.includes(borrow)) {
         throw new Error(`Érvénytelen borrow érték: ${borrow}`);
+    }
+
+    if (op === "mul" && (!isInt(bMin) || !isInt(bMax) || bMin < 1 || bMax > 9 || bMin > bMax)) {
+        throw new Error(`Érvénytelen szorzótartomány: ${bMin}..${bMax}`);
     }
 
     const tasks = [];
@@ -99,6 +118,33 @@ export function generateWrittenOperation(options = {}) {
             }
 
             const carryResult = carryColumns(a, b).length > 0;
+
+            if (carry === "always" && !carryResult) {
+                continue;
+            }
+
+            if (carry === "never" && carryResult) {
+                continue;
+            }
+
+            tasks.push({
+                op,
+                a,
+                b,
+                answer: result,
+                interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction
+            });
+
+        } else if (op === "mul") {
+
+            const b = random(bMin, bMax);
+            const result = a * b;
+
+            if (result < resultMin || result > resultMax) {
+                continue;
+            }
+
+            const carryResult = mulCarryColumns(a, b).length > 0;
 
             if (carry === "always" && !carryResult) {
                 continue;

@@ -82,7 +82,7 @@ export function renderBridgeTen(step, root, onNext, progress, onResult, onAttemp
     line2.style.cssText = "flex:1; height:2px; background:#2e7d32;";
     divider.append(line, label, line2);
 
-    const row3 = stepRow("Add össze!", `10 + ${remainder} = ___`, "#2e7d32");
+    const row3 = stepRow("Add össze!", `${a} + ${complement} + ${remainder} = ___`, "#2e7d32");
 
     const opts = document.createElement("div");
     opts.style.cssText = "display:flex; flex-wrap:wrap; gap:.4rem; justify-content:center;";
@@ -150,7 +150,7 @@ const s1 = document.createElement("span");
             opts.querySelectorAll("button").forEach(b => b.style.pointerEvents = "none");
 
             const q = row3.querySelector("div:nth-child(2)");
-            q.textContent = `10 + ${remainder} = ${sum}`;
+            q.textContent = `${a} + ${complement} + ${remainder} = ${sum}`;
             q.style.color = "#2e7d32";
 
             const correct = document.createElement("span");

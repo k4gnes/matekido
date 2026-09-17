@@ -64,7 +64,7 @@ export function generateBridgeTo10(options = {}) {
                 },
                 {
                     label: "Add össze!",
-                    question: `10 + ${remainder} = ☐`,
+                    question: `${a} + ${complement} + ${remainder} = ☐`,
                     answer: sum,
                     options: buildNumberOptions(sum, {
                         min: Math.max(2, sum - 5),

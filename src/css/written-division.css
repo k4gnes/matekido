@@ -1,0 +1,23 @@
+.wd-remainder-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #64748b;
+    text-align: right;
+}
+
+.wd-product {
+    color: #E53935;
+}
+
+.wd-remainder-input {
+    border-color: #38bdf8;
+    background: #f0f9ff;
+}
+
+.wd-divisor {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #334155;
+    text-align: right;
+    align-self: center;
+}

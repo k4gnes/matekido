@@ -48,6 +48,7 @@ import { generateFraction } from "./fractionGenerator.js?v=3";
 import { generateMeasureUnits } from "./measureUnitsGenerator.js?v=3";
 import { generateWrittenOperation } from "./writtenOperationGenerator.js?v=4";
 import { generateRemainderDivision } from "./remainderDivisionGenerator.js?v=3";
+import { generateWrittenDivision } from "./writtenDivisionGenerator.js?v=1";
 import { generatePerimeter } from "./perimeterGenerator.js?v=1";
 import { generateArea } from "./areaGenerator.js?v=1";
 import { generateAngles } from "./anglesGenerator.js?v=1";
@@ -170,6 +171,8 @@ export function generate(step) {
             return generateWrittenOperation(opts);
         case "remainder-division":
             return generateRemainderDivision(opts);
+        case "written-division":
+            return generateWrittenDivision(opts);
         case "perimeter":
             return generatePerimeter(opts);
         case "area":

@@ -53,6 +53,7 @@ import { renderFractionOf } from "../components/fractionOf.js?v=1";
 import { renderMeasureUnits } from "../components/measureUnits.js?v=2";
 import { renderWrittenOperation } from "../components/writtenOperation.js?v=10";
 import { renderRemainderDivision } from "../components/remainderDivision.js?v=6";
+import { renderWrittenDivision } from "../components/writtenDivision.js?v=1";
 import { renderPerimeter } from "../components/perimeter.js?v=1";
 import { renderArea } from "../components/area.js?v=1";
 import { renderAngles } from "../components/angles.js?v=1";
@@ -119,6 +120,7 @@ const COUNTED_TYPES = new Set([
     "measure-units",
     "written-operation",
     "remainder-division",
+    "written-division",
     "perimeter",
     "area",
     "angles",
@@ -207,6 +209,7 @@ const RENDERERS = new Map([
     ["measure-units", renderMeasureUnits],
     ["written-operation", renderWrittenOperation],
     ["remainder-division", renderRemainderDivision],
+    ["written-division", renderWrittenDivision],
     ["perimeter", renderPerimeter],
     ["area", renderArea],
     ["angles", renderAngles],

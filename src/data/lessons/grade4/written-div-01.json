@@ -1,0 +1,99 @@
+{
+    "id": "grade4-written-div-01",
+    "title": "Írásbeli osztás egyjegyűvel",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "➗ Írásbeli osztás egyjegyűvel",
+            "text": "Az írásbeli osztásnál balról jobbra haladunk! Nézd meg, hányszor van meg a részben az osztó, és írd a hányados számjegyét a tetejére! Utána kivonjuk, és megnézzük, mi a maradék, majd a következő számjegygé visszük tovább.",
+            "illustration": "<div class='wo-table' style='--wo-cols:3;--wo-rows:12; margin:0.5rem auto; font-size:1.6rem;'><div></div><div class='wo-digit'>1</div><div class='wo-digit'>4</div><div class='wo-digit'>9</div><div class='wd-divisor'>5 )</div><div class='wo-digit'>7</div><div class='wo-digit'>4</div><div class='wo-digit'>6</div><div class='wo-line'></div><div></div><div class='wo-digit'>5</div><div></div><div></div><div class='wo-line'></div><div></div><div class='wo-digit'>2</div><div class='wo-digit'>4</div><div></div><div></div><div class='wo-digit'>2</div><div class='wo-digit'>0</div><div></div><div class='wo-line'></div><div></div><div></div><div class='wo-digit'>4</div><div class='wo-digit'>6</div><div></div><div></div><div class='wo-digit'>4</div><div class='wo-digit'>5</div><div class='wo-line'></div><div class='wd-remainder-label' style='grid-column:1/4'>maradék:</div><div class='wo-digit'>1</div></div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Írásbeli osztás a postán",
+                    "text": "Oszd el a csomagokat maradékos írásbeli osztással! Balról jobbra haladj, és mindig azt figyeld, hányszor van meg az osztó a részben!"
+                },
+                "racing": {
+                    "title": "🏎️ Írásbeli osztás a pályán",
+                    "text": "Oszd el a köröket egyjegyű osztóval! Balról jobbra haladva írd a hányados jegyeit, és figyeld a maradékot!"
+                },
+                "football": {
+                    "title": "⚽ Írásbeli osztás a bajnokságban",
+                    "text": "Oszd el a pontokat egyjegyű osztóval! Minden résznél nézd meg, hányszor fér bele az osztó!"
+                },
+                "cooking": {
+                    "title": "🍳 Írásbeli osztás a konyhában",
+                    "text": "Oszd el a hozzávalókat egyjegyű osztóval! Balról jobbra haladva írd a hányados jegyeit, a kép mutatja a kivonásokat!"
+                },
+                "animals": {
+                    "title": "🦁 Írásbeli osztás az állatkertben",
+                    "text": "Oszd el az állatokat egyjegyű osztóval az írásbeli osztás szabályai szerint!"
+                },
+                "space": {
+                    "title": "🤖 Írásbeli osztás az űrben",
+                    "text": "Oszd el az energia-egységeket egyjegyű osztóval! Balról jobbra haladj, és jegyezd le a hányadost és a maradékot!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "written-division",
+            "options": {
+                "count": 4,
+                "min": 100,
+                "max": 999,
+                "divisors": [2, 3, 4, 5, 6, 7, 8, 9],
+                "firstDigitGe": true,
+                "withZeroRemainder": false,
+                "interaction": "input"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "written-division",
+            "options": {
+                "count": 4,
+                "min": 100,
+                "max": 999,
+                "divisors": [4, 5, 6, 7, 8, 9],
+                "firstDigitGe": true,
+                "withZeroRemainder": false,
+                "interaction": "input"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Minden írásbeli osztás jól sikerült!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden írásbeli osztás jól sikerült a postán!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden írásbeli osztás jól sikerült a pályán!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden írásbeli osztás jól sikerült a meccsen!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden írásbeli osztás jól sikerült a konyhában!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden írásbeli osztás jól sikerült az állatkertben!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden írásbeli osztás jól sikerült az űrben!"
+                }
+            }
+        }
+    ]
+}

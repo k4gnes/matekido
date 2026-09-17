@@ -485,6 +485,53 @@ function validateStep(step, ctx) {
             }
             break;
         }
+        case "written-division": {
+            if (!isInt(step.a) || !isInt(step.b) || !isInt(step.quotient) || !isInt(step.remainder)) {
+                fail(ctx, "a/b/quotient/remainder nem egész");
+                break;
+            }
+            if (step.a !== step.quotient * step.b + step.remainder) {
+                fail(ctx, `a != quotient*b+remainder (${step.a} != ${step.quotient}*${step.b}+${step.remainder})`);
+            }
+            if (step.remainder < 0 || step.remainder >= step.b) {
+                fail(ctx, `remainder tartomány hibás: ${step.remainder} (b=${step.b})`);
+            }
+            if (!Array.isArray(step.steps) || step.steps.length === 0) {
+                fail(ctx, "steps hiányzik");
+            }
+            const digits = String(step.a).length;
+            for (let i = 0; i < digits; i++) {
+                if (i >= step.steps.length) {
+                    fail(ctx, `steps rövidebb, mint az osztandó jegyei (${step.steps.length} vs ${digits})`);
+                    break;
+                }
+                const st = step.steps[i];
+                const digit = Number(String(step.a)[i]);
+                const expectedPartial = i === 0 ? digit : step.steps[i - 1].remainder * 10 + digit;
+                if (st.partial !== expectedPartial) {
+                    fail(ctx, `steps[${i}].partial hibás (${st.partial} != ${expectedPartial})`);
+                }
+                if (st.qd < 0 || st.qd > 9) {
+                    fail(ctx, `steps[${i}].qd nem 0..9: ${st.qd}`);
+                }
+                if (st.product !== st.qd * step.b) {
+                    fail(ctx, `steps[${i}].product != qd*b (${st.product} != ${st.qd}*${step.b})`);
+                }
+                if (st.remainder !== st.partial - st.product) {
+                    fail(ctx, `steps[${i}].remainder != partial-product (${st.remainder} != ${st.partial}-${st.product})`);
+                }
+                if (st.remainder < 0 || st.remainder >= step.b) {
+                    fail(ctx, `steps[${i}].remainder tartomány hibás: ${st.remainder}`);
+                }
+            }
+            if (step.steps[step.steps.length - 1].remainder !== step.remainder) {
+                fail(ctx, `utolsó steps.remainder != feladat maradéka (${step.steps[step.steps.length - 1].remainder} vs ${step.remainder})`);
+            }
+            if (!["input", "choice"].includes(step.interaction)) {
+                fail(ctx, `interaction hibás: ${step.interaction}`);
+            }
+            break;
+        }
         case "remainder-division": {
             if (!isInt(step.a) || !isInt(step.b) || !isInt(step.quotient) || !isInt(step.remainder)) {
                 fail(ctx, "a/b/quotient/remainder nem egész");

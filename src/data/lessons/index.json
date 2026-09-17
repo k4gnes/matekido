@@ -3262,6 +3262,29 @@
                 "animals": "🦁 Írásbeli szorzás kétjegyűvel az állatkertben",
                 "space": "🤖 Írásbeli szorzás kétjegyűvel az űrben"
             }
+        },
+        {
+            "id": "written-div-1000-01",
+            "title": "Írásbeli osztás egyjegyűvel (maradékos)",
+            "grades": [
+                4
+            ],
+            "category": "operations",
+            "skill": "division",
+            "difficulty": 2,
+            "type": "written-division",
+            "range": 1000,
+            "mission": "✍️ Írásbeli számolás",
+            "subtitle": "Írásbeli osztás maradékos",
+            "file": "./data/lessons/grade4/written-div-01.json",
+            "worldTitles": {
+                "postman": "📮 Írásbeli osztás a postán",
+                "racing": "🏎️ Írásbeli osztás a pályán",
+                "football": "⚽ Írásbeli osztás a bajnokságban",
+                "cooking": "🍳 Írásbeli osztás a konyhában",
+                "animals": "🦁 Írásbeli osztás az állatkertben",
+                "space": "🤖 Írásbeli osztás az űrben"
+            }
         }
     ],
     "gradeConfig": [

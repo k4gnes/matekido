@@ -473,6 +473,16 @@ export function buildLesson(lesson) {
                     quotientOptions: task.quotientOptions,
                     remainderOptions: task.remainderOptions
                 });
+            } else if (step.generator === "written-division") {
+                result.push({
+                    type: "written-division",
+                    a: task.a,
+                    b: task.b,
+                    quotient: task.quotient,
+                    remainder: task.remainder,
+                    steps: task.steps,
+                    interaction: task.interaction
+                });
             } else if (step.generator === "perimeter") {
                 result.push({
                     type: "perimeter",

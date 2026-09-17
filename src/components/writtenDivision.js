@@ -44,26 +44,29 @@ export function renderWrittenDivision(step, root, next, progress, onResult, onAt
     const n = digitCount(step.a);
 
     const table = document.createElement("div");
-    table.className = "wo-table";
-    table.style.setProperty("--wo-cols", n);
-    table.style.setProperty("--wo-rows", 3 * n + 3);
+    table.className = "wd-table";
+    table.style.gridTemplateColumns = `repeat(${n}, 4.2rem) 1.8rem 4.2rem 1.8rem repeat(${n}, 4.2rem)`;
 
     const line = () => {
         const l = document.createElement("div");
-        l.className = "wo-line";
+        l.className = "wd-line";
+        l.style.gridColumn = `1 / ${2 * n + 4}`;
         table.append(l);
     };
 
     const showNumberRow = (value, endCol, cls) => {
         const k = digitCount(value);
-        addEmptyCells(table, endCol + 2 - k);
+        addEmptyCells(table, endCol + 1 - k);
         for (let i = 0; i < k; i++) {
             addCell(table, Number(String(value)[i]), cls);
         }
-        addEmptyCells(table, n - endCol - 1);
+        addEmptyCells(table, 2 * n + 2 - endCol);
     };
 
-    addEmptyCells(table, 1);
+    String(step.a).split("").forEach(d => addCell(table, d, "wo-digit"));
+    addCell(table, ":", "wd-sym");
+    addCell(table, step.b, "wo-digit");
+    addCell(table, "=", "wd-sym");
 
     const qInputs = [];
     for (let i = 0; i < n; i++) {
@@ -76,9 +79,6 @@ export function renderWrittenDivision(step, root, next, progress, onResult, onAt
         table.append(input);
         qInputs.push(input);
     }
-
-    addCell(table, `${step.b} )`, "wd-divisor");
-    String(step.a).split("").forEach(d => addCell(table, d, "wo-digit"));
 
     line();
 
@@ -97,7 +97,7 @@ export function renderWrittenDivision(step, root, next, progress, onResult, onAt
     const remLabel = document.createElement("div");
     remLabel.className = "wd-remainder-label";
     remLabel.textContent = "maradék:";
-    remLabel.style.gridColumn = `1 / ${n + 1}`;
+    remLabel.style.gridColumn = `1 / ${n}`;
     table.append(remLabel);
 
     const rInput = document.createElement("input");
@@ -107,6 +107,7 @@ export function renderWrittenDivision(step, root, next, progress, onResult, onAt
     rInput.maxLength = "1";
     rInput.className = "wo-input wd-remainder-input";
     rInput.setAttribute("aria-label", "maradék");
+    rInput.style.gridColumn = String(n);
     table.append(rInput);
 
     const inputs = [...qInputs, rInput];
@@ -116,7 +117,7 @@ export function renderWrittenDivision(step, root, next, progress, onResult, onAt
     const hintButton = createButton("💡 Segítséget kérek", {
         onClick: () => {
             hintShown = true;
-            hint.textContent = "Balról jobbra haladj! Nézd meg, hogy az osztó hányszor van meg a részben. Írd be a hányados számjegyét, a kivonásokat mutatja a kép, a végén a maradékot írd be!";
+            hint.textContent = "Az egyenlőségjel után írd a hányados számjegyeit, balról jobbra haladva! A kivonásokat mutatja a kép, a végén a maradékot írd be!";
             hintButton.style.display = "none";
             qInputs[0].focus();
         }

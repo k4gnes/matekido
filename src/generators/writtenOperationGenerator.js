@@ -84,7 +84,7 @@ export function generateWrittenOperation(options = {}) {
         throw new Error(`Érvénytelen borrow érték: ${borrow}`);
     }
 
-    if (op === "mul" && (!isInt(bMin) || !isInt(bMax) || bMin < 1 || bMax > 9 || bMin > bMax)) {
+    if (op === "mul" && (!isInt(bMin) || !isInt(bMax) || bMin < 1 || bMax > 99 || bMin > bMax)) {
         throw new Error(`Érvénytelen szorzótartomány: ${bMin}..${bMax}`);
     }
 
@@ -144,7 +144,13 @@ export function generateWrittenOperation(options = {}) {
                 continue;
             }
 
-            const carryResult = mulCarryColumns(a, b).length > 0;
+            if (b % 10 === 0) {
+                continue;
+            }
+
+            const onesPart = a * (b % 10);
+            const tensPart = a * Math.floor(b / 10);
+            const carryResult = mulCarryColumns(a, b % 10).length > 0 || mulCarryColumns(a, Math.floor(b / 10)).length > 0;
 
             if (carry === "always" && !carryResult) {
                 continue;
@@ -154,13 +160,25 @@ export function generateWrittenOperation(options = {}) {
                 continue;
             }
 
-            tasks.push({
-                op,
-                a,
-                b,
-                answer: result,
-                interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction
-            });
+            if (b >= 10) {
+                tasks.push({
+                    op,
+                    a,
+                    b,
+                    answer: result,
+                    onesPart,
+                    tensPart,
+                    interaction: "input"
+                });
+            } else {
+                tasks.push({
+                    op,
+                    a,
+                    b,
+                    answer: result,
+                    interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction
+                });
+            }
 
         } else {
 

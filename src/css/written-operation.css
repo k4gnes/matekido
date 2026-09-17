@@ -1,7 +1,7 @@
 .wo-table {
     display: grid;
     grid-template-columns: 3.2rem repeat(var(--wo-cols, 3), 4.2rem);
-    grid-template-rows: auto auto auto auto auto;
+    grid-template-rows: repeat(var(--wo-rows, 5), auto);
     gap: 0.3rem;
     justify-content: center;
     align-items: center;

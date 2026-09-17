@@ -3239,6 +3239,29 @@
                 "animals": "🦁 Írásbeli szorzás az állatkertben",
                 "space": "🤖 Írásbeli szorzás az űrben"
             }
+        },
+        {
+            "id": "written-mul2-1000-01",
+            "title": "Írásbeli szorzás kétjegyűvel",
+            "grades": [
+                4
+            ],
+            "category": "operations",
+            "skill": "multiplication",
+            "difficulty": 3,
+            "type": "written-operation",
+            "range": 10000,
+            "mission": "✍️ Írásbeli számolás",
+            "subtitle": "Írásbeli szorzás kétjegyűvel",
+            "file": "./data/lessons/grade4/written-mul2-01.json",
+            "worldTitles": {
+                "postman": "📮 Írásbeli szorzás kétjegyűvel a postán",
+                "racing": "🏎️ Írásbeli szorzás kétjegyűvel a pályán",
+                "football": "⚽ Írásbeli szorzás kétjegyűvel a bajnokságban",
+                "cooking": "🍳 Írásbeli szorzás kétjegyűvel a konyhában",
+                "animals": "🦁 Írásbeli szorzás kétjegyűvel az állatkertben",
+                "space": "🤖 Írásbeli szorzás kétjegyűvel az űrben"
+            }
         }
     ],
     "gradeConfig": [

@@ -441,20 +441,32 @@ function validateStep(step, ctx) {
             if (!["add", "sub", "mul"].includes(step.op)) {
                 fail(ctx, `op hibás: ${step.op}`);
             }
-            if (!isInt(step.a) || !isInt(step.b) || step.a < 100 || step.b < 1) {
+            const twoDigitMul = step.op === "mul" && step.b >= 10;
+            if (!isInt(step.a) || !isInt(step.b) || step.a < 1 || step.b < 1) {
                 fail(ctx, "a/b nem érvényes egész");
             }
             if (step.op === "mul") {
                 if (step.a > 9999) fail(ctx, `a 9999 fölötti (${step.a})`);
-                if (step.b < 2 || step.b > 9) fail(ctx, `b nem 2..9 szorzó (${step.b})`);
+                if (twoDigitMul) {
+                    if (step.b > 99) fail(ctx, `b 99 fölötti kétjegyű szorzó (${step.b})`);
+                    if (step.onesPart !== step.a * (step.b % 10)) {
+                        fail(ctx, `onesPart != a*(b%10) (${step.onesPart})`);
+                    }
+                    if (step.tensPart !== step.a * Math.floor(step.b / 10)) {
+                        fail(ctx, `tensPart != a*(b/10) (${step.tensPart})`);
+                    }
+                } else {
+                    if (step.b < 2 || step.b > 9) fail(ctx, `b nem 2..9 szorzó (${step.b})`);
+                }
                 if (step.answer !== step.a * step.b) {
                     fail(ctx, `answer != a*b (${step.answer} vs ${step.a * step.b})`);
                 }
-                if (step.answer > 99999) {
-                    fail(ctx, `answer 99999 fölötti: ${step.answer}`);
+                if (step.answer > 9999) {
+                    fail(ctx, `answer 9999 fölötti: ${step.answer}`);
                 }
             } else {
                 if (step.a > 9999 || step.b > 9999) fail(ctx, "a/b 9999 fölötti");
+                if (step.a < 100) fail(ctx, `a 100 alatti: ${step.a}`);
                 if (step.op === "add" && step.answer !== step.a + step.b) {
                     fail(ctx, `answer != a+b (${step.answer})`);
                 }
@@ -467,6 +479,9 @@ function validateStep(step, ctx) {
             }
             if (!["input", "choice"].includes(step.interaction)) {
                 fail(ctx, `interaction hibás: ${step.interaction}`);
+            }
+            if (twoDigitMul && step.interaction !== "input") {
+                fail(ctx, `kétjegyű szorzónál input kell (${step.interaction})`);
             }
             break;
         }

@@ -456,6 +456,8 @@ export function buildLesson(lesson) {
                     a: task.a,
                     b: task.b,
                     answer: task.answer,
+                    onesPart: task.onesPart,
+                    tensPart: task.tensPart,
                     interaction: task.interaction
                 });
             } else if (step.generator === "remainder-division") {

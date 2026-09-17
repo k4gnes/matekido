@@ -1,0 +1,105 @@
+{
+    "id": "grade4-written-mul2-01",
+    "title": "Írásbeli szorzás kétjegyűvel",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "✍️ Írásbeli szorzás kétjegyűvel",
+            "text": "Először a szorzót szorozd meg a felső szám egyeseivel, és írd le a részt (például 345 × 3 = 1035)! Ezután szorozd meg a tízesekkel is (345 × 2 = 690), és ezt írd egy jeggyel balra! A végén add össze a két részt, és megkapod az eredményt (345 × 23 = 7935)!",
+            "illustration": "<div class='wo-table' style='--wo-cols:7;--wo-rows:7; margin:0.5rem auto; font-size:1.6rem;'><div></div><div>ezres</div><div>százas</div><div>tízes</div><div>egyes</div><div></div><div></div><div></div><div></div><div></div><div class='wo-digit'>3</div><div class='wo-digit'>4</div><div class='wo-digit'>5</div><div class='wo-op'>×</div><div class='wo-digit'>2</div><div class='wo-digit'>3</div><div class='wo-line'></div><div></div><div class='wo-digit'>1</div><div class='wo-digit'>0</div><div class='wo-digit'>3</div><div class='wo-digit'>5</div><div></div><div></div><div></div><div></div><div class='wo-digit'>6</div><div class='wo-digit'>9</div><div class='wo-digit'>0</div><div></div><div></div><div></div><div></div><div class='wo-line'></div><div></div><div class='wo-digit'>7</div><div class='wo-digit'>9</div><div class='wo-digit'>3</div><div class='wo-digit'>5</div><div></div><div></div><div></div></div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Írásbeli szorzás kétjegyűvel a postán",
+                    "text": "Szorozd meg a csomagok darabszámát kétjegyű szorzóval! Először az egyesekkel, aztán a tízesekkel szorozz, végül add össze a két részt!"
+                },
+                "racing": {
+                    "title": "🏎️ Írásbeli szorzás kétjegyűvel a pályán",
+                    "text": "Számold ki a körök szorzatát kétjegyű szorzóval! Először az egyesekkel, aztán a tízesekkel szorozz!"
+                },
+                "football": {
+                    "title": "⚽ Írásbeli szorzás kétjegyűvel a bajnokságban",
+                    "text": "Szorozd meg a csapatok létszámát kétjegyű szorzóval! Először az egyesekkel, aztán a tízesekkel szorozz!"
+                },
+                "cooking": {
+                    "title": "🍳 Írásbeli szorzás kétjegyűvel a konyhában",
+                    "text": "Szorozd meg a hozzávalók mennyiségét kétjegyű szorzóval! Először az egyesekkel, aztán a tízesekkel szorozz!"
+                },
+                "animals": {
+                    "title": "🦁 Írásbeli szorzás kétjegyűvel az állatkertben",
+                    "text": "Szorozd meg az állatok lábainak számát kétjegyű szorzóval! Először az egyesekkel, aztán a tízesekkel szorozz!"
+                },
+                "space": {
+                    "title": "🤖 Írásbeli szorzás kétjegyűvel az űrben",
+                    "text": "Szorozd meg az energia-egységeket kétjegyű szorzóval! Először az egyesekkel, aztán a tízesekkel szorozz!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "written-operation",
+            "options": {
+                "count": 4,
+                "op": "mul",
+                "min": 12,
+                "max": 49,
+                "bMin": 12,
+                "bMax": 19,
+                "carry": "any",
+                "resultMin": 100,
+                "resultMax": 9999,
+                "interaction": "input"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "written-operation",
+            "options": {
+                "count": 4,
+                "op": "mul",
+                "min": 23,
+                "max": 98,
+                "bMin": 23,
+                "bMax": 98,
+                "carry": "any",
+                "resultMin": 100,
+                "resultMax": 9999,
+                "interaction": "input"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Minden írásbeli szorzás jól sikerült!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden kétjegyű írásbeli szorzás jól sikerült a postán!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden kétjegyű írásbeli szorzás jól sikerült a pályán!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden kétjegyű írásbeli szorzás jól sikerült a meccsen!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden kétjegyű írásbeli szorzás jól sikerült a konyhában!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden kétjegyű írásbeli szorzás jól sikerült az állatkertben!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden kétjegyű írásbeli szorzás jól sikerült az űrben!"
+                }
+            }
+        }
+    ]
+}

@@ -3331,6 +3331,75 @@
                 "animals": "🦁 Vegyes írásbeli műveletek az állatkertben",
                 "space": "🤖 Vegyes írásbeli műveletek az űrben"
             }
+        },
+        {
+            "id": "fraction-big-1000-01",
+            "title": "Fele, harmada, negyede – nagyobb számok",
+            "grades": [
+                4
+            ],
+            "category": "fractions",
+            "skill": "fraction",
+            "difficulty": 2,
+            "type": "fraction-of",
+            "range": 1000,
+            "mission": "🍕 Törtek",
+            "subtitle": "Törtrész nagyobb számokra",
+            "file": "./data/lessons/grade4/fraction-big-01.json",
+            "worldTitles": {
+                "postman": "📮 Törtrészek a postán",
+                "racing": "🏎️ Törtrészek a pályán",
+                "football": "⚽ Törtrészek a bajnokságban",
+                "cooking": "🍳 Törtrészek a konyhában",
+                "animals": "🦁 Törtrészek az állatkertben",
+                "space": "🤖 Törtrészek az űrben"
+            }
+        },
+        {
+            "id": "fraction-symbol2-20-01",
+            "title": "Törtek jelölése – számláló, nevező",
+            "grades": [
+                4
+            ],
+            "category": "fractions",
+            "skill": "fraction",
+            "difficulty": 2,
+            "type": "fraction",
+            "range": 20,
+            "mission": "🍕 Törtek",
+            "subtitle": "Tört jeléhez kép, képhez jel",
+            "file": "./data/lessons/grade4/fraction-symbol2-01.json",
+            "worldTitles": {
+                "postman": "📮 Törtek jelölése a postán",
+                "racing": "🏎️ Törtek jelölése a pályán",
+                "football": "⚽ Törtek jelölése a bajnokságban",
+                "cooking": "🍳 Törtek jelölése a konyhában",
+                "animals": "🦁 Törtek jelölése az állatkertben",
+                "space": "🤖 Törtek jelölése az űrben"
+            }
+        },
+        {
+            "id": "fraction-eqden-20-01",
+            "title": "Azonos nevezőjű törtek",
+            "grades": [
+                4
+            ],
+            "category": "fractions",
+            "skill": "fraction",
+            "difficulty": 3,
+            "type": "fraction-equal-den",
+            "range": 20,
+            "mission": "🍕 Törtek",
+            "subtitle": "Összehasonlítás és műveletek",
+            "file": "./data/lessons/grade4/fraction-eqden-01.json",
+            "worldTitles": {
+                "postman": "📮 Azonos nevezőjű törtek a postán",
+                "racing": "🏎️ Azonos nevezőjű törtek a pályán",
+                "football": "⚽ Azonos nevezőjű törtek a bajnokságban",
+                "cooking": "🍳 Azonos nevezőjű törtek a konyhában",
+                "animals": "🦁 Azonos nevezőjű törtek az állatkertben",
+                "space": "🤖 Azonos nevezőjű törtek az űrben"
+            }
         }
     ],
     "gradeConfig": [

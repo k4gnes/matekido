@@ -48,8 +48,9 @@ import { renderMirror } from "../components/mirror.js?v=3";
 import { renderSetMatch } from "../components/setMatch.js?v=1";
 import { renderDataChart } from "../components/dataChart.js?v=3";
 import { renderCalendar } from "../components/calendar.js?v=2";
-import { renderFraction } from "../components/fraction.js?v=6";
-import { renderFractionOf } from "../components/fractionOf.js?v=1";
+import { renderFraction } from "../components/fraction.js?v=7";
+import { renderFractionOf } from "../components/fractionOf.js?v=2";
+import { renderFractionEqualDen } from "../components/fractionEqualDen.js?v=1";
 import { renderMeasureUnits } from "../components/measureUnits.js?v=2";
 import { renderWrittenOperation } from "../components/writtenOperation.js?v=10";
 import { renderRemainderDivision } from "../components/remainderDivision.js?v=6";
@@ -121,6 +122,7 @@ const COUNTED_TYPES = new Set([
     "written-operation",
     "remainder-division",
     "written-division",
+    "fraction-equal-den",
     "perimeter",
     "area",
     "angles",
@@ -146,7 +148,8 @@ const SKILL_BY_TYPE = {
     "neighbor-single": "neighbor",
     "neighbor-round": "neighbor",
     "place-value-two-input": "place-value",
-    "place-value-thousands": "place-value"
+    "place-value-thousands": "place-value",
+    "fraction-equal-den": "fraction"
 };
 
 const RENDERERS = new Map([
@@ -206,6 +209,7 @@ const RENDERERS = new Map([
     ["calendar", renderCalendar],
     ["fraction", renderFraction],
     ["fraction-of", renderFractionOf],
+    ["fraction-equal-den", renderFractionEqualDen],
     ["measure-units", renderMeasureUnits],
     ["written-operation", renderWrittenOperation],
     ["remainder-division", renderRemainderDivision],

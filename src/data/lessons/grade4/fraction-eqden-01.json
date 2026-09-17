@@ -1,0 +1,100 @@
+{
+    "id": "grade4-fraction-eqden-01",
+    "title": "Azonos nevezőjű törtek",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🧮 Azonos nevezőjű törtek",
+            "text": "Ha két törtnek ugyanaz a nevezője, könnyű dolgunk van! Nagyobb az, amelyiknek nagyobb a számlálója: a 3/8 kisebb, mint az 5/8. Összeadáskor a számlálókat összeadjuk, a nevező nem változik: 3/8 + 2/8 = 5/8. Kivonáskor a számlálókat kivonjuk: 5/8 − 2/8 = 3/8. Próbáld ki te is a képeken!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Törtek a postán",
+                    "text": "Hasonlítsd össze és számold ki a törteket! A nevező mindig ugyanaz marad."
+                },
+                "racing": {
+                    "title": "🏎️ Törtek a pályán",
+                    "text": "A köröket törtekkel hasonlítjuk össze! Keresd a nagyobbat, és számold ki az összeget!"
+                },
+                "football": {
+                    "title": "⚽ Törtek a bajnokságban",
+                    "text": "A gólokat törtekkel jelezzük! Számold ki az összeget és a különbséget!"
+                },
+                "cooking": {
+                    "title": "🍳 Törtek a konyhában",
+                    "text": "A hozzávalókat törtekkel adagoljuk! Melyik lesz a nagyobb, és mennyi az összeg?"
+                },
+                "animals": {
+                    "title": "🦁 Törtek az állatkertben",
+                    "text": "Az eleségeket törtekkel osztjuk el! Hasonlítsd össze és számolj!"
+                },
+                "space": {
+                    "title": "🤖 Törtek az űrben",
+                    "text": "Az energia-adagokat törtekkel gondoljuk! Melyik a nagyobb, és mennyi lesz az összeg?"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "fraction-equal-den",
+            "options": {
+                "count": 4,
+                "mode": "compare",
+                "denoms": [4, 6, 8]
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "fraction-equal-den",
+            "options": {
+                "count": 4,
+                "mode": "add",
+                "denoms": [4, 6, 8]
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "fraction-equal-den",
+            "options": {
+                "count": 4,
+                "mode": "sub",
+                "denoms": [4, 6, 8]
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Minden azonos nevezőjű törtet jól számoltál ki!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden törtszámítás jól sikerült a postán!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden törtszámítás jól sikerült a pályán!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden törtszámítás jól sikerült a bajnokságban!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden törtszámítás jól sikerült a konyhában!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden törtszámítás jól sikerült az állatkertben!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden törtszámítás jól sikerült az űrben!"
+                }
+            }
+        }
+    ]
+}

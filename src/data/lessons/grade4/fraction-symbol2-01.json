@@ -1,0 +1,100 @@
+{
+    "id": "grade4-fraction-symbol2-01",
+    "title": "Törtek jelölése – számláló, nevező",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🍕 Törtek jelölése – számláló, nevező",
+            "text": "Egy törtnek két része van, és így írjuk fel: 5/8. A felső szám a számláló: megmutatja, hány részt színeztek ki. Az alsó szám a nevező: megmutatja, hány egyenlő részre osztották az egészet. Ebben az esetben 5 részt színeztek ki a 8-ból! Nézd meg a képet, és találd meg a hozzá tartozó jelet, vagy a jelhez a képet!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Törtek jelölése a postán",
+                    "text": "A csomagokat is jelekkel jelöljük! Figyeld a részeket: a számlálót és a nevezőt!"
+                },
+                "racing": {
+                    "title": "🏎️ Törtek jelölése a pályán",
+                    "text": "A köröket jelölni kell! Nézd meg, hány rész van kiszínezve, és melyik jel illik hozzá!"
+                },
+                "football": {
+                    "title": "⚽ Törtek jelölése a bajnokságban",
+                    "text": "A pontokat törtekkel jelöljük! A képhez keresd a jelet, a jelhez a képet!"
+                },
+                "cooking": {
+                    "title": "🍳 Törtek jelölése a konyhában",
+                    "text": "A hozzávalók felét, harmadát törttel jelöljük! Kösd össze a képet a jellel!"
+                },
+                "animals": {
+                    "title": "🦁 Törtek jelölése az állatkertben",
+                    "text": "Az állatok eleségét törtekkel jelöljük! Figyeld a számlálót és a nevezőt!"
+                },
+                "space": {
+                    "title": "🤖 Törtek jelölése az űrben",
+                    "text": "Az energia-jeleket is meg kell érteni! A képhez keresd a jelet, a jelhez a képet!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "fraction",
+            "options": {
+                "count": 4,
+                "deep": true,
+                "mode": "write"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "fraction",
+            "options": {
+                "count": 4,
+                "deep": true,
+                "mode": "symbol"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "fraction",
+            "options": {
+                "count": 4,
+                "deep": true,
+                "mode": "symbol-pick"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Minden tört jelét jól felismered!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden tört jelét jól felismerted a postán!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden tört jelét jól felismerted a pályán!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden tört jelét jól felismerted a bajnokságban!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden tört jelét jól felismerted a konyhában!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden tört jelét jól felismerted az állatkertben!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden tört jelét jól felismerted az űrben!"
+                }
+            }
+        }
+    ]
+}

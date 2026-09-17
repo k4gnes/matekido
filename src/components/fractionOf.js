@@ -16,6 +16,33 @@ const WORLD_EMOJI = {
 };
 
 function renderVisual(step, card) {
+    if (step.visual === "bar") {
+        const wrap = document.createElement("div");
+        wrap.className = "fof-bar-wrap";
+
+        const value = document.createElement("div");
+        value.className = "fof-bar-value";
+        value.textContent = step.whole;
+        wrap.append(value);
+
+        const bar = document.createElement("div");
+        bar.className = "fof-bar";
+        for (let i = 0; i < step.denominator; i++) {
+            const seg = document.createElement("div");
+            seg.className = "fof-bar-seg" + (i === 0 ? " fof-bar-seg-hot" : "");
+            bar.append(seg);
+        }
+        wrap.append(bar);
+
+        const note = document.createElement("p");
+        note.className = "fof-note";
+        note.textContent = `${step.whole}-t ${step.denominator} egyenlő részre osztva – a piros rész egy ${FRACTION_NAMES[step.denominator]}.`;
+        wrap.append(note);
+
+        card.append(wrap);
+        return;
+    }
+
     const hint = document.createElement("p");
     hint.className = "fof-hint";
     hint.textContent = `${step.whole} ${step.emoji} – ${step.denominator} egyenlő részre osztva. Mennyi az egyik rész?`;
@@ -234,6 +261,36 @@ function renderCSS(card) {
         .fof-item {
             font-size: 1.5rem;
             line-height: 1;
+        }
+        .fof-bar-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            margin: 0.6rem 0 0.8rem;
+        }
+        .fof-bar-value {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1e293b;
+        }
+        .fof-bar {
+            display: flex;
+            width: min(80%, 420px);
+            height: 46px;
+            border: 3px solid #334155;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .fof-bar-seg {
+            flex: 1;
+            background: #f6c453;
+        }
+        .fof-bar-seg + .fof-bar-seg {
+            border-left: 3px solid #334155;
+        }
+        .fof-bar-seg-hot {
+            background: #e2574c;
         }
         .fof-options {
             display: flex;

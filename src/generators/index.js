@@ -44,7 +44,7 @@ import { generateMirror } from "./mirrorGenerator.js?v=2";
 import { generateSetMatch } from "./setMatchGenerator.js?v=1";
 import { generateDataChart } from "./dataChartGenerator.js?v=3";
 import { generateCalendar } from "./calendarGenerator.js?v=3";
-import { generateFraction } from "./fractionGenerator.js?v=3";
+import { generateFraction } from "./fractionGenerator.js?v=4";
 import { generateMeasureUnits } from "./measureUnitsGenerator.js?v=3";
 import { generateWrittenOperation } from "./writtenOperationGenerator.js?v=4";
 import { generateRemainderDivision } from "./remainderDivisionGenerator.js?v=3";
@@ -52,7 +52,8 @@ import { generateWrittenDivision } from "./writtenDivisionGenerator.js?v=2";
 import { generatePerimeter } from "./perimeterGenerator.js?v=1";
 import { generateArea } from "./areaGenerator.js?v=1";
 import { generateAngles } from "./anglesGenerator.js?v=1";
-import { generateFractionOf } from "./fractionOfGenerator.js?v=1";
+import { generateFractionOf } from "./fractionOfGenerator.js?v=2";
+import { generateFractionEqualDen } from "./fractionEqualDenGenerator.js?v=1";
 import { generateCircle } from "./circleGenerator.js?v=1";
 import { generateProbability } from "./probabilityGenerator.js?v=1";
 import { generateOperationOrder } from "./operationOrderGenerator.js?v=1";
@@ -165,6 +166,8 @@ export function generate(step) {
             return generateFraction(opts);
         case "fraction-of":
             return generateFractionOf(opts);
+        case "fraction-equal-den":
+            return generateFractionEqualDen(opts);
         case "measure-units":
             return generateMeasureUnits(opts);
         case "written-operation":

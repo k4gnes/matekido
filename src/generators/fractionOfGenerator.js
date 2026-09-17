@@ -51,16 +51,26 @@ function getEmojis(world) {
 }
 
 export function generateFractionOf(options = {}) {
-    const { count = 6, denominator = 0, interaction = "mixed", world } = options;
+    const { count = 6, denominator = 0, interaction = "mixed", world, larger = false } = options;
 
     const emojis = getEmojis(world);
-    const denoms = denominator > 0 ? [denominator] : [2, 3, 4];
+    const denoms = denominator > 0 ? [denominator] : larger ? [2, 3, 4] : [2, 3, 4];
 
     const tasks = [];
     for (let i = 0; i < count; i++) {
         const den = pick(denoms);
-        const answer = randint(1, 12);
-        const whole = den * answer;
+
+        let whole, answer;
+
+        if (larger) {
+            const baseMax = Math.floor(999 / den);
+            answer = 10 * randint(10, Math.floor(baseMax / 10));
+            whole = den * answer;
+        } else {
+            answer = randint(1, 12);
+            whole = den * answer;
+        }
+
         const emoji = pick(emojis);
 
         const task = {
@@ -71,11 +81,15 @@ export function generateFractionOf(options = {}) {
             emoji
         };
 
+        if (larger) {
+            task.visual = "bar";
+        }
+
         const mode = interaction === "mixed" ? pick(["choice", "input"]) : interaction;
         task.interaction = mode;
 
         if (mode === "choice") {
-            task.options = makeOptions(task.answer, 1, 12);
+            task.options = makeOptions(task.answer, larger ? 5 : 1, larger ? 495 : 12);
         }
 
         tasks.push(task);

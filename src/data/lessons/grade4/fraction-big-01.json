@@ -1,0 +1,103 @@
+{
+    "id": "grade4-fraction-big-01",
+    "title": "Fele, harmada, negyede – nagyobb számok",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🧮 Fele, harmada, negyede – nagyobb számok",
+            "text": "Néha nem egész számot, hanem egy nagyobb számnak csak a részét keressük! Például a 240 fele 120, a harmada 80, a negyede 60. A csík mutatja, hány egyenlő részre osztjuk a számot – te találd ki, mennyi az egyik rész!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Osztogatás a postán",
+                    "text": "A postán szét kell osztani a csomagokat! A csík mutatja, hány egyenlő részre osztjuk a számot."
+                },
+                "racing": {
+                    "title": "🏎️ Részszámítások a pályán",
+                    "text": "A versenyen a köröket is el kell osztani! Találd ki a nagyobb számok részét!"
+                },
+                "football": {
+                    "title": "⚽ Részosztás a bajnokságban",
+                    "text": "A pontokat osztjuk el egyenlő részekre! Számold ki a felet, harmadot vagy negyedet!"
+                },
+                "cooking": {
+                    "title": "🍳 Hozzávalók a konyhában",
+                    "text": "A recepthez pont annyi hozzávaló kell! Számold ki, mennyi a hozzávalók fele, harmada, negyede!"
+                },
+                "animals": {
+                    "title": "🦁 Részosztás az állatkertben",
+                    "text": "Az állatok eleségét is szét kell osztani! Számold ki a nagyobb számok törtrészeit!"
+                },
+                "space": {
+                    "title": "🤖 Energiarészek az űrben",
+                    "text": "Az energia-egységeket részekre osztjuk! Találd ki, mennyi az egyik rész!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "fraction-of",
+            "options": {
+                "count": 4,
+                "larger": true,
+                "denominator": 2,
+                "interaction": "input"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "fraction-of",
+            "options": {
+                "count": 4,
+                "larger": true,
+                "denominator": 3,
+                "interaction": "input"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "fraction-of",
+            "options": {
+                "count": 4,
+                "larger": true,
+                "denominator": 4,
+                "interaction": "input"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Minden törtrészt jól kiszámoltál!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden törtrészt jól kiszámoltál a postán!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden törtrészt jól kiszámoltál a pályán!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden törtrészt jól kiszámoltál a bajnokságban!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden törtrészt jól kiszámoltál a konyhában!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden törtrészt jól kiszámoltál az állatkertben!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden törtrészt jól kiszámoltál az űrben!"
+                }
+            }
+        }
+    ]
+}

@@ -90,6 +90,6 @@ A fenti 30 lecke a 4. osztályos tanmenet terve. Tovább tervezett leckék:
 **Megvalósult leckék:**
 
 - Számfogalom 10 000-ig (6/6): helyiérték, számnevek, szomszédok, összehasonlítás, római számok, kerekítés
-- Műveletek – írásbeli számolás (6/7): írásbeli összeadás, kivonás, szorzás egyjegyűvel, szorzás kétjegyűvel, osztás egyjegyűvel, osztás kétjegyűvel ✔
+- Műveletek – írásbeli számolás (7/7): írásbeli összeadás, kivonás, szorzás egyjegyűvel, szorzás kétjegyűvel, osztás egyjegyűvel, osztás kétjegyűvel, vegyes írásbeli műveletek ✔
 
 *(A többi lecke a fenti táblázat szerint tervezett és még nem implementált.)*

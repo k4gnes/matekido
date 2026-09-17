@@ -3308,6 +3308,29 @@
                 "animals": "🦁 Írásbeli osztás kétjegyűvel az állatkertben",
                 "space": "🤖 Írásbeli osztás kétjegyűvel az űrben"
             }
+        },
+        {
+            "id": "written-mixed-10000-01",
+            "title": "Vegyes írásbeli műveletek",
+            "grades": [
+                4
+            ],
+            "category": "operations",
+            "skill": "mixed",
+            "difficulty": 3,
+            "type": "written-operation",
+            "range": 10000,
+            "mission": "✍️ Írásbeli számolás",
+            "subtitle": "Vegyes írásbeli műveletek",
+            "file": "./data/lessons/grade4/written-mixed-01.json",
+            "worldTitles": {
+                "postman": "📮 Vegyes írásbeli műveletek a postán",
+                "racing": "🏎️ Vegyes írásbeli műveletek a pályán",
+                "football": "⚽ Vegyes írásbeli műveletek a bajnokságban",
+                "cooking": "🍳 Vegyes írásbeli műveletek a konyhában",
+                "animals": "🦁 Vegyes írásbeli műveletek az állatkertben",
+                "space": "🤖 Vegyes írásbeli műveletek az űrben"
+            }
         }
     ],
     "gradeConfig": [

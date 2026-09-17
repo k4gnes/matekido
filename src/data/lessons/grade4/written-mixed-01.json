@@ -1,0 +1,130 @@
+{
+    "id": "grade4-written-mixed-01",
+    "title": "Vegyes írásbeli műveletek",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "✍️ Vegyes írásbeli műveletek",
+            "text": "Most vegyesen oldasz meg írásbeli műveleteket! Jöhet összeadás, kivonás, szorzás és osztás is – mindent pon-talanul, a számok aláírásával kell kiszámolnod. Olvass figyelmesen, melyik műveletet kell elvégezned!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Vegyes írásbeli műveletek a postán",
+                    "text": "A postán mindenféle művelettel kell számolni! Olvad jól, mielőtt nekiállsz!"
+                },
+                "racing": {
+                    "title": "🏎️ Vegyes írásbeli műveletek a pályán",
+                    "text": "A versenyen vegyes feladatok jönnek! Légy gyors és pontos!"
+                },
+                "football": {
+                    "title": "⚽ Vegyes írásbeli műveletek a bajnokságban",
+                    "text": "A bajnokságon vegyes számolás vár! Néha összeadsz, néha kivonsz, szorzol vagy osztasz!"
+                },
+                "cooking": {
+                    "title": "🍳 Vegyes írásbeli műveletek a konyhában",
+                    "text": "A konyhában vegyes műveletekkel számolod ki a hozzávalókat! Olvasd el, melyik műveletet kell használnod!"
+                },
+                "animals": {
+                    "title": "🦁 Vegyes írásbeli műveletek az állatkertben",
+                    "text": "Az állatkertben vegyes feladatok várnak! Légy ügyes és alapos!"
+                },
+                "space": {
+                    "title": "🤖 Vegyes írásbeli műveletek az űrben",
+                    "text": "Az űrben vegyes műveleteket kell megoldanod! Pontos számolás kell a navigációhoz!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "written-operation",
+            "options": {
+                "count": 3,
+                "op": "add",
+                "min": 1000,
+                "max": 9999,
+                "resultMin": 1000,
+                "resultMax": 9999,
+                "carry": "any",
+                "interaction": "input"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "written-operation",
+            "options": {
+                "count": 3,
+                "op": "sub",
+                "min": 1000,
+                "max": 9999,
+                "resultMin": 1000,
+                "resultMax": 9999,
+                "borrow": "any",
+                "interaction": "input"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "written-operation",
+            "options": {
+                "count": 3,
+                "op": "mul",
+                "min": 100,
+                "max": 999,
+                "bMin": 2,
+                "bMax": 9,
+                "resultMin": 100,
+                "resultMax": 9999,
+                "carry": "any",
+                "interaction": "input"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "written-division",
+            "options": {
+                "count": 3,
+                "min": 1000,
+                "max": 5000,
+                "divisors": [11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 24, 25, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49],
+                "withZeroRemainder": false,
+                "interaction": "input"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Mester vagy!",
+            "text": "Minden vegyes írásbeli műveletet megoldottál!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Mester vagy!",
+                    "text": "Minden vegyes írásbeli műveletet megoldottál a postán!"
+                },
+                "racing": {
+                    "title": "🏁 Mester vagy!",
+                    "text": "Minden vegyes írásbeli művelet megoldva a pályán!"
+                },
+                "football": {
+                    "title": "🏆 Mester vagy!",
+                    "text": "Minden vegyes írásbeli művelet megoldva a bajnokságban!"
+                },
+                "cooking": {
+                    "title": "🍳 Mester vagy!",
+                    "text": "Minden vegyes írásbeli művelet megoldva a konyhában!"
+                },
+                "animals": {
+                    "title": "🦁 Mester vagy!",
+                    "text": "Minden vegyes írásbeli művelet megoldva az állatkertben!"
+                },
+                "space": {
+                    "title": "🚀 Mester vagy!",
+                    "text": "Minden vegyes írásbeli művelet megoldva az űrben!"
+                }
+            }
+        }
+    ]
+}

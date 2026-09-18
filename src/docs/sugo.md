@@ -94,9 +94,20 @@ A feladatlista oldalon (a profil-avatárról nyitható) sorban a következők j�
 
 - Az üdvözlőképernyőn a **⏭️** gombbal a feladat elé **kihagyni** is lehet a leckét – a következő, még meg nem oldott feladatra ugrik.
 - A kihagyott feladatok **összegyűlnek**, és **legvégül jönnek következőnek**: előbb az osztály összes többi feladatát megoldod, és a kihagyottak a sorrendjükben úgyis visszatérnek.
+- Ugyanez működik a **🎛️ Saját listában** is: a **⏭️** gombbal félreteheted a feladatot, a „➡️ Következő feladat" ajánló akkor hozza csak vissza, ha a lista többi feladata már kész – és a saját listában is megjelenik a **⏭️ Átugrott feladatok** szekció.
+- Az osztályos és a saját listás félretetteket az app **külön nyilvántartja**: ha a saját listában teszel félre egy feladatot, az az osztályos listában nem számít kihagyottnak – és fordítva. Akárhol megoldod, onnantól sehol nem vár rád.
+- **Már megoldott** feladatnál a **⏭️** csak továbblép, nem tesz félre semmit.
 - Az **osztályváltóval bármikor** továbbléphetsz a következő osztályra – a kihagyott feladat ekkor is vár rád, ajánlott utóbb pótolni.
-- Kihagyás **csak a feladatlista fő menetéből számít**: az Erősítő feladatok és a Kedvenceim listából kihagyott feladat nem kerül a kimaradt listára.
-- A **Szülőknek** nézet mutatja a kihagyott feladatokat, így utólag is látható, mi maradt ki.
+- Kihagyás **csak a feladatlista fő menetéből és a Saját listából számít**: az Erősítő feladatok és a Kedvenceim listából kihagyott feladat nem kerül a kimaradt listára.
+- A **Szülőknek** nézet az **osztályos** kihagyott feladatokat mutatja, így utólag is látható, mi maradt ki.
+
+## 🎛️ Saját lista
+
+A **🎛️ Saját lista** füllel magadnak válogatsz: az osztály, nehézség, feladattípus, készség, típus és számkör szűrői alapján csak azok a feladatok kerülnek a listába, amelyeket szeretnél.
+
+- A **➡️ Következő feladat** az első, még meg nem oldott feladatot ajánlja.
+- A **⏭️** gombbal félreteheted a feladatot: az **⏭️ Átugrott feladatok** szekcióban visszaköszön, és amíg van más megoldatlan feladat a listában, csak a **végén** jön újra.
+- A saját listás félretetteket az app **külön tartja** az osztályosaktól – nem keverednek egymással.
 
 ## 🔍 Szűrők – ha mégis keresnél valamit
 

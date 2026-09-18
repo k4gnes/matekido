@@ -653,11 +653,9 @@ function filterLessons(lessons, filters) {
     });
 }
 
-function pickNextForGrade(gradeLessons) {
+function pickNextForGrade(gradeLessons, skippedFiles = new Set(getSkippedLessons())) {
 
     if (gradeLessons.length === 0) return null;
-
-    const skippedFiles = new Set(getSkippedLessons());
 
     const undone = gradeLessons.find(l => !skippedFiles.has(l.file) && !getLessonStats(l.file));
     if (undone) {
@@ -1103,7 +1101,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
 
         const poolOpts = { from: "custom", list: pool.map(l => l.file) };
 
-        const next = pickNextForGrade(pool);
+        const next = pickNextForGrade(pool, new Set(getSkippedLessons("custom")));
         if (next) {
             const nextCard = createCard();
 
@@ -1174,6 +1172,24 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
         }
 
         contentArea.append(browseWrap);
+
+        const customSkippedSet = new Set(getSkippedLessons("custom"));
+        const customSkippedLessons = pool.filter(l => customSkippedSet.has(l.file) && !getLessonStats(l.file));
+
+        const pickerSections = [];
+        if (customSkippedLessons.length > 0) {
+            pickerSections.push(createPickerSection(
+                `⏭️ Átugrott feladatok (${customSkippedLessons.length}) – érdemes pótolni, a végén úgyis visszajönnek`,
+                customSkippedLessons,
+                onSelect,
+                activeWorld,
+                poolOpts
+            ));
+        }
+
+        if (pickerSections.length > 0) {
+            contentArea.append(createPickerRow(pickerSections));
+        }
     }
 
     function renderBrowseLessons(gradeLessons) {

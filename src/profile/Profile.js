@@ -274,23 +274,26 @@ export function toggleFavoriteLesson(lessonFile) {
 
 }
 
-export function getSkippedLessons() {
+export function getSkippedLessons(context) {
 
     const profile = loadProfile();
-    return Array.isArray(profile.skippedLessons) ? profile.skippedLessons : [];
+    const key = context === "custom" ? "skippedCustomLessons" : "skippedLessons";
+    return Array.isArray(profile[key]) ? profile[key] : [];
 
 }
 
-export function recordLessonSkip(lessonFile) {
+export function recordLessonSkip(lessonFile, context) {
 
     const profile = loadProfile();
 
-    if (!Array.isArray(profile.skippedLessons)) {
-        profile.skippedLessons = [];
+    const key = context === "custom" ? "skippedCustomLessons" : "skippedLessons";
+
+    if (!Array.isArray(profile[key])) {
+        profile[key] = [];
     }
 
-    if (!profile.skippedLessons.includes(lessonFile)) {
-        profile.skippedLessons.push(lessonFile);
+    if (!profile[key].includes(lessonFile)) {
+        profile[key].push(lessonFile);
     }
 
     saveProfile(profile);
@@ -301,13 +304,14 @@ export function resolveSkippedLesson(lessonFile) {
 
     const profile = loadProfile();
 
-    if (!Array.isArray(profile.skippedLessons)) {
-        profile.skippedLessons = [];
-    }
-
-    const idx = profile.skippedLessons.indexOf(lessonFile);
-    if (idx >= 0) {
-        profile.skippedLessons.splice(idx, 1);
+    for (const key of ["skippedLessons", "skippedCustomLessons"]) {
+        if (!Array.isArray(profile[key])) {
+            profile[key] = [];
+        }
+        const idx = profile[key].indexOf(lessonFile);
+        if (idx >= 0) {
+            profile[key].splice(idx, 1);
+        }
     }
 
     saveProfile(profile);

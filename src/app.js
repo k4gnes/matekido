@@ -1,7 +1,7 @@
 import { Game } from "./engine/Game.js?v=80";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=21";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=56";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=57";
 import { renderSkillMap } from "./components/skillMap.js?v=15";
 import { renderHelp } from "./components/help.js?v=3";
 import { renderProfilePage } from "./components/profilePage.js?v=8";
@@ -123,6 +123,10 @@ async function startLesson(path, opts = {}) {
         skill = found.skill;
     }
 
+    const skipContext = opts.from === "custom" ? "custom" : "grade";
+    const canMarkSkip = !opts.from || opts.from === "custom";
+    const alreadySkipped = canMarkSkip && getSkippedLessons(skipContext).includes(path);
+
     const game = new Game(
         lesson,
         root,
@@ -132,9 +136,9 @@ async function startLesson(path, opts = {}) {
             onProfile: showProfile,
             onNext: () => continueToNext(path, opts),
             onGradeComplete: opts.from ? null : () => showGradeComplete(path),
-            onSkipNext: !opts.from && getSkippedLessons().includes(path) ? null : () => {
-                if (!opts.from && !getLessonStats(path)) {
-                    recordLessonSkip(path);
+            onSkipNext: alreadySkipped ? null : () => {
+                if (canMarkSkip && !getLessonStats(path)) {
+                    recordLessonSkip(path, skipContext);
                 }
                 continueToNext(path, opts);
             }

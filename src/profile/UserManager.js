@@ -22,6 +22,7 @@ const DEFAULT_PROFILE = {
     lessonStats: {},
     favorites: [],
     skippedLessons: [],
+    skippedCustomLessons: [],
     statistics: {
         addition: { correct: 0, wrong: 0 },
         subtraction: { correct: 0, wrong: 0 },

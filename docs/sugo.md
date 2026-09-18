@@ -8,7 +8,7 @@ Az alkalmazás megnyitásakor válaszd ki, **ki játszik ma**:
 
 - Ha még nincs profil, kattints a **➕** kártyára, add meg a nevet és válassz avatárt.
 - **Több játékosnak** is lehet saját profilja (pl. testvérnek).
-- A főmenüben a **👤 Játékos** gombbal bármikor visszatérsz a profilválasztóhoz.
+- A **👤 Játékos** gombbal bármikor visszatérsz a profilválasztóhoz – a navigációs sávban minden képernyőn megtalálható.
 - A profilját mindenki a magáétól folytatja: saját csillagjai, saját szintje, saját eredményei vannak.
 - Profilt törölni a választóképernyőn a profil kártyáján lévő **×** gombbal lehet. Bár erre nincs megerősítés utáni visszaállás – a törlés végleges!
 
@@ -48,7 +48,8 @@ A Matekidő **hat világban** játszódik, és a leckék történetei mindig az 
 Egy feladat közben:
 
 - A kártya jobb felső sarkában lévő kis **❓** gombra (vagy ráhúzással) előjön a feladat utasítása – hogy ilyenkor mit kell csinálni.
-- Sok feladatnál van **💡 Segítséget kérek** gomb – kattints rá, és lépésről lépésre vezető segítséget kapsz.
+- Sok feladatnál van **💡 Segítséget kérek** gomb – kattints rá, és lépésről lépésre vezető segítséget kapsz. A segítség csak akkor jelenik meg, ha kérsz: néhány hiba után bukkan fel a gomb.
+- A **tízesátlépés** feladatok lépésről lépésre vezetnek: először a tízesre pótlást, majd a szétbontást, végül az összeadást kell megoldanod – a korábbi lépések mindvégig láthatók.
 - **Soha nem büntetünk**: hibás válasznál nincs büntetés, csak újrapróbálhatod, amíg sikerül.
 
 ## ⭐ Csillagok, mérföldkövek, napi küldetés és kitűzők
@@ -62,36 +63,51 @@ Egy feladat közben:
 
 Ha új világ szabadul fel, az ünneplés automatikusan jelzi.
 
-## 👤 Saját oldal és 📊 Értékek
+## 👤 Saját oldal és 📊 Százalék
 
-- A **Saját oldal** (a menüben a profil-avatárra vagy a lecke végén a **👤 Profil** gombra kattintva) mutatja: csillagok, teljesített leckék, sorozat (🔥 napok), hibátlan leckék, a következő cél, a napi küldetés állása, a kitűzők és a világok.
-- A **📋 Értékek** oldal (Saját oldal → 📋 Értékek) a napi és az összesített statisztikát mutatja, valamint azt, hogy melyik készség megy jól és melyik szorul gyakorlásra.
-- A **📚 Készségek** gomb az évfolyami készségtérképet nyitja meg, ahol az összes lecke látszik készségenként.
+- A **Saját oldal** (a navigációs sávban a nevedre/avatárodra kattintva, vagy a lecke végén a **👤 Profil** gombra) mutatja: csillagok, teljesített leckék, sorozat (🔥 napok), hibátlan leckék, a következő cél, a napi küldetés állása, a kitűzők és a világok.
+- A **képernyők tetején egységes navigációs sáv** van: **🦊 neved** (Saját oldal), **📚 Leckék**, **📊 Százalék**, **❓ Súgó**, **👤 Játékos** (profilváltás) – minden képernyőn ugyanaz a sor, az éppen látogatott képernyő gombja kiemelve, így egy koppintással bárhonnan elérhető a többi képernyő.
+- A **📊 Százalék** oldal (Saját oldal → 📊 Százalék) a napi és az összesített statisztikát mutatja, valamint azt, hogy melyik készség megy jól és melyik szorul gyakorlásra. Itt találod az **🏆 Osztályok** részt is, amely megmutatja, melyik osztályt sikerült már sikeresen (átlagosan 90% fölött) befejezni, és mennyi lecke maradt hátra belőle.
+- A **📚 Témakörök** gomb osztályonkénti tananyagtérképet nyit, ahol az összes lecke látszik témakörönként.
 
 ## 🎯 Gyakorlás – a gyengébb leckék
 
-Ha egy leckében az eredmény **90% alatt** van, az bekerül a **Gyakorlás** listára:
+Ha egy leckében az eredmény **90% alatt** van, az bekerül a **Gyakorlásra javasolt** listára:
 
-- A Saját oldalon (és az ünneplő képernyőn) látszik a **🎯 Gyakorlás (szám)** gomb.
+- A feladatlista oldalon van a **🎯 Gyakorlásra javasolt** rész, amíg van 90% alatti lecke.
 - A gyakorlásnál pontosan azokat a leckéket ajánlja fel az app, amelyekben még bizonytalan a gyerek.
+- A lista mindig az **aktívan választott osztály** leckéit mutatja: ha átváltasz például 1. osztályról 2. osztályra, a gyakorlás is csak az éppen választott osztály leckéit ajánlja.
 - Ezzel mindig azt erősítjük, ami még gyenge – nem azt, ami már megy.
 
-## 📚 Feladatlista – Erősítő feladatok és Kedvenceim
+## 📚 Feladatlista – Gyakorlás, Erősítő feladatok és Kedvenceim
 
 A feladatlista oldalon (a profil-avatárról nyitható) sorban a következők jönnek:
 
 - **➡️ Következő feladat** – az, amit legközelebb érdemes megoldani.
 - **📚 Feladatok listája** gomb – a teljes, szűréssel böngészhető feladatlista nyílik ki alatta.
-- **⏭️ Átugrott feladatok** – ha voltak kihagyott feladatok, itt látszanak, és amíg van ilyen, nem léphetsz tovább. Egy átugrott feladat megoldásával azonnal lekerül a listáról.
+- **🎯 Gyakorlásra javasolt** – azok a leckék, amelyekben az eredmény **90% alatti**. A nyitó feladat után a következő gyakorló feladat jön automatikusan, a lista végén a menübe tér vissza.
+- **⏭️ Átugrott feladatok** – ha voltak kihagyott feladatok, itt látszanak. Érdemes pótolni őket, mert a sorrendjükben a végén úgyis visszajönnek (részletek az alábbi ⏭️ szakaszban).
 - **🔁 Erősítő feladatok** – a kurátori csapat által kiválasztott, ismétlésre javasolt feladatok. A nyitó feladat után a következő erősítő feladat jön automatikusan, a lista végén a menübe tér vissza.
 - **❤️ Kedvenceim** – azok a feladatok, amelyeket a sor jobb oldalán lévő szív gombbal (**🤍 → ❤️**) megjelöltél. Ugyanígy játszólistaként megy végig a kedvenceken.
 
-## ⏭️ Kihagyott feladatok és a 2. osztály
+## ⏭️ Kihagyott feladatok
 
-- Az üdvözlőképernyőn a **⏭️** gombbal a feladat elé **kihagyni** is lehet a leckét – a következő feladatra ugrik.
-- A kihagyott feladat a **„kimaradt feladatok”** listájára kerül, és amíg van kihagyott feladat, a gyerek **nem léphet a 2. osztályra** – a gátló üzenet visszairányítja a feladatlistához.
-- Kihagyás **csak a feladatlista fő menetéből számít**: az Erősítő feladatok és a Kedvenceim listából kihagyott feladat nem kerül a kimaradt listára, nem tartja vissza az osztályváltást.
-- A **Szülőknek** nézet mutatja a kihagyott feladatokat, így utólag is látható, mi maradt ki.
+- Az üdvözlőképernyőn a **⏭️** gombbal a feladat elé **kihagyni** is lehet a leckét – a következő, még meg nem oldott feladatra ugrik.
+- A kihagyott feladatok **összegyűlnek**, és **legvégül jönnek következőnek**: előbb az osztály összes többi feladatát megoldod, és a kihagyottak a sorrendjükben úgyis visszatérnek.
+- Ugyanez működik a **🎛️ Saját listában** is: a **⏭️** gombbal félreteheted a feladatot, a „➡️ Következő feladat" ajánló akkor hozza csak vissza, ha a lista többi feladata már kész – és a saját listában is megjelenik a **⏭️ Átugrott feladatok** szekció.
+- Az osztályos és a saját listás félretetteket az app **külön nyilvántartja**: ha a saját listában teszel félre egy feladatot, az az osztályos listában nem számít kihagyottnak – és fordítva. Akárhol megoldod, onnantól sehol nem vár rád.
+- **Már megoldott** feladatnál a **⏭️** csak továbblép, nem tesz félre semmit.
+- Az **osztályváltóval bármikor** továbbléphetsz a következő osztályra – a kihagyott feladat ekkor is vár rád, ajánlott utóbb pótolni.
+- Kihagyás **csak a feladatlista fő menetéből és a Saját listából számít**: az Erősítő feladatok és a Kedvenceim listából kihagyott feladat nem kerül a kimaradt listára.
+- A **Szülőknek** nézet az **osztályos** kihagyott feladatokat mutatja, így utólag is látható, mi maradt ki.
+
+## 🎛️ Saját lista
+
+A **🎛️ Saját lista** füllel magadnak válogatsz: az osztály, nehézség, feladattípus, készség, típus és számkör szűrői alapján csak azok a feladatok kerülnek a listába, amelyeket szeretnél.
+
+- A **➡️ Következő feladat** az első, még meg nem oldott feladatot ajánlja.
+- A **⏭️** gombbal félreteheted a feladatot: az **⏭️ Átugrott feladatok** szekcióban visszaköszön, és amíg van más megoldatlan feladat a listában, csak a **végén** jön újra.
+- A saját listás félretetteket az app **külön tartja** az osztályosaktól – nem keverednek egymással.
 
 ## 🔍 Szűrők – ha mégis keresnél valamit
 
@@ -108,7 +124,7 @@ A szűrőkre általában **nincs szükség**, mert az osztályválasztás adja a
 
 ## 👨‍👩‍👧 Szülőknek
 
-A profilválasztó alján a **👨‍👩‍👧 Szülőknek** gomb megnyitja a szülői áttekintést, ahol napról napra követhető, mikor és mennyit játszott a gyerek, és hogy milyen pontossággal oldotta meg a feladatokat. Emellett itt látszik a **gyengébb** (90% alatti) leckék listája és az **⏭️ kihagyott feladatok** – ezek pótlásáig a gyerek nem léphet a 2. osztályra.
+A profilválasztó alján a **👨‍👩‍👧 Szülőknek** gomb megnyitja a szülői áttekintést, ahol napról napra követhető, mikor és mennyit játszott a gyerek, és hogy milyen pontossággal oldotta meg a feladatokat. Emellett itt látszik a **gyengébb** (90% alatti) leckék listája és az **⏭️ kihagyott feladatok** – érdemes ezeket is pótolni, hogy az osztály feladatai teljesek legyenek.
 
 ## 📥 Telepítés alkalmazásként
 
@@ -136,4 +152,4 @@ Amikor internet van, az alkalmazás mindig a **legfrissebb tartalmat** tölti be
 
 ## ❤️ Tetszik a Matekidő?
 
-Ha hasznosnak találod, egy kis tippel is támogathatod a fejlesztését – minden oldal **jobb felső sarkában** megtalálod a **☕ Tippelj meg! 💛** linket. A visszajelzéseket (hiba, ötlet, kérés) szívesen fogadjuk!
+Ha hasznosnak találod, egy kis tippel is támogathatod a fejlesztését – minden oldal **bal alsó sarkában** megtalálod a **☕ Tippelj meg! 💛** linket (feladatmegoldás közben elrejtőzik, hogy ne takarja el a feladatot). A visszajelzéseket (hiba, ötlet, kérés) szívesen fogadjuk!

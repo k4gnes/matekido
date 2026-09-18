@@ -1173,10 +1173,28 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
 
         contentArea.append(browseWrap);
 
+        const weakLessons = pool.filter(l => {
+            const stats = getLessonStats(l.file);
+            return stats !== null && stats.percentage < 90;
+        });
+
+        const favoriteLessons = pool.filter(l => isFavoriteLesson(l.file));
+
         const customSkippedSet = new Set(getSkippedLessons("custom"));
         const customSkippedLessons = pool.filter(l => customSkippedSet.has(l.file) && !getLessonStats(l.file));
 
         const pickerSections = [];
+
+        if (weakLessons.length > 0) {
+            pickerSections.push(createPickerSection(
+                `🎯 Gyakorlásra javasolt (${weakLessons.length}) – 90% alatt vannak`,
+                weakLessons,
+                onSelect,
+                activeWorld,
+                { from: "custom", list: weakLessons.map(l => l.file) }
+            ));
+        }
+
         if (customSkippedLessons.length > 0) {
             pickerSections.push(createPickerSection(
                 `⏭️ Átugrott feladatok (${customSkippedLessons.length}) – érdemes pótolni, a végén úgyis visszajönnek`,
@@ -1184,6 +1202,16 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
                 onSelect,
                 activeWorld,
                 poolOpts
+            ));
+        }
+
+        if (favoriteLessons.length > 0) {
+            pickerSections.push(createPickerSection(
+                `❤️ Kedvenceim (${favoriteLessons.length})`,
+                favoriteLessons,
+                onSelect,
+                activeWorld,
+                { from: "custom", list: favoriteLessons.map(l => l.file) }
             ));
         }
 

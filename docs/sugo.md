@@ -107,6 +107,7 @@ A **🎛️ Saját lista** füllel magadnak válogatsz: az osztály, nehézség,
 
 - A **➡️ Következő feladat** az első, még meg nem oldott feladatot ajánlja.
 - A **⏭️** gombbal félreteheted a feladatot: az **⏭️ Átugrott feladatok** szekcióban visszaköszön, és amíg van más megoldatlan feladat a listában, csak a **végén** jön újra.
+- A **🎯 Gyakorlásra javasolt** és a **❤️ Kedvenceim** szekció a **listádon belül** ajánl: csak azok a 90% alatti (illetve kedvenc) feladatok látszanak, amelyek a szűrt listádban is benne vannak, és a játék ezeken a csoportjukon belül halad végig.
 - A saját listás félretetteket az app **külön tartja** az osztályosaktól – nem keverednek egymással.
 
 ## 🔍 Szűrők – ha mégis keresnél valamit

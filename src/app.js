@@ -131,7 +131,7 @@ async function startLesson(path, opts = {}) {
             onExit: showMenu,
             onProfile: showProfile,
             onNext: () => continueToNext(path, opts),
-            onGradeComplete: () => showGradeComplete(path),
+            onGradeComplete: opts.from ? null : () => showGradeComplete(path),
             onSkipNext: !opts.from && getSkippedLessons().includes(path) ? null : () => {
                 if (!opts.from && !getLessonStats(path)) {
                     recordLessonSkip(path);

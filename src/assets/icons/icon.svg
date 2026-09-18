@@ -21,11 +21,7 @@
     </linearGradient>
   </defs>
 
-  <!-- Fehér háttér lekerekített sarkokkal -->
-  <rect width="100%" height="100%" fill="#FFFFFF" rx="32"/>
-
-  <!-- Tangram M szimbólum -->
-  <g id="tangram-m">
+  <g id="tangram-m" transform="translate(256,296) scale(1.2) translate(-256,-296)">
     <!-- Bal oldali oszlop -->
     <polygon points="96,256 176,176 176,256" fill="url(#bluePrimary)" class="poly" />
     <polygon points="96,256 176,256 96,336" fill="url(#grayLight)" class="poly" />

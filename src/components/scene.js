@@ -2,7 +2,7 @@ import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { isFavoriteLesson, toggleFavoriteLesson } from "../profile/Profile.js";
 
-export function renderScene(step, root, next, progress, activeWorld, onExit, lessonPos, onSkipNext, lessonFile, source) {
+export function renderScene(step, root, next, progress, activeWorld, onExit, lessonPos, onSkipNext, lessonFile, source, gradeLabel) {
     root.innerHTML = "";
 
     const worldStep = activeWorld ? step.worldTitles?.[activeWorld] : null;
@@ -76,6 +76,13 @@ export function renderScene(step, root, next, progress, activeWorld, onExit, les
 
     if (progress) {
         card.append(progress);
+    }
+
+    if (gradeLabel) {
+        const gradeText = document.createElement("span");
+        gradeText.className = "lesson-grade-badge";
+        gradeText.textContent = gradeLabel;
+        card.append(gradeText);
     }
 
     if (lessonPos) {

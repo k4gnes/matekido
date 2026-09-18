@@ -2,7 +2,7 @@ import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 
-export function renderCelebration(step, root, actions = {}, milestone, reward, activeWorld, lessonIndex) {
+export function renderCelebration(step, root, actions = {}, milestone, reward, activeWorld, lessonIndex, lessonTitle, gradeLabel) {
 
     root.replaceChildren();
 
@@ -50,6 +50,28 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
             className: "nav-bar-btn",
             onClick: () => actions.onProfile?.()
         });
+
+    if (lessonTitle || gradeLabel) {
+
+        const lessonInfo = document.createElement("div");
+        lessonInfo.className = "celebration-lesson";
+
+        if (lessonTitle) {
+            const titleEl = document.createElement("span");
+            titleEl.textContent = lessonTitle;
+            lessonInfo.append(titleEl);
+        }
+
+        if (gradeLabel) {
+            const gradeEl = document.createElement("span");
+            gradeEl.className = "lesson-grade-badge";
+            gradeEl.textContent = gradeLabel;
+            lessonInfo.append(gradeEl);
+        }
+
+        card.append(lessonInfo);
+
+    }
 
     if (milestone) {
 

@@ -1,4 +1,4 @@
-import { renderScene } from "../components/scene.js?v=7";
+import { renderScene } from "../components/scene.js?v=8";
 import { createInstructionHelp } from "../components/ui/instruction.js";
 import { createExitButton } from "../components/ui/exit.js";
 import { renderExercise } from "../components/exercise.js?v=5";
@@ -134,7 +134,7 @@ const COUNTED_TYPES = new Set([
 const isCounted = s => COUNTED_TYPES.has(s.type);
 
 
-import { renderCelebration } from "../components/celebration.js?v=9";
+import { renderCelebration } from "../components/celebration.js?v=10";
 import { renderProgress } from "../components/progress.js?v=2";
 import { renderMissingProgress } from "../components/missingProgress.js?v=3";
 import { renderComparisonProgress } from "../components/comparisonProgress.js?v=3";
@@ -275,6 +275,27 @@ export class Game {
         return resolveLessonGrade(entry);
     }
 
+    getLessonGradeLabel() {
+        if (!this.lessonIndex || !this.lessonFile) return null;
+        const allLessons = this.lessonIndex.lessons || [];
+        const entry = allLessons.find(l => l.file === this.lessonFile);
+        const grades = entry?.grades || [];
+        if (grades.length === 0) return null;
+        const sorted = [...grades].sort((a, b) => a - b);
+        if (sorted.length === 1) {
+            return `${sorted[0]}. osztály`;
+        }
+        return `${sorted[0]}–${sorted[sorted.length - 1]}. osztály`;
+    }
+
+    getLessonTitle() {
+        if (!this.lessonIndex || !this.lessonFile) return null;
+        const allLessons = this.lessonIndex.lessons || [];
+        const entry = allLessons.find(l => l.file === this.lessonFile);
+        if (!entry) return null;
+        return entry.worldTitles?.[getActiveWorld()] ?? entry.mission ?? entry.title ?? null;
+    }
+
     isGradeComplete() {
         if (!this.lessonIndex || !this.lessonFile) return false;
         const allLessons = this.lessonIndex.lessons || [];
@@ -405,7 +426,7 @@ export class Game {
             this.instructionTitle = worldStep?.title ?? step.title;
             this.instructionText = worldStep?.text ?? step.text;
             const lessonPos = this.getLessonPosition();
-            renderScene(step, this.root, () => this.next(), progress, getActiveWorld(), this.onExit, lessonPos, this.onSkipNext, this.lessonFile, this.source);
+            renderScene(step, this.root, () => this.next(), progress, getActiveWorld(), this.onExit, lessonPos, this.onSkipNext, this.lessonFile, this.source, this.getLessonGradeLabel());
             return;
         }
 
@@ -445,7 +466,7 @@ export class Game {
                 onExit: this.onExit,
                 onProfile: this.onProfile,
                 onNext: gradeJustCompleted && this.onGradeComplete ? this.onGradeComplete : this.onNext
-            }, milestone2, reward2, getActiveWorld(), this.lessonIndex);
+            }, milestone2, reward2, getActiveWorld(), this.lessonIndex, this.getLessonTitle(), this.getLessonGradeLabel());
 
             return;
         }
@@ -476,6 +497,13 @@ export class Game {
         if (card) {
             const cornerBar = document.createElement("div");
             cornerBar.className = "corner-buttons";
+            const gradeLabel = this.getLessonGradeLabel();
+            if (gradeLabel) {
+                const gradeText = document.createElement("span");
+                gradeText.className = "lesson-grade-badge";
+                gradeText.textContent = gradeLabel;
+                cornerBar.append(gradeText);
+            }
             if (helpTitle || helpText) {
                 cornerBar.append(createInstructionHelp(helpTitle, helpText));
             }

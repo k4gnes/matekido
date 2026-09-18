@@ -1131,21 +1131,49 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
             contentArea.append(nextCard);
         }
 
+        const browseWrap = document.createElement("div");
+        const savedHidden = loadListHidden();
+        const browseHidden = savedHidden !== null ? savedHidden : false;
+        browseWrap.hidden = browseHidden;
+
+        const listButton = createButton(
+            browseHidden
+                ? `📚 Feladatok listája (${pool.length})`
+                : "🔽 Elrejtés",
+            {
+                onClick: () => {
+                    const showing = !browseWrap.hidden;
+                    browseWrap.hidden = showing;
+                    saveListHidden(showing);
+                    listButton.textContent = showing
+                        ? `📚 Feladatok listája (${pool.length})`
+                        : "🔽 Elrejtés";
+                }
+            }
+        );
+        listButton.className = "filter-toggle-btn";
+
+        const listButtonRow = document.createElement("div");
+        listButtonRow.style.cssText = "display:flex; gap:.5rem; justify-content:center; margin-top:1rem;";
+        listButtonRow.append(listButton);
+        contentArea.append(listButtonRow);
+
         if (hasNonGradeFilters(filters)) {
-            contentArea.append(createFilterResult(pool, createPositionMap(pool), poolOpts));
-            return;
+            browseWrap.append(createFilterResult(pool, createPositionMap(pool), poolOpts));
+        } else {
+            const positionMap = createPositionMap(pool);
+            const flatCard = createCard();
+            const grid = document.createElement("div");
+            grid.className = "lesson-grid";
+            pool.forEach(lesson => {
+                const pos = positionMap.get(lesson.file);
+                grid.append(createLessonCard(lesson, onSelect, activeWorld, pos.position, pos.total, poolOpts));
+            });
+            flatCard.append(grid);
+            browseWrap.append(flatCard);
         }
 
-        const positionMap = createPositionMap(pool);
-        const flatCard = createCard();
-        const grid = document.createElement("div");
-        grid.className = "lesson-grid";
-        pool.forEach(lesson => {
-            const pos = positionMap.get(lesson.file);
-            grid.append(createLessonCard(lesson, onSelect, activeWorld, pos.position, pos.total, poolOpts));
-        });
-        flatCard.append(grid);
-        contentArea.append(flatCard);
+        contentArea.append(browseWrap);
     }
 
     function renderBrowseLessons(gradeLessons) {

@@ -190,5 +190,5 @@ export function switchPlayer(id) {
     data.activeId = id;
     saveUsers(data);
 
-    removeKeys("matekido-lesson-filters", "matekido-lesson-filters-open");
+    removeKeys("matekido-lesson-filters", "matekido-lesson-filters-open", "matekido-lesson-view");
 }

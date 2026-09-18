@@ -1,7 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createNavBar } from "./ui/navbar.js";
-import { loadJSON, saveJSON, loadRaw, saveRaw } from "../storage.js";
+import { loadJSON, saveJSON, loadRaw, saveRaw, removeKeys } from "../storage.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getLessonStats, getActiveWorld, getActiveGrade, setActiveGrade, getFavoriteLessons, getSkippedLessons, isFavoriteLesson, toggleFavoriteLesson } from "../profile/Profile.js";
 import { renderMarkdown } from "../utils/markdown.js";
@@ -12,6 +12,8 @@ import { getWorld } from "../world/WorldRegistry.js";
 const FILTER_STORAGE_KEY = "matekido-lesson-filters";
 const FILTER_OPEN_KEY = "matekido-lesson-filters-open";
 const LIST_HIDDEN_KEY = "matekido-lesson-list-hidden";
+const VIEW_STORAGE_KEY = "matekido-lesson-view";
+const CUSTOM_UNLOCKED_KEY = "matekido-custom-unlocked";
 
 function saveListHidden(hidden) {
     saveRaw(LIST_HIDDEN_KEY, hidden ? "1" : "0");
@@ -47,6 +49,26 @@ function saveSelectedGrade(grade) {
     setActiveGrade(grade);
 }
 
+function setUpgradesMode(custom) {
+    if (custom) {
+        saveRaw(VIEW_STORAGE_KEY, "custom");
+    } else {
+        removeKeys(VIEW_STORAGE_KEY);
+    }
+}
+
+function loadCustomMode() {
+    return loadRaw(VIEW_STORAGE_KEY) === "custom";
+}
+
+function isCustomUnlocked() {
+    return loadRaw(CUSTOM_UNLOCKED_KEY) === "1";
+}
+
+function unlockCustom() {
+    saveRaw(CUSTOM_UNLOCKED_KEY, "1");
+}
+
 function loadFilters() {
     const parsed = loadJSON(FILTER_STORAGE_KEY);
     if (parsed) {
@@ -55,10 +77,11 @@ function loadFilters() {
             skills: parsed.skills || [],
             types: (parsed.types || []).map(t => t === "decomposition-find-wrong" ? "decomposition" : t),
             ranges: parsed.ranges || [],
-            categories: (parsed.categories || []).map(c => ["time", "money", "measurement"].includes(c) ? "practical" : c)
+            categories: (parsed.categories || []).map(c => ["time", "money", "measurement"].includes(c) ? "practical" : c),
+            grades: parsed.grades || []
         };
     }
-    return { difficulty: [], skills: [], types: [], ranges: [], categories: [] };
+    return { difficulty: [], skills: [], types: [], ranges: [], categories: [], grades: [] };
 }
 
 const TYPE_EMOJI = {
@@ -115,7 +138,14 @@ const TYPE_EMOJI = {
     "angles": "📐",
     "circle": "⭕",
     "probability": "🎲",
-    "operation-order": "🧮"
+    "operation-order": "🧮",
+    "set-match": "🧺",
+    "data-chart": "📊",
+    calendar: "📅",
+    "time-convert": "🕑",
+    volume: "🫗",
+    transform: "🔄",
+    mirror: "🪞"
 };
 
 const TYPE_GROUPS = {
@@ -401,9 +431,44 @@ function createGradeSection(gradeConfig, lessons, onSelect, activeWorld) {
     return card;
 }
 
-function createFilterPanel(filters, onFilterChange) {
+function createFilterPanel(filters, onFilterChange, gradeConfig, showGradeRow) {
     const panel = document.createElement("div");
     panel.className = "filter-panel";
+
+    if (showGradeRow) {
+        const gradeRow = document.createElement("div");
+        gradeRow.className = "filter-row";
+        const gradeLabel = document.createElement("span");
+        gradeLabel.className = "filter-label";
+        gradeLabel.textContent = "Osztály:";
+        gradeRow.append(gradeLabel);
+
+        const gradeBtns = document.createElement("div");
+        gradeBtns.className = "filter-skill-btns";
+
+        (gradeConfig || []).forEach(gc => {
+            const btn = document.createElement("button");
+            btn.className = "filter-btn" + (filters.grades.includes(gc.grade) ? " active" : "");
+            btn.textContent = gc.title;
+            btn.addEventListener("click", () => {
+                if (filters.grades.includes(gc.grade)) {
+                    filters.grades = filters.grades.filter(g => g !== gc.grade);
+                } else {
+                    filters.grades.push(gc.grade);
+                }
+                onFilterChange();
+            });
+            gradeBtns.append(btn);
+        });
+
+        gradeRow.append(gradeBtns);
+        panel.append(gradeRow);
+
+        const gradeHint = document.createElement("p");
+        gradeHint.className = "filter-hint";
+        gradeHint.textContent = "Ha egy osztály sincs kijelölve, mindegyik osztály feladatai látszanak.";
+        panel.append(gradeHint);
+    }
 
     const diffRow = document.createElement("div");
     diffRow.className = "filter-row";
@@ -558,6 +623,7 @@ function createFilterPanel(filters, onFilterChange) {
         filters.types = [];
         filters.ranges = [];
         filters.categories = [];
+        filters.grades = [];
         onFilterChange();
     });
     clearRow.append(clearBtn);
@@ -654,18 +720,67 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     const gradeConfig = index.gradeConfig || [];
     let selectedGrade = loadSelectedGrade();
     if (!gradeConfig.some(gc => gc.grade === selectedGrade)) {
-        selectedGrade = null;
+        selectedGrade = gradeConfig.length > 0 ? gradeConfig[0].grade : null;
+    }
+    let customUnlocked = isCustomUnlocked();
+    let customMode = loadCustomMode() && customUnlocked;
+    if (loadCustomMode() && !customUnlocked) {
+        setUpgradesMode(false);
     }
 
     function chooseGrade(grade) {
         selectedGrade = grade;
+        customMode = false;
+        setUpgradesMode(false);
         saveSelectedGrade(grade);
         showFilters = false;
         saveFilterOpen(false);
         filterToggle.textContent = "🔍 Szűrők ▼";
         filterPanel.style.display = "none";
-        gradeBackButton.style.display = grade == null ? "none" : "inline-block";
+        gradePickerPanel.style.display = "none";
         renderContent();
+    }
+
+    let ctrlLastGrade = null;
+
+    function toggleGradePicker() {
+        if (gradePickerPanel.style.display !== "none") {
+            gradePickerPanel.style.display = "none";
+            return;
+        }
+        gradePickerPanel.style.display = "flex";
+        if (customMode) {
+            customMode = false;
+            setUpgradesMode(false);
+            selectedGrade = ctrlLastGrade;
+            if (!gradeConfig.some(gc => gc.grade === selectedGrade)) {
+                selectedGrade = gradeConfig.length > 0 ? gradeConfig[0].grade : null;
+            }
+            renderContent();
+        }
+    }
+
+    function enterCustomMode() {
+        ctrlLastGrade = selectedGrade;
+        selectedGrade = null;
+        saveSelectedGrade(null);
+        customMode = true;
+        setUpgradesMode(true);
+        showFilters = true;
+        saveFilterOpen(true);
+        rebuildFilterPanel();
+        filterToggle.textContent = "🔍 Szűrők ▲";
+        filterToggle.style.display = "inline-block";
+        filterPanel.style.display = "flex";
+        gradePickerPanel.style.display = "none";
+        renderContent();
+    }
+
+    function unlockAndEnterCustom() {
+        unlockCustom();
+        customUnlocked = true;
+        filters.grades = [];
+        enterCustomMode();
     }
 
     const filters = loadFilters();
@@ -689,15 +804,29 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     });
     infoButton.className = "filter-toggle-btn";
 
-    const gradeBackButton = createButton("🔙 Osztály", {
-        onClick: () => chooseGrade(null)
+    const gradeTab = createButton("📚 Osztály", {
+        onClick: () => toggleGradePicker()
     });
-    gradeBackButton.className = "filter-toggle-btn";
-    gradeBackButton.style.display = selectedGrade == null ? "none" : "inline-block";
+    gradeTab.className = "mode-tab";
+
+    const customTab = createButton("🎛️ Saját lista", {
+        onClick: () => enterCustomMode()
+    });
+    customTab.className = "mode-tab";
+
+    const customUnlockButton = createButton("🎛️ Saját lista", {
+        onClick: () => unlockAndEnterCustom()
+    });
+    customUnlockButton.className = "filter-toggle-btn";
+
+    const pickerBackButton = createButton("📚 Osztály", {
+        onClick: () => toggleGradePicker()
+    });
+    pickerBackButton.className = "filter-toggle-btn";
 
     const menuToolbar = document.createElement("div");
     menuToolbar.className = "menu-toolbar";
-    menuToolbar.append(filterToggle, infoButton, gradeBackButton);
+    menuToolbar.append(pickerBackButton, gradeTab, customTab, customUnlockButton, filterToggle, infoButton);
 
     const filterPanel = document.createElement("div");
     filterPanel.className = "filter-panel";
@@ -705,14 +834,42 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
 
     function rebuildFilterPanel() {
         filterPanel.replaceChildren();
-        const newPanel = createFilterPanel(filters, rebuildAndRender);
+        const newPanel = createFilterPanel(filters, rebuildAndRender, gradeConfig, customMode);
         filterPanel.append(...newPanel.childNodes);
     }
 
     const contentArea = document.createElement("div");
     contentArea.className = "content-area";
 
-    wrapper.append(menuToolbar, filterPanel, contentArea);
+    const gradePickerPanel = document.createElement("div");
+    gradePickerPanel.className = "grade-picker-panel";
+    gradePickerPanel.style.display = "none";
+
+    function rebuildGradePickerPanel() {
+        gradePickerPanel.replaceChildren();
+
+        const pickTitle = document.createElement("h3");
+        pickTitle.className = "grade-picker-title";
+        pickTitle.textContent = "Melyik osztályban játszol?";
+        gradePickerPanel.append(pickTitle);
+
+        const grid = document.createElement("div");
+        grid.className = "lesson-grid";
+
+        gradeConfig.forEach(gc => {
+            const gradeLessons = allLessons.filter(l => l.grades?.includes(gc.grade));
+            const done = gradeLessons.length > 0 && gradeLessons.every(l => getLessonStats(l.file));
+            const btn = createButton(done ? `✅ ${gc.title} – kész!` : gc.title, {
+                onClick: () => chooseGrade(gc.grade)
+            });
+            btn.className = "profile-page-button" + (done ? " grade-done" : "");
+            grid.append(btn);
+        });
+
+        gradePickerPanel.append(grid);
+    }
+
+    wrapper.append(menuToolbar, filterPanel, gradePickerPanel, contentArea);
 
     const footer = document.createElement("p");
     footer.className = "skill-map-footer";
@@ -734,31 +891,6 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
         saveFilters(filters);
         rebuildFilterPanel();
         renderContent();
-    }
-
-    function renderGradePicker() {
-        const pick = createCard();
-
-        const pickTitle = document.createElement("h2");
-        pickTitle.className = "lesson-group";
-        pickTitle.textContent = "Melyik osztályban játszol?";
-        pick.append(pickTitle);
-
-        const grid = document.createElement("div");
-        grid.className = "lesson-grid";
-
-        gradeConfig.forEach(gc => {
-            const gradeLessons = allLessons.filter(l => l.grades?.includes(gc.grade));
-            const done = gradeLessons.length > 0 && gradeLessons.every(l => getLessonStats(l.file));
-            const btn = createButton(done ? `✅ ${gc.title} – kész!` : gc.title, {
-                onClick: () => chooseGrade(gc.grade)
-            });
-            btn.className = "profile-page-button" + (done ? " grade-done" : "");
-            grid.append(btn);
-        });
-
-        pick.append(grid);
-        contentArea.append(pick);
     }
 
     function renderGradeContent() {
@@ -910,44 +1042,82 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
         }
     }
 
+    function createPositionMap(lessons) {
+        const positionMap = new Map();
+        lessons.forEach((lesson, index) => {
+            positionMap.set(lesson.file, { position: index + 1, total: lessons.length });
+        });
+        return positionMap;
+    }
+
+    function createFilterResult(filteredLessons, positionMap) {
+        const container = document.createElement("div");
+        const resultInfo = document.createElement("div");
+        resultInfo.className = "filter-result-info";
+        resultInfo.textContent = `${filteredLessons.length} találat`;
+        container.append(resultInfo);
+
+        if (filteredLessons.length > 0) {
+            const categorized = {};
+            for (const key of Object.keys(CATEGORIES)) {
+                categorized[key] = [];
+            }
+            filteredLessons.forEach(l => {
+                const cat = l.category || "operations";
+                if (!categorized[cat]) categorized[cat] = [];
+                categorized[cat].push(l);
+            });
+
+            const flatCard = createCard();
+            for (const [categoryKey, catLessons] of Object.entries(categorized)) {
+                const section = createCategorySection(categoryKey, catLessons, onSelect, activeWorld, positionMap);
+                if (section) flatCard.append(section);
+            }
+            container.append(flatCard);
+        }
+
+        return container;
+    }
+
+    function hasNonGradeFilters(f) {
+        return f.difficulty.length > 0 || f.skills.length > 0 || f.types.length > 0 || f.ranges.length > 0 || f.categories.length > 0;
+    }
+
+    function renderCustomContent() {
+        const customGrades = filters.grades.length > 0
+            ? filters.grades.slice().sort((a, b) => a - b)
+            : gradeConfig.map(gc => gc.grade);
+
+        let pool = allLessons.filter(l => l.grades?.some(g => customGrades.includes(g)));
+        pool = filterLessons(pool, filters);
+
+        const title = document.createElement("h2");
+        title.className = "lesson-group";
+        title.textContent = filters.grades.length > 0
+            ? `🎛️ Saját lista (${customGrades.map(g => `${g}.`).join(" ")} osztály)`
+            : "🎛️ Saját lista (minden osztály)";
+        contentArea.append(title);
+
+        if (hasNonGradeFilters(filters)) {
+            contentArea.append(createFilterResult(pool, createPositionMap(pool)));
+            return;
+        }
+
+        const gradeWrap = document.createElement("div");
+        gradeConfig.forEach(gc => {
+            if (!customGrades.includes(gc.grade)) return;
+            const gradeLessons = pool.filter(l => l.grades?.includes(gc.grade));
+            if (gradeLessons.length === 0) return;
+            gradeWrap.append(createGradeSection(gc, gradeLessons, onSelect, activeWorld));
+        });
+        contentArea.append(gradeWrap);
+    }
+
     function renderBrowseLessons(gradeLessons) {
         const container = document.createElement("div");
 
-        const filtered = filterLessons(gradeLessons, filters);
-    const hasFilters = filters.difficulty.length > 0 || filters.skills.length > 0 || filters.types.length > 0 || filters.ranges.length > 0 || filters.categories.length > 0;
-
-        if (hasFilters) {
-            const resultInfo = document.createElement("div");
-            resultInfo.className = "filter-result-info";
-            resultInfo.textContent = `${filtered.length} találat`;
-            container.append(resultInfo);
-
-            if (filtered.length > 0) {
-                const categorized = {};
-                for (const key of Object.keys(CATEGORIES)) {
-                    categorized[key] = [];
-                }
-                filtered.forEach(l => {
-                    const cat = l.category || "operations";
-                    if (!categorized[cat]) categorized[cat] = [];
-                    categorized[cat].push(l);
-                });
-
-                const flatCard = createCard();
-                const positionMap = new Map();
-                gradeLessons.forEach((lesson, index) => {
-                    positionMap.set(lesson.file, { position: index + 1, total: gradeLessons.length });
-                });
-                for (const [categoryKey, catLessons] of Object.entries(categorized)) {
-                    const section = createCategorySection(categoryKey, catLessons, onSelect, activeWorld, positionMap);
-                    if (section) flatCard.append(section);
-                }
-                container.append(flatCard);
-            }
-        } else {
-            const gc = gradeConfig.find(g => g.grade === selectedGrade) || { grade: selectedGrade, title: `${selectedGrade}. osztály` };
-            container.append(createGradeSection(gc, gradeLessons, onSelect, activeWorld));
-        }
+        const gc = gradeConfig.find(g => g.grade === selectedGrade) || { grade: selectedGrade, title: `${selectedGrade}. osztály` };
+        container.append(createGradeSection(gc, gradeLessons, onSelect, activeWorld));
 
         return container;
     }
@@ -955,16 +1125,29 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     function renderContent() {
         contentArea.replaceChildren();
 
-        if (selectedGrade == null) {
+        const showTabs = customUnlocked;
+        gradeTab.style.display = showTabs ? "inline-block" : "none";
+        customTab.style.display = showTabs ? "inline-block" : "none";
+        customUnlockButton.style.display = (!showTabs && !customMode && selectedGrade != null) ? "inline-block" : "none";
+        pickerBackButton.style.display = (!showTabs && !customMode && selectedGrade != null) ? "inline-block" : "none";
+
+        if (showTabs) {
+            gradeTab.classList.toggle("active", !customMode);
+            customTab.classList.toggle("active", customMode);
+        }
+
+        if (customMode) {
+            filterToggle.style.display = showTabs ? "inline-block" : "none";
+            filterPanel.style.display = showTabs && showFilters ? "flex" : "none";
+            renderCustomContent();
+        } else {
             filterToggle.style.display = "none";
             filterPanel.style.display = "none";
-            renderGradePicker();
-        } else {
-            filterToggle.style.display = "inline-block";
             renderGradeContent();
         }
     }
 
+    rebuildGradePickerPanel();
     renderContent();
 
     root.append(wrapper);

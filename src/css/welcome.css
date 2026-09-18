@@ -5,6 +5,10 @@
     padding: 1rem;
 }
 
+.welcome-screen h1 {
+    color: var(--primary);
+}
+
 .player-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;

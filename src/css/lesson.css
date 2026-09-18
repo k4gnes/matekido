@@ -265,6 +265,29 @@
     margin: 0.5rem 0;
 }
 
+.mode-tab {
+    display: inline-block;
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    background: var(--background);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.mode-tab:hover {
+    transform: scale(1.04);
+}
+
+.mode-tab.active {
+    background: var(--primary);
+    color: #fff;
+}
+
 .menu-player-row {
     display: flex;
     flex-wrap: wrap;
@@ -298,6 +321,23 @@
     background: #f8f8f8;
     border-radius: 12px;
     margin-bottom: 1rem;
+}
+
+.grade-picker-panel {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    background: #f8f8f8;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.grade-picker-title {
+    margin: 0 0 0.3rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
 }
 
 .filter-row {
@@ -345,6 +385,13 @@
 
 .filter-clear {
     margin-top: 0.3rem;
+}
+
+.filter-hint {
+    margin: 0;
+    font-size: 0.7rem;
+    color: #888;
+    padding: 0 0.3rem;
 }
 
 .filter-clear-btn {

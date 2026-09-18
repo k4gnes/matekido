@@ -1,4 +1,4 @@
-import { renderScene } from "../components/scene.js?v=6";
+import { renderScene } from "../components/scene.js?v=7";
 import { createInstructionHelp } from "../components/ui/instruction.js";
 import { createExitButton } from "../components/ui/exit.js";
 import { renderExercise } from "../components/exercise.js?v=5";
@@ -225,7 +225,7 @@ const RENDERERS = new Map([
 
 export class Game {
 
-    constructor(lesson, root, actions = {}, lessonFile = null, skill = null, lessonIndex = null, source = null) {
+    constructor(lesson, root, actions = {}, lessonFile = null, skill = null, lessonIndex = null, source = null, lessonPool = null) {
 
         this.lesson = lesson;
         this.root = root;
@@ -233,6 +233,7 @@ export class Game {
         this.skill = skill;
         this.lessonIndex = lessonIndex;
         this.source = source;
+        this.lessonPool = lessonPool;
         this.currentStep = 0;
         this.instructionTitle = null;
         this.instructionText = null;
@@ -250,6 +251,12 @@ export class Game {
     }
 
     getLessonPosition() {
+        if (this.lessonPool?.length) {
+            const poolIdx = this.lessonPool.findIndex(f => f === this.lessonFile);
+            if (poolIdx !== -1) {
+                return { position: poolIdx + 1, total: this.lessonPool.length };
+            }
+        }
         if (!this.lessonIndex || !this.lessonFile) return null;
         const allLessons = this.lessonIndex.lessons || [];
         const idx = allLessons.findIndex(l => l.file === this.lessonFile);

@@ -1,7 +1,7 @@
 {
   "id": "/",
-  "name": "Matekidő",
-  "short_name": "Matekidő",
+  "name": "matekidő",
+  "short_name": "matekidő",
   "description": "Interaktív matematikai tanulási platform magyar gyerekeknek.",
   "lang": "hu",
   "start_url": "/",

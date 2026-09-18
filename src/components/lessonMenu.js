@@ -371,7 +371,7 @@ function createPickerRow(sections) {
     return row;
 }
 
-function createCategorySection(categoryKey, lessons, onSelect, activeWorld, positionMap) {
+function createCategorySection(categoryKey, lessons, onSelect, activeWorld, positionMap, selectOpts) {
     const category = CATEGORIES[categoryKey];
     if (!category || lessons.length === 0) return null;
 
@@ -388,14 +388,14 @@ function createCategorySection(categoryKey, lessons, onSelect, activeWorld, posi
 
     lessons.forEach(lesson => {
         const pos = positionMap?.get(lesson.file);
-        lessonGrid.append(createLessonCard(lesson, onSelect, activeWorld, pos?.position, pos?.total));
+        lessonGrid.append(createLessonCard(lesson, onSelect, activeWorld, pos?.position, pos?.total, selectOpts));
     });
 
     section.append(lessonGrid);
     return section;
 }
 
-function createGradeSection(gradeConfig, lessons, onSelect, activeWorld) {
+function createGradeSection(gradeConfig, lessons, onSelect, activeWorld, positionMap, selectOpts) {
     const card = createCard();
 
     const gradeTitle = document.createElement("h2");
@@ -406,11 +406,6 @@ function createGradeSection(gradeConfig, lessons, onSelect, activeWorld) {
     separator.className = "lesson-separator";
 
     card.append(gradeTitle, separator);
-
-    const positionMap = new Map();
-    lessons.forEach((lesson, index) => {
-        positionMap.set(lesson.file, { position: index + 1, total: lessons.length });
-    });
 
     const categorized = {};
     for (const key of Object.keys(CATEGORIES)) {
@@ -423,8 +418,15 @@ function createGradeSection(gradeConfig, lessons, onSelect, activeWorld) {
         categorized[cat].push(lesson);
     });
 
+    if (!positionMap) {
+        positionMap = new Map();
+        lessons.forEach((lesson, index) => {
+            positionMap.set(lesson.file, { position: index + 1, total: lessons.length });
+        });
+    }
+
     for (const [categoryKey, catLessons] of Object.entries(categorized)) {
-        const section = createCategorySection(categoryKey, catLessons, onSelect, activeWorld, positionMap);
+        const section = createCategorySection(categoryKey, catLessons, onSelect, activeWorld, positionMap, selectOpts);
         if (section) card.append(section);
     }
 
@@ -686,10 +688,11 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     const wrapper = createCard();
 
     const title = document.createElement("h1");
+    title.style.color = "var(--primary)";
     const worldId = getActiveWorld();
     const logo = document.createElement("img");
     logo.src = "assets/icons/icon.svg";
-    logo.alt = "Matekidő";
+    logo.alt = "matekidő";
     logo.style.height = "2em";
     logo.style.width = "auto";
     logo.style.verticalAlign = "middle";
@@ -1050,7 +1053,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
         return positionMap;
     }
 
-    function createFilterResult(filteredLessons, positionMap) {
+    function createFilterResult(filteredLessons, positionMap, selectOpts) {
         const container = document.createElement("div");
         const resultInfo = document.createElement("div");
         resultInfo.className = "filter-result-info";
@@ -1070,7 +1073,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
 
             const flatCard = createCard();
             for (const [categoryKey, catLessons] of Object.entries(categorized)) {
-                const section = createCategorySection(categoryKey, catLessons, onSelect, activeWorld, positionMap);
+                const section = createCategorySection(categoryKey, catLessons, onSelect, activeWorld, positionMap, selectOpts);
                 if (section) flatCard.append(section);
             }
             container.append(flatCard);
@@ -1098,19 +1101,51 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
             : "🎛️ Saját lista (minden osztály)";
         contentArea.append(title);
 
+        const poolOpts = { from: "custom", list: pool.map(l => l.file) };
+
+        const next = pickNextForGrade(pool);
+        if (next) {
+            const nextCard = createCard();
+
+            const nextIdx = pool.findIndex(l => l.file === next.file);
+            const nextHeading = document.createElement("h3");
+            nextHeading.className = "category-title";
+            const remaining = pool.filter(l => !getLessonStats(l.file)).length;
+            nextHeading.textContent = remaining > 0
+                ? `➡️ Következő feladat (még ${remaining} van hátra)`
+                : "➡️ Következő feladat";
+            nextCard.append(nextHeading);
+
+            const grid = document.createElement("div");
+            grid.className = "next-lesson-card";
+            grid.append(createLessonCard(next, onSelect, activeWorld, nextIdx + 1, pool.length, poolOpts));
+            nextCard.append(grid);
+
+            const nextNote = document.createElement("p");
+            nextNote.className = "lesson-card-subtitle";
+            nextNote.textContent = remaining > 0
+                ? "Ez az, ami legközelebb rád vár."
+                : "Az összes feladaton túl vagy – kezdheted elölről az elsővel.";
+            nextCard.append(nextNote);
+
+            contentArea.append(nextCard);
+        }
+
         if (hasNonGradeFilters(filters)) {
-            contentArea.append(createFilterResult(pool, createPositionMap(pool)));
+            contentArea.append(createFilterResult(pool, createPositionMap(pool), poolOpts));
             return;
         }
 
-        const gradeWrap = document.createElement("div");
-        gradeConfig.forEach(gc => {
-            if (!customGrades.includes(gc.grade)) return;
-            const gradeLessons = pool.filter(l => l.grades?.includes(gc.grade));
-            if (gradeLessons.length === 0) return;
-            gradeWrap.append(createGradeSection(gc, gradeLessons, onSelect, activeWorld));
+        const positionMap = createPositionMap(pool);
+        const flatCard = createCard();
+        const grid = document.createElement("div");
+        grid.className = "lesson-grid";
+        pool.forEach(lesson => {
+            const pos = positionMap.get(lesson.file);
+            grid.append(createLessonCard(lesson, onSelect, activeWorld, pos.position, pos.total, poolOpts));
         });
-        contentArea.append(gradeWrap);
+        flatCard.append(grid);
+        contentArea.append(flatCard);
     }
 
     function renderBrowseLessons(gradeLessons) {

@@ -21,7 +21,14 @@ export function renderWelcomeScreen(root, onSelect, onParent) {
     const wrapper = createCard("welcome-screen");
 
     const title = document.createElement("h1");
-    title.textContent = "📚 Matekidő";
+    const logo = document.createElement("img");
+    logo.src = "assets/icons/icon.svg";
+    logo.alt = "matekidő";
+    logo.style.height = "2em";
+    logo.style.width = "auto";
+    logo.style.verticalAlign = "middle";
+    title.append(logo, " matekidő");
+    title.style.color = "var(--primary)";
 
     const subtitle = document.createElement("p");
     subtitle.textContent = "Ki játszik ma?";

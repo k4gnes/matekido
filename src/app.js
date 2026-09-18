@@ -1,13 +1,13 @@
-import { Game } from "./engine/Game.js?v=78";
+import { Game } from "./engine/Game.js?v=79";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=21";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=52";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=55";
 import { renderSkillMap } from "./components/skillMap.js?v=15";
 import { renderHelp } from "./components/help.js?v=3";
 import { renderProfilePage } from "./components/profilePage.js?v=8";
 import { renderStatsPage } from "./components/statsPage.js?v=8";
 import { getNextPracticeLesson } from "./components/practicePage.js?v=8";
-import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=2";
+import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=3";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=5";
 import { getActiveId, listPlayers } from "./profile/UserManager.js";
 import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld, setActiveGrade, resolveLessonGrade } from "./profile/Profile.js";
@@ -142,7 +142,8 @@ async function startLesson(path, opts = {}) {
         path,
         skill,
         lessonIndex,
-        opts.from || null
+        opts.from || null,
+        opts.list || null
     );
 
     game.start();
@@ -150,6 +151,18 @@ async function startLesson(path, opts = {}) {
 }
 
 function continueToNext(path, opts = {}) {
+
+    if (opts.from === "custom" && Array.isArray(opts.list)) {
+        const files = opts.list;
+        const idx = files.indexOf(path);
+        const next = idx !== -1 ? files[idx + 1] : null;
+        if (next) {
+            startLesson(next, opts);
+            return;
+        }
+        showMenu();
+        return;
+    }
 
     if (opts.from === "practice") {
         const next = getNextPracticeLesson(lessonIndex, path);

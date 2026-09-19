@@ -59,7 +59,7 @@
 }
 
 .mult-input:focus {
-    border-color: #4a90d9;
+    border-color: var(--primary);
     outline: none;
 }
 
@@ -83,7 +83,7 @@
 
 .mult-item {
     font-size: 1.2rem;
-    color: #4a90d9;
+    color: var(--primary);
 }
 
 @media (max-width: 380px) {

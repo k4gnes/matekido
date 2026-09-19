@@ -72,6 +72,7 @@ function createPlayerCard(player, onSelect, onRefresh) {
     const deleteBtn = document.createElement("button");
     deleteBtn.className = "player-delete";
     deleteBtn.textContent = "×";
+    deleteBtn.setAttribute("aria-label", "Profil törlése");
     deleteBtn.addEventListener("click", (e) => {
         e.stopPropagation();
         showConfirmDialog(player.name, () => {

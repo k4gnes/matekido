@@ -1,4 +1,5 @@
 import { createCard } from "./ui/card.js";
+import { createButton } from "./ui/button.js";
 import { createMessageBox } from "./ui/messageBox.js";
 
 const DECOMP_COLOR = "#e65100";
@@ -126,10 +127,10 @@ const s1 = document.createElement("span");
 
         summary.append(s1, s2, s3);
 
-        const nextBtn = document.createElement("button");
-        nextBtn.textContent = "➡️ Tovább";
-        nextBtn.style.cssText = "padding:.6rem 1.5rem; font-size:1rem; border:2px solid #4a90d9; border-radius:12px; background:#4a90d9; color:white; cursor:pointer; margin-top:1rem;";
-        nextBtn.addEventListener("click", () => onNext());
+        const nextBtn = createButton("➡️ Tovább", {
+            className: "nav-bar-btn",
+            onClick: () => onNext()
+        });
 
         card.append(summary, nextBtn);
         setTimeout(() => nextBtn.focus(), 0);

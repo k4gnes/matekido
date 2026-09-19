@@ -1,4 +1,6 @@
 import { createCard } from "./ui/card.js";
+import { createMessageBox } from "./ui/messageBox.js";
+import { createFeedback } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_EMOJI = {
@@ -105,7 +107,18 @@ export function renderDecompositionFindWrong(step, root, onNext, progress, onRes
     const optionsContainer = document.createElement("div");
     optionsContainer.style.cssText = "display:flex; flex-wrap:wrap; gap:0.6rem; justify-content:center; margin:1rem 0;";
 
-    let answered = false;
+    const result = createMessageBox();
+
+    card.append(titleElement, optionsContainer, result.element);
+    root.append(card);
+
+    const feedback = createFeedback({
+        message: result,
+        container: card,
+        onNext,
+        onResult,
+        onAttempt
+    });
 
     options.forEach(opt => {
         const [a, b] = opt.split("+").map(Number);
@@ -148,17 +161,14 @@ export function renderDecompositionFindWrong(step, root, onNext, progress, onRes
         btn.append(expr, emojiRow);
 
         btn.addEventListener("mouseenter", () => {
-            if (!answered) btn.style.transform = "scale(1.05)";
+            if (!feedback.isAnswered()) btn.style.transform = "scale(1.05)";
         });
         btn.addEventListener("mouseleave", () => {
-            if (!answered) btn.style.transform = "";
+            if (!feedback.isAnswered()) btn.style.transform = "";
         });
 
         btn.addEventListener("click", () => {
-            if (answered) return;
-            answered = true;
-
-            onAttempt?.();
+            if (feedback.isAnswered()) return;
 
             optionsContainer.querySelectorAll("button").forEach(b => {
                 b.style.pointerEvents = "none";
@@ -173,10 +183,7 @@ export function renderDecompositionFindWrong(step, root, onNext, progress, onRes
                 star.textContent = " ⭐";
                 expr.append(star);
 
-                result.textContent = `🎉 Szuper! ${a} + ${b} = ${a + b}, nem ${number}!`;
-                result.style.color = "#2e7d32";
-
-                onResult?.(true);
+                feedback.success(`🎉 Szuper! ${a} + ${b} = ${a + b}, nem ${number}!`);
             } else {
                 btn.style.borderColor = "#c62828";
                 btn.style.background = "#ffebee";
@@ -200,26 +207,10 @@ export function renderDecompositionFindWrong(step, root, onNext, progress, onRes
                     }
                 });
 
-                result.textContent = `🤔 Nem! ${a} + ${b} = ${a + b}, azaz ${number}. A kakukktojás: ${wrongA} + ${wrongB} = ${wrongA + wrongB}`;
-                result.style.color = "#c62828";
-
-                onResult?.(false);
+                feedback.reveal(`🤔 Nem! ${a} + ${b} = ${a + b}, azaz ${number}. A kakukktojás: ${wrongA} + ${wrongB} = ${wrongA + wrongB}`);
             }
-
-            const nextBtn = document.createElement("button");
-            nextBtn.textContent = "➡️ Tovább";
-            nextBtn.style.cssText = "padding:0.6rem 1.5rem; font-size:1rem; border:2px solid #4a90d9; border-radius:12px; background:#4a90d9; color:white; cursor:pointer; margin-top:1rem;";
-            nextBtn.addEventListener("click", () => onNext());
-            card.append(nextBtn);
         });
 
         optionsContainer.append(btn);
     });
-
-    const result = document.createElement("div");
-    result.style.cssText = "font-size:1.3rem; font-weight:bold; margin:1rem 0; min-height:1.5em;";
-
-    card.append(titleElement, optionsContainer, result);
-    root.append(card);
-
 }

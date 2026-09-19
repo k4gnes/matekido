@@ -62,7 +62,7 @@ export function renderScene(step, root, next, progress, activeWorld, onExit, les
         const skipBtn = document.createElement("button");
         skipBtn.type = "button";
         skipBtn.className = isNavigate ? "exercise-next" : "exercise-fav";
-        skipBtn.textContent = isNavigate ? "Tovább ▶" : "⏭️";
+        skipBtn.textContent = isNavigate ? "➡️ Tovább" : "⏭️";
         skipBtn.title = isNavigate ? "Következő feladat" : "Következő feladat – kihagyom ezt most";
         skipBtn.setAttribute("aria-label", "Következő feladat");
         skipBtn.addEventListener("click", () => {
@@ -120,6 +120,8 @@ export function renderScene(step, root, next, progress, activeWorld, onExit, les
     card.append(buttonRow);
 
     root.replaceChildren(card);
+
+    requestAnimationFrame(() => button.focus());
 
     return button;
 }

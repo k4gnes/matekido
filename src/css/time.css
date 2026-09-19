@@ -54,34 +54,6 @@
     color: #1a1a2e;
 }
 
-.time-message {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin: 1rem 0;
-    min-height: 1.5em;
-    text-align: center;
-}
-
-.time-message-good {
-    color: #2e7d32;
-}
-
-.time-message-bad {
-    color: #c62828;
-}
-
-.time-next {
-    display: block;
-    margin: 1rem auto 0;
-    padding: 0.6rem 1.5rem;
-    font-size: 1rem;
-    border: 2px solid #4a90d9;
-    border-radius: 12px;
-    background: #4a90d9;
-    color: white;
-    cursor: pointer;
-}
-
 @media (max-width: 380px) {
     .time-clock {
         width: 130px;

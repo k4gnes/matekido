@@ -1,4 +1,6 @@
 import { createCard } from "./ui/card.js";
+import { createMessageBox } from "./ui/messageBox.js";
+import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -117,11 +119,18 @@ export function renderTime(step, root, onNext, progress, onResult, onAttempt) {
     const optionsContainer = document.createElement("div");
     optionsContainer.className = "time-options";
 
-    const message = document.createElement("div");
-    message.className = "time-message";
+    const message = createMessageBox();
 
-    let answered = false;
-    let reported = false;
+    card.append(optionsContainer, message.element);
+    root.append(card);
+
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext,
+        onResult,
+        onAttempt
+    });
 
     step.options.forEach(opt => {
         const btn = document.createElement("button");
@@ -130,29 +139,20 @@ export function renderTime(step, root, onNext, progress, onResult, onAttempt) {
         btn.textContent = opt.text;
 
         btn.addEventListener("mouseenter", () => {
-            if (!answered) btn.style.transform = "scale(1.05)";
+            if (!feedback.isAnswered()) btn.style.transform = "scale(1.05)";
         });
         btn.addEventListener("mouseleave", () => {
-            if (!answered) btn.style.transform = "";
+            if (!feedback.isAnswered()) btn.style.transform = "";
         });
 
         btn.addEventListener("click", () => {
-            if (answered) return;
-            answered = true;
-
-            onAttempt?.();
+            if (feedback.isAnswered()) return;
 
             optionsContainer.querySelectorAll("button").forEach(b => b.style.pointerEvents = "none");
 
             if (opt.correct) {
-                btn.classList.add("time-option-correct");
-                message.textContent = "🎉 Jó válasz!";
-                message.className = "time-message time-message-good";
-
-                if (!reported) {
-                    reported = true;
-                    onResult?.(true);
-                }
+                markCorrect(btn);
+                feedback.success("🎉 Jó válasz!");
             } else {
                 btn.classList.add("time-option-wrong");
                 optionsContainer.querySelectorAll("button").forEach(b => {
@@ -160,25 +160,10 @@ export function renderTime(step, root, onNext, progress, onResult, onAttempt) {
                         b.classList.add("time-option-correct");
                     }
                 });
-                message.textContent = `🤔 Nem! A helyes meghatározás: ${step.answer}`;
-                message.className = "time-message time-message-bad";
-
-                if (!reported) {
-                    reported = true;
-                    onResult?.(false);
-                }
+                feedback.reveal(`🤔 Nem! A helyes meghatározás: ${step.answer}`);
             }
-
-            const nextBtn = document.createElement("button");
-            nextBtn.className = "time-next";
-            nextBtn.textContent = "➡️ Tovább";
-            nextBtn.addEventListener("click", () => onNext());
-            card.append(nextBtn);
         });
 
         optionsContainer.append(btn);
     });
-
-    card.append(optionsContainer, message);
-    root.append(card);
 }

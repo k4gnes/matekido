@@ -1,9 +1,9 @@
-import { renderScene } from "../components/scene.js?v=9";
+import { renderScene } from "../components/scene.js?v=10";
 import { createInstructionHelp } from "../components/ui/instruction.js";
 import { createExitButton } from "../components/ui/exit.js";
 import { renderExercise } from "../components/exercise.js?v=5";
-import { renderDecomposition } from "../components/decomposition.js?v=2";
-import { renderDecompositionFindWrong } from "../components/decompositionFindWrong.js?v=3";
+import { renderDecomposition } from "../components/decomposition.js?v=3";
+import { renderDecompositionFindWrong } from "../components/decompositionFindWrong.js?v=4";
 import { renderMissingNumber } from "../components/missingNumber.js?v=7";
 import { renderComparison } from "../components/comparison.js?v=5";
 import { renderNeighbor } from "../components/neighbor.js?v=5";
@@ -11,15 +11,15 @@ import { renderNeighborSingle } from "../components/neighborSingle.js?v=5";
 import { renderNeighborRound } from "../components/neighborRound.js?v=2";
 import { renderPlaceValue } from "../components/placeValue.js?v=5";
 import { renderPlaceValueTwoInput } from "../components/placeValueTwoInput.js?v=5";
-import { renderBridgeTen } from "../components/bridgeTen.js?v=13";
+import { renderBridgeTen } from "../components/bridgeTen.js?v=14";
 import { renderSequence } from "../components/sequence.js?v=14";
 import { renderOrder } from "../components/order.js?v=15";
 import { renderEvenOdd } from "../components/evenOdd.js?v=13";
-import { renderPattern } from "../components/pattern.js?v=10";
+import { renderPattern } from "../components/pattern.js?v=11";
 import { renderShapeSort } from "../components/shapeSort.js?v=14";
-import { renderTime } from "../components/time.js?v=10";
+import { renderTime } from "../components/time.js?v=11";
 import { renderTimeConvert } from "../components/timeConvert.js?v=1";
-import { renderSpatial } from "../components/spatial.js?v=26";
+import { renderSpatial } from "../components/spatial.js?v=27";
 import { renderMoneyPay } from "../components/moneyPay.js?v=15";
 import { renderMoneyCompare } from "../components/moneyCompare.js?v=13";
 import { renderMoneyEnough } from "../components/moneyEnough.js?v=13";
@@ -134,7 +134,7 @@ const COUNTED_TYPES = new Set([
 const isCounted = s => COUNTED_TYPES.has(s.type);
 
 
-import { renderCelebration } from "../components/celebration.js?v=10";
+import { renderCelebration } from "../components/celebration.js?v=11";
 import { renderProgress } from "../components/progress.js?v=2";
 import { renderMissingProgress } from "../components/missingProgress.js?v=3";
 import { renderComparisonProgress } from "../components/comparisonProgress.js?v=3";

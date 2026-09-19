@@ -325,7 +325,7 @@ function renderCSS(card) {
             display: block;
         }
         .fof-input:focus {
-            border-color: #4a90d9;
+            border-color: var(--primary);
             outline: none;
         }
     `;

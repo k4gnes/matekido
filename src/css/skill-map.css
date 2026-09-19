@@ -34,7 +34,7 @@
 }
 
 .skill-map-choice:hover {
-    border-color: #4a90d9;
+    border-color: var(--primary);
     background: #eef4fe;
 }
 
@@ -64,7 +64,7 @@
 }
 
 .skill-map-footer a:hover {
-    color: #4a90d9;
+    color: var(--primary);
     text-decoration: underline;
 }
 

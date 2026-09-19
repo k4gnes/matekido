@@ -65,34 +65,6 @@
     color: #1a1a2e;
 }
 
-.spatial-message {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin: 1rem 0;
-    min-height: 1.5em;
-    text-align: center;
-}
-
-.spatial-message-good {
-    color: #2e7d32;
-}
-
-.spatial-message-bad {
-    color: #c62828;
-}
-
-.spatial-next {
-    display: block;
-    margin: 1rem auto 0;
-    padding: .6rem 1.5rem;
-    font-size: 1rem;
-    border: 2px solid #4a90d9;
-    border-radius: 12px;
-    background: #4a90d9;
-    color: #fff;
-    cursor: pointer;
-}
-
 @media (max-width: 380px) {
     .spatial-options {
         grid-template-columns: 1fr;

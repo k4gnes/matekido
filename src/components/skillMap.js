@@ -19,7 +19,7 @@ export function renderSkillMap(root, nav = {}) {
 
     root.append(wrapper);
 
-    const navbar = createNavBar({ ...nav, current: "lessons" });
+    const navbar = createNavBar({ ...nav, current: "topics" });
 
     showChoice();
 

@@ -228,7 +228,7 @@ function renderCSS(card) {
             display: block;
         }
         .div-input:focus {
-            border-color: #4a90d9;
+            border-color: var(--primary);
             outline: none;
         }
     `;

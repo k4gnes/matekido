@@ -3,6 +3,7 @@ import { createButton } from "./ui/button.js";
 import { createNavBar } from "./ui/navbar.js";
 import { getDailyStats, getAllSkillStats, getActiveWorld, getLessonStats } from "../profile/Profile.js";
 import { SKILLS, CATEGORIES } from "../data/skills.js";
+import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js";
 
 function formatDate(dateStr) {
     const d = new Date(dateStr + "T00:00:00");
@@ -22,111 +23,6 @@ const WORLD_STATS_TITLE = {
     football: "⚽ Meccsjelentés",
     animals: "🦁 Állatkerti jelentés",
     space: "🤖 Űrállomás jelentés"
-};
-
-const TYPE_LABEL = {
-    addition: "Összeadás",
-    subtraction: "Kivonás",
-    mixed: "Vegyes",
-    "missing-number": "Hiányzó szám",
-    comparison: "Összehasonlítás",
-    neighbor: "Szomszédok",
-    decomposition: "Bontás",
-    "place-value": "Helyi érték",
-    sequence: "Számsor",
-    order: "Sorba rendezés",
-    "even-odd": "Páros-páratlan",
-    pattern: "Sorminta",
-    "shape-sort": "Alakzatok",
-    "shape-compare": "Alakzatok összehasonlítása",
-    "solid-shape": "Térbeli alakzatok",
-    time: "Idő",
-    spatial: "Térbeli tájékozódás",
-    "money-pay": "Pontos kifizetés",
-    "money-compare": "Pénz összehasonlítás",
-    "money-enough": "Elég-e a pénz?",
-    "measure-compare": "Hosszúság összehasonlítás",
-    "measure-squares": "Mérés négyzetekkel",
-    "word-problem": "Szöveges feladat",
-    "bridge-ten": "Tízes átlépés",
-    "equal-groups": "Egyenlő csoportok",
-    "repeated-addition": "Ismételt összeadás",
-    "skip-counting": "Lépegető számolás",
-    table: "Szorzótábla",
-    "missing-factor": "Hiányzó tényező",
-    "match-groups": "Csoportok párosítása",
-    link: "Szorzás–osztás kapcsolat",
-    sharing: "Elosztás",
-    grouping: "Csoportosítás",
-    "division-table": "Osztótábla",
-    "missing-operand": "Hiányzó tag",
-    estimate: "Becslés",
-    "true-false": "Igaz/Hamis",
-    "find-error": "Hibás számolás",
-    "place-value-hundreds": "Helyiérték (1000)",
-    "place-value-thousands": "Helyiérték (10 000)",
-    "number-name": "Számnevek",
-    rounding: "Kerekítés",
-    roman: "Római számok",
-    volume: "Űrtartalom",
-    weight: "Tömeg",
-    transform: "Forgatás",
-    mirror: "Tükrözés",
-    "set-match": "Halmazok és válogatás",
-    "data-chart": "Adatok és diagramok",
-    calendar: "Naptár",
-    fraction: "Törtek",
-    "measure-units": "Hosszúság-mérés"
-};
-
-const TYPE_EMOJI = {
-    addition: "➕",
-    subtraction: "➖",
-    mixed: "🔀",
-    "missing-number": "❓",
-    comparison: "⚖️",
-    neighbor: "🔍",
-    decomposition: "🧩",
-    "place-value": "🔢",
-    sequence: "🔢",
-    order: "↕️",
-    "even-odd": "🎯",
-    pattern: "🔁",
-    "shape-sort": "🟦",
-    "shape-compare": "📐",
-    "solid-shape": "🧊",
-    time: "🕐",
-    spatial: "🧭",
-    "money-pay": "💰",
-    "money-compare": "⚖️",
-    "money-enough": "🛒",
-    "measure-compare": "📏",
-    "measure-squares": "🧮",
-    "word-problem": "📝",
-    "bridge-ten": "🧩",
-    "equal-groups": "🍅",
-    "repeated-addition": "➕",
-    "skip-counting": "🔢",
-    table: "✖️",
-    "missing-factor": "❓",
-    "match-groups": "🧩",
-    link: "🔗",
-    sharing: "🍕",
-    grouping: "📦",
-    "division-table": "➗",
-    "missing-operand": "❓",
-    estimate: "🧮",
-    "true-false": "✅",
-    "find-error": "🕵️",
-    "place-value-hundreds": "🔢",
-    "place-value-thousands": "🔢",
-    "number-name": "🔤",
-    rounding: "🎯",
-    roman: "🏛️",
-    weight: "⚖️",
-    mirror: "🪞",
-    fraction: "🍕",
-    "measure-units": "📏"
 };
 
 function createStatGrid(items, className) {
@@ -262,12 +158,14 @@ export function renderStatsPage(root, navConfig, lessonIndex) {
 
     const prevBtn = createButton("◀", { onClick: () => changeDate(-1) });
     prevBtn.className = "daily-nav-btn";
+    prevBtn.setAttribute("aria-label", "Előző nap");
 
     const dateLabel = document.createElement("span");
     dateLabel.className = "daily-date-label";
 
     const nextBtn = createButton("▶", { onClick: () => changeDate(1) });
     nextBtn.className = "daily-nav-btn";
+    nextBtn.setAttribute("aria-label", "Következő nap");
 
     nav.append(prevBtn, dateLabel, nextBtn);
 

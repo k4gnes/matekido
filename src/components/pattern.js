@@ -1,4 +1,6 @@
 import { createCard } from "./ui/card.js";
+import { createMessageBox } from "./ui/messageBox.js";
+import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -54,8 +56,18 @@ export function renderPattern(step, root, onNext, progress, onResult, onAttempt)
         optionsContainer.classList.add("pattern-numeric");
     }
 
-    let answered = false;
-    let reported = false;
+    const message = createMessageBox();
+
+    card.append(optionsContainer, message.element);
+    root.append(card);
+
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext,
+        onResult,
+        onAttempt
+    });
 
     step.options.forEach(opt => {
         const isCorrect = opt === step.answer;
@@ -66,29 +78,20 @@ export function renderPattern(step, root, onNext, progress, onResult, onAttempt)
         btn.textContent = opt;
 
         btn.addEventListener("mouseenter", () => {
-            if (!answered) btn.style.transform = "scale(1.1)";
+            if (!feedback.isAnswered()) btn.style.transform = "scale(1.1)";
         });
         btn.addEventListener("mouseleave", () => {
-            if (!answered) btn.style.transform = "";
+            if (!feedback.isAnswered()) btn.style.transform = "";
         });
 
         btn.addEventListener("click", () => {
-            if (answered) return;
-            answered = true;
-
-            onAttempt?.();
+            if (feedback.isAnswered()) return;
 
             optionsContainer.querySelectorAll("button").forEach(b => b.style.pointerEvents = "none");
 
             if (isCorrect) {
-                btn.classList.add("pattern-correct");
-                message.textContent = "🎉 Jó válasz!";
-                message.className = "pattern-message pattern-message-good";
-
-                if (!reported) {
-                    reported = true;
-                    onResult?.(true);
-                }
+                markCorrect(btn);
+                feedback.success("🎉 Jó válasz!");
             } else {
                 btn.classList.add("pattern-wrong");
                 optionsContainer.querySelectorAll("button").forEach(b => {
@@ -96,30 +99,12 @@ export function renderPattern(step, root, onNext, progress, onResult, onAttempt)
                         b.classList.add("pattern-correct");
                     }
                 });
-                message.textContent = `🤔 Nem! A helyes válasz: ${step.answer}`;
-                message.className = "pattern-message pattern-message-bad";
-
-                if (!reported) {
-                    reported = true;
-                    onResult?.(false);
-                }
+                feedback.reveal(`🤔 Nem! A helyes válasz: ${step.answer}`);
             }
 
             question.textContent = step.answer;
-
-            const nextBtn = document.createElement("button");
-            nextBtn.className = "pattern-next";
-            nextBtn.textContent = "➡️ Tovább";
-            nextBtn.addEventListener("click", () => onNext());
-            card.append(nextBtn);
         });
 
         optionsContainer.append(btn);
     });
-
-    const message = document.createElement("div");
-    message.className = "pattern-message";
-
-    card.append(optionsContainer, message);
-    root.append(card);
 }

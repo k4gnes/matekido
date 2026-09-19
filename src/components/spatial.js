@@ -1,4 +1,6 @@
 import { createCard } from "./ui/card.js";
+import { createMessageBox } from "./ui/messageBox.js";
+import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 import { REFERENCES, OBJECTS } from "../data/spatial.js?v=8";
 
@@ -710,11 +712,18 @@ export function renderSpatial(step, root, onNext, progress, onResult, onAttempt)
     const optionsContainer = document.createElement("div");
     optionsContainer.className = "spatial-options";
 
-    const message = document.createElement("div");
-    message.className = "spatial-message";
+    const message = createMessageBox();
 
-    let answered = false;
-    let reported = false;
+    card.append(optionsContainer, message.element);
+    root.append(card);
+
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext,
+        onResult,
+        onAttempt
+    });
 
     step.options.forEach(opt => {
         const btn = document.createElement("button");
@@ -723,22 +732,13 @@ export function renderSpatial(step, root, onNext, progress, onResult, onAttempt)
         btn.textContent = opt.text;
 
         btn.addEventListener("click", () => {
-            if (answered) return;
-            answered = true;
-
-            onAttempt?.();
+            if (feedback.isAnswered()) return;
 
             optionsContainer.querySelectorAll("button").forEach(b => (b.style.pointerEvents = "none"));
 
             if (opt.correct) {
-                btn.classList.add("spatial-option-correct");
-                message.textContent = "🎉 Jó válasz!";
-                message.className = "spatial-message spatial-message-good";
-
-                if (!reported) {
-                    reported = true;
-                    onResult?.(true);
-                }
+                markCorrect(btn);
+                feedback.success("🎉 Jó válasz!");
             } else {
                 btn.classList.add("spatial-option-wrong");
                 optionsContainer.querySelectorAll("button").forEach(b => {
@@ -746,25 +746,10 @@ export function renderSpatial(step, root, onNext, progress, onResult, onAttempt)
                         b.classList.add("spatial-option-correct");
                     }
                 });
-                message.textContent = `🤔 Nem! A helyes meghatározás: ${step.answer}`;
-                message.className = "spatial-message spatial-message-bad";
-
-                if (!reported) {
-                    reported = true;
-                    onResult?.(false);
-                }
+                feedback.reveal(`🤔 Nem! A helyes meghatározás: ${step.answer}`);
             }
-
-            const nextBtn = document.createElement("button");
-            nextBtn.className = "spatial-next";
-            nextBtn.textContent = "➡️ Tovább";
-            nextBtn.addEventListener("click", () => onNext());
-            card.append(nextBtn);
         });
 
         optionsContainer.append(btn);
     });
-
-    card.append(optionsContainer, message);
-    root.append(card);
 }

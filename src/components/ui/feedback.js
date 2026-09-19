@@ -42,6 +42,31 @@ export function createFeedback({ message, container, onNext, onResult, onAttempt
         setTimeout(() => nextBtn.focus(), 0);
     }
 
+    function reveal(customText) {
+        if (answered) return;
+        answered = true;
+
+        onAttempt?.();
+
+        if (!reported) {
+            reported = true;
+            onResult?.(false);
+        }
+
+        message.show(customText ?? "🤔 Nem jó válasz!", "retry");
+
+        const nextBtn = createButton("➡️ Tovább", {
+            className: "nav-bar-btn",
+            onClick: () => {
+                if (navigated) return;
+                navigated = true;
+                onNext?.();
+            }
+        });
+        container.append(nextBtn);
+        setTimeout(() => nextBtn.focus(), 0);
+    }
+
     function retry(customText) {
         if (answered) return;
 
@@ -62,6 +87,7 @@ export function createFeedback({ message, container, onNext, onResult, onAttempt
     return {
         success,
         retry,
+        reveal,
         isAnswered: () => answered,
         getMistakes: () => mistakes
     };

@@ -50,7 +50,7 @@ export function renderMixed(step, root, next, progress, onResult, onAttempt) {
         placeholder = document.createElement("span");
         placeholder.textContent = "?";
         placeholder.style.fontWeight = "bold";
-        placeholder.style.color = "#4a90d9";
+        placeholder.style.color = "var(--primary)";
 
         const answerSpan = document.createElement("span");
         answerSpan.textContent = step.answer;

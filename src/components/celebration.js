@@ -22,7 +22,7 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
     });
 
     const nextButton = actions.onNext
-        ? createButton("➡️ Következő", {
+        ? createButton("➡️ Tovább", {
             className: "nav-bar-btn",
             onClick: () => actions.onNext()
         })

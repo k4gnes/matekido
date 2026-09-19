@@ -48,7 +48,7 @@ export function renderMissingNumber(step, root, next, progress, onResult, onAtte
         placeholder = document.createElement("span");
         placeholder.textContent = "?";
         placeholder.style.fontWeight = "bold";
-        placeholder.style.color = "#4a90d9";
+        placeholder.style.color = "var(--primary)";
 
         equation.append(first, plus, placeholder, equal, result);
 

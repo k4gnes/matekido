@@ -1,4 +1,5 @@
 import { createCard } from "./ui/card.js";
+import { createButton } from "./ui/button.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_EMOJI = {
@@ -175,7 +176,7 @@ export function renderDecomposition(step, root, onNext, progress, onResult, onAt
                 ? "padding:0.7rem 1.8rem; font-size:1.1rem; border:none; border-radius:12px; background:#f59e0b; color:white; cursor:pointer; box-shadow:0 4px 0 #b45309;"
                 : isFootball
                     ? "padding:0.7rem 1.8rem; font-size:1.1rem; border:none; border-radius:12px; background:#22c55e; color:white; cursor:pointer; box-shadow:0 4px 0 #15803d;"
-                    : "padding:0.6rem 1.5rem; font-size:1rem; border:2px solid #4a90d9; border-radius:12px; background:#4a90d9; color:white; cursor:pointer;";
+                    : "padding:0.6rem 1.5rem; font-size:1rem; border:2px solid var(--primary); border-radius:12px; background:var(--primary); color:white; cursor:pointer;";
     finishBtn.addEventListener("click", () => {
         const selectedCount = items.filter(it => it.dataset.selected === "true").length;
         const key = `${selectedCount}+${number - selectedCount}`;
@@ -221,13 +222,13 @@ export function renderDecomposition(step, root, onNext, progress, onResult, onAt
             hint.textContent = `${totalNeeded} bontás mind megtalálva!`;
             hint.style.color = "#2e7d32";
 
-            const nextBtn = document.createElement("button");
-            nextBtn.textContent = "➡️ Tovább";
-            nextBtn.style.cssText = "padding:0.6rem 1.5rem; font-size:1rem; border:2px solid #4a90d9; border-radius:12px; background:#4a90d9; color:white; cursor:pointer; margin-top:1rem;";
-            nextBtn.addEventListener("click", () => {
-                onAttempt?.();
-                onResult?.(true);
-                onNext();
+            const nextBtn = createButton("➡️ Tovább", {
+                className: "nav-bar-btn",
+                onClick: () => {
+                    onAttempt?.();
+                    onResult?.(true);
+                    onNext();
+                }
             });
             card.append(nextBtn);
         }

@@ -105,7 +105,7 @@ A feladatlista oldalon (a profil-avatárról nyitható) sorban a következők j�
 
 A **🎛️ Saját lista** füllel magadnak válogatsz: az osztály, nehézség, feladattípus, készség, típus és számkör szűrői alapján csak azok a feladatok kerülnek a listába, amelyeket szeretnél.
 
-- A **➡️ Következő feladat** az első, még meg nem oldott feladatot ajánlja; ha már mindegyiken túl vagy, onnan folytathatod, ahol a múltkor abbahagytad.
+- A **➡️ Következő feladat** sorban halad a szűrt listádon: a Saját listában az is a körbe kerül, amit korábban máshol (pl. az osztályos menetben) már megoldottál – szóval újragyakorolható. Ha a listád összes elemén átestél, újra az elsőt javasolja.
 - A lista pont olyan **gyakorlólista**, mint a **🔁 Erősítő**: belekattintasz egy feladatba, és a **➡️ Tovább** gombbal a lista elemei egyesével következnek, a végéig.
 - A **🎯 Gyakorlásra javasolt** és a **❤️ Kedvenceim** szekció a **listádon belül** ajánl: csak azok a 90% alatti (illetve kedvenc) feladatok látszanak, amelyek a szűrt listádban is benne vannak, és a játék ezeken a csoportjukon belül halad végig.
 

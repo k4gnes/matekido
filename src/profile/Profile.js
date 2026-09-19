@@ -300,6 +300,29 @@ export function recordLessonSkip(lessonFile, context) {
 
 }
 
+export function getCustomDoneLessons() {
+
+    const profile = loadProfile();
+    return Array.isArray(profile.doneCustomLessons) ? profile.doneCustomLessons : [];
+
+}
+
+export function recordCustomDoneLesson(lessonFile) {
+
+    const profile = loadProfile();
+
+    if (!Array.isArray(profile.doneCustomLessons)) {
+        profile.doneCustomLessons = [];
+    }
+
+    if (!profile.doneCustomLessons.includes(lessonFile)) {
+        profile.doneCustomLessons.push(lessonFile);
+    }
+
+    saveProfile(profile);
+
+}
+
 export function resolveSkippedLesson(lessonFile) {
 
     const profile = loadProfile();

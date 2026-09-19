@@ -140,7 +140,7 @@ import { renderMissingProgress } from "../components/missingProgress.js?v=3";
 import { renderComparisonProgress } from "../components/comparisonProgress.js?v=3";
 import { renderNeighborProgress } from "../components/neighborProgress.js?v=3";
 
-import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, recordSkillResult, resolveSkippedLesson, getLessonStats, getActiveWorld, isFavoriteLesson, toggleFavoriteLesson, resolveLessonGrade } from "../profile/Profile.js";
+import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, recordSkillResult, recordCustomDoneLesson, resolveSkippedLesson, getLessonStats, getActiveWorld, isFavoriteLesson, toggleFavoriteLesson, resolveLessonGrade } from "../profile/Profile.js";
 import { grantRewards } from "../profile/RewardService.js";
 
 const SKILL_BY_TYPE = {
@@ -357,6 +357,9 @@ export class Game {
                     if (this.skill) {
                         recordSkillResult(this.skill, this.correct, this.wrong);
                     }
+                    if (this.source === "custom" && this.lessonFile) {
+                        recordCustomDoneLesson(this.lessonFile);
+                    }
                     if (this.wrong === 0) {
                         recordPerfectLesson();
                     }
@@ -445,6 +448,9 @@ export class Game {
                     }
                     if (this.skill) {
                         recordSkillResult(this.skill, this.correct, this.wrong);
+                    }
+                    if (this.source === "custom" && this.lessonFile) {
+                        recordCustomDoneLesson(this.lessonFile);
                     }
                     if (this.wrong === 0) {
                         recordPerfectLesson();

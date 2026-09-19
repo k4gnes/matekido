@@ -3,7 +3,7 @@ import { createButton } from "./ui/button.js";
 import { createNavBar } from "./ui/navbar.js";
 import { loadJSON, saveJSON, loadRaw, saveRaw, removeKeys } from "../storage.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
-import { getLessonStats, getActiveWorld, getActiveGrade, setActiveGrade, getFavoriteLessons, getSkippedLessons, isFavoriteLesson, toggleFavoriteLesson } from "../profile/Profile.js";
+import { getLessonStats, getActiveWorld, getActiveGrade, setActiveGrade, getFavoriteLessons, getSkippedLessons, isFavoriteLesson, toggleFavoriteLesson, getCustomDoneLessons } from "../profile/Profile.js";
 import { renderMarkdown } from "../utils/markdown.js";
 import { CATEGORIES, SKILLS } from "../data/skills.js";
 import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js";
@@ -975,14 +975,16 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
 
         const poolOpts = { from: "custom", list: pool.map(l => l.file) };
 
-        const next = pickNextFromList(pool);
+        const doneSet = new Set(getCustomDoneLessons());
+        const undone = pool.filter(l => !doneSet.has(l.file));
+        const next = undone.length > 0 ? undone[0] : pool[0];
         if (next) {
             const nextCard = createCard();
 
             const nextIdx = pool.findIndex(l => l.file === next.file);
             const nextHeading = document.createElement("h3");
             nextHeading.className = "category-title";
-            const remaining = pool.filter(l => !getLessonStats(l.file)).length;
+            const remaining = undone.length;
             nextHeading.textContent = remaining > 0
                 ? `➡️ Következő feladat (még ${remaining} van hátra)`
                 : "➡️ Következő feladat";
@@ -997,7 +999,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
             nextNote.className = "lesson-card-subtitle";
             nextNote.textContent = remaining > 0
                 ? "Ez az, ami legközelebb rád vár."
-                : "Az összes feladaton túl vagy – kezdheted elölről az elsővel.";
+                : "Az összes feladaton túl vagy – a ➡️ Tovább gombbal innen folytathatod a listát.";
             nextCard.append(nextNote);
 
             contentArea.append(nextCard);

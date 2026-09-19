@@ -2971,6 +2971,29 @@
             }
         },
         {
+            "id": "measure-units-03",
+            "title": "📏 Mértékegység-átváltás 1000-ig",
+            "grades": [
+                4
+            ],
+            "category": "practical",
+            "skill": "length",
+            "difficulty": 2,
+            "type": "measure-units",
+            "range": 1000,
+            "mission": "📏 Mértékegység-átváltás",
+            "subtitle": "hosszúság, tömeg, űrtartalom átváltása 1000-ig",
+            "file": "./data/lessons/grade4/measure-units-03.json",
+            "worldTitles": {
+                "postman": "📏 Mértékegységek a postán",
+                "racing": "🔧 Mértékegység-átváltás a boxutcában",
+                "cooking": "🥄 Mértékegység-átváltás a konyhában",
+                "football": "⚽ Mértékegység-átváltás a pályán",
+                "animals": "🦁 Mértékegység-átváltás az állatkertben",
+                "space": "🤖 Mértékegység-átváltás az űrhajón"
+            }
+        },
+        {
             "id": "time-convert-01",
             "title": "🕐 Idő – perc és óra",
             "grades": [

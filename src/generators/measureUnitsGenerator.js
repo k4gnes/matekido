@@ -6,7 +6,9 @@ const CONVERSIONS = {
     ],
     lengthAdvanced: [
         { unit: "km", target: "m", factor: 1000, max: 5 },
-        { unit: "m", target: "mm", factor: 1000, max: 5 }
+        { unit: "m", target: "mm", factor: 1000, max: 5 },
+        { unit: "cm", target: "mm", factor: 10, max: 100 },
+        { unit: "km", target: "m", factor: 1000, max: 10 }
     ],
     weight: [
         { unit: "kg", target: "dkg", factor: 100, max: 10 },

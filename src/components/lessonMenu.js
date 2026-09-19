@@ -42,6 +42,10 @@ function loadFilterOpen() {
     return null;
 }
 
+export function resetMenuPrefs() {
+    removeKeys(FILTER_STORAGE_KEY, FILTER_OPEN_KEY, VIEW_STORAGE_KEY, LIST_HIDDEN_KEY);
+}
+
 function loadSelectedGrade() {
     return getActiveGrade();
 }

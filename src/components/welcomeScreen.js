@@ -1,4 +1,5 @@
 import { createCard } from "./ui/card.js";
+import { resetMenuPrefs } from "./lessonMenu.js";
 import {
     listPlayers,
     switchPlayer,
@@ -198,6 +199,7 @@ function showAddModal(root, onSelect) {
         if (!name) return;
 
         createPlayer(name, selectedAvatar);
+        resetMenuPrefs();
         overlay.remove();
         onSelect();
     });

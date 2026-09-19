@@ -37,6 +37,7 @@ import { renderShapeCompare } from "../components/shapeCompare.js?v=3";
 import { renderSolidShape } from "../components/solidShape.js?v=2";
 import { renderPolygon } from "../components/polygon.js?v=4";
 import { renderElapsedTime } from "../components/elapsedTime.js?v=1";
+import { renderLengthUnits } from "../components/lengthUnits.js?v=1";
 import { renderWeight } from "../components/weight.js?v=2";
 import { renderVolume } from "../components/volume.js?v=2";
 import { renderMoneyChange } from "../components/moneyChange.js?v=3";
@@ -132,7 +133,8 @@ const COUNTED_TYPES = new Set([
     "probability",
     "operation-order",
     "polygon",
-    "elapsed-time"
+    "elapsed-time",
+    "length-units"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -194,6 +196,7 @@ const RENDERERS = new Map([
     ["solid-shape", renderSolidShape],
     ["polygon", renderPolygon],
     ["elapsed-time", renderElapsedTime],
+    ["length-units", renderLengthUnits],
     ["weight", renderWeight],
     ["volume", renderVolume],
     ["money-change", renderMoneyChange],

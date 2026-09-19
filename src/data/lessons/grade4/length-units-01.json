@@ -1,0 +1,88 @@
+{
+    "id": "grade4-length-units-01",
+    "title": "📏 Távolságok és hosszúságok a valóságban",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📏 Melyik egység illik hozzá?",
+            "text": "A hosszúságot cm-ben, m-ben vagy km-ben is mérhetjük! Kicsi dolgokra cm, közepesekre m, nagy utakra km illik. Te melyiket választanád?",
+            "illustration": "<div style='margin:.5rem 0; font-size:2rem; text-align:center;'>🖍️ 15 cm · 🚪 2 m · 🚗 230 km</div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "📏 Mérések a postán",
+                    "text": "A postán csomagokat és útvonalakat is mérnek! Válaszd ki, melyik mértékegység illik a számhoz!"
+                },
+                "racing": {
+                    "title": "🏎️ Távolságok a pályán",
+                    "text": "A versenyzők felszerelést és pályát mérnek! Válaszd ki, melyik mértékegység illik a számhoz!"
+                },
+                "football": {
+                    "title": "⚽ Hosszúságok a pályán",
+                    "text": "A pálya és a felszerelés hossza is fontos a focihoz! Válaszd ki a megfelelő mértékegységet!"
+                },
+                "cooking": {
+                    "title": "🍳 Hosszúságok a konyhában",
+                    "text": "A konyhában is sok hosszúságot mérnek! Válaszd ki, melyik mértékegység illik a számhoz!"
+                },
+                "animals": {
+                    "title": "🦁 Hosszúságok az állatkertben",
+                    "text": "Az állatokat is lemérik az állatkertben! Válaszd ki, melyik mértékegység illik a számhoz!"
+                },
+                "space": {
+                    "title": "🛰️ Távolságok az űrben",
+                    "text": "Az űrhajósok nagy távolságokat járnak be! Válaszd ki, melyik mértékegység illik a számhoz!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "length-units",
+
+            "options": {
+                "count": 6
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "length-units",
+
+            "options": {
+                "count": 6
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes vagy!",
+            "text": "A valóságban is pontosan választod ki a mértékegységet!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📏 Ügyes vagy!",
+                    "text": "Minden hosszúsághoz jó mértékegységet választottál!"
+                },
+                "racing": {
+                    "title": "🏎️ Ügyes vagy!",
+                    "text": "Minden távolsághoz jó mértékegységet választottál!"
+                },
+                "football": {
+                    "title": "⚽ Szép munka!",
+                    "text": "Minden hosszúsághoz jó mértékegységet választottál!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden hosszúsághoz jó mértékegységet választottál!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden hosszúsághoz jó mértékegységet választottál!"
+                },
+                "space": {
+                    "title": "🛰️ Nagy vagy!",
+                    "text": "Minden távolsághoz jó mértékegységet választottál!"
+                }
+            }
+        }
+    ]
+}

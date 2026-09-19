@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=32";
+import { generate } from "../generators/index.js?v=34";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -366,6 +366,11 @@ export function buildLesson(lesson) {
             } else if (step.generator === "money-change") {
                 result.push({
                     type: "money-change",
+                    ...task
+                });
+            } else if (step.generator === "length-units") {
+                result.push({
+                    type: "length-units",
                     ...task
                 });
             } else if (step.generator === "place-value-hundreds") {

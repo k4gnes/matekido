@@ -3061,6 +3061,29 @@
             }
         },
         {
+            "id": "length-units-01",
+            "title": "📏 Távolságok és hosszúságok a valóságban",
+            "grades": [
+                4
+            ],
+            "category": "practical",
+            "skill": "length",
+            "difficulty": 1,
+            "type": "length-units",
+            "range": 10000,
+            "mission": "📏 Hosszúság a valóságban",
+            "subtitle": "km, m, cm a hétköznapokban",
+            "file": "./data/lessons/grade4/length-units-01.json",
+            "worldTitles": {
+                "postman": "📏 Hosszúságok a postán",
+                "racing": "🏎️ Távolságok a pályán",
+                "cooking": "🍳 Hosszúságok a konyhában",
+                "football": "⚽ Hosszúságok a pályán",
+                "animals": "🦁 Hosszúságok az állatkertben",
+                "space": "🛰️ Távolságok az űrben"
+            }
+        },
+        {
             "id": "money-pay-03",
             "title": "💰 Vásárlás 1000-ig",
             "grades": [

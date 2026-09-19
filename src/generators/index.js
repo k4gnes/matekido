@@ -34,6 +34,7 @@ import { generateSolidShape } from "./solidShapeGenerator.js?v=1";
 import { generateWeight } from "./weightGenerator.js?v=1";
 import { generateVolume } from "./volumeGenerator.js?v=2";
 import { generateMoneyChange } from "./moneyChangeGenerator.js?v=2";
+import { generateLengthUnits } from "./lengthUnitsGenerator.js?v=2";
 import { generatePlaceValueHundreds } from "./placeValueHundredsGenerator.js?v=1";
 import { generatePlaceValueThousands } from "./placeValueThousandsGenerator.js?v=1";
 import { generateNumberName } from "./numberNameGenerator.js?v=5";
@@ -144,6 +145,8 @@ export function generate(step) {
             return generateVolume(opts);
         case "money-change":
             return generateMoneyChange(opts);
+        case "length-units":
+            return generateLengthUnits(opts);
         case "place-value-hundreds":
             return generatePlaceValueHundreds(opts);
         case "place-value-thousands":

@@ -17,7 +17,7 @@ import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
 
-const INDEX_ANSWER_TYPES = new Set(["calendar", "data-chart", "solid-shape", "polygon"]);
+const INDEX_ANSWER_TYPES = new Set(["calendar", "data-chart", "solid-shape", "polygon", "length-units"]);
 
 const WORLDS = ["postman", "racing", "football", "cooking", "animals", "space"];
 const PASSES = { postman: 12, racing: 4, football: 4, cooking: 4, animals: 4, space: 4 };
@@ -615,6 +615,21 @@ function validateStep(step, ctx) {
                 fail(ctx, "options nem érvényes percek");
             }
             if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            break;
+        }
+    case "length-units": {
+            if (typeof step.emoji !== "string") fail(ctx, "emoji hiányzik");
+            if (typeof step.name !== "string" || typeof step.text !== "string" || step.name.length === 0 || step.text.length === 0) {
+                fail(ctx, "name/text hiányzik");
+            }
+            if (!isInt(step.number) || step.number <= 0) fail(ctx, `number hibás: ${step.number}`);
+            if (!["cm", "m", "km"].includes(step.unit)) fail(ctx, `unit hibás: ${step.unit}`);
+            if (!Array.isArray(step.options) || step.options.length < 2) fail(ctx, "options hiányos");
+            if (!step.options.every(o => ["cm", "m", "km"].includes(o))) fail(ctx, "options nem mértékegységek");
+            if (!isInt(step.answer) || step.answer < 0 || step.answer >= step.options.length) {
+                fail(ctx, `answer index hibás: ${step.answer}`);
+            }
+            if (step.options[step.answer] !== step.unit) fail(ctx, "answer nem a helyes egység");
             break;
         }
     }

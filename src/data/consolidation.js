@@ -42,5 +42,33 @@ export const CONSOLIDATION_LESSONS = {
         "fraction-01",
         "measure-units-01",
         "time-04"
+    ],
+    3: [
+        "place-value-hundreds-01",
+        "neighbor-1000-01",
+        "comparison-1000-01",
+        "rounding-01",
+        "round-hundreds-addition-01",
+        "round-hundreds-subtraction-01",
+        "addition-1000-01",
+        "addition-1000-02",
+        "subtraction-1000-01",
+        "subtraction-1000-02",
+        "written-add-1000-01",
+        "written-sub-1000-01",
+        "operation-order-01",
+        "multiplication-6789-01",
+        "division-6789-01",
+        "missing-factor-6789-01",
+        "mixed-mult-div-6789-01",
+        "remainder-division-01",
+        "fraction-02",
+        "fraction-of-01",
+        "mixed-1000-01",
+        "perimeter-01",
+        "area-01",
+        "measure-units-02",
+        "time-convert-01",
+        "money-pay-03"
     ]
 };

@@ -1,4 +1,4 @@
-import { renderScene } from "../components/scene.js?v=10";
+import { renderScene } from "../components/scene.js?v=11";
 import { createInstructionHelp } from "../components/ui/instruction.js";
 import { createExitButton } from "../components/ui/exit.js";
 import { renderExercise } from "../components/exercise.js?v=5";

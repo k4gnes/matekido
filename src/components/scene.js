@@ -58,7 +58,7 @@ export function renderScene(step, root, next, progress, activeWorld, onExit, les
     }
 
     if (onSkipNext) {
-        const isNavigate = source === "consolidation" || source === "favorites" || source === "practice";
+        const isNavigate = source === "consolidation" || source === "favorites" || source === "practice" || source === "custom";
         const skipBtn = document.createElement("button");
         skipBtn.type = "button";
         skipBtn.className = isNavigate ? "exercise-next" : "exercise-fav";

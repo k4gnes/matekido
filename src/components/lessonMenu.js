@@ -975,7 +975,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
 
         const poolOpts = { from: "custom", list: pool.map(l => l.file) };
 
-        const next = pickNextForGrade(pool, new Set(getSkippedLessons("custom")));
+        const next = pickNextFromList(pool);
         if (next) {
             const nextCard = createCard();
 
@@ -1054,9 +1054,6 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
 
         const favoriteLessons = pool.filter(l => isFavoriteLesson(l.file));
 
-        const customSkippedSet = new Set(getSkippedLessons("custom"));
-        const customSkippedLessons = pool.filter(l => customSkippedSet.has(l.file) && !getLessonStats(l.file));
-
         const pickerSections = [];
 
         if (weakLessons.length > 0) {
@@ -1066,16 +1063,6 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
                 onSelect,
                 activeWorld,
                 { from: "custom", list: weakLessons.map(l => l.file) }
-            ));
-        }
-
-        if (customSkippedLessons.length > 0) {
-            pickerSections.push(createPickerSection(
-                `⏭️ Átugrott feladatok (${customSkippedLessons.length}) – érdemes pótolni, a végén úgyis visszajönnek`,
-                customSkippedLessons,
-                onSelect,
-                activeWorld,
-                poolOpts
             ));
         }
 

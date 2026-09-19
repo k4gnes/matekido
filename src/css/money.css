@@ -203,7 +203,7 @@
 }
 
 .money-cmp-op:hover {
-    background: #2563eb;
+    background: var(--primary-dark);
     transform: scale(1.08);
 }
 

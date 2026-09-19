@@ -59,8 +59,8 @@
 }
 
 .mp-option:hover {
-    border-color: #2563eb;
-    background: #2563eb;
+    border-color: var(--primary-dark);
+    background: var(--primary-dark);
     transform: scale(1.05);
 }
 

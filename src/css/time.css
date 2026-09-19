@@ -38,8 +38,8 @@
 }
 
 .time-option:hover {
-    border-color: #2563eb;
-    background: #2563eb;
+    border-color: var(--primary-dark);
+    background: var(--primary-dark);
 }
 
 .time-option.time-option-correct {

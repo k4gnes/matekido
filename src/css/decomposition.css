@@ -61,7 +61,7 @@
 
     font-weight: bold;
 
-    color: #2563eb;
+    color: var(--primary-dark);
 
 }
 

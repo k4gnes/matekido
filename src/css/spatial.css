@@ -49,8 +49,8 @@
 }
 
 .spatial-option:hover {
-    border-color: #2563eb;
-    background: #2563eb;
+    border-color: var(--primary-dark);
+    background: var(--primary-dark);
 }
 
 .spatial-option.spatial-option-correct {

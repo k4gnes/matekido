@@ -3015,6 +3015,29 @@
             }
         },
         {
+            "id": "elapsed-time-01",
+            "title": "🕐 Idő – óra és perc tartamok",
+            "grades": [
+                4
+            ],
+            "category": "practical",
+            "skill": "hour",
+            "difficulty": 2,
+            "type": "elapsed-time",
+            "range": 60,
+            "mission": "🕐 Időtartam",
+            "subtitle": "kezdés, vég és eltelt idő",
+            "file": "./data/lessons/grade4/elapsed-time-01.json",
+            "worldTitles": {
+                "postman": "🕐 Idő a postán",
+                "racing": "🏎️ Idő a boxutcában",
+                "cooking": "🍳 Idő a konyhában",
+                "football": "⚽ Idő a pályán",
+                "animals": "🦁 Idő az állatkertben",
+                "space": "🤖 Idő az űrhajón"
+            }
+        },
+        {
             "id": "money-pay-03",
             "title": "💰 Vásárlás 1000-ig",
             "grades": [

@@ -93,6 +93,6 @@ A fenti 30 lecke a 4. osztályos tanmenet terve. Tovább tervezett leckék:
 - Műveletek – írásbeli számolás (7/7): írásbeli összeadás, kivonás, szorzás egyjegyűvel, szorzás kétjegyűvel, osztás egyjegyűvel, osztás kétjegyűvel, vegyes írásbeli műveletek ✔
 - Törtek bevezetése (3/3): törtrész nagyobb számokra, törtek jelölése (számláló, nevező), azonos nevezőjű törtek összehasonlítása és műveletei ✔
 - Geometria (1/7): sokszögek és tulajdonságaik (oldalak, csúcsok, átlók) ✔
-- Gyakorlati tudások (1/4): mértékegység-átváltás hosszúság/tömeg/űrtartalom 1000-ig ✔
+- Gyakorlati tudások (2/4): mértékegység-átváltás hosszúság/tömeg/űrtartalom 1000-ig, idő – óra és perc tartamok (kezdés/vég/eltelt idő) ✔
 
 *(A többi lecke a fenti táblázat szerint tervezett és még nem implementált.)*

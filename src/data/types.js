@@ -64,7 +64,8 @@ export const TYPE_EMOJI = {
     "match-groups": "🧩",
     grouping: "📦",
     weight: "⚖️",
-    polygon: "🔷"
+    polygon: "🔷",
+    "elapsed-time": "🕐"
 };
 
 export const TYPE_LABEL = {
@@ -133,5 +134,6 @@ export const TYPE_LABEL = {
     "match-groups": "Csoportok párosítása",
     grouping: "Csoportosítás",
     weight: "Tömeg",
-    polygon: "Sokszögek"
+    polygon: "Sokszögek",
+    "elapsed-time": "Idő – óra és perc"
 };

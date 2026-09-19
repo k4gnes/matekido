@@ -601,6 +601,22 @@ function validateStep(step, ctx) {
             }
             break;
         }
+    case "elapsed-time": {
+            if (!["duration", "start", "end"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!["start", "end", "duration"].every(k => isInt(step[k]))) fail(ctx, "start/end/duration nem egész");
+            if (step.start < 0 || step.end > 1439 || step.start >= step.end) fail(ctx, `start/end tartomány hibás: ${step.start} → ${step.end}`);
+            if (step.duration !== step.end - step.start) fail(ctx, `duration != end-start (${step.duration})`);
+            const expected = step.mode === "duration" ? step.duration : step.mode === "start" ? step.start : step.end;
+            if (step.answer !== expected) fail(ctx, `answer (${step.answer}) != ${step.mode} (${expected})`);
+            if (!Array.isArray(step.options) || step.options.length < 2 || !step.options.includes(step.answer)) {
+                fail(ctx, "options nem tartalmazza a helyes választ");
+            }
+            if (!step.options.every(o => isInt(o) && o % 5 === 0 && o >= 0 && o <= 1439)) {
+                fail(ctx, "options nem érvényes percek");
+            }
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            break;
+        }
     }
 
     checkOptions(step, ctx);

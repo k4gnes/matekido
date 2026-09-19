@@ -1,0 +1,38 @@
+.et-question {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    color: #475569;
+    margin: .6rem 0;
+    line-height: 1.6;
+}
+
+.et-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .6rem;
+    margin: .8rem 0;
+}
+
+.et-option {
+    background: #fff;
+    border: 2px solid var(--primary);
+    border-radius: 16px;
+    padding: .7rem 1rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+    cursor: pointer;
+    transition: transform .15s, box-shadow .15s;
+}
+
+.et-option-num {
+    font-size: 1.3rem;
+    min-width: 4.2rem;
+}
+
+.et-option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
+}

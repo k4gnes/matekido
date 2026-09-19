@@ -1,0 +1,94 @@
+{
+    "id": "grade4-elapsed-time-01",
+    "title": "🕐 Idő – óra és perc",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🕐 Mennyi idő telt el?",
+            "text": "Nézzük meg, mennyi idő telik el egy esemény kezdetétől a végéig! 1 óra = 60 perc. Ha egy dolog 10 óra 15 perckor kezdődik és 10 óra 45 perckor ér véget, akkor 30 percig tartott.",
+            "illustration": "<div style='margin:.5rem 0; font-size:1.9rem; text-align:center;'>10:15 ⏭️ 10:45 = 30 perc</div><div style='font-size:0.95rem; opacity:0.8; text-align:center;'>1 óra = 60 perc</div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "🕐 Idő a postán",
+                    "text": "A postás körútjai eltartanak egy darabig! Számoljuk ki, mennyi ideig tart egy-egy útvonal!",
+                    "illustration": "<div style='margin:.5rem 0; font-size:1.9rem; text-align:center;'>8:00 ⏭️ 8:40 = 40 perc</div>"
+                },
+                "racing": {
+                    "title": "🏎️ Idő a boxutcában",
+                    "text": "A versenyen minden másodperc számít! Számoljuk ki, mennyi ideig tart egy-egy futam!",
+                    "illustration": "<div style='margin:.5rem 0; font-size:1.9rem; text-align:center;'>14:00 ⏭️ 14:30 = 30 perc</div>"
+                },
+                "football": {
+                    "title": "⚽ Idő a pályán",
+                    "text": "A mérkőzések is sokáig tartanak! Számoljuk ki, mennyi ideig tart egy félidő vagy egy edzés!",
+                    "illustration": "<div style='margin:.5rem 0; font-size:1.9rem; text-align:center;'>16:00 ⏭️ 16:45 = 45 perc</div>"
+                },
+                "cooking": {
+                    "title": "🍳 Idő a konyhában",
+                    "text": "A süteményeknek idő kell, amíg megsülnek! Számoljuk ki, mennyi ideig sül a finomság!",
+                    "illustration": "<div style='margin:.5rem 0; font-size:1.9rem; text-align:center;'>9:10 ⏭️ 9:50 = 40 perc</div>"
+                },
+                "animals": {
+                    "title": "🦁 Idő az állatkertben",
+                    "text": "Az etetés is menetrend szerint zajlik! Számoljuk ki, meddig tart egy-egy etetés!"
+                },
+                "space": {
+                    "title": "🤖 Idő az űrhajón",
+                    "text": "Az űrutazás is időben történik! Számoljuk ki, mennyi ideig tart egy-egy űrjárat!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "elapsed-time",
+
+            "options": {
+                "count": 4,
+                "mode": "duration"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "elapsed-time",
+
+            "options": {
+                "count": 4,
+                "mode": "mixed"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Remekül számolod az eltelt időt: kezdés, vég és tartam már nem okoz gondot!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🕐 Nagy vagy!",
+                    "text": "Minden postás kört jól időzítettél!"
+                },
+                "racing": {
+                    "title": "🏎️ Nagy vagy!",
+                    "text": "Minden futam idejét pontosan számoltad!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden mérkőzés ideje pontosan megvan!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden sütés pontosan jókor készült el!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden állat a megfelelő időben evett!"
+                },
+                "space": {
+                    "title": "🛸 Szuper vagy!",
+                    "text": "Minden űrjárat pontosan érkezik!"
+                }
+            }
+        }
+    ]
+}

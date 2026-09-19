@@ -15,7 +15,7 @@ const AVATARS = [
     "🐒"
 ];
 
-export function renderWelcomeScreen(root, onSelect, onParent) {
+export function renderWelcomeScreen(root, onSelect, onParent, lessonIndex) {
 
     root.replaceChildren();
 
@@ -48,7 +48,7 @@ export function renderWelcomeScreen(root, onSelect, onParent) {
     });
 
     grid.append(createAddCard(() => {
-        showAddModal(root, onSelect);
+        showAddModal(root, onSelect, lessonIndex?.gradeConfig ?? []);
     }));
 
     wrapper.append(grid);
@@ -132,7 +132,7 @@ function createAddCard(onClick) {
     return card;
 }
 
-function showAddModal(root, onSelect) {
+function showAddModal(root, onSelect, gradeConfig) {
 
     const overlay = document.createElement("div");
     overlay.className = "modal-overlay";
@@ -173,6 +173,37 @@ function showAddModal(root, onSelect) {
         avatarGrid.append(btn);
     });
 
+    let selectedGrade = null;
+    const gradeBlock = document.createElement("div");
+
+    if (gradeConfig.length > 0) {
+        selectedGrade = gradeConfig[0].grade;
+
+        const gradeLabel = document.createElement("div");
+        gradeLabel.className = "modal-label";
+        gradeLabel.textContent = "Melyik osztályban játszol?";
+
+        const gradeGrid = document.createElement("div");
+        gradeGrid.className = "lesson-grid";
+
+        gradeConfig.forEach(gc => {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "profile-page-button" + (gc.grade === selectedGrade ? " selected" : "");
+            btn.textContent = gc.title;
+
+            btn.addEventListener("click", () => {
+                selectedGrade = gc.grade;
+                gradeGrid.querySelectorAll(".profile-page-button").forEach(b => b.classList.remove("selected"));
+                btn.classList.add("selected");
+            });
+
+            gradeGrid.append(btn);
+        });
+
+        gradeBlock.append(gradeLabel, gradeGrid);
+    }
+
     const actions = document.createElement("div");
     actions.className = "modal-actions";
 
@@ -198,7 +229,7 @@ function showAddModal(root, onSelect) {
         const name = input.value.trim();
         if (!name) return;
 
-        createPlayer(name, selectedAvatar);
+        createPlayer(name, selectedAvatar, selectedGrade);
         resetMenuPrefs();
         overlay.remove();
         onSelect();
@@ -211,7 +242,7 @@ function showAddModal(root, onSelect) {
     });
 
     actions.append(cancelBtn, confirmBtn);
-    modal.append(heading, input, avatarLabel, avatarGrid, actions);
+    modal.append(heading, input, avatarLabel, avatarGrid, gradeBlock, actions);
     overlay.append(modal);
     root.append(overlay);
 

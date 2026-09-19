@@ -1,13 +1,13 @@
 import { Game } from "./engine/Game.js?v=82";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=21";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=66";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=67";
 import { renderSkillMap } from "./components/skillMap.js?v=16";
 import { renderHelp } from "./components/help.js?v=3";
 import { renderProfilePage } from "./components/profilePage.js?v=8";
 import { renderStatsPage } from "./components/statsPage.js?v=9";
 import { getNextPracticeLesson } from "./components/practicePage.js?v=9";
-import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=4";
+import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=6";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=5";
 import { getActiveId, listPlayers } from "./profile/UserManager.js";
 import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld, setActiveGrade, resolveLessonGrade } from "./profile/Profile.js";
@@ -45,7 +45,7 @@ function showWelcome() {
     setTipVisible(true);
     renderWelcomeScreen(root, () => {
         showMenu();
-    }, showParentDashboard);
+    }, showParentDashboard, lessonIndex);
 }
 
 function showParentDashboard() {

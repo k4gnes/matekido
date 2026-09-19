@@ -49,6 +49,26 @@ export function saveProfile(profile) {
 
 }
 
+export function getMenuPrefs() {
+
+    const profile = loadProfile();
+
+    if (!profile.menuPrefs || typeof profile.menuPrefs !== "object" || Array.isArray(profile.menuPrefs)) {
+        profile.menuPrefs = {};
+    }
+
+    return profile.menuPrefs;
+
+}
+
+export function saveMenuPrefs(prefs) {
+
+    const profile = loadProfile();
+    profile.menuPrefs = prefs;
+    saveProfile(profile);
+
+}
+
 function unlock(theme) {
 
     const profile = loadProfile();

@@ -22,9 +22,10 @@ Ez a dokumentum a Matekidő **teljes újbóli teszteléséhez** készült, előr
 | # | Lépés | Várt eredmény | Eredmény |
 |---|-------|---------------|----------|
 | 1.1 | Nyisd meg az appot | „📚 Matekidő – Ki játszik ma?” üdvözlőképernyő, alul „Új játékos” (＋) kártya | |
-| 1.2 | Kattints az „Új játékos”-ra | Megjelenik a modál: név input, avatar-rács, „Mégse” és „Hozzáadás” gomb | |
+| 1.2 | Kattints az „Új játékos”-ra | Megjelenik a modál: név input, avatar-rács, osztályválasztó („Melyik osztályos vagy?”), „Mégse” és „Hozzáadás” gomb | |
 | 1.3 | A „Hozzáadás” gomb inaktív (disabled), amíg üres a név | Ha nincs név, a gomb szürke/letiltott | |
-| 1.4 | Írj be egy nevet (pl. „Mezei Zsófi”), válassz avatart, kattints „Hozzáadás”-ra | Bezárul a modál, megjelenik a játékoskártya a nevvel és az avatarral, ⭐0 📚0 🔥0 | |
+| 1.4 | Írj be egy nevet (pl. „Mezei Zsófi”), válassz avatart és osztályt, kattints „Hozzáadás”-ra | Bezárul a modál, megjelenik a játékoskártya a nevvel és az avatarral, ⭐0 📚0 🔥0 | |
+| 1.4b | Ezután kattints a játékosra | A menü az **osztályválasztóban megadott osztály** feladatait mutatja (nem alapból az 1.) | |
 | 1.5 | Adj hozzá egy második játékost is (pl. „Kiss Áron”) | Két játékoskártya jelenik meg, az első adatai változatlanok | |
 | 1.6 | Kattints az első játékos kártyájára | A kártya kijelölésre kerül (aktív), és a menübe lép | |
 
@@ -137,6 +138,7 @@ Ezt a lépéskört **futtasd végig a főbb feladattípusokon is**, hogy mindegy
 | 8.1 | A menüből `👤 Játékos` gombbal térj vissza | Üdvözlőképernyő, a két játékos listája | |
 | 8.2 | Válts a másik játékosra | A másik játékos önálló profilja (üres/korábbi adatok), a menü az ő nevét/Avatarját mutatja | |
 | 8.3 | A játékoskártya „×” gombjával törölj egy játékost | Megerősítő párbeszéd jelenik meg; „Törlés”-re a játékos és adatai törlődnek | |
+| 8.4 | Játékos A beállít egy osztályt és a Saját listában szűrőt; válts B-re, majd vissza A-ra | A saját osztálya, szűrői és a Saját lista nézete visszaáll B saját beállításai nélkül (nincs keveredés) | |
 
 ---
 

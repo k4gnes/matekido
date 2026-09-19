@@ -23,6 +23,7 @@ const DEFAULT_PROFILE = {
     favorites: [],
     skippedLessons: [],
     skippedCustomLessons: [],
+    menuPrefs: null,
     statistics: {
         addition: { correct: 0, wrong: 0 },
         subtraction: { correct: 0, wrong: 0 },
@@ -153,7 +154,7 @@ export function saveActiveProfile(profile) {
     }
 }
 
-export function createPlayer(name, avatar) {
+export function createPlayer(name, avatar, grade = null) {
 
     const data = loadUsers();
 
@@ -161,7 +162,10 @@ export function createPlayer(name, avatar) {
         id: generateId(),
         name,
         avatar,
-        profile: { ...DEFAULT_PROFILE }
+        profile: {
+            ...DEFAULT_PROFILE,
+            grade: grade ?? null
+        }
     };
 
     data.players.push(player);
@@ -191,5 +195,4 @@ export function switchPlayer(id) {
     data.activeId = id;
     saveUsers(data);
 
-    removeKeys("matekido-lesson-filters", "matekido-lesson-filters-open", "matekido-lesson-view");
 }

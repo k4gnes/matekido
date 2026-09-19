@@ -6,7 +6,7 @@
 
 Az alkalmazás megnyitásakor válaszd ki, **ki játszik ma**:
 
-- Ha még nincs profil, kattints a **➕** kártyára, add meg a nevet és válassz avatárt.
+- Ha még nincs profil, kattints a **➕** kártyára, add meg a nevet, válassz avatárt és osztályt.
 - **Több játékosnak** is lehet saját profilja (pl. testvérnek).
 - A **👤 Játékos** gombbal bármikor visszatérsz a profilválasztóhoz – a navigációs sávban minden képernyőn megtalálható.
 - A profilját mindenki a magáétól folytatja: saját csillagjai, saját szintje, saját eredményei vannak.
@@ -16,7 +16,7 @@ Az alkalmazás megnyitásakor válaszd ki, **ki játszik ma**:
 
 A leckék **osztályonként vannak adagolva**, így mindig pontosan az adott évfolyamhoz tartozó tananyagot kapja:
 
-- A főmenüben kérdez meg az app, hogy *melyik osztályban játszol* (1., 2., 3. osztály).
+- A főmenüben kérdez meg az app, hogy *melyik osztályban játszol* (1., 2., 3., 4. osztály), illetve **új profil létrehozásakor** az ablakban is be kell jelölni az osztályt.
 - A választás **játékosonként elmentődik**, és legközelebb már nem kérdezi meg.
 - Ha másik osztályt szeretnél, a menüben a **🔙 Osztály** gombbal léphetsz vissza a választóhoz.
 - Minden leckéről látszik, hányadik osztályos a mellett található jelvényen (pl. „1. osztály”).
@@ -109,6 +109,7 @@ A **🎛️ Saját lista** füllel magadnak válogatsz: az osztály, nehézség,
 - A **⏭️** gombbal félreteheted a feladatot: az **⏭️ Átugrott feladatok** szekcióban visszaköszön, és amíg van más megoldatlan feladat a listában, csak a **végén** jön újra.
 - A **🎯 Gyakorlásra javasolt** és a **❤️ Kedvenceim** szekció a **listádon belül** ajánl: csak azok a 90% alatti (illetve kedvenc) feladatok látszanak, amelyek a szűrt listádban is benne vannak, és a játék ezeken a csoportjukon belül halad végig.
 - A saját listás félretetteket az app **külön tartja** az osztályosaktól – nem keverednek egymással.
+- A Saját lista nézeted, a szűrők és az osztályod **játékosonként megmaradnak**: játékosváltás után mindig a saját beállításaid térnek vissza, az osztályváltás a váltásnál nem vész el.
 
 ## 🔍 Szűrők – ha mégis keresnél valamit
 
@@ -120,7 +121,7 @@ A szűrőkre általában **nincs szükség**, mert az osztályválasztás adja a
 | 🧩 Feladat | Nagy témakör: Számok, Műveletek, Szorzás & Osztás, Gyakorlati matek, Geometria, Szöveges feladatok |
 | 🎯 Készség és Típus | A készség az, **mit tanul** a gyerek; a típus az, **hogyan kérdezi** a feladat |
 
-- A szűrők **megmaradnak** a következő látogatásra is.
+- A szűrők **játékosonként megmaradnak** a következő látogatásra is – másik játékosra váltva az ő beállításai érvényesek.
 - A **✕ Szűrők törlése** gomb visszaállítja az összes leckét.
 
 ## 👨‍👩‍👧 Szülőknek

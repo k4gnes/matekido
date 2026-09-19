@@ -1,9 +1,9 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createNavBar } from "./ui/navbar.js";
-import { loadJSON, saveJSON, loadRaw, saveRaw, removeKeys } from "../storage.js";
+import { loadJSON, loadRaw, saveRaw, removeKeys } from "../storage.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
-import { getLessonStats, getActiveWorld, getActiveGrade, setActiveGrade, getFavoriteLessons, getSkippedLessons, isFavoriteLesson, toggleFavoriteLesson, getCustomDoneLessons } from "../profile/Profile.js";
+import { getLessonStats, getActiveWorld, getActiveGrade, setActiveGrade, getFavoriteLessons, getSkippedLessons, isFavoriteLesson, toggleFavoriteLesson, getCustomDoneLessons, getMenuPrefs, saveMenuPrefs } from "../profile/Profile.js";
 import { renderMarkdown } from "../utils/markdown.js";
 import { CATEGORIES, SKILLS } from "../data/skills.js";
 import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js";
@@ -17,25 +17,50 @@ const VIEW_STORAGE_KEY = "matekido-lesson-view";
 const CUSTOM_UNLOCKED_KEY = "matekido-custom-unlocked";
 
 function saveListHidden(hidden) {
-    saveRaw(LIST_HIDDEN_KEY, hidden ? "1" : "0");
+    const prefs = getMenuPrefs();
+    prefs.listHidden = hidden;
+    saveMenuPrefs(prefs);
 }
 
 function loadListHidden() {
+    const prefs = getMenuPrefs();
+    if ("listHidden" in prefs && (prefs.listHidden === true || prefs.listHidden === false)) {
+        return prefs.listHidden;
+    }
     const val = loadRaw(LIST_HIDDEN_KEY);
     if (val === "1") return true;
     if (val === "0") return false;
     return null;
 }
 
+function normalizeFilters(parsed) {
+    return {
+        difficulty: parsed.difficulty || [],
+        skills: parsed.skills || [],
+        types: (parsed.types || []).map(t => t === "decomposition-find-wrong" ? "decomposition" : t),
+        ranges: parsed.ranges || [],
+        categories: (parsed.categories || []).map(c => ["time", "money", "measurement"].includes(c) ? "practical" : c),
+        grades: parsed.grades || []
+    };
+}
+
 function saveFilters(filters) {
-    saveJSON(FILTER_STORAGE_KEY, filters);
+    const prefs = getMenuPrefs();
+    prefs.filters = filters;
+    saveMenuPrefs(prefs);
 }
 
 function saveFilterOpen(open) {
-    saveRaw(FILTER_OPEN_KEY, open ? "1" : "0");
+    const prefs = getMenuPrefs();
+    prefs.filterOpen = open;
+    saveMenuPrefs(prefs);
 }
 
 function loadFilterOpen() {
+    const prefs = getMenuPrefs();
+    if ("filterOpen" in prefs && (prefs.filterOpen === true || prefs.filterOpen === false)) {
+        return prefs.filterOpen;
+    }
     const val = loadRaw(FILTER_OPEN_KEY);
     if (val === "1") return true;
     if (val === "0") return false;
@@ -55,14 +80,16 @@ function saveSelectedGrade(grade) {
 }
 
 function setUpgradesMode(custom) {
-    if (custom) {
-        saveRaw(VIEW_STORAGE_KEY, "custom");
-    } else {
-        removeKeys(VIEW_STORAGE_KEY);
-    }
+    const prefs = getMenuPrefs();
+    prefs.view = custom ? "custom" : null;
+    saveMenuPrefs(prefs);
 }
 
 function loadCustomMode() {
+    const prefs = getMenuPrefs();
+    if ("view" in prefs) {
+        return prefs.view === "custom";
+    }
     return loadRaw(VIEW_STORAGE_KEY) === "custom";
 }
 
@@ -75,16 +102,13 @@ function unlockCustom() {
 }
 
 function loadFilters() {
+    const prefs = getMenuPrefs();
+    if (prefs.filters) {
+        return normalizeFilters(prefs.filters);
+    }
     const parsed = loadJSON(FILTER_STORAGE_KEY);
     if (parsed) {
-        return {
-            difficulty: parsed.difficulty || [],
-            skills: parsed.skills || [],
-            types: (parsed.types || []).map(t => t === "decomposition-find-wrong" ? "decomposition" : t),
-            ranges: parsed.ranges || [],
-            categories: (parsed.categories || []).map(c => ["time", "money", "measurement"].includes(c) ? "practical" : c),
-            grades: parsed.grades || []
-        };
+        return normalizeFilters(parsed);
     }
     return { difficulty: [], skills: [], types: [], ranges: [], categories: [], grades: [] };
 }
@@ -622,6 +646,11 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
 
     let ctrlLastGrade = null;
 
+    if (customMode) {
+        ctrlLastGrade = selectedGrade;
+        selectedGrade = null;
+    }
+
     function toggleGradePicker() {
         if (gradePickerPanel.style.display !== "none") {
             gradePickerPanel.style.display = "none";
@@ -642,7 +671,6 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     function enterCustomMode() {
         ctrlLastGrade = selectedGrade;
         selectedGrade = null;
-        saveSelectedGrade(null);
         customMode = true;
         setUpgradesMode(true);
         showFilters = true;

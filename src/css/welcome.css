@@ -205,6 +205,7 @@
     border: 2px solid transparent;
     border-radius: 10px;
     background: #f5f5f5;
+    color: #2b2b2b;
     cursor: pointer;
     text-align: center;
     transition: border-color .15s, background .15s;
@@ -218,6 +219,16 @@
 .avatar-option.selected {
     border-color: var(--primary);
     background: rgba(79, 134, 247, .1);
+}
+
+.modal .lesson-grid {
+    width: 100%;
+    margin-bottom: 1.2rem;
+}
+
+.modal .profile-page-button.selected {
+    outline: 3px solid var(--primary-dark);
+    outline-offset: 2px;
 }
 
 .modal-actions {

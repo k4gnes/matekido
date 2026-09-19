@@ -36,6 +36,7 @@ import { generateVolume } from "./volumeGenerator.js?v=2";
 import { generateMoneyChange } from "./moneyChangeGenerator.js?v=2";
 import { generateLengthUnits } from "./lengthUnitsGenerator.js?v=2";
 import { generateCompoundShape } from "./compoundShapeGenerator.js?v=2";
+import { generateShapeFormula } from "./shapeFormulaGenerator.js?v=1";
 import { generatePlaceValueHundreds } from "./placeValueHundredsGenerator.js?v=1";
 import { generatePlaceValueThousands } from "./placeValueThousandsGenerator.js?v=1";
 import { generateNumberName } from "./numberNameGenerator.js?v=5";
@@ -150,6 +151,8 @@ export function generate(step) {
             return generateLengthUnits(opts);
         case "compound-shape":
             return generateCompoundShape(opts);
+        case "shape-formula":
+            return generateShapeFormula(opts);
         case "place-value-hundreds":
             return generatePlaceValueHundreds(opts);
         case "place-value-thousands":

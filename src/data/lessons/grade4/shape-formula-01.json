@@ -1,0 +1,90 @@
+{
+    "id": "grade4-shape-formula-01",
+    "title": "🧮 Kerület és terület számolással",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🧮 Képletekkel, gyorsan!",
+            "text": "Képletekkel is számolhatsz! A téglalap kerülete: K = 2 × (a + b), a területe: T = a × b. A négyzetnél: K = 4 × a és T = a × a. Próbáljuk ki!",
+            "illustration": "<div style='margin:.5rem 0; font-size:2rem; text-align:center;'>K = 2×(a+b) · T = a×b</div><div style='font-size:0.95rem; opacity:0.8; text-align:center;'>Például a = 5 cm, b = 3 cm: K = 2×8 = 16 cm, T = 5×3 = 15 cm².</div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "🧮 Csomagolópapír a postán",
+                    "text": "A postán téglalap alakú csomagokat mérnek! Számold ki képlettel a kerületüket és a területüket!"
+                },
+                "racing": {
+                    "title": "🏎️ Szervizüzletek a boxutcában",
+                    "text": "A szerelőcsapat téglalap alakú területet mér! Számold ki a kerületét és a területét!"
+                },
+                "football": {
+                    "title": "⚽ Az edzőpálya méretei",
+                    "text": "A pálya téglalap alakú! Számold ki képlettel a kerületét és a területét!"
+                },
+                "cooking": {
+                    "title": "🍳 A sütő tepsi méretei",
+                    "text": "A tepsi téglalap alakú! Számold ki a kerületét és a területét!"
+                },
+                "animals": {
+                    "title": "🦁 Medence az állatkertben",
+                    "text": "A fókamedence téglalap alakú! Számold ki a kerületét és a területét!"
+                },
+                "space": {
+                    "title": "🛰️ Napelemek az űrhajón",
+                    "text": "Az űrhajó napelemei négyzet alakúak! Számold ki képlettel a kerületüket és a területüket!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "shape-formula",
+
+            "options": {
+                "count": 5,
+                "mode": "perimeter"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "shape-formula",
+
+            "options": {
+                "count": 5,
+                "mode": "area"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Képlettel is pontosan számolod a kerületet és a területet!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🧮 Ügyes voltál!",
+                    "text": "A csomagok kerületét és területét is pontosan kiszámoltad!"
+                },
+                "racing": {
+                    "title": "🏎️ Nagy vagy!",
+                    "text": "Képlettel is gyorsan számolsz!"
+                },
+                "football": {
+                    "title": "⚽ Szép munka!",
+                    "text": "A pálya méreteit is pontosan kiszámoltad!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "A tepsi kerülete és területe is rendben van!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "A medence kerületét és területét is pontosan kiszámoltad!"
+                },
+                "space": {
+                    "title": "🛰️ Nagy vagy!",
+                    "text": "A napelemek méreteit is pontosan kiszámoltad!"
+                }
+            }
+        }
+    ]
+}

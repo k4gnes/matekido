@@ -1,0 +1,37 @@
+.sf-svg {
+    display: block;
+    margin: .4rem auto;
+    max-width: 92%;
+}
+
+.sf-prompt {
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-align: center;
+    color: #475569;
+    margin: .4rem 0 .6rem;
+}
+
+.sf-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .6rem;
+    margin: .8rem 0;
+}
+
+.sf-option {
+    background: #fff;
+    border: 2px solid var(--primary);
+    border-radius: 16px;
+    padding: .6rem 1.1rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1e293b;
+    cursor: pointer;
+}
+
+.sf-option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
+}

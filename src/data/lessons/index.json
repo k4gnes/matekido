@@ -3107,6 +3107,29 @@
             }
         },
         {
+            "id": "shape-formula-01",
+            "title": "🧮 Kerület és terület számolással",
+            "grades": [
+                4
+            ],
+            "category": "geometry",
+            "skill": "perimeter",
+            "difficulty": 3,
+            "type": "shape-formula",
+            "range": 100,
+            "mission": "🧮 Kerület és terület számolással",
+            "subtitle": "képletek téglalapnál és négyzetnél",
+            "file": "./data/lessons/grade4/shape-formula-01.json",
+            "worldTitles": {
+                "postman": "🧮 Kerület és terület a postán",
+                "racing": "🏎️ Kerület és terület a boxutcában",
+                "cooking": "🍳 A sütő tepsi méretei",
+                "football": "⚽ Az edzőpálya méretei",
+                "animals": "🦁 Medence az állatkertben",
+                "space": "🛰️ Napelemek az űrhajón"
+            }
+        },
+        {
             "id": "money-pay-03",
             "title": "💰 Vásárlás 1000-ig",
             "grades": [

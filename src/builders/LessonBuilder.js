@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=36";
+import { generate } from "../generators/index.js?v=37";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -376,6 +376,11 @@ export function buildLesson(lesson) {
             } else if (step.generator === "compound-shape") {
                 result.push({
                     type: "compound-shape",
+                    ...task
+                });
+            } else if (step.generator === "shape-formula") {
+                result.push({
+                    type: "shape-formula",
                     ...task
                 });
             } else if (step.generator === "place-value-hundreds") {

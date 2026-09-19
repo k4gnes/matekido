@@ -39,6 +39,7 @@ import { renderPolygon } from "../components/polygon.js?v=4";
 import { renderElapsedTime } from "../components/elapsedTime.js?v=1";
 import { renderLengthUnits } from "../components/lengthUnits.js?v=1";
 import { renderCompoundShape } from "../components/compoundShape.js?v=2";
+import { renderShapeFormula } from "../components/shapeFormula.js?v=3";
 import { renderWeight } from "../components/weight.js?v=2";
 import { renderVolume } from "../components/volume.js?v=2";
 import { renderMoneyChange } from "../components/moneyChange.js?v=3";
@@ -136,7 +137,8 @@ const COUNTED_TYPES = new Set([
     "polygon",
     "elapsed-time",
     "length-units",
-    "compound-shape"
+    "compound-shape",
+    "shape-formula"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -200,6 +202,7 @@ const RENDERERS = new Map([
     ["elapsed-time", renderElapsedTime],
     ["length-units", renderLengthUnits],
     ["compound-shape", renderCompoundShape],
+    ["shape-formula", renderShapeFormula],
     ["weight", renderWeight],
     ["volume", renderVolume],
     ["money-change", renderMoneyChange],

@@ -67,7 +67,8 @@ export const TYPE_EMOJI = {
     polygon: "🔷",
     "elapsed-time": "🕐",
     "length-units": "📏",
-    "compound-shape": "🧱"
+    "compound-shape": "🧱",
+    "shape-formula": "🧮"
 };
 
 export const TYPE_LABEL = {
@@ -139,5 +140,6 @@ export const TYPE_LABEL = {
     polygon: "Sokszögek",
     "elapsed-time": "Idő – óra és perc",
     "length-units": "Hosszúságok a valóságban",
-    "compound-shape": "Összetett alakzatok"
+    "compound-shape": "Összetett alakzatok",
+    "shape-formula": "Kerület és terület képletekkel"
 };

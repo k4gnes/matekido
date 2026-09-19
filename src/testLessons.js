@@ -632,6 +632,18 @@ function validateStep(step, ctx) {
             if (step.options[step.answer] !== step.unit) fail(ctx, "answer nem a helyes egység");
             break;
         }
+    case "shape-formula": {
+            if (!["perimeter", "area"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!["square", "rectangle"].includes(step.shape)) fail(ctx, `shape hibás: ${step.shape}`);
+            if (!isInt(step.a) || !isInt(step.b) || step.a < 1 || step.b < 1) fail(ctx, `a/b hibás: ${step.a} x ${step.b}`);
+            if (step.shape === "square" && step.a !== step.b) fail(ctx, `négyzetnél a != b (${step.a} != ${step.b})`);
+            const expectedFormula = step.mode === "perimeter"
+                ? 2 * (step.a + step.b)
+                : step.a * step.b;
+            if (step.answer !== expectedFormula) fail(ctx, `answer (${step.answer}) != képlet (${expectedFormula})`);
+            if (!Array.isArray(step.options) || !step.options.includes(step.answer)) fail(ctx, "options nem tartalmazza a választ");
+            break;
+        }
     case "compound-shape": {
             if (!["perimeter", "area"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             if (!["L", "stairs"].includes(step.kind)) fail(ctx, `kind hibás: ${step.kind}`);

@@ -3400,6 +3400,29 @@
                 "animals": "🦁 Azonos nevezőjű törtek az állatkertben",
                 "space": "🤖 Azonos nevezőjű törtek az űrben"
             }
+        },
+        {
+            "id": "polygon-01",
+            "title": "🔷 Sokszögek és tulajdonságaik",
+            "grades": [
+                4
+            ],
+            "category": "geometry",
+            "skill": "shapes",
+            "difficulty": 2,
+            "type": "polygon",
+            "range": null,
+            "mission": "📐 Sokszögek",
+            "subtitle": "Sokszögek oldalai, csúcsai és átlói",
+            "file": "./data/lessons/grade4/polygon-01.json",
+            "worldTitles": {
+                "postman": "📐 Sokszögek a postán",
+                "racing": "🏎️ Sokszögek a pályán",
+                "football": "⚽ Sokszögek a pályán",
+                "cooking": "🍳 Sokszögek a konyhában",
+                "animals": "🦁 Sokszögek az állatkertben",
+                "space": "🤖 Sokszögek az űrben"
+            }
         }
     ],
     "gradeConfig": [

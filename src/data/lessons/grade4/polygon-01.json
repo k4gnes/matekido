@@ -1,0 +1,95 @@
+{
+    "id": "grade4-polygon-01",
+    "title": "Sokszögek és tulajdonságaik",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📐 Oldalak, csúcsok és átlók",
+            "text": "A sokszögeket az oldalaik és a csúcsaik számáról ismerjük meg: a háromszögnek 3, a négyszögnek 4, az ötszögnek 5 oldala van. Az átló pedig két olyan csúcsot köt össze, amelyek nem szomszédosak!",
+            "illustration": "<div style='margin:.5rem 0; font-size:1.05rem; text-align:center; line-height:2;'>🔺 háromszög = 3 oldal<br>◆ négyszög = 4 oldal<br>⬠ ötszög = 5 oldal</div><div style='font-size:0.95rem; opacity:0.8; text-align:center;'>A háromszögnek egyetlen átlója sincs!</div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "📐 Sokszögek a postán",
+                    "text": "A postai alakzatokat oldalaik, csúcsaik és átlóik szerint vizsgáljuk meg!",
+                    "illustration": "<div style='margin:.5rem 0; font-size:2rem; text-align:center;'>🔼 ◆ ⬟</div>"
+                },
+                "racing": {
+                    "title": "🏎️ Sokszögek a pályán",
+                    "text": "A versenypályán a felrajzolt alakzatokat oldalaik, csúcsaik és átlóik szerint vizsgáljuk!",
+                    "illustration": "<div style='margin:.5rem 0; font-size:2rem; text-align:center;'>🔼 ◆ ⬟</div>"
+                },
+                "football": {
+                    "title": "⚽ Sokszögek a pályán",
+                    "text": "A focipályán a felrajzolt alakzatokat oldalaik, csúcsaik és átlóik szerint vizsgáljuk!",
+                    "illustration": "<div style='margin:.5rem 0; font-size:2rem; text-align:center;'>🔼 ◆ ⬟</div>"
+                },
+                "cooking": {
+                    "title": "🍳 Sokszögek a konyhában",
+                    "text": "A konyhában a tányérok és sütemények alakzatát oldalaik, csúcsaik és átlóik szerint vizsgáljuk!",
+                    "illustration": "<div style='margin:.5rem 0; font-size:2rem; text-align:center;'>🔼 ◆ ⬟</div>"
+                },
+                "animals": {
+                    "title": "🦁 Sokszögek az állatkertben",
+                    "text": "Az állatkert karámjait oldalaik, csúcsaik és átlóik szerint vizsgáljuk meg!"
+                },
+                "space": {
+                    "title": "🤖 Sokszögek az űrben",
+                    "text": "Az űrhajó ablakai sokszögek – oldalaik, csúcsaik és átlóik szerint vizsgáljuk meg!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "polygon",
+
+            "options": {
+                "count": 4,
+                "mode": "mixed"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "polygon",
+
+            "options": {
+                "count": 4,
+                "mode": "diagonals"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Már ismered a sokszögek oldalait, csúcsait és átlóit is!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📐 Nagy vagy!",
+                    "text": "Minden postai alakzatot jól megismertél!"
+                },
+                "racing": {
+                    "title": "🏎️ Nagy vagy!",
+                    "text": "Minden pályaalakzatot jól megismertél!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden pályaalakzatot jól megismertél!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden konyhaalakzatot jól megismertél!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden karámot jól megismertél!"
+                },
+                "space": {
+                    "title": "🛸 Szuper vagy!",
+                    "text": "Minden űrhajóablakot jól megismertél!"
+                }
+            }
+        }
+    ]
+}

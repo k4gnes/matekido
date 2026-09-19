@@ -35,6 +35,7 @@ import { renderTrueFalse } from "../components/trueFalse.js?v=5";
 import { renderFindError } from "../components/findError.js?v=2";
 import { renderShapeCompare } from "../components/shapeCompare.js?v=3";
 import { renderSolidShape } from "../components/solidShape.js?v=2";
+import { renderPolygon } from "../components/polygon.js?v=4";
 import { renderWeight } from "../components/weight.js?v=2";
 import { renderVolume } from "../components/volume.js?v=2";
 import { renderMoneyChange } from "../components/moneyChange.js?v=3";
@@ -128,7 +129,8 @@ const COUNTED_TYPES = new Set([
     "angles",
     "circle",
     "probability",
-    "operation-order"
+    "operation-order",
+    "polygon"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -188,6 +190,7 @@ const RENDERERS = new Map([
     ["find-error", renderFindError],
     ["shape-compare", renderShapeCompare],
     ["solid-shape", renderSolidShape],
+    ["polygon", renderPolygon],
     ["weight", renderWeight],
     ["volume", renderVolume],
     ["money-change", renderMoneyChange],

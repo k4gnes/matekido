@@ -17,10 +17,19 @@ import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
 
-const INDEX_ANSWER_TYPES = new Set(["calendar", "data-chart", "solid-shape"]);
+const INDEX_ANSWER_TYPES = new Set(["calendar", "data-chart", "solid-shape", "polygon"]);
 
 const WORLDS = ["postman", "racing", "football", "cooking", "animals", "space"];
 const PASSES = { postman: 12, racing: 4, football: 4, cooking: 4, animals: 4, space: 4 };
+
+const POLYGON_SIDES = {
+    triangle: 3,
+    square: 4,
+    pentagon: 5,
+    hexagon: 6,
+    heptagon: 7,
+    octagon: 8
+};
 
 const errors = [];
 
@@ -256,6 +265,25 @@ function validateStep(step, ctx) {
                 if (!step.options.every(o => typeof o === "string" && o.length > 0)) fail(ctx, "name options nem stringek");
             } else {
                 if (!step.options.every(o => isInt(o) && o > 0)) fail(ctx, "faces options nem pozitív egészek");
+            }
+            break;
+        }
+        case "polygon": {
+            if (!["name", "sides", "vertices", "diagonals"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!POLYGON_SIDES[step.kind]) fail(ctx, `kind hibás: ${step.kind}`);
+            if (step.n !== POLYGON_SIDES[step.kind]) fail(ctx, `n != oldalak száma (${step.n})`);
+            if (!Array.isArray(step.options) || step.options.length < 2) fail(ctx, "options hiányos");
+            if (!isInt(step.answer) || step.answer < 0 || step.answer >= step.options.length) {
+                fail(ctx, `answer index hibás: ${step.answer}`);
+            }
+            const correct = step.mode === "name"
+                ? step.answer
+                : step.options.indexOf(step.mode === "sides" || step.mode === "vertices" ? step.n : step.n * (step.n - 3) / 2);
+            if (step.options[step.answer] !== step.options[correct]) fail(ctx, "answer nem a helyes érték");
+            if (step.mode === "name") {
+                if (!step.options.every(o => typeof o === "string" && o.length > 0)) fail(ctx, "name options nem stringek");
+            } else {
+                if (!step.options.every(o => isInt(o) && o >= 0)) fail(ctx, "számoptions nem nemnegatív egészek");
             }
             break;
         }

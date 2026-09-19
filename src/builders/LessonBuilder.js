@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=28";
+import { generate } from "../generators/index.js?v=29";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -341,6 +341,11 @@ export function buildLesson(lesson) {
             } else if (step.generator === "solid-shape") {
                 result.push({
                     type: "solid-shape",
+                    ...task
+                });
+            } else if (step.generator === "polygon") {
+                result.push({
+                    type: "polygon",
                     ...task
                 });
             } else if (step.generator === "weight") {

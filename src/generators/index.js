@@ -57,6 +57,7 @@ import { generateFractionEqualDen } from "./fractionEqualDenGenerator.js?v=1";
 import { generateCircle } from "./circleGenerator.js?v=1";
 import { generateProbability } from "./probabilityGenerator.js?v=1";
 import { generateOperationOrder } from "./operationOrderGenerator.js?v=1";
+import { generatePolygon } from "./polygonGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -188,6 +189,8 @@ export function generate(step) {
             return generateProbability(opts);
         case "operation-order":
             return generateOperationOrder(opts);
+        case "polygon":
+            return generatePolygon(opts);
 
         default:
             throw new Error(

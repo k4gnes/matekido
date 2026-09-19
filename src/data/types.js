@@ -63,7 +63,8 @@ export const TYPE_EMOJI = {
     "bridge-ten": "🧩",
     "match-groups": "🧩",
     grouping: "📦",
-    weight: "⚖️"
+    weight: "⚖️",
+    polygon: "🔷"
 };
 
 export const TYPE_LABEL = {
@@ -131,5 +132,6 @@ export const TYPE_LABEL = {
     "bridge-ten": "Tízes átlépés",
     "match-groups": "Csoportok párosítása",
     grouping: "Csoportosítás",
-    weight: "Tömeg"
+    weight: "Tömeg",
+    polygon: "Sokszögek"
 };

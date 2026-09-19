@@ -1,0 +1,90 @@
+{
+    "id": "grade4-compound-shape-01",
+    "title": "🧱 Összetett alakzatok kerülete és területe",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🧱 L- és lépcsős alakzatok",
+            "text": "Az L-alakú és a lépcsős alakzatok nem téglalapok – de összerakhatod őket téglalapokból! Számold ki a kerületüket és a területüket!",
+            "illustration": "<div style='margin:.5rem 0; font-size:2rem; text-align:center;'>┘-alak · 📶 lépcső</div><div style='font-size:0.95rem; opacity:0.8; text-align:center;'>A kerület a piros vonal, a terület a kék négyzetek száma.</div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "🧱 Tasakok és dobozok a postán",
+                    "text": "A postán L-alakú csomagokat is ragasztanak! Számold ki a kerületüket és a területüket!"
+                },
+                "racing": {
+                    "title": "🏎️ A boxutca alakzatai",
+                    "text": "A szerelőcsapat alakzatokat rajzol a mentesített zónán! Mennyi a kerület, mennyi a terület?"
+                },
+                "football": {
+                    "title": "⚽ Bóják a pályán",
+                    "text": "Az edző L- és lépcsős alakzatokba rendezett bójákat! Számold ki a kerületüket és a területüket!"
+                },
+                "cooking": {
+                    "title": "🍳 Formák a konyhában",
+                    "text": "A konyhában L-alakú szendvicseket is készítenek! Mennyi a kerület, mennyi a terület?"
+                },
+                "animals": {
+                    "title": "🦁 Karámok az állatkertben",
+                    "text": "A gondozók L-alakú karámokat is kerítenek! Számold ki a kerületüket és a területüket!"
+                },
+                "space": {
+                    "title": "🤖 Modulok az űrhajón",
+                    "text": "Az űrhajó is L-alakú modulokból áll! Mennyi a kerület, mennyi a terület?"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "compound-shape",
+
+            "options": {
+                "count": 4,
+                "mode": "perimeter"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "compound-shape",
+
+            "options": {
+                "count": 4,
+                "mode": "area"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Az összetett alakzatok kerületét és területét is ügyesen számolod!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🧱 Ügyes voltál!",
+                    "text": "Az összetett alakzatokat is pontosan mérted!"
+                },
+                "racing": {
+                    "title": "🏎️ Nagy vagy!",
+                    "text": "A kerületet és a területet is jól számolod!"
+                },
+                "football": {
+                    "title": "⚽ Szép munka!",
+                    "text": "Az összetett alakzatokat is pontosan mérted!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "A kerület és a terület is rendben van!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Az összetett alakzatokat is ügyesen mérted!"
+                },
+                "space": {
+                    "title": "🛰️ Nagy vagy!",
+                    "text": "Az űrhajó moduljait is pontosan kiszámoltad!"
+                }
+            }
+        }
+    ]
+}

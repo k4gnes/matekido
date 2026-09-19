@@ -632,6 +632,53 @@ function validateStep(step, ctx) {
             if (step.options[step.answer] !== step.unit) fail(ctx, "answer nem a helyes egység");
             break;
         }
+    case "compound-shape": {
+            if (!["perimeter", "area"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!["L", "stairs"].includes(step.kind)) fail(ctx, `kind hibás: ${step.kind}`);
+            if (!isInt(step.rows) || !isInt(step.cols) || step.rows < 1 || step.cols < 1) fail(ctx, `rows/cols hibás: ${step.rows}x${step.cols}`);
+            if (!Array.isArray(step.cells) || step.cells.length === 0) fail(ctx, "cells üres");
+            const cellSet = new Set();
+            for (const cell of step.cells) {
+                if (!Array.isArray(cell) || cell.length !== 2 || !isInt(cell[0]) || !isInt(cell[1])) {
+                    fail(ctx, `cell hibás: ${JSON.stringify(cell)}`);
+                    continue;
+                }
+                if (cell[0] < 0 || cell[0] >= step.rows || cell[1] < 0 || cell[1] >= step.cols) {
+                    fail(ctx, `cell a rácson kívül: ${cell}`);
+                }
+                cellSet.add(`${cell[0]},${cell[1]}`);
+            }
+            if (cellSet.size !== step.cells.length) fail(ctx, "cellák ismétlődnek");
+            let expected;
+            if (step.mode === "area") {
+                expected = step.cells.length;
+            } else {
+                expected = 0;
+                step.cells.forEach(([r, c]) => {
+                    if (!cellSet.has(`${r - 1},${c}`)) expected++;
+                    if (!cellSet.has(`${r + 1},${c}`)) expected++;
+                    if (!cellSet.has(`${r},${c - 1}`)) expected++;
+                    if (!cellSet.has(`${r},${c + 1}`)) expected++;
+                });
+            }
+            if (step.answer !== expected) fail(ctx, `answer (${step.answer}) != számolt (${expected}, ${step.mode})`);
+            if (!Array.isArray(step.options) || !step.options.includes(step.answer)) fail(ctx, "options nem tartalmazza a választ");
+            if (step.seams !== undefined) {
+                if (!Array.isArray(step.seams) || step.seams.length === 0) fail(ctx, "seams üres");
+                for (const seam of step.seams) {
+                    if (!Array.isArray(seam) || seam.length !== 2) {
+                        fail(ctx, `seam hibás: ${JSON.stringify(seam)}`);
+                        continue;
+                    }
+                    for (const [r, c] of seam) {
+                        if (!isInt(r) || !isInt(c) || r < 0 || r > step.rows || c < 0 || c > step.cols) {
+                            fail(ctx, `seam a rácson kívül: ${JSON.stringify(seam)}`);
+                        }
+                    }
+                }
+            }
+            break;
+        }
     }
 
     checkOptions(step, ctx);

@@ -3084,6 +3084,29 @@
             }
         },
         {
+            "id": "compound-shape-01",
+            "title": "🧱 Összetett alakzatok kerülete és területe",
+            "grades": [
+                4
+            ],
+            "category": "geometry",
+            "skill": "area",
+            "difficulty": 3,
+            "type": "compound-shape",
+            "range": 100,
+            "mission": "🧱 Összetett alakzatok",
+            "subtitle": "L- és lépcsős alakzatok felbontása",
+            "file": "./data/lessons/grade4/compound-shape-01.json",
+            "worldTitles": {
+                "postman": "🧱 Összetett alakzatok a postán",
+                "racing": "🏎️ Összetett alakzatok a boxutcában",
+                "cooking": "🍳 Formák a konyhában",
+                "football": "⚽ Bóják a pályán",
+                "animals": "🦁 Karámok az állatkertben",
+                "space": "🛰️ Modulok az űrhajón"
+            }
+        },
+        {
             "id": "money-pay-03",
             "title": "💰 Vásárlás 1000-ig",
             "grades": [

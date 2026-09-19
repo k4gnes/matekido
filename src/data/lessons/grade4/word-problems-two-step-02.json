@@ -1,0 +1,86 @@
+{
+  "id": "grade4-word-problems-two-step-02",
+  "title": "📝 Többlépéses szöveges feladatok",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📝 Többlépéses történetek",
+      "text": "Ezekben a feladatokban két lépéssel kell számolni! Először az 1. lépést oldd meg, aztán jöhet a 2. lépés!",
+      "worldTitles": {
+        "postman": {
+          "title": "📝 Többlépéses postás történetek",
+          "text": "A postán sokféle csomag fordul meg! Olvasd el a történetet, és két lépésben számolj!"
+        },
+        "racing": {
+          "title": "🏎️ Többlépéses gyorsasági feladatok",
+          "text": "A versenypályán sok kereket és kilométert számolgatnak! Két lépésben oldd meg a feladatot!"
+        },
+        "cooking": {
+          "title": "🍳 Többlépéses konyhai történetek",
+          "text": "A konyhában sütés előtt alaposan kell számolni! Oldd meg a feladatot két lépésben!"
+        },
+        "football": {
+          "title": "⚽ Többlépéses focis történetek",
+          "text": "A focicsapatban is sokféle dolgot összeadogatnak! Két lépésben számolj!"
+        },
+        "animals": {
+          "title": "🦁 Többlépéses állatkerti történetek",
+          "text": "Az állatkertben is jól kell figyelni a számokra! Olvasd el, és két lépésben számolj!"
+        },
+        "space": {
+          "title": "🤖 Többlépéses űrtörténetek",
+          "text": "Az űrhajósok robotjai és rakétái sok számot mozgatnak! Két lépésben oldd meg!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 5,
+        "max": 1000,
+        "kind": "two-step"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 5,
+        "max": 1000,
+        "kind": "two-step"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megoldottad a többlépéses feladatokat!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a postás történeteket!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a gyorsasági feladatokat!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a konyhai történeteket!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a focis történeteket!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megoldottad az állatkerti történeteket!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad az űrtörténeteket!"
+        }
+      }
+    }
+  ]
+}

@@ -3130,6 +3130,52 @@
             }
         },
         {
+            "id": "word-problems-two-step-02",
+            "title": "📝 Többlépéses szöveges feladatok",
+            "grades": [
+                4
+            ],
+            "category": "wordProblems",
+            "skill": "two-step",
+            "difficulty": 3,
+            "type": "word-problem",
+            "range": 1000,
+            "mission": "📝 Többlépéses történetek",
+            "subtitle": "két lépésben számolni 1000-ig",
+            "file": "./data/lessons/grade4/word-problems-two-step-02.json",
+            "worldTitles": {
+                "postman": "📝 Többlépéses feladatok a postán",
+                "racing": "🏎️ Többlépéses feladatok a pályán",
+                "cooking": "🍳 Többlépéses feladatok a konyhában",
+                "football": "⚽ Többlépéses feladatok a pályán",
+                "animals": "🦁 Többlépéses feladatok az állatkertben",
+                "space": "🛰️ Többlépéses feladatok az űrhajón"
+            }
+        },
+        {
+            "id": "word-problems-proportion-02",
+            "title": "📝 Arányos szöveges feladatok",
+            "grades": [
+                4
+            ],
+            "category": "wordProblems",
+            "skill": "one-step",
+            "difficulty": 3,
+            "type": "word-problem",
+            "range": 1000,
+            "mission": "📝 Arányos történetek",
+            "subtitle": "a felét, a harmadát keresni 1000-ig",
+            "file": "./data/lessons/grade4/word-problems-proportion-02.json",
+            "worldTitles": {
+                "postman": "📝 Arányos történetek a postán",
+                "racing": "🏎️ Arányos történetek a pályán",
+                "cooking": "🍳 Arányos történetek a konyhában",
+                "football": "⚽ Arányos történetek a pályán",
+                "animals": "🦁 Arányos történetek az állatkertben",
+                "space": "🛰️ Arányos történetek az űrhajón"
+            }
+        },
+        {
             "id": "money-pay-03",
             "title": "💰 Vásárlás 1000-ig",
             "grades": [

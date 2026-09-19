@@ -594,28 +594,40 @@ function random(min, max) {
 
 const TWO_STEP_THEMES = {
     postman: [
-        { text: (a, b, c) => `A postán ${a} csomag van. ${b} újabb csomag érkezik. Aztán ${c} csomagot visznek el. Hány csomag van most a postán?`, question: "Hány csomag van most a postán?", success: (ans) => `😊 Szép munka! Most ${ans} csomag van a postán!` },
-        { text: (a, b, c) => `A postaládában ${a} levél van. Tibi ${b} levelet tesz bele. Aztán ${c} levelet kivesz. Hány levél van a ládában?`, question: "Hány levél van a ládában?", success: (ans) => `😊 Szép munka! Most ${ans} levél van a ládában!` }
+        { text: (a, b, c) => `A postán ${a} csomag van. ${b} újabb csomag érkezik. Aztán ${c} csomagot visznek el. Hány csomag van most a postán?`, question: "Hány csomag van most a postán?", success: (ans) => `😊 Szép munka! Most ${ans} csomag van a postán!`, form: "add-sub" },
+        { text: (a, b, c) => `A postaládában ${a} levél van. Tibi ${b} levelet tesz bele. Aztán ${c} levelet kivesz. Hány levél van a ládában?`, question: "Hány levél van a ládában?", success: (ans) => `😊 Szép munka! Most ${ans} levél van a ládában!`, form: "add-sub" },
+        { text: (a, b, c) => `Ma ${a} csomag volt a postán. ${b} csomagot kézbesítenek. Aztán ${c} újabb csomag érkezik. Hány csomag van most a postán?`, question: "Hány csomag van most a postán?", success: (ans) => `😊 Szép munka! Most ${ans} csomag van a postán!`, form: "sub-add" },
+        { text: (a, b, c) => `${b} szállítóautó mindegyikében ${a} csomag van. Még ${c} csomagot beraknak a postára. Hány csomag van összesen?`, question: "Hány csomag van összesen?", success: (ans) => `😊 Szép munka! Összesen ${ans} csomag van!`, form: "mult-add" }
     ],
     racing: [
-        { text: (a, b, c) => `A versenyautó ${a} km-t ment az első körben. A második körben ${b} km-t. Aztán ${c} km-t visszafelé. Hány km-re van most a rajttól?`, question: "Hány km-re van a rajttól?", success: (ans) => `😊 Szép munka! Most ${ans} km-re van a rajttól!` },
-        { text: (a, b, c) => `A garázsban ${a} kerék van. ${b} új kerék érkezik. Aztán ${c} kereket szerelnek fel. Hány kerék marad a garázsban?`, question: "Hány kerék marad a garázsban?", success: (ans) => `😊 Szép munka! ${ans} kerék maradt a garázsban!` }
+        { text: (a, b, c) => `A versenyautó ${a} km-t ment az első körben. A második körben ${b} km-t. Aztán ${c} km-t visszafelé. Hány km-re van most a rajttól?`, question: "Hány km-re van a rajttól?", success: (ans) => `😊 Szép munka! Most ${ans} km-re van a rajttól!`, form: "add-sub" },
+        { text: (a, b, c) => `A garázsban ${a} kerék van. ${b} új kerék érkezik. Aztán ${c} kereket szerelnek fel. Hány kerék marad a garázsban?`, question: "Hány kerék marad a garázsban?", success: (ans) => `😊 Szép munka! ${ans} kerék maradt a garázsban!`, form: "add-sub" },
+        { text: (a, b, c) => `A raktárban ${a} kerék volt. ${b} kereket felszerelnek. Aztán ${c} új kerék érkezik. Hány kerék van most a raktárban?`, question: "Hány kerék van most a raktárban?", success: (ans) => `😊 Szép munka! ${ans} kerék van a raktárban!`, form: "sub-add" },
+        { text: (a, b, c) => `${b} versenyautóban mindegyikben ${a} kerék van. Még ${c} tartalék kerék van a garázsban. Hány kerék van összesen?`, question: "Hány kerék van összesen?", success: (ans) => `😊 Szép munka! Összesen ${ans} kerék van!`, form: "mult-add" }
     ],
     cooking: [
-        { text: (a, b, c) => `A tálban ${a} tojás van. Ancsika ${b} tojást üt bele. Aztán ${c} tojást félretesz. Hány tojás marad a tálban?`, question: "Hány tojás marad a tálban?", success: (ans) => `😊 Szép munka! ${ans} tojás maradt a tálban!` },
-        { text: (a, b, c) => `${a} palacsinta van a tányéron. ${b} palacsintát megsütünk még. Aztán ${c}-t megesznek. Hány palacsinta van a tányéron?`, question: "Hány palacsinta van a tányéron?", success: (ans) => `😊 Szép munka! ${ans} palacsinta van a tányéron!` }
+        { text: (a, b, c) => `A tálban ${a} tojás van. Ancsika ${b} tojást üt bele. Aztán ${c} tojást félretesz. Hány tojás marad a tálban?`, question: "Hány tojás marad a tálban?", success: (ans) => `😊 Szép munka! ${ans} tojás maradt a tálban!`, form: "add-sub" },
+        { text: (a, b, c) => `${a} palacsinta van a tányéron. ${b} palacsintát megsütünk még. Aztán ${c}-t megesznek. Hány palacsinta van a tányéron?`, question: "Hány palacsinta van a tányéron?", success: (ans) => `😊 Szép munka! ${ans} palacsinta van a tányéron!`, form: "add-sub" },
+        { text: (a, b, c) => `${a} palacsinta volt a tányéron. ${b}-t megettek. Aztán még ${c}-t sütnek. Hány palacsinta van most a tányéron?`, question: "Hány palacsinta van most a tányéron?", success: (ans) => `😊 Szép munka! ${ans} palacsinta van a tányéron!`, form: "sub-add" },
+        { text: (a, b, c) => `${b} tálban mindegyikben ${a} palacsinta van. Még ${c} palacsinta csücsül a tányéron. Hány palacsinta van összesen?`, question: "Hány palacsinta van összesen?", success: (ans) => `😊 Szép munka! Összesen ${ans} palacsinta van!`, form: "mult-add" }
     ],
     football: [
-        { text: (a, b, c) => `A csapatban ${a} játékos van. ${b} játékos csatlakozik. Aztán ${c} játékos lecserélik. Hány játékos van a pályán?`, question: "Hány játékos van a pályán?", success: (ans) => `😊 Szép munka! ${ans} játékos van a pályán!` },
-        { text: (a, b, c) => `${a} gól esett az első félidőben. A második félidőben ${b} gól. Aztán ${c} gólt érvénytelenítettek. Hány gól maradt?`, question: "Hány gól maradt?", success: (ans) => `😊 Szép munka! ${ans} gól maradt!` }
+        { text: (a, b, c) => `A csapatban ${a} játékos van. ${b} játékos csatlakozik. Aztán ${c} játékos lecserélik. Hány játékos van a pályán?`, question: "Hány játékos van a pályán?", success: (ans) => `😊 Szép munka! ${ans} játékos van a pályán!`, form: "add-sub" },
+        { text: (a, b, c) => `${a} gól esett az első félidőben. A második félidőben ${b} gól. Aztán ${c} gólt érvénytelenítettek. Hány gól maradt?`, question: "Hány gól maradt?", success: (ans) => `😊 Szép munka! ${ans} gól maradt!`, form: "add-sub" },
+        { text: (a, b, c) => `${a} labda volt a raktárban. ${b} labdát kivisznek a pályára. Aztán ${c} labda érkezik. Hány labda van most a raktárban?`, question: "Hány labda van most a raktárban?", success: (ans) => `😊 Szép munka! ${ans} labda van a raktárban!`, form: "sub-add" },
+        { text: (a, b, c) => `${b} csapatnak ${a} labdára van szüksége. Még ${c} tartalék labda van. Hány labdára van szükség összesen?`, question: "Hány labdára van szükség összesen?", success: (ans) => `😊 Szép munka! Összesen ${ans} labda kell!`, form: "mult-add" }
     ],
     animals: [
-        { text: (a, b, c) => `A kifutóban ${a} zebra van. ${b} zebra érkezik. Aztán ${c} zebrát bezárnak a ketrecbe. Hány zebra marad a kifutóban?`, question: "Hány zebra marad a kifutóban?", success: (ans) => `😊 Szép munka! ${ans} zebra maradt a kifutóban!` },
-        { text: (a, b, c) => `${a} madár ül a fán. ${b} madár Repül oda. Aztán ${c} madár elrepül. Hány madár marad a fán?`, question: "Hány madár marad a fán?", success: (ans) => `😊 Szép munka! ${ans} madár maradt a fán!` }
+        { text: (a, b, c) => `A kifutóban ${a} zebra van. ${b} zebra érkezik. Aztán ${c} zebrát bezárnak a ketrecbe. Hány zebra marad a kifutóban?`, question: "Hány zebra marad a kifutóban?", success: (ans) => `😊 Szép munka! ${ans} zebra maradt a kifutóban!`, form: "add-sub" },
+        { text: (a, b, c) => `${a} madár ül a fán. ${b} madár repül oda. Aztán ${c} madár elrepül. Hány madár marad a fán?`, question: "Hány madár marad a fán?", success: (ans) => `😊 Szép munka! ${ans} madár maradt a fán!`, form: "add-sub" },
+        { text: (a, b, c) => `${a} zebra volt a kifutóban. ${b}-t bezárnak a ketrecbe. Aztán ${c} zebra érkezik. Hány zebra van most a kifutóban?`, question: "Hány zebra van most a kifutóban?", success: (ans) => `😊 Szép munka! ${ans} zebra van a kifutóban!`, form: "sub-add" },
+        { text: (a, b, c) => `${b} karámban mindegyikben ${a} zebra van. Még ${c} zebra sétál a karámok közt. Hány zebra van összesen?`, question: "Hány zebra van összesen?", success: (ans) => `😊 Szép munka! Összesen ${ans} zebra van!`, form: "mult-add" }
     ],
     space: [
-        { text: (a, b, c) => `Az űrállomáson ${a} robot van. ${b} robot érkezik a rakétával. Aztán ${c} robotot a bolygóra küldenek. Hány robot marad az űrállomáson?`, question: "Hány robot marad az űrállomáson?", success: (ans) => `😊 Szép munka! ${ans} robot maradt az űrállomáson!` },
-        { text: (a, b, c) => `${a} rakéta van a dokkban. ${b} rakéta indul el. Aztán ${c} rakéta érkezik. Hány rakéta van most a dokkban?`, question: "Hány rakéta van most a dokkban?", success: (ans) => `😊 Szép munka! ${ans} rakéta van a dokkban!` }
+        { text: (a, b, c) => `Az űrállomáson ${a} robot van. ${b} robot érkezik a rakétával. Aztán ${c} robotot a bolygóra küldenek. Hány robot marad az űrállomáson?`, question: "Hány robot marad az űrállomáson?", success: (ans) => `😊 Szép munka! ${ans} robot maradt az űrállomáson!`, form: "add-sub" },
+        { text: (a, b, c) => `${a} rakéta van a dokkban. ${b} rakéta indul el. Aztán ${c} rakéta érkezik. Hány rakéta van most a dokkban?`, question: "Hány rakéta van most a dokkban?", success: (ans) => `😊 Szép munka! ${ans} rakéta van a dokkban!`, form: "sub-add" },
+        { text: (a, b, c) => `${a} robot volt az űrállomáson. ${b} robotot a bolygóra küldenek. Aztán ${c} robot érkezik. Hány robot van most az űrállomáson?`, question: "Hány robot van most az űrállomáson?", success: (ans) => `😊 Szép munka! ${ans} robot van az űrállomáson!`, form: "sub-add" },
+        { text: (a, b, c) => `${b} rakétán mindegyiken ${a} robot tartózkodik. Még ${c} robot van a dokkban. Hány robot van összesen?`, question: "Hány robot van összesen?", success: (ans) => `😊 Szép munka! Összesen ${ans} robot van!`, form: "mult-add" }
     ]
 };
 
@@ -623,11 +635,33 @@ function generateTwoStep(max, world) {
     const templates = TWO_STEP_THEMES[world] ?? TWO_STEP_THEMES.postman;
     const template = templates[Math.floor(Math.random() * templates.length)];
 
-    const a = random(5, Math.floor(max * 0.5));
-    const b = random(3, Math.floor(max * 0.4));
-    const intermediate = a + b;
-    const c = random(2, Math.min(intermediate - 1, 8));
-    const answer = intermediate - c;
+    const form = template.form ?? "add-sub";
+
+    let a;
+    let b;
+    let c;
+    let intermediate;
+    let answer;
+
+    if (form === "mult-add") {
+        b = random(2, 4);
+        a = random(5, Math.floor(max / b));
+        intermediate = a * b;
+        c = random(1, Math.min(50, Math.max(1, max + 5 - intermediate)));
+        answer = intermediate + c;
+    } else if (form === "sub-add") {
+        a = random(8, Math.floor(max * 0.6));
+        b = random(2, a - 6);
+        intermediate = a - b;
+        c = random(1, 40);
+        answer = intermediate + c;
+    } else {
+        a = random(5, Math.floor(max * 0.5));
+        b = random(3, Math.floor(max * 0.4));
+        intermediate = a + b;
+        c = random(2, Math.min(intermediate - 1, 40));
+        answer = intermediate - c;
+    }
 
     return {
         kind: "two-step",
@@ -638,6 +672,7 @@ function generateTwoStep(max, world) {
         a,
         b,
         c,
+        form,
         intermediate,
         answer,
         firstAnswer: intermediate,

@@ -691,6 +691,47 @@ function validateStep(step, ctx) {
             }
             break;
         }
+    case "word-problem": {
+            if (!["join", "remove", "part-whole", "compare", "multiply", "divide", "proportion", "remainder", "two-step"].includes(step.kind)) {
+                fail(ctx, `ismeretlen kind: ${step.kind}`);
+            }
+            if (typeof step.text !== "string" || step.text.length === 0) fail(ctx, "text hiányzik");
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            if (step.kind === "remainder") {
+                for (const k of ["a", "b", "quotient", "remainder"]) {
+                    if (!isInt(step[k])) fail(ctx, `${k} nem egész: ${step[k]}`);
+                }
+                if (step.a !== step.b * step.quotient + step.remainder) {
+                    fail(ctx, `a (${step.a}) != b*q+r (${step.b}*${step.quotient}+${step.remainder})`);
+                }
+                if (step.remainder <= 0 || step.remainder >= step.b) {
+                    fail(ctx, `remainder nincs (0,${step.b}) tartományban: ${step.remainder}`);
+                }
+                if (!Array.isArray(step.quotientOptions) || !step.quotientOptions.includes(step.quotient)) fail(ctx, "quotientOptions nem tartalmazza a hányadost");
+                if (!Array.isArray(step.remainderOptions) || !step.remainderOptions.includes(step.remainder)) fail(ctx, "remainderOptions nem tartalmazza a maradékot");
+                break;
+            }
+            if (!isInt(step.answer)) fail(ctx, `answer nem egész: ${step.answer}`);
+            if (step.kind === "two-step") {
+                if (!["add-sub", "sub-add", "mult-add"].includes(step.form ?? "add-sub")) fail(ctx, `form hibás: ${step.form}`);
+                for (const k of ["a", "b", "c", "intermediate"]) {
+                    if (!isInt(step[k])) fail(ctx, `${k} nem egész: ${step[k]}`);
+                }
+                const form = step.form ?? "add-sub";
+                const expected = form === "mult-add"
+                    ? step.a * step.b + step.c
+                    : form === "sub-add"
+                        ? step.a - step.b + step.c
+                        : step.a + step.b - step.c;
+                if (step.intermediate !== (form === "mult-add" ? step.a * step.b : form === "sub-add" ? step.a - step.b : step.a + step.b)) {
+                    fail(ctx, `intermediate (${step.intermediate}) hibás`);
+                }
+                if (step.answer !== expected || step.firstAnswer !== step.intermediate) {
+                    fail(ctx, `answer (${step.answer}) != számolt (${expected})`);
+                }
+            }
+            break;
+        }
     }
 
     checkOptions(step, ctx);

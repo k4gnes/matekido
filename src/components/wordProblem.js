@@ -519,6 +519,14 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
 
     } else if (step.kind === "two-step") {
 
+        const form = step.form ?? "add-sub";
+        const ops = {
+            "add-sub": ["+", "−"],
+            "sub-add": ["−", "+"],
+            "mult-add": ["×", "+"]
+        };
+        const [op1, op2] = ops[form] ?? ops["add-sub"];
+
         const visual = document.createElement("div");
         visual.className = "wp-visual";
 
@@ -529,7 +537,7 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
         step1Label.textContent = "1. lépés:";
         const step1Expr = document.createElement("span");
         step1Expr.className = "wp-two-step-expr";
-        step1Expr.textContent = `${step.a} + ${step.b} = ?`;
+        step1Expr.textContent = `${step.a} ${op1} ${step.b} = ?`;
         step1Row.append(step1Label, step1Expr);
         visual.append(step1Row);
 
@@ -540,7 +548,7 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
         step2Label.textContent = "2. lépés:";
         const step2Expr = document.createElement("span");
         step2Expr.className = "wp-two-step-expr";
-        step2Expr.textContent = `? − ${step.c} = ?`;
+        step2Expr.textContent = `? ${op2} ${step.c} = ?`;
         step2Row.append(step2Label, step2Expr);
         visual.append(step2Row);
 
@@ -560,8 +568,8 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
         function showOptionsForPhase(p) {
             options.replaceChildren();
             const opts = p === 1
-                ? makeStepOptions(step.firstAnswer, 0, step.a + step.b + 5)
-                : makeStepOptions(step.answer, 0, step.firstAnswer + 5);
+                ? makeStepOptions(step.firstAnswer, 0, step.firstAnswer + 40)
+                : makeStepOptions(step.answer, 0, step.firstAnswer + 60);
             opts.forEach(value => {
                 const btn = createButton(String(value), { className: "wp-option" });
                 btn.addEventListener("click", () => {
@@ -569,8 +577,8 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
                         if (value === step.firstAnswer) {
                             phase = 2;
                             intermediateValue = step.firstAnswer;
-                            step1Expr.textContent = `${step.a} + ${step.b} = ${intermediateValue}`;
-                            step2Expr.textContent = `${intermediateValue} − ${step.c} = ?`;
+                            step1Expr.textContent = `${step.a} ${op1} ${step.b} = ${intermediateValue}`;
+                            step2Expr.textContent = `${intermediateValue} ${op2} ${step.c} = ?`;
                             step2Row.classList.remove("wp-two-step-pending");
                             onAttempt?.();
                             showOptionsForPhase(2);

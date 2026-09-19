@@ -1,0 +1,86 @@
+{
+  "id": "grade4-word-problems-proportion-02",
+  "title": "📝 Arányos szöveges feladatok",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📝 Mennyi a fele, a harmada?",
+      "text": "Olvasd el a történetet, és keresd meg, mennyi az egésznek a fele vagy a harmada!",
+      "worldTitles": {
+        "postman": {
+          "title": "📝 Arányos történetek a postán",
+          "text": "A postán is sokszor kell kétfelé, háromfelé osztani! Keresd meg, mennyi a fele vagy a harmada!"
+        },
+        "racing": {
+          "title": "🏎️ Arányos történetek a pályán",
+          "text": "Olvasd el a garázstörténetet, és keresd meg, mennyi a fele vagy a harmada!"
+        },
+        "cooking": {
+          "title": "🍳 Arányos történetek a konyhában",
+          "text": "Olvasd el a receptet, és keresd meg, mennyi a fele vagy a harmada!"
+        },
+        "football": {
+          "title": "⚽ Arányos történetek a pályán",
+          "text": "Olvasd el a meccstörténetet, és keresd meg, mennyi a fele vagy a harmada!"
+        },
+        "animals": {
+          "title": "🦁 Arányos történetek az állatkertben",
+          "text": "Olvasd el az állatok történetét, és keresd meg, mennyi a fele vagy a harmada!"
+        },
+        "space": {
+          "title": "🤖 Arányos történetek az űrhajón",
+          "text": "Olvasd el az űrtörténetet, és keresd meg, mennyi a fele vagy a harmada!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 5,
+        "max": 1000,
+        "kind": "proportion"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 5,
+        "max": 1000,
+        "kind": "proportion"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megoldottad az arányos szöveges feladatokat!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a postás történeteket!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a garázstörténeteket!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a konyhai történeteket!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a meccstörténeteket!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megoldottad az állatos történeteket!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad az űrtörténeteket!"
+        }
+      }
+    }
+  ]
+}

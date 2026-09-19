@@ -1,0 +1,104 @@
+{
+    "id": "grade4-money-change-02",
+    "title": "💰 Vásárlás és visszajáró 10 000-ig",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "💰 Nagy vásárlás, nagy visszajáró",
+            "text": "Nagyobb dolgokat is vehetünk! Ha valami 1000–10 000 Ft-ba kerül, tízezres vagy ötezres bankjeggyel is fizethetsz. Mennyi lesz a visszajáró?",
+            "illustration": "<div style='margin:.5rem 0; font-size:2rem; text-align:center;'>4000 Ft 🛒 🎉 10000 Ft → visszajáró 6000 Ft</div><div style='font-size:0.95rem; opacity:0.8; text-align:center;'>Nagyobb címlettel fizetsz, és kiszámolod a visszajárót.</div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Visszajáró a postán",
+                    "text": "A postán nagyobb csomagokért is fizetnek! Fizess nagyobb címlettel, és számold ki a visszajárót!",
+                    "illustration": "<div style='margin:.5rem 0; font-size:2rem; text-align:center;'>4000 Ft 📮 10000 Ft → 6000 Ft</div>"
+                },
+                "racing": {
+                    "title": "🏎️ Visszajáró a versenyboltban",
+                    "text": "A csapat nagyobb felszerelést is vesz! Fizess nagyobb címlettel, és számold ki a visszajárót!",
+                    "illustration": "<div style='margin:.5rem 0; font-size:2rem; text-align:center;'>3500 Ft 🏎️ 5000 Ft → 1500 Ft</div>"
+                },
+                "football": {
+                    "title": "⚽ Visszajáró a szurkolói boltban",
+                    "text": "Nagyobb szurkolói dolgok is kaphatók! Fizess nagyobb címlettel, és számold ki a visszajárót!"
+                },
+                "cooking": {
+                    "title": "🥘 Visszajáró a nagy piacon",
+                    "text": "Nagy bevásárlás jön a piacon! Fizess nagyobb címlettel, és számold ki a visszajárót!"
+                },
+                "animals": {
+                    "title": "🦁 Visszajáró a jegypénztárnál",
+                    "text": "Nagyobb belépők is vannak! Fizess nagyobb címlettel, és számold ki a visszajárót!"
+                },
+                "space": {
+                    "title": "🛸 Visszajáró az űrboltban",
+                    "text": "Az űrhajósok drágább alkatrészeket is vesznek! Számold ki a visszajárót!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "money-change",
+
+            "options": {
+                "count": 5,
+                "minPrice": 500,
+                "maxPrice": 9800,
+                "paidFrom": [
+                    5000,
+                    10000
+                ],
+                "items": "big"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "money-change",
+
+            "options": {
+                "count": 5,
+                "minPrice": 500,
+                "maxPrice": 9800,
+                "paidFrom": [
+                    5000,
+                    10000
+                ],
+                "items": "big"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "10 000-ig is pontosan számolod a visszajárót!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden visszajárót pontosan kiszámoltál!"
+                },
+                "racing": {
+                    "title": "🏎️ Nagy vagy!",
+                    "text": "Minden visszajárót pontosan kiszámoltál!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden visszajárót pontosan kiszámoltál!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden visszajárót pontosan kiszámoltál!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden visszajárót pontosan kiszámoltál!"
+                },
+                "space": {
+                    "title": "🛸 Szuper vagy!",
+                    "text": "Minden visszajárót pontosan kiszámoltál!"
+                }
+            }
+        }
+    ]
+}

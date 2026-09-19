@@ -1,4 +1,4 @@
-import { ITEMS } from "../data/money.js";
+import { ITEMS, BIG_ITEMS } from "../data/money.js";
 
 function pick(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
@@ -10,12 +10,14 @@ function randint(min, max) {
 
 export function generateMoneyChange(options = {}) {
 
-    const { count = 6, minPrice = 11, maxPrice = 99, paidFrom = [50, 100, 200] } = options;
+    const { count = 6, minPrice = 11, maxPrice = 99, paidFrom = [50, 100, 200], items = "basic" } = options;
+
+    const pool = items === "big" ? BIG_ITEMS : items === "basic" ? ITEMS : items;
 
     const tasks = [];
 
     for (let i = 0; i < count; i++) {
-        const item = pick(ITEMS);
+        const item = pick(pool);
         const price = randint(minPrice, maxPrice);
         const paid = pick(paidFrom.filter(p => p > price));
 

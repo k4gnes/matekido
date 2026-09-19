@@ -18,3 +18,16 @@ export const ITEMS = [
     { id: "perec", emoji: "🥨", name: "perec" },
     { id: "csokolade", emoji: "🍫", name: "csokoládé" }
 ];
+
+export const BIG_ITEMS = [
+    { id: "robot", emoji: "🤖", name: "robotjáték" },
+    { id: "focilabda", emoji: "⚽", name: "focilabda" },
+    { id: "kerekpar", emoji: "🚲", name: "kerékpár" },
+    { id: "roller", emoji: "🛴", name: "roller" },
+    { id: "tablet", emoji: "📱", name: "tablet" },
+    { id: "laptop", emoji: "💻", name: "laptop" },
+    { id: "okosora", emoji: "⌚", name: "okosóra" },
+    { id: "videojatek", emoji: "🎮", name: "videojáték" },
+    { id: "hangszoro", emoji: "🔊", name: "hangszóró" },
+    { id: "helikopter", emoji: "🚁", name: "helikopterjáték" }
+];

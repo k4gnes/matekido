@@ -17,7 +17,7 @@ export const CATEGORIES = {
     practical: {
         title: "Gyakorlati matek",
         icon: "🧮",
-        skills: ["length", "mass", "volume", "hour", "minute", "calendar", "coins", "banknotes", "shopping"]
+        skills: ["length", "mass", "volume", "hour", "minute", "calendar", "money"]
     },
     geometry: {
         title: "Geometria",
@@ -76,9 +76,7 @@ export const SKILLS = {
     calendar: { title: "Naptár", category: "practical" },
 
     // Money
-    coins: { title: "Érmék", category: "practical" },
-    banknotes: { title: "Bankjegyek", category: "practical" },
-    shopping: { title: "Vásárlás", category: "practical" },
+    money: { title: "Pénz", category: "practical" },
 
     // Geometry
     shapes: { title: "Alakzatok", category: "geometry" },

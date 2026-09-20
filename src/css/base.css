@@ -123,6 +123,19 @@ button:hover {
     border-radius:12px;
 }
 
+.world-unlock-link{
+    cursor:pointer;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.world-unlock-link:hover,
+.world-unlock-link:focus-visible{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,.12);
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
 .world-unlock h2{
     margin:0 0 .5rem;
     font-size:1.1rem;
@@ -139,6 +152,12 @@ button:hover {
 
 .world-unlock-icon{
     font-size:1.5rem;
+}
+
+.world-unlock-hint{
+    margin:.6rem 0 0;
+    font-size:.9rem;
+    color:#7a6f00;
 }
 .option-correct{
     border-color:#2e7d32 !important;

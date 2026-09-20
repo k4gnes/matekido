@@ -1,4 +1,4 @@
-import { Game } from "./engine/Game.js?v=84";
+import { Game } from "./engine/Game.js?v=88";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=21";
 import { renderLessonMenu } from "./components/lessonMenu.js?v=71";
@@ -133,6 +133,8 @@ async function startLesson(path, opts = {}) {
             onRestart: () => startLesson(path, opts),
             onExit: showMenu,
             onProfile: showProfile,
+            onStats: showStats,
+            onHelp: () => showHelp(),
             onNext: () => continueToNext(path, opts),
             onGradeComplete: opts.from ? null : () => showGradeComplete(path),
             onSkipNext: alreadySkipped ? null : () => {

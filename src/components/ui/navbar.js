@@ -31,7 +31,7 @@ export function createNavBar({ current = null, player = null, onLessons, onProfi
     addButton("lessons", "📚 Leckék", onLessons);
     addButton("stats", "📊 Százalék", onStats);
     addButton("help", "❓ Súgó", onHelp);
-    addButton("switch", "👤 Játékos", onSwitch);
+    addButton("switch", "👤 Csere", onSwitch);
 
     return row;
 

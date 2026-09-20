@@ -8,7 +8,7 @@ Az alkalmazás megnyitásakor válaszd ki, **ki játszik ma**:
 
 - Ha még nincs profil, kattints a **➕** kártyára, add meg a nevet és válassz avatárt.
 - **Több játékosnak** is lehet saját profilja (pl. testvérnek).
-- A **👤 Játékos** gombbal bármikor visszatérsz a profilválasztóhoz – a navigációs sávban minden képernyőn megtalálható.
+- A **👤 Csere** gombbal bármikor visszatérsz a profilválasztóhoz – a navigációs sávban minden képernyőn megtalálható.
 - A profilját mindenki a magáétól folytatja: saját csillagjai, saját szintje, saját eredményei vannak.
 - Profilt törölni a választóképernyőn a profil kártyáján lévő **×** gombbal lehet. Bár erre nincs megerősítés utáni visszaállás – a törlés végleges!
 
@@ -66,7 +66,7 @@ Ha új világ szabadul fel, az ünneplés automatikusan jelzi.
 ## 👤 Saját oldal és 📊 Százalék
 
 - A **Saját oldal** (a navigációs sávban a nevedre/avatárodra kattintva, vagy a lecke végén a **👤 Profil** gombra) mutatja: csillagok, teljesített leckék, sorozat (🔥 napok), hibátlan leckék, a következő cél, a napi küldetés állása, a kitűzők és a világok.
-- A **képernyők tetején egységes navigációs sáv** van: **🦊 neved** (Saját oldal), **📚 Leckék**, **📊 Százalék**, **❓ Súgó**, **👤 Játékos** (profilváltás) – minden képernyőn ugyanaz a sor, az éppen látogatott képernyő gombja kiemelve, így egy koppintással bárhonnan elérhető a többi képernyő.
+- A **képernyők tetején egységes navigációs sáv** van: **🦊 neved** (Saját oldal), **📚 Leckék**, **📊 Százalék**, **❓ Súgó**, **👤 Csere** (profilváltás) – minden képernyőn ugyanaz a sor, az éppen látogatott képernyő gombja kiemelve, így egy koppintással bárhonnan elérhető a többi képernyő.
 - A **📊 Százalék** oldal (Saját oldal → 📊 Százalék) a napi és az összesített statisztikát mutatja, valamint azt, hogy melyik készség megy jól és melyik szorul gyakorlásra. Itt találod az **🏆 Osztályok** részt is, amely megmutatja, melyik osztályt sikerült már sikeresen (átlagosan 90% fölött) befejezni, és mennyi lecke maradt hátra belőle.
 - A **📚 Témakörök** gomb osztályonkénti tananyagtérképet nyit, ahol az összes lecke látszik témakörönként.
 

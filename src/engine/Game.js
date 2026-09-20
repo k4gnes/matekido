@@ -144,7 +144,7 @@ const COUNTED_TYPES = new Set([
 const isCounted = s => COUNTED_TYPES.has(s.type);
 
 
-import { renderCelebration } from "../components/celebration.js?v=11";
+import { renderCelebration } from "../components/celebration.js?v=14";
 import { renderProgress } from "../components/progress.js?v=2";
 import { renderMissingProgress } from "../components/missingProgress.js?v=3";
 import { renderComparisonProgress } from "../components/comparisonProgress.js?v=3";
@@ -260,6 +260,8 @@ export class Game {
         this.onRestart = actions.onRestart;
         this.onExit = actions.onExit;
         this.onProfile = actions.onProfile;
+        this.onStats = actions.onStats;
+        this.onHelp = actions.onHelp;
         this.onNext = actions.onNext;
         this.onSkipNext = actions.onSkipNext;
         this.onGradeComplete = actions.onGradeComplete;
@@ -401,6 +403,8 @@ export class Game {
                     onRestart: this.onRestart,
                     onExit: this.onExit,
                     onProfile: this.onProfile,
+                    onStats: this.onStats,
+                    onHelp: this.onHelp,
                     onNext: this.onNext
                 },
                 milestone,
@@ -486,6 +490,8 @@ export class Game {
                 onRestart: this.onRestart,
                 onExit: this.onExit,
                 onProfile: this.onProfile,
+                onStats: this.onStats,
+                onHelp: this.onHelp,
                 onNext: gradeJustCompleted && this.onGradeComplete ? this.onGradeComplete : this.onNext
             }, milestone2, reward2, getActiveWorld(), this.lessonIndex, this.getLessonTitle(), this.getLessonGradeLabel());
 
@@ -547,6 +553,14 @@ export class Game {
                 cornerBar.append(createExitButton(this.onExit));
             }
             card.insertBefore(cornerBar, card.firstChild);
+
+            const lessonPos = this.getLessonPosition();
+            if (lessonPos) {
+                const posText = document.createElement("p");
+                posText.className = "scene-lesson-pos";
+                posText.textContent = `${lessonPos.position}. lecke a ${lessonPos.total}-ből`;
+                cornerBar.after(posText);
+            }
         }
 
     }

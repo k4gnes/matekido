@@ -1,12 +1,21 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
-import { listPlayers, getActiveId } from "../profile/UserManager.js";
+import { createNavBar } from "./ui/navbar.js";
 
 export function renderCelebration(step, root, actions = {}, milestone, reward, activeWorld, lessonIndex, lessonTitle, gradeLabel) {
 
     root.replaceChildren();
 
     const card = createCard();
+
+    const navbar = createNavBar({
+        onLessons: () => actions.onExit?.(),
+        onProfile: () => actions.onProfile?.(),
+        onStats: () => actions.onStats?.(),
+        onHelp: () => actions.onHelp?.()
+    });
+
+    card.append(navbar);
 
     const worldStep = activeWorld ? step.worldTitles?.[activeWorld] : null;
 
@@ -27,29 +36,6 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
             onClick: () => actions.onNext()
         })
         : null;
-
-    const menuButton = createButton("📚 Leckék", {
-        className: "nav-bar-btn",
-        onClick: () => actions.onExit?.()
-    });
-
-    const activePlayer = actions.onProfile ? listPlayers().find(p => p.id === getActiveId()) ?? null : null;
-
-    const profileButton = activePlayer
-        ? (() => {
-            const chip = document.createElement("button");
-            chip.type = "button";
-            chip.className = "nav-bar-player";
-            chip.textContent = `${activePlayer.avatar} ${activePlayer.name}`;
-            chip.title = "Profil";
-            chip.setAttribute("aria-label", "Profil: " + activePlayer.name);
-            chip.addEventListener("click", () => actions.onProfile());
-            return chip;
-        })()
-        : createButton("👤 Profil", {
-            className: "nav-bar-btn",
-            onClick: () => actions.onProfile?.()
-        });
 
     if (lessonTitle || gradeLabel) {
 
@@ -96,7 +82,7 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
     buttons.className = "celebration-buttons";
 
     if (nextButton) buttons.append(nextButton);
-    buttons.append(restartButton, menuButton, profileButton);
+    buttons.append(restartButton);
 
     card.append(buttons);
 
@@ -133,10 +119,24 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
     if (reward && reward.newlyUnlocked && reward.newlyUnlocked.length > 0) {
 
         const worldEl = document.createElement("div");
-        worldEl.className = "world-unlock";
+        worldEl.className = "world-unlock world-unlock-link";
+        worldEl.setAttribute("role", "button");
+        worldEl.setAttribute("tabindex", "0");
+        worldEl.setAttribute("aria-label", "Új világ feloldva – kattints a profilodra az aktiváláshoz");
+        worldEl.addEventListener("click", () => actions.onProfile?.());
+        worldEl.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                actions.onProfile?.();
+            }
+        });
 
         const worldTitle = document.createElement("h2");
         worldTitle.textContent = "🌍 Új világ feloldva!";
+
+        const worldHint = document.createElement("p");
+        worldHint.className = "world-unlock-hint";
+        worldHint.textContent = "👆 Kattints a profilodra, és rögtön aktiválhatod!";
 
         worldEl.append(worldTitle);
 
@@ -146,6 +146,8 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
             worldItem.innerHTML = `<span class="world-unlock-icon">${world.icon}</span><span>${world.name}</span>`;
             worldEl.append(worldItem);
         });
+
+        worldEl.append(worldHint);
 
         const rewardSection = card.querySelector(".reward-section");
         if (rewardSection) {

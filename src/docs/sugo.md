@@ -18,7 +18,7 @@ A leckék **osztályonként vannak adagolva**, így mindig pontosan az adott év
 
 - A főmenüben kérdez meg az app, hogy *melyik osztályban játszol* (1., 2., 3. osztály).
 - A választás **játékosonként elmentődik**, és legközelebb már nem kérdezi meg.
-- Ha másik osztályt szeretnél, a menüben a **🔙 Osztály** gombbal léphetsz vissza a választóhoz.
+- Ha másik osztályt szeretnél, a menüben a **🎓 Évfolyam** gombbal léphetsz vissza a választóhoz.
 - Minden leckéről látszik, hányadik osztályos a mellett található jelvényen (pl. „1. osztály”).
 
 ## 🌍 Világok – hol játszódik a lecke?
@@ -94,18 +94,18 @@ A feladatlista oldalon (a profil-avatárról nyitható) sorban a következők j�
 
 - Az üdvözlőképernyőn a **⏭️** gombbal a feladat elé **kihagyni** is lehet a leckét – a következő, még meg nem oldott feladatra ugrik.
 - A kihagyott feladatok **összegyűlnek**, és **legvégül jönnek következőnek**: előbb az osztály összes többi feladatát megoldod, és a kihagyottak a sorrendjükben úgyis visszatérnek.
-- A **🎛️ Saját lista** viszont **gyakorlólista**, mint az Erősítő: a **⏭️** gombbal itt nem teszel félre feladatot, a **➡️ Tovább** gombbal pedig a listád elemei jönnek sorban, a végéig.
-- A félretett feladatok listája az **osztályos** menüből él: ha a saját listában megoldod, onnantól sehol nem vár rád.
+- A **⚽ Válogatott** viszont **gyakorlólista**, mint az Erősítő: a **⏭️** gombbal itt nem teszel félre feladatot, a **➡️ Tovább** gombbal pedig a listád elemei jönnek sorban, a végéig.
+- A félretett feladatok listája az **osztályos** menüből él: ha a válogatottban megoldod, onnantól sehol nem vár rád.
 - **Már megoldott** feladatnál a **⏭️** csak továbblép, nem tesz félre semmit.
 - Az **osztályváltóval bármikor** továbbléphetsz a következő osztályra – a kihagyott feladat ekkor is vár rád, ajánlott utóbb pótolni.
-- Kihagyás **csak a feladatlista fő menetéből számít**: a Saját lista, az Erősítő feladatok és a Kedvenceim lista csak továbblép a **➡️ Tovább** gombbal, nem tesz el feladatot.
+- Kihagyás **csak a feladatlista fő menetéből számít**: a Válogatott, az Erősítő feladatok és a Kedvenceim lista csak továbblép a **➡️ Tovább** gombbal, nem tesz el feladatot.
 - A **Szülőknek** nézet az **osztályos** kihagyott feladatokat mutatja, így utólag is látható, mi maradt ki.
 
-## 🎛️ Saját lista
+## ⚽ Válogatott
 
-A **🎛️ Saját lista** füllel magadnak válogatsz: az osztály, nehézség, feladattípus, készség, típus és számkör szűrői alapján csak azok a feladatok kerülnek a listába, amelyeket szeretnél.
+A **⚽ Válogatott** füllel magadnak válogatsz: az évfolyam, nehézség, feladattípus, készség, típus és számkör szűrői alapján csak azok a feladatok kerülnek a listába, amelyeket szeretnél.
 
-- A **➡️ Következő feladat** sorban halad a szűrt listádon: a Saját listában az is a körbe kerül, amit korábban máshol (pl. az osztályos menetben) már megoldottál – szóval újragyakorolható. Ha a listád összes elemén átestél, újra az elsőt javasolja.
+- A **➡️ Következő feladat** sorban halad a szűrt listádon: a Válogatottban az is a körbe kerül, amit korábban máshol (pl. az osztályos menetben) már megoldottál – szóval újragyakorolható. Ha a listád összes elemén átestél, újra az elsőt javasolja.
 - A lista pont olyan **gyakorlólista**, mint a **🔁 Erősítő**: belekattintasz egy feladatba, és a **➡️ Tovább** gombbal a lista elemei egyesével következnek, a végéig.
 - A **🎯 Gyakorlásra javasolt** és a **❤️ Kedvenceim** szekció a **listádon belül** ajánl: csak azok a 90% alatti (illetve kedvenc) feladatok látszanak, amelyek a szűrt listádban is benne vannak, és a játék ezeken a csoportjukon belül halad végig.
 

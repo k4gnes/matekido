@@ -344,7 +344,7 @@ function createFilterPanel(filters, onFilterChange, gradeConfig, showGradeRow) {
         gradeRow.className = "filter-row";
         const gradeLabel = document.createElement("span");
         gradeLabel.className = "filter-label";
-        gradeLabel.textContent = "Osztály:";
+        gradeLabel.textContent = "Évfolyam:";
         gradeRow.append(gradeLabel);
 
         const gradeBtns = document.createElement("div");
@@ -370,7 +370,7 @@ function createFilterPanel(filters, onFilterChange, gradeConfig, showGradeRow) {
 
         const gradeHint = document.createElement("p");
         gradeHint.className = "filter-hint";
-        gradeHint.textContent = "Ha egy osztály sincs kijelölve, mindegyik osztály feladatai látszanak.";
+        gradeHint.textContent = "Ha egy évfolyam sincs kijelölve, mindegyik évfolyam feladatai látszanak.";
         panel.append(gradeHint);
     }
 
@@ -711,22 +711,22 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     });
     infoButton.className = "filter-toggle-btn";
 
-    const gradeTab = createButton("📚 Osztály", {
+    const gradeTab = createButton("🎓 Évfolyam", {
         onClick: () => toggleGradePicker()
     });
     gradeTab.className = "mode-tab";
 
-    const customTab = createButton("🎛️ Saját lista", {
+    const customTab = createButton("⚽ Válogatott", {
         onClick: () => enterCustomMode()
     });
     customTab.className = "mode-tab";
 
-    const customUnlockButton = createButton("🎛️ Saját lista", {
+    const customUnlockButton = createButton("⚽ Válogatott", {
         onClick: () => unlockAndEnterCustom()
     });
     customUnlockButton.className = "filter-toggle-btn";
 
-    const pickerBackButton = createButton("📚 Osztály", {
+    const pickerBackButton = createButton("🎓 Évfolyam", {
         onClick: () => toggleGradePicker()
     });
     pickerBackButton.className = "filter-toggle-btn";
@@ -1001,8 +1001,8 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
         const title = document.createElement("h2");
         title.className = "lesson-group";
         title.textContent = filters.grades.length > 0
-            ? `🎛️ Saját lista (${customGrades.map(g => `${g}.`).join(" ")} osztály)`
-            : "🎛️ Saját lista (minden osztály)";
+            ? `⚽ Válogatott (${customGrades.map(g => `${g}.`).join(" ")} évfolyam)`
+            : "⚽ Válogatott (minden évfolyam)";
         contentArea.append(title);
 
         const poolOpts = { from: "custom", list: pool.map(l => l.file) };

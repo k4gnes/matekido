@@ -7,7 +7,7 @@ import { renderHelp } from "./components/help.js?v=3";
 import { renderProfilePage } from "./components/profilePage.js?v=8";
 import { renderStatsPage } from "./components/statsPage.js?v=9";
 import { getNextPracticeLesson } from "./components/practicePage.js?v=9";
-import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=6";
+import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=7";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=5";
 import { getActiveId, listPlayers } from "./profile/UserManager.js";
 import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld, setActiveGrade, resolveLessonGrade } from "./profile/Profile.js";
@@ -45,7 +45,7 @@ function showWelcome() {
     setTipVisible(true);
     renderWelcomeScreen(root, () => {
         showMenu();
-    }, showParentDashboard, lessonIndex);
+    }, showParentDashboard, showHelp, lessonIndex);
 }
 
 function showParentDashboard() {

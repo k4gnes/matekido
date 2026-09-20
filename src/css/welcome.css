@@ -17,6 +17,13 @@
     margin-bottom: 1rem;
 }
 
+.welcome-links {
+    display: flex;
+    gap: .6rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .parent-link {
     margin: .2rem auto 0;
     padding: .5rem 1.4rem;

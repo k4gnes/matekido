@@ -80,7 +80,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 A fenti 30 lecke a 4. osztályos tanmenet. Tovább tervezett leckék:
 
 - [x] **Tizedes törtek előkészítése** (fejezd ki tizedben, században – az 5. osztályos tananyag bevezetése)
-- [ ] **Szögek mérése** (a szögmérő használata, fokban mérés)
+- [x] **Szögek mérése** (a szögmérő használata, fokban mérés)
 - [x] **Osztó és többszörös** alapfogalmai (az 5. osztályos oszthatóság előkészítése)
 
 ---

@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=41";
+import { generate } from "../generators/index.js?v=42";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -551,6 +551,11 @@ export function buildLesson(lesson) {
             } else if (step.generator === "divisibility") {
                 result.push({
                     type: "divisibility",
+                    ...task
+                });
+            } else if (step.generator === "angle-measure") {
+                result.push({
+                    type: "angle-measure",
                     ...task
                 });
             } else {

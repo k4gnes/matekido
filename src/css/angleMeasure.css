@@ -1,0 +1,73 @@
+.am-prompt {
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-align: center;
+    color: #475569;
+    margin: .4rem 0 .8rem;
+}
+
+.am-svg {
+    display: block;
+    margin: 0 auto .8rem;
+    width: auto;
+    max-width: 300px;
+    height: auto;
+}
+
+.am-compare-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: .4rem 0 .8rem;
+}
+
+.am-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .3rem;
+}
+
+.am-letter {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #64748b;
+}
+
+.am-mini {
+    display: block;
+    width: 150px;
+    height: auto;
+}
+
+.am-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .7rem;
+    margin: .6rem 0;
+}
+
+.am-option {
+    margin: 0;
+    padding: .8rem 1.4rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    background: var(--primary);
+    color: #fff;
+    cursor: pointer;
+    transition: transform .15s, border-color .15s, background-color .15s;
+}
+
+.am-option:hover {
+    border-color: var(--primary-dark);
+    background: var(--primary-dark);
+    transform: scale(1.06);
+}
+
+.am-option:disabled {
+    opacity: .8;
+}

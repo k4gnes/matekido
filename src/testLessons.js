@@ -12,7 +12,7 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=21";
+import { buildLesson } from "./builders/LessonBuilder.js?v=22";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
@@ -367,6 +367,24 @@ function validateStep(step, ctx) {
             const nameByCategory = { acute: "Hegyes", right: "Derékszög", obtuse: "Tompa" };
             if (step.options[step.answer] !== nameByCategory[step.category]) {
                 fail(ctx, `answer nem a helyes opcióra mutat: ${step.answer} (${step.options[step.answer]})`);
+            }
+            break;
+        }
+        case "angle-measure": {
+            if (step.mode === "compare") {
+                if (!isInt(step.angleA) || !isInt(step.angleB) || step.angleA === step.angleB) {
+                    fail(ctx, `compare szögek hibásak: ${step.angleA}/${step.angleB}`);
+                }
+            } else {
+                if (!isInt(step.angle) || step.angle <= 0 || step.angle >= 180) {
+                    fail(ctx, `angle tartomány hibás: ${step.angle}`);
+                }
+                if (step.mode === "kind") {
+                    const expected = step.angle === 90 ? "right" : step.angle < 90 ? "acute" : "obtuse";
+                    if (step.category !== expected) {
+                        fail(ctx, `category (${step.category}) nem illik a szögéhez (${step.angle})`);
+                    }
+                }
             }
             break;
         }

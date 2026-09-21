@@ -1,0 +1,106 @@
+{
+    "id": "grade4-angle-measure-01",
+    "title": "Szögek mérése – szögmérővel és fokban",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📐 Szögek és fokok",
+            "text": "A szögek nagyságát fokban mérjük, a jele a °. A derékszög 90°-os, a derékszögnél kisebb szög hegyes, a nagyobb tompa. A szögmérő félkörén 0°-tól 180°-ig vannak a beosztások – úgy olvasunk le róla, mint a kilométer-számlálóról. Nézzük meg szögmérővel!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📐 Szögek mérése a postán",
+                    "text": "A borítékok sarkait fokban mérjük! Olvasd le a szögmérőt, és add meg a szög nagyságát!"
+                },
+                "racing": {
+                    "title": "🏎️ Szögek mérése a boxutcában",
+                    "text": "A kanyarokat fokban mérik a pályán! Olvasd le a szögmérőt!"
+                },
+                "football": {
+                    "title": "⚽ Szögek mérése a pályán",
+                    "text": "A csatár rúgásának szögét mérjük! Mekkora a fok?"
+                },
+                "cooking": {
+                    "title": "🍳 Szögek mérése a konyhában",
+                    "text": "A sütemény szeletek szögeit mérjük! Olvasd le a szögmérőt!"
+                },
+                "animals": {
+                    "title": "🦁 Szögek mérése az állatkertben",
+                    "text": "Az állatok karámjainak sarkait mérjük! Add meg a szögek fokát!"
+                },
+                "space": {
+                    "title": "🤖 Szögek mérése az űrhajón",
+                    "text": "A robot karjának szögét mérjük! Olvasd le a szögmérőt!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "angle-measure",
+            "options": {
+                "count": 4,
+                "mode": "measure"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "angle-measure",
+            "options": {
+                "count": 4,
+                "mode": "measure5"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "angle-measure",
+            "options": {
+                "count": 4,
+                "mode": "kind"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "angle-measure",
+            "options": {
+                "count": 4,
+                "mode": "compare"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Minden szöget jól mértél meg fokban!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden szögfok jól sikerült a postán!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden szögfok jól sikerült a pályán!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden szögfok jól sikerült a bajnokságban!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden szögfok jól sikerült a konyhában!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden szögfok jól sikerült az állatkertben!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden szögfok jól sikerült az űrben!"
+                }
+            }
+        }
+    ]
+}

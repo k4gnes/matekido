@@ -3632,6 +3632,29 @@
             }
         },
         {
+            "id": "angle-measure-01",
+            "title": "Szögek mérése – szögmérővel és fokban",
+            "grades": [
+                4
+            ],
+            "category": "geometry",
+            "skill": "angles",
+            "difficulty": 1,
+            "type": "angle-measure",
+            "range": 180,
+            "mission": "📐 Szögek mérése",
+            "subtitle": "Leolvasás a szögmérőről, hegyesderék-tompaszög",
+            "file": "./data/lessons/grade4/angle-measure-01.json",
+            "worldTitles": {
+                "postman": "📐 Szögek mérése a postán",
+                "racing": "🏎️ Szögek mérése a boxutcában",
+                "football": "⚽ Szögek mérése a pályán",
+                "cooking": "🍳 Szögek mérése a konyhában",
+                "animals": "🦁 Szögek mérése az állatkertben",
+                "space": "🤖 Szögek mérése az űrhajón"
+            }
+        },
+        {
             "id": "polygon-01",
             "title": "🔷 Sokszögek és tulajdonságaik",
             "grades": [

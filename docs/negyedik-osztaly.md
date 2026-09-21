@@ -79,9 +79,9 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 A fenti 30 lecke a 4. osztályos tanmenet terve. Tovább tervezett leckék:
 
-- [ ] **Tizedes törtek előkészítése** (fejezd ki tízedben, században – az 5. osztályos tananyag bevezetése)
+- [x] **Tizedes törtek előkészítése** (fejezd ki tizedben, században – az 5. osztályos tananyag bevezetése) ✔ (lecke: „Tizedes törtek – a tized és a század", `decimal-prep-01`)
 - [ ] **Szögek mérése** (a szögmérő használata, fokban mérés)
-- [ ] **Osztó és többszörös** alapfogalmai (az 5. osztályos oszthatóság előkészítése)
+- [x] **Osztó és többszörös** alapfogalmai (az 5. osztályos oszthatóság előkészítése, lecke: `divisibility-01`)
 
 ---
 

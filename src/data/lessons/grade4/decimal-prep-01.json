@@ -1,0 +1,106 @@
+{
+    "id": "grade4-decimal-prep-01",
+    "title": "Tizedes törtek – a tized és a század",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🔟 Tizedes törtek",
+            "text": "Egy egészet 10 egyenlő részre osztva minden rész egy tized, amit 1/10-ként jelölünk. A tizedeket röviden tizedes törttel is írhatjuk: 4 tized = 4/10 = 0,4. Ha 100 részre osztjuk az egészet, minden rész egy század: 23 század = 23/100 = 0,23. A vessző előtt az egészek vannak, utána a tizedek és a századok. Nézzük meg képekkel!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Tizedek és századok a postán",
+                    "text": "A csomagokat tizedekre és századokra osztjuk! Nézd meg a rajzot, és keresd a helyes tizedes törtet!"
+                },
+                "racing": {
+                    "title": "🏎️ Tizedek és századok a pályán",
+                    "text": "A versenypályát 10, majd 100 részre osztjuk! Keresd, mekkora részt tett meg az autó!"
+                },
+                "football": {
+                    "title": "⚽ Tizedek és századok a bajnokságban",
+                    "text": "A gólokat tizedekkel és századokkal mérjük! Melyik tizedes tört illik a rajzhoz?"
+                },
+                "cooking": {
+                    "title": "🍳 Tizedek és századok a konyhában",
+                    "text": "A tésztát 10, a keveréket 100 részre osztjuk! Nézd meg, mennyi lett kész!"
+                },
+                "animals": {
+                    "title": "🦁 Tizedek és századok az állatkertben",
+                    "text": "A kifutókat 10, majd 100 részre osztjuk! Melyik tizedes törtet mutatja a kép?"
+                },
+                "space": {
+                    "title": "🤖 Tizedek és századok az űrben",
+                    "text": "A rakéta üzemanyaga 10, majd 100 részre oszlik! Add meg tizedes törttel!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "decimal-prep",
+            "options": {
+                "count": 4,
+                "mode": "tenths"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "decimal-prep",
+            "options": {
+                "count": 4,
+                "mode": "hundredths"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "decimal-prep",
+            "options": {
+                "count": 4,
+                "mode": "convert"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "decimal-prep",
+            "options": {
+                "count": 4,
+                "mode": "compare"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Minden tizedes törtet jól olvastál le a képről!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden tizedes tört jól sikerült a postán!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden tizedes tört jól sikerült a pályán!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden tizedes tört jól sikerült a bajnokságban!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden tizedes tört jól sikerült a konyhában!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden tizedes tört jól sikerült az állatkertben!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden tizedes tört jól sikerült az űrben!"
+                }
+            }
+        }
+    ]
+}

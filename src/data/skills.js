@@ -2,7 +2,12 @@ export const CATEGORIES = {
     numbers: {
         title: "Számok",
         icon: "🔢",
-        skills: ["neighbours", "comparison", "ordering", "missing-number", "place-value", "rounding", "number-sequence", "even-odd", "pattern", "estimation", "number-names", "roman", "sets", "data-charts", "fraction", "probability"]
+        skills: ["neighbours", "comparison", "ordering", "missing-number", "place-value", "rounding", "number-sequence", "even-odd", "pattern", "estimation", "number-names", "roman", "sets", "data-charts", "fraction", "probability", "divisibility"]
+    },
+    fractions: {
+        title: "Törtek",
+        icon: "🍕",
+        skills: ["fraction"]
     },
     operations: {
         title: "Összeadás-Kivonás",
@@ -49,6 +54,7 @@ export const SKILLS = {
     "data-charts": { title: "Adatok és diagramok", category: "numbers" },
     fraction: { title: "Törtek", category: "numbers" },
     probability: { title: "Valószínűség", category: "numbers" },
+    divisibility: { title: "Osztó és többszörös", category: "numbers" },
 
     // Operations
     addition: { title: "Összeadás", category: "operations" },

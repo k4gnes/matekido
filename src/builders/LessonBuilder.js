@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=39";
+import { generate } from "../generators/index.js?v=41";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -541,6 +541,16 @@ export function buildLesson(lesson) {
             } else if (step.generator === "operation-order") {
                 result.push({
                     type: "operation-order",
+                    ...task
+                });
+            } else if (step.generator === "decimal-prep") {
+                result.push({
+                    type: "decimal",
+                    ...task
+                });
+            } else if (step.generator === "divisibility") {
+                result.push({
+                    type: "divisibility",
                     ...task
                 });
             } else {

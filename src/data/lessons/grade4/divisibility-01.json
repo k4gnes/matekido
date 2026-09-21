@@ -1,0 +1,106 @@
+{
+    "id": "grade4-divisibility-01",
+    "title": "Osztó és többszörös – az oszthatóság kezdete",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "➗ Osztó és többszörös",
+            "text": "Ha egy szám maradék nélkül oszt valamivel, akkor az a szám osztója. A 12-nek például az osztói: 1, 2, 3, 4, 6, 12. Aki egy számmal szorozva megadható, az többszöröse: a 6-nak többszörösei a 6, 12, 18, 24 és így tovább. Válogassunk együtt!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Osztók és többszörösök a postán",
+                    "text": "A csomagokat egyenlő csoportokba rakjuk! Keresd az osztókat és a többszörösöket!"
+                },
+                "racing": {
+                    "title": "🏎️ Osztók és többszörösök a pályán",
+                    "text": "A körök egyenlő részre osztják a pályát! Melyik szám való ide?"
+                },
+                "football": {
+                    "title": "⚽ Osztók és többszörösök a bajnokságban",
+                    "text": "A csapatokat egyenlő csoportokba rendezzük! Keresd a jó osztót és többszöröst!"
+                },
+                "cooking": {
+                    "title": "🍳 Osztók és többszörösök a konyhában",
+                    "text": "A sütiket egyenlő részekre osztjuk! Melyik szám osztója a sütiknek?"
+                },
+                "animals": {
+                    "title": "🦁 Osztók és többszörösök az állatkertben",
+                    "text": "Az állatokat egyenlő csoportokra osztjuk! Keresd meg a helyes számot!"
+                },
+                "space": {
+                    "title": "🤖 Osztók és többszörösök az űrben",
+                    "text": "A robotok egyenlő csapatokba rendeződnek! Melyik szám többszörös?"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "divisibility",
+            "options": {
+                "count": 4,
+                "mode": "multiple"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "divisibility",
+            "options": {
+                "count": 4,
+                "mode": "divisor"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "divisibility",
+            "options": {
+                "count": 4,
+                "mode": "count"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "divisibility",
+            "options": {
+                "count": 4,
+                "mode": "not-multiple"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Minden osztót és többszöröst megtaláltál!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden osztó és többszörös jól sikerült a postán!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden osztó és többszörös jól sikerült a pályán!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden osztó és többszörös jól sikerült a bajnokságban!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden osztó és többszörös jól sikerült a konyhában!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden osztó és többszörös jól sikerült az állatkertben!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden osztó és többszörös jól sikerült az űrben!"
+                }
+            }
+        }
+    ]
+}

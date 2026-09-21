@@ -56,6 +56,8 @@ import { renderCalendar } from "../components/calendar.js?v=2";
 import { renderFraction } from "../components/fraction.js?v=7";
 import { renderFractionOf } from "../components/fractionOf.js?v=2";
 import { renderFractionEqualDen } from "../components/fractionEqualDen.js?v=1";
+import { renderDecimal } from "../components/decimal.js?v=2";
+import { renderDivisibility } from "../components/divisibility.js?v=1";
 import { renderMeasureUnits } from "../components/measureUnits.js?v=2";
 import { renderWrittenOperation } from "../components/writtenOperation.js?v=10";
 import { renderRemainderDivision } from "../components/remainderDivision.js?v=6";
@@ -127,7 +129,9 @@ const COUNTED_TYPES = new Set([
     "written-operation",
     "remainder-division",
     "written-division",
-    "fraction-equal-den",
+"fraction-equal-den",
+"decimal",
+    "divisibility",
     "perimeter",
     "area",
     "angles",
@@ -225,6 +229,8 @@ const RENDERERS = new Map([
     ["fraction", renderFraction],
     ["fraction-of", renderFractionOf],
     ["fraction-equal-den", renderFractionEqualDen],
+    ["decimal", renderDecimal],
+    ["divisibility", renderDivisibility],
     ["measure-units", renderMeasureUnits],
     ["written-operation", renderWrittenOperation],
     ["remainder-division", renderRemainderDivision],

@@ -49,7 +49,6 @@ Egy feladat közben:
 
 - A kártya jobb felső sarkában lévő kis **❓** gombra (vagy ráhúzással) előjön a feladat utasítása – hogy ilyenkor mit kell csinálni.
 - Sok feladatnál van **💡 Segítséget kérek** gomb – kattints rá, és lépésről lépésre vezető segítséget kapsz. A segítség csak akkor jelenik meg, ha kérsz: néhány hiba után bukkan fel a gomb.
-- A **tízesátlépés** feladatok lépésről lépésre vezetnek: először a tízesre pótlást, majd a szétbontást, végül az összeadást kell megoldanod – a korábbi lépések mindvégig láthatók.
 - **Soha nem büntetünk**: hibás válasznál nincs büntetés, csak újrapróbálhatod, amíg sikerül.
 
 ## ⭐ Csillagok, mérföldkövek, napi küldetés és kitűzők

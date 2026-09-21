@@ -48,6 +48,8 @@ import { generateSetMatch } from "./setMatchGenerator.js?v=2";
 import { generateDataChart } from "./dataChartGenerator.js?v=3";
 import { generateCalendar } from "./calendarGenerator.js?v=3";
 import { generateFraction } from "./fractionGenerator.js?v=4";
+import { generateDecimalPrep } from "./decimalPrepGenerator.js?v=1";
+import { generateDivisibility } from "./divisibilityGenerator.js?v=1";
 import { generateMeasureUnits } from "./measureUnitsGenerator.js?v=4";
 import { generateWrittenOperation } from "./writtenOperationGenerator.js?v=4";
 import { generateRemainderDivision } from "./remainderDivisionGenerator.js?v=3";
@@ -175,6 +177,10 @@ export function generate(step) {
             return generateCalendar(opts);
         case "fraction":
             return generateFraction(opts);
+        case "decimal-prep":
+            return generateDecimalPrep(opts);
+        case "divisibility":
+            return generateDivisibility(opts);
         case "fraction-of":
             return generateFractionOf(opts);
         case "fraction-equal-den":

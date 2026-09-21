@@ -432,7 +432,7 @@ function createFilterPanel(filters, onFilterChange, gradeConfig, showGradeRow) {
     const skillBtns = document.createElement("div");
     skillBtns.className = "filter-skill-btns";
 
-    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed", "true-false", "find-error", "place-value", "number-sequence", "ordering", "even-odd", "pattern", "estimation", "shapes", "shape-compare", "solid-shapes", "hour", "minute", "position", "money", "length", "volume", "calendar", "multiplication", "division", "missing-factor", "rounding", "number-names", "roman", "transform", "sets", "data-charts", "fraction", "perimeter", "area", "angles", "circle", "probability", "operation-order", "one-step", "two-step"];
+    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed", "true-false", "find-error", "place-value", "number-sequence", "ordering", "even-odd", "pattern", "estimation", "shapes", "shape-compare", "solid-shapes", "hour", "minute", "position", "money", "length", "volume", "calendar", "multiplication", "division", "missing-factor", "rounding", "number-names", "roman", "transform", "sets", "data-charts", "fraction", "divisibility", "perimeter", "area", "angles", "circle", "probability", "operation-order", "one-step", "two-step"];
 
     usedSkills.forEach(skillId => {
         const skill = SKILLS[skillId];

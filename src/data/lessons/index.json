@@ -3586,6 +3586,52 @@
             }
         },
         {
+            "id": "decimal-prep-01",
+            "title": "Tizedes törtek – a tized és a század",
+            "grades": [
+                4
+            ],
+            "category": "fractions",
+            "skill": "fraction",
+            "difficulty": 1,
+            "type": "decimal",
+            "range": 100,
+            "mission": "🍕 Törtek",
+            "subtitle": "Képről törtre, törtről tizedesre",
+            "file": "./data/lessons/grade4/decimal-prep-01.json",
+            "worldTitles": {
+                "postman": "📮 Tizedek és századok a postán",
+                "racing": "🏎️ Tizedek és századok a pályán",
+                "football": "⚽ Tizedek és századok a bajnokságban",
+                "cooking": "🍳 Tizedek és századok a konyhában",
+                "animals": "🦁 Tizedek és századok az állatkertben",
+                "space": "🤖 Tizedek és századok az űrben"
+            }
+        },
+        {
+            "id": "divisibility-01",
+            "title": "Osztó és többszörös – az oszthatóság kezdete",
+            "grades": [
+                4
+            ],
+            "category": "numbers",
+            "skill": "divisibility",
+            "difficulty": 1,
+            "type": "divisibility",
+            "range": 100,
+            "mission": "➗ Osztó és többszörös",
+            "subtitle": "Osztók és többszörösök keresése",
+            "file": "./data/lessons/grade4/divisibility-01.json",
+            "worldTitles": {
+                "postman": "📮 Osztók és többszörösök a postán",
+                "racing": "🏎️ Osztók és többszörösök a pályán",
+                "football": "⚽ Osztók és többszörösök a bajnokságban",
+                "cooking": "🍳 Osztók és többszörösök a konyhában",
+                "animals": "🦁 Osztók és többszörösök az állatkertben",
+                "space": "🤖 Osztók és többszörösök az űrben"
+            }
+        },
+        {
             "id": "polygon-01",
             "title": "🔷 Sokszögek és tulajdonságaik",
             "grades": [

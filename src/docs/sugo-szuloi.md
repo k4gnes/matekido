@@ -143,3 +143,7 @@ Telepítés után az app ikonról indítható, teljes képernyős módban fut �
 - Segítséget **csak kérésre** adunk.
 - **A történet fontosabb, mint a pontszám.**
 - Mindig a **gyengébb** leckéket erősítjük, nem azt, ami már megy – ezt szolgálja a Gyakorlásra javasolt lista is.
+
+## 💬 Visszajelzés
+
+Írj nekünk Messengeren! A Matekidő :fb: [Facebook-oldalán](https://www.facebook.com/profile.php?id=61594289895525) kattints az **Üzenet** gombra, vagy használd ezt a :msg: [közvetlen linket](https://www.facebook.com/messages/t/61594289895525). Hibát, ötletet, kérést szívesen fogadunk!

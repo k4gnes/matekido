@@ -2,10 +2,22 @@ function escapeHtml(text) {
     return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
+const ICON_STYLE = "width:1.05em;height:1.05em;vertical-align:-0.18em;";
+
+const MD_ICONS = {
+    "fb": `<svg viewBox="0 0 24 24" style="${ICON_STYLE}" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1877f2"/><text x="12" y="15.5" font-size="12" font-family="Arial, sans-serif" font-weight="700" fill="#fff" text-anchor="middle">f</text></svg>`,
+    "msg": `<svg viewBox="0 0 24 24" style="${ICON_STYLE}" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0084ff"/><text x="12" y="16" font-size="14" font-family="Arial, sans-serif" fill="#fff" text-anchor="middle">⚡</text></svg>`
+};
+
 function renderInline(text) {
     return escapeHtml(text)
         .replace(/`([^`]+)`/g, "<code>$1</code>")
-        .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+        .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, label, url) => {
+            const safeUrl = /^https?:\/\//.test(url.trim()) ? url.trim() : "#";
+            return `<a href="${safeUrl}" target="_blank" rel="noopener">${label}</a>`;
+        })
+        .replace(/:fb:|:msg:/g, token => MD_ICONS[token.slice(1, -1)]);
 }
 
 function isTableSeparator(row) {

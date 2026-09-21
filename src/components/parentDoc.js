@@ -1,6 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
-import { renderMarkdown } from "../utils/markdown.js";
+import { renderMarkdown } from "../utils/markdown.js?v=3";
 
 export function renderParentDoc(root, { title, doc, onBack }) {
 

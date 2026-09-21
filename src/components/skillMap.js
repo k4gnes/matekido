@@ -1,6 +1,6 @@
 import { createButton } from "./ui/button.js";
 import { createCard } from "./ui/card.js";
-import { renderMarkdown } from "../utils/markdown.js";
+import { renderMarkdown } from "../utils/markdown.js?v=3";
 
 const DOCS = [
     { id: "elso-osztaly", emoji: "🌱", label: "1. osztály", desc: "42 lecke – számfogalom, válogatás, naptár, mérések, geometria" },

@@ -1,6 +1,6 @@
 # Matekidő – 4. osztályos tanmenet
 
-**Tervezett 30 lecke**, 7 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**30 lecke**, 7 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
 
 A 3. osztályos tananyag (1000-es számkör) lezárult – a 4. osztály a **10 000-ig bővülő számkörre**, az **írásbeli műveletekre**, a **törtek bevezetésére** és a **geometria** terület/kerület felé forduló kiszélesítésére épül.
 
@@ -77,7 +77,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 ## Tervezett kiegészítések
 
-A fenti 30 lecke a 4. osztályos tanmenet terve. Tovább tervezett leckék:
+A fenti 30 lecke a 4. osztályos tanmenet. Tovább tervezett leckék:
 
 - [ ] **Tizedes törtek előkészítése** (fejezd ki tízedben, században – az 5. osztályos tananyag bevezetése)
 - [ ] **Szögek mérése** (a szögmérő használata, fokban mérés)
@@ -87,4 +87,4 @@ A fenti 30 lecke a 4. osztályos tanmenet terve. Tovább tervezett leckék:
 
 ## Státusz
 
-*(A 4. osztályos tanmenet tervezett. Egyik lecke sincs még implementálva – a fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg.)*
+*(A 4. osztályos tanmenet a fenti 30 leckével kész. A jövőbeli kiegészítéseket a „Tervezett kiegészítések" szekció jelöli.)*

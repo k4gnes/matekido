@@ -10,7 +10,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
-| Halmazok | 🧺 Halmazok és válogatás | Halmazba illesztés (SVG alakzatok) | — | 1 |
+| Válogatás | 🧺 Válogatás | Dobozba válogatás (SVG alakzatok) | — | 1 |
 | Sorminta | Sorminta – mi a következő? | Sorminta | 20 | 1 |
 | Számok bontása | Számok bontása 10-ig | Számbontás | 10 | 1 |
 | Számok bontása | Keresd a kakukktojást! | Kakukktojás (bontás) | 10 | 1 |

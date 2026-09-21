@@ -11,18 +11,18 @@ function shuffle(arr) {
 }
 
 const KIND_PROPS = [
-    { kind: "circle", label: "Körök", rule: "a körök közé?" },
-    { kind: "triangle", label: "Háromszögek", rule: "a háromszögek közé?" },
-    { kind: "square", label: "Négyzetek", rule: "a négyzetek közé?" },
-    { kind: "rectangle", label: "Téglalapok", rule: "a téglalapok közé?" }
+    { kind: "circle", label: "Körök", rule: "a körök csoportjába?" },
+    { kind: "triangle", label: "Háromszögek", rule: "a háromszögek csoportjába?" },
+    { kind: "square", label: "Négyzetek", rule: "a négyzetek csoportjába?" },
+    { kind: "rectangle", label: "Téglalapok", rule: "a téglalapok csoportjába?" }
 ];
 
 const COLOR_PROPS = [
-    { name: "Piros", hex: "#ef4444", rule: "a piros alakzatok közé?" },
-    { name: "Kék", hex: "#3b82f6", rule: "a kék alakzatok közé?" },
-    { name: "Zöld", hex: "#22c55e", rule: "a zöld alakzatok közé?" },
-    { name: "Sárga", hex: "#f59e0b", rule: "a sárga alakzatok közé?" },
-    { name: "Lila", hex: "#a855f7", rule: "a lila alakzatok közé?" }
+    { name: "Piros", hex: "#ef4444", rule: "a piros alakzatok csoportjába?" },
+    { name: "Kék", hex: "#3b82f6", rule: "a kék alakzatok csoportjába?" },
+    { name: "Zöld", hex: "#22c55e", rule: "a zöld alakzatok csoportjába?" },
+    { name: "Sárga", hex: "#f59e0b", rule: "a sárga alakzatok csoportjába?" },
+    { name: "Lila", hex: "#a855f7", rule: "a lila alakzatok csoportjába?" }
 ];
 
 const ALL_HEXES = COLOR_PROPS.map(c => c.hex);
@@ -59,8 +59,8 @@ function buildTask() {
     } else {
         const big = Math.random() < 0.5;
         prop = big
-            ? { type: "size", label: "Nagy alakzatok", rule: "a nagy alakzatok közé?", value: "big" }
-            : { type: "size", label: "Kis alakzatok", rule: "a kis alakzatok közé?", value: "small" };
+            ? { type: "size", label: "Nagy alakzatok", rule: "a nagy alakzatok csoportjába?", value: "big" }
+            : { type: "size", label: "Kis alakzatok", rule: "a kis alakzatok csoportjába?", value: "small" };
     }
 
     for (let attempt = 0; attempt < 50; attempt++) {

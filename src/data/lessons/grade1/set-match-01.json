@@ -1,12 +1,12 @@
 {
   "id": "grade1-set-match-01",
-  "title": "🧺 Halmazok és válogatás 1. osztály",
+  "title": "🧺 Válogatás 1. osztály",
 
   "steps": [
     {
       "type": "scene",
       "title": "🧺 Milyen alakzatok tartoznak ide?",
-      "text": "Nézd meg jól a halmazt a szaggatott dobozban! Találd ki, melyik alakzat illik bele!",
+      "text": "Nézd meg jól, mi van a szaggatott dobozban! Találd ki, melyik alakzat illik bele!",
       "worldTitles": {
         "racing": {
           "title": "🏎️ Halmazválogatás a boxutcában",
@@ -42,7 +42,7 @@
     {
       "type": "celebration",
       "title": "🎉 Ügyes voltál!",
-      "text": "Minden alakzatot jól a halmazba válogattál!",
+      "text": "Minden alakzatot jól a helyére válogattál!",
       "worldTitles": {
         "racing": {
           "title": "🎉 Ügyes vagy!",

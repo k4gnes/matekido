@@ -16,7 +16,7 @@ Az alkalmazás megnyitásakor válaszd ki, **ki játszik ma**:
 
 A leckék **osztályonként vannak adagolva**, így mindig pontosan az adott évfolyamhoz tartozó tananyagot kapja:
 
-- A főmenüben kérdez meg az app, hogy *melyik osztályban játszol* (1., 2., 3. osztály).
+- A főmenüben kérdez meg az app, hogy *melyik osztályban játszol* (1., 2., 3., 4. osztály).
 - A választás **játékosonként elmentődik**, és legközelebb már nem kérdezi meg.
 - Ha másik osztályt szeretnél, a menüben a **🎓 Évfolyam** gombbal léphetsz vissza a választóhoz.
 - Minden leckéről látszik, hányadik osztályos a mellette található jelvényen (pl. „1. osztály”).

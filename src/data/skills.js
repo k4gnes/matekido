@@ -45,7 +45,7 @@ export const SKILLS = {
     estimation: { title: "Becslés", category: "numbers" },
     "number-names": { title: "Számnevek", category: "numbers" },
     roman: { title: "Római számok", category: "numbers" },
-    sets: { title: "Halmazok és válogatás", category: "numbers" },
+    sets: { title: "Válogatás", category: "numbers" },
     "data-charts": { title: "Adatok és diagramok", category: "numbers" },
     fraction: { title: "Törtek", category: "numbers" },
     probability: { title: "Valószínűség", category: "numbers" },

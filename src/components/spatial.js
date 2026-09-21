@@ -607,6 +607,36 @@ function shadow(svg, cx, baseY, w) {
     ellipse(svg, cx, baseY, w / 2, 5, "rgba(15,23,42,0.16)", "rgba(15,23,42,0)", 0);
 }
 
+function measureInDom(svgNode) {
+    svgNode.style.position = "fixed";
+    svgNode.style.left = "-9999px";
+    svgNode.style.width = "1px";
+    svgNode.style.height = "1px";
+    document.body.append(svgNode);
+    let bb;
+    try {
+        bb = svgNode.getBBox();
+    } finally {
+        svgNode.remove();
+    }
+    return bb;
+}
+
+function measureReference(ref) {
+    const probe = el("svg", {});
+    drawReference(probe, ref);
+    return measureInDom(probe);
+}
+
+function measureObject(obj) {
+    const probe = el("svg", {});
+    const g = el("g", { transform: "translate(100 100)" });
+    OBJECT_DRAW[obj.id](g, 0, 0);
+    probe.append(g);
+    const bb = measureInDom(probe);
+    return { x: bb.x - 100, y: bb.y - 100, width: bb.width, height: bb.height };
+}
+
 function mark(svg, cx, cy, r) {
     svg.append(el("circle", { cx, cy, r, fill: "none", stroke: "#2563eb", "stroke-width": 2.5, "stroke-dasharray": "6 5", opacity: 0.9 }));
 }
@@ -666,10 +696,15 @@ function createScene(step) {
         drawObject(svg, obj, cx, baseY, 0.95);
         mark(svg, cx, cy, 27);
     } else {
-        const emojiW = Math.min(b.w, b.h) * 0.95;
-        const leftEdge = cx - emojiW / 2;
-        const rightEdge = cx + emojiW / 2;
-        const ox = pos === "left" ? leftEdge - 18 : rightEdge + 18;
+        const refBB = measureReference(ref);
+        const objBB = measureObject(obj);
+        let ox;
+        if (pos === "left") {
+            ox = refBB.x - 12 - (objBB.x + objBB.width);
+        } else {
+            ox = refBB.x + refBB.width + 12 - objBB.x;
+        }
+        ox = Math.max(16 - objBB.x, Math.min(ox, 208 - objBB.x - objBB.width));
         drawReference(svg, ref);
         shadow(svg, ox, floorY, 38);
         drawObject(svg, obj, ox, floorY, 1);

@@ -6,19 +6,19 @@
     {
       "type": "scene",
       "title": "🟪 Négyzet és téglalap",
-      "text": "Kattints egy alakzatra, majd a helyére! A négyzetek a négyzetbe, a téglalapok a téglalapba valók!",
+      "text": "Kattints egy alakzatra, majd a helyére! A négyzetek a Négyzet dobozba, a téglalapok a Téglalap dobozba valók!",
       "worldTitles": {
         "racing": {
           "title": "🏎️ Négyzet és téglalap",
-          "text": "Kattints egy alakzatra, majd a helyére! A négyzetek a négyzetbe, a téglalapok a téglalapba valók!"
+          "text": "Kattints egy alakzatra, majd a helyére! A négyzetek a Négyzet dobozba, a téglalapok a Téglalap dobozba valók!"
         },
         "football": {
           "title": "⚽ Négyzet és téglalap",
-          "text": "Kattints egy alakzatra, majd a helyére! A négyzetek a négyzetbe, a téglalapok a téglalapba valók!"
+          "text": "Kattints egy alakzatra, majd a helyére! A négyzetek a Négyzet dobozba, a téglalapok a Téglalap dobozba valók!"
         },
         "cooking": {
           "title": "🍳 Négyzet és téglalap",
-          "text": "Kattints egy alakzatra, majd a helyére! A négyzetek a négyzetbe, a téglalapok a téglalapba valók!"
+          "text": "Kattints egy alakzatra, majd a helyére! A négyzetek a Négyzet dobozba, a téglalapok a Téglalap dobozba valók!"
         },
         "animals": {
           "title": "🦁 Rakd a helyére az alakzatokat!",

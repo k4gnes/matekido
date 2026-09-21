@@ -5,7 +5,7 @@ import { getActiveWorld } from "../profile/Profile.js";
 import { createShapeSvg } from "./ui/shapeSvg.js";
 
 const TITLES = {
-    postman: "🧺 Halmazok és válogatás",
+    postman: "🧺 Válogatás",
     racing: "🏎️ Válogatás a boxutcában",
     football: "⚽ Válogatás a pályán",
     cooking: "🍳 Válogatás a konyhában",

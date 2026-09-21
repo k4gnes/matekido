@@ -2,7 +2,7 @@
     "lessons": [
         {
             "id": "set-match-01-grade1",
-            "title": "🧺 Halmazok és válogatás",
+            "title": "🧺 Válogatás",
             "grades": [
                 1
             ],
@@ -10,15 +10,15 @@
             "skill": "sets",
             "difficulty": 1,
             "type": "set-match",
-            "mission": "🧺 Halmazok és válogatás",
-            "subtitle": "Melyik alakzat illik a halmazba?",
+            "mission": "🧺 Válogatás",
+            "subtitle": "Melyik alakzat illik ide?",
             "file": "./data/lessons/grade1/set-match-01.json",
             "worldTitles": {
-                "racing": "🏎️ Halmazválogatás a boxutcában",
-                "cooking": "🍳 Halmazválogatás a konyhában",
-                "football": "⚽ Halmazválogatás a pályán",
-                "animals": "🦁 Halmazválogatás az állatkertben",
-                "space": "🤖 Halmazválogatás az űrhajón"
+                "racing": "🏎️ Válogatás a boxutcában",
+                "cooking": "🍳 Válogatás a konyhában",
+                "football": "⚽ Válogatás a pályán",
+                "animals": "🦁 Válogatás az állatkertben",
+                "space": "🤖 Válogatás az űrhajón"
             }
         },
         {

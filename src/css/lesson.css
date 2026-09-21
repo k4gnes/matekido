@@ -288,6 +288,26 @@
     color: #fff;
 }
 
+.home-parent-btn {
+    display: inline-block;
+    margin: 0.5rem 0;
+    padding: 0.45rem 1rem;
+    font-size: 0.85rem;
+    background: transparent;
+    color: #888;
+    border: 1.5px solid #ddd;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: color .15s, border-color .15s, background .15s;
+}
+
+.home-parent-btn:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    background: rgba(79, 134, 247, .05);
+    transform: none;
+}
+
 .menu-player-row {
     display: flex;
     flex-wrap: wrap;

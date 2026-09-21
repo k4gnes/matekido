@@ -19,7 +19,7 @@ A leckék **osztályonként vannak adagolva**, így mindig pontosan az adott év
 - A főmenüben kérdez meg az app, hogy *melyik osztályban játszol* (1., 2., 3. osztály).
 - A választás **játékosonként elmentődik**, és legközelebb már nem kérdezi meg.
 - Ha másik osztályt szeretnél, a menüben a **🎓 Évfolyam** gombbal léphetsz vissza a választóhoz.
-- Minden leckéről látszik, hányadik osztályos a mellett található jelvényen (pl. „1. osztály”).
+- Minden leckéről látszik, hányadik osztályos a mellette található jelvényen (pl. „1. osztály”).
 
 ## 🌍 Világok – hol játszódik a lecke?
 
@@ -65,10 +65,10 @@ Ha új világ szabadul fel, az ünneplés automatikusan jelzi.
 
 ## 👤 Saját oldal és 📊 Százalék
 
-- A **Saját oldal** (a navigációs sávban a nevedre/avatárodra kattintva, vagy a lecke végén a **👤 Profil** gombra) mutatja: csillagok, teljesített leckék, sorozat (🔥 napok), hibátlan leckék, a következő cél, a napi küldetés állása, a kitűzők és a világok.
+- A **Saját oldal** (a navigációs sávban vagy a lecke végén is a **saját avatarodra és a nevedre** – pl. 🦊 Lili – kattintva) mutatja: csillagok, teljesített leckék, sorozat (🔥 napok), hibátlan leckék, a következő cél, a napi küldetés állása, a kitűzők és a világok.
 - A **képernyők tetején egységes navigációs sáv** van: **🦊 neved** (Saját oldal), **📚 Leckék**, **📊 Százalék**, **❓ Súgó**, **👤 Csere** (profilváltás) – minden képernyőn ugyanaz a sor, az éppen látogatott képernyő gombja kiemelve, így egy koppintással bárhonnan elérhető a többi képernyő.
 - A **📊 Százalék** oldal (Saját oldal → 📊 Százalék) a napi és az összesített statisztikát mutatja, valamint azt, hogy melyik készség megy jól és melyik szorul gyakorlásra. Itt találod az **🏆 Osztályok** részt is, amely megmutatja, melyik osztályt sikerült már sikeresen (átlagosan 90% fölött) befejezni, és mennyi lecke maradt hátra belőle.
-- A **📚 Témakörök** gomb osztályonkénti tananyagtérképet nyit, ahol az összes lecke látszik témakörönként.
+- A **👨‍👩‍👧 Szülői** gombon belül a **📚 Témakörök** osztályonkénti tananyagtérképet nyit, ahol az összes lecke látszik témakörönként.
 
 ## 🎯 Gyakorlás – a gyengébb leckék
 
@@ -99,19 +99,22 @@ A feladatlista oldalon (a profil-avatárról nyitható) sorban a következők j�
 - **Már megoldott** feladatnál a **⏭️** csak továbblép, nem tesz félre semmit.
 - Az **osztályváltóval bármikor** továbbléphetsz a következő osztályra – a kihagyott feladat ekkor is vár rád, ajánlott utóbb pótolni.
 - Kihagyás **csak a feladatlista fő menetéből számít**: a Válogatott, az Erősítő feladatok és a Kedvenceim lista csak továbblép a **➡️ Tovább** gombbal, nem tesz el feladatot.
-- A **Szülőknek** nézet az **osztályos** kihagyott feladatokat mutatja, így utólag is látható, mi maradt ki.
+- A **Szülői** nézet az **osztályos** kihagyott feladatokat mutatja, így utólag is látható, mi maradt ki.
 
 ## ⚽ Válogatott
 
-A **⚽ Válogatott** füllel magadnak válogatsz: az évfolyam, nehézség, feladattípus, készség, típus és számkör szűrői alapján csak azok a feladatok kerülnek a listába, amelyeket szeretnél.
+A **⚽ Válogatott** fülön a magadnak összeállított gyakorlólista jelenik meg: az évfolyam, nehézség, feladattípus, készség, típus és számkör szűrői alapján csak azok a feladatok kerülnek a listába, amelyeket szeretnél. A szűrők a Válogatott tetején a **🔍 Szűrők** gombbal nyithatók meg (részletek az alábbi szakaszban).
 
+- A **🎓 Évfolyam** gombbal a Válogatottból bármikor visszatérsz – az app a korábban választott osztályodat hozza vissza, nem kell újra kiválasztanod.
 - A **➡️ Következő feladat** sorban halad a szűrt listádon: a Válogatottban az is a körbe kerül, amit korábban máshol (pl. az osztályos menetben) már megoldottál – szóval újragyakorolható. Ha a listád összes elemén átestél, újra az elsőt javasolja.
 - A lista pont olyan **gyakorlólista**, mint a **🔁 Erősítő**: belekattintasz egy feladatba, és a **➡️ Tovább** gombbal a lista elemei egyesével következnek, a végéig.
 - A **🎯 Gyakorlásra javasolt** és a **❤️ Kedvenceim** szekció a **listádon belül** ajánl: csak azok a 90% alatti (illetve kedvenc) feladatok látszanak, amelyek a szűrt listádban is benne vannak, és a játék ezeken a csoportjukon belül halad végig.
 
-## 🔍 Szűrők – ha mégis keresnél valamit
+## 🔍 Szűrők – a Válogatott összeállításához
 
-A szűrőkre általában **nincs szükség**, mert az osztályválasztás adja a leckéket a megfelelő sorrendben. Ha mégis szeretnél válogatni, a **🔍 Szűrők** gombbal megnyithatod a panelt:
+A szűrők a **⚽ Válogatott** részhez tartoznak: a **🎓 Évfolyam** oldal mindig a kiválasztott osztály rendes, tananyag szerinti sorrendjét adja, ahhoz szűrők nem kellenek.
+
+Ha mégis válogatni szeretnél, kapcsolj a **⚽ Válogatott** fülre – a tetején lévő **🔍 Szűrők** gombbal nyitható meg a panel:
 
 | Szűrő | Mit jelent? |
 |---|---|
@@ -122,9 +125,13 @@ A szűrőkre általában **nincs szükség**, mert az osztályválasztás adja a
 - A szűrők **megmaradnak** a következő látogatásra is.
 - A **✕ Szűrők törlése** gomb visszaállítja az összes leckét.
 
-## 👨‍👩‍👧 Szülőknek
+## 👨‍👩‍👧 Szülői
 
-A profilválasztó alján a **👨‍👩‍👧 Szülőknek** gomb megnyitja a szülői áttekintést, ahol napról napra követhető, mikor és mennyit játszott a gyerek, és hogy milyen pontossággal oldotta meg a feladatokat. Emellett itt látszik a **gyengébb** (90% alatti) leckék listája és az **⏭️ kihagyott feladatok** – érdemes ezeket is pótolni, hogy az osztály feladatai teljesek legyenek.
+A **👨‍👩‍👧 Szülői** gomb a feladatok menüjében (vagy a profilválasztó alján) megnyitja a szülői részt, amelyből az alábbiak érhetők el:
+
+- **📊 Szülői összefoglaló** – napról napra követhető, mikor és mennyit játszott a gyerek, és hogy milyen pontossággal oldotta meg a feladatokat. Emellett itt látszik a **gyengébb** (90% alatti) leckék listája és az **⏭️ kihagyott feladatok** – érdemes ezeket is pótolni, hogy az osztály feladatai teljesek legyenek.
+- **📚 Témakörök** – az évfolyamonkénti tananyag áttekintése.
+- **❓ Súgó a szülőknek** – hogyan működik a matekidő, és hogyan olvasd a szülői összefoglalót.
 
 ## 📥 Telepítés alkalmazásként
 

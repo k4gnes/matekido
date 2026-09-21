@@ -1,6 +1,5 @@
 import { createButton } from "./ui/button.js";
 import { createCard } from "./ui/card.js";
-import { createNavBar } from "./ui/navbar.js";
 import { renderMarkdown } from "../utils/markdown.js";
 
 const DOCS = [
@@ -11,7 +10,7 @@ const DOCS = [
     { id: "otodik-osztaly", emoji: "🌌", label: "5. osztály", desc: "32 tervezett lecke – 1 000 000-ig, oszthatóság, tizedes törtek, százalék" }
 ];
 
-export function renderSkillMap(root, nav = {}) {
+export function renderSkillMap(root, onBack) {
 
     root.replaceChildren();
 
@@ -19,13 +18,25 @@ export function renderSkillMap(root, nav = {}) {
 
     root.append(wrapper);
 
-    const navbar = createNavBar({ ...nav, current: "topics" });
-
     showChoice();
+
+    function createBackRow(...buttons) {
+        const row = document.createElement("div");
+        row.style.cssText = "display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center; margin-bottom:1rem;";
+        buttons.forEach(btn => row.append(btn));
+        return row;
+    }
+
+    function hubBackButton() {
+        return createButton("⬅️ Vissza a szülői részhez", {
+            className: "nav-bar-btn",
+            onClick: () => onBack()
+        });
+    }
 
     function showChoice() {
 
-        wrapper.replaceChildren(navbar);
+        wrapper.replaceChildren(createBackRow(hubBackButton()));
 
         const title = document.createElement("h1");
         title.textContent = "📚 Témakörök";
@@ -64,7 +75,10 @@ export function renderSkillMap(root, nav = {}) {
 
     async function showDoc(doc) {
 
-        wrapper.replaceChildren(navbar);
+        wrapper.replaceChildren(createBackRow(
+            hubBackButton(),
+            createBackButton("📚 Vissza a témakörökhöz", showChoice)
+        ));
 
         const title = document.createElement("h1");
         title.textContent = `${doc.emoji} ${doc.label} – témakörök`;
@@ -73,7 +87,7 @@ export function renderSkillMap(root, nav = {}) {
         body.className = "skill-map-body";
         body.innerHTML = "<p class='skill-map-loading'>Betöltés…</p>";
 
-        wrapper.append(title, body, createBackButton("⬅️ Vissza", showChoice), createFooter());
+        wrapper.append(title, body, createFooter());
 
         try {
             const response = await fetch(`/docs/${doc.id}.md`, { cache: "reload" });

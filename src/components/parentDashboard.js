@@ -363,6 +363,15 @@ export function renderParentDashboard(root, onBack, lessonIndex) {
 
     const wrapper = createCard("parent-page");
 
+    const backButton = createButton("⬅️ Vissza", {
+        onClick: () => onBack()
+    });
+    backButton.className = "nav-bar-btn";
+
+    const backRow = document.createElement("div");
+    backRow.style.cssText = "display:flex; justify-content:center; margin-bottom:1rem;";
+    backRow.append(backButton);
+
     const title = document.createElement("h1");
     title.className = "parent-title";
     title.textContent = "📊 Szülői összefoglaló";
@@ -371,7 +380,7 @@ export function renderParentDashboard(root, onBack, lessonIndex) {
     subtitle.className = "parent-subtitle";
     subtitle.textContent = "A gyerekek előrehaladása és napi játéktevékenysége egy pillantásra.";
 
-    wrapper.append(title, subtitle);
+    wrapper.append(backRow, title, subtitle);
 
     const players = listPlayers();
 
@@ -385,14 +394,6 @@ export function renderParentDashboard(root, onBack, lessonIndex) {
             wrapper.append(createPlayerCard(player, ACCENT_COLORS[index % ACCENT_COLORS.length], lessonIndex));
         });
     }
-
-    const backButton = createButton("⬅️ Vissza", {
-        onClick: () => onBack()
-    });
-    backButton.className = "nav-bar-btn";
-    backButton.style.marginTop = "1rem";
-
-    wrapper.append(backButton);
 
     root.append(wrapper);
 }

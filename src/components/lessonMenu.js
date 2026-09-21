@@ -1,10 +1,9 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createNavBar } from "./ui/navbar.js";
-import { loadJSON, loadRaw, saveRaw, removeKeys } from "../storage.js";
+import { loadJSON, loadRaw, removeKeys } from "../storage.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getLessonStats, getActiveWorld, getActiveGrade, setActiveGrade, getFavoriteLessons, getSkippedLessons, isFavoriteLesson, toggleFavoriteLesson, getCustomDoneLessons, getMenuPrefs, saveMenuPrefs } from "../profile/Profile.js";
-import { renderMarkdown } from "../utils/markdown.js";
 import { CATEGORIES, SKILLS } from "../data/skills.js";
 import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js";
 import { CONSOLIDATION_LESSONS } from "../data/consolidation.js";
@@ -91,14 +90,6 @@ function loadCustomMode() {
         return prefs.view === "custom";
     }
     return loadRaw(VIEW_STORAGE_KEY) === "custom";
-}
-
-function isCustomUnlocked() {
-    return loadRaw(CUSTOM_UNLOCKED_KEY) === "1";
-}
-
-function unlockCustom() {
-    saveRaw(CUSTOM_UNLOCKED_KEY, "1");
 }
 
 function loadFilters() {
@@ -582,7 +573,7 @@ function pickNextForGrade(gradeLessons, skippedFiles = new Set(getSkippedLessons
 
 }
 
-export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onSkillMap, onHelp, onStats) {
+export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onParent, onHelp, onStats) {
     root.replaceChildren();
 
     const wrapper = createCard();
@@ -625,21 +616,13 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     if (!gradeConfig.some(gc => gc.grade === selectedGrade)) {
         selectedGrade = gradeConfig.length > 0 ? gradeConfig[0].grade : null;
     }
-    let customUnlocked = isCustomUnlocked();
-    let customMode = loadCustomMode() && customUnlocked;
-    if (loadCustomMode() && !customUnlocked) {
-        setUpgradesMode(false);
-    }
+    let customMode = loadCustomMode();
 
     function chooseGrade(grade) {
         selectedGrade = grade;
         customMode = false;
         setUpgradesMode(false);
         saveSelectedGrade(grade);
-        showFilters = false;
-        saveFilterOpen(false);
-        filterToggle.textContent = "🔍 Szűrők ▼";
-        filterPanel.style.display = "none";
         gradePickerPanel.style.display = "none";
         renderContent();
     }
@@ -652,11 +635,6 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     }
 
     function toggleGradePicker() {
-        if (gradePickerPanel.style.display !== "none") {
-            gradePickerPanel.style.display = "none";
-            return;
-        }
-        gradePickerPanel.style.display = "flex";
         if (customMode) {
             customMode = false;
             setUpgradesMode(false);
@@ -664,8 +642,11 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
             if (!gradeConfig.some(gc => gc.grade === selectedGrade)) {
                 selectedGrade = gradeConfig.length > 0 ? gradeConfig[0].grade : null;
             }
+            gradePickerPanel.style.display = "none";
             renderContent();
+            return;
         }
+        gradePickerPanel.style.display = gradePickerPanel.style.display !== "none" ? "none" : "flex";
     }
 
     function enterCustomMode() {
@@ -675,19 +656,8 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
         setUpgradesMode(true);
         showFilters = true;
         saveFilterOpen(true);
-        rebuildFilterPanel();
-        filterToggle.textContent = "🔍 Szűrők ▲";
-        filterToggle.style.display = "inline-block";
-        filterPanel.style.display = "flex";
         gradePickerPanel.style.display = "none";
         renderContent();
-    }
-
-    function unlockAndEnterCustom() {
-        unlockCustom();
-        customUnlocked = true;
-        filters.grades = [];
-        enterCustomMode();
     }
 
     const filters = loadFilters();
@@ -706,11 +676,6 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     });
     filterToggle.className = "filter-toggle-btn";
 
-    const infoButton = createButton("📚 Témakörök", {
-        onClick: () => onSkillMap()
-    });
-    infoButton.className = "filter-toggle-btn";
-
     const gradeTab = createButton("🎓 Évfolyam", {
         onClick: () => toggleGradePicker()
     });
@@ -721,19 +686,14 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     });
     customTab.className = "mode-tab";
 
-    const customUnlockButton = createButton("⚽ Válogatott", {
-        onClick: () => unlockAndEnterCustom()
+    const parentButton = createButton("👨‍👩‍👧 Szülői", {
+        onClick: () => onParent()
     });
-    customUnlockButton.className = "filter-toggle-btn";
-
-    const pickerBackButton = createButton("🎓 Évfolyam", {
-        onClick: () => toggleGradePicker()
-    });
-    pickerBackButton.className = "filter-toggle-btn";
+    parentButton.className = "home-parent-btn";
 
     const menuToolbar = document.createElement("div");
     menuToolbar.className = "menu-toolbar";
-    menuToolbar.append(pickerBackButton, gradeTab, customTab, customUnlockButton, filterToggle, infoButton);
+    menuToolbar.append(gradeTab, customTab, parentButton);
 
     const filterPanel = document.createElement("div");
     filterPanel.className = "filter-panel";
@@ -776,7 +736,7 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
         gradePickerPanel.append(grid);
     }
 
-    wrapper.append(menuToolbar, filterPanel, gradePickerPanel, contentArea);
+    wrapper.append(menuToolbar, gradePickerPanel, contentArea);
 
     const footer = document.createElement("p");
     footer.className = "skill-map-footer";
@@ -787,12 +747,6 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     footerLink.textContent = "💻 Iconet Informatika 2026";
     footer.append(footerLink);
     wrapper.append(footer);
-
-    if (showFilters) {
-        rebuildFilterPanel();
-        filterPanel.style.display = "flex";
-        filterToggle.textContent = "🔍 Szűrők ▲";
-    }
 
     function rebuildAndRender() {
         saveFilters(filters);
@@ -991,6 +945,15 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     }
 
     function renderCustomContent() {
+        rebuildFilterPanel();
+
+        const filterWrap = document.createElement("div");
+        filterWrap.style.cssText = "display:flex; flex-direction:column; gap:.5rem; margin-bottom:1rem;";
+        filterToggle.textContent = showFilters ? "🔍 Szűrők ▲" : "🔍 Szűrők ▼";
+        filterPanel.style.display = showFilters ? "flex" : "none";
+        filterWrap.append(filterToggle, filterPanel);
+        contentArea.append(filterWrap);
+
         const customGrades = filters.grades.length > 0
             ? filters.grades.slice().sort((a, b) => a - b)
             : gradeConfig.map(gc => gc.grade);
@@ -1127,24 +1090,14 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onS
     function renderContent() {
         contentArea.replaceChildren();
 
-        const showTabs = customUnlocked;
-        gradeTab.style.display = showTabs ? "inline-block" : "none";
-        customTab.style.display = showTabs ? "inline-block" : "none";
-        customUnlockButton.style.display = (!showTabs && !customMode && selectedGrade != null) ? "inline-block" : "none";
-        pickerBackButton.style.display = (!showTabs && !customMode && selectedGrade != null) ? "inline-block" : "none";
-
-        if (showTabs) {
-            gradeTab.classList.toggle("active", !customMode);
-            customTab.classList.toggle("active", customMode);
-        }
+        const gc = gradeConfig.find(g => g.grade === selectedGrade);
+        gradeTab.textContent = gc ? `🎓 ${gc.title}` : "🎓 Évfolyam";
+        gradeTab.classList.toggle("active", !customMode);
+        customTab.classList.toggle("active", customMode);
 
         if (customMode) {
-            filterToggle.style.display = showTabs ? "inline-block" : "none";
-            filterPanel.style.display = showTabs && showFilters ? "flex" : "none";
             renderCustomContent();
         } else {
-            filterToggle.style.display = "none";
-            filterPanel.style.display = "none";
             renderGradeContent();
         }
     }

@@ -67,7 +67,7 @@ export function renderWelcomeScreen(root, onSelect, onParent, onHelp, lessonInde
     const parentButton = document.createElement("button");
     parentButton.type = "button";
     parentButton.className = "parent-link";
-    parentButton.textContent = "👨‍👩‍👧 Szülőknek";
+    parentButton.textContent = "👨‍👩‍👧 Szülői";
     parentButton.addEventListener("click", () => {
         onParent?.();
     });

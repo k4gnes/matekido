@@ -1,14 +1,16 @@
 import { Game } from "./engine/Game.js?v=88";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=21";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=71";
-import { renderSkillMap } from "./components/skillMap.js?v=16";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=74";
+import { renderSkillMap } from "./components/skillMap.js?v=19";
 import { renderHelp } from "./components/help.js?v=3";
 import { renderProfilePage } from "./components/profilePage.js?v=8";
 import { renderStatsPage } from "./components/statsPage.js?v=9";
 import { getNextPracticeLesson } from "./components/practicePage.js?v=9";
-import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=7";
-import { renderParentDashboard } from "./components/parentDashboard.js?v=5";
+import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=8";
+import { renderParentDashboard } from "./components/parentDashboard.js?v=6";
+import { renderParentHub } from "./components/parentHub.js?v=5";
+import { renderParentDoc } from "./components/parentDoc.js?v=1";
 import { getActiveId, listPlayers } from "./profile/UserManager.js";
 import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld, setActiveGrade, resolveLessonGrade } from "./profile/Profile.js";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
@@ -67,7 +69,7 @@ function showMenu() {
         startLesson,
         showProfile,
         showWelcome,
-        showSkillMap,
+        showParentHub,
         () => showHelp(),
         showStats
     );
@@ -87,7 +89,32 @@ function navFor() {
 function showSkillMap() {
     clearWorldBackground();
     setTipVisible(true);
-    renderSkillMap(root, navFor());
+    renderSkillMap(root, () => showParentHub());
+}
+
+function showParentHub() {
+    clearWorldBackground();
+    setTipVisible(true);
+    renderParentHub(root, {
+        onBack: showMenu,
+        onDashboard: () => {
+            clearWorldBackground();
+            setTipVisible(true);
+            renderParentDashboard(root, () => showParentHub(), lessonIndex);
+        },
+        onTopics: showSkillMap,
+        onHelp: showParentHelp
+    });
+}
+
+function showParentHelp() {
+    clearWorldBackground();
+    setTipVisible(true);
+    renderParentDoc(root, {
+        title: "❓ Súgó a szülőknek",
+        doc: "/docs/sugo-szuloi.md",
+        onBack: () => showParentHub()
+    });
 }
 
 function showHelp() {

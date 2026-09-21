@@ -127,7 +127,7 @@ export const TYPE_LABEL = {
     circle: "Kör",
     probability: "Valószínűség",
     "operation-order": "Műveleti sorrend",
-    "set-match": "Válogatás",
+    "set-match": "Halmazok és válogatás",
     "data-chart": "Adatok és diagramok",
     calendar: "Naptár",
     volume: "Űrtartalom",

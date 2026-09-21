@@ -9,6 +9,11 @@ import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js";
 import { CONSOLIDATION_LESSONS } from "../data/consolidation.js";
 import { getWorld } from "../world/WorldRegistry.js";
 
+const CHILD_FRIENDLY_LABELS = {
+    sets: "Válogatás",
+    "set-match": "Válogatás"
+};
+
 const FILTER_STORAGE_KEY = "matekido-lesson-filters";
 const FILTER_OPEN_KEY = "matekido-lesson-filters-open";
 const LIST_HIDDEN_KEY = "matekido-lesson-list-hidden";
@@ -435,7 +440,7 @@ function createFilterPanel(filters, onFilterChange, gradeConfig, showGradeRow) {
 
         const btn = document.createElement("button");
         btn.className = "filter-btn" + (filters.skills.includes(skillId) ? " active" : "");
-        btn.textContent = skill.title;
+        btn.textContent = CHILD_FRIENDLY_LABELS[skillId] ?? skill.title;
         btn.addEventListener("click", () => {
             if (filters.skills.includes(skillId)) {
                 filters.skills = filters.skills.filter(s => s !== skillId);
@@ -463,7 +468,7 @@ function createFilterPanel(filters, onFilterChange, gradeConfig, showGradeRow) {
     Object.entries(TYPE_LABEL).forEach(([typeId, label]) => {
         const btn = document.createElement("button");
         btn.className = "filter-btn" + (filters.types.includes(typeId) ? " active" : "");
-        btn.textContent = `${TYPE_EMOJI[typeId]} ${label}`;
+        btn.textContent = `${TYPE_EMOJI[typeId]} ${CHILD_FRIENDLY_LABELS[typeId] ?? label}`;
         btn.addEventListener("click", () => {
             if (filters.types.includes(typeId)) {
                 filters.types = filters.types.filter(t => t !== typeId);

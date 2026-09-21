@@ -1885,7 +1885,7 @@
             "difficulty": 2,
             "type": "estimate",
             "range": 50,
-            "mission": "� Becslés",
+            "mission": "🎯 Becslés",
             "subtitle": "Számérzék és becslés",
             "file": "./data/lessons/grade2/estimate-01.json",
             "worldTitles": {

@@ -170,6 +170,29 @@
     margin-bottom: 1rem;
 }
 
+.nav-shell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+.app-header {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 1.1;
+    color: var(--primary);
+    margin-bottom: .4rem;
+}
+
+.app-header img {
+    height: 2em;
+    width: auto;
+}
+
 .nav-bar-btn,
 .nav-bar-player {
     display: inline-flex;
@@ -196,6 +219,12 @@
 .nav-bar-btn.active {
     background: var(--secondary);
     border-color: var(--secondary);
+}
+
+.nav-bar-player.active {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: #fff;
 }
 
 .nav-bar-player {
@@ -298,7 +327,7 @@
 }
 
 .profile-page {
-    padding: 1rem;
+    padding: 0 1rem 1rem;
 }
 
 .profile-page-stats {

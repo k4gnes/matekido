@@ -119,7 +119,7 @@ function showProfile() {
 }
 
 function showStats() {
-    clearWorldBackground();
+    setWorldBackground();
     setTipVisible(true);
     renderStatsPage(root, navFor(), lessonIndex);
 }

@@ -3,6 +3,18 @@ import { listPlayers, getActiveId } from "../../profile/UserManager.js";
 
 export function createNavBar({ current = null, player = null, onLessons, onProfile, onStats, onHelp, onSwitch }) {
 
+    const shell = document.createElement("div");
+    shell.className = "nav-shell";
+
+    const header = document.createElement("div");
+    header.className = "app-header";
+    const logo = document.createElement("img");
+    logo.src = "assets/icons/icon.svg";
+    logo.alt = "matekidő";
+    const label = document.createElement("span");
+    label.textContent = "matekidő";
+    header.append(logo, label);
+
     const row = document.createElement("div");
     row.className = "nav-bar";
 
@@ -33,6 +45,8 @@ export function createNavBar({ current = null, player = null, onLessons, onProfi
     addButton("help", "❓ Súgó", onHelp);
     addButton("switch", "👤 Csere", onSwitch);
 
-    return row;
+    shell.append(header, row);
+
+    return shell;
 
 }

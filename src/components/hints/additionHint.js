@@ -3,11 +3,30 @@ import { createHintBox } from "../ui/hintBox.js";
 
 export function renderAdditionHint(step, container) {
 
-    const { a, b } = step;
+    const { a, b, inputPos, result } = step;
 
     container.replaceChildren();
 
     const box = createHintBox();
+
+    if (inputPos === "left" || inputPos === "right") {
+        const known = inputPos === "left" ? b : a;
+        const missing = result - known;
+
+        box.innerHTML = `
+            <p><strong>💡 Segítség</strong></p>
+
+            <p>A hiányzó tagot <strong>kivonással</strong> kapod meg:</p>
+
+            <p>${result} − ${known} = <strong>${missing}</strong></p>
+
+            <p>Tehát: ${inputPos === "left" ? `<strong>${missing}</strong> + ${known}` : `${a} + <strong>${missing}</strong>`} = ${result}</p>
+        `;
+
+        container.append(box);
+        return;
+
+    }
 
     const big = Math.max(a, b);
     const small = Math.min(a, b);

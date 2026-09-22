@@ -45,8 +45,8 @@ export function renderParentHub(root, { onBack, onDashboard, onTopics, onHelp })
 
     const helpItem = createHubItem(
         "❓",
-        "Súgó a szülőknek",
-        "Hogyan működik a matekidő, és hogyan olvasd a szülői összefoglalót.",
+        "Súgó",
+        "Gyakori kérdések, szülői összefoglaló és visszajelzés egy helyen.",
         () => onHelp()
     );
 

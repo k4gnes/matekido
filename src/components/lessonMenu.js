@@ -5,6 +5,7 @@ import { loadJSON, loadRaw, removeKeys } from "../storage.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getLessonStats, getActiveWorld, getActiveGrade, setActiveGrade, getFavoriteLessons, getSkippedLessons, isFavoriteLesson, toggleFavoriteLesson, getCustomDoneLessons, getMenuPrefs, saveMenuPrefs } from "../profile/Profile.js";
 import { CATEGORIES, SKILLS } from "../data/skills.js";
+import { HINT_LESSON_FILES } from "../data/hintLessons.js";
 import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js";
 import { CONSOLIDATION_LESSONS } from "../data/consolidation.js";
 import { getWorld } from "../world/WorldRegistry.js";
@@ -117,7 +118,8 @@ const RANGE_LABEL = {
     10: "10-ig",
     20: "20-ig",
     100: "100-ig",
-    1000: "1000-ig"
+    1000: "1000-ig",
+    10000: "10 000-ig"
 };
 
 const DIFFICULTY_BADGE = {
@@ -133,6 +135,7 @@ const DIFFICULTY_LABEL = {
     3: "Haladó",
     4: "Mester"
 };
+
 
 export function createLessonCard(lesson, onSelect, activeWorld, position, total, selectOpts) {
     const lessonCard = document.createElement("div");
@@ -176,6 +179,14 @@ export function createLessonCard(lesson, onSelect, activeWorld, position, total,
         const g = lesson.grades;
         gradeBadge.textContent = g.length === 1 ? `${g[0]}. osztály` : `${g[0]}–${g[g.length - 1]}. osztály`;
         badges.append(gradeBadge);
+    }
+
+    if (HINT_LESSON_FILES.has(lesson.file)) {
+        const hintBadge = document.createElement("span");
+        hintBadge.className = "lesson-hint-badge";
+        hintBadge.textContent = "💡";
+        hintBadge.title = "Ehhez a leckéhez van feladat-segítség";
+        badges.append(hintBadge);
     }
 
     const isFav = isFavoriteLesson(lesson.file);

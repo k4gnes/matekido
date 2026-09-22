@@ -122,6 +122,15 @@
     font-size: 0.85em;
 }
 
+.skill-map-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0.8rem auto;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
 .skill-map-body table {
     border-collapse: collapse;
     width: 100%;

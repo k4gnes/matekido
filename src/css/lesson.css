@@ -231,6 +231,11 @@
     font-size: 1rem;
 }
 
+.lesson-hint-badge {
+    font-size: 1rem;
+    cursor: help;
+}
+
 .filter-toggle-btn {
     display: block;
     margin: 0.5rem auto;

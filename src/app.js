@@ -1,7 +1,7 @@
 import { Game } from "./engine/Game.js?v=95";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=25";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=77";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=78";
 import { renderSkillMap } from "./components/skillMap.js?v=23";
 import { renderHelp } from "./components/help.js?v=5";
 import { renderProfilePage } from "./components/profilePage.js?v=8";
@@ -9,8 +9,7 @@ import { renderStatsPage } from "./components/statsPage.js?v=9";
 import { getNextPracticeLesson } from "./components/practicePage.js?v=9";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=8";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=6";
-import { renderParentHub } from "./components/parentHub.js?v=5";
-import { renderParentDoc } from "./components/parentDoc.js?v=3";
+import { renderParentHub } from "./components/parentHub.js?v=6";
 import { getActiveId, listPlayers } from "./profile/UserManager.js";
 import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld, setActiveGrade, resolveLessonGrade } from "./profile/Profile.js";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
@@ -47,7 +46,7 @@ function showWelcome() {
     setTipVisible(true);
     renderWelcomeScreen(root, () => {
         showMenu();
-    }, showParentDashboard, showHelp, lessonIndex);
+    }, showHelp, lessonIndex);
 }
 
 function showParentDashboard() {
@@ -103,17 +102,7 @@ function showParentHub() {
             renderParentDashboard(root, () => showParentHub(), lessonIndex);
         },
         onTopics: showSkillMap,
-        onHelp: showParentHelp
-    });
-}
-
-function showParentHelp() {
-    clearWorldBackground();
-    setTipVisible(true);
-    renderParentDoc(root, {
-        title: "❓ Súgó a szülőknek",
-        doc: "/docs/sugo-szuloi.md",
-        onBack: () => showParentHub()
+        onHelp: showHelp
     });
 }
 

@@ -101,9 +101,9 @@ export function renderMixed(step, root, next, progress, onResult, onAttempt) {
         onClick: () => {
             hintShown = true;
             if (step.op === "+") {
-                renderAdditionHint({ a: step.a, b: step.b }, hint);
+                renderAdditionHint({ a: step.a, b: step.b, inputPos: step.inputPos, result: step.answer }, hint);
             } else {
-                renderSubtractionHint({ a: step.a, b: step.b }, hint);
+                renderSubtractionHint({ a: step.a, b: step.b, inputPos: step.inputPos, result: step.answer }, hint);
             }
             hintButton.style.display = "none";
             if (input) input.focus();

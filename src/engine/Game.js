@@ -1,5 +1,6 @@
 import { renderScene } from "../components/scene.js?v=11";
 import { createInstructionHelp } from "../components/ui/instruction.js";
+import { HINT_LESSON_FILES } from "../data/hintLessons.js";
 import { createExitButton } from "../components/ui/exit.js";
 import { renderExercise } from "../components/exercise.js?v=5";
 import { renderDecomposition } from "../components/decomposition.js?v=3";
@@ -557,6 +558,13 @@ export class Game {
                     favBtn.title = nowFav ? "Kedvencekből törlés" : "Kedvencekhez adás";
                 });
                 cornerBar.append(favBtn);
+            }
+            if (HINT_LESSON_FILES.has(this.lessonFile)) {
+                const hintDot = document.createElement("span");
+                hintDot.className = "exercise-hint-dot";
+                hintDot.textContent = "💡";
+                hintDot.title = "Ehhez a leckéhez van feladat-segítség";
+                cornerBar.append(hintDot);
             }
             if (this.onExit) {
                 cornerBar.append(createExitButton(this.onExit));

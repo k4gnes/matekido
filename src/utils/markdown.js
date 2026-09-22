@@ -13,6 +13,17 @@ function renderInline(text) {
     return escapeHtml(text)
         .replace(/`([^`]+)`/g, "<code>$1</code>")
         .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+        .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
+            const safeSrc = src.trim();
+            const allowed = /^(https?:\/\/|\/|\.\/|\.\.\/)/.test(safeSrc);
+            if (!allowed) {
+                return "";
+            }
+            if (/\.(mp4|webm|ogg)$/i.test(safeSrc)) {
+                return `<video controls preload="metadata" muted playsinline style="width:100%;border-radius:12px"><source src="${safeSrc}">A böngésződ nem tudja lejátszani a videót.</video>`;
+            }
+            return `<img src="${safeSrc}" alt="${alt}" loading="lazy">`;
+        })
         .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, label, url) => {
             const safeUrl = /^https?:\/\//.test(url.trim()) ? url.trim() : "#";
             return `<a href="${safeUrl}" target="_blank" rel="noopener">${label}</a>`;

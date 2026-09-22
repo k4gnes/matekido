@@ -105,7 +105,7 @@ Folytasd a menetet a 2. szakasz állásától: **oldd meg a 5–42. feladatot so
 | 4.2 | A **❤️ Kedvenceim** listából ⏭️-zd az elsőt | Ugyanaz, mint 4.1 – nem számít félretételnek | |
 | 4.3 | A **🎯 Gyakorlás** oldalon ⏭️-zd az elsőt | A következő gyakorló feladat jön, nem kerül a kimaradt listára | |
 | 4.4 | Maradjon félretett feladat, és a menüben **🔙 Osztály** gombbal válts 2. osztályra | **Nem gátolja semmi:** a váltás szabadon működik | |
-| 4.5 | Szülői nézet (profilválasztó alján **👨‍👩‍👧 Szülőknek**) | „⏭️ Kihagyott feladatok (N): <címek>” sor látszik (csak az **osztályos** félretettekkel) | |
+| 4.5 | Szülői nézet (a feladatmenü **👨‍👩‍👧 Szülői** gombjával) | „⏭️ Kihagyott feladatok (N): <címek>” sor látszik (csak az **osztályos** félretettekkel) | |
 | 4.6 | Ugyanazt a feladatot kétszer hagyd ki (⏭️ kétszer ugyanazon a jeleneten) | A listán **egyszer** szerepel (nem duplázódik) | |
 | 4.7 | **Már megoldott** feladatot ⏭️-zz ki (osztály menetben), majd nézd meg a menü Átugrott szekcióját | **Nem** kerül a kimaradt listára – a ⏭️ csak továbblép (a félretétel csak megoldatlan feladatnál él) | |
 

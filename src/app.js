@@ -10,6 +10,7 @@ import { getNextPracticeLesson } from "./components/practicePage.js?v=9";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=8";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=7";
 import { renderParentHub } from "./components/parentHub.js?v=6";
+import { renderTransferPage } from "./components/transferPage.js?v=1";
 import { getActiveId, listPlayers } from "./profile/UserManager.js";
 import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld, setActiveGrade, resolveLessonGrade } from "./profile/Profile.js";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
@@ -56,6 +57,8 @@ if (restoredRoute === "welcome") {
     showParentHub();
 } else if (restoredRoute === "dashboard") {
     showParentDashboard();
+} else if (restoredRoute === "transfer") {
+    showTransferPage();
 } else if (getActiveId() && listPlayers().length > 0) {
     showMenu();
 } else {
@@ -143,8 +146,16 @@ function showParentHub() {
             renderParentDashboard(root, () => showParentHub(), lessonIndex);
         },
         onTopics: showSkillMap,
-        onHelp: showHelp
+        onHelp: showHelp,
+        onTransfer: showTransferPage
     });
+}
+
+function showTransferPage() {
+    clearWorldBackground();
+    setTipVisible(true);
+    setRoute("transfer");
+    renderTransferPage(root, () => showParentHub());
 }
 
 function showHelp() {

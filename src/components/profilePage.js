@@ -4,7 +4,6 @@ import { loadProfile, getNextGoal, getActiveWorld, setActiveWorld, getLessonStat
 import { ACHIEVEMENTS, getUnlockedAchievements } from "../profile/Achievements.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getAllWorlds } from "../world/WorldRegistry.js";
-import { createBackupPanel } from "./backupPanel.js";
 
 function getGradeProgress(lessonIndex, grade) {
     const lessons = (lessonIndex?.lessons || []).filter(l => l.grades?.includes(grade));
@@ -221,11 +220,6 @@ export function renderProfilePage(lessonIndex, root, onBack, onStats, onHelp, on
     });
 
     card.append(navbar, title, stats, gradeCard, progressSection, questSection, achWorldRow);
-
-    card.append(createBackupPanel({
-        playerIds: activePlayer ? [activePlayer.id] : null,
-        onChanged: () => renderProfilePage(lessonIndex, root, onBack, onStats, onHelp, onSwitch)
-    }));
 
     root.append(card);
 }

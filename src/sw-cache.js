@@ -101,6 +101,7 @@ const SW_CACHE_LIST = [
     "/components/subtraction.js",
     "/components/time.js",
     "/components/timeConvert.js",
+    "/components/transferPage.js",
     "/components/transform.js",
     "/components/trueFalse.js",
     "/components/ui/button.js",

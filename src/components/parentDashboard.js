@@ -2,7 +2,6 @@ import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { listPlayers } from "../profile/UserManager.js";
 import { SKILLS, CATEGORIES } from "../data/skills.js";
-import { createBackupPanel } from "./backupPanel.js";
 
 const DAY = 24 * 60 * 60 * 1000;
 
@@ -395,10 +394,6 @@ export function renderParentDashboard(root, onBack, lessonIndex) {
             wrapper.append(createPlayerCard(player, ACCENT_COLORS[index % ACCENT_COLORS.length], lessonIndex));
         });
     }
-
-    wrapper.append(createBackupPanel({
-        onChanged: () => renderParentDashboard(root, onBack, lessonIndex)
-    }));
 
     root.append(wrapper);
 }

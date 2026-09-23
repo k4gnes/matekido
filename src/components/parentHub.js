@@ -1,7 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 
-export function renderParentHub(root, { onBack, onDashboard, onTopics, onHelp }) {
+export function renderParentHub(root, { onBack, onDashboard, onTopics, onHelp, onTransfer }) {
 
     root.replaceChildren();
 
@@ -43,6 +43,13 @@ export function renderParentHub(root, { onBack, onDashboard, onTopics, onHelp })
         () => onTopics()
     );
 
+    const transferItem = createHubItem(
+        "💾",
+        "Profilok átvitele",
+        "Játékosadatok mozgatása egyik eszközről a másikra fájllal vagy QR-kóddal.",
+        () => onTransfer()
+    );
+
     const helpItem = createHubItem(
         "❓",
         "Súgó",
@@ -50,7 +57,7 @@ export function renderParentHub(root, { onBack, onDashboard, onTopics, onHelp })
         () => onHelp()
     );
 
-    grid.append(dashboardItem, topicsItem, helpItem);
+    grid.append(dashboardItem, topicsItem, transferItem, helpItem);
     wrapper.append(grid);
 
     root.append(wrapper);

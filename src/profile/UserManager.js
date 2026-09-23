@@ -224,6 +224,45 @@ export function exportUsers(playerIds) {
 
 }
 
+export function exportUsersSlim(playerIds) {
+
+    const data = loadUsers();
+    const wanted = playerIds ? new Set(playerIds) : null;
+    const players = data.players
+        .filter(p => !wanted || wanted.has(p.id))
+        .map(p => ({
+            id: p.id,
+            name: p.name,
+            avatar: p.avatar,
+            profile: {
+                stars: p.profile.stars,
+                lessonsCompleted: p.profile.lessonsCompleted,
+                perfectLessons: p.profile.perfectLessons,
+                lettersDelivered: p.profile.lettersDelivered,
+                streak: p.profile.streak,
+                lastPlayed: p.profile.lastPlayed,
+                unlockedThemes: p.profile.unlockedThemes,
+                activeWorld: p.profile.activeWorld,
+                grade: p.profile.grade,
+                dailyQuest: p.profile.dailyQuest,
+                skillStats: p.profile.skillStats,
+                favorites: p.profile.favorites,
+                skippedLessons: p.profile.skippedLessons,
+                skippedCustomLessons: p.profile.skippedCustomLessons,
+                doneCustomLessons: p.profile.doneCustomLessons
+            }
+        }));
+
+    return JSON.stringify({
+        app: TRANSFER_APP,
+        type: TRANSFER_TYPE,
+        version: TRANSFER_VERSION,
+        exportedAt: new Date().toISOString(),
+        players
+    });
+
+}
+
 function sumCounts(a, b) {
     return (a ?? 0) + (b ?? 0);
 }

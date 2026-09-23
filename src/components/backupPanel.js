@@ -1,6 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
-import { listPlayers, exportUsers, importUsers } from "../profile/UserManager.js";
+import { listPlayers, exportUsers, exportUsersSlim, importUsers } from "../profile/UserManager.js";
 import { queueMessage } from "./appDiagnostics.js";
 
 const TRANSFER_PREFIX = "matekido-atvitel:";
@@ -370,13 +370,16 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
             qrArea.replaceChildren();
             setStatus("Kód készül…");
             try {
-                const { url, text, tooLarge } = await buildQrImage(exportUsers(ids));
+                const fullQr = await buildQrImage(exportUsers(ids));
+                const slimQr = fullQr.tooLarge ? await buildQrImage(exportUsersSlim(ids)) : null;
+                const slimUsed = fullQr.tooLarge && slimQr && !slimQr.tooLarge;
+                const shown = slimUsed ? slimQr : fullQr;
                 qrArea.replaceChildren();
 
-                if (!tooLarge) {
+                if (!shown.tooLarge) {
                     const img = document.createElement("img");
                     img.className = "backup-qr-img";
-                    img.src = url;
+                    img.src = shown.url;
                     img.alt = "QR-kód";
                     qrArea.append(img);
                 }
@@ -386,7 +389,7 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
                     onClick: async () => {
                         setStatus("Kód másolása…");
                         try {
-                            await copyText(text);
+                            await copyText(shown.text);
                             setStatus("📋 Az átviteli kód a vágólapon van. A másik eszközön: Kód beillesztése.");
                         } catch {
                             setStatus("⚠️ A másolás nem sikerült. Használd a letöltést.");
@@ -402,14 +405,18 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
                 pre.className = "backup-paste-input";
                 pre.readOnly = true;
                 pre.rows = 4;
-                pre.value = text;
+                pre.value = shown.text;
                 details.append(summary, pre);
 
                 const hint = document.createElement("p");
                 hint.className = "backup-hint";
-                hint.textContent = tooLarge
-                    ? "A profil túl nagy a QR-képhez, de a kód így is átvihető: másold ki, és a másik eszközön használd a Kód beillesztése opciót."
-                    : "Tartsd a másik eszközön indított QR beolvasás elé. Ha nem olvasható: másold a kódot, és ott használd a Kód beillesztése opciót.";
+                if (shown.tooLarge) {
+                    hint.textContent = "A profil túl nagy a QR-képhez, de a kód így is átvihető: másold ki, és a másik eszközön használd a Kód beillesztése opciót.";
+                } else if (slimUsed) {
+                    hint.textContent = "⚠️ A QR az összesített adatokat viszi (csillagok, készség-statisztika, világok). A részletes előrehaladás (napi és leckénkénti adatok) teljesen a 💾 Letöltés / megosztás gombbal vihető át.";
+                } else {
+                    hint.textContent = "Tartsd a másik eszközön indított QR beolvasás elé. Ha nem olvasható: másold a kódot, és ott használd a Kód beillesztése opciót.";
+                }
 
                 qrArea.append(copyBtn, details, hint);
                 setStatus("");

@@ -24,31 +24,114 @@ function buildFilename() {
 
 async function buildQrImage(payload) {
 
-    const [{ default: qrcode }, { default: LZString }] = await Promise.all([
+    const [{ default: qrcode }, { default: LZString }, { default: jsQR }] = await Promise.all([
         import("../vendor/qrcode.js"),
-        import("../vendor/lzstring.js")
+        import("../vendor/lzstring.js"),
+        import("../vendor/jsqr.js")
     ]);
 
+    const text = TRANSFER_PREFIX + LZString.compressToBase64(payload);
+
     const qr = qrcode(0, "L");
-    qr.addData(TRANSFER_PREFIX + LZString.compressToBase64(payload));
+    qr.addData(text);
     qr.make();
 
-    if (!Number.isFinite(qr.getModuleCount()) || qr.getModuleCount() <= 0) {
+    const modules = qr.getModuleCount();
+
+    if (modules > 117) {
         throw new Error("too-large");
     }
 
-    return qr.createDataURL(6, 2);
+    const cell = 8;
+    const margin = 4;
+    const size = modules * cell + margin * 2;
+
+    const canvas = document.createElement("canvas");
+    canvas.width = size;
+    canvas.height = size;
+
+    const context = canvas.getContext("2d");
+    context.fillStyle = "#ffffff";
+    context.fillRect(0, 0, size, size);
+    context.fillStyle = "#000000";
+
+    for (let row = 0; row < modules; row++) {
+        for (let col = 0; col < modules; col++) {
+            if (qr.isDark(row, col)) {
+                context.fillRect(margin + col * cell, margin + row * cell, cell, cell);
+            }
+        }
+    }
+
+    const probe = context.getImageData(0, 0, size, size);
+    const found = jsQR(probe.data, size, size);
+
+    if (!found || found.data !== text) {
+        throw new Error("too-large");
+    }
+
+    return { url: canvas.toDataURL("image/png"), text };
 
 }
 
 async function decodeQrPayload(text) {
 
-    if (!text || !text.startsWith(TRANSFER_PREFIX)) {
+    let cleaned = (text ?? "").trim().replace(/^\uFEFF/, "");
+
+    if (cleaned.startsWith(TRANSFER_PREFIX)) {
+        cleaned = cleaned.slice(TRANSFER_PREFIX.length);
+    }
+
+    cleaned = cleaned.replace(/\s+/g, "");
+
+    if (!cleaned) {
         return null;
     }
 
     const { default: LZString } = await import("../vendor/lzstring.js");
-    return LZString.decompressFromBase64(text.slice(TRANSFER_PREFIX.length));
+    const payload = LZString.decompressFromBase64(cleaned);
+
+    if (!payload) {
+        return null;
+    }
+
+    try {
+        const parsed = JSON.parse(payload.trim().replace(/^\uFEFF/, ""));
+        if (parsed && parsed.app === "matekido") {
+            return payload;
+        }
+    } catch {
+        return null;
+    }
+
+    return null;
+
+}
+
+async function copyText(value) {
+
+    if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(value);
+        return;
+    }
+
+    const field = document.createElement("textarea");
+    field.value = value;
+    document.body.appendChild(field);
+    field.select();
+    document.execCommand("copy");
+    document.body.removeChild(field);
+
+}
+
+function showToast(message, isError = false) {
+
+    const toast = document.createElement("div");
+    toast.className = "backup-toast" + (isError ? " warn" : "");
+    toast.textContent = message;
+    document.body.appendChild(toast);
+
+    setTimeout(() => toast.remove(), 5000);
 
 }
 
@@ -60,9 +143,42 @@ function downloadJson(filename, content) {
     const link = document.createElement("a");
     link.href = url;
     link.download = filename;
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
 
-    URL.revokeObjectURL(url);
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+
+}
+
+function readFileText(file) {
+
+    if (typeof file.text === "function") {
+        return file.text();
+    }
+
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = () => reject(reader.error);
+        reader.readAsText(file);
+    });
+
+}
+
+function downscaleImageData(image, width, height, factor) {
+
+    const source = document.createElement("canvas");
+    source.width = width;
+    source.height = height;
+    source.getContext("2d").putImageData(image, 0, 0);
+
+    const target = document.createElement("canvas");
+    target.width = Math.max(1, Math.round(width * factor));
+    target.height = Math.max(1, Math.round(height * factor));
+    target.getContext("2d").drawImage(source, 0, 0, target.width, target.height);
+
+    return target.getContext("2d").getImageData(0, 0, target.width, target.height);
 
 }
 
@@ -94,7 +210,26 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
 
     const qrArea = document.createElement("div");
     qrArea.className = "backup-qr-area";
-    card.append(qrArea);
+
+    const pasteArea = document.createElement("div");
+    pasteArea.className = "backup-paste-area";
+    pasteArea.hidden = true;
+
+    const pasteInput = document.createElement("textarea");
+    pasteInput.className = "backup-paste-input";
+    pasteInput.rows = 3;
+    pasteInput.placeholder = "Ide másold az átviteli kódot vagy a mentés szövegét…";
+
+    const pasteBtn = createButton("📥 Kód importálása", {
+        className: "backup-btn",
+        onClick: () => {
+            handleAnyText(pasteInput.value);
+        }
+    });
+
+    pasteArea.append(pasteInput, pasteBtn);
+
+    card.append(qrArea, pasteArea);
 
     function setStatus(message) {
         status.textContent = message ?? "";
@@ -178,16 +313,38 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
             qrArea.replaceChildren();
             setStatus("QR-kód készül…");
             try {
-                const url = await buildQrImage(exportUsers(ids));
+                const { url, text } = await buildQrImage(exportUsers(ids));
                 qrArea.replaceChildren();
                 const img = document.createElement("img");
                 img.className = "backup-qr-img";
                 img.src = url;
                 img.alt = "QR-kód";
+                const copyBtn = createButton("📋 Kód másolása", {
+                    className: "backup-btn",
+                    onClick: async () => {
+                        setStatus("Kód másolása…");
+                        try {
+                            await copyText(text);
+                            setStatus("📋 Az átviteli kód a vágólapon van. A másik eszközön: Kód beillesztése.");
+                        } catch {
+                            setStatus("⚠️ A másolás nem sikerült. Használd a letöltést, vagy nagyítsd a kódot.");
+                        }
+                    }
+                });
+                const details = document.createElement("details");
+                details.className = "backup-qr-details";
+                const summary = document.createElement("summary");
+                summary.textContent = "Nézd meg a kódot szövegként";
+                const pre = document.createElement("textarea");
+                pre.className = "backup-paste-input";
+                pre.readOnly = true;
+                pre.rows = 4;
+                pre.value = text;
+                details.append(summary, pre);
                 const hint = document.createElement("p");
                 hint.className = "backup-hint";
-                hint.textContent = "Tartsd a másik eszközön indított QR beolvasás elé ezt a kódot.";
-                qrArea.append(img, hint);
+                hint.textContent = "Tartsd a másik eszközön indított QR beolvasás elé. Ha nem olvasható: másold a kódot, és a másik eszközön Kód beillesztése, vagy használd a letöltést.";
+                qrArea.append(img, copyBtn, details, hint);
                 setStatus("");
             } catch {
                 setStatus("⚠️ A kiválasztott profilok túl nagyok QR-kódnak. Használd a letöltést!");
@@ -209,9 +366,10 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
         const file = fileInput.files[0];
         if (!file) return;
         try {
-            handleImport(await file.text());
-        } catch {
-            setStatus("⚠️ A fájl nem olvasható.");
+            handleAnyText(await readFileText(file));
+        } catch (error) {
+            const detail = (error && error.message) ? ": " + error.message : "";
+            setStatus("⚠️ Hibás fájl" + detail + ".");
         }
         fileInput.value = "";
     });
@@ -221,12 +379,30 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
         onClick: () => startScan()
     });
 
-    actions.append(downloadBtn, qrBtn, importBtn, scanBtn);
+    const pasteToggle = createButton("📋 Kód beillesztése", {
+        className: "backup-btn",
+        onClick: () => {
+            pasteArea.hidden = !pasteArea.hidden;
+            if (!pasteArea.hidden) {
+                pasteInput.focus();
+            }
+        }
+    });
+
+    actions.append(downloadBtn, qrBtn, importBtn, scanBtn, pasteToggle);
     card.append(fileInput);
 
     function handleImport(text) {
 
-        const result = importUsers(text);
+        let result;
+
+        try {
+            result = importUsers(text);
+        } catch (error) {
+            const detail = (error && error.message) ? ": " + error.message : "";
+            setStatus("⚠️ Hiba az importálás közben" + detail + ".");
+            return;
+        }
 
         if (!result.ok) {
             setStatus("⚠️ " + result.error);
@@ -234,15 +410,48 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
         }
 
         const parts = [];
-        parts.push(`${result.imported} profil importálva`);
-        if (result.skipped > 0) {
-            parts.push(`${result.skipped} már létezett`);
-        }
-        setStatus("✅ " + parts.join(", ") + ".");
-
         if (result.imported > 0) {
-            onChanged();
+            parts.push(`${result.imported} új profil importálva`);
         }
+        if (result.merged > 0) {
+            parts.push(`${result.merged} profil összefésülve`);
+        }
+
+        const message = "✅ " + (parts.join(", ") || "Nincs változás.") + ".";
+        setStatus(message);
+        showToast(message);
+
+        if (result.imported > 0 || result.merged > 0) {
+            try {
+                onChanged();
+            } catch {
+                showToast("✅ Az adatok mentve. Az oldal frissítéséhez lépj egyet vissza, majd újra ide.", true);
+            }
+        }
+
+    }
+
+    function handleAnyText(text) {
+
+        const cleaned = text.trim().replace(/^\uFEFF/, "");
+
+        if (!cleaned) {
+            setStatus("⚠️ Üres beillesztés.");
+            return;
+        }
+
+        if (cleaned.startsWith("{")) {
+            handleImport(cleaned);
+            return;
+        }
+
+        decodeQrPayload(cleaned).then(payload => {
+            if (payload) {
+                handleImport(payload);
+            } else {
+                setStatus("⚠️ Ez a szöveg nem matekidős átviteli kód. Próbáld a letöltés + importálás fájlból párost.");
+            }
+        });
 
     }
 
@@ -292,8 +501,6 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
         qrArea.append(video, hint, stopBtn);
 
         const canvas = document.createElement("canvas");
-        canvas.width = 640;
-        canvas.height = 480;
 
         const context = canvas.getContext("2d", { willReadFrequently: true });
         let cancelled = false;
@@ -302,10 +509,32 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
 
             if (cancelled || !activeStream) return;
 
-            if (video.readyState >= 2) {
-                context.drawImage(video, 0, 0, 640, 480);
-                const image = context.getImageData(0, 0, 640, 480);
-                const found = jsQR(image.data, 640, 480);
+            if (video.readyState >= 2 && video.videoWidth > 0) {
+
+                const srcW = video.videoWidth;
+                const srcH = video.videoHeight;
+                const maxDim = 1000;
+                const scale = Math.min(1, maxDim / Math.max(srcW, srcH));
+                const w = Math.max(1, Math.round(srcW * scale));
+                const h = Math.max(1, Math.round(srcH * scale));
+
+                if (canvas.width !== w || canvas.height !== h) {
+                    canvas.width = w;
+                    canvas.height = h;
+                }
+
+                context.drawImage(video, 0, 0, w, h);
+                const image = context.getImageData(0, 0, w, h);
+
+                let found = jsQR(image.data, w, h);
+
+                if (!found) {
+                    for (const factor of [0.6, 0.35]) {
+                        const small = downscaleImageData(image, w, h, factor);
+                        found = jsQR(small.data, small.width, small.height);
+                        if (found) break;
+                    }
+                }
 
                 if (found && found.data) {
                     cancelled = true;
@@ -319,6 +548,7 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
                     }
                     return;
                 }
+
             }
 
             requestAnimationFrame(tick);

@@ -95,13 +95,13 @@
 }
 
 .backup-qr-img {
-    max-width: 240px;
-    width: 100%;
+    max-width: min(94vw, 560px);
     height: auto;
     border: 2px solid #eee;
     border-radius: 12px;
     background: white;
-    padding: .4rem;
+    padding: .6rem;
+    image-rendering: pixelated;
 }
 
 .backup-scan-video {
@@ -127,6 +127,57 @@
     margin: 0;
 }
 
+.backup-paste-area {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 100%;
+}
+
+.backup-paste-input {
+    width: 100%;
+    padding: .5rem;
+    border: 2px solid #dce7f8;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: .85rem;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
 .backup-hidden {
     display: none;
+}
+
+.backup-toast {
+    position: fixed;
+    left: 50%;
+    top: 1.2rem;
+    transform: translateX(-50%);
+    z-index: 9999;
+    max-width: min(92vw, 460px);
+    padding: .7rem 1.1rem;
+    border-radius: 12px;
+    background: #1f7a3d;
+    color: white;
+    font-size: .92rem;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, .28);
+    animation: backup-toast-in .25s ease-out;
+}
+
+.backup-toast.warn {
+    background: #c0392b;
+}
+
+@keyframes backup-toast-in {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -12px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
 }

@@ -224,12 +224,113 @@ export function exportUsers(playerIds) {
 
 }
 
+function sumCounts(a, b) {
+    return (a ?? 0) + (b ?? 0);
+}
+
+function pickLater(a, b) {
+    if (!a) return b ?? null;
+    if (!b) return a;
+    return a > b ? a : b;
+}
+
+function unionList(local, incoming) {
+    return [...new Set([...(local ?? []), ...(incoming ?? [])])];
+}
+
+function mergeCounters(local, incoming) {
+
+    local = { ...(local ?? {}) };
+
+    for (const [key, counts] of Object.entries(incoming ?? {})) {
+        const prev = local[key] ?? { correct: 0, wrong: 0 };
+        local[key] = {
+            correct: sumCounts(prev.correct, counts.correct),
+            wrong: sumCounts(prev.wrong, counts.wrong)
+        };
+    }
+
+    return local;
+
+}
+
+function mergeDailyStats(local, incoming) {
+
+    local = { ...(local ?? {}) };
+
+    for (const [date, day] of Object.entries(incoming ?? {})) {
+        const prev = local[date] ?? { correct: 0, wrong: 0, lessonsPlayed: 0, byType: {} };
+        const merged = {
+            correct: sumCounts(prev.correct, day.correct),
+            wrong: sumCounts(prev.wrong, day.wrong),
+            lessonsPlayed: sumCounts(prev.lessonsPlayed, day.lessonsPlayed),
+            byType: { ...(prev.byType ?? {}) }
+        };
+        for (const [type, counts] of Object.entries(day.byType ?? {})) {
+            const prevType = merged.byType[type] ?? { correct: 0, wrong: 0 };
+            merged.byType[type] = {
+                correct: sumCounts(prevType.correct, counts.correct),
+                wrong: sumCounts(prevType.wrong, counts.wrong)
+            };
+        }
+        local[date] = merged;
+    }
+
+    return local;
+
+}
+
+function mergeLessonStats(local, incoming) {
+
+    local = { ...(local ?? {}) };
+
+    for (const [file, counts] of Object.entries(incoming ?? {})) {
+        const prev = local[file] ?? { correct: 0, wrong: 0, lastDoneAt: null };
+        local[file] = {
+            correct: sumCounts(prev.correct, counts.correct),
+            wrong: sumCounts(prev.wrong, counts.wrong),
+            lastDoneAt: pickLater(prev.lastDoneAt, counts.lastDoneAt)
+        };
+    }
+
+    return local;
+
+}
+
+function mergeProfiles(local, incoming) {
+
+    return {
+        stars: sumCounts(local.stars, incoming.stars),
+        lessonsCompleted: sumCounts(local.lessonsCompleted, incoming.lessonsCompleted),
+        perfectLessons: sumCounts(local.perfectLessons, incoming.perfectLessons),
+        lettersDelivered: sumCounts(local.lettersDelivered, incoming.lettersDelivered),
+        streak: Math.max(local.streak ?? 0, incoming.streak ?? 0),
+        lastPlayed: pickLater(local.lastPlayed, incoming.lastPlayed),
+        unlockedThemes: unionList(local.unlockedThemes, incoming.unlockedThemes),
+        activeWorld: local.activeWorld ?? incoming.activeWorld ?? "postman",
+        grade: local.grade ?? incoming.grade ?? null,
+        dailyQuest: local.dailyQuest ?? incoming.dailyQuest ?? DEFAULT_PROFILE.dailyQuest,
+        dailyStats: mergeDailyStats(local.dailyStats, incoming.dailyStats),
+        lessonStats: mergeLessonStats(local.lessonStats, incoming.lessonStats),
+        favorites: unionList(local.favorites, incoming.favorites),
+        skippedLessons: unionList(local.skippedLessons, incoming.skippedLessons),
+        skippedCustomLessons: unionList(local.skippedCustomLessons, incoming.skippedCustomLessons),
+        menuPrefs: local.menuPrefs ?? incoming.menuPrefs ?? null,
+        statistics: mergeCounters(local.statistics, incoming.statistics),
+        skillStats: mergeCounters(local.skillStats, incoming.skillStats),
+        doneCustomLessons: unionList(local.doneCustomLessons, incoming.doneCustomLessons)
+    };
+
+}
+
 export function importUsers(jsonString) {
 
     let parsed;
 
+    const cleaned = jsonString.trim().replace(/^\uFEFF/, "");
+
     try {
-        parsed = JSON.parse(jsonString);
+        parsed = JSON.parse(cleaned);
     } catch {
         return { ok: false, error: "Nem érvényes mentési fájl." };
     }
@@ -239,9 +340,9 @@ export function importUsers(jsonString) {
     }
 
     const data = loadUsers();
-    const existing = new Set(data.players.map(p => p.name + "\u0000" + (p.avatar ?? "")));
+    const existing = new Map(data.players.map(p => [p.name + "\u0000" + (p.avatar ?? ""), p]));
     const imported = [];
-    const skipped = [];
+    let merged = 0;
 
     for (const raw of parsed.players) {
 
@@ -253,8 +354,12 @@ export function importUsers(jsonString) {
         const avatar = typeof raw.avatar === "string" && raw.avatar ? raw.avatar : "🦊";
         const key = name + "\u0000" + avatar;
 
-        if (existing.has(key)) {
-            skipped.push(name);
+        const match = existing.get(key);
+
+        if (match) {
+            const profile = { ...DEFAULT_PROFILE, ...(raw.profile ?? {}) };
+            match.profile = mergeProfiles(match.profile ?? {}, profile);
+            merged++;
             continue;
         }
 
@@ -268,13 +373,16 @@ export function importUsers(jsonString) {
 
     if (imported.length > 0) {
         data.players.push(...imported);
+    }
+
+    if (imported.length > 0 || merged > 0) {
         saveUsers(data);
     }
 
     return {
         ok: true,
         imported: imported.length,
-        skipped: skipped.length
+        merged
     };
 
 }

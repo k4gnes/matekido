@@ -23,7 +23,8 @@ Az app megnyitásakor válaszd ki, **ki játszik ma**:
 ![Új játékos létrehozása – név, avatar és évfolyam választás](/docs/uj-jatekos.png)
 - **Több játékosnak** is lehet saját profilja (pl. testvérnek) – mindenki a saját haladását folytatja: saját csillagjai, saját eredményei vannak.
 - Az osztályt **új profil létrehozásakor** be kell jelölni; a választás **játékosonként** tárolódik.
-- A **👤 Csere** gombbal bármikor visszatérsz a profilválasztóhoz – a navigációs sávban minden képernyőn megtalálható.
+- A **profilválasztó képernyőn** az egyik profilról a másikra a kívánt profil **kártyájára koppintva** válthatsz.
+- Az **app többi képernyőjén** (Saját oldal, Leckék, Százalék, Súgó) a navigációs sáv [[👤 Csere]] gombja bármikor visszavisz a profilválasztóhoz.
 - Profilt törölni a választóképernyőn a profil kártyáján lévő **×** gombbal lehet. Erre nincs visszaállás – a törlés **végleges**!
 
 ## 🎓 Melyik osztályban játszol?
@@ -54,7 +55,7 @@ A **⚽ Válogatott** füllel magadnak állítasz össze gyakorlólistát: az é
 | Típus | A feladat **formája**: pl. igaz/hamis, hibakeresés, sorba rendezés, helyiérték |
 | Számkör | Mekkora számokkal dolgozol: 10-ig, 20-ig, 100-ig, 1000-ig vagy 10 000-ig |
 
-- A **🎓 Évfolyam** gombbal a Válogatottból bármikor visszatérsz – az app a korábban választott osztályodat hozza vissza.
+- A {{🎓 Évfolyam}} gombbal a Válogatottból bármikor visszatérsz – az app a korábban választott osztályodat hozza vissza.
 - A szűrők **játékosonként megmaradnak** a következő látogatásra is – másik játékosra váltva az ő beállításai érvényesek. A {{✕ Szűrők törlése|grey}} gomb visszaállítja az összes leckét.
 
 ## 👨‍👩‍👧 Szülői rész
@@ -100,7 +101,7 @@ Az évfolyamonkénti **tananyagtérkép**: megmutatja, milyen feladatok és tém
 
 A leckék **listákban vannak**, és mindegyiknek más a szerepe:
 
-**Feladatlista** – az **🎓 Évfolyam** menüjében a leckék a tananyag szerint sorban következnek. Egy **elemet kihagyhatsz**: a lecke jobb felső sarkában lévő [[⏭️]] gombbal átugrod, nem kell megoldanod.
+**Feladatlista** – a {{🎓 Évfolyam}} menüjében a leckék a tananyag szerint sorban következnek. Egy **elemet kihagyhatsz**: a lecke jobb felső sarkában lévő [[⏭️]] gombbal átugrod, nem kell megoldanod.
 
 **Gyakorló listák** – ezeken a [[➡️ Tovább|outline]] gombbal visz végig a lista elemein, a végéig, majd újra kezdődik:
 

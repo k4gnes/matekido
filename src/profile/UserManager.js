@@ -245,11 +245,11 @@ export function exportUsersSlim(playerIds) {
                 activeWorld: p.profile.activeWorld,
                 grade: p.profile.grade,
                 dailyQuest: p.profile.dailyQuest,
-                skillStats: p.profile.skillStats,
-                favorites: p.profile.favorites,
-                skippedLessons: p.profile.skippedLessons,
-                skippedCustomLessons: p.profile.skippedCustomLessons,
-                doneCustomLessons: p.profile.doneCustomLessons
+                skillStats: topSkills(p.profile.skillStats, 12),
+                favorites: (p.profile.favorites ?? []).slice(0, 6),
+                skippedLessons: (p.profile.skippedLessons ?? []).slice(0, 6),
+                skippedCustomLessons: (p.profile.skippedCustomLessons ?? []).slice(0, 6),
+                doneCustomLessons: (p.profile.doneCustomLessons ?? []).slice(0, 8)
             }
         }));
 
@@ -260,6 +260,19 @@ export function exportUsersSlim(playerIds) {
         exportedAt: new Date().toISOString(),
         players
     });
+
+}
+
+function topSkills(skillStats, count) {
+
+    return Object.entries(skillStats ?? {})
+        .map(([id, stats]) => [id, (stats.correct ?? 0) + (stats.wrong ?? 0), stats])
+        .sort((a, b) => (b[1] - a[1]) || (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0))
+        .slice(0, count)
+        .reduce((acc, [id, , stats]) => {
+            acc[id] = stats;
+            return acc;
+        }, {});
 
 }
 

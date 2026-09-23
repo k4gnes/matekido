@@ -35,12 +35,17 @@ async function buildQrImage(payload) {
 
     const qr = qrcode(0, "L");
     qr.addData(text);
-    qr.make();
+
+    try {
+        qr.make();
+    } catch {
+        return { url: null, text, tooLarge: true };
+    }
 
     const modules = qr.getModuleCount();
 
     if (modules > 117) {
-        throw new Error("too-large");
+        return { url: null, text, tooLarge: true };
     }
 
     const cell = 8;
@@ -68,7 +73,7 @@ async function buildQrImage(payload) {
     const found = jsQR(probe.data, size, size);
 
     if (!found || found.data !== text) {
-        throw new Error("too-large");
+        return { url: null, text, tooLarge: true };
     }
 
     return { url: canvas.toDataURL("image/png"), text };
@@ -152,6 +157,30 @@ function downloadJson(filename, content) {
 
 }
 
+async function shareOrDownload(filename, content) {
+
+    const file = new File([content], filename, { type: "application/json" });
+
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        try {
+            await navigator.share({
+                files: [file],
+                title: "matekidő – profilok",
+                text: "A matekidő játékosprofiljainak mentése. A másik eszközön: Profilok átvitele → Importálás fájlból."
+            });
+            return true;
+        } catch (error) {
+            if (error && error.name === "AbortError") {
+                return true;
+            }
+        }
+    }
+
+    downloadJson(filename, content);
+    return false;
+
+}
+
 function readFileText(file) {
 
     if (typeof file.text === "function") {
@@ -197,7 +226,7 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
 
     const subtitle = document.createElement("p");
     subtitle.className = "backup-subtitle";
-    subtitle.textContent = "Menthető fájlba vagy QR-kódba; a másik eszközön importálással vagy QR beolvasással visszaállítható.";
+    subtitle.textContent = "Fájlként letölthető vagy megosztható (Androidon azonnal megosztási menü ugrik fel), vagy QR-kódba menthető; a másik eszközön importálással visszaállítható.";
 
     card.append(title, subtitle);
 
@@ -289,17 +318,20 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
         setStatus("🏟️ " + (players[0].name ?? "Játékos") + " profilja");
     }
 
-    const downloadBtn = createButton("💾 Letöltés fájlba", {
+    const downloadBtn = createButton("💾 Letöltés / megosztás", {
         className: "backup-btn",
-        onClick: () => {
+        onClick: async () => {
             const ids = selectedIds();
             if (ids.length === 0) {
                 setStatus("⚠️ Jelölj ki legalább egy játékost!");
                 return;
             }
             const filename = buildFilename();
-            downloadJson(filename, exportUsers(ids));
-            setStatus(`💾 Elmentve: ${filename}`);
+            setStatus("Előkészítés…");
+            const shared = await shareOrDownload(filename, exportUsers(ids));
+            setStatus(shared
+                ? "💾 Válaszd ki a megosztásban, hová mented a fájlt (pl. Messenger, Drive, e-mail)."
+                : `💾 Elmentve: ${filename}`);
         }
     });
 
@@ -312,14 +344,19 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
                 return;
             }
             qrArea.replaceChildren();
-            setStatus("QR-kód készül…");
+            setStatus("Kód készül…");
             try {
-                const { url, text } = await buildQrImage(exportUsers(ids));
+                const { url, text, tooLarge } = await buildQrImage(exportUsers(ids));
                 qrArea.replaceChildren();
-                const img = document.createElement("img");
-                img.className = "backup-qr-img";
-                img.src = url;
-                img.alt = "QR-kód";
+
+                if (!tooLarge) {
+                    const img = document.createElement("img");
+                    img.className = "backup-qr-img";
+                    img.src = url;
+                    img.alt = "QR-kód";
+                    qrArea.append(img);
+                }
+
                 const copyBtn = createButton("📋 Kód másolása", {
                     className: "backup-btn",
                     onClick: async () => {
@@ -328,10 +365,11 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
                             await copyText(text);
                             setStatus("📋 Az átviteli kód a vágólapon van. A másik eszközön: Kód beillesztése.");
                         } catch {
-                            setStatus("⚠️ A másolás nem sikerült. Használd a letöltést, vagy nagyítsd a kódot.");
+                            setStatus("⚠️ A másolás nem sikerült. Használd a letöltést.");
                         }
                     }
                 });
+
                 const details = document.createElement("details");
                 details.className = "backup-qr-details";
                 const summary = document.createElement("summary");
@@ -342,13 +380,17 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
                 pre.rows = 4;
                 pre.value = text;
                 details.append(summary, pre);
+
                 const hint = document.createElement("p");
                 hint.className = "backup-hint";
-                hint.textContent = "Tartsd a másik eszközön indított QR beolvasás elé. Ha nem olvasható: másold a kódot, és a másik eszközön Kód beillesztése, vagy használd a letöltést.";
-                qrArea.append(img, copyBtn, details, hint);
+                hint.textContent = tooLarge
+                    ? "A profil túl nagy a QR-képhez, de a kód így is átvihető: másold ki, és a másik eszközön használd a Kód beillesztése opciót."
+                    : "Tartsd a másik eszközön indított QR beolvasás elé. Ha nem olvasható: másold a kódot, és ott használd a Kód beillesztése opciót.";
+
+                qrArea.append(copyBtn, details, hint);
                 setStatus("");
             } catch {
-                setStatus("⚠️ A kiválasztott profilok túl nagyok QR-kódnak. Használd a letöltést!");
+                setStatus("⚠️ Hibás kód készítés. Használd a letöltést!");
             }
         }
     });

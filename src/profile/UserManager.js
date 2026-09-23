@@ -196,3 +196,85 @@ export function switchPlayer(id) {
     saveUsers(data);
 
 }
+
+const TRANSFER_APP = "matekido";
+const TRANSFER_TYPE = "matekido-profiles";
+const TRANSFER_VERSION = 1;
+
+export function exportUsers(playerIds) {
+
+    const data = loadUsers();
+    const wanted = playerIds ? new Set(playerIds) : null;
+    const players = data.players
+        .filter(p => !wanted || wanted.has(p.id))
+        .map(p => ({
+            id: p.id,
+            name: p.name,
+            avatar: p.avatar,
+            profile: p.profile
+        }));
+
+    return JSON.stringify({
+        app: TRANSFER_APP,
+        type: TRANSFER_TYPE,
+        version: TRANSFER_VERSION,
+        exportedAt: new Date().toISOString(),
+        players
+    });
+
+}
+
+export function importUsers(jsonString) {
+
+    let parsed;
+
+    try {
+        parsed = JSON.parse(jsonString);
+    } catch {
+        return { ok: false, error: "Nem érvényes mentési fájl." };
+    }
+
+    if (!parsed || parsed.app !== TRANSFER_APP || parsed.type !== TRANSFER_TYPE || !Array.isArray(parsed.players)) {
+        return { ok: false, error: "Ez nem matekidős mentés." };
+    }
+
+    const data = loadUsers();
+    const existing = new Set(data.players.map(p => p.name + "\u0000" + (p.avatar ?? "")));
+    const imported = [];
+    const skipped = [];
+
+    for (const raw of parsed.players) {
+
+        if (!raw || typeof raw.name !== "string" || !raw.name.trim()) {
+            continue;
+        }
+
+        const name = raw.name.trim();
+        const avatar = typeof raw.avatar === "string" && raw.avatar ? raw.avatar : "🦊";
+        const key = name + "\u0000" + avatar;
+
+        if (existing.has(key)) {
+            skipped.push(name);
+            continue;
+        }
+
+        imported.push({
+            id: generateId(),
+            name,
+            avatar,
+            profile: { ...DEFAULT_PROFILE, ...(raw.profile ?? {}) }
+        });
+    }
+
+    if (imported.length > 0) {
+        data.players.push(...imported);
+        saveUsers(data);
+    }
+
+    return {
+        ok: true,
+        imported: imported.length,
+        skipped: skipped.length
+    };
+
+}

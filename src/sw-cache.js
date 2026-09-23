@@ -22,6 +22,7 @@ const SW_CACHE_LIST = [
     "/components/angleMeasure.js",
     "/components/angles.js",
     "/components/area.js",
+    "/components/backupPanel.js",
     "/components/bridgeTen.js",
     "/components/calendar.js",
     "/components/celebration.js",
@@ -125,6 +126,7 @@ const SW_CACHE_LIST = [
     "/css/angleMeasure.css",
     "/css/angles.css",
     "/css/area.css",
+    "/css/backup.css",
     "/css/base.css",
     "/css/calendar.css",
     "/css/card.css",
@@ -466,6 +468,9 @@ const SW_CACHE_LIST = [
     "/testGenerator.js",
     "/testLessons.js",
     "/utils/markdown.js",
+    "/vendor/jsqr.js",
+    "/vendor/lzstring.js",
+    "/vendor/qrcode.js",
     "/world/World.js",
     "/world/WorldRegistry.js"
 ];

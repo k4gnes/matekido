@@ -191,7 +191,11 @@ Ha egy leckében az eredmény **90% alatt** van, az bekerül a **Gyakorlásra ja
 
 - A **Saját oldal** (a navigációs sávban a nevedre/avatárodra, pl. **🦊 Lili**-re kattintva, vagy a lecke végén ugyanerre a **🦊 Lili** gombra) mutatja: csillagok, teljesített leckék, sorozat (🔥 napok), hibátlan leckék, a napi küldetés állása, a kitűzők és a világok.
 - A **képernyők tetején egységes navigációs sáv** van: **🦊 Lili** (Saját oldal), **📚 Leckék**, **📊 Százalék**, **❓ Súgó**, **👤 Csere** (profilváltás) – minden képernyőn ugyanaz a sor, az éppen látogatott képernyő gombja kiemelve, így egy koppintással bárhonnan elérhető a többi képernyő.
-- A **📊 Százalék** oldal a napi és az összesített statisztikát mutatja, valamint azt, hogy melyik készség megy jól és melyik szorul gyakorlásra. Itt találod az **🏆 Osztályok** részt is, amely megmutatja, melyik osztályt sikerült már sikeresen (átlagosan 90% fölött) befejezni, és mennyi lecke maradt hátra belőle.
+- A **📊 Százalék** oldal két fülön mutatja a teljesítményt.
+- A **📅 Napi** fül az adott napra mutatja a **helyes** és **hibás** válaszok számát, a megoldott **leckéket** és a **pontosságot** (🎯 %), valamint a **Feladatok bontásban** listában a feladattípusok találati arányát. A **◀ ▶** nyilakkal visszalapozhatsz a korábbi napokra.
+- A **📈 Összesített** fül az eddigi összes eredményt vonja össze (összes helyes és hibás válasz, leckék, pontosság), és két további részt is mutat:
+  - **🏆 Osztályok** – osztályonként látszik, meddig jutottál a leckékkel: **✅ Sikeresen befejezve**, ha minden lecke átlagosan legalább 90%-os, **🔁 Befejezve, érdemes gyakorolni**, ha már minden lecke megvan, de 90% alatti az átlag, egyébként pedig az **elvégzett / összes lecke** száma.
+  - **📊 Készségek** – készségenként (pl. összeadás, szorzás, osztás) látszik, milyen arányban sikerülnek a feladatok.
 
 ![A Százalék oldal – összesített adatok, osztályok és készségek](/docs/szazalek.png)
 

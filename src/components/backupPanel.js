@@ -1,6 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { listPlayers, exportUsers, importUsers } from "../profile/UserManager.js";
+import { queueMessage } from "./appDiagnostics.js";
 
 const TRANSFER_PREFIX = "matekido-atvitel:";
 
@@ -369,7 +370,9 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
             handleAnyText(await readFileText(file));
         } catch (error) {
             const detail = (error && error.message) ? ": " + error.message : "";
-            setStatus("⚠️ Hibás fájl" + detail + ".");
+            const message = "⚠️ Hibás fájl" + detail + ".";
+            setStatus(message);
+            queueMessage(message, true);
         }
         fileInput.value = "";
     });
@@ -400,7 +403,9 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
             result = importUsers(text);
         } catch (error) {
             const detail = (error && error.message) ? ": " + error.message : "";
-            setStatus("⚠️ Hiba az importálás közben" + detail + ".");
+            const message = "⚠️ Hiba az importálás közben" + detail + ".";
+            setStatus(message);
+            queueMessage(message, true);
             return;
         }
 
@@ -420,6 +425,7 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
         const message = "✅ " + (parts.join(", ") || "Nincs változás.") + ".";
         setStatus(message);
         showToast(message);
+        queueMessage(message);
 
         if (result.imported > 0 || result.merged > 0) {
             try {

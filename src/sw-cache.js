@@ -21,6 +21,7 @@ const SW_CACHE_LIST = [
     "/components/addition.js",
     "/components/angleMeasure.js",
     "/components/angles.js",
+    "/components/appDiagnostics.js",
     "/components/area.js",
     "/components/backupPanel.js",
     "/components/bridgeTen.js",

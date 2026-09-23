@@ -15,12 +15,48 @@ import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, g
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
 import { createCard } from "./components/ui/card.js";
 import { createButton } from "./components/ui/button.js";
+import { installDiagnostics, showPendingMessage } from "./components/appDiagnostics.js";
+
+installDiagnostics();
+showPendingMessage();
 
 const root = document.getElementById("app");
 
+const ROUTE_KEY = "matekido-route";
+
+function readRoute() {
+    try {
+        return sessionStorage.getItem(ROUTE_KEY) || "";
+    } catch {
+        return "";
+    }
+}
+
+function setRoute(name) {
+    try {
+        sessionStorage.setItem(ROUTE_KEY, name);
+    } catch {
+        return;
+    }
+}
+
 const lessonIndex = await loadLesson("./data/lessons/index.json");
 
-if (getActiveId() && listPlayers().length > 0) {
+const restoredRoute = readRoute();
+
+if (restoredRoute === "welcome") {
+    showWelcome();
+} else if (restoredRoute === "profile") {
+    showProfile();
+} else if (restoredRoute === "stats") {
+    showStats();
+} else if (restoredRoute === "help") {
+    showHelp();
+} else if (restoredRoute === "parent") {
+    showParentHub();
+} else if (restoredRoute === "dashboard") {
+    showParentDashboard();
+} else if (getActiveId() && listPlayers().length > 0) {
     showMenu();
 } else {
     showWelcome();
@@ -44,6 +80,7 @@ function clearWorldBackground() {
 function showWelcome() {
     clearWorldBackground();
     setTipVisible(true);
+    setRoute("welcome");
     renderWelcomeScreen(root, () => {
         showMenu();
     }, showHelp, lessonIndex);
@@ -52,6 +89,7 @@ function showWelcome() {
 function showParentDashboard() {
     clearWorldBackground();
     setTipVisible(true);
+    setRoute("dashboard");
     renderParentDashboard(root, () => {
         showWelcome();
     }, lessonIndex);
@@ -61,6 +99,7 @@ function showMenu() {
 
     setWorldBackground();
     setTipVisible(true);
+    setRoute("menu");
 
     renderLessonMenu(
         lessonIndex,
@@ -88,12 +127,14 @@ function navFor() {
 function showSkillMap() {
     clearWorldBackground();
     setTipVisible(true);
+    setRoute("parent");
     renderSkillMap(root, () => showParentHub());
 }
 
 function showParentHub() {
     clearWorldBackground();
     setTipVisible(true);
+    setRoute("parent");
     renderParentHub(root, {
         onBack: showMenu,
         onDashboard: () => {
@@ -109,18 +150,21 @@ function showParentHub() {
 function showHelp() {
     clearWorldBackground();
     setTipVisible(true);
+    setRoute("help");
     renderHelp(root, navFor());
 }
 
 function showProfile() {
     setWorldBackground();
     setTipVisible(true);
+    setRoute("profile");
     renderProfilePage(lessonIndex, root, showMenu, showStats, () => showHelp(), showWelcome);
 }
 
 function showStats() {
     setWorldBackground();
     setTipVisible(true);
+    setRoute("stats");
     renderStatsPage(root, navFor(), lessonIndex);
 }
 

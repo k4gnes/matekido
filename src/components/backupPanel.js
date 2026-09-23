@@ -166,18 +166,34 @@ async function shareOrDownload(filename, content) {
             await navigator.share({
                 files: [file],
                 title: "matekidő – profilok",
-                text: "A matekidő játékosprofiljainak mentése. A másik eszközön: Profilok átvitele → Importálás fájlból."
+                text: "A másik eszközön: Profilok átvitele → Importálás fájlból."
             });
-            return true;
+            return { mode: "share" };
         } catch (error) {
             if (error && error.name === "AbortError") {
-                return true;
+                return { mode: "share" };
+            }
+        }
+    }
+
+    if (navigator.share) {
+        try {
+            const { default: LZString } = await import("../vendor/lzstring.js");
+            const code = TRANSFER_PREFIX + LZString.compressToBase64(content);
+            await navigator.share({
+                title: "matekidő – profilok",
+                text: code
+            });
+            return { mode: "text" };
+        } catch (error) {
+            if (error && error.name === "AbortError") {
+                return { mode: "text" };
             }
         }
     }
 
     downloadJson(filename, content);
-    return false;
+    return { mode: "download" };
 
 }
 
@@ -328,10 +344,18 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
             }
             const filename = buildFilename();
             setStatus("Előkészítés…");
-            const shared = await shareOrDownload(filename, exportUsers(ids));
-            setStatus(shared
-                ? "💾 Válaszd ki a megosztásban, hová mented a fájlt (pl. Messenger, Drive, e-mail)."
-                : `💾 Elmentve: ${filename}`);
+            const outcome = await shareOrDownload(filename, exportUsers(ids));
+
+            if (outcome.mode === "share") {
+                setStatus("💾 Válaszd ki a megosztásban, hová küldöd a fájlt (pl. Messenger, Drive, e-mail).");
+            } else if (outcome.mode === "text") {
+                setStatus("💾 A kódot küldd el magadnak (pl. Messengeren). A másik gépen: Kód beillesztése.");
+            } else {
+                const isMobile = /Android|iPhone|iPad|Mobile/i.test(navigator.userAgent);
+                setStatus(isMobile
+                    ? `💾 Elmentve: ${filename} – a Fájlok (Letöltések) mappában keresd.`
+                    : `💾 Elmentve: ${filename}`);
+            }
         }
     });
 

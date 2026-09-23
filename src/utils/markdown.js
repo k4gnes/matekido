@@ -13,6 +13,14 @@ function renderInline(text) {
     return escapeHtml(text)
         .replace(/`([^`]+)`/g, "<code>$1</code>")
         .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+        .replace(/\[\[([^\]|]+)(?:\|([^\]|]+))?\]\]/g, (match, label, variant) => {
+            const cls = variant === "outline" ? " help-btn-outline" : variant === "ghost" ? " help-btn-ghost" : "";
+            return `<span class="help-btn${cls}">${label}</span>`;
+        })
+        .replace(/\{\{([^}|]+)(?:\|([^}|]+))?\}\}/g, (match, label, variant) => {
+            const cls = variant === "grey" ? " help-btn-grey" : "";
+            return `<span class="help-btn help-btn-sq${cls}">${label}</span>`;
+        })
         .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
             const safeSrc = src.trim();
             const allowed = /^(https?:\/\/|\/|\.\/|\.\.\/)/.test(safeSrc);

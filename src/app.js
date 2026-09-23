@@ -3,7 +3,7 @@ import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=25";
 import { renderLessonMenu } from "./components/lessonMenu.js?v=78";
 import { renderSkillMap } from "./components/skillMap.js?v=23";
-import { renderHelp } from "./components/help.js?v=5";
+import { renderHelp } from "./components/help.js?v=6";
 import { renderProfilePage } from "./components/profilePage.js?v=9";
 import { renderStatsPage } from "./components/statsPage.js?v=9";
 import { getNextPracticeLesson } from "./components/practicePage.js?v=9";

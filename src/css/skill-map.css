@@ -75,15 +75,16 @@
 
 .skill-map-body {
     text-align: left;
+    font-size: 1rem;
 }
 
 .skill-map-body h1 {
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     margin: 0.2rem 0 1rem;
 }
 
 .skill-map-body h2 {
-    font-size: 1.1rem;
+    font-size: 1.08rem;
     margin: 1.4rem 0 0.6rem;
     border-bottom: 2px solid #eef2f7;
     padding-bottom: 0.3rem;
@@ -92,6 +93,11 @@
 .skill-map-body h3 {
     font-size: 1rem;
     margin: 1.1rem 0 0.5rem;
+}
+
+.skill-map-body h4 {
+    font-size: 0.92rem;
+    margin: 1rem 0 0.4rem;
 }
 
 .skill-map-body p {
@@ -119,7 +125,7 @@
     background: #f1f5fa;
     padding: 0.08rem 0.35rem;
     border-radius: 6px;
-    font-size: 0.85em;
+    font-size: 0.88em;
 }
 
 .skill-map-body img {
@@ -147,6 +153,46 @@
 
 .skill-map-body th {
     background: #f4f7fb;
+}
+
+.help-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.12rem 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.55;
+    border-radius: 999px;
+    background: var(--primary);
+    color: #fff;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.help-btn-sq {
+    border-radius: 10px;
+    background: var(--background);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.help-btn-outline {
+    background: #fff;
+    color: var(--primary);
+    border: 1.5px solid var(--primary);
+}
+
+.help-btn-ghost {
+    background: transparent;
+    color: #889;
+    border: 1.5px solid #ddd;
+}
+
+.help-btn-grey {
+    background: #e0e0e0;
+    color: #333;
+    border: 1.5px solid #e0e0e0;
 }
 
 @media (max-width: 600px) {

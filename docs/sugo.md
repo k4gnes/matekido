@@ -6,9 +6,13 @@ Hibát találtál, ötleted vagy kérésed van a Matekidővel kapcsolatban? Írj
 
 ## ☕ Támogatás
 
+[[☕ Tippelj meg! 💛|outline]]
+
 Ha hasznosnak találod az appot, a **☕ Tippelj meg! 💛** linkkel támogathatod a fejlesztését. Ezt a képernyők **bal alsó sarkában** találod.
 
 ## 🚀 Kezdés – ki játszik ma?
+
+[[👤 Csere]]
 
 Az app megnyitásakor válaszd ki, **ki játszik ma**:
 
@@ -24,17 +28,21 @@ Az app megnyitásakor válaszd ki, **ki játszik ma**:
 
 ## 🎓 Melyik osztályban játszol?
 
+{{🎓 Évfolyam}}
+
 A leckék **osztályonként vannak csoportosítva**, így mindig pontosan az adott évfolyamhoz tartozó tananyag következik:
 
 ![Az évfolyamválasztó a feladatok menüjében](/docs/evfolyamvalaszto.png)
 
-- A feladatok menüjének **🎓 Évfolyam** gombjával választhatsz (1., 2., 3., 4. osztály).
+- A feladatok menüjének {{🎓 Évfolyam}} gombjával választhatsz (1., 2., 3., 4. osztály).
 - A választás **játékosonként elmentődik**, legközelebb már nem kérdezi meg.
 - Minden lecke mellett látszik, hányadik osztályos a jelvényen (pl. „1. osztály”).
 
 ## ⚽ Válogatott és 🔍 Szűrők
 
-A **⚽ Válogatott** füllel magadnak állítasz össze gyakorlólistát: az évfolyam, nehézség, feladattípus, készség, típus és számkör szűrői alapján csak azok a feladatok kerülnek a listába, amelyeket szeretnél. A szűrők a Válogatott tetején a **🔍 Szűrők** gombbal nyithatók meg:
+{{⚽ Válogatott}} {{🔍 Szűrők|grey}}
+
+A **⚽ Válogatott** füllel magadnak állítasz össze gyakorlólistát: az évfolyam, nehézség, feladattípus, készség, típus és számkör szűrői alapján csak azok a feladatok kerülnek a listába, amelyeket szeretnél. A szűrők a Válogatott tetején a {{🔍 Szűrők|grey}} gombbal nyithatók meg:
 
 ![A Válogatott nézd a 🔍 Szűrőkkel](/docs/valogatott.png)
 
@@ -47,9 +55,11 @@ A **⚽ Válogatott** füllel magadnak állítasz össze gyakorlólistát: az é
 | Számkör | Mekkora számokkal dolgozol: 10-ig, 20-ig, 100-ig, 1000-ig vagy 10 000-ig |
 
 - A **🎓 Évfolyam** gombbal a Válogatottból bármikor visszatérsz – az app a korábban választott osztályodat hozza vissza.
-- A szűrők **játékosonként megmaradnak** a következő látogatásra is – másik játékosra váltva az ő beállításai érvényesek. A **✕ Szűrők törlése** gomb visszaállítja az összes leckét.
+- A szűrők **játékosonként megmaradnak** a következő látogatásra is – másik játékosra váltva az ő beállításai érvényesek. A {{✕ Szűrők törlése|grey}} gomb visszaállítja az összes leckét.
 
 ## 👨‍👩‍👧 Szülői rész
+
+[[👨‍👩‍👧 Szülői|ghost]]
 
 A feladatok menüjében a **👨‍👩‍👧 Szülői** gomb nyitja meg a szülői részt, ahonnan az alábbiak érhetők el:
 
@@ -86,11 +96,13 @@ Az évfolyamonkénti **tananyagtérkép**: megmutatja, milyen feladatok és tém
 
 ## 📋 A listák
 
+[[⏭️]] [[➡️ Tovább|outline]]
+
 A leckék **listákban vannak**, és mindegyiknek más a szerepe:
 
-**Feladatlista** – az **🎓 Évfolyam** menüjében a leckék a tananyag szerint sorban következnek. Egy **elemet kihagyhatsz**: a lecke jobb felső sarkában lévő **⏭️** gombbal átugrod, nem kell megoldanod.
+**Feladatlista** – az **🎓 Évfolyam** menüjében a leckék a tananyag szerint sorban következnek. Egy **elemet kihagyhatsz**: a lecke jobb felső sarkában lévő [[⏭️]] gombbal átugrod, nem kell megoldanod.
 
-**Gyakorló listák** – ezeken a **➡️ Tovább** gombbal visz végig a lista elemein, a végéig, majd újra kezdődik:
+**Gyakorló listák** – ezeken a [[➡️ Tovább|outline]] gombbal visz végig a lista elemein, a végéig, majd újra kezdődik:
 
 - **⚽ Válogatott** – a **🔍 Szűrők** alapján összeállított szűrt lista.
 - **🎯 Gyakorlásra javasolt** – a 90% alatti eredményű leckéid.
@@ -111,6 +123,8 @@ Az egész app leckékből és feladatokból áll, ezért tisztázzuk, miben kül
 
 ## 📖 Hogyan épül fel egy lecke?
 
+[[Kezdjük!]]
+
 1. **Bevezető jelenet** – röviden leírja, mi fog történni, és mi a történet. A **Kezdjük!** gombbal indulsz. A jobb felső sarokban lévő **❤️** gombbal kedvenccé teheted a leckét, a **⏭️** gombbal kihagyhatod (részletek lentebb).
 2. **Feladatok** – egymás után jönnek, a haladást a felső sáv mutatja.
 3. **Ünneplés** – a végén látod a kapott csillagokat és a következő lehetőségeket.
@@ -121,8 +135,8 @@ Az egész app leckékből és feladatokból áll, ezért tisztázzuk, miben kül
 
 Egy feladat közben:
 
-- A kártya jobb felső sarkában három gomb van: a **?** gombra előjön a feladat utasítása (mit kell csinálni), a **❤️** gombbal kedvenccé teheted a leckét (🤍-re váltva leveszed), a **📚** gombbal pedig a leckékhez lépsz ki.
-- Sok feladatnál van **💡 Segítséget kérek** gomb – kattints rá, és lépésről lépésre vezető segítséget kapsz. A segítség csak akkor jelenik meg, ha kérsz: néhány hiba után bukkan fel a gomb.
+- A kártya jobb felső sarkában három gomb van: a [[?]] gombra előjön a feladat utasítása (mit kell csinálni), a [[❤️]] gombbal kedvenccé teheted a leckét (🤍-re váltva leveszed), a [[📚]] gombbal pedig a leckékhez lépsz ki.
+- Sok feladatnál van {{💡 Segítséget kérek}} gomb – kattints rá, és lépésről lépésre vezető segítséget kapsz. A segítség csak akkor jelenik meg, ha kérsz: néhány hiba után bukkan fel a gomb.
 - **Soha nem büntetünk**: hibás válasznál nincs büntetés, csak újrapróbálhatod, amíg sikerül.
 
 ## ⭐ Csillagok, küldetések, mérföldkövek és kitűzők
@@ -158,6 +172,8 @@ A Matekidő **hat világban** játszódik, és a leckék történetei mindig az 
 
 ## 📚 A feladatok menüje
 
+{{➡️ Következő feladat}} {{📚 Feladatok listája}} {{🎯 Gyakorlásra javasolt}} {{⏭️ Átugrott feladatok}} {{🔁 Erősítő feladatok}} {{❤️ Kedvenceim}}
+
 A feladatlistára belépve sorban a következők jönnek:
 
 - **➡️ Következő feladat** – az, amit legközelebb érdemes megoldani.
@@ -169,6 +185,8 @@ A feladatlistára belépve sorban a következők jönnek:
 
 ## 🎯 Gyakorlás – a gyengébb leckék
 
+{{🎯 Gyakorlásra javasolt}}
+
 Ha egy leckében az eredmény **90% alatt** van, az bekerül a **Gyakorlásra javasolt** listára:
 
 - A feladatmenüben van a **🎯 Gyakorlásra javasolt** rész, amíg van 90% alatti lecke.
@@ -177,6 +195,8 @@ Ha egy leckében az eredmény **90% alatt** van, az bekerül a **Gyakorlásra ja
 - Ezzel mindig azt erősítjük, ami még gyenge – nem azt, ami már megy.
 
 ## ⏭️ Kihagyott leckék
+
+[[⏭️]]
 
 - Az **⏭️** gombbal **kihagyhatod a leckét** – a következő, még meg nem oldott leckére ugrik.
 - A kihagyott leckék **összegyűlnek**, és **legvégül jönnek következőnek**: előbb a többi leckét megoldod, a kihagyottak a sorrendjükben úgyis visszatérnek.
@@ -187,10 +207,12 @@ Ha egy leckében az eredmény **90% alatt** van, az bekerül a **Gyakorlásra ja
 
 ## 🦊 Lili Saját oldal és 📊 Százalék
 
+[[🦊 Lili]] [[📚 Leckék]] [[📊 Százalék]] [[❓ Súgó]] [[👤 Csere]]
+
 ![A Saját oldal – csillagok, statisztika, napi küldetés](/docs/sajat-oldal.png)
 
 - A **Saját oldal** (a navigációs sávban a nevedre/avatárodra, pl. **🦊 Lili**-re kattintva, vagy a lecke végén ugyanerre a **🦊 Lili** gombra) mutatja: csillagok, teljesített leckék, sorozat (🔥 napok), hibátlan leckék, a napi küldetés állása, a kitűzők és a világok.
-- A **képernyők tetején egységes navigációs sáv** van: **🦊 Lili** (Saját oldal), **📚 Leckék**, **📊 Százalék**, **❓ Súgó**, **👤 Csere** (profilváltás) – minden képernyőn ugyanaz a sor, az éppen látogatott képernyő gombja kiemelve, így egy koppintással bárhonnan elérhető a többi képernyő.
+- A **képernyők tetején egységes navigációs sáv** van: [[🦊 Lili]] (Saját oldal), [[📚 Leckék]], [[📊 Százalék]], [[❓ Súgó]], [[👤 Csere]] (profilváltás) – minden képernyőn ugyanaz a sor, az éppen látogatott képernyő gombja kiemelve, így egy koppintással bárhonnan elérhető a többi képernyő.
 - A **📊 Százalék** oldal két fülön mutatja a teljesítményt.
 - A **📅 Napi** fül az adott napra mutatja a **helyes** és **hibás** válaszok számát, a megoldott **leckéket** és a **pontosságot** (🎯 %), valamint a **Feladatok bontásban** listában a feladattípusok találati arányát. A **◀ ▶** nyilakkal visszalapozhatsz a korábbi napokra.
 - A **📈 Összesített** fül az eddigi összes eredményt vonja össze (összes helyes és hibás válasz, leckék, pontosság), és két további részt is mutat:
@@ -215,6 +237,8 @@ Telepítés után az alkalmazás ikonról indítható, teljes képernyős módba
 - Amikor internet van, az alkalmazás mindig a **legfrissebb tartalmat** tölti be. Ha új leckék vagy javítások érkeztek, elég egyszer online megnyitni – a következő offline használatra már az új verzió lesz elérhető.
 
 ## 💾 Eredmények tárolása és adatvédelem
+
+[[👨‍👩‍👧 Szülői|ghost]] {{💾 Profilok átvitele}}
 
 - A játékosprofilok és az eredmények **csak a készüléken** (a böngészőben) tárolódnak, sehova nem kerülnek fel.
 - **Figyelem:** ha a böngészőben törlöd a webhely adatait (előzmények / cookie-k / webhelyadatok), a profilok és az eredmények is **véglegesen elvesznek**. Telepített appnál ugyanez vonatkozik a böngésző adataira.

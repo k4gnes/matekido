@@ -195,6 +195,108 @@
     border: 1.5px solid #e0e0e0;
 }
 
+.help-btn-img {
+    background: transparent;
+    color: inherit;
+    border: 0;
+    padding: 0;
+    line-height: 0;
+    vertical-align: middle;
+}
+
+a.help-btn-img {
+    text-decoration: none;
+}
+
+a.help-btn-img img {
+    transition: opacity 0.15s, transform 0.15s;
+}
+
+a.help-btn-img:hover img {
+    opacity: 0.85;
+    transform: scale(1.05);
+}
+
+.help-btn-img img {
+    display: block;
+    height: 2.4rem;
+    width: auto;
+}
+
+.skill-map-body h2 .help-btn-img img {
+    height: 1.4rem;
+}
+
+.help-toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 0.9rem 0 1.3rem;
+    padding: 0.85rem;
+    background: #f6f9ff;
+    border: 2px solid #dce7f8;
+    border-radius: 14px;
+}
+
+.help-toc-title {
+    flex: 0 0 100%;
+    margin: 0 0 0.15rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.help-toc-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.32rem 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.4;
+    border-radius: 999px;
+    background: #fff;
+    border: 2px solid #dce7f8;
+    color: var(--primary);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: border-color 0.15s, background 0.15s;
+}
+
+.help-toc-item img {
+    height: 1.3rem;
+    width: auto;
+}
+
+.help-toc-item:hover,
+.help-toc-item:focus {
+    border-color: var(--primary);
+    background: #eef4fe;
+}
+
+.help-toc-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin: 0.7rem 0 0.1rem;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.4;
+    border-radius: 999px;
+    background: #eef4fe;
+    border: 2px solid #dce7f8;
+    color: var(--primary);
+    text-decoration: none;
+    transition: border-color 0.15s, background 0.15s;
+}
+
+.help-toc-back:hover,
+.help-toc-back:focus {
+    border-color: var(--primary);
+    background: #fff;
+}
+
 @media (max-width: 600px) {
 
     .skill-map-body th,

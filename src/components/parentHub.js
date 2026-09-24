@@ -1,30 +1,31 @@
 import { createCard } from "./ui/card.js";
-import { createButton } from "./ui/button.js";
+import { createNavBar } from "./ui/navbar.js";
 
-export function renderParentHub(root, { onBack, onDashboard, onTopics, onHelp, onTransfer }) {
+export function renderParentHub(root, { onDashboard, onTopics, onHelp, onTransfer, onLessons, onProfile, onStats, onSwitch, onParent }) {
 
     root.replaceChildren();
 
     const wrapper = createCard("parent-page parent-hub");
 
-    const backButton = createButton("⬅️ Vissza a feladatokhoz", {
-        className: "nav-bar-btn",
-        onClick: () => onBack()
+    const navbar = createNavBar({
+        current: "parent",
+        onLessons,
+        onProfile,
+        onStats,
+        onHelp,
+        onSwitch,
+        onParent
     });
-
-    const backRow = document.createElement("div");
-    backRow.style.cssText = "display:flex; justify-content:center; margin-bottom:1rem;";
-    backRow.append(backButton);
 
     const title = document.createElement("h1");
     title.className = "parent-title";
-    title.textContent = "👨‍👩‍👧 Szülői";
+    title.textContent = "👪 Szülői";
 
     const subtitle = document.createElement("p");
     subtitle.className = "parent-subtitle";
     subtitle.textContent = "A gyerekeknek ez az oldal játék – ebből a részből pedig a haladást és a tananyagot követheted figyelemmel.";
 
-    wrapper.append(backRow, title, subtitle);
+    wrapper.append(navbar, title, subtitle);
 
     const grid = document.createElement("div");
     grid.className = "parent-hub-grid";
@@ -50,14 +51,7 @@ export function renderParentHub(root, { onBack, onDashboard, onTopics, onHelp, o
         () => onTransfer()
     );
 
-    const helpItem = createHubItem(
-        "❓",
-        "Súgó",
-        "Gyakori kérdések, szülői összefoglaló és visszajelzés egy helyen.",
-        () => onHelp()
-    );
-
-    grid.append(dashboardItem, topicsItem, transferItem, helpItem);
+    grid.append(dashboardItem, topicsItem, transferItem);
     wrapper.append(grid);
 
     root.append(wrapper);

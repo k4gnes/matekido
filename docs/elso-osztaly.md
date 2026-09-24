@@ -24,8 +24,8 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Helyiérték | Helyiérték – tízes és egyes 100-ig | Helyiérték (tízes + egyes) | 100 | 1 |
 | Hiányzó szám | Kiegészítés véletlen számig 20-ig | Hiányzó szám | 20 | 1 |
 | Számszomszédok | Számok szomszédai 100-ig | Számszomszédok | 100 | 1 |
-| Tízesátlépés | Tízesátlépés 20-ig | Tízesátlépés | 20 | 2 |
-| Becslés | Becslés 30-ig | Becslés | 30 | 1 |
+| Tízesátlépés | Tízesátlépés 20-ig | Tízesátlépés (lépésről lépésre) | 20 | 2 |
+| Becslés | Becslés 30-ig | Becslés (segítség gombra) | 30 | 1 |
 | Kerekítés | Kerekítés tízesre 100-ig | Kerekítés | 100 | 1 |
 | Adatok | 📊 Melyikből van több? | Oszlopdiagram olvasása (SVG) | — | 1 |
 
@@ -55,7 +55,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 |---|---|---|---|---|
 | Alakzatok | Kerek, szögletes és háromszög | Alakzatok rendezése (SVG) | — | 1 |
 | Térbeli tájékozódás | Térbeli tájékozódás | Térbeli tájékozódás | — | 1 |
-| Alakzat-tulajdonságok | 📐 Hány oldala van? | Oldalak számlálása (SVG) | — | 1 |
+| Alakzat-tulajdonságok | 📐 Hány oldala van? | Oldalak/sarkok és nagyság (SVG) | — | 1 |
 | Térbeli testek | 🧊 Térbeli testek | Testek felismerése | — | 1 |
 | Forgatás | 🌀 Forgatás | Forgatás és tükrözés (L betű) | — | 1 |
 

@@ -374,6 +374,7 @@ const SW_CACHE_LIST = [
     "/docs/sajat-oldal.png",
     "/docs/sugo.md",
     "/docs/szazalek.png",
+    "/docs/szuloi-gomb.svg",
     "/docs/szuloi.png",
     "/docs/temakorok.png",
     "/docs/uj-jatekos.png",

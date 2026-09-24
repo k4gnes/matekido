@@ -16,10 +16,15 @@ function stopActiveStream() {
 
 }
 
-function buildFilename() {
+function buildFilename(players) {
 
     const date = new Date().toISOString().split("T")[0];
-    return `matekido-mentes-${date}.json`;
+    const names = (players || [])
+        .map(p => p.name)
+        .map(name => String(name ?? "").replace(/[^a-zA-Z0-9áéíóöőúüűÁÉÍÓÖŐÚÜŰ._-]/g, "-").replace(/-+/g, "-").replace(/^-+|-+$/g, ""))
+        .filter(Boolean);
+    const label = (names.length ? names.join("-") : "jatekosok").slice(0, 60);
+    return `matekido-mentes-${label}-${date}.json`;
 
 }
 
@@ -342,7 +347,7 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
                 setStatus("⚠️ Jelölj ki legalább egy játékost!");
                 return;
             }
-            const filename = buildFilename();
+            const filename = buildFilename(players);
             setStatus("Előkészítés…");
             const outcome = await shareOrDownload(filename, exportUsers(ids));
 

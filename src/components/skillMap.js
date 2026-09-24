@@ -1,6 +1,6 @@
 import { createButton } from "./ui/button.js";
 import { createCard } from "./ui/card.js";
-import { renderMarkdown } from "../utils/markdown.js?v=4";
+import { renderMarkdown } from "../utils/markdown.js?v=15";
 
 const DOCS = [
     { id: "elso-osztaly", emoji: "🌱", label: "1. osztály", desc: "42 lecke – számfogalom, válogatás, naptár, mérések, geometria" },
@@ -28,7 +28,7 @@ export function renderSkillMap(root, onBack) {
     }
 
     function hubBackButton() {
-        return createButton("⬅️ Vissza a szülői részhez", {
+        return createButton("⬅️ Vissza", {
             className: "nav-bar-btn",
             onClick: () => onBack()
         });
@@ -76,8 +76,7 @@ export function renderSkillMap(root, onBack) {
     async function showDoc(doc) {
 
         wrapper.replaceChildren(createBackRow(
-            hubBackButton(),
-            createBackButton("📚 Vissza a témakörökhöz", showChoice)
+            createBackButton("⬅️ Vissza", showChoice)
         ));
 
         const title = document.createElement("h1");

@@ -1,7 +1,7 @@
 import { createButton } from "./button.js";
 import { listPlayers, getActiveId } from "../../profile/UserManager.js";
 
-export function createNavBar({ current = null, player = null, onLessons, onProfile, onStats, onHelp, onSwitch }) {
+export function createNavBar({ current = null, player = null, onLessons, onProfile, onStats, onHelp, onSwitch, onParent }) {
 
     const shell = document.createElement("div");
     shell.className = "nav-shell";
@@ -14,6 +14,14 @@ export function createNavBar({ current = null, player = null, onLessons, onProfi
     const label = document.createElement("span");
     label.textContent = "matekidő";
     header.append(logo, label);
+
+if (onParent) {
+        const parentBtn = createButton("👪 Szülői", {
+            className: "app-parent-btn" + (current === "parent" ? " active" : ""),
+            onClick: onParent
+        });
+        header.append(parentBtn);
+    }
 
     const row = document.createElement("div");
     row.className = "nav-bar";

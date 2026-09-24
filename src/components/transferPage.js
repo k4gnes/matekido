@@ -1,6 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
-import { createBackupPanel } from "./backupPanel.js?v=1";
+import { createBackupPanel } from "./backupPanel.js?v=2";
 
 export function renderTransferPage(root, onBack) {
 

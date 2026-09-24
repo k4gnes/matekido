@@ -1,5 +1,3 @@
-# ❓ Súgó
-
 ## 💬 Visszajelzés
 
 Hibát találtál, ötleted vagy kérésed van a Matekidővel kapcsolatban? Írj nekünk üzenetet a [Facebook-oldalunkra](https://www.facebook.com/profile.php?id=61594289895525) (**Üzenet** gomb), vagy ezen a [közvetlen linken](https://www.facebook.com/messages/t/61594289895525) – szívesen fogadjuk!
@@ -11,8 +9,6 @@ Hibát találtál, ötleted vagy kérésed van a Matekidővel kapcsolatban? Írj
 Ha hasznosnak találod az appot, a **☕ Tippelj meg! 💛** linkkel támogathatod a fejlesztését. Ezt a képernyők **bal alsó sarkában** találod.
 
 ## 🚀 Kezdés – ki játszik ma?
-
-[[👤 Csere]]
 
 Az app megnyitásakor válaszd ki, **ki játszik ma**:
 
@@ -26,6 +22,7 @@ Az app megnyitásakor válaszd ki, **ki játszik ma**:
 - A **profilválasztó képernyőn** az egyik profilról a másikra a kívánt profil **kártyájára koppintva** válthatsz.
 - Az **app többi képernyőjén** (Saját oldal, Leckék, Százalék, Súgó) a navigációs sáv [[👤 Csere]] gombja bármikor visszavisz a profilválasztóhoz.
 - Profilt törölni a választóképernyőn a profil kártyáján lévő **×** gombbal lehet. Erre nincs visszaállás – a törlés **végleges**!
+- **Profilt szállítani** is lehet az eszközök között – erről a [[img:szuloi-gomb#szuloi-resz]] részben olvashatsz.
 
 ## 🎓 Melyik osztályban játszol?
 
@@ -58,11 +55,11 @@ A **⚽ Válogatott** füllel magadnak állítasz össze gyakorlólistát: az é
 - A {{🎓 Évfolyam}} gombbal a Válogatottból bármikor visszatérsz – az app a korábban választott osztályodat hozza vissza.
 - A szűrők **játékosonként megmaradnak** a következő látogatásra is – másik játékosra váltva az ő beállításai érvényesek. A {{✕ Szűrők törlése|grey}} gomb visszaállítja az összes leckét.
 
-## 👨‍👩‍👧 Szülői rész
+## 👪 Szülői rész
 
-[[👨‍👩‍👧 Szülői|ghost]]
+[[img:szuloi-gomb]]
 
-A feladatok menüjében a **👨‍👩‍👧 Szülői** gomb nyitja meg a szülői részt, ahonnan az alábbiak érhetők el:
+A feladatok menüjében a **👪 Szülői** gomb nyitja meg a szülői részt, ahonnan az alábbiak érhetők el:
 
 ### 📊 Szülői összefoglaló
 
@@ -87,13 +84,22 @@ Az **Elmúlt 7 nap** oszlopai a napi játéktevékenységet mutatják: a sávok 
 - 🔴 piros: 50% alatti
 - ⚪ szürke: aznap nem játszott
 
-A **🎯 Gyakorlásra javasolt** részben azok a készségek és leckék látszanak, amelyekben az eredmény **90% alatt** van – a gyerek ezeket a Gyakorlásra javasolt listából újragyakorolhatja. A **⏭️ Kihagyott feladatok** rész pedig az osztályos félretett leckéket mutatja; ajánlott utóbb pótolni, hogy az osztály leckéi teljesek legyenek.
+A [**🎯 Gyakorlásra javasolt**](#gyakorlas-a-gyengebb-leckek) részben azok a készségek és leckék látszanak, amelyekben az eredmény **90% alatt** van – a gyerek ezeket a Gyakorlásra javasolt listából újragyakorolhatja. A [**⏭️ Kihagyott feladatok**](#kihagyott-leckek) rész pedig az osztályos félretett leckéket mutatja; ajánlott utóbb pótolni, hogy az osztály leckéi teljesek legyenek.
 
 ### 📚 Témakörök
 
 Az évfolyamonkénti **tananyagtérkép**: megmutatja, milyen feladatok és témakörök tartoznak az adott osztály tananyagába, így előre átlátod, mi következik.
 
 ![A Témakörök – évfolyamonkénti tananyagtérkép](/docs/temakorok.png)
+
+### 💾 Profilok átvitele
+
+A Szülői rész **Profilok átvitele** gombjával a játékosprofilokat átviheted egy másik eszközre:
+
+- Válaszd ki, melyik profilokat vinnéd magaddal, és mentsd el őket **fájlba** (a fájlt bármilyen módon átviheted: e-mail, felhő, üzenet) vagy **QR-kódba**.
+- A másik eszközön az importnál választhatsz **fájl betöltést** vagy **QR beolvasást** – az utóbbihoz kamera és HTTPS szükséges (a kód a natív telefonos szkennerből a „Kód beillesztése” mezőbe is bemásolható).
+- Az **azonos név + avatár** párosú profil **összefésül** a meglévővel – a csillagok, leckék és statisztikák mindkét gépről gyűlnek, adatvesztés nélkül. A kis- és nagybetű különböző névnek számít (a `bubu` és a `BUBU` két profil).
+- A QR-kód **csak közepes méretű adatra** jó: ha túl sok a statisztika, az app **fájl-letöltést** ajánl helyette.
 
 ## 📋 A listák
 
@@ -120,13 +126,13 @@ Az egész app leckékből és feladatokból áll, ezért tisztázzuk, miben kül
 ![A lecke bevezető jelenettel kezdődik – a Kezdjük! gombbal indulsz](/docs/bevezeto-jelenet.png)
 
 - A **listákat leckékből** állítod össze: ⚽ Válogatott, 🎯 Gyakorlás, 🔁 Erősítő feladatok, ❤️ Kedvenceim.
-- A ⭐ csillag is **lecke** teljesítéséért jár (nem feladatonként) – lásd a ⭐ szakaszt.
+- A ⭐ csillag is **lecke** teljesítéséért jár (nem feladatonként) – [lásd a ⭐ szakaszt](#csillagok-kuldetesek-merfoldkovek-es-kituzok).
 
 ## 📖 Hogyan épül fel egy lecke?
 
 [[Kezdjük!]]
 
-1. **Bevezető jelenet** – röviden leírja, mi fog történni, és mi a történet. A **Kezdjük!** gombbal indulsz. A jobb felső sarokban lévő **❤️** gombbal kedvenccé teheted a leckét, a **⏭️** gombbal kihagyhatod (részletek lentebb).
+1. **Bevezető jelenet** – röviden leírja, mi fog történni, és mi a történet. A **Kezdjük!** gombbal indulsz. A jobb felső sarokban lévő **❤️** gombbal kedvenccé teheted a leckét, a **⏭️** gombbal kihagyhatod ([részletek lentebb](#kihagyott-leckek)).
 2. **Feladatok** – egymás után jönnek, a haladást a felső sáv mutatja.
 3. **Ünneplés** – a végén látod a kapott csillagokat és a következő lehetőségeket.
 
@@ -168,7 +174,7 @@ A Matekidő **hat világban** játszódik, és a leckék történetei mindig az 
 
 - A világokat **csillagokkal** lehet feloldani – minden teljesített lecke csillagot hoz.
 - Az **aktív világ** határozza meg, hogy egy lecke postás, versenyzős, focis stb. színben jelenjen meg.
-- Váltani a **Saját oldal → Világok** részben lehet: kattints arra a világra, amelyiket aktívvá szeretnéd tenni. Az aktív világ zöld kerettel és ✅ jelzéssel van kiemelve.
+- Váltani a [**Saját oldal**](#lili-sajat-oldal-es-szazalek) → **Világok** részben lehet: kattints arra a világra, amelyiket aktívvá szeretnéd tenni. Az aktív világ zöld kerettel és ✅ jelzéssel van kiemelve.
 - A választás **játékosonként** tárolódik.
 
 ## 📚 A feladatok menüje
@@ -178,8 +184,8 @@ A Matekidő **hat világban** játszódik, és a leckék történetei mindig az 
 A feladatlistára belépve sorban a következők jönnek:
 
 - **➡️ Következő feladat** – az, amit legközelebb érdemes megoldani.
-- **📚 Feladatok listája** – az évfolyam teljes feladatlistája. Szűrni **csak a ⚽ Válogatott nézetben** lehet (lásd a szűrőkről szóló szakaszt).
-- **🎯 Gyakorlásra javasolt** – azok a leckék, amelyekben az eredmény **90% alatti** (részletek a Gyakorlás szakaszban).
+- **📚 Feladatok listája** – az évfolyam teljes feladatlistája. Szűrni **csak a ⚽ Válogatott nézetben** lehet (lásd a [szűrőkről szóló szakaszt](#valogatott-es-szurok)).
+- **🎯 Gyakorlásra javasolt** – azok a leckék, amelyekben az eredmény **90% alatti** (részletek a [Gyakorlás szakaszban](#gyakorlas-a-gyengebb-leckek)).
 - **⏭️ Átugrott feladatok** – a kihagyott leckék itt látszanak. Érdemes pótolni őket, mert a sorrendjükben a végén úgyis visszajönnek.
 - **🔁 Erősítő feladatok** – ismétlésre javasolt feladatok. A nyitó feladat után a következő erősítő feladat jön automatikusan, a lista végén a menübe tér vissza.
 - **❤️ Kedvenceim** – azok a leckék, amelyeket a sor jobb oldalán lévő szív gombbal (**🤍 → ❤️**) megjelöltél. Ugyanígy játszólistaként megy végig a kedvenceken.
@@ -239,9 +245,6 @@ Telepítés után az alkalmazás ikonról indítható, teljes képernyős módba
 
 ## 💾 Eredmények tárolása és adatvédelem
 
-[[👨‍👩‍👧 Szülői|ghost]] {{💾 Profilok átvitele}}
-
 - A játékosprofilok és az eredmények **csak a készüléken** (a böngészőben) tárolódnak, sehova nem kerülnek fel.
 - **Figyelem:** ha a böngészőben törlöd a webhely adatait (előzmények / cookie-k / webhelyadatok), a profilok és az eredmények is **véglegesen elvesznek**. Telepített appnál ugyanez vonatkozik a böngésző adataira.
-- 💾 **Átvihető a másik eszközre:** a szülői területen (Szülői → "Profilok átvitele") elérhető a játékosadat-mozgatás. A kijelölt profilok menthetők **fájlba** (azt bármilyen módon átviheted: e-mail, felhő, üzenet) vagy **QR-kódba** (a másik eszközön a "QR beolvasása" funkcióval beszkennelhető, ehhez kamera + HTTPS szükséges). Importnál az új profilok új azonosítóval kerülnek mellé; az azonos név+avatár párosú profillal pedig **összefésülnek** – a csillagok, leckék és statisztikák mindkét gépről gyűlnek, adatvesztés nélkül. A kis- és nagybetű különböző névnek számít (a `bubu` és a `BUBU` két profil). A QR-kód csak közepes méretű adatra jó (ha túl sok a statisztika, az app a fájl-letöltést ajánlja); a beolvasáshoz kamera + HTTPS kell, és a kód szövege a natív telefonos szkennerből a "Kód beillesztése" mezőbe is bemásolható.
 - A gyerekről semmilyen személyes adat (név, kor) nem hagyja el a készüléket – a nevek kizárólag a profil megkülönböztetésére szolgálnak.

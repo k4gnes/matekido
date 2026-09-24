@@ -611,7 +611,8 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onP
         onProfile,
         onStats,
         onHelp,
-        onSwitch
+        onSwitch,
+        onParent
     });
 
     wrapper.append(navbar, worldSub);
@@ -693,14 +694,9 @@ export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onP
     });
     customTab.className = "mode-tab";
 
-    const parentButton = createButton("👨‍👩‍👧 Szülői", {
-        onClick: () => onParent()
-    });
-    parentButton.className = "home-parent-btn";
-
     const menuToolbar = document.createElement("div");
     menuToolbar.className = "menu-toolbar";
-    menuToolbar.append(gradeTab, customTab, parentButton);
+    menuToolbar.append(gradeTab, customTab);
 
     const filterPanel = document.createElement("div");
     filterPanel.className = "filter-panel";

@@ -20,7 +20,7 @@ function getGradeProgress(lessonIndex, grade) {
     return { total, done, completed: total > 0 && done === total };
 }
 
-export function renderProfilePage(lessonIndex, root, onBack, onStats, onHelp, onSwitch) {
+export function renderProfilePage(lessonIndex, root, onBack, onStats, onHelp, onSwitch, onParent) {
 
     root.replaceChildren();
 
@@ -216,7 +216,8 @@ export function renderProfilePage(lessonIndex, root, onBack, onStats, onHelp, on
         onLessons: onBack,
         onStats,
         onHelp,
-        onSwitch
+        onSwitch,
+        onParent
     });
 
     card.append(navbar, title, stats, gradeCard, progressSection, questSection, achWorldRow);

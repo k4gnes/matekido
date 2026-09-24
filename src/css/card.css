@@ -193,6 +193,38 @@
     width: auto;
 }
 
+.app-parent-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .3rem;
+    padding: .25rem .7rem;
+    font-size: .72rem;
+    font-weight: 700;
+    border: 1.5px solid #dce7f8;
+    background: #fff;
+    color: var(--primary);
+    border-radius: 999px;
+    cursor: pointer;
+    margin: 0;
+    user-select: none;
+    white-space: nowrap;
+    opacity: .9;
+    transition: background .15s, border-color .15s, opacity .15s;
+}
+
+.app-parent-btn:hover {
+    background: #eef4fe;
+    border-color: var(--primary);
+    opacity: 1;
+}
+
+.app-parent-btn.active {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: #fff;
+    opacity: 1;
+}
+
 .nav-bar-btn,
 .nav-bar-player {
     display: inline-flex;

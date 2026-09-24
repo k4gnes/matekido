@@ -1,6 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createNavBar } from "./ui/navbar.js";
-import { renderMarkdown } from "../utils/markdown.js?v=7";
+import { renderMarkdown } from "../utils/markdown.js?v=15";
 
 export function renderHelp(root, nav = {}) {
 
@@ -29,7 +29,7 @@ export function renderHelp(root, nav = {}) {
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}`);
             }
-            target.innerHTML = renderMarkdown(await response.text());
+            target.innerHTML = renderMarkdown(await response.text(), { toc: true });
         } catch {
             target.innerHTML = "<p>A súgó most nem tölthető be. Próbáld újra később!</p>";
         }

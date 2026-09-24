@@ -1,15 +1,15 @@
 import { Game } from "./engine/Game.js?v=95";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=25";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=78";
-import { renderSkillMap } from "./components/skillMap.js?v=23";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=80";
+import { renderSkillMap } from "./components/skillMap.js?v=25";
 import { renderHelp } from "./components/help.js?v=6";
-import { renderProfilePage } from "./components/profilePage.js?v=9";
+import { renderProfilePage } from "./components/profilePage.js?v=10";
 import { renderStatsPage } from "./components/statsPage.js?v=9";
 import { getNextPracticeLesson } from "./components/practicePage.js?v=9";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=8";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=7";
-import { renderParentHub } from "./components/parentHub.js?v=6";
+import { renderParentHub } from "./components/parentHub.js?v=10";
 import { renderTransferPage } from "./components/transferPage.js?v=2";
 import { getActiveId, listPlayers } from "./profile/UserManager.js?v=2";
 import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld, setActiveGrade, resolveLessonGrade } from "./profile/Profile.js";
@@ -123,7 +123,8 @@ function navFor() {
         onProfile: showProfile,
         onStats: showStats,
         onHelp: () => showHelp(),
-        onSwitch: showWelcome
+        onSwitch: showWelcome,
+        onParent: showParentHub
     };
 }
 
@@ -139,14 +140,13 @@ function showParentHub() {
     setTipVisible(true);
     setRoute("parent");
     renderParentHub(root, {
-        onBack: showMenu,
+        ...navFor(),
         onDashboard: () => {
             clearWorldBackground();
             setTipVisible(true);
             renderParentDashboard(root, () => showParentHub(), lessonIndex);
         },
         onTopics: showSkillMap,
-        onHelp: showHelp,
         onTransfer: showTransferPage
     });
 }
@@ -169,7 +169,7 @@ function showProfile() {
     setWorldBackground();
     setTipVisible(true);
     setRoute("profile");
-    renderProfilePage(lessonIndex, root, showMenu, showStats, () => showHelp(), showWelcome);
+    renderProfilePage(lessonIndex, root, showMenu, showStats, () => showHelp(), showWelcome, showParentHub);
 }
 
 function showStats() {

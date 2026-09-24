@@ -347,7 +347,7 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
                 setStatus("⚠️ Jelölj ki legalább egy játékost!");
                 return;
             }
-            const filename = buildFilename(players);
+            const filename = buildFilename(players.filter(p => ids.includes(p.id)));
             setStatus("Előkészítés…");
             const outcome = await shareOrDownload(filename, exportUsers(ids));
 

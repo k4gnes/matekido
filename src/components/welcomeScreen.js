@@ -94,6 +94,16 @@ function createPlayerCard(player, onSelect, onRefresh) {
     name.className = "player-name";
     name.textContent = player.name;
 
+    const grade = player.profile?.grade ?? null;
+    const gradeEl = document.createElement("div");
+    if (grade != null) {
+        gradeEl.className = "player-grade";
+        gradeEl.textContent = `🎓 ${grade}. osztály`;
+        card.append(name, gradeEl);
+    } else {
+        card.append(name);
+    }
+
     const stats = document.createElement("div");
     stats.className = "player-stats";
 
@@ -107,7 +117,7 @@ function createPlayerCard(player, onSelect, onRefresh) {
         <span class="player-stat">🔥 ${streak}</span>
     `;
 
-    card.append(deleteBtn, avatar, name, stats);
+    card.append(stats);
 
     card.addEventListener("click", () => {
         switchPlayer(player.id);

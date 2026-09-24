@@ -26,6 +26,10 @@
                 "space": {
                     "title": "🤖 Szöveges feladatok az űrállomáson",
                     "text": "A robotoknak ma sok dolga van az űrállomáson. Segíts nekik megoldani a szöveges feladatokat!"
+                },
+                "tram": {
+                    "title": "🚋 Szöveges feladatok a villamoson",
+                    "text": "A villamoson ma sok utas utazik. Segíts nekik megoldani a szöveges feladatokat!"
                 }
             }
         },

@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Páros és páratlan robotok",
           "text": "Döntsd el a robotok számáról, hogy párosak-e! Kattints a kért robotszámokra, hogy a helyükre kerüljenek!"
+        },
+        "tram": {
+          "title": "🚋 Páros és páratlan utasok",
+          "text": "Döntsd el az utasok számáról, hogy párosak-e! Kattints a kért utasszámokra, hogy a helyükre kerüljenek!"
         }
       }
     },
@@ -63,6 +67,10 @@
           "text": "Minden számot jól válogattál szét!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden számot jól válogattál szét!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden számot jól válogattál szét!"
         }

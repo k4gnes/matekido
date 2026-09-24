@@ -9,7 +9,8 @@ const TITLES = {
     football: "⚽ Alakzatok a pályán",
     cooking: "🍳 Alakzatok a konyhában",
     animals: "🦁 Alakzatok az állatkertben",
-    space: "🤖 Alakzatok az űrben"
+    space: "🤖 Alakzatok az űrben",
+    tram: "🚋 Alakzatok a városban"
 };
 
 const SIDES = {

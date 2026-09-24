@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Melyik rakéta hosszabb?",
           "text": "Olvasd le a két mércéről, milyen hosszú a rakéta, és válaszd ki, melyik a hosszabb!"
+        },
+        "tram": {
+          "title": "🚋 Melyik villamos hosszabb?",
+          "text": "Olvasd le a két mércéről, milyen hosszú a villamos, és válaszd ki, melyik a hosszabb!"
         }
       }
     },
@@ -61,6 +65,10 @@
           "text": "Minden hosszúságot jól összehasonlítottál!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden hosszúságot jól összehasonlítottál!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden hosszúságot jól összehasonlítottál!"
         }

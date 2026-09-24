@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Mit mutat az óra az űrállomáson?",
           "text": "Nézd meg az órát! Találd meg, melyik meghatározás illik hozzá!"
+        },
+        "tram": {
+          "title": "🚋 Mit mutat az óra a megállón?",
+          "text": "Nézd meg az órát! Találd meg, melyik meghatározás illik hozzá!"
         }
       }
     },
@@ -63,6 +67,10 @@
           "text": "Minden időt jól felismertél!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden időt jól felismertél!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden időt jól felismertél!"
         }

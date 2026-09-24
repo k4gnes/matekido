@@ -10,7 +10,8 @@ const TITLES = {
     football: "⚽ Műveleti sorrend a pályán",
     cooking: "🍳 Műveleti sorrend a konyhában",
     animals: "🦁 Műveleti sorrend az állatkertben",
-    space: "🤖 Műveleti sorrend az űrhajón"
+    space: "🤖 Műveleti sorrend az űrhajón",
+    tram: "🚋 Műveleti sorrend a villamoson"
 };
 
 export function renderOperationOrder(step, root, next, progress, onResult, onAttempt) {

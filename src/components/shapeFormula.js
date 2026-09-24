@@ -11,7 +11,8 @@ const TITLES = {
     football: "⚽ Kerület és terület a pályán",
     cooking: "🍳 Kerület és terület a konyhában",
     animals: "🦁 Kerület és terület az állatkertben",
-    space: "🤖 Kerület és terület az űrhajón"
+    space: "🤖 Kerület és terület az űrhajón",
+    tram: "🚋 Kerület és terület a villamoson"
 };
 
 const SVG_NS = "http://www.w3.org/2000/svg";

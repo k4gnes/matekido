@@ -10,7 +10,8 @@ const TITLES = {
     football: "⚽ Szögek a pályán",
     cooking: "🍳 Szögek a konyhában",
     animals: "🦁 Szögek az állatkertben",
-    space: "🤖 Szögek az űrhajón"
+    space: "🤖 Szögek az űrhajón",
+    tram: "🚋 Szögek a villamoson"
 };
 
 const SVG_NS = "http://www.w3.org/2000/svg";

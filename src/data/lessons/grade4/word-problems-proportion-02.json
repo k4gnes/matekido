@@ -30,6 +30,10 @@
         "space": {
           "title": "🤖 Arányos történetek az űrhajón",
           "text": "Olvasd el az űrtörténetet, és keresd meg, mennyi a fele vagy a harmada!"
+        },
+        "tram": {
+          "title": "🚋 Arányos történetek a villamoson",
+          "text": "Olvasd el a villamosos történetet, és keresd meg, mennyi a fele vagy a harmada!"
         }
       }
     },
@@ -79,6 +83,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megoldottad az űrtörténeteket!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a villamosos történeteket!"
         }
       }
     }

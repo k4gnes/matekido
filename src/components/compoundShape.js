@@ -11,7 +11,8 @@ const TITLES = {
     football: "⚽ Összetett alakzatok a pályán",
     cooking: "🍳 Összetett alakzatok a konyhában",
     animals: "🦁 Összetett alakzatok az állatkertben",
-    space: "🤖 Összetett alakzatok az űrhajón"
+    space: "🤖 Összetett alakzatok az űrhajón",
+    tram: "🚋 Összetett alakzatok a villamoson"
 };
 
 const SVG_NS = "http://www.w3.org/2000/svg";

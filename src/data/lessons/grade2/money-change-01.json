@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Visszajáró az űrboltban",
           "text": "Alkatrészt vásárolunk! Fizess nagyobb címlettel, és számold ki, mennyi visszajárót kapsz!"
+        },
+        "tram": {
+          "title": "🚋 Visszajáró a jegyboltban",
+          "text": "Jegyet vásárolunk! Fizess nagyobb címlettel, és számold ki, mennyi visszajárót kapsz!"
         }
       }
     },
@@ -61,6 +65,10 @@
           "text": "Minden visszajárót pontosan kiszámoltál!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden visszajárót pontosan kiszámoltál!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden visszajárót pontosan kiszámoltál!"
         }

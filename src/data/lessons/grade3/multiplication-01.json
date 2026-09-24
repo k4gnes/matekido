@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Nagyobb szorzás az űrben",
           "text": "A robotok a 6, 7, 8, 9-es táblákkal szoroznak! Válaszd ki a helyes eredményt!"
+        },
+        "tram": {
+          "title": "🚋 Nagyobb szorzás a városban",
+          "text": "Az utasok a 6, 7, 8, 9-es táblákkal szoroznak! Válaszd ki a helyes eredményt!"
         }
       }
     },
@@ -62,6 +66,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megszoroztad a nagyobb táblákkal az űrben!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megszoroztad a nagyobb táblákkal a városban!"
         }
       }
     }

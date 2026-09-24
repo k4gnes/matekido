@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Mérd meg a rakétát négyzetekkel!",
           "text": "Rakj mérőnégyzeteket a rakétára, és számold meg, hányat ér a hossza vagy magassága!"
+        },
+        "tram": {
+          "title": "🚋 Mérd meg a villamost négyzetekkel!",
+          "text": "Rakj mérőnégyzeteket a villamosra, és számold meg, hányat ér a hossza vagy magassága!"
         }
       }
     },
@@ -63,6 +67,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden rakétát jól megmértél négyzetekkel!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden villamost jól megmértél négyzetekkel!"
         }
       }
     }

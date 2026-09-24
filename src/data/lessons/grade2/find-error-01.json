@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Hibás számolás a fedélzeten?",
           "text": "A robot számológépe hibásan számolt! Nézd meg a kijelzőt, és találd meg a hibát!"
+        },
+        "tram": {
+          "title": "🚋 Hibás számolás a villamoson?",
+          "text": "A villamos számológépe hibásan számolt! Nézd meg a kijelzőt, és találd meg a hibát!"
         }
       }
     },
@@ -62,6 +66,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden hibát megtaláltál az űrhajón!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden hibát megtaláltál a villamoson!"
         }
       }
     }

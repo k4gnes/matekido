@@ -36,6 +36,10 @@
                 "space": {
                     "title": "🛸 Hány robotot küld az űrflotta?",
                     "text": "Egy űrflotta mindig 1000 robotot szállít! Most már 10 000-ig bontjuk a számokat!"
+                },
+                "tram": {
+                    "title": "🚋 Hány utast küld a villamosflotta?",
+                    "text": "Egy villamosflotta mindig 1000 utast szállít! Most már 10 000-ig bontjuk a számokat!"
                 }
             }
         },
@@ -92,6 +96,10 @@
                 "space": {
                     "title": "🛸 Szuper vagy!",
                     "text": "Minden robotot jól megszámoltál az űrflottában!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden utast jól megszámoltál a villamosflottában!"
                 }
             }
         }

@@ -8,7 +8,8 @@ const WORLD_EMOJI = {
     football: "⚽",
     cooking: "🥄",
     animals: "🦁",
-    space: "🤖"
+    space: "🤖",
+    tram: "🚋"
 };
 
 function createEnvelopeSVG() {
@@ -96,6 +97,8 @@ export function renderDecomposition(step, root, onNext, progress, onResult, onAt
             item.textContent = selected ? "🦒" : "🦁";
         } else if (world === "space") {
             item.textContent = selected ? "🛰️" : "🤖";
+        } else if (world === "tram") {
+            item.textContent = selected ? "🚉" : "🚋";
         } else {
             item.style.opacity = selected ? "0.4" : "1";
         }
@@ -159,7 +162,9 @@ export function renderDecomposition(step, root, onNext, progress, onResult, onAt
                         ? `🥄 ${selectedCount} kanál fűszer`
                         : isFootball
                             ? `⚽ ${selectedCount} gól`
-                            : `Kiválasztva: ${selectedCount}`;
+                            : world === "tram"
+                                ? `🚋 ${selectedCount} utas leszáll`
+                                : `Kiválasztva: ${selectedCount}`;
         });
 
         items.push(item);
@@ -167,7 +172,7 @@ export function renderDecomposition(step, root, onNext, progress, onResult, onAt
     }
 
     const finishBtn = document.createElement("button");
-    finishBtn.textContent = isPostman ? "📮 Postázom" : isRacing ? "🔧 Szerel" : isCooking ? "🥄 Kever" : isFootball ? "⚽ Gól" : "✅ Kiválasztom";
+    finishBtn.textContent = isPostman ? "📮 Postázom" : isRacing ? "🔧 Szerel" : isCooking ? "🥄 Kever" : isFootball ? "⚽ Gól" : world === "tram" ? "🚉 Indulok" : "✅ Kiválasztom";
     finishBtn.style.cssText = isPostman
         ? "padding:0.7rem 1.8rem; font-size:1.1rem; border:none; border-radius:12px; background:#ef5350; color:white; cursor:pointer; box-shadow:0 4px 0 #b71c1c;"
         : isRacing
@@ -176,7 +181,9 @@ export function renderDecomposition(step, root, onNext, progress, onResult, onAt
                 ? "padding:0.7rem 1.8rem; font-size:1.1rem; border:none; border-radius:12px; background:#f59e0b; color:white; cursor:pointer; box-shadow:0 4px 0 #b45309;"
                 : isFootball
                     ? "padding:0.7rem 1.8rem; font-size:1.1rem; border:none; border-radius:12px; background:#22c55e; color:white; cursor:pointer; box-shadow:0 4px 0 #15803d;"
-                    : "padding:0.6rem 1.5rem; font-size:1rem; border:2px solid var(--primary); border-radius:12px; background:var(--primary); color:white; cursor:pointer;";
+                    : world === "tram"
+                        ? "padding:0.7rem 1.8rem; font-size:1.1rem; border:none; border-radius:12px; background:#f59e0b; color:white; cursor:pointer; box-shadow:0 4px 0 #b45309;"
+                        : "padding:0.6rem 1.5rem; font-size:1rem; border:2px solid var(--primary); border-radius:12px; background:var(--primary); color:white; cursor:pointer;";
     finishBtn.addEventListener("click", () => {
         const selectedCount = items.filter(it => it.dataset.selected === "true").length;
         const key = `${selectedCount}+${number - selectedCount}`;
@@ -217,7 +224,9 @@ export function renderDecomposition(step, root, onNext, progress, onResult, onAt
                         ? `🎉 Szuper! Megfőzted az összes levest!`
                         : isFootball
                             ? `🎉 Szuper! Berúgtad az összes gólt!`
-                            : `🎉 Szuper! Megtaláltad az összes bontást! (${number})`;
+                            : world === "tram"
+                                ? `🎉 Szuper! Az összes utas leszállt!`
+                                : `🎉 Szuper! Megtaláltad az összes bontást! (${number})`;
             selectionInfo.style.color = "#2e7d32";
             hint.textContent = `${totalNeeded} bontás mind megtalálva!`;
             hint.style.color = "#2e7d32";

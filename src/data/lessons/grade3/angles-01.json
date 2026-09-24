@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Szögek az űrhajón",
           "text": "A robotok antennákat szerelnek. Nézd meg, milyen szöget zárnak be egymással!"
+        },
+        "tram": {
+          "title": "🚋 Szögek a villamoson",
+          "text": "Az utasok antennákat szerelnek. Nézd meg, milyen szöget zárnak be egymással!"
         }
       }
     },
@@ -60,6 +64,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen felismerted a szögeket az űrhajón!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen felismerted a szögeket a villamoson!"
         }
       }
     }

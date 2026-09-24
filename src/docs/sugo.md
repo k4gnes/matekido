@@ -159,7 +159,7 @@ Ha új világ szabadul fel, az ünneplés automatikusan jelzi.
 
 ## 🌍 Világok – hol játszódik a lecke?
 
-A Matekidő **hat világban** játszódik, és a leckék történetei mindig az aktív világhoz igazodnak:
+A Matekidő **hét világban** játszódik, és a leckék történetei mindig az aktív világhoz igazodnak:
 
 | Világ | Ikon | Hány csillag kell hozzá? |
 |---|---|---|
@@ -169,6 +169,7 @@ A Matekidő **hat világban** játszódik, és a leckék történetei mindig az 
 | Foci | ⚽ | 80 |
 | Állatkert | 🦁 | 100 |
 | Űr | 🤖 | 120 |
+| Villamos | 🚋 | 150 |
 
 ![A világok váltása a Saját oldalon](/docs/vilagok.png)
 

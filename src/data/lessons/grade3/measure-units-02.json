@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Mértékegység-átváltás az űrhajón",
           "text": "Az űrhajósok mérik az alkatrészeket és az üzemanyagot! Méter, kilogramm, liter – menjünk!"
+        },
+        "tram": {
+          "title": "🚋 Mértékegység-átváltás a villamoson",
+          "text": "Az utasok mérik a jegyeket és az üzemanyagot! Méter, kilogramm, liter – menjünk!"
         }
       }
     },
@@ -62,6 +66,10 @@
         "space": {
           "title": "🤖 Indulhat a küldetés!",
           "text": "Az alkatrészek pontosan meg vannak mérve, indulhat a rakéta! 🚀"
+        },
+        "tram": {
+          "title": "🚋 Indulhat az út!",
+          "text": "A jegyek pontosan meg vannak mérve, indulhat a villamos! 🚋"
         }
       }
     }

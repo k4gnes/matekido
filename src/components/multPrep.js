@@ -36,6 +36,11 @@ const TITLES = {
         "equal-groups": "🤖 Hány elem van összesen?",
         "repeated-addition": "🤖 Számold ki az összeget!",
         "skip-counting": "🤖 Mi a következő szám?"
+    },
+    tram: {
+        "equal-groups": "🚋 Hány elem van összesen?",
+        "repeated-addition": "🚋 Számold ki az összeget!",
+        "skip-counting": "🚋 Mi a következő szám?"
     }
 };
 

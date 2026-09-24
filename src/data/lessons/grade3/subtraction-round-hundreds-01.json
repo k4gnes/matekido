@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Kerek százasok kivonása",
           "text": "Vond ki a kerek százasokat! Például: 700 - 300 = ?"
+        },
+        "tram": {
+          "title": "🚋 Kerek százasok kivonása",
+          "text": "Vond ki a kerek százasokat! Például: 700 - 300 = ?"
         }
       }
     },
@@ -62,6 +66,10 @@
           "text": "Minden kerek százas kivonást jól megoldottál!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden kerek százas kivonást jól megoldottál!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden kerek százas kivonást jól megoldottál!"
         }

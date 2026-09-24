@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Becslés az űrhajón",
           "text": "A robotok becsülik az üzemanyagot. Kerekíts százra!"
+        },
+        "tram": {
+          "title": "🚋 Becslés a villamoson",
+          "text": "Az utasok becsülik az üzemanyagot. Kerekíts százra!"
         }
       }
     },
@@ -63,6 +67,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen becsültél az űrhajón!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen becsültél a villamoson!"
         }
       }
     }

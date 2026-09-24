@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Páros vagy páratlan?",
           "text": "Kattints a kért számokra, hogy a megfelelő helyre kerüljenek!"
+        },
+        "tram": {
+          "title": "🚋 Páros vagy páratlan?",
+          "text": "Kattints a kért számokra, hogy a megfelelő helyre kerüljenek!"
         }
       }
     },
@@ -64,6 +68,10 @@
           "text": "Minden számot jól szétválogattál!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden számot jól szétválogattál!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden számot jól szétválogattál!"
         }

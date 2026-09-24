@@ -31,6 +31,10 @@
                 "space": {
                     "title": "🤖 Osztók és többszörösök az űrben",
                     "text": "A robotok egyenlő csapatokba rendeződnek! Melyik szám többszörös?"
+                },
+                "tram": {
+                    "title": "🚋 Osztók és többszörösök a városban",
+                    "text": "Az utasok egyenlő csapatokba rendeződnek! Melyik szám többszörös?"
                 }
             }
         },
@@ -99,6 +103,10 @@
                 "space": {
                     "title": "🚀 Szuper vagy!",
                     "text": "Minden osztó és többszörös jól sikerült az űrben!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden osztó és többszörös jól sikerült a városban!"
                 }
             }
         }

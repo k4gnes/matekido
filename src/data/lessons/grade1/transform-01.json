@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Forgatás az űrhajón",
           "text": "Az űrhajóban mindent el kell forgatni, hogy beférjen! Találd ki, melyik ugyanaz, csak elforgatva!"
+        },
+        "tram": {
+          "title": "🚋 Forgatás a villamoson",
+          "text": "A villamosban mindent el kell forgatni, hogy beférjen! Találd ki, melyik ugyanaz, csak elforgatva!"
         }
       }
     },
@@ -63,6 +67,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden alkatrészt jól felismertél az űrhajón!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden jegyet jól felismertél a villamoson!"
         }
       }
     }

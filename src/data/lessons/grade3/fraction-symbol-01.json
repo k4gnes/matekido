@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 A tört jele az űrhajón",
           "text": "Az űrhajósok fölírták a csokiadagokat: ½, ⅓, ¼. Melyik jel illik a képhez?"
+        },
+        "tram": {
+          "title": "🚋 A tört jele a villamoson",
+          "text": "Az utasok fölírták a jégkrémeket: ½, ⅓, ¼. Melyik jel illik a képhez?"
         }
       }
     },
@@ -61,6 +65,10 @@
         "space": {
           "title": "🤖 Csoki az egész legénységnek!",
           "text": "Ügyesen jelölted a csokiadagokat, a legénység jól lakott! 🛰️"
+        },
+        "tram": {
+          "title": "🚋 Jégkrém az egész társaságnak!",
+          "text": "Ügyesen jelölted a jégkrémeket, a társaság jól lakott! 🚋"
         }
       }
     }

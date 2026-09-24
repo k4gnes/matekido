@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Kerekítés az űrben",
           "text": "A robotok gyorsan kerekítenek. Te is tudod? Ha a szám közelebb van egy tízeshez, oda kerekítjük!"
+        },
+        "tram": {
+          "title": "🚋 Kerekítés a városban",
+          "text": "Az utasok gyorsan kerekítenek. Te is tudod? Ha a szám közelebb van egy tízeshez, oda kerekítjük!"
         }
       }
     },
@@ -67,6 +71,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "A robotok is elismeréssel adóznak a kerekítésednek!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Az utasok is elismeréssel adóznak a kerekítésednek!"
         }
       }
     }

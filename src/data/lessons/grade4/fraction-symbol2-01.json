@@ -31,6 +31,10 @@
                 "space": {
                     "title": "🤖 Törtek jelölése az űrben",
                     "text": "Az energia-jeleket is meg kell érteni! A képhez keresd a jelet, a jelhez a képet!"
+                },
+                "tram": {
+                    "title": "🚋 Törtek jelölése a városban",
+                    "text": "A jegy-jeleket is meg kell érteni! A képhez keresd a jelet, a jelhez a képet!"
                 }
             }
         },
@@ -93,6 +97,10 @@
                 "space": {
                     "title": "🚀 Szuper vagy!",
                     "text": "Minden tört jelét jól felismerted az űrben!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden tört jelét jól felismerted a városban!"
                 }
             }
         }

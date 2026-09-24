@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Halmazválogatás az űrhajón",
           "text": "Az űrhajón minden alkatrésznek megvan a helye! Találd ki, melyik illik a dobozba!"
+        },
+        "tram": {
+          "title": "🚋 Válogatás a villamosmegállóban",
+          "text": "A megállóban minden utazótáskának megvan a helye! Találd ki, melyik illik a dobozba!"
         }
       }
     },
@@ -63,6 +67,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden alkatrészt jól válogattál az űrhajón!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden utazótáskát jól a helyére válogattál a villamoson!"
         }
       }
     }

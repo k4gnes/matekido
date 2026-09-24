@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Mennyi fér bele?",
           "text": "Nézd meg jól a két tartályt! Találd ki, melyikbe fér több és melyikbe kevesebb!"
+        },
+        "tram": {
+          "title": "🚋 Mennyi fér bele?",
+          "text": "Nézd meg jól a két vagont! Találd ki, melyikbe fér több és melyikbe kevesebb!"
         }
       }
     },
@@ -63,6 +67,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden tartályt jól összehasonlítottál!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden vagont jól összehasonlítottál!"
         }
       }
     }

@@ -32,6 +32,10 @@
                 "space": {
                     "title": "🤖 Írásbeli osztás az űrben",
                     "text": "Oszd el az energia-egységeket kétjegyű osztóval! Jegyezd le a hányadost és a maradékot!"
+                },
+                "tram": {
+                    "title": "🚋 Írásbeli osztás a városban",
+                    "text": "Oszd el a jegy-egységeket kétjegyű osztóval! Jegyezd le a hányadost és a maradékot!"
                 }
             }
         },
@@ -90,6 +94,10 @@
                 "space": {
                     "title": "🚀 Szuper vagy!",
                     "text": "Minden írásbeli osztás jól sikerült az űrben!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden írásbeli osztás jól sikerült a városban!"
                 }
             }
         }

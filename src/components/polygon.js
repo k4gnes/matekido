@@ -12,7 +12,8 @@ const TITLES = {
     football: "⚽ Sokszögek a pályán",
     cooking: "🍳 Sokszögek a konyhában",
     animals: "🦁 Sokszögek az állatkertben",
-    space: "🤖 Sokszögek az űrben"
+    space: "🤖 Sokszögek az űrben",
+    tram: "🚋 Sokszögek a városban"
 };
 
 const POLYGONS = {

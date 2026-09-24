@@ -31,6 +31,10 @@
         "space": {
           "title": "🤖 Rakd össze a robotok számát!",
           "text": "Számold ki, hány robot van, ha egy tartályba épp tíz robot fér!"
+        },
+        "tram": {
+          "title": "🚋 Rakd össze az utasok számát!",
+          "text": "Számold ki, hány utas van, ha egy vagonba épp tíz utas fér!"
         }
       }
     },

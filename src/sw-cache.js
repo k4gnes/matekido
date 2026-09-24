@@ -15,6 +15,7 @@ const SW_CACHE_LIST = [
     "/assets/images/bg-postman.svg",
     "/assets/images/bg-racing.svg",
     "/assets/images/bg-space.svg",
+    "/assets/images/bg-tram.svg",
     "/assets/images/mail-stamped.svg",
     "/assets/images/mail.svg",
     "/builders/LessonBuilder.js",

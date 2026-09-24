@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Melyik kasszában van több?",
           "text": "Számold meg, mennyi energia van a két kasszában, és rakd ki közéjük a helyes jelet!"
+        },
+        "tram": {
+          "title": "🚋 Melyik perselyben van több?",
+          "text": "Számold meg, mennyi jegy van a két perselyben, és rakd ki közéjük a helyes jelet!"
         }
       }
     },
@@ -63,6 +67,10 @@
           "text": "Minden pénztárcát jól hasonlítottál össze!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden kasszát jól hasonlítottál össze!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden kasszát jól hasonlítottál össze!"
         }

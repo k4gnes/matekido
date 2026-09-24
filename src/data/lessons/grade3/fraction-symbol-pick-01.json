@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Kép a jelhez az űrhajón",
           "text": "Az űrhajósok a jelhez keresik a csokidarabot! Válaszd ki a hozzá illő képet!"
+        },
+        "tram": {
+          "title": "🚋 Kép a jelhez a villamoson",
+          "text": "Az utasok a jelhez keresik a jégkrémet! Válaszd ki a hozzá illő képet!"
         }
       }
     },
@@ -61,6 +65,10 @@
         "space": {
           "title": "🤖 Csoki az egész legénységnek!",
           "text": "Ügyesen olvastad a jeleket, a legénység jól lakott! 🛰️"
+        },
+        "tram": {
+          "title": "🚋 Jégkrém az egész társaságnak!",
+          "text": "Ügyesen olvastad a jeleket, a társaság jól lakott! 🚋"
         }
       }
     }

@@ -9,7 +9,8 @@ const WORLD_EMOJI = {
     football: "⚽",
     cooking: "🥄",
     animals: "🦁",
-    space: "🤖"
+    space: "🤖",
+    tram: "🚋"
 };
 
 const KIND_CONFIG = {

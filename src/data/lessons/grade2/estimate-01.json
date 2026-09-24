@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Becslés az űrben",
           "text": "Kerekítsd a számokat tízesre, és gondold ki az eredményt! Nem kell pontosan kiszámolni!"
+        },
+        "tram": {
+          "title": "🚋 Becslés a városban",
+          "text": "Kerekítsd a számokat tízesre, és gondold ki az eredményt! Nem kell pontosan kiszámolni!"
         }
       }
     },
@@ -62,6 +66,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megbecsülted az eredményeket az űrben!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megbecsülted az eredményeket a városban!"
         }
       }
     }

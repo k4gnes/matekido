@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Mérlegelés az űrállomáson",
           "text": "Nézd meg jól a két tárgyat! Találd ki, melyik nehezebb és melyik könnyebb!"
+        },
+        "tram": {
+          "title": "🚋 Mérlegelés a megállón",
+          "text": "Nézd meg jól a két tárgyat! Találd ki, melyik nehezebb és melyik könnyebb!"
         }
       }
     },
@@ -61,6 +65,10 @@
           "text": "Minden tárgyat jól mérlegeltél!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden tárgyat jól mérlegeltél!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden tárgyat jól mérlegeltél!"
         }

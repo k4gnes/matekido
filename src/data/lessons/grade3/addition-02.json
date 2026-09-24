@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Százasátlépés az űrben",
           "text": "Add össze a számokat! Most a százashatárt is átlépjük. Például: 350 + 280 = ?"
+        },
+        "tram": {
+          "title": "🚋 Százasátlépés a városban",
+          "text": "Add össze a számokat! Most a százashatárt is átlépjük. Például: 350 + 280 = ?"
         }
       }
     },
@@ -64,6 +68,10 @@
           "text": "Minden százasátlépéses összeadást jól megoldottál!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden százasátlépéses összeadást jól megoldottál!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden százasátlépéses összeadást jól megoldottál!"
         }

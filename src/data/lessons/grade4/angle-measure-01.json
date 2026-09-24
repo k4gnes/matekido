@@ -31,6 +31,10 @@
                 "space": {
                     "title": "🤖 Szögek mérése az űrhajón",
                     "text": "A robot karjának szögét mérjük! Olvasd le a szögmérőt!"
+                },
+                "tram": {
+                    "title": "🚋 Szögek mérése a villamoson",
+                    "text": "Az utas karjának szögét mérjük! Olvasd le a szögmérőt!"
                 }
             }
         },
@@ -99,6 +103,10 @@
                 "space": {
                     "title": "🚀 Szuper vagy!",
                     "text": "Minden szögfok jól sikerült az űrben!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden szögfok jól sikerült a városban!"
                 }
             }
         }

@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Szorzás az űrben",
           "text": "A robotok szorzásban számolnak! Válaszd ki a helyes eredményt!"
+        },
+        "tram": {
+          "title": "🚋 Szorzás a városban",
+          "text": "Az utasok szorzásban számolnak! Válaszd ki a helyes eredményt!"
         }
       }
     },
@@ -62,6 +66,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megoldottad a szorzásokat az űrben!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad a szorzásokat a városban!"
         }
       }
     }

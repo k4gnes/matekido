@@ -35,6 +35,10 @@
                 "space": {
                     "title": "🤖 Idő az űrhajón",
                     "text": "Az űrutazás is időben történik! Számoljuk ki, mennyi ideig tart egy-egy űrjárat!"
+                },
+                "tram": {
+                    "title": "🚋 Idő a villamoson",
+                    "text": "A városi utazás is időben történik! Számoljuk ki, mennyi ideig tart egy-egy villamosjárat!"
                 }
             }
         },
@@ -87,6 +91,10 @@
                 "space": {
                     "title": "🛸 Szuper vagy!",
                     "text": "Minden űrjárat pontosan érkezik!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden villamosjárat pontosan érkezik!"
                 }
             }
         }

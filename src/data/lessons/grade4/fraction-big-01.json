@@ -31,6 +31,10 @@
                 "space": {
                     "title": "🤖 Energiarészek az űrben",
                     "text": "Az energia-egységeket részekre osztjuk! Találd ki, mennyi az egyik rész!"
+                },
+                "tram": {
+                    "title": "🚋 Jegyrészek a városban",
+                    "text": "A jegy-egységeket részekre osztjuk! Találd ki, mennyi az egyik rész!"
                 }
             }
         },
@@ -96,6 +100,10 @@
                 "space": {
                     "title": "🚀 Szuper vagy!",
                     "text": "Minden törtrészt jól kiszámoltál az űrben!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden törtrészt jól kiszámoltál a városban!"
                 }
             }
         }

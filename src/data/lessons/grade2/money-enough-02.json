@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Meg tudod venni az alkatrészt?",
           "text": "Nagyobb robotalkatrészek, nagyobb kassza! Nézd meg az alkatrészt és a kassza tartalmát! Elég az energiád a vásárláshoz?"
+        },
+        "tram": {
+          "title": "🚋 Meg tudod venni a jegyet?",
+          "text": "Nagyobb jegyek, nagyobb persely! Nézd meg a jegyet és a persely tartalmát! Elég a jegyed a vásárláshoz?"
         }
       }
     },
@@ -64,6 +68,10 @@
           "text": "Minden nagyobb vásárlást jól eldöntöttél!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden nagyobb vásárlást jól eldöntöttél!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden nagyobb vásárlást jól eldöntöttél!"
         }

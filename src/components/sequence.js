@@ -12,7 +12,8 @@ const WORLD_TITLES = {
     football: "⚽ Mi a következő eredmény?",
     cooking: "🍳 Mi a következő oldalszám?",
     animals: "🦁 Mi a következő állat?",
-    space: "🤖 Mi a következő robot?"
+    space: "🤖 Mi a következő robot?",
+    tram: "🚋 Mi a következő utas?"
 };
 
 export function renderSequence(step, root, next, progress, onResult, onAttempt) {

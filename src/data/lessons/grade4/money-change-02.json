@@ -33,6 +33,10 @@
                 "space": {
                     "title": "🛸 Visszajáró az űrboltban",
                     "text": "Az űrhajósok drágább alkatrészeket is vesznek! Számold ki a visszajárót!"
+                },
+                "tram": {
+                    "title": "🚋 Visszajáró a jegyboltban",
+                    "text": "Az utasok drágább jegyeket is vesznek! Számold ki a visszajárót!"
                 }
             }
         },
@@ -96,6 +100,10 @@
                 },
                 "space": {
                     "title": "🛸 Szuper vagy!",
+                    "text": "Minden visszajárót pontosan kiszámoltál!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
                     "text": "Minden visszajárót pontosan kiszámoltál!"
                 }
             }

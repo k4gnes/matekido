@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Fizesd ki pontosan az alkatrészt!",
           "text": "Válogass érméket a pénztárcába, hogy pontosan annyit fizess, amennyibe a robotalkatrész kerül!"
+        },
+        "tram": {
+          "title": "🚋 Fizesd ki pontosan a jegyet!",
+          "text": "Válogass érméket a pénztárcába, hogy pontosan annyit fizess, amennyibe a jegy kerül!"
         }
       }
     },
@@ -63,6 +67,10 @@
           "text": "Minden vásárlást pontosan kifizettél!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden vásárlást pontosan kifizettél!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden vásárlást pontosan kifizettél!"
         }

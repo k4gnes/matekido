@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Mi a következő robot?",
           "text": "Figyeld meg a robotok sorát, és írd be a következő számot!"
+        },
+        "tram": {
+          "title": "🚋 Mi a következő utas?",
+          "text": "Figyeld meg az utasok sorát, és írd be a következő számot!"
         }
       }
     },
@@ -62,6 +66,10 @@
           "text": "Minden számsort jól kitaláltál!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden számsort jól kitaláltál!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden számsort jól kitaláltál!"
         }

@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Naptár az űrhajón",
           "text": "A bázis egy egész évet tervez előre! Ismerd meg az év, hónap, hét és nap kapcsolatát!"
+        },
+        "tram": {
+          "title": "🚋 Naptár a villamoson",
+          "text": "A depó egy egész évet tervez előre! Ismerd meg az év, hónap, hét és nap kapcsolatát!"
         }
       }
     },
@@ -61,6 +65,10 @@
         "space": {
           "title": "🎉 A küldetés elindulhat!",
           "text": "Remekül ismered az év hosszát, a bázis készen áll a repülésre!"
+        },
+        "tram": {
+          "title": "🎉 Elindulhat az út!",
+          "text": "Remekül ismered az év hosszát, a depó készen áll az indulásra!"
         }
       }
     }

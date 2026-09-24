@@ -31,6 +31,10 @@
                 "space": {
                     "title": "🤖 Tizedek és századok az űrben",
                     "text": "A rakéta üzemanyaga 10, majd 100 részre oszlik! Add meg tizedes törttel!"
+                },
+                "tram": {
+                    "title": "🚋 Tizedek és századok a városban",
+                    "text": "A villamos üzemanyaga 10, majd 100 részre oszlik! Add meg tizedes törttel!"
                 }
             }
         },
@@ -99,6 +103,10 @@
                 "space": {
                     "title": "🚀 Szuper vagy!",
                     "text": "Minden tizedes tört jól sikerült az űrben!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden tizedes tört jól sikerült a városban!"
                 }
             }
         }

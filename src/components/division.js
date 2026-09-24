@@ -33,6 +33,11 @@ const TITLES = {
         "sharing": "🤖 Szétosztás",
         "grouping": "🤖 Hány csoport?",
         "division-table": "📌 Mennyi?"
+    },
+    tram: {
+        "sharing": "🚋 Szétosztás",
+        "grouping": "🚋 Hány csoport?",
+        "division-table": "📌 Mennyi?"
     }
 };
 

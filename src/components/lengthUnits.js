@@ -11,7 +11,8 @@ const TITLES = {
     football: "⚽ Hosszúságok a pályán",
     cooking: "🍳 Hosszúságok a konyhában",
     animals: "🦁 Hosszúságok az állatkertben",
-    space: "🛰️ Távolságok az űrben"
+    space: "🛰️ Távolságok az űrben",
+    tram: "🚋 Távolságok a városban"
 };
 
 export function renderLengthUnits(step, root, next, progress, onResult, onAttempt) {

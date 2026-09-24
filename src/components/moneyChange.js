@@ -9,7 +9,8 @@ const WORLD_TITLES = {
     football: "⚽ Visszajáró a szurkolói boltban",
     cooking: "🥄 Visszajáró a pékségben",
     animals: "🦁 Visszajáró a jegypénztárnál",
-    space: "🤖 Visszajáró az űrboltban"
+    space: "🤖 Visszajáró az űrboltban",
+    tram: "🚋 Visszajáró a jegyboltban"
 };
 
 export function renderMoneyChange(step, root, next, progress, onResult, onAttempt) {

@@ -10,7 +10,8 @@ const WORLD_TITLES = {
     football: "⚽ Rendezzük sorainkat!",
     cooking: "🍳 Rendezzük sorainkat!",
     animals: "🦁 Rendezzük sorainkat!",
-    space: "🤖 Rendezzük sorainkat!"
+    space: "🤖 Rendezzük sorainkat!",
+    tram: "🚋 Rendezzük sorainkat!"
 };
 
 const DIRECTION_TEXT = {

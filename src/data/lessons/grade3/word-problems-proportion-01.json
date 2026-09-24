@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Űrállomásos történetek",
           "text": "Olvasd el az űrtörténetet, és keresd meg, mennyi a fél, a harmad!"
+        },
+        "tram": {
+          "title": "🚋 Jegyellenőrzési történetek",
+          "text": "Olvasd el a kalauz történetét, és keresd meg, mennyi a fél, a harmad!"
         }
       }
     },
@@ -62,6 +66,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megoldottad az űrállomásos feladatokat!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a jegyellenőrzési feladatokat!"
         }
       }
     }

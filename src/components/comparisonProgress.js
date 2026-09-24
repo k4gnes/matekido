@@ -6,7 +6,8 @@ const WORLD_COMPARISON = {
     football: { done: "✅", current: "⚖️", next: "🥅" },
     cooking: { done: "✅", current: "⚖️", next: "🥄" },
     animals: { done: "✅", current: "⚖️", next: "🦒" },
-    space: { done: "✅", current: "⚖️", next: "🚀" }
+    space: { done: "✅", current: "⚖️", next: "🚀" },
+    tram: { done: "✅", current: "⚖️", next: "🚉" }
 };
 
 export function renderComparisonProgress({ current, total }) {

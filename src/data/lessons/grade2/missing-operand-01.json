@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Hiányzó szám",
           "text": "Melyik szám hiányzik a számításból?"
+        },
+        "tram": {
+          "title": "🚋 Hiányzó szám",
+          "text": "Melyik szám hiányzik a számításból?"
         }
       }
     },
@@ -60,6 +64,10 @@
           "text": "Ügyesen megtaláltad a hiányzó számokat!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megtaláltad a hiányzó számokat!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megtaláltad a hiányzó számokat!"
         }

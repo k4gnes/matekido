@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Vegyes osztás",
           "text": "Vegyes osztásos feladatok az űrben! Készülj!"
+        },
+        "tram": {
+          "title": "🚋 Vegyes osztás",
+          "text": "Vegyes osztásos feladatok a városban! Készülj!"
         }
       }
     },
@@ -80,6 +84,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megoldottad a vegyes osztásokat az űrben!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad a vegyes osztásokat a városban!"
         }
       }
     }

@@ -22,7 +22,8 @@ const WORLD_STATS_TITLE = {
     cooking: "👨‍🍳 Szakács jelentés",
     football: "⚽ Meccsjelentés",
     animals: "🦁 Állatkerti jelentés",
-    space: "🤖 Űrállomás jelentés"
+    space: "🤖 Űrállomás jelentés",
+    tram: "🚋 Megálló jelentés"
 };
 
 function createStatGrid(items, className) {

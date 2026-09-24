@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Robotok az űrben",
           "text": "Számold meg, hány teljes legénységet látsz, és hány robot marad ki!"
+        },
+        "tram": {
+          "title": "🚋 Utasok a városban",
+          "text": "Számold meg, hány teljes társaságot látsz, és hány utas marad ki!"
         }
       }
     },
@@ -65,6 +69,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Remekül megszámoltad a legénységeket és a maradék robotokat!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Remekül megszámoltad a társaságokat és a maradék utasokat!"
         }
       }
     }

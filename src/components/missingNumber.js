@@ -11,7 +11,8 @@ const WORLD_TITLES = {
     football: "⚽ Hány gól hiányzik?",
     cooking: "🍳 Hány hozzávaló hiányzik?",
     animals: "🦁 Hány állat hiányzik?",
-    space: "🤖 Hány robot hiányzik?"
+    space: "🤖 Hány robot hiányzik?",
+    tram: "🚋 Hány utas hiányzik?"
 };
 
 export function renderMissingNumber(step, root, next, progress, onResult, onAttempt) {

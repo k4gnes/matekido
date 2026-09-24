@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Kétlépéses űrfeladatok",
           "text": "Ezek a feladatok két lépésből állnak! Először az első lépést oldd meg, aztán a másodikat!"
+        },
+        "tram": {
+          "title": "🚋 Kétlépéses villamosfeladatok",
+          "text": "Ezek a feladatok két lépésből állnak! Először az első lépést oldd meg, aztán a másodikat!"
         }
       }
     },
@@ -62,6 +66,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megoldottad a kétlépéses űrfeladatokat!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a kétlépéses villamosfeladatokat!"
         }
       }
     }

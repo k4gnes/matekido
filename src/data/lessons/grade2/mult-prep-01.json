@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Egyenlő csoportok",
           "text": "Nézd meg a robot-csoportokat! Minden csoportban ugyanannyi robot van. Hány robot van összesen?"
+        },
+        "tram": {
+          "title": "🚋 Egyenlő csoportok",
+          "text": "Nézd meg az utas-csoportokat! Minden csoportban ugyanannyi utas van. Hány utas van összesen?"
         }
       }
     },
@@ -63,6 +67,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megszámoltad a robot-csoportokat!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megszámoltad az utas-csoportokat!"
         }
       }
     }

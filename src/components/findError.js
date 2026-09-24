@@ -9,7 +9,8 @@ const TITLES = {
     football: "⚽ Hibás számolás?",
     cooking: "🍳 Hibás számolás?",
     animals: "🦁 Hibás számolás?",
-    space: "🤖 Hibás számolás?"
+    space: "🤖 Hibás számolás?",
+    tram: "🚋 Hibás számolás?"
 };
 
 export function renderFindError(step, root, next, progress, onResult, onAttempt) {

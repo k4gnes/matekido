@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Robotos sorminta",
           "text": "Figyeld meg a robotos emojik sorát! Kattints arra, amelyik szerinted a következő lesz!"
+        },
+        "tram": {
+          "title": "🚋 Sorminta a villamoson",
+          "text": "Figyeld meg az utasos emojik sorát! Kattints arra, amelyik szerinted a következő lesz!"
         }
       }
     },
@@ -64,6 +68,10 @@
           "text": "Minden sormintát jól folytattál!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden sormintát jól folytattál!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden sormintát jól folytattál!"
         }

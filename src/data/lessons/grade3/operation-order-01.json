@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Műveleti sorrend az űrhajón",
           "text": "A robotok számolják az üzemanyagot. Előbb a szorzás-osztás, aztán az összeadás-kivonás!"
+        },
+        "tram": {
+          "title": "🚋 Műveleti sorrend a villamoson",
+          "text": "Az utasok számolják az üzemanyagot. Előbb a szorzás-osztás, aztán az összeadás-kivonás!"
         }
       }
     },
@@ -60,6 +64,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen használtad a műveleti sorrendet az űrhajón!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen használtad a műveleti sorrendet a villamoson!"
         }
       }
     }

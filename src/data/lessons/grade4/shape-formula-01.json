@@ -31,6 +31,10 @@
                 "space": {
                     "title": "🛰️ Napelemek az űrhajón",
                     "text": "Az űrhajó napelemei négyzet alakúak! Számold ki képlettel a kerületüket és a területüket!"
+                },
+                "tram": {
+                    "title": "🚋 Akkumulátorok a villamoson",
+                    "text": "A villamos akkumulátorai négyzet alakúak! Számold ki képlettel a kerületüket és a területüket!"
                 }
             }
         },
@@ -83,6 +87,10 @@
                 "space": {
                     "title": "🛰️ Nagy vagy!",
                     "text": "A napelemek méreteit is pontosan kiszámoltad!"
+                },
+                "tram": {
+                    "title": "🚋 Nagy vagy!",
+                    "text": "Az akkumulátorok méreteit is pontosan kiszámoltad!"
                 }
             }
         }

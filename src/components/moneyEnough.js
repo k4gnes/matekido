@@ -11,7 +11,8 @@ const WORLD_EMOJI = {
     football: "⚽",
     cooking: "🥄",
     animals: "🦁",
-    space: "🤖"
+    space: "🤖",
+    tram: "🚋"
 };
 
 export function renderMoneyEnough(step, root, next, progress, onResult, onAttempt) {

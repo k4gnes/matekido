@@ -31,6 +31,10 @@
                 "space": {
                     "title": "🤖 Tartályok és robotok",
                     "text": "Egy tartályba mindig 10 robot fér! Most már 100-ig bontjuk a számokat!"
+                },
+                "tram": {
+                    "title": "🚋 Vagonok és utasok",
+                    "text": "Egy vagonba mindig 10 utas fér! Most már 100-ig bontjuk a számokat!"
                 }
             }
         },
@@ -79,6 +83,10 @@
                 "space": {
                     "title": "🚀 Szuper vagy!",
                     "text": "Minden tartályt jól megtöltöttél!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden vagont jól megtöltöttél!"
                 }
             }
         }

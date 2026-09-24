@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Hány oldala van az ablaknak?",
           "text": "Az űrhajó ablakai alakzatok! Nézd meg jól, hány oldaluk van!"
+        },
+        "tram": {
+          "title": "🚋 Hány oldala van az ablaknak?",
+          "text": "A villamos ablakai alakzatok! Nézd meg jól, hány oldaluk van!"
         }
       }
     },
@@ -64,6 +68,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden ablakot jól megszámoltál az űrben!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden ablakot jól megszámoltál a városban!"
         }
       }
     }

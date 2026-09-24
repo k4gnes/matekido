@@ -9,7 +9,8 @@ const TITLES = {
     football: "⚽ Tükrözés a pályán",
     cooking: "🍳 Tükrözés a konyhában",
     animals: "🦁 Tükrözés az állatkertben",
-    space: "🤖 Tükrözés az űrhajón"
+    space: "🤖 Tükrözés az űrhajón",
+    tram: "🚋 Tükrözés a villamoson"
 };
 
 const SVG_NS = "http://www.w3.org/2000/svg";

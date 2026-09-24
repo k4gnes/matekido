@@ -9,7 +9,8 @@ const WORLD_TITLES = {
     football: "⚽ Mit mutat az óra?",
     cooking: "🍳 Mit mutat az óra?",
     animals: "🦁 Mit mutat az óra?",
-    space: "🤖 Mit mutat az óra?"
+    space: "🤖 Mit mutat az óra?",
+    tram: "🚋 Mit mutat az óra?"
 };
 
 const SVG_NS = "http://www.w3.org/2000/svg";

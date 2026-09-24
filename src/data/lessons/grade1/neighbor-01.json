@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Ki áll mellette a sorban?",
           "text": "Írd be, melyik robotszám szomszédait látod!"
+        },
+        "tram": {
+          "title": "🚋 Ki áll mellette a sorban?",
+          "text": "Írd be, melyik utasszám szomszédait látod!"
         }
       }
     },
@@ -62,6 +66,10 @@
           "text": "Minden szomszédot jól megtaláltál!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden szomszédot jól megtaláltál!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden szomszédot jól megtaláltál!"
         }

@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Egyenlő csoportok",
           "text": "Nézd meg a csoportokat! Minden csoportban ugyanannyi elem van. Hány elem van összesen?"
+        },
+        "tram": {
+          "title": "🚋 Egyenlő csoportok",
+          "text": "Nézd meg a csoportokat! Minden csoportban ugyanannyi elem van. Hány elem van összesen?"
         }
       }
     },
@@ -61,6 +65,10 @@
           "text": "Ügyesen megszámoltad az állat-csoportokat!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megszámoltad a csoportokat!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megszámoltad a csoportokat!"
         }

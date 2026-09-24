@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Mit hoz az űr?",
           "text": "Az űrhajón gondolkodj el: mi biztos, mi lehetséges és mi lehetetlen? Ha dobókockával dobunk, mindig hatoldalút használunk."
+        },
+        "tram": {
+          "title": "🚋 Mit hoz a város?",
+          "text": "A villamoson gondolkodj el: mi biztos, mi lehetséges és mi lehetetlen? Ha dobókockával dobunk, mindig hatoldalút használunk."
         }
       }
     },
@@ -60,6 +64,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen mérlegeltél az űrhajón!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen mérlegeltél a villamoson!"
         }
       }
     }

@@ -31,6 +31,10 @@
                 "space": {
                     "title": "🤖 Modulok az űrhajón",
                     "text": "Az űrhajó is L-alakú modulokból áll! Mennyi a kerület, mennyi a terület?"
+                },
+                "tram": {
+                    "title": "🚋 Vagonok a villamoson",
+                    "text": "A villamos is L-alakú vagonokból áll! Mennyi a kerület, mennyi a terület?"
                 }
             }
         },
@@ -83,6 +87,10 @@
                 "space": {
                     "title": "🛰️ Nagy vagy!",
                     "text": "Az űrhajó moduljait is pontosan kiszámoltad!"
+                },
+                "tram": {
+                    "title": "🚋 Nagy vagy!",
+                    "text": "A villamos vagonjait is pontosan kiszámoltad!"
                 }
             }
         }

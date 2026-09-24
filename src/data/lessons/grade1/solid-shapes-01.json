@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Testek az űrhajón",
           "text": "Az űrhajó alkatrészei testek! Ismerd fel, melyik testet látod!"
+        },
+        "tram": {
+          "title": "🚋 Testek a villamoson",
+          "text": "A villamos jegyei testek! Ismerd fel, melyik testet látod!"
         }
       }
     },
@@ -64,6 +68,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden testet felismertél az űrhajón!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden testet felismertél a villamoson!"
         }
       }
     }

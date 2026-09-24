@@ -27,6 +27,10 @@
         "space": {
           "title": "🪞 Tükrözés az űrhajón",
           "text": "Az űrhajósok tükrös paneleket illesztenek! Találd ki, melyik a minta tükörképe!"
+        },
+        "tram": {
+          "title": "🚋 Tükrözés a villamoson",
+          "text": "Az utasok tükrös paneleket illesztenek! Találd ki, melyik a minta tükörképe!"
         }
       }
     },
@@ -63,6 +67,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden tükörképet megtaláltál az űrhajón!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden tükörképet megtaláltál a villamoson!"
         }
       }
     }

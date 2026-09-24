@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Terület az űrhajón",
           "text": "A robotok napelemeket raknak ki az űrállomáson. Számold meg a kék négyzeteket!"
+        },
+        "tram": {
+          "title": "🚋 Terület a villamoson",
+          "text": "Az utasok akkumulátorokat raknak ki a megállón. Számold meg a kék négyzeteket!"
         }
       }
     },
@@ -61,6 +65,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megszámoltad a területeket az űrhajón!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megszámoltad a területeket a villamoson!"
         }
       }
     }

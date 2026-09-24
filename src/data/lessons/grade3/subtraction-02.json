@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Százasátlépés kivonásnál",
           "text": "Vond ki a számokat! Most a százashatárt is átlépjük. Például: 520 - 380 = ?"
+        },
+        "tram": {
+          "title": "🚋 Százasátlépés kivonásnál",
+          "text": "Vond ki a számokat! Most a százashatárt is átlépjük. Például: 520 - 380 = ?"
         }
       }
     },
@@ -63,6 +67,10 @@
           "text": "Minden százasátlépéses kivonást jól megoldottál!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden százasátlépéses kivonást jól megoldottál!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden százasátlépéses kivonást jól megoldottál!"
         }

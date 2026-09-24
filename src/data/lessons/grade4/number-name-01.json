@@ -31,6 +31,10 @@
                 "space": {
                     "title": "🤖 Számok és szavak",
                     "text": "Melyik számot mondjuk hangosan? Most már 10 000-ig párosítjuk a számokat a szavaikkal!"
+                },
+                "tram": {
+                    "title": "🚋 Számok és szavak",
+                    "text": "Melyik számot mondjuk hangosan? Most már 10 000-ig párosítjuk a számokat a szavaikkal!"
                 }
             }
         },
@@ -72,6 +76,10 @@
                     "text": "Minden számnevet jól elsajátítottál!"
                 },
                 "space": {
+                    "title": "🎉 Szuper vagy!",
+                    "text": "Minden számnevet jól elsajátítottál!"
+                },
+                "tram": {
                     "title": "🎉 Szuper vagy!",
                     "text": "Minden számnevet jól elsajátítottál!"
                 }

@@ -12,7 +12,8 @@ const WORLD_EMOJI = {
     football: "⚽",
     cooking: "🍳",
     animals: "🦁",
-    space: "🤖"
+    space: "🤖",
+    tram: "🚋"
 };
 
 function el(tag, attrs = {}) {

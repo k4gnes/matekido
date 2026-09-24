@@ -30,6 +30,10 @@
         "space": {
           "title": "🤖 Többlépéses űrtörténetek",
           "text": "Az űrhajósok robotjai és rakétái sok számot mozgatnak! Két lépésben oldd meg!"
+        },
+        "tram": {
+          "title": "🚋 Többlépéses villamosos történetek",
+          "text": "A villamosvonalon sok jegy, utas és megálló jön számításba! Olvasd el a történetet, és két lépésben számolj!"
         }
       }
     },
@@ -79,6 +83,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megoldottad az űrtörténeteket!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a villamosos történeteket!"
         }
       }
     }

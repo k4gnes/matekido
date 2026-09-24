@@ -9,7 +9,8 @@ const TITLES = {
     football: "⚽ Idő a pályán",
     cooking: "🍳 Idő a konyhában",
     animals: "🦁 Idő az állatkertben",
-    space: "🤖 Idő az űrhajón"
+    space: "🤖 Idő az űrhajón",
+    tram: "🚋 Idő a villamoson"
 };
 
 const EVENTS = {
@@ -18,7 +19,8 @@ const EVENTS = {
     football: "a mérkőzés",
     cooking: "a sütés",
     animals: "az oroszlánok etetése",
-    space: "az űrjárat"
+    space: "az űrjárat",
+    tram: "a villamosjárat"
 };
 
 function fmtTime(minutes) {

@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Számolás ötösével",
           "text": "Az egységek ötösével jönnek! Találd ki, mi a hiányzó szám!"
+        },
+        "tram": {
+          "title": "🚋 Számolás ötösével",
+          "text": "Az egységek ötösével jönnek! Találd ki, mi a hiányzó szám!"
         }
       }
     },
@@ -61,6 +65,10 @@
           "text": "Ügyesen megtaláltad az állatok számát!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megtaláltad az egységek számát!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megtaláltad az egységek számát!"
         }

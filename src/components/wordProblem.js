@@ -12,7 +12,8 @@ const ITEM_EMOJI = {
     cooking: "🥚",
     football: "⚽",
     animals: "🦓",
-    space: "🤖"
+    space: "🤖",
+    tram: "🎟️"
 };
 
 const FIGURE_EMOJI = {
@@ -20,7 +21,8 @@ const FIGURE_EMOJI = {
     cooking: "🥞",
     football: "🧑",
     animals: "🦓",
-    space: "🤖"
+    space: "🤖",
+    tram: "🚋"
 };
 
 const FIGURE_COLORS = {
@@ -43,6 +45,10 @@ const FIGURE_COLORS = {
     space: {
         leaving: { bg: "#e2e8f0", border: "#64748b" },
         staying: { bg: "#ede9fe", border: "#7c3aed" }
+    },
+    tram: {
+        leaving: { bg: "#fef3c7", border: "#f59e0b" },
+        staying: { bg: "#fef9c3", border: "#ca8a04" }
     }
 };
 
@@ -66,6 +72,10 @@ const PART_COLORS = {
     space: {
         part: { bg: "#e2e8f0", border: "#64748b" },
         other: { bg: "#ede9fe", border: "#7c3aed" }
+    },
+    tram: {
+        part: { bg: "#fef3c7", border: "#f59e0b" },
+        other: { bg: "#fef9c3", border: "#ca8a04" }
     }
 };
 
@@ -75,7 +85,8 @@ const JOIN_LABELS = {
     cooking: { before: "A tálban volt", after: "Ancsika most beletesz" },
     football: { before: "A tartóban volt", after: "Most hoztak" },
     animals: { before: "A karámban volt", after: "A gondozó most behoz" },
-    space: { before: "A raktárban volt", after: "A robot most hozzászerel" }
+    space: { before: "A raktárban volt", after: "A robot most hozzászerel" },
+    tram: { before: "A megállóban volt", after: "A villamos most hozott" }
 };
 
 const COMPARE_LABELS = {
@@ -84,7 +95,8 @@ const COMPARE_LABELS = {
     cooking: { a: "Reggel", b: "Délben", unit: "palacsinta" },
     football: { a: "Első félidő", b: "Második félidő", unit: "gól" },
     animals: { a: "Reggel", b: "Este", unit: "zebra" },
-    space: { a: "Első űrhajó", b: "Második űrhajó", unit: "robot" }
+    space: { a: "Első űrhajó", b: "Második űrhajó", unit: "robot" },
+    tram: { a: "Első megálló", b: "Második megálló", unit: "utas" }
 };
 
 const PART_LEGEND = {
@@ -111,6 +123,10 @@ const PART_LEGEND = {
     space: {
         part: (n) => `🤖 ${n} működő`,
         other: "🟣 töltődik: ?"
+    },
+    tram: {
+        part: (n) => `🎟️ ${n} bérletes`,
+        other: "🚋 jeggyel: ?"
     }
 };
 
@@ -144,6 +160,11 @@ const REMOVE_LABELS = {
         waiting: "🛰️ Az űrállomáson vannak",
         departure: "🚀 Elindulnak (szürke robotok)",
         count: (n) => `Az űrállomáson maradt: ${n} robot`
+    },
+    tram: {
+        waiting: "🚋 A villamoson vannak",
+        departure: "🚉 Leszállnak a megállónál",
+        count: (n) => `A villamoson maradt: ${n} utas`
     }
 };
 

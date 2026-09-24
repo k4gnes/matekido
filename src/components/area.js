@@ -10,7 +10,8 @@ const TITLES = {
     football: "⚽ Terület a pályán",
     cooking: "🍳 Terület a konyhában",
     animals: "🦁 Terület az állatkertben",
-    space: "🤖 Terület az űrhajón"
+    space: "🤖 Terület az űrhajón",
+    tram: "🚋 Terület a villamoson"
 };
 
 const SVG_NS = "http://www.w3.org/2000/svg";

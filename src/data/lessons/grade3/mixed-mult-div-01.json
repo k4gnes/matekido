@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Vegyes szorzás és osztás az űrben",
           "text": "Keverjük a szorzást és az osztást! Figyelj a jelekre az űrben, mindig a műveletet kövesd!"
+        },
+        "tram": {
+          "title": "🚋 Vegyes szorzás és osztás a városban",
+          "text": "Keverjük a szorzást és az osztást! Figyelj a jelekre a városban, mindig a műveletet kövesd!"
         }
       }
     },
@@ -71,6 +75,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megoldottad a vegyes feladatokat az űrben!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad a vegyes feladatokat a városban!"
         }
       }
     }

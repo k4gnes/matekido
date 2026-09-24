@@ -9,7 +9,8 @@ const WORLD_TITLES = {
     football: "⚽ Melyik szám hiányzik?",
     cooking: "🍳 Melyik szám hiányzik?",
     animals: "🦁 Melyik szám hiányzik?",
-    space: "🤖 Melyik szám hiányzik?"
+    space: "🤖 Melyik szám hiányzik?",
+    tram: "🚋 Melyik szám hiányzik?"
 };
 
 function getTitle(world) {

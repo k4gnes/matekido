@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Alakzatok az űrben",
           "text": "Az űrhajó ablakain alakzatok vannak! Nézd meg jól, és válaszolj a kérdésekre!"
+        },
+        "tram": {
+          "title": "🚋 Alakzatok a városban",
+          "text": "A villamos ablakain alakzatok vannak! Nézd meg jól, és válaszolj a kérdésekre!"
         }
       }
     },
@@ -62,6 +66,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden alakzatot jól összehasonlítottál az űrben!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden alakzatot jól összehasonlítottál a városban!"
         }
       }
     }

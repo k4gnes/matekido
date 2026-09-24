@@ -31,6 +31,10 @@
         "space": {
           "title": "🤖 Keresd a meghibásodott robotot!",
           "text": "Nézd meg az összegeket, és kattints arra, ami nem egyenlő a robotok számával!"
+        },
+        "tram": {
+          "title": "🚋 Keresd a meghibásodott utast!",
+          "text": "Nézd meg az összegeket, és kattints arra, ami nem egyenlő az utasok számával!"
         }
       }
     },

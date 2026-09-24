@@ -9,7 +9,8 @@ const WORLD_EMOJI = {
     football: "⚽",
     cooking: "🥄",
     animals: "🦁",
-    space: "🤖"
+    space: "🤖",
+    tram: "🚋"
 };
 
 function renderEmojiGroup(container, emoji, count) {

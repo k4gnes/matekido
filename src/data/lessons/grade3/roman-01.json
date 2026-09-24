@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Római számok",
           "text": "A rómaiak jelekkel írták a számokat: I = 1, V = 5, X = 10. Ismerd meg a jeleket!"
+        },
+        "tram": {
+          "title": "🚋 Római számok",
+          "text": "A rómaiak jelekkel írták a számokat: I = 1, V = 5, X = 10. Ismerd meg a jeleket!"
         }
       }
     },
@@ -64,6 +68,10 @@
           "text": "Minden római számot felismertél!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden római számot felismertél!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden római számot felismertél!"
         }

@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Hol van a robot?",
           "text": "Nézd meg a képet! Kattints a helyes meghatározásra!"
+        },
+        "tram": {
+          "title": "🚋 Hol van az utas?",
+          "text": "Nézd meg a képet! Kattints a helyes meghatározásra!"
         }
       }
     },
@@ -61,6 +65,10 @@
           "text": "Minden helyzetet jól felismertél!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden helyzetet jól felismertél!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden helyzetet jól felismertél!"
         }

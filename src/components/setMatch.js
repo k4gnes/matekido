@@ -10,7 +10,8 @@ const TITLES = {
     football: "⚽ Válogatás a pályán",
     cooking: "🍳 Válogatás a konyhában",
     animals: "🦁 Válogatás az állatkertben",
-    space: "🤖 Válogatás az űrhajón"
+    space: "🤖 Válogatás az űrhajón",
+    tram: "🚋 Válogatás a villamoson"
 };
 
 export function renderSetMatch(step, root, next, progress, onResult, onAttempt) {

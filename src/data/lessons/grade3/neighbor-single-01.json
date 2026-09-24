@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Ki áll mellette a sorban?",
           "text": "Írd be a szám kisebb és nagyobb szomszédját!"
+        },
+        "tram": {
+          "title": "🚋 Ki áll mellette a sorban?",
+          "text": "Írd be a szám kisebb és nagyobb szomszédját!"
         }
       }
     },
@@ -63,6 +67,10 @@
           "text": "Minden szomszédot jól megtaláltál!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden szomszédot jól megtaláltál!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden szomszédot jól megtaláltál!"
         }

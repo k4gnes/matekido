@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Perc és óra az űrhajón",
           "text": "A küldetés ideje percekben! Mennyi az 1 óra percekben?"
+        },
+        "tram": {
+          "title": "🚋 Perc és óra a villamoson",
+          "text": "Az út ideje percekben! Mennyi az 1 óra percekben?"
         }
       }
     },
@@ -62,6 +66,10 @@
         "space": {
           "title": "🤖 Indulhat a küldetés!",
           "text": "Az időpontok pontosak, indulhat a rakéta! 🚀"
+        },
+        "tram": {
+          "title": "🚋 Indulhat az út!",
+          "text": "Az időpontok pontosak, indulhat a villamos! 🚋"
         }
       }
     }

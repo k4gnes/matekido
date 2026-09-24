@@ -31,6 +31,10 @@
                 "space": {
                     "title": "🤖 Törtek az űrben",
                     "text": "Az energia-adagokat törtekkel gondoljuk! Melyik a nagyobb, és mennyi lesz az összeg?"
+                },
+                "tram": {
+                    "title": "🚋 Törtek a városban",
+                    "text": "A jegy-adagokat törtekkel gondoljuk! Melyik a nagyobb, és mennyi lesz az összeg?"
                 }
             }
         },
@@ -93,6 +97,10 @@
                 "space": {
                     "title": "🚀 Szuper vagy!",
                     "text": "Minden törtszámítás jól sikerült az űrben!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden törtszámítás jól sikerült a városban!"
                 }
             }
         }

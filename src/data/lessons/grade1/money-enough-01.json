@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Meg tudod venni az alkatrészt?",
           "text": "Nézd meg az alkatrészt és a pénztárcád tartalmát! Elég a pénzed a robot megjavításához?"
+        },
+        "tram": {
+          "title": "🚋 Meg tudod venni a jegyet?",
+          "text": "Nézd meg a jegyet és a pénztárcád tartalmát! Elég a pénzed a jegy megvásárlásához?"
         }
       }
     },
@@ -63,6 +67,10 @@
           "text": "Minden vásárlást jól eldöntöttél!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden vásárlást jól eldöntöttél!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden vásárlást jól eldöntöttél!"
         }

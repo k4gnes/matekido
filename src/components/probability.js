@@ -10,7 +10,8 @@ const TITLES = {
     football: "⚽ Biztos vagy benne? A pályán",
     cooking: "🍳 Biztos vagy benne? A konyhában",
     animals: "🦁 Biztos vagy benne? Az állatkertben",
-    space: "🤖 Biztos vagy benne? Az űrhajón"
+    space: "🤖 Biztos vagy benne? Az űrhajón",
+    tram: "🚋 Biztos vagy benne? A villamoson"
 };
 
 export function renderProbability(step, root, next, progress, onResult, onAttempt) {

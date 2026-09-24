@@ -36,6 +36,10 @@
                 "space": {
                     "title": "🤖 Sokszögek az űrben",
                     "text": "Az űrhajó ablakai sokszögek – oldalaik, csúcsaik és átlóik szerint vizsgáljuk meg!"
+                },
+                "tram": {
+                    "title": "🚋 Sokszögek a városban",
+                    "text": "A villamos ablakai sokszögek – oldalaik, csúcsaik és átlóik szerint vizsgáljuk meg!"
                 }
             }
         },
@@ -88,6 +92,10 @@
                 "space": {
                     "title": "🛸 Szuper vagy!",
                     "text": "Minden űrhajóablakot jól megismertél!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden villamosablakot jól megismertél!"
                 }
             }
         }

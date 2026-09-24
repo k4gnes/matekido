@@ -32,6 +32,10 @@
                 "space": {
                     "title": "🤖 Kerek szomszédok az űrben",
                     "text": "Melyik kerek szám áll a szám előtt és után a sorban? Írd be mindkét szomszédot!"
+                },
+                "tram": {
+                    "title": "🚋 Kerek szomszédok a városban",
+                    "text": "Melyik kerek szám áll a szám előtt és után a sorban? Írd be mindkét szomszédot!"
                 }
             }
         },
@@ -86,6 +90,10 @@
                 "space": {
                     "title": "🚀 Szuper vagy!",
                     "text": "Minden kerek szomszédot jól megtaláltál az űrben!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden kerek szomszédot jól megtaláltál a városban!"
                 }
             }
         }

@@ -10,7 +10,8 @@ const WORLD = {
     football: { title: "⚽ Hány játékos van a pályán?", tens: "👨‍🏫", ones: "🏃" },
     cooking: { title: "🍳 Hány kanál kell?", tens: "🍲", ones: "🥄" },
     animals: { title: "🦁 Hány állat van a karámban?", tens: "🦒", ones: "🦁" },
-    space: { title: "🤖 Hány robot van a tartályban?", tens: "🛰️", ones: "🤖" }
+    space: { title: "🤖 Hány robot van a tartályban?", tens: "🛰️", ones: "🤖" },
+    tram: { title: "🚋 Hány utas van a vagonban?", tens: "🚋", ones: "🚶" }
 };
 
 export function renderPlaceValue(step, root, next, progress, onResult, onAttempt) {

@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Nehezebb szorzás",
           "text": "A robotok nehezebb szorzásokat oldanak meg! Válaszd ki a helyes eredményt!"
+        },
+        "tram": {
+          "title": "🚋 Nehezebb szorzás",
+          "text": "Az utasok nehezebb szorzásokat oldanak meg! Válaszd ki a helyes eredményt!"
         }
       }
     },
@@ -60,6 +64,10 @@
           "text": "Ügyesen megoldottad a nehezebb szorzásokat!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad a nehezebb szorzásokat!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megoldottad a nehezebb szorzásokat!"
         }

@@ -19,8 +19,8 @@ import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
 
 const INDEX_ANSWER_TYPES = new Set(["calendar", "data-chart", "solid-shape", "polygon", "length-units"]);
 
-const WORLDS = ["postman", "racing", "football", "cooking", "animals", "space"];
-const PASSES = { postman: 12, racing: 4, football: 4, cooking: 4, animals: 4, space: 4 };
+const WORLDS = ["postman", "racing", "football", "cooking", "animals", "space", "tram"];
+const PASSES = { postman: 12, racing: 4, football: 4, cooking: 4, animals: 4, space: 4, tram: 4 };
 
 const POLYGON_SIDES = {
     triangle: 3,

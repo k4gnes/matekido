@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Írásbeli összeadás az űrben",
           "text": "Írd egymás alá a számokat, és számolj jobbról balra, egyesekkel kezdve! Például: 256 + 388 = ?"
+        },
+        "tram": {
+          "title": "🚋 Írásbeli összeadás a városban",
+          "text": "Írd egymás alá a számokat, és számolj jobbról balra, egyesekkel kezdve! Például: 256 + 388 = ?"
         }
       }
     },
@@ -64,6 +68,10 @@
           "text": "Minden írásbeli összeadást jól megoldottál!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden írásbeli összeadást jól megoldottál!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden írásbeli összeadást jól megoldottál!"
         }

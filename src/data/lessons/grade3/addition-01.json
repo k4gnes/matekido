@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Összeadás az űrben",
           "text": "Add össze a számokat! Nem kell átlépnünk a százashatárt. Például: 250 + 320 = ?"
+        },
+        "tram": {
+          "title": "🚋 Összeadás a városban",
+          "text": "Add össze a számokat! Nem kell átlépnünk a százashatárt. Például: 250 + 320 = ?"
         }
       }
     },
@@ -64,6 +68,10 @@
           "text": "Minden összeadást jól megoldottál!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden összeadást jól megoldottál!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden összeadást jól megoldottál!"
         }

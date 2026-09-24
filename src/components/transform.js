@@ -9,7 +9,8 @@ const TITLES = {
     football: "⚽ Forgatás a pályán",
     cooking: "🍳 Forgatás a konyhában",
     animals: "🦁 Forgatás az állatkertben",
-    space: "🤖 Forgatás az űrhajón"
+    space: "🤖 Forgatás az űrhajón",
+    tram: "🚋 Forgatás a villamoson"
 };
 
 const SVG_NS = "http://www.w3.org/2000/svg";

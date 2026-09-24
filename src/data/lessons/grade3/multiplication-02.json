@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Hiányzó tényező az űrben",
           "text": "Melyik szám hiányzik a számításból? Például: 6 × ? = 42. Melyik számot szorozd 6-tal, hogy 42 legyen?"
+        },
+        "tram": {
+          "title": "🚋 Hiányzó tényező a városban",
+          "text": "Melyik szám hiányzik a számításból? Például: 6 × ? = 42. Melyik számot szorozd 6-tal, hogy 42 legyen?"
         }
       }
     },
@@ -62,6 +66,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megtaláltad a hiányzó tényezőket az űrben!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megtaláltad a hiányzó tényezőket a városban!"
         }
       }
     }

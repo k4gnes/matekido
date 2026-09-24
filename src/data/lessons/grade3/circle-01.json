@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Körök az űrhajón",
           "text": "Az űrhajó ablakai kör alakúak. Nézd meg a kör részeit!"
+        },
+        "tram": {
+          "title": "🚋 Körök a villamoson",
+          "text": "A villamos ablakai kör alakúak. Nézd meg a kör részeit!"
         }
       }
     },
@@ -60,6 +64,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen felismerted a kör részeit az űrhajón!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen felismerted a kör részeit a villamoson!"
         }
       }
     }

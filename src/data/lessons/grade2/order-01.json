@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Rendezd sorba a robotokat!",
           "text": "Kattints a robotok számaira a helyes sorrendben!"
+        },
+        "tram": {
+          "title": "🚋 Rendezd sorba az utasokat!",
+          "text": "Kattints az utasok számaira a helyes sorrendben!"
         }
       }
     },
@@ -65,6 +69,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden robotsort jól rendeztél!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden utassort jól rendeztél!"
         }
       }
     }

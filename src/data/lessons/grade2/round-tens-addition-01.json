@@ -26,6 +26,10 @@
                 "space": {
                     "title": "🤖 Segíts a robotoknak!",
                     "text": "A robotoknak energiát kell számolni a fedélzeten. Add össze, hány egység kell!"
+                },
+                "tram": {
+                    "title": "🚋 Segíts az utasoknak!",
+                    "text": "Az utasoknak jegyet kell számolni a villamoson. Add össze, hány egység kell!"
                 }
             }
         },
@@ -66,6 +70,10 @@
                 "space": {
                     "title": "🎉 Szuper vagy!",
                     "text": "Minden robot megkapta az energiáját!"
+                },
+                "tram": {
+                    "title": "🎉 Szuper vagy!",
+                    "text": "Minden utas megkapta az energiáját!"
                 }
             }
         }

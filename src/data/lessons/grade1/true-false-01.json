@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Igaz vagy hamis?",
           "text": "Nézd meg a számolást a számítógépen, és döntsd el, hogy igaz-e vagy hamis!"
+        },
+        "tram": {
+          "title": "🚋 Igaz vagy hamis?",
+          "text": "Nézd meg a számolást a számítógépen, és döntsd el, hogy igaz-e vagy hamis!"
         }
       }
     },
@@ -62,6 +66,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen eldöntötted, mi igaz és mi hamis az űrben!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen eldöntötted, mi igaz és mi hamis a városban!"
         }
       }
     }

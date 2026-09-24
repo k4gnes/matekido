@@ -31,6 +31,10 @@
                 "space": {
                     "title": "🛰️ Távolságok az űrben",
                     "text": "Az űrhajósok nagy távolságokat járnak be! Válaszd ki, melyik mértékegység illik a számhoz!"
+                },
+                "tram": {
+                    "title": "🚋 Távolságok a városban",
+                    "text": "Az utasok nagy távolságokat járnak be! Válaszd ki, melyik mértékegység illik a számhoz!"
                 }
             }
         },
@@ -80,6 +84,10 @@
                 },
                 "space": {
                     "title": "🛰️ Nagy vagy!",
+                    "text": "Minden távolsághoz jó mértékegységet választottál!"
+                },
+                "tram": {
+                    "title": "🚋 Nagy vagy!",
                     "text": "Minden távolsághoz jó mértékegységet választottál!"
                 }
             }

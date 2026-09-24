@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Szorzás és osztás az űrben",
           "text": "Ha tudod, hogy 3 × 4 = 12, akkor azt is tudod, hogy 12 ÷ 3 = 4! A szorzás és az osztás fordítottja egymásnak!"
+        },
+        "tram": {
+          "title": "🚋 Szorzás és osztás a városban",
+          "text": "Ha tudod, hogy 3 × 4 = 12, akkor azt is tudod, hogy 12 ÷ 3 = 4! A szorzás és az osztás fordítottja egymásnak!"
         }
       }
     },
@@ -62,6 +66,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megoldottad a szorzás-osztás feladatokat az űrben!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad a szorzás-osztás feladatokat a városban!"
         }
       }
     }

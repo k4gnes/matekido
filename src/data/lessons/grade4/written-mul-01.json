@@ -32,6 +32,10 @@
                 "space": {
                     "title": "🤖 Írásbeli szorzás az űrben",
                     "text": "Szorozd meg az energia-egységeket írásban! Az egyesektől haladj balra!"
+                },
+                "tram": {
+                    "title": "🚋 Írásbeli szorzás a városban",
+                    "text": "Szorozd meg a jegy-egységeket írásban! Az egyesektől haladj balra!"
                 }
             }
         },
@@ -98,6 +102,10 @@
                 "space": {
                     "title": "🚀 Szuper vagy!",
                     "text": "Minden írásbeli szorzás jól sikerült az űrben!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden írásbeli szorzás jól sikerült a városban!"
                 }
             }
         }

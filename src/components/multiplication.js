@@ -39,6 +39,12 @@ const TITLES = {
         "missing-factor": "🤖 Melyik szám hiányzik?",
         "match-groups": "🤖 Melyik szorzás felel meg?",
         "link": "🤖 Szorzás és osztás"
+    },
+    tram: {
+        "table": "🚋 Mennyi?",
+        "missing-factor": "🚋 Melyik szám hiányzik?",
+        "match-groups": "🚋 Melyik szorzás felel meg?",
+        "link": "🚋 Szorzás és osztás"
     }
 };
 

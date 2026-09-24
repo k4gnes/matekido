@@ -10,7 +10,8 @@ const WORLD = {
     football: { title: "⚽ Hány edző és hány játékos van a pályán?", tens: "👨‍🏫", ones: "🏃" },
     cooking: { title: "🍳 Hány fazék és hány kanál kell?", tens: "🍲", ones: "🥄" },
     animals: { title: "🦁 Hány karám és hány állat van?", tens: "🦒", ones: "🦁" },
-    space: { title: "🤖 Hány tartály és hány robot van?", tens: "🛰️", ones: "🤖" }
+    space: { title: "🤖 Hány tartály és hány robot van?", tens: "🛰️", ones: "🤖" },
+    tram: { title: "🚋 Hány vagon és hány utas van?", tens: "🚋", ones: "🚶" }
 };
 
 export function renderPlaceValueTwoInput(step, root, next, progress, onResult, onAttempt) {

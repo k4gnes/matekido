@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Naptár az űrhajón",
           "text": "A bázis komputer a naptár szerint ütemezi a küldetéseket! Ismerd meg a hónapokat és a heteket!"
+        },
+        "tram": {
+          "title": "🚋 Naptár a villamoson",
+          "text": "A depó komputer a naptár szerint ütemezi az utakat! Ismerd meg a hónapokat és a heteket!"
         }
       }
     },
@@ -64,6 +68,10 @@
         "space": {
           "title": "🤖 Küldetés engedélyezve!",
           "text": "A bázis szerint minden a helyén van, indulhat a küldetés! 🛰️"
+        },
+        "tram": {
+          "title": "🚋 Indulhat az út!",
+          "text": "A depó szerint minden a helyén van, indulhat az út! 🚋"
         }
       }
     }

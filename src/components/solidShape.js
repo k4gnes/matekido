@@ -9,7 +9,8 @@ const TITLES = {
     football: "⚽ Térbeli alakzatok",
     cooking: "🍳 Térbeli alakzatok",
     animals: "🦁 Térbeli alakzatok",
-    space: "🤖 Térbeli alakzatok"
+    space: "🤖 Térbeli alakzatok",
+    tram: "🚋 Térbeli alakzatok"
 };
 
 const SOLIDS = {

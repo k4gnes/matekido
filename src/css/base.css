@@ -212,3 +212,8 @@ body[data-world="space"] {
     --world-bg-image: url("../assets/images/bg-space.svg");
     background-color: #eef1fb;
 }
+
+body[data-world="tram"] {
+    --world-bg-image: url("../assets/images/bg-tram.svg");
+    background-color: #fff9e8;
+}

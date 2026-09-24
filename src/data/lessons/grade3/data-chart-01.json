@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Adatok az űrhajón",
           "text": "A bázis komputer diagramon mutatja a készleteket! Olvasd le az oszlopokról!"
+        },
+        "tram": {
+          "title": "🚋 Adatok a villamoson",
+          "text": "A depó komputer diagramon mutatja a készleteket! Olvasd le az oszlopokról!"
         }
       }
     },
@@ -63,6 +67,10 @@
         "space": {
           "title": "🤖 Kapcsolat visszaállt!",
           "text": "A bázis jól fogadta az űrhajó jelzését, ügyesen leolvastad a diagramot! 🛰️"
+        },
+        "tram": {
+          "title": "🚋 Kapcsolat visszaállt!",
+          "text": "A depó jól fogadta a villamos jelzését, ügyesen leolvastad a diagramot! 🚋"
         }
       }
     }

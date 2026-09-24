@@ -32,6 +32,10 @@
                 "space": {
                     "title": "🤖 Kerekítés az űrben",
                     "text": "Kerekítsd a számot a legközelebbi kerek számra! Ha épp félúton van, felfelé kerekítünk."
+                },
+                "tram": {
+                    "title": "🚋 Kerekítés a városban",
+                    "text": "Kerekítsd a számot a legközelebbi kerek számra! Ha épp félúton van, felfelé kerekítünk."
                 }
             }
         },
@@ -88,6 +92,10 @@
                 "space": {
                     "title": "🚀 Szuper vagy!",
                     "text": "Minden kerekítés jól sikerült az űrben!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden kerekítés jól sikerült a városban!"
                 }
             }
         }

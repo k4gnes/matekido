@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Számok és szavak",
           "text": "Melyik számot mondjuk hangosan? Melyik írásmód a helyes?"
+        },
+        "tram": {
+          "title": "🚋 Számok és szavak",
+          "text": "Melyik számot mondjuk hangosan? Melyik írásmód a helyes?"
         }
       }
     },
@@ -64,6 +68,10 @@
           "text": "Minden számnevet jól elsajátítottál!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden számnevet jól elsajátítottál!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden számnevet jól elsajátítottál!"
         }

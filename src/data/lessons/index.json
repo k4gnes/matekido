@@ -18,7 +18,8 @@
                 "cooking": "🍳 Válogatás a konyhában",
                 "football": "⚽ Válogatás a pályán",
                 "animals": "🦁 Válogatás az állatkertben",
-                "space": "🤖 Válogatás az űrhajón"
+                "space": "🤖 Válogatás az űrhajón",
+                "tram": "🚋 Válogatás a villamosmegállóban"
             }
         },
         {
@@ -39,7 +40,8 @@
                 "cooking": "🍳 Rakd a helyére az alakzatokat!",
                 "football": "⚽ Rakd a helyére az alakzatokat!",
                 "animals": "🦁 Rakd a helyére az alakzatokat!",
-                "space": "🤖 Rakd a helyére az alakzatokat!"
+                "space": "🤖 Rakd a helyére az alakzatokat!",
+                "tram": "🚋 Rakd a helyére az alakzatokat!"
             }
         },
         {
@@ -60,7 +62,8 @@
                 "cooking": "🍳 Hol van?",
                 "football": "⚽ Hol van?",
                 "animals": "🦁 Hol van az állat?",
-                "space": "🤖 Hol van a robot?"
+                "space": "🤖 Hol van a robot?",
+                "tram": "🚋 Hol van az utas?"
             }
         },
         {
@@ -81,7 +84,8 @@
                 "cooking": "🍳 Naptár a konyhában",
                 "football": "⚽ Naptár a pályán",
                 "animals": "🦁 Naptár az állatkertben",
-                "space": "🤖 Naptár az űrhajón"
+                "space": "🤖 Naptár az űrhajón",
+                "tram": "🚋 Naptár a villamoson"
             }
         },
         {
@@ -103,7 +107,8 @@
                 "cooking": "🍳 Mi a következő a sorban?",
                 "football": "⚽ Mi a következő a sorban?",
                 "animals": "🦁 Állatos sorminta",
-                "space": "🤖 Robotos sorminta"
+                "space": "🤖 Robotos sorminta",
+                "tram": "🚋 Sorminta a villamoson"
             }
         },
         {
@@ -126,7 +131,8 @@
                 "football": "🧩 Csapattagok kiválasztása",
                 "postman": "📮 Levelek bontása",
                 "animals": "🦁 Állatok szétválogatása",
-                "space": "🤖 Robotok szétválogatása"
+                "space": "🤖 Robotok szétválogatása",
+                "tram": "🚋 Robotok szétválogatása"
             }
         },
         {
@@ -149,7 +155,8 @@
                 "football": "⚽ Keresd a kakukktojást!",
                 "postman": "📮 Keresd a kakukktojást!",
                 "animals": "🦁 Keresd a kakukktojást!",
-                "space": "🤖 Keresd a hibás robotot!"
+                "space": "🤖 Keresd a hibás robotot!",
+                "tram": "🚋 Keresd a hibás utast!"
             }
         },
         {
@@ -171,7 +178,8 @@
                 "cooking": "🍳 Hány hozzávaló hiányzik?",
                 "football": "⚽ Hány játékos hiányzik?",
                 "animals": "🦁 Hány állat hiányzik?",
-                "space": "🤖 Hány robot hiányzik?"
+                "space": "🤖 Hány robot hiányzik?",
+                "tram": "🚋 Hány utas hiányzik?"
             }
         },
         {
@@ -193,7 +201,8 @@
                 "cooking": "🍳 Mi a következő?",
                 "football": "⚽ Mi a következő?",
                 "animals": "🦁 Mi a következő állat?",
-                "space": "🤖 Mi a következő robot?"
+                "space": "🤖 Mi a következő robot?",
+                "tram": "🚋 Mi a következő utas?"
             }
         },
         {
@@ -215,7 +224,8 @@
                 "cooking": "🍳 Rendezzük sorainkat!",
                 "football": "⚽ Rendezzük sorainkat!",
                 "animals": "🦁 Állatok sorba rendezése",
-                "space": "🤖 Robotok sorba rendezése"
+                "space": "🤖 Robotok sorba rendezése",
+                "tram": "🚋 Robotok sorba rendezése"
             }
         },
         {
@@ -237,7 +247,8 @@
                 "cooking": "🍳 Melyik tál nehezebb?",
                 "football": "⚽ Melyik csapat erősebb?",
                 "animals": "🦁 Állatok összehasonlítása",
-                "space": "🤖 Bolygók összehasonlítása"
+                "space": "🤖 Bolygók összehasonlítása",
+                "tram": "🚋 Bolygók összehasonlítása"
             }
         },
         {
@@ -260,7 +271,8 @@
                 "cooking": "🍳 Melyik edény nehezebb?",
                 "football": "⚽ Melyik játékos magasabb?",
                 "animals": "🦁 Állatok összehasonlítása",
-                "space": "🤖 Bolygók összehasonlítása"
+                "space": "🤖 Bolygók összehasonlítása",
+                "tram": "🚋 Bolygók összehasonlítása"
             }
         },
         {
@@ -282,7 +294,8 @@
                 "cooking": "🍳 Páros vagy páratlan?",
                 "football": "⚽ Páros vagy páratlan?",
                 "animals": "🦁 Páros vagy páratlan?",
-                "space": "🤖 Páros vagy páratlan?"
+                "space": "🤖 Páros vagy páratlan?",
+                "tram": "🚋 Páros vagy páratlan?"
             }
         },
         {
@@ -304,7 +317,8 @@
                 "cooking": "🍳 Hány kanál kell?",
                 "football": "⚽ Hány játékos ez összesen?",
                 "animals": "🦁 Hány állat van a karámokban?",
-                "space": "🤖 Hány robot van a tartályokban?"
+                "space": "🤖 Hány robot van a tartályokban?",
+                "tram": "🚋 Hány utas van a vagonokban?"
             }
         },
         {
@@ -326,7 +340,8 @@
                 "cooking": "🍳 Hány fazék és kanál?",
                 "football": "⚽ Hány edző és hány játékos van a pályán?",
                 "animals": "🦁 Hány karám és állat?",
-                "space": "🤖 Hány tartály és robot?"
+                "space": "🤖 Hány tartály és robot?",
+                "tram": "🚋 Hány vagon és utas?"
             }
         },
         {
@@ -348,7 +363,8 @@
                 "cooking": "🍳 Hány hozzávaló hiányzik?",
                 "football": "⚽ Hány gól hiányzik?",
                 "animals": "🦁 Hány állat hiányzik?",
-                "space": "🤖 Hány robot hiányzik?"
+                "space": "🤖 Hány robot hiányzik?",
+                "tram": "🚋 Hány utas hiányzik?"
             }
         },
         {
@@ -371,7 +387,8 @@
                 "cooking": "🍳 Mi áll mellette a polcon?",
                 "football": "⚽ Ki áll mellette a sorfalban?",
                 "animals": "🦁 Ki áll mellette a kifutóban?",
-                "space": "🤖 Ki áll mellette a sorban?"
+                "space": "🤖 Ki áll mellette a sorban?",
+                "tram": "🚋 Ki áll mellette a sorban?"
             }
         },
         {
@@ -393,7 +410,8 @@
                 "cooking": "🍳 Első ételkészítés",
                 "football": "⚽ Az első félidő",
                 "animals": "🦁 Takarmány számolása",
-                "space": "🤖 Energia számolása"
+                "space": "🤖 Energia számolása",
+                "tram": "🚋 Energia számolása"
             }
         },
         {
@@ -415,7 +433,8 @@
                 "cooking": "🍳 Gyors keverés",
                 "football": "⚽ Gólpasszok sorozata",
                 "animals": "🦁 Takarmány számolása",
-                "space": "🤖 Energia számolása"
+                "space": "🤖 Energia számolása",
+                "tram": "🚋 Energia számolása"
             }
         },
         {
@@ -437,7 +456,8 @@
                 "cooking": "🍳 Mennyi alapanyag maradt?",
                 "football": "⚽ Hány gólt rúgtak már?",
                 "animals": "🦁 Maradék takarmány",
-                "space": "🤖 Maradék energia"
+                "space": "🤖 Maradék energia",
+                "tram": "🚋 Maradék jegy"
             }
         },
         {
@@ -460,7 +480,8 @@
                 "cooking": "🍳 Tízesátlépés",
                 "football": "⚽ Tízesátlépés",
                 "animals": "🦁 Tízesátlépés az állatkertben",
-                "space": "🤖 Tízesátlépés az űrállomáson"
+                "space": "🤖 Tízesátlépés az űrállomáson",
+                "tram": "🚋 Tízesátlépés a megállón"
             }
         },
         {
@@ -482,7 +503,8 @@
                 "cooking": "🍳 Hiányos recept",
                 "football": "⚽ Hiányos mérkőzés",
                 "animals": "🦁 Hiányzó állatok",
-                "space": "🤖 Hibás rendszer"
+                "space": "🤖 Hibás rendszer",
+                "tram": "🚋 Hibás rendszer"
             }
         },
         {
@@ -504,7 +526,8 @@
                 "cooking": "🍳 Hiányzó szám",
                 "football": "⚽ Hiányzó szám",
                 "animals": "🦁 Hiányzó szám",
-                "space": "🤖 Hiányzó szám"
+                "space": "🤖 Hiányzó szám",
+                "tram": "🚋 Hiányzó szám"
             }
         },
         {
@@ -526,7 +549,8 @@
                 "cooking": "🍳 Igaz vagy hamis?",
                 "football": "⚽ Igaz vagy hamis?",
                 "animals": "🦁 Igaz vagy hamis?",
-                "space": "🤖 Igaz vagy hamis?"
+                "space": "🤖 Igaz vagy hamis?",
+                "tram": "🚋 Igaz vagy hamis?"
             }
         },
         {
@@ -548,7 +572,8 @@
                 "cooking": "🍳 Hibás számolás a receptben?",
                 "football": "⚽ Hibás számolás az eredményjelzőn?",
                 "animals": "🦁 Hibás számolás az állatkertben?",
-                "space": "🤖 Hibás számolás a fedélzeten?"
+                "space": "🤖 Hibás számolás a fedélzeten?",
+                "tram": "🚋 Hibás számolás a villamoson?"
             }
         },
         {
@@ -569,7 +594,8 @@
                 "cooking": "🥄 Melyik hosszabb?",
                 "football": "⚽ Melyik hosszabb?",
                 "animals": "🦁 Melyik állat hosszabb?",
-                "space": "🤖 Melyik rakéta hosszabb?"
+                "space": "🤖 Melyik rakéta hosszabb?",
+                "tram": "🚋 Melyik villamos hosszabb?"
             }
         },
         {
@@ -590,7 +616,8 @@
                 "cooking": "🥄 Mérd meg négyzetekkel!",
                 "football": "⚽ Mérd meg négyzetekkel!",
                 "animals": "🦁 Mérd meg négyzetekkel!",
-                "space": "🤖 Mérd meg a rakétát!"
+                "space": "🤖 Mérd meg a rakétát!",
+                "tram": "🚋 Mérd meg a villamost!"
             }
         },
         {
@@ -611,7 +638,8 @@
                 "cooking": "🍳 Mennyi fér bele?",
                 "football": "⚽ Mennyi fér bele?",
                 "animals": "🦁 Mennyi fér bele?",
-                "space": "🤖 Mennyi fér a tartályba?"
+                "space": "🤖 Mennyi fér a tartályba?",
+                "tram": "🚋 Mennyi fér a vagonba?"
             }
         },
         {
@@ -632,7 +660,8 @@
                 "cooking": "🍳 Mit mutat az óra?",
                 "football": "⚽ Mit mutat az óra?",
                 "animals": "🦁 Mit mutat az óra?",
-                "space": "🤖 Mit mutat az óra az űrben?"
+                "space": "🤖 Mit mutat az óra az űrben?",
+                "tram": "🚋 Mit mutat az óra a városban?"
             }
         },
         {
@@ -653,7 +682,8 @@
                 "cooking": "🥄 Fizesd ki pontosan!",
                 "football": "⚽ Fizesd ki pontosan!",
                 "animals": "🦁 Fizesd ki a belépőt!",
-                "space": "🤖 Fizesd ki az alkatrészt!"
+                "space": "🤖 Fizesd ki az alkatrészt!",
+                "tram": "🚋 Fizesd ki a jegyet!"
             }
         },
         {
@@ -674,7 +704,8 @@
                 "cooking": "🥄 Melyikben van több?",
                 "football": "⚽ Melyikben van több?",
                 "animals": "🦁 Melyikben van több?",
-                "space": "🤖 Melyikben van több?"
+                "space": "🤖 Melyikben van több?",
+                "tram": "🚋 Melyikben van több?"
             }
         },
         {
@@ -695,7 +726,8 @@
                 "cooking": "🥄 Meg tudod venni?",
                 "football": "⚽ Meg tudod venni?",
                 "animals": "🦁 Meg tudod venni a jegyet?",
-                "space": "🤖 Meg tudod venni az alkatrészt?"
+                "space": "🤖 Meg tudod venni az alkatrészt?",
+                "tram": "🚋 Meg tudod venni a jegyet?"
             }
         },
         {
@@ -718,7 +750,8 @@
                 "football": "⚽ Szöveges feladatok a pályán",
                 "postman": "📮 Szöveges feladatok a postán",
                 "animals": "🦁 Szöveges feladatok az állatkertben",
-                "space": "🤖 Szöveges feladatok az űrben"
+                "space": "🤖 Szöveges feladatok az űrben",
+                "tram": "🚋 Szöveges feladatok a villamoson"
             }
         },
         {
@@ -740,7 +773,8 @@
                 "cooking": "🍳 Egyenlő csoportok",
                 "football": "⚽ Egyenlő csoportok",
                 "animals": "🦁 Egyenlő csoportok",
-                "space": "🤖 Egyenlő csoportok"
+                "space": "🤖 Egyenlő csoportok",
+                "tram": "🚋 Egyenlő csoportok"
             }
         },
         {
@@ -762,7 +796,8 @@
                 "cooking": "🍳 Ismételt összeadás",
                 "football": "⚽ Ismételt összeadás",
                 "animals": "🦁 Ismételt összeadás",
-                "space": "🤖 Ismételt összeadás"
+                "space": "🤖 Ismételt összeadás",
+                "tram": "🚋 Ismételt összeadás"
             }
         },
         {
@@ -784,7 +819,8 @@
                 "cooking": "🍳 Számolás kettesével",
                 "football": "⚽ Számolás ötösével",
                 "animals": "🦁 Számolás kettesével",
-                "space": "🤖 Számolás ötösével"
+                "space": "🤖 Számolás ötösével",
+                "tram": "🚋 Számolás ötösével"
             }
         },
         {
@@ -805,7 +841,8 @@
                 "cooking": "🍳 Hány oldala van a sütinek?",
                 "football": "⚽ Hány oldala van a zászlónak?",
                 "animals": "🦁 Hány oldala van a táblának?",
-                "space": "🤖 Hány oldala van az ablaknak?"
+                "space": "🤖 Hány oldala van az ablaknak?",
+                "tram": "🚋 Hány oldala van az ablaknak?"
             }
         },
         {
@@ -826,7 +863,8 @@
                 "cooking": "🍳 Testek a konyhában",
                 "football": "⚽ Testek a pályán",
                 "animals": "🦁 Testek az állatkertben",
-                "space": "🤖 Testek az űrhajón"
+                "space": "🤖 Testek az űrhajón",
+                "tram": "🚋 Testek a villamoson"
             }
         },
         {
@@ -847,7 +885,8 @@
                 "cooking": "🍳 Forgatás a konyhában",
                 "football": "⚽ Forgatás a pályán",
                 "animals": "🦁 Forgatás az állatkertben",
-                "space": "🤖 Forgatás az űrhajón"
+                "space": "🤖 Forgatás az űrhajón",
+                "tram": "🚋 Forgatás a villamoson"
             }
         },
         {
@@ -869,7 +908,8 @@
                 "cooking": "🍳 Becslés a konyhában",
                 "football": "⚽ Becslés a meccsen",
                 "animals": "🦁 Becslés az állatkertben",
-                "space": "🤖 Becslés a űrben"
+                "space": "🤖 Becslés a űrben",
+                "tram": "🚋 Becslés a városban"
             }
         },
         {
@@ -891,7 +931,8 @@
                 "cooking": "🍳 Kerekítés a konyhában",
                 "football": "⚽ Kerekítés a meccsen",
                 "animals": "🦁 Kerekítés az állatkertben",
-                "space": "🤖 Kerekítés az űrben"
+                "space": "🤖 Kerekítés az űrben",
+                "tram": "🚋 Kerekítés a városban"
             }
         },
         {
@@ -912,7 +953,8 @@
                 "cooking": "🍳 Diagram a konyhában",
                 "football": "⚽ Diagram a pályán",
                 "animals": "🦁 Diagram az állatkertben",
-                "space": "🤖 Diagram az űrhajón"
+                "space": "🤖 Diagram az űrhajón",
+                "tram": "🚋 Diagram a villamoson"
             }
         },
         {
@@ -934,7 +976,8 @@
                 "cooking": "🍲 Fazekak és kanalak",
                 "football": "⚽ Csapatok és edzők",
                 "animals": "🦁 Karámok és állatok",
-                "space": "🤖 Tartályok és robotok"
+                "space": "🤖 Tartályok és robotok",
+                "tram": "🚋 Tartályok és utasok"
             }
         },
         {
@@ -956,7 +999,8 @@
                 "cooking": "🍲 Melyik tál nagyobb?",
                 "football": "⚽ Melyik csapat erősebb?",
                 "animals": "🦁 Melyik állatcsapat nagyobb?",
-                "space": "🤖 Melyik bolygón többen vannak?"
+                "space": "🤖 Melyik bolygón többen vannak?",
+                "tram": "🚋 Melyik kerületn többen vannak?"
             }
         },
         {
@@ -978,7 +1022,8 @@
                 "cooking": "🍳 Hány hozzávaló hiányzik?",
                 "football": "⚽ Hány gól hiányzik?",
                 "animals": "🦁 Hány állat hiányzik?",
-                "space": "🤖 Hány robot hiányzik?"
+                "space": "🤖 Hány robot hiányzik?",
+                "tram": "🚋 Hány utas hiányzik?"
             }
         },
         {
@@ -1000,7 +1045,8 @@
                 "cooking": "🍳 Kerek tányérok",
                 "football": "⚽ Kerek számok a pályán",
                 "animals": "🦁 Takarmány számolása",
-                "space": "🤖 Energia számolása"
+                "space": "🤖 Energia számolása",
+                "tram": "🚋 Energia számolása"
             }
         },
         {
@@ -1022,7 +1068,8 @@
                 "cooking": "🍳 Véletlen mennyiség + kerek tizes",
                 "football": "⚽ Véletlen szám + kerek gól",
                 "animals": "🦁 Takarmány számolása",
-                "space": "🤖 Energia számolása"
+                "space": "🤖 Energia számolása",
+                "tram": "🚋 Energia számolása"
             }
         },
         {
@@ -1044,7 +1091,8 @@
                 "cooking": "🍳 Gyors számolás a konyhában",
                 "football": "⚽ Gyors számolás a kispadon",
                 "animals": "🦁 Takarmány számolása",
-                "space": "🤖 Energia számolása"
+                "space": "🤖 Energia számolása",
+                "tram": "🚋 Energia számolása"
             }
         },
         {
@@ -1066,7 +1114,8 @@
                 "cooking": "🍳 Nehéz nap a konyhában",
                 "football": "⚽ Nehéz mérkőzés",
                 "animals": "🦁 Takarmány számolása",
-                "space": "🤖 Energia számolása"
+                "space": "🤖 Energia számolása",
+                "tram": "🚋 Energia számolása"
             }
         },
         {
@@ -1088,7 +1137,8 @@
                 "cooking": "🍳 Sokadik fogás",
                 "football": "⚽ Sokadik gól a meccsen",
                 "animals": "🦁 Takarmány számolása",
-                "space": "🤖 Energia számolása"
+                "space": "🤖 Energia számolása",
+                "tram": "🚋 Energia számolása"
             }
         },
         {
@@ -1110,7 +1160,8 @@
                 "cooking": "🍳 Kerek tányérok kivonása",
                 "football": "⚽ Kerek számok kivonása",
                 "animals": "🦁 Maradék takarmány",
-                "space": "🤖 Maradék energia"
+                "space": "🤖 Maradék energia",
+                "tram": "🚋 Maradék jegy"
             }
         },
         {
@@ -1132,7 +1183,8 @@
                 "cooking": "🍳 Véletlen mennyiség - kerek tizes",
                 "football": "⚽ Véletlen szám - kerek gól",
                 "animals": "🦁 Maradék takarmány",
-                "space": "🤖 Maradék energia"
+                "space": "🤖 Maradék energia",
+                "tram": "🚋 Maradék jegy"
             }
         },
         {
@@ -1154,7 +1206,8 @@
                 "cooking": "🍳 Gyors számolás a konyhában",
                 "football": "⚽ Gyors számolás a kispadon",
                 "animals": "🦁 Maradék takarmány",
-                "space": "🤖 Maradék energia"
+                "space": "🤖 Maradék energia",
+                "tram": "🚋 Maradék jegy"
             }
         },
         {
@@ -1176,7 +1229,8 @@
                 "cooking": "🍳 Mennyi alapanyag maradt?",
                 "football": "⚽ Hány perc van még?",
                 "animals": "🦁 Maradék takarmány",
-                "space": "🤖 Maradék energia"
+                "space": "🤖 Maradék energia",
+                "tram": "🚋 Maradék jegy"
             }
         },
         {
@@ -1198,7 +1252,8 @@
                 "cooking": "🍳 Kétjegyű mennyiségek kivonása",
                 "football": "⚽ Kétjegyű gólok kivonása",
                 "animals": "🦁 Maradék takarmány",
-                "space": "🤖 Maradék energia"
+                "space": "🤖 Maradék energia",
+                "tram": "🚋 Maradék jegy"
             }
         },
         {
@@ -1220,7 +1275,8 @@
                 "cooking": "🍳 Mennyiségek átlépése",
                 "football": "⚽ Gólok átlépéssel",
                 "animals": "🦁 Maradék takarmány",
-                "space": "🤖 Maradék energia"
+                "space": "🤖 Maradék energia",
+                "tram": "🚋 Maradék jegy"
             }
         },
         {
@@ -1242,7 +1298,8 @@
                 "cooking": "🍳 Hiányos nagy recept",
                 "football": "⚽ Hiányos nagy meccs",
                 "animals": "🦁 Hiányzó állatok",
-                "space": "🤖 Hibás rendszer"
+                "space": "🤖 Hibás rendszer",
+                "tram": "🚋 Hibás rendszer"
             }
         },
         {
@@ -1264,7 +1321,8 @@
                 "cooking": "🔍 Mi áll mellette a polcon?",
                 "football": "🔍 Ki a szomszédja?",
                 "animals": "🦁 Ki áll mellette a kifutóban?",
-                "space": "🤖 Ki áll mellette a sorban?"
+                "space": "🤖 Ki áll mellette a sorban?",
+                "tram": "🚋 Ki áll mellette a sorban?"
             }
         },
         {
@@ -1286,7 +1344,8 @@
                 "cooking": "🍳 Mi a következő?",
                 "football": "⚽ Mi a következő?",
                 "animals": "🦁 Mi a következő állat?",
-                "space": "🤖 Mi a következő robot?"
+                "space": "🤖 Mi a következő robot?",
+                "tram": "🚋 Mi a következő utas?"
             }
         },
         {
@@ -1308,7 +1367,8 @@
                 "cooking": "🍳 Rendezzük sorainkat!",
                 "football": "⚽ Rendezzük sorainkat!",
                 "animals": "🦁 Állatok sorba rendezése",
-                "space": "🤖 Robotok sorba rendezése"
+                "space": "🤖 Robotok sorba rendezése",
+                "tram": "🚋 Robotok sorba rendezése"
             }
         },
         {
@@ -1330,7 +1390,8 @@
                 "cooking": "🍳 Páros vagy páratlan?",
                 "football": "⚽ Páros vagy páratlan?",
                 "animals": "🦁 Páros vagy páratlan?",
-                "space": "🤖 Páros vagy páratlan?"
+                "space": "🤖 Páros vagy páratlan?",
+                "tram": "🚋 Páros vagy páratlan?"
             }
         },
         {
@@ -1352,7 +1413,8 @@
                 "cooking": "🍳 Mi a következő a sorban?",
                 "football": "⚽ Mi a következő a sorban?",
                 "animals": "🦁 Állatos sorminta",
-                "space": "🤖 Robotos sorminta"
+                "space": "🤖 Robotos sorminta",
+                "tram": "🚋 Sorminta a villamoson"
             }
         },
         {
@@ -1373,7 +1435,8 @@
                 "cooking": "🍳 Négyzet és téglalap",
                 "football": "⚽ Négyzet és téglalap",
                 "animals": "🦁 Rakd a helyére az alakzatokat!",
-                "space": "🤖 Rakd a helyére az alakzatokat!"
+                "space": "🤖 Rakd a helyére az alakzatokat!",
+                "tram": "🚋 Rakd a helyére az alakzatokat!"
             }
         },
         {
@@ -1394,7 +1457,8 @@
                 "cooking": "🍳 Mit mutat az óra?",
                 "football": "⚽ Mit mutat az óra?",
                 "animals": "🦁 Mit mutat az óra az állatkertben?",
-                "space": "🤖 Mit mutat az óra az űrállomáson?"
+                "space": "🤖 Mit mutat az óra az űrállomáson?",
+                "tram": "🚋 Mit mutat az óra a megállón?"
             }
         },
         {
@@ -1415,7 +1479,8 @@
                 "cooking": "🍳 Mit mutat az óra?",
                 "football": "⚽ Mit mutat az óra?",
                 "animals": "🦁 Mennyi az idő az állatkertben?",
-                "space": "🤖 Mennyi az idő az űrállomáson?"
+                "space": "🤖 Mennyi az idő az űrállomáson?",
+                "tram": "🚋 Mennyi az idő a megállóban?"
             }
         },
         {
@@ -1436,7 +1501,8 @@
                 "cooking": "🥄 Fizesd ki pontosan!",
                 "football": "⚽ Fizesd ki pontosan!",
                 "animals": "🦁 Fizesd ki pontosan a belépőt!",
-                "space": "🤖 Fizesd ki pontosan az alkatrészt!"
+                "space": "🤖 Fizesd ki pontosan az alkatrészt!",
+                "tram": "🚋 Fizesd ki pontosan a jegyet!"
             }
         },
         {
@@ -1457,7 +1523,8 @@
                 "cooking": "🥄 Melyikben van több?",
                 "football": "⚽ Melyikben van több?",
                 "animals": "🦁 Melyik pénztárcában van több?",
-                "space": "🤖 Melyik kasszában van több?"
+                "space": "🤖 Melyik kasszában van több?",
+                "tram": "🚋 Melyik perselyben van több?"
             }
         },
         {
@@ -1478,7 +1545,8 @@
                 "cooking": "🥄 Meg tudod venni?",
                 "football": "⚽ Meg tudod venni?",
                 "animals": "🦁 Meg tudod venni a jegyet?",
-                "space": "🤖 Meg tudod venni az alkatrészt?"
+                "space": "🤖 Meg tudod venni az alkatrészt?",
+                "tram": "🚋 Meg tudod venni a jegyet?"
             }
         },
         {
@@ -1499,7 +1567,8 @@
                 "cooking": "🍳 Mennyi fér bele?",
                 "football": "⚽ Mennyi fér bele?",
                 "animals": "🦁 Mennyi fér bele?",
-                "space": "🤖 Mennyi fér bele?"
+                "space": "🤖 Mennyi fér bele?",
+                "tram": "🚋 Mennyi fér bele?"
             }
         },
         {
@@ -1520,7 +1589,8 @@
                 "cooking": "🍳 Melyik hozzávaló nehezebb?",
                 "football": "⚽ Melyik felszerelés nehezebb?",
                 "animals": "🦁 Melyik tárgy nehezebb?",
-                "space": "🤖 Melyik tárgy nehezebb?"
+                "space": "🤖 Melyik tárgy nehezebb?",
+                "tram": "🚋 Melyik tárgy nehezebb?"
             }
         },
         {
@@ -1541,7 +1611,8 @@
                 "cooking": "🥄 Visszajáró a pékségben",
                 "football": "⚽ Visszajáró a szurkolói boltban",
                 "animals": "🦁 Visszajáró a jegypénztárnál",
-                "space": "🤖 Visszajáró az űrboltban"
+                "space": "🤖 Visszajáró az űrboltban",
+                "tram": "🚋 Visszajáró a jegyboltban"
             }
         },
         {
@@ -1563,7 +1634,8 @@
                 "cooking": "🍳 Egyenlő csoportok",
                 "football": "⚽ Egyenlő csoportok",
                 "animals": "🦁 Egyenlő csoportok",
-                "space": "🤖 Egyenlő csoportok"
+                "space": "🤖 Egyenlő csoportok",
+                "tram": "🚋 Egyenlő csoportok"
             }
         },
         {
@@ -1585,7 +1657,8 @@
                 "cooking": "🍳 Ismételt összeadás",
                 "football": "⚽ Ismételt összeadás",
                 "animals": "🦁 Ismételt összeadás",
-                "space": "🤖 Ismételt összeadás"
+                "space": "🤖 Ismételt összeadás",
+                "tram": "🚋 Ismételt összeadás"
             }
         },
         {
@@ -1607,7 +1680,8 @@
                 "cooking": "🍳 Számolás tizesével",
                 "football": "⚽ Számolás ötösével",
                 "animals": "🦁 Számolás kettesével",
-                "space": "🤖 Számolás ötösével"
+                "space": "🤖 Számolás ötösével",
+                "tram": "🚋 Számolás ötösével"
             }
         },
         {
@@ -1629,7 +1703,8 @@
                 "cooking": "🍳 Szorzás a konyhában",
                 "football": "⚽ Szorzás a pályán",
                 "animals": "🦁 Szorzás az állatkertben",
-                "space": "🤖 Szorzás az űrben"
+                "space": "🤖 Szorzás az űrben",
+                "tram": "🚋 Szorzás a városban"
             }
         },
         {
@@ -1651,7 +1726,8 @@
                 "cooking": "🍳 Nehezebb szorzás",
                 "football": "⚽ Nehezebb szorzás",
                 "animals": "🦁 Nehezebb szorzás",
-                "space": "🤖 Nehezebb szorzás"
+                "space": "🤖 Nehezebb szorzás",
+                "tram": "🚋 Nehezebb szorzás"
             }
         },
         {
@@ -1673,7 +1749,8 @@
                 "cooking": "🍳 Vegyes szorzás",
                 "football": "⚽ Vegyes szorzás",
                 "animals": "🦁 Vegyes szorzás",
-                "space": "🤖 Vegyes szorzás"
+                "space": "🤖 Vegyes szorzás",
+                "tram": "🚋 Vegyes szorzás"
             }
         },
         {
@@ -1695,7 +1772,8 @@
                 "cooking": "🍳 Szétosztás",
                 "football": "⚽ Szétosztás",
                 "animals": "🦁 Szétosztás",
-                "space": "🤖 Szétosztás"
+                "space": "🤖 Szétosztás",
+                "tram": "🚋 Szétosztás"
             }
         },
         {
@@ -1717,7 +1795,8 @@
                 "cooking": "🍳 Osztás",
                 "football": "⚽ Osztás",
                 "animals": "🦁 Osztás",
-                "space": "🤖 Osztás"
+                "space": "🤖 Osztás",
+                "tram": "🚋 Osztás"
             }
         },
         {
@@ -1739,7 +1818,8 @@
                 "cooking": "🍳 Vegyes osztás",
                 "football": "⚽ Vegyes osztás",
                 "animals": "🦁 Vegyes osztás",
-                "space": "🤖 Vegyes osztás"
+                "space": "🤖 Vegyes osztás",
+                "tram": "🚋 Vegyes osztás"
             }
         },
         {
@@ -1761,7 +1841,8 @@
                 "cooking": "🍳 Hiányzó szám",
                 "football": "⚽ Hiányzó szám",
                 "animals": "🦁 Hiányzó szám",
-                "space": "🤖 Hiányzó szám"
+                "space": "🤖 Hiányzó szám",
+                "tram": "🚋 Hiányzó szám"
             }
         },
         {
@@ -1783,7 +1864,8 @@
                 "cooking": "🍳 Hiányzó tényező",
                 "football": "⚽ Hiányzó tényező",
                 "animals": "🦁 Hiányzó tényező",
-                "space": "🤖 Hiányzó tényező"
+                "space": "🤖 Hiányzó tényező",
+                "tram": "🚋 Hiányzó tényező"
             }
         },
         {
@@ -1805,7 +1887,8 @@
                 "cooking": "🍳 Szorzásos történetek",
                 "football": "⚽ Szorzásos történetek",
                 "animals": "🦁 Szorzásos történetek",
-                "space": "🤖 Szorzásos történetek"
+                "space": "🤖 Szorzásos történetek",
+                "tram": "🚋 Szorzásos történetek a villamoson"
             }
         },
         {
@@ -1827,7 +1910,8 @@
                 "cooking": "🍳 Osztásos történetek",
                 "football": "⚽ Osztásos történetek",
                 "animals": "🦁 Osztásos történetek",
-                "space": "🤖 Osztásos történetek"
+                "space": "🤖 Osztásos történetek",
+                "tram": "🚋 Osztásos történetek a villamoson"
             }
         },
         {
@@ -1849,7 +1933,8 @@
                 "cooking": "🍳 Szorzás és osztás",
                 "football": "⚽ Szorzás és osztás",
                 "animals": "🦁 Szorzás és osztás",
-                "space": "🤖 Szorzás és osztás"
+                "space": "🤖 Szorzás és osztás",
+                "tram": "🚋 Szorzás és osztás"
             }
         },
         {
@@ -1871,7 +1956,8 @@
                 "cooking": "🍳 Kétlépéses receptek",
                 "football": "⚽ Kétlépéses meccsfeladatok",
                 "animals": "🦁 Kétlépéses állatfeladatok",
-                "space": "🤖 Kétlépéses űrfeladatok"
+                "space": "🤖 Kétlépéses űrfeladatok",
+                "tram": "🚋 Kétlépéses feladatok a villamoson"
             }
         },
         {
@@ -1893,7 +1979,8 @@
                 "cooking": "🍳 Becslés a konyhában",
                 "football": "⚽ Becslés a meccsen",
                 "animals": "🦁 Becslés az állatkertben",
-                "space": "🤖 Becslés az űrben"
+                "space": "🤖 Becslés az űrben",
+                "tram": "🚋 Becslés a városban"
             }
         },
         {
@@ -1915,7 +2002,8 @@
                 "cooking": "🍳 Igaz vagy hamis?",
                 "football": "⚽ Igaz vagy hamis?",
                 "animals": "🦁 Igaz vagy hamis?",
-                "space": "🤖 Igaz vagy hamis?"
+                "space": "🤖 Igaz vagy hamis?",
+                "tram": "🚋 Igaz vagy hamis?"
             }
         },
         {
@@ -1937,7 +2025,8 @@
                 "cooking": "🍳 Hibás számolás a receptben?",
                 "football": "⚽ Hibás számolás az eredményjelzőn?",
                 "animals": "🦁 Hibás számolás az állatkertben?",
-                "space": "🤖 Hibás számolás a fedélzeten?"
+                "space": "🤖 Hibás számolás a fedélzeten?",
+                "tram": "🚋 Hibás számolás a villamoson?"
             }
         },
         {
@@ -1958,7 +2047,8 @@
                 "cooking": "🍳 Alakzatok a konyhában",
                 "football": "⚽ Alakzatok a meccsen",
                 "animals": "🦁 Alakzatok az állatkertben",
-                "space": "🤖 Alakzatok az űrben"
+                "space": "🤖 Alakzatok az űrben",
+                "tram": "🚋 Alakzatok a városban"
             }
         },
         {
@@ -1979,7 +2069,8 @@
                 "cooking": "🍳 Testek a konyhában",
                 "football": "⚽ Testek a pályán",
                 "animals": "🦁 Testek az állatkertben",
-                "space": "🤖 Testek az űrhajón"
+                "space": "🤖 Testek az űrhajón",
+                "tram": "🚋 Testek a villamoson"
             }
         },
         {
@@ -2000,7 +2091,8 @@
                 "cooking": "🍳 Naptár a konyhában",
                 "football": "⚽ Naptár a pályán",
                 "animals": "🦁 Naptár az állatkertben",
-                "space": "🤖 Naptár az űrhajón"
+                "space": "🤖 Naptár az űrhajón",
+                "tram": "🚋 Naptár a villamoson"
             }
         },
         {
@@ -2021,7 +2113,8 @@
                 "cooking": "🍳 Törtek a konyhában",
                 "football": "⚽ Törtek a pályán",
                 "animals": "🦁 Törtek az állatkertben",
-                "space": "🤖 Törtek az űrhajón"
+                "space": "🤖 Törtek az űrhajón",
+                "tram": "🚋 Törtek a villamoson"
             }
         },
         {
@@ -2042,7 +2135,8 @@
                 "cooking": "🥄 Hosszúság-mérés a konyhában",
                 "football": "⚽ Hosszúság-mérés a pályán",
                 "animals": "🦁 Hosszúság-mérés az állatkertben",
-                "space": "🤖 Hosszúság-mérés az űrhajón"
+                "space": "🤖 Hosszúság-mérés az űrhajón",
+                "tram": "🚋 Hosszúság-mérés a villamoson"
             }
         },
         {
@@ -2064,7 +2158,8 @@
                 "cooking": "🍳 Hány hozzávaló kell?",
                 "football": "⚽ Hány játékos van a pályán?",
                 "animals": "🦁 Hány állat van a karámokban?",
-                "space": "🤖 Hány robot van az egységekben?"
+                "space": "🤖 Hány robot van az egységekben?",
+                "tram": "🚋 Hány utas van az egységekben?"
             }
         },
         {
@@ -2086,7 +2181,8 @@
                 "cooking": "🍳 Számok és szavak",
                 "football": "⚽ Számok és szavak",
                 "animals": "🦁 Számok és szavak",
-                "space": "🤖 Számok és szavak"
+                "space": "🤖 Számok és szavak",
+                "tram": "🚋 Számok és szavak"
             }
         },
         {
@@ -2108,7 +2204,8 @@
                 "cooking": "🔍 Mi áll mellette a polcon?",
                 "football": "🔍 Ki a szomszédja?",
                 "animals": "🦁 Ki áll mellette a kifutóban?",
-                "space": "🤖 Ki áll mellette a sorban?"
+                "space": "🤖 Ki áll mellette a sorban?",
+                "tram": "🚋 Ki áll mellette a sorban?"
             }
         },
         {
@@ -2130,7 +2227,8 @@
                 "cooking": "🍲 Melyik tál nagyobb?",
                 "football": "⚽ Melyik csapat erősebb?",
                 "animals": "🦁 Melyik állatcsapat nagyobb?",
-                "space": "🤖 Melyik bolygón többen vannak?"
+                "space": "🤖 Melyik bolygón többen vannak?",
+                "tram": "🚋 Melyik kerületn többen vannak?"
             }
         },
         {
@@ -2152,7 +2250,8 @@
                 "cooking": "🍳 Rendezzük sorainkat!",
                 "football": "⚽ Rendezzük sorainkat!",
                 "animals": "🦁 Állatok sorba rendezése",
-                "space": "🤖 Robotok sorba rendezése"
+                "space": "🤖 Robotok sorba rendezése",
+                "tram": "🚋 Robotok sorba rendezése"
             }
         },
         {
@@ -2174,7 +2273,8 @@
                 "cooking": "🍳 Páros vagy páratlan?",
                 "football": "⚽ Páros vagy páratlan?",
                 "animals": "🦁 Páros vagy páratlan?",
-                "space": "🤖 Páros vagy páratlan?"
+                "space": "🤖 Páros vagy páratlan?",
+                "tram": "🚋 Páros vagy páratlan?"
             }
         },
         {
@@ -2196,7 +2296,8 @@
                 "cooking": "🎯 Kerekítsük kerekre!",
                 "football": "🎯 Kerekítsük kerekre!",
                 "animals": "🎯 Kerekítsük kerekre!",
-                "space": "🎯 Kerekítsük kerekre!"
+                "space": "🎯 Kerekítsük kerekre!",
+                "tram": "🚋 Kerekítsük kerekre!"
             }
         },
         {
@@ -2218,7 +2319,8 @@
                 "cooking": "🍳 Római számok",
                 "football": "⚽ Római számok",
                 "animals": "🦁 Római számok",
-                "space": "🤖 Római számok"
+                "space": "🤖 Római számok",
+                "tram": "🚋 Római számok"
             }
         },
         {
@@ -2240,7 +2342,8 @@
                 "cooking": "🍳 Becslés a konyhában",
                 "football": "⚽ Becslés a pályán",
                 "animals": "🦁 Becslés az állatkertben",
-                "space": "🤖 Becslés az űrhajón"
+                "space": "🤖 Becslés az űrhajón",
+                "tram": "🚋 Becslés a villamoson"
             }
         },
         {
@@ -2262,7 +2365,8 @@
                 "cooking": "🍳 Számsorozat a konyhában",
                 "football": "⚽ Számsorozat a táblázaton",
                 "animals": "🦁 Számsorozat az állatkertben",
-                "space": "🤖 Számsorozat az űrben"
+                "space": "🤖 Számsorozat az űrben",
+                "tram": "🚋 Számsorozat a városban"
             }
         },
         {
@@ -2284,7 +2388,8 @@
                 "cooking": "🍳 Kerek százasok a konyhában",
                 "football": "⚽ Kerek százasok a meccsen",
                 "animals": "🦁 Kerek százasok az állatkertben",
-                "space": "🤖 Kerek százasok az űrben"
+                "space": "🤖 Kerek százasok az űrben",
+                "tram": "🚋 Kerek százasok a városban"
             }
         },
         {
@@ -2306,7 +2411,8 @@
                 "cooking": "🍳 Véletlen szám + kerek százas",
                 "football": "⚽ Véletlen szám + kerek százas",
                 "animals": "🦁 Véletlen szám + kerek százas",
-                "space": "🤖 Véletlen szám + kerek százas"
+                "space": "🤖 Véletlen szám + kerek százas",
+                "tram": "🚋 Véletlen szám + kerek százas"
             }
         },
         {
@@ -2328,7 +2434,8 @@
                 "cooking": "🍳 Összeadás a konyhában",
                 "football": "⚽ Összeadás a meccsen",
                 "animals": "🦁 Összeadás az állatkertben",
-                "space": "🤖 Összeadás az űrben"
+                "space": "🤖 Összeadás az űrben",
+                "tram": "🚋 Összeadás a városban"
             }
         },
         {
@@ -2350,7 +2457,8 @@
                 "cooking": "🍳 Százasátlépés a konyhában",
                 "football": "⚽ Százasátlépés a meccsen",
                 "animals": "🦁 Százasátlépés az állatkertben",
-                "space": "🤖 Százasátlépés az űrben"
+                "space": "🤖 Százasátlépés az űrben",
+                "tram": "🚋 Százasátlépés a városban"
             }
         },
         {
@@ -2372,7 +2480,8 @@
                 "cooking": "🍳 Írásbeli összeadás a konyhában",
                 "football": "⚽ Írásbeli összeadás a meccsen",
                 "animals": "🦁 Írásbeli összeadás az állatkertben",
-                "space": "🤖 Írásbeli összeadás az űrben"
+                "space": "🤖 Írásbeli összeadás az űrben",
+                "tram": "🚋 Írásbeli összeadás a városban"
             }
         },
         {
@@ -2394,7 +2503,8 @@
                 "cooking": "🍳 Kerek százasok kivonása",
                 "football": "⚽ Kerek százasok kivonása",
                 "animals": "🦁 Kerek százasok kivonása",
-                "space": "🤖 Kerek százasok kivonása"
+                "space": "🤖 Kerek százasok kivonása",
+                "tram": "🚋 Kerek százasok kivonása"
             }
         },
         {
@@ -2416,7 +2526,8 @@
                 "cooking": "🍳 Véletlen szám - kerek százas",
                 "football": "⚽ Véletlen szám - kerek százas",
                 "animals": "🦁 Véletlen szám - kerek százas",
-                "space": "🤖 Véletlen szám - kerek százas"
+                "space": "🤖 Véletlen szám - kerek százas",
+                "tram": "🚋 Véletlen szám - kerek százas"
             }
         },
         {
@@ -2438,7 +2549,8 @@
                 "cooking": "🍳 Kivonás a konyhában",
                 "football": "⚽ Kivonás a meccsen",
                 "animals": "🦁 Kivonás az állatkertben",
-                "space": "🤖 Kivonás az űrben"
+                "space": "🤖 Kivonás az űrben",
+                "tram": "🚋 Kivonás a városban"
             }
         },
         {
@@ -2460,7 +2572,8 @@
                 "cooking": "🍳 Százasátlépés kivonásnál",
                 "football": "⚽ Százasátlépés kivonásnál",
                 "animals": "🦁 Százasátlépés kivonásnál",
-                "space": "🤖 Százasátlépés kivonásnál"
+                "space": "🤖 Százasátlépés kivonásnál",
+                "tram": "🚋 Százasátlépés kivonásnál"
             }
         },
         {
@@ -2482,7 +2595,8 @@
                 "cooking": "🍳 Írásbeli kivonás a konyhában",
                 "football": "⚽ Írásbeli kivonás a meccsen",
                 "animals": "🦁 Írásbeli kivonás az állatkertben",
-                "space": "🤖 Írásbeli kivonás az űrben"
+                "space": "🤖 Írásbeli kivonás az űrben",
+                "tram": "🚋 Írásbeli kivonás a városban"
             }
         },
         {
@@ -2504,7 +2618,8 @@
                 "cooking": "🍳 Vegyes műveletek a konyhában",
                 "football": "⚽ Vegyes műveletek a meccsen",
                 "animals": "🦁 Vegyes műveletek az állatkertben",
-                "space": "🤖 Vegyes műveletek az űrben"
+                "space": "🤖 Vegyes műveletek az űrben",
+                "tram": "🚋 Vegyes műveletek a városban"
             }
         },
         {
@@ -2525,7 +2640,8 @@
                 "cooking": "🍳 Műveleti sorrend a konyhában",
                 "football": "⚽ Műveleti sorrend a pályán",
                 "animals": "🦁 Műveleti sorrend az állatkertben",
-                "space": "🤖 Műveleti sorrend az űrhajón"
+                "space": "🤖 Műveleti sorrend az űrhajón",
+                "tram": "🚋 Műveleti sorrend a villamoson"
             },
             "range": 100
         },
@@ -2548,7 +2664,8 @@
                 "cooking": "🍳 Szorzás a konyhában",
                 "football": "⚽ Szorzás a meccsen",
                 "animals": "🦁 Szorzás az állatkertben",
-                "space": "🤖 Szorzás az űrben"
+                "space": "🤖 Szorzás az űrben",
+                "tram": "🚋 Szorzás a városban"
             }
         },
         {
@@ -2570,7 +2687,8 @@
                 "cooking": "🍳 Hiányzó tényező a konyhában",
                 "football": "⚽ Hiányzó tényező a meccsen",
                 "animals": "🦁 Hiányzó tényező az állatkertben",
-                "space": "🤖 Hiányzó tényező az űrben"
+                "space": "🤖 Hiányzó tényező az űrben",
+                "tram": "🚋 Hiányzó tényező a városban"
             }
         },
         {
@@ -2592,7 +2710,8 @@
                 "cooking": "🍳 Kapcsolat a konyhában",
                 "football": "⚽ Kapcsolat a meccsen",
                 "animals": "🦁 Kapcsolat az állatkertben",
-                "space": "🤖 Kapcsolat az űrben"
+                "space": "🤖 Kapcsolat az űrben",
+                "tram": "🚋 Kapcsolat a városban"
             }
         },
         {
@@ -2614,7 +2733,8 @@
                 "cooking": "🍳 Osztás a konyhában",
                 "football": "⚽ Osztás a meccsen",
                 "animals": "🦁 Osztás az állatkertben",
-                "space": "🤖 Osztás az űrben"
+                "space": "🤖 Osztás az űrben",
+                "tram": "🚋 Osztás a városban"
             }
         },
         {
@@ -2636,7 +2756,8 @@
                 "cooking": "🍳 Vegyes a konyhában",
                 "football": "⚽ Vegyes a meccsen",
                 "animals": "🦁 Vegyes az állatkertben",
-                "space": "🤖 Vegyes az űrben"
+                "space": "🤖 Vegyes az űrben",
+                "tram": "🚋 Vegyes a városban"
             }
         },
         {
@@ -2658,7 +2779,8 @@
                 "cooking": "🍳 Maradékos osztás a konyhában",
                 "football": "⚽ Maradékos osztás a meccsen",
                 "animals": "🦁 Maradékos osztás az állatkertben",
-                "space": "🤖 Maradékos osztás az űrben"
+                "space": "🤖 Maradékos osztás az űrben",
+                "tram": "🚋 Maradékos osztás a városban"
             }
         },
         {
@@ -2680,7 +2802,8 @@
                 "cooking": "🍳 Maradékos osztás csoportokkal",
                 "football": "⚽ Maradékos osztás csoportokkal",
                 "animals": "🦁 Maradékos osztás csoportokkal",
-                "space": "🤖 Maradékos osztás csoportokkal"
+                "space": "🤖 Maradékos osztás csoportokkal",
+                "tram": "🚋 Maradékos osztás csoportokkal"
             }
         },
         {
@@ -2701,7 +2824,8 @@
                 "cooking": "🍳 A tört jele a konyhában",
                 "football": "⚽ A tört jele a pályán",
                 "animals": "🦁 A tört jele az állatkertben",
-                "space": "🤖 A tört jele az űrhajón"
+                "space": "🤖 A tört jele az űrhajón",
+                "tram": "🚋 A tört jele a villamoson"
             }
         },
         {
@@ -2722,7 +2846,8 @@
                 "cooking": "🍳 Kép a jelhez a konyhában",
                 "football": "⚽ Kép a jelhez a pályán",
                 "animals": "🦁 Kép a jelhez az állatkertben",
-                "space": "🤖 Kép a jelhez az űrhajón"
+                "space": "🤖 Kép a jelhez az űrhajón",
+                "tram": "🚋 Kép a jelhez a villamoson"
             }
         },
         {
@@ -2743,7 +2868,8 @@
                 "cooking": "🍳 Szétosztás a konyhában",
                 "football": "⚽ Szétosztás a pályán",
                 "animals": "🦁 Szétosztás az állatkertben",
-                "space": "🤖 Szétosztás az űrhajón"
+                "space": "🤖 Szétosztás az űrhajón",
+                "tram": "🚋 Szétosztás a villamoson"
             }
         },
         {
@@ -2764,7 +2890,8 @@
                 "cooking": "🍳 Biztos, lehetséges, lehetetlen a konyhában",
                 "football": "⚽ Biztos, lehetséges, lehetetlen a pályán",
                 "animals": "🦁 Biztos, lehetséges, lehetetlen az állatkertben",
-                "space": "🤖 Biztos, lehetséges, lehetetlen az űrhajón"
+                "space": "🤖 Biztos, lehetséges, lehetetlen az űrhajón",
+                "tram": "🚋 Biztos, lehetséges, lehetetlen a villamoson"
             },
             "range": 1
         },
@@ -2788,7 +2915,8 @@
                 "cooking": "🍳 Adatok a konyhában",
                 "football": "⚽ Adatok a pályán",
                 "animals": "🦁 Adatok az állatkertben",
-                "space": "🤖 Adatok az űrhajón"
+                "space": "🤖 Adatok az űrhajón",
+                "tram": "🚋 Adatok a villamoson"
             }
         },
         {
@@ -2810,7 +2938,8 @@
                 "cooking": "🍳 Konyhai történetek",
                 "football": "⚽ Raktári történetek",
                 "animals": "🦁 Kifutós történetek",
-                "space": "🤖 Űrállomásos történetek"
+                "space": "🤖 Űrállomásos történetek",
+                "tram": "🚋 Jegyellenőrzési történetek"
             }
         },
         {
@@ -2832,7 +2961,8 @@
                 "cooking": "🍳 Adagolási történetek",
                 "football": "⚽ Pakolási történetek",
                 "animals": "🦁 Beszállásos történetek",
-                "space": "🤖 Űrhajós történetek"
+                "space": "🤖 Űrhajós történetek",
+                "tram": "🚋 Beszállási történetek"
             }
         },
         {
@@ -2855,7 +2985,8 @@
                 "cooking": "🍳 Kerület a konyhában",
                 "football": "⚽ Kerület a pályán",
                 "animals": "🦁 Kerület az állatkertben",
-                "space": "🤖 Kerület az űrhajón"
+                "space": "🤖 Kerület az űrhajón",
+                "tram": "🚋 Kerület a villamoson"
             }
         },
         {
@@ -2878,7 +3009,8 @@
                 "cooking": "🍳 Terület a konyhában",
                 "football": "⚽ Terület a pályán",
                 "animals": "🦁 Terület az állatkertben",
-                "space": "🤖 Terület az űrhajón"
+                "space": "🤖 Terület az űrhajón",
+                "tram": "🚋 Terület a villamoson"
             }
         },
         {
@@ -2901,7 +3033,8 @@
                 "cooking": "🍳 Szögek a konyhában",
                 "football": "⚽ Szögek a pályán",
                 "animals": "🦁 Szögek az állatkertben",
-                "space": "🤖 Szögek az űrhajón"
+                "space": "🤖 Szögek az űrhajón",
+                "tram": "🚋 Szögek a villamoson"
             }
         },
         {
@@ -2924,7 +3057,8 @@
                 "cooking": "🍳 Tükrözés a konyhában",
                 "football": "⚽ Tükrözés a pályán",
                 "animals": "🦁 Tükrözés az állatkertben",
-                "space": "🤖 Tükrözés az űrhajón"
+                "space": "🤖 Tükrözés az űrhajón",
+                "tram": "🚋 Tükrözés a villamoson"
             }
         },
         {
@@ -2945,7 +3079,8 @@
                 "cooking": "🍳 Kör a konyhában",
                 "football": "⚽ Kör a pályán",
                 "animals": "🦁 Kör az állatkertben",
-                "space": "🤖 Kör az űrhajón"
+                "space": "🤖 Kör az űrhajón",
+                "tram": "🚋 Kör a villamoson"
             },
             "range": 1
         },
@@ -2967,7 +3102,8 @@
                 "cooking": "🥄 Mértékegység-átváltás a konyhában",
                 "football": "⚽ Mértékegység-átváltás a pályán",
                 "animals": "🦁 Mértékegység-átváltás az állatkertben",
-                "space": "🤖 Mértékegység-átváltás az űrhajón"
+                "space": "🤖 Mértékegység-átváltás az űrhajón",
+                "tram": "🚋 Mértékegység-átváltás a villamoson"
             }
         },
         {
@@ -2990,7 +3126,8 @@
                 "cooking": "🥄 Mértékegység-átváltás a konyhában",
                 "football": "⚽ Mértékegység-átváltás a pályán",
                 "animals": "🦁 Mértékegység-átváltás az állatkertben",
-                "space": "🤖 Mértékegység-átváltás az űrhajón"
+                "space": "🤖 Mértékegység-átváltás az űrhajón",
+                "tram": "🚋 Mértékegység-átváltás a villamoson"
             }
         },
         {
@@ -3011,7 +3148,8 @@
                 "cooking": "🍳 Perc és óra a konyhában",
                 "football": "⚽ Perc és óra a pályán",
                 "animals": "🦁 Perc és óra az állatkertben",
-                "space": "🤖 Perc és óra az űrhajón"
+                "space": "🤖 Perc és óra az űrhajón",
+                "tram": "🚋 Perc és óra a villamoson"
             }
         },
         {
@@ -3034,7 +3172,8 @@
                 "cooking": "🍳 Idő a konyhában",
                 "football": "⚽ Idő a pályán",
                 "animals": "🦁 Idő az állatkertben",
-                "space": "🤖 Idő az űrhajón"
+                "space": "🤖 Idő az űrhajón",
+                "tram": "🚋 Idő a villamoson"
             }
         },
         {
@@ -3057,7 +3196,8 @@
                 "cooking": "🥘 Visszajáró a nagy piacon",
                 "football": "⚽ Visszajáró a szurkolói boltban",
                 "animals": "🦁 Visszajáró a jegypénztárnál",
-                "space": "🛸 Visszajáró az űrboltban"
+                "space": "🛸 Visszajáró az űrboltban",
+                "tram": "🚋 Visszajáró a jegyboltban"
             }
         },
         {
@@ -3080,7 +3220,8 @@
                 "cooking": "🍳 Hosszúságok a konyhában",
                 "football": "⚽ Hosszúságok a pályán",
                 "animals": "🦁 Hosszúságok az állatkertben",
-                "space": "🛰️ Távolságok az űrben"
+                "space": "🛰️ Távolságok az űrben",
+                "tram": "🚋 Távolságok a városban"
             }
         },
         {
@@ -3103,7 +3244,8 @@
                 "cooking": "🍳 Formák a konyhában",
                 "football": "⚽ Bóják a pályán",
                 "animals": "🦁 Karámok az állatkertben",
-                "space": "🛰️ Modulok az űrhajón"
+                "space": "🛰️ Modulok az űrhajón",
+                "tram": "🚋 Modulok a villamoson"
             }
         },
         {
@@ -3126,7 +3268,8 @@
                 "cooking": "🍳 A sütő tepsi méretei",
                 "football": "⚽ Az edzőpálya méretei",
                 "animals": "🦁 Medence az állatkertben",
-                "space": "🛰️ Napelemek az űrhajón"
+                "space": "🛰️ Napelemek az űrhajón",
+                "tram": "🚋 Napelemek a villamoson"
             }
         },
         {
@@ -3149,7 +3292,8 @@
                 "cooking": "🍳 Többlépéses feladatok a konyhában",
                 "football": "⚽ Többlépéses feladatok a pályán",
                 "animals": "🦁 Többlépéses feladatok az állatkertben",
-                "space": "🛰️ Többlépéses feladatok az űrhajón"
+                "space": "🛰️ Többlépéses feladatok az űrhajón",
+                "tram": "🚋 Többlépéses feladatok a villamoson"
             }
         },
         {
@@ -3172,7 +3316,8 @@
                 "cooking": "🍳 Arányos történetek a konyhában",
                 "football": "⚽ Arányos történetek a pályán",
                 "animals": "🦁 Arányos történetek az állatkertben",
-                "space": "🛰️ Arányos történetek az űrhajón"
+                "space": "🛰️ Arányos történetek az űrhajón",
+                "tram": "🚋 Arányos történetek a villamoson"
             }
         },
         {
@@ -3193,7 +3338,8 @@
                 "cooking": "🥄 Vásárlás 1000-ig",
                 "football": "⚽ Vásárlás 1000-ig",
                 "animals": "🦁 Vásárlás 1000-ig",
-                "space": "🤖 Vásárlás 1000-ig"
+                "space": "🤖 Vásárlás 1000-ig",
+                "tram": "🚋 Vásárlás 1000-ig"
             }
         },
         {
@@ -3214,7 +3360,8 @@
                 "cooking": "🍳 Naptár a konyhában",
                 "football": "⚽ Naptár a bajnokságban",
                 "animals": "🦁 Naptár az állatkertben",
-                "space": "🤖 Naptár az űrhajón"
+                "space": "🤖 Naptár az űrhajón",
+                "tram": "🚋 Naptár a villamoson"
             }
         },
         {
@@ -3237,7 +3384,8 @@
                 "cooking": "🥘 Hány hozzávaló kell a nagy ebédhez?",
                 "football": "🏆 Hány játékos van a bajnokságban?",
                 "animals": "🦛 Hány állat van a füves pusztán?",
-                "space": "🛸 Hány robotot küld az űrflotta?"
+                "space": "🛸 Hány robotot küld az űrflotta?",
+                "tram": "🚋 Hány utast küld a villamosflotta?"
             }
         },
         {
@@ -3260,7 +3408,8 @@
                 "cooking": "🍳 Számok és szavak",
                 "football": "⚽ Számok és szavak",
                 "animals": "🦁 Számok és szavak",
-                "space": "🤖 Számok és szavak"
+                "space": "🤖 Számok és szavak",
+                "tram": "🚋 Számok és szavak"
             }
         },
         {
@@ -3283,7 +3432,8 @@
                 "football": "⚽ Ki a szomszédja a meccsen?",
                 "cooking": "🍳 Ki áll mellette a polcon?",
                 "animals": "🦁 Ki áll mellette a kifutóban?",
-                "space": "🤖 Ki áll mellette a sorban?"
+                "space": "🤖 Ki áll mellette a sorban?",
+                "tram": "🚋 Ki áll mellette a sorban?"
             }
         },
         {
@@ -3306,7 +3456,8 @@
                 "football": "⚽ Melyik a nagyobb szám?",
                 "cooking": "🍳 Melyik a nagyobb?",
                 "animals": "🦁 Melyik a nagyobb?",
-                "space": "🤖 Melyik a nagyobb szám?"
+                "space": "🤖 Melyik a nagyobb szám?",
+                "tram": "🚋 Melyik a nagyobb szám?"
             }
         },
         {
@@ -3329,7 +3480,8 @@
                 "football": "🏛️ Római számok a bajnokságban",
                 "cooking": "🏛️ Római számok a konyhában",
                 "animals": "🦁 Római számok az állatkertben",
-                "space": "🤖 Római számok az űrben"
+                "space": "🤖 Római számok az űrben",
+                "tram": "🚋 Római számok a városban"
             }
         },
         {
@@ -3352,7 +3504,8 @@
                 "football": "⚽ Kerekítés a bajnokságban",
                 "cooking": "🍳 Kerekítés a konyhában",
                 "animals": "🦁 Kerekítés az állatkertben",
-                "space": "🤖 Kerekítés az űrben"
+                "space": "🤖 Kerekítés az űrben",
+                "tram": "🚋 Kerekítés a városban"
             }
         },
         {
@@ -3375,7 +3528,8 @@
                 "football": "⚽ Írásbeli összeadás a bajnokságban",
                 "cooking": "🍳 Írásbeli összeadás a konyhában",
                 "animals": "🦁 Írásbeli összeadás az állatkertben",
-                "space": "🤖 Írásbeli összeadás az űrben"
+                "space": "🤖 Írásbeli összeadás az űrben",
+                "tram": "🚋 Írásbeli összeadás a városban"
             }
         },
         {
@@ -3398,7 +3552,8 @@
                 "football": "⚽ Írásbeli kivonás a bajnokságban",
                 "cooking": "🍳 Írásbeli kivonás a konyhában",
                 "animals": "🦁 Írásbeli kivonás az állatkertben",
-                "space": "🤖 Írásbeli kivonás az űrben"
+                "space": "🤖 Írásbeli kivonás az űrben",
+                "tram": "🚋 Írásbeli kivonás a városban"
             }
         },
         {
@@ -3421,7 +3576,8 @@
                 "football": "⚽ Írásbeli szorzás a bajnokságban",
                 "cooking": "🍳 Írásbeli szorzás a konyhában",
                 "animals": "🦁 Írásbeli szorzás az állatkertben",
-                "space": "🤖 Írásbeli szorzás az űrben"
+                "space": "🤖 Írásbeli szorzás az űrben",
+                "tram": "🚋 Írásbeli szorzás a városban"
             }
         },
         {
@@ -3444,7 +3600,8 @@
                 "football": "⚽ Írásbeli szorzás kétjegyűvel a bajnokságban",
                 "cooking": "🍳 Írásbeli szorzás kétjegyűvel a konyhában",
                 "animals": "🦁 Írásbeli szorzás kétjegyűvel az állatkertben",
-                "space": "🤖 Írásbeli szorzás kétjegyűvel az űrben"
+                "space": "🤖 Írásbeli szorzás kétjegyűvel az űrben",
+                "tram": "🚋 Írásbeli szorzás kétjegyűvel a városban"
             }
         },
         {
@@ -3467,7 +3624,8 @@
                 "football": "⚽ Írásbeli osztás a bajnokságban",
                 "cooking": "🍳 Írásbeli osztás a konyhában",
                 "animals": "🦁 Írásbeli osztás az állatkertben",
-                "space": "🤖 Írásbeli osztás az űrben"
+                "space": "🤖 Írásbeli osztás az űrben",
+                "tram": "🚋 Írásbeli osztás a városban"
             }
         },
         {
@@ -3490,7 +3648,8 @@
                 "football": "⚽ Írásbeli osztás kétjegyűvel a bajnokságban",
                 "cooking": "🍳 Írásbeli osztás kétjegyűvel a konyhában",
                 "animals": "🦁 Írásbeli osztás kétjegyűvel az állatkertben",
-                "space": "🤖 Írásbeli osztás kétjegyűvel az űrben"
+                "space": "🤖 Írásbeli osztás kétjegyűvel az űrben",
+                "tram": "🚋 Írásbeli osztás kétjegyűvel a városban"
             }
         },
         {
@@ -3513,7 +3672,8 @@
                 "football": "⚽ Vegyes írásbeli műveletek a bajnokságban",
                 "cooking": "🍳 Vegyes írásbeli műveletek a konyhában",
                 "animals": "🦁 Vegyes írásbeli műveletek az állatkertben",
-                "space": "🤖 Vegyes írásbeli műveletek az űrben"
+                "space": "🤖 Vegyes írásbeli műveletek az űrben",
+                "tram": "🚋 Vegyes írásbeli műveletek a városban"
             }
         },
         {
@@ -3536,7 +3696,8 @@
                 "football": "⚽ Törtrészek a bajnokságban",
                 "cooking": "🍳 Törtrészek a konyhában",
                 "animals": "🦁 Törtrészek az állatkertben",
-                "space": "🤖 Törtrészek az űrben"
+                "space": "🤖 Törtrészek az űrben",
+                "tram": "🚋 Törtrészek a városban"
             }
         },
         {
@@ -3559,7 +3720,8 @@
                 "football": "⚽ Törtek jelölése a bajnokságban",
                 "cooking": "🍳 Törtek jelölése a konyhában",
                 "animals": "🦁 Törtek jelölése az állatkertben",
-                "space": "🤖 Törtek jelölése az űrben"
+                "space": "🤖 Törtek jelölése az űrben",
+                "tram": "🚋 Törtek jelölése a városban"
             }
         },
         {
@@ -3582,7 +3744,8 @@
                 "football": "⚽ Azonos nevezőjű törtek a bajnokságban",
                 "cooking": "🍳 Azonos nevezőjű törtek a konyhában",
                 "animals": "🦁 Azonos nevezőjű törtek az állatkertben",
-                "space": "🤖 Azonos nevezőjű törtek az űrben"
+                "space": "🤖 Azonos nevezőjű törtek az űrben",
+                "tram": "🚋 Azonos nevezőjű törtek a városban"
             }
         },
         {
@@ -3605,7 +3768,8 @@
                 "football": "⚽ Tizedek és századok a bajnokságban",
                 "cooking": "🍳 Tizedek és századok a konyhában",
                 "animals": "🦁 Tizedek és századok az állatkertben",
-                "space": "🤖 Tizedek és századok az űrben"
+                "space": "🤖 Tizedek és századok az űrben",
+                "tram": "🚋 Tizedek és századok a városban"
             }
         },
         {
@@ -3628,7 +3792,8 @@
                 "football": "⚽ Osztók és többszörösök a bajnokságban",
                 "cooking": "🍳 Osztók és többszörösök a konyhában",
                 "animals": "🦁 Osztók és többszörösök az állatkertben",
-                "space": "🤖 Osztók és többszörösök az űrben"
+                "space": "🤖 Osztók és többszörösök az űrben",
+                "tram": "🚋 Osztók és többszörösök a városban"
             }
         },
         {
@@ -3651,7 +3816,8 @@
                 "football": "⚽ Szögek mérése a pályán",
                 "cooking": "🍳 Szögek mérése a konyhában",
                 "animals": "🦁 Szögek mérése az állatkertben",
-                "space": "🤖 Szögek mérése az űrhajón"
+                "space": "🤖 Szögek mérése az űrhajón",
+                "tram": "🚋 Szögek mérése a villamoson"
             }
         },
         {
@@ -3674,7 +3840,8 @@
                 "football": "⚽ Sokszögek a pályán",
                 "cooking": "🍳 Sokszögek a konyhában",
                 "animals": "🦁 Sokszögek az állatkertben",
-                "space": "🤖 Sokszögek az űrben"
+                "space": "🤖 Sokszögek az űrben",
+                "tram": "🚋 Sokszögek a városban"
             }
         }
     ],

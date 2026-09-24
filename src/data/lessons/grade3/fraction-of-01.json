@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Szétosztás az űrhajón",
           "text": "Az űrhajósok 12 csokit osztanak 3 részre – mennyi a harmada? Számolj velünk!"
+        },
+        "tram": {
+          "title": "🚋 Szétosztás a villamoson",
+          "text": "Az utasok 12 jégkrémet osztanak 3 részre – mennyi a harmada? Számolj velünk!"
         }
       }
     },
@@ -60,6 +64,10 @@
         "space": {
           "title": "🤖 Csoki az egész legénységnek!",
           "text": "Ügyesen szétosztottad az adagokat, a legénység jól lakott! 🛰️"
+        },
+        "tram": {
+          "title": "🚋 Jégkrém az egész társaságnak!",
+          "text": "Ügyesen szétosztottad az adagokat, a társaság jól lakott! 🚋"
         }
       }
     }

@@ -32,6 +32,10 @@
                 "space": {
                     "title": "🤖 Római számok az űrben",
                     "text": "Most már az M, D, C jellemzőket is használhatjuk! Olvasd ki vagy írd római számokkal!"
+                },
+                "tram": {
+                    "title": "🚋 Római számok a városban",
+                    "text": "Most már az M, D, C jellemzőket is használhatjuk! Olvasd ki vagy írd római számokkal!"
                 }
             }
         },
@@ -86,6 +90,10 @@
                 "space": {
                     "title": "🚀 Szuper vagy!",
                     "text": "Minden római számot jól megoldottál az űrben!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden római számot jól megoldottál a városban!"
                 }
             }
         }

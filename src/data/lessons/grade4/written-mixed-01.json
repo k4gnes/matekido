@@ -31,6 +31,10 @@
                 "space": {
                     "title": "🤖 Vegyes írásbeli műveletek az űrben",
                     "text": "Az űrben vegyes műveleteket kell megoldanod! Pontos számolás kell a navigációhoz!"
+                },
+                "tram": {
+                    "title": "🚋 Vegyes írásbeli műveletek a városban",
+                    "text": "A városban vegyes műveleteket kell megoldanod! Pontos számolás kell a navigációhoz!"
                 }
             }
         },
@@ -123,6 +127,10 @@
                 "space": {
                     "title": "🚀 Mester vagy!",
                     "text": "Minden vegyes írásbeli művelet megoldva az űrben!"
+                },
+                "tram": {
+                    "title": "🚋 Mester vagy!",
+                    "text": "Minden vegyes írásbeli művelet megoldva a városban!"
                 }
             }
         }

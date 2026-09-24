@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Osztásos történetek",
           "text": "Olvasd el az űrtörténetet, és oldd meg a feladatot!"
+        },
+        "tram": {
+          "title": "🚋 Osztásos történetek a villamoson",
+          "text": "Olvasd el a villamosos történetet, és oldd meg a feladatot!"
         }
       }
     },
@@ -62,6 +66,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megoldottad az osztásos feladatokat!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad az osztásos feladatokat a villamoson!"
         }
       }
     }

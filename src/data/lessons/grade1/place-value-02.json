@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Hány tartály és hány robot van?",
           "text": "Számold ki, hány tartály és hány robot van a számban!"
+        },
+        "tram": {
+          "title": "🚋 Hány vagon és hány utas van?",
+          "text": "Számold ki, hány vagon és hány utas van a számban!"
         }
       }
     },

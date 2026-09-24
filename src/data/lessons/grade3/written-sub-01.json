@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Írásbeli kivonás az űrben",
           "text": "Írd egymás alá a számokat, és számolj jobbról balra, egyesekkel kezdve! Ha kell, kérj kölcsön a tízesektől. Például: 642 − 357 = ?"
+        },
+        "tram": {
+          "title": "🚋 Írásbeli kivonás a városban",
+          "text": "Írd egymás alá a számokat, és számolj jobbról balra, egyesekkel kezdve! Ha kell, kérj kölcsön a tízesektől. Például: 642 − 357 = ?"
         }
       }
     },
@@ -64,6 +68,10 @@
           "text": "Minden írásbeli kivonást jól megoldottál!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden írásbeli kivonást jól megoldottál!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden írásbeli kivonást jól megoldottál!"
         }

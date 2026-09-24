@@ -48,6 +48,14 @@ const WORLDS = [
         description: "Robotok és utazás a világűrben",
         requiredStars: 120,
         tagline: "Az űrhajóm ránk vár 🤖"
+    }),
+    new World({
+        id: "tram",
+        name: "Villamos",
+        icon: "🚋",
+        description: "Utazás villamossal a városban",
+        requiredStars: 150,
+        tagline: "A villamosom már indul 🚋"
     })
 ];
 

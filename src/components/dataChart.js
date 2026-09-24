@@ -9,7 +9,8 @@ const TITLES = {
     football: "⚽ Diagram a pályán",
     cooking: "🍳 Diagram a konyhában",
     animals: "🦁 Diagram az állatkertben",
-    space: "🤖 Diagram az űrhajón"
+    space: "🤖 Diagram az űrhajón",
+    tram: "🚋 Diagram a villamoson"
 };
 
 const SVG_NS = "http://www.w3.org/2000/svg";

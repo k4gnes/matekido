@@ -32,6 +32,10 @@
                 "space": {
                     "title": "🤖 Melyik a nagyobb szám?",
                     "text": "Hasonlítsd össze a két számot, és válaszd ki a helyes jelet: <, = vagy >!"
+                },
+                "tram": {
+                    "title": "🚋 Melyik a nagyobb szám?",
+                    "text": "Hasonlítsd össze a két számot, és válaszd ki a helyes jelet: <, = vagy >!"
                 }
             }
         },
@@ -84,6 +88,10 @@
                 "space": {
                     "title": "🚀 Szuper vagy!",
                     "text": "Minden összehasonlítást jól megoldottál az űrben!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden összehasonlítást jól megoldottál a városban!"
                 }
             }
         }

@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Hány robot hiányzik?",
           "text": "Segíts megtalálni a hiányzó robotokat!"
+        },
+        "tram": {
+          "title": "🚋 Hány utas hiányzik?",
+          "text": "Segíts megtalálni a hiányzó utasokat!"
         }
       }
     },
@@ -63,6 +67,10 @@
           "text": "Minden hiányzó számot megtaláltál!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden hiányzó számot megtaláltál!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden hiányzó számot megtaláltál!"
         }

@@ -9,7 +9,8 @@ const WORLD_TITLES = {
     football: "⚽ Mérlegelés az öltözőben",
     cooking: "🍳 Mérlegelés a konyhában",
     animals: "🦁 Mérlegelés az állatkertben",
-    space: "🤖 Mérlegelés az űrállomáson"
+    space: "🤖 Mérlegelés az űrállomáson",
+    tram: "🚋 Mérlegelés a megállón"
 };
 
 export function renderWeight(step, root, next, progress, onResult, onAttempt) {

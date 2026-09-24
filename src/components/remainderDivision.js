@@ -10,7 +10,8 @@ const WORLD = {
     football: { emoji: "⚽" },
     cooking: { emoji: "🍳" },
     animals: { emoji: "🦁" },
-    space: { emoji: "🤖" }
+    space: { emoji: "🤖" },
+    tram: { emoji: "🚋" }
 };
 
 export function renderRemainderDivision(step, root, next, progress, onResult, onAttempt) {

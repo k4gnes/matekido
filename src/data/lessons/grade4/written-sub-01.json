@@ -32,6 +32,10 @@
                 "space": {
                     "title": "🤖 Írásbeli kivonás az űrben",
                     "text": "Vond ki a felhasznált energiát írásban! Az egyesektől haladj balra!"
+                },
+                "tram": {
+                    "title": "🚋 Írásbeli kivonás a városban",
+                    "text": "Vond ki a felhasznált jegyet írásban! Az egyesektől haladj balra!"
                 }
             }
         },
@@ -94,6 +98,10 @@
                 "space": {
                     "title": "🚀 Szuper vagy!",
                     "text": "Minden írásbeli kivonás jól sikerült az űrben!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden írásbeli kivonás jól sikerült a városban!"
                 }
             }
         }

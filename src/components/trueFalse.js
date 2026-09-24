@@ -9,7 +9,8 @@ const TITLES = {
     football: "⚽ Igaz vagy hamis?",
     cooking: "🍳 Igaz vagy hamis?",
     animals: "🦁 Igaz vagy hamis?",
-    space: "🤖 Igaz vagy hamis?"
+    space: "🤖 Igaz vagy hamis?",
+    tram: "🚋 Igaz vagy hamis?"
 };
 
 export function renderTrueFalse(step, root, next, progress, onResult, onAttempt) {

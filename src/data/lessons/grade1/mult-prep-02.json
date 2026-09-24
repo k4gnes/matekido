@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Ismételt összeadás",
           "text": "A robotok ugyanannyi egységet dolgoznak fel! Számold ki, hány egység összesen!"
+        },
+        "tram": {
+          "title": "🚋 Ismételt összeadás",
+          "text": "Az utasok ugyanannyi egységet dolgoznak fel! Számold ki, hány egység összesen!"
         }
       }
     },
@@ -61,6 +65,10 @@
           "text": "Ügyesen kiszámoltad az almákat!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen kiszámoltad az egységeket!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen kiszámoltad az egységeket!"
         }

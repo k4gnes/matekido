@@ -9,7 +9,8 @@ const TITLES = {
     football: "⚽ Naptár a pályán",
     cooking: "🍳 Naptár a konyhában",
     animals: "🦁 Naptár az állatkertben",
-    space: "🤖 Naptár az űrhajón"
+    space: "🤖 Naptár az űrhajón",
+    tram: "🚋 Naptár a villamoson"
 };
 
 function successText(mode) {

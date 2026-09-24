@@ -9,7 +9,8 @@ const WORLD_TITLES = {
     football: "⚽ Mennyi fér bele?",
     cooking: "🍳 Mennyi fér bele?",
     animals: "🦁 Mennyi fér bele?",
-    space: "🤖 Mennyi fér bele?"
+    space: "🤖 Mennyi fér bele?",
+    tram: "🚋 Mennyi fér bele?"
 };
 
 export function renderVolume(step, root, next, progress, onResult, onAttempt) {

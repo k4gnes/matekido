@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Kivonás az űrben",
           "text": "Vond ki a számokat! Nem kell átlépnünk a százashatárt. Például: 570 - 240 = ?"
+        },
+        "tram": {
+          "title": "🚋 Kivonás a városban",
+          "text": "Vond ki a számokat! Nem kell átlépnünk a százashatárt. Például: 570 - 240 = ?"
         }
       }
     },
@@ -63,6 +67,10 @@
           "text": "Minden kivonást jól megoldottál!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden kivonást jól megoldottál!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden kivonást jól megoldottál!"
         }

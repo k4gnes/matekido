@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Véletlen szám + kerek százas",
           "text": "Add hozzá a kerek százasokat a véletlen számokhoz! Például: 350 + 400 = ?"
+        },
+        "tram": {
+          "title": "🚋 Véletlen szám + kerek százas",
+          "text": "Add hozzá a kerek százasokat a véletlen számokhoz! Például: 350 + 400 = ?"
         }
       }
     },
@@ -66,6 +70,10 @@
           "text": "Minden feladatot jól megoldottál!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden feladatot jól megoldottál!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden feladatot jól megoldottál!"
         }

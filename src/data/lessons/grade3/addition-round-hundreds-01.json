@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Kerek százasok az űrben",
           "text": "Add össze a kerek százasokat! Például: 300 + 400 = ?"
+        },
+        "tram": {
+          "title": "🚋 Kerek százasok a városban",
+          "text": "Add össze a kerek százasokat! Például: 300 + 400 = ?"
         }
       }
     },
@@ -65,6 +69,10 @@
           "text": "Minden kerek százas összeadást jól megoldottál!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden kerek százas összeadást jól megoldottál!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden kerek százas összeadást jól megoldottál!"
         }

@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Számsorozat az űrben",
           "text": "A bolygók távolságai mintát alkotnak. Melyik szám következik?"
+        },
+        "tram": {
+          "title": "🚋 Számsorozat a városban",
+          "text": "A kerületek távolságai mintát alkotnak. Melyik szám következik?"
         }
       }
     },
@@ -62,6 +66,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen felismerted az űrbeli számsorozatokat!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen felismerted a városbeli számsorozatokat!"
         }
       }
     }

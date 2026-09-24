@@ -11,7 +11,8 @@ const TITLES = {
     football: "⚽ Becslés",
     cooking: "🍳 Becslés",
     animals: "🦁 Becslés",
-    space: "🤖 Becslés"
+    space: "🤖 Becslés",
+    tram: "🚋 Becslés"
 };
 
 export function renderEstimate(step, root, next, progress, onResult, onAttempt) {

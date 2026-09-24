@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Hiányzó tényező",
           "text": "Melyik szám hiányzik a szorzásból az űrben?"
+        },
+        "tram": {
+          "title": "🚋 Hiányzó tényező",
+          "text": "Melyik szám hiányzik a szorzásból a városban?"
         }
       }
     },
@@ -60,6 +64,10 @@
           "text": "Ügyesen megtaláltad a hiányzó tényezőket!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megtaláltad a hiányzó tényezőket!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megtaláltad a hiányzó tényezőket!"
         }

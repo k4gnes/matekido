@@ -6,7 +6,8 @@ const WORLD_PROGRESS = {
     cooking: { done: "🍽️", current: "🍳", next: "🥄" },
     football: { done: "⚽", current: "🥅", next: "🏟️" },
     animals: { done: "🦒", current: "🦁", next: "🐾" },
-    space: { done: "🛰️", current: "🤖", next: "🚀" }
+    space: { done: "🛰️", current: "🤖", next: "🚀" },
+    tram: { done: "🚉", current: "🚋", next: "🛤️" }
 };
 
 export function renderProgress({ current, total }) {

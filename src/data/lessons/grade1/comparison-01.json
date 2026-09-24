@@ -27,6 +27,10 @@
         "space": {
           "title": "⚖️ Melyik bolygón van több?",
           "text": "Válaszd ki a helyes relációjelet a robotok számaihoz!"
+        },
+        "tram": {
+          "title": "🚋 Melyik kerületn van több?",
+          "text": "Válaszd ki a helyes relációjelet az utasok számaihoz!"
         }
       }
     },
@@ -62,6 +66,10 @@
           "text": "Minden összehasonlítást jól megcsináltál!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden összehasonlítást jól megcsináltál!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden összehasonlítást jól megcsináltál!"
         }

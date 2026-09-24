@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Mennyi az idő az űrállomáson?",
           "text": "Olvasd le pontosan, hány óra és hány perc van!"
+        },
+        "tram": {
+          "title": "🚋 Mennyi az idő a megállóban?",
+          "text": "Olvasd le pontosan, hány óra és hány perc van!"
         }
       }
     },
@@ -64,6 +68,10 @@
           "text": "Minden időt pontosan le tudtál olvasni!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden időt pontosan le tudtál olvasni!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden időt pontosan le tudtál olvasni!"
         }

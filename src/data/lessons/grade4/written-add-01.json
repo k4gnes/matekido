@@ -32,6 +32,10 @@
                 "space": {
                     "title": "🤖 Írásbeli összeadás az űrben",
                     "text": "Add össze az energiát írásban! Az egyesektől haladj balra!"
+                },
+                "tram": {
+                    "title": "🚋 Írásbeli összeadás a városban",
+                    "text": "Add össze a jegyet írásban! Az egyesektől haladj balra!"
                 }
             }
         },
@@ -94,6 +98,10 @@
                 "space": {
                     "title": "🚀 Szuper vagy!",
                     "text": "Minden írásbeli összeadás jól sikerült az űrben!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden írásbeli összeadás jól sikerült a városban!"
                 }
             }
         }

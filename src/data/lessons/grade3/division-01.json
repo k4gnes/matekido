@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Osztás az űrben",
           "text": "A robotok a 6, 7, 8, 9-es táblákkal osztanak! Válaszd ki a helyes eredményt!"
+        },
+        "tram": {
+          "title": "🚋 Osztás a városban",
+          "text": "Az utasok a 6, 7, 8, 9-es táblákkal osztanak! Válaszd ki a helyes eredményt!"
         }
       }
     },
@@ -62,6 +66,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megoldottad az osztásokat az űrben!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad az osztásokat a városban!"
         }
       }
     }

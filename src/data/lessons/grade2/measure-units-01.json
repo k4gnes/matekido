@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Hosszúság-mérés az űrhajón",
           "text": "A mérnökök megmérik a rakéta alkatrészeit! 1 m 10 dm, 1 dm 10 cm, menjünk!"
+        },
+        "tram": {
+          "title": "🚋 Hosszúság-mérés a villamoson",
+          "text": "A mérnökök megmérik a villamos jegyeit! 1 m 10 dm, 1 dm 10 cm, menjünk!"
         }
       }
     },
@@ -63,6 +67,10 @@
         "space": {
           "title": "🤖 Indulhat a küldetés!",
           "text": "Az alkatrészek pontosan meg vannak mérve, indulhat a rakéta! 🚀"
+        },
+        "tram": {
+          "title": "🚋 Indulhat az út!",
+          "text": "A jegyek pontosan meg vannak mérve, indulhat a villamos! 🚋"
         }
       }
     }

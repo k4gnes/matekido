@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Rakd a helyére az alakzatokat!",
           "text": "Kattints az alakzatokra, majd a megfelelő fedélzeti rekeszbe!"
+        },
+        "tram": {
+          "title": "🚋 Rakd a helyére az alakzatokat!",
+          "text": "Kattints az alakzatokra, majd a megfelelő utastéri rekeszbe!"
         }
       }
     },
@@ -62,6 +66,10 @@
           "text": "Minden alakzatot jól a helyére raktál!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden alakzatot jól a helyére raktál!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden alakzatot jól a helyére raktál!"
         }

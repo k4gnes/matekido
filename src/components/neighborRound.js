@@ -11,7 +11,8 @@ const WORLD_TITLE = {
     football: "⚽ Kerek szomszédok a bajnokságban",
     cooking: "🍳 Kerek szomszédok a konyhában",
     animals: "🦁 Kerek szomszédok az állatkertben",
-    space: "🤖 Kerek szomszédok az űrben"
+    space: "🤖 Kerek szomszédok az űrben",
+    tram: "🚋 Kerek szomszédok a városban"
 };
 
 export function renderNeighborRound(step, root, next, progress, onResult, onAttempt) {

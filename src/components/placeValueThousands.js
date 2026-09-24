@@ -11,7 +11,8 @@ const WORLD = {
     football: { title: "⚽ Hány játékos van a bajnokságban?", thousands: "🏆", hundreds: "⚽", tens: "👨‍🏫", ones: "🏃" },
     cooking: { title: "🍳 Hány hozzávaló kell a nagy ebédhez?", thousands: "🥘", hundreds: "🍲", tens: "🍳", ones: "🥄" },
     animals: { title: "🦁 Hány állat van a füves pusztán?", thousands: "🦛", hundreds: "🦒", tens: "🦁", ones: "🐘" },
-    space: { title: "🤖 Hány robotot küld az űrflotta?", thousands: "🛸", hundreds: "🚀", tens: "🛰️", ones: "🤖" }
+    space: { title: "🤖 Hány robotot küld az űrflotta?", thousands: "🛸", hundreds: "🚀", tens: "🛰️", ones: "🤖" },
+    tram: { title: "🚋 Hány utast küld a villamosflotta?", thousands: "🚋", hundreds: "🚉", tens: "🚋", ones: "🚶" }
 };
 
 export function renderPlaceValueThousands(step, root, next, progress, onResult, onAttempt) {

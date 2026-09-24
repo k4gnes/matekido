@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Törtek az űrhajón",
           "text": "Az űrhajósok egyenlően osztják el a csokit! Találd meg a fele, harmada vagy negyede!"
+        },
+        "tram": {
+          "title": "🚋 Törtek a villamoson",
+          "text": "Az utasok egyenlően osztják el a jégkrémet! Találd meg a fele, harmada vagy negyede!"
         }
       }
     },
@@ -63,6 +67,10 @@
         "space": {
           "title": "🤖 Csoki az egész legénységnek!",
           "text": "Ügyesen osztottad a csokit, a legénység jól éheztetett! 🛰️"
+        },
+        "tram": {
+          "title": "🚋 Jégkrém az egész társaságnak!",
+          "text": "Ügyesen osztottad a jégkrémet, a társaság jól lakott! 🚋"
         }
       }
     }

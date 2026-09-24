@@ -27,6 +27,10 @@
         "space": {
           "title": "🤖 Melyik kasszában van több?",
           "text": "Most nagyobb energia-kristályok is vannak a kasszákban! Számold meg, mennyi energia van a két kasszában, és rakd ki közéjük a helyes jelet!"
+        },
+        "tram": {
+          "title": "🚋 Melyik perselyben van több?",
+          "text": "Most nagyobb jegy-kristályok is vannak a perselyekben! Számold meg, mennyi jegy van a két perselyben, és rakd ki közéjük a helyes jelet!"
         }
       }
     },
@@ -64,6 +68,10 @@
           "text": "Minden nagyobb pénztárcát jól hasonlítottál össze!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden nagyobb kasszát jól hasonlítottál össze!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Minden nagyobb kasszát jól hasonlítottál össze!"
         }

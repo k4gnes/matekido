@@ -333,6 +333,59 @@ remainder: {
             question: "Hány teljes csoport lesz, és hány robot marad a dokkban?",
             success: (quotient, remainder) => `😊 Szép munka! ${quotient} teljes csoport, és ${remainder} robot marad a dokkban!`
         }
+    },
+    tram: {
+        join: {
+            title: "🚋 Egyesítés",
+            text: (a, b) => `A villamosmegállóban ${a} utas várakozik. Még ${b} utas érkezik a megállóhoz.`,
+            question: "Hány utas várakozik összesen a megállóban?",
+            success: (answer) => `😊 Szép munka! Összesen ${answer} utas várakozik a megállóban!`
+        },
+        remove: {
+            title: "🚋 Elmegy belőle",
+            text: (total, leaving) => `${total} utas ül a villamoson. ${leaving} utas leszáll a következő megállónál.`,
+            question: "Hányan utaznak tovább a villamoson?",
+            hint: "Húzd a leszálló utasokat a megállóba, ők leszállnak!",
+            success: (answer) => `😊 Szép munka! A villamoson ${answer} utas utazik tovább!`
+        },
+        "part-whole": {
+            title: "🚋 Rész és egész",
+            text: (total, part) => `${total} utas ül a villamoson. Közülük ${part} bérlettel utazik, a többiek jeggyel.`,
+            question: "Hányan utaznak jeggyel?",
+            success: (answer) => `😊 Szép munka! ${answer} utas utazik jeggyel!`
+        },
+        compare: {
+            title: "🚋 Összehasonlítás",
+            text: (a, b) => `Az első megállóban ${a} utas, a második megállóban ${b} utas szállt fel.`,
+            question: "Mennyivel több utas szállt fel az első megállóban?",
+            success: (answer) => `😊 Szép munka! ${diffPhrase(answer)} utassal többen szálltak fel az első megállóban!`
+        },
+        multiply: {
+            title: "🚋 Szorzás",
+            text: (groups, perGroup) => `${groups} villamosra mindegyikre ${perGroup} jegyet adnak el.`,
+            question: "Hány jegyet adnak el összesen?",
+            success: (answer) => `😊 Szép munka! Összesen ${answer} jegyet adnak el!`
+        },
+        divide: {
+            title: "🚋 Osztás",
+            text: (total, groups) => `${total} jegyet kell szétosztani ${groups} villamos között egyenlően.`,
+            question: "Hány jegy jut egy villamosra?",
+            success: (answer) => `😊 Szép munka! Minden villamosra ${answer} jegy jut!`
+        },
+        proportion: {
+            title: "🚋 Arányos osztás",
+            textHalf: (total) => `${total} utas ül a villamoson. A fele bérlettel, a másik fele jeggyel utazik.`,
+            textThird: (total) => `${total} utas ül a villamoson. A harmada bérlettel utazik.`,
+            question: "Hány utas utazik bérlettel?",
+            successHalf: (answer) => `😊 Szép munka! ${answer} utas utazik bérlettel!`,
+            successThird: (answer) => `😊 Szép munka! ${answer} utas utazik bérlettel!`
+        },
+        remainder: {
+            title: "🚋 Maradékos osztás",
+            text: (total, groups) => `${total} utas vár a végállomáson. Egy villamosra ${groups} utas szállhat fel.`,
+            question: "Hány tele villamos indul, és hány utas marad a végállomáson?",
+            success: (quotient, remainder) => `😊 Szép munka! ${quotient} tele villamos indul, és ${remainder} utas marad!`
+        }
     }
 };
 

@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Szétosztás az űrben",
           "text": "Az energiát kell szétosztani a robotok között! Figyelj a csoportokra!"
+        },
+        "tram": {
+          "title": "🚋 Szétosztás a városban",
+          "text": "A jegyet kell szétosztani az utasok között! Figyelj a csoportokra!"
         }
       }
     },
@@ -62,6 +66,10 @@
         "space": {
           "title": "🤖 Csoportosítás",
           "text": "A robotokat kell egységekbe rendezni! Hány csoport lesz?"
+        },
+        "tram": {
+          "title": "🚋 Csoportosítás",
+          "text": "Az utasokat kell egységekbe rendezni! Hány csoport lesz?"
         }
       }
     },
@@ -98,6 +106,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen szétosztottad az energiát az űrben!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen szétosztottad a jegyet a városban!"
         }
       }
     }

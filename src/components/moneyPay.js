@@ -12,7 +12,8 @@ const WORLD_EMOJI = {
     football: "⚽",
     cooking: "🥄",
     animals: "🦁",
-    space: "🤖"
+    space: "🤖",
+    tram: "🚋"
 };
 
 const NOTE_VALUES = new Set([200, 500, 1000]);

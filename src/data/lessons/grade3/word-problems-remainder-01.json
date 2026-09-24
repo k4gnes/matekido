@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Űrhajós történetek",
           "text": "Olvasd el az űrtörténetet, és találd meg, mi fér az űrhajóba, és mi marad a dokkban!"
+        },
+        "tram": {
+          "title": "🚋 Beszállási történetek",
+          "text": "Olvasd el a villamosos történetet, és találd meg, hány utas fér fel, és ki marad a megállóban!"
         }
       }
     },
@@ -62,6 +66,10 @@
         "space": {
           "title": "🎉 Szuper vagy!",
           "text": "Ügyesen megoldottad az űrhajós feladatokat!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a beszállási feladatokat!"
         }
       }
     }

@@ -26,6 +26,10 @@
         "space": {
           "title": "🤖 Vegyes szorzás",
           "text": "A robotok vegyes szorzásokat oldanak meg! Válaszd ki a helyes eredményt!"
+        },
+        "tram": {
+          "title": "🚋 Vegyes szorzás",
+          "text": "Az utasok vegyes szorzásokat oldanak meg! Válaszd ki a helyes eredményt!"
         }
       }
     },
@@ -60,6 +64,10 @@
           "text": "Tökéletesen megoldottad a vegyes szorzásokat!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Tökéletesen megoldottad a vegyes szorzásokat!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Tökéletesen megoldottad a vegyes szorzásokat!"
         }

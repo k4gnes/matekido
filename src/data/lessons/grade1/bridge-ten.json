@@ -31,6 +31,10 @@
         "space": {
           "title": "🤖 Tízesátlépés az űrállomáson",
           "text": "Bontsd fel a második számot, hogy 10-re egészítsd ki a robotok számát!"
+        },
+        "tram": {
+          "title": "🚋 Tízesátlépés a megállón",
+          "text": "Bontsd fel a második számot, hogy 10-re egészítsd ki az utasok számát!"
         }
       }
     },
@@ -69,6 +73,10 @@
           "text": "Sikeresen áttörtél a tízes határon!"
         },
         "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Sikeresen áttörtél a tízes határon!"
+        },
+        "tram": {
           "title": "🎉 Szuper vagy!",
           "text": "Sikeresen áttörtél a tízes határon!"
         }

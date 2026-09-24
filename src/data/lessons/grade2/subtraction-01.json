@@ -26,6 +26,10 @@
                 "space": {
                     "title": "🤖 Mennyi energia maradt?",
                     "text": "Számold ki, hány energiaegység maradt a robotoknak!"
+                },
+                "tram": {
+                    "title": "🚋 Mennyi jegy maradt?",
+                    "text": "Számold ki, hány jegyegység maradt az utasoknak!"
                 }
             }
         },
@@ -63,6 +67,10 @@
                 "space": {
                     "title": "🎉 Szuper vagy!",
                     "text": "Minden energiát jól kiszámoltál!"
+                },
+                "tram": {
+                    "title": "🎉 Szuper vagy!",
+                    "text": "Minden jegyet jól kiszámoltál!"
                 }
             }
         }

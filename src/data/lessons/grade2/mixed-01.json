@@ -26,6 +26,10 @@
                 "space": {
                     "title": "🤖 Rendszerhiba a fedélzeten",
                     "text": "Valami hiányzik a robotok adataiból! Találd ki, melyik szám nem látszik!"
+                },
+                "tram": {
+                    "title": "🚋 Rendszerhiba a villamoson",
+                    "text": "Valami hiányzik az utasok adataiból! Találd ki, melyik szám nem látszik!"
                 }
             }
         },
@@ -59,6 +63,10 @@
                     "text": "Minden állatot megtaláltál!"
                 },
                 "space": {
+                    "title": "🎉 Szuper vagy!",
+                    "text": "Minden hibát kijavítottál!"
+                },
+                "tram": {
                     "title": "🎉 Szuper vagy!",
                     "text": "Minden hibát kijavítottál!"
                 }

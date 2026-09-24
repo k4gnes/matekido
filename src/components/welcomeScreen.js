@@ -99,9 +99,12 @@ function createPlayerCard(player, onSelect, onRefresh) {
     if (grade != null) {
         gradeEl.className = "player-grade";
         gradeEl.textContent = `🎓 ${grade}. osztály`;
-        card.append(name, gradeEl);
-    } else {
-        card.append(name);
+    }
+
+    card.append(deleteBtn, avatar, name);
+
+    if (grade != null) {
+        card.append(gradeEl);
     }
 
     const stats = document.createElement("div");

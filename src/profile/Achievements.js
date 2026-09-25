@@ -10,14 +10,16 @@ export const ACHIEVEMENTS = [
             cooking: "Első szakács",
             football: "Első játékos",
             animals: "Első gondozó",
-            space: "Első robotpilóta"
+            space: "Első robotpilóta",
+            tram: "Első villamosos"
         },
         worldIcons: {
             racing: "🏁",
             cooking: "🍳",
             football: "⚽",
             animals: "🦁",
-            space: "🤖"
+            space: "🤖",
+            tram: "🎫"
         }
     },
     {
@@ -31,14 +33,16 @@ export const ACHIEVEMENTS = [
             cooking: "Tapasztalt szakács",
             football: "Tapasztalt játékos",
             animals: "Tapasztalt gondozó",
-            space: "Tapasztalt robotpilóta"
+            space: "Tapasztalt robotpilóta",
+            tram: "Tapasztalt villamosos"
         },
         worldIcons: {
             racing: "🏆",
             cooking: "👨‍🍳",
             football: "🏆",
             animals: "🦒",
-            space: "🚀"
+            space: "🚀",
+            tram: "🎟️"
         }
     },
     {
@@ -52,14 +56,16 @@ export const ACHIEVEMENTS = [
             cooking: "Séf mester",
             football: "Bajnok játékos",
             animals: "Mestergondozó",
-            space: "Űrkapitány"
+            space: "Űrkapitány",
+            tram: "Villamosguru"
         },
         worldIcons: {
             racing: "🥇",
             cooking: "🥇",
             football: "🥇",
             animals: "🦁",
-            space: "🛸"
+            space: "🛸",
+            tram: "⚡"
         }
     },
     {

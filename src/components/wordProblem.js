@@ -13,7 +13,7 @@ const ITEM_EMOJI = {
     football: "⚽",
     animals: "🦓",
     space: "🤖",
-    tram: "🎟️"
+    tram: "🧑"
 };
 
 const FIGURE_EMOJI = {
@@ -22,7 +22,11 @@ const FIGURE_EMOJI = {
     football: "🧑",
     animals: "🦓",
     space: "🤖",
-    tram: "🚋"
+    tram: "🧑"
+};
+
+const FIGURE_EMOJI_LEAVING = {
+    tram: "🧒"
 };
 
 const FIGURE_COLORS = {
@@ -48,7 +52,7 @@ const FIGURE_COLORS = {
     },
     tram: {
         leaving: { bg: "#fef3c7", border: "#f59e0b" },
-        staying: { bg: "#fef9c3", border: "#ca8a04" }
+        staying: { bg: "#dbeafe", border: "#3b82f6" }
     }
 };
 
@@ -75,7 +79,7 @@ const PART_COLORS = {
     },
     tram: {
         part: { bg: "#fef3c7", border: "#f59e0b" },
-        other: { bg: "#fef9c3", border: "#ca8a04" }
+        other: { bg: "#dbeafe", border: "#3b82f6" }
     }
 };
 
@@ -125,8 +129,8 @@ const PART_LEGEND = {
         other: "🟣 töltődik: ?"
     },
     tram: {
-        part: (n) => `🎟️ ${n} bérletes`,
-        other: "🚋 jeggyel: ?"
+        part: (n) => `🟠 ${n} bérletes utas`,
+        other: "🔵 jegyet váltó utas: ?"
     }
 };
 
@@ -255,7 +259,7 @@ function createFigure(world, { leaving = false } = {}) {
     const c = leaving ? colors.leaving : colors.staying;
     const span = document.createElement("span");
     span.className = "wp-drag-figure";
-    span.textContent = FIGURE_EMOJI[world] ?? "●";
+    span.textContent = (leaving ? FIGURE_EMOJI_LEAVING[world] : null) ?? FIGURE_EMOJI[world] ?? "●";
     span.style.background = c.bg;
     span.style.borderColor = c.border;
     return span;

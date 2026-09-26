@@ -343,9 +343,9 @@ remainder: {
         },
         remove: {
             title: "🚋 Elmegy belőle",
-            text: (total, leaving) => `${total} utas ül a villamoson. ${leaving} utas leszáll a következő megállónál.`,
+            text: (total, leaving) => `${total} utas ül a villamoson. Közülük ${leaving} gyerek utas leszáll a következő megállónál.`,
             question: "Hányan utaznak tovább a villamoson?",
-            hint: "Húzd a leszálló utasokat a megállóba, ők leszállnak!",
+            hint: "Húzd a gyerek utasokat a megállóba, ők leszállnak!",
             success: (answer) => `😊 Szép munka! A villamoson ${answer} utas utazik tovább!`
         },
         "part-whole": {

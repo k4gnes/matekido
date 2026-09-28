@@ -127,6 +127,38 @@ const UNIT_FAMILY = {
     volume: ["l", "dl", "cl", "ml"]
 };
 
+const UNIT_LADDER = {
+    length: { km: 1000000, m: 1000, dm: 100, cm: 10, mm: 1 },
+    weight: { t: 1000000, kg: 1000, dkg: 10, g: 1 },
+    volume: { l: 1000, dl: 100, cl: 10, ml: 1 }
+};
+
+function validateComparison(ctx, step) {
+    if (!isInt(step.leftValue) || step.leftValue < 1) fail(ctx, `leftValue hibás: ${step.leftValue}`);
+    if (!isInt(step.rightValue) || step.rightValue < 1) fail(ctx, `rightValue hibás: ${step.rightValue}`);
+
+    const ladder = UNIT_LADDER[step.kind];
+    const leftFactor = ladder?.[step.leftUnit];
+    const rightFactor = ladder?.[step.rightUnit];
+    if (!leftFactor || !rightFactor) {
+        fail(ctx, `ismeretlen egység: ${step.leftUnit} / ${step.rightUnit}`);
+        return;
+    }
+    if (step.leftUnit === step.rightUnit) fail(ctx, `az oldalak egysége azonos: ${step.leftUnit}`);
+
+    if (!["<", "=", ">"].includes(step.operator)) fail(ctx, `operator hibás: ${step.operator}`);
+    if (step.answer !== step.operator) fail(ctx, `answer != operator: ${step.answer}`);
+
+    const left = step.leftValue * leftFactor;
+    const right = step.rightValue * rightFactor;
+    const expected = left === right ? "=" : left > right ? ">" : "<";
+    if (step.operator !== expected) {
+        fail(ctx, `reláció rossz: ${step.leftValue} ${step.leftUnit} ${step.operator} ${step.rightValue} ${step.rightUnit} (valójában ${expected})`);
+    }
+    if (step.options !== undefined) fail(ctx, "compare módban nem kell options");
+    if (step.target !== undefined) fail(ctx, "compare módban nem kell target");
+}
+
 function validateUnitChoice(ctx, step) {
     if (typeof step.answer !== "string") fail(ctx, `unit módban answer szöveg kell: ${step.answer}`);
     if (step.unit !== step.answer) fail(ctx, `answer (${step.answer}) != unit (${step.unit})`);
@@ -488,12 +520,16 @@ function validateStep(step, ctx) {
             break;
         }
         case "measure-units": {
-            if (!isInt(step.value) || step.value < 1) fail(ctx, `value hibás: ${step.value}`);
             if (!["length", "weight", "volume"].includes(step.kind)) fail(ctx, `kind hibás: ${step.kind}`);
             if (step.interaction === "unit") {
                 validateUnitChoice(ctx, step);
                 break;
             }
+            if (step.interaction === "compare") {
+                validateComparison(ctx, step);
+                break;
+            }
+            if (!isInt(step.value) || step.value < 1) fail(ctx, `value hibás: ${step.value}`);
             if (!["km", "m", "dm", "cm", "kg", "dkg", "g", "l", "dl", "cl", "ml", "mm", "t"].includes(step.unit) ||
                 !["km", "m", "dm", "cm", "kg", "dkg", "g", "l", "dl", "cl", "ml", "mm", "t"].includes(step.target)) {
                 fail(ctx, `unit/target ismeretlen: ${step.unit} → ${step.target}`);
@@ -516,7 +552,7 @@ function validateStep(step, ctx) {
                 }
             }
             const mode = step.interaction ?? "choice";
-            if (!["choice", "input", "tf"].includes(mode)) {
+            if (!["choice", "input", "tf", "compare", "unit"].includes(mode)) {
                 fail(ctx, `interaction ismeretlen: ${step.interaction}`);
             }
             if (mode === "tf") {

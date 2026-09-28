@@ -64,9 +64,10 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
     const mode = step.interaction ?? "choice";
     const isUnitMode = mode === "unit";
     const isTrueFalse = mode === "tf";
+    const isCompare = mode === "compare";
     const choiceSelector = isUnitMode ? ".mu-unit" : ".mu-option";
     const choiceClass = isUnitMode ? "mu-unit" : "mu-option";
-    const choiceBoxClass = isUnitMode ? "mu-units" : "mu-options";
+    const choiceBoxClass = isCompare ? "mu-compare" : isUnitMode ? "mu-units" : "mu-options";
 
     if (isTrueFalse) {
         const expression = document.createElement("div");
@@ -98,18 +99,44 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
         choiceBox = document.createElement("div");
         choiceBox.className = choiceBoxClass;
 
-        const entries = isTrueFalse
-            ? [["Igaz", "true"], ["Hamis", "false"]]
-            : (isUnitMode ? step.unitOptions : step.options).map(choice => [choice, choice]);
+        if (isCompare) {
+            const sides = [[step.leftValue, step.leftUnit], [step.rightValue, step.rightUnit]];
 
-        entries.forEach(([label, value]) => {
-            const btn = document.createElement("button");
-            btn.type = "button";
-            btn.className = choiceClass;
-            btn.textContent = label;
-            btn.dataset.value = value;
-            choiceBox.append(btn);
-        });
+            const leftSide = document.createElement("span");
+            leftSide.className = "mu-compare-side";
+            leftSide.textContent = `${sides[0][0]} ${sides[0][1]}`;
+
+            const ops = document.createElement("div");
+            ops.className = "mu-compare-ops";
+
+            ["<", "=", ">"].forEach(op => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = `${choiceClass} mu-compare-op`;
+                btn.textContent = op;
+                btn.dataset.value = op;
+                ops.append(btn);
+            });
+
+            const rightSide = document.createElement("span");
+            rightSide.className = "mu-compare-side";
+            rightSide.textContent = `${sides[1][0]} ${sides[1][1]}`;
+
+            choiceBox.append(leftSide, ops, rightSide);
+        } else {
+            const entries = isTrueFalse
+                ? [["Igaz", "true"], ["Hamis", "false"]]
+                : (isUnitMode ? step.unitOptions : step.options).map(choice => [choice, choice]);
+
+            entries.forEach(([label, value]) => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = choiceClass;
+                btn.textContent = label;
+                btn.dataset.value = value;
+                choiceBox.append(btn);
+            });
+        }
 
         card.append(choiceBox);
     }
@@ -148,6 +175,9 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
             return step.tfAnswer
                 ? `🎉 Igaz! ${step.value} ${step.unit} = ${step.answer} ${step.target}`
                 : `🤔 Nem, ez hamis. ${step.value} ${step.unit} = ${step.answer} ${step.target}`;
+        }
+        if (isCompare) {
+            return `🎉 Ügyes! ${step.leftValue} ${step.leftUnit} ${step.operator} ${step.rightValue} ${step.rightUnit}`;
         }
         return `🎉 Ügyes! ${step.value} ${step.unit} = ${step.answer} ${step.target}`;
     }

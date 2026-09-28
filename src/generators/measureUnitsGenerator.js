@@ -78,6 +78,64 @@ function buildUnitChoiceTask(k, object, amount) {
     };
 }
 
+const UNIT_LADDER = {
+    length: { m: 1000, dm: 100, cm: 10 },
+    weight: { kg: 1000, dkg: 10, g: 1 },
+    volume: { l: 1000, dl: 100, cl: 10, ml: 1 }
+};
+
+const UNIT_LADDER_ADVANCED = {
+    length: { km: 1000000, mm: 1 },
+    weight: { t: 1000000 },
+    volume: {}
+};
+
+const COMPARE_QUESTION = {
+    length: "Melyik a hosszabb?",
+    weight: "Melyik a nehezebb?",
+    volume: "Melyikben van több?"
+};
+
+function buildCompareTask(k, advanced) {
+    const ladder = {
+        ...UNIT_LADDER[k],
+        ...(advanced && UNIT_LADDER_ADVANCED[k] ? UNIT_LADDER_ADVANCED[k] : {})
+    };
+    const units = Object.keys(ladder);
+    const leftUnit = pick(units);
+    let rightUnit = pick(units);
+    while (rightUnit === leftUnit) {
+        rightUnit = pick(units);
+    }
+
+    const step = Math.max(ladder[leftUnit], ladder[rightUnit]);
+    const span = step >= 1000000 ? 2 : 9;
+    const relation = pick(["<", "<", ">", ">", "="]);
+    const gap = relation === "=" ? 0 : rand(1, Math.max(1, span - 1));
+    const multiplier = relation === "="
+        ? rand(1, span)
+        : relation === "<"
+            ? rand(1, Math.max(1, span - gap))
+            : rand(gap + 1, span);
+
+    const leftBase = multiplier * step;
+    const rightBase = (multiplier + (relation === "<" ? gap : -gap)) * step;
+
+    return {
+        type: "measure-units",
+        kind: k,
+        advanced,
+        interaction: "compare",
+        leftValue: leftBase / ladder[leftUnit],
+        leftUnit,
+        rightValue: rightBase / ladder[rightUnit],
+        rightUnit,
+        operator: relation,
+        answer: relation,
+        question: COMPARE_QUESTION[k]
+    };
+}
+
 function pickWrongAnswer(correct) {
     const candidates = [correct * 10, correct / 10, correct * 100, correct / 100]
         .map(v => Math.round(v))
@@ -165,11 +223,16 @@ export function generateMeasureUnits(options = {}) {
 
     for (let i = 0; i < count; i++) {
         const k = pick(kinds);
-        const mode = interaction === "mixed" ? pick(["choice", "input", "tf"]) : interaction;
+        const mode = interaction === "mixed" ? pick(["choice", "input", "tf", "compare"]) : interaction;
 
         if (mode === "unit") {
             const object = pick(UNIT_OBJECTS[k]);
             tasks.push(buildUnitChoiceTask(k, object, rand(object.min, object.max)));
+            continue;
+        }
+
+        if (mode === "compare") {
+            tasks.push(buildCompareTask(k, advanced));
             continue;
         }
 

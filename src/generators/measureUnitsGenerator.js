@@ -111,7 +111,7 @@ function objectVariants(object, pool) {
 }
 
 export function generateMeasureUnits(options = {}) {
-    const { count = 5, kind = "length", advanced = false, reverse = false, context = false } = options;
+    const { count = 5, kind = "length", advanced = false, reverse = false, context = false, interaction = "choice" } = options;
 
     const kinds = kind === "mixed"
         ? ["length", "weight", "volume"]
@@ -140,6 +140,7 @@ export function generateMeasureUnits(options = {}) {
             ? variant.amount
             : (conv.reverse ? rand(1, conv.max) * conv.factor : rand(1, conv.max));
         const correct = conv.reverse ? value / conv.factor : value * conv.factor;
+        const mode = interaction === "mixed" ? pick(["choice", "input"]) : interaction;
 
         const task = {
             type: "measure-units",
@@ -150,9 +151,13 @@ export function generateMeasureUnits(options = {}) {
             kind: k,
             advanced,
             reverse: conv.reverse === true,
-            question: `Hány ${conv.target} a ${value} ${conv.unit}?`,
-            options: buildNumberOptions(correct, value)
+            interaction: mode,
+            question: `Hány ${conv.target} a ${value} ${conv.unit}?`
         };
+
+        if (mode === "choice") {
+            task.options = buildNumberOptions(correct, value);
+        }
 
         if (entry) {
             const { object } = entry;

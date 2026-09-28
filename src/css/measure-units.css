@@ -46,3 +46,25 @@
 .mu-option:disabled {
     opacity: 0.7;
 }
+
+.mu-input {
+    width: 7ch;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    padding: 0.3rem;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    margin: 1rem auto 0.6rem;
+    display: block;
+}
+
+.mu-input:focus {
+    border-color: #16a34a;
+    outline: none;
+}
+
+.mu-input:disabled {
+    opacity: 0.7;
+}

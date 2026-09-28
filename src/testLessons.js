@@ -454,9 +454,6 @@ function validateStep(step, ctx) {
             if (step.answer !== expected) {
                 fail(ctx, `answer (${step.answer}) != ${step.value} ${step.reverse ? "÷" : "×"} ${factor}`);
             }
-            if (!Array.isArray(step.options) || !step.options.includes(step.answer)) {
-                fail(ctx, "options nem tartalmazza a helyes választ");
-            }
             if (step.context !== undefined) {
                 if (typeof step.context !== "string" || step.context.length === 0) {
                     fail(ctx, "context üres vagy nem szöveg");
@@ -467,6 +464,17 @@ function validateStep(step, ctx) {
                 if (!Number.isInteger(step.answer) || step.answer < 1) {
                     fail(ctx, `contextes feladat válasza nem pozitív egész: ${step.answer}`);
                 }
+            }
+            const mode = step.interaction ?? "choice";
+            if (!["choice", "input"].includes(mode)) {
+                fail(ctx, `interaction ismeretlen: ${step.interaction}`);
+            }
+            if (mode === "choice") {
+                if (!Array.isArray(step.options) || !step.options.includes(step.answer)) {
+                    fail(ctx, "options nem tartalmazza a helyes választ");
+                }
+            } else if (step.options !== undefined) {
+                fail(ctx, "input módban nem kell options");
             }
             break;
         }

@@ -66,19 +66,37 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
     prompt.textContent = step.question;
     card.append(prompt);
 
-    const optionsContainer = document.createElement("div");
-    optionsContainer.className = "mu-options";
+    const mode = step.interaction ?? "choice";
 
-    step.options.forEach(value => {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "mu-option";
-        btn.textContent = value;
-        btn.dataset.value = value;
-        optionsContainer.append(btn);
-    });
+    let input = null;
+    let submitButton = null;
+    let optionsContainer = null;
 
-    card.append(optionsContainer);
+    if (mode === "input") {
+        input = document.createElement("input");
+        input.type = "number";
+        input.className = "mu-input";
+        input.placeholder = "?";
+        input.setAttribute("aria-label", "Átváltás eredménye");
+        card.append(input);
+
+        submitButton = createButton("Ellenőrzöm", { onClick: submitAnswer });
+        card.append(submitButton);
+    } else {
+        optionsContainer = document.createElement("div");
+        optionsContainer.className = "mu-options";
+
+        step.options.forEach(value => {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "mu-option";
+            btn.textContent = value;
+            btn.dataset.value = value;
+            optionsContainer.append(btn);
+        });
+
+        card.append(optionsContainer);
+    }
 
     let hintShown = false;
 
@@ -112,10 +130,20 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
         if (feedback.isAnswered()) return;
 
         if (isCorrect) {
-            optionsContainer.querySelectorAll("button").forEach(b => b.style.pointerEvents = "none");
+            if (input) {
+                input.disabled = true;
+                submitButton.disabled = true;
+            } else if (optionsContainer) {
+                optionsContainer.querySelectorAll("button").forEach(b => b.style.pointerEvents = "none");
+            }
             feedback.success(`🎉 Ügyes! ${step.value} ${step.unit} = ${step.answer} ${step.target}`);
         } else {
             feedback.retry();
+
+            if (input) {
+                input.focus();
+                input.select();
+            }
 
             if (feedback.getMistakes() >= 2 && !hintShown) {
                 hintButton.style.display = "inline-block";
@@ -123,15 +151,31 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
         }
     }
 
-    optionsContainer.addEventListener("click", (e) => {
-        const btn = e.target.closest(".mu-option");
-        if (!btn || feedback.isAnswered()) return;
+    function submitAnswer() {
+        if (feedback.isAnswered()) return;
 
-        const value = Number(btn.dataset.value);
-        const ok = value === step.answer;
+        const answer = Number(input.value);
+        if (input.value.trim() === "" || isNaN(answer)) return;
 
-        if (ok) markCorrect(btn);
+        checkAnswer(answer === step.answer);
+    }
 
-        checkAnswer(ok);
-    }, { signal: ac.signal });
+    if (input) {
+        requestAnimationFrame(() => input.focus());
+        input.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") submitAnswer();
+        }, { signal: ac.signal });
+    } else {
+        optionsContainer.addEventListener("click", (e) => {
+            const btn = e.target.closest(".mu-option");
+            if (!btn || feedback.isAnswered()) return;
+
+            const value = Number(btn.dataset.value);
+            const ok = value === step.answer;
+
+            if (ok) markCorrect(btn);
+
+            checkAnswer(ok);
+        }, { signal: ac.signal });
+    }
 }

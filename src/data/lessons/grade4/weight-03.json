@@ -39,7 +39,8 @@
       "options": {
         "count": 6,
         "kind": "weight",
-        "context": true
+        "context": true,
+        "interaction": "mixed"
       }
     },
     {
@@ -50,7 +51,8 @@
         "kind": "weight",
         "advanced": true,
         "reverse": true,
-        "context": true
+        "context": true,
+        "interaction": "mixed"
       }
     },
     {

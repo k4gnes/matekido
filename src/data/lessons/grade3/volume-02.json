@@ -39,7 +39,8 @@
       "options": {
         "count": 8,
         "kind": "volume",
-        "context": true
+        "context": true,
+        "interaction": "mixed"
       }
     },
     {
@@ -49,7 +50,8 @@
         "count": 6,
         "kind": "volume",
         "advanced": true,
-        "context": true
+        "context": true,
+        "interaction": "mixed"
       }
     },
     {

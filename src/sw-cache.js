@@ -449,7 +449,7 @@ const SW_CACHE_LIST = [
     "/generators/shapeFormulaGenerator.js",
     "/generators/shapeSortGenerator.js",
     "/generators/solidShapeGenerator.js",
-    "/generators/substractionGenerator.js",
+    "/generators/subtractionGenerator.js",
     "/generators/timeConvertGenerator.js",
     "/generators/timeGenerator.js",
     "/generators/transformGenerator.js",

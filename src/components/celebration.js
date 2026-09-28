@@ -2,7 +2,14 @@ import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createNavBar } from "./ui/navbar.js";
 
-export function renderCelebration(step, root, actions = {}, milestone, reward, activeWorld, lessonIndex, lessonTitle, gradeLabel) {
+function formatDuration(seconds) {
+    if (seconds < 60) return `${seconds} mp`;
+    const minutes = Math.floor(seconds / 60);
+    const rest = seconds % 60;
+    return `${minutes}:${String(rest).padStart(2, "0")}`;
+}
+
+export function renderCelebration(step, root, actions = {}, milestone, reward, activeWorld, lessonIndex, lessonTitle, gradeLabel, elapsedSeconds) {
 
     root.replaceChildren();
 
@@ -158,6 +165,15 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
         } else {
             text.after(worldEl);
         }
+
+    }
+
+    if (typeof elapsedSeconds === "number" && elapsedSeconds >= 0) {
+
+        const timeEl = document.createElement("p");
+        timeEl.className = "celebration-time";
+        timeEl.textContent = `⏱️ ${formatDuration(elapsedSeconds)}`;
+        text.after(timeEl);
 
     }
 

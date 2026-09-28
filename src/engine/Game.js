@@ -151,7 +151,7 @@ const COUNTED_TYPES = new Set([
 const isCounted = s => COUNTED_TYPES.has(s.type);
 
 
-import { renderCelebration } from "../components/celebration.js?v=14";
+import { renderCelebration } from "../components/celebration.js?v=15";
 import { renderProgress } from "../components/progress.js?v=4";
 import { renderMissingProgress } from "../components/missingProgress.js?v=4";
 import { renderComparisonProgress } from "../components/comparisonProgress.js?v=4";
@@ -266,6 +266,7 @@ export class Game {
         this.wrong = 0;
         this.attempts = 0;
         this.byType = {};
+        this.startedAt = null;
 
         this.onRestart = actions.onRestart;
         this.onExit = actions.onExit;
@@ -348,6 +349,18 @@ export class Game {
 
     }
 
+    onSceneNext() {
+        if (this.startedAt === null) {
+            this.startedAt = Date.now();
+        }
+        this.next();
+    }
+
+    elapsedSeconds() {
+        if (this.startedAt === null) return null;
+        return Math.max(0, Math.round((Date.now() - this.startedAt) / 1000));
+    }
+
     onResult(isCorrect, type) {
         if (isCorrect) {
             this.correct++;
@@ -420,7 +433,10 @@ export class Game {
                 milestone,
                 reward,
                 getActiveWorld(),
-                this.lessonIndex
+                this.lessonIndex,
+                null,
+                null,
+                this.elapsedSeconds()
             );
 
             return;
@@ -458,7 +474,7 @@ export class Game {
             this.instructionTitle = worldStep?.title ?? step.title;
             this.instructionText = worldStep?.text ?? step.text;
             const lessonPos = this.getLessonPosition();
-            renderScene(step, this.root, () => this.next(), progress, getActiveWorld(), this.onExit, lessonPos, this.onSkipNext, this.lessonFile, this.source, this.getLessonGradeLabel());
+            renderScene(step, this.root, () => this.onSceneNext(), progress, getActiveWorld(), this.onExit, lessonPos, this.onSkipNext, this.lessonFile, this.source, this.getLessonGradeLabel());
             return;
         }
 
@@ -503,7 +519,7 @@ export class Game {
                 onStats: this.onStats,
                 onHelp: this.onHelp,
                 onNext: gradeJustCompleted && this.onGradeComplete ? this.onGradeComplete : this.onNext
-            }, milestone2, reward2, getActiveWorld(), this.lessonIndex, this.getLessonTitle(), this.getLessonGradeLabel());
+            }, milestone2, reward2, getActiveWorld(), this.lessonIndex, this.getLessonTitle(), this.getLessonGradeLabel(), this.elapsedSeconds());
 
             return;
         }

@@ -89,6 +89,14 @@ button:hover {
     color: #888;
 }
 
+.celebration-time{
+    margin: .1rem 0 .6rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #888;
+}
+
 .milestone-icon{
     font-size:64px;
     margin-bottom:8px;

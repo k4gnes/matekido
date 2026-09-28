@@ -6,31 +6,31 @@
     {
       "type": "scene",
       "title": "🕐 Idő",
-      "text": "Nézd meg az órát! Találd meg, melyik meghatározás illik hozzá!",
+      "text": "Nézd meg az órát! Melyik időpontot mutatja?",
       "worldTitles": {
         "racing": {
           "title": "🏎️ Idő",
-          "text": "Nézd meg az órát! Találd meg, melyik meghatározás illik hozzá!"
+          "text": "Nézd meg az órát! Melyik időpontot mutatja?"
         },
         "football": {
           "title": "⚽ Idő",
-          "text": "Nézd meg az órát! Találd meg, melyik meghatározás illik hozzá!"
+          "text": "Nézd meg az órát! Melyik időpontot mutatja?"
         },
         "cooking": {
           "title": "🍳 Idő",
-          "text": "Nézd meg az órát! Találd meg, melyik meghatározás illik hozzá!"
+          "text": "Nézd meg az órát! Melyik időpontot mutatja?"
         },
         "animals": {
           "title": "🦁 Mit mutat az óra az állatkertben?",
-          "text": "Nézd meg az órát! Találd meg, melyik meghatározás illik hozzá!"
+          "text": "Nézd meg az órát! Melyik időpontot mutatja?"
         },
         "space": {
           "title": "🤖 Mit mutat az óra az űrállomáson?",
-          "text": "Nézd meg az órát! Találd meg, melyik meghatározás illik hozzá!"
+          "text": "Nézd meg az órát! Melyik időpontot mutatja?"
         },
         "tram": {
           "title": "🚋 Mit mutat az óra a megállón?",
-          "text": "Nézd meg az órát! Találd meg, melyik meghatározás illik hozzá!"
+          "text": "Nézd meg az órát! Melyik időpontot mutatja?"
         }
       }
     },

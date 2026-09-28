@@ -114,7 +114,7 @@ export function renderTime(step, root, onNext, progress, onResult, onAttempt) {
 
     const prompt = document.createElement("p");
     prompt.className = "time-prompt";
-    prompt.textContent = "Kattints a helyes meghatározásra!";
+    prompt.textContent = "Kattints a helyes időpontra!";
     card.append(prompt);
 
     const optionsContainer = document.createElement("div");
@@ -161,7 +161,7 @@ export function renderTime(step, root, onNext, progress, onResult, onAttempt) {
                         b.classList.add("time-option-correct");
                     }
                 });
-                feedback.reveal(`🤔 Nem! A helyes meghatározás: ${step.answer}`);
+                feedback.reveal(`🤔 Nem! A helyes időpont: ${step.answer}`);
             }
         });
 

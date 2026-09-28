@@ -37,27 +37,27 @@
       "type": "exercise",
       "generator": "measure-units",
       "options": {
-        "count": 8,
-        "kind": "weight",
-        "context": true,
-        "interaction": "mixed"
-      }
-    },
-    {
-      "type": "exercise",
-      "generator": "measure-units",
-      "options": {
-        "count": 6,
-        "kind": "weight",
-        "context": true,
-        "interaction": "mixed"
-      }
-    },
-    {
-      "type": "exercise",
-      "generator": "measure-units",
-      "options": {
         "count": 5,
+        "kind": "weight",
+        "context": true,
+        "interaction": "mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 3,
+        "kind": "weight",
+        "context": true,
+        "interaction": "mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 2,
         "kind": "weight",
         "interaction": "unit"
       }

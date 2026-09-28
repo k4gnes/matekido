@@ -37,7 +37,7 @@
       "type": "exercise",
       "generator": "measure-units",
       "options": {
-        "count": 8,
+        "count": 5,
         "kind": "volume",
         "context": true,
         "interaction": "mixed"
@@ -47,7 +47,7 @@
       "type": "exercise",
       "generator": "measure-units",
       "options": {
-        "count": 6,
+        "count": 3,
         "kind": "volume",
         "advanced": true,
         "context": true,
@@ -58,7 +58,7 @@
       "type": "exercise",
       "generator": "measure-units",
       "options": {
-        "count": 5,
+        "count": 2,
         "kind": "volume",
         "interaction": "unit"
       }

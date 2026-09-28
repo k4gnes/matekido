@@ -37,7 +37,7 @@
       "type": "exercise",
       "generator": "measure-units",
       "options": {
-        "count": 6,
+        "count": 4,
         "kind": "weight",
         "context": true,
         "interaction": "mixed"
@@ -47,7 +47,7 @@
       "type": "exercise",
       "generator": "measure-units",
       "options": {
-        "count": 10,
+        "count": 5,
         "kind": "weight",
         "advanced": true,
         "reverse": true,
@@ -59,7 +59,7 @@
       "type": "exercise",
       "generator": "measure-units",
       "options": {
-        "count": 5,
+        "count": 2,
         "kind": "weight",
         "interaction": "unit"
       }

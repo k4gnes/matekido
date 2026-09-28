@@ -43,7 +43,7 @@ Ennek a dokumentumnak a célja, hogy a **4. osztályos tananyagot** (35 lecke, 7
 | 2.1.4 | Összehasonlítás 10 000-ig | `comparison` / 10000 | Két kifejezés összehasonlítása, a jel illik a nagyságokra | |
 | 2.1.5 | Római számok bővítve | `roman` / 4000 | XL, L, C, M jelek (pl. 43 = XLIII); mindkét irány | |
 | 2.1.6 | Kerekítés 10 000-ig | `rounding` / 10000 | A célfelirat követi a kért helyet (tízesre / százasre / ezresre); opciók és beírás vegyesen | |
-| 2.1.7 | Osztó és többszörös | `divisibility` / 100 | Négy mód: többszörös, nem-többszörös, osztó, hányszoros; a „-nek” toldalék helyes | |
+| 2.1.7 | Osztó és többszörös – az oszthatóság kezdete | `divisibility` / 100 | Négy mód: többszörös, nem-többszörös, osztó, hányszoros; a „-nek” toldalék helyes | |
 | 2.1.8 | 📊 Táblázatok és diagramok | `data-chart` / 100 | Oszlopdiagram emojikkal; a kérdés lehet összeg, különbség vagy a legnagyobb/legkisebb | |
 
 ### 2.2 Írásbeli műveletek
@@ -54,18 +54,18 @@ Ennek a dokumentumnak a célja, hogy a **4. osztályos tananyagot** (35 lecke, 7
 | 2.2.2 | Írásbeli kivonás négyjegyűekkel | `written-operation` / 10000 | Négyjegyű − négyjegyű, az eredmény pozitív; **opció és beírás vegyesen** | |
 | 2.2.3 | Írásbeli szorzás egyjegyűvel | `written-operation` / 1000 | Háromjegyű × egyjegyű | |
 | 2.2.4 | Írásbeli szorzás kétjegyűvel | `written-operation` / 10000 | **Részszorzás** látható (pl. 21 × 14 → 84 és 21, összeg 294) | |
-| 2.2.5 | Írásbeli osztás egyjegyűvel | `written-division` / 1000 | Lépcsős osztás: a közbenső részletek (8 → 2, majd 27 → 9) helyesek; a maradék megjelenik | |
-| 2.2.6 | Írásbeli osztás kétjegyűvel | `written-division` / 10000 | Kétjegyű osztó (pl. 625 : 14 = 44 maradék 9); a lépcsők száma helyes | |
+| 2.2.5 | Írásbeli osztás egyjegyűvel (maradékos) | `written-division` / 1000 | Lépcsős osztás: a közbenső részletek (8 → 2, majd 27 → 9) helyesek; a maradék megjelenik | |
+| 2.2.6 | Írásbeli osztás kétjegyűvel (maradékos) | `written-division` / 10000 | Kétjegyű osztó (pl. 625 : 14 = 44 maradék 9); a lépcsők száma helyes | |
 | 2.2.7 | Vegyes írásbeli műveletek | `written-operation` / 10000 | Kétjegyű számok, a 12 feladatos lecke a leghosszabb a műveletek között | |
 
 ### 2.3 Törtek
 
 | # | Lecke | Típus / tartomány | Amire figyelj | Eredmény |
 |---|-------|-------------------|---------------|----------|
-| 2.3.1 | Fele, harmada, negyede nagyobb számokkal | `fraction-of` / 1000 | Pl. 820 fele = 410; a sávdiagram néha látható, a beírás mindig | |
+| 2.3.1 | Fele, harmada, negyede – nagyobb számok | `fraction-of` / 1000 | Pl. 820 fele = 410; a sávdiagram néha látható, a beírás mindig | |
 | 2.3.2 | Törtek jelölése – számláló, nevező | `fraction` / 20 | A rajz (pl. 3/4 csoki) és a jelölés összhangja; **írásbeli és összehasonlító mód is van** | |
 | 2.3.3 | Azonos nevezőjű törtek | `fraction-equal-den` / 20 | Azonos nevezővel a számláló dönt; összeadás és jelölés-összehasonlítás | |
-| 2.3.4 | Tizedes törtek – tized és század | `decimal` / 100 | 3/10 = 0,3; a válasz **magyar tizedesponttal** (0,3) jelenik meg, a legegyszerűbb forma a helyes | |
+| 2.3.4 | Tizedes törtek – a tized és a század | `decimal` / 100 | 3/10 = 0,3; a válasz **magyar tizedesponttal** (0,3) jelenik meg, a legegyszerűbb forma a helyes | |
 
 ### 2.4 Geometria
 
@@ -76,9 +76,9 @@ Ennek a dokumentumnak a célja, hogy a **4. osztályos tananyagot** (35 lecke, 7
 | 2.4.3 | 🧱 Összetett alakzatok kerülete és területe | `compound-shape` / 100 | **A belső illesztési varratok nem számítanak a kerületbe** – ezt ellenőrizd a rajzon | |
 | 2.4.4 | 🧮 Kerület és terület számolással | `shape-formula` / 100 | Négyzet, TEGLALAP, háromszög; a képlethez tartozó méretjelölés (a, b) helyes | |
 | 2.4.5 | 📐 Szögek | `angles` / 180 | Derékszög / hegyes / tompa besorolás; a felirat szerinti kategória illik a számhoz | |
-| 2.4.6 | 📐 Szögek mérése szögmérővel | `angle-measure` / 180 | A rajz leolvasása: 0° és 180° körüli érték is jön | |
+| 2.4.6 | Szögek mérése – szögmérővel és fokban | `angle-measure` / 180 | A rajz leolvasása: 0° és 180° körüli érték is jön | |
 | 2.4.7 | 🪞 Tükrözés és szimmetria | `mirror` / – | Függőleges és vízszintes tengely; a tükrözött alakzat a helyes opció | |
-| 2.4.8 | 🔷 Sokszögek | `polygon` / – | Oldalak száma, átlók száma (pl. ötszög → 5 átló), tulajdonságok | |
+| 2.4.8 | 🔷 Sokszögek és tulajdonságaik | `polygon` / – | Oldalak száma, átlók száma (pl. ötszög → 5 átló), tulajdonságok | |
 
 ### 2.5 Szöveges feladatok
 
@@ -112,7 +112,7 @@ Ennek a dokumentumnak a célja, hogy a **4. osztályos tananyagot** (35 lecke, 7
 
 | # | Lecke | Típus / tartomány | Amire figyelj | Eredmény |
 |---|-------|-------------------|---------------|----------|
-| 2.6.2 | 📏 Távolságok a valóságban | `length-units` | 12 feladat **két különböző formában**: 1. blokk kurált cm/m/km (3 opció, egységsúgó), 2. blokk a teljes mm–km létrával (4 opció) | |
+| 2.6.2 | 📏 Távolságok és hosszúságok a valóságban | `length-units` | 12 feladat **két különböző formában**: 1. blokk kurált cm/m/km (3 opció, egységsúgó), 2. blokk a teljes mm–km létrával (4 opció) | |
 | 2.6.3 | 🕐 Idő – óra és perc tartamok | `elapsed-time` / 60 | Kezdés/vég, eltelt idő számítása; az opciók nem a valós választ adják | |
 | 2.6.4 | 💰 Vásárlás és visszajáró 10 000-ig | `money-change` / 10000 | 5000 vagy 10 000 Ft-tal fizet, 500–9800 Ft-os ár; a visszajáró **soha nem negatív** (2000 mintában 0 hiba) | |
 

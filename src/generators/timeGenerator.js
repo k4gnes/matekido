@@ -15,29 +15,17 @@ function displayHour(h) {
     return hour12 === 0 ? 12 : hour12;
 }
 
-function daypart(h) {
-    if (h <= 4) return "hajnali";
-    if (h <= 8) return "reggeli";
-    if (h <= 11) return "délelőtti";
-    if (h <= 17) return "délutáni";
-    if (h <= 21) return "esti";
-    return "éjszakai";
-}
-
 export function describeTime(h, m) {
     if (QUARTER_PREFIXES[m]) {
         const next = (displayHour(h) % 12) + 1;
         return `${QUARTER_PREFIXES[m]} ${HOUR_WORDS[next]}`;
     }
-    if (h === 0) return "éjfél";
-    if (h === 12) return "dél";
-    return `${daypart(h)} ${HOUR_WORDS[displayHour(h)]} óra`;
+    return `${HOUR_WORDS[displayHour(h)]} óra`;
 }
 
 function describeExact(h, m) {
     if (m === 0) return describeTime(h, 0);
-    if (h === 0 && m === 0) return "éjfél";
-    return `${daypart(h)} ${HOUR_WORDS[displayHour(h)]} óra ${m} perc`;
+    return `${HOUR_WORDS[displayHour(h)]} óra ${m} perc`;
 }
 
 export function generateTime(options = {}) {
@@ -73,17 +61,12 @@ export function generateTime(options = {}) {
             const siblingMinutes = [m - 5, m + 5, m - 10, m + 10].map(x => ((x % 60) + 60) % 60)
                 .filter(x => x !== m && x !== 0);
             nearMiss = [
-                ...siblingMinutes.map(sm => `${daypart(h)} ${HOUR_WORDS[displayHour(h)]} óra ${sm} perc`),
+                ...siblingMinutes.map(sm => `${HOUR_WORDS[displayHour(h)]} óra ${sm} perc`),
                 ...([-1, 1].map(d => h + d).filter(hh => hh >= minHour && hh <= maxHour).map(hh => describe(hh, m)))
             ];
         } else if (m !== 0) {
             const next = HOUR_WORDS[(displayHour(h) % 12) + 1];
             nearMiss = [`negyed ${next}`, `fél ${next}`, `háromnegyed ${next}`, describe(h, 0)];
-        } else {
-            const twin = (h + 12) % 24;
-            if (twin >= minHour && twin <= maxHour) {
-                forbidden.push(describe(twin, 0));
-            }
         }
 
         nearMiss = [...new Set(nearMiss)].filter(d => !forbidden.includes(d));

@@ -61,14 +61,24 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
         card.append(contextLine);
     }
 
+    const mode = step.interaction ?? "choice";
+    const isUnitMode = mode === "unit";
+    const isTrueFalse = mode === "tf";
+    const choiceSelector = isUnitMode ? ".mu-unit" : ".mu-option";
+    const choiceClass = isUnitMode ? "mu-unit" : "mu-option";
+    const choiceBoxClass = isUnitMode ? "mu-units" : "mu-options";
+
+    if (isTrueFalse) {
+        const expression = document.createElement("div");
+        expression.className = "mu-expression";
+        expression.textContent = step.statement;
+        card.append(expression);
+    }
+
     const prompt = document.createElement("p");
     prompt.className = "mu-prompt";
     prompt.textContent = step.question;
     card.append(prompt);
-
-    const mode = step.interaction ?? "choice";
-    const isUnitMode = mode === "unit";
-    const choiceSelector = isUnitMode ? ".mu-unit" : ".mu-option";
 
     let input = null;
     let submitButton = null;
@@ -86,16 +96,18 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
         card.append(submitButton);
     } else {
         choiceBox = document.createElement("div");
-        choiceBox.className = isUnitMode ? "mu-units" : "mu-options";
+        choiceBox.className = choiceBoxClass;
 
-        const choices = isUnitMode ? step.unitOptions : step.options;
+        const entries = isTrueFalse
+            ? [["Igaz", "true"], ["Hamis", "false"]]
+            : (isUnitMode ? step.unitOptions : step.options).map(choice => [choice, choice]);
 
-        choices.forEach(choice => {
+        entries.forEach(([label, value]) => {
             const btn = document.createElement("button");
             btn.type = "button";
-            btn.className = isUnitMode ? "mu-unit" : "mu-option";
-            btn.textContent = choice;
-            btn.dataset.value = choice;
+            btn.className = choiceClass;
+            btn.textContent = label;
+            btn.dataset.value = value;
             choiceBox.append(btn);
         });
 
@@ -132,6 +144,11 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
 
     function successText() {
         if (isUnitMode) return `🎉 Ügyes! ${step.value} ${step.answer} a helyes egység`;
+        if (isTrueFalse) {
+            return step.tfAnswer
+                ? `🎉 Igaz! ${step.value} ${step.unit} = ${step.answer} ${step.target}`
+                : `🤔 Nem, ez hamis. ${step.value} ${step.unit} = ${step.answer} ${step.target}`;
+        }
         return `🎉 Ügyes! ${step.value} ${step.unit} = ${step.answer} ${step.target}`;
     }
 
@@ -179,7 +196,9 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
             const btn = e.target.closest(choiceSelector);
             if (!btn || feedback.isAnswered()) return;
 
-            const ok = String(btn.dataset.value) === String(step.answer);
+            const ok = isTrueFalse
+                ? (btn.dataset.value === "true") === step.tfAnswer
+                : String(btn.dataset.value) === String(step.answer);
 
             if (ok) markCorrect(btn);
 

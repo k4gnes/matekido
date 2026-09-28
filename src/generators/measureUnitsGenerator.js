@@ -78,6 +78,14 @@ function buildUnitChoiceTask(k, object, amount) {
     };
 }
 
+function pickWrongAnswer(correct) {
+    const candidates = [correct * 10, correct / 10, correct * 100, correct / 100]
+        .map(v => Math.round(v))
+        .filter(v => v > 0 && v !== correct);
+    const unique = [...new Set(candidates)];
+    return unique.length ? pick(unique) : correct + 10;
+}
+
 function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -157,7 +165,7 @@ export function generateMeasureUnits(options = {}) {
 
     for (let i = 0; i < count; i++) {
         const k = pick(kinds);
-        const mode = interaction === "mixed" ? pick(["choice", "input"]) : interaction;
+        const mode = interaction === "mixed" ? pick(["choice", "input", "tf"]) : interaction;
 
         if (mode === "unit") {
             const object = pick(UNIT_OBJECTS[k]);
@@ -200,6 +208,15 @@ export function generateMeasureUnits(options = {}) {
 
         if (mode === "choice") {
             task.options = buildNumberOptions(correct, value);
+        }
+
+        if (mode === "tf") {
+            const isTrue = Math.random() < 0.5;
+            const stated = isTrue ? correct : pickWrongAnswer(correct);
+            task.statedAnswer = stated;
+            task.tfAnswer = isTrue;
+            task.statement = `${value} ${conv.unit} = ${stated} ${conv.target}`;
+            task.question = "Igaz vagy hamis?";
         }
 
         if (entry) {

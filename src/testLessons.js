@@ -149,6 +149,24 @@ function validateUnitChoice(ctx, step) {
     if (step.target !== undefined) fail(ctx, "unit módban nem kell target");
 }
 
+function validateTrueFalse(ctx, step) {
+    if (typeof step.tfAnswer !== "boolean") fail(ctx, `tfAnswer nem logikai: ${step.tfAnswer}`);
+    if (!isInt(step.statedAnswer) || step.statedAnswer < 1) {
+        fail(ctx, `statedAnswer hibás: ${step.statedAnswer}`);
+    }
+    if (typeof step.statement !== "string" ||
+        !step.statement.includes(String(step.statedAnswer)) ||
+        !step.statement.includes(step.target)) {
+        fail(ctx, `statement nem egyezik: ${step.statement}`);
+    }
+    if (step.tfAnswer && step.statedAnswer !== step.answer) {
+        fail(ctx, `igaznak jelölt állítás hibás: ${step.statedAnswer} != ${step.answer}`);
+    }
+    if (!step.tfAnswer && step.statedAnswer === step.answer) {
+        fail(ctx, "hamisnak jelölt állítás mégis igaz");
+    }
+}
+
 function validateStep(step, ctx) {
     if (!step || typeof step !== "object") {
         fail(ctx, "lépés nem objektum");
@@ -498,15 +516,18 @@ function validateStep(step, ctx) {
                 }
             }
             const mode = step.interaction ?? "choice";
-            if (!["choice", "input"].includes(mode)) {
+            if (!["choice", "input", "tf"].includes(mode)) {
                 fail(ctx, `interaction ismeretlen: ${step.interaction}`);
+            }
+            if (mode === "tf") {
+                validateTrueFalse(ctx, step);
             }
             if (mode === "choice") {
                 if (!Array.isArray(step.options) || !step.options.includes(step.answer)) {
                     fail(ctx, "options nem tartalmazza a helyes választ");
                 }
             } else if (step.options !== undefined) {
-                fail(ctx, "input módban nem kell options");
+                fail(ctx, `${mode} módban nem kell options`);
             }
             break;
         }

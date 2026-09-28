@@ -56,7 +56,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
-| Törtek | A tört jele – ½, ⅓, ¼ | Kép → jel társítása | ½, ⅓, ¼ | 1 |
+| Törtek | 🍕 Tört jele – ½, ⅓, ¼ | Kép → jel társítása | ½, ⅓, ¼ | 1 |
 | Törtek | Kép a tört jeléhez | Jel → kép társítása | ½, ⅓, ¼ | 1 |
 | Törtek | Egész törtrészei | Fele, harmada, negyede egész számnál | 48 | 1 |
 

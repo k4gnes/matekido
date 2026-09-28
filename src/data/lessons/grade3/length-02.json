@@ -1,0 +1,98 @@
+{
+  "id": "grade3-length-02",
+  "title": "📏 Hosszúság – centiméter, deciméter, méter",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📏 Milyen hosszú egy könyv?",
+      "text": "A hosszúságot centiméterben (cm), deciméterben (dm) és méterben (m) mérjük. Figyeld meg: 1 méterből 10 deciméter, 10 deciméterből 10 centiméter lesz! Átváltásra fel!",
+      "worldTitles": {
+        "racing": {
+          "title": "📏 A futópálya hossza",
+          "text": "Egy futópálya pontosan 100 méter hosszú! Hány centiméter az? Számolj át!"
+        },
+        "football": {
+          "title": "📏 A pálya és a kapu",
+          "text": "A futballpálya 90–100 méter, a kapu viszont csak 2,44 m! Számolj át!"
+        },
+        "cooking": {
+          "title": "📏 A konyhai mérőszalag",
+          "text": "A szakács mindent kimér, mielőtt beviszi a sütőbe! Deciméterről centiméterre számoljunk!"
+        },
+        "animals": {
+          "title": "📏 Az állatok méretei",
+          "text": "Egy elefánt 3–4 méter, egy mackó két centiméter. Mekkora a különbség centiméterben?"
+        },
+        "space": {
+          "title": "📏 A rakéta magassága",
+          "text": "A rakéta 40 méter magasra indul! Hány centiméter az, hány deciméter? Számolj át!"
+        },
+        "tram": {
+          "title": "📏 A sínek hossza",
+          "text": "Egy vagon 20 méter, és négy vagonból áll a szerelvény! Milyen hosszú az egész?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 5,
+        "kind": "length",
+        "context": true,
+        "interaction": "mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 3,
+        "kind": "length",
+        "advanced": true,
+        "context": true,
+        "interaction": "mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 2,
+        "kind": "length",
+        "interaction": "unit"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Most már a centiméter, deciméter és méter is a barátod!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Rajt!",
+          "text": "Jól mérted be a pályát, indulhat a verseny! 🏁"
+        },
+        "football": {
+          "title": "⚽ Gól!",
+          "text": "Ügyesen számoltál a centiméterekkel, játékra kész vagy! 🎉"
+        },
+        "cooking": {
+          "title": "🍰 Pontos a tésztád!",
+          "text": "Minden centiméter a helyén van, mehet a sütőbe! 🍽️"
+        },
+        "animals": {
+          "title": "🐾 Mindenki megmérve!",
+          "text": "Az elefánttól a mackóig mindenki tudja a hosszát! 🐾"
+        },
+        "space": {
+          "title": "🚀 A rakéta indul!",
+          "text": "Pontosan 40 méter magasságban száll fel, minden szám stimmel! 🚀"
+        },
+        "tram": {
+          "title": "🚋 Indulhat az út!",
+          "text": "A szerelvény pontosan a megfelelő hosszú, indulhat! 🚋"
+        }
+      }
+    }
+  ]
+}

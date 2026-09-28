@@ -18,7 +18,7 @@ export const UNIT_OBJECTS = {
         { emoji: "🥚", phrase: "Egy tojás", base: "g", min: 50, max: 70 }
     ],
     volume: [
-        { emoji: "🛢️", phrase: "Egy kannamycinős", base: "l", min: 10, max: 20 },
+        { emoji: "🚰", phrase: "Egy vizes kanna", base: "l", min: 10, max: 20 },
         { emoji: "🪣", phrase: "Egy vödör", base: "l", min: 5, max: 10 },
         { emoji: "🍲", phrase: "Egy fazék", base: "l", min: 2, max: 4 },
         { emoji: "🥛", phrase: "Egy pohár tej", base: "ml", min: 200, max: 300 },

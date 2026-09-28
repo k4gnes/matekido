@@ -1,6 +1,8 @@
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
+import { createButton } from "./ui/button.js";
+import { createHintBox } from "./ui/hintBox.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_EMOJI = {
@@ -50,10 +52,7 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
     title.textContent = `${emoji} ${config.title}`;
     card.append(title);
 
-    const hint = document.createElement("p");
-    hint.className = "mu-hint";
-    hint.textContent = (step.advanced && config.hintAdvanced) ? config.hintAdvanced : config.hint;
-    card.append(hint);
+    const hintText = (step.advanced && config.hintAdvanced) ? config.hintAdvanced : config.hint;
 
     const prompt = document.createElement("p");
     prompt.className = "mu-prompt";
@@ -73,6 +72,21 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
     });
 
     card.append(optionsContainer);
+
+    let hintShown = false;
+
+    const hint = createHintBox();
+
+    const hintButton = createButton("💡 Segítséget kérek", {
+        onClick: () => {
+            hintShown = true;
+            hint.textContent = hintText;
+            hintButton.style.display = "none";
+        }
+    });
+    hintButton.style.display = "none";
+
+    card.append(hintButton, hint);
 
     const message = createMessageBox();
     card.append(message.element);
@@ -95,6 +109,10 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
             feedback.success(`🎉 Ügyes! ${step.value} ${step.unit} = ${step.answer} ${step.target}`);
         } else {
             feedback.retry();
+
+            if (feedback.getMistakes() >= 2 && !hintShown) {
+                hintButton.style.display = "inline-block";
+            }
         }
     }
 

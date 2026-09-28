@@ -201,7 +201,7 @@ export function renderProfilePage(lessonIndex, root, onBack, onStats, onHelp, on
             item.addEventListener("click", () => {
                 setActiveWorld(world.id);
                 document.body.dataset.world = world.id;
-                renderProfilePage(lessonIndex, root, onBack, onStats, onHelp, onSwitch);
+                renderProfilePage(lessonIndex, root, onBack, onStats, onHelp, onSwitch, onParent);
             });
         }
 

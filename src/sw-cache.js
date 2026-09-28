@@ -366,6 +366,7 @@ const SW_CACHE_LIST = [
     "/data/skills.js",
     "/data/spatial.js",
     "/data/types.js",
+    "/data/unitObjects.js",
     "/docs/bevezeto-jelenet.png",
     "/docs/elso-osztaly.md",
     "/docs/evfolyamvalaszto.png",

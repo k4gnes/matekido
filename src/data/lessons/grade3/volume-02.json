@@ -38,7 +38,8 @@
       "generator": "measure-units",
       "options": {
         "count": 8,
-        "kind": "volume"
+        "kind": "volume",
+        "context": true
       }
     },
     {
@@ -47,7 +48,8 @@
       "options": {
         "count": 6,
         "kind": "volume",
-        "advanced": true
+        "advanced": true,
+        "context": true
       }
     },
     {

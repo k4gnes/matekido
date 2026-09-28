@@ -1,3 +1,5 @@
+import { UNIT_OBJECTS } from "../data/unitObjects.js";
+
 const CONVERSIONS = {
     length: [
         { unit: "m", target: "dm", factor: 10, max: 10 },
@@ -74,8 +76,42 @@ function buildNumberOptions(correct, value) {
     return shuffle([correct, ...pool]);
 }
 
+function conversionsFrom(pool, base) {
+    return pool.filter(c => c.unit === base);
+}
+
+function fitsObject(conv, amount) {
+    if (conv.reverse && amount % conv.factor !== 0) return false;
+    const answer = conv.reverse ? amount / conv.factor : amount * conv.factor;
+    return Number.isInteger(answer) && answer >= 1 && answer <= 9999;
+}
+
+function validAmounts(conv, object) {
+    const amounts = [];
+    const step = conv.reverse ? conv.factor : 1;
+    const start = conv.reverse
+        ? Math.ceil(object.min / conv.factor) * conv.factor
+        : object.min;
+
+    for (let amount = start; amount <= object.max; amount += step) {
+        if (fitsObject(conv, amount)) amounts.push(amount);
+    }
+
+    return amounts;
+}
+
+function objectVariants(object, pool) {
+    const variants = [];
+    for (const conv of conversionsFrom(pool, object.base)) {
+        for (const amount of validAmounts(conv, object)) {
+            variants.push({ conv, amount });
+        }
+    }
+    return variants;
+}
+
 export function generateMeasureUnits(options = {}) {
-    const { count = 5, kind = "length", advanced = false, reverse = false } = options;
+    const { count = 5, kind = "length", advanced = false, reverse = false, context = false } = options;
 
     const kinds = kind === "mixed"
         ? ["length", "weight", "volume"]
@@ -91,14 +127,21 @@ export function generateMeasureUnits(options = {}) {
         if (reverse && CONVERSIONS[k + "Reverse"]) {
             pool = [...pool, ...CONVERSIONS[k + "Reverse"]];
         }
-        const conv = pick(pool);
-        const raw = rand(1, conv.max);
-        const value = conv.reverse ? raw * conv.factor : raw;
+
+        const objectVariantsByObject = context
+            ? UNIT_OBJECTS[k].map(object => ({ object, variants: objectVariants(object, pool) }))
+                .filter(entry => entry.variants.length > 0)
+            : [];
+        const entry = objectVariantsByObject.length ? pick(objectVariantsByObject) : null;
+
+        const variant = entry ? pick(entry.variants) : null;
+        const conv = variant ? variant.conv : pick(pool);
+        const value = variant
+            ? variant.amount
+            : (conv.reverse ? rand(1, conv.max) * conv.factor : rand(1, conv.max));
         const correct = conv.reverse ? value / conv.factor : value * conv.factor;
 
-        const optionsArr = buildNumberOptions(correct, value);
-
-        tasks.push({
+        const task = {
             type: "measure-units",
             unit: conv.unit,
             target: conv.target,
@@ -108,8 +151,16 @@ export function generateMeasureUnits(options = {}) {
             advanced,
             reverse: conv.reverse === true,
             question: `Hány ${conv.target} a ${value} ${conv.unit}?`,
-            options: optionsArr
-        });
+            options: buildNumberOptions(correct, value)
+        };
+
+        if (entry) {
+            const { object } = entry;
+            task.context = `${object.emoji} ${object.phrase} ${variant.amount} ${object.base}.`;
+            task.question = `Hány ${conv.target}?`;
+        }
+
+        tasks.push(task);
     }
 
     return tasks;

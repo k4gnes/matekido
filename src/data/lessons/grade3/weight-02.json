@@ -38,7 +38,8 @@
       "generator": "measure-units",
       "options": {
         "count": 8,
-        "kind": "weight"
+        "kind": "weight",
+        "context": true
       }
     },
     {
@@ -46,7 +47,8 @@
       "generator": "measure-units",
       "options": {
         "count": 6,
-        "kind": "weight"
+        "kind": "weight",
+        "context": true
       }
     },
     {

@@ -54,6 +54,13 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
 
     const hintText = (step.advanced && config.hintAdvanced) ? config.hintAdvanced : config.hint;
 
+    if (step.context) {
+        const contextLine = document.createElement("p");
+        contextLine.className = "mu-context";
+        contextLine.textContent = step.context;
+        card.append(contextLine);
+    }
+
     const prompt = document.createElement("p");
     prompt.className = "mu-prompt";
     prompt.textContent = step.question;

@@ -457,6 +457,17 @@ function validateStep(step, ctx) {
             if (!Array.isArray(step.options) || !step.options.includes(step.answer)) {
                 fail(ctx, "options nem tartalmazza a helyes választ");
             }
+            if (step.context !== undefined) {
+                if (typeof step.context !== "string" || step.context.length === 0) {
+                    fail(ctx, "context üres vagy nem szöveg");
+                }
+                if (!step.context.includes(String(step.value)) || !step.context.includes(step.unit)) {
+                    fail(ctx, `context nem tartalmazza a ${step.value} ${step.unit} mennyiséget`);
+                }
+                if (!Number.isInteger(step.answer) || step.answer < 1) {
+                    fail(ctx, `contextes feladat válasza nem pozitív egész: ${step.answer}`);
+                }
+            }
             break;
         }
         case "repeated-addition": {

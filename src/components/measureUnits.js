@@ -21,7 +21,8 @@ const KIND_CONFIG = {
     },
     weight: {
         title: "Súly-mérés",
-        hint: "1 kg = 100 dkg, 1 dkg = 10 g"
+        hint: "1 kg = 100 dkg, 1 dkg = 10 g",
+        hintAdvanced: "1 kg = 100 dkg = 1000 g, 1 t = 1000 kg. Visszafelé 10-szeres, 100-szoros és 1000-szeres osztás"
     },
     volume: {
         title: "Űrtartalom-mérés",

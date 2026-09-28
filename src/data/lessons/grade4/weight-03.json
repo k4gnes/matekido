@@ -1,0 +1,86 @@
+{
+  "id": "grade4-weight-03",
+  "title": "⚖️ Tömeg – a tonnáig, visszafelé is",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "⚖️ Mennyi ez, ha visszafelé számolunk?",
+      "text": "Nagy súlyokat is mérünk: 1 tonna (t) = 1000 kilogramm. A 3. osztályban mindig felfelé váltottunk át – most a másik irány is kell: hány tonna van 3000 kilogrammban? Indulhat a visszafelé átváltás!",
+      "worldTitles": {
+        "racing": {
+          "title": "⚖️ A versenypálya tehermentesítése",
+          "text": "A kamion több tonnát is bír! Hány tonna van 2000 kilogrammban? Számolj át!"
+        },
+        "football": {
+          "title": "⚖️ A csapat teljes tömege",
+          "text": "A teljes csapat együtt súlyosabb, mint hiszed! Hány grammból lesz egy csapat? Számolj át!"
+        },
+        "cooking": {
+          "title": "🥄 A konyha mérlegei",
+          "text": "A szakács nagy adagokat is kimér! Hány dekagramm van 2 kilogrammban? Számolj át!"
+        },
+        "animals": {
+          "title": "🦁 Az állatkert súlyai",
+          "text": "Az állatkertben vannak, amik több tonnát is nyomnak! Hány kilogramm az, ami 1 tonna? Számolj át!"
+        },
+        "space": {
+          "title": "🤖 A rakéta indító súlya",
+          "text": "Az indítóállás több tonnát is nyom! Hány tonna van 7000 kilogrammban? Számolj át!"
+        },
+        "tram": {
+          "title": "🚋 A tehervonat",
+          "text": "A tehervonat nagyon súlyos! Hány tonna van 5000 kilogrammban? Számolj át!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 6,
+        "kind": "weight"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 10,
+        "kind": "weight",
+        "advanced": true,
+        "reverse": true
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "A tonnától a grammig, oda és vissza minden átváltást pontosan megoldottál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Irány a pálya!",
+          "text": "A tonnák is a helyükön vannak, indulhat a verseny! 🏁"
+        },
+        "football": {
+          "title": "⚽ Felszabadult a pálya!",
+          "text": "Ügyesen számoltál visszafelé is, kezdődhet a meccs! 🎉"
+        },
+        "cooking": {
+          "title": "🥄 Finom a menü!",
+          "text": "Pontos dekagrammig mérted a recepteket, a konyha kész! 🍽️"
+        },
+        "animals": {
+          "title": "🦁 Minden állat megmérve!",
+          "text": "Minden súly a megfelelő lett, nagyszerű! 🐾"
+        },
+        "space": {
+          "title": "🤖 Indulhat a küldetés!",
+          "text": "Az indítóállás súlya stimmel, indulhat a rakéta! 🚀"
+        },
+        "tram": {
+          "title": "🚋 Indulhat az út!",
+          "text": "A tehervonat súlya pontos, indulhat a szerelvény! 🚋"
+        }
+      }
+    }
+  ]
+}

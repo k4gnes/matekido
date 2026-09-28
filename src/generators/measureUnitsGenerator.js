@@ -15,6 +15,12 @@ const CONVERSIONS = {
         { unit: "kg", target: "g", factor: 1000, max: 5 },
         { unit: "dkg", target: "g", factor: 10, max: 10 }
     ],
+    weightReverse: [
+        { unit: "g", target: "kg", factor: 1000, max: 5, reverse: true },
+        { unit: "g", target: "dkg", factor: 10, max: 100, reverse: true },
+        { unit: "dkg", target: "kg", factor: 100, max: 10, reverse: true },
+        { unit: "kg", target: "t", factor: 1000, max: 5, reverse: true }
+    ],
     volume: [
         { unit: "l", target: "dl", factor: 10, max: 10 },
         { unit: "l", target: "cl", factor: 100, max: 5 },

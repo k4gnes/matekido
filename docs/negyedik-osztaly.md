@@ -1,6 +1,6 @@
 # Matekidő – 4. osztályos tanmenet
 
-**34 lecke**, 9 kategóriában. Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
+**35 lecke**, 9 kategóriában. Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
 A 3. osztályos tananyag (1000-es számkör) lezárult – a 4. osztály a **10 000-ig bővülő számkörre**, az **írásbeli műveletekre**, a **törtek bevezetésére** és a **geometria** terület/kerület felé forduló kiszélesítésére épül.
 
@@ -51,12 +51,13 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Összetett alakzatok | Összetett alakzatok kerülete és területe | L- és lépcsős alakzatok felbontása | 100 | 3 |
 | Számolásos geometria | Kerület és terület számolással | Képletek használata téglalapnál, négyzetnél | 100 | 3 |
 
-## Gyakorlati tudások (5 lecke)
+## Gyakorlati tudások (6 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
 | Mértékegység-átváltás | Hosszúság, tömeg, űrtartalom átváltása | Átváltás m/dm/cm, kg/dkg/g, l/dl | 1000 | 2 |
 | Űrtartalom | Űrtartalom – a milliliterig | l/dl/cl → ml 1000-ig, majd visszafelé: ml/cl/dl → l (osztás) | 1000 | 3 |
+| Tömeg | Tömeg – a tonnáig, visszafelé is | kg/dkg/g átváltás, majd visszafelé: g → kg/dkg, dkg → kg, kg → t (osztás) | 1000 | 3 |
 | Idő | Óra és perc időtartamok | Kezdés/vég, eltelt idő | 60 | 2 |
 | Pénz | Vásárlás és váltás 10 000-ig | Bankjegyek, fizetés, visszajáró | 10000 | 2 |
 | Terület-egységek | Távolságok és hosszúságok a valóságban | km, m, cm a hétköznapokban | 10000 | 1 |
@@ -88,13 +89,13 @@ A fenti 30 lecke a 4. osztályos tanmenet terve. Tovább tervezett leckék:
 
 ## Státusz
 
-**Megvalósult leckék (34/34):**
+**Megvalósult leckék (35/35):**
 
 - Számfogalom 10 000-ig (7/7): helyiérték, számnevek, szomszédok, összehasonlítás, római számok, kerekítés, táblázatok és diagramok (közös a 3. osztállyal) ✔
 - Műveletek – írásbeli számolás (7/7): írásbeli összeadás, kivonás, szorzás egyjegyűvel, szorzás kétjegyűvel, osztás egyjegyűvel, osztás kétjegyűvel, vegyes írásbeli műveletek ✔
 - Törtek bevezetése (3/3): törtrész nagyobb számokra, törtek jelölése (számláló, nevező), azonos nevezőjű törtek összehasonlítása és műveletei ✔
 - Geometria (7/7): sokszögek és tulajdonságaik (oldalak, csúcsok, átlók), kerület és terület (rácsos, közös a 3. osztállyal), szögek és tükrözés (közös a 3. osztállyal), összetett alakzatok kerülete és területe (L- és lépcsős alakzatok), kerület és terület számolással (képletek téglalapnál és négyzetnél) ✔
-- Gyakorlati tudások (5/5): mértékegység-átváltás hosszúság/tömeg/űrtartalom 1000-ig, idő – óra és perc tartamok (kezdés/vég/eltelt idő), vásárlás és visszajáró 10 000-ig, távolságok és hosszúságok a valóságban (km, m, cm a hétköznapokban), űrtartalom a milliliterig (l, dl, cl, ml) ✔
+- Gyakorlati tudások (6/6): mértékegység-átváltás hosszúság/tömeg/űrtartalom 1000-ig, idő – óra és perc tartamok (kezdés/vég/eltelt idő), vásárlás és visszajáró 10 000-ig, távolságok és hosszúságok a valóságban (km, m, cm a hétköznapokban), űrtartalom a milliliterig (l, dl, cl, ml) ✔, tömeg a tonnáig visszafelé (kg, dkg, g, t) ✔
 - Szöveges feladatok (2/2): többlépéses szöveges feladatok két lépésben 1000-ig (összeadás-kivonás, kivonás-összeadás, szorzás-összeadás) ✔, arányos szöveges feladatok (a fele, a harmada) 1000-ig ✔
 
 A 4. osztályos terv minden leckéje megvalósult. Utóbbiak a „Tervezett kiegészítések" szekcióban ellenőrizhetők.

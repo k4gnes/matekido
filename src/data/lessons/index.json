@@ -1623,7 +1623,7 @@
                 2
             ],
             "category": "practical",
-            "skill": "weight",
+            "skill": "mass",
             "difficulty": 2,
             "type": "weight",
             "mission": "⚖️ Melyik nehezebb?",
@@ -1636,6 +1636,51 @@
                 "animals": "🦁 Melyik tárgy nehezebb?",
                 "space": "🤖 Melyik tárgy nehezebb?",
                 "tram": "🚋 Melyik tárgy nehezebb?"
+            }
+        },
+        {
+            "id": "weight-02",
+            "title": "⚖️ Tömeg – kilogramm, dekagramm, gramm",
+            "grades": [
+                3
+            ],
+            "category": "practical",
+            "skill": "mass",
+            "difficulty": 2,
+            "type": "measure-units",
+            "mission": "⚖️ Tömeg – kilogramm, dekagramm, gramm",
+            "subtitle": "kg, dkg, g átváltása",
+            "file": "./data/lessons/grade3/weight-02.json",
+            "worldTitles": {
+                "racing": "⚖️ A versenypálya mérlege",
+                "cooking": "⚖️ A konyhai mérleg",
+                "football": "⚖️ A játékosok súlya",
+                "animals": "⚖️ Az állatok súlya",
+                "space": "🤖 A rakéta részeinek tömege",
+                "tram": "🚋 A szerelvény tömege"
+            }
+        },
+        {
+            "id": "weight-03",
+            "title": "⚖️ Tömeg – a tonnáig, visszafelé is",
+            "grades": [
+                4
+            ],
+            "category": "practical",
+            "skill": "mass",
+            "difficulty": 3,
+            "type": "measure-units",
+            "range": 1000,
+            "mission": "⚖️ Tömeg – a tonnáig, visszafelé is",
+            "subtitle": "kg, dkg, g átváltása, majd visszafelé a tonnáig",
+            "file": "./data/lessons/grade4/weight-03.json",
+            "worldTitles": {
+                "racing": "⚖️ A versenypálya tehermentesítése",
+                "cooking": "🥄 A konyha mérlegei",
+                "football": "⚖️ A csapat teljes tömege",
+                "animals": "🦁 Az állatkert súlyai",
+                "space": "🤖 A rakéta indító súlya",
+                "tram": "🚋 A tehervonat"
             }
         },
         {

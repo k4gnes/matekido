@@ -22,7 +22,7 @@ Interaktív matematikai tanulási platform magyar gyerekeknek (első osztálytó
 
 - `src/index.html` – az egyetlen HTML, minden CSS/JS verzióparaméterrel hivatkozott.
 - `src/app.js` – belépési pont, navigáció (welcome → menü → lecke → profil/statisztika).
-- `src/data/lessons/index.json` – lecke-regiszter (169 lecke: 1. osztály 42, 2. osztály 55, 3. osztály 46, 4. osztály 34 – egy lecke több évfolyamhoz is tartozhat, ezért az összeg nagyobb a fájlok számánál). Metaadatok: `id`, `title`, `grades`, `category`, `skill`, `difficulty`, `type`, `range`, `mission`, `subtitle`, `file`, `worldTitles`.
+- `src/data/lessons/index.json` – lecke-regiszter (171 lecke: 1. osztály 42, 2. osztály 55, 3. osztály 47, 4. osztály 35 – egy lecke több évfolyamhoz is tartozhat, ezért az összeg nagyobb a fájlok számánál). Metaadatok: `id`, `title`, `grades`, `category`, `skill`, `difficulty`, `type`, `range`, `mission`, `subtitle`, `file`, `worldTitles`.
 - `src/data/lessons/gradeN/*.json` – lecke-fájlok. `steps` listából állnak (`type: "scene"`, `"exercise"`, …), `worldTitles` a világok szerinti szövegek.
 - `src/engine/` – `Game.js` (lecke futtatás), `LessonLoader.js` (JSON betöltés), `Renderer.js`.
 - `src/builders/LessonBuilder.js` – nyers leckéből futtatható lecke.

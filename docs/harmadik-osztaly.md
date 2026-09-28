@@ -1,6 +1,6 @@
 # Matekidő – 3. osztályos készségtérkép
 
-**46 lecke**, 9 kategóriában. Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
+**47 lecke**, 9 kategóriában. Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
 A 2. osztályos tananyag lezárult – a 3. osztály **nagyobb számkörre (1000-ig)**, a **szorzás és osztás bővítésére** épül.
 
@@ -89,12 +89,13 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Tükrözés | Tükrözés és szimmetria | Tükörkép felismerése (közös a 2. osztállyal) | – | 2 |
 | Kör | Kör – középpont, sugár, átmérő | A kör részeinek felismerése | – | 1 |
 
-## Gyakorlati tudások (5 lecke)
+## Gyakorlati tudások (6 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
 | Mértékegység | Mértékegység-átváltás | km/m, m/dm/cm/mm, kg/dkg, l/dl (mixed) | – | 2 |
 | Űrtartalom | Űrtartalom – liter, deciliter, centiliter | l/dl, l/cl, dl/cl átváltás, majd ml-ig | 1000 | 2 |
+| Tömeg | Tömeg – kilogramm, dekagramm, gramm | kg/dkg, kg/g, dkg/g átváltás | 1000 | 2 |
 | Idő | Idő – perc és óra | Perc és óra átváltása (choice + input) | – | 2 |
 | Pénz | Vásárlás 1000-ig | Fizetés 200 és 500 forintos bankjegyekkel | 1000 | 2 |
 | Naptár | Naptár és év | Év, hónap, hét, nap kapcsolata | – | 2 |

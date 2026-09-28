@@ -1,0 +1,84 @@
+{
+  "id": "grade3-weight-02",
+  "title": "⚖️ Tömeg – kilogramm, dekagramm, gramm",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "⚖️ Mennyi súlya van?",
+      "text": "A tömeget kilogrammban (kg), dekagrammban (dkg) és grammban (g) mérjük. Figyeld meg: 1 kilogrammban 100 dekagramm van, 1 dekagrammban 10 gramm! Átváltásra fel!",
+      "worldTitles": {
+        "racing": {
+          "title": "⚖️ A versenypálya mérlege",
+          "text": "A szerelők pontosan mérnek minden alkatrészt! Kilogramm, dekagramm, gramm – számoljunk át!"
+        },
+        "football": {
+          "title": "⚖️ A játékosok súlya",
+          "text": "Az orvos minden játékost lemér! Hány gramm egy lejtő? Számolj át!"
+        },
+        "cooking": {
+          "title": "⚖️ A konyhai mérleg",
+          "text": "A szakács mindent pontosan kimér! Dekagramm és gramm – mennyi kell a recepthez?"
+        },
+        "animals": {
+          "title": "⚖️ Az állatok súlya",
+          "text": "Az állatgondozók minden állatot lemérnek! Hány dekagramm az újszülött cica? Számolj át!"
+        },
+        "space": {
+          "title": "🤖 A rakéta részeinek tömege",
+          "text": "Az űrhajó alkatrészeit grammban mérjük! Kilogramm, dekagramm, gramm – számoljunk át!"
+        },
+        "tram": {
+          "title": "🚋 A szerelvény tömege",
+          "text": "A villamos nagyon nehéz! Hány tonna a szerelvény? Számoljunk át a súlyával!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 8,
+        "kind": "weight"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 6,
+        "kind": "weight"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Most már a kilogramm, a dekagramm és a gramm is a barátod!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Irány a pálya!",
+          "text": "Jól mérted az alkatrészeket, indulhat a verseny! 🏁"
+        },
+        "football": {
+          "title": "⚽ Felszabadult a pálya!",
+          "text": "Ügyesen számoltál a grammokkal, kezdődhet a meccs! 🎉"
+        },
+        "cooking": {
+          "title": "🥄 Finom a menü!",
+          "text": "Pontosan kimérted a recepteket, a konyha kész! 🍽️"
+        },
+        "animals": {
+          "title": "🦁 Minden állat megmérve!",
+          "text": "Minden állatot sikerült lemérned, nagyszerű! 🐾"
+        },
+        "space": {
+          "title": "🤖 Indulhat a küldetés!",
+          "text": "Az alkatrészek tömege pontosan egyezik, indulhat a rakéta! 🚀"
+        },
+        "tram": {
+          "title": "🚋 Indulhat az út!",
+          "text": "A súlyok megvannak mérve, indulhat a villamos! 🚋"
+        }
+      }
+    }
+  ]
+}

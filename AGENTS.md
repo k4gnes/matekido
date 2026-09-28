@@ -20,16 +20,16 @@ Interaktív matematikai tanulási platform magyar gyerekeknek (első osztálytó
 
 ## Szerkezet
 
-- `src/index.html` – az egyetlen HTML, minden CSS/JS verzióparaméterrel hivatkozott (`?v=9`).
+- `src/index.html` – az egyetlen HTML, minden CSS/JS verzióparaméterrel hivatkozott.
 - `src/app.js` – belépési pont, navigáció (welcome → menü → lecke → profil/statisztika).
-- `src/data/lessons/index.json` – lecke-regiszter (111 lecke). Metaadatok: `id`, `title`, `grades`, `category`, `skill`, `difficulty`, `type`, `range`, `mission`, `subtitle`, `file`, `worldTitles`.
+- `src/data/lessons/index.json` – lecke-regiszter (167 lecke: 1. osztály 42, 2. osztály 55, 3. osztály 45, 4. osztály 33 – egy lecke több évfolyamhoz is tartozhat, ezért az összeg nagyobb a fájlok számánál). Metaadatok: `id`, `title`, `grades`, `category`, `skill`, `difficulty`, `type`, `range`, `mission`, `subtitle`, `file`, `worldTitles`.
 - `src/data/lessons/gradeN/*.json` – lecke-fájlok. `steps` listából állnak (`type: "scene"`, `"exercise"`, …), `worldTitles` a világok szerinti szövegek.
 - `src/engine/` – `Game.js` (lecke futtatás), `LessonLoader.js` (JSON betöltés), `Renderer.js`.
 - `src/builders/LessonBuilder.js` – nyers leckéből futtatható lecke.
 - `src/generators/` – feladatgenerátorok (`XxxGenerator.js`), `index.js`-ben gyűjtve.
 - `src/components/` – a feladattípusok renderelői (egy fájl = egy feladat), `ui/` és `hints/` kisebb építőelemek.
 - `src/math/` – számolási segédek (`addition.js`, `subtraction.js`, `number.js`).
-- `src/world/` – világok (`World.js`, `WorldRegistry.js`).
+- `src/world/` – világok (`World.js`, `WorldRegistry.js` – 8 világ: postman, racing, cooking, football, animals, space, tram, castle).
 - `src/profile/` – játékosprofilok, statisztika, eredmények.
 - `src/assets/` – ikonok (PWA), képek, (üres) hangok.
 - `src/manifest.webmanifest`, `src/sw.js` – PWA fájlok a `src/` gyökerében.
@@ -54,7 +54,7 @@ Interaktív matematikai tanulási platform magyar gyerekeknek (első osztálytó
 
 - `sw.js` és `manifest.webmanifest` a `src/` gyökerében – a web gyökér a `src/`, így a `/sw.js` scope a `/`-t, a `/assets/...`-t és az egész appot lefedi.
 - A service worker network-first: online mindig friss tartalom, offline cache. Az install során az EGÉSZ appot precache-eli a generált `sw-cache.js` lista alapján, így offline rögtön az összes lecke elérhető.
-- Új/eltűnt fájl (pl. új lecke) után futtatni kell a `node src/generateSWCache.js`-t. Nincs automatizált verzió-bump – nagy fájlstruktúra-változásnál a `sw.js` tetején lévő `CACHE` (`matekido-v2`) értékét növeld.
+- Új/eltűnt fájl (pl. új lecke) után futtatni kell a `node src/generateSWCache.js`-t (jelenleg 479 fájl). Nincs automatizált verzió-bump – nagy fájlstruktúra-változásnál a `sw.js` tetején lévő `CACHE` (`matekido-v64`) értékét növeld.
 - Ha a `src/index.html`-ben `?v=` paramétert emelsz, a SW online módban automatikusan az új fájlt adja.
 - Ikonok: `src/assets/icons/` (`icon-*`, `maskable-*`, `apple-touch-icon.png`, SVG források).
 - Telepíthetőséghez HTTPS kell (localhoston a `make start` is jó). Deploy: nincs konfigurálva, pl. GitHub Pages / Netlify.

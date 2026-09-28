@@ -20,7 +20,7 @@ function getGradeProgress(lessonIndex, grade) {
     return { total, done, completed: total > 0 && done === total };
 }
 
-export function renderProfilePage(lessonIndex, root, onBack, onStats, onHelp, onSwitch, onParent) {
+export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, onSwitch, onParent }) {
 
     root.replaceChildren();
 
@@ -201,7 +201,7 @@ export function renderProfilePage(lessonIndex, root, onBack, onStats, onHelp, on
             item.addEventListener("click", () => {
                 setActiveWorld(world.id);
                 document.body.dataset.world = world.id;
-                renderProfilePage(lessonIndex, root, onBack, onStats, onHelp, onSwitch, onParent);
+                renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, onSwitch, onParent });
             });
         }
 

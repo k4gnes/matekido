@@ -1,11 +1,11 @@
 import { Game } from "./engine/Game.js?v=95";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=25";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=80";
-import { renderSkillMap } from "./components/skillMap.js?v=25";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=81";
+import { renderSkillMap } from "./components/skillMap.js?v=26";
 import { renderHelp } from "./components/help.js?v=6";
-import { renderProfilePage } from "./components/profilePage.js?v=11";
-import { renderStatsPage } from "./components/statsPage.js?v=9";
+import { renderProfilePage } from "./components/profilePage.js?v=12";
+import { renderStatsPage } from "./components/statsPage.js?v=10";
 import { getNextPracticeLesson } from "./components/practicePage.js?v=9";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=9";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=7";
@@ -104,16 +104,16 @@ function showMenu() {
     setTipVisible(true);
     setRoute("menu");
 
-    renderLessonMenu(
-        lessonIndex,
+    renderLessonMenu({
+        index: lessonIndex,
         root,
-        startLesson,
-        showProfile,
-        showWelcome,
-        showParentHub,
-        () => showHelp(),
-        showStats
-    );
+        onSelect: startLesson,
+        onProfile: showProfile,
+        onSwitch: showWelcome,
+        onParent: showParentHub,
+        onHelp: () => showHelp(),
+        onStats: showStats
+    });
 
 }
 
@@ -169,7 +169,15 @@ function showProfile() {
     setWorldBackground();
     setTipVisible(true);
     setRoute("profile");
-    renderProfilePage(lessonIndex, root, showMenu, showStats, () => showHelp(), showWelcome, showParentHub);
+    renderProfilePage({
+        lessonIndex,
+        root,
+        onBack: showMenu,
+        onStats: showStats,
+        onHelp: () => showHelp(),
+        onSwitch: showWelcome,
+        onParent: showParentHub
+    });
 }
 
 function showStats() {

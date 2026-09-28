@@ -143,7 +143,7 @@ Az egész app leckékből és feladatokból áll, ezért tisztázzuk, miben kül
 Egy feladat közben:
 
 - A kártya jobb felső sarkában három gomb van: a [[?]] gombra előjön a feladat utasítása (mit kell csinálni), a [[❤️]] gombbal kedvenccé teheted a leckét (🤍-re váltva leveszed), a [[📚]] gombbal pedig a leckékhez lépsz ki.
-- Sok feladatnál van {{💡 Segítséget kérek}} gomb – kattints rá, és lépésről lépésre vezető segítséget kapsz. A segítség csak akkor jelenik meg, ha kérsz: néhány hiba után bukkan fel a gomb.
+- A számolásos feladatoknál (összeadás, kivonás, vegyes műveletek, becslés, írásbeli műveletek, írásbeli osztás, maradékos osztás) és néhány geometriai feladatnál (hosszúság-mértékegységek, összetett alakzat, sokszög, alakzat-képlet) van {{💡 Segítséget kérek}} gomb – kattints rá, és lépésről lépésre vezető segítséget kapsz. A segítség csak akkor jelenik meg, ha kérsz: néhány hiba után bukkan fel a gomb.
 - **Soha nem büntetünk**: hibás válasznál nincs büntetés, csak újrapróbálhatod, amíg sikerül.
 
 ## ⭐ Csillagok, küldetések, mérföldkövek és kitűzők

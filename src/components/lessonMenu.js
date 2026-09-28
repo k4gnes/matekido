@@ -589,7 +589,7 @@ function pickNextForGrade(gradeLessons, skippedFiles = new Set(getSkippedLessons
 
 }
 
-export function renderLessonMenu(index, root, onSelect, onProfile, onSwitch, onParent, onHelp, onStats) {
+export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, onParent, onHelp, onStats }) {
     root.replaceChildren();
 
     const wrapper = createCard();

@@ -15,7 +15,7 @@ export function createNavBar({ current = null, player = null, onLessons, onProfi
     label.textContent = "matekidő";
     header.append(logo, label);
 
-if (onParent) {
+    if (onParent) {
         const parentBtn = createButton("👪 Szülői", {
             className: "app-parent-btn" + (current === "parent" ? " active" : ""),
             onClick: onParent

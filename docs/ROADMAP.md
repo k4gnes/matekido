@@ -5,15 +5,28 @@
 - [x] Landing page
 
 ## v0.2
-- [ ] Első játék
-- [ ] Pontszám
-- [ ] Gratuláló képernyő
+- [x] Első játék
+- [x] Pontszám
+- [x] Gratuláló képernyő
 
 ## v0.3
-- [ ] Feladatmotor
-- [ ] JSON alapú feladatok
+- [x] Feladatmotor
+- [x] JSON alapú feladatok
 
 ## v1.0
-- [x] Első osztály
-- [ ] Negyedik osztály
-- [ ] Szülői felület
+- [x] Első osztály (42 lecke)
+- [x] Második osztály (55 lecke)
+- [x] Harmadik osztály (45 lecke)
+- [x] Negyedik osztály (33 lecke)
+- [x] Szülői felület (statisztika, export/import, játékoskezelés)
+
+## v1.1 – világok
+- [x] 8 világ (postahivatal, verseny, konyha, foci, állatkert, űr, villamos, kastély)
+- [x] Világváltás a profiloldalon
+- [x] Világ-specifikus lecketitkok és teljesítmények
+
+## v1.2 – további évfolyamok
+- [ ] Ötödik osztály (terv: `docs/otodik-osztaly.md`, 32 lecke)
+- [ ] Hatodik osztály
+- [ ] Hetedik osztály
+- [ ] Nyolcadik osztály

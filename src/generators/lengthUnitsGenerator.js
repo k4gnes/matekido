@@ -39,9 +39,10 @@ export function generateLengthUnits(options = {}) {
     const { count = 5 } = options;
 
     const tasks = [];
+    const deck = count <= FACTS.length ? shuffle([...FACTS]) : null;
 
     for (let i = 0; i < count; i++) {
-        const fact = pick(FACTS);
+        const fact = deck ? deck[i] : pick(FACTS);
         const units = shuffle(["cm", "m", "km"]);
 
         tasks.push({

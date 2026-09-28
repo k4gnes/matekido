@@ -38,25 +38,22 @@
                 }
             }
         },
-
         {
             "type": "exercise",
             "generator": "length-units",
-
             "options": {
                 "count": 6
             }
         },
-
         {
             "type": "exercise",
-            "generator": "length-units",
-
+            "generator": "measure-units",
             "options": {
-                "count": 6
+                "count": 6,
+                "kind": "length",
+                "interaction": "unit"
             }
         },
-
         {
             "type": "celebration",
             "title": "🎉 Ügyes vagy!",

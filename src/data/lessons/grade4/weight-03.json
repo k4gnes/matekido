@@ -56,6 +56,15 @@
       }
     },
     {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 5,
+        "kind": "weight",
+        "interaction": "unit"
+      }
+    },
+    {
       "type": "celebration",
       "title": "🎉 Ügyes voltál!",
       "text": "A tonnától a grammig, oda és vissza minden átváltást pontosan megoldottál!",

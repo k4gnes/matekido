@@ -55,6 +55,15 @@
       }
     },
     {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 5,
+        "kind": "volume",
+        "interaction": "unit"
+      }
+    },
+    {
       "type": "celebration",
       "title": "🎉 Ügyes voltál!",
       "text": "Most már a liter, deciliter és centiliter is a barátod!",

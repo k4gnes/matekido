@@ -121,6 +121,34 @@ function measureUnitFactor(unit, target) {
     return UNIT_FACTORS[`${unit}-${target}`] ?? null;
 }
 
+const UNIT_FAMILY = {
+    length: ["km", "m", "dm", "cm", "mm"],
+    weight: ["t", "kg", "dkg", "g"],
+    volume: ["l", "dl", "cl", "ml"]
+};
+
+function validateUnitChoice(ctx, step) {
+    if (typeof step.answer !== "string") fail(ctx, `unit módban answer szöveg kell: ${step.answer}`);
+    if (step.unit !== step.answer) fail(ctx, `answer (${step.answer}) != unit (${step.unit})`);
+    if (!UNIT_FAMILY[step.kind].includes(step.answer)) {
+        fail(ctx, `answer nem tartozik a ${step.kind} családhoz: ${step.answer}`);
+    }
+    if (!Array.isArray(step.unitOptions) || step.unitOptions.length !== 4) {
+        fail(ctx, `unitOptions elemszáma hibás: ${step.unitOptions?.length}`);
+    } else {
+        if (new Set(step.unitOptions).size !== 4) fail(ctx, "unitOptions ismétlődik");
+        if (!step.unitOptions.includes(step.answer)) fail(ctx, "unitOptions nem tartalmazza a választ");
+        step.unitOptions.forEach(u => {
+            if (!UNIT_FAMILY[step.kind].includes(u)) fail(ctx, `unitOptions idegen egység: ${u}`);
+        });
+    }
+    if (typeof step.context !== "string" || !step.context.includes("____")) {
+        fail(ctx, "unit módban a contextnek kitöltendő vonalat kell tartalmaznia");
+    }
+    if (step.options !== undefined) fail(ctx, "unit módban nem kell options");
+    if (step.target !== undefined) fail(ctx, "unit módban nem kell target");
+}
+
 function validateStep(step, ctx) {
     if (!step || typeof step !== "object") {
         fail(ctx, "lépés nem objektum");
@@ -444,6 +472,10 @@ function validateStep(step, ctx) {
         case "measure-units": {
             if (!isInt(step.value) || step.value < 1) fail(ctx, `value hibás: ${step.value}`);
             if (!["length", "weight", "volume"].includes(step.kind)) fail(ctx, `kind hibás: ${step.kind}`);
+            if (step.interaction === "unit") {
+                validateUnitChoice(ctx, step);
+                break;
+            }
             if (!["km", "m", "dm", "cm", "kg", "dkg", "g", "l", "dl", "cl", "ml", "mm", "t"].includes(step.unit) ||
                 !["km", "m", "dm", "cm", "kg", "dkg", "g", "l", "dl", "cl", "ml", "mm", "t"].includes(step.target)) {
                 fail(ctx, `unit/target ismeretlen: ${step.unit} → ${step.target}`);

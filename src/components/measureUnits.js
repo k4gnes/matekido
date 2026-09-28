@@ -67,10 +67,12 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
     card.append(prompt);
 
     const mode = step.interaction ?? "choice";
+    const isUnitMode = mode === "unit";
+    const choiceSelector = isUnitMode ? ".mu-unit" : ".mu-option";
 
     let input = null;
     let submitButton = null;
-    let optionsContainer = null;
+    let choiceBox = null;
 
     if (mode === "input") {
         input = document.createElement("input");
@@ -83,19 +85,21 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
         submitButton = createButton("Ellenőrzöm", { onClick: submitAnswer });
         card.append(submitButton);
     } else {
-        optionsContainer = document.createElement("div");
-        optionsContainer.className = "mu-options";
+        choiceBox = document.createElement("div");
+        choiceBox.className = isUnitMode ? "mu-units" : "mu-options";
 
-        step.options.forEach(value => {
+        const choices = isUnitMode ? step.unitOptions : step.options;
+
+        choices.forEach(choice => {
             const btn = document.createElement("button");
             btn.type = "button";
-            btn.className = "mu-option";
-            btn.textContent = value;
-            btn.dataset.value = value;
-            optionsContainer.append(btn);
+            btn.className = isUnitMode ? "mu-unit" : "mu-option";
+            btn.textContent = choice;
+            btn.dataset.value = choice;
+            choiceBox.append(btn);
         });
 
-        card.append(optionsContainer);
+        card.append(choiceBox);
     }
 
     let hintShown = false;
@@ -126,6 +130,11 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
         onAttempt
     });
 
+    function successText() {
+        if (isUnitMode) return `🎉 Ügyes! ${step.value} ${step.answer} a helyes egység`;
+        return `🎉 Ügyes! ${step.value} ${step.unit} = ${step.answer} ${step.target}`;
+    }
+
     function checkAnswer(isCorrect) {
         if (feedback.isAnswered()) return;
 
@@ -133,10 +142,10 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
             if (input) {
                 input.disabled = true;
                 submitButton.disabled = true;
-            } else if (optionsContainer) {
-                optionsContainer.querySelectorAll("button").forEach(b => b.style.pointerEvents = "none");
+            } else if (choiceBox) {
+                choiceBox.querySelectorAll("button").forEach(b => b.style.pointerEvents = "none");
             }
-            feedback.success(`🎉 Ügyes! ${step.value} ${step.unit} = ${step.answer} ${step.target}`);
+            feedback.success(successText());
         } else {
             feedback.retry();
 
@@ -166,12 +175,11 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
             if (e.key === "Enter") submitAnswer();
         }, { signal: ac.signal });
     } else {
-        optionsContainer.addEventListener("click", (e) => {
-            const btn = e.target.closest(".mu-option");
+        choiceBox.addEventListener("click", (e) => {
+            const btn = e.target.closest(choiceSelector);
             if (!btn || feedback.isAnswered()) return;
 
-            const value = Number(btn.dataset.value);
-            const ok = value === step.answer;
+            const ok = String(btn.dataset.value) === String(step.answer);
 
             if (ok) markCorrect(btn);
 

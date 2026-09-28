@@ -42,6 +42,42 @@ const CONVERSIONS = {
     ]
 };
 
+const UNIT_FAMILY = {
+    length: ["km", "m", "dm", "cm", "mm"],
+    weight: ["t", "kg", "dkg", "g"],
+    volume: ["l", "dl", "cl", "ml"]
+};
+
+const UNIT_MEASURE_WORD = {
+    length: "hossza",
+    weight: "súlya",
+    volume: "űrtartalma"
+};
+
+function roundNice(value) {
+    if (value >= 1000) return Math.round(value / 100) * 100;
+    if (value >= 100) return Math.round(value / 10) * 10;
+    return value;
+}
+
+function buildUnitChoiceTask(k, object, amount) {
+    const family = UNIT_FAMILY[k].filter(u => u !== object.base);
+    const unitOptions = shuffle([object.base, ...shuffle(family).slice(0, 3)]);
+    const nice = roundNice(amount);
+
+    return {
+        type: "measure-units",
+        kind: k,
+        value: nice,
+        unit: object.base,
+        answer: object.base,
+        unitOptions,
+        interaction: "unit",
+        question: "Melyik egység illik ide?",
+        context: `${object.emoji} ${object.phrase} ${UNIT_MEASURE_WORD[k]} ${nice} ____`
+    };
+}
+
 function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -121,6 +157,14 @@ export function generateMeasureUnits(options = {}) {
 
     for (let i = 0; i < count; i++) {
         const k = pick(kinds);
+        const mode = interaction === "mixed" ? pick(["choice", "input"]) : interaction;
+
+        if (mode === "unit") {
+            const object = pick(UNIT_OBJECTS[k]);
+            tasks.push(buildUnitChoiceTask(k, object, rand(object.min, object.max)));
+            continue;
+        }
+
         let pool = (advanced && CONVERSIONS[k + "Advanced"])
             ? [...CONVERSIONS[k], ...CONVERSIONS[k + "Advanced"]]
             : CONVERSIONS[k];
@@ -140,7 +184,6 @@ export function generateMeasureUnits(options = {}) {
             ? variant.amount
             : (conv.reverse ? rand(1, conv.max) * conv.factor : rand(1, conv.max));
         const correct = conv.reverse ? value / conv.factor : value * conv.factor;
-        const mode = interaction === "mixed" ? pick(["choice", "input"]) : interaction;
 
         const task = {
             type: "measure-units",

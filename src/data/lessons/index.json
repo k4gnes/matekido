@@ -3220,52 +3220,6 @@
       "range": 1
     },
     {
-      "id": "measure-units-02",
-      "title": "📏 Mértékegység-átváltás",
-      "grades": [
-        3
-      ],
-      "category": "practical",
-      "skill": "length",
-      "difficulty": 2,
-      "type": "measure-units",
-      "mission": "📏 Mértékegység-átváltás",
-      "subtitle": "m, dm, cm, kg, dkg, l, dl átváltása",
-      "file": "./data/lessons/grade3/measure-units-02.json",
-      "worldTitles": {
-        "racing": "🔧 Mértékegység-átváltás a boxutcában",
-        "cooking": "🥄 Mértékegység-átváltás a konyhában",
-        "football": "⚽ Mértékegység-átváltás a pályán",
-        "animals": "🦁 Mértékegység-átváltás az állatkertben",
-        "space": "🤖 Mértékegység-átváltás az űrhajón",
-        "tram": "🚋 Mértékegység-átváltás a villamoson"
-      }
-    },
-    {
-      "id": "measure-units-03",
-      "title": "📏 Mértékegység-átváltás 1000-ig",
-      "grades": [
-        4
-      ],
-      "category": "practical",
-      "skill": "length",
-      "difficulty": 2,
-      "type": "measure-units",
-      "range": 1000,
-      "mission": "📏 Mértékegység-átváltás",
-      "subtitle": "hosszúság, tömeg, űrtartalom átváltása 1000-ig",
-      "file": "./data/lessons/grade4/measure-units-03.json",
-      "worldTitles": {
-        "postman": "📏 Mértékegységek a postán",
-        "racing": "🔧 Mértékegység-átváltás a boxutcában",
-        "cooking": "🥄 Mértékegység-átváltás a konyhában",
-        "football": "⚽ Mértékegység-átváltás a pályán",
-        "animals": "🦁 Mértékegység-átváltás az állatkertben",
-        "space": "🤖 Mértékegység-átváltás az űrhajón",
-        "tram": "🚋 Mértékegység-átváltás a villamoson"
-      }
-    },
-    {
       "id": "time-convert-01",
       "title": "🕐 Idő – perc és óra",
       "grades": [

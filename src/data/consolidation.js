@@ -67,7 +67,9 @@ export const CONSOLIDATION_LESSONS = {
         "mixed-1000-01",
         "perimeter-01",
         "area-01",
-        "measure-units-02",
+        "length-02",
+        "volume-02",
+        "weight-02",
         "time-convert-01",
         "money-pay-03"
     ]

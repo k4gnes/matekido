@@ -102,10 +102,10 @@ Ennek a dokumentumnak a célja, hogy a **4. osztályos tananyagot** (35 lecke, 7
 | # | Ellenőrzés | Várt eredmény | Eredmény |
 |---|-----------|---------------|----------|
 | a | Az 1. blokk (4 feladat) | Előre átváltás (nagyobb egység → kisebb): m→cm, l→dl, kg→g | |
-| b | A 2. blokk (5 feladat) | **Visszafelé** egységben is jön feladat (≈ 1/3): pl. 3000 g = 3 kg, 40 dl = 4 l, 30 cm = 3 dm | |
+| b | A 2. blokk (5 feladat) | Fordított átváltás: pl. 3000 g = 3 kg, 40 dl = 4 l, 30 cm = 3 dm. **Az összehasonlítás nem fordított**, ezért a visszafelé feladatok száma leckénként 4–5 a 11-ből (kb. 36–45%) – ez nem hiba | |
 | c | A 3. blokk (2 feladat) | Csak egységválasztás: „🐜 Egy hangya hossza 5 ____” → mm | |
-| d | Feladatformák | Mind az 5 jelen van: válaszlista, beírás, egységválasztás, igaz-hamis, összehasonlítás (`< = >`) | |
-| e | Összehasonlítás feladat | Két oldal különböző egységben, a kiegyenlítés a cél (pl. 80 g ? 2 dkg) | |
+| d | Feladatformák | Mindegyik forma: válaszlista, beírás, egységválasztás, igaz-hamis, összehasonlítás (`< = >`). **A forma blokkonként véletlenül választott:** egy leckefuttatásban mind az 5 csak kb. 70%-ban jelen meg (200 futásból mérve), a `unit` forma viszont mindig. Ha hiányzik egy, indítsd újra a leckét | |
+| e | Összehasonlítás feladat | Két oldal különböző egységben, ahol az átváltás dönt: pl. `900 dkg > 4 kg` (90 kg vs 4 kg), `1 t = 1 000 000 g`. A kérdés fajtánként: „Melyik a hosszabb?" / „Melyik a nehezebb?" / „Melyikben van több?" | |
 | f | Tárgyak | Minden kontextusos feladat előtt valós tárgy van, értelmes nagysággal (fa, vödör, elefánt, tojás…) | |
 | g | Rejtett súgó | A súgó gomb **két hiba után** jelenik meg, a táblázat csak kattintásra | |
 | h | Ugyanaz a lecke újra | Más feladatok jönnek (generátor véletlen) | |

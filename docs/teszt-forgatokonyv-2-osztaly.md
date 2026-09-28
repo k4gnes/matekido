@@ -1,6 +1,6 @@
 # Matekidő – 2. osztály manuális tesztforgatókönyv
 
-Ennek a dokumentumnak a célja, hogy a **2. osztályos tananyagot** (55 lecke, 6 világ, számkör 100-ig + szorzás/osztás 2, 3, 4, 5, 10-es táblákkal) a böngészőben kézzel végigteszteljük: minden lecke helyesen épül fel, a feladatok a megjelölt tartományban vannak, a jó/rossz válasz kezelése helyes, és a lecke a celebrációval zárul.
+Ennek a dokumentumnak a célja, hogy a **2. osztályos tananyagot** (55 lecke, 7 világ, számkör 100-ig + szorzás/osztás 2, 3, 4, 5, 10-es táblákkal) a böngészőben kézzel végigteszteljük: minden lecke helyesen épül fel, a feladatok a megjelölt tartományban vannak, a jó/rossz válasz kezelése helyes, és a lecke a celebrációval zárul.
 
 - **Szerver:** `make start` (localhost:8000) – a `src/` mappát szolgálja ki.
 - **Böngésző:** Asztali (Chrome / Firefox / Edge) + legalább egyszer telefon méretű nézet.

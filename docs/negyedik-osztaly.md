@@ -55,7 +55,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
-| Mértékegység-átváltás | Hosszúság, tömeg, űrtartalom átváltása | Átváltás m/dm/cm, kg/dkg/g, l/dl | 1000 | 2 |
+| Hosszúság | Hosszúság – a milliméterig, visszafelé is | m/dm/cm + mm, km; visszafelé mm→cm, cm→dm, m→km (osztás) | 1000 | 3 |
 | Űrtartalom | Űrtartalom – a milliliterig | l/dl/cl → ml 1000-ig, majd visszafelé: ml/cl/dl → l (osztás) | 1000 | 3 |
 | Tömeg | Tömeg – a tonnáig, visszafelé is | kg/dkg/g átváltás, majd visszafelé: g → kg/dkg, dkg → kg, kg → t (osztás) | 1000 | 3 |
 | Idő | Óra és perc időtartamok | Kezdés/vég, eltelt idő | 60 | 2 |

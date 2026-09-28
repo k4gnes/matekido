@@ -93,9 +93,9 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
-| Mértékegység | Mértékegység-átváltás | km/m, m/dm/cm/mm, kg/dkg, l/dl (mixed) | – | 2 |
-| Űrtartalom | Űrtartalom – liter, deciliter, centiliter | l/dl, l/cl, dl/cl átváltás, majd ml-ig | 1000 | 2 |
-| Tömeg | Tömeg – kilogramm, dekagramm, gramm | kg/dkg, kg/g, dkg/g átváltás | 1000 | 2 |
+| Hosszúság | Hosszúság – centiméter, deciméter, méter | m/dm/cm átváltás, 2. blokkban km és mm is (advanced) | – | 2 |
+| Űrtartalom | Űrtartalom – liter, deciliter, centiliter | l/dl, l/cl, dl/cl átváltás, 2. blokkban ml is (advanced) | – | 2 |
+| Tömeg | Tömeg – kilogramm, dekagramm, gramm | kg/dkg, kg/g, dkg/g átváltás | – | 2 |
 | Idő | Idő – perc és óra | Perc és óra átváltása (choice + input) | – | 2 |
 | Pénz | Vásárlás 1000-ig | Fizetés 200 és 500 forintos bankjegyekkel | 1000 | 2 |
 | Naptár | Naptár és év | Év, hónap, hét, nap kapcsolata | – | 2 |

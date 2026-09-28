@@ -16,12 +16,12 @@
 ## v1.0
 - [x] Első osztály (42 lecke)
 - [x] Második osztály (55 lecke)
-- [x] Harmadik osztály (45 lecke)
-- [x] Negyedik osztály (33 lecke)
+- [x] Harmadik osztály (47 lecke)
+- [x] Negyedik osztály (35 lecke)
 - [x] Szülői felület (statisztika, export/import, játékoskezelés)
 
 ## v1.1 – világok
-- [x] 8 világ (postahivatal, verseny, konyha, foci, állatkert, űr, villamos, kastély)
+- [x] 7 világ (postahivatal, verseny, konyha, foci, állatkert, űr, villamos)
 - [x] Világváltás a profiloldalon
 - [x] Világ-specifikus lecketitkok és teljesítmények
 

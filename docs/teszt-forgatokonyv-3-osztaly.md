@@ -1,6 +1,6 @@
 # Matekidő – 3. osztály manuális tesztforgatókönyv
 
-Ennek a dokumentumnak a célja, hogy a **3. osztályos tananyagot** (45 lecke, 6 világ, számkör 1000-ig + szorzás/osztás 6, 7, 8, 9-es táblákkal) a böngészőben kézzel végigteszteljük: minden lecke helyesen épül fel, a feladatok a megjelölt tartományban vannak, a jó/rossz válasz kezelése helyes, és a lecke a celebrációval zárul.
+Ennek a dokumentumnak a célja, hogy a **3. osztályos tananyagot** (47 lecke, 7 világ, számkör 1000-ig + szorzás/osztás 6, 7, 8, 9-es táblákkal) a böngészőben kézzel végigteszteljük: minden lecke helyesen épül fel, a feladatok a megjelölt tartományban vannak, a jó/rossz válasz kezelése helyes, és a lecke a celebrációval zárul.
 
 - **Szerver:** `make start` (localhost:8000) – a `src/` mappát szolgálja ki.
 - **Böngésző:** Asztali (Chrome / Firefox / Edge) + legalább egyszer telefon méretű nézet.
@@ -75,10 +75,16 @@ Ennek a dokumentumnak a célja, hogy a **3. osztályos tananyagot** (45 lecke, 6
 
 | # | Lecke | Típus / tartomány | Amire figyelj | Eredmény |
 |---|-------|-------------------|---------------|----------|
-| 2.4.1 | Mértékegység-átváltás | `measure-units` | km/m, m/dm/cm/mm, kg/dkg, l/dl átváltás | |
-| 2.4.2 | Idő – perc és óra | `time-convert` | perc ↔ óra átváltás | |
-| 2.4.3 | Vásárlás 1000-ig | `money-pay` / 1000 | Fizetés 200/500 Ft-os bankjegyekkel | |
-| 2.4.4 | Naptár és év | `calendar` (advanced) | Év hossza 365 (366 szökőév), kb. 52 hét; hónap napjai; egy hónap kb. 4 hét; évszakonként 3 hónap | |
+| 2.4.1 | 📏 Hosszúság – centiméter, deciméter, méter | `measure-units` / length | m→dm, m→cm, dm→cm; 2. blokkban km és mm is (advanced) | |
+| 2.4.2 | 🥤 Űrtartalom – liter, deciliter, centiliter | `measure-units` / volume | l→dl, l→cl, dl→cl; 2. blokkban ml is (advanced) | |
+| 2.4.3 | ⚖️ Tömeg – kilogramm, dekagramm, gramm | `measure-units` / weight | kg→dkg, kg→g, dkg→g | |
+| 2.4.4 | A három lecke feladatformái | `measure-units` | Mindháromban mind az 5 forma jelen van: válaszlista, beírás, egységválasztás, igaz-hamis, összehasonlítás (`< = >`) | |
+| 2.4.5 | Valós tárgyak a feladatokban | `unitObjects.js` | Minden feladat előtt tárgy (fa, vödör, elefánt, tojás…), a tárgyhoz illő érték; a mondat egysége nem találgatás | |
+| 2.4.6 | Összehasonlítás | `measure-units` / compare | Két oldal különböző egységben (`3 kg ? 3000 g`), a kiegyenlítés a cél | |
+| 2.4.7 | Rejtett súgó | `measure-units` | A súgó gomb **két hiba után** jelenik meg, a táblázat csak kattintásra | |
+| 2.4.8 | Idő – perc és óra | `time-convert` | perc ↔ óra átváltás | |
+| 2.4.9 | Vásárlás 1000-ig | `money-pay` / 1000 | Fizetés 200/500 Ft-os bankjegyekkel | |
+| 2.4.10 | Naptár és év | `calendar` (advanced) | Év hossza 365 (366 szökőév), kb. 52 hét; hónap napjai; egy hónap kb. 4 hét; évszakonként 3 hónap | |
 
 ---
 

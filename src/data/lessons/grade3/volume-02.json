@@ -1,0 +1,85 @@
+{
+  "id": "grade3-volume-02",
+  "title": "🥤 Űrtartalom – liter, deciliter, centiliter",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🥤 Mennyi űrtartalom van egy üvegben?",
+      "text": "Az űrtartalmat literben (l), deciliterben (dl) és centiliterben (cl) mérjük. Figyeld meg: 1 literből 10 deciliter, 10 deciliterből 10 centiliter lesz! Átváltásra fel!",
+      "worldTitles": {
+        "racing": {
+          "title": "🥤 Az italkiszerelés",
+          "text": "A versenypályán mindenki tudja, mennyi folyadék kell egy üvegbe! Liter, deciliter, centiliter – számoljunk át!"
+        },
+        "football": {
+          "title": "🥤 A szivároktól az ivócsarnokig",
+          "text": "A meccsen színezőtől isznak a játékosok! Hány centiliter egy üveg? Számolj át!"
+        },
+        "cooking": {
+          "title": "🥤 A konyha mérlegei",
+          "text": "A szakács mindent pontosan kimér! Liter, deciliter, centiliter – mennyi kell a recepthez?"
+        },
+        "animals": {
+          "title": "🥤 Az itatóvályak",
+          "text": "Az állatgondozók kimérnek minden vizet! Hány centiliter jut egy vödörbe? Számolj át!"
+        },
+        "space": {
+          "title": "🤖 Az üzemanyagtartály",
+          "text": "Az űrhajó üzemanyagtartályát literben mérik! Deciliterre és centiliterre is át kell számolni!"
+        },
+        "tram": {
+          "title": "🚋 A tartályvonat",
+          "text": "A villamos vizet szállít! Hány liter, hány deciliter van egy tartályban? Számolj át!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 8,
+        "kind": "volume"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 6,
+        "kind": "volume",
+        "advanced": true
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Most már a liter, deciliter és centiliter is a barátod!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Irány a pálya!",
+          "text": "Jól mérted az üvegeket, indulhat a verseny! 🏁"
+        },
+        "football": {
+          "title": "⚽ Felszabadult a pálya!",
+          "text": "Ügyesen számoltál a milliliterekkel, kezdődhet a meccs! 🎉"
+        },
+        "cooking": {
+          "title": "🥄 Finom a menü!",
+          "text": "Pontosan kimérted a recepteket, a konyha kész! 🍽️"
+        },
+        "animals": {
+          "title": "🦁 Minden állat megitta!",
+          "text": "Minden vödör a megfelelő méretű lett, nagyszerű! 🐾"
+        },
+        "space": {
+          "title": "🤖 Indulhat a küldetés!",
+          "text": "Az üzemanyag pontosan belegyűlt a tartályba, indulhat a rakéta! 🚀"
+        },
+        "tram": {
+          "title": "🚋 Indulhat az út!",
+          "text": "A tartályok pontosan meg vannak mérve, indulhat a villamos! 🚋"
+        }
+      }
+    }
+  ]
+}

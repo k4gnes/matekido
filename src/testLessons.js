@@ -109,7 +109,10 @@ function operationOrderAnswer(step) {
 const UNIT_FACTORS = {
     "km-m": 1000, "m-dm": 10, "m-cm": 100, "m-mm": 1000, "dm-cm": 10, "cm-mm": 10,
     "kg-dkg": 100, "kg-g": 1000, "dkg-g": 10,
-    "l-dl": 10, "l-cl": 100, "dl-cl": 10
+    "l-dl": 10, "l-cl": 100, "dl-cl": 10,
+    "l-ml": 1000, "dl-ml": 100, "cl-ml": 10,
+    "ml-l": 1000, "ml-dl": 100, "ml-cl": 10,
+    "cl-dl": 10, "cl-l": 100, "dl-l": 10
 };
 
 function measureUnitFactor(unit, target) {
@@ -439,14 +442,15 @@ function validateStep(step, ctx) {
         case "measure-units": {
             if (!isInt(step.value) || step.value < 1) fail(ctx, `value hibás: ${step.value}`);
             if (!["length", "weight", "volume"].includes(step.kind)) fail(ctx, `kind hibás: ${step.kind}`);
-            if (!["km", "m", "dm", "cm", "kg", "dkg", "g", "l", "dl", "cl", "mm"].includes(step.unit) ||
-                !["km", "m", "dm", "cm", "kg", "dkg", "g", "l", "dl", "cl", "mm"].includes(step.target)) {
+            if (!["km", "m", "dm", "cm", "kg", "dkg", "g", "l", "dl", "cl", "ml", "mm"].includes(step.unit) ||
+                !["km", "m", "dm", "cm", "kg", "dkg", "g", "l", "dl", "cl", "ml", "mm"].includes(step.target)) {
                 fail(ctx, `unit/target ismeretlen: ${step.unit} → ${step.target}`);
             }
             const factor = measureUnitFactor(step.unit, step.target);
             if (!factor) fail(ctx, `nincs átszámítás: ${step.unit} → ${step.target}`);
-            if (step.answer !== step.value * factor) {
-                fail(ctx, `answer (${step.answer}) != ${step.value} × ${factor}`);
+            const expected = step.reverse ? step.value / factor : step.value * factor;
+            if (step.answer !== expected) {
+                fail(ctx, `answer (${step.answer}) != ${step.value} ${step.reverse ? "÷" : "×"} ${factor}`);
             }
             if (!Array.isArray(step.options) || !step.options.includes(step.answer)) {
                 fail(ctx, "options nem tartalmazza a helyes választ");

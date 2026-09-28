@@ -1,0 +1,86 @@
+{
+  "id": "grade4-volume-03",
+  "title": "🥤 Űrtartalom – a milliliterig",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🥤 Milyen nagy ez a térfogat?",
+      "text": "Nagyobb mennyiségeket is mérünk: 1 liter = 1000 milliliter, 1 deciliter = 100 milliliter, 1 centiliter = 10 milliliter. Most a másik irány is kell: hány liter van 2000 milliliterben? Indulhat a visszafelé átváltás!",
+      "worldTitles": {
+        "racing": {
+          "title": "🥤 A benzinkút mérőberendezése",
+          "text": "A boxutcában minden csepp számít! Hány milliliter kerül a tartályba? Számolj át!"
+        },
+        "football": {
+          "title": "🥤 A pára és a permetezés",
+          "text": "A pályán a pára és a hűtés milliliterszámokban érdekel! Számolj át!"
+        },
+        "cooking": {
+          "title": "🥄 A konyhai milliméter",
+          "text": "A szakács pontosan kimér mindent milliliterre! Liter, deciliter, centiliter – menjünk!"
+        },
+        "animals": {
+          "title": "🦁 Az itatóvályak literben és milliliterben",
+          "text": "Az állatkertben hatalmas vödrök és apró fecskék is vannak! Hány milliliter beléjük? Számolj át!"
+        },
+        "space": {
+          "title": "🤖 Az űrhajó tartályai",
+          "text": "Az űrhajón minden csepp üzemanyag számít! Hány milliliter kell a küldetéshez?"
+        },
+        "tram": {
+          "title": "🚋 A szerelvény víztartálya",
+          "text": "A villamos utasai vizet kapnak! Hány milliliter fogy el, ha mindenki köt le egy pohárral? Számolj át!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 6,
+        "kind": "volume"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 10,
+        "kind": "volume",
+        "advanced": true,
+        "reverse": true
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "A litertől a milliliterig minden átváltást pontosan megoldottál!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Irány a pálya!",
+          "text": "A milliliterek is a helyükön vannak, indulhat a verseny! 🏁"
+        },
+        "football": {
+          "title": "⚽ Felszabadult a pálya!",
+          "text": "Ügyesen számoltál a milliliterekkel, kezdődhet a meccs! 🎉"
+        },
+        "cooking": {
+          "title": "🥄 Finom a menü!",
+          "text": "Pontos milliméterig mérted a recepteket, a konyha kész! 🍽️"
+        },
+        "animals": {
+          "title": "🦁 Minden állat megitta!",
+          "text": "Minden vödör a megfelelő térfogatú lett, nagyszerű! 🐾"
+        },
+        "space": {
+          "title": "🤖 Indulhat a küldetés!",
+          "text": "Az üzemanyag milligrammra pontosan belefért, indulhat a rakéta! 🚀"
+        },
+        "tram": {
+          "title": "🚋 Indulhat az út!",
+          "text": "A víztartályok pontosan meg vannak mérve, indulhat a villamos! 🚋"
+        }
+      }
+    }
+  ]
+}

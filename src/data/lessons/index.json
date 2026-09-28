@@ -1572,6 +1572,51 @@
             }
         },
         {
+            "id": "volume-02",
+            "title": "🥤 Űrtartalom – liter, deciliter, centiliter",
+            "grades": [
+                3
+            ],
+            "category": "practical",
+            "skill": "volume",
+            "difficulty": 2,
+            "type": "measure-units",
+            "mission": "🥤 Űrtartalom – liter, deciliter, centiliter",
+            "subtitle": "l, dl, cl átváltása",
+            "file": "./data/lessons/grade3/volume-02.json",
+            "worldTitles": {
+                "racing": "🥤 Az italkiszerelés",
+                "cooking": "🥤 A konyha mérlegei",
+                "football": "🥤 A szivároktól az ivócsarnokig",
+                "animals": "🥤 Az itatóvályak",
+                "space": "🤖 Az üzemanyagtartály",
+                "tram": "🚋 A tartályvonat"
+            }
+        },
+        {
+            "id": "volume-03",
+            "title": "🥤 Űrtartalom – a milliliterig",
+            "grades": [
+                4
+            ],
+            "category": "practical",
+            "skill": "volume",
+            "difficulty": 3,
+            "type": "measure-units",
+            "range": 1000,
+            "mission": "🥤 Űrtartalom – a milliliterig",
+            "subtitle": "l, dl, cl, ml átváltása oda és vissza",
+            "file": "./data/lessons/grade4/volume-03.json",
+            "worldTitles": {
+                "racing": "🥤 A benzinkút mérőberendezése",
+                "cooking": "🥄 A konyhai milliméter",
+                "football": "🥤 A pára és a permetezés",
+                "animals": "🦁 Az itatóvályak literben és milliliterben",
+                "space": "🤖 Az űrhajó tartályai",
+                "tram": "🚋 A szerelvény víztartálya"
+            }
+        },
+        {
             "id": "weight-01",
             "title": "Melyik nehezebb?",
             "grades": [

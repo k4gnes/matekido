@@ -19,6 +19,18 @@ const CONVERSIONS = {
         { unit: "l", target: "dl", factor: 10, max: 10 },
         { unit: "l", target: "cl", factor: 100, max: 5 },
         { unit: "dl", target: "cl", factor: 10, max: 10 }
+    ],
+    volumeAdvanced: [
+        { unit: "l", target: "ml", factor: 1000, max: 5 },
+        { unit: "dl", target: "ml", factor: 100, max: 10 },
+        { unit: "cl", target: "ml", factor: 10, max: 100 }
+    ],
+    volumeReverse: [
+        { unit: "ml", target: "l", factor: 1000, max: 5, reverse: true },
+        { unit: "ml", target: "dl", factor: 100, max: 10, reverse: true },
+        { unit: "ml", target: "cl", factor: 10, max: 100, reverse: true },
+        { unit: "cl", target: "dl", factor: 10, max: 10, reverse: true },
+        { unit: "dl", target: "l", factor: 10, max: 10, reverse: true }
     ]
 };
 
@@ -41,7 +53,7 @@ function pick(arr) {
 function buildNumberOptions(correct, value) {
     const candidates = [];
     const push = v => {
-        if (v !== correct && v > 0) candidates.push(v);
+        if (v > 0) candidates.push(v);
     };
     push(correct * 10);
     push(correct / 10);
@@ -50,13 +62,14 @@ function buildNumberOptions(correct, value) {
     push(correct + 10);
     push(correct - 10);
 
-    const pool = shuffle([...new Set(candidates.map(c => Math.round(c)))]).slice(0, 3);
+    const pool = shuffle([...new Set(candidates.map(c => Math.round(c)))]
+        .filter(c => c > 0 && c !== correct)).slice(0, 3);
 
     return shuffle([correct, ...pool]);
 }
 
 export function generateMeasureUnits(options = {}) {
-    const { count = 5, kind = "length", advanced = false } = options;
+    const { count = 5, kind = "length", advanced = false, reverse = false } = options;
 
     const kinds = kind === "mixed"
         ? ["length", "weight", "volume"]
@@ -66,12 +79,16 @@ export function generateMeasureUnits(options = {}) {
 
     for (let i = 0; i < count; i++) {
         const k = pick(kinds);
-        const pool = (k === "length" && advanced)
-            ? [...CONVERSIONS[k], ...CONVERSIONS.lengthAdvanced]
+        let pool = (advanced && CONVERSIONS[k + "Advanced"])
+            ? [...CONVERSIONS[k], ...CONVERSIONS[k + "Advanced"]]
             : CONVERSIONS[k];
+        if (reverse && CONVERSIONS[k + "Reverse"]) {
+            pool = [...pool, ...CONVERSIONS[k + "Reverse"]];
+        }
         const conv = pick(pool);
-        const value = rand(1, conv.max);
-        const correct = value * conv.factor;
+        const raw = rand(1, conv.max);
+        const value = conv.reverse ? raw * conv.factor : raw;
+        const correct = conv.reverse ? value / conv.factor : value * conv.factor;
 
         const optionsArr = buildNumberOptions(correct, value);
 
@@ -83,6 +100,7 @@ export function generateMeasureUnits(options = {}) {
             answer: correct,
             kind: k,
             advanced,
+            reverse: conv.reverse === true,
             question: `Hány ${conv.target} a ${value} ${conv.unit}?`,
             options: optionsArr
         });

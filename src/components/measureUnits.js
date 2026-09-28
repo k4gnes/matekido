@@ -25,7 +25,8 @@ const KIND_CONFIG = {
     },
     volume: {
         title: "Űrtartalom-mérés",
-        hint: "1 l = 10 dl, 1 dl = 10 cl"
+        hint: "1 l = 10 dl = 100 cl",
+        hintAdvanced: "1 l = 10 dl = 100 cl = 1000 ml. Visszafelé 10-szeres, 100-szoros és 1000-szeres osztás"
     }
 };
 

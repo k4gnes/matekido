@@ -1,5 +1,7 @@
 # Matekidő – 2. osztályos feladatok készséghierarchiája
 
+> **Státusz: megvalósult.** Ez a doksz a 2. osztályos tanterv *pedagógiai indoklása* (melyik készség miért követi a másikat), nem a megvalósítás naplója. Ami elkészült, az a `docs/kovetkezo-lepesek.md`-ben van, lépésenként, a lefedettségi táblázattal együtt.
+
 ## Cél
 
 A második osztályos feladatok felépítése a tananyag logikai egymásra épülése szerint.

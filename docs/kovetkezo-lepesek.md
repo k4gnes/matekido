@@ -2,7 +2,7 @@
 
 ## Jelenlegi állapot
 
-**67 lecke** van regisztrálva összesen (**27** első + **40** második osztályos). Az 1–3. lépés **kész**.
+A ma állapota: **171 lecke** van a regiszterben (1. osztály **42**, 2. osztály **55**, 3. osztály **47**, 4. osztály **35**). Ez a doksz a 2. osztályos roadmap **naplója** – az alábbi lépések mind készek. Utána még érkezett öt lecke (2026-09-10): naptár, törtek, tükrözés, hosszúság-mérés és pontos idő olvasása; ezek a táblázat végén külön sorban szerepelnek.
 
 ---
 
@@ -145,6 +145,13 @@ Részletes leírás: `docs/kod-racionalizalas.md`
 - **Generátor-javítás mindkét órára:** egész órás feladatoknál a napszak-ikrek (u.a. mutatóállás, pl. reggeli 7 vs. esti 7, dél vs. éjfél) soha nem kerülhetnek egymás zavaró válaszai közé.
 - `sw-cache.js` újragenerálva (237 fájl).
 
+#### 2026-09-28 – a gyökérok is kikerült
+A fenti javítás csak a zavarókat érintette, ezért a generátorban a napszak-előtag (`hajnali`/`délelőtti`/…) a válaszokban benne maradt. Ma ez is kikerült: az időfeladat válasza mostantól csak maga az óra („nyolc óra", „fél kilenc", „negyed tizenkettő"), és a feladat szövege „időpont" lett (eddig „meghatározás" volt).
+
+Közben egy hiba is kiderült: `0:00` → „éjfél" és `12:00` → „dél" volt, tehát **ugyanarra a 12:00-as számlapra két különböző válasz**. Aki jól leolvasta az órát és a „dél"-t választotta, rosszat kapott. Most mindkettő „tizenkettő óra".
+
+Érintett leckék: `time-01`, `time-03`, `time-04`.
+
 ---
 
 ## ✅ 5. lépés – Pénz bővítése (kész – 2026-08-23)
@@ -194,7 +201,7 @@ A `masodik-osztaly.md` hiányzó-készségek táblázatának utolsó két sora:
 
 ## Készség → Lecke lefedettség (második osztály)
 
-*(2026-08-22-i állapot szerint ellenőrizve)*
+*(2026-08-22-i állapot szerint ellenőrizve; az „Idő" és a „Hosszúság" sor 2026-09-28-án frissült a regiszterhez)*
 
 | Készség | Státusz | Leckék |
 |---|---|---|
@@ -223,8 +230,8 @@ A `masodik-osztaly.md` hiányzó-készségek táblázatának utolsó két sora:
 | Alakzatok | ✅ Kész | shape-sort-03 |
 | Alakzatok összehasonlítása | ✅ Kész | shape-compare-01 |
 | Térbeli alakzatok | ✅ Kész | solid-shapes-01 |
-| Idő | ✅ Kész | 1. oszt: egész/fél óra (6–20) + negyedóra lecke |
-| Hosszúság | ⚠️ 1. osztályos | measure-compare-01, measure-squares-01 |
+| Idő | ✅ Kész | time-01 (1. oszt: egész és fél óra, 6–20 óra), time-03 (negyedóra), time-04 (pontos idő olvasása) |
+| Hosszúság | ✅ Kész | measure-compare-01, measure-squares-01 (1. oszt: összehasonlítás, négyzetek), measure-units-01 (2. oszt: m/dm/cm átváltás) |
 | Tömeg | ✅ Kész | weight-01 |
 | Űrtartalom | ✅ Kész | volume-01 |
 | Pénz (alap) | ⚠️ 1. osztályos | money-pay-01, money-compare-01, money-enough-01 + 2. oszt: pay/compare/enough-02 (100 Ft felett) |
@@ -232,3 +239,6 @@ A `masodik-osztaly.md` hiányzó-készségek táblázatának utolsó két sora:
 | Számérzék és becslés | ✅ Kész | estimate-01 |
 | Igaz/Hamis műveletek | ✅ Kész | true-false-01 |
 | Hibás számolás | ✅ Kész | find-error-01 |
+| Tükrözés | ✅ Kész | mirror-01 (2026-09-10) |
+| Törtek | ✅ Kész | fraction-01 (2026-09-10) |
+| Naptár | ✅ Kész | calendar-01 (2026-09-10) |

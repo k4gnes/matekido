@@ -2236,7 +2236,7 @@
       "grades": [
         2
       ],
-      "category": "numbers",
+      "category": "fractions",
       "skill": "fraction",
       "difficulty": 1,
       "type": "fraction",
@@ -2947,7 +2947,7 @@
       "grades": [
         3
       ],
-      "category": "numbers",
+      "category": "fractions",
       "skill": "fraction",
       "difficulty": 1,
       "type": "fraction",
@@ -2969,7 +2969,7 @@
       "grades": [
         3
       ],
-      "category": "numbers",
+      "category": "fractions",
       "skill": "fraction",
       "difficulty": 1,
       "type": "fraction",
@@ -2991,7 +2991,7 @@
       "grades": [
         3
       ],
-      "category": "numbers",
+      "category": "fractions",
       "skill": "fraction",
       "difficulty": 1,
       "type": "fraction-of",

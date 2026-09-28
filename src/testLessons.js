@@ -109,6 +109,7 @@ function operationOrderAnswer(step) {
 
 const UNIT_FACTORS = {
     "km-m": 1000, "m-dm": 10, "m-cm": 100, "m-mm": 1000, "dm-cm": 10, "cm-mm": 10,
+    "mm-cm": 10, "cm-dm": 10, "m-km": 1000,
     "kg-dkg": 100, "kg-g": 1000, "dkg-g": 10,
     "g-kg": 1000, "g-dkg": 10, "dkg-kg": 100, "kg-t": 1000,
     "l-dl": 10, "l-cl": 100, "dl-cl": 10,

@@ -1,0 +1,99 @@
+{
+  "id": "grade4-length-03",
+  "title": "📏 Hosszúság – a milliméterig, visszafelé is",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📏 Milyen hosszú egy vonalzó?",
+      "text": "A hosszúságot milliméterben (mm), centiméterben (cm), deciméterben (dm), méterben (m) és kilométerben (km) mérjük. Előre könnyű: 1 méterből 1000 milliméter. Visszafelé viszont osztani kell! Indulhat a visszaszámlálás?",
+      "worldTitles": {
+        "racing": {
+          "title": "📏 A pályák hossza kilométerben",
+          "text": "A maraton 42 km, az úszómedence 50 m. Hány méter a maraton? Számolj vissza!"
+        },
+        "football": {
+          "title": "📏 A pálya és a vonalzó",
+          "text": "A pályán centiméterekkel mérnek! Hány milliméter egy futballpálya szélessége? Számolj át!"
+        },
+        "cooking": {
+          "title": "📏 A tésztavonalzó",
+          "text": "A tészta vastagságát milliméterben mérjük! 1 cm hány mm? Számolj át!"
+        },
+        "animals": {
+          "title": "📏 A legkisebb és a legnagyobb",
+          "text": "Egy rovar 5 mm, egy kékhal 3 m. Hány milliméter a hal? Számolj vissza!"
+        },
+        "space": {
+          "title": "📏 A Föld átmérője",
+          "text": "A Föld átmérője kb. 12 757 km! Hány méter az? Vagy inkább hány centiméter? Számolj át!"
+        },
+        "tram": {
+          "title": "📏 A vonal és a túra",
+          "text": "A túraút 12 km hosszú, a sínmérő 1 m. Számolj át mindkét irányban!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 4,
+        "kind": "length",
+        "context": true,
+        "interaction": "mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 5,
+        "kind": "length",
+        "advanced": true,
+        "reverse": true,
+        "context": true,
+        "interaction": "mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 2,
+        "kind": "length",
+        "interaction": "unit"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Most már előre és vissza is átváltasz millimétertől kilométerig!",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Rajt!",
+          "text": "A 42 km-t is fejben átszámítottad, indulhat a maraton! 🏁"
+        },
+        "football": {
+          "title": "⚽ Gól!",
+          "text": "Ügyesen számoltál oda és vissza, játékra kész vagy! 🎉"
+        },
+        "cooking": {
+          "title": "🍰 Véknyabb a tészta!",
+          "text": "Pontosan belőtt a centiméter, mehet a sütőbe! 🍽️"
+        },
+        "animals": {
+          "title": "🐾 Mindenki megmérve!",
+          "text": "A rovartól a kékhalig mindenki tudja a hosszát! 🐾"
+        },
+        "space": {
+          "title": "🚀 A Föld körül",
+          "text": "Az átmérőt is kilométerben értetted, indulhat a küldetés! 🚀"
+        },
+        "tram": {
+          "title": "🚋 Indulhat az út!",
+          "text": "A túraút és a sínmérő is a helyes hosszú, indulhat! 🚋"
+        }
+      }
+    }
+  ]
+}

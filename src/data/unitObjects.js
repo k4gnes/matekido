@@ -3,9 +3,12 @@ export const UNIT_OBJECTS = {
         { emoji: "🌳", phrase: "Egy fa", base: "m", min: 8, max: 15 },
         { emoji: "🚪", phrase: "Egy ajtó", base: "m", min: 2, max: 3 },
         { emoji: "🚲", phrase: "Egy kerékpár", base: "m", min: 1, max: 2 },
-        { emoji: "📏", phrase: "Egy téglalap alakú asztal", base: "m", min: 1, max: 2 },
+        { emoji: "🛋️", phrase: "Egy asztal", base: "m", min: 1, max: 2 },
+        { emoji: "📏", phrase: "Egy vonalzó", base: "cm", min: 28, max: 30 },
         { emoji: "📕", phrase: "Egy könyv", base: "cm", min: 20, max: 30 },
-        { emoji: "✏️", phrase: "Egy ceruza", base: "cm", min: 17, max: 19 }
+        { emoji: "✏️", phrase: "Egy ceruza", base: "cm", min: 17, max: 19 },
+        { emoji: "🐜", phrase: "Egy hangya", base: "mm", min: 3, max: 6 },
+        { emoji: "🐝", phrase: "Egy méh", base: "mm", min: 10, max: 20 }
     ],
     weight: [
         { emoji: "🐘", phrase: "Egy elefánt", base: "kg", min: 3000, max: 6000 },

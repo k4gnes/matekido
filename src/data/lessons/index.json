@@ -1616,6 +1616,29 @@
       }
     },
     {
+      "id": "length-03",
+      "title": "📏 Hosszúság – a milliméterig, visszafelé is",
+      "grades": [
+        4
+      ],
+      "category": "practical",
+      "skill": "length",
+      "difficulty": 3,
+      "type": "measure-units",
+      "range": 1000,
+      "mission": "📏 Hosszúság – a milliméterig, visszafelé is",
+      "subtitle": "mm, cm, m, km átváltása oda és vissza",
+      "file": "./data/lessons/grade4/length-03.json",
+      "worldTitles": {
+        "racing": "📏 A pályák hossza kilométerben",
+        "cooking": "📏 A tésztavonalzó",
+        "football": "📏 A pálya és a vonalzó",
+        "animals": "📏 A legkisebb és a legnagyobb",
+        "space": "📏 A Föld átmérője",
+        "tram": "📏 A vonal és a túra"
+      }
+    },
+    {
       "id": "volume-03",
       "title": "🥤 Űrtartalom – a milliliterig",
       "grades": [

@@ -12,6 +12,11 @@ const CONVERSIONS = {
         { unit: "cm", target: "mm", factor: 10, max: 100 },
         { unit: "km", target: "m", factor: 1000, max: 10 }
     ],
+    lengthReverse: [
+        { unit: "mm", target: "cm", factor: 10, max: 100, reverse: true },
+        { unit: "cm", target: "dm", factor: 10, max: 100, reverse: true },
+        { unit: "m", target: "km", factor: 1000, max: 10, reverse: true }
+    ],
     weight: [
         { unit: "kg", target: "dkg", factor: 100, max: 10 },
         { unit: "kg", target: "g", factor: 1000, max: 5 },
@@ -212,6 +217,24 @@ function objectVariants(object, pool) {
     return variants;
 }
 
+function pickPreferred(entries, reverse) {
+    if (!entries.length) return null;
+    const wants = v => (v.conv.reverse === true) === reverse;
+
+    if (reverse) {
+        const backwards = entries.filter(entry => entry.variants.some(wants));
+        if (backwards.length) {
+            const entry = pick(backwards);
+            const variants = entry.variants.filter(wants);
+            return { entry, variants: variants.length ? variants : entry.variants };
+        }
+    }
+
+    const entry = pick(entries);
+    const variants = entry.variants.filter(wants);
+    return { entry, variants: variants.length ? variants : entry.variants };
+}
+
 export function generateMeasureUnits(options = {}) {
     const { count = 5, kind = "length", advanced = false, reverse = false, context = false, interaction = "choice" } = options;
 
@@ -247,9 +270,10 @@ export function generateMeasureUnits(options = {}) {
             ? UNIT_OBJECTS[k].map(object => ({ object, variants: objectVariants(object, pool) }))
                 .filter(entry => entry.variants.length > 0)
             : [];
-        const entry = objectVariantsByObject.length ? pick(objectVariantsByObject) : null;
+        const chosen = pickPreferred(objectVariantsByObject, reverse);
+        const entry = chosen ? chosen.entry : null;
+        const variant = chosen ? pick(chosen.variants) : null;
 
-        const variant = entry ? pick(entry.variants) : null;
         const conv = variant ? variant.conv : pick(pool);
         const value = variant
             ? variant.amount

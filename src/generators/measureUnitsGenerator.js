@@ -65,8 +65,12 @@ function roundNice(value) {
     return value;
 }
 
-function buildUnitChoiceTask(k, object, amount) {
-    const family = UNIT_FAMILY[k].filter(u => u !== object.base);
+function buildUnitChoiceTask(k, object, amount, allowed = null) {
+    let family = UNIT_FAMILY[k].filter(u => u !== object.base);
+    if (allowed) {
+        const filtered = family.filter(u => allowed.has(u));
+        if (filtered.length) family = filtered;
+    }
     const unitOptions = shuffle([object.base, ...shuffle(family).slice(0, 3)]);
     const nice = roundNice(amount);
 
@@ -77,6 +81,7 @@ function buildUnitChoiceTask(k, object, amount) {
         unit: object.base,
         answer: object.base,
         unitOptions,
+        ...(allowed ? { allowedUnits: [...allowed] } : {}),
         interaction: "unit",
         question: "Melyik egység illik ide?",
         context: `${object.emoji} ${object.phrase} ${UNIT_MEASURE_WORD[k]} ${nice} ____`
@@ -101,16 +106,20 @@ const COMPARE_QUESTION = {
     volume: "Melyikben van több?"
 };
 
-function buildCompareTask(k, advanced) {
+function buildCompareTask(k, advanced, allowed = null) {
     const ladder = {
         ...UNIT_LADDER[k],
         ...(advanced && UNIT_LADDER_ADVANCED[k] ? UNIT_LADDER_ADVANCED[k] : {})
     };
-    const units = Object.keys(ladder);
-    const leftUnit = pick(units);
-    let rightUnit = pick(units);
+    let unitNames = Object.keys(ladder);
+    if (allowed) {
+        const filtered = unitNames.filter(u => allowed.has(u));
+        if (filtered.length >= 2) unitNames = filtered;
+    }
+    const leftUnit = pick(unitNames);
+    let rightUnit = pick(unitNames);
     while (rightUnit === leftUnit) {
-        rightUnit = pick(units);
+        rightUnit = pick(unitNames);
     }
 
     const step = Math.max(ladder[leftUnit], ladder[rightUnit]);
@@ -236,7 +245,8 @@ function pickPreferred(entries, reverse) {
 }
 
 export function generateMeasureUnits(options = {}) {
-    const { count = 5, kind = "length", advanced = false, reverse = false, context = false, interaction = "choice" } = options;
+    const { count = 5, kind = "length", advanced = false, reverse = false, context = false, interaction = "choice", units = null } = options;
+    const allowed = Array.isArray(units) && units.length ? new Set(units) : null;
 
     const kinds = kind === "mixed"
         ? ["length", "weight", "volume"]
@@ -249,13 +259,18 @@ export function generateMeasureUnits(options = {}) {
         const mode = interaction === "mixed" ? pick(["choice", "input", "tf", "compare"]) : interaction;
 
         if (mode === "unit") {
-            const object = pick(UNIT_OBJECTS[k]);
-            tasks.push(buildUnitChoiceTask(k, object, rand(object.min, object.max)));
+            let objects = UNIT_OBJECTS[k];
+            if (allowed) {
+                const filtered = objects.filter(o => allowed.has(o.base));
+                if (filtered.length) objects = filtered;
+            }
+            const object = pick(objects);
+            tasks.push(buildUnitChoiceTask(k, object, rand(object.min, object.max), allowed));
             continue;
         }
 
         if (mode === "compare") {
-            tasks.push(buildCompareTask(k, advanced));
+            tasks.push(buildCompareTask(k, advanced, allowed));
             continue;
         }
 
@@ -264,6 +279,10 @@ export function generateMeasureUnits(options = {}) {
             : CONVERSIONS[k];
         if (reverse && CONVERSIONS[k + "Reverse"]) {
             pool = [...pool, ...CONVERSIONS[k + "Reverse"]];
+        }
+        if (allowed) {
+            const filtered = pool.filter(c => allowed.has(c.unit) && allowed.has(c.target));
+            if (filtered.length) pool = filtered;
         }
 
         const objectVariantsByObject = context

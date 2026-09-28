@@ -39,7 +39,21 @@
       "type": "exercise",
       "generator": "measure-units",
       "options": {
-        "count": 5
+        "count": 3,
+        "kind": "length",
+        "context": true,
+        "interaction": "mixed",
+        "units": ["m", "dm", "cm"]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 2,
+        "kind": "length",
+        "interaction": "unit",
+        "units": ["m", "dm", "cm"]
       }
     },
 

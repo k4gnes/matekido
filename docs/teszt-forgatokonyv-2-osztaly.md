@@ -111,7 +111,9 @@ Ennek a dokumentumnak a célja, hogy a **2. osztályos tananyagot** (55 lecke, 7
 | 2.6.7 | Melyik pénztárcában van több? 100 felett | `money-compare` | A pénztárcák értéke helyesen összehasonlítható | |
 | 2.6.8 | Meg tudod venni? 100 felett | `money-enough` | Az elég/nem elég döntés az értéknek megfelel | |
 | 2.6.9 | Mennyi a visszajáró? | `money-change` | A visszajáró = fizetett − ár | |
-| 2.6.10 | 📏 Hosszúság-mérés (m, dm, cm) | `measure-units` | Az átváltás/mérés helyes a mértékegységek között | |
+| 2.6.10 | 📏 Hosszúság-mérés – méter, deciméter, centiméter | `measure-units` | 5 feladat, 2 blokkban: 3 vegyes (válaszlista / beírás / igaz-hamis / összehasonlítás) valós tárggyal, majd 2 egységválasztó („🚲 Egy kerékpár hossza 1 ____") | |
+| 2.6.10a | ⚠️ Csak 2. osztályos egységek jöhetnek | `units: [m, dm, cm]` | **Sem milliméter, sem kilométer nem jöhet** – a hangya (mm) és a méh (mm) kimarad, az egységopciók is csak m/dm/cm. A 3–4. osztályon már van mm/km, itt még nincs | |
+| 2.6.10b | Ugyanaz a lecke újra | | Más feladatok jönnek; a 3 vegyes feladatban a forma véletlenül választott, ezért nem mindig mind a 4 látható egyszerre | |
 | 2.6.11 | 🍕 Törtek – fele, harmada, negyede | `fraction` | A kép és a tört jele társítható | |
 
 ### 2.7 Szöveges feladatok

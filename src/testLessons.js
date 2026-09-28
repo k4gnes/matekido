@@ -166,13 +166,18 @@ function validateUnitChoice(ctx, step) {
     if (!UNIT_FAMILY[step.kind].includes(step.answer)) {
         fail(ctx, `answer nem tartozik a ${step.kind} családhoz: ${step.answer}`);
     }
-    if (!Array.isArray(step.unitOptions) || step.unitOptions.length !== 4) {
-        fail(ctx, `unitOptions elemszáma hibás: ${step.unitOptions?.length}`);
+    const allowedUnits = Array.isArray(step.allowedUnits) ? step.allowedUnits : null;
+    const expectedOptions = allowedUnits ? Math.min(4, allowedUnits.length) : 4;
+    if (!Array.isArray(step.unitOptions) || step.unitOptions.length !== expectedOptions) {
+        fail(ctx, `unitOptions elemszáma hibás: ${step.unitOptions?.length} (várt ${expectedOptions})`);
     } else {
-        if (new Set(step.unitOptions).size !== 4) fail(ctx, "unitOptions ismétlődik");
+        if (new Set(step.unitOptions).size !== expectedOptions) fail(ctx, "unitOptions ismétlődik");
         if (!step.unitOptions.includes(step.answer)) fail(ctx, "unitOptions nem tartalmazza a választ");
         step.unitOptions.forEach(u => {
             if (!UNIT_FAMILY[step.kind].includes(u)) fail(ctx, `unitOptions idegen egység: ${u}`);
+            if (allowedUnits && !allowedUnits.includes(u)) {
+                fail(ctx, `unitOptions a lecke engedélyezett egységen kívül: ${u}`);
+            }
         });
     }
     if (typeof step.context !== "string" || !step.context.includes("____")) {

@@ -6,31 +6,31 @@
     {
       "type": "scene",
       "title": "🗓️ Naptár",
-      "text": "Egy hétben 7 nap van: hétfő, kedd, szerda, csütörtök, péntek, szombat, vasárnap. Egy évben 12 hónap, és négy évszak: tavasz, nyár, ősz, tél!",
+      "text": "Egy hétben 7 nap van: hétfő, kedd, szerda, csütörtök, péntek, szombat, vasárnap. Egy évben 12 hónap, és négy évszak: tavasz, nyár, ősz, tél! A hónapokat római számmal is számozzuk: I. január, II. február … XII. december!",
       "worldTitles": {
         "racing": {
           "title": "🏎️ Naptár a boxutcában",
-          "text": "A szerelők a naptárt nézik, mikor van a következő futam! Tanuld meg rendben a napokat és a hónapokat!"
+          "text": "A szerelők a naptárt nézik, mikor van a következő futam! Tanuld meg rendben a napokat és a hónapokat, a hónapok római számai is segítenek: I. január, II. február … XII. december!"
         },
         "football": {
           "title": "⚽ Naptár a pályán",
-          "text": "A csapat a naptárban tervezi a meccseket! Játszunk a napokkal, a hónapokkal és az évszakokkal!"
+          "text": "A csapat a naptárban tervezi a meccseket! Játszunk a napokkal, a hónapokkal és az évszakokkal, a hónapok római számai is segítenek: I. január, II. február … XII. december!"
         },
         "cooking": {
           "title": "🍳 Naptár a konyhában",
-          "text": "A szakácsok minden nap más menüt főznek! Keresd meg, melyik nap és hónap jön soron!"
+          "text": "A szakácsok minden nap más menüt főznek! Keresd meg, melyik nap és hónap jön soron, a hónapok római számai is segítenek: I. január, II. február … XII. december!"
         },
         "animals": {
           "title": "🦁 Naptár az állatkertben",
-          "text": "Az állatgondozók vezetik, melyik nap érkezik az új takarmány! Segíts a naptárban igazodni!"
+          "text": "Az állatgondozók vezetik, melyik nap érkezik az új takarmány! Segíts a naptárban igazodni, a hónapok római számai is segítenek: I. január, II. február … XII. december!"
         },
         "space": {
           "title": "🤖 Naptár az űrhajón",
-          "text": "A bázis komputer a naptár szerint ütemezi a küldetéseket! Ismerd meg a napokat, hónapokat és évszakokat!"
+          "text": "A bázis komputer a naptár szerint ütemezi a küldetéseket! Ismerd meg a napokat, hónapokat és évszakokat, a hónapok római számai is segítenek: I. január, II. február … XII. december!"
         },
         "tram": {
           "title": "🚋 Naptár a villamoson",
-          "text": "A depó komputer a naptár szerint ütemezi az utakat! Ismerd meg a napokat, hónapokat és évszakokat!"
+          "text": "A depó komputer a naptár szerint ütemezi az utakat! Ismerd meg a napokat, hónapokat és évszakokat, a hónapok római számai is segítenek: I. január, II. február … XII. december!"
         }
       }
     },
@@ -39,7 +39,8 @@
       "type": "exercise",
       "generator": "calendar",
       "options": {
-        "count": 5
+        "count": 5,
+        "roman": true
       }
     },
 

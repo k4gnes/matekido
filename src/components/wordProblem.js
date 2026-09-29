@@ -258,7 +258,7 @@ function createFigure(world, { leaving = false } = {}) {
     const colors = FIGURE_COLORS[world] ?? FIGURE_COLORS.racing;
     const c = leaving ? colors.leaving : colors.staying;
     const span = document.createElement("span");
-    span.className = "wp-drag-figure";
+    span.className = "wp-figure";
     span.textContent = (leaving ? FIGURE_EMOJI_LEAVING[world] : null) ?? FIGURE_EMOJI[world] ?? "●";
     span.style.background = c.bg;
     span.style.borderColor = c.border;
@@ -276,7 +276,7 @@ function createPartFigure(world, { highlight = false } = {}) {
     const colors = PART_COLORS[world] ?? PART_COLORS.racing;
     const c = highlight ? colors.part : colors.other;
     const span = document.createElement("span");
-    span.className = "wp-drag-figure";
+    span.className = "wp-figure";
     span.textContent = FIGURE_EMOJI[world] ?? "●";
     span.style.background = c.bg;
     span.style.borderColor = c.border;
@@ -655,7 +655,8 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
         const postmen = [];
         for (let i = 0; i < step.total; i++) {
             const leaving = i < step.leaving;
-            const wrap = document.createElement("div");
+            const wrap = document.createElement("button");
+            wrap.type = "button";
             wrap.className = "wp-postman";
             wrap.dataset.leaving = leaving ? "true" : "false";
             wrap.append(createFigure(world, { leaving }));
@@ -673,90 +674,17 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
             countEl.textContent = labels.count(remaining);
         }
 
-        const zones = [waiting, departure];
-
-        let drag = null;
-
-        card.addEventListener("pointerdown", (e) => {
-            const postman = e.target.closest(".wp-postman");
-            if (!postman || feedback.isAnswered() || drag) return;
-            e.preventDefault();
-
-            const rect = postman.getBoundingClientRect();
-
-            const clone = postman.cloneNode(true);
-            clone.classList.add("wp-postman-clone");
-            clone.style.width = rect.width + "px";
-            clone.style.height = rect.height + "px";
-            document.body.append(clone);
-
-            postman.classList.add("wp-postman-hidden");
-
-            drag = {
-                postman,
-                clone,
-                offsetX: e.clientX - rect.left,
-                offsetY: e.clientY - rect.top
-            };
-
-            moveClone(e);
-
-            document.addEventListener("pointermove", onMove);
-            document.addEventListener("pointerup", onUp);
-            document.addEventListener("pointercancel", onUp);
+        postmen.forEach(figure => {
+            figure.addEventListener("click", () => {
+                if (feedback.isAnswered()) return;
+                const target = figure.parentElement === waiting ? departure : waiting;
+                target.append(figure);
+                figure.classList.remove("wp-postman-jump");
+                void figure.offsetWidth;
+                figure.classList.add("wp-postman-jump");
+                updateCount();
+            });
         });
-
-        function onMove(e) {
-            if (!drag) return;
-            e.preventDefault();
-            moveClone(e);
-            highlightZone(e);
-        }
-
-        function moveClone(e) {
-            drag.clone.style.left = (e.clientX - drag.offsetX) + "px";
-            drag.clone.style.top = (e.clientY - drag.offsetY) + "px";
-        }
-
-        function getZoneAt(x, y) {
-            for (const zone of zones) {
-                const r = zone.getBoundingClientRect();
-                if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) {
-                    return zone;
-                }
-            }
-            return null;
-        }
-
-        function highlightZone(e) {
-            const zone = getZoneAt(e.clientX, e.clientY);
-            zones.forEach(z => z.classList.toggle("wp-drag-over", z === zone));
-        }
-
-        function clearHighlight() {
-            zones.forEach(z => z.classList.remove("wp-drag-over"));
-        }
-
-        function onUp(e) {
-            if (!drag) return;
-
-            drag.clone.remove();
-            clearHighlight();
-
-            const zone = getZoneAt(e.clientX, e.clientY);
-            if (zone) {
-                zone.append(drag.postman);
-            }
-
-            drag.postman.classList.remove("wp-postman-hidden");
-            drag = null;
-
-            document.removeEventListener("pointermove", onMove);
-            document.removeEventListener("pointerup", onUp);
-            document.removeEventListener("pointercancel", onUp);
-
-            updateCount();
-        }
 
         function check() {
             if (feedback.isAnswered()) return;

@@ -27,7 +27,7 @@ const THEMES = {
             title: "📮 Elmegy belőle",
             text: (total, leaving) => `${total} postás várakozik a postán. ${leaving} piros sapkás elindul kézbesíteni.`,
             question: "Hányan maradnak a postán?",
-            hint: "Húzd a piros sapkás postásokat a kézbesítő autóhoz!",
+            hint: "Kattints a piros sapkás postásra!",
             success: (answer) => `😊 Szép munka! A postán ${answer} postás maradt!`
         },
         "part-whole": {
@@ -80,7 +80,7 @@ const THEMES = {
             title: "🔧 Elmegy belőle",
             text: (total, leaving) => `${total} versenyautó várakozik a rajtvonalnál. ${leaving} piros autó elindul az első körre.`,
             question: "Hány autó marad a rajtvonalnál?",
-            hint: "Húzd a piros autókat a pályára!",
+            hint: "Kattints a piros autóra!",
             success: (answer) => `😊 Szép munka! A rajtvonalnál ${answer} autó maradt!`
         },
         "part-whole": {
@@ -133,7 +133,7 @@ const THEMES = {
             title: "🍳 Elmegy belőle",
             text: (total, leaving) => `${total} palacsinta van a tányéron. ${leaving} csokoládésat megesznek.`,
             question: "Hány palacsinta marad a tányéron?",
-            hint: "Húzd a csokoládés palacsintákat a tányér mellé, ezeket megeszik!",
+            hint: "Kattints a csokoládés palacsintára!",
             success: (answer) => `😊 Szép munka! A tányéron ${answer} palacsinta maradt!`
         },
         "part-whole": {
@@ -186,7 +186,7 @@ const THEMES = {
             title: "⚽ Elmegy belőle",
             text: (total, leaving) => `${total} játékos van a pályán. ${leaving} piros mezes lecserélik a szünetben.`,
             question: "Hány játékos marad a pályán?",
-            hint: "Húzd a piros mezes játékosokat a kispadra!",
+            hint: "Kattints a piros mezes játékosra!",
             success: (answer) => `😊 Szép munka! A pályán ${answer} játékos maradt!`
         },
         "part-whole": {
@@ -239,7 +239,7 @@ const THEMES = {
             title: "🦓 Elmegy belőle",
             text: (total, leaving) => `${total} zebra van a kifutóban. ${leaving} sárga nyakörvű zebrát megetetnek és behoznak a ketrecbe.`,
             question: "Hány zebra marad a kifutóban?",
-            hint: "Húzd a sárga nyakörvű zebrákat a ketrecbe!",
+            hint: "Kattints a sárga nyakörvű zebrára!",
             success: (answer) => `😊 Szép munka! A kifutóban ${answer} zebra maradt!`
         },
         "part-whole": {
@@ -292,7 +292,7 @@ remainder: {
             title: "🤖 Elmegy belőle",
             text: (total, leaving) => `${total} robot van az űrállomáson. ${leaving} szürke robot elindul a bolygóra.`,
             question: "Hány robot marad az űrállomáson?",
-            hint: "Húzd a szürke robotokat a rakétához!",
+            hint: "Kattints a szürke robotra!",
             success: (answer) => `😊 Szép munka! Az űrállomáson ${answer} robot maradt!`
         },
         "part-whole": {
@@ -345,7 +345,7 @@ remainder: {
             title: "🚋 Elmegy belőle",
             text: (total, leaving) => `${total} utas ül a villamoson. Közülük ${leaving} gyerek utas leszáll a következő megállónál.`,
             question: "Hányan utaznak tovább a villamoson?",
-            hint: "Húzd a gyerek utasokat a megállóba, ők leszállnak!",
+            hint: "Kattints a gyerek utasra!",
             success: (answer) => `😊 Szép munka! A villamoson ${answer} utas utazik tovább!`
         },
         "part-whole": {

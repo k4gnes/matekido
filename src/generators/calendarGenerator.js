@@ -12,6 +12,7 @@ function shuffle(arr) {
 
 const DAYS = ["hétfő", "kedd", "szerda", "csütörtök", "péntek", "szombat", "vasárnap"];
 const MONTHS = ["január", "február", "március", "április", "május", "június", "július", "augusztus", "szeptember", "október", "november", "december"];
+const ROMAN_MONTHS = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
 const SEASONS = ["tavasz", "nyár", "ősz", "tél"];
 const MONTH_DAYS = {
     január: 31,
@@ -54,7 +55,36 @@ function withNumberDistractors(correct, numbers, count) {
     return { options, answer: options.indexOf(correct) };
 }
 
-function buildTask(advanced) {
+function labelMonths(text) {
+    if (typeof text !== "string") {
+        return text;
+    }
+
+    let result = text;
+
+    MONTHS.forEach((month, index) => {
+        result = result.split(month).join(`${ROMAN_MONTHS[index]}. ${month}`);
+    });
+
+    return result;
+}
+
+function buildTask(advanced, roman) {
+
+    const task = createTask(advanced);
+
+    if (!roman) {
+        return task;
+    }
+
+    return {
+        ...task,
+        question: labelMonths(task.question),
+        options: task.options.map(labelMonths)
+    };
+}
+
+function createTask(advanced) {
     const modes = advanced
         ? ["days-in-month", "leap-february", "weekend-workday", "month-of-season", "season-months", "two-weeks-days", "long-month", "days-in-year", "weeks-in-year", "season-long", "count-weeks-month"]
         : ["next-day", "prev-day", "tomorrow", "yesterday", "between-days", "next-month", "prev-month", "season-of-month", "next-season", "count-days", "count-months"];
@@ -207,11 +237,11 @@ function buildTask(advanced) {
 }
 
 export function generateCalendar(options = {}) {
-    const { count = 5, advanced = false } = options;
+    const { count = 5, advanced = false, roman = false } = options;
 
     const tasks = [];
     for (let i = 0; i < count; i++) {
-        tasks.push(buildTask(advanced));
+        tasks.push(buildTask(advanced, roman));
     }
     return tasks;
 }

@@ -70,7 +70,7 @@
     margin: 0 .1rem;
 }
 
-.wp-drag-figure {
+.wp-figure {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -213,12 +213,6 @@
     background: #fffbeb;
 }
 
-.wp-drag-over {
-    background: #fff7ed;
-    border-color: #f59e0b;
-    border-style: solid;
-}
-
 .wp-count {
     text-align: center;
     font-size: 1.25rem;
@@ -231,24 +225,45 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    cursor: grab;
-    touch-action: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    background: none;
+    color: inherit;
+    font-size: inherit;
+    line-height: 1;
+    cursor: pointer;
+    touch-action: manipulation;
     user-select: none;
     -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.wp-postman-hidden {
-    visibility: hidden;
+.wp-postman:hover {
+    transform: none;
 }
 
-.wp-postman-clone {
-    position: fixed;
-    left: 0;
-    top: 0;
-    pointer-events: none;
-    z-index: 1000;
-    cursor: grabbing;
-    filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .25));
+.wp-postman.wp-postman-jump {
+    animation: wp-jump .3s ease-out;
+}
+
+@keyframes wp-jump {
+    0% {
+        transform: scale(1);
+    }
+    40% {
+        transform: scale(1.18);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.wp-postman:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: 10px;
 }
 
 .wp-two-step-row {

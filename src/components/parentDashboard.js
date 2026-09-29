@@ -7,6 +7,8 @@ const DAY = 24 * 60 * 60 * 1000;
 
 const WEEKDAY_SHORT = ["V", "H", "K", "Sze", "Cs", "P", "Szo"];
 
+const MONTH_SHORT = ["jan.", "febr.", "márc.", "ápr.", "máj.", "jún.", "júl.", "aug.", "szept.", "okt.", "nov.", "dec."];
+
 const ACCENT_COLORS = [
     "#4F86F7",
     "#F59E0B",
@@ -18,15 +20,6 @@ const ACCENT_COLORS = [
 
 function getToday() {
     return new Date().toISOString().split("T")[0];
-}
-
-function getLastNDays(n) {
-    const days = [];
-    const now = Date.now();
-    for (let i = n - 1; i >= 0; i--) {
-        days.push(new Date(now - i * DAY).toISOString().split("T")[0]);
-    }
-    return days;
 }
 
 function parseDate(dateStr) {
@@ -234,6 +227,27 @@ function createWeakSection(player, lessonIndex) {
 
 }
 
+function getWeekDates(offset) {
+    const dates = [];
+    const end = Date.now() - offset * 7 * DAY;
+    for (let i = 6; i >= 0; i--) {
+        dates.push(new Date(end - i * DAY).toISOString().split("T")[0]);
+    }
+    return dates;
+}
+
+function weekRangeLabel(dates, offset) {
+    const from = parseDate(dates[0]);
+    const to = parseDate(dates[dates.length - 1]);
+    const range = `${MONTH_SHORT[from.getMonth()]} ${from.getDate()} – ${MONTH_SHORT[to.getMonth()]} ${to.getDate()}.`;
+    return offset === 0 ? `Ez a hét: ${range}` : range;
+}
+
+function firstRecordedDate(dailyStats) {
+    const dates = Object.keys(dailyStats ?? {}).sort();
+    return dates.length > 0 ? dates[0] : null;
+}
+
 function createPlayerCard(player, accent, lessonIndex) {
 
     const card = document.createElement("div");
@@ -281,50 +295,115 @@ function createPlayerCard(player, accent, lessonIndex) {
 
     card.append(header, stats);
 
-    const lastDays = getLastNDays(7);
-    const weekDays = lastDays.map(date => {
-        const day = dailyStats[date] ?? { correct: 0, wrong: 0, lessonsPlayed: 0 };
-        return {
-            date,
-            lessons: day.lessonsPlayed ?? 0,
-            accuracy: dayAccuracy(day)
-        };
-    });
+    const earliest = firstRecordedDate(dailyStats);
+    let weekOffset = 0;
 
-    const maxLessons = Math.max(1, ...weekDays.map(d => d.lessons));
-    const chartTrackMin = Math.max(...weekDays.map(d => d.accuracy !== null ? 1 : 0)) > 0;
-    const chartLabel = document.createElement("p");
-    chartLabel.className = "parent-chart-label";
-    chartLabel.textContent = "📈 Elmúlt 7 nap";
+    const chartTitle = document.createElement("p");
+    chartTitle.className = "parent-chart-label";
+    chartTitle.textContent = "📈 Heti statisztika";
+
+    const weekNav = document.createElement("div");
+    weekNav.className = "parent-week-nav";
+
+    const prevBtn = createButton("◀", { className: "daily-nav-btn" });
+    const nextBtn = createButton("▶", { className: "daily-nav-btn" });
+    prevBtn.setAttribute("aria-label", "Előző hét");
+    nextBtn.setAttribute("aria-label", "Következő hét");
+
+    const weekLabel = document.createElement("span");
+    weekLabel.className = "parent-week-label";
+
+    weekNav.append(prevBtn, weekLabel, nextBtn);
+
+    const weekSummary = document.createElement("p");
+    weekSummary.className = "parent-week-summary";
 
     const chart = document.createElement("div");
     chart.className = "parent-chart";
 
-    weekDays.forEach(day => {
-        const col = document.createElement("div");
-        col.className = "parent-bar-col";
+    const note = document.createElement("p");
+    note.className = "parent-weekly-note";
 
-        const barValue = document.createElement("span");
-        barValue.className = "parent-bar-value";
-        barValue.textContent = day.lessons > 0 ? day.lessons : "";
+    function buildWeek(offset) {
 
-        const bar = document.createElement("div");
-        bar.className = "parent-bar";
-        bar.style.background = accuracyColor(day.accuracy);
-        bar.title = day.accuracy === null
-            ? `${day.date} – nem játszott`
-            : `${day.date} – ${day.lessons} lecke, ${day.accuracy}% pontosság`;
-        if (day.lessons > 0) {
-            bar.style.height = Math.max(6, Math.round((day.lessons / maxLessons) * 100)) + "px";
+        const dates = getWeekDates(offset);
+
+        const days = dates.map(date => {
+            const day = dailyStats[date] ?? { correct: 0, wrong: 0, lessonsPlayed: 0 };
+            return {
+                date,
+                lessons: day.lessonsPlayed ?? 0,
+                accuracy: dayAccuracy(day),
+                correct: day.correct ?? 0,
+                wrong: day.wrong ?? 0
+            };
+        });
+
+        const maxLessons = Math.max(1, ...days.map(d => d.lessons));
+
+        const totalLessons = days.reduce((sum, d) => sum + d.lessons, 0);
+        const totalCorrect = days.reduce((sum, d) => sum + d.correct, 0);
+        const totalWrong = days.reduce((sum, d) => sum + d.wrong, 0);
+        const playedDays = days.filter(d => d.lessons > 0).length;
+        const hasData = days.some(d => d.accuracy !== null);
+
+        weekLabel.textContent = weekRangeLabel(dates, offset);
+
+        prevBtn.disabled = earliest === null || dates[0] <= earliest;
+        nextBtn.disabled = offset === 0;
+
+        if (totalLessons === 0) {
+            weekSummary.textContent = "Ebben a hétben még nem játszott.";
+        } else {
+            const accuracy = Math.round((totalCorrect / (totalCorrect + totalWrong)) * 100);
+            weekSummary.textContent = `📚 ${totalLessons} lecke · 🎯 ${accuracy}% pontosság · 📅 ${playedDays}/7 nap`;
         }
 
-        const dayLabel = document.createElement("span");
-        dayLabel.className = "parent-bar-day";
-        dayLabel.textContent = formatDayLabel(day.date);
+        note.textContent = hasData
+            ? "A sávok magassága a leckék száma, színük a napi pontosság."
+            : "Nincs adat ehhez a héthez.";
 
-        col.append(barValue, bar, dayLabel);
-        chart.append(col);
+        chart.replaceChildren();
+
+        days.forEach(day => {
+            const col = document.createElement("div");
+            col.className = "parent-bar-col";
+
+            const barValue = document.createElement("span");
+            barValue.className = "parent-bar-value";
+            barValue.textContent = day.lessons > 0 ? day.lessons : "";
+
+            const bar = document.createElement("div");
+            bar.className = "parent-bar";
+            bar.style.background = accuracyColor(day.accuracy);
+            bar.title = day.accuracy === null
+                ? `${day.date} – nem játszott`
+                : `${day.date} – ${day.lessons} lecke, ${day.accuracy}% pontosság`;
+            if (day.lessons > 0) {
+                bar.style.height = Math.max(6, Math.round((day.lessons / maxLessons) * 100)) + "px";
+            }
+
+            const dayLabel = document.createElement("span");
+            dayLabel.className = "parent-bar-day";
+            dayLabel.textContent = formatDayLabel(day.date);
+
+            col.append(barValue, bar, dayLabel);
+            chart.append(col);
+        });
+    }
+
+    prevBtn.addEventListener("click", () => {
+        weekOffset++;
+        buildWeek(weekOffset);
     });
+
+    nextBtn.addEventListener("click", () => {
+        if (weekOffset === 0) return;
+        weekOffset--;
+        buildWeek(weekOffset);
+    });
+
+    buildWeek(0);
 
     const legend = document.createElement("div");
     legend.className = "parent-legend";
@@ -341,13 +420,7 @@ function createPlayerCard(player, accent, lessonIndex) {
         legend.append(item);
     });
 
-    const note = document.createElement("p");
-    note.className = "parent-weekly-note";
-    note.textContent = chartTrackMin
-        ? "A sávok magassága a leckék száma, színük a napi pontosság."
-        : "Nincs még heti adat ehhez a játékoshoz.";
-
-    card.append(chartLabel, chart, legend, note, createWeakSection(player, lessonIndex));
+    card.append(chartTitle, weekNav, weekSummary, chart, legend, note, createWeakSection(player, lessonIndex));
 
     const skippedTitles = computeSkippedLessons(player, lessonIndex);
     if (skippedTitles.length > 0) {

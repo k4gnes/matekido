@@ -1,5 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { resetMenuPrefs } from "./lessonMenu.js";
+import { gradesWithLessons } from "../utils/grades.js?v=1";
 import {
     listPlayers,
     switchPlayer,
@@ -48,7 +49,7 @@ export function renderWelcomeScreen(root, onSelect, onHelp, lessonIndex) {
     });
 
     grid.append(createAddCard(() => {
-        showAddModal(root, onSelect, lessonIndex?.gradeConfig ?? []);
+        showAddModal(root, onSelect, gradesWithLessons(lessonIndex));
     }));
 
     wrapper.append(grid);

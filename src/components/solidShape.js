@@ -17,7 +17,8 @@ const SOLIDS = {
     cube: { label: "kocka", dative: "kockának", faces: 6, color: "#3b82f6" },
     cuboid: { label: "téglatest", dative: "téglatestnek", faces: 6, color: "#8b5cf6" },
     cylinder: { label: "henger", dative: "hengernek", faces: 3, color: "#10b981" },
-    cone: { label: "kúp", dative: "kúpnak", faces: 2, color: "#f59e0b" }
+    cone: { label: "kúp", dative: "kúpnak", faces: 2, color: "#f59e0b" },
+    sphere: { label: "gömb", dative: "gömbnek", faces: 0, color: "#ef4444" }
 };
 
 const SVG_NS = "http://www.w3.org/2000/svg";
@@ -54,6 +55,12 @@ function createSolidSvg(solid) {
     } else if (solid === "cone") {
         svg.append(svgEl("path", { d: "M60,18 L28,88 A32,11 0 0 0 92,88 Z", fill: color, "fill-opacity": ".85", ...la }));
         svg.append(svgEl("ellipse", { cx: 60, cy: 88, rx: 32, ry: 11, fill: color, "fill-opacity": ".45", ...la }));
+    } else if (solid === "sphere") {
+        svg.append(svgEl("circle", { cx: 60, cy: 62, r: 36, fill: color, "fill-opacity": ".85", ...la }));
+        svg.append(svgEl("ellipse", {
+            cx: 47, cy: 46, rx: 13, ry: 9, fill: "#ffffff", "fill-opacity": ".4", stroke: "none",
+            transform: "rotate(-28 47 46)"
+        }));
     }
 
     return svg;

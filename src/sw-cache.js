@@ -476,6 +476,7 @@ const SW_CACHE_LIST = [
     "/sw.js",
     "/testGenerator.js",
     "/testLessons.js",
+    "/utils/grades.js",
     "/utils/markdown.js",
     "/vendor/jsqr.js",
     "/vendor/lzstring.js",

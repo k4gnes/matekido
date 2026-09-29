@@ -14,10 +14,13 @@ const SOLIDS = {
     cube: { label: "kocka", dative: "kockának", faces: 6 },
     cuboid: { label: "téglatest", dative: "téglatestnek", faces: 6 },
     cylinder: { label: "henger", dative: "hengernek", faces: 3 },
-    cone: { label: "kúp", dative: "kúpnak", faces: 2 }
+    cone: { label: "kúp", dative: "kúpnak", faces: 2 },
+    sphere: { label: "gömb", dative: "gömbnek", faces: 0 }
 };
 
-const ALL_LABELS = [...Object.values(SOLIDS).map(s => s.label), "gömb"];
+const FACE_SOLIDS = ["cube", "cuboid", "cylinder", "cone"];
+
+const ALL_LABELS = Object.values(SOLIDS).map(s => s.label);
 
 function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
@@ -39,7 +42,7 @@ function buildName() {
 }
 
 function buildFaces() {
-    const solid = pick(Object.keys(SOLIDS));
+    const solid = pick(FACE_SOLIDS);
     const correct = SOLIDS[solid].faces;
     const candidates = shuffle([correct - 2, correct - 1, correct + 1, correct + 2, correct + 4])
         .filter(v => v > 0 && v !== correct);

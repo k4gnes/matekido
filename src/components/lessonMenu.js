@@ -8,6 +8,7 @@ import { CATEGORIES, SKILLS } from "../data/skills.js";
 import { HINT_LESSON_FILES } from "../data/hintLessons.js";
 import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js";
 import { CONSOLIDATION_LESSONS } from "../data/consolidation.js";
+import { gradesWithLessons } from "../utils/grades.js?v=1";
 import { getWorld } from "../world/WorldRegistry.js";
 
 const CHILD_FRIENDLY_LABELS = {
@@ -117,9 +118,13 @@ const TYPE_GROUPS = {
 const RANGE_LABEL = {
     10: "10-ig",
     20: "20-ig",
+    30: "30-ig",
+    50: "50-ig",
     100: "100-ig",
+    500: "500-ig",
     1000: "1000-ig",
-    10000: "10 000-ig"
+    10000: "10 000-ig",
+    1000000: "1 000 000-ig"
 };
 
 const DIFFICULTY_BADGE = {
@@ -342,7 +347,12 @@ function createGradeSection(gradeConfig, lessons, onSelect, activeWorld, positio
     return card;
 }
 
-function createFilterPanel(filters, onFilterChange, gradeConfig, showGradeRow) {
+function getUsedSkills(lessons) {
+    const used = new Set((lessons || []).map(l => l.skill).filter(Boolean));
+    return Object.keys(SKILLS).filter(id => used.has(id));
+}
+
+function createFilterPanel(filters, onFilterChange, gradeConfig, showGradeRow, usedSkills) {
     const panel = document.createElement("div");
     panel.className = "filter-panel";
 
@@ -443,9 +453,9 @@ function createFilterPanel(filters, onFilterChange, gradeConfig, showGradeRow) {
     const skillBtns = document.createElement("div");
     skillBtns.className = "filter-skill-btns";
 
-    const usedSkills = ["neighbours", "comparison", "missing-number", "addition", "subtraction", "mixed", "true-false", "find-error", "place-value", "number-sequence", "ordering", "even-odd", "pattern", "estimation", "shapes", "shape-compare", "solid-shapes", "hour", "minute", "position", "money", "length", "mass", "volume", "calendar", "multiplication", "division", "missing-factor", "rounding", "number-names", "roman", "transform", "sets", "data-charts", "fraction", "divisibility", "perimeter", "area", "angles", "circle", "probability", "operation-order", "one-step", "two-step"];
+    const skills = usedSkills || getUsedSkills();
 
-    usedSkills.forEach(skillId => {
+    skills.forEach(skillId => {
         const skill = SKILLS[skillId];
         if (!skill) return;
 
@@ -619,7 +629,8 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
 
     const activeWorld = getActiveWorld();
     const allLessons = index.lessons || [];
-    const gradeConfig = index.gradeConfig || [];
+    const gradeConfig = gradesWithLessons(index);
+    const usedSkills = getUsedSkills(allLessons);
     let selectedGrade = loadSelectedGrade();
     if (!gradeConfig.some(gc => gc.grade === selectedGrade)) {
         selectedGrade = gradeConfig.length > 0 ? gradeConfig[0].grade : null;
@@ -704,7 +715,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
 
     function rebuildFilterPanel() {
         filterPanel.replaceChildren();
-        const newPanel = createFilterPanel(filters, rebuildAndRender, gradeConfig, customMode);
+        const newPanel = createFilterPanel(filters, rebuildAndRender, gradeConfig, customMode, usedSkills);
         filterPanel.append(...newPanel.childNodes);
     }
 

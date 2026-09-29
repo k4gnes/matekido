@@ -4,6 +4,7 @@ import { createNavBar } from "./ui/navbar.js";
 import { getDailyStats, getAllSkillStats, getActiveWorld, getLessonStats } from "../profile/Profile.js";
 import { SKILLS, CATEGORIES } from "../data/skills.js";
 import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js";
+import { gradesWithLessons } from "../utils/grades.js?v=1";
 
 function formatDate(dateStr) {
     const d = new Date(dateStr + "T00:00:00");
@@ -43,7 +44,7 @@ function createStatGrid(items, className) {
 function getGradeCompletion(lessonIndex) {
 
     const lessons = (lessonIndex?.lessons) || [];
-    const grades = (lessonIndex?.gradeConfig) || [];
+    const grades = gradesWithLessons(lessonIndex);
 
     return grades.map(gc => {
         const gradeLessons = lessons.filter(l => l.grades?.includes(gc.grade));

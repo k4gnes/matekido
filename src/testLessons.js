@@ -344,7 +344,7 @@ function validateStep(step, ctx) {
             break;
         }
         case "solid-shape": {
-            if (!["cube", "cuboid", "cylinder", "cone"].includes(step.solid)) fail(ctx, `solid hibás: ${step.solid}`);
+            if (!["cube", "cuboid", "cylinder", "cone", "sphere"].includes(step.solid)) fail(ctx, `solid hibás: ${step.solid}`);
             if (!["name", "faces"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             if (!Array.isArray(step.options) || step.options.length < 2) fail(ctx, "options hiányos");
             if (!isInt(step.answer) || step.answer < 0 || step.answer >= step.options.length) {

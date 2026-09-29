@@ -2,7 +2,7 @@ import { Game } from "./engine/Game.js?v=95";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=25";
 import { renderLessonMenu } from "./components/lessonMenu.js?v=82";
-import { renderSkillMap } from "./components/skillMap.js?v=26";
+import { renderSkillMap } from "./components/skillMap.js?v=27";
 import { renderHelp } from "./components/help.js?v=6";
 import { renderProfilePage } from "./components/profilePage.js?v=12";
 import { renderStatsPage } from "./components/statsPage.js?v=10";
@@ -345,16 +345,16 @@ function getNextLesson(path) {
 
 }
 
+function gradeArticle(grade) {
+    return grade === 1 || grade === 5 ? "az" : "a";
+}
+
 function gradeLabel(grade) {
-    if (grade === 1) return "az 1. osztállyal";
-    if (grade === 2) return "a 2. osztállyal";
-    return "a 3. osztállyal";
+    return `${gradeArticle(grade)} ${grade}. osztállyal`;
 }
 
 function nextGradeLabel(grade) {
-    if (grade === 1) return "az 1. osztály";
-    if (grade === 2) return "a 2. osztály";
-    return "a 3. osztály";
+    return `${gradeArticle(grade)} ${grade}. osztály`;
 }
 
 function showGradeChange(path, next) {
@@ -430,7 +430,7 @@ function showGradeComplete(path) {
     const card = createCard();
 
     const title = document.createElement("h1");
-    title.textContent = grade ? `🎉 Gratulálunk, a ${grade}. osztályt befejezted!` : "🎉 Gratulálunk!";
+    title.textContent = grade ? `🎉 Gratulálunk, ${gradeArticle(grade)} ${grade}. osztályt befejezted!` : "🎉 Gratulálunk!";
 
     const text = document.createElement("p");
     text.textContent = "Ügyes vagy, az összes feladatot teljesítetted ebben az osztályban!";
@@ -438,15 +438,17 @@ function showGradeComplete(path) {
     const buttons = document.createElement("div");
     buttons.className = "celebration-buttons";
 
-    if (grade != null && grade < 3) {
-        const nextBtn = createButton(`➡️ ${grade + 1}. osztály feladatai`, {
+    const nextGrade = grade != null ? grade + 1 : null;
+    const nextLesson = nextGrade != null ? getNextGradeStart(path) : null;
+    const nextGradeKnown = nextGrade != null
+        && (lessonIndex.gradeConfig ?? []).some(g => g.grade === nextGrade);
+
+    if (nextLesson && nextGradeKnown) {
+        const nextBtn = createButton(`➡️ ${nextGrade}. osztály feladatai`, {
             className: "nav-bar-btn",
             onClick: () => {
-                const next = getNextGradeStart(path);
-                if (next) {
-                    setActiveGrade(grade + 1);
-                    startLesson(next.file);
-                }
+                setActiveGrade(nextGrade);
+                startLesson(nextLesson.file);
             }
         });
         buttons.append(nextBtn);

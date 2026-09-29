@@ -77,7 +77,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
-| Hosszúság | 📏 Hosszúság-mérés | m, dm, cm átváltása | 100 | 2 |
+| Hosszúság | 📏 Hosszúság-mérés – méter, deciméter, centiméter | m, dm, cm átváltása (3 vegyes + 2 egységválasztó feladat) | 100 | 2 |
 | Idő | 🕐 Idő – pontos idő olvasása | Percre pontosan | — | 3 |
 | Naptár | 🗓️ Naptár 2. osztály | Hónapok napjai, hetek, hétvégék | — | 2 |
 | Idő | Idő – negyedóra | Óra olvasása (negyed, fél, háromnegyed) | — | 3 |

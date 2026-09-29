@@ -1,6 +1,8 @@
 # Matekidő – 5. osztályos tanmenet
 
-**Tervezett 32 lecke**, 7 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+> **Státusz: terv, még nincs megvalósítva.** A regiszterben ma csak 1–4. osztály van (171 lecke); 5. osztályos lecke még egy sincs. Az alábbiak irányadó tervek – a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
+
+**Tervezett 32 lecke**, 7 kategóriában. Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
 A 4. osztályos tananyag (10 000-es számkör, írásbeli műveletek) lezárult – az 5. osztály az **1 000 000-ig bővülő számkörre**, az **oszthatóságra**, a **törtek és tizedes törtek teljes műveletkörére**, valamint a **százalékszámítás alapjaira** épül.
 

@@ -1,6 +1,6 @@
 # Matekidő – 3. osztályos készségtérkép
 
-**45 lecke**, 7 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**47 lecke**, 9 kategóriában. Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
 A 2. osztályos tananyag lezárult – a 3. osztály **nagyobb számkörre (1000-ig)**, a **szorzás és osztás bővítésére** épül.
 
@@ -56,7 +56,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
-| Törtek | A tört jele – ½, ⅓, ¼ | Kép → jel társítása | ½, ⅓, ¼ | 1 |
+| Törtek | 🍕 Tört jele – ½, ⅓, ¼ | Kép → jel társítása | ½, ⅓, ¼ | 1 |
 | Törtek | Kép a tört jeléhez | Jel → kép társítása | ½, ⅓, ¼ | 1 |
 | Törtek | Egész törtrészei | Fele, harmada, negyede egész számnál | 48 | 1 |
 
@@ -89,11 +89,13 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Tükrözés | Tükrözés és szimmetria | Tükörkép felismerése (közös a 2. osztállyal) | – | 2 |
 | Kör | Kör – középpont, sugár, átmérő | A kör részeinek felismerése | – | 1 |
 
-## Gyakorlati tudások (4 lecke)
+## Gyakorlati tudások (6 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
-| Mértékegység | Mértékegység-átváltás | km/m, m/dm/cm/mm, kg/dkg, l/dl (mixed) | – | 2 |
+| Hosszúság | Hosszúság – centiméter, deciméter, méter | m/dm/cm átváltás, 2. blokkban km és mm is (advanced) | – | 2 |
+| Űrtartalom | Űrtartalom – liter, deciliter, centiliter | l/dl, l/cl, dl/cl átváltás, 2. blokkban ml is (advanced) | – | 2 |
+| Tömeg | Tömeg – kilogramm, dekagramm, gramm | kg/dkg, kg/g, dkg/g átváltás | – | 2 |
 | Idő | Idő – perc és óra | Perc és óra átváltása (choice + input) | – | 2 |
 | Pénz | Vásárlás 1000-ig | Fizetés 200 és 500 forintos bankjegyekkel | 1000 | 2 |
 | Naptár | Naptár és év | Év, hónap, hét, nap kapcsolata | – | 2 |

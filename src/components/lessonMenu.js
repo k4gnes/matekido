@@ -5,7 +5,7 @@ import { loadJSON, loadRaw, removeKeys } from "../storage.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getLessonStats, getActiveWorld, getActiveGrade, setActiveGrade, getFavoriteLessons, getSkippedLessons, isFavoriteLesson, toggleFavoriteLesson, getCustomDoneLessons, getMenuPrefs, saveMenuPrefs } from "../profile/Profile.js";
 import { CATEGORIES, SKILLS } from "../data/skills.js";
-import { HINT_LESSON_FILES } from "../data/hintLessons.js";
+import { HINT_TYPES, lessonHasHint } from "../data/hintLessons.js";
 import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js";
 import { CONSOLIDATION_LESSONS } from "../data/consolidation.js";
 import { gradesWithLessons } from "../utils/grades.js?v=1";
@@ -186,7 +186,7 @@ export function createLessonCard(lesson, onSelect, activeWorld, position, total,
         badges.append(gradeBadge);
     }
 
-    if (HINT_LESSON_FILES.has(lesson.file)) {
+    if (lessonHasHint(lesson)) {
         const hintBadge = document.createElement("span");
         hintBadge.className = "lesson-hint-badge";
         hintBadge.textContent = "💡";

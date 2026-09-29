@@ -1,6 +1,6 @@
 import { renderScene } from "../components/scene.js?v=11";
 import { createInstructionHelp } from "../components/ui/instruction.js";
-import { HINT_LESSON_FILES } from "../data/hintLessons.js";
+import { HINT_TYPES, lessonHasHint } from "../data/hintLessons.js";
 import { createExitButton } from "../components/ui/exit.js";
 import { renderExercise } from "../components/exercise.js?v=5";
 import { renderDecomposition } from "../components/decomposition.js?v=5";
@@ -296,6 +296,12 @@ export class Game {
         return { position: posInGrade + 1, total: gradeLessons.length };
     }
 
+    getLessonMeta() {
+        if (!this.lessonIndex || !this.lessonFile) return null;
+        const allLessons = this.lessonIndex.lessons || [];
+        return allLessons.find(l => l.file === this.lessonFile) || null;
+    }
+
     getLessonGrade() {
         if (!this.lessonIndex || !this.lessonFile) return null;
         const allLessons = this.lessonIndex.lessons || [];
@@ -575,7 +581,7 @@ export class Game {
                 });
                 cornerBar.append(favBtn);
             }
-            if (HINT_LESSON_FILES.has(this.lessonFile)) {
+            if (lessonHasHint(this.getLessonMeta()) || HINT_TYPES.has(step.type)) {
                 const hintDot = document.createElement("span");
                 hintDot.className = "exercise-hint-dot";
                 hintDot.textContent = "💡";

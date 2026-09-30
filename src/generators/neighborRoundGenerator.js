@@ -2,6 +2,12 @@ function pick(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
+function pickDifferent(arr, previous) {
+    if (arr.length < 2 || !previous) return pick(arr);
+    const candidates = arr.filter(item => item !== previous);
+    return pick(candidates);
+}
+
 const UNITS = {
     ten: { step: 10, label: "tízes" },
     hundred: { step: 100, label: "százas" },
@@ -34,7 +40,7 @@ export function generateNeighborRound(options = {}) {
 
     for (let i = 0; i < count; i++) {
 
-        const unit = pick(units);
+        const unit = pickDifferent(units, tasks.length ? tasks[tasks.length - 1].unit : null);
         const { step, label } = UNITS[unit];
 
         const num = nonAligned(min, max, step);

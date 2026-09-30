@@ -6,6 +6,12 @@ function randint(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function pickTruth(previous, beforePrevious) {
+    if (previous === undefined) return Math.random() < 0.5;
+    if (previous !== beforePrevious) return Math.random() < 0.5;
+    return !previous;
+}
+
 function generateAdditionTF(count, max) {
     const tasks = [];
     for (let i = 0; i < count; i++) {
@@ -61,11 +67,11 @@ function generateSubtractionTF(count, max) {
 function generateMixedTF(count, max) {
     const tasks = [];
     for (let i = 0; i < count; i++) {
+        const isCorrect = pickTruth(i === 0 ? null : tasks[i - 1].answer, tasks[i - 2]?.answer);
         if (Math.random() < 0.5) {
             const a = randint(5, max - 5);
             const b = randint(2, max - a);
             const correct = a + b;
-            const isCorrect = Math.random() < 0.5;
 
             if (isCorrect) {
                 tasks.push({
@@ -85,7 +91,6 @@ function generateMixedTF(count, max) {
             const a = randint(10, max);
             const b = randint(3, a - 2);
             const correct = a - b;
-            const isCorrect = Math.random() < 0.5;
 
             if (isCorrect) {
                 tasks.push({

@@ -1,24 +1,19 @@
 function spreadEqualSlots(count, forceEqual) {
 
-    const slots = [];
+    if (forceEqual <= 0 || count <= 1) return [];
 
-    if (forceEqual <= 0 || count <= 0) return slots;
-
-    const total = Math.min(forceEqual, count);
-
-    if (total >= count) {
-        for (let i = 0; i < count; i++) slots.push(i);
-        return slots;
-    }
+    const total = Math.max(1, Math.min(forceEqual, Math.ceil(count / 2)));
 
     if (total === 1) {
-        slots.push(1 + Math.floor(Math.random() * (count - 1)));
-        return slots;
+        return [1 + Math.floor(Math.random() * (count - 1))];
     }
 
-    const gap = Math.max(2, Math.floor(count / total));
-    for (let i = 0; i < total; i++) {
-        slots.push(Math.min(count - 1, i * gap + 1));
+    const slots = [];
+    let index = Math.floor(Math.random() * 2);
+
+    while (slots.length < total && index < count) {
+        slots.push(index);
+        index += 2;
     }
 
     return slots;
@@ -37,12 +32,19 @@ export function generateComparison(options = {}) {
     for (let i = 0; i < count; i++) {
 
         const makeEqual = equalSlots.has(i);
+        const previousEqual = i > 0 && tasks[i - 1].operator === "=";
 
         const left = plain ? randomPlainNumber(min, max) : randomExpression(max);
 
-        const right = makeEqual
+        let right = makeEqual
             ? (plain ? { expr: String(left.value), value: left.value } : randomExpressionEqualTo(left.value))
             : (plain ? randomPlainNumber(min, max) : randomExpression(max));
+
+        if (!makeEqual && previousEqual && left.value === right.value) {
+            right = plain
+                ? differentPlainNumber(left.value, min, max)
+                : differentExpression(left.value, max);
+        }
 
         let operator;
 
@@ -71,6 +73,24 @@ export function generateComparison(options = {}) {
 function randomPlainNumber(min, max) {
     const value = Math.floor(Math.random() * (max - min + 1)) + min;
     return { expr: String(value), value };
+}
+
+function differentPlainNumber(value, min, max) {
+    for (let attempt = 0; attempt < 20; attempt++) {
+        const candidate = Math.floor(Math.random() * (max - min + 1)) + min;
+        if (candidate !== value) return { expr: String(candidate), value: candidate };
+    }
+    const fallback = value + 1 <= max ? value + 1 : value - 1;
+    return { expr: String(fallback), value: fallback };
+}
+
+function differentExpression(value, max) {
+    for (let attempt = 0; attempt < 20; attempt++) {
+        const candidate = randomExpression(max);
+        if (candidate.value !== value) return candidate;
+    }
+    const offset = value + 1 <= max ? 1 : -1;
+    return { expr: `${Math.max(0, value + offset)} + 0`, value: Math.max(0, value + offset) };
 }
 
 function randomExpression(max) {

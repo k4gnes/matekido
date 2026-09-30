@@ -2,29 +2,145 @@ function pick(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
+function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
+const PLACE_VALUES = [
+    { key: "millions", label: "millió", value: 1000000 },
+    { key: "hundredThousands", label: "százezer", value: 100000 },
+    { key: "tenThousands", label: "tízezer", value: 10000 },
+    { key: "thousands", label: "ezres", value: 1000 },
+    { key: "hundreds", label: "százas", value: 100 },
+    { key: "tens", label: "tízes", value: 10 },
+    { key: "ones", label: "egyes", value: 1 }
+];
+
+function digitsOf(num) {
+    const digits = {};
+    for (const place of PLACE_VALUES) {
+        digits[place.key] = Math.floor(num / place.value) % 10;
+    }
+    return digits;
+}
+
+function formatNumber(n) {
+    return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+
+function makeValueTask(num, digits) {
+    const interesting = PLACE_VALUES.filter(p => digits[p.key] > 0);
+    const place = pick(interesting.length ? interesting : PLACE_VALUES);
+    const digit = digits[place.key];
+    const answer = digit * place.value;
+
+    const candidates = [digit, digit * 1, place.value, place.value * digit];
+    const options = [answer];
+    for (const c of candidates) {
+        if (options.length < 4 && !options.includes(c)) options.push(c);
+    }
+    for (let p = 1; options.length < 4; p *= 10) {
+        for (const d of [digit, Math.max(1, digit - 1), digit + 1]) {
+            const v = d * p;
+            if (options.length < 4 && !options.includes(v)) options.push(v);
+        }
+    }
+
+    return {
+        task: "value",
+        place: place.key,
+        placeLabel: place.label,
+        digit,
+        answer,
+        options: shuffle(options)
+    };
+}
+
+function makeDigitTask(num, digits) {
+    const place = pick(PLACE_VALUES);
+    const answer = digits[place.key];
+
+    const pool = [answer, (answer + 1) % 10, (answer + 9) % 10, (answer + 2) % 10, 0, 5];
+    const options = [];
+    for (const d of pool) {
+        if (options.length < 4 && !options.includes(d)) options.push(d);
+    }
+
+    return {
+        task: "digit",
+        place: place.key,
+        placeLabel: place.label,
+        answer,
+        options: shuffle(options)
+    };
+}
+
+function makeExpandTask(num) {
+    return { task: "expand", answer: num };
+}
+
 export function generatePlaceValueThousands(options = {}) {
 
-    const { count = 8, min = 1000, max = 9999, interaction = "mixed" } = options;
+    const {
+        count = 8,
+        min = 1000,
+        max = 9999,
+        interaction = "mixed",
+        layout = "auto",
+        task = "expand"
+    } = options;
+
+    const resolvedLayout = layout === "table" || (layout === "auto" && max > 9999) ? "table" : "emoji";
+    const useChoice = interaction === "mixed" ? null : interaction === "choice";
 
     const tasks = [];
 
     for (let i = 0; i < count; i++) {
 
         const num = Math.floor(Math.random() * (max - min + 1)) + min;
+        const digits = digitsOf(num);
 
-        const thousands = Math.floor(num / 1000);
-        const hundreds = Math.floor((num % 1000) / 100);
-        const tens = Math.floor((num % 100) / 10);
-        const ones = num % 10;
-
-        tasks.push({
-            thousands,
-            hundreds,
-            tens,
-            ones,
+        const base = {
             answer: num,
-            interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction
-        });
+            number: num,
+            numberText: formatNumber(num),
+            layout: resolvedLayout,
+            interaction: useChoice ?? pick(["input", "choice"])
+        };
+
+        for (const place of PLACE_VALUES) {
+            base[place.key] = digits[place.key];
+        }
+
+        let extra;
+
+        if (task === "mixed") {
+            extra = pick([makeValueTask, makeDigitTask, makeExpandTask])(num, digits);
+        } else if (task === "value") {
+            extra = makeValueTask(num, digits);
+        } else if (task === "digit") {
+            extra = makeDigitTask(num, digits);
+        } else if (task === "expand") {
+            extra = makeExpandTask(num);
+        } else {
+            throw new Error(`Ismeretlen helyiérték feladattípus: ${task}`);
+        }
+
+        if (extra.task !== "expand" && !extra.options) {
+            throw new Error(`A(z) ${extra.task} feladattípushoz nincs opció.`);
+        }
+
+        if (extra.task === "value" || extra.task === "digit") {
+            base.interaction = "choice";
+        }
+
+        Object.assign(base, extra);
+
+        tasks.push(base);
     }
 
     return tasks;

@@ -102,5 +102,13 @@ export const CONSOLIDATION_LESSONS = {
         "money-change-02",
         "elapsed-time-01",
         "word-problems-two-step-02"
+    ],
+    5: [
+        "place-value-millions-01",
+        "number-name-millions-01",
+        "neighbor-round-millions-01",
+        "comparison-millions-01",
+        "divisibility-rules-01",
+        "rounding-millions-01"
     ]
 };

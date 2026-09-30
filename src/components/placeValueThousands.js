@@ -15,6 +15,51 @@ const WORLD = {
     tram: { title: "🚋 Hány utast küld a villamosflotta?", thousands: "🚋", hundreds: "🚉", tens: "🚋", ones: "🚶" }
 };
 
+const PLACES = [
+    { key: "millions", label: "millió" },
+    { key: "hundredThousands", label: "százezer" },
+    { key: "tenThousands", label: "tízezer" },
+    { key: "thousands", label: "ezres" },
+    { key: "hundreds", label: "százas" },
+    { key: "tens", label: "tízes" },
+    { key: "ones", label: "egyes" }
+];
+
+function activePlaces(number) {
+    const first = PLACES.length - String(number).length;
+    return PLACES.slice(Math.max(first, 0));
+}
+
+function magnitudeBounds(answer) {
+    const digits = String(answer).length;
+    if (digits <= 3) return [0, 999];
+    return [Math.pow(10, digits - 1), Math.pow(10, digits) - 1];
+}
+
+function placeValueTable(places, step) {
+    const table = document.createElement("table");
+    table.style.cssText = "margin:0.5rem auto;border-collapse:separate;border-spacing:0.3rem;table-layout:fixed;";
+
+    const head = document.createElement("tr");
+    const body = document.createElement("tr");
+
+    for (const place of places) {
+        const th = document.createElement("th");
+        th.style.cssText = "font-size:0.85rem;font-weight:600;color:var(--text-soft, #6b7280);padding:0.2rem 0.3rem;";
+        th.textContent = place.label;
+
+        const td = document.createElement("td");
+        td.style.cssText = "font-size:2rem;font-weight:700;min-width:2.6rem;padding:0.3rem 0.4rem;text-align:center;background:var(--card-bg,#fff);border:1px solid var(--line,#e5e7eb);border-radius:0.5rem;";
+        td.textContent = step[place.key];
+
+        head.append(th);
+        body.append(td);
+    }
+
+    table.append(head, body);
+    return table;
+}
+
 export function renderPlaceValueThousands(step, root, next, progress, onResult, onAttempt) {
 
     const ac = new AbortController();
@@ -24,37 +69,57 @@ export function renderPlaceValueThousands(step, root, next, progress, onResult, 
 
     const useChoice = step.interaction === "choice";
 
+    const number = step.number ?? step.answer;
+    const places = activePlaces(number);
+    const hasEmoji = places.every(place => w[place.key]);
+    const useTable = step.layout === "table" || !hasEmoji;
+
     const title = document.createElement("h1");
-    title.textContent = w.title;
+    const defaultTitle = step.task === "value" ? "🔢 Mennyit ér a számjegy?"
+        : step.task === "digit" ? "🔢 Melyik számjegy van itt?"
+        : useTable ? "🔢 Bontsuk fel helyiértékekre!"
+        : w.title;
+    title.textContent = step.title ?? defaultTitle;
 
-    const emojiArea = document.createElement("div");
-    emojiArea.style.cssText = "display:flex; flex-wrap:wrap; gap:0.8rem; justify-content:center; margin:0.5rem 0;";
+    let board;
 
-    function emojiColumn(emoji, count, label) {
-        const col = document.createElement("div");
-        col.style.cssText = "display:flex; flex-direction:column; align-items:center;";
-        const emojiRow = document.createElement("div");
-        emojiRow.style.cssText = "font-size:1.25rem; line-height:1.7; text-align:center;";
-        emojiRow.textContent = emoji.repeat(count);
-        const lbl = document.createElement("div");
-        lbl.style.cssText = "font-size:0.9rem; font-weight:bold; margin-top:0.2rem;";
-        lbl.textContent = label;
-        col.append(emojiRow, lbl);
-        return col;
+    if (useTable) {
+        board = placeValueTable(places, step);
+    } else {
+        const emojiArea = document.createElement("div");
+        emojiArea.style.cssText = "display:flex; flex-wrap:wrap; gap:0.8rem; justify-content:center; margin:0.5rem 0;";
+
+        for (const place of places) {
+            const col = document.createElement("div");
+            col.style.cssText = "display:flex; flex-direction:column; align-items:center;";
+            const emojiRow = document.createElement("div");
+            emojiRow.style.cssText = "font-size:1.25rem; line-height:1.7; text-align:center;";
+            emojiRow.textContent = w[place.key].repeat(step[place.key]);
+            const lbl = document.createElement("div");
+            lbl.style.cssText = "font-size:0.9rem; font-weight:bold; margin-top:0.2rem;";
+            lbl.textContent = place.label;
+            col.append(emojiRow, lbl);
+            emojiArea.append(col);
+        }
+
+        board = emojiArea;
     }
-
-    emojiArea.append(
-        emojiColumn(w.thousands, step.thousands, "ezres"),
-        emojiColumn(w.hundreds, step.hundreds, "százas"),
-        emojiColumn(w.tens, step.tens, "tízes"),
-        emojiColumn(w.ones, step.ones, "egyes")
-    );
 
     const equation = document.createElement("div");
     equation.className = "equation";
 
+    let prompt;
+
+    if (step.task === "value") {
+        prompt = `A(z) ${step.digit} számjegy a(z) ${step.placeLabel} helyen mennyit ér?`;
+    } else if (step.task === "digit") {
+        prompt = `Melyik számjegy van a(z) ${step.placeLabel} helyen?`;
+    } else {
+        prompt = places.map(place => `${step[place.key]} ${place.label}`).join(" + ") + " =";
+    }
+
     const desc = document.createElement("span");
-    desc.textContent = `${step.thousands} ezres + ${step.hundreds} százas + ${step.tens} tízes + ${step.ones} egyes =`;
+    desc.textContent = prompt;
 
     let input;
     let optionsContainer;
@@ -65,7 +130,8 @@ export function renderPlaceValueThousands(step, root, next, progress, onResult, 
         optionsContainer = document.createElement("div");
         optionsContainer.className = "mult-options";
 
-        const options = makeOptions(step.answer, 1000, 9999);
+        const [boundMin, boundMax] = magnitudeBounds(step.answer);
+        const options = step.options ?? makeOptions(step.answer, boundMin, boundMax);
         options.forEach(value => {
             const btn = document.createElement("button");
             btn.type = "button";
@@ -76,13 +142,13 @@ export function renderPlaceValueThousands(step, root, next, progress, onResult, 
         });
     } else {
         input = createNumberInput();
-        input.style.width = "8ch";
+        input.style.width = `${String(step.answer).length + 2}ch`;
         equation.append(desc, input);
 
         button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
     }
 
-    const children = [emojiArea, equation];
+    const children = [board, equation];
     if (optionsContainer) children.push(optionsContainer);
     if (button) children.push(button);
 

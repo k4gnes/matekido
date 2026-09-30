@@ -1,4 +1,4 @@
-import { splitNumber, distanceToNextTen } from "../../math/number.js";
+import { splitNumber, distanceToNextTen } from "../../math/number.js?v=1";
 import { createHintBox } from "../ui/hintBox.js";
 
 export function renderAdditionHint(step, container) {

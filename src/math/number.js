@@ -39,8 +39,37 @@ const ONES = ["", "egy", "kettő", "három", "négy", "öt", "hat", "hét", "nyo
 const TENS_BASE = ["", "", "huszon", "harminc", "negyven", "ötven", "hatvan", "hetven", "nyolcvan", "kilencven"];
 const TENS_ROUND = ["", "tíz", "húsz", "harminc", "negyven", "ötven", "hatvan", "hetven", "nyolcvan", "kilencven"];
 
+const SCALES = [
+    { value: 1000000, name: "millió", alwaysHyphen: true, prefixOne: true },
+    { value: 1000, name: "ezer", alwaysHyphen: false, prefixOne: false }
+];
+
 /**
- * Egy szám magyar neve (1–9999), iskolai (helyiérték szerinti) olvasatban.
+ * Nagysávi szó megalkotása (ezer, millió): az 1 és a 2 külön alakú, a
+ * 10 fölötti darabszám iskolai olvasatban szó szerint következik utána.
+ * A millió csak összetételben kap "egy" előtagot, önmagában nem.
+ *
+ * scaleWords(3, "ezer", false)
+ * → "háromezer"
+ *
+ * scaleWords(2, "millió", true)
+ * → "kétmillió"
+ *
+ * scaleWords(120, "millió", true)
+ * → "százhuszonötmillió"
+ */
+function scaleWords(count, name, prefixOne) {
+
+    if (count === 1) return prefixOne ? "egy" + name : name;
+    if (count === 2) return "két" + name;
+    if (count < 10) return ONES[count] + name;
+
+    return numberToWords(count) + name;
+
+}
+
+/**
+ * Egy szám magyar neve (1–999 999 999), iskolai (helyiérték szerinti) olvasatban.
  *
  * numberToWords(125)
  * → "egyszázhuszonöt"
@@ -53,6 +82,9 @@ const TENS_ROUND = ["", "tíz", "húsz", "harminc", "negyven", "ötven", "hatvan
  *
  * numberToWords(5326)
  * → "ötezer-háromszázhuszonhat"
+ *
+ * numberToWords(1234567)
+ * → "egymillió-kétszázharmincnégyezer-ötszázhatvanhét"
  */
 export function numberToWords(number) {
 
@@ -89,20 +121,14 @@ export function numberToWords(number) {
         return result;
     }
 
-    const thousands = Math.floor(number / 1000);
-    const rest = number % 1000;
+    const scale = SCALES.find(s => number >= s.value);
+    const count = Math.floor(number / scale.value);
+    const rest = number % scale.value;
 
-    let result;
-    if (thousands === 1) {
-        result = "ezer";
-    } else if (thousands === 2) {
-        result = "kétezer";
-    } else {
-        result = ONES[thousands] + "ezer";
-    }
+    let result = scaleWords(count, scale.name, scale.prefixOne && rest > 0);
 
     if (rest > 0) {
-        result += (thousands >= 2 ? "-" : "") + numberToWords(rest);
+        result += (scale.alwaysHyphen || count >= 2 ? "-" : "") + numberToWords(rest);
     }
 
     return result;

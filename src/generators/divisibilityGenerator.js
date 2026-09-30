@@ -15,6 +15,8 @@ function randint(min, max) {
 }
 
 const SUFFIX = {
+    2: "-nek",
+    3: "-nek",
     4: "-nek",
     5: "-nek",
     6: "-nak",
@@ -32,6 +34,7 @@ const SUFFIX = {
 };
 
 const MULTIPLE_BASES = [4, 5, 6, 7, 8, 9, 10, 12];
+const NOT_MULTIPLE_BASES = [4, 5, 6, 7, 8, 9];
 const DIVISOR_BASES = [12, 15, 16, 18, 20, 24, 30];
 
 function divisorsOf(n) {
@@ -52,8 +55,8 @@ function inRange(pool, center, spread) {
     return pool.filter(v => v >= center - spread && v <= center + spread);
 }
 
-function buildMultipleTask() {
-    const base = pick(MULTIPLE_BASES);
+function buildMultipleTask(bases) {
+    const base = pick(bases);
     const correct = base * randint(2, 6);
     const pool = [];
     for (let v = 2; v <= 90; v++) {
@@ -71,11 +74,12 @@ function buildMultipleTask() {
     };
 }
 
-function buildNotMultipleTask() {
-    const base = pick([4, 5, 6, 7, 8, 9]);
+function buildNotMultipleTask(bases) {
+    const base = pick(bases);
     const factor = randint(3, 6);
     const m = base * factor;
-    const non = m + pick([1, 2, 3, base - 1]);
+    const deltas = [1, 2, 3, base - 1].filter(d => d > 0 && d % base !== 0);
+    const non = m + pick(deltas);
     const multiples = [m - base, m, m + base];
     const options = shuffle([...multiples.map(v => ({ text: String(v), correct: false })), { text: String(non), correct: true }]);
     return {
@@ -125,21 +129,29 @@ function buildCountTask() {
 }
 
 export function generateDivisibility(options = {}) {
-    const { count = 4, mode = "mixed" } = options;
+    const { count = 4, mode = "mixed", bases = null } = options;
+
+    const multipleBases = bases ?? MULTIPLE_BASES;
+    const notMultipleBases = bases ?? NOT_MULTIPLE_BASES;
+
+    const builders = {
+        multiple: () => buildMultipleTask(multipleBases),
+        divisor: () => buildDivisorTask(),
+        count: () => buildCountTask(),
+        "not-multiple": () => buildNotMultipleTask(notMultipleBases)
+    };
+
+    const keys = Object.keys(builders);
+    const chosen = mode === "mixed" ? pick(keys) : mode;
+
+    const build = builders[chosen];
+    if (!build) {
+        throw new Error(`Ismeretlen oszthatósági mód: ${chosen}`);
+    }
 
     const tasks = [];
     for (let i = 0; i < count; i++) {
-        if (mode === "multiple") {
-            tasks.push(buildMultipleTask());
-        } else if (mode === "divisor") {
-            tasks.push(buildDivisorTask());
-        } else if (mode === "count") {
-            tasks.push(buildCountTask());
-        } else if (mode === "not-multiple") {
-            tasks.push(buildNotMultipleTask());
-        } else {
-            tasks.push(pick([buildMultipleTask, buildDivisorTask, buildCountTask, buildNotMultipleTask])());
-        }
+        tasks.push(build());
     }
     return tasks;
 }

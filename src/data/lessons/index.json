@@ -1,6 +1,150 @@
 {
   "lessons": [
     {
+      "id": "place-value-millions-01",
+      "title": "Helyiérték 1 000 000-ig",
+      "grades": [
+        5
+      ],
+      "category": "numbers",
+      "skill": "place-value",
+      "difficulty": 2,
+      "type": "place-value-thousands",
+      "range": 1000000,
+      "mission": "🔢 Milliók, száuezrek, tíuezrek",
+      "subtitle": "Helyiérték 1 000 000-ig – milliók, száuezrek, tíuezrek",
+      "file": "./data/lessons/grade5/place-value-millions-01.json",
+      "worldTitles": {
+        "postman": "🚚 Hány levél jut száz rakományra?",
+        "racing": "🏁 Hány alkatrész kell a nagy raktárba?",
+        "cooking": "🥘 Hány hozzávaló kell a városi étkezdenek?",
+        "football": "🏆 Hány szurkoló jön a nagy stadionba?",
+        "animals": "🦛 Hány állat van a teljes szafárián?",
+        "space": "🛸 Hány robotot irányít a flotta?",
+        "tram": "🚋 Hány utast szállít a városi hálózat?"
+      }
+    },
+    {
+      "id": "number-name-millions-01",
+      "title": "Számnevek 1 000 000-ig",
+      "grades": [
+        5
+      ],
+      "category": "numbers",
+      "skill": "number-names",
+      "difficulty": 2,
+      "type": "number-name",
+      "range": 1000000,
+      "mission": "🗣️ Hogyan mondjuk a nagy számokat?",
+      "subtitle": "Számnevek 1 000 000-ig – szóval és számmal",
+      "file": "./data/lessons/grade5/number-name-millions-01.json",
+      "worldTitles": {
+        "postman": "🚚 Milyen nevű a rakományok száma?",
+        "racing": "🏁 Milyen nevű az alkatrészszám?",
+        "cooking": "🥘 Milyen nevű a hozzávalók száma?",
+        "football": "🏆 Milyen nevű a nézőszám?",
+        "animals": "🦛 Milyen nevű az állatok száma?",
+        "space": "🛸 Milyen nevű a robotok száma?",
+        "tram": "🚋 Milyen nevű az utasok száma?"
+      }
+    },
+    {
+      "id": "neighbor-round-millions-01",
+      "title": "Számszomszédok 1 000 000-ig",
+      "grades": [
+        5
+      ],
+      "category": "numbers",
+      "skill": "neighbours",
+      "difficulty": 2,
+      "type": "neighbor-round",
+      "range": 1000000,
+      "mission": "↔️ Ki áll közvetlenül mellé?",
+      "subtitle": "Számszomszédok 1 000 000-ig – tízesen, százezeren",
+      "file": "./data/lessons/grade5/neighbor-round-millions-01.json",
+      "worldTitles": {
+        "postman": "🚚 Melyik rakomány jön a szomszédban?",
+        "racing": "🏁 Melyik raktár a legközelebbi?",
+        "cooking": "🥘 Melyik láda a legközelebbi?",
+        "football": "🏆 Melyik szektor a legközelebbi?",
+        "animals": "🦛 Melyik karám a legközelebbi?",
+        "space": "🛸 Melyik bázis a legközelebbi?",
+        "tram": "🚋 Melyik szerelvény a legközelebbi?"
+      }
+    },
+    {
+      "id": "comparison-millions-01",
+      "title": "Összehasonlítás 1 000 000-ig",
+      "grades": [
+        5
+      ],
+      "category": "numbers",
+      "skill": "comparison",
+      "difficulty": 2,
+      "type": "comparison",
+      "range": 1000000,
+      "mission": "⚖️ Melyik a nagyobb?",
+      "subtitle": "Összehasonlítás 1 000 000-ig – nagyobb, kisebb, egyenlő",
+      "file": "./data/lessons/grade5/comparison-millions-01.json",
+      "worldTitles": {
+        "postman": "🚚 Melyik rakományszám a nagyobb?",
+        "racing": "🏁 Melyik raktárszám a nagyobb?",
+        "cooking": "🥘 Melyik ladaszám a nagyobb?",
+        "football": "🏆 Melyik nézőszám a nagyobb?",
+        "animals": "🦛 Melyik állatszám a nagyobb?",
+        "space": "🛸 Melyik bázisszám a nagyobb?",
+        "tram": "🚋 Melyik utasszám a nagyobb?"
+      }
+    },
+    {
+      "id": "divisibility-rules-01",
+      "title": "Oszthatóság 2, 3, 4, 5, 6, 9, 10-zel",
+      "grades": [
+        5
+      ],
+      "category": "numbers",
+      "skill": "divisibility",
+      "difficulty": 3,
+      "type": "divisibility",
+      "range": 1000000,
+      "mission": "🔢 Mivel osztható?",
+      "subtitle": "Oszthatósági szabályok: 2, 3, 4, 5, 6, 9, 10",
+      "file": "./data/lessons/grade5/divisibility-rules-01.json",
+      "worldTitles": {
+        "postman": "🚚 Melyik szám osztható 3-mal?",
+        "racing": "🏁 Melyik szám osztható 4-gyel?",
+        "cooking": "🥘 Melyik szám osztható 9-cel?",
+        "football": "🏆 Melyik szám osztható 6-tal?",
+        "animals": "🦛 Melyik szám osztható 10-zel?",
+        "space": "🛸 Melyik szám osztható 5-tel?",
+        "tram": "🚋 Melyik szám osztható 2-vel?"
+      }
+    },
+    {
+      "id": "rounding-millions-01",
+      "title": "Kerekítés és becslés 1 000 000-ig",
+      "grades": [
+        5
+      ],
+      "category": "numbers",
+      "skill": "rounding",
+      "difficulty": 2,
+      "type": "rounding",
+      "range": 1000000,
+      "mission": "🎯 Kerekíts és becsülj!",
+      "subtitle": "Kerekítés és becslés – százezresre, százezerre",
+      "file": "./data/lessons/grade5/rounding-millions-01.json",
+      "worldTitles": {
+        "postman": "🚚 Mennyi levél érkezik össze?",
+        "racing": "🏁 Mennyi alkatrész kell a raktárba?",
+        "cooking": "🥘 Mennyi hozzávaló kell az étkezdenek?",
+        "football": "🏆 Mennyi néző jön a meccsre?",
+        "animals": "🦛 Mennyi állat van a szafárián?",
+        "space": "🛸 Mennyi robotot indít a flotta?",
+        "tram": "🚋 Mennyi utas száll fel a hálózaton?"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

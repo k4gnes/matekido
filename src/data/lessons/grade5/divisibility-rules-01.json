@@ -1,0 +1,101 @@
+{
+    "id": "grade5-divisibility-rules-01",
+    "title": "Oszthatóság 2, 3, 4, 5, 6, 9, 10-zel",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🔢 Mivel osztható?",
+            "text": "Van olyan szám, ami 2-vel, 3-mal, 4-gyel, 5-tel, 6-tal, 9-cel és 10-zel is osztható! Nézd meg, melyik szám melyik szabályhoz tartozik.",
+            "illustration": "<div style='margin:1rem 0; line-height:2.2; text-align:center; font-size:1.05rem;'>360</div><div style='font-size:0.95rem; opacity:0.8;'>2-vel, 3-mal, 4-gyel, 5-tel, 6-tal, 9-cel és 10-zel is osztható</div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "🚚 Melyik szám osztható 3-mal?",
+                    "text": "Ha a rakományok, ládák és levélszámok összege 3-mal osztható, akkor a teljes szám is az!"
+                },
+                "racing": {
+                    "title": "🏁 Melyik szám osztható 4-gyel?",
+                    "text": "Ha egy szám utolsó két számjegyeosztható 4-gyel, akkor a teljes szám is az!"
+                },
+                "football": {
+                    "title": "🏆 Melyik szám osztható 6-tal?",
+                    "text": "Ha egy szám 2-vel és 3-mal is osztható, akkor 6-tal is osztható!"
+                },
+                "cooking": {
+                    "title": "🥘 Melyik szám osztható 9-cel?",
+                    "text": "Ha a számjegyek összege 9-cel osztható, akkor a teljes szám is osztható 9-cel!"
+                },
+                "animals": {
+                    "title": "🦛 Melyik szám osztható 10-zel?",
+                    "text": "Ha egy szám 0-ra végződik, akkor 10-zel is osztható!"
+                },
+                "space": {
+                    "title": "🛸 Melyik szám osztható 5-tel?",
+                    "text": "Ha egy szám 0-ra vagy 5-re végződik, akkor 5-tel is osztható!"
+                },
+                "tram": {
+                    "title": "🚋 Melyik szám osztható 2-vel?",
+                    "text": "Ha egy szám páros, akkor 2-vel is osztható!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "divisibility",
+
+            "options": {
+                "count": 4,
+                "mode": "multiple",
+                "bases": [2, 3, 4, 5, 6, 9, 10]
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "divisibility",
+
+            "options": {
+                "count": 4,
+                "mode": "not-multiple",
+                "bases": [2, 3, 4, 5, 6, 9, 10]
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Megismerted a 2, 3, 4, 5, 6, 9 és 10 oszthatósági szabályait!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🚚 Nagy vagy!",
+                    "text": "Minden rakományszámnál felismerted az oszthatóságot!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden alkatrészszámnál felismerted az oszthatóságot!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden nézőszámnál felismerted az oszthatóságot!"
+                },
+                "cooking": {
+                    "title": "🥘 Szép munka!",
+                    "text": "Minden hozzavalószámnál felismerted az oszthatóságot!"
+                },
+                "animals": {
+                    "title": "🦛 Ügyes voltál!",
+                    "text": "Minden állatszámnál felismerted az oszthatóságot!"
+                },
+                "space": {
+                    "title": "🛸 Szuper vagy!",
+                    "text": "Minden robotszámnál felismerted az oszthatóságot!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden utasszámnál felismerted az oszthatóságot!"
+                }
+            }
+        }
+    ]
+}

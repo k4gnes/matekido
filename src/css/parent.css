@@ -220,11 +220,22 @@
 }
 
 .parent-hub-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 1rem;
-    justify-content: center;
     margin: .4rem 0 1.4rem;
+}
+
+@media (min-width: 34rem) {
+    .parent-hub-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 52rem) {
+    .parent-hub-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .parent-hub-choice {
@@ -232,8 +243,7 @@
     flex-direction: column;
     align-items: center;
     gap: .3rem;
-    min-width: 230px;
-    max-width: 320px;
+    width: 100%;
     padding: 1.4rem 1.6rem;
     background: #f6f9ff;
     border: 2px solid #dce7f8;
@@ -262,4 +272,5 @@
     font-size: .85rem;
     color: #667;
     line-height: 1.4;
+    text-align: center;
 }

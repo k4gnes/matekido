@@ -5,12 +5,30 @@ function pick(arr) {
 const UNITS = {
     ten: { step: 10, label: "tízes" },
     hundred: { step: 100, label: "százas" },
-    thousand: { step: 1000, label: "ezres" }
+    thousand: { step: 1000, label: "ezres" },
+    tenThousand: { step: 10000, label: "tízezeres" },
+    hundredThousand: { step: 100000, label: "százezres" }
 };
+
+function nonAligned(min, max, step) {
+
+    const num = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    if (num % step !== 0) return num;
+    if (num + 1 <= max) return num + 1;
+    if (num - 1 >= min) return num - 1;
+
+    throw new Error(`A ${min}–${max} tartományban nincs ${step} alá nem eső szám.`);
+
+}
 
 export function generateNeighborRound(options = {}) {
 
     const { count = 8, min = 1000, max = 9999, units = ["ten", "hundred", "thousand"] } = options;
+
+    if (max < min) {
+        throw new Error("A max értéknek legalább akkora kell lennie, mint a min.");
+    }
 
     const tasks = [];
 
@@ -19,10 +37,7 @@ export function generateNeighborRound(options = {}) {
         const unit = pick(units);
         const { step, label } = UNITS[unit];
 
-        let num;
-        do {
-            num = Math.floor(Math.random() * (max - min + 1)) + min;
-        } while (num % step === 0);
+        const num = nonAligned(min, max, step);
 
         tasks.push({
             number: num,

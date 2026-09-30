@@ -1,0 +1,105 @@
+{
+  "id": "grade5-place-value-millions-01",
+  "title": "Helyiérték 1 000 000-ig",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧮 Milliók, százezrek, tíuezrek",
+      "text": "Tíz darab ezer tízezer, száz darab ezer százezer, és ezer darab ezer millió! Nézd meg a helyiérték-táblázatot, és bontsd fel a számokat helyiértékekre!",
+      "illustration": "<div style='margin:1rem 0; line-height:2.2; text-align:center;'><span style='font-size:1.5rem;'>🏙️</span> <span style='font-size:1.1rem;'>= 1 000 000</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 000 000 = 1 millió · 100 000 = 1 százezer · 10 000 = 1 tízezer</div>",
+      "worldTitles": {
+        "postman": {
+          "title": "🚚 Hány levél jut száz rakományra?",
+          "text": "Száz rakományban százezer levél van, ezer rakományban millió! Nézd meg a helyiérték-táblázatot!",
+          "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>🚚</span> <span style='font-size:1.1rem;'>= 1000 levél</span></div><div style='font-size:0.95rem; opacity:0.8;'>1000 levél = 1 rakomány · 1000 rakomány = 1 millió levél</div>"
+        },
+        "racing": {
+          "title": "🏁 Hány alkatrész kell a nagy raktárba?",
+          "text": "Egy raktárban ezer alkatrész van, száz raktárban százezer, ezer raktárban millió! Nézd meg a helyiérték-táblázatot!",
+          "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>🏁</span> <span style='font-size:1.1rem;'>= 1000 alkatrész</span></div><div style='font-size:0.95rem; opacity:0.8;'>1000 alkatrész = 1 raktár · 1000 raktár = 1 millió alkatrész</div>"
+        },
+        "football": {
+          "title": "🏆 Hány szurkoló jön a nagy stadionba?",
+          "text": "Egy szektorban ezer szurkoló, száz szektorban százezer, ezer szektorban millió! Nézd meg a helyiérték-táblázatot!",
+          "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>🏆</span> <span style='font-size:1.1rem;'>= 1000 szurkoló</span></div><div style='font-size:0.95rem; opacity:0.8;'>1000 szurkoló = 1 szektor · 1000 szektor = 1 millió szurkoló</div>"
+        },
+        "cooking": {
+          "title": "🥘 Hány hozzávaló kell a városi étkezdenek?",
+          "text": "Egy ládában ezer hozzávaló, száz ládában százezer, ezer ládában millió! Nézd meg a helyiérték-táblázatot!",
+          "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>🥘</span> <span style='font-size:1.1rem;'>= 1000 hozzávaló</span></div><div style='font-size:0.95rem; opacity:0.8;'>1000 hozzávaló = 1 láda · 1000 láda = 1 millió hozzávaló</div>"
+        },
+        "animals": {
+          "title": "🦛 Hány állat van a teljes szafárián?",
+          "text": "Egy karámban ezer állat, száz karámban százezer, ezer karámban millió! Nézd meg a helyiérték-táblázatot!"
+        },
+        "space": {
+          "title": "🛸 Hány robotot irányít a flotta?",
+          "text": "Egy bázison ezer robot, száz bázison százezer, ezer bázison millió! Nézd meg a helyiérték-táblázatot!"
+        },
+        "tram": {
+          "title": "🚋 Hány utast szállít a városi hálózat?",
+          "text": "Egy villamos ezer utast, száz villamos százezret, ezer villamos milliót! Nézd meg a helyiérték-táblázatot!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "place-value-thousands",
+      "options": {
+        "count": 4,
+        "min": 100000,
+        "max": 1000000,
+        "layout": "table",
+        "interaction": "input",
+        "task": "mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "place-value-thousands",
+      "options": {
+        "count": 4,
+        "min": 100000,
+        "max": 1000000,
+        "layout": "table",
+        "interaction": "choice",
+        "task": "value"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "1 000 000-ig is tökéletesen bontod a számokat milliókra, száuezrekre, tíuezrekre, ezresekre, százasokra, tízesekre és egyesekre!",
+      "worldTitles": {
+        "postman": {
+          "title": "🚚 Nagy vagy!",
+          "text": "Minden rakományt jól megszámoltál, akár a milliós nagyságrendben is!"
+        },
+        "racing": {
+          "title": "🏁 Nagy vagy!",
+          "text": "Minden alkatrészt jól megszámoltál a raktárban!"
+        },
+        "football": {
+          "title": "🏆 Nagy vagy!",
+          "text": "Minden szurkolót jól megszámoltál a stadionban!"
+        },
+        "cooking": {
+          "title": "🥘 Szép munka!",
+          "text": "Minden hozzávalót jól megszámoltál a nagy étkezdehez!"
+        },
+        "animals": {
+          "title": "🦛 Ügyes voltál!",
+          "text": "Minden állatot jól megszámoltál a szafárián!"
+        },
+        "space": {
+          "title": "🛸 Szuper vagy!",
+          "text": "Minden robotot jól megszámoltál a flottán!"
+        },
+        "tram": {
+          "title": "🚋 Szuper vagy!",
+          "text": "Minden utast jól megszámoltál a városi hálózaton!"
+        }
+      }
+    }
+  ]
+}

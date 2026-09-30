@@ -1,0 +1,103 @@
+{
+    "id": "grade5-neighbor-round-millions-01",
+    "title": "Számszomszédok 1 000 000-ig",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "↔️ Ki áll közvetlenül mellé?",
+            "text": "Minden számnak van szomszédja tízesen, százason, ezresen, tízezeren és százezeren! A millió legnagyobb szomszédja a 999 999.",
+            "illustration": "<div style='margin:1rem 0; line-height:2.2; text-align:center; font-size:1.05rem;'>214 751<br><span style='opacity:0.7;'>210 000 &nbsp;·&nbsp; 214 751 &nbsp;·&nbsp; 220 000</span></div><div style='font-size:0.95rem; opacity:0.8;'>999 999 szomszédai: 999 000 és 1 000 000</div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "🚚 Melyik rakomány jön a szomszédban?",
+                    "text": "Ha a rakományok száma 214 751, melyik a legközelebbi ezerre és százezerre kerekítve?"
+                },
+                "racing": {
+                    "title": "🏁 Melyik raktár a legközelebbi?",
+                    "text": "Ha az alkatrészek száma 214 751, melyik a legközelebbi ezerre és százezerre kerekítve?"
+                },
+                "football": {
+                    "title": "🏆 Melyik szektor a legközelebbi?",
+                    "text": "Ha a nézők száma 214 751, melyik a legközelebbi ezerre és százezerre kerekítve?"
+                },
+                "cooking": {
+                    "title": "🥘 Melyik láda a legközelebbi?",
+                    "text": "Ha a hozzávalók száma 214 751, melyik a legközelebbi ezerre és százezerre kerekítve?"
+                },
+                "animals": {
+                    "title": "🦛 Melyik karám a legközelebbi?",
+                    "text": "Ha az állatok száma 214 751, melyik a legközelebbi ezerre és százezerre kerekítve?"
+                },
+                "space": {
+                    "title": "🛸 Melyik bázis a legközelebbi?",
+                    "text": "Ha a robotok száma 214 751, melyik a legközelebbi ezerre és százezerre kerekítve?"
+                },
+                "tram": {
+                    "title": "🚋 Melyik szerelvény a legközelebbi?",
+                    "text": "Ha az utasok száma 214 751, melyik a legközelebbi ezerre és százezerre kerekítve?"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "neighbor-round",
+
+            "options": {
+                "count": 4,
+                "min": 1000,
+                "max": 1000000,
+                "units": ["ten", "hundred", "thousand"]
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "neighbor-round",
+
+            "options": {
+                "count": 4,
+                "min": 10000,
+                "max": 1000000,
+                "units": ["thousand", "tenThousand", "hundredThousand"]
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "1 000 000-ig is megtaláltad a szám szomszédjait minden nagyságrenden!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🚚 Nagy vagy!",
+                    "text": "Minden rakományszám szomszédját megtaláltad!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden alkatrészszám szomszédját megtaláltad!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden nézőszám szomszédját megtaláltad!"
+                },
+                "cooking": {
+                    "title": "🥘 Szép munka!",
+                    "text": "Minden hozzavalószám szomszédját megtaláltad!"
+                },
+                "animals": {
+                    "title": "🦛 Ügyes voltál!",
+                    "text": "Minden állatszám szomszédját megtaláltad!"
+                },
+                "space": {
+                    "title": "🛸 Szuper vagy!",
+                    "text": "Minden robotszám szomszédját megtaláltad!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden utasszám szomszédját megtaláltad!"
+                }
+            }
+        }
+    ]
+}

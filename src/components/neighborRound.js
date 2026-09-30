@@ -43,6 +43,8 @@ export function renderNeighborRound(step, root, next, progress, onResult, onAtte
     numberLine.append(numSpan);
     card.append(numberLine);
 
+    const digits = String(Math.max(step.lower, step.upper, step.number)).length;
+
     function neighborInput(label) {
         const wrap = document.createElement("div");
         wrap.style.cssText = "display:flex; align-items:center; justify-content:center; gap:0.75rem; margin:0.35rem 0; font-size:1.2rem;";
@@ -50,7 +52,10 @@ export function renderNeighborRound(step, root, next, progress, onResult, onAtte
         lbl.style.cssText = "text-align:right;";
         lbl.textContent = label;
         const input = createNumberInput("?");
-        input.style.width = "8ch";
+        input.style.width = `${digits + 2}ch`;
+        input.style.fontSize = "1.3rem";
+        input.style.padding = "0.35rem 0.4rem";
+        input.style.textAlign = "center";
         wrap.append(lbl, input);
         card.append(wrap);
         return input;

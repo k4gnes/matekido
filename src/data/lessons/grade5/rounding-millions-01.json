@@ -1,0 +1,103 @@
+{
+    "id": "grade5-rounding-millions-01",
+    "title": "Kerekítés és becslés 1 000 000-ig",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🎯 Kerekíts és becsülj!",
+            "text": "Kerekítéskor mindig megnézzük az utána következő számjegyet: 5 vagy nagyobb, akkor felfelé kerekítünk! Becsléskor közelítő számot választunk, hogy gyorsan jöjjön a kiadódás.",
+            "illustration": "<div style='margin:1rem 0; line-height:2.2; text-align:center; font-size:1.05rem;'>396 538 &nbsp;→&nbsp; 400 000</div><div style='font-size:0.95rem; opacity:0.8;'>396 538 ≈ 400 000 (százezresre kerekítve) · 396 538 + 103 462 ≈ 500 000</div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "🚚 Mennyi levél érkezik össze?",
+                    "text": "Nem kell pontosan számolni, elég kerekíteni vagy becsülni, hogy megkapjuk a nagyságrendet!"
+                },
+                "racing": {
+                    "title": "🏁 Mennyi alkatrész kell a raktárba?",
+                    "text": "Nem kell pontosan számolni, elég kerekíteni vagy becsülni, hogy megkapjuk a nagyságrendet!"
+                },
+                "football": {
+                    "title": "🏆 Mennyi néző jön a meccsre?",
+                    "text": "Nem kell pontosan számolni, elég kerekíteni vagy becsülni, hogy megkapjuk a nagyságrendet!"
+                },
+                "cooking": {
+                    "title": "🥘 Mennyi hozzávaló kell az étkezdenek?",
+                    "text": "Nem kell pontosan számolni, elég kerekíteni vagy becsülni, hogy megkapjuk a nagyságrendet!"
+                },
+                "animals": {
+                    "title": "🦛 Mennyi állat van a szafárián?",
+                    "text": "Nem kell pontosan számolni, elég kerekíteni vagy becsülni, hogy megkapjuk a nagyságrendet!"
+                },
+                "space": {
+                    "title": "🛸 Mennyi robotot indít a flotta?",
+                    "text": "Nem kell pontosan számolni, elég kerekíteni vagy becsülni, hogy megkapjuk a nagyságrendet!"
+                },
+                "tram": {
+                    "title": "🚋 Mennyi utas száll fel a hálózaton?",
+                    "text": "Nem kell pontosan számolni, elég kerekíteni vagy becsülni, hogy megkapjuk a nagyságrendet!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "rounding",
+
+            "options": {
+                "count": 5,
+                "min": 10000,
+                "max": 1000000,
+                "targets": ["hundreds", "thousands", "tenThousands", "hundredThousands"]
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "estimate",
+
+            "options": {
+                "count": 5,
+                "max": 100000,
+                "op": "mixed",
+                "rounding": 1000
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "1 000 000-ig is pontosan kerekítesz és jól becsülsz!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🚚 Nagy vagy!",
+                    "text": "Minden levélszámnál jól kerekítettél és becsültél!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden alkatrészszámnál jól kerekítettél és becsültél!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden nézőszámnál jól kerekítettél és becsültél!"
+                },
+                "cooking": {
+                    "title": "🥘 Szép munka!",
+                    "text": "Minden hozzavalószámnál jól kerekítettél és becsültél!"
+                },
+                "animals": {
+                    "title": "🦛 Ügyes voltál!",
+                    "text": "Minden állatszámnál jól kerekítettél és becsültél!"
+                },
+                "space": {
+                    "title": "🛸 Szuper vagy!",
+                    "text": "Minden robotszámnál jól kerekítettél és becsültél!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden utasszámnál jól kerekítettél és becsültél!"
+                }
+            }
+        }
+    ]
+}

@@ -23,6 +23,11 @@ const INDEX_ANSWER_TYPES = new Set(["calendar", "data-chart", "solid-shape", "po
 const WORLDS = ["postman", "racing", "football", "cooking", "animals", "space", "tram"];
 const PASSES = { postman: 12, racing: 4, football: 4, cooking: 4, animals: 4, space: 4, tram: 4 };
 
+const PLACE_LABELS = {
+    millions: "millió", hundredThousands: "százezer", tenThousands: "tízezer",
+    thousands: "ezres", hundreds: "százas", tens: "tízes", ones: "egyes"
+};
+
 const POLYGON_SIDES = {
     triangle: 3,
     square: 4,
@@ -274,11 +279,13 @@ function validateStep(step, ctx) {
         }
         case "neighbor-round": {
             if (!isInt(step.number) || !isInt(step.lower) || !isInt(step.upper)) fail(ctx, "number/lower/upper hibás");
-            if (!["ten", "hundred", "thousand"].includes(step.unit)) fail(ctx, `unit hibás (${step.unit})`);
-            const stepVal = step.unit === "ten" ? 10 : step.unit === "hundred" ? 100 : 1000;
+            const NEIGHBOR_STEPS = { ten: 10, hundred: 100, thousand: 1000, tenThousand: 10000, hundredThousand: 100000 };
+            if (!(step.unit in NEIGHBOR_STEPS)) fail(ctx, `unit hibás (${step.unit})`);
+            const stepVal = NEIGHBOR_STEPS[step.unit];
             if (step.lower % stepVal !== 0 || step.upper % stepVal !== 0) fail(ctx, "lower/upper nem kerek");
             if (step.lower >= step.number || step.upper <= step.number) fail(ctx, "lower/upper nem szomszédok");
-            if (step.unitLabel !== { ten: "tízes", hundred: "százas", thousand: "ezres" }[step.unit]) fail(ctx, "unitLabel hibás");
+            if (step.upper - step.lower !== stepVal) fail(ctx, "lower/upper nem szomszédosak");
+            if (step.unitLabel !== { ten: "tízes", hundred: "százas", thousand: "ezres", tenThousand: "tízezeres", hundredThousand: "százezres" }[step.unit]) fail(ctx, "unitLabel hibás");
             break;
         }
         case "place-value":
@@ -293,8 +300,42 @@ function validateStep(step, ctx) {
             break;
         }
         case "place-value-thousands": {
-            if (!isInt(step.thousands) || !isInt(step.hundreds) || !isInt(step.tens) || !isInt(step.ones)) fail(ctx, "ezres/százas/tízes/egyes hibás");
-            if (step.answer !== 1000 * step.thousands + 100 * step.hundreds + 10 * step.tens + step.ones) fail(ctx, "answer hibás");
+            const task = step.task ?? "expand";
+            if (!isInt(step.millions) || !isInt(step.hundredThousands) || !isInt(step.tenThousands)
+                || !isInt(step.thousands) || !isInt(step.hundreds) || !isInt(step.tens) || !isInt(step.ones)) {
+                fail(ctx, "helyiérték számjegyei hibásak");
+            }
+            const recomposed = 1000000 * step.millions + 100000 * step.hundredThousands
+                + 10000 * step.tenThousands + 1000 * step.thousands
+                + 100 * step.hundreds + 10 * step.tens + step.ones;
+            if (step.number !== undefined && step.number !== recomposed) fail(ctx, "number hibás");
+            if (!isInt(step.answer)) fail(ctx, "answer hibás");
+            if (!["expand", "value", "digit"].includes(task)) fail(ctx, `task hibás (${task})`);
+
+            const placeValues = {
+                millions: 1000000, hundredThousands: 100000, tenThousands: 10000,
+                thousands: 1000, hundreds: 100, tens: 10, ones: 1
+            };
+
+            if (task === "expand") {
+                if (step.answer !== recomposed) fail(ctx, "expand answer hibás");
+            } else {
+                if (!placeValues[step.place]) fail(ctx, `place hibás (${step.place})`);
+                if (step.placeLabel !== PLACE_LABELS[step.place]) fail(ctx, "placeLabel hibás");
+                const digit = step[step.place];
+                if (task === "value") {
+                    if (step.digit !== digit) fail(ctx, "digit hibás");
+                    if (step.answer !== digit * placeValues[step.place]) fail(ctx, "value answer hibás");
+                } else {
+                    if (step.digit !== undefined) fail(ctx, "digit nem kell");
+                    if (step.answer !== digit) fail(ctx, "digit answer hibás");
+                }
+                if (!Array.isArray(step.options) || step.options.length < 3) fail(ctx, "options hiányzik");
+                if (new Set(step.options).size !== step.options.length) fail(ctx, "options ismétlődik");
+                if (!step.options.includes(step.answer)) fail(ctx, "a helyes válasz nincs az opciók között");
+                if (step.interaction !== "choice") fail(ctx, "a value/digit feladat választásos");
+            }
+            if (!["emoji", "table"].includes(step.layout)) fail(ctx, `layout hibás (${step.layout})`);
             break;
         }
         case "sequence": {

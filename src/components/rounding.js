@@ -7,7 +7,9 @@ import { createFeedback, markCorrect } from "./ui/feedback.js";
 const TARGET_LABEL = {
     tens: "tízesre",
     hundreds: "százasra",
-    thousands: "ezresre"
+    thousands: "ezresre",
+    tenThousands: "tízezerre",
+    hundredThousands: "százezresre"
 };
 
 export function renderRounding(step, root, next, progress, onResult, onAttempt) {

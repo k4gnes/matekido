@@ -1,0 +1,104 @@
+{
+    "id": "grade5-comparison-millions-01",
+    "title": "Összehasonlítás 1 000 000-ig",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "⚖️ Melyik a nagyobb?",
+            "text": "Hasonlítsd össze a számokat! Először mindig a helyiértéket nézd: aki több millióval, százezerrel vagy tízezerrel rendelkezik, az a nagyobb.",
+            "illustration": "<div style='margin:1rem 0; line-height:2.2; text-align:center; font-size:1.05rem;'>391 007 &nbsp;&lt;&nbsp; 391 071</div><div style='font-size:0.95rem; opacity:0.8;'>Az egyenlőség jele = , a nagyobbé &gt; , a kisebbé &lt;</div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "🚚 Melyik rakományszám a nagyobb?",
+                    "text": "Először a helyiértéket nézd: aki több százezerrel vagy ezressel rendelkezik, az a nagyobb!"
+                },
+                "racing": {
+                    "title": "🏁 Melyik raktárszám a nagyobb?",
+                    "text": "Először a helyiértéket nézd: aki több százezerrel vagy ezressel rendelkezik, az a nagyobb!"
+                },
+                "football": {
+                    "title": "🏆 Melyik nézőszám a nagyobb?",
+                    "text": "Először a helyiértéket nézd: aki több százezerrel vagy ezressel rendelkezik, az a nagyobb!"
+                },
+                "cooking": {
+                    "title": "🥘 Melyik ladaszám a nagyobb?",
+                    "text": "Először a helyiértéket nézd: aki több százezerrel vagy ezressel rendelkezik, az a nagyobb!"
+                },
+                "animals": {
+                    "title": "🦛 Melyik állatszám a nagyobb?",
+                    "text": "Először a helyiértéket nézd: aki több százezerrel vagy ezressel rendelkezik, az a nagyobb!"
+                },
+                "space": {
+                    "title": "🛸 Melyik bázisszám a nagyobb?",
+                    "text": "Először a helyiértéket nézd: aki több százezerrel vagy ezressel rendelkezik, az a nagyobb!"
+                },
+                "tram": {
+                    "title": "🚋 Melyik utasszám a nagyobb?",
+                    "text": "Először a helyiértéket nézd: aki több százezerrel vagy ezressel rendelkezik, az a nagyobb!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "comparison",
+
+            "options": {
+                "count": 5,
+                "min": 100000,
+                "max": 1000000,
+                "plain": true
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "comparison",
+
+            "options": {
+                "count": 4,
+                "min": 100000,
+                "max": 1000000,
+                "plain": true,
+                "forceEqual": 4
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "1 000 000-ig is biztosan eldöntöd, melyik szám a nagyobb, és felismered az egyenlőséget is!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🚚 Nagy vagy!",
+                    "text": "Minden rakományszámot jól hasonlítottál össze!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden raktárszámot jól hasonlítottál össze!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden nézőszámot jól hasonlítottál össze!"
+                },
+                "cooking": {
+                    "title": "🥘 Szép munka!",
+                    "text": "Minden ladaszámot jól hasonlítottál össze!"
+                },
+                "animals": {
+                    "title": "🦛 Ügyes voltál!",
+                    "text": "Minden állatszámot jól hasonlítottál össze!"
+                },
+                "space": {
+                    "title": "🛸 Szuper vagy!",
+                    "text": "Minden bázisszámot jól hasonlítottál össze!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden utasszámot jól hasonlítottál össze!"
+                }
+            }
+        }
+    ]
+}

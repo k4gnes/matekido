@@ -1,0 +1,103 @@
+{
+    "id": "grade5-number-name-millions-01",
+    "title": "Számnevek 1 000 000-ig",
+
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🗣️ Hogyan mondjuk a nagy számokat?",
+            "text": "A magyarban minden ezres csoportot szóval mondunk: 234 567 = kétszázharmincnégyezer-ötszázhatvanhét. A millió előtt pedig mindig kötőjel áll!",
+            "illustration": "<div style='margin:1rem 0; line-height:2.2; text-align:center; font-size:1.05rem;'>234 567<br><span style='opacity:0.7;'>kétszázharmincnégyezer-ötszázhatvanhét</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 000 000 = millió · 1 234 567 = egymillió-kétszázharmincnégyezer-ötszázhatvanhét</div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "🚚 Milyen nevű a rakományok száma?",
+                    "text": "Százezer levél százezer, de ha kötőjeles szóval mondjuk, könnyebb elképzelni!"
+                },
+                "racing": {
+                    "title": "🏁 Milyen nevű az alkatrészszám?",
+                    "text": "Százezer alkatrész százezer, de ha kötőjeles szóval mondjuk, könnyebb elképzelni!"
+                },
+                "football": {
+                    "title": "🏆 Milyen nevű a nézőszám?",
+                    "text": "Százezer néző százezer, de ha kötőjeles szóval mondjuk, könnyebb elképzelni!"
+                },
+                "cooking": {
+                    "title": "🥘 Milyen nevű a hozzávalók száma?",
+                    "text": "Százezer hozzávaló százezer, de ha kötőjeles szóval mondjuk, könnyebb elképzelni!"
+                },
+                "animals": {
+                    "title": "🦛 Milyen nevű az állatok száma?",
+                    "text": "Százezer állat százezer, de ha kötőjeles szóval mondjuk, könnyebb elképzelni!"
+                },
+                "space": {
+                    "title": "🛸 Milyen nevű a robotok száma?",
+                    "text": "Százezer robot százezer, de ha kötőjeles szóval mondjuk, könnyebb elképzelni!"
+                },
+                "tram": {
+                    "title": "🚋 Milyen nevű az utasok száma?",
+                    "text": "Százezer utas százezer, de ha kötőjeles szóval mondjuk, könnyebb elképzelni!"
+                }
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "number-name",
+
+            "options": {
+                "count": 6,
+                "min": 100000,
+                "max": 999999,
+                "direction": "toWord"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "number-name",
+
+            "options": {
+                "count": 6,
+                "min": 100000,
+                "max": 999999,
+                "direction": "toNumber"
+            }
+        },
+
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "1 000 000-ig is helyesen mondod el a számneveket!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🚚 Nagy vagy!",
+                    "text": "Minden rakományszámtól sem tévedtél el!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden alkatrészszámtól sem tévedtél el!"
+                },
+                "football": {
+                    "title": "🏆 Nagy vagy!",
+                    "text": "Minden nézőszámtól sem tévedtél el!"
+                },
+                "cooking": {
+                    "title": "🥘 Szép munka!",
+                    "text": "Minden hozzavalószámtól sem tévedtél el!"
+                },
+                "animals": {
+                    "title": "🦛 Ügyes voltál!",
+                    "text": "Minden állatszámtól sem tévedtél el!"
+                },
+                "space": {
+                    "title": "🛸 Szuper vagy!",
+                    "text": "Minden robotszámtól sem tévedtél el!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden utasszámtól sem tévedtél el!"
+                }
+            }
+        }
+    ]
+}

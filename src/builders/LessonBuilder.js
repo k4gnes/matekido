@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=42";
+import { generate } from "../generators/index.js?v=43";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -393,15 +393,29 @@ export function buildLesson(lesson) {
                     interaction: task.interaction
                 });
             } else if (step.generator === "place-value-thousands") {
-                result.push({
+                const taskFields = {
                     type: "place-value-thousands",
+                    number: task.number,
+                    millions: task.millions,
+                    hundredThousands: task.hundredThousands,
+                    tenThousands: task.tenThousands,
                     thousands: task.thousands,
                     hundreds: task.hundreds,
                     tens: task.tens,
                     ones: task.ones,
+                    task: task.task,
+                    place: task.place,
+                    placeLabel: task.placeLabel,
+                    digit: task.digit,
+                    options: task.options,
                     answer: task.answer,
+                    layout: task.layout,
                     interaction: task.interaction
-                });
+                };
+                for (const key of Object.keys(taskFields)) {
+                    if (taskFields[key] === undefined) delete taskFields[key];
+                }
+                result.push(taskFields);
             } else if (step.generator === "number-name") {
                 result.push({
                     type: "number-name",

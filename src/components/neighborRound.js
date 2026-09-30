@@ -52,10 +52,12 @@ export function renderNeighborRound(step, root, next, progress, onResult, onAtte
         lbl.style.cssText = "text-align:right;";
         lbl.textContent = label;
         const input = createNumberInput("?");
-        input.style.width = `${digits + 2}ch`;
+        input.className = "nr-input";
         input.style.fontSize = "1.3rem";
-        input.style.padding = "0.35rem 0.4rem";
+        input.style.padding = "0.35rem 0.5rem";
         input.style.textAlign = "center";
+        input.style.boxSizing = "content-box";
+        input.style.width = `${digits + 2}ch`;
         wrap.append(lbl, input);
         card.append(wrap);
         return input;

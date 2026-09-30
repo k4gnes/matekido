@@ -13,3 +13,14 @@
     font-weight: bold;
     margin: 0 .75rem;
 }
+
+.nr-input {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.nr-input::-webkit-inner-spin-button,
+.nr-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

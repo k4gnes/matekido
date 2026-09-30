@@ -5,7 +5,7 @@
     {
       "type": "scene",
       "title": "⚖️ Mennyi ez, ha visszafelé számolunk?",
-      "text": "Nagy súlyokat is mérünk: 1 tonna (t) = 1000 kilogramm. A 3. osztályban mindig felfelé váltottunk át – most a másik irány is kell: hány tonna van 3000 kilogrammban? Indulhat a visszafelé átváltás!",
+      "text": "Nagy tömegeket is mérünk: 1 tonna (t) = 1000 kilogramm. A 3. osztályban mindig felfelé váltottunk át – most a másik irány is kell: hány tonna van 3000 kilogrammban? Indulhat a visszafelé átváltás!",
       "worldTitles": {
         "racing": {
           "title": "⚖️ A versenypálya tehermentesítése",
@@ -13,23 +13,23 @@
         },
         "football": {
           "title": "⚖️ A csapat teljes tömege",
-          "text": "A teljes csapat együtt súlyosabb, mint hiszed! Hány grammból lesz egy csapat? Számolj át!"
+          "text": "A teljes csapat együtt nehezebb, mint hiszed! Hány grammból lesz egy csapat? Számolj át!"
         },
         "cooking": {
           "title": "🥄 A konyha mérlegei",
           "text": "A szakács nagy adagokat is kimér! Hány dekagramm van 2 kilogrammban? Számolj át!"
         },
         "animals": {
-          "title": "🦁 Az állatkert súlyai",
+          "title": "🦁 Az állatkert tömegei",
           "text": "Az állatkertben vannak, amik több tonnát is nyomnak! Hány kilogramm az, ami 1 tonna? Számolj át!"
         },
         "space": {
-          "title": "🤖 A rakéta indító súlya",
+          "title": "🤖 Az indítóállás tömege",
           "text": "Az indítóállás több tonnát is nyom! Hány tonna van 7000 kilogrammban? Számolj át!"
         },
         "tram": {
           "title": "🚋 A tehervonat",
-          "text": "A tehervonat nagyon súlyos! Hány tonna van 5000 kilogrammban? Számolj át!"
+          "text": "A tehervonat nagyon nehéz! Hány tonna van 5000 kilogrammban? Számolj át!"
         }
       }
     },
@@ -83,15 +83,15 @@
         },
         "animals": {
           "title": "🦁 Minden állat megmérve!",
-          "text": "Minden súly a megfelelő lett, nagyszerű! 🐾"
+          "text": "Minden tömeg a megfelelő lett, nagyszerű! 🐾"
         },
         "space": {
           "title": "🤖 Indulhat a küldetés!",
-          "text": "Az indítóállás súlya stimmel, indulhat a rakéta! 🚀"
+          "text": "Az indítóállás tömege stimmel, indulhat a rakéta! 🚀"
         },
         "tram": {
           "title": "🚋 Indulhat az út!",
-          "text": "A tehervonat súlya pontos, indulhat a szerelvény! 🚋"
+          "text": "A tehervonat tömege pontos, indulhat a szerelvény! 🚋"
         }
       }
     }

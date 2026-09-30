@@ -123,7 +123,7 @@ export const TYPE_LABEL = {
     "divisibility": "Osztó és többszörös",
     "angle-measure": "Szögek mérése",
     "fraction-equal-den": "Azonos nevezőjű törtek",
-    "measure-units": "Hosszúság-mérés",
+    "measure-units": "Mértékegység-átváltás",
     "written-operation": "Írásbeli művelet",
     "remainder-division": "Maradékos osztás",
     "written-division": "Írásbeli osztás",

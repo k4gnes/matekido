@@ -1699,8 +1699,8 @@
       "worldTitles": {
         "racing": "⚖️ A versenypálya mérlege",
         "cooking": "⚖️ A konyhai mérleg",
-        "football": "⚖️ A játékosok súlya",
-        "animals": "⚖️ Az állatok súlya",
+        "football": "⚖️ A játékosok tömege",
+        "animals": "⚖️ Az állatok tömege",
         "space": "🤖 A rakéta részeinek tömege",
         "tram": "🚋 A szerelvény tömege"
       }
@@ -1723,8 +1723,8 @@
         "racing": "⚖️ A versenypálya tehermentesítése",
         "cooking": "🥄 A konyha mérlegei",
         "football": "⚖️ A csapat teljes tömege",
-        "animals": "🦁 Az állatkert súlyai",
-        "space": "🤖 A rakéta indító súlya",
+        "animals": "🦁 Az állatkert tömegei",
+        "space": "🤖 Az indítóállás tömege",
         "tram": "🚋 A tehervonat"
       }
     },

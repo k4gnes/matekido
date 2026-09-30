@@ -193,9 +193,11 @@ A `masodik-osztaly.md` hiányzó-készségek táblázatának utolsó két sora:
 
 ---
 
-## Hátralevő munka
+## Hátralévő munka
 
-*(a 2. osztályos roadmap lezárva – a következő irányok: 3. osztályos tananyag, app-funkciók)*
+Nincs: a 2. osztályos roadmap lezárva, minden készség ✅ (lásd a lefedettségi táblázatot alább).
+
+A 3. osztályos tananyag és az app-funkciók (`docs/ROADMAP.md`, `docs/otodik-osztaly.md`) már külön úton haladnak.
 
 ---
 

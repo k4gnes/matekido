@@ -22,7 +22,7 @@ const KIND_CONFIG = {
         hintAdvanced: "1 km = 1000 m, 1 m = 1000 mm, 1 m = 10 dm = 100 cm"
     },
     weight: {
-        title: "Súly-mérés",
+        title: "Tömeg-mérés",
         hint: "1 kg = 100 dkg, 1 dkg = 10 g",
         hintAdvanced: "1 kg = 100 dkg = 1000 g, 1 t = 1000 kg. Visszafelé 10-szeres, 100-szoros és 1000-szeres osztás"
     },

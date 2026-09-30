@@ -4,7 +4,7 @@
   "steps": [
     {
       "type": "scene",
-      "title": "⚖️ Mennyi súlya van?",
+      "title": "⚖️ Mennyi a tömege?",
       "text": "A tömeget kilogrammban (kg), dekagrammban (dkg) és grammban (g) mérjük. Figyeld meg: 1 kilogrammban 100 dekagramm van, 1 dekagrammban 10 gramm! Átváltásra fel!",
       "worldTitles": {
         "racing": {
@@ -12,7 +12,7 @@
           "text": "A szerelők pontosan mérnek minden alkatrészt! Kilogramm, dekagramm, gramm – számoljunk át!"
         },
         "football": {
-          "title": "⚖️ A játékosok súlya",
+          "title": "⚖️ A játékosok tömege",
           "text": "Az orvos minden játékost lemér! Hány gramm egy lejtő? Számolj át!"
         },
         "cooking": {
@@ -20,7 +20,7 @@
           "text": "A szakács mindent pontosan kimér! Dekagramm és gramm – mennyi kell a recepthez?"
         },
         "animals": {
-          "title": "⚖️ Az állatok súlya",
+          "title": "⚖️ Az állatok tömege",
           "text": "Az állatgondozók minden állatot lemérnek! Hány dekagramm az újszülött cica? Számolj át!"
         },
         "space": {
@@ -29,7 +29,7 @@
         },
         "tram": {
           "title": "🚋 A szerelvény tömege",
-          "text": "A villamos nagyon nehéz! Hány tonna a szerelvény? Számoljunk át a súlyával!"
+          "text": "A villamos nagyon nehéz! Hány tonna a szerelvény? Számoljunk át a tömegével!"
         }
       }
     },
@@ -89,7 +89,7 @@
         },
         "tram": {
           "title": "🚋 Indulhat az út!",
-          "text": "A súlyok megvannak mérve, indulhat a villamos! 🚋"
+          "text": "A tömegek megvannak mérve, indulhat a villamos! 🚋"
         }
       }
     }

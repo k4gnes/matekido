@@ -24,13 +24,18 @@ Interaktív matematikai tanulási platform magyar gyerekeknek (első osztálytó
 - `src/app.js` – belépési pont, navigáció (welcome → menü → lecke → profil/statisztika).
 - `src/data/lessons/index.json` – lecke-regiszter (171 lecke: 1. osztály 42, 2. osztály 55, 3. osztály 47, 4. osztály 35 – egy lecke több évfolyamhoz is tartozhat, ezért az összeg nagyobb a fájlok számánál). Metaadatok: `id`, `title`, `grades`, `category`, `skill`, `difficulty`, `type`, `range`, `mission`, `subtitle`, `file`, `worldTitles`.
 - `src/data/lessons/gradeN/*.json` – lecke-fájlok. `steps` listából állnak (`type: "scene"`, `"exercise"`, …), `worldTitles` a világok szerinti szövegek.
-- `src/engine/` – `Game.js` (lecke futtatás), `LessonLoader.js` (JSON betöltés), `Renderer.js`.
+- `src/data/` – a leckéken kívüli statikus adatmodulok: `skills.js` (készségek a statisztikához és a szűrőkhöz), `types.js` (feladattípusok magyar nevei), `measure.js` / `money.js` / `shapes.js` / `spatial.js` / `unitObjects.js` (mértékegységek, pénznemek, alakzatok), `consolidation.js`, `hintLessons.js`.
+- `src/engine/` – `Game.js` (lecke futtatás + a `RENDERERS` registry, ami a feladattípust a komponenshez köti), `LessonLoader.js` (JSON betöltés).
 - `src/builders/LessonBuilder.js` – nyers leckéből futtatható lecke.
 - `src/generators/` – feladatgenerátorok (`XxxGenerator.js`), `index.js`-ben gyűjtve.
 - `src/components/` – a feladattípusok renderelői (egy fájl = egy feladat), `ui/` és `hints/` kisebb építőelemek.
+- `src/css/` – egy CSS fájl feladattípusonként (`?v=N` verzióparaméterrel az `index.html`-ben).
 - `src/math/` – számolási segédek (`addition.js`, `subtraction.js`, `number.js`).
+- `src/utils/` – `grades.js` (a regiszterből a ténylegesen használt évfolyamok), `markdown.js` (mini markdown + ikonok a leckeszövegekhez).
+- `src/storage.js` – közös `localStorage` segéd (`loadJSON` / `saveJSON` / `loadRaw` / `saveRaw` / `removeKeys`).
 - `src/world/` – világok (`World.js`, `WorldRegistry.js` – 7 világ: postman, racing, cooking, football, animals, space, tram).
-- `src/profile/` – játékosprofilok, statisztika, eredmények.
+- `src/profile/` – játékosprofilok, statisztika, eredmények (`UserManager.js`, `Statistics.js`, `Achievements.js`, `Milestones.js`, `DailyQuests.js`, `RewardService.js`, `ThemeManager.js`).
+- `src/docs/` – a felhasználónak megjelenő súgóoldalak (a `docs/` a fejlesztői dokszoké).
 - `src/assets/` – ikonok (PWA), képek, (üres) hangok.
 - `src/manifest.webmanifest`, `src/sw.js` – PWA fájlok a `src/` gyökerében.
 
@@ -54,7 +59,7 @@ Interaktív matematikai tanulási platform magyar gyerekeknek (első osztálytó
 
 - `sw.js` és `manifest.webmanifest` a `src/` gyökerében – a web gyökér a `src/`, így a `/sw.js` scope a `/`-t, a `/assets/...`-t és az egész appot lefedi.
 - A service worker network-first: online mindig friss tartalom, offline cache. Az install során az EGÉSZ appot precache-eli a generált `sw-cache.js` lista alapján, így offline rögtön az összes lecke elérhető.
-- Új/eltűnt fájl (pl. új lecke) után futtatni kell a `node src/generateSWCache.js`-t (jelenleg 483 fájl). Nincs automatizált verzió-bump – nagy fájlstruktúra-változásnál a `sw.js` tetején lévő `CACHE` (`matekido-v69`) értékét növeld.
+- Új/eltűnt fájl (pl. új lecke) után futtatni kell a `node src/generateSWCache.js`-t (jelenleg 484 fájl). Nincs automatizált verzió-bump – nagy fájlstruktúra-változásnál a `sw.js` tetején lévő `CACHE` (`matekido-v71`) értékét növeld.
 - Ha a `src/index.html`-ben `?v=` paramétert emelsz, a SW online módban automatikusan az új fájlt adja.
 - Ikonok: `src/assets/icons/` (`icon-*`, `maskable-*`, `apple-touch-icon.png`, SVG források).
 - Telepíthetőséghez HTTPS kell (localhoston a `make start` is jó). Deploy: nincs konfigurálva, pl. GitHub Pages / Netlify.

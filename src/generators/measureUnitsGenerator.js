@@ -55,7 +55,7 @@ const UNIT_FAMILY = {
 
 const UNIT_MEASURE_WORD = {
     length: "hossza",
-    weight: "súlya",
+    weight: "tömege",
     volume: "űrtartalma"
 };
 

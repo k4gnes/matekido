@@ -110,6 +110,7 @@ export const CONSOLIDATION_LESSONS = {
         "comparison-millions-01",
         "divisibility-rules-01",
         "rounding-millions-01",
-        "fraction-equal-01"
+        "fraction-equal-01",
+        "fraction-common-den-01"
     ]
 };

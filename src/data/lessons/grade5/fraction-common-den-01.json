@@ -1,0 +1,93 @@
+{
+  "id": "grade5-fraction-common-den-01",
+  "title": "Törtek összeadása és kivonása",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧮 Különböző nevezőjű törtek",
+      "text": "Ha a két tört nevezője nem egyforma, előbb közös nevezőt kell keresni! Az 1/2 és az 1/4 összeadásánál a fele felezhető: az 1/2 = 2/4. Így már könnyű: 2/4 + 1/4 = 3/4. Kivonásnál is ez a titok: ha a kisebb nevező osztható a nagyobbal, csak a kisebbiket kell bővíteni. A kapott törtet mindig egyszerűsítsd le!",
+      "illustration": "<div style=\"display:flex;align-items:center;justify-content:center;gap:1.2rem;font-size:1.5rem;font-weight:700;margin:1rem 0;\"><div style=\"display:flex;flex-direction:column;align-items:center;\"><span>1</span><span style=\"width:100%;border-top:3px solid #1e293b;margin:.1rem 0;\"></span><span>2</span></div><span>+</span><div style=\"display:flex;flex-direction:column;align-items:center;\"><span>1</span><span style=\"width:100%;border-top:3px solid #1e293b;margin:.1rem 0;\"></span><span>4</span></div><span>=</span><div style=\"display:flex;flex-direction:column;align-items:center;\"><span>1</span><span style=\"width:100%;border-top:3px solid #1e293b;margin:.1rem 0;\"></span><span>2</span></div><span style=\"font-size:1rem;font-weight:400;opacity:.8;\">a 2/4-del</span><span>+</span><div style=\"display:flex;flex-direction:column;align-items:center;\"><span>1</span><span style=\"width:100%;border-top:3px solid #1e293b;margin:.1rem 0;\"></span><span>4</span></div><span>=</span><div style=\"display:flex;flex-direction:column;align-items:center;\"><span>3</span><span style=\"width:100%;border-top:3px solid #1e293b;margin:.1rem 0;\"></span><span>4</span></div></div>",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Levélek közös nevezővel",
+          "text": "A leveleket előbb azonos részre kell osztani, aztán jöhet az összeadás! Keresd a közös nevezőt!"
+        },
+        "racing": {
+          "title": "🏎️ Körök a pályán",
+          "text": "Különböző nagyságú köröket adunk össze! Előbb alakítsd át a törteket úgy, hogy a nevezőjük megegyezzen."
+        },
+        "football": {
+          "title": "⚽ Gólok aránya",
+          "text": "A különböző nevezőjű törteket közös nevezővel lehet összeadni és kivonni. Figyelj, ne keveredjenek!"
+        },
+        "cooking": {
+          "title": "🍳 Adagok a konyhában",
+          "text": "Fél tálcát és negyed tálcát adunk össze? Előbb a felet felezzük meg, utána könnyű lesz!"
+        },
+        "animals": {
+          "title": "🦁 Az eleségek felosztása",
+          "text": "Két különböző adagból adunk össze egyet! Közös nevező nélkül ez nem megy."
+        },
+        "space": {
+          "title": "🤖 Energia-adagok",
+          "text": "Az űrhajón minden számításnak pontosnak kell lennie! A közös nevező megkeresése az első lépés."
+        },
+        "tram": {
+          "title": "🚋 Jegyek a villamoson",
+          "text": "Különböző jegyadagokat vonunk össze! Nézd meg, melyik nevező a közös!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-common-den",
+      "options": {
+        "count": 4,
+        "mode": "add"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-common-den",
+      "options": {
+        "count": 4,
+        "mode": "sub"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Megtanultad a közös nevező megkeresését és a törtek egyszerűsítését!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Nagy vagy!",
+          "text": "Minden levelet pontosan összeadtál a postán!"
+        },
+        "racing": {
+          "title": "🏁 Nagy vagy!",
+          "text": "Minden kört pontosan összegeztél a pályán!"
+        },
+        "football": {
+          "title": "🏆 Nagy vagy!",
+          "text": "Minden gólt pontosan számoltad ki a pályán!"
+        },
+        "cooking": {
+          "title": "🍳 Szép munka!",
+          "text": "Minden adagot pontosan összegezettél a konyhában!"
+        },
+        "animals": {
+          "title": "🦁 Ügyes voltál!",
+          "text": "Minden eleséget pontosan osztottál fel az állatkertben!"
+        },
+        "space": {
+          "title": "🚀 Szuper vagy!",
+          "text": "Minden energia-adag pontosan kijött az űrben!"
+        },
+        "tram": {
+          "title": "🚋 Szuper vagy!",
+          "text": "Minden jegy-adag pontosan kijött a városban!"
+        }
+      }
+    }
+  ]
+}

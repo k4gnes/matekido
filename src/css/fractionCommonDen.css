@@ -1,0 +1,37 @@
+.fcd-prompt {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0.5rem 0 0.2rem;
+    color: #475569;
+}
+
+.fcd-pics {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+    margin: 0.6rem 0 0.2rem;
+}
+
+.fcd-pics .fcd-pic {
+    width: 170px;
+    height: 140px;
+}
+
+.fcd-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0.8rem 0;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.fcd-sign {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #334155;
+}

@@ -61,6 +61,7 @@ import { generateAngles } from "./anglesGenerator.js?v=1";
 import { generateFractionOf } from "./fractionOfGenerator.js?v=2";
 import { generateFractionEqualDen } from "./fractionEqualDenGenerator.js?v=1";
 import { generateFractionEqual } from "./fractionEqualGenerator.js?v=1";
+import { generateFractionCommonDen } from "./fractionCommonDenGenerator.js?v=1";
 import { generateCircle } from "./circleGenerator.js?v=1";
 import { generateProbability } from "./probabilityGenerator.js?v=1";
 import { generateOperationOrder } from "./operationOrderGenerator.js?v=1";
@@ -191,6 +192,8 @@ export function generate(step) {
             return generateFractionEqualDen(opts);
         case "fraction-equal":
             return generateFractionEqual(opts);
+        case "fraction-common-den":
+            return generateFractionCommonDen(opts);
         case "measure-units":
             return generateMeasureUnits(opts);
         case "written-operation":

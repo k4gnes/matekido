@@ -488,6 +488,11 @@ export function buildLesson(lesson) {
                     type: "fraction-equal",
                     ...task
                 });
+            } else if (step.generator === "fraction-common-den") {
+                result.push({
+                    type: "fraction-common-den",
+                    ...task
+                });
             } else if (step.generator === "measure-units") {
                 result.push({
                     type: "measure-units",

@@ -10,7 +10,8 @@ export const HINT_TYPES = new Set([
     "compound-shape",
     "shape-formula",
     "length-units",
-    "measure-units"
+    "measure-units",
+    "fraction-common-den"
 ]);
 
 export function lessonHasHint(lessonMeta) {

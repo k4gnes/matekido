@@ -169,6 +169,30 @@
       }
     },
     {
+      "id": "fraction-common-den-01",
+      "title": "Különböző nevezőjű törtek összeadása",
+      "grades": [
+        5
+      ],
+      "category": "fractions",
+      "skill": "fraction",
+      "difficulty": 3,
+      "type": "fraction-common-den",
+      "range": 20,
+      "mission": "🍕 Közös nevező",
+      "subtitle": "Összeadás és kivonás különböző nevezőkkel",
+      "file": "./data/lessons/grade5/fraction-common-den-01.json",
+      "worldTitles": {
+        "postman": "📮 Mennyi a két adag együtt?",
+        "racing": "🏎️ Mennyi kör a két adagból összesen?",
+        "cooking": "🥘 Mennyi tésztát dobsz bele összesen?",
+        "football": "🏆 Mennyi gól esett összesen?",
+        "animals": "🦛 Mennyi eleséget kapsz összesen?",
+        "space": "🛸 Mennyi energiát töltesz be összesen?",
+        "tram": "🚋 Mennyi jegyet adtok össze?"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

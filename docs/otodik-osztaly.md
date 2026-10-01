@@ -1,6 +1,6 @@
 # Matekidő – 5. osztályos tanmenet
 
-> **Státusz: részben megvalósult.** A regiszterben 178 lecke van, ebből 7 az 5. osztályos (a teljes Számfogalom blokk + a Törtek blokk első leckéje). Az alábbiak irányadó tervek – a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
+> **Státusz: részben megvalósult.** A regiszterben 179 lecke van, ebből 8 az 5. osztályos (a teljes Számfogalom blokk + a Törtek blokk első két leckéje). Az alábbiak irányadó tervek – a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
 
 **Tervezett 32 lecke**, 7 kategóriában. Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
@@ -102,9 +102,9 @@ A fenti 32 lecke az 5. osztályos tanmenet terve. Tovább tervezett leckék:
 
 ## Státusz
 
-**Megvalósult leckék (7/32):**
+**Megvalósult leckék (8/32):**
 
 - Számfogalom 1 000 000-ig (6/6): helyiérték, számnevek, szomszédok, összehasonlítás, oszthatósági szabályok (2, 3, 4, 5, 6, 9, 10), kerekítés és becslés ✔
-- Törtek (1/5): bővítés és egyszerűsítés – azonos értékű töredékek leírása (`fraction-equal-01`) ✔
+- Törtek (2/5): bővítés és egyszerűsítés – azonos értékű töredékek leírása (`fraction-equal-01`) ✔; különböző nevezőjű törtek összeadása és kivonása (`fraction-common-den-01`) ✔
 
-A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg; a még hiányzó 25 lecke a következő blokkokban várakozik: Törtek (4), Tizedes törtek (4), Százalékszámítás (2), Műveletek nagy számokkal (3), Geometria (6), Gyakorlati tudások (3), Adatok (1), Szöveges feladatok (2).
+A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg; a még hiányzó 24 lecke a következő blokkokban várakozik: Törtek (3), Tizedes törtek (4), Százalékszámítás (2), Műveletek nagy számokkal (3), Geometria (6), Gyakorlati tudások (3), Adatok (1), Szöveges feladatok (2).

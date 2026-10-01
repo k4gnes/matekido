@@ -58,6 +58,7 @@ import { renderFraction } from "../components/fraction.js?v=8";
 import { renderFractionOf } from "../components/fractionOf.js?v=3";
 import { renderFractionEqualDen } from "../components/fractionEqualDen.js?v=2";
 import { renderFractionEqual } from "../components/fractionEqual.js?v=1";
+import { renderFractionCommonDen } from "../components/fractionCommonDen.js?v=1";
 import { renderDecimal } from "../components/decimal.js?v=3";
 import { renderDivisibility } from "../components/divisibility.js?v=2";
 import { renderAngleMeasure } from "../components/angleMeasure.js?v=2";
@@ -134,6 +135,7 @@ const COUNTED_TYPES = new Set([
     "written-division",
 "fraction-equal-den",
 "fraction-equal",
+"fraction-common-den",
 "decimal",
 "divisibility",
     "angle-measure",
@@ -169,7 +171,8 @@ const SKILL_BY_TYPE = {
     "place-value-two-input": "place-value",
     "place-value-thousands": "place-value",
     "fraction-equal-den": "fraction",
-    "fraction-equal": "fraction"
+    "fraction-equal": "fraction",
+    "fraction-common-den": "fraction"
 };
 
 const RENDERERS = new Map([
@@ -236,6 +239,7 @@ const RENDERERS = new Map([
     ["fraction-of", renderFractionOf],
     ["fraction-equal-den", renderFractionEqualDen],
     ["fraction-equal", renderFractionEqual],
+    ["fraction-common-den", renderFractionCommonDen],
     ["decimal", renderDecimal],
     ["divisibility", renderDivisibility],
     ["angle-measure", renderAngleMeasure],

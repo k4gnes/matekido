@@ -13,7 +13,8 @@ export const HINT_TYPES = new Set([
     "measure-units",
     "fraction-common-den",
     "fraction-times-int",
-    "fraction-times-frac"
+    "fraction-times-frac",
+    "fraction-divide"
 ]);
 
 export function lessonHasHint(lessonMeta) {

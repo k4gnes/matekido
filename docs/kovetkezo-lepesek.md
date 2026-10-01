@@ -2,7 +2,7 @@
 
 ## Jelenlegi állapot
 
-A leckekészítés idején **171 lecke** volt a regiszterben (1. osztály **42**, 2. osztály **55**, 3. osztály **47**, 4. osztály **35**); ma **181** lecke van, ebből 10 az 5. osztályos. Ez a doksz a 2. osztályos roadmap **naplója** – az alábbi lépések mind készek. Utána még érkezett öt lecke (2026-09-10): naptár, törtek, tükrözés, hosszúság-mérés és pontos idő olvasása; ezek a táblázat végén külön sorban szerepelnek.
+A leckekészítés idején **171 lecke** volt a regiszterben (1. osztály **42**, 2. osztály **55**, 3. osztály **47**, 4. osztály **35**); ma **182** lecke van, ebből 11 az 5. osztályos. Ez a doksz a 2. osztályos roadmap **naplója** – az alábbi lépések mind készek. Utána még érkezett öt lecke (2026-09-10): naptár, törtek, tükrözés, hosszúság-mérés és pontos idő olvasása; ezek a táblázat végén külön sorban szerepelnek.
 
 ---
 

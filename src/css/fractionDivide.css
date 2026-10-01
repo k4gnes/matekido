@@ -1,4 +1,4 @@
-.ftf-prompt {
+.fdv-prompt {
     font-size: 1.3rem;
     font-weight: 700;
     text-align: center;
@@ -6,7 +6,7 @@
     color: #475569;
 }
 
-.ftf-caption {
+.fdv-caption {
     font-size: 1rem;
     font-weight: 700;
     text-align: center;
@@ -17,7 +17,21 @@
     margin-right: auto;
 }
 
-.ftf-row {
+.fdv-pics {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.4rem 0;
+}
+
+.fdv-pics .fdv-pic {
+    width: 68px;
+    height: 68px;
+}
+
+.fdv-row {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,7 +42,7 @@
     color: #1e293b;
 }
 
-.ftf-sign {
+.fdv-sign {
     font-size: 2.4rem;
     font-weight: 800;
     color: #334155;

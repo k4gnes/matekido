@@ -26,7 +26,7 @@
 - [x] Világ-specifikus lecketitkok és teljesítmények
 
 ## v1.2 – további évfolyamok
-- [x] Ötödik osztály – első blokk (10 lecke: Számfogalom 6/6, Törtek 4/5; terv: `docs/otodik-osztaly.md`, 32 lecke)
+- [x] Ötödik osztály – első blokk (11 lecke: Számfogalom 6/6, Törtek 5/5 – a Törtek blokk lezárult; terv: `docs/otodik-osztaly.md`, 32 lecke)
 - [ ] Hatodik osztály
 - [ ] Hetedik osztály
 - [ ] Nyolcadik osztály

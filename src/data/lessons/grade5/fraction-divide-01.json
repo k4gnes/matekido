@@ -1,0 +1,93 @@
+{
+  "id": "grade5-fraction-divide-01",
+  "title": "Törtek osztása",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "✖️ Törtek osztása",
+      "text": "Osztani nem lehet megfordítás nélkül, de van egy trükk: ha egész számmal osztod a törteket, a nevezőt kell megszorozni vele, a számláló pedig változatlan marad. A 3/4 ÷ 2 = 3/8. Ha viszont törttel osztod, akkor megfordítod a másik törteket, és már szorzás lesz belőle: 3/4 : 1/2 = 3/4 × 2/1 = 6/4 = 1,5. A megfordított számláló a nevező helyére, a megfordított nevező a számláló helyére kerül. Mindig ellenőrizd a mértékegységet: ha 1-nél kisebb számmal osztottál, az eredmény mindig nagyobb a kiindulásnál!",
+      "illustration": "<div style=\"display:flex;align-items:center;justify-content:center;gap:0.9rem;font-size:1.4rem;font-weight:700;margin:1rem 0;flex-wrap:wrap;\"><div style=\"display:flex;flex-direction:column;align-items:center;\"><span>3</span><span style=\"width:100%;border-top:3px solid #1e293b;margin:.1rem 0;\"></span><span>4</span></div><span>÷</span><div style=\"display:flex;flex-direction:column;align-items:center;\"><span>1</span><span style=\"width:100%;border-top:3px solid #1e293b;margin:.1rem 0;\"></span><span>2</span></div><span>=</span><div style=\"display:flex;flex-direction:column;align-items:center;\"><span>3</span><span style=\"width:100%;border-top:3px solid #1e293b;margin:.1rem 0;\"></span><span>4</span></div><span>×</span><div style=\"display:flex;flex-direction:column;align-items:center;\"><span>2</span><span style=\"width:100%;border-top:3px solid #1e293b;margin:.1rem 0;\"></span><span>1</span></div><span>=</span><div style=\"display:flex;flex-direction:column;align-items:center;\"><span>3</span><span style=\"width:100%;border-top:3px solid #1e293b;margin:.1rem 0;\"></span><span>2</span></div></div>",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Levelek felosztása",
+          "text": "A leveleket egyenlő részekre osztod, és minden részből csak egy lapot kérsz. Így számolj!"
+        },
+        "racing": {
+          "title": "🏎️ Körök felosztása",
+          "text": "A kört többször ismételheted – és az utolsó szakasz csak a fele. Osztás lesz belőle!"
+        },
+        "football": {
+          "title": "⚽ Gólok aránya",
+          "text": "Ha minden negyed gólból csak a fele esett be, így oszd el, és kijön a valódi szám!"
+        },
+        "cooking": {
+          "title": "🍳 Adagok felosztása",
+          "text": "A feladat egyszerű: a tésztát elosztod, és minden adagból csak a felét sütöd meg."
+        },
+        "animals": {
+          "title": "🦁 Az eleségek felosztása",
+          "text": "Az adag fele félikre osztható, és csak minden második rész kell. Kétszer osztunk!"
+        },
+        "space": {
+          "title": "🤖 Energia-adagok",
+          "text": "Az űrhajó energiáját előbb felezed, aztán minden feléből ismét a felét vetted. Így spórolsz!"
+        },
+        "tram": {
+          "title": "🚋 Jegyek osztása",
+          "text": "Az ülések fele van tele, és azoknak is csak a fele ad el jegyet. Osztással számolj!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-divide",
+      "options": {
+        "count": 4,
+        "mode": "whole"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-divide",
+      "options": {
+        "count": 4,
+        "mode": "fraction"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Megtanultad, hogy egész számmal osztva a nevezőt kell szorozni, törttel osztva pedig a másik törteket kell megfordítani!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Nagy vagy!",
+          "text": "Minden levelet pontosan felosztottál a postán!"
+        },
+        "racing": {
+          "title": "🏁 Nagy vagy!",
+          "text": "Minden körüljarást pontosan felosztottál a pályán!"
+        },
+        "football": {
+          "title": "🏆 Nagy vagy!",
+          "text": "Minden gól helyesen számoltál ki a pályán!"
+        },
+        "cooking": {
+          "title": "🍳 Szép munka!",
+          "text": "Minden adagot pontosan felosztottál a konyhában!"
+        },
+        "animals": {
+          "title": "🦁 Ügyes voltál!",
+          "text": "Minden eleséget pontosan felosztottál az állatkertben!"
+        },
+        "space": {
+          "title": "🚀 Szuper vagy!",
+          "text": "Minden energia-adag pontosan kijött az űrben!"
+        },
+        "tram": {
+          "title": "🚋 Szuper vagy!",
+          "text": "Minden jegyet pontosan felosztottál a városban!"
+        }
+      }
+    }
+  ]
+}

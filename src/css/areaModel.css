@@ -1,0 +1,35 @@
+.areamodel {
+    display: grid;
+    justify-content: center;
+    gap: 2px;
+    margin: 0.6rem auto 0.2rem;
+}
+
+.areamodel-corner {
+    grid-column: 1;
+}
+
+.areamodel-lab {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #94a3b8;
+    text-align: center;
+    align-self: center;
+}
+
+.areamodel-lab-on {
+    color: #0369a1;
+}
+
+.areamodel-cell {
+    width: 1.6rem;
+    height: 1.6rem;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 3px;
+}
+
+.areamodel-cell-on {
+    background: #38bdf8;
+    border-color: #0284c7;
+}

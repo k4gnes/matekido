@@ -503,6 +503,11 @@ export function buildLesson(lesson) {
                     type: "fraction-times-frac",
                     ...task
                 });
+            } else if (step.generator === "fraction-divide") {
+                result.push({
+                    type: "fraction-divide",
+                    ...task
+                });
             } else if (step.generator === "measure-units") {
                 result.push({
                     type: "measure-units",

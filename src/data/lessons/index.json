@@ -241,6 +241,30 @@
       }
     },
     {
+      "id": "fraction-divide-01",
+      "title": "Törtek osztása",
+      "grades": [
+        5
+      ],
+      "category": "fractions",
+      "skill": "fraction",
+      "difficulty": 3,
+      "type": "fraction-divide",
+      "range": 100,
+      "mission": "🍕 Osztott adagok",
+      "subtitle": "Osztás egésszel és törttel, megfordított szorzás",
+      "file": "./data/lessons/grade5/fraction-divide-01.json",
+      "worldTitles": {
+        "postman": "📮 Mennyi lapot kapsz fél adagonként?",
+        "racing": "🏎️ Hány körből áll össze az ismétlés?",
+        "cooking": "🥘 Mennyi adag készül a feléből?",
+        "football": "🏆 Hány gól esik összesen?",
+        "animals": "🦛 Mennyi eleséget kapsz összesen?",
+        "space": "🛸 Mennyi energiát töltesz be összesen?",
+        "tram": "🚋 Hány jegyet adtok össze?"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

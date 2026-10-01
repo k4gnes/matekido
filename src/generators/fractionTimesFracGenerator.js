@@ -35,6 +35,7 @@ function sameValue(aNum, aDen, bNum, bDen) {
 function fractionOptions(answerNum, answerDen, candidates) {
     const values = [[answerNum, answerDen]];
     const options = [];
+    const tags = [];
 
     const addable = (num, den) => {
         if (!Number.isInteger(num) || !Number.isInteger(den)) return false;
@@ -46,10 +47,11 @@ function fractionOptions(answerNum, answerDen, candidates) {
         return true;
     };
 
-    for (const [num, den] of candidates) {
+    for (const [num, den, tag] of candidates) {
         if (options.length >= 3) break;
         if (!addable(num, den)) continue;
         options.push({ numerator: num, denominator: den, correct: false });
+        tags.push(tag);
     }
 
     for (let step = 1; options.length < 3 && step <= 4; step++) {
@@ -63,15 +65,19 @@ function fractionOptions(answerNum, answerDen, candidates) {
             if (options.length >= 3) break;
             if (!addable(num, den)) continue;
             options.push({ numerator: num, denominator: den, correct: false });
+            tags.push("near");
         }
     }
 
     if (options.length < 3) return null;
 
-    return shuffle([
-        { numerator: answerNum, denominator: answerDen, correct: true },
-        ...options
-    ]);
+    return {
+        options: shuffle([
+            { numerator: answerNum, denominator: answerDen, correct: true },
+            ...options
+        ]),
+        tags
+    };
 }
 
 function buildTask(mode) {
@@ -98,18 +104,17 @@ function buildTask(mode) {
         const answerNum = rawNum / g;
         const answerDen = rawDen / g;
 
-        const options = fractionOptions(answerNum, answerDen, [
-            [rawNum, rawDen],
-            [numA * denB, denA * numB],
-            [numA + numB, denA + denB],
-            [numA, rawDen],
-            [rawNum, denA],
-            [rawNum + numB, rawDen],
-            [rawNum, rawDen + numB],
-            [numA * denA, numB * denB]
+        const built = fractionOptions(answerNum, answerDen, [
+            [numA * denB, denA * numB, "swap"],
+            [numA + numB, denA + denB, "add"],
+            [rawNum + numB, rawDen, "over"],
+            [numA + numB, rawDen, "addNum"],
+            [numA, rawDen, "denOnly"],
+            [rawNum, denA, "numOnly"],
+            [rawNum, rawDen + numB, "over"]
         ]);
 
-        if (!options) continue;
+        if (!built) continue;
 
         const explanation = g > 1
             ? `A számlálók és a nevezők összeszorzódnak: ${numA}/${denA} × ${numB}/${denB} = ${rawNum}/${rawDen}. Ezután egyszerűsítünk: a ${rawNum} és a ${rawDen} közös osztója a ${g}, így az eredmény ${answerNum}/${answerDen}.`
@@ -126,7 +131,8 @@ function buildTask(mode) {
             rawDen,
             answerNum,
             answerDen,
-            options,
+            options: built.options,
+            tags: built.tags,
             explanation
         };
     }
@@ -141,14 +147,13 @@ export function generateFractionTimesFrac(options = {}) {
     const modes = MODES.includes(mode) ? [mode] : MODES;
 
     const tasks = [];
+    const spare = [];
     const seen = new Set();
+    const seenTags = new Set();
     let attempts = 0;
 
-    while (tasks.length < count) {
+    while (tasks.length < count && attempts <= MAX_GENERATION_ATTEMPTS) {
         attempts++;
-        if (attempts > MAX_GENERATION_ATTEMPTS) {
-            throw new Error("Nem sikerült elegendő feladatot generálni...");
-        }
 
         const task = buildTask(pick(modes));
         if (!task) continue;
@@ -156,7 +161,22 @@ export function generateFractionTimesFrac(options = {}) {
         const key = `${task.numA}/${task.denA}*${task.numB}/${task.denB}`;
         if (seen.has(key)) continue;
         seen.add(key);
+
+        if (task.tags.some(tag => !seenTags.has(tag))) {
+            for (const tag of task.tags) seenTags.add(tag);
+            tasks.push(task);
+        } else if (spare.length < count * 3) {
+            spare.push(task);
+        }
+    }
+
+    for (const task of spare) {
+        if (tasks.length >= count) break;
         tasks.push(task);
+    }
+
+    if (tasks.length < count) {
+        throw new Error("Nem sikerült elegendő feladatot generálni...");
     }
 
     return tasks;

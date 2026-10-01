@@ -1,8 +1,8 @@
 # Matekidő – 5. osztályos tanmenet
 
-> **Státusz: terv, még nincs megvalósítva.** A regiszterben ma csak 1–4. osztály van (171 lecke); 5. osztályos lecke még egy sincs. Az alábbiak irányadó tervek – a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
+> **Státusz: részben megvalósult.** A regiszterben 179 lecke van, ebből 8 az 5. osztályos (a teljes Számfogalom blokk + a Törtek blokk első két leckéje). Az alábbiak irányadó tervek – a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
 
-**Tervezett 32 lecke**, 7 kategóriában. Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
+**Tervezett 32 lecke**, 9 témakörben (a regiszterben ma 2 kategória: Számok és Törtek). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
 A 4. osztályos tananyag (10 000-es számkör, írásbeli műveletek) lezárult – az 5. osztály az **1 000 000-ig bővülő számkörre**, az **oszthatóságra**, a **törtek és tizedes törtek teljes műveletkörére**, valamint a **százalékszámítás alapjaira** épül.
 
@@ -15,18 +15,18 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
 | Helyiérték | Helyiérték 1 000 000-ig | Milliók, ezresek, tízesek, egyesek | 1000000 | 2 |
-| Számnevek | Számnevek 1 000 000-ig | Szám ↔ szöveg párosítása | 1000000 | 1 |
-| Számszomszédok | Szomszédok 1 000 000-ig | Ezres és tízezres szomszédok | 1000000 | 2 |
+| Számnevek | Számnevek 1 000 000-ig | Szám ↔ szöveg párosítása | 1000000 | 2 |
+| Számszomszédok | Számszomszédok 1 000 000-ig | Ezres és tízezres szomszédok | 1000000 | 2 |
 | Összehasonlítás | Összehasonlítás 1 000 000-ig | Nagyobb, kisebb vagy egyenlő | 1000000 | 2 |
-| Oszthatóság | Oszthatóság 2, 3, 4, 5, 6, 9, 10 | Oszthatósági szabályok | 100 | 2 |
-| Kerekítés és becslés | Kerekítés és becslés nagyobb számokra | Kerekítés, nagyságrend | 1000000 | 2 |
+| Oszthatóság | Oszthatóság 2, 3, 4, 5, 6, 9, 10-zel | Oszthatósági szabályok | 1000000 | 3 |
+| Kerekítés és becslés | Kerekítés és becslés 1 000 000-ig | Kerekítés, nagyságrend | 1000000 | 2 |
 
 ## Törtek (5 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
 | Bővítés, egyszerűsítés | Bővítés és egyszerűsítés | Egyenlő törtek | 100 | 2 |
-| Törtek összeadása | Törtek összeadása és kivonása | Különböző nevezőjű törtek | 20 | 3 |
+| Törtek összeadása | Különböző nevezőjű törtek összeadása | Összeadás és kivonás | 20 | 3 |
 | Törtek szorzása | Törtek szorzása egész számmal | Szorzás törttel | 100 | 3 |
 | Törtek szorzása | Törtek szorzása törttel | Szorzás törttel | 100 | 3 |
 | Törtek osztása | Törtek osztása | Osztás egésszel és törttel | 100 | 3 |
@@ -102,4 +102,9 @@ A fenti 32 lecke az 5. osztályos tanmenet terve. Tovább tervezett leckék:
 
 ## Státusz
 
-*(Az 5. osztályos tanmenet tervezett. Egyik lecke sincs még implementálva – a fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg.)*
+**Megvalósult leckék (8/32):**
+
+- Számfogalom 1 000 000-ig (6/6): helyiérték (`place-value-millions-01`), számnevek (`number-name-millions-01`), számszomszédok és kerekítés (`neighbor-round-millions-01`), összehasonlítás (`comparison-millions-01`), oszthatósági szabályok 2, 3, 4, 5, 6, 9, 10-zel (`divisibility-rules-01`), kerekítés és becslés (`rounding-millions-01`) ✔
+- Törtek (2/5): bővítés és egyszerűsítés – azonos értékű töredékek leírása (`fraction-equal-01`) ✔; különböző nevezőjű törtek összeadása és kivonása (`fraction-common-den-01`, feladat-segítséggel) ✔
+
+A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg; a még hiányzó 24 lecke a következő blokkokban várakozik: Törtek (3), Tizedes törtek (4), Százalékszámítás (2), Műveletek nagy számokkal (3), Geometria (6), Gyakorlati tudások (3), Adatok (1), Szöveges feladatok (2).

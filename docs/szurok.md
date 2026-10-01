@@ -9,6 +9,7 @@ A legdurvább csoportosítás – ez adja a menü szekciócímeit is. Meghatáro
 | Kulcs | Megjelenő név | Ikon |
 |---|---|---|
 | `numbers` | Számok | 🔢 |
+| `fractions` | Törtek | 🍕 |
 | `operations` | Összeadás-Kivonás | ➕ |
 | `multiplication` | Szorzás & Osztás | ✖️ |
 | `practical` | Gyakorlati matek | 🧮 |

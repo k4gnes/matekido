@@ -32,7 +32,7 @@ A leckék **osztályonként vannak csoportosítva**, így mindig pontosan az ado
 
 ![Az évfolyamválasztó a feladatok menüjében](/docs/evfolyamvalaszto.png)
 
-- A feladatok menüjének {{🎓 Évfolyam}} gombjával választhatsz (1., 2., 3., 4. osztály).
+- A feladatok menüjének {{🎓 Évfolyam}} gombjával választhatsz (1., 2., 3., 4., 5. osztály).
 - A választás **játékosonként elmentődik**, legközelebb már nem kérdezi meg.
 - Minden lecke mellett látszik, hányadik osztályos a jelvényen (pl. „1. osztály”).
 

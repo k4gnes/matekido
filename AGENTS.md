@@ -6,10 +6,10 @@ Interaktív matematikai tanulási platform magyar gyerekeknek (első osztálytó
 
 - Nincs build lépés, nincs csomagkezelő, nincs lint/test keretrendszer.
 - `make start` – Python http szerver a `src/`-ből (localhost:8000).
-- `make test` / `node src/testLessons.js` – az összes osztályos lecke (1–4.) automatizált ellenőrzése (minden lecke felépül több világban és sorozatban, a generált feladatok struktúrája helyes).
+- `make test` / `node src/testLessons.js` – az összes osztályos lecke (1–5.) automatizált ellenőrzése (minden lecke felépül több világban és sorozatban, a generált feladatok struktúrája helyes).
 - `node src/testGenerator.js` – generatorok manuális tesztelése (ESM-et használ, node-dal futtatható).
 - `node src/generateSWCache.js` – az offline precache-lista (`src/sw-cache.js`) újragenerálása; új/eltűnt fájlnál (pl. új lecke) mindig futtatni kell.
-- Minden commit után manuálisan ellenőrizni kell a böngészőben (hibakereséshez nincs automatizált teszt). Ehhez használható: `docs/tesztelés.md` (teljes app-átfutás) és az osztályonkénti forgatókönyvek `docs/teszt-forgatokonyv-{1,2,3,4}-osztaly.md`.
+- Minden commit után manuálisan ellenőrizni kell a böngészőben (hibakereséshez nincs automatizált teszt). Ehhez használható: `docs/tesztelés.md` (teljes app-átfutás) és az osztályonkénti forgatókönyvek `docs/teszt-forgatokonyv-{1,2,3,4}-osztaly.md` (5. osztályra még nincs).
 
 ## Web gyökér: `src/`
 
@@ -35,7 +35,7 @@ Interaktív matematikai tanulási platform magyar gyerekeknek (első osztálytó
 - `src/storage.js` – közös `localStorage` segéd (`loadJSON` / `saveJSON` / `loadRaw` / `saveRaw` / `removeKeys`).
 - `src/world/` – világok (`World.js`, `WorldRegistry.js` – 7 világ: postman, racing, cooking, football, animals, space, tram).
 - `src/profile/` – játékosprofilok, statisztika, eredmények (`UserManager.js`, `Statistics.js`, `Achievements.js`, `Milestones.js`, `DailyQuests.js`, `RewardService.js`, `ThemeManager.js`).
-- `src/docs/` – a felhasználónak megjelenő súgóoldalak (a `docs/` a fejlesztői dokszoké).
+- `src/docs/` – a felhasználónak megjelenő súgóoldalak; a `docs/{elso,masodik,harmadik,negyedik,otodik}-osztaly.md` + `docs/sugo.md` másolatai. `make sync-docs` tartja szinkronban, doksz szerkesztés után mindig futtatandó, különben a felhasználó elavult szöveget lát.
 - `src/assets/` – ikonok (PWA), képek, (üres) hangok.
 - `src/manifest.webmanifest`, `src/sw.js` – PWA fájlok a `src/` gyökerében.
 
@@ -59,7 +59,7 @@ Interaktív matematikai tanulási platform magyar gyerekeknek (első osztálytó
 
 - `sw.js` és `manifest.webmanifest` a `src/` gyökerében – a web gyökér a `src/`, így a `/sw.js` scope a `/`-t, a `/assets/...`-t és az egész appot lefedi.
 - A service worker network-first: online mindig friss tartalom, offline cache. Az install során az EGÉSZ appot precache-eli a generált `sw-cache.js` lista alapján, így offline rögtön az összes lecke elérhető.
-- Új/eltűnt fájl (pl. új lecke) után futtatni kell a `node src/generateSWCache.js`-t (jelenleg 490 fájl). Nincs automatizált verzió-bump – nagy fájlstruktúra-változásnál a `sw.js` tetején lévő `CACHE` (`matekido-v72`) értékét növeld.
+- Új/eltűnt fájl (pl. új lecke) után futtatni kell a `node src/generateSWCache.js`-t (jelenleg 499 fájl). Nincs automatizált verzió-bump – nagy fájlstruktúra-változásnál a `sw.js` tetején lévő `CACHE` (`matekido-v73`) értékét növeld.
 - Ha a `src/index.html`-ben `?v=` paramétert emelsz, a SW online módban automatikusan az új fájlt adja.
 - Ikonok: `src/assets/icons/` (`icon-*`, `maskable-*`, `apple-touch-icon.png`, SVG források).
 - Telepíthetőséghez HTTPS kell (localhoston a `make start` is jó). Deploy: nincs konfigurálva, pl. GitHub Pages / Netlify.

@@ -1,6 +1,6 @@
 # Matekidő – 1. osztályos készségtérkép
 
-**42 lecke**, 6 kategóriában. Minden lecke a hat világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀).
+**42 lecke**, 6 kategóriában. Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
 Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 

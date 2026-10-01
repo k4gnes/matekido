@@ -27,7 +27,7 @@ az 1. osztályban: mi mi alatt van a menüben, és miért.
   záró `celebration`. A `LessonBuilder` a nyers `exercise` lépéseket generált
   feladatokká bontja.
 
-A **világok** (Postás, Verseny, Szakács, Foci, Állatkert, Űr) NEM tartalmi
+A **világok** (Postás, Verseny, Szakács, Foci, Állatkert, Űr, Villamos) NEM tartalmi
 szintjei a hierarchiának, hanem tematikus "bőrök" – lásd a 6. pontot.
 
 ## 2. Az 1. osztály menüje kategóriánként
@@ -167,8 +167,8 @@ pedig a fájl alapján – így ugyanaz a készség több leckén át mérhető.
 
 ## 6. Világok – tematikus bőr, nem tartalmi szint
 
-A hat világ (📮 Postás, 🏎️ Verseny, 👨🍳 Szakács, ⚽ Foci, 🦁 Állatkert,
-🤖 Űr) nem a feladatok szintje: minden lecke ugyanazt a matematikát adja,
+A hét világ (📮 Postás, 🏎️ Verseny, 👨🍳 Szakács, ⚽ Foci, 🦁 Állatkert,
+🤖 Űr, 🚋 Villamos) nem a feladatok szintje: minden lecke ugyanazt a matematikát adja,
 csak más szöveggel és ikonokkal (`worldTitles`). A világokat csillagokkal
 lehet megnyitni (`requiredStars`), a `setActiveWorld` pedig csak azt mondja meg,
 melyik tematikával jelenjen meg a menü és a leckék.

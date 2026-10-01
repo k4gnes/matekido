@@ -145,6 +145,30 @@
       }
     },
     {
+      "id": "fraction-equal-01",
+      "title": "Bővítés és egyszerűsítés",
+      "grades": [
+        5
+      ],
+      "category": "fractions",
+      "skill": "fraction",
+      "difficulty": 2,
+      "type": "fraction-equal",
+      "range": 100,
+      "mission": "🔗 Egyenlő törtek",
+      "subtitle": "Bővítés és egyszerűsítés – ugyanaz a rész más alakban",
+      "file": "./data/lessons/grade5/fraction-equal-01.json",
+      "worldTitles": {
+        "postman": "📮 Mennyi levél jut ugyanúgy minden postaládába?",
+        "racing": "🏁 Melyik adag ugyanannyi alkatrész?",
+        "cooking": "🥘 Melyik adag ugyanannyi tésztát jelent?",
+        "football": "🏆 Melyik arány ugyanannyi gól?",
+        "animals": "🦛 Melyik adag ugyanannyi eleséget?",
+        "space": "🛸 Melyik energia-adag ugyanakkora?",
+        "tram": "🚋 Melyik jegy-adag ugyanannyi utasnak elég?"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

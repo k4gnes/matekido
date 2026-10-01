@@ -483,6 +483,11 @@ export function buildLesson(lesson) {
                     type: "fraction-equal-den",
                     ...task
                 });
+            } else if (step.generator === "fraction-equal") {
+                result.push({
+                    type: "fraction-equal",
+                    ...task
+                });
             } else if (step.generator === "measure-units") {
                 result.push({
                     type: "measure-units",

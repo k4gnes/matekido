@@ -1,0 +1,79 @@
+.fequal-prompt {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0.5rem 0 0.2rem;
+    color: #475569;
+}
+
+.fequal-pics {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+    margin: 0.6rem 0 0.2rem;
+}
+
+.fequal-pics .fequal-pic {
+    width: 170px;
+    height: 140px;
+}
+
+.fequal-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: 0.8rem 0;
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.fequal-sign {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #334155;
+}
+
+.fequal-input {
+    width: 3.4ch;
+    height: 2.8rem;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #e2574c;
+    background: #ffffff;
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+}
+
+.fequal-input:focus {
+    border-color: #38bdf8;
+    outline: none;
+}
+
+.fequal-options {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0.8rem 0;
+}
+
+.fequal-option {
+    min-width: 64px;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1e293b;
+    background: #ffffff;
+    border: 2px solid #cbd5e1;
+    border-radius: 14px;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+}
+
+.fequal-option:hover {
+    transform: scale(1.05);
+    border-color: #94a3b8;
+}

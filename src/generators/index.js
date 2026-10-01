@@ -60,6 +60,7 @@ import { generateArea } from "./areaGenerator.js?v=1";
 import { generateAngles } from "./anglesGenerator.js?v=1";
 import { generateFractionOf } from "./fractionOfGenerator.js?v=2";
 import { generateFractionEqualDen } from "./fractionEqualDenGenerator.js?v=1";
+import { generateFractionEqual } from "./fractionEqualGenerator.js?v=1";
 import { generateCircle } from "./circleGenerator.js?v=1";
 import { generateProbability } from "./probabilityGenerator.js?v=1";
 import { generateOperationOrder } from "./operationOrderGenerator.js?v=1";
@@ -188,6 +189,8 @@ export function generate(step) {
             return generateFractionOf(opts);
         case "fraction-equal-den":
             return generateFractionEqualDen(opts);
+        case "fraction-equal":
+            return generateFractionEqual(opts);
         case "measure-units":
             return generateMeasureUnits(opts);
         case "written-operation":

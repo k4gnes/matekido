@@ -1,0 +1,101 @@
+{
+  "id": "grade5-fraction-equal-01",
+  "title": "Bővítés és egyszerűsítés",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔗 Egyenlő törtek",
+      "text": "Ugyanaz a rész sokféleképpen írható fel! Ha a pizzát 6 részre osztjuk, a 2/3 éppen ugyanannyi, mint a 4/6 – csak több részre osztottuk. Ha a nevezőt megszorozzuk 2-vel, a számlálót is meg kell szorozni: 2/3 = 4/6. Ez a bővítés. Fordítva, ha a nevezőt és a számlálót együtt osztjuk, egyszerűsítünk: 6/9 = 2/3. Mindig a legrövidebb alakot keresd!",
+      "illustration": "<div style=\"display:flex;align-items:center;justify-content:center;gap:1.4rem;font-size:1.5rem;font-weight:700;margin:1rem 0;\"><div style=\"display:flex;flex-direction:column;align-items:center;\"><span>2</span><span style=\"width:100%;border-top:3px solid #1e293b;margin:.1rem 0;\"></span><span>3</span></div><span>=</span><div style=\"display:flex;flex-direction:column;align-items:center;\"><span>4</span><span style=\"width:100%;border-top:3px solid #1e293b;margin:.1rem 0;\"></span><span>6</span></div><span style=\"font-size:1rem;font-weight:400;opacity:.8;\">ugyanannyi</span></div>",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Törtek a postán",
+          "text": "Ugyanannyi levél sokféleképpen osztható el! Bővítsd és egyszerűsítsd a törteket, hogy mindig a legrövidebb alakot kapjad!"
+        },
+        "racing": {
+          "title": "🏎️ Törtek a pályán",
+          "text": "A körök minden alkalommal ugyanannyi rész! Bővítéskor a nevezőt és a számlálót együtt szorozd, egyszerűsítéskor együtt oszd!"
+        },
+        "football": {
+          "title": "⚽ Törtek a pályán",
+          "text": "A gólok arányát többféleképpen is fel lehet írni! Találd meg a legrövidebb alakot!"
+        },
+        "cooking": {
+          "title": "🍳 Törtek a konyhában",
+          "text": "Egy tálta tésztát 4-féle adagban is oszthatunk! Bővítés és egyszerűsítés – mindkettő ugyanazt a mennyiséget adja."
+        },
+        "animals": {
+          "title": "🦁 Törtek az állatkertben",
+          "text": "Az eleséget bármennyi adagra oszthatjuk! A számok változnak, a mennyiség ugyanaz."
+        },
+        "space": {
+          "title": "🤖 Törtek az űrben",
+          "text": "Az energia-adagokat pontosan kell kiszámolni! Ellenőrizd, hogy két különböző alak ugyanazt adja-e."
+        },
+        "tram": {
+          "title": "🚋 Törtek a városban",
+          "text": "A jegyekből bármennyi adagot számolhatunk! Nézd meg, melyik alak a legrövidebb."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-equal",
+      "options": {
+        "count": 4,
+        "mode": "expand"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-equal",
+      "options": {
+        "count": 4,
+        "mode": "simplify"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-equal",
+      "options": {
+        "count": 4,
+        "mode": "compare"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Megtanultad, hogyan kell a törteket bővíteni és egyszerűsíteni!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Nagy vagy!",
+          "text": "Minden törtet szépen bővítettél és egyszerűsítettél a postán!"
+        },
+        "racing": {
+          "title": "🏁 Nagy vagy!",
+          "text": "Minden törtet szépen bővítettél és egyszerűsítettél a pályán!"
+        },
+        "football": {
+          "title": "🏆 Nagy vagy!",
+          "text": "Minden törtet szépen bővítettél és egyszerűsítettél a pályán!"
+        },
+        "cooking": {
+          "title": "🍳 Szép munka!",
+          "text": "Minden adagot a legrövidebb alakban számoltál ki a konyhában!"
+        },
+        "animals": {
+          "title": "🦁 Ügyes voltál!",
+          "text": "Minden eleséget pontosan kiszámoltál az állatkertben!"
+        },
+        "space": {
+          "title": "🚀 Szuper vagy!",
+          "text": "Minden energia-adag pontosan kijött az űrben!"
+        },
+        "tram": {
+          "title": "🚋 Szuper vagy!",
+          "text": "Minden jegy-adag pontosan kijött a városban!"
+        }
+      }
+    }
+  ]
+}

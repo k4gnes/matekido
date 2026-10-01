@@ -109,6 +109,7 @@ export const CONSOLIDATION_LESSONS = {
         "neighbor-round-millions-01",
         "comparison-millions-01",
         "divisibility-rules-01",
-        "rounding-millions-01"
+        "rounding-millions-01",
+        "fraction-equal-01"
     ]
 };

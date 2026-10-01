@@ -11,8 +11,8 @@
       "difficulty": 2,
       "type": "place-value-thousands",
       "range": 1000000,
-      "mission": "🔢 Milliók, száuezrek, tíuezrek",
-      "subtitle": "Helyiérték 1 000 000-ig – milliók, száuezrek, tíuezrek",
+      "mission": "🔢 Milliók, százezrek, tízezrek",
+      "subtitle": "Helyiérték 1 000 000-ig – milliók, százezrek, tízezrek",
       "file": "./data/lessons/grade5/place-value-millions-01.json",
       "worldTitles": {
         "postman": "🚚 Hány levél jut száz rakományra?",

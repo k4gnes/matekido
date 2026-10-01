@@ -193,6 +193,30 @@
       }
     },
     {
+      "id": "fraction-times-int-01",
+      "title": "Törtek szorzása egész számmal",
+      "grades": [
+        5
+      ],
+      "category": "fractions",
+      "skill": "fraction",
+      "difficulty": 3,
+      "type": "fraction-times-int",
+      "range": 20,
+      "mission": "🍕 Ismételt összeadás",
+      "subtitle": "Számolás egész számú szorzóval, egyszerűsítés",
+      "file": "./data/lessons/grade5/fraction-times-int-01.json",
+      "worldTitles": {
+        "postman": "📮 Hány levelet osztasz szét összesen?",
+        "racing": "🏎️ Hány körből áll össze a teljes táv?",
+        "cooking": "🥘 Mennyi összetett adag készül?",
+        "football": "🏆 Hány gól esik összesen?",
+        "animals": "🦛 Mennyi eleséget kapsz összesen?",
+        "space": "🛸 Mennyi energiát töltesz be összesen?",
+        "tram": "🚋 Hány jegyet adtok össze?"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

@@ -1,0 +1,101 @@
+{
+  "id": "grade5-fraction-times-int-01",
+  "title": "Törtek szorzása egész számmal",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "✖️ Törtek szorzása egész számmal",
+      "text": "Ha egy tortából 3/4-et adsz mindegyik barátodnak, az nem egyenlő 3/4-del, hanem a 3/4 háromszorosával. Szorozni tehát annyi, mint annyiszor összeadni: 3/4 + 3/4 + 3/4. Nem kell azonban háromszor leírni a törtet: egész számmal szorozva a nevező nem változik, csak a számláló szorzódik. A 3/4 × 3 = 9/4, ami 2 egész és 1/4. Ha a számláló és a nevező közös osztóra akad, egyszerűsítsd, hogy a legszebb alakot kapd!",
+      "illustration": "<div style=\"display:flex;align-items:center;justify-content:center;gap:1rem;font-size:1.5rem;font-weight:700;margin:1rem 0;flex-wrap:wrap;\"><div style=\"display:flex;flex-direction:column;align-items:center;\"><span>3</span><span style=\"width:100%;border-top:3px solid #1e293b;margin:.1rem 0;\"></span><span>4</span></div><span>+</span><div style=\"display:flex;flex-direction:column;align-items:center;\"><span>3</span><span style=\"width:100%;border-top:3px solid #1e293b;margin:.1rem 0;\"></span><span>4</span></div><span>+</span><div style=\"display:flex;flex-direction:column;align-items:center;\"><span>3</span><span style=\"width:100%;border-top:3px solid #1e293b;margin:.1rem 0;\"></span><span>4</span></div><span>=</span><div style=\"display:flex;flex-direction:column;align-items:center;\"><span>9</span><span style=\"width:100%;border-top:3px solid #1e293b;margin:.1rem 0;\"></span><span>4</span></div><span style=\"font-size:1rem;font-weight:400;opacity:.8;\">azaz 3/4 × 3</span></div>",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Levelek kiszámolása",
+          "text": "Négy házban mindegyikben ugyanannyi levél van. Össze kell számolni, hány jut összesen – ez a szorzás!"
+        },
+        "racing": {
+          "title": "🏎️ Körök a pályán",
+          "text": "Minden körön ugyanaz a rövid szakasz teljesül. A teljes körtáv csak így mérhető meg!"
+        },
+        "football": {
+          "title": "⚽ Gólok szorzása",
+          "text": "Ha minden negyed percben esik egy gól, így számolhatod ki egy fél óra góljait!"
+        },
+        "cooking": {
+          "title": "🍳 Adagok a konyhában",
+          "text": "A tésztát adagonként mérjük. Két adag fél adagja most négy adag lesz, ugyanannyi fél adag!"
+        },
+        "animals": {
+          "title": "🦁 Az eleségek felosztása",
+          "text": "Mindegyik ketrec ugyanolyan adagot kap. Így számold ki az egész zoo ellátmányát!"
+        },
+        "space": {
+          "title": "🤖 Energia-adagok",
+          "text": "Az űrhajó minden reakciója ugyanannyi energiát használ. A teljes készlet így számolható ki!"
+        },
+        "tram": {
+          "title": "🚋 Jegyek a villamoson",
+          "text": "Négy kocsi, mindegyikben ugyanannyi üres hely. Így jön ki az egész villamos férőhelye!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-times-int",
+      "options": {
+        "count": 4,
+        "mode": "whole"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-times-int",
+      "options": {
+        "count": 4,
+        "mode": "fraction"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-times-int",
+      "options": {
+        "count": 4,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Megtanultad, hogy egész számmal szorozva a nevező változatlan marad, és mindig a legszebb, egyszerűsített alakot kell megadni!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Nagy vagy!",
+          "text": "Minden levelet pontosan kiszámoltál a postán!"
+        },
+        "racing": {
+          "title": "🏁 Nagy vagy!",
+          "text": "Minden körtávot pontosan kiszámoltál a pályán!"
+        },
+        "football": {
+          "title": "🏆 Nagy vagy!",
+          "text": "Minden gól helyesen számoltál ki a pályán!"
+        },
+        "cooking": {
+          "title": "🍳 Szép munka!",
+          "text": "Minden adagot pontosan kimértél a konyhában!"
+        },
+        "animals": {
+          "title": "🦁 Ügyes voltál!",
+          "text": "Minden eleséget pontosan kiszámoltál az állatkertben!"
+        },
+        "space": {
+          "title": "🚀 Szuper vagy!",
+          "text": "Minden energia-adag pontosan kijött az űrben!"
+        },
+        "tram": {
+          "title": "🚋 Szuper vagy!",
+          "text": "Minden jegy pontosan kijött a városban!"
+        }
+      }
+    }
+  ]
+}

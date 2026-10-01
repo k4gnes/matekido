@@ -493,6 +493,11 @@ export function buildLesson(lesson) {
                     type: "fraction-common-den",
                     ...task
                 });
+            } else if (step.generator === "fraction-times-int") {
+                result.push({
+                    type: "fraction-times-int",
+                    ...task
+                });
             } else if (step.generator === "measure-units") {
                 result.push({
                     type: "measure-units",

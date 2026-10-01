@@ -1,0 +1,71 @@
+.ftf-prompt {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0.5rem 0 0.2rem;
+    color: #475569;
+}
+
+.ftf-caption {
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0.2rem 0 0.4rem;
+    color: #64748b;
+    max-width: 32rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.areamodel {
+    display: grid;
+    justify-content: center;
+    gap: 2px;
+    margin: 0.6rem auto 0.2rem;
+}
+
+.areamodel-corner {
+    grid-column: 1;
+}
+
+.areamodel-lab {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #94a3b8;
+    text-align: center;
+    align-self: center;
+}
+
+.areamodel-lab-on {
+    color: #0369a1;
+}
+
+.areamodel-cell {
+    width: 1.6rem;
+    height: 1.6rem;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 3px;
+}
+
+.areamodel-cell-on {
+    background: #38bdf8;
+    border-color: #0284c7;
+}
+
+.ftf-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0.8rem 0;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.ftf-sign {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #334155;
+}

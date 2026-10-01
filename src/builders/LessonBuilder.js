@@ -498,6 +498,11 @@ export function buildLesson(lesson) {
                     type: "fraction-times-int",
                     ...task
                 });
+            } else if (step.generator === "fraction-times-frac") {
+                result.push({
+                    type: "fraction-times-frac",
+                    ...task
+                });
             } else if (step.generator === "measure-units") {
                 result.push({
                     type: "measure-units",

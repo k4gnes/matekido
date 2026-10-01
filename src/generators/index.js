@@ -63,6 +63,7 @@ import { generateFractionEqualDen } from "./fractionEqualDenGenerator.js?v=1";
 import { generateFractionEqual } from "./fractionEqualGenerator.js?v=1";
 import { generateFractionCommonDen } from "./fractionCommonDenGenerator.js?v=1";
 import { generateFractionTimesInt } from "./fractionTimesIntGenerator.js?v=1";
+import { generateFractionTimesFrac } from "./fractionTimesFracGenerator.js?v=1";
 import { generateCircle } from "./circleGenerator.js?v=1";
 import { generateProbability } from "./probabilityGenerator.js?v=1";
 import { generateOperationOrder } from "./operationOrderGenerator.js?v=1";
@@ -197,6 +198,8 @@ export function generate(step) {
             return generateFractionCommonDen(opts);
         case "fraction-times-int":
             return generateFractionTimesInt(opts);
+        case "fraction-times-frac":
+            return generateFractionTimesFrac(opts);
         case "measure-units":
             return generateMeasureUnits(opts);
         case "written-operation":

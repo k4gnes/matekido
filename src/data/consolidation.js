@@ -112,6 +112,7 @@ export const CONSOLIDATION_LESSONS = {
         "rounding-millions-01",
         "fraction-equal-01",
         "fraction-common-den-01",
-        "fraction-times-int-01"
+        "fraction-times-int-01",
+        "fraction-times-frac-01"
     ]
 };

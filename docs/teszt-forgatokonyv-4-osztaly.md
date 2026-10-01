@@ -137,7 +137,7 @@ Ennek a dokumentumnak a célja, hogy a **4. osztályos tananyagot** (35 lecke, 7
 | 4.2 | Telefonméret (DevTools 375px) | A ☕ „Tippelj meg!” link NEM jelenik meg, a jobb felső gombok (súgó, 📚) koppinthatók | |
 | 4.3 | Az összehasonlítás feladat mobilon | A két oldal és a `< = >` gombok nem csúsznak szét, a `min-width: 48px` érintési cél megmarad | |
 | 4.4 | Asztali nézet | A ☕ „Tippelj meg!” link a jobb felső sarokban látható | |
-| 4.5 | Hard reload / offline | Nincs konzolhiba; az app cache-ből is betölt (504 fájl, `matekido-v74`) | |
+| 4.5 | Hard reload / offline | Nincs konzolhiba; az app cache-ből is betölt (510 fájl, `matekido-v75`) | |
 
 ---
 

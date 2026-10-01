@@ -10,7 +10,7 @@
             "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>🚚</span> <span style='font-size:1.1rem;'>= 1000 db</span> <span style='font-size:1.5rem;'>🧺✉️</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 rakomány = 1000 levél · 3 rakomány, 2 láda és 4 levél = 3024</div>",
             "worldTitles": {
                 "postman": {
-                    "title": "🚚 Hány levél van a rakocsikban?",
+                    "title": "🚚 Hány levél van a rakományokban?",
                     "text": "Egy rakományba mindig 1000 levél fér! Most már 10 000-ig bontjuk a számokat!",
                     "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>🚚</span> <span style='font-size:1.1rem;'>= 1000 db</span> <span style='font-size:1.5rem;'>✉️</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 rakomány = 1000 levél</div>"
                 },
@@ -65,6 +65,20 @@
                 "min": 1000,
                 "max": 9999,
                 "interaction": "choice"
+            }
+        },
+
+        {
+            "type": "exercise",
+            "generator": "place-value-thousands",
+
+            "options": {
+                "count": 4,
+                "min": 1000,
+                "max": 9999,
+                "interaction": "input",
+                "carry": true,
+                "carryOn": "hundreds"
             }
         },
 

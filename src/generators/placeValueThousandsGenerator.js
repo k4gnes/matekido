@@ -1,3 +1,5 @@
+import { makeCarryParts } from "../math/placeValue.js";
+
 function pick(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
@@ -26,6 +28,26 @@ function digitsOf(num) {
         digits[place.key] = Math.floor(num / place.value) % 10;
     }
     return digits;
+}
+
+function makeCarryBase(parts, sum, layout, interaction, carryOn) {
+    const base = {
+        answer: sum,
+        number: sum,
+        numberText: formatNumber(sum),
+        parts: parts.map(part => part.key),
+        layout,
+        interaction
+    };
+
+    if (carryOn) base.carryOn = carryOn;
+
+    for (const place of PLACE_VALUES) {
+        const part = parts.find(p => p.key === place.key);
+        base[place.key] = part ? part.count : 0;
+    }
+
+    return base;
 }
 
 function formatNumber(n) {
@@ -91,8 +113,19 @@ export function generatePlaceValueThousands(options = {}) {
         max = 9999,
         interaction = "mixed",
         layout = "auto",
-        task = "expand"
+        task = "expand",
+        carry = false,
+        carryOn = null
     } = options;
+
+    if (carry && task !== "expand" && task !== "mixed") {
+        throw new Error("A kétjegyű darabszám csak összegbontó (expand) feladatban használható.");
+    }
+
+    const carryOnKeys = carryOn === null ? null : [].concat(carryOn);
+    if (carryOnKeys && carryOnKeys.some(key => !PLACE_VALUES.some(place => place.key === key))) {
+        throw new Error(`Ismeretlen carryOn helyiérték: ${carryOnKeys.join(", ")}`);
+    }
 
     const resolvedLayout = layout === "table" || (layout === "auto" && max > 9999) ? "table" : "emoji";
     const useChoice = interaction === "mixed" ? null : interaction === "choice";
@@ -100,6 +133,20 @@ export function generatePlaceValueThousands(options = {}) {
     const tasks = [];
 
     for (let i = 0; i < count; i++) {
+
+        let carryTask = null;
+
+        if (carry) {
+            const forced = carryOnKeys ? carryOnKeys[i % carryOnKeys.length] : null;
+            carryTask = makeCarryParts(PLACE_VALUES, min, max, { forceCarryOn: forced })
+                ?? (forced ? makeCarryParts(PLACE_VALUES, min, max) : null);
+        }
+
+        if (carryTask) {
+            const lead = carryTask.parts.find(part => part.count >= 10);
+            tasks.push(makeCarryBase(carryTask.parts, carryTask.sum, resolvedLayout, useChoice ?? pick(["input", "choice"]), lead ? lead.key : undefined));
+            continue;
+        }
 
         const num = Math.floor(Math.random() * (max - min + 1)) + min;
         const digits = digitsOf(num);

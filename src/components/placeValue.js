@@ -25,26 +25,25 @@ export function renderPlaceValue(step, root, next, progress, onResult, onAttempt
     title.textContent = w.title;
 
     const emojiArea = document.createElement("div");
-    emojiArea.style.cssText = "text-align:center; margin:0.5rem 0;";
+    emojiArea.style.cssText = "display:flex; flex-wrap:wrap; gap:0.8rem; justify-content:center; margin:0.5rem 0;";
 
-    const emojiRow = document.createElement("div");
-    emojiRow.style.cssText = "display:flex; flex-wrap:wrap; gap:0.3rem; justify-content:center; font-size:1.6rem; line-height:1.8;";
-    emojiRow.textContent = `${w.tens.repeat(step.tens)} ${w.ones.repeat(step.ones)}`;
-
-    const labelRow = document.createElement("div");
-    labelRow.style.cssText = "display:flex; justify-content:space-between; width:100%; font-size:1rem; font-weight:bold; margin-top:0.2rem; padding:0 0.5rem;";
-    if (step.tens > 0) {
-        const tensLabel = document.createElement("span");
-        tensLabel.textContent = "tízes";
-        labelRow.append(tensLabel);
-    }
-    if (step.ones > 0) {
-        const onesLabel = document.createElement("span");
-        onesLabel.textContent = "egyes";
-        labelRow.append(onesLabel);
+    function emojiColumn(emoji, count, label) {
+        const col = document.createElement("div");
+        col.style.cssText = "display:flex; flex-direction:column; align-items:center;";
+        const emojiRow = document.createElement("div");
+        emojiRow.style.cssText = `font-size:${count > 9 ? "1.1rem" : "1.6rem"}; line-height:1.8; text-align:center; max-width:12rem;`;
+        emojiRow.textContent = Array(count).fill(emoji).join(" ");
+        const lbl = document.createElement("div");
+        lbl.style.cssText = "font-size:1rem; font-weight:bold; margin-top:0.2rem;";
+        lbl.textContent = label;
+        col.append(emojiRow, lbl);
+        return col;
     }
 
-    emojiArea.append(emojiRow, labelRow);
+    emojiArea.append(
+        emojiColumn(w.tens, step.tens, "tízes"),
+        emojiColumn(w.ones, step.ones, "egyes")
+    );
 
     const equation = document.createElement("div");
     equation.className = "equation";
@@ -53,6 +52,7 @@ export function renderPlaceValue(step, root, next, progress, onResult, onAttempt
     desc.textContent = `${step.tens} tízes + ${step.ones} egyes =`;
 
     const input = createNumberInput();
+    input.style.width = `${String(step.answer).length + 2}ch`;
 
     equation.append(desc, input);
 

@@ -495,6 +495,7 @@ const SW_CACHE_LIST = [
     "/manifest.webmanifest",
     "/math/addition.js",
     "/math/number.js",
+    "/math/placeValue.js",
     "/math/subtraction.js",
     "/profile/Achievements.js",
     "/profile/DailyQuests.js",

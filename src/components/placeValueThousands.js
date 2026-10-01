@@ -6,7 +6,7 @@ import { getActiveWorld } from "../profile/Profile.js";
 import { makeOptions } from "./ui/optionHelper.js";
 
 const WORLD = {
-    postman: { title: "📮 Hány levél van a rakocsikban?", thousands: "🚚", hundreds: "🧺", tens: "📦", ones: "✉️" },
+    postman: { title: "📮 Hány levél van a rakományokban?", thousands: "🚚", hundreds: "🧺", tens: "📦", ones: "✉️" },
     racing: { title: "🏎️ Hány alkatrész kell a pályára?", thousands: "🏁", hundreds: "🏎️", tens: "⚙️", ones: "🔧" },
     football: { title: "⚽ Hány játékos van a bajnokságban?", thousands: "🏆", hundreds: "⚽", tens: "👨‍🏫", ones: "🏃" },
     cooking: { title: "🍳 Hány hozzávaló kell a nagy ebédhez?", thousands: "🥘", hundreds: "🍲", tens: "🍳", ones: "🥄" },
@@ -28,6 +28,22 @@ const PLACES = [
 function activePlaces(number) {
     const first = PLACES.length - String(number).length;
     return PLACES.slice(Math.max(first, 0));
+}
+
+const PLACE_VALUES_LETTER = {
+    millions: "millió", hundredThousands: "százezer", tenThousands: "tízezer",
+    thousands: "ezer", hundreds: "száz", tens: "tíz", ones: "egy"
+};
+
+function partPlaces(keys) {
+    return keys.map(key => PLACES.find(place => place.key === key)).filter(Boolean);
+}
+
+function emojiRow(emoji, count) {
+    const row = document.createElement("div");
+    row.style.cssText = `font-size:${count > 9 ? "1rem" : "1.25rem"}; line-height:1.7; text-align:center; max-width:11rem;`;
+    row.textContent = Array(count).fill(emoji).join(" ");
+    return row;
 }
 
 function magnitudeBounds(answer) {
@@ -70,16 +86,20 @@ export function renderPlaceValueThousands(step, root, next, progress, onResult, 
     const useChoice = step.interaction === "choice";
 
     const number = step.number ?? step.answer;
-    const places = activePlaces(number);
-    const hasEmoji = places.every(place => w[place.key]);
+    const places = step.parts ? partPlaces(step.parts) : activePlaces(number);
+    const hasEmoji = places.length > 0 && places.every(place => w[place.key]);
     const useTable = step.layout === "table" || !hasEmoji;
+    const hasTwoDigit = places.some(place => step[place.key] >= 10);
 
     const title = document.createElement("h1");
     const defaultTitle = step.task === "value" ? "🔢 Mennyit ér a számjegy?"
         : step.task === "digit" ? "🔢 Melyik számjegy van itt?"
+        : hasTwoDigit ? "🔢 Mennyi ez összesen?"
         : useTable ? "🔢 Bontsuk fel helyiértékekre!"
         : w.title;
     title.textContent = step.title ?? defaultTitle;
+
+    const leadPlace = hasTwoDigit ? places.find(place => step[place.key] >= 10) : null;
 
     let board;
 
@@ -92,13 +112,10 @@ export function renderPlaceValueThousands(step, root, next, progress, onResult, 
         for (const place of places) {
             const col = document.createElement("div");
             col.style.cssText = "display:flex; flex-direction:column; align-items:center;";
-            const emojiRow = document.createElement("div");
-            emojiRow.style.cssText = "font-size:1.25rem; line-height:1.7; text-align:center;";
-            emojiRow.textContent = w[place.key].repeat(step[place.key]);
             const lbl = document.createElement("div");
             lbl.style.cssText = "font-size:0.9rem; font-weight:bold; margin-top:0.2rem;";
             lbl.textContent = place.label;
-            col.append(emojiRow, lbl);
+            col.append(emojiRow(w[place.key], step[place.key]), lbl);
             emojiArea.append(col);
         }
 
@@ -148,7 +165,16 @@ export function renderPlaceValueThousands(step, root, next, progress, onResult, 
         button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
     }
 
-    const children = [board, equation];
+    const children = [];
+
+    if (leadPlace) {
+        const note = document.createElement("div");
+        note.style.cssText = "text-align:center; font-size:0.95rem; margin:0.2rem 0; color:var(--text-soft, #6b7280);";
+        note.textContent = `${step[leadPlace.key]} ${leadPlace.label} több, mint 10, ezért ${PLACE_VALUES_LETTER[leadPlace.key] ?? "egy"} helyiértékkel több!`;
+        children.push(note);
+    }
+
+    children.push(board, equation);
     if (optionsContainer) children.push(optionsContainer);
     if (button) children.push(button);
 

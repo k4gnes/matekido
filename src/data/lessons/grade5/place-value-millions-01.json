@@ -67,6 +67,18 @@
       }
     },
     {
+      "type": "exercise",
+      "generator": "place-value-thousands",
+      "options": {
+        "count": 4,
+        "min": 100000,
+        "max": 1000000,
+        "layout": "table",
+        "interaction": "input",
+        "carry": true
+      }
+    },
+    {
       "type": "celebration",
       "title": "🎉 Ügyes voltál!",
       "text": "1 000 000-ig is tökéletesen bontod a számokat milliókra, száezerekre, tíezerekre, ezresekre, százasokra, tízesekre és egyesekre!",

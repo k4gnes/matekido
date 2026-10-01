@@ -42,7 +42,7 @@ export const SKILLS = {
     comparison: { title: "Nagyobb-kisebb", category: "numbers" },
     ordering: { title: "Számrendezés", category: "numbers" },
     "missing-number": { title: "Hiányzó szám", category: "numbers" },
-    "place-value": { title: "Helyi érték", category: "numbers" },
+    "place-value": { title: "Helyiérték", category: "numbers" },
     "number-sequence": { title: "Számsor", category: "numbers" },
     "even-odd": { title: "Páros és páratlan", category: "numbers" },
     pattern: { title: "Sorminta", category: "numbers" },

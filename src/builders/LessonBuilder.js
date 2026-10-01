@@ -404,6 +404,8 @@ export function buildLesson(lesson) {
                     tens: task.tens,
                     ones: task.ones,
                     task: task.task,
+                    parts: task.parts,
+                    carryOn: task.carryOn,
                     place: task.place,
                     placeLabel: task.placeLabel,
                     digit: task.digit,

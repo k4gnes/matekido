@@ -28,6 +28,8 @@ const PLACE_LABELS = {
     thousands: "ezres", hundreds: "százas", tens: "tízes", ones: "egyes"
 };
 
+const PLACE_ORDER = Object.keys(PLACE_LABELS);
+
 const POLYGON_SIDES = {
     triangle: 3,
     square: 4,
@@ -316,6 +318,25 @@ function validateStep(step, ctx) {
                 millions: 1000000, hundredThousands: 100000, tenThousands: 10000,
                 thousands: 1000, hundreds: 100, tens: 10, ones: 1
             };
+
+            if (step.parts !== undefined) {
+                if (!Array.isArray(step.parts) || step.parts.length < 2) fail(ctx, "parts hibás");
+                if (task !== "expand") fail(ctx, "a kétjegyű darabszám csak expand feladatban lehet");
+                const indices = step.parts.map(key => {
+                    if (!placeValues[key]) fail(ctx, `parts helyiérték hibás (${key})`);
+                    return PLACE_ORDER.indexOf(key);
+                });
+                if (indices.some(index => indices.indexOf(index) !== indices.lastIndexOf(index))) fail(ctx, "parts ismétlődik");
+                if (indices.some((index, i) => i > 0 && index <= indices[i - 1])) fail(ctx, "parts nincs csökkenő sorrendben");
+                if (step.parts.some(key => step[key] < 1)) fail(ctx, "parts null darabszámú helyet tartalmaz");
+                if (step.parts.some(key => step[key] > 99)) fail(ctx, "parts darabszáma nem kétjegyű");
+                if (Object.keys(placeValues).some(key => step[key] > 0 && !step.parts.includes(key))) fail(ctx, "parts nem tartalmaz minden nem nulla helyiértéket");
+                if (!step.parts.some(key => step[key] >= 10)) fail(ctx, "nincs kétjegyű darabszám");
+                const lead = step.parts.find(key => step[key] >= 10);
+                if (step.carryOn !== undefined) {
+                    if (step.carryOn !== lead) fail(ctx, `carryOn hibás (${step.carryOn}, kétjegyű: ${lead})`);
+                }
+            }
 
             if (task === "expand") {
                 if (step.answer !== recomposed) fail(ctx, "expand answer hibás");

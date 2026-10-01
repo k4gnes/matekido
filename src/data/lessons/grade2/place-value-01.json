@@ -60,6 +60,17 @@
         },
 
         {
+            "type": "exercise",
+            "generator": "place-value",
+
+            "options": {
+                "count": 4,
+                "max": 100,
+                "carry": true
+            }
+        },
+
+        {
             "type": "celebration",
             "title": "🎉 Ügyes voltál!",
             "text": "100-ig is tökéletesen tudod a tízeseket és egyeseket!",

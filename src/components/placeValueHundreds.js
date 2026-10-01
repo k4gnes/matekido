@@ -34,8 +34,8 @@ export function renderPlaceValueHundreds(step, root, next, progress, onResult, o
         const col = document.createElement("div");
         col.style.cssText = "display:flex; flex-direction:column; align-items:center;";
         const emojiRow = document.createElement("div");
-        emojiRow.style.cssText = "font-size:1.5rem; line-height:1.7; text-align:center;";
-        emojiRow.textContent = emoji.repeat(count);
+        emojiRow.style.cssText = `font-size:${count > 9 ? "1.1rem" : "1.5rem"}; line-height:1.7; text-align:center; max-width:11rem;`;
+        emojiRow.textContent = Array(count).fill(emoji).join(" ");
         const lbl = document.createElement("div");
         lbl.style.cssText = "font-size:1rem; font-weight:bold; margin-top:0.2rem;";
         lbl.textContent = label;
@@ -64,7 +64,7 @@ export function renderPlaceValueHundreds(step, root, next, progress, onResult, o
         optionsContainer = document.createElement("div");
         optionsContainer.className = "mult-options";
 
-        const options = makeOptions(step.answer, 100, 999);
+        const options = makeOptions(step.answer, 100, Math.max(999, step.answer));
         options.forEach(value => {
             const btn = document.createElement("button");
             btn.type = "button";
@@ -75,6 +75,7 @@ export function renderPlaceValueHundreds(step, root, next, progress, onResult, o
         });
     } else {
         input = createNumberInput();
+        input.style.width = `${String(step.answer).length + 2}ch`;
         equation.append(desc, input);
 
         button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });

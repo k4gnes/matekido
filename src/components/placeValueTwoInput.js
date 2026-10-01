@@ -97,13 +97,19 @@ export function renderPlaceValueTwoInput(step, root, next, progress, onResult, o
         tensInput.focus();
     });
 
+    function isValidSplit(tens, ones) {
+        if (!Number.isInteger(tens) || !Number.isInteger(ones)) return false;
+        if (tens < 0 || ones < 0) return false;
+        return 10 * tens + ones === step.answer;
+    }
+
     function check() {
         if (feedback.isAnswered()) return;
 
         const tens = Number(tensInput.value);
         const ones = Number(onesInput.value);
 
-        if (tens === step.tens && ones === step.ones) {
+        if (isValidSplit(tens, ones)) {
 
             tensInput.disabled = true;
             onesInput.disabled = true;

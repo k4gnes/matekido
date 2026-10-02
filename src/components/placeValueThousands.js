@@ -1,5 +1,6 @@
 import { createButton } from "./ui/button.js";
 import { createNumberInput } from "./ui/numberInput.js";
+import { createCountRow } from "./ui/countRow.js";
 import { createExercise } from "./ui/exerciseShell.js";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
@@ -30,20 +31,13 @@ function activePlaces(number) {
     return PLACES.slice(Math.max(first, 0));
 }
 
-const PLACE_VALUES_LETTER = {
-    millions: "millió", hundredThousands: "százezer", tenThousands: "tízezer",
-    thousands: "ezer", hundreds: "száz", tens: "tíz", ones: "egy"
-};
+function nextPlaceUp(key) {
+    const index = PLACES.findIndex(place => place.key === key);
+    return index > 0 ? PLACES[index - 1] : null;
+}
 
 function partPlaces(keys) {
     return keys.map(key => PLACES.find(place => place.key === key)).filter(Boolean);
-}
-
-function emojiRow(emoji, count) {
-    const row = document.createElement("div");
-    row.style.cssText = `font-size:${count > 9 ? "1rem" : "1.25rem"}; line-height:1.7; text-align:center; max-width:11rem;`;
-    row.textContent = Array(count).fill(emoji).join(" ");
-    return row;
 }
 
 function magnitudeBounds(answer) {
@@ -76,6 +70,30 @@ function placeValueTable(places, step) {
     return table;
 }
 
+function numberBoard(text) {
+    const box = document.createElement("div");
+    box.style.cssText = "font-size:2.2rem;font-weight:700;letter-spacing:0.05em;margin:0.6rem 0;padding:0.4rem 0.9rem;background:var(--card-bg,#fff);border:1px solid var(--line,#e5e7eb);border-radius:0.6rem;";
+    box.textContent = text;
+    return box;
+}
+
+function emojiBoard(places, step, w) {
+    const area = document.createElement("div");
+    area.style.cssText = "display:flex; flex-wrap:wrap; gap:0.8rem; justify-content:center; margin:0.5rem 0;";
+
+    for (const place of places) {
+        const col = document.createElement("div");
+        col.style.cssText = "display:flex; flex-direction:column; align-items:center;";
+        const lbl = document.createElement("div");
+        lbl.style.cssText = "font-size:0.9rem; font-weight:bold; margin-top:0.2rem;";
+        lbl.textContent = place.label;
+        col.append(createCountRow(w[place.key], step[place.key]), lbl);
+        area.append(col);
+    }
+
+    return area;
+}
+
 export function renderPlaceValueThousands(step, root, next, progress, onResult, onAttempt) {
 
     const ac = new AbortController();
@@ -87,39 +105,28 @@ export function renderPlaceValueThousands(step, root, next, progress, onResult, 
 
     const number = step.number ?? step.answer;
     const places = step.parts ? partPlaces(step.parts) : activePlaces(number);
-    const hasEmoji = places.length > 0 && places.every(place => w[place.key]);
-    const useTable = step.layout === "table" || !hasEmoji;
+    const isSumTask = step.task !== "value" && step.task !== "digit";
+    const hasEmoji = isSumTask && places.length > 0 && places.every(place => w[place.key]);
     const hasTwoDigit = places.some(place => step[place.key] >= 10);
 
     const title = document.createElement("h1");
     const defaultTitle = step.task === "value" ? "🔢 Mennyit ér a számjegy?"
         : step.task === "digit" ? "🔢 Melyik számjegy van itt?"
         : hasTwoDigit ? "🔢 Mennyi ez összesen?"
-        : useTable ? "🔢 Bontsuk fel helyiértékekre!"
-        : w.title;
+        : hasEmoji ? w.title
+        : "🔢 Írd le a számot!";
     title.textContent = step.title ?? defaultTitle;
 
     const leadPlace = hasTwoDigit ? places.find(place => step[place.key] >= 10) : null;
 
-    let board;
+    let board = null;
 
-    if (useTable) {
+    if (step.task === "digit") {
+        board = numberBoard(step.numberText ?? String(number));
+    } else if (step.task === "value") {
         board = placeValueTable(places, step);
-    } else {
-        const emojiArea = document.createElement("div");
-        emojiArea.style.cssText = "display:flex; flex-wrap:wrap; gap:0.8rem; justify-content:center; margin:0.5rem 0;";
-
-        for (const place of places) {
-            const col = document.createElement("div");
-            col.style.cssText = "display:flex; flex-direction:column; align-items:center;";
-            const lbl = document.createElement("div");
-            lbl.style.cssText = "font-size:0.9rem; font-weight:bold; margin-top:0.2rem;";
-            lbl.textContent = place.label;
-            col.append(emojiRow(w[place.key], step[place.key]), lbl);
-            emojiArea.append(col);
-        }
-
-        board = emojiArea;
+    } else if (hasEmoji) {
+        board = emojiBoard(places, step, w);
     }
 
     const equation = document.createElement("div");
@@ -168,13 +175,23 @@ export function renderPlaceValueThousands(step, root, next, progress, onResult, 
     const children = [];
 
     if (leadPlace) {
+        const count = step[leadPlace.key];
+        const label = leadPlace.label;
+        const higher = nextPlaceUp(leadPlace.key);
+        let text = `${count} ${label} több, mint 10!`;
+        if (higher) {
+            text = count < 20
+                ? `Tipp: 10 ${label} = 1 ${higher.label}! Írd le, ${count} ${label} hány ${higher.label} és hány ${label}.`
+                : `Tipp: 10 ${label} = 1 ${higher.label}!`;
+        }
         const note = document.createElement("div");
         note.style.cssText = "text-align:center; font-size:0.95rem; margin:0.2rem 0; color:var(--text-soft, #6b7280);";
-        note.textContent = `${step[leadPlace.key]} ${leadPlace.label} több, mint 10, ezért ${PLACE_VALUES_LETTER[leadPlace.key] ?? "egy"} helyiértékkel több!`;
+        note.textContent = text;
         children.push(note);
     }
 
-    children.push(board, equation);
+    if (board) children.push(board);
+    children.push(equation);
     if (optionsContainer) children.push(optionsContainer);
     if (button) children.push(button);
 

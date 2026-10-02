@@ -299,6 +299,7 @@ function validateStep(step, ctx) {
         case "place-value-hundreds": {
             if (!isInt(step.hundreds) || !isInt(step.tens) || !isInt(step.ones)) fail(ctx, "h/t/o hibás");
             if (step.answer !== 100 * step.hundreds + 10 * step.tens + step.ones) fail(ctx, "answer hibás");
+            if (step.ones >= 10) fail(ctx, "a kétjegyű darabszám nem lehet egyes");
             break;
         }
         case "place-value-thousands": {
@@ -333,6 +334,7 @@ function validateStep(step, ctx) {
                 if (Object.keys(placeValues).some(key => step[key] > 0 && !step.parts.includes(key))) fail(ctx, "parts nem tartalmaz minden nem nulla helyiértéket");
                 if (!step.parts.some(key => step[key] >= 10)) fail(ctx, "nincs kétjegyű darabszám");
                 const lead = step.parts.find(key => step[key] >= 10);
+                if (lead === "ones") fail(ctx, "a kétjegyű darabszám nem lehet egyes");
                 if (step.carryOn !== undefined) {
                     if (step.carryOn !== lead) fail(ctx, `carryOn hibás (${step.carryOn}, kétjegyű: ${lead})`);
                 }

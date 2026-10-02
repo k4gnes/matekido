@@ -6,35 +6,35 @@
         {
             "type": "scene",
             "title": "🔢 Tízesek és egyesek",
-            "text": "Egy dobozba mindig 10 levél fér! Most már 100-ig bontjuk a számokat tízesekre és egyesekre!",
+            "text": "Egy dobozba mindig 10 levél fér! Most már 100-ig rakod össze a számokat tízesekből és egyesekből!",
             "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>📦</span> <span style='font-size:1.1rem;'>= 10 db</span> <span style='font-size:1.8rem;'>✉️</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 doboz = 10 levél · 3 doboz és 4 levél = 34</div>",
             "worldTitles": {
                 "racing": {
                     "title": "🏎️ Alkatrészes dobozok",
-                    "text": "Egy kerék-tartályba mindig 10 alkatrész fér! Most már 100-ig bontjuk a számokat!",
+                    "text": "Egy kerék-tartályba mindig 10 alkatrész fér! Most már 100-ig rakod össze a számokat!",
                     "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>⚙️</span> <span style='font-size:1.1rem;'>= 10 db</span> <span style='font-size:1.8rem;'>🔧</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 tartály = 10 alkatrész</div>"
                 },
                 "football": {
                     "title": "⚽ Csapatok és edzők",
-                    "text": "1 edző mindig 10 játékost vezet! Most már 100-ig bontjuk a számokat!",
+                    "text": "1 edző mindig 10 játékost vezet! Most már 100-ig rakod össze a számokat!",
                     "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>👨‍🏫</span> <span style='font-size:1.1rem;'>= 10 db</span> <span style='font-size:1.8rem;'>🏃</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 edző = 10 játékos</div>"
                 },
                 "cooking": {
                     "title": "🍲 Fazekak és kanalak",
-                    "text": "Egy fazékba mindig 10 kanál fér! Most már 100-ig bontjuk a számokat!",
+                    "text": "Egy fazékba mindig 10 kanál fér! Most már 100-ig rakod össze a számokat!",
                     "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>🍲</span> <span style='font-size:1.1rem;'>= 10 db</span> <span style='font-size:1.8rem;'>🥄</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 fazék = 10 kanál</div>"
                 },
                 "animals": {
                     "title": "🦁 Karámok és állatok",
-                    "text": "Egy karámba mindig 10 állat fér! Most már 100-ig bontjuk a számokat!"
+                    "text": "Egy karámba mindig 10 állat fér! Most már 100-ig rakod össze a számokat!"
                 },
                 "space": {
                     "title": "🤖 Tartályok és robotok",
-                    "text": "Egy tartályba mindig 10 robot fér! Most már 100-ig bontjuk a számokat!"
+                    "text": "Egy tartályba mindig 10 robot fér! Most már 100-ig rakod össze a számokat!"
                 },
                 "tram": {
                     "title": "🚋 Vagonok és utasok",
-                    "text": "Egy vagonba mindig 10 utas fér! Most már 100-ig bontjuk a számokat!"
+                    "text": "Egy vagonba mindig 10 utas fér! Most már 100-ig rakod össze a számokat!"
                 }
             }
         },
@@ -56,17 +56,6 @@
             "options": {
                 "count": 4,
                 "max": 100
-            }
-        },
-
-        {
-            "type": "exercise",
-            "generator": "place-value",
-
-            "options": {
-                "count": 4,
-                "max": 100,
-                "carry": true
             }
         },
 

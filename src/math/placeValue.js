@@ -16,12 +16,14 @@ function shuffle(arr) {
 
 /**
  * Olyan helyiérték-bontás, amelyben legalább egy helyen kétjegyű darabszám van
- * (pl. 9 százas + 12 tízes + 3 egyes = 1023). Az összeg a min–max tartományban marad.
+ * (pl. 4 százas + 34 tízes + 9 egyes = 749). Az összeg a min–max tartományban marad.
+ * A kétjegyű darabszám bármely beférő helyen lehet (százas, ezres, tízezer, …),
+ * 10 és 99 között, egyesen viszont sosem, mert 10-nél több egyes már átvihető a tízesekbe.
  *
  * makeCarryParts([{ key: "hundreds", value: 100 }, { key: "tens", value: 10 }, { key: "ones", value: 1 }], 100, 999)
- * → { parts: [{ key: "hundreds", count: 12 }, { key: "tens", count: 4 }, { key: "ones", count: 3 }], sum: 1243 }
+ * → { parts: [{ key: "hundreds", count: 4 }, { key: "tens", count: 34 }, { key: "ones", count: 9 }], sum: 749 }
  *
- * forceCarryOn megadásával egy adott helyiérték marad kétjegyű (pl. "tens").
+ * forceCarryOn megadásával egy adott helyiérték marad kétjegyű (pl. "hundreds").
  * Ha egyik helyen sem fér el kétjegyű darabszám, null-t ad vissza.
  */
 export function makeCarryParts(places, min, max, options = {}) {
@@ -29,9 +31,11 @@ export function makeCarryParts(places, min, max, options = {}) {
     const { forceCarryOn } = options;
     const valueOf = new Map(places.map(place => [place.key, place.value]));
 
-    let candidates = places.filter(place => place.value * 10 + place.value <= max);
+    const placeable = places.filter(place => place.value >= 10);
+
+    let candidates = placeable.filter(place => place.value * 10 + place.value <= max);
     if (candidates.length === 0) {
-        candidates = places.filter(place => place.value * 10 <= max);
+        candidates = placeable.filter(place => place.value * 10 <= max);
     }
     if (candidates.length === 0) {
         return null;
@@ -48,7 +52,7 @@ export function makeCarryParts(places, min, max, options = {}) {
     for (let attempt = 0; attempt < 30; attempt++) {
 
         const lead = candidates[randInt(0, candidates.length - 1)];
-        const maxLeadCount = Math.min(19, Math.floor(max / lead.value) - 9);
+        const maxLeadCount = Math.min(99, Math.floor(max / lead.value));
         if (maxLeadCount < 10) continue;
 
         const counts = new Map();
@@ -70,7 +74,7 @@ export function makeCarryParts(places, min, max, options = {}) {
         const parts = places.filter(place => counts.has(place.key)).map(place => ({ key: place.key, count: counts.get(place.key) }));
 
         if (counts.size >= 3) return { parts, sum };
-        fallback = { parts, sum };
+        if (counts.size >= 2) fallback = { parts, sum };
     }
 
     return fallback;

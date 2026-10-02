@@ -5,40 +5,40 @@
     {
       "type": "scene",
       "title": "🧮 Milliók, százezrek, tízezrek",
-      "text": "Tíz darab ezer tízezer, száz darab ezer százezer, és ezer darab ezer millió! Nézd meg a helyiérték-táblázatot, és bontsd fel a számokat helyiértékekre!",
+      "text": "Tíz darab ezer tízezer, száz darab ezer százezer, és ezer darab ezer millió! Nézd meg a helyiérték-táblázatot, és rakd össze a számokat a helyiértékeikből!",
       "illustration": "<div style='margin:1rem 0; line-height:2.2; text-align:center;'><span style='font-size:1.5rem;'>🏙️</span> <span style='font-size:1.1rem;'>= 1 000 000</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 000 000 = 1 millió · 100 000 = 1 százezer · 10 000 = 1 tízezer</div>",
       "worldTitles": {
         "postman": {
           "title": "🚚 Hány levél jut száz rakományra?",
-          "text": "Száz rakományban százezer levél van, ezer rakományban millió! Nézd meg a helyiérték-táblázatot!",
+          "text": "Száz rakományban százezer levél van, ezer rakományban millió! Most már 1 000 000-ig rakod össze a számokat a helyiértékeikből!",
           "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>🚚</span> <span style='font-size:1.1rem;'>= 1000 levél</span></div><div style='font-size:0.95rem; opacity:0.8;'>1000 levél = 1 rakomány · 1000 rakomány = 1 millió levél</div>"
         },
         "racing": {
           "title": "🏁 Hány alkatrész kell a nagy raktárba?",
-          "text": "Egy raktárban ezer alkatrész van, száz raktárban százezer, ezer raktárban millió! Nézd meg a helyiérték-táblázatot!",
+          "text": "Egy raktárban ezer alkatrész van, száz raktárban százezer, ezer raktárban millió! Most már 1 000 000-ig rakod össze a számokat a helyiértékeikből!",
           "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>🏁</span> <span style='font-size:1.1rem;'>= 1000 alkatrész</span></div><div style='font-size:0.95rem; opacity:0.8;'>1000 alkatrész = 1 raktár · 1000 raktár = 1 millió alkatrész</div>"
         },
         "football": {
           "title": "🏆 Hány szurkoló jön a nagy stadionba?",
-          "text": "Egy szektorban ezer szurkoló, száz szektorban százezer, ezer szektorban millió! Nézd meg a helyiérték-táblázatot!",
+          "text": "Egy szektorban ezer szurkoló, száz szektorban százezer, ezer szektorban millió! Most már 1 000 000-ig rakod össze a számokat a helyiértékeikből!",
           "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>🏆</span> <span style='font-size:1.1rem;'>= 1000 szurkoló</span></div><div style='font-size:0.95rem; opacity:0.8;'>1000 szurkoló = 1 szektor · 1000 szektor = 1 millió szurkoló</div>"
         },
         "cooking": {
           "title": "🥘 Hány hozzávaló kell a városi étkezdenek?",
-          "text": "Egy ládában ezer hozzávaló, száz ládában százezer, ezer ládában millió! Nézd meg a helyiérték-táblázatot!",
+          "text": "Egy ládában ezer hozzávaló, száz ládában százezer, ezer ládában millió! Most már 1 000 000-ig rakod össze a számokat a helyiértékeikből!",
           "illustration": "<div style='margin:1rem 0; line-height:2.2;'><span style='font-size:2.5rem;'>🥘</span> <span style='font-size:1.1rem;'>= 1000 hozzávaló</span></div><div style='font-size:0.95rem; opacity:0.8;'>1000 hozzávaló = 1 láda · 1000 láda = 1 millió hozzávaló</div>"
         },
         "animals": {
           "title": "🦛 Hány állat van a teljes szafárián?",
-          "text": "Egy karámban ezer állat, száz karámban százezer, ezer karámban millió! Nézd meg a helyiérték-táblázatot!"
+          "text": "Egy karámban ezer állat, száz karámban százezer, ezer karámban millió! Most már 1 000 000-ig rakod össze a számokat a helyiértékeikből!"
         },
         "space": {
           "title": "🛸 Hány robotot irányít a flotta?",
-          "text": "Egy bázison ezer robot, száz bázison százezer, ezer bázison millió! Nézd meg a helyiérték-táblázatot!"
+          "text": "Egy bázison ezer robot, száz bázison százezer, ezer bázison millió! Most már 1 000 000-ig rakod össze a számokat a helyiértékeikből!"
         },
         "tram": {
           "title": "🚋 Hány utast szállít a városi hálózat?",
-          "text": "Egy villamos ezer utast, száz villamos százezret, ezer villamos milliót! Nézd meg a helyiérték-táblázatot!"
+          "text": "Egy villamos ezer utast, száz villamos százezret, ezer villamos milliót! Most már 1 000 000-ig rakod össze a számokat a helyiértékeikből!"
         }
       }
     },
@@ -81,7 +81,7 @@
     {
       "type": "celebration",
       "title": "🎉 Ügyes voltál!",
-      "text": "1 000 000-ig is tökéletesen bontod a számokat milliókra, száezerekre, tíezerekre, ezresekre, százasokra, tízesekre és egyesekre!",
+      "text": "1 000 000-ig is tökéletesen rakod össze a számokat milliókból, száezerekből, tíezerekből, ezresekből, százasokból, tízesekből és egyesekből!",
       "worldTitles": {
         "postman": {
           "title": "🚚 Nagy vagy!",

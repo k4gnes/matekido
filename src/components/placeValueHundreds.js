@@ -1,5 +1,6 @@
 import { createButton } from "./ui/button.js";
 import { createNumberInput } from "./ui/numberInput.js";
+import { createCountRow } from "./ui/countRow.js";
 import { createExercise } from "./ui/exerciseShell.js";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
@@ -33,13 +34,10 @@ export function renderPlaceValueHundreds(step, root, next, progress, onResult, o
     function emojiColumn(emoji, count, label) {
         const col = document.createElement("div");
         col.style.cssText = "display:flex; flex-direction:column; align-items:center;";
-        const emojiRow = document.createElement("div");
-        emojiRow.style.cssText = `font-size:${count > 9 ? "1.1rem" : "1.5rem"}; line-height:1.7; text-align:center; max-width:11rem;`;
-        emojiRow.textContent = Array(count).fill(emoji).join(" ");
         const lbl = document.createElement("div");
         lbl.style.cssText = "font-size:1rem; font-weight:bold; margin-top:0.2rem;";
         lbl.textContent = label;
-        col.append(emojiRow, lbl);
+        col.append(createCountRow(emoji, count), lbl);
         return col;
     }
 

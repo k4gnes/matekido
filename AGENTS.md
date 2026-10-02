@@ -59,7 +59,7 @@ Interaktív matematikai tanulási platform magyar gyerekeknek (első osztálytó
 
 - `sw.js` és `manifest.webmanifest` a `src/` gyökerében – a web gyökér a `src/`, így a `/sw.js` scope a `/`-t, a `/assets/...`-t és az egész appot lefedi.
 - A service worker network-first: online mindig friss tartalom, offline cache. Az install során az EGÉSZ appot precache-eli a generált `sw-cache.js` lista alapján, így offline rögtön az összes lecke elérhető.
-- Új/eltűnt fájl (pl. új lecke) után futtatni kell a `node src/generateSWCache.js`-t (jelenleg 516 fájl). Nincs automatizált verzió-bump – nagy fájlstruktúra-változásnál a `sw.js` tetején lévő `CACHE` (`matekido-v76`) értékét növeld.
+- Új/eltűnt fájl (pl. új lecke) után futtatni kell a `node src/generateSWCache.js`-t (jelenleg 518 fájl). Nincs automatizált verzió-bump – nagy fájlstruktúra-változásnál a `sw.js` tetején lévő `CACHE` (`matekido-v77`) értékét növeld.
 - Ha a `src/index.html`-ben `?v=` paramétert emelsz, a SW online módban automatikusan az új fájlt adja.
 - Ikonok: `src/assets/icons/` (`icon-*`, `maskable-*`, `apple-touch-icon.png`, SVG források).
 - Telepíthetőséghez HTTPS kell (localhoston a `make start` is jó). Deploy: nincs konfigurálva, pl. GitHub Pages / Netlify.

@@ -182,7 +182,8 @@ A `masodik-osztaly.md` hiányzó-készségek táblázatának utolsó két sora:
 
 ### ✅ Helyiérték 100-ig
 - **Nincs új kód:** a meglévő `place-value` és `place-value-two-input` generátorok már támogatják a `max: 100` opciót
-- **Lecke:** `grade2/place-value-01.json` (index: `place-value-03`, skill: `place-value`, difficulty 2) – 4 feladat bontásra + 4 feladat összeállításra
+- **Lecke:** `grade2/place-value-01.json` (index: `place-value-03`, skill: `place-value`, difficulty 2) – 4 feladat összeállításra (tízesekből + egyesekből) + 4 feladat bontásra (hány tízes, hány egyes)
+- **Utólagos javítás:** a kétjegyű darabszám 10–99-re emelése után kiderült, hogy 100-ig ilyen nincs (a 10 tízes már 100), ezért a harmadik, `carry: true` blokk kikerült a leckéből; a jelenet- és ünnepi szövegek a valós feladatot írják le („rakd össze a tízesekből", nem „bontjuk a számokat tízesekre").
 
 ### ✅ Összehasonlítás 100-ig
 - **Nincs új kód:** a meglévő `generateComparison` már támogatja a `max: 100` opciót (a kifejezések összege/különbsége mindig ≤ 100)

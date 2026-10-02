@@ -134,3 +134,35 @@ export function numberToWords(number) {
     return result;
 
 }
+
+/**
+ * Egy tizedes szám iskolai szöveges olvasata (tized, század).
+ *
+ * decimalToWords("3,5")
+ * → "három egész öt tized"
+ *
+ * decimalToWords("3,45")
+ * → "három egész öt század"
+ *
+ * decimalToWords("0,07")
+ * → "hét század"
+ */
+export function decimalToWords(value) {
+
+    const [wholePart, fracPart = ""] = String(value).split(/[.,]/);
+    const whole = Number(wholePart || 0);
+    const frac = fracPart.padEnd(2, "0").slice(0, 2);
+
+    if (Number(frac) === 0) {
+        return numberToWords(whole);
+    }
+
+    const head = whole > 0 ? `${numberToWords(whole)} egész ` : "";
+
+    if (frac.endsWith("0")) {
+        return `${head}${numberToWords(Number(frac[0]))} tized`;
+    }
+
+    return `${head}${numberToWords(Number(frac))} század`;
+
+}

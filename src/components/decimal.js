@@ -43,7 +43,7 @@ export function renderDecimal(step, root, next, progress, onResult, onAttempt) {
         drawing.className = "decimal-drawing";
         drawing.append(renderGrid(step.total, step.filled));
         card.append(drawing);
-    } else if (step.mode === "compare") {
+    } else if (step.mode === "compare" || step.mode === "compare-whole") {
         const compareRow = document.createElement("div");
         compareRow.className = "decimal-compare";
         compareRow.append(renderSymbolBox(step.left), renderSymbolBox("?"), renderSymbolBox(step.right));
@@ -55,6 +55,9 @@ export function renderDecimal(step, root, next, progress, onResult, onAttempt) {
             symbol.append(renderFractionSymbol(step.numerator, step.denominator));
         } else {
             symbol.textContent = step.symbol;
+            if (step.mode === "read") {
+                symbol.classList.add("decimal-symbol-box-word");
+            }
         }
         card.append(symbol);
     }
@@ -78,20 +81,28 @@ export function renderDecimal(step, root, next, progress, onResult, onAttempt) {
     const correct = correctText(step);
 
     const successText = (() => {
-        if (step.mode === "compare") {
+        if (step.mode === "compare" || step.mode === "compare-whole") {
             return `🎉 Ügyes! ${step.left} ${correct} ${step.right}`;
         }
-        if (step.mode === "convert") {
+        if (step.mode === "convert" || step.mode === "read" || step.mode === "write") {
             return `🎉 Ügyes! ${step.symbol} = ${correct}.`;
         }
         return `🎉 Ügyes! ${correct} az ${step.filled} ${step.total === 10 ? "tized" : "század"}.`;
     })();
+
+    const wordMode = step.mode === "write";
+    if (wordMode) {
+        options.classList.add("decimal-options-text");
+    }
 
     step.options.forEach(opt => {
         const btn = document.createElement("button");
         btn.type = "button";
         btn.className = "decimal-option";
         btn.textContent = opt.text;
+        if (wordMode) {
+            btn.classList.add("decimal-option-text");
+        }
 
         btn.addEventListener("click", () => {
             if (feedback.isAnswered()) return;

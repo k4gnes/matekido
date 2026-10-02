@@ -1,5 +1,5 @@
 import { makeOptions } from "../components/ui/optionHelper.js";
-import { numberToWords } from "../math/number.js?v=1";
+import { numberToWords } from "../math/number.js?v=2";
 
 function shuffle(arr) {
     for (let i = arr.length - 1; i > 0; i--) {

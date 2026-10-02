@@ -265,6 +265,30 @@
       }
     },
     {
+      "id": "decimal-basics-01",
+      "title": "Tizedes törtek: írás, olvasás, összehasonlítás",
+      "grades": [
+        5
+      ],
+      "category": "fractions",
+      "skill": "fraction",
+      "difficulty": 2,
+      "type": "decimal",
+      "range": 100,
+      "mission": "🔟 Vessző és tizedek",
+      "subtitle": "Egész és tizedes rész, szóval és számmal, összehasonlítás",
+      "file": "./data/lessons/grade5/decimal-basics-01.json",
+      "worldTitles": {
+        "postman": "📮 Milyen súlyos a küldemény?",
+        "racing": "🏁 Hány liter benzin kell a versenyre?",
+        "football": "🏆 Mennyi a nézőszám a meccsen?",
+        "cooking": "🥘 Mennyi liszt kell a tésztához?",
+        "animals": "🦁 Mennyi a takarmányadag?",
+        "space": "🚀 Mennyi üzemanyag van a űrhajón?",
+        "tram": "🚋 Hány utas van a villamoson?"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

@@ -1,3 +1,5 @@
+import { decimalToWords } from "../math/number.js";
+
 function pick(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
@@ -155,6 +157,125 @@ function buildCompareTask() {
     };
 }
 
+function parseDecimal(text) {
+    return Number(text.replace(",", "."));
+}
+
+function wholeDecimal(whole, tenths, hundredths = null) {
+    const base = `${whole},${tenths}`;
+    return hundredths === null ? base : `${base}${hundredths}`;
+}
+
+/**
+ * Tévesztő lehetőségek egy tizedes számhoz: tized/század csere, helyre
+ * csúsztatás, egészrész eltolás. Ugyanazt az értéket soha nem adja vissza,
+ * és kétszeresét sem, mert az nem lenne téves válasz.
+ */
+function decimalDistractors(correct) {
+    const [w, f = ""] = correct.split(",");
+    const whole = Number(w);
+    const digits = f.padEnd(2, "0");
+    const tenths = Number(digits[0]);
+    const hundredths = Number(digits[1]);
+    const pool = new Set();
+
+    const add = value => {
+        if (!value || value === correct || pool.has(value)) return;
+        if (parseDecimal(value) === parseDecimal(correct)) return;
+        pool.add(value);
+    };
+
+    if (f.length === 1) {
+        add(wholeDecimal(whole, `0${tenths}`));
+        add(wholeDecimal(whole === 1 ? 2 : whole - 1, tenths));
+        add(wholeDecimal(whole + 1, tenths));
+        add(wholeDecimal(whole, tenths === 9 ? 8 : tenths + 1));
+    } else {
+        add(wholeDecimal(whole, tenths));
+        add(wholeDecimal(whole, tenths, hundredths === 9 ? 8 : hundredths + 1));
+        add(wholeDecimal(whole === 1 ? 2 : whole - 1, tenths, hundredths));
+        add(wholeDecimal(whole + 1, tenths, hundredths));
+    }
+
+    return shuffle([...pool]);
+}
+
+function buildWordTask(direction) {
+    const whole = randint(1, 30);
+    const useHundredths = Math.random() < 0.5;
+    const correct = useHundredths
+        ? wholeDecimal(whole, randint(1, 9), randint(1, 9))
+        : wholeDecimal(whole, randint(1, 9));
+
+    const alternatives = decimalDistractors(correct).slice(0, 3);
+    const values = shuffle([correct, ...alternatives]);
+    const words = values.map(v => decimalToWords(v));
+    const answer = decimalToWords(correct);
+
+    if (direction === "read") {
+        return {
+            type: "decimal",
+            mode: "read",
+            direction,
+            symbol: answer,
+            question: "Mennyi ez tizedes törttel?",
+            options: values.map(text => ({ text, correct: text === correct }))
+        };
+    }
+
+    return {
+        type: "decimal",
+        mode: "write",
+        direction,
+        symbol: correct,
+        question: "Hogyan mondjuk ezt szóval?",
+        options: words.map((text, i) => ({ text, correct: values[i] === correct }))
+    };
+}
+
+function buildCompareWholeTask() {
+    const kind = pick(["pad", "pad", "same", "whole", "equal"]);
+    const whole = randint(2, 30);
+    let left;
+    let right;
+
+    if (kind === "pad") {
+        left = wholeDecimal(whole, randint(1, 9));
+        right = wholeDecimal(whole, randint(1, 9), randint(0, 9));
+    } else if (kind === "same") {
+        const base = randint(11, 98);
+        let other = randint(11, 99);
+        if (other === base) other = base === 99 ? 11 : base + 1;
+        left = wholeDecimal(whole, Math.floor(base / 10), base % 10);
+        right = wholeDecimal(whole, Math.floor(other / 10), other % 10);
+    } else if (kind === "whole") {
+        left = wholeDecimal(whole, randint(0, 9), randint(1, 9));
+        right = wholeDecimal(whole + 1, randint(0, 9), randint(1, 9));
+    } else {
+        const tenths = randint(1, 9);
+        left = wholeDecimal(whole, tenths);
+        right = wholeDecimal(whole, tenths, 0);
+    }
+
+    const leftValue = parseDecimal(left);
+    const rightValue = parseDecimal(right);
+    let relation = leftValue < rightValue ? "<" : leftValue > rightValue ? ">" : "=";
+    if (Math.random() < 0.5) {
+        [left, right] = [right, left];
+        relation = relation === ">" ? "<" : relation === "<" ? ">" : "=";
+    }
+
+    const options = shuffle([">", "<", "="]).map(text => ({ text, correct: text === relation }));
+    return {
+        type: "decimal",
+        mode: "compare-whole",
+        left,
+        right,
+        question: "Melyik jel illik a két szám közé?",
+        options
+    };
+}
+
 export function generateDecimalPrep(options = {}) {
     const { count = 4, mode = "mixed" } = options;
 
@@ -168,6 +289,12 @@ export function generateDecimalPrep(options = {}) {
             tasks.push(Math.random() < 0.5 ? buildFractionToDecimalTask() : buildDecimalToFractionTask());
         } else if (mode === "compare") {
             tasks.push(buildCompareTask());
+        } else if (mode === "read") {
+            tasks.push(buildWordTask("read"));
+        } else if (mode === "write") {
+            tasks.push(buildWordTask("write"));
+        } else if (mode === "compare-whole") {
+            tasks.push(buildCompareWholeTask());
         } else {
             tasks.push(pick([buildTenthsTask, buildHundredthsTask, buildFractionToDecimalTask, buildDecimalToFractionTask, buildCompareTask])());
         }

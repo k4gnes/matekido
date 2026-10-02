@@ -377,6 +377,7 @@ const SW_CACHE_LIST = [
     "/data/lessons/grade4/written-mul2-01.json",
     "/data/lessons/grade4/written-sub-01.json",
     "/data/lessons/grade5/comparison-millions-01.json",
+    "/data/lessons/grade5/decimal-basics-01.json",
     "/data/lessons/grade5/divisibility-rules-01.json",
     "/data/lessons/grade5/fraction-common-den-01.json",
     "/data/lessons/grade5/fraction-divide-01.json",

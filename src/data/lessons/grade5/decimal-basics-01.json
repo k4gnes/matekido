@@ -1,0 +1,71 @@
+{
+    "id": "grade5-decimal-basics-01",
+    "title": "Tizedes törtek: írás, olvasás, összehasonlítás",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🔟 Mi mindent jelent a vessző?",
+            "text": "A tizedes számokban a vessző (,) az egész és a tizedes rész határa. 12,47 = tizenkettő egész negyvenhét század. Ha a tizedes rész végén nulla áll, elhagyjuk: 12,40 = tizenkettő egész négy tized. Összehasonlításnál először az egész részt nézd, és csak ha az egyenlő, akkor a tizedeket, majd a századokat. A rövidebb számot gondolatban egészítsd ki nullákkal: 0,5 = 0,50!",
+            "illustration": "<div style='margin:1rem 0; text-align:center; line-height:2.1; font-size:1.05rem;'>12,47<br><span style='opacity:0.7;'>tizenkettő egész negyvenhét század</span><br>12,4<br><span style='opacity:0.7;'>tizenkettő egész négy tized</span><br><span style='opacity:0.8;'>3,9 &gt; 3,85 · 3,5 = 3,50</span></div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Milyen súlyos a csomag?",
+                    "text": "A csomag súlya tizedes szám lehet: 12,47 kg = tizenkettő egész negyvenhét század. A végén álló nullát elhagyhatod: 12,40 kg = tizenkettő egész négy tized. Összehasonlításnál először a teljes kilogrammokat nézd, és csak utána a tizedeket, századokat – a rövidebb számot nullákkal egészítsd ki: 0,5 kg = 0,50 kg!"
+                },
+                "racing": {
+                    "title": "🏁 Hány liter benzin kell?",
+                    "text": "A benzinmennyiség tizedes szám lehet: 12,47 l = tizenkettő egész negyvenhét század. A végén álló nullát elhagyhatod: 12,40 l = tizenkettő egész négy tized. Összehasonlításnál először a teljes litereket nézd, és csak utána a tizedeket, századokat – a rövidebb számot nullákkal egészítsd ki: 0,5 l = 0,50 l!"
+                },
+                "football": {
+                    "title": "⚽ Mennyi a nézőszám?",
+                    "text": "A nézők száma is lehet tizedes: 12,47 ezer = tizenkettő egész negyvenhét század. A végén álló nullát elhagyhatod: 12,40 ezer = tizenkettő egész négy tized. Összehasonlításnál először a teljes ezreseket nézd, és csak utána a tizedeket, századokat – a rövidebb számot nullákkal egészítsd ki: 0,5 ezer = 0,50 ezer!"
+                },
+                "cooking": {
+                    "title": "🥘 Mennyi liszt kell a tésztához?",
+                    "text": "A hozzávalók mennyisége tizedes szám: 12,47 kg = tizenkettő egész negyvenhét század. A végén álló nullát elhagyhatod: 12,40 kg = tizenkettő egész négy tized. Összehasonlításnál először a teljes kilogrammokat nézd, és csak utána a tizedeket, századokat – a rövidebb számot nullákkal egészítsd ki: 0,5 kg = 0,50 kg!"
+                },
+                "animals": {
+                    "title": "🦁 Mennyi a takarmányadag?",
+                    "text": "Az adag tizedes szám lehet: 12,47 kg = tizenkettő egész negyvenhét század. A végén álló nullát elhagyhatod: 12,40 kg = tizenkettő egész négy tized. Összehasonlításnál először a teljes kilogrammokat nézd, és csak utána a tizedeket, századokat – a rövidebb számot nullákkal egészítsd ki: 0,5 kg = 0,50 kg!"
+                },
+                "space": {
+                    "title": "🚀 Mennyi üzemanyag van a tanksban?",
+                    "text": "Az üzemanyag mennyisége tizedes: 12,47 t = tizenkettő egész negyvenhét század. A végén álló nullát elhagyhatod: 12,40 t = tizenkettő egész négy tized. Összehasonlításnál először a teljes tonnákat nézd, és csak utána a tizedeket, századokat – a rövidebb számot nullákkal egészítsd ki: 0,5 t = 0,50 t!"
+                },
+                "tram": {
+                    "title": "🚋 Hány utas van a szerelvényen?",
+                    "text": "Az utasok száma is lehet tizedes: 12,47 ezer = tizenkettő egész negyvenhét század. A végén álló nullát elhagyhatod: 12,40 ezer = tizenkettő egész négy tized. Összehasonlításnál először a teljes ezreseket nézd, és csak utána a tizedeket, századokat – a rövidebb számot nullákkal egészítsd ki: 0,5 ezer = 0,50 ezer!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "decimal-prep",
+            "options": {
+                "count": 5,
+                "mode": "read"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "decimal-prep",
+            "options": {
+                "count": 5,
+                "mode": "write"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "decimal-prep",
+            "options": {
+                "count": 6,
+                "mode": "compare-whole"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Most már biztosan elolvasod és leírod a tizedes számokat, és nem téveszt meg az sem, ha különböző hosszúságú számokat kell összehasonlítani!"
+        }
+    ]
+}

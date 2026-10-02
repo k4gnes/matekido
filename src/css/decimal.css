@@ -65,12 +65,31 @@
     font-size: 2.4rem;
 }
 
+.decimal-symbol-box-word {
+    font-size: 1.5rem;
+    line-height: 1.35;
+    text-align: center;
+    max-width: min(90vw, 420px);
+}
+
 .decimal-options {
     display: flex;
     gap: 0.8rem;
     justify-content: center;
     flex-wrap: wrap;
     margin: 0.8rem 0;
+}
+
+.decimal-options-text {
+    flex-direction: column;
+    align-items: center;
+}
+
+.decimal-option-text {
+    min-width: min(92vw, 520px);
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 0.6rem 1rem;
 }
 
 .decimal-option {

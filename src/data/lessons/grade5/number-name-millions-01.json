@@ -6,36 +6,36 @@
         {
             "type": "scene",
             "title": "🗣️ Hogyan mondjuk a nagy számokat?",
-            "text": "A magyarban minden ezres csoportot szóval mondunk: 234 567 = kétszázharmincnégyezer-ötszázhatvanhét. A millió előtt pedig mindig kötőjel áll!",
+            "text": "A magyarban minden ezres csoportot külön szóval mondunk, és a csoportok közé kötőjel áll: 1 234 567 = egymillió-kétszázharmincnégyezer-ötszázhatvanhét!",
             "illustration": "<div style='margin:1rem 0; line-height:2.2; text-align:center; font-size:1.05rem;'>234 567<br><span style='opacity:0.7;'>kétszázharmincnégyezer-ötszázhatvanhét</span></div><div style='font-size:0.95rem; opacity:0.8;'>1 000 000 = millió · 1 234 567 = egymillió-kétszázharmincnégyezer-ötszázhatvanhét</div>",
             "worldTitles": {
                 "postman": {
                     "title": "🚚 Milyen nevű a rakományok száma?",
-                    "text": "Százezer levél százezer, de ha kötőjeles szóval mondjuk, könnyebb elképzelni!"
+                    "text": "Száz rakományban százezer levél, öt rakományban ötezer, és még hatvanhét levél – így mondjuk: százezer-ötezer-hatvanhét!"
                 },
                 "racing": {
                     "title": "🏁 Milyen nevű az alkatrészszám?",
-                    "text": "Százezer alkatrész százezer, de ha kötőjeles szóval mondjuk, könnyebb elképzelni!"
+                    "text": "Száz raktárban százezer alkatrész, öt raktárban ötezer, és még hatvanhét alkatrész – így mondjuk: százezer-ötezer-hatvanhét!"
                 },
                 "football": {
                     "title": "🏆 Milyen nevű a nézőszám?",
-                    "text": "Százezer néző százezer, de ha kötőjeles szóval mondjuk, könnyebb elképzelni!"
+                    "text": "Száz szektorban százezer néző, öt szektorban ötezer, és még hatvanhét néző – így mondjuk: százezer-ötezer-hatvanhét!"
                 },
                 "cooking": {
                     "title": "🥘 Milyen nevű a hozzávalók száma?",
-                    "text": "Százezer hozzávaló százezer, de ha kötőjeles szóval mondjuk, könnyebb elképzelni!"
+                    "text": "Száz ládában százezer hozzávaló, öt ládában ötezer, és még hatvanhét hozzávaló – így mondjuk: százezer-ötezer-hatvanhét!"
                 },
                 "animals": {
                     "title": "🦛 Milyen nevű az állatok száma?",
-                    "text": "Százezer állat százezer, de ha kötőjeles szóval mondjuk, könnyebb elképzelni!"
+                    "text": "Száz karámban százezer állat, öt karámban ötezer, és még hatvanhét állat – így mondjuk: százezer-ötezer-hatvanhét!"
                 },
                 "space": {
                     "title": "🛸 Milyen nevű a robotok száma?",
-                    "text": "Százezer robot százezer, de ha kötőjeles szóval mondjuk, könnyebb elképzelni!"
+                    "text": "Száz bázison százezer robot, öt bázison ötezer, és még hatvanhét robot – így mondjuk: százezer-ötezer-hatvanhét!"
                 },
                 "tram": {
                     "title": "🚋 Milyen nevű az utasok száma?",
-                    "text": "Százezer utas százezer, de ha kötőjeles szóval mondjuk, könnyebb elképzelni!"
+                    "text": "Száz villamosban százezer utas, öt villamosban ötezer, és még hatvanhét utas – így mondjuk: százezer-ötezer-hatvanhét!"
                 }
             }
         },

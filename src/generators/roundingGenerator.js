@@ -41,6 +41,15 @@ function nonAligned(min, max, step, mid) {
     return num;
 }
 
+function pickNumber(min, max, step, mid) {
+    const num = nonAligned(min, max, step, mid);
+    const floor = Math.ceil(step / 2);
+    if (num < floor && max >= floor) {
+        return nonAligned(Math.max(min, floor), max, step, mid);
+    }
+    return num;
+}
+
 function makeRoundOptions(answer, step, min, max) {
     const candidates = [];
     for (let v = min; v <= max; v += step) {
@@ -80,7 +89,7 @@ export function generateRounding(options = {}) {
         const useTarget = pick(pool);
         const { step, mid } = TARGETS[useTarget];
 
-        const number = nonAligned(min, max, step, mid);
+        const number = pickNumber(min, max, step, mid);
         const answer = Math.round(number / step) * step;
 
         tasks.push({

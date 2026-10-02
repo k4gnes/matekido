@@ -6,13 +6,13 @@ import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getAllWorlds } from "../world/WorldRegistry.js";
 
 function getGradeProgress(lessonIndex, grade) {
-    const lessons = (lessonIndex?.lessons || []).filter(l => l.grades?.includes(grade));
+    const lessons = (lessonIndex?.lessons || []).filter(l => l.grades?.includes(grade) && !l.practice);
     const total = lessons.length;
     let done = 0;
 
     lessons.forEach(l => {
         const stats = getLessonStats(l.file);
-        if (stats && stats.total > 0) {
+        if (stats && (stats.practice || stats.total > 0)) {
             done++;
         }
     });

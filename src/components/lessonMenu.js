@@ -3,10 +3,10 @@ import { createButton } from "./ui/button.js";
 import { createNavBar } from "./ui/navbar.js";
 import { loadJSON, loadRaw, removeKeys } from "../storage.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
-import { getLessonStats, getActiveWorld, getActiveGrade, setActiveGrade, getFavoriteLessons, getSkippedLessons, isFavoriteLesson, toggleFavoriteLesson, getCustomDoneLessons, getMenuPrefs, saveMenuPrefs } from "../profile/Profile.js";
+import { getLessonStats, getPlayBest, getActiveWorld, getActiveGrade, setActiveGrade, getFavoriteLessons, getSkippedLessons, isFavoriteLesson, toggleFavoriteLesson, getCustomDoneLessons, getMenuPrefs, saveMenuPrefs } from "../profile/Profile.js";
 import { CATEGORIES, SKILLS } from "../data/skills.js";
 import { HINT_TYPES, lessonHasHint } from "../data/hintLessons.js";
-import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js";
+import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=1";
 import { CONSOLIDATION_LESSONS } from "../data/consolidation.js";
 import { gradesWithLessons } from "../utils/grades.js?v=1";
 import { getWorld } from "../world/WorldRegistry.js";
@@ -144,7 +144,8 @@ const DIFFICULTY_LABEL = {
 
 export function createLessonCard(lesson, onSelect, activeWorld, position, total, selectOpts) {
     const lessonCard = document.createElement("div");
-    lessonCard.className = "lesson-card";
+    const isPractice = !!lesson.practice;
+    lessonCard.className = "lesson-card" + (isPractice ? " lesson-card-practice" : "");
 
     const mission = lesson.worldTitles?.[activeWorld] ?? lesson.mission;
 
@@ -166,10 +167,18 @@ export function createLessonCard(lesson, onSelect, activeWorld, position, total,
         badges.append(posBadge);
     }
 
-    const typeBadge = document.createElement("span");
-    typeBadge.className = "lesson-type-badge";
-    typeBadge.textContent = TYPE_EMOJI[lesson.type] ?? "";
-    badges.append(typeBadge);
+    if (isPractice) {
+        const playBadge = document.createElement("span");
+        playBadge.className = "lesson-play-badge";
+        playBadge.textContent = "🎲 Játék";
+        playBadge.title = "Szabadon játszható: nincs pontszám, nincs számozott feladat";
+        badges.append(playBadge);
+    } else {
+        const typeBadge = document.createElement("span");
+        typeBadge.className = "lesson-type-badge";
+        typeBadge.textContent = TYPE_EMOJI[lesson.type] ?? "";
+        badges.append(typeBadge);
+    }
 
     if (lesson.difficulty) {
         const diffBadge = document.createElement("span");
@@ -212,7 +221,13 @@ export function createLessonCard(lesson, onSelect, activeWorld, position, total,
     lessonCard.append(badges, title, subtitle);
 
     const stats = getLessonStats(lesson.file);
-    if (stats) {
+    if (stats?.practice) {
+        const playStatBadge = document.createElement("span");
+        playStatBadge.className = "lesson-play-stat-badge";
+        const playBest = getPlayBest(lesson.playMode);
+        playStatBadge.textContent = playBest ? `🎲 Játszottad 🏆 ${playBest}` : "🎲 Játszottad";
+        lessonCard.append(playStatBadge);
+    } else if (stats) {
         const mastered = stats.percentage >= 90;
         const statBadge = document.createElement("span");
         statBadge.className = "lesson-stat-badge " + (mastered ? "mastered" : "done");
@@ -230,7 +245,7 @@ export function createLessonCard(lesson, onSelect, activeWorld, position, total,
 
 function pickNextFromList(lessons) {
 
-    const undone = lessons.find(l => !getLessonStats(l.file));
+    const undone = lessons.find(l => !l.practice && !getLessonStats(l.file));
     if (undone) {
         return undone;
     }
@@ -285,7 +300,7 @@ function createPickerRow(sections) {
     return row;
 }
 
-function createCategorySection(categoryKey, lessons, onSelect, activeWorld, positionMap, selectOpts) {
+export function createCategorySection(categoryKey, lessons, onSelect, activeWorld, positionMap, selectOpts) {
     const category = CATEGORIES[categoryKey];
     if (!category || lessons.length === 0) return null;
 
@@ -300,13 +315,42 @@ function createCategorySection(categoryKey, lessons, onSelect, activeWorld, posi
     const lessonGrid = document.createElement("div");
     lessonGrid.className = "lesson-grid";
 
-    lessons.forEach(lesson => {
+    lessons.filter(l => !l.practice).forEach(lesson => {
         const pos = positionMap?.get(lesson.file);
         lessonGrid.append(createLessonCard(lesson, onSelect, activeWorld, pos?.position, pos?.total, selectOpts));
     });
 
+    if (lessonGrid.children.length === 0) return null;
+
     section.append(lessonGrid);
     return section;
+}
+
+export function createPlaySection(playLessons, onSelect, activeWorld, selectOpts) {
+
+    if (!playLessons || playLessons.length === 0) return null;
+
+    const card = createCard();
+    card.classList.add("play-section");
+
+    const title = document.createElement("h2");
+    title.className = "lesson-group lesson-group-play";
+    title.textContent = "🎲 Egypercesek";
+    card.append(title);
+
+    const note = document.createElement("p");
+    note.className = "lesson-card-subtitle";
+    note.textContent = "🎲 Mindegyik egyperces játék saját rekorddal: nem számít a haladásba, és bármikor újrajátszhatod, hogy jobb eredményt hozz.";
+    card.append(note);
+
+    const grid = document.createElement("div");
+    grid.className = "lesson-grid";
+    playLessons.forEach(lesson => {
+        grid.append(createLessonCard(lesson, onSelect, activeWorld, null, null, selectOpts));
+    });
+    card.append(grid);
+
+    return card;
 }
 
 function createGradeSection(gradeConfig, lessons, onSelect, activeWorld, positionMap, selectOpts) {
@@ -334,8 +378,9 @@ function createGradeSection(gradeConfig, lessons, onSelect, activeWorld, positio
 
     if (!positionMap) {
         positionMap = new Map();
-        lessons.forEach((lesson, index) => {
-            positionMap.set(lesson.file, { position: index + 1, total: lessons.length });
+        const counted = lessons.filter(l => !l.practice);
+        counted.forEach((lesson, index) => {
+            positionMap.set(lesson.file, { position: index + 1, total: counted.length });
         });
     }
 
@@ -574,19 +619,19 @@ function filterLessons(lessons, filters) {
 
 function pickNextForGrade(gradeLessons, skippedFiles = new Set(getSkippedLessons())) {
 
-    if (gradeLessons.length === 0) return null;
+    if (!gradeLessons.some(l => !l.practice)) return null;
 
-    const undone = gradeLessons.find(l => !skippedFiles.has(l.file) && !getLessonStats(l.file));
+    const undone = gradeLessons.find(l => !l.practice && !skippedFiles.has(l.file) && !getLessonStats(l.file));
     if (undone) {
         return undone;
     }
 
-    const undoneSkipped = gradeLessons.find(l => skippedFiles.has(l.file) && !getLessonStats(l.file));
+    const undoneSkipped = gradeLessons.find(l => !l.practice && skippedFiles.has(l.file) && !getLessonStats(l.file));
     if (undoneSkipped) {
         return undoneSkipped;
     }
 
-    const withTime = gradeLessons
+    const withTime = gradeLessons.filter(l => !l.practice)
         .map(l => ({ lesson: l, time: getLessonStats(l.file)?.lastDoneAt || 0 }))
         .sort((a, b) => b.time - a.time);
     const lastDone = withTime[0]?.lesson;
@@ -771,14 +816,16 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
     function renderGradeContent() {
         const gradeConfigEntry = gradeConfig.find(gc => gc.grade === selectedGrade);
         const gradeLessons = allLessons.filter(l => l.grades?.includes(selectedGrade));
+        const taskLessons = gradeLessons.filter(l => !l.practice);
+        const playLessons = gradeLessons.filter(l => l.practice);
 
         const gradeTitle = document.createElement("h2");
         gradeTitle.className = "lesson-group";
         gradeTitle.textContent = gradeConfigEntry ? gradeConfigEntry.title : `${selectedGrade}. osztály`;
         contentArea.append(gradeTitle);
 
-        const next = pickNextForGrade(gradeLessons);
-        const gradeFinished = gradeLessons.length > 0 && gradeLessons.every(l => getLessonStats(l.file));
+        const next = pickNextForGrade(taskLessons);
+        const gradeFinished = taskLessons.length > 0 && taskLessons.every(l => getLessonStats(l.file));
 
         if (gradeFinished) {
             const doneCard = createCard();
@@ -799,10 +846,10 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
         if (next) {
             const nextCard = createCard();
 
-            const nextIdx = gradeLessons.findIndex(l => l.file === next.file);
+            const nextIdx = taskLessons.findIndex(l => l.file === next.file);
             const nextHeading = document.createElement("h3");
             nextHeading.className = "category-title";
-            const remaining = gradeLessons.filter(l => !getLessonStats(l.file)).length;
+            const remaining = taskLessons.filter(l => !getLessonStats(l.file)).length;
             nextHeading.textContent = remaining > 0
                 ? `➡️ Következő feladat (még ${remaining} van hátra)`
                 : "➡️ Következő feladat";
@@ -810,7 +857,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
 
             const grid = document.createElement("div");
             grid.className = "next-lesson-card";
-            grid.append(createLessonCard(next, onSelect, activeWorld, nextIdx + 1, gradeLessons.length));
+            grid.append(createLessonCard(next, onSelect, activeWorld, nextIdx + 1, taskLessons.length));
             nextCard.append(grid);
 
             const nextNote = document.createElement("p");
@@ -830,7 +877,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
 
         const listButton = createButton(
             browseHidden
-                ? `📚 Feladatok listája (${gradeLessons.length})`
+                ? `📚 Feladatok listája (${taskLessons.length})`
                 : "🔽 Elrejtés",
             {
                 onClick: () => {
@@ -838,7 +885,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
                     browseWrap.hidden = showing;
                     saveListHidden(showing);
                     listButton.textContent = showing
-                        ? `📚 Feladatok listája (${gradeLessons.length})`
+                        ? `📚 Feladatok listája (${taskLessons.length})`
                         : "🔽 Elrejtés";
                 }
             }
@@ -850,8 +897,11 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
         listButtonRow.append(listButton);
         contentArea.append(listButtonRow);
 
-        browseWrap.append(renderBrowseLessons(gradeLessons));
+        browseWrap.append(renderBrowseLessons(taskLessons));
         contentArea.append(browseWrap);
+
+        const playSection = createPlaySection(playLessons, onSelect, activeWorld);
+        if (playSection) contentArea.append(playSection);
 
         const byId = new Map(allLessons.map(l => [l.id, l]));
         const consolidationIds = CONSOLIDATION_LESSONS[selectedGrade] || [];
@@ -865,7 +915,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
         const weakLessons = allLessons.filter(l => {
             if (!l.grades?.includes(selectedGrade)) return false;
             const stats = getLessonStats(l.file);
-            return stats !== null && stats.percentage < 90;
+            return stats !== null && stats.percentage !== null && stats.percentage < 90;
         });
 
         if (weakLessons.length > 0) {
@@ -919,8 +969,9 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
 
     function createPositionMap(lessons) {
         const positionMap = new Map();
-        lessons.forEach((lesson, index) => {
-            positionMap.set(lesson.file, { position: index + 1, total: lessons.length });
+        const counted = lessons.filter(l => !l.practice);
+        counted.forEach((lesson, index) => {
+            positionMap.set(lesson.file, { position: index + 1, total: counted.length });
         });
         return positionMap;
     }
@@ -972,7 +1023,9 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
             ? filters.grades.slice().sort((a, b) => a - b)
             : gradeConfig.map(gc => gc.grade);
 
-        let pool = allLessons.filter(l => l.grades?.some(g => customGrades.includes(g)));
+        const gradePool = allLessons.filter(l => l.grades?.some(g => customGrades.includes(g)));
+        const playLessons = gradePool.filter(l => l.practice);
+        let pool = gradePool.filter(l => !l.practice);
         pool = filterLessons(pool, filters);
 
         const title = document.createElement("h2");
@@ -1060,7 +1113,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
 
         const weakLessons = pool.filter(l => {
             const stats = getLessonStats(l.file);
-            return stats !== null && stats.percentage < 90;
+            return stats !== null && stats.percentage !== null && stats.percentage < 90;
         });
 
         const favoriteLessons = pool.filter(l => isFavoriteLesson(l.file));
@@ -1090,6 +1143,9 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
         if (pickerSections.length > 0) {
             contentArea.append(createPickerRow(pickerSections));
         }
+
+        const playSection = createPlaySection(playLessons, onSelect, activeWorld, poolOpts);
+        if (playSection) contentArea.append(playSection);
     }
 
     function renderBrowseLessons(gradeLessons) {

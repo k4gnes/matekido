@@ -1,12 +1,12 @@
-import { Game } from "./engine/Game.js?v=98";
+import { Game } from "./engine/Game.js?v=100";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=30";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=85";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=89";
 import { renderSkillMap } from "./components/skillMap.js?v=27";
 import { renderHelp } from "./components/help.js?v=6";
-import { renderProfilePage } from "./components/profilePage.js?v=12";
-import { renderStatsPage } from "./components/statsPage.js?v=11";
-import { getNextPracticeLesson } from "./components/practicePage.js?v=9";
+import { renderProfilePage } from "./components/profilePage.js?v=14";
+import { renderStatsPage } from "./components/statsPage.js?v=13";
+import { getNextPracticeLesson } from "./components/practicePage.js?v=10";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=10";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=8";
 import { renderParentHub } from "./components/parentHub.js?v=10";
@@ -202,7 +202,7 @@ async function startLesson(path, opts = {}) {
         skill = found.skill;
     }
 
-    const canMarkSkip = !opts.from;
+    const canMarkSkip = !opts.from && !found?.practice;
     const alreadySkipped = canMarkSkip && getSkippedLessons("grade").includes(path);
 
     const game = new Game(
@@ -214,9 +214,9 @@ async function startLesson(path, opts = {}) {
             onProfile: showProfile,
             onStats: showStats,
             onHelp: () => showHelp(),
-            onNext: () => continueToNext(path, opts),
+            onNext: found?.practice ? showMenu : () => continueToNext(path, opts),
             onGradeComplete: opts.from ? null : () => showGradeComplete(path),
-            onSkipNext: alreadySkipped ? null : () => {
+            onSkipNext: alreadySkipped || found?.practice ? null : () => {
                 if (canMarkSkip && !getLessonStats(path)) {
                     recordLessonSkip(path, "grade");
                 }
@@ -314,7 +314,7 @@ function getNextLesson(path) {
 
     const grade = resolveLessonGrade(allLessons[idx]);
 
-    const gradeLessons = allLessons.filter(l => l.grades?.includes(grade));
+    const gradeLessons = allLessons.filter(l => l.grades?.includes(grade) && !l.practice);
     const pos = gradeLessons.findIndex(l => l.file === path);
     if (pos === -1) return null;
 

@@ -40,7 +40,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Vegyes műveletek | Vegyes műveletek 1000-ig | Vegyes műveletek | 1000 | 3 |
 | Műveleti sorrend | Műveleti sorrend | Sorrend és zárójelek | 100 | 2 |
 
-## Szorzás és osztás bővítése (7 lecke)
+## Szorzás és osztás bővítése (8 lecke)
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
@@ -99,3 +99,13 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Idő | Idő – perc és óra | Perc és óra átváltása (choice + input) | – | 2 |
 | Pénz | Vásárlás 1000-ig | Fizetés 200 és 500 forintos bankjegyekkel | 1000 | 2 |
 | Naptár | Naptár és év | Év, hónap, hét, nap kapcsolata | – | 2 |
+
+
+## 🎲 Egypercesek (minden évfolyamon)
+
+Ezek nem számozott feladatok: bármikor, bármelyik évfolyam alatt elérhetők, és nem számítanak a haladásba. Mindkettő egyperces játék, és mindkettőnek saját rekordja van.
+
+| Játék | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|
+| Gombos játék | 🎲 Gombos szorzótábla – egy perc, négy gomb | Szorzótábla-játék | 100 | 2 |
+| Számolós játék | 🎲 Számolós szorzótábla – egy perc, beírás | Szorzótábla-játék | 100 | 2 |

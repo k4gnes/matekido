@@ -8,7 +8,7 @@ export function getWeakLessonFiles(lessonIndex, grade) {
     for (const lesson of lessonIndex.lessons || []) {
         if (activeGrade != null && !(lesson.grades?.includes(activeGrade))) continue;
         const stats = getLessonStats(lesson.file);
-        if (stats && stats.percentage < 90) {
+        if (stats && stats.percentage !== null && stats.percentage < 90) {
             weak.add(lesson.file);
         }
     }
@@ -44,6 +44,7 @@ function pickNextLesson(lessonIndex, weakLessonFiles) {
 
     for (const lesson of lessons) {
         const stats = getLessonStats(lesson.file);
+        if (stats?.practice) continue;
         const percentage = stats ? stats.percentage : 0;
         if (percentage < worst) {
             worst = percentage;

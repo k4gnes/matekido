@@ -77,3 +77,13 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
 | Egy lépéses | Szöveges feladatok | Szöveges feladat | 20 | 1 |
+
+
+## 🎲 Egypercesek (minden évfolyamon)
+
+Ezek nem számozott feladatok: bármikor, bármelyik évfolyam alatt elérhetők, és nem számítanak a haladásba. Mindkettő egyperces játék, és mindkettőnek saját rekordja van.
+
+| Játék | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|
+| Gombos játék | 🎲 Gombos szorzótábla – egy perc, négy gomb | Szorzótábla-játék | 100 | 2 |
+| Számolós játék | 🎲 Számolós szorzótábla – egy perc, beírás | Szorzótábla-játék | 100 | 2 |

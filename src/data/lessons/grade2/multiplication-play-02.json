@@ -1,0 +1,86 @@
+{
+  "id": "grade2-multiplication-play-02",
+  "title": "🎲 Szorzótábla-játék",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📮 Számolás a postán",
+      "text": "Szorzótábla-játék: egy perc alatt annyi csomag számát írd be, amennyit bírsz. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Számolás a postán",
+          "text": "Szorzótábla-játék: egy perc alatt annyi csomag számát írd be, amennyit bírsz. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+        },
+        "racing": {
+          "title": "🏎️ Számolás a pályán",
+          "text": "Szorzótábla-játék: egy perc alatt annyi kör számát írd be, amennyit bírsz. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+        },
+        "football": {
+          "title": "⚽ Számolás a meccsen",
+          "text": "Szorzótábla-játék: egy perc alatt annyi gól számát írd be, amennyit bírsz. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+        },
+        "cooking": {
+          "title": "🍳 Számolás a konyhában",
+          "text": "Szorzótábla-játék: egy perc alatt annyi tálka számát írd be, amennyit bírsz. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+        },
+        "animals": {
+          "title": "🦁 Számolás az állatkertben",
+          "text": "Szorzótábla-játék: egy perc alatt annyi állat számát írd be, amennyit bírsz. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+        },
+        "space": {
+          "title": "🤖 Számolás az űrben",
+          "text": "Szorzótábla-játék: egy perc alatt annyi bolygó számát írd be, amennyit bírsz. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+        },
+        "tram": {
+          "title": "🚋 Számolás a villamoson",
+          "text": "Szorzótábla-játék: egy perc alatt annyi utas számát írd be, amennyit bírsz. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+        }
+      }
+    },
+    {
+      "type": "multiplication-play",
+      "mode": "input",
+      "defaultTables": [
+        2,
+        5,
+        10
+      ],
+      "duration": 60
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Jó móka volt!",
+      "text": "Számolós egyperces játékot játszottál a szorzótáblával, és a rekordod megvan!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Számolós egyperces játékot játszottál, és minden csomagszámot kitaláltál a postán!"
+        },
+        "racing": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Számolós egyperces játékot játszottál, és minden kör számát beírtad a pályán!"
+        },
+        "football": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Számolós egyperces játékot játszottál, és minden gólszámot beírtál a meccsen!"
+        },
+        "cooking": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Számolós egyperces játékot játszottál, és minden tálkaszámot beírtál a konyhában!"
+        },
+        "animals": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Számolós egyperces játékot játszottál, és minden állat számát beírtad!"
+        },
+        "space": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Számolós egyperces játékot játszottál, és minden bolygó számát beírtad!"
+        },
+        "tram": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Számolós egyperces játékot játszottál, és minden utas számát beírtad!"
+        }
+      }
+    }
+  ]
+}

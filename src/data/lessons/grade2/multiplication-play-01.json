@@ -1,0 +1,86 @@
+{
+  "id": "grade2-multiplication-play-01",
+  "title": "🎲 Szorzótábla-játék",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📮 Csomagjáték",
+      "text": "Szorzótábla-játék: egy perc alatt annyi csomagot szábolsz be, amennyit bírsz: négy gomb közül választasz a helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Csomagjáték",
+          "text": "Szorzótábla-játék: egy perc alatt annyi csomagot szábolsz be, amennyit bírsz: négy gomb közül választasz a helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+        },
+        "racing": {
+          "title": "🏎️ Száguldás",
+          "text": "Szorzótábla-játék: egy perc alatt végigszaladsz a körökön: négy gomb közül választasz a helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+        },
+        "football": {
+          "title": "⚽ Góljáték",
+          "text": "Szorzótábla-játék: egy perc alatt annyi gólt rúgsz, amennyit bírsz: négy gomb közül választasz a helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+        },
+        "cooking": {
+          "title": "🍳 Tálkajáték",
+          "text": "Szorzótábla-játék: egy perc alatt annyi tálkát készítesz, amennyit bírsz: négy gomb közül választasz a helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+        },
+        "animals": {
+          "title": "🦁 Etetőjáték",
+          "text": "Szorzótábla-játék: egy perc alatt annyi állatot etetsz, amennyit bírsz: négy gomb közül választasz a helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+        },
+        "space": {
+          "title": "🤖 Bolygójáték",
+          "text": "Szorzótábla-játék: egy perc alatt annyi bolygót fedezel fel, amennyit bírsz: négy gomb közül választasz a helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+        },
+        "tram": {
+          "title": "🚋 Utasjáték",
+          "text": "Szorzótábla-játék: egy perc alatt annyi utast szállítasz el, amennyit bírsz: négy gomb közül választasz a helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+        }
+      }
+    },
+    {
+      "type": "multiplication-play",
+      "mode": "choice",
+      "defaultTables": [
+        2,
+        5,
+        10
+      ],
+      "duration": 60
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Jó móka volt!",
+      "text": "Gombos egyperces játékot játszottál a szorzótáblával, és a rekordod megvan!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Gombos egyperces játékot játszottál, és minden csomagot kiszámoltál a postán!"
+        },
+        "racing": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Gombos egyperces játékot játszottál, és minden körben tudtad a szorzatokat!"
+        },
+        "football": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Gombos egyperces játékot játszottál, és minden gólhoz megvolt a számítás a meccsen!"
+        },
+        "cooking": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Gombos egyperces játékot játszottál, és minden tálkát kiszámoltál a konyhában!"
+        },
+        "animals": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Gombos egyperces játékot játszottál, és minden állatnak kiszámoltad az ételét!"
+        },
+        "space": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Gombos egyperces játékot játszottál, és minden bolygóig kiszámítottad az utat!"
+        },
+        "tram": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Gombos egyperces játékot játszottál, és minden utasnak kiszámoltad a jegyet!"
+        }
+      }
+    }
+  ]
+}

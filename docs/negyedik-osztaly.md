@@ -99,3 +99,13 @@ A fenti 32 lecke a 4. osztályos tanmenet terve. Tovább tervezett leckék:
 - Szöveges feladatok (2/2): többlépéses szöveges feladatok két lépésben 1000-ig (összeadás-kivonás, kivonás-összeadás, szorzás-összeadás) ✔, arányos szöveges feladatok (a fele, a harmada) 1000-ig ✔
 
 A 4. osztályos terv minden leckéje megvalósult: **32 lecke a fenti táblázatokban + 3 lecke a „Tervezett kiegészítések" sorban = 35**, ami a `src/data/lessons/index.json` regiszterben szereplő 4. osztályos darabszámmal egyezik (8 + 7 + 4 + 8 + 6 + 2). A három kiegészítő lecke a fenti kategóriákban számít bele: `divisibility-01` (Számfogalom), `decimal-prep-01` (Törtek), `angle-measure-01` (Geometria). A „Táblázatok és diagramok" lecke a regiszterben a `numbers` kategóriába tartozik, a dokszban viszont külön témakörként jelenik meg.
+
+
+## 🎲 Egypercesek (minden évfolyamon)
+
+Ezek nem számozott feladatok: bármikor, bármelyik évfolyam alatt elérhetők, és nem számítanak a haladásba. Mindkettő egyperces játék, és mindkettőnek saját rekordja van.
+
+| Játék | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|
+| Gombos játék | 🎲 Gombos szorzótábla – egy perc, négy gomb | Szorzótábla-játék | 100 | 2 |
+| Számolós játék | 🎲 Számolós szorzótábla – egy perc, beírás | Szorzótábla-játék | 100 | 2 |

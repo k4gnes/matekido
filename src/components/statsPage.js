@@ -3,7 +3,7 @@ import { createButton } from "./ui/button.js";
 import { createNavBar } from "./ui/navbar.js";
 import { getDailyStats, getAllSkillStats, getActiveWorld, getLessonStats } from "../profile/Profile.js";
 import { SKILLS, CATEGORIES } from "../data/skills.js";
-import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js";
+import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=1";
 import { gradesWithLessons } from "../utils/grades.js?v=1";
 
 function formatDate(dateStr) {
@@ -47,14 +47,16 @@ function getGradeCompletion(lessonIndex) {
     const grades = gradesWithLessons(lessonIndex);
 
     return grades.map(gc => {
-        const gradeLessons = lessons.filter(l => l.grades?.includes(gc.grade));
+        const gradeLessons = lessons.filter(l => l.grades?.includes(gc.grade) && !l.practice);
         const total = gradeLessons.length;
         let done = 0;
         let sumPct = 0;
 
         gradeLessons.forEach(l => {
             const stats = getLessonStats(l.file);
-            if (stats && stats.total > 0) {
+            if (stats && stats.practice) {
+                done++;
+            } else if (stats && stats.total > 0) {
                 done++;
                 sumPct += stats.percentage;
             }

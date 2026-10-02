@@ -109,3 +109,13 @@ A fenti 32 lecke az 5. osztályos tanmenet terve. Tovább tervezett leckék:
 - Tizedes törtek (1/4 – blokk indul): írás, olvasás és összehasonlítás egész és tizedes résszel (`decimal-basics-01`: szöveges olvasat → tizedes szám, tizedes szám → szöveges olvasat, és összehasonlítás nullával kiegészítéssel, `3,5 = 3,50`, `3,9 > 3,85`) ✔
 
 A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg; a még hiányzó 20 lecke a következő blokkokban várakozik: Tizedes törtek (3), Százalékszámítás (2), Műveletek nagy számokkal (3), Geometria (6), Gyakorlati tudások (3), Adatok (1), Szöveges feladatok (2).
+
+
+## 🎲 Egypercesek (minden évfolyamon)
+
+Ezek nem számozott feladatok: bármikor, bármelyik évfolyam alatt elérhetők, és nem számítanak a haladásba. Mindkettő egyperces játék, és mindkettőnek saját rekordja van.
+
+| Játék | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|
+| Gombos játék | 🎲 Gombos szorzótábla – egy perc, négy gomb | Szorzótábla-játék | 100 | 2 |
+| Számolós játék | 🎲 Számolós szorzótábla – egy perc, beírás | Szorzótábla-játék | 100 | 2 |

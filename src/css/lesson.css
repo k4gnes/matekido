@@ -129,6 +129,49 @@
     background: #fffbe9;
 }
 
+.play-section {
+    border: 2px dashed #c9b6ee;
+    background: linear-gradient(180deg, #faf7ff 0%, #ffffff 100%);
+}
+
+.lesson-group-play {
+    color: #7b5cbf;
+}
+
+.lesson-card-practice {
+    background:
+        repeating-linear-gradient(135deg, rgba(123, 92, 191, .1) 0 12px, rgba(123, 92, 191, 0) 12px 24px),
+        #faf7ff;
+    border: 2px dashed #a98ce0;
+}
+
+.lesson-card-practice:hover {
+    background:
+        repeating-linear-gradient(135deg, rgba(123, 92, 191, .16) 0 12px, rgba(123, 92, 191, 0) 12px 24px),
+        #f3edff;
+}
+
+.lesson-play-badge {
+    display: block;
+    margin-bottom: .3rem;
+    font-size: .8rem;
+    font-weight: 700;
+    color: #fff;
+    background: #7b5cbf;
+    border-radius: 999px;
+    padding: .15rem .55rem;
+    width: fit-content;
+}
+
+.lesson-play-stat-badge {
+    display: block;
+    margin-top: .4rem;
+    font-size: .8rem;
+    font-weight: 600;
+    color: #7b5cbf;
+    text-align: right;
+}
+
 .category-section {
     margin-bottom: 1.5rem;
 }

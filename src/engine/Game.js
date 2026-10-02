@@ -29,6 +29,7 @@ import { renderMeasureSquares } from "../components/measureSquares.js?v=16";
 import { renderWordProblem } from "../components/wordProblem.js?v=25";
 import { renderMultPrep } from "../components/multPrep.js?v=9";
 import { renderMultiplication } from "../components/multiplication.js?v=7";
+import { renderMultiplicationPlay } from "../components/multiplicationPlay.js?v=6";
 import { renderDivision } from "../components/division.js?v=6";
 import { renderMissingOperand } from "../components/missingOperand.js?v=6";
 import { renderEstimate } from "../components/estimate.js?v=7";
@@ -167,7 +168,7 @@ import { renderMissingProgress } from "../components/missingProgress.js?v=4";
 import { renderComparisonProgress } from "../components/comparisonProgress.js?v=4";
 import { renderNeighborProgress } from "../components/neighborProgress.js?v=4";
 
-import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, recordSkillResult, recordCustomDoneLesson, resolveSkippedLesson, getLessonStats, getActiveWorld, isFavoriteLesson, toggleFavoriteLesson, resolveLessonGrade } from "../profile/Profile.js";
+import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, recordLessonPractice, recordSkillResult, recordCustomDoneLesson, resolveSkippedLesson, getLessonStats, getActiveWorld, isFavoriteLesson, toggleFavoriteLesson, resolveLessonGrade } from "../profile/Profile.js";
 import { grantRewards } from "../profile/RewardService.js";
 
 const SKILL_BY_TYPE = {
@@ -207,6 +208,7 @@ const RENDERERS = new Map([
     ["repeated-addition", renderMultPrep],
     ["skip-counting", renderMultPrep],
     ["table", renderMultiplication],
+    ["multiplication-play", renderMultiplicationPlay],
     ["missing-factor", renderMultiplication],
     ["match-groups", renderMultiplication],
     ["link", renderMultiplication],
@@ -287,9 +289,14 @@ export class Game {
         this.attempts = 0;
         this.byType = {};
         this.startedAt = null;
+        this.componentCleanup = null;
 
         this.onRestart = actions.onRestart;
-        this.onExit = actions.onExit;
+        const exitAction = actions.onExit;
+        this.onExit = (...args) => {
+            this.cleanupComponent();
+            exitAction?.(...args);
+        };
         this.onProfile = actions.onProfile;
         this.onStats = actions.onStats;
         this.onHelp = actions.onHelp;
@@ -356,7 +363,8 @@ export class Game {
         const grade = this.getLessonGrade();
         if (grade == null) return false;
         const gradeLessons = allLessons.filter(l => l.grades?.includes(grade));
-        return gradeLessons.length > 0 && gradeLessons.every(l => getLessonStats(l.file));
+        const counted = gradeLessons.filter(l => !l.practice);
+        return counted.length > 0 && counted.every(l => getLessonStats(l.file));
     }
 
     onAttempt() {
@@ -405,11 +413,25 @@ export class Game {
         }
     }
 
+    cleanupComponent() {
+        if (typeof this.componentCleanup !== "function") return;
+        const cleanup = this.componentCleanup;
+        this.componentCleanup = null;
+        try {
+            cleanup();
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
     render() {
+
+        this.cleanupComponent();
 
         if (this.currentStep >= this.lesson.steps.length) {
             let milestone = null;
             let reward = null;
+            const practice = !this.lesson.steps.some(isCounted);
 
             if (!this.lesson.completed) {
                 try {
@@ -417,25 +439,28 @@ export class Game {
                     const dailyQuestJustCompleted = profileBefore && !profileBefore.dailyQuestCompleted;
                     recordDailyResult(this.correct, this.wrong, this.byType);
                     if (this.lessonFile) {
-                        recordLessonResult(this.lessonFile, this.correct, this.wrong);
+                        if (practice) recordLessonPractice(this.lessonFile);
+                        else recordLessonResult(this.lessonFile, this.correct, this.wrong);
                         resolveSkippedLesson(this.lessonFile);
                     }
-                    if (this.skill) {
+                    if (this.skill && !practice) {
                         recordSkillResult(this.skill, this.correct, this.wrong);
                     }
                     if (this.source === "custom" && this.lessonFile) {
                         recordCustomDoneLesson(this.lessonFile);
                     }
-                    if (this.wrong === 0) {
+                    if (this.wrong === 0 && !practice) {
                         recordPerfectLesson();
                     }
                     milestone = profileBefore?.milestone ?? null;
-                    reward = grantRewards({
-                        correct: this.correct,
-                        wrong: this.wrong,
-                        isMilestone: !!milestone,
-                        dailyQuestJustCompleted
-                    });
+                    if (!practice) {
+                        reward = grantRewards({
+                            correct: this.correct,
+                            wrong: this.wrong,
+                            isMilestone: !!milestone,
+                            dailyQuestJustCompleted
+                        });
+                    }
                 } catch (e) { console.error(e); }
                 this.lesson.completed = true;
             }
@@ -443,9 +468,11 @@ export class Game {
             renderCelebration(
                 {
                     title: "🎉 Nagyszerű!",
-                    text: this.wrong === 0
-                        ? "Tökéletes! Egyetlen hiba sem volt!"
-                        : "Minden feladatot megoldottál!"
+                    text: practice
+                        ? "Jó gyakorlás, köszönöm!"
+                        : (this.wrong === 0
+                            ? "Tökéletes! Egyetlen hiba sem volt!"
+                            : "Minden feladatot megoldottál!")
                 },
                 this.root,
                 {
@@ -508,31 +535,35 @@ export class Game {
             let milestone2 = null;
             let reward2 = null;
             let gradeJustCompleted = false;
+            const practice = !this.lesson.steps.some(isCounted);
             if (!this.lesson.completed) {
                 const gradeWasComplete = this.isGradeComplete();
                 try {
                     const result2 = completeLesson();
                     recordDailyResult(this.correct, this.wrong, this.byType);
                     if (this.lessonFile) {
-                        recordLessonResult(this.lessonFile, this.correct, this.wrong);
+                        if (practice) recordLessonPractice(this.lessonFile);
+                        else recordLessonResult(this.lessonFile, this.correct, this.wrong);
                         resolveSkippedLesson(this.lessonFile);
                     }
-                    if (this.skill) {
+                    if (this.skill && !practice) {
                         recordSkillResult(this.skill, this.correct, this.wrong);
                     }
                     if (this.source === "custom" && this.lessonFile) {
                         recordCustomDoneLesson(this.lessonFile);
                     }
-                    if (this.wrong === 0) {
+                    if (this.wrong === 0 && !practice) {
                         recordPerfectLesson();
                     }
                     milestone2 = result2.milestone;
-                    reward2 = grantRewards({
-                        correct: this.correct,
-                        wrong: this.wrong,
-                        isMilestone: !!milestone2,
-                        dailyQuestJustCompleted: result2.dailyQuestJustCompleted
-                    });
+                    if (!practice) {
+                        reward2 = grantRewards({
+                            correct: this.correct,
+                            wrong: this.wrong,
+                            isMilestone: !!milestone2,
+                            dailyQuestJustCompleted: result2.dailyQuestJustCompleted
+                        });
+                    }
                 } catch (e) { console.error(e); }
                 this.lesson.completed = true;
                 gradeJustCompleted = !gradeWasComplete && this.isGradeComplete();
@@ -561,7 +592,7 @@ export class Game {
             ? step.kind
             : (SKILL_BY_TYPE[step.type] ?? step.type);
 
-        renderer(
+        const cleanup = renderer(
             step,
             this.root,
             () => this.next(),
@@ -569,6 +600,7 @@ export class Game {
             (isCorrect) => this.onResult(isCorrect, skill),
             () => this.onAttempt()
         );
+        this.componentCleanup = typeof cleanup === "function" ? cleanup : null;
 
         const card = this.root.querySelector(".card");
         const helpTitle = this.instructionTitle ?? step.title;

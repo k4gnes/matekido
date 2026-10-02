@@ -235,13 +235,79 @@ export function getAllSkillStats() {
 
 }
 
+export function recordLessonPractice(lessonFile) {
+
+    const profile = loadProfile();
+
+    if (!profile.practiceDone) {
+        profile.practiceDone = {};
+    }
+
+    profile.practiceDone[lessonFile] = { lastDoneAt: Date.now() };
+
+    saveProfile(profile);
+
+}
+
+export function getPlayRecord(mode, key) {
+
+    const profile = loadProfile();
+    const rec = profile.playRecords?.[mode]?.[key];
+
+    if (!rec || !Number.isFinite(rec.best) || rec.best <= 0) return null;
+
+    return { best: rec.best, lastPlayedAt: rec.lastPlayedAt || 0 };
+
+}
+
+export function getPlayBest(mode) {
+
+    const profile = loadProfile();
+    const modes = profile.playRecords || {};
+    const list = mode ? [modes[mode]].filter(Boolean) : Object.values(modes);
+    let best = 0;
+    for (const records of list) {
+        for (const rec of Object.values(records || {})) {
+            if (Number.isFinite(rec?.best) && rec.best > best) best = rec.best;
+        }
+    }
+    return best > 0 ? best : null;
+
+}
+
+export function recordPlayResult(mode, key, score) {
+
+    if (!Number.isFinite(score) || score <= 0) return null;
+
+    const profile = loadProfile();
+    if (!profile.playRecords) profile.playRecords = {};
+    if (!profile.playRecords[mode]) profile.playRecords[mode] = {};
+
+    const previous = profile.playRecords[mode][key]?.best ?? 0;
+    const isRecord = score > previous;
+    profile.playRecords[mode][key] = { best: Math.max(previous, score), lastPlayedAt: Date.now() };
+
+    saveProfile(profile);
+
+    return { best: profile.playRecords[mode][key].best, isRecord };
+
+}
+
+export function isPracticeLesson(lessonFile) {
+
+    return !!loadProfile().practiceDone?.[lessonFile];
+
+}
+
 export function getLessonStats(lessonFile) {
 
     const profile = loadProfile();
     const stats = profile.lessonStats?.[lessonFile];
 
     if (!stats) {
-        return null;
+        const practiced = profile.practiceDone?.[lessonFile];
+        if (!practiced) return null;
+        return { correct: 0, total: 0, percentage: null, practice: true, lastDoneAt: practiced.lastDoneAt || 0 };
     }
 
     const total = stats.correct + stats.wrong;

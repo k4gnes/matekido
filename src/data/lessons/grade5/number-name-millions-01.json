@@ -11,31 +11,31 @@
             "worldTitles": {
                 "postman": {
                     "title": "🚚 Milyen nevű a rakományok száma?",
-                    "text": "Száz rakományban százezer levél, öt rakományban ötezer, és még hatvanhét levél – így mondjuk: százezer-ötezer-hatvanhét!"
+                    "text": "Száz rakományban százezer levél, öt rakományban ötezer, és még hatvanhét levél – így mondjuk: egyszázötezer-hatvanhét!"
                 },
                 "racing": {
                     "title": "🏁 Milyen nevű az alkatrészszám?",
-                    "text": "Száz raktárban százezer alkatrész, öt raktárban ötezer, és még hatvanhét alkatrész – így mondjuk: százezer-ötezer-hatvanhét!"
+                    "text": "Száz raktárban százezer alkatrész, öt raktárban ötezer, és még hatvanhét alkatrész – így mondjuk: egyszázötezer-hatvanhét!"
                 },
                 "football": {
                     "title": "🏆 Milyen nevű a nézőszám?",
-                    "text": "Száz szektorban százezer néző, öt szektorban ötezer, és még hatvanhét néző – így mondjuk: százezer-ötezer-hatvanhét!"
+                    "text": "Száz szektorban százezer néző, öt szektorban ötezer, és még hatvanhét néző – így mondjuk: egyszázötezer-hatvanhét!"
                 },
                 "cooking": {
                     "title": "🥘 Milyen nevű a hozzávalók száma?",
-                    "text": "Száz ládában százezer hozzávaló, öt ládában ötezer, és még hatvanhét hozzávaló – így mondjuk: százezer-ötezer-hatvanhét!"
+                    "text": "Száz ládában százezer hozzávaló, öt ládában ötezer, és még hatvanhét hozzávaló – így mondjuk: egyszázötezer-hatvanhét!"
                 },
                 "animals": {
                     "title": "🦛 Milyen nevű az állatok száma?",
-                    "text": "Száz karámban százezer állat, öt karámban ötezer, és még hatvanhét állat – így mondjuk: százezer-ötezer-hatvanhét!"
+                    "text": "Száz karámban százezer állat, öt karámban ötezer, és még hatvanhét állat – így mondjuk: egyszázötezer-hatvanhét!"
                 },
                 "space": {
                     "title": "🛸 Milyen nevű a robotok száma?",
-                    "text": "Száz bázison százezer robot, öt bázison ötezer, és még hatvanhét robot – így mondjuk: százezer-ötezer-hatvanhét!"
+                    "text": "Száz bázison százezer robot, öt bázison ötezer, és még hatvanhét robot – így mondjuk: egyszázötezer-hatvanhét!"
                 },
                 "tram": {
                     "title": "🚋 Milyen nevű az utasok száma?",
-                    "text": "Száz villamosban százezer utas, öt villamosban ötezer, és még hatvanhét utas – így mondjuk: százezer-ötezer-hatvanhét!"
+                    "text": "Száz villamosban százezer utas, öt villamosban ötezer, és még hatvanhét utas – így mondjuk: egyszázötezer-hatvanhét!"
                 }
             }
         },

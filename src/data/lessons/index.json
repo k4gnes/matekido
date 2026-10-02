@@ -2177,6 +2177,66 @@
       }
     },
     {
+      "id": "multiplication-play-01",
+      "title": "Szorzótábla-játék (gombokkal)",
+      "grades": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "category": "multiplication",
+      "skill": "multiplication",
+      "difficulty": 2,
+      "type": "multiplication-play",
+      "range": 100,
+      "practice": true,
+      "playMode": "choice",
+      "mission": "🎲 Gombos szorzótábla",
+      "subtitle": "Egy perc, négy gomb – találd ki a helyes szorzatot!",
+      "file": "./data/lessons/grade2/multiplication-play-01.json",
+      "worldTitles": {
+        "postman": "📮 Küldeménylánc",
+        "racing": "🏎️ Száguldás",
+        "cooking": "🍳 Tésztalánc",
+        "football": "⚽ Gólgyűjtő",
+        "animals": "🦁 Etetősor",
+        "space": "🤖 Csillagsor",
+        "tram": "🚋 Utaslánc"
+      }
+    },
+    {
+      "id": "multiplication-play-02",
+      "title": "Szorzótábla-játék (beírással)",
+      "grades": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "category": "multiplication",
+      "skill": "multiplication",
+      "difficulty": 2,
+      "type": "multiplication-play",
+      "range": 100,
+      "practice": true,
+      "playMode": "input",
+      "mission": "🎲 Számolós szorzótábla",
+      "subtitle": "Egy perc – írd be a helyes szorzatot!",
+      "file": "./data/lessons/grade2/multiplication-play-02.json",
+      "worldTitles": {
+        "postman": "📮 Számolás a postán",
+        "racing": "🏎️ Számolás a pályán",
+        "football": "⚽ Számolás a meccsen",
+        "cooking": "🍳 Számolás a konyhában",
+        "animals": "🦁 Számolás az állatkertben",
+        "space": "🤖 Számolás az űrben",
+        "tram": "🚋 Számolás a villamoson"
+      }
+    },
+    {
       "id": "division-01",
       "title": "Egyenlő elosztás és csoportosítás",
       "grades": [

@@ -1,0 +1,260 @@
+.mult-play-title {
+    font-size: clamp(1.1rem, 3.2vw, 1.5rem);
+    margin-bottom: 0.6rem;
+}
+
+.mult-play-subtitle {
+    margin: -0.2rem 0 0.6rem;
+    font-size: clamp(0.85rem, 2.6vw, 1rem);
+    font-weight: 600;
+    text-align: center;
+    opacity: 0.85;
+}
+
+.mult-play-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    width: 100%;
+}
+
+.mult-play-lead {
+    margin: 0;
+    text-align: center;
+    font-size: clamp(0.9rem, 2.6vw, 1.05rem);
+    line-height: 1.5;
+}
+
+.mult-play-tables {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(62px, 1fr));
+    gap: 0.45rem;
+    width: 100%;
+    max-width: 460px;
+}
+
+.mult-play-table {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    padding: 0.5rem 0.2rem;
+    border: 2px solid #cfd8ea;
+    border-radius: 12px;
+    background: #fff;
+    color: inherit;
+    cursor: pointer;
+}
+
+.mult-play-table.active {
+    background: var(--secondary);
+    border-color: #c97f06;
+    font-weight: 700;
+}
+
+.mult-play-table-all {
+    grid-column: span 2;
+}
+
+.mult-play-start {
+    font-size: clamp(1rem, 3vw, 1.15rem);
+    padding: 0.6rem 1.4rem;
+}
+
+.mult-play-hud {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    width: 100%;
+    max-width: 420px;
+}
+
+.mult-play-timer {
+    font-size: clamp(1.2rem, 4vw, 1.7rem);
+    font-weight: 700;
+}
+
+.mult-play-timerbar {
+    width: 100%;
+    height: 12px;
+    border-radius: 999px;
+    background: #e6ebf6;
+    overflow: hidden;
+}
+
+.mult-play-timerfill {
+    height: 100%;
+    width: 100%;
+    border-radius: 999px;
+    background: var(--primary);
+    transition: width 0.2s linear;
+}
+
+.mult-play-timerbar-low .mult-play-timerfill {
+    background: #e8836f;
+}
+
+.mult-play-score {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-weight: 700;
+}
+
+.mult-play-tablebest {
+    display: block;
+    font-size: 0.7rem;
+    line-height: 1.1;
+    font-weight: 600;
+    color: #b8860b;
+}
+
+.mult-play-bestline {
+    font-size: clamp(0.9rem, 2.6vw, 1.05rem);
+    font-weight: 600;
+    color: #6b5ca5;
+    text-align: center;
+    min-height: 1.2em;
+    margin: 0.2rem 0;
+}
+
+.mult-play-record {
+    font-size: clamp(0.95rem, 2.8vw, 1.1rem);
+    font-weight: 700;
+    color: #6b5ca5;
+}
+
+.mult-play-record-new {
+    color: #c97f06;
+    font-size: clamp(1.05rem, 3.2vw, 1.3rem);
+}
+
+.mult-play-recordtables {
+    font-size: 0.85rem;
+    color: #b8860b;
+    margin: 0.1rem 0 0;
+}
+
+.mult-play-again {
+    background: #f3edff;
+    border-color: #a98ce0;
+    color: #5b3fa8;
+}
+
+.mult-play-chip {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    line-height: 1.2;
+}
+
+.mult-play-chip-more {
+    font-size: clamp(0.85rem, 2.4vw, 1rem);
+    font-weight: 700;
+    align-self: center;
+}
+
+.mult-play-slot {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.mult-play-question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+}
+
+.mult-play-fact {
+    font-size: clamp(1.6rem, 6vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.mult-play-options {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.4rem;
+    width: 100%;
+    max-width: 460px;
+}
+
+.mult-play-option {
+    font-size: clamp(1.15rem, 4.2vw, 1.7rem);
+    font-weight: 700;
+    padding: 0.7rem 0.15rem;
+    border: 2px solid #cfd8ea;
+    border-radius: 14px;
+    background: #fff;
+    color: inherit;
+    cursor: pointer;
+}
+
+.mult-play-option.option-correct {
+    border-color: #2e7d32;
+    background: #e8f5e9;
+    color: #1a1a2e;
+}
+
+.mult-play-option.mult-play-option-wrong {
+    border-color: #c62828;
+    background: #ffebee;
+    color: #1a1a2e;
+}
+
+.mult-play-input {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    text-align: center;
+    width: min(240px, 80%);
+    padding: 0.45rem;
+    border-radius: 12px;
+    border: 2px solid #cfd8ea;
+}
+
+.mult-play-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.45rem;
+    width: 100%;
+}
+
+.mult-play-summaryhead {
+    font-size: clamp(1.05rem, 3.4vw, 1.3rem);
+    text-align: center;
+}
+
+.mult-play-summaryscore {
+    font-size: clamp(1.1rem, 3.6vw, 1.4rem);
+    font-weight: 700;
+}
+
+.mult-play-missedlabel {
+    margin: 0.2rem 0 0;
+    font-size: clamp(0.9rem, 2.6vw, 1rem);
+    text-align: center;
+}
+
+.mult-play-missed {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    justify-content: center;
+}
+
+.mult-play-chip-missed {
+    font-size: clamp(0.85rem, 2.4vw, 1rem);
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    background: #ffebee;
+    border: 1px solid #ef9a9a;
+}
+
+@media (max-width: 380px) {
+    .mult-play-options {
+        gap: 0.3rem;
+    }
+
+    .mult-play-option {
+        font-size: 1.1rem;
+        padding: 0.6rem 0.1rem;
+    }
+}

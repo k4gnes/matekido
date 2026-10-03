@@ -85,18 +85,32 @@ function saveSelectedGrade(grade) {
     setActiveGrade(grade);
 }
 
-function setUpgradesMode(custom) {
+function setMenuView(mode) {
     const prefs = getMenuPrefs();
-    prefs.view = custom ? "custom" : null;
+    prefs.view = mode;
     saveMenuPrefs(prefs);
 }
 
-function loadCustomMode() {
+function setUpgradesMode(custom) {
+    setMenuView(custom ? "custom" : "grade");
+}
+
+function loadMenuMode() {
     const prefs = getMenuPrefs();
-    if ("view" in prefs) {
-        return prefs.view === "custom";
+    if ("view" in prefs && typeof prefs.view === "string") {
+        const v = prefs.view;
+        if (v === "custom" || v === "play" || v === "grade") {
+            return v;
+        }
     }
-    return loadRaw(VIEW_STORAGE_KEY) === "custom";
+    if (loadRaw(VIEW_STORAGE_KEY) === "custom") {
+        return "custom";
+    }
+    return "grade";
+}
+
+function loadCustomMode() {
+    return loadMenuMode() === "custom";
 }
 
 function loadFilters() {
@@ -680,12 +694,14 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
     if (!gradeConfig.some(gc => gc.grade === selectedGrade)) {
         selectedGrade = gradeConfig.length > 0 ? gradeConfig[0].grade : null;
     }
-    let customMode = loadCustomMode();
+    let mode = loadMenuMode();
+    let customMode = mode === "custom";
 
     function chooseGrade(grade) {
         selectedGrade = grade;
+        mode = "grade";
         customMode = false;
-        setUpgradesMode(false);
+        setMenuView("grade");
         saveSelectedGrade(grade);
         gradePickerPanel.style.display = "none";
         renderContent();
@@ -693,16 +709,19 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
 
     let ctrlLastGrade = null;
 
-    if (customMode) {
+    if (mode === "custom") {
         ctrlLastGrade = selectedGrade;
         selectedGrade = null;
     }
 
     function toggleGradePicker() {
-        if (customMode) {
+        if (mode !== "grade") {
+            mode = "grade";
             customMode = false;
-            setUpgradesMode(false);
-            selectedGrade = ctrlLastGrade;
+            setMenuView("grade");
+            if (ctrlLastGrade !== null) {
+                selectedGrade = ctrlLastGrade;
+            }
             if (!gradeConfig.some(gc => gc.grade === selectedGrade)) {
                 selectedGrade = gradeConfig.length > 0 ? gradeConfig[0].grade : null;
             }
@@ -716,10 +735,20 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
     function enterCustomMode() {
         ctrlLastGrade = selectedGrade;
         selectedGrade = null;
+        mode = "custom";
         customMode = true;
-        setUpgradesMode(true);
+        setMenuView("custom");
         showFilters = true;
         saveFilterOpen(true);
+        gradePickerPanel.style.display = "none";
+        renderContent();
+    }
+
+    function enterPlayMode() {
+        ctrlLastGrade = selectedGrade;
+        mode = "play";
+        customMode = false;
+        setMenuView("play");
         gradePickerPanel.style.display = "none";
         renderContent();
     }
@@ -750,9 +779,14 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
     });
     customTab.className = "mode-tab";
 
+    const playTab = createButton("🎲 Egypercesek", {
+        onClick: () => enterPlayMode()
+    });
+    playTab.className = "mode-tab";
+
     const menuToolbar = document.createElement("div");
     menuToolbar.className = "menu-toolbar";
-    menuToolbar.append(gradeTab, customTab);
+    menuToolbar.append(gradeTab, customTab, playTab);
 
     const filterPanel = document.createElement("div");
     filterPanel.className = "filter-panel";
@@ -900,8 +934,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
         browseWrap.append(renderBrowseLessons(taskLessons));
         contentArea.append(browseWrap);
 
-        const playSection = createPlaySection(playLessons, onSelect, activeWorld);
-        if (playSection) contentArea.append(playSection);
+        // Egypercesek most külön oldalon találhatók
 
         const byId = new Map(allLessons.map(l => [l.id, l]));
         const consolidationIds = CONSOLIDATION_LESSONS[selectedGrade] || [];
@@ -1144,8 +1177,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
             contentArea.append(createPickerRow(pickerSections));
         }
 
-        const playSection = createPlaySection(playLessons, onSelect, activeWorld, poolOpts);
-        if (playSection) contentArea.append(playSection);
+        // Egypercesek most külön oldalon találhatók
     }
 
     function renderBrowseLessons(gradeLessons) {
@@ -1157,16 +1189,52 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
         return container;
     }
 
+    function renderPlayContent() {
+        const playLessons = allLessons.filter(l => l.practice);
+
+        const title = document.createElement("h2");
+        title.className = "lesson-group";
+        title.textContent = "🎲 Egypercesek";
+        contentArea.append(title);
+
+        const note = document.createElement("p");
+        note.className = "lesson-card-subtitle";
+        note.textContent = "🎲 Mindegyik egyperces játék saját rekorddal: nem számít a haladásba, és bármikor újrajátszhatod, hogy jobb eredményt hozz.";
+        contentArea.append(note);
+
+        if (playLessons.length === 0) {
+            const emptyCard = createCard();
+            const emptyText = document.createElement("p");
+            emptyText.className = "lesson-card-subtitle";
+            emptyText.textContent = "Még nincsenek egyperces játékok.";
+            emptyCard.append(emptyText);
+            contentArea.append(emptyCard);
+            return;
+        }
+
+        const flatCard = createCard();
+        const grid = document.createElement("div");
+        grid.className = "lesson-grid";
+        playLessons.forEach(lesson => {
+            grid.append(createLessonCard(lesson, onSelect, activeWorld, null, null, { from: "play" }));
+        });
+        flatCard.append(grid);
+        contentArea.append(flatCard);
+    }
+
     function renderContent() {
         contentArea.replaceChildren();
 
         const gc = gradeConfig.find(g => g.grade === selectedGrade);
         gradeTab.textContent = gc ? `🎓 ${gc.title}` : "🎓 Évfolyam";
-        gradeTab.classList.toggle("active", !customMode);
-        customTab.classList.toggle("active", customMode);
+        gradeTab.classList.toggle("active", mode === "grade");
+        customTab.classList.toggle("active", mode === "custom");
+        playTab.classList.toggle("active", mode === "play");
 
-        if (customMode) {
+        if (mode === "custom") {
             renderCustomContent();
+        } else if (mode === "play") {
+            renderPlayContent();
         } else {
             renderGradeContent();
         }

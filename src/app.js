@@ -214,7 +214,21 @@ async function startLesson(path, opts = {}) {
             onProfile: showProfile,
             onStats: showStats,
             onHelp: () => showHelp(),
-            onNext: found?.practice ? showMenu : () => continueToNext(path, opts),
+            onNext: found?.practice ? () => {
+                const from = opts.from;
+                if (from === "play") {
+                    showMenu();
+                    return;
+                }
+                if (from === "practice") {
+                    const next = getNextPracticeLesson(lessonIndex, path);
+                    if (next) {
+                        startLesson(next.file, { from: "practice" });
+                        return;
+                    }
+                }
+                showMenu();
+            } : () => continueToNext(path, opts),
             onGradeComplete: opts.from ? null : () => showGradeComplete(path),
             onSkipNext: alreadySkipped || found?.practice ? null : () => {
                 if (canMarkSkip && !getLessonStats(path)) {
@@ -248,11 +262,13 @@ function continueToNext(path, opts = {}) {
         return;
     }
 
-    if (opts.from === "practice") {
-        const next = getNextPracticeLesson(lessonIndex, path);
-        if (next) {
-            startLesson(next.file, { from: "practice" });
-            return;
+    if (opts.from === "practice" || opts.from === "play") {
+        if (opts.from === "practice") {
+            const next = getNextPracticeLesson(lessonIndex, path);
+            if (next) {
+                startLesson(next.file, { from: "practice" });
+                return;
+            }
         }
         showMenu();
         return;

@@ -236,7 +236,6 @@ export function renderOperationOrderPlay(step, root, next, progress) {
     let timerId = null;
     let lastTick = 0;
     let timerLabel = null;
-    let timerBar = null;
     let timerFill = null;
     let scoreLabel = null;
     let slot = null;
@@ -272,7 +271,7 @@ export function renderOperationOrderPlay(step, root, next, progress) {
         if (state.remaining <= 0) {
             state.remaining = 0;
             paintTimer();
-            endRound();
+            endRoundWhenIdle();
             return;
         }
         paintTimer();
@@ -285,11 +284,23 @@ export function renderOperationOrderPlay(step, root, next, progress) {
         if (!timerFill) return;
         const ratio = state.remaining / (duration * 1000);
         timerFill.style.width = `${Math.round(ratio * 100)}%`;
-        if (timerBar) timerBar.classList.toggle("mult-play-timerbar-low", secs <= 10);
     }
 
     function paintScore() {
         if (scoreLabel) scoreLabel.textContent = `🎯 ${state.correct} helyes`;
+    }
+
+    function endRoundWhenIdle() {
+        if (state.over) return;
+        if (state.locked) endRound();
+        else state.timeUp = true;
+    }
+
+    function advance(delay) {
+        setTimeout(() => {
+            if (state.timeUp) endRound();
+            else nextTask();
+        }, delay);
     }
 
     function showPicker() {
@@ -359,29 +370,35 @@ export function renderOperationOrderPlay(step, root, next, progress) {
         state.last = null;
         state.remaining = duration * 1000;
         state.over = false;
+        state.timeUp = false;
         state.ended = false;
         message.clear();
         body.replaceChildren();
         subtitle.textContent = `🧮 Egyperces játék · ${LEVELS.find(l => l.id === state.level)?.label ?? ""}`;
 
-        scoreLabel = document.createElement("div");
+        scoreLabel = document.createElement("span");
         scoreLabel.className = "mult-play-score";
         paintScore();
 
         const hud = document.createElement("div");
         hud.className = "mult-play-hud";
 
-        timerLabel = document.createElement("div");
+        const hudTop = document.createElement("div");
+        hudTop.className = "mult-play-hudtop";
+
+        timerLabel = document.createElement("span");
         timerLabel.className = "mult-play-timer";
 
-        timerBar = document.createElement("div");
+        hudTop.append(timerLabel, scoreLabel);
+
+        const timerBar = document.createElement("div");
         timerBar.className = "mult-play-timerbar";
 
         timerFill = document.createElement("div");
         timerFill.className = "mult-play-timerfill";
 
         timerBar.append(timerFill);
-        hud.append(timerLabel, timerBar, scoreLabel);
+        hud.append(hudTop, timerBar);
         body.append(hud);
 
         paintTimer();
@@ -444,7 +461,7 @@ export function renderOperationOrderPlay(step, root, next, progress) {
             if (btn) markCorrect(btn);
             message.show(`${task.expression} = ${task.answer}!`, "success");
             paintScore();
-            setTimeout(nextTask, 600);
+            advance(600);
             return;
         }
 
@@ -453,7 +470,7 @@ export function renderOperationOrderPlay(step, root, next, progress) {
         if (btn) btn.classList.add("mult-play-option-wrong");
         revealCorrect(task);
         message.show(`💡 ${task.expression} = ${task.answer}. Először a zárójel, aztán a szorzás és az osztás, végül az összeadás és a kivonás.`, "retry");
-        setTimeout(nextTask, 2200);
+        advance(2200);
     }
 
     function revealCorrect(task) {

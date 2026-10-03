@@ -63,19 +63,28 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.35rem;
     width: 100%;
     max-width: 420px;
 }
 
+.mult-play-hudtop {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.8rem;
+    width: 100%;
+}
+
 .mult-play-timer {
-    font-size: clamp(1.2rem, 4vw, 1.7rem);
-    font-weight: 700;
+    font-size: clamp(0.85rem, 2.4vw, 0.95rem);
+    font-weight: 600;
+    color: #7a7a8a;
 }
 
 .mult-play-timerbar {
     width: 100%;
-    height: 12px;
+    height: 8px;
     border-radius: 999px;
     background: #e6ebf6;
     overflow: hidden;
@@ -89,12 +98,8 @@
     transition: width 0.2s linear;
 }
 
-.mult-play-timerbar-low .mult-play-timerfill {
-    background: #e8836f;
-}
-
 .mult-play-score {
-    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-size: clamp(1rem, 3vw, 1.15rem);
     font-weight: 700;
 }
 

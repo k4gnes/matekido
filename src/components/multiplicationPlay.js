@@ -196,6 +196,7 @@ export function renderMultiplicationPlay(step, root, next, progress) {
         last: null,
         locked: true,
         over: false,
+        timeUp: false,
         ended: false,
         remaining: duration * 1000
     };
@@ -203,7 +204,6 @@ export function renderMultiplicationPlay(step, root, next, progress) {
     let timerId = null;
     let lastTick = 0;
     let timerLabel = null;
-    let timerBar = null;
     let timerFill = null;
     let scoreLabel = null;
     let slot = null;
@@ -229,7 +229,7 @@ export function renderMultiplicationPlay(step, root, next, progress) {
         if (state.remaining <= 0) {
             state.remaining = 0;
             paintTimer();
-            endRound();
+            endRoundWhenIdle();
             return;
         }
         paintTimer();
@@ -241,11 +241,23 @@ export function renderMultiplicationPlay(step, root, next, progress) {
         if (timerLabel.textContent !== text) timerLabel.textContent = text;
         const ratio = state.remaining / (duration * 1000);
         timerFill.style.width = `${Math.round(ratio * 100)}%`;
-        timerBar.classList.toggle("mult-play-timerbar-low", secs <= 10);
     }
 
     function paintScore() {
         if (scoreLabel) scoreLabel.textContent = `🎯 ${state.correct} helyes`;
+    }
+
+    function endRoundWhenIdle() {
+        if (state.over) return;
+        if (state.locked) endRound();
+        else state.timeUp = true;
+    }
+
+    function advance(delay) {
+        setTimeout(() => {
+            if (state.timeUp) endRound();
+            else nextFact();
+        }, delay);
     }
 
     function bestFor(tables) {
@@ -346,28 +358,34 @@ export function renderMultiplicationPlay(step, root, next, progress) {
         state.missed = new Map();
         state.remaining = duration * 1000;
         state.over = false;
+        state.timeUp = false;
         message.clear();
         body.replaceChildren();
         subtitle.textContent = `🔢 Szorzótábla-játék · ${subtitleWhere(state.tables)}`;
 
-        scoreLabel = document.createElement("div");
+        scoreLabel = document.createElement("span");
         scoreLabel.className = "mult-play-score";
         paintScore();
 
         const hud = document.createElement("div");
         hud.className = "mult-play-hud";
 
-        timerLabel = document.createElement("div");
+        const hudTop = document.createElement("div");
+        hudTop.className = "mult-play-hudtop";
+
+        timerLabel = document.createElement("span");
         timerLabel.className = "mult-play-timer";
 
-        timerBar = document.createElement("div");
+        hudTop.append(timerLabel, scoreLabel);
+
+        const timerBar = document.createElement("div");
         timerBar.className = "mult-play-timerbar";
 
         timerFill = document.createElement("div");
         timerFill.className = "mult-play-timerfill";
 
         timerBar.append(timerFill);
-        hud.append(timerLabel, timerBar, scoreLabel);
+        hud.append(hudTop, timerBar);
         body.append(hud);
 
         paintTimer();
@@ -455,7 +473,7 @@ export function renderMultiplicationPlay(step, root, next, progress) {
             if (btn) markCorrect(btn);
             message.show(`${ui.item} ${fact.a} × ${fact.b} = ${fact.answer}!`, "success");
             paintScore();
-            setTimeout(nextFact, mode === "input" ? 450 : 650);
+            advance(mode === "input" ? 450 : 650);
             return;
         }
 
@@ -464,7 +482,7 @@ export function renderMultiplicationPlay(step, root, next, progress) {
         if (btn) btn.classList.add("mult-play-option-wrong");
         revealCorrect(fact);
         message.show(`💡 ${fact.a} × ${fact.b} = ${fact.answer}. Jöjj a következő!`, "retry");
-        setTimeout(nextFact, mode === "input" ? 1200 : 1600);
+        advance(mode === "input" ? 1200 : 1600);
     }
 
     function revealCorrect(fact) {

@@ -340,33 +340,6 @@ export function createCategorySection(categoryKey, lessons, onSelect, activeWorl
     return section;
 }
 
-export function createPlaySection(playLessons, onSelect, activeWorld, selectOpts) {
-
-    if (!playLessons || playLessons.length === 0) return null;
-
-    const card = createCard();
-    card.classList.add("play-section");
-
-    const title = document.createElement("h2");
-    title.className = "lesson-group lesson-group-play";
-    title.textContent = "🎲 Egypercesek";
-    card.append(title);
-
-    const note = document.createElement("p");
-    note.className = "lesson-card-subtitle";
-    note.textContent = "🎲 Mindegyik egyperces játék saját rekorddal: nem számít a haladásba, és bármikor újrajátszhatod, hogy jobb eredményt hozz.";
-    card.append(note);
-
-    const grid = document.createElement("div");
-    grid.className = "lesson-grid";
-    playLessons.forEach(lesson => {
-        grid.append(createLessonCard(lesson, onSelect, activeWorld, null, null, selectOpts));
-    });
-    card.append(grid);
-
-    return card;
-}
-
 function createGradeSection(gradeConfig, lessons, onSelect, activeWorld, positionMap, selectOpts) {
     const card = createCard();
 
@@ -1190,10 +1163,11 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
     }
 
     function renderPlayContent() {
-        const playLessons = allLessons.filter(l => l.practice);
+        const activeGrade = getActiveGrade();
+        const playLessons = allLessons.filter(l => l.practice && l.grades?.includes(activeGrade));
 
         const title = document.createElement("h2");
-        title.className = "lesson-group";
+        title.className = "lesson-group lesson-group-play";
         title.textContent = "🎲 Egypercesek";
         contentArea.append(title);
 
@@ -1206,13 +1180,14 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
             const emptyCard = createCard();
             const emptyText = document.createElement("p");
             emptyText.className = "lesson-card-subtitle";
-            emptyText.textContent = "Még nincsenek egyperces játékok.";
+            emptyText.textContent = "Ebben az osztályban még nincsenek egyperces játékok.";
             emptyCard.append(emptyText);
             contentArea.append(emptyCard);
             return;
         }
 
         const flatCard = createCard();
+        flatCard.classList.add("play-section");
         const grid = document.createElement("div");
         grid.className = "lesson-grid";
         playLessons.forEach(lesson => {

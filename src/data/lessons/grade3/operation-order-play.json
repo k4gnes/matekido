@@ -1,0 +1,80 @@
+{
+  "id": "grade3-operation-order-play",
+  "title": "🎲 Műveleti sorrend",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📮 Rend a postán",
+      "text": "Egy perc alatt annyi küldeményt rendezel ki, amennyit bírsz. Mindegyiknél figyelni kell a sorrendre: előbb a zárójel, aztán a szorzás és az osztás, végül az összeadás és a kivonás. Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Rend a postán",
+          "text": "Egy perc alatt annyi küldeményt rendezel ki, amennyit bírsz. Mindegyiknél figyelni kell a sorrendre: előbb a zárójel, aztán a szorzás és az osztás, végül az összeadás és a kivonás. Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "racing": {
+          "title": "🏎️ Körök a boxutcában",
+          "text": "Egy perc alatt végigszaladsz a körökön: minden körben egy számolás vár. Előbb a zárójel, aztán a szorzás és az osztás, végül az összeadás és a kivonás. Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "football": {
+          "title": "⚽ Góljáték a pályán",
+          "text": "Egy perc alatt annyi gólt rúgsz, amennyit bírsz: minden gól egy számolás. Előbb a zárójel, aztán a szorzás és az osztás, végül az összeadás és a kivonás. Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "cooking": {
+          "title": "🍳 Tálkajáték a konyhában",
+          "text": "Egy perc alatt annyi tálkát készítesz, amennyit bírsz: minden receptben a műveleti sorrend dönt. Előbb a zárójel, aztán a szorzás és az osztás, végül az összeadás és a kivonás. Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "animals": {
+          "title": "🦁 Etetőjáték az állatkertben",
+          "text": "Egy perc alatt annyi állatot etetsz, amennyit bírsz: minden adagnál a műveleti sorrend kell. Előbb a zárójel, aztán a szorzás és az osztás, végül az összeadás és a kivonás. Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "space": {
+          "title": "🤖 Számolás az űrhajón",
+          "text": "Egy perc alatt annyi bolygót fedezel fel, amennyit bírsz: az üzemanyag-számításban a sorrend szab határa. Előbb a zárójel, aztán a szorzás és az osztás, végül az összeadás és a kivonás. Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "tram": {
+          "title": "🚋 Utasjáték a villamoson",
+          "text": "Egy perc alatt annyi utast szállítasz el, amennyit bírsz: minden jegyhez egy számolás tartozik. Előbb a zárójel, aztán a szorzás és az osztás, végül az összeadás és a kivonás. Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        }
+      }
+    },
+    {
+      "type": "operation-order-play",
+      "duration": 60
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Jó móka volt!",
+      "text": "Egyperces műveleti sorrend játékot játszottál, és a rekordod megvan!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces műveleti sorrend játékot játszottál, és minden küldeményt kiszámítottál a postán!"
+        },
+        "racing": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces műveleti sorrend játékot játszottál, és minden körben tudtad a sorrendet!"
+        },
+        "football": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces műveleti sorrend játékot játszottál, és minden gólhoz megvolt a számítás!"
+        },
+        "cooking": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces műveleti sorrend játékot játszottál, és minden tálkát kiszámítottál a konyhában!"
+        },
+        "animals": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces műveleti sorrend játékot játszottál, és minden állatnak kiszámítottad az adagját!"
+        },
+        "space": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces műveleti sorrend játékot játszottál, és minden bolygóig kiszámítottad az utat!"
+        },
+        "tram": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces műveleti sorrend játékot játszottál, és minden utasnak kiszámítottad a jegyet!"
+        }
+      }
+    }
+  ]
+}

@@ -2180,7 +2180,6 @@
       "id": "multiplication-play-01",
       "title": "Szorzótábla-játék (gombokkal)",
       "grades": [
-        1,
         2,
         3,
         4,
@@ -2210,7 +2209,6 @@
       "id": "multiplication-play-02",
       "title": "Szorzótábla-játék (beírással)",
       "grades": [
-        1,
         2,
         3,
         4,
@@ -4280,6 +4278,33 @@
         "space": "🤖 Sokszögek az űrben",
         "tram": "🚋 Sokszögek a városban"
       }
+    },
+    {
+      "id": "operation-order-play-01",
+      "title": "🎲 Műveleti sorrend (egyperces)",
+      "grades": [
+        3,
+        4,
+        5
+      ],
+      "category": "operations",
+      "skill": "operation-order",
+      "difficulty": 3,
+      "type": "operation-order-play",
+      "practice": true,
+      "mission": "🎲 Műveleti sorrend",
+      "subtitle": "Egy perc, annyi helyes feladat, amennyit bírsz",
+      "file": "./data/lessons/grade3/operation-order-play.json",
+      "worldTitles": {
+        "postman": "📮 Műveleti sorrend a postán",
+        "racing": "🏎️ Műveleti sorrend a boxutcában",
+        "cooking": "🍳 Műveleti sorrend a konyhában",
+        "football": "⚽ Műveleti sorrend a pályán",
+        "animals": "🦁 Műveleti sorrend az állatkertben",
+        "space": "🤖 Műveleti sorrend az űrhajón",
+        "tram": "🚋 Műveleti sorrend a villamoson"
+      },
+      "playMode": "operation-order-play"
     }
   ],
   "gradeConfig": [

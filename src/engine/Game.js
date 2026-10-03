@@ -30,6 +30,7 @@ import { renderWordProblem } from "../components/wordProblem.js?v=25";
 import { renderMultPrep } from "../components/multPrep.js?v=9";
 import { renderMultiplication } from "../components/multiplication.js?v=7";
 import { renderMultiplicationPlay } from "../components/multiplicationPlay.js?v=6";
+import { renderOperationOrderPlay } from "../components/operationOrderPlay.js?v=1";
 import { renderDivision } from "../components/division.js?v=6";
 import { renderMissingOperand } from "../components/missingOperand.js?v=6";
 import { renderEstimate } from "../components/estimate.js?v=7";
@@ -266,7 +267,8 @@ const RENDERERS = new Map([
     ["angles", renderAngles],
     ["circle", renderCircle],
     ["probability", renderProbability],
-    ["operation-order", renderOperationOrder]
+    ["operation-order", renderOperationOrder],
+    ["operation-order-play", renderOperationOrderPlay]
 ]);
 
 

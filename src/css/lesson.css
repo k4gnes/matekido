@@ -139,16 +139,22 @@
 }
 
 .lesson-card-practice {
-    background:
-        repeating-linear-gradient(135deg, rgba(123, 92, 191, .1) 0 12px, rgba(123, 92, 191, 0) 12px 24px),
-        #faf7ff;
-    border: 2px dashed #a98ce0;
+    background-color: #fffdf7;
+    background-image:
+        radial-gradient(circle, rgba(255, 138, 91, .24) 0 3.5px, rgba(255, 138, 91, 0) 4px),
+        radial-gradient(circle, rgba(53, 196, 201, .26) 0 3.5px, rgba(53, 196, 201, 0) 4px),
+        radial-gradient(circle, rgba(255, 201, 60, .32) 0 3.5px, rgba(255, 201, 60, 0) 4px);
+    background-size: 36px 36px, 36px 36px, 36px 36px;
+    background-position: 0 0, 12px 12px, 24px 24px;
+    border: 2px dashed #f2a03d;
 }
 
 .lesson-card-practice:hover {
-    background:
-        repeating-linear-gradient(135deg, rgba(123, 92, 191, .16) 0 12px, rgba(123, 92, 191, 0) 12px 24px),
-        #f3edff;
+    background-color: #fffbef;
+    background-image:
+        radial-gradient(circle, rgba(255, 138, 91, .26) 0 4px, rgba(255, 138, 91, 0) 4.5px),
+        radial-gradient(circle, rgba(53, 196, 201, .28) 0 4px, rgba(53, 196, 201, 0) 4.5px),
+        radial-gradient(circle, rgba(255, 201, 60, .36) 0 4px, rgba(255, 201, 60, 0) 4.5px);
 }
 
 .lesson-play-badge {

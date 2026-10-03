@@ -97,11 +97,12 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Kétlépéses | 📝 Kétlépéses szöveges feladatok | Kétlépéses szöveges feladat | 20 | 3 |
 
 
-## 🎲 Egypercesek (minden évfolyamon)
+## 🎲 Egypercesek
 
-Ezek nem számozott feladatok: bármikor, bármelyik évfolyam alatt elérhetők, és nem számítanak a haladásba. Mindkettő egyperces játék, és mindkettőnek saját rekordja van.
+Ezek nem számozott feladatok: a **🎲 Egypercesek** oldalon találhatók, nem számítanak a haladásba, és mindegyiknek saját rekordja van. A játék végén a ➡️ Tovább gomb visszavigyen ide.
 
 | Játék | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
 | Gombos játék | 🎲 Gombos szorzótábla – egy perc, négy gomb | Szorzótábla-játék | 100 | 2 |
 | Számolós játék | 🎲 Számolós szorzótábla – egy perc, beírás | Szorzótábla-játék | 100 | 2 |
+

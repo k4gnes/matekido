@@ -111,11 +111,13 @@ A fenti 32 lecke az 5. osztályos tanmenet terve. Tovább tervezett leckék:
 A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg; a még hiányzó 20 lecke a következő blokkokban várakozik: Tizedes törtek (3), Százalékszámítás (2), Műveletek nagy számokkal (3), Geometria (6), Gyakorlati tudások (3), Adatok (1), Szöveges feladatok (2).
 
 
-## 🎲 Egypercesek (minden évfolyamon)
+## 🎲 Egypercesek
 
-Ezek nem számozott feladatok: bármikor, bármelyik évfolyam alatt elérhetők, és nem számítanak a haladásba. Mindkettő egyperces játék, és mindkettőnek saját rekordja van.
+Ezek nem számozott feladatok: a **🎲 Egypercesek** oldalon találhatók, nem számítanak a haladásba, és mindegyiknek saját rekordja van. A játék végén a ➡️ Tovább gomb visszavigyen ide.
 
 | Játék | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
 | Gombos játék | 🎲 Gombos szorzótábla – egy perc, négy gomb | Szorzótábla-játék | 100 | 2 |
 | Számolós játék | 🎲 Számolós szorzótábla – egy perc, beírás | Szorzótábla-játék | 100 | 2 |
+| Műveleti sorrend | 🎲 Műveleti sorrend – egy perc | Műveleti sorrend (egyperces) | 100 | 3 |
+

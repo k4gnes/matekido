@@ -36,6 +36,18 @@ A leckék **osztályonként vannak csoportosítva**, így mindig pontosan az ado
 - A választás **játékosonként elmentődik**, legközelebb már nem kérdezi meg.
 - Minden lecke mellett látszik, hányadik osztályos a jelvényen (pl. „1. osztály”).
 
+## 🎲 Egypercesek
+
+{{🎲 Egypercesek}}
+
+Az **egyperces játékok** külön oldalon élnek: a feladatok menüjében a {{🎲 Egypercesek|grey}} gomb nyitja meg őket, az {{🎓 Évfolyam}} és {{⚽ Válogatott}} oldalon pedig nem jelennek meg, így a leckelista sokkal kevésbé zsúfolt.
+
+- Egy perc alatt **annyi feladatot oldasz meg helyesen, amennyit bírsz** – nincs számozás, és nem számít a haladásba.
+- Minden játéknak **saját rekordja** van, amit a játékos állít be: a rekord a kártyán és a játék elején is látszik.
+- Elrontani nem baj: a játék **megmutatja a helyes választot**, és ugyanaz a feladat később újra jön.
+- Az egyperces oldalon a **➡️ Tovább** gomb mindig ide visz vissza, és a kiválasztott oldal megmarad a következő látogatásra is.
+- Az oldalon csak az **aktuális évfolyam játékai** jelennek meg (2. osztálytól a szorzótábla-játékok, 3. osztálytól a műveleti sorrend játék is).
+
 ## ⚽ Válogatott és 🔍 Szűrők
 
 {{⚽ Válogatott}} {{🔍 Szűrők|grey}}
@@ -112,6 +124,7 @@ A leckék **listákban vannak**, és mindegyiknek más a szerepe:
 **Gyakorló listák** – ezeken a [[➡️ Tovább|outline]] gombbal visz végig a lista elemein, a végéig, majd újra kezdődik:
 
 - **⚽ Válogatott** – a **🔍 Szűrők** alapján összeállított szűrt lista.
+- **🎲 Egypercesek** – az egyperces játékok: ezeknek nincs sorszámuk, mindegyiknek saját rekordja van, és a játék végén a {{➡️ Tovább|outline}} gomb ide visz vissza.
 - **🎯 Gyakorlásra javasolt** – a 90% alatti eredményű leckéid.
 - **🔁 Erősítő feladatok** – az osztály kulcsleckéi, amelyeket érdemes időről időre ismételni.
 - **❤️ Kedvenceim** – a kedvencnek jelölt leckéid.

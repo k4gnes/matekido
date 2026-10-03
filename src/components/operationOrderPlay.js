@@ -34,6 +34,10 @@ const FORM_WEIGHT = {
     "paren-two": 1
 };
 
+function isParenForm(form) {
+    return form.startsWith("paren-");
+}
+
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -229,6 +233,8 @@ export function renderOperationOrderPlay(step, root, next, progress) {
         missed: new Map(),
         locked: true,
         over: false,
+        timeUp: false,
+        served: 0,
         ended: false,
         remaining: duration * 1000
     };
@@ -253,6 +259,9 @@ export function renderOperationOrderPlay(step, root, next, progress) {
 
     function pickForm() {
         const forms = formsFor(state.level);
+        const forced = state.served === 1 ? forms.filter(isParenForm) : [];
+        state.served++;
+        if (forced.length > 0) return pick(forced);
         let total = 0;
         for (const form of forms) total += state.weights.get(form) ?? FORM_WEIGHT[form] ?? 1;
         let roll = Math.random() * total;
@@ -371,6 +380,7 @@ export function renderOperationOrderPlay(step, root, next, progress) {
         state.remaining = duration * 1000;
         state.over = false;
         state.timeUp = false;
+        state.served = 0;
         state.ended = false;
         message.clear();
         body.replaceChildren();

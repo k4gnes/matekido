@@ -72,6 +72,18 @@ function tableLabel(tables) {
     return "a kiválasztott táblákon";
 }
 
+function subtitleWhere(tables) {
+    if (tables.length === 1) return `a ${tableName(tables[0])} táblán`;
+    if (tables.length === ALL_TABLES.length) return "minden táblán";
+    if (tables.length <= 3) {
+        const names = tables.map(tableName);
+        return names.length === 2
+            ? `a ${names[0]} és ${names[1]} táblán`
+            : `a ${names[0]}, ${names[1]} és ${names[2]} táblán`;
+    }
+    return "a kiválasztott táblákon";
+}
+
 function shuffle(list) {
     const out = list.slice();
     for (let i = out.length - 1; i > 0; i--) {
@@ -157,9 +169,10 @@ export function renderMultiplicationPlay(step, root, next, progress) {
 
     const subtitle = document.createElement("p");
     subtitle.className = "mult-play-subtitle";
-    subtitle.textContent = mode === "input"
+    const subtitleIdle = mode === "input"
         ? "🔢 Szorzótábla-játék · egy perc, beírás"
         : "🔢 Szorzótábla-játék · egy perc, négy gomb";
+    subtitle.textContent = subtitleIdle;
     card.append(subtitle);
 
     const body = document.createElement("div");
@@ -248,6 +261,7 @@ export function renderMultiplicationPlay(step, root, next, progress) {
         stopTimer();
         message.clear();
         body.replaceChildren();
+        subtitle.textContent = subtitleIdle;
 
         const lead = document.createElement("p");
         lead.className = "mult-play-lead";
@@ -333,6 +347,8 @@ export function renderMultiplicationPlay(step, root, next, progress) {
         state.remaining = duration * 1000;
         state.over = false;
         message.clear();
+        body.replaceChildren();
+        subtitle.textContent = `🔢 Szorzótábla-játék · ${subtitleWhere(state.tables)}`;
 
         scoreLabel = document.createElement("div");
         scoreLabel.className = "mult-play-score";

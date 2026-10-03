@@ -207,7 +207,8 @@ export function renderOperationOrderPlay(step, root, next, progress) {
 
     const subtitle = document.createElement("p");
     subtitle.className = "mult-play-subtitle";
-    subtitle.textContent = "🧮 Egyperces játék · műveleti sorrend";
+    const subtitleIdle = "🧮 Egyperces játék · műveleti sorrend";
+    subtitle.textContent = subtitleIdle;
     card.append(subtitle);
 
     const body = document.createElement("div");
@@ -295,6 +296,7 @@ export function renderOperationOrderPlay(step, root, next, progress) {
         stopTimer();
         message.clear();
         body.replaceChildren();
+        subtitle.textContent = subtitleIdle;
 
         const lead = document.createElement("p");
         lead.className = "mult-play-lead";
@@ -359,6 +361,8 @@ export function renderOperationOrderPlay(step, root, next, progress) {
         state.over = false;
         state.ended = false;
         message.clear();
+        body.replaceChildren();
+        subtitle.textContent = `🧮 Egyperces játék · ${LEVELS.find(l => l.id === state.level)?.label ?? ""}`;
 
         scoreLabel = document.createElement("div");
         scoreLabel.className = "mult-play-score";

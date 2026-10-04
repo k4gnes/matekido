@@ -1,4 +1,4 @@
-import { Game } from "./engine/Game.js?v=101";
+import { Game } from "./engine/Game.js?v=102";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=30";
 import { renderLessonMenu } from "./components/lessonMenu.js?v=90";
@@ -191,7 +191,14 @@ async function startLesson(path, opts = {}) {
     clearWorldBackground();
     setTipVisible(false);
 
-    const rawLesson = await loadLesson(path);
+    let rawLesson;
+    try {
+        rawLesson = await loadLesson(path);
+    } catch (e) {
+        console.error(e);
+        showMenu();
+        return;
+    }
 
     const lesson = buildLesson(rawLesson);
 

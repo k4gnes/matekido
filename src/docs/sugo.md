@@ -43,7 +43,7 @@ A leckék **osztályonként vannak csoportosítva**, így mindig pontosan az ado
 Az **egyperces játékok** külön oldalon élnek: a feladatok menüjében a {{🎲 Egypercesek|grey}} gomb nyitja meg őket, az {{🎓 Évfolyam}} és {{⚽ Válogatott}} oldalon pedig nem jelennek meg, így a leckelista sokkal kevésbé zsúfolt.
 
 - Egy perc alatt **annyi feladatot oldasz meg helyesen, amennyit bírsz** – nincs számozás, és nem számít a haladásba.
-- **Nem siettet**: az idő egy csendes sávon látszik, és ha lejárt, az éppen befejezésre váró feladatot még bátran befejezheted – a válaszod beleszámít.
+- **Nem siettet**: az idő egy csendes sávon látszik, és ha lejárt, az éppen befejezésre váró feladatot még bátran befejezheted – a válaszod beleszámít. Ha nem akarsz többet, a **🏁 Befejezem** gombbal bármikor az eredményhez ugorhatsz (úgyis megáll magától tíz másodperc múlva).
 - Minden játéknak **saját rekordja** van, amit a játékos állít be: a rekord a kártyán és a játék elején is látszik.
 - Elrontani nem baj: a játék **megmutatja a helyes választot**, és ugyanaz a feladat később újra jön.
 - Az egyperces oldalon a **➡️ Tovább** gomb mindig ide visz vissza, és a kiválasztott oldal megmarad a következő látogatásra is.

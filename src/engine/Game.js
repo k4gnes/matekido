@@ -29,8 +29,8 @@ import { renderMeasureSquares } from "../components/measureSquares.js?v=16";
 import { renderWordProblem } from "../components/wordProblem.js?v=25";
 import { renderMultPrep } from "../components/multPrep.js?v=9";
 import { renderMultiplication } from "../components/multiplication.js?v=7";
-import { renderMultiplicationPlay } from "../components/multiplicationPlay.js?v=8";
-import { renderOperationOrderPlay } from "../components/operationOrderPlay.js?v=4";
+import { renderMultiplicationPlay } from "../components/multiplicationPlay.js?v=9";
+import { renderOperationOrderPlay } from "../components/operationOrderPlay.js?v=5";
 import { renderDivision } from "../components/division.js?v=6";
 import { renderMissingOperand } from "../components/missingOperand.js?v=6";
 import { renderEstimate } from "../components/estimate.js?v=7";
@@ -529,7 +529,9 @@ export class Game {
             this.instructionTitle = worldStep?.title ?? step.title;
             this.instructionText = worldStep?.text ?? step.text;
             const lessonPos = this.getLessonPosition();
-            renderScene(step, this.root, () => this.onSceneNext(), progress, getActiveWorld(), this.onExit, lessonPos, this.onSkipNext, this.lessonFile, this.source, this.getLessonGradeLabel());
+            const isPlayLesson = !this.lesson.steps.some(isCounted);
+            const sceneExit = isPlayLesson ? null : this.onExit;
+            renderScene(step, this.root, () => this.onSceneNext(), progress, getActiveWorld(), sceneExit, lessonPos, this.onSkipNext, this.lessonFile, this.source, this.getLessonGradeLabel());
             return;
         }
 

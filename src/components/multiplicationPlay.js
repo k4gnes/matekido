@@ -7,6 +7,8 @@ import { getActiveWorld, getPlayRecord, recordPlayResult } from "../profile/Prof
 
 const ALL_TABLES = [2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+const GRACE_MS = 10000;
+
 const TABLE_SUFFIX = { 3: "as", 5: "ös", 6: "os", 8: "as" };
 
 const UI = {
@@ -202,21 +204,26 @@ export function renderMultiplicationPlay(step, root, next, progress) {
     };
 
     let timerId = null;
+    let graceId = null;
     let lastTick = 0;
     let timerLabel = null;
     let timerFill = null;
     let scoreLabel = null;
     let slot = null;
 
-    function stopTimer() {
+    function stopTimers() {
         if (timerId !== null) {
             clearInterval(timerId);
             timerId = null;
         }
+        if (graceId !== null) {
+            clearTimeout(graceId);
+            graceId = null;
+        }
     }
 
     function startTimer() {
-        stopTimer();
+        stopTimers();
         lastTick = Date.now();
         timerId = setInterval(tick, 200);
     }
@@ -248,9 +255,23 @@ export function renderMultiplicationPlay(step, root, next, progress) {
     }
 
     function endRoundWhenIdle() {
-        if (state.over) return;
-        if (state.locked) endRound();
-        else state.timeUp = true;
+        if (state.over || state.timeUp) return;
+        if (state.locked) {
+            endRound();
+            return;
+        }
+        state.timeUp = true;
+        stopTimers();
+        message.show("⏳ Elfogyott az idő! Válaszolhatsz még egyszer, aztán jön az eredmény.", "retry");
+        showFinishButton();
+        graceId = setTimeout(() => endRound(), GRACE_MS);
+    }
+
+    function showFinishButton() {
+        if (!slot || slot.querySelector(".mult-play-finish")) return;
+        const finishBtn = createButton("🏁 Befejezem", { className: "nav-bar-btn mult-play-finish" });
+        finishBtn.addEventListener("click", () => endRound(), { signal: ac.signal });
+        slot.append(finishBtn);
     }
 
     function advance(delay) {
@@ -270,7 +291,7 @@ export function renderMultiplicationPlay(step, root, next, progress) {
     }
 
     function showPicker() {
-        stopTimer();
+        stopTimers();
         message.clear();
         body.replaceChildren();
         subtitle.textContent = subtitleIdle;
@@ -424,7 +445,10 @@ export function renderMultiplicationPlay(step, root, next, progress) {
 
             function check() {
                 if (state.locked || state.over) return;
-                if (input.value.trim() === "") return;
+                if (input.value.trim() === "") {
+                    if (state.timeUp) endRound();
+                    return;
+                }
                 const value = Number(input.value);
                 if (!Number.isFinite(value)) return;
                 input.disabled = true;
@@ -511,12 +535,12 @@ export function renderMultiplicationPlay(step, root, next, progress) {
         if (state.over) return;
         state.over = true;
         state.locked = true;
-        stopTimer();
+        stopTimers();
         renderSummary(saveRecords());
     }
 
     function renderSummary(record) {
-        stopTimer();
+        stopTimers();
         message.clear();
         body.replaceChildren();
 
@@ -607,7 +631,7 @@ export function renderMultiplicationPlay(step, root, next, progress) {
     }, { signal: ac.signal });
 
     return () => {
-        stopTimer();
+        stopTimers();
         ac.abort();
     };
 }

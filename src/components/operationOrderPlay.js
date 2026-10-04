@@ -6,6 +6,8 @@ import { getActiveWorld, getPlayRecord, recordPlayResult } from "../profile/Prof
 
 const RECORD_MODE = "operation-order-play";
 
+const GRACE_MS = 10000;
+
 const UI = {
     postman: { title: "📮 Műveleti sorrend a postán", done: "📮 Kézbesítve!" },
     racing: { title: "🏎️ Műveleti sorrend a boxutcában", done: "🏁 Célban értél!" },
@@ -240,16 +242,21 @@ export function renderOperationOrderPlay(step, root, next, progress) {
     };
 
     let timerId = null;
+    let graceId = null;
     let lastTick = 0;
     let timerLabel = null;
     let timerFill = null;
     let scoreLabel = null;
     let slot = null;
 
-    function stopTimer() {
+    function stopTimers() {
         if (timerId !== null) {
             clearInterval(timerId);
             timerId = null;
+        }
+        if (graceId !== null) {
+            clearTimeout(graceId);
+            graceId = null;
         }
     }
 
@@ -300,9 +307,23 @@ export function renderOperationOrderPlay(step, root, next, progress) {
     }
 
     function endRoundWhenIdle() {
-        if (state.over) return;
-        if (state.locked) endRound();
-        else state.timeUp = true;
+        if (state.over || state.timeUp) return;
+        if (state.locked) {
+            endRound();
+            return;
+        }
+        state.timeUp = true;
+        stopTimers();
+        message.show("⏳ Elfogyott az idő! Válaszolhatsz még egyszer, aztán jön az eredmény.", "retry");
+        showFinishButton();
+        graceId = setTimeout(() => endRound(), GRACE_MS);
+    }
+
+    function showFinishButton() {
+        if (!slot || slot.querySelector(".mult-play-finish")) return;
+        const finishBtn = createButton("🏁 Befejezem", { className: "nav-bar-btn mult-play-finish" });
+        finishBtn.addEventListener("click", () => endRound(), { signal: ac.signal });
+        slot.append(finishBtn);
     }
 
     function advance(delay) {
@@ -313,7 +334,7 @@ export function renderOperationOrderPlay(step, root, next, progress) {
     }
 
     function showPicker() {
-        stopTimer();
+        stopTimers();
         message.clear();
         body.replaceChildren();
         subtitle.textContent = subtitleIdle;
@@ -412,7 +433,7 @@ export function renderOperationOrderPlay(step, root, next, progress) {
         body.append(hud);
 
         paintTimer();
-        stopTimer();
+        stopTimers();
         lastTick = Date.now();
         timerId = setInterval(tick, 200);
 
@@ -503,12 +524,12 @@ export function renderOperationOrderPlay(step, root, next, progress) {
         if (state.over) return;
         state.over = true;
         state.locked = true;
-        stopTimer();
+        stopTimers();
         renderSummary(saveRecords());
     }
 
     function renderSummary(record) {
-        stopTimer();
+        stopTimers();
         message.clear();
         body.replaceChildren();
 
@@ -589,7 +610,7 @@ export function renderOperationOrderPlay(step, root, next, progress) {
     }, { signal: ac.signal });
 
     return () => {
-        stopTimer();
+        stopTimers();
         ac.abort();
     };
 }

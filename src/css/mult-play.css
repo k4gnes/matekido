@@ -143,6 +143,13 @@
     color: #5b3fa8;
 }
 
+.mult-play-finish {
+    background: #fff4e0;
+    border-color: #e08a00;
+    color: #8a5200;
+    margin-top: .4rem;
+}
+
 .mult-play-chip {
     font-size: clamp(1rem, 3vw, 1.3rem);
     line-height: 1.2;

@@ -5,35 +5,35 @@
     {
       "type": "scene",
       "title": "📮 Csomagjáték",
-      "text": "Szorzótábla-játék: egy perc alatt annyi csomagot szábolsz be, amennyit bírsz: négy gomb közül választasz a helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!",
+      "text": "Szorzótábla-játék: egy perc alatt annyi csomagot számolsz, amennyit bírsz: négy gomb közül választasz helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!",
       "worldTitles": {
         "postman": {
           "title": "📮 Csomagjáték",
-          "text": "Szorzótábla-játék: egy perc alatt annyi csomagot szábolsz be, amennyit bírsz: négy gomb közül választasz a helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+          "text": "Szorzótábla-játék: egy perc alatt annyi csomagot számolsz, amennyit bírsz: négy gomb közül választasz helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
         },
         "racing": {
           "title": "🏎️ Száguldás",
-          "text": "Szorzótábla-játék: egy perc alatt végigszaladsz a körökön: négy gomb közül választasz a helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+          "text": "Szorzótábla-játék: egy perc alatt végigszaladsz a körökön: négy gomb közül választasz helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
         },
         "football": {
           "title": "⚽ Góljáték",
-          "text": "Szorzótábla-játék: egy perc alatt annyi gólt rúgsz, amennyit bírsz: négy gomb közül választasz a helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+          "text": "Szorzótábla-játék: egy perc alatt annyi gólt rúgsz, amennyit bírsz: négy gomb közül választasz helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
         },
         "cooking": {
           "title": "🍳 Tálkajáték",
-          "text": "Szorzótábla-játék: egy perc alatt annyi tálkát készítesz, amennyit bírsz: négy gomb közül választasz a helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+          "text": "Szorzótábla-játék: egy perc alatt annyi tálkát készítesz, amennyit bírsz: négy gomb közül választasz helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
         },
         "animals": {
           "title": "🦁 Etetőjáték",
-          "text": "Szorzótábla-játék: egy perc alatt annyi állatot etetsz, amennyit bírsz: négy gomb közül választasz a helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+          "text": "Szorzótábla-játék: egy perc alatt annyi állatot etetsz, amennyit bírsz: négy gomb közül választasz helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
         },
         "space": {
           "title": "🤖 Bolygójáték",
-          "text": "Szorzótábla-játék: egy perc alatt annyi bolygót fedezel fel, amennyit bírsz: négy gomb közül választasz a helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+          "text": "Szorzótábla-játék: egy perc alatt annyi bolygót fedezel fel, amennyit bírsz: négy gomb közül választasz helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
         },
         "tram": {
           "title": "🚋 Utasjáték",
-          "text": "Szorzótábla-játék: egy perc alatt annyi utast szállítasz el, amennyit bírsz: négy gomb közül választasz a helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
+          "text": "Szorzótábla-játék: egy perc alatt annyi utast szállítasz el, amennyit bírsz: négy gomb közül választasz helyes választ. Elrontani nem baj: megmutatjuk a helyes eredményt, és ugyanaz a szorzat később újra jön. A saját rekordodat te állítod!"
         }
       }
     },

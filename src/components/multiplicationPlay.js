@@ -380,6 +380,7 @@ export function renderMultiplicationPlay(step, root, next, progress) {
         state.remaining = duration * 1000;
         state.over = false;
         state.timeUp = false;
+        state.ended = false;
         message.clear();
         body.replaceChildren();
         subtitle.textContent = `🔢 Szorzótábla-játék · ${subtitleWhere(state.tables)}`;

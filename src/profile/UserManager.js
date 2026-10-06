@@ -280,6 +280,20 @@ function slimPlayRecords(playRecords) {
 
 }
 
+function countPlayRecords(playRecords) {
+
+    let count = 0;
+
+    for (const records of Object.values(playRecords ?? {})) {
+        for (const rec of Object.values(records ?? {})) {
+            if (Number.isFinite(rec?.best) && rec.best > 0) count++;
+        }
+    }
+
+    return count;
+
+}
+
 function topSkills(skillStats, count) {
 
     return Object.entries(skillStats ?? {})
@@ -446,6 +460,7 @@ export function importUsers(jsonString) {
     const existing = new Map(data.players.map(p => [p.name + "\u0000" + (p.avatar ?? ""), p]));
     const imported = [];
     let merged = 0;
+    let records = 0;
 
     for (const raw of parsed.players) {
 
@@ -456,6 +471,8 @@ export function importUsers(jsonString) {
         const name = raw.name.trim();
         const avatar = typeof raw.avatar === "string" && raw.avatar ? raw.avatar : "🦊";
         const key = name + "\u0000" + avatar;
+
+        records += countPlayRecords(raw.profile?.playRecords);
 
         const match = existing.get(key);
 
@@ -485,7 +502,8 @@ export function importUsers(jsonString) {
     return {
         ok: true,
         imported: imported.length,
-        merged
+        merged,
+        records
     };
 
 }

@@ -1,7 +1,7 @@
 import { Game } from "./engine/Game.js?v=102";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=30";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=90";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=91";
 import { renderSkillMap } from "./components/skillMap.js?v=27";
 import { renderHelp } from "./components/help.js?v=6";
 import { renderProfilePage } from "./components/profilePage.js?v=14";
@@ -11,7 +11,7 @@ import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=10";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=8";
 import { renderParentHub } from "./components/parentHub.js?v=10";
 import { renderTransferPage } from "./components/transferPage.js?v=2";
-import { getActiveId, listPlayers } from "./profile/UserManager.js?v=3";
+import { getActiveId, listPlayers } from "./profile/UserManager.js?v=4";
 import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld, setActiveGrade, resolveLessonGrade } from "./profile/Profile.js";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
 import { createCard } from "./components/ui/card.js";

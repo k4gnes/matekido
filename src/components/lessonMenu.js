@@ -235,10 +235,10 @@ export function createLessonCard(lesson, onSelect, activeWorld, position, total,
     lessonCard.append(badges, title, subtitle);
 
     const stats = getLessonStats(lesson.file);
-    if (stats?.practice) {
+    const playBest = lesson.playMode ? getPlayBest(lesson.playMode) : null;
+    if (stats?.practice || (!stats && playBest)) {
         const playStatBadge = document.createElement("span");
         playStatBadge.className = "lesson-play-stat-badge";
-        const playBest = getPlayBest(lesson.playMode);
         playStatBadge.textContent = playBest ? `🎲 Játszottad 🏆 ${playBest}` : "🎲 Játszottad";
         lessonCard.append(playStatBadge);
     } else if (stats) {

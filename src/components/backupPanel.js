@@ -499,6 +499,9 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
         if (result.merged > 0) {
             parts.push(`${result.merged} profil összefésülve`);
         }
+        if (result.records > 0) {
+            parts.push(`${result.records} egyperces rekord átvéve`);
+        }
 
         const message = "✅ " + (parts.join(", ") || "Nincs változás.") + ".";
         setStatus(message);

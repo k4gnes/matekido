@@ -30,7 +30,7 @@ export function renderDecimal(step, root, next, progress, onResult, onAttempt) {
     }
 
     const title = document.createElement("h1");
-    title.textContent = `${WORLD_EMOJI[getActiveWorld()] ?? "🔟"} Tizedes törtek`;
+    title.textContent = `${WORLD_EMOJI[getActiveWorld()] ?? "🔟"} ${step.title ?? "Tizedes törtek"}`;
     card.append(title);
 
     const prompt = document.createElement("p");
@@ -84,7 +84,7 @@ export function renderDecimal(step, root, next, progress, onResult, onAttempt) {
         if (step.mode === "compare" || step.mode === "compare-whole") {
             return `🎉 Ügyes! ${step.left} ${correct} ${step.right}`;
         }
-        if (step.mode === "convert" || step.mode === "read" || step.mode === "write") {
+        if (step.symbol) {
             return `🎉 Ügyes! ${step.symbol} = ${correct}.`;
         }
         return `🎉 Ügyes! ${correct} az ${step.filled} ${step.total === 10 ? "tized" : "század"}.`;

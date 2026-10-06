@@ -1,0 +1,73 @@
+{
+    "id": "decimal-addsub-01",
+    "title": "Tizedes törtek összeadása és kivonása",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "➕ Vessző a vessző alatt",
+            "text": "A tizedes számok összeadásánál és kivonásánál először igazítsd a vesszőket egymás alá, majd számold külön az egész részeket és a tizedeket! Ha valamelyik számban nincs tizedes rész, képzeld el a vesszőt a helyén: 3 + 0,4 = 3,4. Kivonásnál mindig a nagyobb számból vonj ki kisebbet. Az eredmény végéről a felesleges nullákat lehagyhatod: 5,0 ugyanaz, mint 5.",
+            "illustration": "<div style='margin:1rem 0; text-align:center; line-height:2.1; font-size:1.05rem;'>2,5 + 1,3 = 3,8<br>4,7 - 1,9 = 2,8<br><span style='opacity:0.75;'>vessző a vessző alá, tized a tized alá</span></div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Csomagok a mérlegen",
+                    "text": "A csomagok súlya tizedes szám: 2,5 kg és 1,3 kg. Ha a két csomagot egy mérlegre teszed, összesen 3,8 kg – a vesszőket igazítsd egymás alá, és máris megvan a megoldás!"
+                },
+                "racing": {
+                    "title": "🏁 Időmérés a pályán",
+                    "text": "A köridő tizedes másodpercekben telik: 2,5 mp a gyorsabb kör, 1,3 mp a másik. Ha összeadod a két időt, megkapod, mennyit voltál a pályán – vesszővel a vessző alatt!"
+                },
+                "football": {
+                    "title": "⚽ Edzés a pályán",
+                    "text": "Az edzés 2,5 óráig tartott, ebből 1,3 óra volt a labdagyakorlat. A többi rész 2,5 - 1,3 = 1,2 óra – a tizedeket is számold, ahogy az egészeket!"
+                },
+                "cooking": {
+                    "title": "🍳 Liszt a tésztához",
+                    "text": "A recept 2,5 kg lisztet kér, de már kimértél 1,3 kg-ot. Mennyi hiányzik? 2,5 - 1,3 = 1,2 kg – a tizedeket is pontosan számold, ahogy az egészeket!"
+                },
+                "animals": {
+                    "title": "🦁 Takarmány a kölyöknek",
+                    "text": "A kölyök 2,5 kg tápot kap egy nap, ebből reggel 1,3 kg-ot megeszik. Délután 2,5 - 1,3 = 1,2 kg vár rá – a vesszőket igazítsd egymás alá!"
+                },
+                "space": {
+                    "title": "🚀 Üzemanyag-utánpótlás",
+                    "text": "A űrhajó 2,5 tonna üzemanyaggal indul, az út első szakaszában 1,3 tonnát éget el. Marad 2,5 - 1,3 = 1,2 tonna – a tizedek is számít!"
+                },
+                "tram": {
+                    "title": "🚋 Menetrend",
+                    "text": "A villamos 2,5 percet vesztegelt a megállónál, ebből 1,3 perc alatt szálltak fel az utasok. A többi 2,5 - 1,3 = 1,2 perc a leszállásé – számold ki te is a tizedekkel!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "decimal-prep",
+            "options": {
+                "count": 5,
+                "mode": "addsub",
+                "op": "+"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "decimal-prep",
+            "options": {
+                "count": 5,
+                "mode": "addsub",
+                "op": "-"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "decimal-prep",
+            "options": {
+                "count": 6,
+                "mode": "addsub"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Most már összeadod és kivonod a tizedes számokat! A titok egyszerű: vessző a vessző alá, tized a tized alá – és az eredmény magától összeáll."
+        }
+    ]
+}

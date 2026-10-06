@@ -1,0 +1,82 @@
+{
+    "id": "decimal-times-01",
+    "title": "Szorzás 10-zel, 100-zal, 1000-rel",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "✖️ A vessző vándorlása",
+            "text": "Ha tizedes számot szorzol, a vessző mindig jobbra mozdul: 10-zel egy hellyel, 100-zal kettővel, 1000-rel hárommal. 2,5 × 10 = 25, 1,25 × 100 = 125, 0,4 × 1000 = 400. Ha a vessző mögött nincs elég számjegy, nullákkal egészítsd ki: 3 × 100 = 300. A szám értéke nem változik – csak a vessző helye!",
+            "illustration": "<div style='margin:1rem 0; text-align:center; line-height:2.1; font-size:1.05rem;'>2,5 × 10 = 25<br>1,25 × 100 = 125<br>0,4 × 1000 = 400<br><span style='opacity:0.75;'>a vessző jobbra vándorol: 1 – 2 – 3 hely</span></div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Levél a raktárban",
+                    "text": "A raktárban 2,5 mázsa levél gyűlt össze; a tízszerese, 25 mázsa, már egy egész zsák. Szorozd meg tízzel, és a vessző egy hellyel jobbra csúszik!"
+                },
+                "racing": {
+                    "title": "🏁 Szorzás a köridővel",
+                    "text": "A köridő 1,25 másodperc; a százszorosa 125 – ez jön ki a száz kör összeidején. Szorozz százzal, és a vessző kettővel jobbra vándorol!"
+                },
+                "football": {
+                    "title": "⚽ Pontszám ezerszeresen",
+                    "text": "A csapat 2,5 pontot szerzett egy fordulóban; ha ezerszeresét nézed, egy hosszú szezonban 2500 pont is összejöhet. Szorozz ezerrel: a vessző három hellyel jobbra megy!"
+                },
+                "cooking": {
+                    "title": "🍳 Nagy adag a konyhában",
+                    "text": "A recept 0,4 kg lisztet kér egy adaghoz; ha tízszeresét dagasztod, 4 kg a tészta. A vessző egy hellyel jobbra csúszik – és kész a nagy adag!"
+                },
+                "animals": {
+                    "title": "🦁 Takarmány hetekre",
+                    "text": "Egy nap 0,5 kg az állat adagja; ha százszorosát méröd ki, az 50 kg, egy nagy zsáknyi. Szorozz százzal, és a vessző kettővel jobbra csúszik!"
+                },
+                "space": {
+                    "title": "🚀 Üzemanyag-tartály",
+                    "text": "A tartály 0,4 egység üzemanyagot vesz egy kis repülésre; ha ezerszeresét töltöd, 400 egység lesz a nagy útra. Szorozz ezerrel: a vessző három hellyel jobbra megy!"
+                },
+                "tram": {
+                    "title": "🚋 Megállók százszorosa",
+                    "text": "A villamos 3 megálló alatt ér célba; a százszorosa 300 megálló – már egy egész városrész. Szorozz százzal, és a vessző kettővel csúszik jobbra!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "decimal-prep",
+            "options": {
+                "count": 4,
+                "mode": "times-power",
+                "power": 10
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "decimal-prep",
+            "options": {
+                "count": 4,
+                "mode": "times-power",
+                "power": 100
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "decimal-prep",
+            "options": {
+                "count": 4,
+                "mode": "times-power",
+                "power": 1000
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "decimal-prep",
+            "options": {
+                "count": 4,
+                "mode": "times-power"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 A vessző szépen vándorol!",
+            "text": "Most már tudod: szorzásnál a vessző jobbra megy – tízzel egyet, százzal kettőt, ezerrel hármat. Ha kevés a számjegy, nullákkal pótolod, és kész!"
+        }
+    ]
+}

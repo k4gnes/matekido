@@ -1,0 +1,84 @@
+{
+    "id": "decimal-div-01",
+    "title": "Osztás 10-zel, 100-zal, egésszel",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "➗ A vessző balra indul",
+            "text": "Osztásnál a vessző balra mozdul: 10-zel egy hellyel, 100-zal kettővel. 45 ÷ 10 = 4,5, 700 ÷ 100 = 7. Ha nincs elég számjegy a vessző előtt, nullát írj eléjük: 7 ÷ 100 = 0,07. Egész számmal osztásnál oszd meg az egész részt, aztán a tizedeket: 12,6 ÷ 3 = 4,2, mert 12 ÷ 3 = 4 és 6 ÷ 3 = 2.",
+            "illustration": "<div style='margin:1rem 0; text-align:center; line-height:2.1; font-size:1.05rem;'>45 ÷ 10 = 4,5<br>700 ÷ 100 = 7<br>12,6 ÷ 3 = 4,2<br><span style='opacity:0.75;'>osztásnál a vessző balra indul</span></div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Csomagok elosztása",
+                    "text": "5 kg küldeményt kell szétosztani 10 dobozba: mindegyik 0,5 kg lesz, mert a vessző egy hellyel balra megy. Ha 100 doboz lenne, 0,05 kg – nullával pótolod az elejét!"
+                },
+                "racing": {
+                    "title": "🏁 Részidő felezve",
+                    "text": "A 4,5 másodperces köridőből a tíz részidő mindegyike 0,45 mp – a vessző egy hellyel balra csúszik. Így pontosan látod, hol veszíted az időt!"
+                },
+                "football": {
+                    "title": "⚽ Gólok elosztva",
+                    "text": "12 gólt lőttél négy meccsen: 12 ÷ 4 = 3 gól meccsenként. Ha tizedes számmal osztasz, oszd külön az egész részt és a tizedeket: 12,6 ÷ 3 = 4,2!"
+                },
+                "cooking": {
+                    "title": "🍳 Adagonként a tészta",
+                    "text": "4,4 kg tésztát osztasz 10 adagra: mindegyik 0,44 kg, mert a vessző egy hellyel balra megy. Egésszel osztva pedig előbb az egész részt, aztán a tizedeket oszd el!"
+                },
+                "animals": {
+                    "title": "🦁 Napi adagok",
+                    "text": "Egy hét alatt 3,5 kg takarmány fogy; ha tízzel osztod, egy napra 0,35 kg jut. A vessző egy hellyel balra mozdul, és kész az adag!"
+                },
+                "space": {
+                    "title": "🚀 Üzemanyag század részre",
+                    "text": "A készlet 700 egység, amit százzal osztva 7 egységnyi útra elég. Osztásnál a vessző balra megy: százzal kettővel, tízzel egy hellyel!"
+                },
+                "tram": {
+                    "title": "🚋 Késés tizede",
+                    "text": "A 4,5 perces késés tizede a műszaki hiba ideje: 4,5 ÷ 10 = 0,45 perc. A vessző balra csúszik egy hellyel – és megvan a válasz!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "decimal-prep",
+            "options": {
+                "count": 4,
+                "mode": "div-power",
+                "kind": "power",
+                "divisor": 10
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "decimal-prep",
+            "options": {
+                "count": 4,
+                "mode": "div-power",
+                "kind": "power",
+                "divisor": 100
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "decimal-prep",
+            "options": {
+                "count": 4,
+                "mode": "div-power",
+                "kind": "whole"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "decimal-prep",
+            "options": {
+                "count": 4,
+                "mode": "div-power"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Most már osztod a tizedes számokat: tízzel egy hellyel balra, százzal kettővel, egésszel pedig külön az egész részt és a tizedeket. A vessző most már nem téved el!"
+        }
+    ]
+}

@@ -276,6 +276,128 @@ function buildCompareWholeTask() {
     };
 }
 
+const POWER_LABEL = { 10: "10-zel", 100: "100-zal", 1000: "1000-rel" };
+
+function fmtHundredths(h) {
+    const abs = Math.abs(h);
+    const whole = Math.floor(abs / 100);
+    const rest = abs % 100;
+    let text;
+    if (rest === 0) text = String(whole);
+    else if (rest % 10 === 0) text = `${whole},${rest / 10}`;
+    else text = `${whole},${String(rest).padStart(2, "0")}`;
+    return h < 0 ? `-${text}` : text;
+}
+
+function valueOptions(correctH, candidates) {
+    const pool = new Set();
+    const add = v => {
+        if (Number.isInteger(v) && v > 0 && v !== correctH) pool.add(v);
+    };
+    for (const v of candidates) add(v);
+    add(correctH + 1);
+    add(correctH - 1);
+    add(correctH + 10);
+    add(correctH - 10);
+    add(correctH + 100);
+    add(correctH - 100);
+    add(correctH * 10);
+    const distractors = shuffle([...pool]).slice(0, 3);
+    return shuffle([correctH, ...distractors]).map(v => ({ text: fmtHundredths(v), correct: v === correctH }));
+}
+
+function randomHundredthsValue() {
+    const whole = randint(1, 40);
+    const frac = Math.random() < 0.4 ? randint(1, 99) : randint(1, 9) * 10;
+    return whole * 100 + frac;
+}
+
+function buildAddSubTask(opOption) {
+    const op = opOption === "+" || opOption === "-" ? opOption : pick(["+", "-"]);
+    let a = randomHundredthsValue();
+    let b = randomHundredthsValue();
+    if (op === "-") {
+        if (b > a) [a, b] = [b, a];
+        if (b === a) b = Math.max(10, Math.floor(b / 2));
+    } else if (Math.random() < 0.5) {
+        [a, b] = [b, a];
+    }
+    const resultH = op === "+" ? a + b : a - b;
+    return {
+        type: "decimal",
+        mode: "addsub",
+        op,
+        title: "Összeadás és kivonás",
+        symbol: `${fmtHundredths(a)} ${op} ${fmtHundredths(b)}`,
+        question: "Mennyi az eredmény?",
+        options: valueOptions(resultH, [resultH + 1, resultH - 1, resultH + 10, resultH - 10, resultH + 100, resultH - 100])
+    };
+}
+
+function powerTitle(power) {
+    if (power === 10) return "Szorzás 10-zel";
+    if (power === 100) return "Szorzás 100-zal";
+    if (power === 1000) return "Szorzás 1000-rel";
+    return "Szorzás 10-zel, 100-zal, 1000-rel";
+}
+
+function buildTimesPowerTask(powerOption) {
+    const power = [10, 100, 1000].includes(powerOption) ? powerOption : pick([10, 100, 1000]);
+    let valueH;
+    if (power === 10) {
+        valueH = randint(1, 99) * 100 + randint(0, 9) * 10;
+    } else if (power === 100) {
+        valueH = randint(1, 9) * 100 + pick([0, 50]);
+    } else {
+        valueH = pick([5, 10, 15, 20, 25, 50, 75, 100]);
+    }
+    const resultH = valueH * power;
+    return {
+        type: "decimal",
+        mode: "times-power",
+        power,
+        title: powerTitle(power),
+        symbol: `${fmtHundredths(valueH)} × ${power}`,
+        question: `Mennyi ez szorozva ${POWER_LABEL[power]}?`,
+        options: valueOptions(resultH, [valueH, resultH * 10, resultH / 10, resultH + power, resultH - power])
+    };
+}
+
+function buildDivPowerTask(kindOption, divisorOption) {
+    const kind = ["power", "whole"].includes(kindOption) ? kindOption : pick(["power", "power", "whole"]);
+    if (kind === "whole") {
+        const divisor = randint(2, 9);
+        const resultH = randint(5, 300) * 10;
+        const valueH = resultH * divisor;
+        return {
+            type: "decimal",
+            mode: "div-power",
+            kind,
+            divisor,
+            title: "Osztás egésszel",
+            symbol: `${fmtHundredths(valueH)} ÷ ${divisor}`,
+            question: "Mennyi az eredmény?",
+            options: valueOptions(resultH, [valueH, resultH * 10, resultH / 10, resultH + divisor * 10, resultH - divisor * 10])
+        };
+    }
+    const divisor = [10, 100].includes(divisorOption) ? divisorOption : pick([10, 100]);
+    const valueH = divisor === 10
+        ? randint(1, 999) * 100 + randint(0, 9) * 10
+        : randint(1, 999) * 100;
+    const resultH = valueH / divisor;
+    const label = divisor === 10 ? "10-zel" : "100-zal";
+    return {
+        type: "decimal",
+        mode: "div-power",
+        kind,
+        divisor,
+        title: `Osztás ${label}`,
+        symbol: `${fmtHundredths(valueH)} ÷ ${divisor}`,
+        question: `Mennyi ez osztva ${label}?`,
+        options: valueOptions(resultH, [valueH, resultH * 10, resultH / 10, resultH + 10, resultH - 10])
+    };
+}
+
 export function generateDecimalPrep(options = {}) {
     const { count = 4, mode = "mixed" } = options;
 
@@ -295,6 +417,12 @@ export function generateDecimalPrep(options = {}) {
             tasks.push(buildWordTask("write"));
         } else if (mode === "compare-whole") {
             tasks.push(buildCompareWholeTask());
+        } else if (mode === "addsub") {
+            tasks.push(buildAddSubTask(options.op));
+        } else if (mode === "times-power") {
+            tasks.push(buildTimesPowerTask(options.power));
+        } else if (mode === "div-power") {
+            tasks.push(buildDivPowerTask(options.kind, options.divisor));
         } else {
             tasks.push(pick([buildTenthsTask, buildHundredthsTask, buildFractionToDecimalTask, buildDecimalToFractionTask, buildCompareTask])());
         }

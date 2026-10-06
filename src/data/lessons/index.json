@@ -289,6 +289,78 @@
       }
     },
     {
+      "id": "decimal-addsub-01",
+      "title": "Tizedes törtek összeadása és kivonása",
+      "grades": [
+        5
+      ],
+      "category": "fractions",
+      "skill": "fraction",
+      "difficulty": 2,
+      "type": "decimal",
+      "range": 100,
+      "mission": "➕ Vessző a vessző alatt",
+      "subtitle": "Tizedesek összeadása és kivonása, vesszők igazítása",
+      "file": "./data/lessons/grade5/decimal-addsub-01.json",
+      "worldTitles": {
+        "postman": "📮 Mennyi a csomagok összsúlya?",
+        "racing": "🏁 Mennyi a körök összes ideje?",
+        "football": "⚽ Mennyi az edzés hátralévő része?",
+        "cooking": "🥘 Mennyi liszt hiányzik még?",
+        "animals": "🦁 Mennyi a délutáni adag?",
+        "space": "🚀 Mennyi üzemanyag marad?",
+        "tram": "🚋 Mennyit vesztegel a villamos?"
+      }
+    },
+    {
+      "id": "decimal-times-01",
+      "title": "Szorzás 10-zel, 100-zal, 1000-rel",
+      "grades": [
+        5
+      ],
+      "category": "fractions",
+      "skill": "fraction",
+      "difficulty": 2,
+      "type": "decimal",
+      "range": 1000,
+      "mission": "✖️ A vessző vándorlása",
+      "subtitle": "Helyiérték-váltás szorzással: ×10, ×100, ×1000",
+      "file": "./data/lessons/grade5/decimal-times-01.json",
+      "worldTitles": {
+        "postman": "📮 Hány mázsa a levél tízszerese?",
+        "racing": "🏁 Hány tized százszorosa a köridőnek?",
+        "football": "⚽ Hány pont az ezerszerese?",
+        "cooking": "🥘 Hány kg a liszt tízszerese?",
+        "animals": "🦁 Mennyi egy hét takarmánya?",
+        "space": "🚀 Mennyi üzemanyag ezerszeresen?",
+        "tram": "🚋 Hány megálló százszorosa?"
+      }
+    },
+    {
+      "id": "decimal-div-01",
+      "title": "Osztás 10-zel, 100-zal, egésszel",
+      "grades": [
+        5
+      ],
+      "category": "fractions",
+      "skill": "fraction",
+      "difficulty": 3,
+      "type": "decimal",
+      "range": 1000,
+      "mission": "➗ A vessző balra indul",
+      "subtitle": "Osztás 10-zel, 100-zal és egésszel, tizedes eredménnyel",
+      "file": "./data/lessons/grade5/decimal-div-01.json",
+      "worldTitles": {
+        "postman": "📮 Oszd el a csomagokat!",
+        "racing": "🏁 Mennyi egy tizede a köridőnek?",
+        "football": "⚽ Hány gól jut egy meccsre?",
+        "cooking": "🥘 Mennyi jut egy adagra?",
+        "animals": "🦁 Mennyi jut egy napra?",
+        "space": "🚀 Mennyi jut egy egységre?",
+        "tram": "🚋 Mennyi a késés tizede?"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

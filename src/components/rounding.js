@@ -3,6 +3,7 @@ import { createNumberInput } from "./ui/numberInput.js";
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
+import { formatThousands } from "../utils/formatNumbers.js";
 
 const TARGET_LABEL = {
     tens: "tízesre",
@@ -37,7 +38,7 @@ export function renderRounding(step, root, next, progress, onResult, onAttempt) 
     display.className = "mult-expression";
 
     const numberSpan = document.createElement("span");
-    numberSpan.textContent = step.number;
+    numberSpan.textContent = formatThousands(step.number);
     display.append(numberSpan);
 
     card.append(title, hint, display);
@@ -54,7 +55,7 @@ export function renderRounding(step, root, next, progress, onResult, onAttempt) 
             const btn = document.createElement("button");
             btn.type = "button";
             btn.className = "mult-option";
-            btn.textContent = value;
+            btn.textContent = formatThousands(value);
             btn.dataset.value = value;
             optionsContainer.append(btn);
         });

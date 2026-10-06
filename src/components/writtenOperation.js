@@ -3,6 +3,7 @@ import { createExercise } from "./ui/exerciseShell.js";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { createHintBox } from "./ui/hintBox.js";
 import { getActiveWorld } from "../profile/Profile.js";
+import { formatThousands } from "../utils/formatNumbers.js";
 
 const WORLD = {
     postman: { emoji: "📮" },
@@ -193,7 +194,7 @@ export function renderWrittenOperation(step, root, next, progress, onResult, onA
             const btn = document.createElement("button");
             btn.type = "button";
             btn.className = "mult-option";
-            btn.textContent = value;
+            btn.textContent = formatThousands(value);
             btn.dataset.value = value;
             optionsContainer.append(btn);
         });

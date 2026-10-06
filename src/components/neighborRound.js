@@ -4,6 +4,7 @@ import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
 import { createFeedback } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
+import { formatThousands } from "../utils/formatNumbers.js";
 
 const WORLD_TITLE = {
     postman: "🔍 Kerek szomszédok a postán",
@@ -38,7 +39,7 @@ export function renderNeighborRound(step, root, next, progress, onResult, onAtte
     numberLine.style.fontSize = "2.2rem";
 
     const numSpan = document.createElement("span");
-    numSpan.textContent = step.number;
+    numSpan.textContent = formatThousands(step.number);
     numSpan.style.fontWeight = "bold";
     numberLine.append(numSpan);
     card.append(numberLine);

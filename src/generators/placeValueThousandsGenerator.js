@@ -1,4 +1,5 @@
 import { makeCarryParts } from "../math/placeValue.js";
+import { formatThousands } from "../utils/formatNumbers.js";
 
 function pick(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
@@ -34,7 +35,7 @@ function makeCarryBase(parts, sum, layout, interaction, carryOn) {
     const base = {
         answer: sum,
         number: sum,
-        numberText: formatNumber(sum),
+        numberText: formatThousands(sum),
         parts: parts.map(part => part.key),
         layout,
         interaction
@@ -48,10 +49,6 @@ function makeCarryBase(parts, sum, layout, interaction, carryOn) {
     }
 
     return base;
-}
-
-function formatNumber(n) {
-    return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
 
 function makeValueTask(num, digits) {
@@ -154,7 +151,7 @@ export function generatePlaceValueThousands(options = {}) {
         const base = {
             answer: num,
             number: num,
-            numberText: formatNumber(num),
+            numberText: formatThousands(num),
             layout: resolvedLayout,
             interaction: useChoice ?? pick(["input", "choice"])
         };

@@ -6,10 +6,10 @@ import { renderExercise } from "../components/exercise.js?v=5";
 import { renderDecomposition } from "../components/decomposition.js?v=5";
 import { renderDecompositionFindWrong } from "../components/decompositionFindWrong.js?v=5";
 import { renderMissingNumber } from "../components/missingNumber.js?v=8";
-import { renderComparison } from "../components/comparison.js?v=6";
+import { renderComparison } from "../components/comparison.js?v=7";
 import { renderNeighbor } from "../components/neighbor.js?v=5";
 import { renderNeighborSingle } from "../components/neighborSingle.js?v=6";
-import { renderNeighborRound } from "../components/neighborRound.js?v=5";
+import { renderNeighborRound } from "../components/neighborRound.js?v=6";
 import { renderPlaceValue } from "../components/placeValue.js?v=8";
 import { renderPlaceValueTwoInput } from "../components/placeValueTwoInput.js?v=7";
 import { renderBridgeTen } from "../components/bridgeTen.js?v=14";
@@ -33,7 +33,7 @@ import { renderMultiplicationPlay } from "../components/multiplicationPlay.js?v=
 import { renderOperationOrderPlay } from "../components/operationOrderPlay.js?v=5";
 import { renderDivision } from "../components/division.js?v=6";
 import { renderMissingOperand } from "../components/missingOperand.js?v=6";
-import { renderEstimate } from "../components/estimate.js?v=7";
+import { renderEstimate } from "../components/estimate.js?v=8";
 import { renderTrueFalse } from "../components/trueFalse.js?v=6";
 import { renderFindError } from "../components/findError.js?v=3";
 import { renderShapeCompare } from "../components/shapeCompare.js?v=4";
@@ -45,11 +45,11 @@ import { renderCompoundShape } from "../components/compoundShape.js?v=3";
 import { renderShapeFormula } from "../components/shapeFormula.js?v=4";
 import { renderWeight } from "../components/weight.js?v=3";
 import { renderVolume } from "../components/volume.js?v=3";
-import { renderMoneyChange } from "../components/moneyChange.js?v=4";
+import { renderMoneyChange } from "../components/moneyChange.js?v=5";
 import { renderPlaceValueHundreds } from "../components/placeValueHundreds.js?v=6";
-import { renderPlaceValueThousands } from "../components/placeValueThousands.js?v=8";
-import { renderNumberName } from "../components/numberName.js?v=2";
-import { renderRounding } from "../components/rounding.js?v=5";
+import { renderPlaceValueThousands } from "../components/placeValueThousands.js?v=9";
+import { renderNumberName } from "../components/numberName.js?v=3";
+import { renderRounding } from "../components/rounding.js?v=6";
 import { renderRoman } from "../components/roman.js?v=2";
 import { renderTransform } from "../components/transform.js?v=4";
 import { renderMirror } from "../components/mirror.js?v=4";
@@ -68,7 +68,7 @@ import { renderDecimal } from "../components/decimal.js?v=4";
 import { renderDivisibility } from "../components/divisibility.js?v=2";
 import { renderAngleMeasure } from "../components/angleMeasure.js?v=2";
 import { renderMeasureUnits } from "../components/measureUnits.js?v=13";
-import { renderWrittenOperation } from "../components/writtenOperation.js?v=11";
+import { renderWrittenOperation } from "../components/writtenOperation.js?v=12";
 import { renderRemainderDivision } from "../components/remainderDivision.js?v=7";
 import { renderWrittenDivision } from "../components/writtenDivision.js?v=4";
 import { renderPerimeter } from "../components/perimeter.js?v=2";
@@ -171,6 +171,7 @@ import { renderNeighborProgress } from "../components/neighborProgress.js?v=4";
 
 import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, recordLessonPractice, recordSkillResult, recordCustomDoneLesson, resolveSkippedLesson, getLessonStats, getActiveWorld, isFavoriteLesson, toggleFavoriteLesson, resolveLessonGrade } from "../profile/Profile.js";
 import { grantRewards } from "../profile/RewardService.js";
+import { observeBigNumbers } from "../utils/formatNumbers.js";
 
 const SKILL_BY_TYPE = {
     "decomposition-find-wrong": "decomposition",
@@ -292,19 +293,21 @@ export class Game {
         this.byType = {};
         this.startedAt = null;
         this.componentCleanup = null;
+        this.stopNumberWatch = null;
 
-        this.onRestart = actions.onRestart;
-        const exitAction = actions.onExit;
-        this.onExit = (...args) => {
+        const leave = (action) => action ? (...args) => {
             this.cleanupComponent();
-            exitAction?.(...args);
-        };
-        this.onProfile = actions.onProfile;
-        this.onStats = actions.onStats;
-        this.onHelp = actions.onHelp;
-        this.onNext = actions.onNext;
-        this.onSkipNext = actions.onSkipNext;
-        this.onGradeComplete = actions.onGradeComplete;
+            action(...args);
+        } : action;
+
+        this.onRestart = leave(actions.onRestart);
+        this.onExit = leave(actions.onExit);
+        this.onProfile = leave(actions.onProfile);
+        this.onStats = leave(actions.onStats);
+        this.onHelp = leave(actions.onHelp);
+        this.onNext = leave(actions.onNext);
+        this.onSkipNext = leave(actions.onSkipNext);
+        this.onGradeComplete = leave(actions.onGradeComplete);
     }
 
     getLessonPosition() {
@@ -416,6 +419,10 @@ export class Game {
     }
 
     cleanupComponent() {
+        if (this.stopNumberWatch) {
+            this.stopNumberWatch();
+            this.stopNumberWatch = null;
+        }
         if (typeof this.componentCleanup !== "function") return;
         const cleanup = this.componentCleanup;
         this.componentCleanup = null;
@@ -426,7 +433,20 @@ export class Game {
         }
     }
 
+    watchNumbers() {
+        this.stopNumberWatch?.();
+        this.stopNumberWatch = observeBigNumbers(this.root);
+    }
+
     render() {
+
+        this.renderStep();
+
+        this.watchNumbers();
+
+    }
+
+    renderStep() {
 
         this.cleanupComponent();
 

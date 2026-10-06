@@ -1,6 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
+import { formatThousands } from "../utils/formatNumbers.js";
 
 export function renderNumberName(step, root, next, progress, onResult, onAttempt) {
 
@@ -25,7 +26,7 @@ export function renderNumberName(step, root, next, progress, onResult, onAttempt
     display.className = "mult-expression";
 
     const value = document.createElement("span");
-    value.textContent = step.direction === "toWord" ? step.number : step.word;
+    value.textContent = step.direction === "toWord" ? formatThousands(step.number) : step.word;
     display.append(value);
 
     const optionsContainer = document.createElement("div");
@@ -35,7 +36,7 @@ export function renderNumberName(step, root, next, progress, onResult, onAttempt
         const btn = document.createElement("button");
         btn.type = "button";
         btn.className = "mult-option";
-        btn.textContent = option;
+        btn.textContent = formatThousands(option);
         btn.dataset.value = option;
         optionsContainer.append(btn);
     });

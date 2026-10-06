@@ -4,6 +4,7 @@ import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { createButton } from "./ui/button.js";
 import { createHintBox } from "./ui/hintBox.js";
 import { getActiveWorld } from "../profile/Profile.js";
+import { formatThousands, formatNumbersInText } from "../utils/formatNumbers.js";
 
 const TITLES = {
     postman: "📦 Becslés",
@@ -34,7 +35,7 @@ export function renderEstimate(step, root, next, progress, onResult, onAttempt) 
 
     const expr = document.createElement("div");
     expr.className = "est-expression";
-    expr.textContent = step.expression;
+    expr.textContent = formatNumbersInText(step.expression);
     card.append(expr);
 
     const prompt = document.createElement("p");
@@ -49,7 +50,7 @@ export function renderEstimate(step, root, next, progress, onResult, onAttempt) 
         const btn = document.createElement("button");
         btn.type = "button";
         btn.className = "est-option";
-        btn.textContent = value;
+        btn.textContent = formatThousands(value);
         btn.dataset.value = value;
         optionsContainer.append(btn);
     });

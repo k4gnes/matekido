@@ -2,6 +2,7 @@ import { createButton } from "./ui/button.js";
 import { createExercise } from "./ui/exerciseShell.js";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
+import { formatNumbersInText } from "../utils/formatNumbers.js";
 
 const WORLD_EMOJI = {
     postman: "✉️",
@@ -37,7 +38,7 @@ export function renderComparison(step, root, next, progress, onResult, onAttempt
     leftWrap.style.cssText = "display:flex; flex-direction:column; align-items:center;";
     const left = document.createElement("span");
     left.className = "comparison-side";
-    left.textContent = step.leftExpr;
+    left.textContent = formatNumbersInText(step.leftExpr);
     const leftEmoji = document.createElement("div");
     leftEmoji.className = "comparison-emojis";
     if (step.emoji !== false) {
@@ -54,7 +55,7 @@ export function renderComparison(step, root, next, progress, onResult, onAttempt
     rightWrap.style.cssText = "display:flex; flex-direction:column; align-items:center;";
     const right = document.createElement("span");
     right.className = "comparison-side";
-    right.textContent = step.rightExpr;
+    right.textContent = formatNumbersInText(step.rightExpr);
     const rightEmoji = document.createElement("div");
     rightEmoji.className = "comparison-emojis";
     if (step.emoji !== false) {

@@ -2,6 +2,7 @@ import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
 import { createFeedback } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
+import { formatThousands } from "../utils/formatNumbers.js";
 
 const WORLD_TITLES = {
     postman: "💰 Visszajáró",
@@ -34,13 +35,13 @@ export function renderMoneyChange(step, root, next, progress, onResult, onAttemp
     itemRow.innerHTML = `
         <span class="money-item-emoji">${step.emoji}</span>
         <span class="money-item-name">${step.name}</span>
-        <span class="money-item-price">${step.price} Ft</span>
+        <span class="money-item-price">${formatThousands(step.price)} Ft</span>
     `;
     card.append(itemRow);
 
     const paidRow = document.createElement("p");
     paidRow.className = "mc-paid";
-    paidRow.textContent = `Fizettél vele: ${step.paid} Ft`;
+    paidRow.textContent = `Fizettél vele: ${formatThousands(step.paid)} Ft`;
     card.append(paidRow);
 
     const prompt = document.createElement("p");

@@ -5,6 +5,7 @@ import { createExercise } from "./ui/exerciseShell.js";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 import { makeOptions } from "./ui/optionHelper.js";
+import { formatThousands } from "../utils/formatNumbers.js";
 
 const WORLD = {
     postman: { title: "📮 Hány levél van a rakományokban?", thousands: "🚚", hundreds: "🧺", tens: "📦", ones: "✉️" },
@@ -122,7 +123,7 @@ export function renderPlaceValueThousands(step, root, next, progress, onResult, 
     let board = null;
 
     if (step.task === "digit") {
-        board = numberBoard(step.numberText ?? String(number));
+        board = numberBoard(step.numberText ?? formatThousands(number));
     } else if (step.task === "value") {
         board = placeValueTable(places, step);
     } else if (hasEmoji) {
@@ -160,7 +161,7 @@ export function renderPlaceValueThousands(step, root, next, progress, onResult, 
             const btn = document.createElement("button");
             btn.type = "button";
             btn.className = "mult-option";
-            btn.textContent = value;
+            btn.textContent = formatThousands(value);
             btn.dataset.value = value;
             optionsContainer.append(btn);
         });

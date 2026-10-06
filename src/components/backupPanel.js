@@ -418,7 +418,7 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
                 if (shown.tooLarge) {
                     hint.textContent = "A profil túl nagy a QR-képhez, de a kód így is átvihető: másold ki, és a másik eszközön használd a Kód beillesztése opciót.";
                 } else if (slimUsed) {
-                    hint.textContent = "⚠️ A QR az összesített adatokat viszi (csillagok, készség-statisztika, világok). A részletes előrehaladás (napi és leckénkénti adatok) teljesen a 💾 Letöltés / megosztás gombbal vihető át.";
+                    hint.textContent = "⚠️ A QR az összesített adatokat viszi (csillagok, készség-statisztika, egyperces rekordok, világok). A részletes előrehaladás (napi és leckénkénti adatok) teljesen a 💾 Letöltés / megosztás gombbal vihető át.";
                 } else {
                     hint.textContent = "Tartsd a másik eszközön indított QR beolvasás elé. Ha nem olvasható: másold a kódot, és ott használd a Kód beillesztése opciót.";
                 }

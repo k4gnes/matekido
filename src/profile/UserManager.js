@@ -249,7 +249,8 @@ export function exportUsersSlim(playerIds) {
                 favorites: (p.profile.favorites ?? []).slice(0, 6),
                 skippedLessons: (p.profile.skippedLessons ?? []).slice(0, 6),
                 skippedCustomLessons: (p.profile.skippedCustomLessons ?? []).slice(0, 6),
-                doneCustomLessons: (p.profile.doneCustomLessons ?? []).slice(0, 8)
+                doneCustomLessons: (p.profile.doneCustomLessons ?? []).slice(0, 8),
+                playRecords: p.profile.playRecords
             }
         }));
 
@@ -349,6 +350,38 @@ function mergeLessonStats(local, incoming) {
 
 }
 
+function mergePlayRecords(local, incoming) {
+
+    local = { ...(local ?? {}) };
+
+    for (const [mode, records] of Object.entries(incoming ?? {})) {
+        const merged = { ...(local[mode] ?? {}) };
+        for (const [key, rec] of Object.entries(records ?? {})) {
+            const prev = merged[key];
+            const best = Math.max(prev?.best ?? 0, rec?.best ?? 0);
+            if (best <= 0) continue;
+            merged[key] = { best, lastPlayedAt: pickLater(prev?.lastPlayedAt, rec?.lastPlayedAt) };
+        }
+        local[mode] = merged;
+    }
+
+    return local;
+
+}
+
+function mergePracticeDone(local, incoming) {
+
+    local = { ...(local ?? {}) };
+
+    for (const [file, entry] of Object.entries(incoming ?? {})) {
+        const prev = local[file] ?? { lastDoneAt: null };
+        local[file] = { ...entry, lastDoneAt: pickLater(prev.lastDoneAt, entry?.lastDoneAt) };
+    }
+
+    return local;
+
+}
+
 function mergeProfiles(local, incoming) {
 
     return {
@@ -370,7 +403,9 @@ function mergeProfiles(local, incoming) {
         menuPrefs: local.menuPrefs ?? incoming.menuPrefs ?? null,
         statistics: mergeCounters(local.statistics, incoming.statistics),
         skillStats: mergeCounters(local.skillStats, incoming.skillStats),
-        doneCustomLessons: unionList(local.doneCustomLessons, incoming.doneCustomLessons)
+        doneCustomLessons: unionList(local.doneCustomLessons, incoming.doneCustomLessons),
+        playRecords: mergePlayRecords(local.playRecords, incoming.playRecords),
+        practiceDone: mergePracticeDone(local.practiceDone, incoming.practiceDone)
     };
 
 }

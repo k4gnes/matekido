@@ -11,7 +11,7 @@ import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=10";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=8";
 import { renderParentHub } from "./components/parentHub.js?v=10";
 import { renderTransferPage } from "./components/transferPage.js?v=2";
-import { getActiveId, listPlayers } from "./profile/UserManager.js?v=2";
+import { getActiveId, listPlayers } from "./profile/UserManager.js?v=3";
 import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld, setActiveGrade, resolveLessonGrade } from "./profile/Profile.js";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
 import { createCard } from "./components/ui/card.js";

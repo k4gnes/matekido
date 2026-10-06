@@ -250,7 +250,7 @@ export function exportUsersSlim(playerIds) {
                 skippedLessons: (p.profile.skippedLessons ?? []).slice(0, 6),
                 skippedCustomLessons: (p.profile.skippedCustomLessons ?? []).slice(0, 6),
                 doneCustomLessons: (p.profile.doneCustomLessons ?? []).slice(0, 8),
-                playRecords: p.profile.playRecords
+                playRecords: slimPlayRecords(p.profile.playRecords)
             }
         }));
 
@@ -261,6 +261,22 @@ export function exportUsersSlim(playerIds) {
         exportedAt: new Date().toISOString(),
         players
     });
+
+}
+
+function slimPlayRecords(playRecords) {
+
+    const slim = {};
+
+    for (const [mode, records] of Object.entries(playRecords ?? {})) {
+        const kept = {};
+        for (const [key, rec] of Object.entries(records ?? {})) {
+            if (Number.isFinite(rec?.best) && rec.best > 0) kept[key] = { best: rec.best };
+        }
+        if (Object.keys(kept).length > 0) slim[mode] = kept;
+    }
+
+    return slim;
 
 }
 

@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=47";
+import { generate } from "../generators/index.js?v=48";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -346,6 +346,16 @@ export function buildLesson(lesson) {
             } else if (step.generator === "polygon") {
                 result.push({
                     type: "polygon",
+                    ...task
+                });
+            } else if (step.generator === "solid-measure") {
+                result.push({
+                    type: "solid-measure",
+                    ...task
+                });
+            } else if (step.generator === "coordinate") {
+                result.push({
+                    type: "coordinate",
                     ...task
                 });
             } else if (step.generator === "elapsed-time") {

@@ -1,0 +1,100 @@
+{
+    "id": "angle-measure-02",
+    "title": "Szögek mérése és szerkesztése",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📐 Szögek – teljes kör",
+            "text": "A teljes kör 360°! Ha két sugár szétosztja a kört, a két szög összege 360° – a hiányzót kivonással kapod: 360° mínusz az ismert szög. Összehasonlításkor nézd, melyik szög nyitottabb! A mérésnél 5°-os lépésekben olvasol le a szögmérőről.",
+            "worldTitles": {
+                "postman": {
+                    "title": "📐 Szögek a postán",
+                    "text": "A borítékok sarkai körül forog a világ! Olvasd le 5°-os lépésekben, és számold a teljes kört!"
+                },
+                "racing": {
+                    "title": "🏁 Kanyarok fokban",
+                    "text": "Minden kanyarnak megvan a szöge! Olvasd le 5°-os lépésekben, és töltsd ki a hiányzó fokot!"
+                },
+                "football": {
+                    "title": "⚽ Rúgásszögek",
+                    "text": "A rúgás szöge dönt a gólnál! Olvasd le a szögmérőt, és számold ki a kör többi részét is!"
+                },
+                "cooking": {
+                    "title": "🍳 Szeletek szöge",
+                    "text": "A süteményszelet szöge mindig a kör része! Olvasd le a fokot, és számold a hiányzót!"
+                },
+                "animals": {
+                    "title": "🦁 Karámok sarkai",
+                    "text": "A karám sarkai szöget zárnak be! Olvasd le 5°-os lépésekben, és pótold a kör maradékát!"
+                },
+                "space": {
+                    "title": "🚀 Robotkarok",
+                    "text": "A robotkar minden helyzete szöget ad! Olvasd le a szöget, és számold ki a kérdőjelest!"
+                },
+                "tram": {
+                    "title": "🚋 Kapaszkodók szöge",
+                    "text": "A kapaszkodók és ülések szögei forognak körbe! Olvasd le a fokokat, és told ki a teljes kört!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "angle-measure",
+            "options": {
+                "count": 4,
+                "mode": "measure5"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "angle-measure",
+            "options": {
+                "count": 4,
+                "mode": "full"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "angle-measure",
+            "options": {
+                "count": 4,
+                "mode": "compare"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes vagy!",
+            "text": "Minden szöget jól mértél meg – a teljes kör titka már a tied!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden szögfok jól sikerült a postán – a levelek sarkai egyenesek!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden kanyar szögét jól mérted – a kupád biztos!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "Minden rúgásszöget jól mértél – a kapus nem foghatja be!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden szelet szögét jól mérted – a torta egyenletesen lett vágva!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden karámszöget jól mértél – az állatok büszkék rád!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden robotkarszöget jól mértél – a küldetés sikerül!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden kapaszkodószöget jól mértél – a villamos biztosan halad!"
+                }
+            }
+        }
+    ]
+}

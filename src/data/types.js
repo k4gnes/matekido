@@ -82,7 +82,9 @@ export const TYPE_EMOJI = {
     "elapsed-time": "🕐",
     "length-units": "📏",
     "compound-shape": "🧱",
-    "shape-formula": "🧮"
+    "shape-formula": "🧮",
+    "solid-measure": "📦",
+    coordinate: "📍"
 };
 
 export const TYPE_LABEL = {
@@ -169,5 +171,7 @@ export const TYPE_LABEL = {
     "elapsed-time": "Idő – óra és perc",
     "length-units": "Hosszúságok a valóságban",
     "compound-shape": "Összetett alakzatok",
-    "shape-formula": "Kerület és terület képletekkel"
+    "shape-formula": "Kerület és terület képletekkel",
+    "solid-measure": "Felszín és térfogat",
+    coordinate: "Koordináták"
 };

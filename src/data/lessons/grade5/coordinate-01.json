@@ -1,0 +1,92 @@
+{
+    "id": "coordinate-01",
+    "title": "Koordináta-rendszer",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📍 Pontok a rácsvillán",
+            "text": "A koordináta-rendszerben minden pontnak két száma van: (x; y). Előbb a vízszintes tengelyen mész balról jobbra – ez az x. Aztán a függőlegesen felfelé – ez a y. A két szám együtt pontot ad, mint egy cím az utcában! Előbb olvass le a pontokat, aztán te jelöld be őket!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📍 Címkeresés a postán",
+                    "text": "A leveleken utca és házszám van – itt x és y! Olvasd le a pontok koordinátáit, és jelöld be a hiányzókat!"
+                },
+                "racing": {
+                    "title": "🏁 Pályatérkép",
+                    "text": "A pálya térképén minden kanyarnak koordinátája van! Olvasd le őket, és jelöld be a megadott pontot!"
+                },
+                "football": {
+                    "title": "⚽ Taktikai tábla",
+                    "text": "A taktikai táblán a játékosok koordinátákon állnak! Olvasd le a pozíciókat, és jelöld be a kért helyet!"
+                },
+                "cooking": {
+                    "title": "🍳 Recept-rács",
+                    "text": "A recept rácsán minden hozzávalónak helye van! Olvasd le a koordinátákat, és te is jelölj be pontot!"
+                },
+                "animals": {
+                    "title": "🦁 Kifutó-térkép",
+                    "text": "Az állatkert térképén minden ketrecnek koordinátája van! Olvasd le a pontokat, és jelöld be a kértet!"
+                },
+                "space": {
+                    "title": "🚀 Csillagtérkép",
+                    "text": "A csillagtéren minden csillagnak koordinátája van! Olvasd le a pontokat, és jelöld be a kért fényt!"
+                },
+                "tram": {
+                    "title": "🚋 Megállók térképe",
+                    "text": "A villamos útvonalán minden megállónak koordinátája van! Olvasd le a pontokat, és jelöld be a kértet!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "coordinate",
+            "options": {
+                "count": 6,
+                "mode": "read"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "coordinate",
+            "options": {
+                "count": 6,
+                "mode": "locate"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Minden pontot megtaláltál a rácsvillán – a koordináták már nem fognak ki rajtad!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden címet megtaláltál a térképen – minden levél célba ér!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden kanyart megtaláltál a pályán – a verseny nyertese te vagy!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "Minden pozíciót megtaláltál a táblán – a csapat nyer!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden hozzávalót megtaláltál a rácsvillán – a recept tökéletes!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden állatot megtaláltál a térképen – senki nem tévedt el!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden csillagot megtaláltál – a hajózonák pontosak!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden megállót megtaláltál – a villamos rendben jár!"
+                }
+            }
+        }
+    ]
+}

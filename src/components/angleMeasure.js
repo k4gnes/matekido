@@ -108,6 +108,98 @@ function createMeasureSvg(angleDeg, showLabel) {
     return svg;
 }
 
+function createFullSvg(angleDeg) {
+    const rad = angleDeg * Math.PI / 180;
+    const cx = 120;
+    const cy = 120;
+    const r = 100;
+
+    const svg = svgEl("svg", { viewBox: "0 0 240 240", class: "am-full" });
+
+    const edge = t => [cx + r * Math.cos(t), cy - r * Math.sin(t)];
+    const arcPoint = t => [cx + 54 * Math.cos(t), cy - 54 * Math.sin(t)];
+
+    const [x0, y0] = edge(0);
+    const [x1, y1] = edge(rad);
+
+    svg.append(svgEl("path", {
+        d: `M ${cx} ${cy} L ${x0} ${y0} A ${r} ${r} 0 ${angleDeg > 180 ? 1 : 0} 0 ${x1} ${y1} Z`,
+        fill: "#fee2e2"
+    }));
+    svg.append(svgEl("path", {
+        d: `M ${cx} ${cy} L ${x1} ${y1} A ${r} ${r} 0 ${360 - angleDeg > 180 ? 1 : 0} 0 ${x0} ${y0} Z`,
+        fill: "#dbeafe"
+    }));
+
+    for (let a = 0; a < 360; a += 15) {
+        const ar = a * Math.PI / 180;
+        const big = a % 45 === 0;
+        const r1 = big ? r - 12 : r - 7;
+        svg.append(svgEl("line", {
+            x1: cx + r1 * Math.cos(ar),
+            y1: cy - r1 * Math.sin(ar),
+            x2: cx + r * Math.cos(ar),
+            y2: cy - r * Math.sin(ar),
+            stroke: "#cbd5e1",
+            "stroke-width": big ? 2 : 1
+        }));
+    }
+
+    svg.append(svgEl("circle", { cx, cy, r, fill: "none", stroke: "#94a3b8", "stroke-width": 2 }));
+
+    for (const t of [0, rad]) {
+        svg.append(svgEl("line", {
+            x1: cx, y1: cy,
+            x2: cx + r * Math.cos(t), y2: cy - r * Math.sin(t),
+            stroke: "#334155",
+            "stroke-width": 3,
+            "stroke-linecap": "round"
+        }));
+    }
+
+    const [ax0, ay0] = arcPoint(0);
+    const [ax1, ay1] = arcPoint(rad);
+
+    svg.append(svgEl("path", {
+        d: `M ${ax0} ${ay0} A 54 54 0 ${angleDeg > 180 ? 1 : 0} 0 ${ax1} ${ay1}`,
+        fill: "none",
+        stroke: "#ef4444",
+        "stroke-width": 4
+    }));
+    svg.append(svgEl("path", {
+        d: `M ${ax1} ${ay1} A 54 54 0 ${360 - angleDeg > 180 ? 1 : 0} 0 ${ax0} ${ay0}`,
+        fill: "none",
+        stroke: "#2563eb",
+        "stroke-width": 4,
+        "stroke-dasharray": "9 7"
+    }));
+
+    const label = (t, text, fill) => {
+        const lr = 76;
+        const el = svgEl("text", {
+            x: cx + lr * Math.cos(t),
+            y: cy - lr * Math.sin(t),
+            "text-anchor": "middle",
+            "dominant-baseline": "central",
+            fill,
+            "font-size": "17",
+            "font-weight": "700",
+            stroke: "#ffffff",
+            "stroke-width": "4",
+            "paint-order": "stroke"
+        });
+        el.textContent = text;
+        svg.append(el);
+    };
+
+    label(rad / 2, `${angleDeg}°`, "#ef4444");
+    label(rad / 2 + Math.PI, "?", "#2563eb");
+
+    svg.append(svgEl("circle", { cx, cy, r: 4, fill: "#334155" }));
+
+    return svg;
+}
+
 function createMiniAngle(angleDeg) {
     const rad = angleDeg * Math.PI / 180;
     const vx = 60;
@@ -217,7 +309,11 @@ export function renderAngleMeasure(step, root, next, progress, onResult, onAttem
 
         card.append(row);
     } else {
-        card.append(createMeasureSvg(step.angle, step.mode === "kind"));
+        if (step.mode === "full") {
+            card.append(createFullSvg(step.angle));
+        } else {
+            card.append(createMeasureSvg(step.angle, step.mode === "kind"));
+        }
 
         const options = document.createElement("div");
         options.className = "am-options";
@@ -235,6 +331,8 @@ export function renderAngleMeasure(step, root, next, progress, onResult, onAttem
                     markCorrect(btn);
                     if (step.mode === "kind") {
                         feedback.success(`🎉 Ügyes! A ${step.angle}°-os szög ${opt.text.toLowerCase()}.`);
+                    } else if (step.mode === "full") {
+                        feedback.success(`🎉 Ügyes! ${step.angle}° + ${step.answer}° = 360° – együtt teljes kör!`);
                     } else {
                         feedback.success(`🎉 Ügyes! A szög ${opt.text}.`);
                     }

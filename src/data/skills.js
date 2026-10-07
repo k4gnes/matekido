@@ -27,7 +27,7 @@ export const CATEGORIES = {
     geometry: {
         title: "Geometria",
         icon: "📐",
-        skills: ["shapes", "shape-compare", "solid-shapes", "transform", "perimeter", "area", "angles", "circle", "position"]
+        skills: ["shapes", "shape-compare", "solid-shapes", "transform", "perimeter", "area", "angles", "circle", "position", "coordinates"]
     },
     wordProblems: {
         title: "Szöveges feladatok",
@@ -95,6 +95,7 @@ export const SKILLS = {
     angles: { title: "Szögek", category: "geometry" },
     circle: { title: "Kör", category: "geometry" },
     position: { title: "Térbeli tájékozódás", category: "geometry" },
+    coordinates: { title: "Koordináták", category: "geometry" },
 
     // Word Problems
     "one-step": { title: "Egylépéses", category: "wordProblems" },

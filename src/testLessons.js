@@ -12,7 +12,7 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=25";
+import { buildLesson } from "./builders/LessonBuilder.js?v=26";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
@@ -440,6 +440,105 @@ function validateStep(step, ctx, range) {
             }
             break;
         }
+        case "solid-measure": {
+            if (!["cube", "cuboid"].includes(step.solid)) fail(ctx, `solid hibás: ${step.solid}`);
+            if (!["surface", "volume"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            for (const k of ["a", "b", "c"]) {
+                if (!isInt(step[k]) || step[k] < 3 || step[k] > 10) fail(ctx, `${k} hibás: ${step[k]}`);
+            }
+            if (step.solid === "cube" && !(step.a === step.b && step.b === step.c)) {
+                fail(ctx, `kockánál az élek nem egyenlők: ${step.a}/${step.b}/${step.c}`);
+            }
+            if (step.solid === "cuboid" && step.a === step.b && step.b === step.c) {
+                fail(ctx, `téglatestnél minden él egyenlő (kocka lenne): ${step.a}`);
+            }
+            const expectedSurface = 2 * (step.a * step.b + step.a * step.c + step.b * step.c);
+            const expectedVolume = step.a * step.b * step.c;
+            const expectedSolid = step.mode === "surface" ? expectedSurface : expectedVolume;
+            if (step.answer !== expectedSolid) {
+                fail(ctx, `answer (${step.answer}) != képlet (${expectedSolid})`);
+            }
+            if (!Array.isArray(step.options) || step.options.length !== 4) {
+                fail(ctx, "options nem 4 elemű");
+            } else {
+                if (!step.options.every(o => isFiniteNum(o))) fail(ctx, "options nem számok");
+                if (new Set(step.options).size !== 4) fail(ctx, "options ismétlődik");
+                if (!step.options.includes(step.answer)) fail(ctx, "options nem tartalmazza a választ");
+            }
+            break;
+        }
+        case "coordinate": {
+            if (!["read", "locate"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!isInt(step.x) || !isInt(step.y) || step.x < 0 || step.x > 9 || step.y < 0 || step.y > 9) {
+                fail(ctx, `x/y tartomány hibás: ${step.x}/${step.y}`);
+            }
+            if (step.mode === "read") {
+                const correct = `(${step.x}; ${step.y})`;
+                if (!Array.isArray(step.options) || step.options.length !== 4) {
+                    fail(ctx, "options nem 4 elemű");
+                } else {
+                    if (!step.options.every(o => typeof o === "string" && /^\(\d; \d\)$/.test(o))) {
+                        fail(ctx, "options nem koordináta-párok");
+                    }
+                    if (new Set(step.options).size !== 4) fail(ctx, "options ismétlődik");
+                    if (!isInt(step.answer) || step.answer < 0 || step.answer >= step.options.length) {
+                        fail(ctx, `answer index hibás: ${step.answer}`);
+                    } else if (step.options[step.answer] !== correct) {
+                        fail(ctx, `answer nem a helyes koordináta (${step.options[step.answer]} != ${correct})`);
+                    }
+                }
+            } else {
+                if (!Array.isArray(step.answer) || step.answer.length !== 2 ||
+                    step.answer[0] !== step.x || step.answer[1] !== step.y) {
+                    fail(ctx, `answer nem a koordináta: ${JSON.stringify(step.answer)}`);
+                }
+                if (step.options !== undefined) fail(ctx, "locate módban nem kell options");
+            }
+            break;
+        }
+        case "transform": {
+            if (!["turn", "translate"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            const checkCells = cells => {
+                if (!Array.isArray(cells) || cells.length === 0) return false;
+                const seen = new Set();
+                for (const cell of cells) {
+                    if (!Array.isArray(cell) || cell.length !== 2 || !isInt(cell[0]) || !isInt(cell[1])) return false;
+                    if (cell[0] < 0 || cell[0] > 3 || cell[1] < 0 || cell[1] > 3) return false;
+                    seen.add(`${cell[0]},${cell[1]}`);
+                }
+                return seen.size === cells.length;
+            };
+            const cellsKey = cells => JSON.stringify([...cells].sort());
+            if (!checkCells(step.base)) fail(ctx, `base hibás: ${JSON.stringify(step.base)}`);
+            if (!Array.isArray(step.options) || step.options.length < 2) {
+                fail(ctx, "options hiányos");
+            } else {
+                step.options.forEach((cells, i) => {
+                    if (!checkCells(cells)) fail(ctx, `options[${i}] hibás: ${JSON.stringify(cells)}`);
+                });
+            }
+            if (!isInt(step.answer) || step.answer < 0 || step.answer >= (step.options?.length ?? 0)) {
+                fail(ctx, `answer index hibás: ${step.answer}`);
+            }
+            if (step.mode === "translate") {
+                const s = step.shift;
+                if (!s || !isInt(s.dx) || !isInt(s.dy) || (s.dx === 0 && s.dy === 0)) {
+                    fail(ctx, `shift hibás: ${JSON.stringify(s)}`);
+                }
+                if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+                if (s && isInt(s.dx) && isInt(s.dy) && Array.isArray(step.options) &&
+                    isInt(step.answer) && step.answer < step.options.length) {
+                    const moved = step.base.map(([x, y]) => [x + s.dx, y + s.dy]);
+                    if (cellsKey(moved) !== cellsKey(step.options[step.answer])) {
+                        fail(ctx, "answer nem az eltolott minta");
+                    }
+                    for (const [x, y] of moved) {
+                        if (x < 0 || x > 3 || y < 0 || y > 3) fail(ctx, `eltolt alakzat a rácsra esik: ${x},${y}`);
+                    }
+                }
+            }
+            break;
+        }
         case "true-false": {
             if (typeof step.statement !== "string" || step.statement.length === 0) fail(ctx, "statement hiányzik");
             if (typeof step.answer !== "boolean") fail(ctx, "answer nem boolean");
@@ -527,6 +626,19 @@ function validateStep(step, ctx, range) {
             if (step.mode === "compare") {
                 if (!isInt(step.angleA) || !isInt(step.angleB) || step.angleA === step.angleB) {
                     fail(ctx, `compare szögek hibásak: ${step.angleA}/${step.angleB}`);
+                }
+            } else if (step.mode === "full") {
+                if (!isInt(step.angle) || step.angle <= 0 || step.angle >= 360) {
+                    fail(ctx, `full angle tartomány hibás: ${step.angle}`);
+                }
+                if (step.answer !== 360 - step.angle) {
+                    fail(ctx, `answer (${step.answer}) != 360 - angle (${360 - step.angle})`);
+                }
+                const correctOpt = Array.isArray(step.options)
+                    ? step.options.find(o => o && typeof o === "object" && o.correct)
+                    : null;
+                if (correctOpt && correctOpt.text !== `${step.answer}°`) {
+                    fail(ctx, `helyes opció (${correctOpt.text}) nem a válasz (${step.answer}°)`);
                 }
             } else {
                 if (!isInt(step.angle) || step.angle <= 0 || step.angle >= 180) {

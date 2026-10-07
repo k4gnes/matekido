@@ -51,7 +51,7 @@ import { renderPlaceValueThousands } from "../components/placeValueThousands.js?
 import { renderNumberName } from "../components/numberName.js?v=3";
 import { renderRounding } from "../components/rounding.js?v=6";
 import { renderRoman } from "../components/roman.js?v=2";
-import { renderTransform } from "../components/transform.js?v=4";
+import { renderTransform } from "../components/transform.js?v=5";
 import { renderMirror } from "../components/mirror.js?v=4";
 import { renderSetMatch } from "../components/setMatch.js?v=3";
 import { renderDataChart } from "../components/dataChart.js?v=4";
@@ -67,7 +67,7 @@ import { renderFractionDivide } from "../components/fractionDivide.js?v=1";
 import { renderDecimal } from "../components/decimal.js?v=5";
 import { renderPercent } from "../components/percent.js?v=1";
 import { renderDivisibility } from "../components/divisibility.js?v=2";
-import { renderAngleMeasure } from "../components/angleMeasure.js?v=2";
+import { renderAngleMeasure } from "../components/angleMeasure.js?v=3";
 import { renderMeasureUnits } from "../components/measureUnits.js?v=13";
 import { renderWrittenOperation } from "../components/writtenOperation.js?v=12";
 import { renderRemainderDivision } from "../components/remainderDivision.js?v=7";
@@ -78,6 +78,8 @@ import { renderAngles } from "../components/angles.js?v=2";
 import { renderCircle } from "../components/circle.js?v=2";
 import { renderProbability } from "../components/probability.js?v=2";
 import { renderOperationOrder } from "../components/operationOrder.js?v=2";
+import { renderSolidMeasure } from "../components/solidMeasure.js?v=1";
+import { renderCoordinate } from "../components/coordinate.js?v=1";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -159,7 +161,9 @@ const COUNTED_TYPES = new Set([
     "elapsed-time",
     "length-units",
     "compound-shape",
-    "shape-formula"
+    "shape-formula",
+    "solid-measure",
+    "coordinate"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -186,7 +190,9 @@ const SKILL_BY_TYPE = {
     "fraction-common-den": "fraction",
     "fraction-times-int": "fraction",
     "fraction-times-frac": "fraction",
-    "fraction-divide": "fraction"
+    "fraction-divide": "fraction",
+    "coordinate": "coordinates",
+    "solid-measure": "solid-shapes"
 };
 
 const RENDERERS = new Map([
@@ -272,7 +278,9 @@ const RENDERERS = new Map([
     ["circle", renderCircle],
     ["probability", renderProbability],
     ["operation-order", renderOperationOrder],
-    ["operation-order-play", renderOperationOrderPlay]
+    ["operation-order-play", renderOperationOrderPlay],
+    ["solid-measure", renderSolidMeasure],
+    ["coordinate", renderCoordinate]
 ]);
 
 

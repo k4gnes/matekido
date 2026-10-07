@@ -2,6 +2,10 @@ function pick(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function shuffle(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -84,12 +88,85 @@ function buildTurn() {
     };
 }
 
+function validShifts(cells) {
+    const xs = cells.map(c => c[0]);
+    const ys = cells.map(c => c[1]);
+    const minX = Math.min(...xs);
+    const maxX = Math.max(...xs);
+    const minY = Math.min(...ys);
+    const maxY = Math.max(...ys);
+    const shifts = [];
+    for (let dx = -minX; dx <= 3 - maxX; dx++) {
+        for (let dy = -minY; dy <= 3 - maxY; dy++) {
+            if (dx !== 0 || dy !== 0) shifts.push({ dx, dy });
+        }
+    }
+    return shifts;
+}
+
+function shiftCells(cells, shift) {
+    return cells.map(([x, y]) => [x + shift.dx, y + shift.dy]);
+}
+
+function describeShift(shift) {
+    const parts = [];
+    if (shift.dx > 0) parts.push(`${shift.dx} lépés jobbra`);
+    if (shift.dx < 0) parts.push(`${-shift.dx} lépés balra`);
+    if (shift.dy > 0) parts.push(`${shift.dy} lépés lefelé`);
+    if (shift.dy < 0) parts.push(`${-shift.dy} lépés felfelé`);
+    return parts.join(" és ");
+}
+
+function buildTranslate() {
+    for (let attempt = 0; attempt < 40; attempt++) {
+        const idx = Math.floor(Math.random() * 3);
+        const shape = pick(distinctRotations(FAMILIES[idx]));
+        const w = Math.max(...shape.map(c => c[0])) + 1;
+        const h = Math.max(...shape.map(c => c[1])) + 1;
+        const ox = random(0, 3 - w);
+        const oy = random(0, 3 - h);
+        const base = shape.map(([x, y]) => [x + ox, y + oy]);
+        const shifts = validShifts(base);
+        if (shifts.length < 3) continue;
+
+        const correct = pick(shifts);
+        const answer = shiftCells(base, correct);
+
+        const pool = shuffle(shifts.filter(s => s.dx !== correct.dx || s.dy !== correct.dy));
+        const distractors = [];
+        const seen = new Set([cellsKey(answer)]);
+        const candidates = [base, ...pool.map(s => shiftCells(base, s))];
+        for (const cells of candidates) {
+            if (distractors.length >= 2) break;
+            const key = cellsKey(cells);
+            if (seen.has(key)) continue;
+            seen.add(key);
+            distractors.push(cells);
+        }
+        if (distractors.length < 2) continue;
+
+        const options = shuffle([answer, ...distractors]);
+
+        return {
+            type: "transform",
+            mode: "translate",
+            base,
+            shift: correct,
+            question: `Melyik alakzat lesz, ha a mintát ${describeShift(correct)} toljuk?`,
+            options,
+            answer: options.findIndex(c => cellsKey(c) === cellsKey(answer))
+        };
+    }
+
+    return buildTurn();
+}
+
 export function generateTransform(options = {}) {
-    const { count = 5 } = options;
+    const { count = 5, mode = "turn" } = options;
 
     const tasks = [];
     for (let i = 0; i < count; i++) {
-        tasks.push(buildTurn());
+        tasks.push(mode === "translate" ? buildTranslate() : buildTurn());
     }
     return tasks;
 }

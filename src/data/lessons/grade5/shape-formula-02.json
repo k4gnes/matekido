@@ -1,0 +1,108 @@
+{
+    "id": "shape-formula-02",
+    "title": "Kerület és terület – négyzet és téglalap",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🧮 Kerület és terület – nagyobb oldalakkal",
+            "text": "A kerület a kerítés: végigmész a síkidom szélén! K = 2 × (a + b). A terület a befedés: hány kocka fér rá? T = a × b. Nagyobb oldalakkal is ugyanígy számolsz – csak nagyobb lesz az eredmény. Számolj fejben, akár 1000-ig is!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Csomagok a postán",
+                    "text": "A csomagok oldala hosszú – a kerület a körbefutó szalag, a terület a címke! Számold ki mindkettőt!"
+                },
+                "racing": {
+                    "title": "🏁 Kerítés és pálya",
+                    "text": "A versenypályát kerítés veszi körül: az a kerület! A pálya belső része a terület. Számolj!"
+                },
+                "football": {
+                    "title": "⚽ A pálya vonalai",
+                    "text": "A pálya körbefutó vonala a kerület, a fűvel borított rész a terület! Mennyi egy nagy téglalapnál?"
+                },
+                "cooking": {
+                    "title": "🍳 Tepsik és sütőlapok",
+                    "text": "A tepsi szélén futó csipke a kerület, a sütőfelület a terület! Számold ki mindkettőt!"
+                },
+                "animals": {
+                    "title": "🦁 Kifutókerítés",
+                    "text": "A kifutó kerítése a kerület, a fűvel borított rész a terület! Mekkora egy nagy karámnál?"
+                },
+                "space": {
+                    "title": "🚀 Napelemek",
+                    "text": "Az űrhajó napelemének szélét kerülöd be – az a kerület! A befogott fény a terület. Számolj!"
+                },
+                "tram": {
+                    "title": "🚋 Padló és szőnyeg",
+                    "text": "A villamos padlója szögletes: a szőnyeg széle a kerület, a borítás a terület! Mennyi lesz?"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "shape-formula",
+            "options": {
+                "count": 6,
+                "mode": "perimeter",
+                "shape": "mixed",
+                "aMin": 8,
+                "aMax": 30,
+                "bMin": 6,
+                "bMax": 25,
+                "squareMin": 8,
+                "squareMax": 25,
+                "maxArea": 600
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "shape-formula",
+            "options": {
+                "count": 6,
+                "mode": "area",
+                "shape": "mixed",
+                "aMin": 8,
+                "aMax": 30,
+                "bMin": 6,
+                "bMax": 25,
+                "squareMin": 8,
+                "squareMax": 25,
+                "maxArea": 600
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes vagy!",
+            "text": "A nagy oldalakkal is simán ment – a kerület és a terület már gyerekjáték!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden csomag kerületét és területét kiszámoltad – jöhetnek a levelek!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden pálya kerületét és területét megmérted – ezüstöt ér!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "Minden vonalat kiszámoltál – a mérkőzés kezdődhet!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden tepsit megmértél – a sütemény kész, csak a számolás volt nehéz!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden kifutó kerületét és területét tudod – az állatok elégedettek!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden napelem adatait kiszámoltad – az űrhajó töltve!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden padló adatait megmérted – a villamos indulhat!"
+                }
+            }
+        }
+    ]
+}

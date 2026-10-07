@@ -36,13 +36,13 @@ import { generateVolume } from "./volumeGenerator.js?v=2";
 import { generateMoneyChange } from "./moneyChangeGenerator.js?v=2";
 import { generateLengthUnits } from "./lengthUnitsGenerator.js?v=3";
 import { generateCompoundShape } from "./compoundShapeGenerator.js?v=2";
-import { generateShapeFormula } from "./shapeFormulaGenerator.js?v=1";
+import { generateShapeFormula } from "./shapeFormulaGenerator.js?v=2";
 import { generatePlaceValueHundreds } from "./placeValueHundredsGenerator.js?v=2";
 import { generatePlaceValueThousands } from "./placeValueThousandsGenerator.js?v=5";
 import { generateNumberName } from "./numberNameGenerator.js?v=6";
 import { generateRounding } from "./roundingGenerator.js?v=4";
 import { generateRoman } from "./romanGenerator.js?v=1";
-import { generateTransform } from "./transformGenerator.js?v=2";
+import { generateTransform } from "./transformGenerator.js?v=3";
 import { generateMirror } from "./mirrorGenerator.js?v=2";
 import { generateSetMatch } from "./setMatchGenerator.js?v=2";
 import { generateDataChart } from "./dataChartGenerator.js?v=3";
@@ -51,7 +51,7 @@ import { generateFraction } from "./fractionGenerator.js?v=4";
 import { generateDecimalPrep } from "./decimalPrepGenerator.js?v=3";
 import { generatePercent } from "./percentGenerator.js?v=1";
 import { generateDivisibility } from "./divisibilityGenerator.js?v=2";
-import { generateAngleMeasure } from "./angleMeasureGenerator.js?v=1";
+import { generateAngleMeasure } from "./angleMeasureGenerator.js?v=2";
 import { generateMeasureUnits } from "./measureUnitsGenerator.js?v=15";
 import { generateWrittenOperation } from "./writtenOperationGenerator.js?v=4";
 import { generateRemainderDivision } from "./remainderDivisionGenerator.js?v=3";
@@ -70,6 +70,8 @@ import { generateCircle } from "./circleGenerator.js?v=1";
 import { generateProbability } from "./probabilityGenerator.js?v=1";
 import { generateOperationOrder } from "./operationOrderGenerator.js?v=2";
 import { generatePolygon } from "./polygonGenerator.js?v=1";
+import { generateSolidMeasure } from "./solidMeasureGenerator.js?v=1";
+import { generateCoordinate } from "./coordinateGenerator.js?v=1";
 import { generateElapsedTime } from "./elapsedTimeGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -228,6 +230,10 @@ export function generate(step) {
             return generateOperationOrder(opts);
         case "polygon":
             return generatePolygon(opts);
+        case "solid-measure":
+            return generateSolidMeasure(opts);
+        case "coordinate":
+            return generateCoordinate(opts);
         case "elapsed-time":
             return generateElapsedTime(opts);
 

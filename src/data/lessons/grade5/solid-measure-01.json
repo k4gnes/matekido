@@ -1,0 +1,92 @@
+{
+    "id": "solid-measure-01",
+    "title": "Kocka és téglatest felszíne és térfogata",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📦 Felszín és térfogat",
+            "text": "A felszín a lapok területének összege – a kockáé hat egyforma négyzet: F = 6 × a × a. A téglatestén hatszoros a számítás: F = 2 × (a×b + a×c + b×c). A térfogat megmutatja, mennyi fér bele: kockánál V = a × a × a, téglatestnél V = a × b × c. Az élek 3 és 10 cm között vannak – számolj nyugodtan!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Csomagok felszíne és térfogata",
+                    "text": "Mennyi ragasztó kell a csomag körülragasztásához – és mennyi fér bele? Számold ki a felszínt és a térfogatot!"
+                },
+                "racing": {
+                    "title": "🏁 Dobozok a boxutcában",
+                    "text": "A szerelődobozok felszínét a címkék, térfogatát a benne férő alkatrészek mutatják! Számold ki mindkettőt!"
+                },
+                "football": {
+                    "title": "⚽ Labdáskosarak",
+                    "text": "A labdáskosarak felszínét a háló fedi, térfogatát a labdák töltik meg! Hány cm² és cm³?"
+                },
+                "cooking": {
+                    "title": "🍳 Tárolódobozok",
+                    "text": "A konyhai dobozok felszínét a fedél fedi, térfogatát az étel tölti meg! Számold ki mindkettőt!"
+                },
+                "animals": {
+                    "title": "🦁 Ketrecek és odúk",
+                    "text": "A ketrec rácsa a felszín, az odú belseje a térfogat! Hány cm² és hány cm³ lesz?"
+                },
+                "space": {
+                    "title": "🚀 Űrhajó-raktér",
+                    "text": "A raktér fala a felszín, a beférő csomagok a térfogat! Számold ki mindkettőt!"
+                },
+                "tram": {
+                    "title": "🚋 Bőröndök a villamoson",
+                    "text": "A bőrönd felszínét a bőr fedi, térfogatát a ruhák töltik meg! Hány cm² és cm³?"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "solid-measure",
+            "options": {
+                "count": 6,
+                "mode": "surface"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "solid-measure",
+            "options": {
+                "count": 6,
+                "mode": "volume"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Minden kockát és téglatestet megmértél – a felszín és a térfogat már nem rejtenek titkot!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden csomag felszínét és térfogatát kiszámoltad – jöhetnek a levelek!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden doboz adatait tudod – a boxutca kész a versenyre!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "Minden kosár felszínét és térfogatát tudod – a meccs kezdődhet!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden doboz férőhelyét kiszámoltad – a konyha rendben!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden ketrec és odú adatait megmérted – az állatok elégedettek!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden raktér felszínét és térfogatát tudod – indulás előtt állsz!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden bőrönd elfér – a csomagok a helyükön!"
+                }
+            }
+        }
+    ]
+}

@@ -25,7 +25,18 @@ function makeOptions(answer, min, max) {
 }
 
 export function generateShapeFormula(options = {}) {
-    const { count = 8, mode = "mixed", shape = "mixed" } = options;
+    const {
+        count = 8,
+        mode = "mixed",
+        shape = "mixed",
+        aMin = 3,
+        aMax = 12,
+        bMin = 2,
+        bMax = 10,
+        squareMin = 3,
+        squareMax = 9,
+        maxArea = 100
+    } = options;
 
     const modes = mode === "mixed" ? ["perimeter", "area"] : [mode];
 
@@ -39,16 +50,20 @@ export function generateShapeFormula(options = {}) {
         let a;
         let b;
         if (isSquare) {
-            a = random(3, 9);
+            let guard = 0;
+            do {
+                a = random(squareMin, squareMax);
+                guard++;
+            } while (a * a > maxArea && guard < 40);
             b = a;
         } else {
             let guard = 0;
             do {
-                a = random(3, 12);
-                b = random(2, 10);
-                if (a === b) b = Math.max(2, b - 1);
+                a = random(aMin, aMax);
+                b = random(bMin, bMax);
+                if (a === b) b = Math.max(bMin, b - 1);
                 guard++;
-            } while (a * b > 100 && guard < 40);
+            } while ((a * b > maxArea || a === b) && guard < 40);
         }
 
         const m = modes[i % modes.length];
@@ -63,7 +78,7 @@ export function generateShapeFormula(options = {}) {
             b,
             mode: m,
             answer,
-            options: makeOptions(answer, 6, 100)
+            options: makeOptions(answer, 6, Math.max(answer, 100))
         });
     }
 

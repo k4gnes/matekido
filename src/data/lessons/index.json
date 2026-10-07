@@ -481,6 +481,148 @@
       }
     },
     {
+      "id": "polygon-02",
+      "title": "Síkidomok tulajdonságai",
+      "grades": [
+        5
+      ],
+      "category": "geometry",
+      "skill": "shapes",
+      "difficulty": 2,
+      "type": "polygon",
+      "mission": "🔷 Síkidomok tulajdonságai",
+      "subtitle": "Oldalak, csúcsok és átlók – ötszögtől nyolcszögig, az átlóképlettel",
+      "file": "./data/lessons/grade5/polygon-02.json",
+      "worldTitles": {
+        "postman": "📮 Sokszögű bélyegek",
+        "racing": "🏁 Sokszögű pálya",
+        "football": "⚽ Szöges címerek",
+        "cooking": "🍳 Süteményszeletek",
+        "animals": "🦁 Karámok és ketrecek",
+        "space": "🚀 Űrhajó-csomagok",
+        "tram": "🚋 Ablakok és jegyek"
+      }
+    },
+    {
+      "id": "shape-formula-02",
+      "title": "Kerület és terület – négyzet és téglalap",
+      "grades": [
+        5
+      ],
+      "category": "geometry",
+      "skill": "perimeter",
+      "difficulty": 2,
+      "type": "shape-formula",
+      "range": 1000,
+      "mission": "🧮 Kerület és terület – nagyobb oldalakkal",
+      "subtitle": "K = 2 × (a + b) és T = a × b nagyobb négyzettel és téglalappal",
+      "file": "./data/lessons/grade5/shape-formula-02.json",
+      "worldTitles": {
+        "postman": "📮 Csomagok a postán",
+        "racing": "🏁 Kerítés és pálya",
+        "football": "⚽ A pálya vonalai",
+        "cooking": "🍳 Tepsik és sütőlapok",
+        "animals": "🦁 Kifutókerítés",
+        "space": "🚀 Napelemek",
+        "tram": "🚋 Padló és szőnyeg"
+      }
+    },
+    {
+      "id": "solid-measure-01",
+      "title": "Kocka és téglatest felszíne és térfogata",
+      "grades": [
+        5
+      ],
+      "category": "geometry",
+      "skill": "solid-shapes",
+      "difficulty": 3,
+      "type": "solid-measure",
+      "range": 1000,
+      "mission": "📦 Felszín és térfogat",
+      "subtitle": "Felszín: 6a² és 2(ab + ac + bc); térfogat: a³ és a × b × c",
+      "file": "./data/lessons/grade5/solid-measure-01.json",
+      "worldTitles": {
+        "postman": "📮 Csomagok felszíne és térfogata",
+        "racing": "🏁 Dobozok a boxutcában",
+        "football": "⚽ Labdáskosarak",
+        "cooking": "🍳 Tárolódobozok",
+        "animals": "🦁 Ketrecek és odúk",
+        "space": "🚀 Űrhajó-raktér",
+        "tram": "🚋 Bőröndök a villamoson"
+      }
+    },
+    {
+      "id": "angle-measure-02",
+      "title": "Szögek mérése és szerkesztése",
+      "grades": [
+        5
+      ],
+      "category": "geometry",
+      "skill": "angles",
+      "difficulty": 2,
+      "type": "angle-measure",
+      "range": 360,
+      "mission": "📐 Szögek – teljes kör",
+      "subtitle": "Fokban olvasás 5°-os lépésekkel, teljes kör (360°) és szögek összehasonlítása",
+      "file": "./data/lessons/grade5/angle-measure-02.json",
+      "worldTitles": {
+        "postman": "📐 Szögek a postán",
+        "racing": "🏁 Kanyarok fokban",
+        "football": "⚽ Rúgásszögek",
+        "cooking": "🍳 Szeletek szöge",
+        "animals": "🦁 Karámok sarkai",
+        "space": "🚀 Robotkarok",
+        "tram": "🚋 Kapaszkodók szöge"
+      }
+    },
+    {
+      "id": "coordinate-01",
+      "title": "Koordináta-rendszer",
+      "grades": [
+        5
+      ],
+      "category": "geometry",
+      "skill": "coordinates",
+      "difficulty": 2,
+      "type": "coordinate",
+      "range": 100,
+      "mission": "📍 Pontok a rácsvillán",
+      "subtitle": "Pontok leolvasása a rácsról és pont kijelölése koordinátából (x; y)",
+      "file": "./data/lessons/grade5/coordinate-01.json",
+      "worldTitles": {
+        "postman": "📍 Címkeresés a postán",
+        "racing": "🏁 Pályatérkép",
+        "football": "⚽ Taktikai tábla",
+        "cooking": "🍳 Recept-rács",
+        "animals": "🦁 Kifutó-térkép",
+        "space": "🚀 Csillagtérkép",
+        "tram": "🚋 Megállók térképe"
+      }
+    },
+    {
+      "id": "transform-02",
+      "title": "Eltolás, forgatás és tükrözés",
+      "grades": [
+        5
+      ],
+      "category": "geometry",
+      "skill": "transform",
+      "difficulty": 3,
+      "type": "transform",
+      "mission": "🔄 Eltolás, forgatás, tükrözés",
+      "subtitle": "Eltolás lépésekben, forgatás a helyén hagyott mintával, és tükörkép felismerése",
+      "file": "./data/lessons/grade5/transform-02.json",
+      "worldTitles": {
+        "postman": "📮 Csomagok mozgatása",
+        "racing": "🏁 Rajtrács-állások",
+        "football": "⚽ Taktikai mozgás",
+        "cooking": "🍳 Tálak átrendezése",
+        "animals": "🦁 Játékok mozgatása",
+        "space": "🚀 Műszerek áthelyezése",
+        "tram": "🚋 Csomagok a csomagtartón"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

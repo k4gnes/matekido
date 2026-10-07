@@ -18,6 +18,17 @@ const SVG_NS = "http://www.w3.org/2000/svg";
 const CELL = 30;
 const ORIGIN = 15;
 
+const DEFAULT_PROMPT = "Melyik alakzat ugyanaz, mint a minta, csak elforgatva?";
+
+function describeShift(shift) {
+    const parts = [];
+    if (shift.dx > 0) parts.push(`${shift.dx} lépés jobbra`);
+    if (shift.dx < 0) parts.push(`${-shift.dx} lépés balra`);
+    if (shift.dy > 0) parts.push(`${shift.dy} lépés lefelé`);
+    if (shift.dy < 0) parts.push(`${-shift.dy} lépés felfelé`);
+    return parts.join(" és ");
+}
+
 function svgEl(name, attrs = {}) {
     const el = document.createElementNS(SVG_NS, name);
     for (const [key, value] of Object.entries(attrs)) {
@@ -87,7 +98,7 @@ export function renderTransform(step, root, next, progress, onResult, onAttempt)
 
     const prompt = document.createElement("p");
     prompt.className = "tr-prompt";
-    prompt.textContent = "Melyik alakzat ugyanaz, mint a minta, csak elforgatva?";
+    prompt.textContent = step.question ?? DEFAULT_PROMPT;
     card.append(prompt);
 
     const optionsContainer = document.createElement("div");
@@ -118,6 +129,9 @@ export function renderTransform(step, root, next, progress, onResult, onAttempt)
     });
 
     function successText() {
+        if (step.mode === "translate") {
+            return `😊 Ügyes! Pontosan: ${describeShift(step.shift)} – ez a helyes alakzat!`;
+        }
         return "😊 Ügyes! Ez valóban ugyanaz az alakzat, csak elforgatva!";
     }
 

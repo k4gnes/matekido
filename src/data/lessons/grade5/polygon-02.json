@@ -1,0 +1,102 @@
+{
+    "id": "polygon-02",
+    "title": "Síkidomok tulajdonságai",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🔷 Síkidomok tulajdonságai",
+            "text": "Minden sokszögnek ugyanannyi oldala és csúcsa van! Az átló olyan szakasz, amelyik két nem szomszédos csúcsot köt össze – számát a képlettel kapod: átló = n × (n − 3) ÷ 2, ahol n az oldalak száma. Próbáld ki ötszöggel, hatszöggel, hétszöggel!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Sokszögű bélyegek",
+                    "text": "A postán minden bélyeg szabályos sokszög! Nézd meg, hány oldala és csúcsa van – és hány átló rajzolható belőle!"
+                },
+                "racing": {
+                    "title": "🏁 Sokszögű pálya",
+                    "text": "A versenypálya kanyarjai sokszöget rajzolnak! Számba veszed az oldalakat, a csúcsokat és az átlókat?"
+                },
+                "football": {
+                    "title": "⚽ Szöges címerek",
+                    "text": "A futballpálya négyszög, de a címerekben ötszög és hatszög is van! Hány oldala és átlója van ezeknek?"
+                },
+                "cooking": {
+                    "title": "🍳 Süteményszeletek",
+                    "text": "A süteményt szeletekre vágják, mint egy sokszöget! Hány oldala, csúcsa és átlója lesz a szeleteknek?"
+                },
+                "animals": {
+                    "title": "🦁 Karámok és ketrecek",
+                    "text": "Az állatkert karámjai sokszögűek! Vedd számba az oldalakat, a csúcsokat és az átlókat!"
+                },
+                "space": {
+                    "title": "🚀 Űrhajó-csomagok",
+                    "text": "Az űrhajón minden csomag szabályos sokszög alakú! Hány oldal és hány átló van rajtuk?"
+                },
+                "tram": {
+                    "title": "🚋 Ablakok és jegyek",
+                    "text": "A villamos ablakai négyszögek, a jegyek is! Hány oldal, hány csúcs és hány átló tartozik hozzájuk?"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "polygon",
+            "options": {
+                "count": 4,
+                "mode": "mixed"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "polygon",
+            "options": {
+                "count": 4,
+                "mode": "vertices",
+                "kinds": ["pentagon", "hexagon", "heptagon", "octagon"]
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "polygon",
+            "options": {
+                "count": 4,
+                "mode": "diagonals",
+                "kinds": ["pentagon", "hexagon", "heptagon", "octagon"]
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Minden síkidomot számba vettél – az oldalak, a csúcsok és az átlók többé nem rejtenek titkot!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden bélyeg sokszögét megmérted – a levelek útra készek!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden pályaelemnek megtaláltad a tulajdonságait – ezüstöt ér!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "Minden címer számait kiszámoltad – a csapat rád büszke!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden süteménysszeletnek megvan a számolása – tökéletes az adag!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden karámot számba vettél – az állatok boldogan ugrálnak!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden csomag adatait kiolvastad – a raktér kész az indulásra!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden ablak és jegy a helyén – a villamos indulhat!"
+                }
+            }
+        }
+    ]
+}

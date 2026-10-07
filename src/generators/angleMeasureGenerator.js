@@ -85,6 +85,19 @@ function buildKindTask() {
     };
 }
 
+function buildFullTask() {
+    const angle = random(2, 70) * 5;
+    const answer = 360 - angle;
+    return {
+        type: "angle-measure",
+        mode: "full",
+        angle,
+        answer,
+        question: "A két szög együtt egy teljes kört ad! Mekkora a kérdőjeles szög?",
+        options: degOptions(answer, 5, 5, 355)
+    };
+}
+
 export function generateAngleMeasure(options = {}) {
     const { count = 4, mode = "mixed" } = options;
 
@@ -98,6 +111,8 @@ export function generateAngleMeasure(options = {}) {
             tasks.push(buildCompareTask());
         } else if (mode === "kind") {
             tasks.push(buildKindTask());
+        } else if (mode === "full") {
+            tasks.push(buildFullTask());
         } else {
             tasks.push(pick([() => buildMeasureTask(10), () => buildMeasureTask(5), buildCompareTask, buildKindTask])());
         }

@@ -1,0 +1,99 @@
+{
+    "id": "transform-02",
+    "title": "Eltolás, forgatás és tükrözés",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🔄 Eltolás, forgatás, tükrözés",
+            "text": "Háromféleképpen mozgathatsz alakzatot: eltolod – a helye változik, de nem fordul meg; forgatod – egy pont körül forog; tükrözöd – tükörkép lesz belőle. Az eltolásnál lépésekben számolj: hány mező jobbra vagy balra, hány mező le vagy fel! A forgatásnál és a tükrözésnél az irány a lényeg.",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Csomagok mozgatása",
+                    "text": "A csomagokat a polcon eltolják, forgatják, tükrözik! Számold a lépéseket, és találd meg a helyes alakzatot!"
+                },
+                "racing": {
+                    "title": "🏁 Rajtrács-állások",
+                    "text": "Az autókat a rajtrácson mozgatják: eltolják, elforgatják! Találd ki, melyik illik a mintához!"
+                },
+                "football": {
+                    "title": "⚽ Taktikai mozgás",
+                    "text": "A játékosok lépnek, fordulnak, tükröződnek a pályán! Számold a lépéseket, és válaszd a helyes alakzatot!"
+                },
+                "cooking": {
+                    "title": "🍳 Tálak átrendezése",
+                    "text": "A tálakat a pulton eltolják, forgatják! Számold, hány lépés a helyes – és válaszd ki a párt!"
+                },
+                "animals": {
+                    "title": "🦁 Játékok mozgatása",
+                    "text": "Az állatok a játékaikat tologatják és forgatják! Számold a lépéseket, és találd meg a megfelelőt!"
+                },
+                "space": {
+                    "title": "🚀 Műszerek áthelyezése",
+                    "text": "Az űrhajón mindent eltolnak, elforgatnak, hogy beférjen! Számold a lépéseket, és válaszd a párt!"
+                },
+                "tram": {
+                    "title": "🚋 Csomagok a csomagtartón",
+                    "text": "A csomagokat eltolják, forgatják, hogy elférjenek! Számold a lépéseket, és találd a helyeset!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "transform",
+            "options": {
+                "count": 4,
+                "mode": "translate"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "transform",
+            "options": {
+                "count": 4,
+                "mode": "turn"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "mirror",
+            "options": {
+                "count": 4
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes vagy!",
+            "text": "Eltoltad, forgattad és tükrözted az alakzatokat – a transzformációk a kezedben vannak!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden csomagot a helyére tettél – a posta tökéletesen működik!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden autót jól helyeztél el – a verseny indulhat!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "Minden taktikai lépésed pontos volt – a csapat nyer!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden tálat a helyére tettél – a konyha tökéletesen rendezett!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden játékot jól helyeztél el – az állatok boldogok!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Minden műszert a helyére tettél – a hajó készen áll az indulásra!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden csomag elfért – a villamos indulhat!"
+                }
+            }
+        }
+    ]
+}

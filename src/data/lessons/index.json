@@ -361,6 +361,54 @@
       }
     },
     {
+      "id": "percent-basics-01",
+      "title": "Százalék fogalma: 10%, 20%, 25%, 50%",
+      "grades": [
+        5
+      ],
+      "category": "fractions",
+      "skill": "percent",
+      "difficulty": 2,
+      "type": "percent",
+      "range": 100,
+      "mission": "💯 Száz rész, egy jel",
+      "subtitle": "Századrész felismerése: rács, tört és hétköznapi szöveg",
+      "file": "./data/lessons/grade5/percent-basics-01.json",
+      "worldTitles": {
+        "postman": "📮 Száz levél százada",
+        "racing": "🏁 Száz kör tizede",
+        "football": "⚽ A csapat százaléka",
+        "cooking": "🍳 A tészta fele",
+        "animals": "🦁 Száz ketrec negyede",
+        "space": "🚀 Üzemanyag százalékban",
+        "tram": "🚋 A megállók tizede"
+      }
+    },
+    {
+      "id": "percent-of-01",
+      "title": "Mennyi az X százaléka?",
+      "grades": [
+        5
+      ],
+      "category": "fractions",
+      "skill": "percent",
+      "difficulty": 3,
+      "type": "percent",
+      "range": 1000,
+      "mission": "➗ Tized, negyed, fel",
+      "subtitle": "Százalék számolása és megfordítása: rész ÷ egész × 100",
+      "file": "./data/lessons/grade5/percent-of-01.json",
+      "worldTitles": {
+        "postman": "📮 A küldemény százaléka",
+        "racing": "🏁 Köridő ötöde",
+        "football": "⚽ Gólok fele",
+        "cooking": "🍳 A liszt fele",
+        "animals": "🦁 Napi adag ötöde",
+        "space": "🚀 Készlet százaléka",
+        "tram": "🚋 Pályaszakasz tizede"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

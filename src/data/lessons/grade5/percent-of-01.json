@@ -1,0 +1,77 @@
+{
+    "id": "percent-of-01",
+    "title": "Mennyi az X százaléka?",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🧮 Százalék = tized, negyed, fel",
+            "text": "Százaléket számolni a legegyszerűbben úgy, ha először a jól ismert részekre bontod: 10% = a szám tizede (osztás tízzel), 20% = ötöde (osztás öttel), 25% = negyede (osztás néggyel), 50% = fele (osztás kettővel). Így a 200 ötödét 200 ÷ 5 = 40 kapod, tehát 200-nak a 25%-a 50. Ha furcsa százalék jön, akkor általában: szorozd meg a számot a százalékkal, és oszd el 100-zal – a 300 × 30 ÷ 100 = 90 ugyanazt adja. Megfordítva pedig: a részt oszd el az egésszel, és szorozd százzal – ebből kiderül, hány százaléka az egyik a másiknak!",
+            "illustration": "<div style='margin:1rem 0; text-align:center; line-height:2.2; font-size:1.05rem;'>10% = ÷10 &nbsp;•&nbsp; 20% = ÷5<br>25% = ÷4 &nbsp;•&nbsp; 50% = ÷2<br><span style='opacity:0.75;'>vagy: szám × százalék ÷ 100</span></div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 A küldemény százaléka",
+                    "text": "A 200 csomag negyede ömlesztett: 200 ÷ 4 = 50 csomag, az 25%. Ha csak a tizedét adják fel, az 200 ÷ 10 = 20 – és már meg is van a százalék!"
+                },
+                "racing": {
+                    "title": "🏁 Köridő ötöde",
+                    "text": "Az 500 méteres kör tizede 50 méter – a 10% mindig osztás tízzel. Ha a negyedén gyorsítasz, az 25%, és máris látod, mennyit nyertél!"
+                },
+                "football": {
+                    "title": "⚽ Gólok fele",
+                    "text": "Ha 200 gólt lőttél szezonban, a fele 100, a negyede 50. A 20% – az ötöde – 40 gól: 200 ÷ 5 = 40!"
+                },
+                "cooking": {
+                    "title": "🍳 A liszt fele",
+                    "text": "Ha 400 g lisztből a 25%-át, vagyis a negyedét használod, az 400 ÷ 4 = 100 g. A fele 200 g – mindig a legkényelmesebb részel osztasz!"
+                },
+                "animals": {
+                    "title": "🦁 Napi adag ötöde",
+                    "text": "Ha egy nap 1000 g takarmány fogy, annak a 10%-a 100 g: 1000 ÷ 10. A 20% az ötöde, tehát 1000 ÷ 5 = 200 g!"
+                },
+                "space": {
+                    "title": "🚀 Készlet százaléka",
+                    "text": "A 600 egységes készlet 50%-a 300, vagyis fele. A 25%-a negyede: 600 ÷ 4 = 150. Így tervezed meg az utat!"
+                },
+                "tram": {
+                    "title": "🚋 Pályaszakasz tizede",
+                    "text": "Ha a 900 méteres pályaszakaszból a 10%-a kész, az 900 ÷ 10 = 90 méter. A 20% az ötöde, tehát 900 ÷ 5 = 180 méter!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "percent",
+            "options": {
+                "count": 4,
+                "mode": "of",
+                "percents": [10, 20, 25, 50],
+                "max": 1000
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "percent",
+            "options": {
+                "count": 4,
+                "mode": "of",
+                "percents": [5, 15, 30, 40, 75],
+                "max": 1000
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "percent",
+            "options": {
+                "count": 4,
+                "mode": "find",
+                "percents": [10, 20, 25, 50],
+                "max": 500
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Már százalékot is számolsz: 10% tized, 25% negyed, 50% fele – és megfordítva azt is tudod, hogy a rész hány százaléka az egésznek!"
+        }
+    ]
+}

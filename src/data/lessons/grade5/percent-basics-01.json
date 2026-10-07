@@ -1,0 +1,74 @@
+{
+    "id": "percent-basics-01",
+    "title": "Százalék fogalma: 10%, 20%, 25%, 50%",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "💯 Száz rész, egy jel",
+            "text": "A százalék azt mutatja, hány része valaminek a százból: az egészet mindig 100 egyforma részre osztjuk, és megszámoljuk, mennyi van belőle. A % jel a latin „per cento” szóból jön, azaz „százonként”. Ha a rács 100 kockájából 10 van kiszínezve, az 10%, ha 25, az 25%, ha 50, az fele az egésznek. A gyakori százalékok törtekkel is mennek: 10% = 1/10, 20% = 1/5, 25% = 1/4, 50% = 1/2. Ezt a négyet érdemes fejben tartani, mert az egész hétköznapi életben ezekkel találkozol a legtöbbször!",
+            "illustration": "<div style='margin:1rem 0; text-align:center; line-height:2.2; font-size:1.05rem;'>10% = 1/10 &nbsp;•&nbsp; 20% = 1/5<br>25% = 1/4 &nbsp;•&nbsp; 50% = 1/2<br><span style='opacity:0.75;'>100 egyforma rész – ennyi az egész</span></div>",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Száz levél százada",
+                    "text": "A postán 100 levél várakozik. Ha 10-nek már megvan a címe, az 10%, ha 25-nek, az 25% – mindig a százhoz képest nézd, mennyi kész!"
+                },
+                "racing": {
+                    "title": "🏁 Száz kör tizede",
+                    "text": "Az edzésen 100 kör van hátra. A tizede az 10%, a fele az 50% – így azonnal látod, mennyit mentél a célból!"
+                },
+                "football": {
+                    "title": "⚽ A csapat százaléka",
+                    "text": "A 100 fős szurkolótábor fele sapkás: 50%. Ha csak a tizede zászlós, az 10%. A százalék mindig a teljes csapat aránya!"
+                },
+                "cooking": {
+                    "title": "🍳 A tészta fele",
+                    "text": "100 dkg tésztából 50 dkg már a levesben – az fele, azaz 50%. Ha 25 dkg a serpenyőben, az negyede, 25%!"
+                },
+                "animals": {
+                    "title": "🦁 Száz ketrec negyede",
+                    "text": "Az állatkert 100 kifutójából 25 már megújult: az negyede, 25%. Ha még 10 is kész, az további 10%!"
+                },
+                "space": {
+                    "title": "🚀 Üzemanyag százalékban",
+                    "text": "A tartály 100 egysége közül 50 még megvan: 50%, vagyis fele. Ha 25 marad, az 25% – a fedélzeti számítógép is így mutatja!"
+                },
+                "tram": {
+                    "title": "🚋 A megállók tizede",
+                    "text": "A vonalon 100 megálló van, ebből 10 már kiépült: 10%. Ha 25 kész, az negyed, 25% – így követed a munkálatokat!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "percent",
+            "options": {
+                "count": 4,
+                "mode": "grid",
+                "percents": [10, 20, 25, 50]
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "percent",
+            "options": {
+                "count": 4,
+                "mode": "frac",
+                "percents": [10, 20, 25, 50]
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "percent",
+            "options": {
+                "count": 4,
+                "mode": "word",
+                "percents": [10, 20, 25, 50]
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Most már tudod, hogy a százalék a száz rész egyike: 10% = 1/10, 20% = 1/5, 25% = 1/4, 50% = 1/2. Ezekkel a négy számmal már minden arányt felismersz!"
+        }
+    ]
+}

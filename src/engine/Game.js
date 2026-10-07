@@ -65,6 +65,7 @@ import { renderFractionTimesInt } from "../components/fractionTimesInt.js?v=1";
 import { renderFractionTimesFrac } from "../components/fractionTimesFrac.js?v=1";
 import { renderFractionDivide } from "../components/fractionDivide.js?v=1";
 import { renderDecimal } from "../components/decimal.js?v=5";
+import { renderPercent } from "../components/percent.js?v=1";
 import { renderDivisibility } from "../components/divisibility.js?v=2";
 import { renderAngleMeasure } from "../components/angleMeasure.js?v=2";
 import { renderMeasureUnits } from "../components/measureUnits.js?v=13";
@@ -145,6 +146,7 @@ const COUNTED_TYPES = new Set([
 "fraction-times-frac",
 "fraction-divide",
 "decimal",
+"percent",
 "divisibility",
     "angle-measure",
     "perimeter",
@@ -257,6 +259,7 @@ const RENDERERS = new Map([
     ["fraction-times-frac", renderFractionTimesFrac],
     ["fraction-divide", renderFractionDivide],
     ["decimal", renderDecimal],
+    ["percent", renderPercent],
     ["divisibility", renderDivisibility],
     ["angle-measure", renderAngleMeasure],
     ["measure-units", renderMeasureUnits],

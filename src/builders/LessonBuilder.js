@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=45";
+import { generate } from "../generators/index.js?v=46";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -587,6 +587,11 @@ export function buildLesson(lesson) {
             } else if (step.generator === "decimal-prep") {
                 result.push({
                     type: "decimal",
+                    ...task
+                });
+            } else if (step.generator === "percent") {
+                result.push({
+                    type: "percent",
                     ...task
                 });
             } else if (step.generator === "divisibility") {

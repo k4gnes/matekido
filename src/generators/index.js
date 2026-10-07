@@ -49,6 +49,7 @@ import { generateDataChart } from "./dataChartGenerator.js?v=3";
 import { generateCalendar } from "./calendarGenerator.js?v=4";
 import { generateFraction } from "./fractionGenerator.js?v=4";
 import { generateDecimalPrep } from "./decimalPrepGenerator.js?v=3";
+import { generatePercent } from "./percentGenerator.js?v=1";
 import { generateDivisibility } from "./divisibilityGenerator.js?v=2";
 import { generateAngleMeasure } from "./angleMeasureGenerator.js?v=1";
 import { generateMeasureUnits } from "./measureUnitsGenerator.js?v=15";
@@ -185,6 +186,8 @@ export function generate(step) {
             return generateFraction(opts);
         case "decimal-prep":
             return generateDecimalPrep(opts);
+        case "percent":
+            return generatePercent(opts);
         case "divisibility":
             return generateDivisibility(opts);
         case "angle-measure":

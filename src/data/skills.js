@@ -7,7 +7,7 @@ export const CATEGORIES = {
     fractions: {
         title: "Törtek",
         icon: "🍕",
-        skills: ["fraction"]
+        skills: ["fraction", "percent"]
     },
     operations: {
         title: "Összeadás-Kivonás",
@@ -53,6 +53,7 @@ export const SKILLS = {
     sets: { title: "Halmazok és válogatás", category: "numbers" },
     "data-charts": { title: "Adatok és diagramok", category: "numbers" },
     fraction: { title: "Törtek", category: "fractions" },
+    percent: { title: "Százalék", category: "fractions" },
     probability: { title: "Valószínűség", category: "numbers" },
     divisibility: { title: "Osztó és többszörös", category: "numbers" },
 

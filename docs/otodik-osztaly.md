@@ -1,6 +1,6 @@
 # Matekidő – 5. osztályos tanmenet
 
-> **Státusz: részben megvalósult.** A regiszterben 189 lecke van, ebből 18 az 5. osztályos (15 számozott feladat + 3 egyperces: a teljes Számfogalom, Törtek és Tizedes törtek blokk). Az alábbiak irányadó tervek – a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
+> **Státusz: részben megvalósult.** A regiszterben 191 lecke van, ebből 20 az 5. osztályos (17 számozott feladat + 3 egyperces: a teljes Számfogalom, Törtek, Tizedes törtek és Százalékszámítás blokk). Az alábbiak irányadó tervek – a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
 
 **Tervezett 32 lecke**, 9 témakörben (a regiszterben ma 2 kategória: Számok és Törtek). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
@@ -44,8 +44,8 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
-| Százalék fogalma | Százalék fogalma: 10%, 20%, 25%, 50% | Századrész felismerése | 100 | 2 |
-| Százalékszámítás | Mennyi az X százaléka? | Alap százalékszámítás | 1000 | 3 |
+| Százalék fogalma | Százalék fogalma: 10%, 20%, 25%, 50% | Századrész felismerése | 100 | 2 ✔ |
+| Százalékszámítás | Mennyi az X százaléka? | Alap százalékszámítás | 1000 | 3 ✔ |
 
 ## Műveletek nagy számokkal (3 lecke)
 
@@ -102,13 +102,14 @@ A fenti 32 lecke az 5. osztályos tanmenet terve. Tovább tervezett leckék:
 
 ## Státusz
 
-**Megvalósult leckék (15/32):**
+**Megvalósult leckék (17/32):**
 
 - Számfogalom 1 000 000-ig (6/6): helyiérték (`place-value-millions-01`), számnevek (`number-name-millions-01`), számszomszédok és kerekítés (`neighbor-round-millions-01`), összehasonlítás (`comparison-millions-01`), oszthatósági szabályok 2, 3, 4, 5, 6, 9, 10-zel (`divisibility-rules-01`), kerekítés és becslés (`rounding-millions-01`) ✔
 - Törtek (5/5 – blokk kész): bővítés és egyszerűsítés – azonos értékű töredékek leírása (`fraction-equal-01`) ✔; különböző nevezőjű törtek összeadása és kivonása (`fraction-common-den-01`, feladat-segítséggel) ✔; törtek szorzása egész számmal (`fraction-times-int-01`, egész adagos és tört eredményű feladatokkal, feladat-segítséggel) ✔; törtek szorzása törttel (`fraction-times-frac-01`, területmodellel, egyszerűsítendő és egyszerűsítés nélküli feladatokkal, feladat-segítséggel) ✔; törtek osztása (`fraction-divide-01`, egésszel és törttel, megfordított szorzás, feladat-segítséggel) ✔
 - Tizedes törtek (4/4 – blokk kész): írás, olvasás és összehasonlítás egész és tizedes résszel (`decimal-basics-01`: szöveges olvasat → tizedes szám, tizedes szám → szöveges olvasat, és összehasonlítás nullával kiegészítéssel, `3,5 = 3,50`, `3,9 > 3,85`) ✔; összeadás és kivonás vesszők igazításával (`decimal-addsub-01`: tizedes és század keverve, egész rész pótlásával) ✔; szorzás 10-zel, 100-zal, 1000-rel, a vessző jobbra vándorlásával (`decimal-times-01`, nulla-pótlással) ✔; osztás 10-zel, 100-zal és egésszel, a vessző balra mozdulásával (`decimal-div-01`, nulla elé írásával, tizedes osztása egésszel) ✔
+- Százalékszámítás (2/2 – blokk kész): százalék fogalma (`percent-basics-01`: 100 kockás rács kiszínezése, százalék ↔ egyszerű tört, és hétköznapi szövegben a fele/negyede/ötöde/tizede felismerése, feladat-segítséggel) ✔; százalék számolása és megfordítása (`percent-of-01`: 10/20/25/50% gyors részekkel, majd 5/15/30/40/75%-kal 1000-ig, végül „hány százaléka” – rész ÷ egész × 100, feladat-segítséggel) ✔
 
-A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg; a még hiányzó 17 lecke a következő blokkokban várakozik: Százalékszámítás (2), Műveletek nagy számokkal (3), Geometria (6), Gyakorlati tudások (3), Adatok (1), Szöveges feladatok (2).
+A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg; a még hiányzó 15 lecke a következő blokkokban várakozik: Műveletek nagy számokkal (3), Geometria (6), Gyakorlati tudások (3), Adatok (1), Szöveges feladatok (2).
 
 
 ## 🎲 Egypercesek

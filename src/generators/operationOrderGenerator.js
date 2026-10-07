@@ -49,6 +49,39 @@ function params(form) {
     return { a, b, c };
 }
 
+function paramsBounded(form, bounds) {
+    const { aMin, aMax, bMin, bMax } = bounds;
+
+    if (form === "mult-sub") {
+        const fb = random(bMin, bMax);
+        const fc = random(bMin, bMax);
+        const lo = Math.max(aMin, fb * fc + 1);
+        if (lo > aMax) return null;
+        return { a: random(lo, aMax), b: fb, c: fc };
+    }
+
+    if (form === "div-add") {
+        const c = random(bMin, bMax);
+        const lo = Math.ceil(aMin / c) * c;
+        const hi = Math.floor(aMax / c) * c;
+        if (lo > hi) return null;
+        return { a: random(lo, hi), b: c * random(1, 4), c };
+    }
+
+    if (form === "paren-add") {
+        return { a: random(aMin, aMax), b: random(aMin, aMax), c: random(bMin, bMax) };
+    }
+
+    if (form === "paren-sub") {
+        const a = random(aMin, aMax);
+        const hi = Math.min(bMax, a - 1);
+        if (hi < bMin) return null;
+        return { a, b: random(bMin, hi), c: random(bMin, bMax) };
+    }
+
+    return { a: random(aMin, aMax), b: random(bMin, bMax), c: random(bMin, bMax) };
+}
+
 function expressionText(form, a, b, c) {
     switch (form) {
         case "mult-add": return `${a} + ${b} × ${c}`;
@@ -85,11 +118,13 @@ function computeWrong(form, a, b, c) {
     }
 }
 
-function buildOptions(answer, wrong) {
+function buildOptions(answer, wrong, near = false) {
     const values = new Set([answer, wrong]);
+    const lo = near ? Math.max(1, answer - 12) : 1;
+    const hi = near ? answer + 12 : 90;
     let guard = 0;
     while (values.size < 4 && guard < 30) {
-        values.add(random(1, 90));
+        values.add(random(lo, hi));
         guard++;
     }
     return shuffle([...values].slice(0, 4));
@@ -114,36 +149,80 @@ function explanation(form, a, b, c, answer) {
     return `Először az osztás: ${b} ÷ ${c} = ${b / c}, majd hozzáadjuk: ${a} + ${b / c} = ${answer}`;
 }
 
-function generateTask() {
-    const form = pick(FORMS);
-    let p = params(form);
-    const answer = compute(form, p.a, p.b, p.c);
-    const wrong = computeWrong(form, p.a, p.b, p.c);
-    let options = buildOptions(answer, wrong);
+function generateTask(bounds) {
+    if (!bounds) {
+        const form = pick(FORMS);
+        const p = params(form);
+        const answer = compute(form, p.a, p.b, p.c);
+        const wrong = computeWrong(form, p.a, p.b, p.c);
+        let options = buildOptions(answer, wrong);
 
-    if (!options.includes(answer)) {
-        options = [answer, ...options.slice(0, 3)];
+        if (!options.includes(answer)) {
+            options = [answer, ...options.slice(0, 3)];
+        }
+        options = shuffle(options);
+
+        return {
+            type: "operation-order",
+            form,
+            a: p.a,
+            b: p.b,
+            c: p.c,
+            expression: expressionText(form, p.a, p.b, p.c),
+            answer,
+            options,
+            explanation: explanation(form, p.a, p.b, p.c, answer)
+        };
     }
-    options = shuffle(options);
 
-    return {
-        type: "operation-order",
-        form,
-        a: p.a,
-        b: p.b,
-        c: p.c,
-        expression: expressionText(form, p.a, p.b, p.c),
-        answer,
-        options,
-        explanation: explanation(form, p.a, p.b, p.c, answer)
-    };
+    for (let attempt = 0; attempt < 500; attempt++) {
+        const form = pick(FORMS);
+        const p = paramsBounded(form, bounds);
+        if (!p) continue;
+
+        const answer = compute(form, p.a, p.b, p.c);
+        if (!Number.isInteger(answer) || answer < 1 || answer > bounds.answerMax) continue;
+
+        const wrong = computeWrong(form, p.a, p.b, p.c);
+        if (wrong === answer || !Number.isInteger(wrong) || wrong < 1) continue;
+
+        let options = buildOptions(answer, wrong, true);
+        if (!options.includes(answer)) {
+            options = [answer, ...options.slice(0, 3)];
+        }
+        options = shuffle(options);
+
+        return {
+            type: "operation-order",
+            form,
+            a: p.a,
+            b: p.b,
+            c: p.c,
+            expression: expressionText(form, p.a, p.b, p.c),
+            answer,
+            options,
+            explanation: explanation(form, p.a, p.b, p.c, answer)
+        };
+    }
+
+    throw new Error("Nem sikerült műveleti sorrend feladatot generálni a megadott tartományban.");
 }
 
 export function generateOperationOrder(opts = {}) {
     const { count = 6 } = opts;
+    const bounded = ["aMin", "aMax", "bMin", "bMax", "answerMax"].some(k => opts[k] !== undefined);
+    const bounds = bounded
+        ? {
+            aMin: opts.aMin ?? 2,
+            aMax: opts.aMax ?? 9,
+            bMin: opts.bMin ?? 2,
+            bMax: opts.bMax ?? 9,
+            answerMax: opts.answerMax ?? Infinity
+        }
+        : null;
     const tasks = [];
     for (let i = 0; i < count; i++) {
-        tasks.push(generateTask());
+        tasks.push(generateTask(bounds));
     }
     return tasks;
 }

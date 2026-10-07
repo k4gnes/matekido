@@ -409,6 +409,78 @@
       }
     },
     {
+      "id": "written-big-01",
+      "title": "Írásbeli műveletek nagy számokkal",
+      "grades": [
+        5
+      ],
+      "category": "operations",
+      "skill": "mixed",
+      "difficulty": 2,
+      "type": "written-operation",
+      "range": 100000,
+      "mission": "✍️ Írásbeli számolás nagy számokkal",
+      "subtitle": "Ötjegyű összeadás, kivonás, szorzás és osztás – írásban, aláírással",
+      "file": "./data/lessons/grade5/written-big-01.json",
+      "worldTitles": {
+        "postman": "📮 Írással számolunk a postán",
+        "racing": "🏁 Írással számolunk a pályán",
+        "football": "⚽ Írással számolunk a meccsen",
+        "cooking": "🍳 Írással számolunk a konyhában",
+        "animals": "🦁 Írással számolunk az állatkertben",
+        "space": "🚀 Írással számolunk az űrhajón",
+        "tram": "🚋 Írással számolunk a villamoson"
+      }
+    },
+    {
+      "id": "operation-order-02",
+      "title": "Műveleti sorrend és zárójelek",
+      "grades": [
+        5
+      ],
+      "category": "operations",
+      "skill": "operation-order",
+      "difficulty": 3,
+      "type": "operation-order",
+      "range": 1000,
+      "mission": "🧮 Mi jön előbb?",
+      "subtitle": "Műveleti sorrend és zárójel nagy számokkal: zárójel, szorzás, osztás",
+      "file": "./data/lessons/grade5/operation-order-02.json",
+      "worldTitles": {
+        "postman": "📮 Mi jön előbb a postán?",
+        "racing": "🏁 Mi jön előbb a pályán?",
+        "football": "⚽ Mi jön előbb a meccsen?",
+        "cooking": "🍳 Mi jön előbb a konyhában?",
+        "animals": "🦁 Mi jön előbb az állatkertben?",
+        "space": "🚀 Mi jön előbb az űrhajón?",
+        "tram": "🚋 Mi jön előbb a villamoson?"
+      }
+    },
+    {
+      "id": "missing-mixed-01",
+      "title": "Hiányzó tag és hiányzó tényező",
+      "grades": [
+        5
+      ],
+      "category": "operations",
+      "skill": "missing-operand",
+      "difficulty": 2,
+      "type": "missing-operand",
+      "range": 1000,
+      "mission": "❓ Melyik szám hiányzik?",
+      "subtitle": "Fordított műveletek: hiányzó tag összeadásból és kivonásból, hiányzó tényező szorzásból",
+      "file": "./data/lessons/grade5/missing-mixed-01.json",
+      "worldTitles": {
+        "postman": "📮 Melyik levél hiányzik?",
+        "racing": "🏁 Melyik kör hiányzik?",
+        "football": "⚽ Melyik játékos hiányzik?",
+        "cooking": "🍳 Melyik hozzávaló hiányzik?",
+        "animals": "🦁 Melyik állat hiányzik?",
+        "space": "🚀 Melyik csillag hiányzik?",
+        "tram": "🚋 Melyik utas hiányzik?"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

@@ -1,0 +1,129 @@
+{
+    "id": "written-big-01",
+    "title": "Írásbeli műveletek nagy számokkal",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "✍️ Írásbeli műveletek nagy számokkal",
+            "text": "Az ötjegyű számokkal éppen úgy számolunk, mint a kisebbekkel: a számokat a helyiérték szerint egymás alá írjuk, és jobbról balra haladunk. Az összeadásnál tíznél nagyobb jegyösszegnél átviszünk, a kivonásnál ugyanitt vonunk el. A szorzásnál a szorzó minden jegyével külön szorzunk, a részeredményeket egy sorral lejjebb írjuk, és összeadjuk őket. Az osztásnál az osztó hányadost ad, és maradék is maradhat – az osztási lépésekben mindig a következő jellel lépünk tovább. Több az oszlop, de a szabály ugyanaz!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Írással számolunk a postán",
+                    "text": "A postán nagy csomagszámok mennek: tízezres tételek, százezres súlyok. A nagy számokkal is ugyanúgy számolunk, mint a kicsikkel – csak több az oszlop!"
+                },
+                "racing": {
+                    "title": "🏁 Írással számolunk a pályán",
+                    "text": "A pályán a távok és a köridők nagy számok. Írd alá őket, és jobbról balra haladva pontosan kiszámolod, amit kell!"
+                },
+                "football": {
+                    "title": "⚽ Írással számolunk a meccsen",
+                    "text": "A stadionban ezrek szurkolnak, a költségvetés milliókban megy. Nagy számokkal is pontosan számolunk!"
+                },
+                "cooking": {
+                    "title": "🍳 Írással számolunk a konyhában",
+                    "text": "A nagy konyhában tízezres adagok készülnek. Az összeadás, a kivonás, a szorzás és az osztás itt is ugyanaz, csak több jegy!"
+                },
+                "animals": {
+                    "title": "🦁 Írással számolunk az állatkertben",
+                    "text": "Az állatkert éves takarmány-számai nagyon nagyok. Írd szépen egymás alá, és pontosan kijön a végeredmény!"
+                },
+                "space": {
+                    "title": "🚀 Írással számolunk az űrhajón",
+                    "text": "Az űrhajó távolságai százezrek és milliók. Az űrhajósok is aláírva, oszlopokban számolnak – te is így teszel most!"
+                },
+                "tram": {
+                    "title": "🚋 Írással számolunk a villamoson",
+                    "text": "A vonal hossza, az utasok száma, a késések – minden nagy számokban megy a villamosnál. Aláírva ez is könnyű!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "written-operation",
+            "options": {
+                "count": 3,
+                "op": "add",
+                "min": 10000,
+                "max": 99999,
+                "resultMin": 10000,
+                "resultMax": 99999,
+                "interaction": "input"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "written-operation",
+            "options": {
+                "count": 3,
+                "op": "sub",
+                "min": 10000,
+                "max": 99999,
+                "resultMin": 1000,
+                "resultMax": 99999,
+                "interaction": "input"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "written-operation",
+            "options": {
+                "count": 3,
+                "op": "mul",
+                "min": 1000,
+                "max": 9999,
+                "bMin": 11,
+                "bMax": 15,
+                "resultMin": 10000,
+                "resultMax": 99999,
+                "interaction": "input"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "written-division",
+            "options": {
+                "count": 3,
+                "min": 10000,
+                "max": 99999,
+                "divisors": [40, 42, 45, 48, 50, 54, 55, 56, 60, 63, 64, 65, 70, 72, 75, 80, 81, 84, 88, 90, 92, 95, 96, 99],
+                "firstDigitGe": false,
+                "withZeroRemainder": false
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Nagy számokkal is pontosan számoltál – minden oszlop a helyére került!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Pontosan számoltál a postai tételekkel is!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Pontosan számoltál a pályán is – ezüstöt ér!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "Pontosan számoltál a meccsen is – ez a csapatnak is pont!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Pontosan számoltál a nagy adagoknál is!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Pontosan számoltál az állatkert nagy számaival is!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Pontosan számoltál az űrhajó számaival is!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Pontosan számoltál a villamos adataival is!"
+                }
+            }
+        }
+    ]
+}

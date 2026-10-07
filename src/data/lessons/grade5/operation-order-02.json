@@ -1,0 +1,100 @@
+{
+    "id": "operation-order-02",
+    "title": "Műveleti sorrend és zárójelek",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🧮 Műveleti sorrend és zárójelek",
+            "text": "A műveleti sorrend szabálya nagy számoknál is ugyanaz: előbb a zárójelben lévő műveletet végezzük el, utána a szorzást és az osztást, és csak végül az összeadást és a kivonást. A zárójel megmutatja, hogy mit kell előbb kiszámolni: ha a zárójelben összeadunk, előbb azt összeadjuk, és csak utána szorozzuk meg a részeredményt. Vedd észre a részfeladatokat, számold ki lépésről lépésre, és csak utána válassz!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Mi jön előbb a postán?",
+                    "text": "A csomagok összesúlyát és a levelek számát is lépésről lépésre számoljuk: előbb a zárójel, aztán a szorzás és az osztás!"
+                },
+                "racing": {
+                    "title": "🏁 Mi jön előbb a pályán?",
+                    "text": "A boxutca adatainál sem mindegy, melyik műveletet végzed el előbb. A sorrend mindig ugyanaz!"
+                },
+                "football": {
+                    "title": "⚽ Mi jön előbb a meccsen?",
+                    "text": "A gólok, a percek, a pontszámok – mindenben ugyanaz a sorrend: zárójel, szorzás, osztás, aztán a többi!"
+                },
+                "cooking": {
+                    "title": "🍳 Mi jön előbb a konyhában?",
+                    "text": "A recept nagy mennyiségeinél sem mindegy a sorrend: előbb a zárójel, aztán a szorzás és az osztás!"
+                },
+                "animals": {
+                    "title": "🦁 Mi jön előbb az állatkertben?",
+                    "text": "A takarmány-adagok kiszámításánál is lépésről lépésre megyünk: zárójel előbb, aztán a szorzás és az osztás!"
+                },
+                "space": {
+                    "title": "🚀 Mi jön előbb az űrhajón?",
+                    "text": "Az űrhajó számításainál a sorrend élet-halál kérdése. Zárójel, szorzás, osztás – és csak utána a többi!"
+                },
+                "tram": {
+                    "title": "🚋 Mi jön előbb a villamoson?",
+                    "text": "A menetrend számainál is ugyanaz a sorrend: előbb a zárójel, aztán a szorzás és az osztás, végül az összeadás és a kivonás!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "operation-order",
+            "options": {
+                "count": 6,
+                "aMin": 10,
+                "aMax": 99,
+                "bMin": 2,
+                "bMax": 9,
+                "answerMax": 500
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "operation-order",
+            "options": {
+                "count": 6,
+                "aMin": 100,
+                "aMax": 999,
+                "bMin": 2,
+                "bMax": 9,
+                "answerMax": 1000
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Ügyesen követted a műveleti sorrendet nagy számokkal is!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Ügyesen követted a műveleti sorrendet a postán is!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Ügyesen követted a műveleti sorrendet a boxutcában is!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "Ügyesen követted a műveleti sorrendet a meccsen is!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Ügyesen követted a műveleti sorrendet a konyhában is!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Ügyesen követted a műveleti sorrendet az állatkertben is!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Ügyesen követted a műveleti sorrendet az űrhajón is!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Ügyesen követted a műveleti sorrendet a villamoson is!"
+                }
+            }
+        }
+    ]
+}

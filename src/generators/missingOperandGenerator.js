@@ -39,7 +39,7 @@ function assignInteraction(task, modes, interaction) {
     const mode = interaction === "mixed" ? pick(modes) : interaction;
     task.interaction = mode;
     if (mode === "choice") {
-        task.options = makeOptions(task.answer, 1, 30);
+        task.options = makeOptions(task.answer, Math.max(1, task.answer - 30), task.answer + 30);
     }
 }
 

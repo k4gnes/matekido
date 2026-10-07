@@ -1,0 +1,96 @@
+{
+    "id": "missing-mixed-01",
+    "title": "Hiányzó tag és hiányzó tényező",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "❓ Melyik szám hiányzik?",
+            "text": "Ha egy műveletből egy szám hiányzik, a fordított művelettel keressek meg! Ha a + jel mellett hiányzik egy tag (a + ? = összeg), akkor kivonással számolsz: ? = összeg − a. Ha a − jel mellett hiányzik a kivonandó (a − ? = különbség), akkor összeadással: ? = a − különbség. Ha szorzásból hiányzik egy tényező (? × b = szorzat), akkor osztással: ? = szorzat ÷ b. Nagy számoknál is ez a módszer – csak gondold végig, melyik művelet fordítottja!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Melyik levél hiányzik?",
+                    "text": "A postaládában több száz levél van, de egy címzett kimaradt. Fordított művelettel keresd meg, melyik!"
+                },
+                "racing": {
+                    "title": "🏁 Melyik kör hiányzik?",
+                    "text": "A verseny köréből kimaradt néhány. Összeadással, kivonással vagy osztással kiderül, mennyi!"
+                },
+                "football": {
+                    "title": "⚽ Melyik játékos hiányzik?",
+                    "text": "A csapatból hiányzik egy játékos – a számokból kiderül, ki az. Csak fordítsd meg a műveletet!"
+                },
+                "cooking": {
+                    "title": "🍳 Melyik hozzávaló hiányzik?",
+                    "text": "A receptből kimaradt egy hozzávaló mennyisége. A maradék számokból kiszámolod, mennyi kell!"
+                },
+                "animals": {
+                    "title": "🦁 Melyik állat hiányzik?",
+                    "text": "A kifutóból eltűnt néhány állat – a számok megmondják, mennyi. Fordított művelettel keresd meg!"
+                },
+                "space": {
+                    "title": "🚀 Melyik csillag hiányzik?",
+                    "text": "A csillagtérképről hiányzik egy jelölés. A számokból kiderül, hol kell keresni!"
+                },
+                "tram": {
+                    "title": "🚋 Melyik utas hiányzik?",
+                    "text": "A villamoson hiányzik néhány utas a számlálóból. Összeadással, kivonással és osztással kiderül, mennyi!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "missing-operand",
+            "options": {
+                "count": 8,
+                "max": 1000,
+                "type": "mixed",
+                "interaction": "mixed"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "multiplication",
+            "options": {
+                "count": 8,
+                "tables": [11, 12, 15, 20, 25, 40, 50, 100],
+                "type": "missing-factor",
+                "interaction": "input"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Ügyesen megfordítottad a műveleteket – minden hiányzó számot megtaláltál!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Megtaláltad a hiányzó leveleket is – minden címzett megvan!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Megtaláltad a hiányzó köröket is – ezüstöt ér!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "Megtaláltad a hiányzó játékosokat is – a csapat teljes!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Megtaláltad a hiányzó hozzávalókat is – tökéletes az adag!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Megtaláltad a hiányzó állatokat is – mindenki megvan!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Megtaláltad a hiányzó csillagokat is – a térkép teljes!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Megtaláltad a hiányzó utasokat is – mindenki felszállt!"
+                }
+            }
+        }
+    ]
+}

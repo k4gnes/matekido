@@ -26,7 +26,7 @@
 - [x] Világ-specifikus lecketitkok és teljesítmények
 
 ## v1.2 – további évfolyamok
-- [x] Ötödik osztály – négy blokk (17 lecke: Számfogalom 6/6, Törtek 5/5, Tizedes törtek 4/4, Százalékszámítás 2/2 – mind a négy blokk kész; terv: `docs/otodik-osztaly.md`, 32 lecke)
+- [x] Ötödik osztály – öt blokk (20 lecke: Számfogalom 6/6, Törtek 5/5, Tizedes törtek 4/4, Százalékszámítás 2/2, Műveletek nagy számokkal 3/3 – mind az öt blokk kész; terv: `docs/otodik-osztaly.md`, 32 lecke)
 - [ ] Hatodik osztály
 - [ ] Hetedik osztály
 - [ ] Nyolcadik osztály

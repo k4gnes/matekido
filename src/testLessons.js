@@ -12,7 +12,7 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=24";
+import { buildLesson } from "./builders/LessonBuilder.js?v=25";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
@@ -212,7 +212,7 @@ function validateTrueFalse(ctx, step) {
     }
 }
 
-function validateStep(step, ctx) {
+function validateStep(step, ctx, range) {
     if (!step || typeof step !== "object") {
         fail(ctx, "lépés nem objektum");
         return;
@@ -668,6 +668,7 @@ function validateStep(step, ctx) {
             break;
         }
         case "written-operation": {
+            const bound = Math.max(9999, isFiniteNum(range) ? range : 0);
             if (!["add", "sub", "mul"].includes(step.op)) {
                 fail(ctx, `op hibás: ${step.op}`);
             }
@@ -676,7 +677,7 @@ function validateStep(step, ctx) {
                 fail(ctx, "a/b nem érvényes egész");
             }
             if (step.op === "mul") {
-                if (step.a > 9999) fail(ctx, `a 9999 fölötti (${step.a})`);
+                if (step.a > bound) fail(ctx, `a ${bound} fölötti (${step.a})`);
                 if (twoDigitMul) {
                     if (step.b > 99) fail(ctx, `b 99 fölötti kétjegyű szorzó (${step.b})`);
                     if (step.onesPart !== step.a * (step.b % 10)) {
@@ -691,11 +692,11 @@ function validateStep(step, ctx) {
                 if (step.answer !== step.a * step.b) {
                     fail(ctx, `answer != a*b (${step.answer} vs ${step.a * step.b})`);
                 }
-                if (step.answer > 9999) {
-                    fail(ctx, `answer 9999 fölötti: ${step.answer}`);
+                if (step.answer > bound) {
+                    fail(ctx, `answer ${bound} fölötti: ${step.answer}`);
                 }
             } else {
-                if (step.a > 9999 || step.b > 9999) fail(ctx, "a/b 9999 fölötti");
+                if (step.a > bound || step.b > bound) fail(ctx, `a/b ${bound} fölötti`);
                 if (step.a < 100) fail(ctx, `a 100 alatti: ${step.a}`);
                 if (step.op === "add" && step.answer !== step.a + step.b) {
                     fail(ctx, `answer != a+b (${step.answer})`);
@@ -703,8 +704,8 @@ function validateStep(step, ctx) {
                 if (step.op === "sub" && step.answer !== step.a - step.b) {
                     fail(ctx, `answer != a-b (${step.answer})`);
                 }
-                if (step.answer < 100 || step.answer > 9999) {
-                    fail(ctx, `answer 100..9999 nélküli: ${step.answer}`);
+                if (step.answer < 100 || step.answer > bound) {
+                    fail(ctx, `answer 100..${bound} nélküli: ${step.answer}`);
                 }
             }
             if (!["input", "choice"].includes(step.interaction)) {
@@ -939,12 +940,12 @@ function validateStep(step, ctx) {
     checkOptions(step, ctx);
 }
 
-function validateLesson(built, ctx) {
+function validateLesson(built, ctx, range) {
     const counted = built.steps.filter(s => s.type !== "scene" && s.type !== "celebration");
     if (counted.length === 0) {
         fail(ctx, "nincs feladatlépés");
     }
-    built.steps.forEach((step, index) => validateStep(step, `${ctx} [#${index} ${step.type ?? "?"}]`));
+    built.steps.forEach((step, index) => validateStep(step, `${ctx} [#${index} ${step.type ?? "?"}]`, range));
 }
 
 const index = readJson("data/lessons/index.json");
@@ -980,7 +981,7 @@ for (const world of WORLDS) {
             const raw = readJson(lesson.file.replace("./", ""));
             try {
                 const built = buildLesson(raw);
-                validateLesson(built, `${world}/${lesson.id}`);
+                validateLesson(built, `${world}/${lesson.id}`, lesson.range);
                 JSON.stringify(built);
                 builds++;
             } catch (e) {

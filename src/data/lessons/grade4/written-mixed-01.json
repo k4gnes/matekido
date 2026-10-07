@@ -6,7 +6,7 @@
         {
             "type": "scene",
             "title": "✍️ Vegyes írásbeli műveletek",
-            "text": "Most vegyesen oldasz meg írásbeli műveleteket! Jöhet összeadás, kivonás, szorzás és osztás is – mindent pon-talanul, a számok aláírásával kell kiszámolnod. Olvass figyelmesen, melyik műveletet kell elvégezned!",
+            "text": "Most vegyesen oldasz meg írásbeli műveleteket! Jöhet összeadás, kivonás, szorzás és osztás is – mindegyiket a számok aláírásával, írásban kell kiszámolnod. Olvass figyelmesen, melyik műveletet kell elvégezned!",
             "worldTitles": {
                 "postman": {
                     "title": "📮 Vegyes írásbeli műveletek a postán",

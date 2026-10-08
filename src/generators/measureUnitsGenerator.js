@@ -302,6 +302,13 @@ function unitObjects(k, extended) {
         : UNIT_OBJECTS[k];
 }
 
+function taskSignature(task) {
+    if (task.interaction === "compare") {
+        return `compare|${task.kind}|${task.leftUnit}|${task.leftValue}|${task.operator}|${task.rightUnit}|${task.rightValue}`;
+    }
+    return `${task.interaction}|${task.kind}|${task.unit}|${task.value}|${task.target ?? task.answer}`;
+}
+
 export function generateMeasureUnits(options = {}) {
     const { count = 5, kind = "length", advanced = false, reverse = false, context = false, interaction = "choice", units = null, extended = false } = options;
     const allowed = Array.isArray(units) && units.length ? new Set(units) : null;
@@ -310,9 +317,7 @@ export function generateMeasureUnits(options = {}) {
         ? ["length", "weight", "volume"]
         : [kind];
 
-    const tasks = [];
-
-    for (let i = 0; i < count; i++) {
+    function buildOne() {
         const k = pick(kinds);
         const mode = interaction === "mixed" ? pick(["choice", "input", "tf", "compare"]) : interaction;
 
@@ -323,13 +328,11 @@ export function generateMeasureUnits(options = {}) {
                 if (filtered.length) objects = filtered;
             }
             const object = pick(objects);
-            tasks.push(buildUnitChoiceTask(k, object, rand(object.min, object.max), allowed, extended));
-            continue;
+            return buildUnitChoiceTask(k, object, rand(object.min, object.max), allowed, extended);
         }
 
         if (mode === "compare") {
-            tasks.push(buildCompareTask(k, advanced, allowed, extended));
-            continue;
+            return buildCompareTask(k, advanced, allowed, extended);
         }
 
         let pool = (advanced && CONVERSIONS[k + "Advanced"])
@@ -398,6 +401,21 @@ export function generateMeasureUnits(options = {}) {
             }
         }
 
+        return task;
+    }
+
+    const tasks = [];
+    const seen = new Set();
+
+    for (let i = 0; i < count; i++) {
+        let task;
+        let sig;
+        for (let attempt = 0; ; attempt++) {
+            task = buildOne();
+            sig = taskSignature(task);
+            if (attempt >= 24 || !seen.has(sig)) break;
+        }
+        seen.add(sig);
         tasks.push(task);
     }
 

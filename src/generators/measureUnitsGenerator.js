@@ -373,7 +373,9 @@ export function generateMeasureUnits(options = {}) {
         if (entry) {
             const { object } = entry;
             task.context = `${object.emoji} ${object.phrase} ${variant.amount} ${object.base}.`;
-            task.question = `Hány ${conv.target}?`;
+            if (mode !== "tf") {
+                task.question = `Hány ${conv.target}?`;
+            }
         }
 
         tasks.push(task);

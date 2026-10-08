@@ -1,0 +1,120 @@
+{
+  "id": "ratio-split-01",
+  "title": "📐 Megosztás arányban",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📐 Megosztás arányban",
+      "text": "Az arány elmondja, hogyan oszlanak meg a dolgok két csoportra. Néha az egészből kell az egyik részt keresni, néha az egyik részből az egészet! Olvasd el a történeteket, és számold meg a hiányzó részt!",
+      "worldTitles": {
+        "postman": {
+          "title": "📐 Megosztás arányban a postán",
+          "text": "A levelek is arányban oszlanak meg az expressz és a sima levelek közt. Olvasd el a történetet, és számold meg a hiányzó részt!"
+        },
+        "racing": {
+          "title": "📐 Megosztás arányban a garázsban",
+          "text": "A garázs alkatrészei arányban oszlanak meg a kék és a sárga alkatrészek közt. Olvasd el a történetet, és számold meg a hiányzó részt!"
+        },
+        "cooking": {
+          "title": "📐 Megosztás arányban a konyhában",
+          "text": "A palacsinták arányban oszlanak meg a lekváros és a sajtos palacsinták közt. Olvasd el a történetet, és számold meg a hiányzó részt!"
+        },
+        "football": {
+          "title": "📐 Megosztás arányban a pályán",
+          "text": "A játékosok arányban oszlanak meg a piros és a kék mezesek közt. Olvasd el a történetet, és számold meg a hiányzó részt!"
+        },
+        "animals": {
+          "title": "📐 Megosztás arányban az állatkertben",
+          "text": "A csíkos és a foltos zebrák arányban vannak egymáshoz. Olvasd el a történetet, és számold meg a hiányzó részt!"
+        },
+        "space": {
+          "title": "📐 Megosztás arányban az űrhajón",
+          "text": "A robotok arányban oszlanak meg a működő és a töltődő robotok közt. Olvasd el a történetet, és számold meg a hiányzó részt!"
+        },
+        "tram": {
+          "title": "📐 Megosztás arányban a villamoson",
+          "text": "Az utasok arányban utaznak bérlettel és jeggyel. Olvasd el a történetet, és számold meg a hiányzó részt!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 3,
+        "max": 60,
+        "kind": "ratio-split",
+        "mode": "part",
+        "interaction": "choice"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 3,
+        "max": 200,
+        "kind": "ratio-split",
+        "mode": "total",
+        "interaction": "choice"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 3,
+        "max": 1000,
+        "kind": "ratio-split",
+        "mode": "part",
+        "interaction": "input"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 3,
+        "max": 1000,
+        "kind": "ratio-split",
+        "mode": "total",
+        "interaction": "input"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megosztottad az arányokat!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen osztottad meg a postai leveleket arányban!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen osztottad meg a garázs alkatrészeit arányban!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen osztottad meg a palacsintákat arányban!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen osztottad meg a játékosokat arányban!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen osztottad meg a zebrákat arányban!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen osztottad meg a robotokat arányban!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen osztottad meg az utasokat arányban!"
+        }
+      }
+    }
+  ]
+}

@@ -719,6 +719,30 @@
       }
     },
     {
+      "id": "ratio-split-01",
+      "title": "📐 Megosztás arányban",
+      "grades": [
+        5
+      ],
+      "category": "wordProblems",
+      "skill": "ratio-split",
+      "difficulty": 3,
+      "type": "word-problem",
+      "range": 1000,
+      "mission": "📐 Megosztás arányban",
+      "subtitle": "arány és egész → a részek; arány és rész → az egész",
+      "file": "./data/lessons/grade5/ratio-split-01.json",
+      "worldTitles": {
+        "postman": "📐 Megosztás arányban a postán",
+        "racing": "📐 Megosztás arányban a garázsban",
+        "cooking": "📐 Megosztás arányban a konyhában",
+        "football": "📐 Megosztás arányban a pályán",
+        "animals": "📐 Megosztás arányban az állatkertben",
+        "space": "📐 Megosztás arányban az űrhajón",
+        "tram": "📐 Megosztás arányban a villamoson"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

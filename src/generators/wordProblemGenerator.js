@@ -67,6 +67,13 @@ const THEMES = {
             text: (total, groups) => `${total} levelet kell ${groups}-os csoportokba rendezni.`,
             question: "Hány teljes csoport lesz, és hány levél marad ki?",
             success: (quotient, remainder) => `😊 Szép munka! ${quotient} teljes csoport, és ${remainder} levél marad ki!`
+        },
+        "ratio-split": {
+            totalNoun: "levél",
+            aSubj: "Az expressz levelek",
+            bSubj: "a sima levelek",
+            aSing: "expressz levél",
+            bSing: "sima levél"
         }
     },
     racing: {
@@ -120,6 +127,13 @@ const THEMES = {
             text: (total, groups) => `${total} kereket kell felszerelni az autókra. Minden autóhoz ${groups} kerék kell.`,
             question: "Hány autóra jut elég kerék, és hány marad ki?",
             success: (quotient, remainder) => `😊 Szép munka! ${quotient} autóra jut elég kerék, és ${remainder} kerék marad ki!`
+        },
+        "ratio-split": {
+            totalNoun: "alkatrész",
+            aSubj: "A kék alkatrészek",
+            bSubj: "a sárga alkatrészek",
+            aSing: "kék alkatrész",
+            bSing: "sárga alkatrész"
         }
     },
     cooking: {
@@ -173,6 +187,13 @@ const THEMES = {
             text: (total, groups) => `${total} palacsintát kell ${groups}-es csomagokba tenni.`,
             question: "Hány teljes csomag lesz, és hány palacsinta marad ki?",
             success: (quotient, remainder) => `😊 Szép munka! ${quotient} teljes csomag, és ${remainder} palacsinta marad ki!`
+        },
+        "ratio-split": {
+            totalNoun: "palacsinta",
+            aSubj: "A lekváros palacsinták",
+            bSubj: "a sajtos palacsinták",
+            aSing: "lekváros palacsinta",
+            bSing: "sajtos palacsinta"
         }
     },
     football: {
@@ -226,6 +247,13 @@ const THEMES = {
             text: (total, groups) => `${total} labdát kell ${groups}-es csoportokba rakni.`,
             question: "Hány teljes csoport lesz, és hány labda marad a padon?",
             success: (quotient, remainder) => `😊 Szép munka! ${quotient} teljes csoport, és ${remainder} labda marad a padon!`
+        },
+        "ratio-split": {
+            totalNoun: "játékos",
+            aSubj: "A piros mezes játékosok",
+            bSubj: "a kék mezes játékosok",
+            aSing: "piros mezes játékos",
+            bSing: "kék mezes játékos"
         }
     },
     animals: {
@@ -279,6 +307,13 @@ remainder: {
             text: (total, groups) => `${total} zebrát kell ${groups}-es csoportokba hajtani.`,
             question: "Hány teljes csoport lesz, és hány zebra marad az udvaron?",
             success: (quotient, remainder) => `😊 Szép munka! ${quotient} teljes csoport, és ${remainder} zebra marad az udvaron!`
+        },
+        "ratio-split": {
+            totalNoun: "zebra",
+            aSubj: "A csíkos zebrák",
+            bSubj: "a foltos zebrák",
+            aSing: "csíkos zebra",
+            bSing: "foltos zebra"
         }
     },
     space: {
@@ -332,6 +367,13 @@ remainder: {
             text: (total, groups) => `${total} robotot kell ${groups}-es csoportba küldeni.`,
             question: "Hány teljes csoport lesz, és hány robot marad a dokkban?",
             success: (quotient, remainder) => `😊 Szép munka! ${quotient} teljes csoport, és ${remainder} robot marad a dokkban!`
+        },
+        "ratio-split": {
+            totalNoun: "robot",
+            aSubj: "A működő robotok",
+            bSubj: "a töltődő robotok",
+            aSing: "működő robot",
+            bSing: "töltődő robot"
         }
     },
     tram: {
@@ -385,13 +427,20 @@ remainder: {
             text: (total, groups) => `${total} utas vár a végállomáson. Egy villamosra ${groups} utas szállhat fel.`,
             question: "Hány tele villamos indul, és hány utas marad a végállomáson?",
             success: (quotient, remainder) => `😊 Szép munka! ${quotient} tele villamos indul, és ${remainder} utas marad!`
+        },
+        "ratio-split": {
+            totalNoun: "utas",
+            aSubj: "A bérletes utasok",
+            bSubj: "a jegyet váltó utasok",
+            aSing: "bérletes utas",
+            bSing: "jegyet váltó utas"
         }
     }
 };
 
 export function generateWordProblems(options = {}) {
 
-    const { count = 4, max = 20, kind } = options;
+    const { count = 4, max = 20, kind, mode, interaction } = options;
 
     if (max < 6) {
         throw new Error("A max értéknek legalább 6-nak kell lennie.");
@@ -420,6 +469,10 @@ export function generateWordProblems(options = {}) {
     } else if (kind === "remainder") {
         for (let i = 0; i < count; i++) {
             tasks.push(generateRemainder(max, world));
+        }
+    } else if (kind === "ratio-split") {
+        for (let i = 0; i < count; i++) {
+            tasks.push(generateRatioSplit(max, world, mode, interaction));
         }
     } else {
         for (let i = 0; i < count; i++) {
@@ -532,10 +585,18 @@ function generateCompare(max, world) {
     };
 }
 
-function makeOptions(answer, min, max, count = 4) {
+function makeOptions(answer, min, max, count = 4, candidates = []) {
 
     const options = [answer];
     const seen = new Set([answer]);
+
+    for (const v of candidates) {
+        if (options.length >= count) break;
+        if (v >= min && v <= max && !seen.has(v)) {
+            seen.add(v);
+            options.push(v);
+        }
+    }
 
     const deltas = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5];
 
@@ -643,6 +704,57 @@ function generateRemainder(max, world) {
 
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const RATIO_SPLIT_RATIOS = [[1, 1], [2, 1], [1, 2], [3, 1], [3, 2]];
+
+function generateRatioSplit(max, world, mode, interaction) {
+
+    const theme = getTheme(world, "ratio-split");
+    const normMode = mode === "total" ? "total" : "part";
+    const normInteraction = interaction === "input" ? "input" : "choice";
+
+    const [ra, rb] = RATIO_SPLIT_RATIOS[random(0, RATIO_SPLIT_RATIOS.length - 1)];
+    const units = ra + rb;
+    const kMax = Math.max(1, Math.floor(max / units));
+    const k = random(kMax >= 2 ? 2 : 1, kMax);
+    const total = units * k;
+    const which = Math.random() < 0.5 ? "a" : "b";
+    const part = (which === "a" ? ra : rb) * k;
+    const sing = which === "a" ? theme.aSing : theme.bSing;
+    const answer = normMode === "total" ? total : part;
+
+    const task = {
+        kind: "ratio-split",
+        world,
+        title: "📐 Megosztás arányban",
+        text: normMode === "total"
+            ? `${theme.aSubj} és ${theme.bSubj} aránya ${ra}:${rb}. ${part} ${sing} van.`
+            : `${total} ${theme.totalNoun} van. ${theme.aSubj} és ${theme.bSubj} aránya ${ra}:${rb}.`,
+        question: normMode === "total"
+            ? `Hány ${theme.totalNoun} van összesen?`
+            : `Hány ${sing} van?`,
+        mode: normMode,
+        interaction: normInteraction,
+        which,
+        ra,
+        rb,
+        total,
+        part,
+        nounA: theme.aSing,
+        nounB: theme.bSing,
+        nounTotal: theme.totalNoun,
+        answer,
+        successText: normMode === "total"
+            ? `😊 Szép munka! Összesen ${answer} ${theme.totalNoun} van!`
+            : `😊 Szép munka! ${answer} ${sing} van!`
+    };
+
+    if (normInteraction === "choice") {
+        task.options = makeOptions(answer, 0, max, 4, [part, total - part, total]);
+    }
+
+    return task;
 }
 
 const TWO_STEP_THEMES = {

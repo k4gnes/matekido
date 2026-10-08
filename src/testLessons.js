@@ -1113,7 +1113,7 @@ function validateStep(step, ctx, range) {
             break;
         }
     case "word-problem": {
-            if (!["join", "remove", "part-whole", "compare", "multiply", "divide", "proportion", "remainder", "two-step"].includes(step.kind)) {
+            if (!["join", "remove", "part-whole", "compare", "multiply", "divide", "proportion", "remainder", "two-step", "ratio-split"].includes(step.kind)) {
                 fail(ctx, `ismeretlen kind: ${step.kind}`);
             }
             if (typeof step.text !== "string" || step.text.length === 0) fail(ctx, "text hiányzik");
@@ -1149,6 +1149,31 @@ function validateStep(step, ctx, range) {
                 }
                 if (step.answer !== expected || step.firstAnswer !== step.intermediate) {
                     fail(ctx, `answer (${step.answer}) != számolt (${expected})`);
+                }
+            }
+            if (step.kind === "ratio-split") {
+                for (const k of ["ra", "rb", "total", "part"]) {
+                    if (!isInt(step[k])) fail(ctx, `${k} nem egész: ${step[k]}`);
+                }
+                if (!["part", "total"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+                if (!["a", "b"].includes(step.which)) fail(ctx, `which hibás: ${step.which}`);
+                if (!["choice", "input"].includes(step.interaction)) fail(ctx, `interaction hibás: ${step.interaction}`);
+                if (step.ra < 1 || step.rb < 1) fail(ctx, `aránytag hibás: ${step.ra}:${step.rb}`);
+                const units = step.ra + step.rb;
+                if (units < 2 || step.total % units !== 0) {
+                    fail(ctx, `total (${step.total}) nem osztható arányegészre (${step.ra}:${step.rb})`);
+                } else {
+                    const k = step.total / units;
+                    const expectedPart = (step.which === "a" ? step.ra : step.rb) * k;
+                    if (step.part !== expectedPart) fail(ctx, `part (${step.part}) != számolt (${expectedPart})`);
+                    const expectedAnswer = step.mode === "part" ? step.part : step.total;
+                    if (step.answer !== expectedAnswer) fail(ctx, `answer (${step.answer}) != számolt (${expectedAnswer})`);
+                }
+                if (typeof range === "number" && step.answer > range) {
+                    fail(ctx, `answer (${step.answer}) meghaladja a tartományt (${range})`);
+                }
+                if (step.interaction === "choice" && !Array.isArray(step.options)) {
+                    fail(ctx, "choice interakcióhoz hiányzik az options");
                 }
             }
             break;

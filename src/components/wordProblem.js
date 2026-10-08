@@ -700,6 +700,102 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
         }
 
         button.addEventListener("click", check);
+    } else if (step.kind === "ratio-split") {
+
+        const visual = document.createElement("div");
+        visual.className = "wp-visual";
+
+        const caption = document.createElement("div");
+        caption.className = "wp-ratio-caption";
+        caption.textContent = step.mode === "total"
+            ? `Összesen: ? ${step.nounTotal}`
+            : `Összesen: ${step.total} ${step.nounTotal}`;
+
+        const bar = document.createElement("div");
+        bar.className = "wp-ratio-bar";
+
+        const segA = document.createElement("div");
+        segA.className = "wp-ratio-seg wp-ratio-seg-a";
+        segA.style.flexGrow = String(step.ra);
+        segA.textContent = String(step.ra);
+
+        const segB = document.createElement("div");
+        segB.className = "wp-ratio-seg wp-ratio-seg-b";
+        segB.style.flexGrow = String(step.rb);
+        segB.textContent = String(step.rb);
+
+        bar.append(segA, segB);
+        visual.append(caption, bar);
+        card.append(visual);
+
+        const legend = document.createElement("div");
+        legend.className = "wp-legend";
+
+        const legendA = document.createElement("span");
+        legendA.className = "wp-ratio-legend-a";
+        legendA.textContent = step.mode === "total"
+            ? `🟦 ${step.nounA}: ${step.which === "a" ? step.part : "?"}`
+            : `🟦 ${step.nounA}`;
+
+        const legendB = document.createElement("span");
+        legendB.className = "wp-ratio-legend-b";
+        legendB.textContent = step.mode === "total"
+            ? `🟨 ${step.nounB}: ${step.which === "b" ? step.part : "?"}`
+            : `🟨 ${step.nounB}`;
+
+        legend.append(legendA, legendB);
+        card.append(legend);
+
+        const question = document.createElement("p");
+        question.className = "wp-question";
+        question.textContent = step.question;
+        card.append(question);
+
+        if (step.interaction === "input") {
+
+            const input = createNumberInput("?");
+            input.className = "wp-input";
+
+            const button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
+            card.append(input, button);
+
+            function check() {
+                if (feedback.isAnswered()) return;
+                const value = Number(input.value);
+                if (value === step.answer) {
+                    reportSuccess(step.successText);
+                } else {
+                    reportRetry();
+                    input.focus();
+                    input.select();
+                }
+            }
+
+            button.addEventListener("click", check);
+            input.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") check();
+            });
+
+            requestAnimationFrame(() => input.focus());
+
+        } else {
+            const options = document.createElement("div");
+            options.className = "wp-options";
+            step.options.forEach(value => {
+                const btn = createButton(String(value), { className: "wp-option" });
+                btn.addEventListener("click", () => {
+                    if (value === step.answer) {
+                        markCorrect(btn);
+                        reportSuccess(step.successText);
+                    } else {
+                        reportRetry();
+                    }
+                });
+                options.append(btn);
+            });
+            card.append(options);
+        }
+
     } else if (step.kind === "proportion" || step.kind === "multiply" || step.kind === "divide") {
 
         const question = document.createElement("p");

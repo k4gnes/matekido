@@ -307,6 +307,54 @@
     color: #166534;
 }
 
+.wp-ratio-caption {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #334155;
+}
+
+.wp-ratio-bar {
+    display: flex;
+    gap: 4px;
+    width: 100%;
+    max-width: 480px;
+    padding: 6px;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+.wp-ratio-seg {
+    flex-basis: 0;
+    min-width: 56px;
+    padding: .7rem .3rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.wp-ratio-seg-a {
+    background: #dbeafe;
+    border: 2px solid #3b82f6;
+    color: #1d4ed8;
+}
+
+.wp-ratio-seg-b {
+    background: #fffbeb;
+    border: 2px solid #f59e0b;
+    color: #92400e;
+}
+
+.wp-ratio-legend-a {
+    color: #1d4ed8;
+}
+
+.wp-ratio-legend-b {
+    color: #92400e;
+}
+
 .wp-r-label {
     width: 100%;
     text-align: center;

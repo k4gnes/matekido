@@ -416,6 +416,7 @@ const SW_CACHE_LIST = [
     "/data/lessons/grade5/percent-of-01.json",
     "/data/lessons/grade5/place-value-millions-01.json",
     "/data/lessons/grade5/polygon-02.json",
+    "/data/lessons/grade5/ratio-split-01.json",
     "/data/lessons/grade5/rounding-millions-01.json",
     "/data/lessons/grade5/shape-formula-02.json",
     "/data/lessons/grade5/solid-measure-01.json",

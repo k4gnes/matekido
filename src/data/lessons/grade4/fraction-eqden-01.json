@@ -53,7 +53,7 @@
             "type": "exercise",
             "generator": "fraction-equal-den",
             "options": {
-                "count": 4,
+                "count": 3,
                 "mode": "add",
                 "denoms": [4, 6, 8]
             }
@@ -63,7 +63,7 @@
             "type": "exercise",
             "generator": "fraction-equal-den",
             "options": {
-                "count": 4,
+                "count": 3,
                 "mode": "sub",
                 "denoms": [4, 6, 8]
             }

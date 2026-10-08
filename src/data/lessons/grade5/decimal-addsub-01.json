@@ -42,7 +42,7 @@
             "type": "exercise",
             "generator": "decimal-prep",
             "options": {
-                "count": 5,
+                "count": 4,
                 "mode": "addsub",
                 "op": "+"
             }
@@ -51,7 +51,7 @@
             "type": "exercise",
             "generator": "decimal-prep",
             "options": {
-                "count": 5,
+                "count": 4,
                 "mode": "addsub",
                 "op": "-"
             }
@@ -60,7 +60,7 @@
             "type": "exercise",
             "generator": "decimal-prep",
             "options": {
-                "count": 6,
+                "count": 4,
                 "mode": "addsub"
             }
         },

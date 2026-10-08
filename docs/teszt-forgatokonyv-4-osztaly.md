@@ -56,7 +56,7 @@ Ennek a dokumentumnak a célja, hogy a **4. osztályos tananyagot** (35 lecke, 7
 | 2.2.4 | Írásbeli szorzás kétjegyűvel | `written-operation` / 10000 | **Részszorzás** látható (pl. 21 × 14 → 84 és 21, összeg 294) | |
 | 2.2.5 | Írásbeli osztás egyjegyűvel (maradékos) | `written-division` / 1000 | Lépcsős osztás: a közbenső részletek (8 → 2, majd 27 → 9) helyesek; a maradék megjelenik | |
 | 2.2.6 | Írásbeli osztás kétjegyűvel (maradékos) | `written-division` / 10000 | Kétjegyű osztó (pl. 625 : 14 = 44 maradék 9); a lépcsők száma helyes | |
-| 2.2.7 | Vegyes írásbeli műveletek | `written-operation` / 10000 | Kétjegyű számok, a 12 feladatos lecke a leghosszabb a műveletek között | |
+| 2.2.7 | Vegyes írásbeli műveletek | `written-operation` / 10000 | Kétjegyű számok, a 10 feladatos lecke a leghosszabb a műveletek között | |
 
 ### 2.3 Törtek
 
@@ -93,18 +93,18 @@ Ennek a dokumentumnak a célja, hogy a **4. osztályos tananyagot** (35 lecke, 7
 
 | # | Lecke | Típus / tartomány | Amire figyelj | Eredmény |
 |---|-------|-------------------|---------------|----------|
-| 2.6.1.1 | 📏 Hosszúság – a milliméterig, visszafelé is | `measure-units` / length / 1000 | 11 feladat: 4 + 5 + 2 | |
-| 2.6.1.2 | 🥤 Űrtartalom – a milliliterig | `measure-units` / volume / 1000 | Ugyanígy 11 feladat | |
-| 2.6.1.3 | ⚖️ Tömeg – a tonnáig, visszafelé is | `measure-units` / weight / 1000 | Ugyanígy 11 feladat | |
+| 2.6.1.1 | 📏 Hosszúság – a milliméterig, visszafelé is | `measure-units` / length / 1000 | 10 feladat: 4 + 4 + 2 | |
+| 2.6.1.2 | 🥤 Űrtartalom – a milliliterig | `measure-units` / volume / 1000 | Ugyanígy 10 feladat | |
+| 2.6.1.3 | ⚖️ Tömeg – a tonnáig, visszafelé is | `measure-units` / weight / 1000 | Ugyanígy 10 feladat | |
 
 **Mindhárom leckében ellenőrizd ezeket:**
 
 | # | Ellenőrzés | Várt eredmény | Eredmény |
 |---|-----------|---------------|----------|
 | a | Az 1. blokk (4 feladat) | Előre átváltás (nagyobb egység → kisebb): m→cm, l→dl, kg→g | |
-| b | A 2. blokk (5 feladat) | Fordított átváltás: pl. 3000 g = 3 kg, 40 dl = 4 l, 30 cm = 3 dm. **Az összehasonlítás nem fordított**, ezért a visszafelé feladatok száma leckénként 4–5 a 11-ből (kb. 36–45%) – ez nem hiba | |
+| b | A 2. blokk (4 feladat) | Fordított átváltás: pl. 3000 g = 3 kg, 40 dl = 4 l, 30 cm = 3 dm. **Az összehasonlítás nem fordított**, ezért a visszafelé feladatok száma leckénként 0–4 a 10-ből (átlag 3, kb. 30%) – ez nem hiba | |
 | c | A 3. blokk (2 feladat) | Csak egységválasztás: „🐜 Egy hangya hossza 5 ____” → mm | |
-| d | Feladatformák | Mindegyik forma: válaszlista, beírás, egységválasztás, igaz-hamis, összehasonlítás (`< = >`). **A forma blokkonként véletlenül választott:** egy leckefuttatásban mind az 5 csak kb. 70%-ban jelen meg (200 futásból mérve), a `unit` forma viszont mindig. Ha hiányzik egy, indítsd újra a leckét | |
+| d | Feladatformák | Mindegyik forma: válaszlista, beírás, egységválasztás, igaz-hamis, összehasonlítás (`< = >`). **A forma blokkonként véletlenül választott:** egy leckefuttatásban a négy vegyes forma mind az 5 csak kb. 90%-ban jelen meg (500 futásból mérve), a `unit` forma viszont mindig. Ha hiányzik egy, indítsd újra a leckét | |
 | e | Összehasonlítás feladat | Két oldal különböző egységben, ahol az átváltás dönt: pl. `900 dkg > 4 kg` (90 kg vs 4 kg), `1 t = 1 000 000 g`. A kérdés fajtánként: „Melyik a hosszabb?" / „Melyik a nehezebb?" / „Melyikben van több?" | |
 | f | Tárgyak | Minden kontextusos feladat előtt valós tárgy van, értelmes nagysággal (fa, vödör, elefánt, tojás…) | |
 | g | Rejtett súgó | A súgó gomb **két hiba után** jelenik meg, a táblázat csak kattintásra | |
@@ -112,7 +112,7 @@ Ennek a dokumentumnak a célja, hogy a **4. osztályos tananyagot** (35 lecke, 7
 
 | # | Lecke | Típus / tartomány | Amire figyelj | Eredmény |
 |---|-------|-------------------|---------------|----------|
-| 2.6.2 | 📏 Távolságok és hosszúságok a valóságban | `length-units` | 12 feladat **két különböző formában**: 1. blokk kurált cm/m/km (3 opció, egységsúgó), 2. blokk a teljes mm–km létrával (4 opció) | |
+| 2.6.2 | 📏 Távolságok és hosszúságok a valóságban | `length-units` | 10 feladat **két különböző formában**: 1. blokk kurált cm/m/km (3 opció, egységsúgó), 2. blokk a teljes mm–km létrával (4 opció) | |
 | 2.6.3 | 🕐 Idő – óra és perc tartamok | `elapsed-time` / 60 | Kezdés/vég, eltelt idő számítása; az opciók nem a valós választ adják | |
 | 2.6.4 | 💰 Vásárlás és visszajáró 10 000-ig | `money-change` / 10000 | 5000 vagy 10 000 Ft-tal fizet, 500–9800 Ft-os ár; a visszajáró **soha nem negatív** (2000 mintában 0 hiba) | |
 

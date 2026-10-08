@@ -43,7 +43,7 @@
             "type": "exercise",
             "generator": "decimal-prep",
             "options": {
-                "count": 4,
+                "count": 3,
                 "mode": "tenths"
             }
         },
@@ -52,7 +52,7 @@
             "type": "exercise",
             "generator": "decimal-prep",
             "options": {
-                "count": 4,
+                "count": 3,
                 "mode": "hundredths"
             }
         },
@@ -61,7 +61,7 @@
             "type": "exercise",
             "generator": "decimal-prep",
             "options": {
-                "count": 4,
+                "count": 2,
                 "mode": "convert"
             }
         },
@@ -70,7 +70,7 @@
             "type": "exercise",
             "generator": "decimal-prep",
             "options": {
-                "count": 4,
+                "count": 2,
                 "mode": "compare"
             }
         },

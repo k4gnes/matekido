@@ -61,7 +61,7 @@
             "generator": "place-value-thousands",
 
             "options": {
-                "count": 4,
+                "count": 3,
                 "min": 1000,
                 "max": 9999,
                 "interaction": "choice"
@@ -73,7 +73,7 @@
             "generator": "place-value-thousands",
 
             "options": {
-                "count": 4,
+                "count": 3,
                 "min": 1000,
                 "max": 9999,
                 "interaction": "input",

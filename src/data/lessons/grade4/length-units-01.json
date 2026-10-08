@@ -42,14 +42,14 @@
             "type": "exercise",
             "generator": "length-units",
             "options": {
-                "count": 6
+                "count": 5
             }
         },
         {
             "type": "exercise",
             "generator": "measure-units",
             "options": {
-                "count": 6,
+                "count": 5,
                 "kind": "length",
                 "interaction": "unit"
             }

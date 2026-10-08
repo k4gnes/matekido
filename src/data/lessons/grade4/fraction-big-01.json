@@ -54,7 +54,7 @@
             "type": "exercise",
             "generator": "fraction-of",
             "options": {
-                "count": 4,
+                "count": 3,
                 "larger": true,
                 "denominator": 3,
                 "interaction": "input"
@@ -65,7 +65,7 @@
             "type": "exercise",
             "generator": "fraction-of",
             "options": {
-                "count": 4,
+                "count": 3,
                 "larger": true,
                 "denominator": 4,
                 "interaction": "input"

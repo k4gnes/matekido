@@ -53,7 +53,7 @@
             "type": "exercise",
             "generator": "fraction",
             "options": {
-                "count": 4,
+                "count": 3,
                 "deep": true,
                 "mode": "symbol"
             }
@@ -63,7 +63,7 @@
             "type": "exercise",
             "generator": "fraction",
             "options": {
-                "count": 4,
+                "count": 3,
                 "deep": true,
                 "mode": "symbol-pick"
             }

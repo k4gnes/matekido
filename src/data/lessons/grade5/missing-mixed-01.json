@@ -41,7 +41,7 @@
             "type": "exercise",
             "generator": "missing-operand",
             "options": {
-                "count": 8,
+                "count": 6,
                 "max": 1000,
                 "type": "mixed",
                 "interaction": "mixed"
@@ -51,7 +51,7 @@
             "type": "exercise",
             "generator": "multiplication",
             "options": {
-                "count": 8,
+                "count": 6,
                 "tables": [11, 12, 15, 20, 25, 40, 50, 100],
                 "type": "missing-factor",
                 "interaction": "input"

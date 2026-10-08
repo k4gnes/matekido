@@ -46,6 +46,7 @@ Interaktív matematikai tanulási platform magyar gyerekeknek (első osztálytó
 - NE írj kommentet a kódba.
 - UI szövegek magyarul. A küldetések/missziók emoji-kat használnak.
 - Egy komponens = egy feladat. Egy commit = egy jól körülhatárolható változás.
+- Leckehossz (generált feladatok száma leckénként): 4. osztály max 10, 5. osztály max 12; 2–5 blokkban, nehezedő sorrendben, blokkonként 2–5 feladat.
 - Fejlesztési elvek: a gyereket sosem büntetjük; segítséget csak kérésre adunk; a történet fontosabb, mint a pontszám; a sprint végén mindig működő állapot.
 
 ## Adatmentés

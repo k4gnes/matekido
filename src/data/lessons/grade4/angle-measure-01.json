@@ -43,7 +43,7 @@
             "type": "exercise",
             "generator": "angle-measure",
             "options": {
-                "count": 4,
+                "count": 3,
                 "mode": "measure"
             }
         },
@@ -52,7 +52,7 @@
             "type": "exercise",
             "generator": "angle-measure",
             "options": {
-                "count": 4,
+                "count": 3,
                 "mode": "measure5"
             }
         },
@@ -61,7 +61,7 @@
             "type": "exercise",
             "generator": "angle-measure",
             "options": {
-                "count": 4,
+                "count": 2,
                 "mode": "kind"
             }
         },
@@ -70,7 +70,7 @@
             "type": "exercise",
             "generator": "angle-measure",
             "options": {
-                "count": 4,
+                "count": 2,
                 "mode": "compare"
             }
         },

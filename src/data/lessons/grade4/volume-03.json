@@ -47,7 +47,7 @@
       "type": "exercise",
       "generator": "measure-units",
       "options": {
-        "count": 5,
+        "count": 4,
         "kind": "volume",
         "advanced": true,
         "reverse": true,

@@ -42,7 +42,7 @@
             "type": "exercise",
             "generator": "decimal-prep",
             "options": {
-                "count": 4,
+                "count": 3,
                 "mode": "times-power",
                 "power": 10
             }
@@ -51,7 +51,7 @@
             "type": "exercise",
             "generator": "decimal-prep",
             "options": {
-                "count": 4,
+                "count": 3,
                 "mode": "times-power",
                 "power": 100
             }
@@ -60,7 +60,7 @@
             "type": "exercise",
             "generator": "decimal-prep",
             "options": {
-                "count": 4,
+                "count": 3,
                 "mode": "times-power",
                 "power": 1000
             }
@@ -69,7 +69,7 @@
             "type": "exercise",
             "generator": "decimal-prep",
             "options": {
-                "count": 4,
+                "count": 3,
                 "mode": "times-power"
             }
         },

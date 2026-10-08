@@ -790,7 +790,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
         grid.className = "lesson-grid";
 
         gradeConfig.forEach(gc => {
-            const gradeLessons = allLessons.filter(l => l.grades?.includes(gc.grade));
+            const gradeLessons = allLessons.filter(l => l.grades?.includes(gc.grade) && !l.practice);
             const done = gradeLessons.length > 0 && gradeLessons.every(l => getLessonStats(l.file));
             const btn = createButton(done ? `✅ ${gc.title} – kész!` : gc.title, {
                 onClick: () => chooseGrade(gc.grade)

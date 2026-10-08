@@ -503,6 +503,56 @@ function validateStep(step, ctx, range) {
             }
             break;
         }
+        case "speed-trip": {
+            if (!["distance", "time", "speed"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!["road", "pace"].includes(step.family)) fail(ctx, `family hibás: ${step.family}`);
+            if (!["choice", "input"].includes(step.interaction)) fail(ctx, `interaction ismeretlen: ${step.interaction}`);
+            for (const k of ["speed", "time", "distance", "answer"]) {
+                if (!isInt(step[k]) || step[k] < 1) fail(ctx, `${k} hibás: ${step[k]}`);
+            }
+            if (step.distance !== step.speed * step.time) {
+                fail(ctx, `distance != speed*time (${step.distance} vs ${step.speed * step.time})`);
+            }
+            const expected = step.mode === "distance"
+                ? step.speed * step.time
+                : step.mode === "time"
+                    ? step.distance / step.speed
+                    : step.distance / step.time;
+            if (step.answer !== expected) fail(ctx, `answer hibás: ${step.answer} != ${expected}`);
+            if (isFiniteNum(range) && step.answer > range) fail(ctx, `answer kilép a tartományból: ${step.answer} > ${range}`);
+            const units = step.family === "road"
+                ? { speed: "km/h", time: "óra", distance: "km" }
+                : { speed: "m/perc", time: "perc", distance: "m" };
+            const questionUnit = step.mode === "distance" ? units.distance : step.mode === "time" ? units.time : units.speed;
+            if (typeof step.question !== "string" || !step.question.includes(questionUnit)) {
+                fail(ctx, `question nem tartalmazza a ${questionUnit} egységet: ${step.question}`);
+            }
+            const given = step.mode === "distance"
+                ? [[step.speed, units.speed], [step.time, units.time]]
+                : step.mode === "time"
+                    ? [[step.distance, units.distance], [step.speed, units.speed]]
+                    : [[step.distance, units.distance], [step.time, units.time]];
+            if (typeof step.context !== "string" || step.context.length === 0) {
+                fail(ctx, "context hiányzik");
+            } else {
+                for (const [value, unit] of given) {
+                    if (!step.context.includes(String(value)) || !step.context.includes(unit)) {
+                        fail(ctx, `context nem tartalmazza a ${value} ${unit} mennyiséget`);
+                    }
+                }
+            }
+            if (step.interaction === "choice") {
+                if (!Array.isArray(step.options) || step.options.length !== 4) {
+                    fail(ctx, "choice módban 4 options kell");
+                } else {
+                    if (new Set(step.options).size !== 4) fail(ctx, "options ismétlődik");
+                    if (!step.options.includes(step.answer)) fail(ctx, "options nem tartalmazza a választ");
+                }
+            } else if (step.options !== undefined) {
+                fail(ctx, "input módban nem kell options");
+            }
+            break;
+        }
         case "transform": {
             if (!["turn", "translate"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             const checkCells = cells => {

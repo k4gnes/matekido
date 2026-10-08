@@ -1,0 +1,120 @@
+{
+    "id": "time-speed-01",
+    "title": "Idő, sebesség, út",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "⏱️ Idő, sebesség, út",
+            "text": "Minden útnak három adata van: az út hossza, a sebesség és az idő. Ha kettőt tudsz, a harmadik mindig kiszámolható: út = sebesség × idő, idő = út ÷ sebesség, sebesség = út ÷ idő. Példa: 60 km/h-val 3 óra alatt 180 km az út. Számolj nyugodtan – a válaszok mind egész számok!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Siess, de biztosan!",
+                    "text": "A csomagok nem várnak: számold ki, mennyi időbe telik az út, és milyen gyorsan kell menni!"
+                },
+                "racing": {
+                    "title": "🏁 Rajtot venni!",
+                    "text": "A verseny a tempóról szól: út, idő és sebesség – számold ki mindhármat!"
+                },
+                "football": {
+                    "title": "⚽ Meccsre menet",
+                    "text": "A csapat busza úton van: hány km, hány óra, milyen tempó? Számold ki mindet!"
+                },
+                "cooking": {
+                    "title": "🍳 Kiszállítás előtt",
+                    "text": "A futár siet, de tudnia kell, meddig tart az út – számold ki az időt és a sebességet!"
+                },
+                "animals": {
+                    "title": "🦁 Szafari",
+                    "text": "Az állatkerti kisbusz tempója: számold ki az utat, az időt és a sebességet!"
+                },
+                "space": {
+                    "title": "🚀 Felszállás",
+                    "text": "Az űrhajó sebessége, az út hossza és az idő mind összetartozik – számold ki őket!"
+                },
+                "tram": {
+                    "title": "🚋 Villamosjárat",
+                    "text": "A villamos menetrendje pontos: számold ki, mennyi idő, milyen sebesség és mennyi út!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "speed-trip",
+            "options": {
+                "count": 3,
+                "mode": "distance",
+                "family": "road",
+                "interaction": "choice",
+                "maxDistance": 300
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "speed-trip",
+            "options": {
+                "count": 3,
+                "mode": "time",
+                "family": "road",
+                "interaction": "choice",
+                "maxDistance": 600
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "speed-trip",
+            "options": {
+                "count": 3,
+                "mode": "speed",
+                "family": "road",
+                "interaction": "input",
+                "maxDistance": 800
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "speed-trip",
+            "options": {
+                "count": 3,
+                "mode": "mixed",
+                "family": "both",
+                "interaction": "mixed",
+                "maxDistance": 1000
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Minden utat, időt és sebességet kiszámoltál – most már pontos tempóval bárhová eljutsz!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Gyors kézbesítés",
+                    "text": "Minden út és idő megvan – a csomagok pontosan érkeznek!"
+                },
+                "racing": {
+                    "title": "🏁 Győzelmi kör",
+                    "text": "Tökéletes tempó minden körben – a boxutca ünnepel!"
+                },
+                "football": {
+                    "title": "⚽ Pontos érkezés",
+                    "text": "A csapat időben a pályán – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Percekre pontosan",
+                    "text": "Minden kiszállítás időben érkezik – a konyha nyugodtan főzhet!"
+                },
+                "animals": {
+                    "title": "🦁 Szafarikész",
+                    "text": "Minden állat és gondozó útja megtervezve – irány a szafari!"
+                },
+                "space": {
+                    "title": "🚀 Menetrendszerű indulás",
+                    "text": "Az űrhajó pontosan landol – a legénység gratulál!"
+                },
+                "tram": {
+                    "title": "🚋 Ponthatáson érkezve",
+                    "text": "A villamos tökéletes időben fut be – a sofőr dicséretet kap!"
+                }
+            }
+        }
+    ]
+}

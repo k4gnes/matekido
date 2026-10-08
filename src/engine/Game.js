@@ -80,6 +80,7 @@ import { renderProbability } from "../components/probability.js?v=2";
 import { renderOperationOrder } from "../components/operationOrder.js?v=2";
 import { renderSolidMeasure } from "../components/solidMeasure.js?v=1";
 import { renderCoordinate } from "../components/coordinate.js?v=1";
+import { renderSpeedTrip } from "../components/speedTrip.js?v=1";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -163,7 +164,8 @@ const COUNTED_TYPES = new Set([
     "compound-shape",
     "shape-formula",
     "solid-measure",
-    "coordinate"
+    "coordinate",
+    "speed-trip"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -192,7 +194,8 @@ const SKILL_BY_TYPE = {
     "fraction-times-frac": "fraction",
     "fraction-divide": "fraction",
     "coordinate": "coordinates",
-    "solid-measure": "solid-shapes"
+    "solid-measure": "solid-shapes",
+    "speed-trip": "time-speed"
 };
 
 const RENDERERS = new Map([
@@ -280,7 +283,8 @@ const RENDERERS = new Map([
     ["operation-order", renderOperationOrder],
     ["operation-order-play", renderOperationOrderPlay],
     ["solid-measure", renderSolidMeasure],
-    ["coordinate", renderCoordinate]
+    ["coordinate", renderCoordinate],
+    ["speed-trip", renderSpeedTrip]
 ]);
 
 

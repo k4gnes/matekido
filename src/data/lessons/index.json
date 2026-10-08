@@ -671,6 +671,30 @@
       }
     },
     {
+      "id": "time-speed-01",
+      "title": "⏱️ Idő, sebesség, út",
+      "grades": [
+        5
+      ],
+      "category": "practical",
+      "skill": "time-speed",
+      "difficulty": 3,
+      "type": "speed-trip",
+      "range": 1000,
+      "mission": "🚗 Úton, időben",
+      "subtitle": "út = sebesség × idő, idő = út ÷ sebesség, sebesség = út ÷ idő",
+      "file": "./data/lessons/grade5/time-speed-01.json",
+      "worldTitles": {
+        "postman": "📮 Postai út",
+        "racing": "🏁 Versenytempó",
+        "football": "⚽ Meccsre menet",
+        "cooking": "🍳 Konyhai futár",
+        "animals": "🦁 Szafari",
+        "space": "🚀 Űrsebesség",
+        "tram": "🚋 Villamosjárat"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

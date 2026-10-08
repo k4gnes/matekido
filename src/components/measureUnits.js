@@ -19,17 +19,20 @@ const KIND_CONFIG = {
     length: {
         title: "Hosszúság-mérés",
         hint: "1 m = 10 dm = 100 cm, 1 dm = 10 cm",
-        hintAdvanced: "1 km = 1000 m, 1 m = 1000 mm, 1 m = 10 dm = 100 cm"
+        hintAdvanced: "1 km = 1000 m, 1 m = 1000 mm, 1 m = 10 dm = 100 cm",
+        hintExtended: "1 km = 1000 m, 1 m = 100 cm. Visszafelé osztás: 4000 m = 4 km, 300 cm = 3 m"
     },
     weight: {
         title: "Tömeg-mérés",
         hint: "1 kg = 100 dkg, 1 dkg = 10 g",
-        hintAdvanced: "1 kg = 100 dkg = 1000 g, 1 t = 1000 kg. Visszafelé 10-szeres, 100-szoros és 1000-szeres osztás"
+        hintAdvanced: "1 kg = 100 dkg = 1000 g, 1 t = 1000 kg. Visszafelé 10-szeres, 100-szoros és 1000-szeres osztás",
+        hintExtended: "1 t = 1000 kg, 1 kg = 1000 g. Visszafelé osztás: 4000 kg = 4 t, 3000 g = 3 kg"
     },
     volume: {
         title: "Űrtartalom-mérés",
         hint: "1 l = 10 dl = 100 cl",
-        hintAdvanced: "1 l = 10 dl = 100 cl = 1000 ml. Visszafelé 10-szeres, 100-szoros és 1000-szeres osztás"
+        hintAdvanced: "1 l = 10 dl = 100 cl = 1000 ml. Visszafelé 10-szeres, 100-szoros és 1000-szeres osztás",
+        hintExtended: "1 hl = 100 l, 1 l = 10 dl. Visszafelé osztás: 600 l = 6 hl, 50 dl = 5 l"
     }
 };
 
@@ -52,7 +55,9 @@ export function renderMeasureUnits(step, root, next, progress, onResult, onAttem
     title.textContent = `${emoji} ${config.title}`;
     card.append(title);
 
-    const hintText = (step.advanced && config.hintAdvanced) ? config.hintAdvanced : config.hint;
+    const hintText = (step.extended && config.hintExtended)
+        ? config.hintExtended
+        : (step.advanced && config.hintAdvanced) ? config.hintAdvanced : config.hint;
 
     if (step.context) {
         const contextLine = document.createElement("p");

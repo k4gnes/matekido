@@ -12,7 +12,7 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=26";
+import { buildLesson } from "./builders/LessonBuilder.js?v=27";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
@@ -116,13 +116,14 @@ function operationOrderAnswer(step) {
 
 const UNIT_FACTORS = {
     "km-m": 1000, "m-dm": 10, "m-cm": 100, "m-mm": 1000, "dm-cm": 10, "cm-mm": 10,
-    "mm-cm": 10, "cm-dm": 10, "m-km": 1000,
+    "mm-cm": 10, "cm-dm": 10, "m-km": 1000, "cm-m": 100,
     "kg-dkg": 100, "kg-g": 1000, "dkg-g": 10,
-    "g-kg": 1000, "g-dkg": 10, "dkg-kg": 100, "kg-t": 1000,
+    "g-kg": 1000, "g-dkg": 10, "dkg-kg": 100, "kg-t": 1000, "t-kg": 1000,
     "l-dl": 10, "l-cl": 100, "dl-cl": 10,
     "l-ml": 1000, "dl-ml": 100, "cl-ml": 10,
     "ml-l": 1000, "ml-dl": 100, "ml-cl": 10,
-    "cl-dl": 10, "cl-l": 100, "dl-l": 10
+    "cl-dl": 10, "cl-l": 100, "dl-l": 10,
+    "hl-l": 100, "hl-dl": 1000, "l-hl": 100, "dl-hl": 1000
 };
 
 function measureUnitFactor(unit, target) {
@@ -132,13 +133,13 @@ function measureUnitFactor(unit, target) {
 const UNIT_FAMILY = {
     length: ["km", "m", "dm", "cm", "mm"],
     weight: ["t", "kg", "dkg", "g"],
-    volume: ["l", "dl", "cl", "ml"]
+    volume: ["l", "dl", "cl", "ml", "hl"]
 };
 
 const UNIT_LADDER = {
     length: { km: 1000000, m: 1000, dm: 100, cm: 10, mm: 1 },
     weight: { t: 1000000, kg: 1000, dkg: 10, g: 1 },
-    volume: { l: 1000, dl: 100, cl: 10, ml: 1 }
+    volume: { hl: 100000, l: 1000, dl: 100, cl: 10, ml: 1 }
 };
 
 function validateComparison(ctx, step) {
@@ -712,8 +713,8 @@ function validateStep(step, ctx, range) {
                 break;
             }
             if (!isInt(step.value) || step.value < 1) fail(ctx, `value hibás: ${step.value}`);
-            if (!["km", "m", "dm", "cm", "kg", "dkg", "g", "l", "dl", "cl", "ml", "mm", "t"].includes(step.unit) ||
-                !["km", "m", "dm", "cm", "kg", "dkg", "g", "l", "dl", "cl", "ml", "mm", "t"].includes(step.target)) {
+            if (!["km", "m", "dm", "cm", "kg", "dkg", "g", "l", "dl", "cl", "ml", "mm", "t", "hl"].includes(step.unit) ||
+                !["km", "m", "dm", "cm", "kg", "dkg", "g", "l", "dl", "cl", "ml", "mm", "t", "hl"].includes(step.target)) {
                 fail(ctx, `unit/target ismeretlen: ${step.unit} → ${step.target}`);
             }
             const factor = measureUnitFactor(step.unit, step.target);

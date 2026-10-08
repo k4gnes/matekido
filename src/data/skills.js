@@ -22,7 +22,7 @@ export const CATEGORIES = {
     practical: {
         title: "Gyakorlati matek",
         icon: "🧮",
-        skills: ["length", "mass", "volume", "hour", "minute", "calendar", "money"]
+        skills: ["length", "mass", "volume", "unit-conversion", "hour", "minute", "calendar", "money"]
     },
     geometry: {
         title: "Geometria",
@@ -76,6 +76,7 @@ export const SKILLS = {
     length: { title: "Hosszúság", category: "practical" },
     mass: { title: "Tömeg", category: "practical" },
     volume: { title: "Űrtartalom", category: "practical" },
+    "unit-conversion": { title: "Mértékegység-átváltás", category: "practical" },
 
     // Time
     hour: { title: "Óra", category: "practical" },

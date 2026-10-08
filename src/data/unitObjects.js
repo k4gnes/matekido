@@ -31,3 +31,21 @@ export const UNIT_OBJECTS = {
         { emoji: "🧃", phrase: "Egy kis gyümölcslé", base: "cl", min: 20, max: 30 }
     ]
 };
+
+export const UNIT_OBJECTS_EXTENDED = {
+    length: [
+        { emoji: "🏁", phrase: "Egy futóverseny", base: "km", min: 3, max: 9 },
+        { emoji: "🛣️", phrase: "Egy autópálya-szakasz", base: "m", min: 1000, max: 10000 },
+        { emoji: "🪵", phrase: "Egy deszka", base: "cm", min: 100, max: 500 }
+    ],
+    weight: [
+        { emoji: "🚛", phrase: "Egy teherautó", base: "t", min: 2, max: 8 },
+        { emoji: "🍚", phrase: "Egy zsák rizs", base: "g", min: 1000, max: 5000 }
+    ],
+    volume: [
+        { emoji: "🛁", phrase: "Egy fürdőkád", base: "hl", min: 1, max: 3 },
+        { emoji: "🏊", phrase: "Egy kerti medence", base: "hl", min: 10, max: 30 },
+        { emoji: "🛢️", phrase: "Egy hordó", base: "l", min: 100, max: 900 },
+        { emoji: "🫖", phrase: "Egy teáskanna", base: "dl", min: 10, max: 30 }
+    ]
+};

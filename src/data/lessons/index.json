@@ -623,6 +623,30 @@
       }
     },
     {
+      "id": "unit-conversion-01",
+      "title": "📏 Átváltások tisztán – hosszúság, tömeg és űrtartalom",
+      "grades": [
+        5
+      ],
+      "category": "practical",
+      "skill": "unit-conversion",
+      "difficulty": 2,
+      "type": "measure-units",
+      "range": 10000,
+      "mission": "📏 Átváltások tisztán",
+      "subtitle": "km ↔ m ↔ cm, t ↔ kg ↔ g, hl ↔ l ↔ dl – szorozz előre, oszts visszafelé",
+      "file": "./data/lessons/grade5/unit-conversion-01.json",
+      "worldTitles": {
+        "postman": "📮 Csomag adatai átváltva",
+        "racing": "🏁 Versenyadatok átváltva",
+        "football": "⚽ Pálya és cserepad átváltva",
+        "cooking": "🍳 Konyhai átváltások",
+        "animals": "🦁 Az állatok súlya átváltva",
+        "space": "🚀 Készlet átváltva",
+        "tram": "🚋 Villamos adatok átváltva"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

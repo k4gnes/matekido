@@ -1,0 +1,128 @@
+{
+    "id": "unit-conversion-01",
+    "title": "📏 Átváltások tisztán – hosszúság, tömeg és űrtartalom",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📏 Három mérőcsalád, egy szabály",
+            "text": "A mértékegységek tízes, százas és ezres lépcsőkön haladnak: 1 km = 1000 m, 1 m = 100 cm, 1 t = 1000 kg, 1 kg = 1000 g, 1 hl = 100 l, 1 l = 10 dl. Előre szorozz, visszafelé osztol – a kérdésből mindig kiderül, melyik egység a jó. Indulhat az átváltás?",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Csomag adatai átváltva",
+                    "text": "A csomag 3 kg, a cím pedig 2 km – hány gramm és hány méter? Váltsd át mindkettőt!"
+                },
+                "racing": {
+                    "title": "🏁 Versenyadatok átváltva",
+                    "text": "A verseny 5 km hosszú, a benzintartály 20 l – hány méter a pálya, és hány deciliter az üzemanyag?"
+                },
+                "football": {
+                    "title": "⚽ Pálya és cserepad átváltva",
+                    "text": "A pálya 100 m hosszú, a cserepad 4 m – hány centiméter mindegyik?"
+                },
+                "cooking": {
+                    "title": "🍳 Konyhai átváltások",
+                    "text": "A hordó 2 hl gyümölcslé, a fazék 3 l leves – hány liter és hány deciliter?"
+                },
+                "animals": {
+                    "title": "🦁 Az állatok súlya átváltva",
+                    "text": "A zsiráf 2 t, a teknős 5 kg – hány kilogramm mindegyik?"
+                },
+                "space": {
+                    "title": "🚀 Készlet átváltva",
+                    "text": "A rakéta tartálya 4 hl üzemanyag, a csomag 3 kg – hány liter és hány gramm?"
+                },
+                "tram": {
+                    "title": "🚋 Villamos adatok átváltva",
+                    "text": "A villamos 15 m hosszú, a megálló 2 km – hány centiméter és hány méter?"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "measure-units",
+            "options": {
+                "count": 3,
+                "kind": "length",
+                "advanced": true,
+                "extended": true,
+                "context": true,
+                "interaction": "mixed",
+                "units": ["km", "m", "cm"]
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "measure-units",
+            "options": {
+                "count": 3,
+                "kind": "weight",
+                "advanced": true,
+                "extended": true,
+                "context": true,
+                "interaction": "mixed",
+                "units": ["t", "kg", "g"]
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "measure-units",
+            "options": {
+                "count": 3,
+                "kind": "volume",
+                "extended": true,
+                "context": true,
+                "interaction": "mixed",
+                "units": ["hl", "l", "dl"]
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "measure-units",
+            "options": {
+                "count": 3,
+                "kind": "mixed",
+                "advanced": true,
+                "reverse": true,
+                "extended": true,
+                "context": true,
+                "interaction": "mixed",
+                "units": ["km", "m", "cm", "t", "kg", "g", "hl", "l", "dl"]
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Már a hosszúságot, a tömeget és az űrtartalmat is váltod – előre szorozva és visszafelé osztva is!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Minden csomag a helyén",
+                    "text": "A levelek és csomagok adatai most a helyes mértékegységben vannak – kézbesíthető!"
+                },
+                "racing": {
+                    "title": "🏁 Gyorsaság és pontosság",
+                    "text": "Kilométer és méter sem fog ki rajtad – indulhat a következő verseny!"
+                },
+                "football": {
+                    "title": "🏆 Gól a mérleggel",
+                    "text": "A pálya hossza a helyére került – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Pontosan kimérve",
+                    "text": "Liter, deciliter és gramm – a recept most tökéletes lesz!"
+                },
+                "animals": {
+                    "title": "🦁 Mindenki megmérve",
+                    "text": "A zsiráftól a teknősig mindenki tudja a súlyát – ügyes voltál!"
+                },
+                "space": {
+                    "title": "🚀 Kész az indulásra",
+                    "text": "A tartályok tele, a csomagok kimérve – startolhat a rakéta!"
+                },
+                "tram": {
+                    "title": "🚋 Végállomás",
+                    "text": "Minden adat a helyes egységben – nyugodtan utazhatsz a villamossal!"
+                }
+            }
+        }
+    ]
+}

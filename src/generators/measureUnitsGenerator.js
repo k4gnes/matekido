@@ -1,4 +1,4 @@
-import { UNIT_OBJECTS } from "../data/unitObjects.js";
+import { UNIT_OBJECTS, UNIT_OBJECTS_EXTENDED } from "../data/unitObjects.js?v=1";
 
 const CONVERSIONS = {
     length: [
@@ -47,10 +47,34 @@ const CONVERSIONS = {
     ]
 };
 
+const EXTENDED_CONVERSIONS = {
+    weight: [
+        { unit: "t", target: "kg", factor: 1000, max: 9 }
+    ],
+    volume: [
+        { unit: "hl", target: "l", factor: 100, max: 90 },
+        { unit: "hl", target: "dl", factor: 1000, max: 9 }
+    ]
+};
+
+const EXTENDED_CONVERSIONS_REVERSE = {
+    length: [
+        { unit: "cm", target: "m", factor: 100, max: 50, reverse: true }
+    ],
+    volume: [
+        { unit: "l", target: "hl", factor: 100, max: 10, reverse: true },
+        { unit: "dl", target: "hl", factor: 1000, max: 10, reverse: true }
+    ]
+};
+
 const UNIT_FAMILY = {
     length: ["km", "m", "dm", "cm", "mm"],
     weight: ["t", "kg", "dkg", "g"],
     volume: ["l", "dl", "cl", "ml"]
+};
+
+const EXTENDED_FAMILY = {
+    volume: ["hl"]
 };
 
 const UNIT_MEASURE_WORD = {
@@ -65,8 +89,9 @@ function roundNice(value) {
     return value;
 }
 
-function buildUnitChoiceTask(k, object, amount, allowed = null) {
-    let family = UNIT_FAMILY[k].filter(u => u !== object.base);
+function buildUnitChoiceTask(k, object, amount, allowed = null, extended = false) {
+    let family = [...UNIT_FAMILY[k], ...(extended && EXTENDED_FAMILY[k] ? EXTENDED_FAMILY[k] : [])]
+        .filter(u => u !== object.base);
     if (allowed) {
         const filtered = family.filter(u => allowed.has(u));
         if (filtered.length) family = filtered;
@@ -82,6 +107,7 @@ function buildUnitChoiceTask(k, object, amount, allowed = null) {
         answer: object.base,
         unitOptions,
         ...(allowed ? { allowedUnits: [...allowed] } : {}),
+        extended,
         interaction: "unit",
         question: "Melyik egység illik ide?",
         context: `${object.emoji} ${object.phrase} ${UNIT_MEASURE_WORD[k]} ${nice} ____`
@@ -100,16 +126,21 @@ const UNIT_LADDER_ADVANCED = {
     volume: {}
 };
 
+const EXTENDED_LADDER = {
+    volume: { hl: 100000 }
+};
+
 const COMPARE_QUESTION = {
     length: "Melyik a hosszabb?",
     weight: "Melyik a nehezebb?",
     volume: "Melyikben van több?"
 };
 
-function buildCompareTask(k, advanced, allowed = null) {
+function buildCompareTask(k, advanced, allowed = null, extended = false) {
     const ladder = {
         ...UNIT_LADDER[k],
-        ...(advanced && UNIT_LADDER_ADVANCED[k] ? UNIT_LADDER_ADVANCED[k] : {})
+        ...(advanced && UNIT_LADDER_ADVANCED[k] ? UNIT_LADDER_ADVANCED[k] : {}),
+        ...(extended && EXTENDED_LADDER[k] ? EXTENDED_LADDER[k] : {})
     };
     let unitNames = Object.keys(ladder);
     if (allowed) {
@@ -139,6 +170,7 @@ function buildCompareTask(k, advanced, allowed = null) {
         type: "measure-units",
         kind: k,
         advanced,
+        extended,
         interaction: "compare",
         leftValue: leftBase / ladder[leftUnit],
         leftUnit,
@@ -244,8 +276,14 @@ function pickPreferred(entries, reverse) {
     return { entry, variants: variants.length ? variants : entry.variants };
 }
 
+function unitObjects(k, extended) {
+    return extended && UNIT_OBJECTS_EXTENDED[k]
+        ? [...UNIT_OBJECTS[k], ...UNIT_OBJECTS_EXTENDED[k]]
+        : UNIT_OBJECTS[k];
+}
+
 export function generateMeasureUnits(options = {}) {
-    const { count = 5, kind = "length", advanced = false, reverse = false, context = false, interaction = "choice", units = null } = options;
+    const { count = 5, kind = "length", advanced = false, reverse = false, context = false, interaction = "choice", units = null, extended = false } = options;
     const allowed = Array.isArray(units) && units.length ? new Set(units) : null;
 
     const kinds = kind === "mixed"
@@ -259,18 +297,18 @@ export function generateMeasureUnits(options = {}) {
         const mode = interaction === "mixed" ? pick(["choice", "input", "tf", "compare"]) : interaction;
 
         if (mode === "unit") {
-            let objects = UNIT_OBJECTS[k];
+            let objects = unitObjects(k, extended);
             if (allowed) {
                 const filtered = objects.filter(o => allowed.has(o.base));
                 if (filtered.length) objects = filtered;
             }
             const object = pick(objects);
-            tasks.push(buildUnitChoiceTask(k, object, rand(object.min, object.max), allowed));
+            tasks.push(buildUnitChoiceTask(k, object, rand(object.min, object.max), allowed, extended));
             continue;
         }
 
         if (mode === "compare") {
-            tasks.push(buildCompareTask(k, advanced, allowed));
+            tasks.push(buildCompareTask(k, advanced, allowed, extended));
             continue;
         }
 
@@ -280,13 +318,19 @@ export function generateMeasureUnits(options = {}) {
         if (reverse && CONVERSIONS[k + "Reverse"]) {
             pool = [...pool, ...CONVERSIONS[k + "Reverse"]];
         }
+        if (extended && EXTENDED_CONVERSIONS[k]) {
+            pool = [...pool, ...EXTENDED_CONVERSIONS[k]];
+        }
+        if (extended && reverse && EXTENDED_CONVERSIONS_REVERSE[k]) {
+            pool = [...pool, ...EXTENDED_CONVERSIONS_REVERSE[k]];
+        }
         if (allowed) {
             const filtered = pool.filter(c => allowed.has(c.unit) && allowed.has(c.target));
             if (filtered.length) pool = filtered;
         }
 
         const objectVariantsByObject = context
-            ? UNIT_OBJECTS[k].map(object => ({ object, variants: objectVariants(object, pool) }))
+            ? unitObjects(k, extended).map(object => ({ object, variants: objectVariants(object, pool) }))
                 .filter(entry => entry.variants.length > 0)
             : [];
         const chosen = pickPreferred(objectVariantsByObject, reverse);
@@ -307,6 +351,7 @@ export function generateMeasureUnits(options = {}) {
             answer: correct,
             kind: k,
             advanced,
+            extended,
             reverse: conv.reverse === true,
             interaction: mode,
             question: `Hány ${conv.target} a ${value} ${conv.unit}?`

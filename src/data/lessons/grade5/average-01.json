@@ -1,0 +1,128 @@
+{
+    "id": "average-01",
+    "title": "Táblázatok, diagramok, átlag",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📊 Táblázatok, diagramok, átlag",
+            "text": "Az átlag megmutatja, milyen lenne minden adat, ha mindannyian ugyanannyiak lennének. Kiszámolása egyszerű: összeg ÷ adatok száma. Példa: 2, 4, 6, 8 → összeg 20, 4 adat → átlag 5. Az adatokat táblázatból és oszlopdiagramból is olvashatod – számold ki az átlagot, vagy keresd meg a hiányzó adatot!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Napi mérleg",
+                    "text": "A postás naponta felírja, hány csomagot kézbesített. Számold ki az átlagot – és figyelj, ha egy nap adata hiányzik!"
+                },
+                "racing": {
+                    "title": "🏁 A boxutca adatai",
+                    "text": "A szerelőcsapat vezeti a statisztikát. Olvasd ki a táblázatból, és számold ki az átlagot!"
+                },
+                "football": {
+                    "title": "⚽ Edzésstatiszika",
+                    "text": "A csapat minden edzés rögzít. Átlagot számolni már tudod – mutasd meg!"
+                },
+                "cooking": {
+                    "title": "🍳 Konyhai statisztika",
+                    "text": "A szakácsok naponta feljegyzik a rendeléseket. Számold ki az átlagot a táblázatból!"
+                },
+                "animals": {
+                    "title": "🦁 Látogatói adatok",
+                    "text": "Az állatkert minden nap feljegyzi a látogatók számát. Hány volt az átlag?"
+                },
+                "space": {
+                    "title": "🚀 Űrállomás adatai",
+                    "text": "Az űrhajó naplója számokat tárol. Olvasd ki őket, és számold ki az átlagot!"
+                },
+                "tram": {
+                    "title": "🚋 Utasszámlálás",
+                    "text": "A villamos sofőrje minden nap feljegyzi az utasok számát. Számold ki az átlagot!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "average",
+            "options": {
+                "count": 3,
+                "mode": "avg",
+                "display": "table",
+                "interaction": "choice",
+                "size": 4,
+                "min": 1,
+                "max": 15
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "average",
+            "options": {
+                "count": 3,
+                "mode": "avg",
+                "display": "chart",
+                "interaction": "input",
+                "size": 4,
+                "min": 10,
+                "max": 200
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "average",
+            "options": {
+                "count": 3,
+                "mode": "avg",
+                "display": "table",
+                "interaction": "input",
+                "size": 5,
+                "min": 20,
+                "max": 400
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "average",
+            "options": {
+                "count": 3,
+                "mode": "missing",
+                "display": "chart",
+                "interaction": "input",
+                "size": 4,
+                "min": 10,
+                "max": 60
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Minden átlagot kiszámoltál, és a hiányzó adatot is megtaláltad – most már táblázatból és diagramból is magabiztosan olvasol!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Pontos mérleg",
+                    "text": "A napi átlagok megvannak – a posta tökéletesen működik!"
+                },
+                "racing": {
+                    "title": "🏁 Kiegyensúlyozott teljesítmény",
+                    "text": "Az átlagok minden nap stabilak – a boxutca nyugodt lehet!"
+                },
+                "football": {
+                    "title": "⚽ Gólgazdag átlagok",
+                    "text": "A csapat statisztikája hibátlan – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Kiegyensúlyozott konyha",
+                    "text": "A rendelések átlaga tökéletesen kiszámolva – a vendégek elégedettek!"
+                },
+                "animals": {
+                    "title": "🦁 Boldog látogatók",
+                    "text": "Minden nap adatai megvannak – az állatkert nyugodtan nyit!"
+                },
+                "space": {
+                    "title": "🚀 Hibátlan napló",
+                    "text": "Az űrhajó adatai kiegyensúlyozottak – irány a következő bolygó!"
+                },
+                "tram": {
+                    "title": "🚋 Kiegyensúlyozott forgalom",
+                    "text": "Az utasszámok átlaga megvan – a villamos pontosan jár!"
+                }
+            }
+        }
+    ]
+}

@@ -85,7 +85,8 @@ export const TYPE_EMOJI = {
     "shape-formula": "🧮",
     "solid-measure": "📦",
     coordinate: "📍",
-    "speed-trip": "🚗"
+    "speed-trip": "🚗",
+    average: "⚖️"
 };
 
 export const TYPE_LABEL = {
@@ -175,5 +176,6 @@ export const TYPE_LABEL = {
     "shape-formula": "Kerület és terület képletekkel",
     "solid-measure": "Felszín és térfogat",
     coordinate: "Koordináták",
-    "speed-trip": "Sebességhelyzetek"
+    "speed-trip": "Sebességhelyzetek",
+    average: "Átlag számítása"
 };

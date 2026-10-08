@@ -553,6 +553,55 @@ function validateStep(step, ctx, range) {
             }
             break;
         }
+        case "average": {
+            if (!["avg", "missing"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!["table", "chart"].includes(step.display)) fail(ctx, `display hibás: ${step.display}`);
+            if (!["choice", "input"].includes(step.interaction)) fail(ctx, `interaction ismeretlen: ${step.interaction}`);
+            if (!Array.isArray(step.values) || step.values.length < 3 || step.values.length > 5) {
+                fail(ctx, `values hibás: ${JSON.stringify(step.values)}`);
+                break;
+            }
+            if (!step.values.every(v => isInt(v) && v >= 1 && v <= 1000)) {
+                fail(ctx, `values nem pozitív egész 1..1000: ${JSON.stringify(step.values)}`);
+            }
+            if (!Array.isArray(step.labels) || step.labels.length !== step.values.length) {
+                fail(ctx, `labels hossza nem egyezik a values-szal: ${JSON.stringify(step.labels)}`);
+            }
+            const sum = step.values.reduce((s, v) => s + v, 0);
+            const size = step.values.length;
+            if (sum % size !== 0) fail(ctx, `az összeg nem osztható az adatok számával: ${sum} / ${size}`);
+            const avg = sum / size;
+            if (step.avg !== avg) fail(ctx, `avg (${step.avg}) != összeg ÷ db (${avg})`);
+            if (step.mode === "avg") {
+                if (step.missingIndex !== undefined) fail(ctx, "avg módban nem kell missingIndex");
+                if (step.answer !== avg) fail(ctx, `answer (${step.answer}) != átlag (${avg})`);
+            } else {
+                if (!isInt(step.missingIndex) || step.missingIndex < 0 || step.missingIndex >= size) {
+                    fail(ctx, `missingIndex hibás: ${step.missingIndex}`);
+                } else if (step.answer !== step.values[step.missingIndex]) {
+                    fail(ctx, `answer (${step.answer}) != a hiányzó érték (${step.values[step.missingIndex]})`);
+                }
+                if (step.answer === step.avg) fail(ctx, "a hiányzó érték megegyezik a megadott átlaggal – a kérdés kiszúrja a választ");
+            }
+            if (isFiniteNum(range) && step.answer > range) fail(ctx, `answer kilép a tartományból: ${step.answer} > ${range}`);
+            if (typeof step.question !== "string" || step.question.length === 0) {
+                fail(ctx, "question hiányzik");
+            } else if (step.mode === "missing" && !step.question.includes(String(step.avg))) {
+                fail(ctx, `question nem tartalmazza a megadott átlagot (${step.avg}): ${step.question}`);
+            }
+            if (typeof step.context !== "string" || step.context.length === 0) fail(ctx, "context hiányzik");
+            if (step.interaction === "choice") {
+                if (!Array.isArray(step.options) || step.options.length !== 4) {
+                    fail(ctx, "choice módban 4 options kell");
+                } else {
+                    if (new Set(step.options).size !== 4) fail(ctx, "options ismétlődik");
+                    if (!step.options.includes(step.answer)) fail(ctx, "options nem tartalmazza a választ");
+                }
+            } else if (step.options !== undefined) {
+                fail(ctx, "input módban nem kell options");
+            }
+            break;
+        }
         case "transform": {
             if (!["turn", "translate"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             const checkCells = cells => {

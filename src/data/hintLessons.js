@@ -16,7 +16,8 @@ export const HINT_TYPES = new Set([
     "fraction-times-frac",
     "fraction-divide",
     "percent",
-    "speed-trip"
+    "speed-trip",
+    "average"
 ]);
 
 export function lessonHasHint(lessonMeta) {

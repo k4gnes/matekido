@@ -74,6 +74,7 @@ import { generateSolidMeasure } from "./solidMeasureGenerator.js?v=1";
 import { generateCoordinate } from "./coordinateGenerator.js?v=1";
 import { generateElapsedTime } from "./elapsedTimeGenerator.js?v=1";
 import { generateSpeedTrip } from "./speedTripGenerator.js?v=1";
+import { generateAverage } from "./averageGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -239,6 +240,8 @@ export function generate(step) {
             return generateElapsedTime(opts);
         case "speed-trip":
             return generateSpeedTrip(opts);
+        case "average":
+            return generateAverage(opts);
 
         default:
             throw new Error(

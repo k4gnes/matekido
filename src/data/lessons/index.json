@@ -695,6 +695,30 @@
       }
     },
     {
+      "id": "average-01",
+      "title": "📊 Táblázatok, diagramok, átlag",
+      "grades": [
+        5
+      ],
+      "category": "numbers",
+      "skill": "data-charts",
+      "difficulty": 2,
+      "type": "average",
+      "range": 1000,
+      "mission": "📊 Táblázatok, diagramok, átlag",
+      "subtitle": "átlag = összeg ÷ adatok száma; hiányzó adat keresése adott átlagból",
+      "file": "./data/lessons/grade5/average-01.json",
+      "worldTitles": {
+        "postman": "📮 Átlag a postán",
+        "racing": "🏁 Átlag a boxutcában",
+        "football": "⚽ Átlag a pályán",
+        "cooking": "🍳 Átlag a konyhában",
+        "animals": "🦁 Átlag az állatkertben",
+        "space": "🚀 Átlag az űrhajón",
+        "tram": "🚋 Átlag a villamoson"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

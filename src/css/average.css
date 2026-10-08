@@ -33,6 +33,29 @@
     background: #f8fafc;
 }
 
+.avg-row.avg-total {
+    background: #fef3c7;
+    border-top: 2px solid #fcd34d;
+    color: #92400e;
+}
+
+.avg-row.avg-total .avg-label {
+    color: #92400e;
+}
+
+.avg-total-line {
+    max-width: 320px;
+    margin: 0.5rem auto 0;
+    padding: 0.35rem 0.6rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #92400e;
+    background: #fef3c7;
+    border: 1px solid #fcd34d;
+    border-radius: 10px;
+}
+
 .avg-label {
     color: #64748b;
 }

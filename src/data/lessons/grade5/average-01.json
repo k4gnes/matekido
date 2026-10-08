@@ -5,7 +5,7 @@
         {
             "type": "scene",
             "title": "📊 Táblázatok, diagramok, átlag",
-            "text": "Az átlag megmutatja, milyen lenne minden adat, ha mindannyian ugyanannyiak lennének. Kiszámolása egyszerű: összeg ÷ adatok száma. Példa: 2, 4, 6, 8 → összeg 20, 4 adat → átlag 5. Az adatokat táblázatból és oszlopdiagramból is olvashatod – számold ki az átlagot, vagy keresd meg a hiányzó adatot!",
+            "text": "Az átlag megmutatja, milyen lenne minden adat, ha mindannyian ugyanannyiak lennének. Kiszámolása egyszerű: összeg ÷ adatok száma. Példa: 2, 4, 6, 8 → összeg 20, 4 adat → átlag 5. Átlag számításánál a táblázat és a diagram alján az összeg is szerepel – már csak el kell osztani az adatok számával. A hiányzó adatot az átlagból keresed meg!",
             "worldTitles": {
                 "postman": {
                     "title": "📮 Napi mérleg",

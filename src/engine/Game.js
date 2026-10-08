@@ -81,7 +81,7 @@ import { renderOperationOrder } from "../components/operationOrder.js?v=2";
 import { renderSolidMeasure } from "../components/solidMeasure.js?v=1";
 import { renderCoordinate } from "../components/coordinate.js?v=1";
 import { renderSpeedTrip } from "../components/speedTrip.js?v=1";
-import { renderAverage } from "../components/average.js?v=1";
+import { renderAverage } from "../components/average.js?v=2";
 
 const COUNTED_TYPES = new Set([
     "exercise",

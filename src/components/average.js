@@ -40,6 +40,22 @@ function renderTable(step, card) {
         table.append(row);
     });
 
+    if (step.mode === "avg") {
+        const row = document.createElement("div");
+        row.className = "avg-row avg-total";
+
+        const label = document.createElement("span");
+        label.className = "avg-label";
+        label.textContent = "Összesen";
+
+        const cell = document.createElement("span");
+        cell.className = "avg-value";
+        cell.textContent = String(step.values.reduce((s, v) => s + v, 0));
+
+        row.append(label, cell);
+        table.append(row);
+    }
+
     card.append(table);
 }
 
@@ -105,8 +121,18 @@ export function renderAverage(step, root, next, progress, onResult, onAttempt) {
     contextLine.textContent = step.context;
     card.append(contextLine);
 
+    const sum = step.values.reduce((s, v) => s + v, 0);
+    const size = step.values.length;
+
     if (step.display === "chart") {
         renderChart(step, card);
+
+        if (step.mode === "avg") {
+            const totalLine = document.createElement("div");
+            totalLine.className = "avg-total-line";
+            totalLine.textContent = `Összesen: ${sum}`;
+            card.append(totalLine);
+        }
     } else {
         renderTable(step, card);
     }
@@ -174,14 +200,11 @@ export function renderAverage(step, root, next, progress, onResult, onAttempt) {
         onAttempt
     });
 
-    const sum = step.values.reduce((s, v) => s + v, 0);
-    const size = step.values.length;
-
     function hintText() {
         if (step.mode === "missing") {
             return "💡 Az összeg = átlag × adatok száma; a hiányzó érték = összeg − a többi adat összege.";
         }
-        return "💡 Az átlag = az adatok összege ÷ az adatok száma.";
+        return `💡 Az átlag = az adatok összege ÷ az adatok száma, ezért ${sum} ÷ ${size} osztást kell elvégezni.`;
     }
 
     function successText() {

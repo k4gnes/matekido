@@ -123,7 +123,9 @@ const UNIT_FACTORS = {
     "l-ml": 1000, "dl-ml": 100, "cl-ml": 10,
     "ml-l": 1000, "ml-dl": 100, "ml-cl": 10,
     "cl-dl": 10, "cl-l": 100, "dl-l": 10,
-    "hl-l": 100, "hl-dl": 1000, "l-hl": 100, "dl-hl": 1000
+    "hl-l": 100, "hl-dl": 1000, "l-hl": 100, "dl-hl": 1000,
+    "m²-dm²": 100, "dm²-m²": 100, "dm²-cm²": 100, "cm²-dm²": 100,
+    "dm³-l": 1, "l-dm³": 1
 };
 
 function measureUnitFactor(unit, target) {
@@ -133,13 +135,17 @@ function measureUnitFactor(unit, target) {
 const UNIT_FAMILY = {
     length: ["km", "m", "dm", "cm", "mm"],
     weight: ["t", "kg", "dkg", "g"],
-    volume: ["l", "dl", "cl", "ml", "hl"]
+    volume: ["l", "dl", "cl", "ml", "hl"],
+    area: ["m²", "dm²", "cm²"],
+    capacity: ["dm³", "l"]
 };
 
 const UNIT_LADDER = {
     length: { km: 1000000, m: 1000, dm: 100, cm: 10, mm: 1 },
     weight: { t: 1000000, kg: 1000, dkg: 10, g: 1 },
-    volume: { hl: 100000, l: 1000, dl: 100, cl: 10, ml: 1 }
+    volume: { hl: 100000, l: 1000, dl: 100, cl: 10, ml: 1 },
+    area: { "m²": 10000, "dm²": 100, "cm²": 1 },
+    capacity: { "dm³": 1000, l: 1000 }
 };
 
 function validateComparison(ctx, step) {
@@ -703,7 +709,7 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "measure-units": {
-            if (!["length", "weight", "volume"].includes(step.kind)) fail(ctx, `kind hibás: ${step.kind}`);
+            if (!["length", "weight", "volume", "area", "capacity"].includes(step.kind)) fail(ctx, `kind hibás: ${step.kind}`);
             if (step.interaction === "unit") {
                 validateUnitChoice(ctx, step);
                 break;
@@ -713,8 +719,8 @@ function validateStep(step, ctx, range) {
                 break;
             }
             if (!isInt(step.value) || step.value < 1) fail(ctx, `value hibás: ${step.value}`);
-            if (!["km", "m", "dm", "cm", "kg", "dkg", "g", "l", "dl", "cl", "ml", "mm", "t", "hl"].includes(step.unit) ||
-                !["km", "m", "dm", "cm", "kg", "dkg", "g", "l", "dl", "cl", "ml", "mm", "t", "hl"].includes(step.target)) {
+            if (!["km", "m", "dm", "cm", "kg", "dkg", "g", "l", "dl", "cl", "ml", "mm", "t", "hl", "m²", "dm²", "cm²", "dm³"].includes(step.unit) ||
+                !["km", "m", "dm", "cm", "kg", "dkg", "g", "l", "dl", "cl", "ml", "mm", "t", "hl", "m²", "dm²", "cm²", "dm³"].includes(step.target)) {
                 fail(ctx, `unit/target ismeretlen: ${step.unit} → ${step.target}`);
             }
             const factor = measureUnitFactor(step.unit, step.target);

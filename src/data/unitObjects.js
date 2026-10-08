@@ -29,6 +29,27 @@ export const UNIT_OBJECTS = {
         { emoji: "🍯", phrase: "Egy mézesüveg", base: "ml", min: 250, max: 500 },
         { emoji: "🥤", phrase: "Egy üdítőital", base: "ml", min: 330, max: 500 },
         { emoji: "🧃", phrase: "Egy kis gyümölcslé", base: "cl", min: 20, max: 30 }
+    ],
+    area: [
+        { emoji: "🛏️", phrase: "Egy ágy", base: "m²", min: 1, max: 4 },
+        { emoji: "🏓", phrase: "Egy pingpongasztal", base: "m²", min: 2, max: 4 },
+        { emoji: "🏫", phrase: "Egy osztályterem", base: "m²", min: 40, max: 60 },
+        { emoji: "📕", phrase: "Egy könyv", base: "dm²", min: 2, max: 5 },
+        { emoji: "💻", phrase: "Egy laptop", base: "dm²", min: 5, max: 9 },
+        { emoji: "🚪", phrase: "Egy ajtó", base: "dm²", min: 100, max: 300 },
+        { emoji: "🪟", phrase: "Egy ablak", base: "dm²", min: 100, max: 200 },
+        { emoji: "🛋️", phrase: "Egy kanapé", base: "dm²", min: 200, max: 300 },
+        { emoji: "📮", phrase: "Egy levelezőlap", base: "cm²", min: 100, max: 300 },
+        { emoji: "📓", phrase: "Egy füzet", base: "cm²", min: 150, max: 300 },
+        { emoji: "🖼️", phrase: "Egy fénykép", base: "cm²", min: 100, max: 200 }
+    ],
+    capacity: [
+        { emoji: "📦", phrase: "Egy csomag", base: "dm³", min: 2, max: 12 },
+        { emoji: "🐠", phrase: "Egy akvárium", base: "dm³", min: 10, max: 30 },
+        { emoji: "🧳", phrase: "Egy bőrönd", base: "dm³", min: 5, max: 20 },
+        { emoji: "🚰", phrase: "Egy vizes kanna", base: "l", min: 10, max: 20 },
+        { emoji: "🪣", phrase: "Egy vödör", base: "l", min: 5, max: 10 },
+        { emoji: "🍲", phrase: "Egy fazék", base: "l", min: 2, max: 4 }
     ]
 };
 

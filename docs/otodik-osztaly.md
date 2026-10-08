@@ -1,6 +1,6 @@
 # Matekidő – 5. osztályos tanmenet
 
-> **Státusz: részben megvalósult.** A regiszterben 201 lecke van, ebből 30 az 5. osztályos (27 számozott feladat + 3 egyperces: a teljes Számfogalom, Törtek, Tizedes törtek, Százalékszámítás, Műveletek nagy számokkal és Geometria blokk). Az alábbiak irányadó tervek – a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
+> **Státusz: részben megvalósult.** A regiszterben 202 lecke van, ebből 31 az 5. osztályos (28 számozott feladat + 3 egyperces: a teljes Számfogalom, Törtek, Tizedes törtek, Százalékszámítás, Műveletek nagy számokkal és Geometria blokk). Az alábbiak irányadó tervek – a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
 
 **Tervezett 32 lecke**, 9 témakörben (a regiszterben 7 kategória: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
@@ -71,7 +71,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
 | Mértékegység-átváltás | Átváltások tisztán (hosszúság, tömeg, űrtartalom) | km/m/cm, t/kg/g, hl/l/dl | 10000 | 2 ✔ |
-| Terület és térfogat-egységek | Terület- és térfogategységek váltása | cm², m², dm³, l | 10000 | 3 |
+| Terület és térfogat-egységek | Terület- és térfogategységek váltása | cm², m², dm³, l | 10000 | 3 ✔ |
 | Idő és sebesség | Idő, sebesség, út | Egyszerű sebességhelyzetek | 1000 | 3 |
 
 ## Adatok és valószínűség (1 lecke)
@@ -102,7 +102,7 @@ A fenti 32 lecke az 5. osztályos tanmenet terve. Tovább tervezett leckék:
 
 ## Státusz
 
-**Megvalósult leckék (27/32):**
+**Megvalósult leckék (28/32):**
 
 - Számfogalom 1 000 000-ig (6/6): helyiérték (`place-value-millions-01`), számnevek (`number-name-millions-01`), számszomszédok és kerekítés (`neighbor-round-millions-01`), összehasonlítás (`comparison-millions-01`), oszthatósági szabályok 2, 3, 4, 5, 6, 9, 10-zel (`divisibility-rules-01`), kerekítés és becslés (`rounding-millions-01`) ✔
 - Törtek (5/5 – blokk kész): bővítés és egyszerűsítés – azonos értékű töredékek leírása (`fraction-equal-01`) ✔; különböző nevezőjű törtek összeadása és kivonása (`fraction-common-den-01`, feladat-segítséggel) ✔; törtek szorzása egész számmal (`fraction-times-int-01`, egész adagos és tört eredményű feladatokkal, feladat-segítséggel) ✔; törtek szorzása törttel (`fraction-times-frac-01`, területmodellel, egyszerűsítendő és egyszerűsítés nélküli feladatokkal, feladat-segítséggel) ✔; törtek osztása (`fraction-divide-01`, egésszel és törttel, megfordított szorzás, feladat-segítséggel) ✔
@@ -110,9 +110,9 @@ A fenti 32 lecke az 5. osztályos tanmenet terve. Tovább tervezett leckék:
 - Százalékszámítás (2/2 – blokk kész): százalék fogalma (`percent-basics-01`: 100 kockás rács kiszínezése, százalék ↔ egyszerű tört, és hétköznapi szövegben a fele/negyede/ötöde/tizede felismerése, feladat-segítséggel) ✔; százalék számolása és megfordítása (`percent-of-01`: 10/20/25/50% gyors részekkel, majd 5/15/30/40/75%-kal 1000-ig, végül „hány százaléka” – rész ÷ egész × 100, feladat-segítséggel) ✔
 - Műveletek nagy számokkal (3/3 – blokk kész): írásbeli műveletek nagy számokkal (`written-big-01`: ötjegyű összeadás és kivonás, négyjegyű szám kétszámjegyű szorzóval szorzása, és ötjegyű osztandó kétszámjegyű osztóval, aláírással) ✔; műveleti sorrend és zárójelek (`operation-order-02`: hat műveletforma – szorzás előbb, zárójel, osztás – 1000-ig, a tipikus sorrend-hibás válaszokkal együtt) ✔; hiányzó tag és hiányzó tényező (`missing-mixed-01`: fordított összeadás és kivonás 1000-ig, valamint hiányzó tényező 11–100-as szorzótáblákkal) ✔
 - Geometria (6/6 – blokk kész): síkidomok tulajdonságai (`polygon-02`: ötszögtől nyolcszögig oldalak, csúcsok és átlók, az átlóképlettel) ✔; kerület és terület négyzettel és téglalappal (`shape-formula-02`: K = 2 × (a + b) és T = a × b nagyobb oldalakkal, 600-ig terület) ✔; kocka és téglatest felszíne és térfogata (`solid-measure-01`: 6a², 2(ab + ac + bc), a³ és a × b × c 3–10 cm élekkel, új feladattípus) ✔; szögek mérése és szerkesztése (`angle-measure-02`: fokban olvasás 5°-os lépésekkel, teljes kör 360°, szögek összehasonlítása) ✔; koordináta-rendszer (`coordinate-01`: pont leolvasása a rácsról és pont kijelölése koordinátából, új feladattípus) ✔; eltolás, forgatás és tükrözés (`transform-02`: eltolás lépésekben új módban, forgatás és tükörkép) ✔
-- Gyakorlati tudások (1/3): mértékegység-átváltás (`unit-conversion-01`: hosszúság km/m/cm, tömeg t/kg/g és űrtartalom hl/l/dl – előre szorozva és visszafelé osztva is, összehasonlításokkal, kiterjesztett generátorral) ✔
+- Gyakorlati tudások (2/3): mértékegység-átváltás (`unit-conversion-01`: hosszúság km/m/cm, tömeg t/kg/g és űrtartalom hl/l/dl – előre szorozva és visszafelé osztva is, összehasonlításokkal, kiterjesztett generátorral) ✔; terület- és térfogategységek (`area-volume-units-01`: m² ↔ dm² ↔ cm² szorozással és osztással 100-zal, valamint dm³ ↔ l 1:1 átváltás, összehasonlításokkal és igaz/hamis feladatokkal – új `area` és `capacity` fajták a `measure-units` generátorban, új készség)
 
-A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg; a még hiányzó 5 lecke a következő blokkokban várakozik: Gyakorlati tudások (2), Adatok (1), Szöveges feladatok (2).
+A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg; a még hiányzó 4 lecke a következő blokkokban várakozik: Gyakorlati tudások (1), Adatok (1), Szöveges feladatok (2).
 
 
 ## 🎲 Egypercesek

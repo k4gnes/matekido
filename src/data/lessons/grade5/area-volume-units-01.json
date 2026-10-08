@@ -1,0 +1,122 @@
+{
+    "id": "area-volume-units-01",
+    "title": "📐 Terület- és térfogategységek",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📐 Új egységek: terület és térfogat",
+            "text": "A területet négyzetegységekkel mérjük: 1 m² = 100 dm² = 10 000 cm², és 1 dm² = 100 cm². Előre 100-zal szorzol, visszafelé 100-zal osztol. A térfogatnál egy zseniális egyszerűség vár: 1 dm³ = 1 l – ugyanaz a mennyiség, csak másik egység, a szám nem is változik! Kezdődhet a mérés?",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Címke és csomag",
+                    "text": "A levél címkéje 200 cm², a doboz 6 dm³ – váltsd át dm²-be és literbe!"
+                },
+                "racing": {
+                    "title": "🏁 A box mérései",
+                    "text": "A szerelőpad területe 3 m², a benzinkanna 15 l – hány dm² és hány dm³?"
+                },
+                "football": {
+                    "title": "⚽ Pálya és palack",
+                    "text": "A kispad területe 4 m², a vizespalack 2 dm³ – mérjünk át mindent dm²-be és literbe!"
+                },
+                "cooking": {
+                    "title": "🍳 Konyhai méretek",
+                    "text": "A tálca 600 cm², a fazék 3 l – hány dm² a tálca, és hány dm³ a leves?"
+                },
+                "animals": {
+                    "title": "🦁 Ketrec és itatótál",
+                    "text": "A ketrec alja 5 m², az itatótál 2 l – ha dm²-ben és dm³-ben is tudod, minden állat meg van mérve!"
+                },
+                "space": {
+                    "title": "🚀 Tartály és napelem",
+                    "text": "A rakéta tartálya 25 dm³ üzemanyag – az annyi liter! A napelem 4 m² – hány négyzetdeciméter?"
+                },
+                "tram": {
+                    "title": "🚋 Padló és kijelző",
+                    "text": "A villamos padlója 300 dm², az utastájékoztató kijelzője 200 cm² – váltsd át mindkettőt!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "measure-units",
+            "options": {
+                "count": 3,
+                "kind": "area",
+                "context": true,
+                "interaction": "mixed",
+                "units": ["m²", "dm²", "cm²"]
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "measure-units",
+            "options": {
+                "count": 3,
+                "kind": "area",
+                "reverse": true,
+                "context": true,
+                "interaction": "mixed",
+                "units": ["m²", "dm²"]
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "measure-units",
+            "options": {
+                "count": 3,
+                "kind": "capacity",
+                "context": true,
+                "interaction": "mixed",
+                "units": ["dm³", "l"]
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "measure-units",
+            "options": {
+                "count": 3,
+                "kind": "area",
+                "reverse": true,
+                "context": true,
+                "interaction": "mixed",
+                "units": ["m²", "dm²", "cm²"]
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Minden egység a helyén!",
+            "text": "Most már a területet négyzetegységekben váltod, a térfogatot pedig dm³-ben és literben – és tudod a legfontosabbat: 1 dm³ = 1 l!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Kézbesítve",
+                    "text": "Minden csomag adatai a helyes egységben – a levelek is!"
+                },
+                "racing": {
+                    "title": "🏁 Gyors és pontos",
+                    "text": "A mérőszalag és a mérleg is barátod – indulhat a következő verseny!"
+                },
+                "football": {
+                    "title": "🏆 Gól a méréssel",
+                    "text": "Terület és térfogat a helyére került – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Pontosan kimérve",
+                    "text": "Tálca, fazék, liter – a recept most tökéletes lesz!"
+                },
+                "animals": {
+                    "title": "🦁 Mindenki megmérve",
+                    "text": "A ketrectől az itatótálig mindenki tudja a méretét – ügyes voltál!"
+                },
+                "space": {
+                    "title": "🚀 Kész az indulásra",
+                    "text": "A tartály tele, a napelem megmérve – startolhat a rakéta!"
+                },
+                "tram": {
+                    "title": "🚋 Végállomás",
+                    "text": "Minden adat a helyes egységben – nyugodtan utazhat a villamos!"
+                }
+            }
+        }
+    ]
+}

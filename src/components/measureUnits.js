@@ -33,6 +33,14 @@ const KIND_CONFIG = {
         hint: "1 l = 10 dl = 100 cl",
         hintAdvanced: "1 l = 10 dl = 100 cl = 1000 ml. Visszafelé 10-szeres, 100-szoros és 1000-szeres osztás",
         hintExtended: "1 hl = 100 l, 1 l = 10 dl. Visszafelé osztás: 600 l = 6 hl, 50 dl = 5 l"
+    },
+    area: {
+        title: "Terület-mérés",
+        hint: "1 m² = 100 dm² = 10 000 cm², 1 dm² = 100 cm². Előre szorozz 100-zal, visszafelé oszts 100-zal"
+    },
+    capacity: {
+        title: "Térfogat-egységek",
+        hint: "1 dm³ = 1 l – ugyanaz a mennyiség, csak másik egység, a szám nem változik"
     }
 };
 

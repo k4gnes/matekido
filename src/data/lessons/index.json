@@ -647,6 +647,30 @@
       }
     },
     {
+      "id": "area-volume-units-01",
+      "title": "📐 Terület- és térfogategységek",
+      "grades": [
+        5
+      ],
+      "category": "practical",
+      "skill": "area-volume-units",
+      "difficulty": 3,
+      "type": "measure-units",
+      "range": 10000,
+      "mission": "📐 Terület- és térfogat",
+      "subtitle": "m² ↔ dm² ↔ cm² és dm³ ↔ l – 100-zal szorozz és ossz, 1 dm³ = 1 l",
+      "file": "./data/lessons/grade5/area-volume-units-01.json",
+      "worldTitles": {
+        "postman": "📮 Címke és csomag",
+        "racing": "🏁 A box mérései",
+        "football": "⚽ Pálya és palack",
+        "cooking": "🍳 Konyhai méretek",
+        "animals": "🦁 Ketrec és itatótál",
+        "space": "🚀 Tartály és napelem",
+        "tram": "🚋 Padló és kijelző"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

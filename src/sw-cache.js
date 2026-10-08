@@ -390,6 +390,7 @@ const SW_CACHE_LIST = [
     "/data/lessons/grade4/written-mul2-01.json",
     "/data/lessons/grade4/written-sub-01.json",
     "/data/lessons/grade5/angle-measure-02.json",
+    "/data/lessons/grade5/area-volume-units-01.json",
     "/data/lessons/grade5/comparison-millions-01.json",
     "/data/lessons/grade5/coordinate-01.json",
     "/data/lessons/grade5/decimal-addsub-01.json",

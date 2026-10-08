@@ -1,4 +1,4 @@
-import { UNIT_OBJECTS, UNIT_OBJECTS_EXTENDED } from "../data/unitObjects.js?v=1";
+import { UNIT_OBJECTS, UNIT_OBJECTS_EXTENDED } from "../data/unitObjects.js?v=2";
 
 const CONVERSIONS = {
     length: [
@@ -44,6 +44,18 @@ const CONVERSIONS = {
         { unit: "ml", target: "cl", factor: 10, max: 100, reverse: true },
         { unit: "cl", target: "dl", factor: 10, max: 10, reverse: true },
         { unit: "dl", target: "l", factor: 10, max: 10, reverse: true }
+    ],
+    area: [
+        { unit: "m²", target: "dm²", factor: 100, max: 50 },
+        { unit: "dm²", target: "cm²", factor: 100, max: 90 }
+    ],
+    areaReverse: [
+        { unit: "dm²", target: "m²", factor: 100, max: 50, reverse: true },
+        { unit: "cm²", target: "dm²", factor: 100, max: 90, reverse: true }
+    ],
+    capacity: [
+        { unit: "dm³", target: "l", factor: 1, max: 30 },
+        { unit: "l", target: "dm³", factor: 1, max: 30, reverse: true }
     ]
 };
 
@@ -70,7 +82,9 @@ const EXTENDED_CONVERSIONS_REVERSE = {
 const UNIT_FAMILY = {
     length: ["km", "m", "dm", "cm", "mm"],
     weight: ["t", "kg", "dkg", "g"],
-    volume: ["l", "dl", "cl", "ml"]
+    volume: ["l", "dl", "cl", "ml"],
+    area: ["m²", "dm²", "cm²"],
+    capacity: ["dm³", "l"]
 };
 
 const EXTENDED_FAMILY = {
@@ -80,7 +94,9 @@ const EXTENDED_FAMILY = {
 const UNIT_MEASURE_WORD = {
     length: "hossza",
     weight: "tömege",
-    volume: "űrtartalma"
+    volume: "űrtartalma",
+    area: "területe",
+    capacity: "űrtartalma"
 };
 
 function roundNice(value) {
@@ -117,7 +133,9 @@ function buildUnitChoiceTask(k, object, amount, allowed = null, extended = false
 const UNIT_LADDER = {
     length: { m: 1000, dm: 100, cm: 10 },
     weight: { kg: 1000, dkg: 10, g: 1 },
-    volume: { l: 1000, dl: 100, cl: 10, ml: 1 }
+    volume: { l: 1000, dl: 100, cl: 10, ml: 1 },
+    area: { "m²": 10000, "dm²": 100, "cm²": 1 },
+    capacity: { "dm³": 1000, l: 1000 }
 };
 
 const UNIT_LADDER_ADVANCED = {
@@ -133,7 +151,9 @@ const EXTENDED_LADDER = {
 const COMPARE_QUESTION = {
     length: "Melyik a hosszabb?",
     weight: "Melyik a nehezebb?",
-    volume: "Melyikben van több?"
+    volume: "Melyikben van több?",
+    area: "Melyik a nagyobb?",
+    capacity: "Melyikben van több?"
 };
 
 function buildCompareTask(k, advanced, allowed = null, extended = false) {

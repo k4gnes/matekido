@@ -32,6 +32,7 @@ export const TYPE_EMOJI = {
     "find-error": "🕵️",
     table: "✖️",
     "multiplication-play": "🎲",
+    "addition-play": "🎲",
     "division-table": "➗",
     "mixed-mult-div": "✖️",
     sharing: "🍕",

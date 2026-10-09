@@ -105,4 +105,5 @@ Ezek nem számozott feladatok: a **🎲 Egypercesek** oldalon találhatók, nem 
 |---|---|---|---|---|
 | Gombos játék | 🎲 Gombos szorzótábla – egy perc, négy gomb | Szorzótábla-játék | 100 | 2 |
 | Számolós játék | 🎲 Számolós szorzótábla – egy perc, beírás | Szorzótábla-játék | 100 | 2 |
+| Számolós összeadás | 🎲 Számolós játék – egy perc, négy gomb | Számolós játék | 20 | 2 |
 

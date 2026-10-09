@@ -2761,6 +2761,32 @@
       }
     },
     {
+      "id": "addition-play-01",
+      "title": "🎲 Számolós játék (egyperces)",
+      "grades": [
+        2
+      ],
+      "category": "operations",
+      "skill": "addition",
+      "difficulty": 2,
+      "type": "addition-play",
+      "range": 20,
+      "practice": true,
+      "playMode": "addition-play",
+      "mission": "🎲 Számolós egyperces",
+      "subtitle": "Egy perc, négy gomb – tízesen belül és tízesátlépéssel",
+      "file": "./data/lessons/grade2/addition-play-01.json",
+      "worldTitles": {
+        "postman": "📮 Számolós posta",
+        "racing": "🏎️ Számolás a pályán",
+        "football": "⚽ Góljáték",
+        "cooking": "🍳 Tálkajáték",
+        "animals": "🦁 Etetőjáték",
+        "space": "🤖 Bolygójáték",
+        "tram": "🚋 Utasjáték"
+      }
+    },
+    {
       "id": "division-01",
       "title": "Egyenlő elosztás és csoportosítás",
       "grades": [

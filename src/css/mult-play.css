@@ -54,6 +54,10 @@
     grid-column: span 2;
 }
 
+.mult-play-table-wide {
+    grid-column: 1 / -1;
+}
+
 .mult-play-start {
     font-size: clamp(1rem, 3vw, 1.15rem);
     padding: 0.6rem 1.4rem;

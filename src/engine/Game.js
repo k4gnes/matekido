@@ -31,6 +31,7 @@ import { renderMultPrep } from "../components/multPrep.js?v=9";
 import { renderMultiplication } from "../components/multiplication.js?v=7";
 import { renderMultiplicationPlay } from "../components/multiplicationPlay.js?v=10";
 import { renderOperationOrderPlay } from "../components/operationOrderPlay.js?v=5";
+import { renderAdditionPlay } from "../components/additionPlay.js?v=1";
 import { renderDivision } from "../components/division.js?v=6";
 import { renderMissingOperand } from "../components/missingOperand.js?v=6";
 import { renderEstimate } from "../components/estimate.js?v=8";
@@ -228,6 +229,7 @@ const RENDERERS = new Map([
     ["skip-counting", renderMultPrep],
     ["table", renderMultiplication],
     ["multiplication-play", renderMultiplicationPlay],
+    ["addition-play", renderAdditionPlay],
     ["missing-factor", renderMultiplication],
     ["match-groups", renderMultiplication],
     ["link", renderMultiplication],

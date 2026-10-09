@@ -796,6 +796,95 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
             card.append(options);
         }
 
+    } else if (step.kind === "direct-proportion") {
+
+        const table = document.createElement("div");
+        table.className = "wp-prop-table";
+
+        const headAmount = document.createElement("div");
+        headAmount.className = "wp-prop-head";
+        headAmount.textContent = step.amountNoun;
+
+        const headValue = document.createElement("div");
+        headValue.className = "wp-prop-head";
+        headValue.textContent = step.valueNoun;
+
+        const cellA1 = document.createElement("div");
+        cellA1.className = "wp-prop-cell";
+        cellA1.textContent = `${step.amount1} ${step.amountNoun}`;
+
+        const cellV1 = document.createElement("div");
+        cellV1.className = "wp-prop-cell";
+        cellV1.textContent = `${step.value1} ${step.valueNoun}`;
+
+        const cellA2 = document.createElement("div");
+        const cellV2 = document.createElement("div");
+
+        if (step.mode === "value") {
+            cellA2.className = "wp-prop-cell";
+            cellA2.textContent = `${step.amount2} ${step.amountNoun}`;
+            cellV2.className = "wp-prop-cell wp-prop-unknown";
+            cellV2.textContent = "?";
+        } else {
+            cellA2.className = "wp-prop-cell wp-prop-unknown";
+            cellA2.textContent = "?";
+            cellV2.className = "wp-prop-cell";
+            cellV2.textContent = `${step.value2} ${step.valueNoun}`;
+        }
+
+        table.append(headAmount, headValue, cellA1, cellV1, cellA2, cellV2);
+        card.append(table);
+
+        const question = document.createElement("p");
+        question.className = "wp-question";
+        question.textContent = step.question;
+        card.append(question);
+
+        if (step.interaction === "input") {
+
+            const input = createNumberInput("?");
+            input.className = "wp-input";
+
+            const button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
+            card.append(input, button);
+
+            function check() {
+                if (feedback.isAnswered()) return;
+                const value = Number(input.value);
+                if (value === step.answer) {
+                    reportSuccess(step.successText);
+                } else {
+                    reportRetry();
+                    input.focus();
+                    input.select();
+                }
+            }
+
+            button.addEventListener("click", check);
+            input.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") check();
+            });
+
+            requestAnimationFrame(() => input.focus());
+
+        } else {
+            const options = document.createElement("div");
+            options.className = "wp-options";
+            step.options.forEach(value => {
+                const btn = createButton(String(value), { className: "wp-option" });
+                btn.addEventListener("click", () => {
+                    if (value === step.answer) {
+                        markCorrect(btn);
+                        reportSuccess(step.successText);
+                    } else {
+                        reportRetry();
+                    }
+                });
+                options.append(btn);
+            });
+            card.append(options);
+        }
+
     } else if (step.kind === "proportion" || step.kind === "multiply" || step.kind === "divide") {
 
         const question = document.createElement("p");

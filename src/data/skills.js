@@ -32,7 +32,7 @@ export const CATEGORIES = {
     wordProblems: {
         title: "Szöveges feladatok",
         icon: "📝",
-        skills: ["one-step", "two-step", "ratio-split"]
+        skills: ["one-step", "two-step", "ratio-split", "direct-proportion"]
     }
 };
 
@@ -103,7 +103,8 @@ export const SKILLS = {
     // Word Problems
     "one-step": { title: "Egylépéses", category: "wordProblems" },
     "two-step": { title: "Kétlépéses", category: "wordProblems" },
-    "ratio-split": { title: "Arányos osztás", category: "wordProblems" }
+    "ratio-split": { title: "Arányos osztás", category: "wordProblems" },
+    "direct-proportion": { title: "Egyenes arányosság", category: "wordProblems" }
 };
 
 export const DIFFICULTY = {

@@ -1,0 +1,120 @@
+{
+  "id": "direct-proportion-01",
+  "title": "📐 Egyenes arányosság",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📐 Egyenes arányosság",
+      "text": "Ha egyenesen arányos a mennyiség és az érték, akkor kétszer annyi mennyiséghez kétszer annyi érték tartozik. Először érdemes kiszámolni, mennyi jut egyhez, aztán szorozni. Olvasd el a történetet, és keresd meg a hiányzó értéket!",
+      "worldTitles": {
+        "postman": {
+          "title": "📐 Egyenes arányosság a postán",
+          "text": "A postán minden levélhez ugyanannyi bélyeg jut. Számold ki, mennyi jut egy levélhez, és keresd meg a hiányzó értéket!"
+        },
+        "racing": {
+          "title": "📐 Egyenes arányosság a garázsban",
+          "text": "A garázsban minden körhöz ugyanannyi üzemanyag jut. Számold ki, mennyi jut egy körhöz, és keresd meg a hiányzó értéket!"
+        },
+        "cooking": {
+          "title": "📐 Egyenes arányosság a konyhában",
+          "text": "A konyhában minden adaghoz ugyanannyi tojás jut. Számold ki, mennyi jut egy adaghoz, és keresd meg a hiányzó értéket!"
+        },
+        "football": {
+          "title": "📐 Egyenes arányosság a pályán",
+          "text": "A csapatban minden meccshez ugyanannyi pont jut. Számold ki, mennyi jut egy meccshez, és keresd meg a hiányzó értéket!"
+        },
+        "animals": {
+          "title": "📐 Egyenes arányosság az állatkertben",
+          "text": "Az állatkertben minden vödörhöz ugyanannyi itató jut. Számold ki, mennyi jut egy vödörhöz, és keresd meg a hiányzó értéket!"
+        },
+        "space": {
+          "title": "📐 Egyenes arányosság az űrhajón",
+          "text": "Az űrhajón minden robothoz ugyanannyi feladat jut. Számold ki, mennyi jut egy robothoz, és keresd meg a hiányzó értéket!"
+        },
+        "tram": {
+          "title": "📐 Egyenes arányosság a villamoson",
+          "text": "A villamoson minden megállóhoz ugyanannyi perc jut. Számold ki, mennyi jut egy megállóhoz, és keresd meg a hiányzó értéket!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 3,
+        "max": 60,
+        "kind": "direct-proportion",
+        "mode": "value",
+        "interaction": "choice"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 3,
+        "max": 200,
+        "kind": "direct-proportion",
+        "mode": "value",
+        "interaction": "input"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 3,
+        "max": 1000,
+        "kind": "direct-proportion",
+        "mode": "amount",
+        "interaction": "choice"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 3,
+        "max": 1000,
+        "kind": "direct-proportion",
+        "mode": "amount",
+        "interaction": "input"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen kiszámoltad az egyenes arányosságot!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiszámoltad a bélyegeket a postán!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiszámoltad az üzemanyagot a garázsban!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiszámoltad a tojásokat a konyhában!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiszámoltad a pontokat a pályán!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen kiszámoltad az itatókat az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen kiszámoltad a feladatokat az űrhajón!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiszámoltad a perceket a villamoson!"
+        }
+      }
+    }
+  ]
+}

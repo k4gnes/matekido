@@ -1113,7 +1113,7 @@ function validateStep(step, ctx, range) {
             break;
         }
     case "word-problem": {
-            if (!["join", "remove", "part-whole", "compare", "multiply", "divide", "proportion", "remainder", "two-step", "ratio-split"].includes(step.kind)) {
+            if (!["join", "remove", "part-whole", "compare", "multiply", "divide", "proportion", "remainder", "two-step", "ratio-split", "direct-proportion"].includes(step.kind)) {
                 fail(ctx, `ismeretlen kind: ${step.kind}`);
             }
             if (typeof step.text !== "string" || step.text.length === 0) fail(ctx, "text hiányzik");
@@ -1168,6 +1168,30 @@ function validateStep(step, ctx, range) {
                     if (step.part !== expectedPart) fail(ctx, `part (${step.part}) != számolt (${expectedPart})`);
                     const expectedAnswer = step.mode === "part" ? step.part : step.total;
                     if (step.answer !== expectedAnswer) fail(ctx, `answer (${step.answer}) != számolt (${expectedAnswer})`);
+                }
+                if (typeof range === "number" && step.answer > range) {
+                    fail(ctx, `answer (${step.answer}) meghaladja a tartományt (${range})`);
+                }
+                if (step.interaction === "choice" && !Array.isArray(step.options)) {
+                    fail(ctx, "choice interakcióhoz hiányzik az options");
+                }
+            }
+            if (step.kind === "direct-proportion") {
+                if (!["value", "amount"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+                if (!["choice", "input"].includes(step.interaction)) fail(ctx, `interaction hibás: ${step.interaction}`);
+                for (const k of ["rate", "amount1", "value1", "amount2", "value2"]) {
+                    if (!isInt(step[k]) || step[k] < 1) fail(ctx, `${k} hibás: ${step[k]}`);
+                }
+                if (step.value1 !== step.rate * step.amount1) {
+                    fail(ctx, `value1 (${step.value1}) != rate*amount1 (${step.rate * step.amount1})`);
+                }
+                if (step.value2 !== step.rate * step.amount2) {
+                    fail(ctx, `value2 (${step.value2}) != rate*amount2 (${step.rate * step.amount2})`);
+                }
+                if (step.amount1 === step.amount2) fail(ctx, "amount1 == amount2");
+                const expectedProportion = step.mode === "value" ? step.value2 : step.amount2;
+                if (step.answer !== expectedProportion) {
+                    fail(ctx, `answer (${step.answer}) != számolt (${expectedProportion})`);
                 }
                 if (typeof range === "number" && step.answer > range) {
                     fail(ctx, `answer (${step.answer}) meghaladja a tartományt (${range})`);

@@ -362,3 +362,36 @@
     font-weight: 800;
     color: #92400e;
 }
+
+.wp-prop-table {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    gap: 6px;
+    width: 100%;
+    max-width: 360px;
+    margin: .6rem auto;
+}
+
+.wp-prop-head {
+    text-align: center;
+    font-size: .95rem;
+    font-weight: 800;
+    color: #64748b;
+}
+
+.wp-prop-cell {
+    text-align: center;
+    padding: .7rem .4rem;
+    border-radius: 10px;
+    border: 2px solid #e2e8f0;
+    background: #f8fafc;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #1a1a2e;
+}
+
+.wp-prop-unknown {
+    border-color: #f59e0b;
+    background: #fffbeb;
+    color: #92400e;
+}

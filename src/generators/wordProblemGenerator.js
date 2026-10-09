@@ -74,6 +74,12 @@ const THEMES = {
             bSubj: "a sima levelek",
             aSing: "expressz levél",
             bSing: "sima levél"
+        },
+        "direct-proportion": {
+            amountNoun: "levél",
+            amountTo: "levélhez",
+            valueNoun: "bélyeg",
+            lead: "A postán minden levélhez ugyanannyi bélyeg jut."
         }
     },
     racing: {
@@ -134,6 +140,12 @@ const THEMES = {
             bSubj: "a sárga alkatrészek",
             aSing: "kék alkatrész",
             bSing: "sárga alkatrész"
+        },
+        "direct-proportion": {
+            amountNoun: "kör",
+            amountTo: "körhöz",
+            valueNoun: "liter üzemanyag",
+            lead: "A garázsban minden körhöz ugyanannyi üzemanyag jut."
         }
     },
     cooking: {
@@ -194,6 +206,12 @@ const THEMES = {
             bSubj: "a sajtos palacsinták",
             aSing: "lekváros palacsinta",
             bSing: "sajtos palacsinta"
+        },
+        "direct-proportion": {
+            amountNoun: "adag",
+            amountTo: "adaghoz",
+            valueNoun: "tojás",
+            lead: "A konyhában minden adaghoz ugyanannyi tojás jut."
         }
     },
     football: {
@@ -254,6 +272,12 @@ const THEMES = {
             bSubj: "a kék mezes játékosok",
             aSing: "piros mezes játékos",
             bSing: "kék mezes játékos"
+        },
+        "direct-proportion": {
+            amountNoun: "meccs",
+            amountTo: "meccshez",
+            valueNoun: "pont",
+            lead: "A csapatban minden meccshez ugyanannyi pont jut."
         }
     },
     animals: {
@@ -314,6 +338,12 @@ remainder: {
             bSubj: "a foltos zebrák",
             aSing: "csíkos zebra",
             bSing: "foltos zebra"
+        },
+        "direct-proportion": {
+            amountNoun: "vödör",
+            amountTo: "vödörhöz",
+            valueNoun: "itató",
+            lead: "Az állatkertben minden vödörhöz ugyanannyi itató jut."
         }
     },
     space: {
@@ -374,6 +404,12 @@ remainder: {
             bSubj: "a töltődő robotok",
             aSing: "működő robot",
             bSing: "töltődő robot"
+        },
+        "direct-proportion": {
+            amountNoun: "robot",
+            amountTo: "robothoz",
+            valueNoun: "feladat",
+            lead: "Az űrhajón minden robothoz ugyanannyi feladat jut."
         }
     },
     tram: {
@@ -434,6 +470,12 @@ remainder: {
             bSubj: "a jegyet váltó utasok",
             aSing: "bérletes utas",
             bSing: "jegyet váltó utas"
+        },
+        "direct-proportion": {
+            amountNoun: "megálló",
+            amountTo: "megállóhoz",
+            valueNoun: "perc",
+            lead: "A villamoson minden megállóhoz ugyanannyi perc jut."
         }
     }
 };
@@ -473,6 +515,20 @@ export function generateWordProblems(options = {}) {
     } else if (kind === "ratio-split") {
         for (let i = 0; i < count; i++) {
             tasks.push(generateRatioSplit(max, world, mode, interaction));
+        }
+    } else if (kind === "direct-proportion") {
+        const seen = new Set();
+        let attempts = 0;
+        while (tasks.length < count && attempts < 300) {
+            attempts++;
+            const task = generateDirectProportion(max, world, mode, interaction);
+            const signature = `${task.rate}|${task.mode}|${task.amount1}|${task.amount2}`;
+            if (seen.has(signature)) continue;
+            seen.add(signature);
+            tasks.push(task);
+        }
+        while (tasks.length < count) {
+            tasks.push(generateDirectProportion(max, world, mode, interaction));
         }
     } else {
         for (let i = 0; i < count; i++) {
@@ -752,6 +808,66 @@ function generateRatioSplit(max, world, mode, interaction) {
 
     if (normInteraction === "choice") {
         task.options = makeOptions(answer, 0, max, 4, [part, total - part, total]);
+    }
+
+    return task;
+}
+
+const DIRECT_PROPORTION_RATES = [2, 3, 4, 5];
+
+function generateDirectProportion(max, world, mode, interaction) {
+
+    const theme = getTheme(world, "direct-proportion");
+    const normMode = mode === "amount" ? "amount" : "value";
+    const normInteraction = interaction === "input" ? "input" : "choice";
+
+    const rates = DIRECT_PROPORTION_RATES.filter(r => Math.floor(max / r) >= 3);
+    const rate = rates[random(0, rates.length - 1)] ?? 2;
+    const maxAmount = Math.min(Math.floor(max / rate), 12);
+
+    const amount1 = random(2, maxAmount);
+    let amount2 = random(2, maxAmount);
+    let guard = 0;
+    while (amount2 === amount1 && guard < 40) {
+        amount2 = random(2, maxAmount);
+        guard++;
+    }
+    if (amount2 === amount1) amount2 = amount1 === 2 ? amount1 + 1 : amount1 - 1;
+
+    const value1 = rate * amount1;
+    const value2 = rate * amount2;
+    const answer = normMode === "value" ? value2 : amount2;
+
+    const task = {
+        kind: "direct-proportion",
+        world,
+        title: "📐 Egyenes arányosság",
+        text: `${theme.lead} ${amount1} ${theme.amountTo} ${value1} ${theme.valueNoun} jut.`,
+        question: normMode === "value"
+            ? `Hány ${theme.valueNoun} jut ${amount2} ${theme.amountTo}?`
+            : `Hány ${theme.amountTo} jut ${value2} ${theme.valueNoun}?`,
+        mode: normMode,
+        interaction: normInteraction,
+        rate,
+        amount1,
+        value1,
+        amount2,
+        value2,
+        amountNoun: theme.amountNoun,
+        amountTo: theme.amountTo,
+        valueNoun: theme.valueNoun,
+        answer,
+        successText: normMode === "value"
+            ? `😊 Szép munka! ${answer} ${theme.valueNoun} jut ${amount2} ${theme.amountTo}!`
+            : `😊 Szép munka! ${answer} ${theme.amountTo} jut ${value2} ${theme.valueNoun}!`
+    };
+
+    if (normInteraction === "choice") {
+        const candidates = normMode === "value"
+            ? [value1, value1 + rate, value2 + rate, value2 - rate]
+            : [amount1, amount2 + 1, amount2 - 1];
+        const bound = normMode === "value" ? max : Math.max(12, amount2 + 5);
+        task.options = makeOptions(answer, 1, bound, 4, candidates);
     }
 
     return task;

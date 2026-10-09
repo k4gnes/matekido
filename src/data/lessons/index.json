@@ -743,6 +743,30 @@
       }
     },
     {
+      "id": "direct-proportion-01",
+      "title": "📐 Egyenes arányosság",
+      "grades": [
+        5
+      ],
+      "category": "wordProblems",
+      "skill": "direct-proportion",
+      "difficulty": 3,
+      "type": "word-problem",
+      "range": 1000,
+      "mission": "📐 Egyenes arányosság",
+      "subtitle": "egységnyi érték és skálázás: mennyi jut 1-hez, mennyi jut többhöz",
+      "file": "./data/lessons/grade5/direct-proportion-01.json",
+      "worldTitles": {
+        "postman": "📮 Bélyegek a postán",
+        "racing": "🏁 Üzemanyag a garázsban",
+        "football": "⚽ Pontok a meccsen",
+        "cooking": "🍳 Tojások a konyhában",
+        "animals": "🦁 Itatók az állatkertben",
+        "space": "🚀 Feladatok az űrhajón",
+        "tram": "🚋 Percek a villamoson"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

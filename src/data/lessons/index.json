@@ -959,6 +959,30 @@
       }
     },
     {
+      "id": "prime-factor-01",
+      "title": "🌳 Prímfelbontás",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "prime-factor",
+      "difficulty": 3,
+      "type": "prime-factor",
+      "range": 100,
+      "mission": "🌳 Számok prímfelbontása",
+      "subtitle": "számok felbontása prímek szorzatára",
+      "file": "./data/lessons/grade6/prime-factor-01.json",
+      "worldTitles": {
+        "postman": "📮 Prímfelbontás a postán",
+        "racing": "🏎️ Prímfelbontás a pályán",
+        "cooking": "🍳 Prímfelbontás a konyhában",
+        "football": "⚽ Prímfelbontás a bajnokságban",
+        "animals": "🦁 Prímfelbontás az állatkertben",
+        "space": "🤖 Prímfelbontás az űrben",
+        "tram": "🚋 Prímfelbontás a városban"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

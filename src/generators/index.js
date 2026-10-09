@@ -81,6 +81,7 @@ import { generateIntegerOps } from "./integerOpsGenerator.js?v=1";
 import { generateIntegerMuldiv } from "./integerMuldivGenerator.js?v=1";
 import { generateDivisibilityRule } from "./divisibilityRuleGenerator.js?v=1";
 import { generatePrime } from "./primeGenerator.js?v=1";
+import { generatePrimeFactor } from "./primeFactorGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -260,6 +261,8 @@ export function generate(step) {
             return generateDivisibilityRule(opts);
         case "prime":
             return generatePrime(opts);
+        case "prime-factor":
+            return generatePrimeFactor(opts);
 
         default:
             throw new Error(

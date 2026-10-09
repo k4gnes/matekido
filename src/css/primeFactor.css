@@ -1,0 +1,55 @@
+.prime-factor-prompt {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #444;
+    text-align: center;
+    margin: 0.5rem 0 1.25rem;
+}
+
+.prime-factor-number-box {
+    width: 6.5rem;
+    margin: 0 auto 1.25rem;
+    padding: 0.9rem 0;
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-align: center;
+    color: #1f3a5f;
+    background: #eef5ff;
+    border: 2px solid #bcd4f6;
+    border-radius: 18px;
+}
+
+.prime-factor-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.prime-factor-option {
+    min-width: 7rem;
+    padding: 0.85rem 1.2rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    white-space: nowrap;
+    color: #1f3a5f;
+    background: #ffffff;
+    border: 2px solid #bcd4f6;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.prime-factor-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(31, 58, 95, 0.15);
+}
+
+.prime-factor-hint {
+    text-align: left;
+}
+
+.prime-factor-hint p {
+    margin: 0.35rem 0;
+}

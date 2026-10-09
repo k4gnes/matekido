@@ -1,0 +1,108 @@
+{
+  "id": "prime-factor-01",
+  "title": "🌳 Prímfelbontás",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🌳 Prímfelbontás",
+      "text": "Minden összetett szám felbontható prímszámok szorzatára. Például 24 = 2 · 2 · 2 · 3, és ezt rövidebben így is írhatjuk: 24 = 2³ · 3. A felbontásnál mindig a legkisebb prímosztóval kezdd, és addig osztogass, amíg 1 nem marad!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Prímfelbontás a postán",
+          "text": "A postán a küldeményeket prímcsomagokra bontjuk: minden számot prímek szorzatára írunk."
+        },
+        "racing": {
+          "title": "🏎️ Prímfelbontás a pályán",
+          "text": "A versenypályán a körök számát bontjuk prímekre – a legkisebb prímosztóval kezdjük."
+        },
+        "cooking": {
+          "title": "🍳 Prímfelbontás a konyhában",
+          "text": "A konyhában az adagokat prímekre bontjuk szét, hogy pontosan eloszthassuk."
+        },
+        "football": {
+          "title": "⚽ Prímfelbontás a bajnokságban",
+          "text": "A bajnokságban a pontszámokat bontjuk prímszámok szorzatára."
+        },
+        "animals": {
+          "title": "🦁 Prímfelbontás az állatkertben",
+          "text": "Az állatkertben az állatok számát bontjuk prímekre, hogy átlássuk a szerkezetüket."
+        },
+        "space": {
+          "title": "🚀 Prímfelbontás az űrben",
+          "text": "Az űrhajón a kódokat prímekre bontjuk – a titkos kulcs a prímfelbontás."
+        },
+        "tram": {
+          "title": "🚋 Prímfelbontás a városban",
+          "text": "A villamoson a kocsiszámokat bontjuk prímszámok szorzatára."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "prime-factor",
+      "options": {
+        "count": 3,
+        "mode": "choose"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "prime-factor",
+      "options": {
+        "count": 3,
+        "mode": "missing"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "prime-factor",
+      "options": {
+        "count": 3,
+        "mode": "exponents"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "prime-factor",
+      "options": {
+        "count": 3,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen bontottad a számokat prímszámok szorzatára!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen bontottad prímcsomagokra a küldeményeket!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen bontottad prímekre a köröket!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen bontottad prímekre az adagokat!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen bontottad prímekre a pontszámokat!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen bontottad prímekre az állatok számát!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megfejtetted a prímkódokat!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen bontottad prímekre a kocsiszámokat!"
+        }
+      }
+    }
+  ]
+}

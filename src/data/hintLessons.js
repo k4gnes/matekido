@@ -23,7 +23,8 @@ export const HINT_TYPES = new Set([
     "integer-ops",
     "integer-muldiv",
     "divisibility-rule",
-    "prime"
+    "prime",
+    "prime-factor"
 ]);
 
 export function lessonHasHint(lessonMeta) {

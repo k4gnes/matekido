@@ -229,6 +229,7 @@ export const CURRICULUM_ORDER = {
         "divisibility-rules-02",
         "divisibility-multiples-01",
         "prime-composite-01",
+        "prime-factor-01",
     ],
 };
 

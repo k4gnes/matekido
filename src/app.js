@@ -1,7 +1,7 @@
 import { Game } from "./engine/Game.js?v=119";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=48";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=99";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=100";
 import { renderSkillMap } from "./components/skillMap.js?v=33";
 import { renderHelp } from "./components/help.js?v=6";
 import { renderProfilePage } from "./components/profilePage.js?v=14";
@@ -41,28 +41,84 @@ function setRoute(name) {
     }
 }
 
+const DEEPLINK_KEY = "matekido-deeplink";
+
+function queueDeepLink() {
+    let id = null;
+    try {
+        const params = new URLSearchParams(location.search);
+        id = params.get("lesson");
+        if (!id) return;
+        params.delete("lesson");
+        const query = params.toString();
+        history.replaceState(null, "", location.pathname + (query ? "?" + query : "") + location.hash);
+        sessionStorage.setItem(DEEPLINK_KEY, id);
+    } catch {
+        return;
+    }
+}
+
+function startPendingLesson() {
+    let id = null;
+    try {
+        id = sessionStorage.getItem(DEEPLINK_KEY);
+    } catch {
+        return false;
+    }
+    if (!id) return false;
+
+    const target = (lessonIndex.lessons || []).find(l => l.id === id);
+    if (!target) {
+        try {
+            sessionStorage.removeItem(DEEPLINK_KEY);
+        } catch {
+            return false;
+        }
+        return false;
+    }
+
+    if (!(getActiveId() && listPlayers().length > 0)) return false;
+
+    try {
+        sessionStorage.removeItem(DEEPLINK_KEY);
+    } catch {
+        return false;
+    }
+
+    startLesson(target.file, target.practice ? { from: "play" } : {});
+    return true;
+}
+
+function showRestoredRoute(route) {
+    if (route === "welcome") {
+        showWelcome();
+    } else if (route === "profile") {
+        showProfile();
+    } else if (route === "stats") {
+        showStats();
+    } else if (route === "help") {
+        showHelp();
+    } else if (route === "parent") {
+        showParentHub();
+    } else if (route === "dashboard") {
+        showParentDashboard();
+    } else if (route === "transfer") {
+        showTransferPage();
+    } else if (getActiveId() && listPlayers().length > 0) {
+        showMenu();
+    } else {
+        showWelcome();
+    }
+}
+
 const lessonIndex = await loadLesson("./data/lessons/index.json");
+
+queueDeepLink();
 
 const restoredRoute = readRoute();
 
-if (restoredRoute === "welcome") {
-    showWelcome();
-} else if (restoredRoute === "profile") {
-    showProfile();
-} else if (restoredRoute === "stats") {
-    showStats();
-} else if (restoredRoute === "help") {
-    showHelp();
-} else if (restoredRoute === "parent") {
-    showParentHub();
-} else if (restoredRoute === "dashboard") {
-    showParentDashboard();
-} else if (restoredRoute === "transfer") {
-    showTransferPage();
-} else if (getActiveId() && listPlayers().length > 0) {
-    showMenu();
-} else {
-    showWelcome();
+if (!startPendingLesson()) {
+    showRestoredRoute(restoredRoute);
 }
 
 function setWorldBackground() {
@@ -85,7 +141,9 @@ function showWelcome() {
     setTipVisible(true);
     setRoute("welcome");
     renderWelcomeScreen(root, () => {
-        showMenu();
+        if (!startPendingLesson()) {
+            showMenu();
+        }
     }, showHelp, lessonIndex);
 }
 

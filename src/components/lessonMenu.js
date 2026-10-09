@@ -156,6 +156,49 @@ const DIFFICULTY_LABEL = {
 };
 
 
+function lessonLink(id) {
+    return `${location.origin}${location.pathname}?lesson=${encodeURIComponent(id)}`;
+}
+
+function copyTextFallback(text) {
+    const area = document.createElement("textarea");
+    area.value = text;
+    area.setAttribute("readonly", "");
+    area.style.position = "fixed";
+    area.style.opacity = "0";
+    document.body.append(area);
+    area.select();
+    let ok = false;
+    try {
+        ok = document.execCommand("copy");
+    } catch {
+        ok = false;
+    }
+    area.remove();
+    return ok;
+}
+
+function copyText(text) {
+    if (navigator.clipboard?.writeText) {
+        return navigator.clipboard.writeText(text).then(() => true).catch(() => copyTextFallback(text));
+    }
+    return Promise.resolve(copyTextFallback(text));
+}
+
+function wireLinkButton(btn, id) {
+    btn.addEventListener("click", (event) => {
+        event.stopPropagation();
+        copyText(lessonLink(id)).then((ok) => {
+            btn.textContent = ok ? "✅" : "🔗";
+            btn.title = ok ? "Link a vágólapon!" : "Link másolása a leckéhez";
+            setTimeout(() => {
+                btn.textContent = "🔗";
+                btn.title = "Link másolása a leckéhez";
+            }, 1600);
+        });
+    });
+}
+
 export function createLessonCard(lesson, onSelect, activeWorld, position, total, selectOpts) {
     const lessonCard = document.createElement("div");
     const isPractice = !!lesson.practice;
@@ -231,6 +274,14 @@ export function createLessonCard(lesson, onSelect, activeWorld, position, total,
         favBtn.title = nowFav ? "Kedvencekből törlés" : "Kedvencekhez adás";
     });
     badges.append(favBtn);
+
+    const linkBtn = document.createElement("button");
+    linkBtn.className = "lesson-fav-btn lesson-link-btn";
+    linkBtn.textContent = "🔗";
+    linkBtn.title = "Link másolása a leckéhez";
+    linkBtn.setAttribute("aria-label", "Lecke linkjének másolása");
+    wireLinkButton(linkBtn, lesson.id);
+    badges.append(linkBtn);
 
     lessonCard.append(badges, title, subtitle);
 

@@ -276,6 +276,10 @@
     opacity: 1;
 }
 
+.lesson-link-btn {
+    margin-left: 0;
+}
+
 .lesson-difficulty-badge {
     font-size: 1rem;
 }

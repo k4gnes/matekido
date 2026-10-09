@@ -983,6 +983,30 @@
       }
     },
     {
+      "id": "gcd-lcm-01",
+      "title": "🤝 LNKO és LKKT",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "gcd-lcm",
+      "difficulty": 3,
+      "type": "gcd-lcm",
+      "range": 100,
+      "mission": "🤝 Legnagyobb közös osztó és legkisebb közös többszörös",
+      "subtitle": "közös osztók és közös többszörösök keresése",
+      "file": "./data/lessons/grade6/gcd-lcm-01.json",
+      "worldTitles": {
+        "postman": "📮 Közös osztók és többszörösök a postán",
+        "racing": "🏎️ Közös osztók és többszörösök a pályán",
+        "cooking": "🍳 Közös osztók és többszörösök a konyhában",
+        "football": "⚽ Közös osztók és többszörösök a bajnokságban",
+        "animals": "🦁 Közös osztók és többszörösök az állatkertben",
+        "space": "🤖 Közös osztók és többszörösök az űrben",
+        "tram": "🚋 Közös osztók és többszörösök a városban"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

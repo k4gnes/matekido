@@ -1,0 +1,67 @@
+.gcd-lcm-pair {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin: 0.25rem 0 1rem;
+}
+
+.gcd-lcm-chip {
+    min-width: 3.4rem;
+    padding: 0.5rem 0.9rem;
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-align: center;
+    color: #1f3a5f;
+    background: #eef5ff;
+    border: 2px solid #bcd4f6;
+    border-radius: 14px;
+}
+
+.gcd-lcm-sep {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #6b7a90;
+}
+
+.gcd-lcm-prompt {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #444;
+    text-align: center;
+    margin: 0 0 1.25rem;
+}
+
+.gcd-lcm-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.gcd-lcm-option {
+    min-width: 4rem;
+    padding: 0.85rem 1.2rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #1f3a5f;
+    background: #ffffff;
+    border: 2px solid #bcd4f6;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.gcd-lcm-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(31, 58, 95, 0.15);
+}
+
+.gcd-lcm-hint {
+    text-align: left;
+}
+
+.gcd-lcm-hint p {
+    margin: 0.35rem 0;
+}

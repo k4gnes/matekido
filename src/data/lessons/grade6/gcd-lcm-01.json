@@ -1,0 +1,108 @@
+{
+  "id": "gcd-lcm-01",
+  "title": "🤝 LNKO és LKKT",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🤝 LNKO és LKKT",
+      "text": "A legnagyobb közös osztó (LNKO) a két szám közös osztói közül a legnagyobb: a 12 és a 18 közös osztói az 1, 2, 3 és 6, tehát az LNKO a 6. A legkisebb közös többszörös (LKKT) a közös többszörösök közül a legkisebb: a 4 és a 6 többszörösei közül az első közös a 12. Keresd meg te is a közös osztókat és többszörösöket!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Közös csomagok a postán",
+          "text": "A postán két küldeménysor közös osztóit és többszöröseit keressük, hogy egyenlő csomagokat készíthessünk."
+        },
+        "racing": {
+          "title": "🏎️ Közös körök a pályán",
+          "text": "A versenypályán két autó köreit vizsgáljuk: mikor találkoznak újra a rajtvonalnál?"
+        },
+        "cooking": {
+          "title": "🍳 Közös adagok a konyhában",
+          "text": "A konyhában két recept adagjait osztjuk közös részekre – keressük a közös osztókat."
+        },
+        "football": {
+          "title": "⚽ Közös pontok a bajnokságban",
+          "text": "A bajnokságban két csapat pontjainak közös osztóit és többszöröseit keressük."
+        },
+        "animals": {
+          "title": "🦁 Közös kifutók az állatkertben",
+          "text": "Az állatkertben két kifutó állatait osztjuk egyenlő csoportokra – keressük a közös osztókat."
+        },
+        "space": {
+          "title": "🚀 Közös kódok az űrben",
+          "text": "Az űrhajón két kód közös osztóit és többszöröseit keressük a biztonságos kapcsolathoz."
+        },
+        "tram": {
+          "title": "🚋 Közös megállók a városban",
+          "text": "A villamoson két járat megállóit hasonlítjuk össze: hol találkoznak újra?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "gcd-lcm",
+      "options": {
+        "count": 3,
+        "mode": "gcd"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "gcd-lcm",
+      "options": {
+        "count": 3,
+        "mode": "lcm"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "gcd-lcm",
+      "options": {
+        "count": 3,
+        "mode": "common-divisor"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "gcd-lcm",
+      "options": {
+        "count": 3,
+        "mode": "common-multiple"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megtaláltad a közös osztókat és többszörösöket!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a közös csomagokat!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiszámoltad, mikor találkoznak a körök!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen elosztottad a közös adagokat!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a közös pontokat!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen elosztottad a kifutók állatait!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megfejtetted a közös kódokat!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a közös megállókat!"
+        }
+      }
+    }
+  ]
+}

@@ -24,7 +24,8 @@ export const HINT_TYPES = new Set([
     "integer-muldiv",
     "divisibility-rule",
     "prime",
-    "prime-factor"
+    "prime-factor",
+    "gcd-lcm"
 ]);
 
 export function lessonHasHint(lessonMeta) {

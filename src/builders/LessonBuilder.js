@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=64";
+import { generate } from "../generators/index.js?v=65";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -401,6 +401,11 @@ export function buildLesson(lesson) {
             } else if (step.generator === "prime-factor") {
                 result.push({
                     type: "prime-factor",
+                    ...task
+                });
+            } else if (step.generator === "gcd-lcm") {
+                result.push({
+                    type: "gcd-lcm",
                     ...task
                 });
             } else if (step.generator === "elapsed-time") {

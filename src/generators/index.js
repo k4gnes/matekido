@@ -82,6 +82,7 @@ import { generateIntegerMuldiv } from "./integerMuldivGenerator.js?v=1";
 import { generateDivisibilityRule } from "./divisibilityRuleGenerator.js?v=1";
 import { generatePrime } from "./primeGenerator.js?v=1";
 import { generatePrimeFactor } from "./primeFactorGenerator.js?v=1";
+import { generateGcdLcm } from "./gcdLcmGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -263,6 +264,8 @@ export function generate(step) {
             return generatePrime(opts);
         case "prime-factor":
             return generatePrimeFactor(opts);
+        case "gcd-lcm":
+            return generateGcdLcm(opts);
 
         default:
             throw new Error(

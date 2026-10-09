@@ -28,7 +28,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | 7 | Osztók, többszörösök | [Osztók és többszörösök](?lesson=divisibility-multiples-01) | Osztó- és többszöröskeresés | 100 | 2 |
 | 8 | Prímszámok | [Prím- és összetett számok](?lesson=prime-composite-01) | Prímfelismerés | 100 | 2 |
 | 9 | Prímfelbontás | [Számok prímfelbontása](?lesson=prime-factor-01) | Szorzat prímekből | 100 | 3 |
-|  | LNKO, LKKT | Legnagyobb közös osztó és legkisebb közös többszörös | Közös osztó és többszörös | 100 | 3 |
+| 10 | LNKO, LKKT | [Legnagyobb közös osztó és legkisebb közös többszörös](?lesson=gcd-lcm-01) | Közös osztó és többszörös | 100 | 3 |
 
 ## Hatványok (3 lecke)
 
@@ -101,8 +101,8 @@ A fenti 33 lecke a 6. osztályos tanmenet terve. Tovább tervezett leckék:
 **Megvalósult leckék:** a regiszterbe felvett 6. osztályos leckék (a szám a táblázatban szereplő, évfolyamon belüli folyamatos sorszám):
 
 - Egész számok, negatív számok (5/5): 1. Negatív számok – helyük a számegyenesen (`integers-line-01`, olvasás, elhelyezés, hőmérséklet és adósság), 2. Ellentett és abszolút érték (`integers-opposite-01`), 3. Egész számok összehasonlítása (`integers-compare-01`, abszolút értékkel, ellentettel és egyszerű összegekkel), 4. Előjeles összeadás és kivonás (`integers-ops-01`, azonos és különböző előjelűek, hőmérséklet- és egyenleg-történetek), 5. Előjeles szorzás és osztás (`integers-muldiv-01`, előjelszabályok, hőmérséklet- és egyenleg-történetek) ✔
-- Osztók, többszörösök, prímek (4/5): 6. Oszthatósági szabályok gyakorlása (`divisibility-rules-02`, szabályok a 2, 3, 4, 5, 6, 9, 10 osztókhoz és maradékszámolás 1000-ig) ✔, 7. Osztók és többszörösök (`divisibility-multiples-01`, nagyobb alapokkal: 7–16 többszörösei, 12–30 osztói és osztószámai) ✔, 8. Prím- és összetett számok (`prime-composite-01`, prímfelismerés 100-ig: melyik prím, melyik összetett, osztószám alapján) ✔, 9. Számok prímfelbontása (`prime-factor-01`, prímfelbontás 100-ig: teljes felbontás, hiányzó prím és hatványos alak) ✔
-- A témakör további leckéi (10. LNKO–LKKT) és a többi témakör tervezett.
+- Osztók, többszörösök, prímek (5/5): 6. Oszthatósági szabályok gyakorlása (`divisibility-rules-02`, szabályok a 2, 3, 4, 5, 6, 9, 10 osztókhoz és maradékszámolás 1000-ig) ✔, 7. Osztók és többszörösök (`divisibility-multiples-01`, nagyobb alapokkal: 7–16 többszörösei, 12–30 osztói és osztószámai) ✔, 8. Prím- és összetett számok (`prime-composite-01`, prímfelismerés 100-ig: melyik prím, melyik összetett, osztószám alapján) ✔, 9. Számok prímfelbontása (`prime-factor-01`, prímfelbontás 100-ig: teljes felbontás, hiányzó prím és hatványos alak) ✔, 10. Legnagyobb közös osztó és legkisebb közös többszörös (`gcd-lcm-01`, közös osztók és többszörösök 20-ig, LNKO és LKKT kiválasztása) ✔
+- A témakör elkészült; a többi témakör tervezett.
 
 A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg.
 

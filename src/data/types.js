@@ -94,7 +94,8 @@ export const TYPE_EMOJI = {
     "integer-muldiv": "➗",
     "divisibility-rule": "🎯",
     "prime": "⚛️",
-    "prime-factor": "🌳"
+    "prime-factor": "🌳",
+    "gcd-lcm": "🤝"
 };
 
 export const TYPE_LABEL = {
@@ -192,5 +193,6 @@ export const TYPE_LABEL = {
     "integer-muldiv": "Előjeles szorzás és osztás",
     "divisibility-rule": "Oszthatósági szabályok",
     "prime": "Prím- és összetett számok",
-    "prime-factor": "Prímfelbontás"
+    "prime-factor": "Prímfelbontás",
+    "gcd-lcm": "LNKO és LKKT"
 };

@@ -6,4 +6,4 @@ test:
 
 sync-docs:
 	mkdir -p src/docs
-	cp docs/elso-osztaly.md docs/masodik-osztaly.md docs/harmadik-osztaly.md docs/negyedik-osztaly.md docs/otodik-osztaly.md docs/sugo.md src/docs/
+	cp docs/elso-osztaly.md docs/masodik-osztaly.md docs/harmadik-osztaly.md docs/negyedik-osztaly.md docs/otodik-osztaly.md docs/hatodik-osztaly.md docs/sugo.md src/docs/

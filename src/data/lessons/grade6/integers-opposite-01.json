@@ -1,0 +1,120 @@
+{
+  "id": "integers-opposite-01",
+  "title": "➖ Ellentett és abszolút érték",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "➖ Ellentett és abszolút érték",
+      "text": "A negatív számokat mínuszjellel írjuk. Egy szám ellentettje a 0 túloldalán van, ugyanolyan messze: a 7 ellentettje −7, a −7 ellentettje 7. Az abszolút érték a 0-tól mért távolság, ezért soha nem negatív: |−7| = 7. Olvasd el a történetet, és keresd meg az ellentettet vagy az abszolút értéket!",
+      "worldTitles": {
+        "postman": {
+          "title": "➖ Ellentett a postán",
+          "text": "A postán a tartozást mínusszal számoljuk: aki 7 bélyeggel tartozik, annak a mérlege −7. Az ellentett ugyanolyan messze van a 0-tól, csak a más oldalon. Keresd meg az ellentettet vagy az abszolút értéket!"
+        },
+        "racing": {
+          "title": "➖ Ellentett a garázsban",
+          "text": "A boxutcában a nullponttól balra a lassabb, jobbra a gyorsabb körök vannak. Egy szám ellentettje a 0 túloldalán ugyanolyan messze van. Keresd meg az ellentettet vagy az abszolút értéket!"
+        },
+        "cooking": {
+          "title": "➖ Ellentett a konyhában",
+          "text": "A konyhában a hűtő és a sütő hőmérsékletét is jegyezzük: a fagyasztó −7 fok, a sütő 7 fok. A 0-tól ugyanolyan messze vannak. Keresd meg az ellentettet vagy az abszolút értéket!"
+        },
+        "football": {
+          "title": "➖ Ellentett a pályán",
+          "text": "A pályán a gólkülönbség lehet negatív is: aki 7 góllal kapott ki, annak −7 a mutatója. Az ellentett a 0 túloldalán van. Keresd meg az ellentettet vagy az abszolút értéket!"
+        },
+        "animals": {
+          "title": "➖ Ellentett az állatkertben",
+          "text": "Az állatkert hőmérőjén a pingvineknél −7 fok, a sivatagban 7 fok van. A 0-tól egyformán messze vannak. Keresd meg az ellentettet vagy az abszolút értéket!"
+        },
+        "space": {
+          "title": "➖ Ellentett az űrhajón",
+          "text": "Az űrhajón a mélységet és a magasságot is mérjük: a −7 méter és a 7 méter egyformán messze van a kiinduló szinttől. Keresd meg az ellentettet vagy az abszolút értéket!"
+        },
+        "tram": {
+          "title": "➖ Ellentett a villamoson",
+          "text": "A villamos menetrendjében a késés is mínusz: ha 7 perccel korábban indult, az −7, ha 7 perccel késik, az 7. Keresd meg az ellentettet vagy az abszolút értéket!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "integer",
+      "options": {
+        "count": 3,
+        "mode": "opposite",
+        "interaction": "choice",
+        "min": -20,
+        "max": 20
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "integer",
+      "options": {
+        "count": 3,
+        "mode": "opposite",
+        "interaction": "input",
+        "min": -50,
+        "max": 50
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "integer",
+      "options": {
+        "count": 3,
+        "mode": "absolute",
+        "interaction": "choice",
+        "min": -30,
+        "max": 30
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "integer",
+      "options": {
+        "count": 3,
+        "mode": "absolute",
+        "interaction": "input",
+        "min": -80,
+        "max": 80
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megtaláltad az ellentettet és az abszolút értéket!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiszámoltad a posta egyenlegét!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen eligazodtál a boxutca számain!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen összehasonlítottad a hőmérsékleteket!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kezelted a gólkülönbséget!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen leolvastad az állatkert hőmérőjét!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen tájékozódtál az űrhajón!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltad a villamos perceit!"
+        }
+      }
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=55";
+import { generate } from "../generators/index.js?v=57";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -366,6 +366,11 @@ export function buildLesson(lesson) {
             } else if (step.generator === "average") {
                 result.push({
                     type: "average",
+                    ...task
+                });
+            } else if (step.generator === "integer") {
+                result.push({
+                    type: "integer",
                     ...task
                 });
             } else if (step.generator === "elapsed-time") {

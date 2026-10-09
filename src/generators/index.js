@@ -75,6 +75,7 @@ import { generateCoordinate } from "./coordinateGenerator.js?v=1";
 import { generateElapsedTime } from "./elapsedTimeGenerator.js?v=1";
 import { generateSpeedTrip } from "./speedTripGenerator.js?v=1";
 import { generateAverage } from "./averageGenerator.js?v=1";
+import { generateInteger } from "./integerGenerator.js?v=2";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -242,6 +243,8 @@ export function generate(step) {
             return generateSpeedTrip(opts);
         case "average":
             return generateAverage(opts);
+        case "integer":
+            return generateInteger(opts);
 
         default:
             throw new Error(

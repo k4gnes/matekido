@@ -64,6 +64,22 @@ function isInt(x) {
     return Number.isInteger(x);
 }
 
+function evalIntegerExpr(expr) {
+    const s = String(expr).replace(/−/g, "-").replace(/\s+/g, "");
+    let m = s.match(/^\|(-?\d+)\|$/);
+    if (m) return Math.abs(Number(m[1]));
+    m = s.match(/^-\((-?\d+)\)$/);
+    if (m) return -Number(m[1]);
+    m = s.match(/^(-?\d+)([+\-])(\d+)$/);
+    if (m) {
+        const a = Number(m[1]);
+        const b = Number(m[3]);
+        return m[2] === "+" ? a + b : a - b;
+    }
+    if (/^-?\d+$/.test(s)) return Number(s);
+    return null;
+}
+
 function checkOptions(step, ctx) {
     if (!Array.isArray(step.options)) return;
     if (step.options.length === 0) {
@@ -595,6 +611,47 @@ function validateStep(step, ctx, range) {
                     fail(ctx, "choice módban 4 options kell");
                 } else {
                     if (new Set(step.options).size !== 4) fail(ctx, "options ismétlődik");
+                    if (!step.options.includes(step.answer)) fail(ctx, "options nem tartalmazza a választ");
+                }
+            } else if (step.options !== undefined) {
+                fail(ctx, "input módban nem kell options");
+            }
+            break;
+        }
+        case "integer": {
+            if (!["opposite", "absolute", "compare"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!["choice", "input"].includes(step.interaction)) fail(ctx, `interaction hibás: ${step.interaction}`);
+            if (step.mode === "compare") {
+                if (!isInt(step.leftValue) || !isInt(step.rightValue)) {
+                    fail(ctx, `leftValue/rightValue hibás: ${step.leftValue}/${step.rightValue}`);
+                }
+                if (typeof step.leftExpr !== "string" || step.leftExpr.length === 0) fail(ctx, "leftExpr hiányzik");
+                if (typeof step.rightExpr !== "string" || step.rightExpr.length === 0) fail(ctx, "rightExpr hiányzik");
+                if (step.leftExpr === step.rightExpr) fail(ctx, "a két oldal kifejezése ugyanaz");
+                const leftValue = evalIntegerExpr(step.leftExpr);
+                const rightValue = evalIntegerExpr(step.rightExpr);
+                if (leftValue === null || rightValue === null) {
+                    fail(ctx, `nem értelmezhető kifejezés: ${step.leftExpr} / ${step.rightExpr}`);
+                } else {
+                    if (leftValue !== step.leftValue) fail(ctx, `leftExpr értéke hibás: ${step.leftExpr} -> ${leftValue}`);
+                    if (rightValue !== step.rightValue) fail(ctx, `rightExpr értéke hibás: ${step.rightExpr} -> ${rightValue}`);
+                }
+                const expectedCompare = step.leftValue > step.rightValue ? ">" : step.leftValue < step.rightValue ? "<" : "=";
+                if (step.operator !== expectedCompare) fail(ctx, `operator hibás: ${step.operator}`);
+                if (step.answer !== step.operator) fail(ctx, "answer != operator");
+                if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+                break;
+            }
+            if (!isInt(step.n) || step.n === 0) fail(ctx, `n hibás: ${step.n}`);
+            const expectedValue = step.mode === "opposite" ? -step.n : Math.abs(step.n);
+            if (step.answer !== expectedValue) fail(ctx, `answer (${step.answer}) != számolt (${expectedValue})`);
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            if (step.interaction === "choice") {
+                if (!Array.isArray(step.options) || step.options.length < 3) {
+                    fail(ctx, "choice módban kevés options");
+                } else {
+                    if (!step.options.every(o => isInt(o))) fail(ctx, "options nem egészek");
+                    if (new Set(step.options).size !== step.options.length) fail(ctx, "options ismétlődik");
                     if (!step.options.includes(step.answer)) fail(ctx, "options nem tartalmazza a választ");
                 }
             } else if (step.options !== undefined) {

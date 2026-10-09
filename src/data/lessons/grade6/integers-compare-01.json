@@ -1,0 +1,109 @@
+{
+  "id": "integers-compare-01",
+  "title": "⚖️ Egész számok összehasonlítása",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "⚖️ Egész számok összehasonlítása",
+      "text": "A számegyenesen jobbra haladva nőnek a számok. Minden negatív szám kisebb minden pozitívnál, és a 0 minden negatívnál nagyobb. Két negatív szám közül az a nagyobb, amelyik közelebb van a 0-hoz: például −2 > −5. Hasonlítsd össze a számokat a <, = és > jelekkel!",
+      "worldTitles": {
+        "postman": {
+          "title": "⚖️ Egyenlegek összehasonlítása",
+          "text": "A postán a tartozás negatív, a megtakarítás pozitív. A számegyenesen jobbra haladva nőnek az értékek. Hasonlítsd össze a számokat a <, = és > jelekkel!"
+        },
+        "racing": {
+          "title": "⚖️ Idők összehasonlítása a garázsban",
+          "text": "A boxutcában a gyorsabb kört kisebb idő jelöli, a lassabbat nagyobb. A számegyenesen jobbra nő az érték. Hasonlítsd össze a számokat!"
+        },
+        "cooking": {
+          "title": "⚖️ Hőmérsékletek összehasonlítása",
+          "text": "A konyhában a fagyasztó −18 fok, a sütő 180 fok. A 0-tól jobbra nő a hőmérséklet. Hasonlítsd össze a számokat a <, = és > jelekkel!"
+        },
+        "football": {
+          "title": "⚖️ Gólkülönbségek összehasonlítása",
+          "text": "A pályán a gólkülönbség negatív is lehet. A számegyenesen jobbra nő az érték. Hasonlítsd össze a számokat a <, = és > jelekkel!"
+        },
+        "animals": {
+          "title": "⚖️ Hőmérők az állatkertben",
+          "text": "Az állatkertben a pingvineknél −20 fok, a sivatagban 40 fok van. Minden negatív kisebb minden pozitívnál. Hasonlítsd össze a számokat!"
+        },
+        "space": {
+          "title": "⚖️ Magasságok az űrhajón",
+          "text": "Az űrhajón a kiinduló szint alatt negatív, felette pozitív a magasság. A számegyenesen jobbra nő az érték. Hasonlítsd össze a számokat!"
+        },
+        "tram": {
+          "title": "⚖️ Késések a villamoson",
+          "text": "A villamosnál a korai indulás negatív, a késés pozitív perc. A 0-tól jobbra nő az érték. Hasonlítsd össze a számokat a <, = és > jelekkel!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "integer",
+      "options": {
+        "count": 4,
+        "mode": "compare",
+        "min": -30,
+        "max": 30,
+        "expressions": "plain"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "integer",
+      "options": {
+        "count": 4,
+        "mode": "compare",
+        "min": -60,
+        "max": 60,
+        "expressions": "mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "integer",
+      "options": {
+        "count": 4,
+        "mode": "compare",
+        "min": -90,
+        "max": 90,
+        "expressions": "all"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen összehasonlítottad az egész számokat!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen rendezted a posta egyenlegeit!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen hasonlítottad össze a köröket!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen hasonlítottad össze a hőmérsékleteket!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen hasonlítottad össze a gólkülönbségeket!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen olvastad le az állatkert hőmérőit!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen hasonlítottad össze a magasságokat!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen hasonlítottad össze a késéseket!"
+        }
+      }
+    }
+  ]
+}

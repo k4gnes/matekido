@@ -767,6 +767,54 @@
       }
     },
     {
+      "id": "integers-opposite-01",
+      "title": "➖ Ellentett és abszolút érték",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "integers",
+      "difficulty": 2,
+      "type": "integer",
+      "range": 100,
+      "mission": "➖ Ellentett és abszolút érték",
+      "subtitle": "ellentett a 0 túloldalán, abszolút érték mint távolság",
+      "file": "./data/lessons/grade6/integers-opposite-01.json",
+      "worldTitles": {
+        "postman": "📮 Tartozás és megtakarítás",
+        "racing": "🏎️ Körök a nullpont körül",
+        "cooking": "🍳 Fagyasztó és sütő hőmérséklete",
+        "football": "⚽ Gólkülönbség a pályán",
+        "animals": "🦁 Hőmérők az állatkertben",
+        "space": "🚀 Mélység és magasság az űrhajón",
+        "tram": "🚋 Korai indulás és késés"
+      }
+    },
+    {
+      "id": "integers-compare-01",
+      "title": "⚖️ Egész számok összehasonlítása",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "integers",
+      "difficulty": 2,
+      "type": "integer",
+      "range": 100,
+      "mission": "⚖️ Egész számok összehasonlítása",
+      "subtitle": "kisebb, nagyobb vagy egyenlő a számegyenesen",
+      "file": "./data/lessons/grade6/integers-compare-01.json",
+      "worldTitles": {
+        "postman": "📮 Egyenlegek összehasonlítása",
+        "racing": "🏎️ Körök összehasonlítása",
+        "cooking": "🍳 Hőmérsékletek összehasonlítása",
+        "football": "⚽ Gólkülönbségek összehasonlítása",
+        "animals": "🦁 Hőmérők összehasonlítása",
+        "space": "🚀 Magasságok összehasonlítása",
+        "tram": "🚋 Késések összehasonlítása"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [
@@ -4805,6 +4853,10 @@
     {
       "grade": 5,
       "title": "5. osztály"
+    },
+    {
+      "grade": 6,
+      "title": "6. osztály"
     }
   ]
 }

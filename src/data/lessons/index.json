@@ -2355,6 +2355,30 @@
       }
     },
     {
+      "id": "alternating-sequence-01",
+      "title": "Váltakozó számsor – +1, +3",
+      "grades": [
+        2
+      ],
+      "category": "numbers",
+      "skill": "number-sequence",
+      "difficulty": 2,
+      "type": "sequence",
+      "range": 100,
+      "mission": "🔢 Váltakozó számsor",
+      "subtitle": "váltakozó lépésű számsor 100-ig",
+      "file": "./data/lessons/grade2/alternating-sequence-01.json",
+      "worldTitles": {
+        "postman": "📮 Váltakozó házszámok",
+        "racing": "🏎️ Váltakozó rajtszámok",
+        "cooking": "🍳 Váltakozó oldalak",
+        "football": "⚽ Váltakozó eredmények",
+        "animals": "🦁 Váltakozó állatok",
+        "space": "🤖 Váltakozó robotok",
+        "tram": "🚋 Váltakozó utasok"
+      }
+    },
+    {
       "id": "order-02",
       "title": "Rendezzük sorainkat! 100-ig",
       "grades": [

@@ -50,6 +50,7 @@ export const CURRICULUM_ORDER = {
         "neighbor-01",
         "neighbor-02",
         "sequence-02",
+        "alternating-sequence-01",
         "order-02",
         "pattern-02",
         "place-value-03",

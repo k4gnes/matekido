@@ -4,7 +4,7 @@ import { renderMarkdown } from "../utils/markdown.js?v=16";
 
 const DOCS = [
     { id: "elso-osztaly", emoji: "🌱", label: "1. osztály", desc: "42 lecke – számfogalom, válogatás, naptár, mérések, geometria" },
-    { id: "masodik-osztaly", emoji: "🚀", label: "2. osztály", desc: "55 lecke – számok 100-ig, szorzás és osztás" },
+    { id: "masodik-osztaly", emoji: "🚀", label: "2. osztály", desc: "56 lecke – számok 100-ig, szorzás és osztás" },
     { id: "harmadik-osztaly", emoji: "🪐", label: "3. osztály", desc: "47 lecke – számok 1000-ig, írásbeli műveletek, szorzás, osztás, szöveges feladatok, geometria" },
     { id: "negyedik-osztaly", emoji: "🍀", label: "4. osztály", desc: "35 lecke – 10 000-ig, írásbeli műveletek, törtek, geometria" },
     { id: "otodik-osztaly", emoji: "🌌", label: "5. osztály", desc: "32 lecke – 1 000 000-ig, oszthatóság, törtek, tizedes törtek, százalék, nagy számok műveletei, geometria, adatok, szöveges feladatok" },

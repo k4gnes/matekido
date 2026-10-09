@@ -282,6 +282,7 @@ const SW_CACHE_LIST = [
     "/data/lessons/grade2/addition-01.json",
     "/data/lessons/grade2/addition-02.json",
     "/data/lessons/grade2/addition-play-01.json",
+    "/data/lessons/grade2/alternating-sequence-01.json",
     "/data/lessons/grade2/calendar-01.json",
     "/data/lessons/grade2/comparison-02.json",
     "/data/lessons/grade2/division-01.json",

@@ -82,7 +82,7 @@ import { renderSolidMeasure } from "../components/solidMeasure.js?v=1";
 import { renderCoordinate } from "../components/coordinate.js?v=1";
 import { renderSpeedTrip } from "../components/speedTrip.js?v=1";
 import { renderAverage } from "../components/average.js?v=2";
-import { renderInteger } from "../components/integer.js?v=2";
+import { renderInteger } from "../components/integer.js?v=3";
 
 const COUNTED_TYPES = new Set([
     "exercise",

@@ -16,7 +16,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 |---|---|---|---|---|
 | Negatív számok | Negatív számok – helyük a számegyenesen | Hőmérséklet, adósság, számegyenes | — | 2 |
 | Ellentett, abszolút érték | Ellentett és abszolút érték | Ellentett és \|n\| | 100 | 2 |
-| Összehasonlítás | Egész számok összehasonlítása | Kifejezések és számegyenes (<, =, >) | 100 | 2 |
+| Összehasonlítás | Egész számok összehasonlítása | Kifejezések (<, =, >) | 100 | 2 |
 | Összeadás, kivonás | Egész számok összeadása és kivonása | Előjeles összeadás és kivonás | 100 | 3 |
 | Szorzás, osztás | Egész számok szorzása és osztása | Előjelszabályok | 100 | 3 |
 
@@ -100,7 +100,7 @@ A fenti 33 lecke a 6. osztályos tanmenet terve. Tovább tervezett leckék:
 
 **Megvalósult leckék:** a regiszterbe felvett 6. osztályos leckék száma folyamatosan nő. Az első blokk (Egész számok, negatív számok) indul:
 
-- Egész számok, negatív számok (2/5): ellentett és abszolút érték (`integers-opposite-01`), egész számok összehasonlítása (`integers-compare-01`, abszolút értékkel, ellentettel és egyszerű összegekkel, számegyenes segítséggel) ✔
+- Egész számok, negatív számok (2/5): ellentett és abszolút érték (`integers-opposite-01`), egész számok összehasonlítása (`integers-compare-01`, abszolút értékkel, ellentettel és egyszerű összegekkel) ✔
 - A blokk további leckéi (negatív számok a számegyenesen, előjeles összeadás-kivonás, előjeles szorzás-osztás) és a többi témakör tervezett.
 
 A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg.

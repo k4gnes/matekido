@@ -75,7 +75,7 @@ import { generateCoordinate } from "./coordinateGenerator.js?v=1";
 import { generateElapsedTime } from "./elapsedTimeGenerator.js?v=1";
 import { generateSpeedTrip } from "./speedTripGenerator.js?v=1";
 import { generateAverage } from "./averageGenerator.js?v=1";
-import { generateInteger } from "./integerGenerator.js?v=2";
+import { generateInteger } from "./integerGenerator.js?v=3";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {

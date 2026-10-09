@@ -66,7 +66,9 @@ function isInt(x) {
 
 function evalIntegerExpr(expr) {
     const s = String(expr).replace(/−/g, "-").replace(/\s+/g, "");
-    let m = s.match(/^\|(-?\d+)\|$/);
+    let m = s.match(/^-\|(-?\d+)\|$/);
+    if (m) return -Math.abs(Number(m[1]));
+    m = s.match(/^\|(-?\d+)\|$/);
     if (m) return Math.abs(Number(m[1]));
     m = s.match(/^-\((-?\d+)\)$/);
     if (m) return -Number(m[1]);

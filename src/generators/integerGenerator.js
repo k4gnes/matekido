@@ -80,6 +80,11 @@ function makeOpposite(min, max) {
     return { expr: `−(${fmt(n)})`, value: -n };
 }
 
+function makeNegAbsolute(min, max) {
+    const n = nonzero(min, max);
+    return { expr: `−|${fmt(n)}|`, value: -Math.abs(n) };
+}
+
 function makeSum(min, max) {
     for (let i = 0; i < 30; i++) {
         const a = randInt(-9, 9);
@@ -108,8 +113,8 @@ function makeDiff(min, max) {
 
 const COMPARE_STYLES = {
     plain: ["plain"],
-    mixed: ["plain", "plain", "absolute", "opposite"],
-    all: ["plain", "absolute", "opposite", "sum", "diff"]
+    mixed: ["plain", "absolute", "opposite", "absolute", "negabs"],
+    all: ["absolute", "opposite", "negabs", "absolute", "opposite", "sum", "diff"]
 };
 
 function makeCompareSide(styles, min, max) {
@@ -117,6 +122,7 @@ function makeCompareSide(styles, min, max) {
     switch (style) {
         case "absolute": return makeAbsolute(min, max);
         case "opposite": return makeOpposite(min, max);
+        case "negabs": return makeNegAbsolute(min, max);
         case "sum": return makeSum(min, max);
         case "diff": return makeDiff(min, max);
         default: return makePlain(min, max);
@@ -129,6 +135,7 @@ function makeEqualSide(value, avoidExpr) {
         `−(${fmt(-value)})`
     ];
     if (value >= 0) candidates.push(`|${fmt(-value)}|`);
+    else candidates.push(`−|${fmt(value)}|`);
 
     const pool = candidates.filter(expr => expr !== avoidExpr);
     if (pool.length === 0) return null;

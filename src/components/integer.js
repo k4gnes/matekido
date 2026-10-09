@@ -36,59 +36,6 @@ function hintText(step) {
     return "A számegyenesen a nagyobb szám van jobbra. Minden negatív szám kisebb minden pozitívnál, és két negatív közül az a nagyobb, amelyik közelebb van a 0-hoz (pl. −2 > −5).";
 }
 
-function fmtSigned(n) {
-    return n < 0 ? `−${Math.abs(n)}` : String(n);
-}
-
-function renderNumberLine(step) {
-    const lo = Math.min(step.leftValue, step.rightValue, 0);
-    const hi = Math.max(step.leftValue, step.rightValue, 0);
-    const span = hi - lo || 1;
-
-    const frame = document.createElement("div");
-    frame.className = "integer-numline";
-
-    const plot = document.createElement("div");
-    plot.className = "integer-numline-plot";
-    frame.append(plot);
-
-    const track = document.createElement("div");
-    track.className = "integer-numline-track";
-    plot.append(track);
-
-    const zero = document.createElement("div");
-    zero.className = "integer-numline-zero";
-    zero.style.left = `${((0 - lo) / span) * 100}%`;
-    zero.textContent = "0";
-    plot.append(zero);
-
-    function marker(value, side, label) {
-        const dot = document.createElement("div");
-        dot.className = `integer-numline-marker integer-numline-${side}`;
-        dot.style.left = `${((value - lo) / span) * 100}%`;
-
-        const tag = document.createElement("span");
-        tag.className = "integer-numline-tag";
-        tag.textContent = label;
-
-        const bullet = document.createElement("span");
-        bullet.className = "integer-numline-dot";
-
-        if (side === "left") {
-            dot.append(tag, bullet);
-        } else {
-            dot.append(bullet, tag);
-        }
-
-        plot.append(dot);
-    }
-
-    marker(step.leftValue, "left", fmtSigned(step.leftValue));
-    marker(step.rightValue, "right", fmtSigned(step.rightValue));
-
-    return frame;
-}
-
 export function renderInteger(step, root, next, progress, onResult, onAttempt) {
 
     let hintShown = false;
@@ -163,8 +110,6 @@ export function renderInteger(step, root, next, progress, onResult, onAttempt) {
 
         row.append(left, slot, right);
         card.append(row);
-
-        card.append(renderNumberLine(step));
 
         options.classList.add("integer-options-ops");
 

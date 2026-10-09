@@ -1,0 +1,110 @@
+{
+  "id": "divisibility-multiples-01",
+  "title": "➗ Osztók és többszörösök",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "➗ Osztók és többszörösök",
+      "text": "Egy szám osztói azok a számok, amelyekkel maradék nélkül elosztható: a 24 osztói az 1, 2, 3, 4, 6, 8, 12 és 24. A többszörösei pedig így keletkeznek: a 15-nek többszörösei a 15, 30, 45, 60 és így tovább. Keresd meg az osztókat és a többszörösöket nagyobb számokkal is!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Osztók és többszörösök a postán",
+          "text": "A postán a csomagokat és küldeményeket egyenlő csoportokba rakjuk: keresd meg az osztókat és a többszörösöket!"
+        },
+        "racing": {
+          "title": "🏎️ Osztók és többszörösök a pályán",
+          "text": "A versenypályán a körök egyenlő részre osztják a távot: melyik szám az osztó, melyik a többszörös?"
+        },
+        "cooking": {
+          "title": "🍳 Osztók és többszörösök a konyhában",
+          "text": "A konyhában a sütiket és a hozzávalókat egyenlő adagokra osztjuk: keresd meg a jó osztót és többszöröst!"
+        },
+        "football": {
+          "title": "⚽ Osztók és többszörösök a bajnokságban",
+          "text": "A meccsen a csapatokat és a pontokat egyenlő csoportokba rendezzük: melyik szám illik a helyére?"
+        },
+        "animals": {
+          "title": "🦁 Osztók és többszörösök az állatkertben",
+          "text": "Az állatkertben az adagokat egyenlő részekre osztjuk: keresd meg az osztókat és a többszörösöket!"
+        },
+        "space": {
+          "title": "🤖 Osztók és többszörösök az űrben",
+          "text": "Az űrhajón a felszerelést egyenlő csapatokba rendezzük: melyik szám többszörös, melyik osztó?"
+        },
+        "tram": {
+          "title": "🚋 Osztók és többszörösök a városban",
+          "text": "A villamoson az utasokat egyenlő csoportokba szállítjuk: keresd meg a jó osztót és többszöröst!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "divisibility",
+      "options": {
+        "count": 3,
+        "mode": "multiple",
+        "bases": [7, 8, 9, 10, 12, 15, 16]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "divisibility",
+      "options": {
+        "count": 3,
+        "mode": "divisor"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "divisibility",
+      "options": {
+        "count": 3,
+        "mode": "count"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "divisibility",
+      "options": {
+        "count": 3,
+        "mode": "not-multiple",
+        "bases": [7, 8, 9, 10, 12]
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megtaláltad az osztókat és a többszörösöket!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen rendezted el a posta küldeményeit!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen osztottad el a pálya köreit!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen osztottad el a konyha adagjait!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen rendezted a bajnokság csapatait!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen osztottad el az állatok adagjait!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen rendezted az űrhajó felszerelését!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen szállítottad az utasokat!"
+        }
+      }
+    }
+  ]
+}

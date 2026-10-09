@@ -911,6 +911,30 @@
       }
     },
     {
+      "id": "divisibility-multiples-01",
+      "title": "➗ Osztók és többszörösök",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "divisibility",
+      "difficulty": 2,
+      "type": "divisibility",
+      "range": 100,
+      "mission": "➗ Osztók és többszörösök",
+      "subtitle": "osztók és többszörösök keresése nagyobb számokkal",
+      "file": "./data/lessons/grade6/divisibility-multiples-01.json",
+      "worldTitles": {
+        "postman": "📮 Osztók és többszörösök a postán",
+        "racing": "🏎️ Osztók és többszörösök a pályán",
+        "cooking": "🍳 Osztók és többszörösök a konyhában",
+        "football": "⚽ Osztók és többszörösök a bajnokságban",
+        "animals": "🦁 Osztók és többszörösök az állatkertben",
+        "space": "🤖 Osztók és többszörösök az űrben",
+        "tram": "🚋 Osztók és többszörösök a városban"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

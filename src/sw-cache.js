@@ -437,6 +437,7 @@ const SW_CACHE_LIST = [
     "/data/lessons/grade5/transform-02.json",
     "/data/lessons/grade5/unit-conversion-01.json",
     "/data/lessons/grade5/written-big-01.json",
+    "/data/lessons/grade6/divisibility-multiples-01.json",
     "/data/lessons/grade6/divisibility-rules-02.json",
     "/data/lessons/grade6/integers-compare-01.json",
     "/data/lessons/grade6/integers-line-01.json",

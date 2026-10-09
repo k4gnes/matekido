@@ -785,6 +785,38 @@ function validateStep(step, ctx, range) {
             }
             break;
         }
+        case "divisibility": {
+            if (!["multiple", "not-multiple", "divisor", "count"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!isInt(step.base) || step.base < 2 || step.base > 30) fail(ctx, `base hibás: ${step.base}`);
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            if (!Array.isArray(step.options) || step.options.length !== 4) {
+                fail(ctx, "4 options kell");
+            } else {
+                if (!step.options.every(o => typeof o.text === "string" && typeof o.correct === "boolean" && isInt(Number(o.text)))) {
+                    fail(ctx, "options mezők hibásak");
+                }
+                const correctOpts = step.options.filter(o => o.correct);
+                if (correctOpts.length !== 1) fail(ctx, "pontosan 1 helyes kell");
+                const cv = Number(correctOpts[0].text);
+                if (step.mode === "multiple") {
+                    if (cv <= 0 || cv % step.base !== 0) fail(ctx, `multiple rossz: ${cv}`);
+                    if (step.options.some(o => !o.correct && Number(o.text) % step.base === 0)) fail(ctx, "decoy többszörös");
+                } else if (step.mode === "not-multiple") {
+                    if (cv % step.base === 0) fail(ctx, `not-multiple rossz: ${cv}`);
+                    if (step.options.some(o => !o.correct && Number(o.text) % step.base !== 0)) fail(ctx, "decoy nem többszörös");
+                } else if (step.mode === "divisor") {
+                    if (cv <= 1 || cv >= step.base || step.base % cv !== 0) fail(ctx, `divisor rossz: ${cv}`);
+                    if (step.options.some(o => !o.correct && step.base % Number(o.text) === 0)) fail(ctx, "decoy osztó");
+                } else {
+                    const divs = [];
+                    for (let d = 1; d <= step.base; d++) if (step.base % d === 0) divs.push(d);
+                    if (cv !== divs.length) fail(ctx, `count rossz: ${cv} != ${divs.length}`);
+                    if (!Array.isArray(step.divisors) || step.divisors.length !== divs.length) fail(ctx, "divisors hiányos");
+                    if (step.divisors.some(d => !isInt(d) || step.base % d !== 0)) fail(ctx, "divisors hibás");
+                }
+            }
+            break;
+        }
         case "transform": {
             if (!["turn", "translate"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             const checkCells = cells => {

@@ -1,7 +1,7 @@
-import { Game } from "./engine/Game.js?v=119";
+import { Game } from "./engine/Game.js?v=120";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=48";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=101";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=102";
 import { renderSkillMap } from "./components/skillMap.js?v=34";
 import { renderHelp } from "./components/help.js?v=7";
 import { renderProfilePage } from "./components/profilePage.js?v=14";
@@ -14,6 +14,7 @@ import { renderTransferPage } from "./components/transferPage.js?v=2";
 import { getActiveId, listPlayers } from "./profile/UserManager.js?v=4";
 import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld, setActiveGrade, resolveLessonGrade } from "./profile/Profile.js";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
+import { curriculumSort } from "./data/curriculum.js";
 import { createCard } from "./components/ui/card.js";
 import { createButton } from "./components/ui/button.js";
 import { installDiagnostics, showPendingMessage } from "./components/appDiagnostics.js";
@@ -395,7 +396,7 @@ function getNextLesson(path) {
 
     const grade = resolveLessonGrade(allLessons[idx]);
 
-    const gradeLessons = allLessons.filter(l => l.grades?.includes(grade) && !l.practice);
+    const gradeLessons = curriculumSort(allLessons.filter(l => l.grades?.includes(grade) && !l.practice), grade);
     const pos = gradeLessons.findIndex(l => l.file === path);
     if (pos === -1) return null;
 
@@ -556,13 +557,7 @@ function getNextGradeStart(path) {
 
     const grade = resolveLessonGrade(allLessons[idx]);
 
-    for (let i = 0; i < allLessons.length; i++) {
-        const candidate = allLessons[i];
-        if (candidate.grades?.[0] === grade + 1) {
-            return candidate;
-        }
-    }
-
-    return null;
+    const nextGradeLessons = curriculumSort(allLessons.filter(l => l.grades?.includes(grade + 1) && !l.practice), grade + 1);
+    return nextGradeLessons[0] ?? null;
 
 }

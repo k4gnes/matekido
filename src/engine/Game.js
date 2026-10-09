@@ -191,6 +191,7 @@ import { renderComparisonProgress } from "../components/comparisonProgress.js?v=
 import { renderNeighborProgress } from "../components/neighborProgress.js?v=4";
 
 import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, recordLessonPractice, recordSkillResult, recordCustomDoneLesson, resolveSkippedLesson, getLessonStats, getActiveWorld, isFavoriteLesson, toggleFavoriteLesson, resolveLessonGrade } from "../profile/Profile.js";
+import { curriculumSort } from "../data/curriculum.js";
 import { grantRewards } from "../profile/RewardService.js";
 import { observeBigNumbers } from "../utils/formatNumbers.js";
 
@@ -364,7 +365,7 @@ export class Game {
         if (idx === -1) return null;
         const grade = resolveLessonGrade(allLessons[idx]);
         if (grade == null) return null;
-        const gradeLessons = allLessons.filter(l => l.grades?.includes(grade));
+        const gradeLessons = curriculumSort(allLessons.filter(l => l.grades?.includes(grade) && !l.practice), grade);
         const posInGrade = gradeLessons.findIndex(l => l.file === this.lessonFile);
         return { position: posInGrade + 1, total: gradeLessons.length };
     }

@@ -8,6 +8,7 @@ import { CATEGORIES, SKILLS } from "../data/skills.js";
 import { HINT_TYPES, lessonHasHint } from "../data/hintLessons.js";
 import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=8";
 import { CONSOLIDATION_LESSONS } from "../data/consolidation.js";
+import { curriculumSort } from "../data/curriculum.js";
 import { gradesWithLessons } from "../utils/grades.js?v=1";
 import { getWorld } from "../world/WorldRegistry.js";
 
@@ -822,7 +823,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
 
     function renderGradeContent() {
         const gradeConfigEntry = gradeConfig.find(gc => gc.grade === selectedGrade);
-        const gradeLessons = allLessons.filter(l => l.grades?.includes(selectedGrade));
+        const gradeLessons = curriculumSort(allLessons.filter(l => l.grades?.includes(selectedGrade)), selectedGrade);
         const taskLessons = gradeLessons.filter(l => !l.practice);
         const playLessons = gradeLessons.filter(l => l.practice);
 

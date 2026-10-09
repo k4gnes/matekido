@@ -839,6 +839,30 @@
       }
     },
     {
+      "id": "integers-ops-01",
+      "title": "🧮 Előjeles összeadás és kivonás",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "integers",
+      "difficulty": 3,
+      "type": "integer-ops",
+      "range": 100,
+      "mission": "🧮 Előjeles összeadás és kivonás",
+      "subtitle": "összeadás és kivonás negatív számokkal, hőmérőn és egyenlegen",
+      "file": "./data/lessons/grade6/integers-ops-01.json",
+      "worldTitles": {
+        "postman": "📮 Egyenlegek a postán",
+        "racing": "🏎️ Körök és büntetések",
+        "cooking": "🍳 Hőfokok a konyhában",
+        "football": "⚽ Gólarányok a pályán",
+        "animals": "🦁 Hőmérők az állatkertben",
+        "space": "🚀 Magasság és üzemanyag",
+        "tram": "🚋 Késések és sietségek"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

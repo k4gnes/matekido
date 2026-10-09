@@ -19,7 +19,8 @@ export const HINT_TYPES = new Set([
     "speed-trip",
     "average",
     "integer",
-    "number-line"
+    "number-line",
+    "integer-ops"
 ]);
 
 export function lessonHasHint(lessonMeta) {

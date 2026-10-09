@@ -44,8 +44,8 @@
         "count": 3,
         "mode": "opposite",
         "interaction": "choice",
-        "min": -20,
-        "max": 20
+        "min": -60,
+        "max": 60
       }
     },
     {
@@ -55,8 +55,8 @@
         "count": 3,
         "mode": "opposite",
         "interaction": "input",
-        "min": -50,
-        "max": 50
+        "min": -100,
+        "max": 100
       }
     },
     {
@@ -66,8 +66,8 @@
         "count": 3,
         "mode": "absolute",
         "interaction": "choice",
-        "min": -30,
-        "max": 30
+        "min": -70,
+        "max": 70
       }
     },
     {
@@ -77,8 +77,8 @@
         "count": 3,
         "mode": "absolute",
         "interaction": "input",
-        "min": -80,
-        "max": 80
+        "min": -100,
+        "max": 100
       }
     },
     {

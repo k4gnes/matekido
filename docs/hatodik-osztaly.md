@@ -100,8 +100,8 @@ A fenti 33 lecke a 6. osztályos tanmenet terve. Tovább tervezett leckék:
 
 **Megvalósult leckék:** a regiszterbe felvett 6. osztályos leckék száma folyamatosan nő. Az első blokk (Egész számok, negatív számok) indul:
 
-- Egész számok, negatív számok (3/5): ellentett és abszolút érték (`integers-opposite-01`), egész számok összehasonlítása (`integers-compare-01`, abszolút értékkel, ellentettel és egyszerű összegekkel), negatív számok a számegyenesen és a hőmérőn (`integers-line-01`, olvasás, elhelyezés, hőmérséklet és adósság) ✔
-- A blokk további leckéi (előjeles összeadás-kivonás, előjeles szorzás-osztás) és a többi témakör tervezett.
+- Egész számok, negatív számok (4/5): ellentett és abszolút érték (`integers-opposite-01`), egész számok összehasonlítása (`integers-compare-01`, abszolút értékkel, ellentettel és egyszerű összegekkel), negatív számok a számegyenesen és a hőmérőn (`integers-line-01`, olvasás, elhelyezés, hőmérséklet és adósság), előjeles összeadás és kivonás (`integers-ops-01`, azonos és különböző előjelűek, hőmérséklet- és egyenleg-történetek) ✔
+- A blokk további leckéje (előjeles szorzás-osztás) és a többi témakör tervezett.
 
 A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg.
 

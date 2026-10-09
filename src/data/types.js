@@ -89,7 +89,8 @@ export const TYPE_EMOJI = {
     "speed-trip": "🚗",
     average: "⚖️",
     integer: "➖",
-    "number-line": "🌡️"
+    "number-line": "🌡️",
+    "integer-ops": "🧮"
 };
 
 export const TYPE_LABEL = {
@@ -182,5 +183,6 @@ export const TYPE_LABEL = {
     "speed-trip": "Sebességhelyzetek",
     average: "Átlag számítása",
     integer: "Egész számok",
-    "number-line": "Számegyenes és hőmérő"
+    "number-line": "Számegyenes és hőmérő",
+    "integer-ops": "Előjeles összeadás és kivonás"
 };

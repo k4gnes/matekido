@@ -1,0 +1,116 @@
+{
+  "id": "integers-ops-01",
+  "title": "🧮 Előjeles összeadás és kivonás",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧮 Előjeles összeadás és kivonás",
+      "text": "Két azonos előjelű szám összege azonos előjelű: (−4) + (−6) = −10. Különböző előjelű számoknál a nagyobb abszolút értékű előjelét kapjuk: (−4) + 7 = 3. Kivonni pedig úgy is gondolhatod, hogy az ellentettet adod hozzá: 5 − (−3) = 5 + 3 = 8. A hőmérőn és a bankszámlán is így számolunk!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Egyenlegek a postán",
+          "text": "A postán a bankszámla egyenlege negatív is lehet. Ha érkezik pénz, hozzáadjuk, ha kifizetsz valamit, kivonjuk – az előjeles számokkal is ugyanígy számolunk."
+        },
+        "racing": {
+          "title": "🏎️ Körök és büntetések",
+          "text": "A versenyen a körök idejét és a büntetéseket is összeadjuk. A negatív értékek ugyanúgy viselkednek, mint a pozitívok – csak az előjelük más."
+        },
+        "cooking": {
+          "title": "🍳 Hőfokok a konyhában",
+          "text": "A konyhában a hűtő és a fagyasztó hőmérsékletét számolgatjuk. Ha melegebb lesz, hozzáadunk, ha hidegebb, kivonunk."
+        },
+        "football": {
+          "title": "⚽ Gólarányok a pályán",
+          "text": "A meccsen a gólkülönbség lehet negatív is. Az előjeles összeadás-kivonás pontosan ezt számolja ki."
+        },
+        "animals": {
+          "title": "🦁 Hőmérők az állatkertben",
+          "text": "Az állatkertben a sivatagi és a hideghelyi állatok hőmérsékletét hasonlítjuk össze. Az előjeles számolás segít a változásokban."
+        },
+        "space": {
+          "title": "🚀 Magasság és üzemanyag",
+          "text": "Az űrhajón a magasság és a tartály szintje is lehet negatív. Az előjeles összeadás-kivonás a számítógépeink fontos része."
+        },
+        "tram": {
+          "title": "🚋 Késések és sietségek",
+          "text": "A villamos menetrendjében a késés negatív, a korai indulás pozitív. Az előjeles számokkal számoljuk a változásokat."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "integer-ops",
+      "options": {
+        "count": 3,
+        "mode": "add",
+        "context": "plain",
+        "interaction": "input"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "integer-ops",
+      "options": {
+        "count": 3,
+        "mode": "sub",
+        "context": "plain",
+        "interaction": "input"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "integer-ops",
+      "options": {
+        "count": 3,
+        "mode": "mixed",
+        "context": "temperature",
+        "interaction": "input"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "integer-ops",
+      "options": {
+        "count": 3,
+        "mode": "mixed",
+        "context": "debt",
+        "interaction": "choice"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen számoltál az előjeles számokkal!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltad ki a posta egyenlegeit!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a körökkel és büntetésekkel!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltad ki a konyha hőfokait!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kezelted a gólarányokat!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen számoltál az állatkert hőmérőivel!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltál az űrhajó adataival!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a villamos késéseivel!"
+        }
+      }
+    }
+  ]
+}

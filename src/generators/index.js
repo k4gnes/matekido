@@ -77,6 +77,7 @@ import { generateSpeedTrip } from "./speedTripGenerator.js?v=1";
 import { generateAverage } from "./averageGenerator.js?v=1";
 import { generateInteger } from "./integerGenerator.js?v=3";
 import { generateNumberLine } from "./numberLineGenerator.js?v=1";
+import { generateIntegerOps } from "./integerOpsGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -248,6 +249,8 @@ export function generate(step) {
             return generateInteger(opts);
         case "number-line":
             return generateNumberLine(opts);
+        case "integer-ops":
+            return generateIntegerOps(opts);
 
         default:
             throw new Error(

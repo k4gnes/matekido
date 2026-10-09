@@ -85,6 +85,7 @@ import { renderSpeedTrip } from "../components/speedTrip.js?v=1";
 import { renderAverage } from "../components/average.js?v=2";
 import { renderInteger } from "../components/integer.js?v=3";
 import { renderNumberLine } from "../components/numberLine.js?v=1";
+import { renderIntegerOps } from "../components/integerOps.js?v=1";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -172,7 +173,8 @@ const COUNTED_TYPES = new Set([
     "speed-trip",
     "average",
     "integer",
-    "number-line"
+    "number-line",
+    "integer-ops"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -205,7 +207,8 @@ const SKILL_BY_TYPE = {
     "speed-trip": "time-speed",
     "average": "data-charts",
     "integer": "integers",
-    "number-line": "integers"
+    "number-line": "integers",
+    "integer-ops": "integers"
 };
 
 const RENDERERS = new Map([
@@ -298,7 +301,8 @@ const RENDERERS = new Map([
     ["speed-trip", renderSpeedTrip],
     ["average", renderAverage],
     ["integer", renderInteger],
-    ["number-line", renderNumberLine]
+    ["number-line", renderNumberLine],
+    ["integer-ops", renderIntegerOps]
 ]);
 
 

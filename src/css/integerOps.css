@@ -1,0 +1,85 @@
+.integer-ops-prompt {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #444;
+    text-align: center;
+    margin: 0.5rem 0 1rem;
+}
+
+.integer-ops-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    min-height: 5rem;
+    margin: 0 auto 1.25rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #1f3a5f;
+    background: #f4f8ff;
+    border: 2px solid #bcd4f6;
+    border-radius: 16px;
+}
+
+.integer-ops-expr {
+    white-space: nowrap;
+}
+
+.integer-ops-eq {
+    color: #8fa2bd;
+}
+
+.integer-ops-answer-slot {
+    min-width: 2.2rem;
+    text-align: center;
+    color: #e08a00;
+}
+
+.integer-ops-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.integer-ops-option {
+    min-width: 5rem;
+    padding: 0.85rem 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1f3a5f;
+    background: #ffffff;
+    border: 2px solid #bcd4f6;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.integer-ops-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(31, 58, 95, 0.15);
+}
+
+.integer-ops-input {
+    display: block;
+    width: min(12rem, 80%);
+    margin: 0 auto 1rem;
+    padding: 0.75rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    color: #1f3a5f;
+    border: 2px solid #bcd4f6;
+    border-radius: 14px;
+}
+
+.integer-ops-hint {
+    text-align: left;
+}
+
+.integer-ops-hint p {
+    margin: 0.35rem 0;
+}

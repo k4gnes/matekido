@@ -935,6 +935,30 @@
       }
     },
     {
+      "id": "prime-composite-01",
+      "title": "⚛️ Prím- és összetett számok",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "primes",
+      "difficulty": 2,
+      "type": "prime",
+      "range": 100,
+      "mission": "⚛️ Prím- és összetett számok",
+      "subtitle": "prím- és összetett számok felismerése 100-ig",
+      "file": "./data/lessons/grade6/prime-composite-01.json",
+      "worldTitles": {
+        "postman": "📮 Prím- és összetett számok a postán",
+        "racing": "🏎️ Prím- és összetett számok a pályán",
+        "cooking": "🍳 Prím- és összetett számok a konyhában",
+        "football": "⚽ Prím- és összetett számok a bajnokságban",
+        "animals": "🦁 Prím- és összetett számok az állatkertben",
+        "space": "🤖 Prím- és összetett számok az űrben",
+        "tram": "🚋 Prím- és összetett számok a városban"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

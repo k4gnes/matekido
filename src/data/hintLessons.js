@@ -22,7 +22,8 @@ export const HINT_TYPES = new Set([
     "number-line",
     "integer-ops",
     "integer-muldiv",
-    "divisibility-rule"
+    "divisibility-rule",
+    "prime"
 ]);
 
 export function lessonHasHint(lessonMeta) {

@@ -92,7 +92,8 @@ export const TYPE_EMOJI = {
     "number-line": "🌡️",
     "integer-ops": "🧮",
     "integer-muldiv": "➗",
-    "divisibility-rule": "🎯"
+    "divisibility-rule": "🎯",
+    "prime": "⚛️"
 };
 
 export const TYPE_LABEL = {
@@ -188,5 +189,6 @@ export const TYPE_LABEL = {
     "number-line": "Számegyenes és hőmérő",
     "integer-ops": "Előjeles összeadás és kivonás",
     "integer-muldiv": "Előjeles szorzás és osztás",
-    "divisibility-rule": "Oszthatósági szabályok"
+    "divisibility-rule": "Oszthatósági szabályok",
+    "prime": "Prím- és összetett számok"
 };

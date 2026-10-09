@@ -1,0 +1,108 @@
+{
+  "id": "prime-composite-01",
+  "title": "⚛️ Prím- és összetett számok",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "⚛️ Prím- és összetett számok",
+      "text": "A prímszámnak pontosan két osztója van: az 1 és önmaga. Ilyen a 2, 3, 5, 7, 11 és 13. Az összetett számnak ennél több osztója van: például a 12 osztói az 1, 2, 3, 4, 6 és 12. Az 1 se nem prím, se nem összetett. Találd ki, melyik szám melyik fajta!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Prímküldemények a postán",
+          "text": "A postán minden küldeményszámon ellenőrizzük, prím-e vagy összetett – segíts szétválogatni őket!"
+        },
+        "racing": {
+          "title": "🏎️ Prímszámok a pályán",
+          "text": "A versenypályán a rajtszámok között keressük a prímeket és az összetett számokat."
+        },
+        "cooking": {
+          "title": "🍳 Prím-receptek a konyhában",
+          "text": "A konyhában az adagok számai között válogatjuk ki a prímeket és az összetett számokat."
+        },
+        "football": {
+          "title": "⚽ Prímszámok a bajnokságban",
+          "text": "A bajnokságban a mezek számai között keressük a prímeket és az összetett számokat."
+        },
+        "animals": {
+          "title": "🦁 Prímek az állatkertben",
+          "text": "Az állatkertben az állatok számai között válogatjuk szét a prímeket és az összetett számokat."
+        },
+        "space": {
+          "title": "🚀 Prímek az űrben",
+          "text": "Az űrhajón a kódok számait vizsgáljuk: melyik prím, melyik összetett?"
+        },
+        "tram": {
+          "title": "🚋 Prímszámok a városban",
+          "text": "A villamoson a kocsiszámok között keressük a prímeket és az összetett számokat."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "prime",
+      "options": {
+        "count": 3,
+        "mode": "classify"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "prime",
+      "options": {
+        "count": 3,
+        "mode": "which-prime"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "prime",
+      "options": {
+        "count": 3,
+        "mode": "which-composite"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "prime",
+      "options": {
+        "count": 3,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megkülönböztetted a prím- és az összetett számokat!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen szétválogattad a prímküldeményeket!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a prím rajtszámokat!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiválogattad a prím adagokat!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiválogattad a prím mezeket!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen szétválogattad az állatok számát!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megfejtetted az űr kódjait!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiválogattad a prím kocsiszámokat!"
+        }
+      }
+    }
+  ]
+}

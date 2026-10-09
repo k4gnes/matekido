@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=62";
+import { generate } from "../generators/index.js?v=63";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -391,6 +391,11 @@ export function buildLesson(lesson) {
             } else if (step.generator === "divisibility-rule") {
                 result.push({
                     type: "divisibility-rule",
+                    ...task
+                });
+            } else if (step.generator === "prime") {
+                result.push({
+                    type: "prime",
                     ...task
                 });
             } else if (step.generator === "elapsed-time") {

@@ -228,6 +228,7 @@ export const CURRICULUM_ORDER = {
         "integers-muldiv-01",
         "divisibility-rules-02",
         "divisibility-multiples-01",
+        "prime-composite-01",
     ],
 };
 

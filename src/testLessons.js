@@ -716,6 +716,31 @@ function validateStep(step, ctx, range) {
             }
             break;
         }
+        case "integer-muldiv": {
+            if (!["mul", "div"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!["plain", "temperature", "debt"].includes(step.context)) fail(ctx, `context hibás: ${step.context}`);
+            if (step.operator !== "×" && step.operator !== "÷") fail(ctx, `operator hibás: ${step.operator}`);
+            if (!isInt(step.a) || !isInt(step.b) || step.a === 0 || step.b === 0) fail(ctx, `a/b hibás: ${step.a}/${step.b}`);
+            if (Math.abs(step.a) > 100 || Math.abs(step.b) > 100) fail(ctx, `tartomány hibás: ${step.a}/${step.b}`);
+            const expected = step.operator === "×" ? step.a * step.b : step.a / step.b;
+            if (!isInt(expected) || step.answer !== expected) fail(ctx, `answer != a${step.operator}b: ${step.answer}`);
+            if (typeof step.expression !== "string" || step.expression.length === 0) fail(ctx, "expression hiányzik");
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            if (step.interaction === "choice") {
+                if (!Array.isArray(step.options) || step.options.length < 3) {
+                    fail(ctx, "choice módban kevés options");
+                } else {
+                    if (!step.options.every(o => isInt(o))) fail(ctx, "options nem egészek");
+                    if (new Set(step.options).size !== step.options.length) fail(ctx, "options ismétlődik");
+                    if (!step.options.includes(step.answer)) fail(ctx, "options nem tartalmazza a választ");
+                }
+            } else if (step.interaction === "input") {
+                if (step.options !== undefined) fail(ctx, "input módban nem kell options");
+            } else {
+                fail(ctx, `interaction hibás: ${step.interaction}`);
+            }
+            break;
+        }
         case "transform": {
             if (!["turn", "translate"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             const checkCells = cells => {

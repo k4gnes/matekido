@@ -863,6 +863,30 @@
       }
     },
     {
+      "id": "integers-muldiv-01",
+      "title": "➗ Előjeles szorzás és osztás",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "integers",
+      "difficulty": 3,
+      "type": "integer-muldiv",
+      "range": 100,
+      "mission": "➗ Előjeles szorzás és osztás",
+      "subtitle": "szorzás és osztás negatív számokkal, előjelszabályok",
+      "file": "./data/lessons/grade6/integers-muldiv-01.json",
+      "worldTitles": {
+        "postman": "📮 Szorzás és osztás az egyenlegen",
+        "racing": "🏎️ Körök és pontok a pályán",
+        "cooking": "🍳 Hőfokváltozások a konyhában",
+        "football": "⚽ Pontok a meccsen",
+        "animals": "🦁 Hőmérők és adagok",
+        "space": "🚀 Üzemanyag és pályák",
+        "tram": "🚋 Késések a pályán"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

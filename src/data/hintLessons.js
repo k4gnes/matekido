@@ -20,7 +20,8 @@ export const HINT_TYPES = new Set([
     "average",
     "integer",
     "number-line",
-    "integer-ops"
+    "integer-ops",
+    "integer-muldiv"
 ]);
 
 export function lessonHasHint(lessonMeta) {

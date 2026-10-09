@@ -78,6 +78,7 @@ import { generateAverage } from "./averageGenerator.js?v=1";
 import { generateInteger } from "./integerGenerator.js?v=3";
 import { generateNumberLine } from "./numberLineGenerator.js?v=1";
 import { generateIntegerOps } from "./integerOpsGenerator.js?v=1";
+import { generateIntegerMuldiv } from "./integerMuldivGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -251,6 +252,8 @@ export function generate(step) {
             return generateNumberLine(opts);
         case "integer-ops":
             return generateIntegerOps(opts);
+        case "integer-muldiv":
+            return generateIntegerMuldiv(opts);
 
         default:
             throw new Error(

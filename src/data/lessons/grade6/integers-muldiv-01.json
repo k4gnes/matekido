@@ -1,0 +1,116 @@
+{
+  "id": "integers-muldiv-01",
+  "title": "➗ Előjeles szorzás és osztás",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "➗ Előjeles szorzás és osztás",
+      "text": "Szorzáskor és osztáskor az előjelet a számok egyezése dönti el: két azonos előjelű szám szorzata és hányadosa pozitív, két különböző előjelűé negatív. Például (−3) × (−4) = 12, de (−3) × 4 = −12. Osztásnál ugyanez a szabály: (−24) ÷ (−6) = 4, de 24 ÷ (−6) = −4.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Szorzás és osztás az egyenlegen",
+          "text": "A postán feladatunk, hogy az egyenleg változásait havi bontásban számoljuk: ha minden hónapban ugyanannyival csökken az egyenleg, akkor szorzással és osztással tudjuk kiszámolni a változásokat."
+        },
+        "racing": {
+          "title": "🏎️ Körök és pontok a pályán",
+          "text": "A versenyen a büntetések és a körök száma is összeszorzódik. Az azonos előjelű számok nyernek, a különböző előjelűek pedig veszítenek – a szorzás szabályai segítenek."
+        },
+        "cooking": {
+          "title": "🍳 Hőfokváltozások a konyhában",
+          "text": "A konyhában a hűtő hőmérséklete óránként egyenletesen változik. A szorzás és osztás segít kiszámolni, mennyi lesz a változás több óra alatt."
+        },
+        "football": {
+          "title": "⚽ Pontok a meccsen",
+          "text": "A meccsen a pontok és a gólkülönbségek előjelét a szorzás-osztás szabályaival tudod kiszámolni. Az egyező előjelek pozitív, a különbözők negatív végeredményt adnak."
+        },
+        "animals": {
+          "title": "🦁 Hőmérők és adagok",
+          "text": "Az állatkertben az állatok adagjait és a hőmérők változásait szorzással-osztással számoljuk. Az előjelszabályok itt is működnek."
+        },
+        "space": {
+          "title": "🚀 Üzemanyag és pályák",
+          "text": "Az űrhajón az üzemanyag-fogyasztás és a magasságváltozás is lehet negatív. A szorzás-osztás szabályaival számoljuk a változásokat."
+        },
+        "tram": {
+          "title": "🚋 Késések a pályán",
+          "text": "A villamos késéseit és a megállók közti időket szorzással-osztással számoljuk. Az előjelszabályok itt is megegyeznek."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "integer-muldiv",
+      "options": {
+        "count": 3,
+        "mode": "mul",
+        "context": "plain",
+        "interaction": "input"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "integer-muldiv",
+      "options": {
+        "count": 3,
+        "mode": "div",
+        "context": "plain",
+        "interaction": "input"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "integer-muldiv",
+      "options": {
+        "count": 3,
+        "mode": "mixed",
+        "context": "temperature",
+        "interaction": "input"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "integer-muldiv",
+      "options": {
+        "count": 3,
+        "mode": "mixed",
+        "context": "debt",
+        "interaction": "choice"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen alkalmaztad az előjelszabályokat!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltad ki a posta egyenlegeit szorzással és osztással!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a pálya köreivel és pontjaival!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltad ki a konyha hőfokváltozásait!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen használtad az előjelszabályokat a meccsen!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen számoltál az állatkert adagjaival és hőmérőivel!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltál az űrhajó üzemanyagával!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a villamos késéseivel!"
+        }
+      }
+    }
+  ]
+}

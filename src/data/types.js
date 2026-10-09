@@ -90,7 +90,8 @@ export const TYPE_EMOJI = {
     average: "⚖️",
     integer: "➖",
     "number-line": "🌡️",
-    "integer-ops": "🧮"
+    "integer-ops": "🧮",
+    "integer-muldiv": "➗"
 };
 
 export const TYPE_LABEL = {
@@ -184,5 +185,6 @@ export const TYPE_LABEL = {
     average: "Átlag számítása",
     integer: "Egész számok",
     "number-line": "Számegyenes és hőmérő",
-    "integer-ops": "Előjeles összeadás és kivonás"
+    "integer-ops": "Előjeles összeadás és kivonás",
+    "integer-muldiv": "Előjeles szorzás és osztás"
 };

@@ -10,70 +10,70 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 ## Számfogalom 10 000-ig (6 lecke)
 
-| Készség | Lecke | Feladattípus | Tartomány | Nehézség |
-|---|---|---|---|---|
-| Helyiérték | Helyiérték 10 000-ig | Ezresek, százasok, tízesek, egyesek | 10000 | 2 |
-| Számnevek | Számnevek 10 000-ig | Szám ↔ szöveg párosítása | 10000 | 1 |
-| Számszomszédok | Szomszédok 10 000-ig | Tízes-, százas- és ezres szomszédok | 10000 | 2 |
-| Összehasonlítás | Összehasonlítás 10 000-ig | Nagyobb, kisebb vagy egyenlő | 10000 | 2 |
-| Római számok | Római számok bővítve | Jelek M, D, C, L, X, V, I | 4000 | 2 |
-| Kerekítés | Kerekítés 10 000-ig | Kerekítés több helyiértékre | 10000 | 2 |
+| # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|---|
+| 1 | Helyiérték | [Helyiérték 10 000-ig](?lesson=place-value-thousands-01) | Ezresek, százasok, tízesek, egyesek | 10000 | 2 |
+| 2 | Számnevek | [Számnevek 10 000-ig](?lesson=number-name-02) | Szám ↔ szöveg párosítása | 10000 | 1 |
+| 3 | Számszomszédok | [Szomszédok 10 000-ig](?lesson=neighbor-10000-01) | Tízes-, százas- és ezres szomszédok | 10000 | 2 |
+| 4 | Összehasonlítás | [Összehasonlítás 10 000-ig](?lesson=comparison-10000-01) | Nagyobb, kisebb vagy egyenlő | 10000 | 2 |
+| 5 | Római számok | [Római számok bővítve](?lesson=roman-02) | Jelek M, D, C, L, X, V, I | 4000 | 2 |
+| 6 | Kerekítés | [Kerekítés 10 000-ig](?lesson=rounding-02) | Kerekítés több helyiértékre | 10000 | 2 |
 
 ## Műveletek – írásbeli számolás (7 lecke)
 
-| Készség | Lecke | Feladattípus | Tartomány | Nehézség |
-|---|---|---|---|---|
-| Írásbeli összeadás | Írásbeli összeadás négyjegyűekkel | Írásbeli összeadás | 10000 | 2 |
-| Írásbeli kivonás | Írásbeli kivonás négyjegyűekkel | Írásbeli kivonás | 10000 | 2 |
-| Írásbeli szorzás | Írásbeli szorzás egyjegyűvel | Írásbeli szorzás | 1000 | 2 |
-| Írásbeli szorzás | Írásbeli szorzás kétjegyűvel | Írásbeli szorzás | 10000 | 3 |
-| Írásbeli osztás | Írásbeli osztás egyjegyűvel (maradékos) | Írásbeli osztás | 1000 | 2 |
-| Írásbeli osztás | Írásbeli osztás kétjegyűvel (maradékos) | Írásbeli osztás | 10000 | 3 |
-| Vegyes műveletek | Vegyes írásbeli műveletek | Vegyes műveletek | 10000 | 3 |
+| # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|---|
+| 7 | Írásbeli összeadás | [Írásbeli összeadás négyjegyűekkel](?lesson=written-add-10000-01) | Írásbeli összeadás | 10000 | 2 |
+| 8 | Írásbeli kivonás | [Írásbeli kivonás négyjegyűekkel](?lesson=written-sub-10000-01) | Írásbeli kivonás | 10000 | 2 |
+| 9 | Írásbeli szorzás | [Írásbeli szorzás egyjegyűvel](?lesson=written-mul-1000-01) | Írásbeli szorzás | 1000 | 2 |
+| 10 | Írásbeli szorzás | [Írásbeli szorzás kétjegyűvel](?lesson=written-mul2-1000-01) | Írásbeli szorzás | 10000 | 3 |
+| 11 | Írásbeli osztás | [Írásbeli osztás egyjegyűvel (maradékos)](?lesson=written-div-1000-01) | Írásbeli osztás | 1000 | 2 |
+| 12 | Írásbeli osztás | [Írásbeli osztás kétjegyűvel (maradékos)](?lesson=written-div2-1000-01) | Írásbeli osztás | 10000 | 3 |
+| 13 | Vegyes műveletek | [Vegyes írásbeli műveletek](?lesson=written-mixed-10000-01) | Vegyes műveletek | 10000 | 3 |
 
 ## Törtek bevezetése (3 lecke)
 
-| Készség | Lecke | Feladattípus | Tartomány | Nehézség |
-|---|---|---|---|---|
-| Törtrészek | Fele, harmada, negyede – nagyobb számok | Törtrész felismerése | 1000 | 2 |
-| Törtek jelölése | Törtek jelölése – számláló, nevező | Tört képéhez jel, jelhez kép | 20 | 2 |
-| Azonos nevezőjű törtek | Azonos nevezőjű törtek | Összeadás és kivonás | 20 | 3 |
+| # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|---|
+| 14 | Törtrészek | [Fele, harmada, negyede – nagyobb számok](?lesson=fraction-big-1000-01) | Törtrész felismerése | 1000 | 2 |
+| 15 | Törtek jelölése | [Törtek jelölése – számláló, nevező](?lesson=fraction-symbol2-20-01) | Tört képéhez jel, jelhez kép | 20 | 2 |
+| 16 | Azonos nevezőjű törtek | [Azonos nevezőjű törtek](?lesson=fraction-eqden-20-01) | Összeadás és kivonás | 20 | 3 |
 
 ## Geometria (7 lecke)
 
-| Készség | Lecke | Feladattípus | Tartomány | Nehézség |
-|---|---|---|---|---|
-| Sokszögek | Sokszögek és tulajdonságaik | Oldalak, csúcsok, átlók | — | 2 |
-| Kerület | 📐 Kerület | Rácsos alakzat kerületének számolása | 20 | 2 |
-| Terület | 🟦 Terület | Rácsos alakzat területének számolása | 25 | 2 |
-| Szögek | 📐 Szögek | Hegyes/derék/tompa szög felismerése | 180 | 1 |
-| Tükrözés | 🪞 Tükrözés és szimmetria | Tükörkép felismerése | — | 2 |
-| Összetett alakzatok | Összetett alakzatok kerülete és területe | L- és lépcsős alakzatok felbontása | 100 | 3 |
-| Számolásos geometria | Kerület és terület számolással | Képletek használata téglalapnál, négyzetnél | 100 | 3 |
+| # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|---|
+| 17 | Sokszögek | [Sokszögek és tulajdonságaik](?lesson=polygon-01) | Oldalak, csúcsok, átlók | — | 2 |
+| 18 | Kerület | [📐 Kerület](?lesson=perimeter-01) | Rácsos alakzat kerületének számolása | 20 | 2 |
+| 19 | Terület | [🟦 Terület](?lesson=area-01) | Rácsos alakzat területének számolása | 25 | 2 |
+| 20 | Szögek | [📐 Szögek](?lesson=angles-01) | Hegyes/derék/tompa szög felismerése | 180 | 1 |
+| 21 | Tükrözés | [🪞 Tükrözés és szimmetria](?lesson=mirror-01) | Tükörkép felismerése | — | 2 |
+| 22 | Összetett alakzatok | [Összetett alakzatok kerülete és területe](?lesson=compound-shape-01) | L- és lépcsős alakzatok felbontása | 100 | 3 |
+| 23 | Számolásos geometria | [Kerület és terület számolással](?lesson=shape-formula-01) | Képletek használata téglalapnál, négyzetnél | 100 | 3 |
 
 ## Gyakorlati tudások (6 lecke)
 
-| Készség | Lecke | Feladattípus | Tartomány | Nehézség |
-|---|---|---|---|---|
-| Hosszúság | Hosszúság – a milliméterig, visszafelé is | m/dm/cm + mm, km; visszafelé mm→cm, cm→dm, m→km (osztás) | 1000 | 3 |
-| Űrtartalom | Űrtartalom – a milliliterig | l/dl/cl → ml 1000-ig, majd visszafelé: ml/cl/dl → l (osztás) | 1000 | 3 |
-| Tömeg | Tömeg – a tonnáig, visszafelé is | kg/dkg/g átváltás, majd visszafelé: g → kg/dkg, dkg → kg, kg → t (osztás) | 1000 | 3 |
-| Idő | 🕐 Idő – óra és perc tartamok | Kezdés/vég, eltelt idő | 60 | 2 |
-| Pénz | 💰 Vásárlás és visszajáró 10 000-ig | Bankjegyek, fizetés, visszajáró | 10000 | 2 |
-| Terület-egységek | Távolságok és hosszúságok a valóságban | km, m, cm a hétköznapokban | 10000 | 1 |
+| # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|---|
+| 24 | Hosszúság | [Hosszúság – a milliméterig, visszafelé is](?lesson=length-03) | m/dm/cm + mm, km; visszafelé mm→cm, cm→dm, m→km (osztás) | 1000 | 3 |
+| 25 | Űrtartalom | [Űrtartalom – a milliliterig](?lesson=volume-03) | l/dl/cl → ml 1000-ig, majd visszafelé: ml/cl/dl → l (osztás) | 1000 | 3 |
+| 26 | Tömeg | [Tömeg – a tonnáig, visszafelé is](?lesson=weight-03) | kg/dkg/g átváltás, majd visszafelé: g → kg/dkg, dkg → kg, kg → t (osztás) | 1000 | 3 |
+| 27 | Idő | [🕐 Idő – óra és perc tartamok](?lesson=elapsed-time-01) | Kezdés/vég, eltelt idő | 60 | 2 |
+| 28 | Pénz | [💰 Vásárlás és visszajáró 10 000-ig](?lesson=money-change-02) | Bankjegyek, fizetés, visszajáró | 10000 | 2 |
+| 29 | Terület-egységek | [Távolságok és hosszúságok a valóságban](?lesson=length-units-01) | km, m, cm a hétköznapokban | 10000 | 1 |
 
 ## Adatok és valószínűség (1 lecke)
 
-| Készség | Lecke | Feladattípus | Tartomány | Nehézség |
-|---|---|---|---|---|
-| Adatok | Táblázatok és diagramok | Oszlopdiagram értékeivel összeadás és kivonás (közös a 3. osztállyal) | 100 | 2 |
+| # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|---|
+| 30 | Adatok | [Táblázatok és diagramok](?lesson=data-chart-01) | Oszlopdiagram értékeivel összeadás és kivonás (közös a 3. osztállyal) | 100 | 2 |
 
 ## Szöveges feladatok (2 lecke)
 
-| Készség | Lecke | Feladattípus | Tartomány | Nehézség |
-|---|---|---|---|---|
-| Többlépéses | Többlépéses szöveges feladatok | Több művelet egy történetben | 1000 | 3 |
-| Arányos | Arányos szöveges feladatok | Egyszerű arányosság, megosztás | 1000 | 3 |
+| # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|---|
+| 31 | Többlépéses | [Többlépéses szöveges feladatok](?lesson=word-problems-two-step-02) | Több művelet egy történetben | 1000 | 3 |
+| 32 | Arányos | [Arányos szöveges feladatok](?lesson=word-problems-proportion-02) | Egyszerű arányosság, megosztás | 1000 | 3 |
 
 ---
 
@@ -107,7 +107,7 @@ Ezek nem számozott feladatok: a **🎲 Egypercesek** oldalon találhatók, nem 
 
 | Játék | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
-| Gombos játék | 🎲 Gombos szorzótábla – egy perc, négy gomb | Szorzótábla-játék | 100 | 2 |
-| Számolós játék | 🎲 Számolós szorzótábla – egy perc, beírás | Szorzótábla-játék | 100 | 2 |
-| Műveleti sorrend | 🎲 Műveleti sorrend – egy perc | Műveleti sorrend (egyperces) | 100 | 3 |
+| Gombos játék | [🎲 Gombos szorzótábla – egy perc, négy gomb](?lesson=multiplication-play-01) | Szorzótábla-játék | 100 | 2 |
+| Számolós játék | [🎲 Számolós szorzótábla – egy perc, beírás](?lesson=multiplication-play-02) | Szorzótábla-játék | 100 | 2 |
+| Műveleti sorrend | [🎲 Műveleti sorrend – egy perc](?lesson=operation-order-play-01) | Műveleti sorrend (egyperces) | 100 | 3 |
 

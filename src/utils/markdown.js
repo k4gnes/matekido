@@ -58,6 +58,9 @@ function renderInline(text) {
             if (/^https?:\/\//.test(trimmed)) {
                 return `<a href="${trimmed}" target="_blank" rel="noopener">${label}</a>`;
             }
+            if (/^\?lesson=/.test(trimmed)) {
+                return `<a class="lesson-link" href="${trimmed}">${label}</a>`;
+            }
             if (/^#/.test(trimmed)) {
                 return `<a href="${trimmed}">${label}</a>`;
             }

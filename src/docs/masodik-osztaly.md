@@ -16,7 +16,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | 4 | Számszomszédok | [Számok szomszédai 100-ig](?lesson=neighbor-01) | Számszomszédok | 100 | 1 |
 | 5 | Számszomszédok | [Szomszédok gyakorlása 100-ig](?lesson=neighbor-02) | Számszomszédok | 100 | 2 |
 | 6 | Számsor | [Mi a következő? 100-ig](?lesson=sequence-02) | Számsor | 100 | 2 |
-| 7 | Számsor | [Váltakozó számsor – +1, +3](?lesson=alternating-sequence-01) | Váltakozó lépésű számsor | 100 | 2 |
+| 7 | Számsor | [Váltakozó számsor](?lesson=alternating-sequence-01) | Váltakozó lépésű számsor | 100 | 2 |
 | 8 | Sorba rendezés | [Rendezzük sorainkat! 100-ig](?lesson=order-02) | Sorba rendezés | 100 | 2 |
 | 9 | Sorminta | [Sorminta – hosszabb minták](?lesson=pattern-02) | Sorminta | 100 | 2 |
 | 10 | Helyiérték | [Helyiérték 100-ig](?lesson=place-value-03) | Tízesek és egyesek (bontás + összeállítás) | 100 | 2 |

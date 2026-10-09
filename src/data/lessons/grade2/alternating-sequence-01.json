@@ -1,40 +1,40 @@
 {
   "id": "grade2-alternating-sequence-01",
-  "title": "Váltakozó számsor – +1, +3",
+  "title": "Váltakozó számsor",
 
   "steps": [
     {
       "type": "scene",
       "title": "🔢 Váltakozó léptek",
-      "text": "Ebben a számsorban a lépések váltakoznak: egyszer 1-et adunk hozzá, aztán 3-at, aztán megint 1-et és megint 3-at. Például: 1, 2, 5, 6, 9, 10, ... Figyeld meg a lépéseket, és írd be a következő számot!",
+      "text": "Ebben a számsorban két különböző lépés váltakozik: egyszer kisebbet, aztán nagyobbat lépünk (például +1, +3, +1, +3 — de lehet +2, +4, +1, +5 is). Figyeld meg a lépéseket a sor elején, és írd be a következő számot!",
       "worldTitles": {
         "postman": {
           "title": "📮 Váltakozó házszámok",
-          "text": "A házszámok egyszer 1-gyel, aztán 3-mal nőnek, aztán megint 1-gyel. Figyeld meg, és írd be a következő házszámot!"
+          "text": "A házszámok kétféle lépéssel nőnek váltakozva (például egyszer 1-gyel, aztán 3-mal). Figyeld meg, és írd be a következő házszámot!"
         },
         "racing": {
           "title": "🏎️ Váltakozó rajtszámok",
-          "text": "A rajtszámok egyszer 1-gyel, aztán 3-mal nőnek. Figyeld meg, és írd be a következő rajtszámot!"
+          "text": "A rajtszámok kétféle lépéssel nőnek váltakozva (például egyszer 1-gyel, aztán 3-mal). Figyeld meg, és írd be a következő rajtszámot!"
         },
         "football": {
           "title": "⚽ Váltakozó eredmények",
-          "text": "Az eredmények egyszer 1-gyel, aztán 3-mal nőnek. Figyeld meg, és írd be a következőt!"
+          "text": "Az eredmények kétféle lépéssel nőnek váltakozva. Figyeld meg, és írd be a következőt!"
         },
         "cooking": {
           "title": "🍳 Váltakozó oldalak",
-          "text": "A receptoldalak egyszer 1-gyel, aztán 3-mal nőnek. Figyeld meg, és írd be a következő oldalszámot!"
+          "text": "A receptoldalak kétféle lépéssel nőnek váltakozva. Figyeld meg, és írd be a következő oldalszámot!"
         },
         "animals": {
           "title": "🦁 Váltakozó állatok",
-          "text": "Az állatok sora egyszer 1-gyel, aztán 3-mal nő. Figyeld meg, és írd be a következő számot!"
+          "text": "Az állatok sora kétféle lépéssel nő váltakozva. Figyeld meg, és írd be a következő számot!"
         },
         "space": {
           "title": "🤖 Váltakozó robotok",
-          "text": "A robotok sora egyszer 1-gyel, aztán 3-mal nő. Figyeld meg, és írd be a következő számot!"
+          "text": "A robotok sora kétféle lépéssel nő váltakozva. Figyeld meg, és írd be a következő számot!"
         },
         "tram": {
           "title": "🚋 Váltakozó utasok",
-          "text": "Az utasok sora egyszer 1-gyel, aztán 3-mal nő. Figyeld meg, és írd be a következő számot!"
+          "text": "Az utasok sora kétféle lépéssel nő váltakozva. Figyeld meg, és írd be a következő számot!"
         }
       }
     },
@@ -46,10 +46,6 @@
         "count": 4,
         "max": 100,
         "alternate": true,
-        "deltas": [
-          1,
-          3
-        ],
         "interaction": "choice"
       }
     },
@@ -61,10 +57,6 @@
         "count": 4,
         "max": 100,
         "alternate": true,
-        "deltas": [
-          1,
-          3
-        ],
         "interaction": "input"
       }
     },

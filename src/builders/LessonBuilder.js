@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=66";
+import { generate } from "../generators/index.js?v=67";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {

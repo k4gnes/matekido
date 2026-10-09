@@ -35,9 +35,26 @@ function buildStepped(max) {
     };
 }
 
+const ALTERNATING_PAIRS = [
+    [1, 2],
+    [1, 3],
+    [1, 4],
+    [1, 5],
+    [2, 3],
+    [2, 4],
+    [2, 5],
+    [3, 4],
+    [3, 5],
+    [4, 5]
+];
+
 function buildAlternating(max, deltas) {
 
-    const [first, second] = deltas;
+    const usable = deltas
+        ? [deltas]
+        : ALTERNATING_PAIRS.filter(([first, second]) => 3 * first + 2 * second <= max - 1);
+
+    const [first, second] = pick(usable);
 
     const span = 3 * first + 2 * second;
 
@@ -68,7 +85,7 @@ export function generateSequence(options = {}) {
         max = 100,
         interaction = "mixed",
         alternate = false,
-        deltas = [1, 3]
+        deltas
     } = options;
 
     const tasks = [];

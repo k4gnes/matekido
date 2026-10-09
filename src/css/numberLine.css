@@ -1,0 +1,166 @@
+.nl-prompt {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #444;
+    text-align: center;
+    margin: 0.5rem 0 1rem;
+}
+
+.nl-scroll {
+    overflow-x: auto;
+    padding: 0.4rem 0 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.nl-scroll-vertical {
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+}
+
+.nl-svg {
+    display: block;
+}
+
+.nl-svg-horizontal {
+    width: 100%;
+    min-width: 520px;
+    height: auto;
+}
+
+.nl-svg-vertical {
+    height: min(62vh, 360px);
+    width: auto;
+}
+
+.nl-axis {
+    stroke: #1f3a5f;
+    stroke-width: 0.7;
+    stroke-linecap: round;
+}
+
+.nl-arrow {
+    fill: #1f3a5f;
+}
+
+.nl-tick {
+    stroke: #8fa2bd;
+    stroke-width: 0.6;
+    stroke-linecap: round;
+}
+
+.nl-tick-zero {
+    stroke: #1f3a5f;
+    stroke-width: 1;
+}
+
+.nl-tick-major {
+    stroke: #6d819c;
+    stroke-width: 0.8;
+}
+
+.nl-label {
+    fill: #5a6b83;
+    font-size: 4px;
+    font-weight: 600;
+}
+
+.nl-label-zero {
+    fill: #1f3a5f;
+    font-weight: 800;
+}
+
+.nl-marker-stem {
+    stroke: #e08a00;
+    stroke-width: 0.7;
+    stroke-dasharray: 1.4 1.2;
+}
+
+.nl-marker {
+    fill: #f0a020;
+}
+
+.nl-marker-dot {
+    fill: #e08a00;
+}
+
+.nl-svg-horizontal.nl-clickable {
+    cursor: pointer;
+}
+
+.nl-tube {
+    fill: #ffffff;
+    stroke: #b9c6dc;
+    stroke-width: 1.2;
+}
+
+.nl-bulb {
+    fill: #ffffff;
+    stroke: #b9c6dc;
+    stroke-width: 1.2;
+}
+
+.nl-mercury {
+    fill: #ef5b5b;
+}
+
+.nl-mercury-bulb {
+    fill: #ef5b5b;
+}
+
+.nl-level-line {
+    stroke: #ef5b5b;
+    stroke-width: 0.9;
+    stroke-dasharray: 1.6 1.4;
+}
+
+.nl-svg-vertical.nl-clickable {
+    cursor: pointer;
+}
+
+.nl-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.nl-option {
+    min-width: 4.5rem;
+    padding: 0.85rem 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1f3a5f;
+    background: #ffffff;
+    border: 2px solid #bcd4f6;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.nl-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(31, 58, 95, 0.15);
+}
+
+.nl-input {
+    display: block;
+    width: min(12rem, 80%);
+    margin: 0 auto 1rem;
+    padding: 0.75rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    color: #1f3a5f;
+    border: 2px solid #bcd4f6;
+    border-radius: 14px;
+}
+
+.nl-hint {
+    text-align: left;
+}
+
+.nl-hint p {
+    margin: 0.35rem 0;
+}

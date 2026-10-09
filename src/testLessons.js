@@ -661,6 +661,37 @@ function validateStep(step, ctx, range) {
             }
             break;
         }
+        case "number-line": {
+            if (!["read", "place"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!["plain", "temperature", "debt"].includes(step.context)) fail(ctx, `context hibás: ${step.context}`);
+            if (!["horizontal", "vertical"].includes(step.orientation)) fail(ctx, `orientation hibás: ${step.orientation}`);
+            if (!isInt(step.min) || !isInt(step.max) || step.min >= step.max) fail(ctx, `min/max hibás: ${step.min}/${step.max}`);
+            if (!isInt(step.value) || step.value < step.min || step.value > step.max) fail(ctx, `value hibás: ${step.value}`);
+            if (step.answer !== step.value) fail(ctx, "answer != value");
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            if (!isInt(step.gridStep) || step.gridStep < 1) fail(ctx, `gridStep hibás: ${step.gridStep}`);
+            if (!isInt(step.labelStep) || step.labelStep < 1 || step.labelStep % step.gridStep !== 0) fail(ctx, `labelStep hibás: ${step.labelStep}`);
+            if (step.min % step.labelStep !== 0 || step.max % step.labelStep !== 0) fail(ctx, "a min/max legyen a labelStep többszöröse");
+            if (step.value % step.gridStep !== 0) fail(ctx, "a value legyen a gridStep többszöröse");
+            if (step.mode === "read" && step.value % step.labelStep === 0) fail(ctx, "olvasásnál ne felirat legyen a válasz");
+            if (step.context === "temperature" && step.orientation !== "vertical") fail(ctx, "a hőmérő legyen függőleges");
+            if (step.mode === "place") {
+                if (step.interaction !== "click") fail(ctx, "place módban click interaction kell");
+            } else if (step.interaction === "choice") {
+                if (!Array.isArray(step.options) || step.options.length < 3) {
+                    fail(ctx, "choice módban kevés options");
+                } else {
+                    if (!step.options.every(o => isInt(o))) fail(ctx, "options nem egészek");
+                    if (new Set(step.options).size !== step.options.length) fail(ctx, "options ismétlődik");
+                    if (!step.options.includes(step.answer)) fail(ctx, "options nem tartalmazza a választ");
+                }
+            } else if (step.interaction === "input") {
+                if (step.options !== undefined) fail(ctx, "input módban nem kell options");
+            } else {
+                fail(ctx, `interaction hibás: ${step.interaction}`);
+            }
+            break;
+        }
         case "transform": {
             if (!["turn", "translate"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             const checkCells = cells => {

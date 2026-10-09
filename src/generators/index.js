@@ -76,6 +76,7 @@ import { generateElapsedTime } from "./elapsedTimeGenerator.js?v=1";
 import { generateSpeedTrip } from "./speedTripGenerator.js?v=1";
 import { generateAverage } from "./averageGenerator.js?v=1";
 import { generateInteger } from "./integerGenerator.js?v=3";
+import { generateNumberLine } from "./numberLineGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -245,6 +246,8 @@ export function generate(step) {
             return generateAverage(opts);
         case "integer":
             return generateInteger(opts);
+        case "number-line":
+            return generateNumberLine(opts);
 
         default:
             throw new Error(

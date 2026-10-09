@@ -815,6 +815,30 @@
       }
     },
     {
+      "id": "integers-line-01",
+      "title": "🌡️ Negatív számok a számegyenesen",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "integers",
+      "difficulty": 2,
+      "type": "number-line",
+      "range": 20,
+      "mission": "🌡️ Negatív számok a számegyenesen",
+      "subtitle": "olvasás és elhelyezés a számegyenesen és a hőmérőn",
+      "file": "./data/lessons/grade6/integers-line-01.json",
+      "worldTitles": {
+        "postman": "📮 Egyenleg a számegyenesen",
+        "racing": "🏎️ Körök a nullpont körül",
+        "cooking": "🍳 Hőmérő a konyhában",
+        "football": "⚽ Gólkülönbség a pályán",
+        "animals": "🦁 Hőmérők az állatkertben",
+        "space": "🚀 Magasság és mélység az űrhajón",
+        "tram": "🚋 Késés a villamoson"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

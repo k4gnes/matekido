@@ -88,7 +88,8 @@ export const TYPE_EMOJI = {
     coordinate: "📍",
     "speed-trip": "🚗",
     average: "⚖️",
-    integer: "➖"
+    integer: "➖",
+    "number-line": "🌡️"
 };
 
 export const TYPE_LABEL = {
@@ -180,5 +181,6 @@ export const TYPE_LABEL = {
     coordinate: "Koordináták",
     "speed-trip": "Sebességhelyzetek",
     average: "Átlag számítása",
-    integer: "Egész számok"
+    integer: "Egész számok",
+    "number-line": "Számegyenes és hőmérő"
 };

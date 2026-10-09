@@ -1,0 +1,115 @@
+{
+  "id": "integers-line-01",
+  "title": "🌡️ Negatív számok a számegyenesen",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🌡️ Negatív számok a számegyenesen",
+      "text": "A számegyenesen a 0 a közép. Jobbra a pozitív, balra a negatív számok vannak: a 0-tól jobbra a 2, balra a −2. Ugyanolyan messze vannak, csak ellenkező irányban. A hőmérőn is így olvassuk a fokokat: a −5 fok a 0 alatt van. Olvasd le a jelölt értéket, vagy kattints a megadott szám helyére!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Egyenleg a számegyenesen",
+          "text": "A postán a bankszámla egyenlegét számegyenesen ábrázoljuk: a 0-tól jobbra a megtakarítás, balra az adósság van. Olvasd le a nyíl értékét, vagy kattints a megadott szám helyére!"
+        },
+        "racing": {
+          "title": "🏎️ Körök a nullpont körül",
+          "text": "A boxutcában a nullponttól jobbra a gyorsabb, balra a lassabb körök vannak. A 0-tól ugyanolyan messze lévő számok ellentétes oldalon vannak. Olvasd le a jelet, vagy kattints a helyére!"
+        },
+        "cooking": {
+          "title": "🍳 Hőmérő a konyhában",
+          "text": "A konyhában a hőmérőn a 0 fok a fagypont. A fölötte lévő értékek pozitívak, az alattuk lévők negatívak. Olvasd le a hőmérsékletet, vagy kattints a megadott fok helyére!"
+        },
+        "football": {
+          "title": "⚽ Gólkülönbség a pályán",
+          "text": "A pályán a gólkülönbséget számegyenesen mutatjuk: a 0-tól jobbra a nyerés, balra a vereség van. Olvasd le a jelet, vagy kattints a megadott szám helyére!"
+        },
+        "animals": {
+          "title": "🦁 Hőmérők az állatkertben",
+          "text": "Az állatkert hőmérőin a 0 alatti értékek is vannak: a pingvineknél hidegebb, a sivatagban melegebb. Olvasd le a hőmérsékletet, vagy kattints a megadott fok helyére!"
+        },
+        "space": {
+          "title": "🚀 Magasság és mélység az űrhajón",
+          "text": "Az űrhajón a kiinduló szint a 0. Felette a magasság pozitív, alatta a mélység negatív. Olvasd le az értéket, vagy kattints a megadott szint helyére!"
+        },
+        "tram": {
+          "title": "🚋 Késés a villamoson",
+          "text": "A villamos menetrendjében a korai indulás negatív, a késés pozitív érték. Olvasd le a számegyenes jelét, vagy kattints a megadott helyére!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "number-line",
+      "options": {
+        "count": 3,
+        "mode": "read",
+        "context": "mixed",
+        "interaction": "choice"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "number-line",
+      "options": {
+        "count": 3,
+        "mode": "place",
+        "context": "mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "number-line",
+      "options": {
+        "count": 3,
+        "mode": "read",
+        "context": "temperature",
+        "interaction": "input"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "number-line",
+      "options": {
+        "count": 3,
+        "mode": "read",
+        "context": "debt",
+        "interaction": "choice"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen eligazodtál a negatív számok között a számegyenesen és a hőmérőn!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen leolvastad a posta egyenlegeit!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a helyüket a nullpont körül!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen leolvastad a konyha hőmérőjét!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kezelted a gólkülönbséget a számegyenesen!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen leolvastad az állatkert hőmérőit!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen tájékozódtál a magasság és mélység között!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen leolvastad a villamos késéseit!"
+        }
+      }
+    }
+  ]
+}

@@ -741,6 +741,50 @@ function validateStep(step, ctx, range) {
             }
             break;
         }
+        case "divisibility-rule": {
+            if (!["which", "with", "remainder"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            const RULES = [2, 3, 4, 5, 6, 9, 10];
+            if (step.mode === "which") {
+                if (!RULES.includes(step.divisor)) fail(ctx, `divisor hibás: ${step.divisor}`);
+                if (!isInt(step.answer) || step.answer < 100 || step.answer > 999 || step.answer % step.divisor !== 0) {
+                    fail(ctx, `answer hibás: ${step.answer}`);
+                }
+                if (!Array.isArray(step.options) || step.options.length !== 4) {
+                    fail(ctx, "which módban 4 options kell");
+                } else {
+                    if (!step.options.every(o => isInt(o.value) && typeof o.text === "string")) fail(ctx, "options mezők hibásak");
+                    if (new Set(step.options.map(o => o.value)).size !== 4) fail(ctx, "options ismétlődik");
+                    const correctOpts = step.options.filter(o => o.correct);
+                    if (correctOpts.length !== 1) fail(ctx, "pontosan 1 helyes kell");
+                    if (correctOpts[0].value !== step.answer) fail(ctx, "a helyes options != answer");
+                    if (step.options.some(o => !o.correct && o.value % step.divisor === 0)) fail(ctx, "hiba: decoy osztható a választóval");
+                }
+            } else if (step.mode === "with") {
+                if (!RULES.includes(step.divisor)) fail(ctx, `divisor hibás: ${step.divisor}`);
+                if (!isInt(step.number) || step.number < 100 || step.number > 999 || step.number % step.divisor !== 0) {
+                    fail(ctx, `number hibás: ${step.number}`);
+                }
+                if (step.answer !== step.divisor) fail(ctx, "answer != divisor");
+                if (!Array.isArray(step.options) || step.options.length !== 4) {
+                    fail(ctx, "with módban 4 options kell");
+                } else {
+                    if (!step.options.every(o => isInt(o.value) && typeof o.text === "string")) fail(ctx, "options mezők hibásak");
+                    if (new Set(step.options.map(o => o.value)).size !== 4) fail(ctx, "options ismétlődik");
+                    const correctOpts = step.options.filter(o => o.correct);
+                    if (correctOpts.length !== 1) fail(ctx, "pontosan 1 helyes kell");
+                    if (correctOpts[0].value !== step.answer) fail(ctx, "a helyes options != answer");
+                    if (step.options.some(o => !o.correct && step.number % o.value === 0)) fail(ctx, "hiba: több osztó is osztható");
+                }
+            } else {
+                if (![6, 7, 8, 9, 11, 12].includes(step.b)) fail(ctx, `b hibás: ${step.b}`);
+                if (!isInt(step.a) || !isInt(step.quotient) || step.a < 100 || step.a > 999) fail(ctx, `a/quotient hibás: ${step.a}/${step.quotient}`);
+                if (step.answer < 0 || step.answer >= step.b) fail(ctx, `answer (maradék) hibás: ${step.answer}`);
+                if (step.a !== step.b * step.quotient + step.answer) fail(ctx, "a != b*q + r");
+                if (!["input", "choice"].includes(step.interaction)) fail(ctx, `interaction hibás: ${step.interaction}`);
+            }
+            break;
+        }
         case "transform": {
             if (!["turn", "translate"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             const checkCells = cells => {

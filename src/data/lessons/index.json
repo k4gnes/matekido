@@ -887,6 +887,30 @@
       }
     },
     {
+      "id": "divisibility-rules-02",
+      "title": "🎯 Oszthatósági szabályok",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "divisibility",
+      "difficulty": 2,
+      "type": "divisibility-rule",
+      "range": 1000,
+      "mission": "🎯 Oszthatósági szabályok",
+      "subtitle": "oszthatósági szabályok és maradék számolása 1000-ig",
+      "file": "./data/lessons/grade6/divisibility-rules-02.json",
+      "worldTitles": {
+        "postman": "📮 Csomagok a szabályokkal",
+        "racing": "🏎️ Körök a pályán",
+        "cooking": "🍳 Hozzávalók és adagok",
+        "football": "⚽ Csapatok és meccsek",
+        "animals": "🦁 Adagok az állatkertben",
+        "space": "🚀 Küldetések és legénység",
+        "tram": "🚋 Utasok a megállókban"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

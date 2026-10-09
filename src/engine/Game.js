@@ -87,6 +87,7 @@ import { renderInteger } from "../components/integer.js?v=3";
 import { renderNumberLine } from "../components/numberLine.js?v=1";
 import { renderIntegerOps } from "../components/integerOps.js?v=1";
 import { renderIntegerMuldiv } from "../components/integerMuldiv.js?v=1";
+import { renderDivisibilityRule } from "../components/divisibilityRule.js?v=1";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -176,7 +177,8 @@ const COUNTED_TYPES = new Set([
     "integer",
     "number-line",
     "integer-ops",
-    "integer-muldiv"
+    "integer-muldiv",
+    "divisibility-rule"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -211,7 +213,8 @@ const SKILL_BY_TYPE = {
     "integer": "integers",
     "number-line": "integers",
     "integer-ops": "integers",
-    "integer-muldiv": "integers"
+    "integer-muldiv": "integers",
+    "divisibility-rule": "divisibility"
 };
 
 const RENDERERS = new Map([
@@ -306,7 +309,8 @@ const RENDERERS = new Map([
     ["integer", renderInteger],
     ["number-line", renderNumberLine],
     ["integer-ops", renderIntegerOps],
-    ["integer-muldiv", renderIntegerMuldiv]
+    ["integer-muldiv", renderIntegerMuldiv],
+    ["divisibility-rule", renderDivisibilityRule]
 ]);
 
 

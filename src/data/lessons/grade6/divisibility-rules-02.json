@@ -1,0 +1,112 @@
+{
+  "id": "divisibility-rules-02",
+  "title": "🎯 Oszthatósági szabályok",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🎯 Oszthatósági szabályok",
+      "text": "Néhány oszthatósági szabály gyorsan eldönti, osztható-e egy szám: 2-vel, ha páros, 5-tel, ha 0-ra vagy 5-re végződik, 10-zel, ha 0-ra végződik. A 3-mal és 9-cel való oszthatóságot a számjegyek összege dönti el, a 4-gyel valót az utolsó két számjegy, a 6-tal valót pedig az, hogy 2-vel és 3-mal is osztható-e. Ha nem osztható, a maradékot is ki tudod számolni!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Csomagok a szabályokkal",
+          "text": "A postán a szállítmányok számait oszthatósági szabályokkal ellenőrizzük: gyorsabban megy a munka, ha ismered a szabályokat."
+        },
+        "racing": {
+          "title": "🏎️ Körök a pályán",
+          "text": "A versenypályán a körök és a rajtpozíciók számait is oszthatósági szabályokkal vizsgáljuk."
+        },
+        "cooking": {
+          "title": "🍳 Hozzávalók és adagok",
+          "text": "A konyhában az alapanyagokat egyenlő csoportokba osztjuk – az oszthatósági szabályok segítenek, hogy minden adag egyforma legyen."
+        },
+        "football": {
+          "title": "⚽ Csapatok és meccsek",
+          "text": "A meccsen a csapatokat egyenlő csoportokba osztjuk, és a gólok számát is meg tudjuk nézni az oszthatósági szabályokkal."
+        },
+        "animals": {
+          "title": "🦁 Adagok az állatkertben",
+          "text": "Az állatkertben az állatokat egyenlő csoportokban etetjük – az oszthatósági szabályokkal gyorsan eldöntjük, hogy sikerül-e."
+        },
+        "space": {
+          "title": "🚀 Küldetések és legénység",
+          "text": "Az űrhajón a legénységet egyenlő csapatokba osztjuk, a felszerelést pedig egyenlő részekre – a szabályok sokat segítenek."
+        },
+        "tram": {
+          "title": "🚋 Utasok a megállókban",
+          "text": "A villamoson az utasokat egyenlő csoportokban szállítjuk – az oszthatósági szabályokkal gyorsan kiszámolod, sikerül-e."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "divisibility-rule",
+      "options": {
+        "count": 3,
+        "mode": "which",
+        "interaction": "choice"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "divisibility-rule",
+      "options": {
+        "count": 3,
+        "mode": "with",
+        "interaction": "choice"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "divisibility-rule",
+      "options": {
+        "count": 3,
+        "mode": "remainder",
+        "interaction": "input"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "divisibility-rule",
+      "options": {
+        "count": 3,
+        "mode": "mixed",
+        "interaction": "choice"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen használtad az oszthatósági szabályokat!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen ellenőrizted a posta szállítmányait!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a pálya köreivel!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen osztottad el a konyha hozzávalóit!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen használtad a szabályokat a meccsen!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen osztottad el az állatok adagjait!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltál az űrhajó csapataival!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen osztottad el az utasokat!"
+        }
+      }
+    }
+  ]
+}

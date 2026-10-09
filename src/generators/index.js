@@ -79,6 +79,7 @@ import { generateInteger } from "./integerGenerator.js?v=3";
 import { generateNumberLine } from "./numberLineGenerator.js?v=1";
 import { generateIntegerOps } from "./integerOpsGenerator.js?v=1";
 import { generateIntegerMuldiv } from "./integerMuldivGenerator.js?v=1";
+import { generateDivisibilityRule } from "./divisibilityRuleGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -254,6 +255,8 @@ export function generate(step) {
             return generateIntegerOps(opts);
         case "integer-muldiv":
             return generateIntegerMuldiv(opts);
+        case "divisibility-rule":
+            return generateDivisibilityRule(opts);
 
         default:
             throw new Error(

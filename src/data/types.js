@@ -91,7 +91,8 @@ export const TYPE_EMOJI = {
     integer: "➖",
     "number-line": "🌡️",
     "integer-ops": "🧮",
-    "integer-muldiv": "➗"
+    "integer-muldiv": "➗",
+    "divisibility-rule": "🎯"
 };
 
 export const TYPE_LABEL = {
@@ -186,5 +187,6 @@ export const TYPE_LABEL = {
     integer: "Egész számok",
     "number-line": "Számegyenes és hőmérő",
     "integer-ops": "Előjeles összeadás és kivonás",
-    "integer-muldiv": "Előjeles szorzás és osztás"
+    "integer-muldiv": "Előjeles szorzás és osztás",
+    "divisibility-rule": "Oszthatósági szabályok"
 };

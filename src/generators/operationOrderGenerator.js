@@ -23,6 +23,14 @@ const FORMS = [
     "div-add"
 ];
 
+const FORMS_POWER = [
+    "pow-add",
+    "pow-sub",
+    "pow-mul",
+    "paren-pow",
+    "paren-pow-sub"
+];
+
 function params(form) {
     let a, b, c;
     if (form === "mult-sub") {
@@ -149,6 +157,151 @@ function explanation(form, a, b, c, answer) {
     return `Először az osztás: ${b} ÷ ${c} = ${b / c}, majd hozzáadjuk: ${a} + ${b / c} = ${answer}`;
 }
 
+function sup(c) {
+    return c === 2 ? "²" : "³";
+}
+
+function powerParams(form) {
+    const c = Math.random() < 0.5 ? 2 : 3;
+    let a;
+    let b;
+    if (form === "pow-add") {
+        b = random(2, 4);
+        const maxA = c === 3 ? 10 - b : 9;
+        if (maxA < 2) return null;
+        a = random(2, maxA);
+    } else if (form === "pow-sub") {
+        if (c === 3) {
+            b = 2;
+            a = random(10, 12);
+        } else {
+            b = random(2, 4);
+            const lo = Math.max(2, b * b + 2);
+            const hi = b + 31;
+            if (lo > hi) return null;
+            a = random(lo, hi);
+        }
+    } else if (form === "pow-mul") {
+        b = random(2, 4);
+        const maxA = c === 3 ? Math.floor(10 / b) : Math.min(9, Math.floor(31 / b));
+        if (maxA < 2) return null;
+        a = random(2, maxA);
+    } else if (form === "paren-pow") {
+        a = random(2, 9);
+        const maxB = c === 3 ? 10 - a : 9;
+        if (maxB < 2) return null;
+        b = random(2, maxB);
+    } else if (form === "paren-pow-sub") {
+        if (c === 3) {
+            b = 2;
+            a = random(9, 12);
+        } else {
+            b = random(2, 4);
+            const lo = Math.max(3, b * b + 1);
+            const hi = b + 31;
+            if (lo > hi) return null;
+            a = random(lo, hi);
+        }
+    } else {
+        return null;
+    }
+    return { a, b, c };
+}
+
+function powerExpressionText(form, a, b, c) {
+    const s = sup(c);
+    switch (form) {
+        case "pow-add": return `${b}${s} + ${a}`;
+        case "pow-sub": return `${a} − ${b}${s}`;
+        case "pow-mul": return `${b}${s} × ${a}`;
+        case "paren-pow": return `(${a} + ${b})${s}`;
+        case "paren-pow-sub": return `(${a} − ${b})${s}`;
+        default: return "";
+    }
+}
+
+function powerCompute(form, a, b, c) {
+    switch (form) {
+        case "pow-add": return b ** c + a;
+        case "pow-sub": return a - b ** c;
+        case "pow-mul": return b ** c * a;
+        case "paren-pow": return (a + b) ** c;
+        case "paren-pow-sub": return (a - b) ** c;
+        default: return 0;
+    }
+}
+
+function powerWrong(form, a, b, c) {
+    switch (form) {
+        case "pow-add": return (a + b) ** c;
+        case "pow-sub": return (a - b) ** c;
+        case "pow-mul": return (a * b) ** c;
+        case "paren-pow": return a + b ** c;
+        case "paren-pow-sub": return a - b ** c;
+        default: return 0;
+    }
+}
+
+function powerExplanation(form, a, b, c, answer) {
+    const s = sup(c);
+    const power = b ** c;
+    switch (form) {
+        case "pow-add":
+            return `Először a hatvány: ${b}${s} = ${power}, majd hozzáadjuk: ${power} + ${a} = ${answer}`;
+        case "pow-sub":
+            return `Először a hatvány: ${b}${s} = ${power}, majd kivonjuk: ${a} − ${power} = ${answer}`;
+        case "pow-mul":
+            return `Először a hatvány: ${b}${s} = ${power}, majd megszorozzuk: ${power} × ${a} = ${answer}`;
+        case "paren-pow":
+            return `Először a zárójel: ${a} + ${b} = ${a + b}, majd hatványozunk: ${a + b}${s} = ${answer}`;
+        case "paren-pow-sub":
+            return `Először a zárójel: ${a} − ${b} = ${a - b}, majd hatványozunk: ${a - b}${s} = ${answer}`;
+        default:
+            return "";
+    }
+}
+
+function powerOptions(answer, wrong) {
+    const values = new Set([answer, wrong]);
+    const lo = Math.max(1, answer - 15);
+    const hi = answer + 15;
+    let guard = 0;
+    while (values.size < 4 && guard < 40) {
+        values.add(random(lo, hi));
+        guard++;
+    }
+    return shuffle([...values].slice(0, 4));
+}
+
+function generatePowerTask(form) {
+    const forms = form === "mixed" ? FORMS_POWER : [form];
+    for (let attempt = 0; attempt < 400; attempt++) {
+        const f = pick(forms);
+        const p = powerParams(f);
+        if (!p) continue;
+
+        const answer = powerCompute(f, p.a, p.b, p.c);
+        if (!Number.isInteger(answer) || answer < 1 || answer > 1000) continue;
+
+        const wrong = powerWrong(f, p.a, p.b, p.c);
+        if (wrong === answer || !Number.isInteger(wrong) || wrong < 1 || wrong > 1000) continue;
+
+        return {
+            type: "operation-order",
+            form: f,
+            a: p.a,
+            b: p.b,
+            c: p.c,
+            expression: powerExpressionText(f, p.a, p.b, p.c),
+            answer,
+            options: powerOptions(answer, wrong),
+            explanation: powerExplanation(f, p.a, p.b, p.c, answer)
+        };
+    }
+
+    throw new Error(`Nem sikerült hatványos műveleti sorrend feladatot generálni: ${form}`);
+}
+
 function generateTask(bounds) {
     if (!bounds) {
         const form = pick(FORMS);
@@ -209,7 +362,7 @@ function generateTask(bounds) {
 }
 
 export function generateOperationOrder(opts = {}) {
-    const { count = 6 } = opts;
+    const { count = 6, form } = opts;
     const bounded = ["aMin", "aMax", "bMin", "bMax", "answerMax"].some(k => opts[k] !== undefined);
     const bounds = bounded
         ? {
@@ -222,7 +375,7 @@ export function generateOperationOrder(opts = {}) {
         : null;
     const tasks = [];
     for (let i = 0; i < count; i++) {
-        tasks.push(generateTask(bounds));
+        tasks.push(form ? generatePowerTask(form) : generateTask(bounds));
     }
     return tasks;
 }

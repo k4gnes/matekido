@@ -8,7 +8,7 @@ const DOCS = [
     { id: "harmadik-osztaly", emoji: "🪐", label: "3. osztály", desc: "47 lecke – számok 1000-ig, írásbeli műveletek, szorzás, osztás, szöveges feladatok, geometria" },
     { id: "negyedik-osztaly", emoji: "🍀", label: "4. osztály", desc: "35 lecke – 10 000-ig, írásbeli műveletek, törtek, geometria" },
     { id: "otodik-osztaly", emoji: "🌌", label: "5. osztály", desc: "32 lecke – 1 000 000-ig, oszthatóság, törtek, tizedes törtek, százalék, nagy számok műveletei, geometria, adatok, szöveges feladatok" },
-    { id: "hatodik-osztaly", emoji: "🧊", label: "6. osztály", desc: "12 lecke (tervezett 33) – negatív számok, ellentett és abszolút érték, egész számok összehasonlítása és műveletei, oszthatósági szabályok, osztók és többszörösök, prím- és összetett számok, prímfelbontás, LNKO és LKKT, hatványozás alapjai, tízes hatványok" }
+    { id: "hatodik-osztaly", emoji: "🧊", label: "6. osztály", desc: "13 lecke (tervezett 33) – negatív számok, ellentett és abszolút érték, egész számok összehasonlítása és műveletei, oszthatósági szabályok, osztók és többszörösök, prím- és összetett számok, prímfelbontás, LNKO és LKKT, hatványozás alapjai, tízes hatványok, hatványok a műveleti sorrendben" }
 ];
 
 export function renderSkillMap(root, onBack) {

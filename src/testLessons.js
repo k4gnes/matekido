@@ -128,6 +128,11 @@ function operationOrderAnswer(step) {
         case "paren-add": return (a + b) * c;
         case "paren-sub": return (a - b) * c;
         case "div-add": return a + b / c;
+        case "pow-add": return Math.pow(b, c) + a;
+        case "pow-sub": return a - Math.pow(b, c);
+        case "pow-mul": return Math.pow(b, c) * a;
+        case "paren-pow": return Math.pow(a + b, c);
+        case "paren-pow-sub": return Math.pow(a - b, c);
         default: return null;
     }
 }
@@ -1073,6 +1078,18 @@ function validateStep(step, ctx, range) {
         case "operation-order": {
             if (typeof step.expression !== "string" || step.expression.length === 0) {
                 fail(ctx, "expression hiányzik");
+            }
+            const powerForms = ["pow-add", "pow-sub", "pow-mul", "paren-pow", "paren-pow-sub"];
+            if (powerForms.includes(step.form)) {
+                if (!isInt(step.c) || step.c < 2 || step.c > 3) fail(ctx, `hatvány kitevő hibás: ${step.c}`);
+                if (step.form === "paren-pow") {
+                    if (!isInt(step.a) || step.a < 2 || step.a > 9) fail(ctx, `paren-pow a hibás: ${step.a}`);
+                    if (!isInt(step.b) || step.b < 2 || step.b > 9) fail(ctx, `paren-pow b hibás: ${step.b}`);
+                    if (step.c === 3 && step.a + step.b > 10) fail(ctx, `paren-pow túl nagy összeg: ${step.a + step.b}`);
+                } else {
+                    if (!isInt(step.b) || step.b < 2 || step.b > 4) fail(ctx, `hatvány alap hibás: ${step.b}`);
+                }
+                if (isFiniteNum(range) && step.answer > range) fail(ctx, `answer kilép a tartományból: ${step.answer} > ${range}`);
             }
             const expected = operationOrderAnswer(step);
             if (!isFiniteNum(expected) || step.answer !== expected) {

@@ -1,0 +1,108 @@
+{
+  "id": "operation-order-power-01",
+  "title": "⚡ Hatványok a műveleti sorrendben",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "⚡ Hatványok a műveleti sorrendben",
+      "text": "A műveleti sorrendnél most megjelenik a hatvány is! A teljes sorrend: előbb a zárójelben lévő művelet, utána a hatvány, majd a szorzás és az osztás, és végül az összeadás és a kivonás. Figyeld meg a különbséget: (2 + 3)² = 25, de 2 + 3² = 11 – a zárójel megváltoztatja a végeredményt! A 2³ + 5-nél előbb a hatvány: 2³ = 8, és csak utána adjuk hozzá az 5-öt: 8 + 5 = 13. A 2³ × 4-nél is előbb a hatvány kell: 2³ = 8, majd 8 × 4 = 32.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Hatványok a postán",
+          "text": "A postán a csomagok számánál is fontos a sorrend: előbb a hatvány, aztán a szorzás, és csak utána az összeadás!"
+        },
+        "racing": {
+          "title": "🏎️ Hatványok a boxutcában",
+          "text": "A boxutcában másodperceket számolunk hatványokkal is – a sorrend mindig ugyanaz: zárójel, hatvány, szorzás, osztás!"
+        },
+        "cooking": {
+          "title": "🍳 Hatványok a konyhában",
+          "text": "A recepteknél is előbb a hatványt számoljuk, aztán megy a szorzás és az összeadás – így lesz tökéletes az adag!"
+        },
+        "football": {
+          "title": "⚽ Hatványok a bajnokságban",
+          "text": "A gólok és pontok számításánál is a hatvány jön előbb – a zárójel pedig mindig első!"
+        },
+        "animals": {
+          "title": "🦁 Hatványok az állatkertben",
+          "text": "Az állatkertben a látogatók számát hatványokkal is számoljuk – előbb a hatvány, aztán a többi művelet!"
+        },
+        "space": {
+          "title": "🚀 Hatványok az űrhajón",
+          "text": "Az űrhajó számítógépe is a szabályt követi: zárójel, hatvány, szorzás, osztás, és csak utána az összeadás és a kivonás!"
+        },
+        "tram": {
+          "title": "🚋 Hatványok a villamoson",
+          "text": "A jegyek és utasok számánál is fontos a hatványok helye a műveleti sorrendben!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "operation-order",
+      "options": {
+        "count": 3,
+        "form": "pow-add"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "operation-order",
+      "options": {
+        "count": 3,
+        "form": "pow-mul"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "operation-order",
+      "options": {
+        "count": 3,
+        "form": "paren-pow"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "operation-order",
+      "options": {
+        "count": 3,
+        "form": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen követted a műveleti sorrendet a hatványokkal is!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál hatványokkal a postán!"
+        },
+        "racing": {
+          "title": "🏁 Szuper vagy!",
+          "text": "Ügyesen követted a sorrendet a boxutcában is!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen mértél hatványokkal a konyhában!"
+        },
+        "football": {
+          "title": "🏆 Nagy vagy!",
+          "text": "Ügyesen felírtad a hatványos számolásokat!"
+        },
+        "animals": {
+          "title": "🦁 Ügyes voltál!",
+          "text": "Ügyesen számoltál hatványokkal az állatkertben!"
+        },
+        "space": {
+          "title": "🚀 Szuper vagy!",
+          "text": "Ügyesen megoldottad a hatványos feladatokat az űrben!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen következtél a hatványokkal!"
+        }
+      }
+    }
+  ]
+}

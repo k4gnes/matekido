@@ -1055,6 +1055,30 @@
       }
     },
     {
+      "id": "operation-order-power-01",
+      "title": "⚡ Hatványok a műveleti sorrendben",
+      "grades": [
+        6
+      ],
+      "category": "operations",
+      "skill": "operation-order",
+      "difficulty": 3,
+      "type": "operation-order",
+      "range": 1000,
+      "mission": "⚡ Hatvány a sorrendben",
+      "subtitle": "a hatvány helye a műveleti sorrendben zárójeleknél",
+      "file": "./data/lessons/grade6/operation-order-power-01.json",
+      "worldTitles": {
+        "postman": "📮 Hatványok a postán",
+        "racing": "🏎️ Hatványok a boxutcában",
+        "cooking": "🍳 Hatványok a konyhában",
+        "football": "⚽ Hatványok a bajnokságban",
+        "animals": "🦁 Hatványok az állatkertben",
+        "space": "🚀 Hatványok az űrhajón",
+        "tram": "🚋 Hatványok a villamoson"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

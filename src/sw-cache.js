@@ -457,6 +457,7 @@ const SW_CACHE_LIST = [
     "/data/lessons/grade6/integers-muldiv-01.json",
     "/data/lessons/grade6/integers-opposite-01.json",
     "/data/lessons/grade6/integers-ops-01.json",
+    "/data/lessons/grade6/operation-order-power-01.json",
     "/data/lessons/grade6/powers-basics-01.json",
     "/data/lessons/grade6/powers-ten-01.json",
     "/data/lessons/grade6/prime-composite-01.json",

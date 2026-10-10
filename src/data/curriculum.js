@@ -234,6 +234,7 @@ export const CURRICULUM_ORDER = {
         "gcd-lcm-01",
         "powers-basics-01",
         "powers-ten-01",
+        "operation-order-power-01",
     ],
 };
 

@@ -91,6 +91,7 @@ import { renderDivisibilityRule } from "../components/divisibilityRule.js?v=1";
 import { renderPrime } from "../components/prime.js?v=1";
 import { renderPrimeFactor } from "../components/primeFactor.js?v=1";
 import { renderGcdLcm } from "../components/gcdLcm.js?v=1";
+import { renderPower } from "../components/power.js?v=1";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -184,7 +185,8 @@ const COUNTED_TYPES = new Set([
     "divisibility-rule",
     "prime",
     "prime-factor",
-    "gcd-lcm"
+    "gcd-lcm",
+    "power"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -224,7 +226,8 @@ const SKILL_BY_TYPE = {
     "divisibility-rule": "divisibility",
     "prime": "primes",
     "prime-factor": "prime-factor",
-    "gcd-lcm": "gcd-lcm"
+    "gcd-lcm": "gcd-lcm",
+    "power": "powers"
 };
 
 const RENDERERS = new Map([
@@ -323,7 +326,8 @@ const RENDERERS = new Map([
     ["divisibility-rule", renderDivisibilityRule],
     ["prime", renderPrime],
     ["prime-factor", renderPrimeFactor],
-    ["gcd-lcm", renderGcdLcm]
+    ["gcd-lcm", renderGcdLcm],
+    ["power", renderPower]
 ]);
 
 

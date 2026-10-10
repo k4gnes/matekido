@@ -1,0 +1,55 @@
+.power-prompt {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #444;
+    text-align: center;
+    margin: 0.5rem 0 1rem;
+}
+
+.power-display {
+    width: min(70%, 16rem);
+    margin: 0 auto 1.25rem;
+    padding: 0.9rem 0;
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-align: center;
+    color: #1f3a5f;
+    background: #eef5ff;
+    border: 2px solid #bcd4f6;
+    border-radius: 18px;
+}
+
+.power-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.power-option {
+    min-width: 6rem;
+    padding: 0.85rem 1.2rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    white-space: nowrap;
+    color: #1f3a5f;
+    background: #ffffff;
+    border: 2px solid #bcd4f6;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.power-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(31, 58, 95, 0.15);
+}
+
+.power-hint {
+    text-align: left;
+}
+
+.power-hint p {
+    margin: 0.35rem 0;
+}

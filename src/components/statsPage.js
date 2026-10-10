@@ -3,7 +3,7 @@ import { createButton } from "./ui/button.js";
 import { createNavBar } from "./ui/navbar.js";
 import { getDailyStats, getAllSkillStats, getActiveWorld, getLessonStats } from "../profile/Profile.js";
 import { SKILLS, CATEGORIES } from "../data/skills.js";
-import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=11";
+import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=12";
 import { gradesWithLessons } from "../utils/grades.js?v=1";
 
 function formatDate(dateStr) {

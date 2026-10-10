@@ -1,0 +1,108 @@
+{
+  "id": "powers-basics-01",
+  "title": "⚡ Hatványozás alapjai",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "⚡ Hatványozás alapjai",
+      "text": "A hatványban két szám szerepel: az alap és a kitevő. A 4³-nél az alap a 4, a kitevő a 3, és azt jelenti, hogy 4 · 4 · 4 = 64. A négyzet az n² = n · n: a 6 négyzete 6 · 6 = 36. A köb az n³ = n · n · n: a 3 köbe 3 · 3 · 3 = 27. Számolj te is hatványokat!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Hatványozás a postán",
+          "text": "A postán a küldeményeket hatványcsomagokba rendezzük: az alapot annyiszor szorozzuk össze, ahány a kitevő."
+        },
+        "racing": {
+          "title": "🏎️ Hatványok a pályán",
+          "text": "A versenypályán a körök számát hatványokkal fejezzük ki – hány kör lesz négyzetre vagy köbre emelve?"
+        },
+        "cooking": {
+          "title": "🍳 Hatványozás a konyhában",
+          "text": "A konyhában az adagokat hatványokkal számoljuk: mennyi lesz a hozzávalók négyzete vagy köbe?"
+        },
+        "football": {
+          "title": "⚽ Hatványok a bajnokságban",
+          "text": "A bajnokságban a gólok számát emeljük négyzetre és köbre, hogy lássuk a nagy összegeket."
+        },
+        "animals": {
+          "title": "🦁 Hatványozás az állatkertben",
+          "text": "Az állatkertben az állatok számát hatványokkal írjuk fel – gyorsan nő, ha egymás után szorozzuk!"
+        },
+        "space": {
+          "title": "🚀 Hatványok az űrben",
+          "text": "Az űrhajón a kódokat hatványokkal erősítjük: az alapot annyiszor szorozzuk össze, ahányszor kell."
+        },
+        "tram": {
+          "title": "🚋 Hatványozás a városban",
+          "text": "A villamoson az utasok számát emeljük négyzetre és köbre – nézd meg, milyen nagy lesz!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "power",
+      "options": {
+        "count": 3,
+        "mode": "square"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "power",
+      "options": {
+        "count": 3,
+        "mode": "cube"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "power",
+      "options": {
+        "count": 3,
+        "mode": "notation"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "power",
+      "options": {
+        "count": 3,
+        "mode": "base"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen számoltál hatványokat!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen rendezted el a hatványcsomagokat!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiszámoltad a hatványokat a pályán!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiszámoltad a hatványadagokat!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiszámoltad a hatványgólokat!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen kiszámoltad az állatok hatványait!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megfejtetted a hatványkódokat!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiszámoltad a hatványutasokat!"
+        }
+      }
+    }
+  ]
+}

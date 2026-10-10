@@ -34,7 +34,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-|  | Hatvány | A hatványozás alapjai | Négyzetre és köbre emelés | 1000 | 2 |
+| 11 | Hatvány | [A hatványozás alapjai](?lesson=powers-basics-01) | Négyzetre és köbre emelés | 1000 | 2 |
 |  | Hatvány | Tízes hatványok | Tíz kitevői, nagyságrend | 1000000 | 2 |
 |  | Műveleti sorrend | Hatványok a műveleti sorrendben | Sorrend és zárójelek | 1000 | 3 |
 
@@ -103,6 +103,7 @@ A fenti 33 lecke a 6. osztályos tanmenet terve. Tovább tervezett leckék:
 - Egész számok, negatív számok (5/5): 1. Negatív számok – helyük a számegyenesen (`integers-line-01`, olvasás, elhelyezés, hőmérséklet és adósság), 2. Ellentett és abszolút érték (`integers-opposite-01`), 3. Egész számok összehasonlítása (`integers-compare-01`, abszolút értékkel, ellentettel és egyszerű összegekkel), 4. Előjeles összeadás és kivonás (`integers-ops-01`, azonos és különböző előjelűek, hőmérséklet- és egyenleg-történetek), 5. Előjeles szorzás és osztás (`integers-muldiv-01`, előjelszabályok, hőmérséklet- és egyenleg-történetek) ✔
 - Osztók, többszörösök, prímek (5/5): 6. Oszthatósági szabályok gyakorlása (`divisibility-rules-02`, szabályok a 2, 3, 4, 5, 6, 9, 10 osztókhoz és maradékszámolás 1000-ig) ✔, 7. Osztók és többszörösök (`divisibility-multiples-01`, nagyobb alapokkal: 7–16 többszörösei, 12–30 osztói és osztószámai) ✔, 8. Prím- és összetett számok (`prime-composite-01`, prímfelismerés 100-ig: melyik prím, melyik összetett, osztószám alapján) ✔, 9. Számok prímfelbontása (`prime-factor-01`, prímfelbontás 100-ig: teljes felbontás, hiányzó prím és hatványos alak) ✔, 10. Legnagyobb közös osztó és legkisebb közös többszörös (`gcd-lcm-01`, közös osztók és többszörösök 20-ig, LNKO és LKKT kiválasztása) ✔
 - A témakör elkészült; a többi témakör tervezett.
+- Hatványok (1/3): 11. A hatványozás alapjai (`powers-basics-01`, négyzetre és köbre emelés, a hatványjelölés és a fordított keresés) ✔ – a tízes hatványok és a hatványok a műveleti sorrendben még tervezettek.
 
 A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg.
 

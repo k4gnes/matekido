@@ -6,7 +6,7 @@ import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getLessonStats, getPlayBest, getActiveWorld, getActiveGrade, setActiveGrade, getFavoriteLessons, getSkippedLessons, isFavoriteLesson, toggleFavoriteLesson, getCustomDoneLessons, getMenuPrefs, saveMenuPrefs } from "../profile/Profile.js";
 import { CATEGORIES, SKILLS } from "../data/skills.js";
 import { HINT_TYPES, lessonHasHint } from "../data/hintLessons.js";
-import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=11";
+import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=12";
 import { CONSOLIDATION_LESSONS } from "../data/consolidation.js";
 import { curriculumSort } from "../data/curriculum.js";
 import { gradesWithLessons } from "../utils/grades.js?v=1";

@@ -25,7 +25,8 @@ export const HINT_TYPES = new Set([
     "divisibility-rule",
     "prime",
     "prime-factor",
-    "gcd-lcm"
+    "gcd-lcm",
+    "power"
 ]);
 
 export function lessonHasHint(lessonMeta) {

@@ -95,7 +95,8 @@ export const TYPE_EMOJI = {
     "divisibility-rule": "🎯",
     "prime": "⚛️",
     "prime-factor": "🌳",
-    "gcd-lcm": "🤝"
+    "gcd-lcm": "🤝",
+    "power": "⚡"
 };
 
 export const TYPE_LABEL = {
@@ -194,5 +195,6 @@ export const TYPE_LABEL = {
     "divisibility-rule": "Oszthatósági szabályok",
     "prime": "Prím- és összetett számok",
     "prime-factor": "Prímfelbontás",
-    "gcd-lcm": "LNKO és LKKT"
+    "gcd-lcm": "LNKO és LKKT",
+    "power": "Hatványozás"
 };

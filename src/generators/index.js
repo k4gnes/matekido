@@ -83,6 +83,7 @@ import { generateDivisibilityRule } from "./divisibilityRuleGenerator.js?v=1";
 import { generatePrime } from "./primeGenerator.js?v=1";
 import { generatePrimeFactor } from "./primeFactorGenerator.js?v=1";
 import { generateGcdLcm } from "./gcdLcmGenerator.js?v=1";
+import { generatePower } from "./powerGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -266,6 +267,8 @@ export function generate(step) {
             return generatePrimeFactor(opts);
         case "gcd-lcm":
             return generateGcdLcm(opts);
+        case "power":
+            return generatePower(opts);
 
         default:
             throw new Error(

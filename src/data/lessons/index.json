@@ -1007,6 +1007,30 @@
       }
     },
     {
+      "id": "powers-basics-01",
+      "title": "⚡ A hatványozás alapjai",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "powers",
+      "difficulty": 2,
+      "type": "power",
+      "range": 1000,
+      "mission": "⚡ A hatványozás alapjai",
+      "subtitle": "négyzetre és köbre emelés, a hatványjelölés",
+      "file": "./data/lessons/grade6/powers-basics-01.json",
+      "worldTitles": {
+        "postman": "📮 Hatványozás a postán",
+        "racing": "🏎️ Hatványok a pályán",
+        "cooking": "🍳 Hatványozás a konyhában",
+        "football": "⚽ Hatványok a bajnokságban",
+        "animals": "🦁 Hatványozás az állatkertben",
+        "space": "🚀 Hatványok az űrben",
+        "tram": "🚋 Hatványozás a városban"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

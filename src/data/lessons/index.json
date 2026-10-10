@@ -1079,6 +1079,30 @@
       }
     },
     {
+      "id": "fraction-line-01",
+      "title": "📍 Törtek a számegyenesen és vegyes számok",
+      "grades": [
+        6
+      ],
+      "category": "fractions",
+      "skill": "fraction",
+      "difficulty": 2,
+      "type": "fraction-line",
+      "range": 20,
+      "mission": "📍 Törtek a számegyenesen",
+      "subtitle": "törtek és vegyes számok helye, átváltás áltört és vegyes szám között",
+      "file": "./data/lessons/grade6/fraction-line-01.json",
+      "worldTitles": {
+        "postman": "📮 Törtek a postán",
+        "racing": "🏎️ Törtek a pályán",
+        "cooking": "🍳 Törtek a konyhában",
+        "football": "⚽ Törtek a bajnokságban",
+        "animals": "🦁 Törtek az állatkertben",
+        "space": "🚀 Törtek az űrben",
+        "tram": "🚋 Törtek a villamoson"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

@@ -1,11 +1,11 @@
-import { Game } from "./engine/Game.js?v=125";
+import { Game } from "./engine/Game.js?v=126";
 import { loadLesson } from "./engine/LessonLoader.js";
-import { buildLesson } from "./builders/LessonBuilder.js?v=56";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=107";
+import { buildLesson } from "./builders/LessonBuilder.js?v=57";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=108";
 import { renderSkillMap } from "./components/skillMap.js?v=40";
 import { renderHelp } from "./components/help.js?v=7";
 import { renderProfilePage } from "./components/profilePage.js?v=14";
-import { renderStatsPage } from "./components/statsPage.js?v=25";
+import { renderStatsPage } from "./components/statsPage.js?v=26";
 import { getNextPracticeLesson } from "./components/practicePage.js?v=10";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=10";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=8";

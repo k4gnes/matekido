@@ -85,6 +85,7 @@ import { generatePrimeFactor } from "./primeFactorGenerator.js?v=1";
 import { generateGcdLcm } from "./gcdLcmGenerator.js?v=1";
 import { generatePower } from "./powerGenerator.js?v=1";
 import { generatePowerTen } from "./powerTenGenerator.js?v=1";
+import { generateFractionLine } from "./fractionLineGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -272,6 +273,8 @@ export function generate(step) {
             return generatePower(opts);
         case "power-ten":
             return generatePowerTen(opts);
+        case "fraction-line":
+            return generateFractionLine(opts);
 
         default:
             throw new Error(

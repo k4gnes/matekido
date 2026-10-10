@@ -1,0 +1,123 @@
+.fl-prompt {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #444;
+    text-align: center;
+    margin: 0.5rem 0 0.8rem;
+}
+
+.fl-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 0.6rem auto 1rem;
+    padding: 0.7rem 1.2rem;
+    font-size: 2.6rem;
+    color: #1e293b;
+    background: #f1f5f9;
+    border: 3px solid #cbd5e1;
+    border-radius: 16px;
+}
+
+.fl-line-wrap {
+    overflow-x: auto;
+    padding: 0.4rem 0 0.2rem;
+    margin: 0.4rem 0 0.6rem;
+}
+
+.fl-svg {
+    display: block;
+    margin: 0 auto;
+}
+
+.fl-clickable {
+    cursor: pointer;
+}
+
+.fl-axis {
+    stroke: #475569;
+    stroke-width: 1.4;
+}
+
+.fl-arrow {
+    fill: #475569;
+}
+
+.fl-tick {
+    stroke: #94a3b8;
+    stroke-width: 0.9;
+}
+
+.fl-tick-major {
+    stroke: #475569;
+    stroke-width: 1.4;
+}
+
+.fl-tick-zero {
+    stroke: #e2574c;
+    stroke-width: 1.4;
+}
+
+.fl-label {
+    fill: #334155;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.fl-marker,
+.fl-marker-dot {
+    fill: #e2574c;
+}
+
+.fl-marker-stem {
+    stroke: #e2574c;
+    stroke-width: 1.2;
+}
+
+.fl-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 0.8rem 0;
+}
+
+.fl-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 4.5rem;
+    padding: 0.6rem 1rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1e293b;
+    background: #ffffff;
+    border: 2px solid #cbd5e1;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.1s ease, border-color 0.1s ease;
+}
+
+.fl-option:hover {
+    transform: scale(1.05);
+    border-color: #94a3b8;
+}
+
+.fl-mixed {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.fl-whole {
+    font-weight: 700;
+}
+
+.fl-hint {
+    text-align: left;
+}
+
+.fl-hint p {
+    margin: 0.35rem 0;
+}

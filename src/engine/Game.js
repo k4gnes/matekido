@@ -93,6 +93,7 @@ import { renderPrimeFactor } from "../components/primeFactor.js?v=1";
 import { renderGcdLcm } from "../components/gcdLcm.js?v=1";
 import { renderPower } from "../components/power.js?v=1";
 import { renderPowerTen } from "../components/powerTen.js?v=1";
+import { renderFractionLine } from "../components/fractionLine.js?v=1";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -188,7 +189,8 @@ const COUNTED_TYPES = new Set([
     "prime-factor",
     "gcd-lcm",
     "power",
-    "power-ten"
+    "power-ten",
+    "fraction-line"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -230,7 +232,8 @@ const SKILL_BY_TYPE = {
     "prime-factor": "prime-factor",
     "gcd-lcm": "gcd-lcm",
     "power": "powers",
-    "power-ten": "powers"
+    "power-ten": "powers",
+    "fraction-line": "fraction"
 };
 
 const RENDERERS = new Map([
@@ -331,7 +334,8 @@ const RENDERERS = new Map([
     ["prime-factor", renderPrimeFactor],
     ["gcd-lcm", renderGcdLcm],
     ["power", renderPower],
-    ["power-ten", renderPowerTen]
+    ["power-ten", renderPowerTen],
+    ["fraction-line", renderFractionLine]
 ]);
 
 

@@ -235,6 +235,7 @@ export const CURRICULUM_ORDER = {
         "powers-basics-01",
         "powers-ten-01",
         "operation-order-power-01",
+        "fraction-line-01",
     ],
 };
 

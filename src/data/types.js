@@ -97,7 +97,8 @@ export const TYPE_EMOJI = {
     "prime-factor": "🌳",
     "gcd-lcm": "🤝",
     "power": "⚡",
-    "power-ten": "🔟"
+    "power-ten": "🔟",
+    "fraction-line": "📍"
 };
 
 export const TYPE_LABEL = {
@@ -198,5 +199,6 @@ export const TYPE_LABEL = {
     "prime-factor": "Prímfelbontás",
     "gcd-lcm": "LNKO és LKKT",
     "power": "Hatványozás",
-    "power-ten": "Tízes hatványok"
+    "power-ten": "Tízes hatványok",
+    "fraction-line": "Törtek a számegyenesen"
 };

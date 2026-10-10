@@ -12,7 +12,7 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=27";
+import { buildLesson } from "./builders/LessonBuilder.js?v=28";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
@@ -880,6 +880,74 @@ function validateStep(step, ctx, range) {
                 const correctOptions = step.options.filter(o => o.correct);
                 if (correctOptions.length !== 1) fail(ctx, "pontosan 1 helyes kell");
                 else if (correctOptions[0].text !== String(step.answer)) fail(ctx, "a helyes options != answer");
+            }
+            break;
+        }
+        case "fraction-line": {
+            if (!["read", "place", "to-mixed", "to-fraction"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!isInt(step.den) || step.den < 2 || step.den > 8) fail(ctx, `den hibás: ${step.den}`);
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            if (step.mode === "read" || step.mode === "place") {
+                if (!isInt(step.num) || step.num < 1 || step.num > 20) fail(ctx, `num hibás: ${step.num}`);
+                if (step.num % step.den === 0) fail(ctx, "num egész szám");
+                if (!isInt(step.max) || step.max < Math.ceil(step.num / step.den)) fail(ctx, `max hibás: ${step.max}`);
+            }
+            if (step.mode !== "place") {
+                if (!Array.isArray(step.options) || step.options.length !== 4) {
+                    fail(ctx, "4 options kell");
+                } else if (!step.options.every(o => o && isInt(o.denominator) && isInt(o.numerator))) {
+                    fail(ctx, "options numerator/denominator hibás");
+                } else {
+                    const correct = step.options.filter(o => o.correct);
+                    if (correct.length !== 1) fail(ctx, "pontosan 1 helyes kell");
+                }
+            }
+            if (step.mode === "read") {
+                const correct = step.options.find(o => o.correct);
+                if (correct && (correct.numerator !== step.num || correct.denominator !== step.den)) {
+                    fail(ctx, "a helyes option nem a jelölt tört");
+                }
+                const values = step.options.map(o => o.numerator / o.denominator);
+                if (new Set(values).size !== 4) fail(ctx, "options értéke ismétlődik");
+                for (const o of step.options) {
+                    if (o.numerator < 1 || o.numerator >= step.max * step.den || o.numerator > 20) {
+                        fail(ctx, `read option numerator kilép: ${o.numerator}`);
+                    }
+                }
+            }
+            if (step.mode === "place" && step.answer !== step.num) {
+                fail(ctx, "place answer != num");
+            }
+            if (step.mode === "to-mixed") {
+                if (!isInt(step.whole) || !isInt(step.rem)) fail(ctx, "whole/rem hiányzik");
+                if (step.whole !== Math.floor(step.num / step.den)) fail(ctx, "whole hibás");
+                if (step.rem !== step.num % step.den) fail(ctx, "rem hibás");
+                const correct = step.options.find(o => o.correct);
+                if (correct && (correct.whole !== step.whole || correct.numerator !== step.rem || correct.denominator !== step.den)) {
+                    fail(ctx, "a helyes mixed option hibás");
+                }
+                const values = step.options.map(o => o.whole + o.numerator / o.denominator);
+                if (new Set(values).size !== 4) fail(ctx, "options értéke ismétlődik");
+                for (const o of step.options) {
+                    if (!isInt(o.whole) || o.whole < 1) fail(ctx, `mixed egész hibás: ${JSON.stringify(o)}`);
+                    if (!isInt(o.numerator) || o.numerator < 1 || o.numerator >= o.denominator) {
+                        fail(ctx, `mixed tört hibás: ${JSON.stringify(o)}`);
+                    }
+                    if (o.whole * o.denominator + o.numerator > 20) fail(ctx, `mixed kilép 20-ból: ${JSON.stringify(o)}`);
+                }
+            }
+            if (step.mode === "to-fraction") {
+                if (!isInt(step.whole) || !isInt(step.rem)) fail(ctx, "whole/rem hiányzik");
+                if (step.num !== step.whole * step.den + step.rem) fail(ctx, `num hibás: ${step.num}`);
+                const correct = step.options.find(o => o.correct);
+                if (correct && (correct.numerator !== step.num || correct.denominator !== step.den)) {
+                    fail(ctx, "a helyes option nem az áltört");
+                }
+                const values = step.options.map(o => o.numerator / o.denominator);
+                if (new Set(values).size !== 4) fail(ctx, "options értéke ismétlődik");
+                for (const o of step.options) {
+                    if (o.numerator < 1) fail(ctx, `to-fraction numerator hibás: ${o.numerator}`);
+                }
             }
             break;
         }

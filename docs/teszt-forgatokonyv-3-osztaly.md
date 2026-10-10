@@ -101,8 +101,8 @@ Ennek a dokumentumnak a célja, hogy a **3. osztályos tananyagot** (47 lecke, 7
 | # | Lépés | Várt eredmény | Eredmény |
 |---|-------|---------------|----------|
 | 4.1 | Ikon a fülön / PWA | Kék háttér, piros M betű gombszürke körvonallal | |
-| 4.2 | Telefonméret (DevTools 375px) | A ☕ „Tippelj meg!” link NEM jelenik meg, a jobb felső gombok (súgó, 📚) koppinthatók | |
-| 4.3 | Asztali nézet | A ☕ „Tippelj meg!” link a jobb felső sarokban látható | |
+| 4.2 | Telefonméret (DevTools 375px) | A ☕ „Támogatás” link NEM jelenik meg, a jobb felső gombok (súgó, 📚) koppinthatók | |
+| 4.3 | Asztali nézet | A ☕ „Támogatás” link a jobb felső sarokban látható | |
 | 4.4 | Hard reload / offline | Nincs konzolhiba; az app cache-ből is betölt | |
 
 ---

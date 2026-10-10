@@ -134,9 +134,9 @@ Ennek a dokumentumnak a célja, hogy a **4. osztályos tananyagot** (35 lecke, 7
 | # | Lépés | Várt eredmény | Eredmény |
 |---|-------|---------------|----------|
 | 4.1 | Ikon a fülön / PWA | Kék háttér, piros M betű gombszürke körvonallal | |
-| 4.2 | Telefonméret (DevTools 375px) | A ☕ „Tippelj meg!” link NEM jelenik meg, a jobb felső gombok (súgó, 📚) koppinthatók | |
+| 4.2 | Telefonméret (DevTools 375px) | A ☕ „Támogatás” link NEM jelenik meg, a jobb felső gombok (súgó, 📚) koppinthatók | |
 | 4.3 | Az összehasonlítás feladat mobilon | A két oldal és a `< = >` gombok nem csúsznak szét, a `min-width: 48px` érintési cél megmarad | |
-| 4.4 | Asztali nézet | A ☕ „Tippelj meg!” link a jobb felső sarokban látható | |
+| 4.4 | Asztali nézet | A ☕ „Támogatás” link a jobb felső sarokban látható | |
 | 4.5 | Hard reload / offline | Nincs konzolhiba; az app cache-ből is betölt (518 fájl, `matekido-v77`) | |
 
 ---

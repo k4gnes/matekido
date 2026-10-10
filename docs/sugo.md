@@ -4,9 +4,9 @@ Hibát találtál, ötleted vagy kérésed van a Matekidővel kapcsolatban? Írj
 
 ## ☕ Támogatás
 
-[[☕ Tippelj meg! 💛|outline]]
+[[☕ Támogatás 💛|outline]]
 
-Ha hasznosnak találod az appot, a **☕ Tippelj meg! 💛** linkkel támogathatod a fejlesztését. Ezt a képernyők **bal alsó sarkában** találod.
+Ha hasznosnak találod az appot, a **☕ Támogatás 💛** linkkel támogathatod a fejlesztését. Ezt a képernyők **bal alsó sarkában** találod.
 
 ## 🚀 Kezdés – ki játszik ma?
 

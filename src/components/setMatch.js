@@ -53,7 +53,7 @@ export function renderSetMatch(step, root, next, progress, onResult, onAttempt) 
 
     const prompt = document.createElement("p");
     prompt.className = "sz-prompt";
-    prompt.textContent = `Melyik illik ${step.rule}`;
+    prompt.textContent = `Melyik illik ${step.rule}?`;
     card.append(prompt);
 
     const optionsContainer = document.createElement("div");
@@ -84,7 +84,7 @@ export function renderSetMatch(step, root, next, progress, onResult, onAttempt) 
     });
 
     function successText() {
-        return `😊 Ügyes! Ez az alakzat illik ${step.rule}`;
+        return `😊 Ügyes! Ez az alakzat illik ${step.rule}.`;
     }
 
     function checkAnswer(isCorrect) {

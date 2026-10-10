@@ -225,3 +225,7 @@ body[data-world="tram"] {
     --world-bg-image: url("../assets/images/bg-tram.svg");
     background-color: #fff9e8;
 }
+
+[data-tcx-url] {
+    display: none !important;
+}

@@ -1,0 +1,108 @@
+{
+  "id": "powers-ten-01",
+  "title": "🔟 Tízes hatványok",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔟 Tízes hatványok",
+      "text": "A tízes hatványoknál a kitevő mutatja, hány nullát írunk az 1 után: 10¹ = 10, 10² = 100, 10³ = 1000, 10⁴ = 10 000, 10⁵ = 100 000 és 10⁶ = 1 000 000. Így a milliót röviden csak 10⁶-nak írjuk! Ismerd fel a tíz hatványait a nagy számok között!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Tízes hatványok a postán",
+          "text": "A postán a küldeményeket tíz hatványai szerint rendezzük: a 10⁶ már egymillió csomag!"
+        },
+        "racing": {
+          "title": "🏎️ Tízes hatványok a pályán",
+          "text": "A versenypályán a köröket tíz hatványaival számoljuk: 10³ kör már ezres!"
+        },
+        "cooking": {
+          "title": "🍳 Tízes hatványok a konyhában",
+          "text": "A konyhában a hozzávalókat tíz hatványai szerint mérjük – a millió már rengeteg adag."
+        },
+        "football": {
+          "title": "⚽ Tízes hatványok a bajnokságban",
+          "text": "A bajnokságban a nézők számát tíz hatványaival írjuk fel, hogy lássuk a nagyságrendet."
+        },
+        "animals": {
+          "title": "🦁 Tízes hatványok az állatkertben",
+          "text": "Az állatkertben a látogatók számát tíz hatványaival fejezzük ki – a 10⁵ már százezer vendég!"
+        },
+        "space": {
+          "title": "🚀 Tízes hatványok az űrben",
+          "text": "Az űrhajón a távolságokat tíz hatványaival mérik – a fény éveket 10¹³ méterben számolják!"
+        },
+        "tram": {
+          "title": "🚋 Tízes hatványok a városban",
+          "text": "A villamoson az utasok számát tíz hatványaival írjuk fel, hogy gyorsan lássuk a nagyságot."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "power-ten",
+      "options": {
+        "count": 3,
+        "mode": "value"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "power-ten",
+      "options": {
+        "count": 3,
+        "mode": "zeros"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "power-ten",
+      "options": {
+        "count": 3,
+        "mode": "power"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "power-ten",
+      "options": {
+        "count": 3,
+        "mode": "name"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen ismerted fel a tíz hatványait!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen rendezted el a tízes hatványokat!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál tízes hatványokat a pályán!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen mértél tízes hatványokkal!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen felírtad a nézőket tízes hatványokkal!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen számoltad a tízes hatványokat!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megfejtetted a tízes hatványokat az űrben!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen felírtad az utasokat tízes hatványokkal!"
+        }
+      }
+    }
+  ]
+}

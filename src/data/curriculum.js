@@ -233,6 +233,7 @@ export const CURRICULUM_ORDER = {
         "prime-factor-01",
         "gcd-lcm-01",
         "powers-basics-01",
+        "powers-ten-01",
     ],
 };
 

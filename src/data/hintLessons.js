@@ -26,7 +26,8 @@ export const HINT_TYPES = new Set([
     "prime",
     "prime-factor",
     "gcd-lcm",
-    "power"
+    "power",
+    "power-ten"
 ]);
 
 export function lessonHasHint(lessonMeta) {

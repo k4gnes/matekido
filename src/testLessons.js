@@ -849,6 +849,35 @@ function validateStep(step, ctx, range) {
             }
             break;
         }
+        case "power-ten": {
+            if (!["value", "zeros", "power", "name"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!isInt(step.exponent) || step.exponent < 1 || step.exponent > 6) fail(ctx, `exponent hibás: ${step.exponent}`);
+            if (step.value !== 10 ** step.exponent) fail(ctx, `value (${step.value}) != 10^exp (${10 ** step.exponent})`);
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            const PT_SUP = { 1: "¹", 2: "²", 3: "³", 4: "⁴", 5: "⁵", 6: "⁶" };
+            const PT_NAME = { 1: "tíz", 2: "száz", 3: "ezer", 4: "tízezer", 5: "százezer", 6: "millió" };
+            if (step.mode === "value") {
+                if (step.answer !== step.value) fail(ctx, `answer (${step.answer}) != 10^exp (${step.value})`);
+                if (isFiniteNum(range) && step.answer > range) fail(ctx, `answer kilép a tartományból: ${step.answer} > ${range}`);
+            } else if (step.mode === "zeros") {
+                if (step.answer !== step.exponent) fail(ctx, `answer (${step.answer}) != exponent (${step.exponent})`);
+            } else if (step.mode === "power") {
+                if (typeof step.answer !== "string") fail(ctx, `power answer nem szöveg: ${step.answer}`);
+                if (step.answer !== `10${PT_SUP[step.exponent]}`) fail(ctx, `power answer hibás: ${step.answer}`);
+            } else {
+                if (step.answer !== PT_NAME[step.exponent]) fail(ctx, `name answer hibás: ${step.answer}`);
+            }
+            if (!Array.isArray(step.options) || step.options.length !== 4) {
+                fail(ctx, "4 options kell");
+            } else {
+                if (!step.options.every(o => o && typeof o.text === "string" && typeof o.correct === "boolean")) fail(ctx, "options mezők hibásak");
+                if (new Set(step.options.map(o => o.text)).size !== 4) fail(ctx, "options ismétlődik");
+                const correctOptions = step.options.filter(o => o.correct);
+                if (correctOptions.length !== 1) fail(ctx, "pontosan 1 helyes kell");
+                else if (correctOptions[0].text !== String(step.answer)) fail(ctx, "a helyes options != answer");
+            }
+            break;
+        }
         case "transform": {
             if (!["turn", "translate"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             const checkCells = cells => {

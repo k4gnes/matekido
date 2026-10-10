@@ -1031,6 +1031,30 @@
       }
     },
     {
+      "id": "powers-ten-01",
+      "title": "🔟 Tízes hatványok",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "powers",
+      "difficulty": 2,
+      "type": "power-ten",
+      "range": 1000000,
+      "mission": "🔟 Tízes hatványok",
+      "subtitle": "a tíz kitevői és a nagyságrend millióig",
+      "file": "./data/lessons/grade6/powers-ten-01.json",
+      "worldTitles": {
+        "postman": "📮 Tízes hatványok a postán",
+        "racing": "🏎️ Tízes hatványok a pályán",
+        "cooking": "🍳 Tízes hatványok a konyhában",
+        "football": "⚽ Tízes hatványok a bajnokságban",
+        "animals": "🦁 Tízes hatványok az állatkertben",
+        "space": "🚀 Tízes hatványok az űrben",
+        "tram": "🚋 Tízes hatványok a városban"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

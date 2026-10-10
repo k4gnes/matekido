@@ -84,6 +84,7 @@ import { generatePrime } from "./primeGenerator.js?v=1";
 import { generatePrimeFactor } from "./primeFactorGenerator.js?v=1";
 import { generateGcdLcm } from "./gcdLcmGenerator.js?v=1";
 import { generatePower } from "./powerGenerator.js?v=1";
+import { generatePowerTen } from "./powerTenGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -269,6 +270,8 @@ export function generate(step) {
             return generateGcdLcm(opts);
         case "power":
             return generatePower(opts);
+        case "power-ten":
+            return generatePowerTen(opts);
 
         default:
             throw new Error(

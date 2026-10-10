@@ -93,7 +93,7 @@ import { renderPrimeFactor } from "../components/primeFactor.js?v=1";
 import { renderGcdLcm } from "../components/gcdLcm.js?v=1";
 import { renderPower } from "../components/power.js?v=1";
 import { renderPowerTen } from "../components/powerTen.js?v=1";
-import { renderFractionLine } from "../components/fractionLine.js?v=1";
+import { renderFractionLine } from "../components/fractionLine.js?v=2";
 
 const COUNTED_TYPES = new Set([
     "exercise",

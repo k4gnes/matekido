@@ -18,7 +18,7 @@ const WORLD_EMOJI = {
     tram: "🚋"
 };
 
-const LINE = { h: 48, pad: 10, lineY: 24 };
+const LINE = { h: 56, pad: 10, lineY: 22 };
 
 function svgEl(name, attrs) {
     const el = document.createElementNS(SVGNS, name);
@@ -79,8 +79,8 @@ function buildLine(step) {
         }));
         if (isMajor) {
             const label = svgEl("text", {
-                x: x(n), y: lineY + 8.8,
-                class: "fl-label",
+                x: x(n), y: lineY + 14,
+                class: n === 0 ? "fl-label fl-label-zero" : "fl-label",
                 "text-anchor": "middle"
             });
             label.textContent = n / den;

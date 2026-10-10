@@ -22,6 +22,7 @@
 
 .fl-line-wrap {
     overflow-x: auto;
+    width: 100%;
     padding: 0.4rem 0 0.2rem;
     margin: 0.4rem 0 0.6rem;
 }
@@ -61,8 +62,13 @@
 
 .fl-label {
     fill: #334155;
-    font-size: 8px;
+    font-size: 14px;
     font-weight: 700;
+}
+
+.fl-label-zero {
+    fill: #1f3a5f;
+    font-weight: 800;
 }
 
 .fl-marker,

@@ -200,6 +200,7 @@ function showParentHub() {
     setRoute("parent");
     renderParentHub(root, {
         ...navFor(),
+        onParent: showMenu,
         onDashboard: () => {
             clearWorldBackground();
             setTipVisible(true);

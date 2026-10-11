@@ -9,6 +9,7 @@ import {
 } from "../profile/UserManager.js";
 
 const AVATARS = [
+    "🐻", "🐝", "🐠",
     "🦊", "🐱", "🐰", "🐸",
     "🐵", "🐶", "🐼", "🦁",
     "🐯", "🐨", "🐧", "🐹",

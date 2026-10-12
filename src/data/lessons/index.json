@@ -2132,6 +2132,28 @@
       }
     },
     {
+      "id": "probability-01-grade1",
+      "title": "🎲 Biztos, lehetséges, lehetetlen",
+      "grades": [
+        1
+      ],
+      "category": "numbers",
+      "skill": "probability",
+      "difficulty": 1,
+      "type": "probability",
+      "mission": "🎲 Mi biztos, mi lehetséges?",
+      "subtitle": "Gondold meg, mi történhet meg!",
+      "file": "./data/lessons/grade1/probability-01.json",
+      "worldTitles": {
+        "racing": "🏎️ Mi történhet a boxutcában?",
+        "cooking": "🍳 Mi történhet a konyhában?",
+        "football": "⚽ Mi történhet a pályán?",
+        "animals": "🦁 Mi történhet az állatkertben?",
+        "space": "🤖 Mi történhet az űrhajón?",
+        "tram": "🚋 Mi történhet a villamoson?"
+      }
+    },
+    {
       "id": "place-value-03",
       "title": "Helyiérték 100-ig",
       "grades": [
@@ -2590,6 +2612,50 @@
         "animals": "🦁 Páros vagy páratlan?",
         "space": "🤖 Páros vagy páratlan?",
         "tram": "🚋 Páros vagy páratlan?"
+      }
+    },
+    {
+      "id": "combinatorics-01-grade2",
+      "title": "🔀 Sorrendbe!",
+      "grades": [
+        2
+      ],
+      "category": "numbers",
+      "skill": "combinatorics",
+      "difficulty": 2,
+      "type": "combinatorics",
+      "mission": "🔀 Hányféle sorrend van?",
+      "subtitle": "Sorrend – 3 elem",
+      "file": "./data/lessons/grade2/combinatorics-01.json",
+      "worldTitles": {
+        "racing": "🏎️ Sorakozzanak a versenyzők!",
+        "cooking": "🍳 Sorakozzanak a hozzávalók!",
+        "football": "⚽ Sorakozzanak a játékosok!",
+        "animals": "🦁 Sorakozzanak az állatok!",
+        "space": "🤖 Sorakozzanak az űrhajók!",
+        "tram": "🚋 Sorakozzanak a járművek!"
+      }
+    },
+    {
+      "id": "probability-01-grade2",
+      "title": "🎲 Mi valószínűbb?",
+      "grades": [
+        2
+      ],
+      "category": "numbers",
+      "skill": "probability",
+      "difficulty": 2,
+      "type": "probability",
+      "mission": "🎲 Mi valószínűbb?",
+      "subtitle": "Esélyek összehasonlítása (egyenlő eséllyel is)",
+      "file": "./data/lessons/grade2/probability-01.json",
+      "worldTitles": {
+        "racing": "🏎️ Mit hoz a boxutca?",
+        "cooking": "🍳 Mit hoz a konyha?",
+        "football": "⚽ Mit hoz a meccs?",
+        "animals": "🦁 Mit hoz az állatkert?",
+        "space": "🤖 Mit hoz az űr?",
+        "tram": "🚋 Mit hoz a villamos?"
       }
     },
     {

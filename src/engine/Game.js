@@ -77,7 +77,8 @@ import { renderPerimeter } from "../components/perimeter.js?v=2";
 import { renderArea } from "../components/area.js?v=2";
 import { renderAngles } from "../components/angles.js?v=2";
 import { renderCircle } from "../components/circle.js?v=2";
-import { renderProbability } from "../components/probability.js?v=2";
+import { renderProbability } from "../components/probability.js?v=4";
+import { renderCombinatorics } from "../components/combinatorics.js?v=1";
 import { renderOperationOrder } from "../components/operationOrder.js?v=2";
 import { renderSolidMeasure } from "../components/solidMeasure.js?v=1";
 import { renderCoordinate } from "../components/coordinate.js?v=1";
@@ -173,6 +174,7 @@ const COUNTED_TYPES = new Set([
     "angles",
     "circle",
     "probability",
+    "combinatorics",
     "operation-order",
     "polygon",
     "elapsed-time",
@@ -328,6 +330,7 @@ const RENDERERS = new Map([
     ["angles", renderAngles],
     ["circle", renderCircle],
     ["probability", renderProbability],
+    ["combinatorics", renderCombinatorics],
     ["operation-order", renderOperationOrder],
     ["operation-order-play", renderOperationOrderPlay],
     ["solid-measure", renderSolidMeasure],

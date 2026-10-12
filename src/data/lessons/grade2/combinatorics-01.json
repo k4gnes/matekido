@@ -1,0 +1,75 @@
+{
+  "id": "grade2-combinatorics-01",
+  "title": "🔀 Sorrendbe!",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔀 Hányféle sorrend van?",
+      "text": "Három dolgot sokféle sorrendbe rakhatsz. Koppints a képekre, és rakd sorba őket. Minden új sorrend számít! Találd meg mind a hatot!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Sorakozzanak a versenyzők!",
+          "text": "Három autó sokféle sorrendben indulhat. Koppints rájuk, és rakd sorba őket! Találd meg mind a hat sorrendet!"
+        },
+        "cooking": {
+          "title": "🍳 Sorakozzanak a hozzávalók!",
+          "text": "Három hozzávalót sokféle sorrendbe rakhatsz a tálcán. Koppints rájuk, és rakd sorba őket! Találd meg mind a hat sorrendet!"
+        },
+        "football": {
+          "title": "⚽ Sorakozzanak a játékosok!",
+          "text": "Három játékos sokféle sorrendben állhat fel. Koppints rájuk, és rakd sorba őket! Találd meg mind a hat sorrendet!"
+        },
+        "animals": {
+          "title": "🦁 Sorakozzanak az állatok!",
+          "text": "Három állat sokféle sorrendben vonulhat. Koppints rájuk, és rakd sorba őket! Találd meg mind a hat sorrendet!"
+        },
+        "space": {
+          "title": "🤖 Sorakozzanak az űrhajók!",
+          "text": "Három űrhajó sokféle sorrendben szállhat fel. Koppints rájuk, és rakd sorba őket! Találd meg mind a hat sorrendet!"
+        },
+        "tram": {
+          "title": "🚋 Sorakozzanak a járművek!",
+          "text": "Három jármű sokféle sorrendben állhat a megállóban. Koppints rájuk, és rakd sorba őket! Találd meg mind a hat sorrendet!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "combinatorics",
+      "options": {
+        "count": 1
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Megtaláltad mind a hat sorrendet! Három dologból pontosan hatféle sorrend készíthető.",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Megtaláltad mind a hat sorrendet a pályán!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Megtaláltad mind a hat sorrendet a konyhában!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Megtaláltad mind a hat sorrendet a pályán!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Megtaláltad mind a hat sorrendet az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Megtaláltad mind a hat sorrendet az űrhajón!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Megtaláltad mind a hat sorrendet a villamoson!"
+        }
+      }
+    }
+  ]
+}

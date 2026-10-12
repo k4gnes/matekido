@@ -1,6 +1,6 @@
 # Matekidő – 2. osztály manuális tesztforgatókönyv
 
-Ennek a dokumentumnak a célja, hogy a **2. osztályos tananyagot** (55 lecke, 7 világ, számkör 100-ig + szorzás/osztás 2, 3, 4, 5, 10-es táblákkal) a böngészőben kézzel végigteszteljük: minden lecke helyesen épül fel, a feladatok a megjelölt tartományban vannak, a jó/rossz válasz kezelése helyes, és a lecke a celebrációval zárul.
+Ennek a dokumentumnak a célja, hogy a **2. osztályos tananyagot** (58 lecke, 7 világ, számkör 100-ig + szorzás/osztás 2, 3, 4, 5, 10-es táblákkal, kombinatorika és valószínűség) a böngészőben kézzel végigteszteljük: minden lecke helyesen épül fel, a feladatok a megjelölt tartományban vannak, a jó/rossz válasz kezelése helyes, és a lecke a celebrációval zárul.
 
 - **Szerver:** `make start` (localhost:8000) – a `src/` mappát szolgálja ki.
 - **Böngésző:** Asztali (Chrome / Firefox / Edge) + legalább egyszer telefon méretű nézet.
@@ -47,6 +47,8 @@ Ennek a dokumentumnak a célja, hogy a **2. osztályos tananyagot** (55 lecke, 7
 | 2.1.9 | Páros és páratlan 100-ig | `even-odd` / 100 | Besorolás helyes 100-ig | |
 | 2.1.10 | Sorminta – hosszabb minták | `pattern` / 100 | A minta hosszabb, a folytatás logikus | |
 | 2.1.11 | 🧮 Becslés – Melyik lehet? | `estimate` / 50 | A legjobb becslés kiválasztható; a kapott eredmény 50-en belül van | |
+| 2.1.12 | 🔀 Sorrendbe! – 3 elem | `combinatorics` / — | 3 különböző elemből 6 sorrend; koppintással rakható sorba, ismétlődésnél jelzés jön, új sorrendnél nő a számláló; mind a 6 megtalálása után celebráció | |
+| 2.1.13 | 🎲 Mi valószínűbb? | `probability` (compare) / — | Zsák és pörgettyű vegyesen; a nagyobb/kisebb mennyiség (több golyó / nagyobb körcikk) felismerhető; néha ugyanannyi van, ilyenkor „Ugyanolyan eséllyel" a helyes | |
 
 ### 2.2 Műveletek (összeadás, kivonás, vegyes)
 

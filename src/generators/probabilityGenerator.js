@@ -33,11 +33,147 @@ const EVENTS = {
     ]
 };
 
+const EVENTS_EASY = {
+    certain: [
+        { emoji: "☀️", text: "Nappal süt a nap az égen." },
+        { emoji: "🐶", text: "A kutyának négy lába van." },
+        { emoji: "🌧️", text: "Ha esik az eső, vizes lesz a föld." },
+        { emoji: "🍎", text: "Az almának van magja." }
+    ],
+    possible: [
+        { emoji: "🎲", text: "Egy dobókockával dobunk. Hatost kapunk." },
+        { emoji: "🍎", text: "A piacon almát veszünk." },
+        { emoji: "⚽", text: "A focimeccsen gólt rúgunk." },
+        { emoji: "☂️", text: "Holnap esik az eső." }
+    ],
+    impossible: [
+        { emoji: "🐘", text: "Az elefánt befér a zsebünkbe." },
+        { emoji: "🌙", text: "Nappal ragyognak a csillagok." },
+        { emoji: "🐟", text: "A hal az udvaron sétál." },
+        { emoji: "🐱", text: "A macska megtanul repülni." }
+    ]
+};
+
 const CATEGORIES = ["certain", "possible", "impossible"];
 
-function generateTask() {
+const COMPARE_COLORS = [
+    { color: "piros", label: "Piros", acc: "pirosat", emoji: "🔴", hex: "#ef4444" },
+    { color: "kék", label: "Kék", acc: "kéket", emoji: "🔵", hex: "#3b82f6" },
+    { color: "zöld", label: "Zöld", acc: "zöldet", emoji: "🟢", hex: "#22c55e" },
+    { color: "sárga", label: "Sárga", acc: "sárgát", emoji: "🟡", hex: "#eab308" },
+    { color: "lila", label: "Lila", acc: "lilát", emoji: "🟣", hex: "#a855f7" }
+];
+
+function pickCompareColors() {
+    const pool = shuffle([...COMPARE_COLORS]);
+    return [pool[0], pool[1]];
+}
+
+const EQUAL_LABEL = "Ugyanolyan eséllyel";
+
+function generateCompareTask() {
+    const scenario = Math.random() < 0.5 ? "bag" : "spinner";
+    const [first, second] = pickCompareColors();
+    const equal = Math.random() < 0.34;
+
+    let amountA;
+    let amountB;
+
+    if (scenario === "spinner") {
+        if (equal) {
+            amountA = 4;
+            amountB = 4;
+        } else {
+            const parts = [2, 3, 5, 6];
+            amountA = parts[Math.floor(Math.random() * parts.length)];
+            amountB = 8 - amountA;
+        }
+    } else if (equal) {
+        amountA = [2, 3, 4][Math.floor(Math.random() * 3)];
+        amountB = amountA;
+    } else {
+        const counts = [[4, 1], [5, 1], [3, 2], [4, 2]];
+        const pair = counts[Math.floor(Math.random() * counts.length)];
+        amountA = pair[0];
+        amountB = pair[1];
+    }
+
+    const groups = shuffle([
+        { color: first.color, label: first.label, acc: first.acc, emoji: first.emoji, hex: first.hex, amount: amountA },
+        { color: second.color, label: second.label, acc: second.acc, emoji: second.emoji, hex: second.hex, amount: amountB }
+    ]);
+
+    if (equal) {
+        const question = scenario === "spinner"
+            ? "Melyik színen áll meg nagyobb eséllyel a pörgettyű?"
+            : "Melyik színt húzod nagyobb eséllyel?";
+        const options = shuffle([first.label, second.label, EQUAL_LABEL]);
+        const successText = scenario === "spinner"
+            ? `😊 Igazad van! Ugyanakkora a ${groups[0].color} és a ${groups[1].color} rész, ezért ugyanolyan eséllyel áll meg bármelyiken.`
+            : `😊 Igazad van! Ugyanannyi ${groups[0].color} és ${groups[1].color} golyó van, ezért ugyanolyan eséllyel húzol bármelyiket.`;
+
+        return {
+            type: "probability",
+            mode: "compare",
+            scenario,
+            groups,
+            ask: "bigger",
+            equal: true,
+            question,
+            options,
+            answer: options.indexOf(EQUAL_LABEL),
+            correctColor: null,
+            correctLabel: EQUAL_LABEL,
+            successText
+        };
+    }
+
+    const ask = Math.random() < 0.5 ? "bigger" : "smaller";
+
+    const sorted = [...groups].sort((a, b) => b.amount - a.amount);
+    const more = sorted[0];
+    const less = sorted[1];
+    const correct = ask === "bigger" ? more : less;
+
+    const question = scenario === "spinner"
+        ? (ask === "bigger"
+            ? "Melyik színen áll meg nagyobb eséllyel a pörgettyű?"
+            : "Melyik színen áll meg kisebb eséllyel a pörgettyű?")
+        : (ask === "bigger"
+            ? "Melyiket húzod nagyobb eséllyel?"
+            : "Melyiket húzod kisebb eséllyel?");
+
+    const options = shuffle(groups.map(g => g.label));
+    const answer = options.indexOf(correct.label);
+
+    const successText = scenario === "spinner"
+        ? (ask === "bigger"
+            ? `😊 Igazad van! A ${correct.color} körcikk nagyobb, ezért azon áll meg nagyobb eséllyel a pörgettyű.`
+            : `😊 Igazad van! A ${correct.color} körcikk kisebb, ezért azon áll meg kisebb eséllyel a pörgettyű.`)
+        : (ask === "bigger"
+            ? `😊 Igazad van! Több ${correct.color} golyó van, ezért nagyobb eséllyel ${correct.acc} húzod.`
+            : `😊 Igazad van! Kevesebb ${correct.color} golyó van, ezért kisebb eséllyel ${correct.acc} húzod.`);
+
+    return {
+        type: "probability",
+        mode: "compare",
+        scenario,
+        groups,
+        ask,
+        equal: false,
+        question,
+        options,
+        answer,
+        correctColor: correct.color,
+        correctLabel: correct.label,
+        successText
+    };
+}
+
+function generateTask(level = 2) {
+    const pool = level === 1 ? EVENTS_EASY : EVENTS;
     const cat = CATEGORIES[Math.floor(Math.random() * CATEGORIES.length)];
-    const event = EVENTS[cat][Math.floor(Math.random() * EVENTS[cat].length)];
+    const event = pool[cat][Math.floor(Math.random() * pool[cat].length)];
     const correctLabel = LABELS[cat];
     const otherLabels = CATEGORIES
         .filter(c => c !== cat)
@@ -56,10 +192,10 @@ function generateTask() {
 }
 
 export function generateProbability(opts = {}) {
-    const { count = 6 } = opts;
+    const { count = 6, level = 2, mode } = opts;
     const tasks = [];
     for (let i = 0; i < count; i++) {
-        tasks.push(generateTask());
+        tasks.push(mode === "compare" ? generateCompareTask() : generateTask(level));
     }
     return tasks;
 }

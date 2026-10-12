@@ -1,0 +1,76 @@
+{
+  "id": "grade2-probability-01",
+  "title": "🎲 Mi valószínűbb?",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🎲 Mi valószínűbb?",
+      "text": "Ha egy zsákban több piros golyó van, mint kék, akkor nagyobb eséllyel pirosat húzol. Ha ugyanannyi van belőlük, akkor ugyanolyan eséllyel húzol bármelyiket. A pörgettyűnél is a nagyobb rész az esélyesebb. Használd a szemeidet: számold meg!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Mit hoz a boxutca?",
+          "text": "A boxutcában is kérdezhetjük: mi valószínűbb? Ha egy zsákban több piros golyó van, mint kék, akkor nagyobb eséllyel pirosat húzol. Ha ugyanannyi van belőlük, ugyanolyan az esély. Számold meg!"
+        },
+        "cooking": {
+          "title": "🍳 Mit hoz a konyha?",
+          "text": "A konyhában is találgathatunk: mi valószínűbb? Ha egy tálban több piros cukorka van, mint kék, akkor nagyobb eséllyel pirosat veszel ki. Ha ugyanannyi van belőlük, ugyanolyan az esély. Számold meg!"
+        },
+        "football": {
+          "title": "⚽ Mit hoz a meccs?",
+          "text": "A meccs előtt is kérdezhetjük: mi valószínűbb? Ha egy zsákban több piros golyó van, mint kék, akkor nagyobb eséllyel pirosat húzol. Ha ugyanannyi van belőlük, ugyanolyan az esély. Számold meg!"
+        },
+        "animals": {
+          "title": "🦁 Mit hoz az állatkert?",
+          "text": "Az állatkertben is találgathatunk: mi valószínűbb? Ha egy zsákban több piros golyó van, mint kék, akkor nagyobb eséllyel pirosat húzol. Ha ugyanannyi van belőlük, ugyanolyan az esély. Számold meg!"
+        },
+        "space": {
+          "title": "🤖 Mit hoz az űr?",
+          "text": "Az űrhajón is kérdezhetjük: mi valószínűbb? Ha egy zsákban több piros golyó van, mint kék, akkor nagyobb eséllyel pirosat húzol. Ha ugyanannyi van belőlük, ugyanolyan az esély. Számold meg!"
+        },
+        "tram": {
+          "title": "🚋 Mit hoz a villamos?",
+          "text": "A villamoson is találgathatunk: mi valószínűbb? Ha egy zsákban több piros golyó van, mint kék, akkor nagyobb eséllyel pirosat húzol. Ha ugyanannyi van belőlük, ugyanolyan az esély. Számold meg!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "probability",
+      "options": {
+        "count": 6,
+        "mode": "compare"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen összehasonlítottad az esélyeket! Ahol több golyó van vagy nagyobb a körcikk, az történik nagyobb eséllyel. Ahol ugyanannyi, ott egyenlő az esély.",
+      "worldTitles": {
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen összehasonlítottad az esélyeket a boxutcában!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen összehasonlítottad az esélyeket a konyhában!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen összehasonlítottad az esélyeket a pályán!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen összehasonlítottad az esélyeket az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen összehasonlítottad az esélyeket az űrhajón!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen összehasonlítottad az esélyeket a villamoson!"
+        }
+      }
+    }
+  ]
+}

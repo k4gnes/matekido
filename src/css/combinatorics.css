@@ -1,0 +1,103 @@
+.comb-prompt {
+    font-size: 1.15rem;
+    text-align: center;
+    color: #475569;
+    margin: .4rem 0 .2rem;
+}
+
+.comb-counter {
+    text-align: center;
+    font-weight: 800;
+    color: var(--primary);
+    margin: .2rem 0 .8rem;
+}
+
+.comb-build {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .6rem;
+    margin: .6rem 0;
+}
+
+.comb-slot {
+    width: 56px;
+    height: 56px;
+    font-size: 1.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    background: #f8fafc;
+    color: #cbd5e1;
+    cursor: pointer;
+    transition: border-color .15s, background-color .15s, transform .15s;
+}
+
+.comb-slot.filled {
+    border-style: solid;
+    border-color: var(--primary);
+    background: #fff;
+    color: #1e293b;
+}
+
+.comb-slot.filled:hover {
+    transform: scale(1.06);
+}
+
+.comb-tray {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .6rem;
+    margin: .6rem 0 1rem;
+}
+
+.comb-item {
+    width: 56px;
+    height: 56px;
+    font-size: 1.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    background: #fff;
+    cursor: pointer;
+    transition: transform .15s, opacity .15s;
+}
+
+.comb-item:hover:not(:disabled) {
+    transform: scale(1.08);
+}
+
+.comb-item.used,
+.comb-item:disabled {
+    opacity: .3;
+    cursor: default;
+}
+
+.comb-found {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .4rem;
+    max-width: 380px;
+    margin: 0 auto .6rem;
+}
+
+.comb-found-cell {
+    display: flex;
+    justify-content: center;
+    gap: .2rem;
+    padding: .45rem .3rem;
+    border-radius: 10px;
+    background: #dcfce7;
+    color: #1e293b;
+    font-size: 1.3rem;
+}
+
+.comb-found-cell.empty {
+    background: #f1f5f9;
+    color: #94a3b8;
+}

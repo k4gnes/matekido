@@ -67,7 +67,8 @@ import { generateFractionTimesInt } from "./fractionTimesIntGenerator.js?v=1";
 import { generateFractionTimesFrac } from "./fractionTimesFracGenerator.js?v=1";
 import { generateFractionDivide } from "./fractionDivideGenerator.js?v=1";
 import { generateCircle } from "./circleGenerator.js?v=1";
-import { generateProbability } from "./probabilityGenerator.js?v=1";
+import { generateProbability } from "./probabilityGenerator.js?v=4";
+import { generateCombinatorics } from "./combinatoricsGenerator.js?v=1";
 import { generateOperationOrder } from "./operationOrderGenerator.js?v=3";
 import { generatePolygon } from "./polygonGenerator.js?v=1";
 import { generateSolidMeasure } from "./solidMeasureGenerator.js?v=1";
@@ -242,6 +243,8 @@ export function generate(step) {
             return generateCircle(opts);
         case "probability":
             return generateProbability(opts);
+        case "combinatorics":
+            return generateCombinatorics(opts);
         case "operation-order":
             return generateOperationOrder(opts);
         case "polygon":

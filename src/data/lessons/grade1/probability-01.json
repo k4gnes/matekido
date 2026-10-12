@@ -1,0 +1,79 @@
+{
+  "id": "grade1-probability-01",
+  "title": "🎲 Biztos, lehetséges, lehetetlen 1. osztály",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🎲 Mi történhet?",
+      "text": "Biztos, ami mindig megtörténik. Lehetséges, ami megtörténhet, de nem biztos. Lehetetlen, ami sohasem történhet meg. Gondold meg minden eseménynél!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Mit hoz a futam?",
+          "text": "A versenypályán is kérdezhetjük: mi lesz biztos, lehetséges és lehetetlen? Gondold meg minden eseménynél!"
+        },
+        "football": {
+          "title": "⚽ Mit hoz a meccs?",
+          "text": "A meccs előtt találgathatunk: mi biztos, mi lehetséges és mi lehetetlen? Gondold meg minden eseménynél!"
+        },
+        "cooking": {
+          "title": "🍳 Mit hoz a konyha?",
+          "text": "A konyhában sok esemény történik. Gondold meg, mi biztos, mi lehetséges és mi lehetetlen!"
+        },
+        "animals": {
+          "title": "🦁 Mit hoz az állatkert?",
+          "text": "Az állatkertben is kérdezhetjük: mi biztos, mi lehetséges és mi lehetetlen? Gondold meg!"
+        },
+        "space": {
+          "title": "🤖 Mit hoz az űr?",
+          "text": "Az űrhajón is kérdezhetjük: mi biztos, mi lehetséges és mi lehetetlen? Gondold meg!"
+        },
+        "tram": {
+          "title": "🚋 Mit hoz a villamos?",
+          "text": "A villamoson is kérdezhetjük: mi biztos, mi lehetséges és mi lehetetlen? Gondold meg!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "probability",
+      "options": {
+        "count": 6,
+        "level": 1
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Felismerted, mi biztos, mi lehetséges és mi lehetetlen!",
+      "worldTitles": {
+        "racing": {
+          "title": "🏎️ Nagyon ügyes csapat!",
+          "text": "Jól ismerted fel az eseményeket a boxutcában! 🏁"
+        },
+        "football": {
+          "title": "⚽ Remek meccs!",
+          "text": "Jól ismerted fel az eseményeket a pályán! GOOOL! 🎉"
+        },
+        "cooking": {
+          "title": "🍳 Finom lett a munka!",
+          "text": "Jól ismerted fel az eseményeket a konyhában! 🥖"
+        },
+        "animals": {
+          "title": "🦁 Az állatok hálásak!",
+          "text": "Jól ismerted fel az eseményeket az állatkertben! 🐾"
+        },
+        "space": {
+          "title": "🤖 Kapcsolat visszaállt!",
+          "text": "Jól ismerted fel az eseményeket az űrhajón! 🛰️"
+        },
+        "tram": {
+          "title": "🚋 Kapcsolat visszaállt!",
+          "text": "Jól ismerted fel az eseményeket a villamoson! 🚋"
+        }
+      }
+    }
+  ]
+}

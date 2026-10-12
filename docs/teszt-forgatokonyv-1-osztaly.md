@@ -1,6 +1,6 @@
 # Matekidő – 1. osztály manuális tesztforgatókönyv
 
-Ennek a dokumentumnak a célja, hogy az **1. osztályos tananyagot** (42 lecke, 7 világ, számkör 100-ig) a böngészőben kézzel végigteszteljük: minden lecke helyesen épül fel, a feladatok a megjelölt tartományban vannak, a jó/rossz válasz kezelése helyes, és a lecke a celebrációval zárul.
+Ennek a dokumentumnak a célja, hogy az **1. osztályos tananyagot** (43 lecke, 7 világ, számkör 100-ig) a böngészőben kézzel végigteszteljük: minden lecke helyesen épül fel, a feladatok a megjelölt tartományban vannak, a jó/rossz válasz kezelése helyes, és a lecke a celebrációval zárul.
 
 - **Szerver:** `make start` (localhost:8000) – a `src/` mappát szolgálja ki.
 - **Böngésző:** Asztali (Chrome / Firefox / Edge) + legalább egyszer telefon méretű nézet.
@@ -54,6 +54,7 @@ Ennek a dokumentumnak a célja, hogy az **1. osztályos tananyagot** (42 lecke, 
 | 2.1.16 | Becslés 30-ig | `estimate` / 30 | Kerekíthető eredmény, a legjobb becslés kiválasztható | |
 | 2.1.17 | Kerekítés tízesre 100-ig | `rounding` / 100 | A szám tízesre kerekítése helyes (bemenet és választás) | |
 | 2.1.18 | 📊 Melyikből van több? | `data-chart` | SVG oszlopdiagram; legtöbb/legkevesebb/összeolvasás | |
+| 2.1.19 | 🎲 Biztos, lehetséges, lehetetlen | `probability` | Egyszerű események; a biztos/lehetséges/lehetetlen besorolás helyes | |
 
 ### 2.2 Műveletek
 

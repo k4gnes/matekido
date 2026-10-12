@@ -12,7 +12,7 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=32";
+import { buildLesson } from "./builders/LessonBuilder.js?v=35";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
@@ -239,6 +239,67 @@ function validateTrueFalse(ctx, step) {
     }
     if (!step.tfAnswer && step.statedAnswer === step.answer) {
         fail(ctx, "hamisnak jelölt állítás mégis igaz");
+    }
+}
+
+function validateProbabilityCompare(ctx, step) {
+    if (!["bag", "spinner"].includes(step.scenario)) fail(ctx, `scenario hibás: ${step.scenario}`);
+    if (!["bigger", "smaller"].includes(step.ask)) fail(ctx, `ask hibás: ${step.ask}`);
+    if (typeof step.equal !== "boolean") fail(ctx, "equal mező hibás");
+    if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+    if (typeof step.successText !== "string" || step.successText.length === 0) fail(ctx, "successText hiányzik");
+    if (!Array.isArray(step.groups) || step.groups.length !== 2) {
+        fail(ctx, "groups nem 2 elemű");
+        return;
+    }
+    let amountSum = 0;
+    const labels = new Set();
+    for (const group of step.groups) {
+        if (typeof group.color !== "string" || group.color.length === 0) fail(ctx, "group.color hibás");
+        if (typeof group.label !== "string" || group.label.length === 0) fail(ctx, "group.label hibás");
+        if (typeof group.emoji !== "string" || group.emoji.length === 0) fail(ctx, "group.emoji hibás");
+        if (typeof group.hex !== "string" || !/^#[0-9a-fA-F]{6}$/.test(group.hex)) fail(ctx, `group.hex hibás: ${group.hex}`);
+        if (!isInt(group.amount) || group.amount < 1) fail(ctx, `group.amount hibás: ${group.amount}`);
+        if (labels.has(group.label)) fail(ctx, "group.label ismétlődik");
+        labels.add(group.label);
+        amountSum += group.amount;
+    }
+    if (step.scenario === "spinner" && amountSum !== 8) fail(ctx, `spinner részek összege nem 8: ${amountSum}`);
+
+    const sameAmount = step.groups[0].amount === step.groups[1].amount;
+    if (step.equal !== sameAmount) fail(ctx, "equal jelző és a mennyiségek nem egyeznek");
+
+    if (!Array.isArray(step.options)) {
+        fail(ctx, "options hiányzik");
+        return;
+    }
+
+    if (step.equal) {
+        if (step.options.length !== 3) fail(ctx, `equal esetén 3 opció kell (${step.options.length})`);
+        if (new Set(step.options).size !== step.options.length) fail(ctx, "options ismétlődik");
+        for (const label of labels) {
+            if (!step.options.includes(label)) fail(ctx, `options hiányzik a szín: ${label}`);
+        }
+        if (!step.options.includes("Ugyanolyan eséllyel")) fail(ctx, "options hiányzik az Ugyanolyan eséllyel");
+        if (step.correctLabel !== "Ugyanolyan eséllyel") fail(ctx, `correctLabel hibás: ${step.correctLabel}`);
+        if (step.correctColor !== null) fail(ctx, `equal esetén correctColor null kell: ${step.correctColor}`);
+    } else {
+        if (step.options.length !== 2) fail(ctx, `nem equal esetén 2 opció kell (${step.options.length})`);
+        if (new Set(step.options).size !== 2) fail(ctx, "options ismétlődik");
+        if (step.options.some(o => !labels.has(o))) fail(ctx, "options nem a színek nevei");
+
+        const amounts = step.groups.map(g => g.amount);
+        const correct = step.ask === "bigger"
+            ? step.groups.find(g => g.amount === Math.max(...amounts))
+            : step.groups.find(g => g.amount === Math.min(...amounts));
+        if (step.correctLabel !== correct.label) fail(ctx, `correctLabel hibás: ${step.correctLabel} (várt ${correct.label})`);
+        if (step.correctColor !== correct.color) fail(ctx, `correctColor hibás: ${step.correctColor}`);
+    }
+
+    if (!isInt(step.answer) || step.answer < 0 || step.answer >= step.options.length) {
+        fail(ctx, `answer index hibás: ${step.answer}`);
+    } else if (step.options[step.answer] !== step.correctLabel) {
+        fail(ctx, `answer nem a helyes opcióra mutat: ${step.answer} (${step.options[step.answer]})`);
     }
 }
 
@@ -1332,6 +1393,10 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "probability": {
+            if (step.mode === "compare") {
+                validateProbabilityCompare(ctx, step);
+                break;
+            }
             const labels = { certain: "Biztos", possible: "Lehetséges", impossible: "Lehetetlen" };
             if (!Object.keys(labels).includes(step.category)) {
                 fail(ctx, `category hibás: ${step.category}`);
@@ -1347,6 +1412,24 @@ function validateStep(step, ctx, range) {
             }
             if (step.options[step.answer] !== labels[step.category]) {
                 fail(ctx, `answer nem a helyes opcióra mutat: ${step.answer} (${step.options[step.answer]})`);
+            }
+            break;
+        }
+        case "combinatorics": {
+            if (step.mode !== "order") fail(ctx, `mode hibás: ${step.mode}`);
+            if (!Array.isArray(step.items) || step.items.length !== 3) {
+                fail(ctx, "items nem 3 elemű");
+                break;
+            }
+            if (!step.items.every(it => typeof it === "string" && it.length > 0)) {
+                fail(ctx, "items nem szövegek");
+            }
+            if (new Set(step.items).size !== 3) {
+                fail(ctx, "items nem mind különböző");
+            }
+            if (step.total !== 6) fail(ctx, `total hibás: ${step.total}`);
+            if (typeof step.question !== "string" || step.question.length === 0) {
+                fail(ctx, "question hiányzik");
             }
             break;
         }

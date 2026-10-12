@@ -48,11 +48,19 @@ const ALTERNATING_PAIRS = [
     [4, 5]
 ];
 
-function buildAlternating(max, deltas) {
+function buildAlternating(max, deltas, pairs) {
 
-    const usable = deltas
-        ? [deltas]
-        : ALTERNATING_PAIRS.filter(([first, second]) => 3 * first + 2 * second <= max - 1);
+    const pool = deltas ? [deltas] : (pairs || ALTERNATING_PAIRS);
+
+    let usable = pool.filter(([first, second]) => 3 * first + 2 * second <= max - 1);
+
+    if (usable.length === 0) {
+        usable = ALTERNATING_PAIRS.filter(([first, second]) => 3 * first + 2 * second <= max - 1);
+    }
+
+    if (usable.length === 0) {
+        usable = [[1, 2]];
+    }
 
     const [first, second] = pick(usable);
 
@@ -85,14 +93,15 @@ export function generateSequence(options = {}) {
         max = 100,
         interaction = "mixed",
         alternate = false,
-        deltas
+        deltas,
+        pairs
     } = options;
 
     const tasks = [];
 
     for (let i = 0; i < count; i++) {
 
-        const task = alternate ? buildAlternating(max, deltas) : buildStepped(max);
+        const task = alternate ? buildAlternating(max, deltas, pairs) : buildStepped(max);
 
         task.interaction = interaction === "mixed" ? pick(["input", "choice"]) : interaction;
 

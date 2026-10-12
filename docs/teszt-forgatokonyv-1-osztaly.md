@@ -1,6 +1,6 @@
 # Matekidő – 1. osztály manuális tesztforgatókönyv
 
-Ennek a dokumentumnak a célja, hogy az **1. osztályos tananyagot** (43 lecke, 7 világ, számkör 100-ig) a böngészőben kézzel végigteszteljük: minden lecke helyesen épül fel, a feladatok a megjelölt tartományban vannak, a jó/rossz válasz kezelése helyes, és a lecke a celebrációval zárul.
+Ennek a dokumentumnak a célja, hogy az **1. osztályos tananyagot** (44 lecke, 7 világ, számkör 100-ig) a böngészőben kézzel végigteszteljük: minden lecke helyesen épül fel, a feladatok a megjelölt tartományban vannak, a jó/rossz válasz kezelése helyes, és a lecke a celebrációval zárul.
 
 - **Szerver:** `make start` (localhost:8000) – a `src/` mappát szolgálja ki.
 - **Böngésző:** Asztali (Chrome / Firefox / Edge) + legalább egyszer telefon méretű nézet.
@@ -42,19 +42,20 @@ Ennek a dokumentumnak a célja, hogy az **1. osztályos tananyagot** (43 lecke, 
 | 2.1.4 | Keresd a kakukktojást! | `decomposition-find-wrong` / 10 | Egyetlen hibás bontás található meg | |
 | 2.1.5 | Kiegészítés 10-ig | `missing-number` / 10 | `a + ? = 10`, a válasz `10 − a` | |
 | 2.1.6 | Mi a következő? 50-ig | `sequence` / 50 | A sorozatlépés állandó, a következő tag helyes | |
-| 2.1.7 | Rendezzük sorainkat! 20-ig | `order` / 20 | A számsor a kért irányba (növekvő/csökkenő) rendezhető | |
-| 2.1.8 | Összehasonlítás 10-ig | `comparison` / 10 | A nagyobb/kisebb/egyenlő választás a két számnak megfelel | |
-| 2.1.9 | Összehasonlítás 20-ig | `comparison` / 20 | Az értékek 20-on belül, a jel az értékekhez illik | |
-| 2.1.10 | Páros és páratlan 20-ig | `even-odd` / 20 | A páros/páratlan besorolás helyes 20-ig | |
-| 2.1.11 | Helyiérték 100-ig | `place-value` / 100 | A tízesek/egyesek a számot adják ki (pl. 47 = 4 tízes + 7 egyes) | |
-| 2.1.12 | Helyiérték – tízes és egyes 100-ig | `place-value-two-input` / 100 | Két bevitel; `10 × tízes + egyes` = megjelenített szám | |
-| 2.1.13 | Kiegészítés véletlen számig 20-ig | `missing-number` / 20 | A kiegészítés célja változik leckén belül is | |
-| 2.1.14 | Számok szomszédai 100-ig | `neighbor` / 100 | `bal = válasz − 1`, `jobb = válasz + 1` | |
-| 2.1.15 | Tízesátlépés 20-ig | `bridge-ten` / 20 | 3 lépéses megoldás (10-re kiegészítés, maradék hozzáadása, összeg) | |
-| 2.1.16 | Becslés 30-ig | `estimate` / 30 | Kerekíthető eredmény, a legjobb becslés kiválasztható | |
-| 2.1.17 | Kerekítés tízesre 100-ig | `rounding` / 100 | A szám tízesre kerekítése helyes (bemenet és választás) | |
-| 2.1.18 | 📊 Melyikből van több? | `data-chart` | SVG oszlopdiagram; legtöbb/legkevesebb/összeolvasás | |
-| 2.1.19 | 🎲 Biztos, lehetséges, lehetetlen | `probability` | Egyszerű események; a biztos/lehetséges/lehetetlen besorolás helyes | |
+| 2.1.7 | Váltakozó számsor 20-ig | `sequence` (váltakozó) / 20 | Két lépés váltakozik (pl. +1/+2, +2/+3); a következő tag a tartományon belül helyes | |
+| 2.1.8 | Rendezzük sorainkat! 20-ig | `order` / 20 | A számsor a kért irányba (növekvő/csökkenő) rendezhető | |
+| 2.1.9 | Összehasonlítás 10-ig | `comparison` / 10 | A nagyobb/kisebb/egyenlő választás a két számnak megfelel | |
+| 2.1.10 | Összehasonlítás 20-ig | `comparison` / 20 | Az értékek 20-on belül, a jel az értékekhez illik | |
+| 2.1.11 | Páros és páratlan 20-ig | `even-odd` / 20 | A páros/páratlan besorolás helyes 20-ig | |
+| 2.1.12 | Helyiérték 100-ig | `place-value` / 100 | A tízesek/egyesek a számot adják ki (pl. 47 = 4 tízes + 7 egyes) | |
+| 2.1.13 | Helyiérték – tízes és egyes 100-ig | `place-value-two-input` / 100 | Két bevitel; `10 × tízes + egyes` = megjelenített szám | |
+| 2.1.14 | Kiegészítés véletlen számig 20-ig | `missing-number` / 20 | A kiegészítés célja változik leckén belül is | |
+| 2.1.15 | Számok szomszédai 100-ig | `neighbor` / 100 | `bal = válasz − 1`, `jobb = válasz + 1` | |
+| 2.1.16 | Tízesátlépés 20-ig | `bridge-ten` / 20 | 3 lépéses megoldás (10-re kiegészítés, maradék hozzáadása, összeg) | |
+| 2.1.17 | Becslés 30-ig | `estimate` / 30 | Kerekíthető eredmény, a legjobb becslés kiválasztható | |
+| 2.1.18 | Kerekítés tízesre 100-ig | `rounding` / 100 | A szám tízesre kerekítése helyes (bemenet és választás) | |
+| 2.1.19 | 📊 Melyikből van több? | `data-chart` | SVG oszlopdiagram; legtöbb/legkevesebb/összeolvasás | |
+| 2.1.20 | 🎲 Biztos, lehetséges, lehetetlen | `probability` | Egyszerű események; a biztos/lehetséges/lehetetlen besorolás helyes | |
 
 ### 2.2 Műveletek
 

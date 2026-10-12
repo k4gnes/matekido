@@ -1,0 +1,102 @@
+{
+  "id": "grade3-alternating-sequence-01",
+  "title": "Váltakozó számsor (1000-ig)",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔢 Váltakozó léptek 1000-ig",
+      "text": "Ebben a számsorban két különböző lépés váltakozik: egyszer kisebbet, aztán nagyobbat lépünk (például +3, +4, +3, +4 — de lehet +5, +10 vagy +10, +20 is). Figyeld meg a lépéseket a sor elején, és írd be a következő számot!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Váltakozó házszámok",
+          "text": "A házszámok kétféle lépéssel nőnek váltakozva (például egyszer 3-mal, aztán 4-gyel). Figyeld meg, és írd be a következő házszámot!"
+        },
+        "racing": {
+          "title": "🏎️ Váltakozó rajtszámok",
+          "text": "A rajtszámok kétféle lépéssel nőnek váltakozva (például egyszer 3-mal, aztán 4-gyel). Figyeld meg, és írd be a következő rajtszámot!"
+        },
+        "football": {
+          "title": "⚽ Váltakozó eredmények",
+          "text": "Az eredmények kétféle lépéssel nőnek váltakozva. Figyeld meg, és írd be a következőt!"
+        },
+        "cooking": {
+          "title": "🍳 Váltakozó oldalak",
+          "text": "A receptoldalak kétféle lépéssel nőnek váltakozva. Figyeld meg, és írd be a következő oldalszámot!"
+        },
+        "animals": {
+          "title": "🦁 Váltakozó állatok",
+          "text": "Az állatok sora kétféle lépéssel nő váltakozva. Figyeld meg, és írd be a következő számot!"
+        },
+        "space": {
+          "title": "🤖 Váltakozó robotok",
+          "text": "A robotok sora kétféle lépéssel nő váltakozva. Figyeld meg, és írd be a következő számot!"
+        },
+        "tram": {
+          "title": "🚋 Váltakozó utasok",
+          "text": "Az utasok sora kétféle lépéssel nő váltakozva. Figyeld meg, és írd be a következő számot!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "sequence",
+      "options": {
+        "count": 4,
+        "max": 1000,
+        "alternate": true,
+        "pairs": [[3, 4], [4, 5], [5, 10], [10, 20], [20, 50]],
+        "interaction": "choice"
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "sequence",
+      "options": {
+        "count": 4,
+        "max": 1000,
+        "alternate": true,
+        "pairs": [[3, 4], [4, 5], [5, 10], [10, 20], [20, 50]],
+        "interaction": "input"
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Ügyesen követted a váltakozó lépéseket 1000-ig!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden váltakozó házszámot megtaláltál!"
+        },
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden váltakozó rajtszámot megtaláltál!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden eredményt jól folytattál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden oldalszámot jól folytattál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden állatsort jól folytattál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden robotsort jól folytattál!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden utassort jól folytattál!"
+        }
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Matekidő – 3. osztály manuális tesztforgatókönyv
 
-Ennek a dokumentumnak a célja, hogy a **3. osztályos tananyagot** (47 lecke, 7 világ, számkör 1000-ig + szorzás/osztás 6, 7, 8, 9-es táblákkal) a böngészőben kézzel végigteszteljük: minden lecke helyesen épül fel, a feladatok a megjelölt tartományban vannak, a jó/rossz válasz kezelése helyes, és a lecke a celebrációval zárul.
+Ennek a dokumentumnak a célja, hogy a **3. osztályos tananyagot** (48 lecke, 7 világ, számkör 1000-ig + szorzás/osztás 6, 7, 8, 9-es táblákkal) a böngészőben kézzel végigteszteljük: minden lecke helyesen épül fel, a feladatok a megjelölt tartományban vannak, a jó/rossz válasz kezelése helyes, és a lecke a celebrációval zárul.
 
 - **Szerver:** `make start` (localhost:8000) – a `src/` mappát szolgálja ki.
 - **Böngésző:** Asztali (Chrome / Firefox / Edge) + legalább egyszer telefon méretű nézet.
@@ -46,6 +46,7 @@ Ennek a dokumentumnak a célja, hogy a **3. osztályos tananyagot** (47 lecke, 7
 | 2.1.8 | Római számok | `roman` / 100 | I, V, X, L, C jelek; mindkét irány (szám → római, római → szám) | |
 | 2.1.9 | Becslés 1000-ig | `estimate` / 500 (százas kerekítés) | A válasz százasra kerekített összeg/különbség; a legjobb becslés kiválasztható | |
 | 2.1.10 | Számsorozatok 1000-ig | `pattern` / 1000 | Jól felismerhető szabály (pozitív lépés 2–200); a „?” mindig 1000 alatt marad | |
+| 2.1.11 | Váltakozó számsor 1000-ig | `sequence` (váltakozó) / 1000 | Két lépés váltakozik (pl. +3/+4, +5/+10, +10/+20); a következő tag 1000 alatt marad | |
 
 ### 2.2 Műveletek 1000-ig
 

@@ -1380,6 +1380,30 @@
       }
     },
     {
+      "id": "alternating-sequence-01-grade1",
+      "title": "Váltakozó számsor (20-ig)",
+      "grades": [
+        1
+      ],
+      "category": "numbers",
+      "skill": "number-sequence",
+      "difficulty": 2,
+      "type": "sequence",
+      "range": 20,
+      "mission": "🔢 Váltakozó számsor",
+      "subtitle": "váltakozó lépésű számsor 20-ig",
+      "file": "./data/lessons/grade1/alternating-sequence-01.json",
+      "worldTitles": {
+        "postman": "📮 Váltakozó házszámok",
+        "racing": "🏎️ Váltakozó rajtszámok",
+        "cooking": "🍳 Váltakozó oldalak",
+        "football": "⚽ Váltakozó eredmények",
+        "animals": "🦁 Váltakozó állatok",
+        "space": "🤖 Váltakozó robotok",
+        "tram": "🚋 Váltakozó utasok"
+      }
+    },
+    {
       "id": "order-01",
       "title": "Rendezzük sorainkat! 20-ig",
       "grades": [
@@ -3852,6 +3876,30 @@
         "animals": "🦁 Számsorozat az állatkertben",
         "space": "🤖 Számsorozat az űrben",
         "tram": "🚋 Számsorozat a városban"
+      }
+    },
+    {
+      "id": "alternating-sequence-01-grade3",
+      "title": "Váltakozó számsor (1000-ig)",
+      "grades": [
+        3
+      ],
+      "category": "numbers",
+      "skill": "number-sequence",
+      "difficulty": 2,
+      "type": "sequence",
+      "range": 1000,
+      "mission": "🔢 Váltakozó számsor",
+      "subtitle": "váltakozó lépésű számsor 1000-ig",
+      "file": "./data/lessons/grade3/alternating-sequence-01.json",
+      "worldTitles": {
+        "postman": "📮 Váltakozó házszámok",
+        "racing": "🏎️ Váltakozó rajtszámok",
+        "cooking": "🍳 Váltakozó oldalak",
+        "football": "⚽ Váltakozó eredmények",
+        "animals": "🦁 Váltakozó állatok",
+        "space": "🤖 Váltakozó robotok",
+        "tram": "🚋 Váltakozó utasok"
       }
     },
     {

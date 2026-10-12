@@ -1,0 +1,89 @@
+{
+  "id": "grade1-alternating-sequence-01",
+  "title": "Váltakozó számsor (20-ig)",
+
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔢 Váltakozó lépegetés",
+      "text": "Ebben a számsorban kétféle lépés váltakozik: egyszer kicsit, aztán egy kicsit többet lépünk (például +1, +2, +1, +2). Figyeld meg a lépéseket a sor elején, és mondd meg, mi a következő szám!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Váltakozó házszámok",
+          "text": "A házszámok kétféle lépéssel nőnek váltakozva (például egyszer 1-gyel, aztán 2-vel). Figyeld meg, és mondd meg a következő házszámot!"
+        },
+        "racing": {
+          "title": "🏎️ Váltakozó rajtszámok",
+          "text": "A rajtszámok kétféle lépéssel nőnek váltakozva (például egyszer 1-gyel, aztán 2-vel). Figyeld meg, és mondd meg a következő rajtszámot!"
+        },
+        "football": {
+          "title": "⚽ Váltakozó eredmények",
+          "text": "Az eredmények kétféle lépéssel nőnek váltakozva. Figyeld meg, és mondd meg a következőt!"
+        },
+        "cooking": {
+          "title": "🍳 Váltakozó oldalak",
+          "text": "A receptoldalak kétféle lépéssel nőnek váltakozva. Figyeld meg, és mondd meg a következő oldalszámot!"
+        },
+        "animals": {
+          "title": "🦁 Váltakozó állatok",
+          "text": "Az állatok sora kétféle lépéssel nő váltakozva. Figyeld meg, és mondd meg a következő számot!"
+        },
+        "space": {
+          "title": "🤖 Váltakozó robotok",
+          "text": "A robotok sora kétféle lépéssel nő váltakozva. Figyeld meg, és mondd meg a következő számot!"
+        },
+        "tram": {
+          "title": "🚋 Váltakozó utasok",
+          "text": "Az utasok sora kétféle lépéssel nő váltakozva. Figyeld meg, és mondd meg a következő számot!"
+        }
+      }
+    },
+
+    {
+      "type": "exercise",
+      "generator": "sequence",
+      "options": {
+        "count": 6,
+        "max": 20,
+        "alternate": true,
+        "pairs": [[1, 2], [1, 3], [2, 3]]
+      }
+    },
+
+    {
+      "type": "celebration",
+      "title": "🎉 Ügyes voltál!",
+      "text": "Ügyesen követted a váltakozó lépéseket!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden váltakozó házszámot megtaláltál!"
+        },
+        "racing": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden váltakozó rajtszámot megtaláltál!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden eredményt jól folytattál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden oldalszámot jól folytattál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden állatsort jól folytattál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden robotsort jól folytattál!"
+        },
+        "tram": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden utassort jól folytattál!"
+        }
+      }
+    }
+  ]
+}

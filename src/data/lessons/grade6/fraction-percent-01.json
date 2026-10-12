@@ -1,0 +1,112 @@
+{
+  "id": "fraction-percent-01",
+  "title": "🔗 Törtrész, arány és százalék",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔗 Törtrész, arány és százalék",
+      "text": "A törtrész, az arány és a százalék ugyanazt a viszonyt írja le, csak másképp. Ha az egész 4 egyenlő részéből 3 van meg, akkor a törtrész 3/4, az arány 3 : 4 (rész : egész), a százalék pedig 75%. Törtrészből százalékot úgy kapunk, hogy a törtet 100 nevezőre bővítjük: 3/4 = 75/100 = 75%. Százalékból törtrészt úgy kapunk, hogy a százalékot 100 nevezőjű törtként írjuk fel, és egyszerűsítjük: 75% = 75/100 = 3/4. Az arány ugyanezt mutatja más alakban: a 3 : 4 azt jelenti, hogy a rész 3, az egész 4, tehát 3/4 = 75%.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Törtrész, arány és százalék a postán",
+          "text": "A postán a kézbesített küldemények arányát törttel, aránnyal és százalékkal is megadhatjuk. Ha 4 csomagból 3 megérkezett, az 3/4, azaz 3 : 4, vagyis 75%."
+        },
+        "racing": {
+          "title": "🏎️ Törtrész, arány és százalék a pályán",
+          "text": "A versenyen a megtett körök arányát többféleképpen is leírjuk. A 4 körből 1 készült el: 1/4 = 1 : 4 = 25%."
+        },
+        "cooking": {
+          "title": "🍳 Törtrész, arány és százalék a konyhában",
+          "text": "A konyhában a hozzávalók arányát törttel és százalékkal is megadjuk. Az 5 pohárból 2 tele van: 2/5 = 2 : 5 = 40%."
+        },
+        "football": {
+          "title": "⚽ Törtrész, arány és százalék a bajnokságban",
+          "text": "A bajnokságban a győzelmek arányát százalékban és törtben is figyeljük. A 10 mérkőzésből 7 megnyert: 7/10 = 7 : 10 = 70%."
+        },
+        "animals": {
+          "title": "🦁 Törtrész, arány és százalék az állatkertben",
+          "text": "Az állatkertben az etetett állatok arányát több alakban is leírjuk. A 4 állatból 1 kapott eleséget: 1/4 = 1 : 4 = 25%."
+        },
+        "space": {
+          "title": "🚀 Törtrész, arány és százalék az űrben",
+          "text": "Az űrhajón a készlet arányát törttel, aránnyal és százalékkal is követjük. A tartály 10 része közül 9 teli: 9/10 = 9 : 10 = 90%."
+        },
+        "tram": {
+          "title": "🚋 Törtrész, arány és százalék a villamoson",
+          "text": "A villamoson a megtett út arányát többféleképpen írjuk le. Az 5 megállóból 3 megvan: 3/5 = 3 : 5 = 60%."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-percent",
+      "options": {
+        "count": 3,
+        "mode": "to-percent",
+        "level": "basic"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-percent",
+      "options": {
+        "count": 3,
+        "mode": "from-percent",
+        "level": "basic"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-percent",
+      "options": {
+        "count": 3,
+        "mode": "to-percent",
+        "level": "advanced"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-percent",
+      "options": {
+        "count": 3,
+        "mode": "from-percent",
+        "level": "advanced"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen váltottál a törtrész, az arány és a százalék között!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen váltottál törtrész, arány és százalék között a postán!"
+        },
+        "racing": {
+          "title": "🏁 Szuper vagy!",
+          "text": "Ügyesen váltottál törtrész, arány és százalék között a pályán!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen váltottál törtrész, arány és százalék között a konyhában!"
+        },
+        "football": {
+          "title": "🏆 Nagy vagy!",
+          "text": "Ügyesen váltottál törtrész, arány és százalék között a bajnokságban!"
+        },
+        "animals": {
+          "title": "🦁 Ügyes voltál!",
+          "text": "Ügyesen váltottál törtrész, arány és százalék között az állatkertben!"
+        },
+        "space": {
+          "title": "🚀 Szuper vagy!",
+          "text": "Ügyesen váltottál törtrész, arány és százalék között az űrben!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen váltottál törtrész, arány és százalék között a villamoson!"
+        }
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 importScripts("./sw-cache.js");
 
-const CACHE = "matekido-v127";
+const CACHE = "matekido-v129";
 
 self.addEventListener("install", (event) => {
     event.waitUntil(
@@ -55,6 +55,8 @@ self.addEventListener("fetch", (event) => {
     );
 });
 
+const CACHE_LIMIT = SW_CACHE_LIST.length + 200;
+
 function cachePut(pathname, response) {
     const clone = response.clone();
 
@@ -62,7 +64,7 @@ function cachePut(pathname, response) {
         await cache.put(pathname, clone);
 
         const keys = await cache.keys();
-        if (keys.length > 500) {
+        if (keys.length > CACHE_LIMIT) {
             await cache.delete(keys[0]);
         }
     });

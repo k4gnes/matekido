@@ -100,7 +100,8 @@ export const TYPE_EMOJI = {
     "power-ten": "🔟",
     "fraction-line": "📍",
     "fraction-decimal": "🔁",
-    "fraction-muldiv": "✖️"
+    "fraction-muldiv": "✖️",
+    "fraction-percent": "🔗"
 };
 
 export const TYPE_LABEL = {
@@ -204,5 +205,6 @@ export const TYPE_LABEL = {
     "power-ten": "Tízes hatványok",
     "fraction-line": "Törtek a számegyenesen",
     "fraction-decimal": "Tört és tizedes átváltás",
-    "fraction-muldiv": "Törtek szorzása és osztása"
+    "fraction-muldiv": "Törtek szorzása és osztása",
+    "fraction-percent": "Törtrész, arány és százalék"
 };

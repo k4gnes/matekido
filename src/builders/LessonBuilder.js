@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=74";
+import { generate } from "../generators/index.js?v=75";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -431,6 +431,11 @@ export function buildLesson(lesson) {
             } else if (step.generator === "fraction-muldiv") {
                 result.push({
                     type: "fraction-muldiv",
+                    ...task
+                });
+            } else if (step.generator === "fraction-percent") {
+                result.push({
+                    type: "fraction-percent",
                     ...task
                 });
             } else if (step.generator === "elapsed-time") {

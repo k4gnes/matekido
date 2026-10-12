@@ -45,7 +45,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | 14 | Törtek | [Törtek a számegyenesen és vegyes számok](?lesson=fraction-line-01) | Hely és átalakítás | 20 | 2 |
 | 15 | Törtek | [Tört és tizedes tört átváltása](?lesson=fraction-decimal-01) | Átváltás mindkét irányban | 100 | 2 |
 | 16 | Törtek | [Törtek szorzása és osztása – gyakorlás](?lesson=fraction-muldiv-01) | Műveletek törtekkel | 100 | 3 |
-|  | Törtek, százalék | Törtrész, arány és százalék | Átváltás | 100 | 3 |
+| 17 | Törtek, százalék | [Törtrész, arány és százalék](?lesson=fraction-percent-01) | Átváltás | 100 | 3 |
 
 ## Arány és százalék (4 lecke)
 
@@ -104,7 +104,7 @@ A fenti 33 lecke a 6. osztályos tanmenet terve. Tovább tervezett leckék:
 - Osztók, többszörösök, prímek (5/5): 6. Oszthatósági szabályok gyakorlása (`divisibility-rules-02`, szabályok a 2, 3, 4, 5, 6, 9, 10 osztókhoz és maradékszámolás 1000-ig) ✔, 7. Osztók és többszörösök (`divisibility-multiples-01`, nagyobb alapokkal: 7–16 többszörösei, 12–30 osztói és osztószámai) ✔, 8. Prím- és összetett számok (`prime-composite-01`, prímfelismerés 100-ig: melyik prím, melyik összetett, osztószám alapján) ✔, 9. Számok prímfelbontása (`prime-factor-01`, prímfelbontás 100-ig: teljes felbontás, hiányzó prím és hatványos alak) ✔, 10. Legnagyobb közös osztó és legkisebb közös többszörös (`gcd-lcm-01`, közös osztók és többszörösök 20-ig, LNKO és LKKT kiválasztása) ✔
 - A témakör elkészült; a többi témakör tervezett.
 - Hatványok (3/3): 11. A hatványozás alapjai (`powers-basics-01`, négyzetre és köbre emelés, a hatványjelölés és a fordított keresés) ✔, 12. Tízes hatványok (`powers-ten-01`, a 10 kitevői és a nagyságrend millióig: érték, nullák száma, hatványos alak, számnevek) ✔, 13. Hatványok a műveleti sorrendben (`operation-order-power-01`, a hatvány helye a sorrendben: hatvány az összeadás és a szorzás előtt, zárójel a hatvány előtt, vegyes gyakorlás) ✔ – a Hatványok téma kész.
-- Törtek és tizedes törtek (3/4): 14. Törtek a számegyenesen és vegyes számok (`fraction-line-01`, törtek és vegyes számok helye a számegyenesen, áltört és vegyes szám átváltása) ✔, 15. Tört és tizedes tört átváltása (`fraction-decimal-01`, átváltás mindkét irányban: törtből tizedes tört bővítéssel, tizedes törtből a legegyszerűbb tört egyszerűsítéssel) ✔, 16. Törtek szorzása és osztása – gyakorlás (`fraction-muldiv-01`, törtek szorzása és osztása egész számmal és törttel, az eredmény egyszerűsítése) ✔
+- Törtek és tizedes törtek (4/4): 14. Törtek a számegyenesen és vegyes számok (`fraction-line-01`, törtek és vegyes számok helye a számegyenesen, áltört és vegyes szám átváltása) ✔, 15. Tört és tizedes tört átváltása (`fraction-decimal-01`, átváltás mindkét irányban: törtből tizedes tört bővítéssel, tizedes törtből a legegyszerűbb tört egyszerűsítéssel) ✔, 16. Törtek szorzása és osztása – gyakorlás (`fraction-muldiv-01`, törtek szorzása és osztása egész számmal és törttel, az eredmény egyszerűsítése) ✔, 17. Törtrész, arány és százalék (`fraction-percent-01`, a törtrész, az arány (rész : egész) és a százalék átváltása mindkét irányban) ✔
 
 A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg.
 

@@ -30,7 +30,8 @@ export const HINT_TYPES = new Set([
     "power-ten",
     "fraction-line",
     "fraction-decimal",
-    "fraction-muldiv"
+    "fraction-muldiv",
+    "fraction-percent"
 ]);
 
 export function lessonHasHint(lessonMeta) {

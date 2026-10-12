@@ -12,7 +12,7 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=31";
+import { buildLesson } from "./builders/LessonBuilder.js?v=32";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
@@ -1076,6 +1076,84 @@ function validateStep(step, ctx, range) {
                         if (o.numerator < 1 || o.denominator < 2) fail(ctx, `option kilép: ${o.numerator}/${o.denominator}`);
                         if (o.numerator > o.denominator * 3) fail(ctx, `option túl nagy: ${o.numerator}/${o.denominator}`);
                     }
+                }
+            }
+            break;
+        }
+        case "fraction-percent": {
+            const gcd = (a, b) => (b ? gcd(b, a % b) : a);
+            const allowedDenoms = [2, 4, 5, 10, 20, 25, 50];
+
+            if (!["to-percent", "from-percent"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!["fraction", "percent", "ratio"].includes(step.given)) fail(ctx, `given hibás: ${step.given}`);
+            if (!["fraction", "percent", "ratio"].includes(step.target)) fail(ctx, `target hibás: ${step.target}`);
+            if (step.given === step.target) fail(ctx, "given és target nem lehet ugyanaz");
+
+            const n = step.numerator;
+            const d = step.denominator;
+            if (!isInt(n) || !isInt(d)) {
+                fail(ctx, "numerator/denominator hibás");
+            } else {
+                if (d < 2 || n < 1 || n >= d) fail(ctx, `tört kilép: ${n}/${d}`);
+                if (!allowedDenoms.includes(d)) fail(ctx, `nevező kilép: ${d}`);
+                if (gcd(n, d) !== 1) fail(ctx, `a tört nem legegyszerűbb: ${n}/${d}`);
+            }
+
+            const expectedPercent = 100 * n / d;
+            if (!Number.isInteger(expectedPercent)) fail(ctx, `százalék nem egész: ${expectedPercent}`);
+            if (step.percent !== expectedPercent) fail(ctx, `percent hibás: ${step.percent} != ${expectedPercent}`);
+
+            if (step.mode === "to-percent") {
+                if (step.target !== "percent") fail(ctx, "to-percent esetén target percent kell");
+                if (!["fraction", "ratio"].includes(step.given)) fail(ctx, "to-percent esetén given fraction vagy ratio kell");
+            } else {
+                if (step.given !== "percent") fail(ctx, "from-percent esetén given percent kell");
+                if (!["fraction", "ratio"].includes(step.target)) fail(ctx, "from-percent esetén target fraction vagy ratio kell");
+            }
+
+            if (!step.ratio || step.ratio.part !== n || step.ratio.whole !== d) fail(ctx, "ratio hibás");
+
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            if (typeof step.hint !== "string" || step.hint.length === 0) fail(ctx, "hint hiányzik");
+            if (typeof step.explanation !== "string" || step.explanation.length === 0) fail(ctx, "explanation hiányzik");
+
+            if (!Array.isArray(step.options) || step.options.length !== 4) {
+                fail(ctx, "4 options kell");
+            } else if (step.options.filter(o => o.correct).length !== 1) {
+                fail(ctx, "pontosan 1 helyes kell");
+            } else if (step.target === "percent") {
+                if (!step.options.every(o => isInt(o.percent))) fail(ctx, "options percent hibás");
+                const correct = step.options.find(o => o.correct);
+                if (correct && correct.percent !== step.percent) fail(ctx, "a helyes percent hibás");
+                const values = step.options.map(o => o.percent);
+                if (new Set(values).size !== 4) fail(ctx, "options százaléka ismétlődik");
+                for (const o of step.options) {
+                    if (o.percent < 1 || o.percent > 99) fail(ctx, `option kilép: ${o.percent}%`);
+                    if (o.text !== `${o.percent}%`) fail(ctx, `option szöveg hibás: ${o.text}`);
+                }
+            } else if (step.target === "fraction") {
+                if (!step.options.every(o => isInt(o.numerator) && isInt(o.denominator))) fail(ctx, "options numerator/denominator hibás");
+                const correct = step.options.find(o => o.correct);
+                if (correct && (correct.numerator !== n || correct.denominator !== d)) fail(ctx, "a helyes option nem a legegyszerűbb tört");
+                const values = step.options.map(o => o.numerator / o.denominator);
+                if (new Set(values).size !== 4) fail(ctx, "options értéke ismétlődik");
+                for (const o of step.options) {
+                    if (o.numerator < 1 || o.numerator >= o.denominator) fail(ctx, `option kilép: ${o.numerator}/${o.denominator}`);
+                    if (gcd(o.numerator, o.denominator) !== 1) fail(ctx, `option nem legegyszerűbb: ${o.numerator}/${o.denominator}`);
+                }
+            } else {
+                if (!step.options.every(o => isInt(o.part) && isInt(o.whole))) fail(ctx, "options part/whole hibás");
+                const correct = step.options.find(o => o.correct);
+                if (correct && (correct.part !== n || correct.whole !== d)) fail(ctx, "a helyes arány hibás");
+                const texts = step.options.map(o => o.text);
+                if (new Set(texts).size !== 4) fail(ctx, "options szövege ismétlődik");
+                for (const o of step.options) {
+                    if (o.part < 1 || o.whole < 2) fail(ctx, `option kilép: ${o.part} : ${o.whole}`);
+                    if (o.text !== `${o.part} : ${o.whole}`) fail(ctx, `option szöveg hibás: ${o.text}`);
+                }
+                for (const o of step.options) {
+                    if (o.correct) continue;
+                    if (o.part * d === o.whole * n) fail(ctx, `option egyenértékű a helyessel: ${o.text}`);
                 }
             }
             break;

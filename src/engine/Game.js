@@ -96,6 +96,7 @@ import { renderPowerTen } from "../components/powerTen.js?v=1";
 import { renderFractionLine } from "../components/fractionLine.js?v=2";
 import { renderFractionDecimal } from "../components/fractionDecimal.js?v=1";
 import { renderFractionMulDiv } from "../components/fractionMulDiv.js?v=1";
+import { renderFractionPercent } from "../components/fractionPercent.js?v=1";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -194,7 +195,8 @@ const COUNTED_TYPES = new Set([
     "power-ten",
     "fraction-line",
     "fraction-decimal",
-    "fraction-muldiv"
+    "fraction-muldiv",
+    "fraction-percent"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -239,7 +241,8 @@ const SKILL_BY_TYPE = {
     "power-ten": "powers",
     "fraction-line": "fraction",
     "fraction-decimal": "fraction",
-    "fraction-muldiv": "fraction"
+    "fraction-muldiv": "fraction",
+    "fraction-percent": "percent"
 };
 
 const RENDERERS = new Map([
@@ -343,7 +346,8 @@ const RENDERERS = new Map([
     ["power-ten", renderPowerTen],
     ["fraction-line", renderFractionLine],
     ["fraction-decimal", renderFractionDecimal],
-    ["fraction-muldiv", renderFractionMulDiv]
+    ["fraction-muldiv", renderFractionMulDiv],
+    ["fraction-percent", renderFractionPercent]
 ]);
 
 

@@ -1,0 +1,132 @@
+.fp-prompt {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0.5rem 0 0.6rem;
+    color: #475569;
+}
+
+.fp-given {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    min-width: 110px;
+    min-height: 86px;
+    padding: 0 1rem;
+    margin: 0.4rem auto 0.2rem;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #1e293b;
+    background: #f1f5f9;
+    border: 3px solid #cbd5e1;
+    border-radius: 16px;
+}
+
+.fp-given-text {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.fp-bar {
+    display: flex;
+    width: min(90vw, 420px);
+    height: 2.4rem;
+    margin: 0.7rem auto 0.2rem;
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.fp-bar-cell {
+    flex: 1;
+    background: #f1f5f9;
+    border-right: 1px solid #cbd5e1;
+}
+
+.fp-bar-cell:last-child {
+    border-right: none;
+}
+
+.fp-bar-filled {
+    background: #38bdf8;
+}
+
+.fp-grid {
+    display: grid;
+    grid-template-columns: repeat(10, var(--fp-cell-size));
+    gap: 4px;
+    justify-content: center;
+    margin: 0.7rem auto 0.2rem;
+}
+
+.fp-cell {
+    width: var(--fp-cell-size);
+    aspect-ratio: 1;
+    border-radius: 6px;
+    background: #e2e8f0;
+    border: 1px solid #cbd5e1;
+}
+
+.fp-cell-filled {
+    background: #fbbf24;
+    border-color: #f59e0b;
+}
+
+.fp-options {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0.8rem 0;
+}
+
+.fp-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 92px;
+    min-height: 64px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1e293b;
+    background: #ffffff;
+    border: 2px solid #cbd5e1;
+    border-radius: 14px;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    transition: transform 0.1s ease, border-color 0.1s ease;
+}
+
+.fp-option:hover {
+    transform: scale(1.05);
+    border-color: #94a3b8;
+}
+
+.fp-option-text {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1e293b;
+    white-space: nowrap;
+}
+
+.fp-hint {
+    text-align: left;
+}
+
+.fp-hint p {
+    margin: 0.35rem 0;
+}
+
+@media (max-width: 480px) {
+    .fp-grid {
+        --fp-cell-size: 20px;
+    }
+}
+
+@media (min-width: 481px) {
+    .fp-grid {
+        --fp-cell-size: 26px;
+    }
+}

@@ -1151,6 +1151,30 @@
       }
     },
     {
+      "id": "fraction-percent-01",
+      "title": "🔗 Törtrész, arány és százalék",
+      "grades": [
+        6
+      ],
+      "category": "fractions",
+      "skill": "percent",
+      "difficulty": 3,
+      "type": "fraction-percent",
+      "range": 100,
+      "mission": "🔗 Törtrész, arány, százalék",
+      "subtitle": "törtrész, arány és százalék átváltása mindkét irányban",
+      "file": "./data/lessons/grade6/fraction-percent-01.json",
+      "worldTitles": {
+        "postman": "📮 Törtrész, arány és százalék a postán",
+        "racing": "🏎️ Törtrész, arány és százalék a pályán",
+        "cooking": "🍳 Törtrész, arány és százalék a konyhában",
+        "football": "⚽ Törtrész, arány és százalék a bajnokságban",
+        "animals": "🦁 Törtrész, arány és százalék az állatkertben",
+        "space": "🚀 Törtrész, arány és százalék az űrben",
+        "tram": "🚋 Törtrész, arány és százalék a villamoson"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

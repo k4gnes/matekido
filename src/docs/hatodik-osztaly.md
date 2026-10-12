@@ -2,9 +2,9 @@
 
 > **Státusz: folyamatban.** Az alábbiak a 6. osztályos tanmenet terve; a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
 
-**Tervezett 33 lecke**, 8 témakörben (a regiszter 7 kategóriája: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
+**Tervezett 38 lecke**, 10 témakörben (a regiszter 7 kategóriája: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
-Az 5. osztályos tananyag (1 000 000-ig bővülő számkör, oszthatóság, törtek és tizedes törtek, százalék, nagy számok műveletei, geometria) lezárult – a 6. osztály az **egész számokra és a negatív számokra**, az **oszthatóság és számelmélet** elmélyítésére, a **hatványokra**, az **arányra és arányosságra**, valamint a **geometria rendszerező ismétlésére** épül.
+Az 5. osztályos tananyag (1 000 000-ig bővülő számkör, oszthatóság, törtek és tizedes törtek, százalék, nagy számok műveletei, geometria) lezárult – a 6. osztály az **egész számokra és a negatív számokra**, az **oszthatóság és számelmélet** elmélyítésére, a **hatványokra**, az **egyenletekre és egyenlőtlenségekre**, az **arányra és arányosságra**, a **kombinatorikára**, valamint a **geometria rendszerező ismétlésére** épül.
 
 Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
@@ -47,6 +47,14 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | 16 | Törtek | [Törtek szorzása és osztása – gyakorlás](?lesson=fraction-muldiv-01) | Műveletek törtekkel | 100 | 3 |
 | 17 | Törtek, százalék | [Törtrész, arány és százalék](?lesson=fraction-percent-01) | Átváltás | 100 | 3 |
 
+## Nyitott mondatok, egyenletek és egyenlőtlenségek (3 lecke)
+
+| # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|---|
+|  | Nyitott mondat | Nyitott mondat – igaz vagy hamis? | Behelyettesítés és igazságérték | 100 | 2 |
+|  | Egyenlet | Egyenlet megoldása | Ismeretlen keresése | 100 | 2 |
+|  | Egyenlőtlenség | Egyenlőtlenségek a számegyenesen | Megoldáshalmaz | 100 | 3 |
+
 ## Arány és százalék (4 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
@@ -68,6 +76,13 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 |  | Kerület, terület | Háromszög és négyszög kerülete, területe | Képletek | 1000 | 3 |
 |  | Felszín, térfogat | Felszín és térfogat – téglatest, kocka | Képletek | 1000 | 3 |
 
+## Kombinatorika (2 lecke)
+
+| # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|---|
+|  | Kombinatorika | Hányféleképpen? – sorba rendezés | Sorba rendezés és összeszámlálás | 20 | 2 |
+|  | Kombinatorika | Kiválasztás és párosítás | Összeszámolás | 100 | 3 |
+
 ## Adatok és valószínűség (2 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
@@ -87,7 +102,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 ## Tervezett kiegészítések
 
-A fenti 33 lecke a 6. osztályos tanmenet terve. Tovább tervezett leckék:
+A fenti 38 lecke a 6. osztályos tanmenet terve. Tovább tervezett leckék:
 
 - [ ] **Számrendszerek** (a kettes számrendszer alapjai a helyiérték mintájára)
 - [ ] **Szögek szerkesztése körzővel és vonalzóval** (a fokok ismétlése után)
@@ -105,6 +120,8 @@ A fenti 33 lecke a 6. osztályos tanmenet terve. Tovább tervezett leckék:
 - A témakör elkészült; a többi témakör tervezett.
 - Hatványok (3/3): 11. A hatványozás alapjai (`powers-basics-01`, négyzetre és köbre emelés, a hatványjelölés és a fordított keresés) ✔, 12. Tízes hatványok (`powers-ten-01`, a 10 kitevői és a nagyságrend millióig: érték, nullák száma, hatványos alak, számnevek) ✔, 13. Hatványok a műveleti sorrendben (`operation-order-power-01`, a hatvány helye a sorrendben: hatvány az összeadás és a szorzás előtt, zárójel a hatvány előtt, vegyes gyakorlás) ✔ – a Hatványok téma kész.
 - Törtek és tizedes törtek (4/4): 14. Törtek a számegyenesen és vegyes számok (`fraction-line-01`, törtek és vegyes számok helye a számegyenesen, áltört és vegyes szám átváltása) ✔, 15. Tört és tizedes tört átváltása (`fraction-decimal-01`, átváltás mindkét irányban: törtből tizedes tört bővítéssel, tizedes törtből a legegyszerűbb tört egyszerűsítéssel) ✔, 16. Törtek szorzása és osztása – gyakorlás (`fraction-muldiv-01`, törtek szorzása és osztása egész számmal és törttel, az eredmény egyszerűsítése) ✔, 17. Törtrész, arány és százalék (`fraction-percent-01`, a törtrész, az arány (rész : egész) és a százalék átváltása mindkét irányban) ✔
+- Nyitott mondatok, egyenletek és egyenlőtlenségek (0/3): tervezett – a NAT 2020 tanmenetből felvett hiányzó témakör (nyitott mondat igazságértéke, egyenlet megoldása, egyenlőtlenségek a számegyenesen).
+- Kombinatorika (0/2): tervezett – a NAT 2020 tanmenetből felvett hiányzó témakör (sorba rendezés és összeszámlálás, kiválasztás és párosítás).
 
 A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg.
 

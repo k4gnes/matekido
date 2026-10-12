@@ -87,6 +87,7 @@ import { generatePower } from "./powerGenerator.js?v=1";
 import { generatePowerTen } from "./powerTenGenerator.js?v=1";
 import { generateFractionLine } from "./fractionLineGenerator.js?v=1";
 import { generateFractionDecimal } from "./fractionDecimalGenerator.js?v=1";
+import { generateFractionMulDiv } from "./fractionMulDivGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -278,6 +279,8 @@ export function generate(step) {
             return generateFractionLine(opts);
         case "fraction-decimal":
             return generateFractionDecimal(opts);
+        case "fraction-muldiv":
+            return generateFractionMulDiv(opts);
 
         default:
             throw new Error(

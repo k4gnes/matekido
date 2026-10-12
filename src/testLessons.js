@@ -12,7 +12,7 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=30";
+import { buildLesson } from "./builders/LessonBuilder.js?v=31";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
@@ -1000,6 +1000,82 @@ function validateStep(step, ctx, range) {
                         if (o.numerator < 1 || o.numerator >= o.denominator) fail(ctx, `option tört kilép: ${o.text}`);
                     }
                     if (step.answer !== `${step.numerator}/${step.denominator}`) fail(ctx, "answer hibás");
+                }
+            }
+            break;
+        }
+        case "fraction-muldiv": {
+            if (!["times", "divide"].includes(step.op)) fail(ctx, `op hibás: ${step.op}`);
+            if (!["whole", "fraction"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            const gcd = (a, b) => (b ? gcd(b, a % b) : a);
+
+            const left = step.left;
+            if (!left || !isInt(left.numerator) || !isInt(left.denominator)) {
+                fail(ctx, "left hibás");
+            } else if (left.denominator < 2 || left.numerator < 1 || left.numerator >= left.denominator) {
+                fail(ctx, `left kilép: ${left.numerator}/${left.denominator}`);
+            }
+
+            const right = step.right;
+            if (!right) {
+                fail(ctx, "right hiányzik");
+            } else if (step.mode === "whole") {
+                if (!isInt(right.whole) || right.whole < 2) fail(ctx, `right.whole hibás: ${right.whole}`);
+            } else if (!isInt(right.numerator) || !isInt(right.denominator)
+                || right.denominator < 2 || right.numerator < 1 || right.numerator >= right.denominator) {
+                fail(ctx, `right kilép: ${right.numerator}/${right.denominator}`);
+            }
+
+            if (left && right && isInt(left.numerator) && isInt(left.denominator)) {
+                let rawNum = 0;
+                let rawDen = 0;
+                if (step.op === "times" && step.mode === "whole") {
+                    rawNum = left.numerator * right.whole;
+                    rawDen = left.denominator;
+                } else if (step.op === "divide" && step.mode === "whole") {
+                    rawNum = left.numerator;
+                    rawDen = left.denominator * right.whole;
+                } else if (step.op === "times" && step.mode === "fraction") {
+                    rawNum = left.numerator * right.numerator;
+                    rawDen = left.denominator * right.denominator;
+                } else {
+                    rawNum = left.numerator * right.denominator;
+                    rawDen = left.denominator * right.numerator;
+                }
+
+                if (step.rawNum !== rawNum || step.rawDen !== rawDen) {
+                    fail(ctx, `raw hibás: ${step.rawNum}/${step.rawDen} != ${rawNum}/${rawDen}`);
+                }
+
+                const g = gcd(rawNum, rawDen);
+                const answerNum = rawNum / g;
+                const answerDen = rawDen / g;
+
+                if (answerDen === 1) fail(ctx, "az eredmény nem lehet egész szám");
+                if (step.answerNum !== answerNum || step.answerDen !== answerDen) {
+                    fail(ctx, `answer hibás: ${step.answerNum}/${step.answerDen} != ${answerNum}/${answerDen}`);
+                }
+
+                if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+                if (typeof step.hint !== "string" || step.hint.length === 0) fail(ctx, "hint hiányzik");
+                if (typeof step.explanation !== "string" || step.explanation.length === 0) fail(ctx, "explanation hiányzik");
+
+                if (!Array.isArray(step.options) || step.options.length !== 4) {
+                    fail(ctx, "4 options kell");
+                } else if (!step.options.every(o => o && isInt(o.numerator) && isInt(o.denominator))) {
+                    fail(ctx, "options numerator/denominator hibás");
+                } else {
+                    if (step.options.filter(o => o.correct).length !== 1) fail(ctx, "pontosan 1 helyes kell");
+                    const correct = step.options.find(o => o.correct);
+                    if (correct && (correct.numerator !== answerNum || correct.denominator !== answerDen)) {
+                        fail(ctx, "a helyes option nem a legegyszerűbb eredmény");
+                    }
+                    const values = step.options.map(o => o.numerator / o.denominator);
+                    if (new Set(values).size !== 4) fail(ctx, "options értéke ismétlődik");
+                    for (const o of step.options) {
+                        if (o.numerator < 1 || o.denominator < 2) fail(ctx, `option kilép: ${o.numerator}/${o.denominator}`);
+                        if (o.numerator > o.denominator * 3) fail(ctx, `option túl nagy: ${o.numerator}/${o.denominator}`);
+                    }
                 }
             }
             break;

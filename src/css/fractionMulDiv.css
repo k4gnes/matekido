@@ -1,0 +1,32 @@
+.fmd-prompt {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0.5rem 0 0.2rem;
+    color: #475569;
+}
+
+.fmd-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0.8rem 0;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.fmd-sign {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #334155;
+}
+
+.fmd-hint {
+    text-align: left;
+}
+
+.fmd-hint p {
+    margin: 0.35rem 0;
+}

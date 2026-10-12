@@ -29,7 +29,8 @@ export const HINT_TYPES = new Set([
     "power",
     "power-ten",
     "fraction-line",
-    "fraction-decimal"
+    "fraction-decimal",
+    "fraction-muldiv"
 ]);
 
 export function lessonHasHint(lessonMeta) {

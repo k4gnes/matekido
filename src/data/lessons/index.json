@@ -1127,6 +1127,30 @@
       }
     },
     {
+      "id": "fraction-muldiv-01",
+      "title": "✖️➗ Törtek szorzása és osztása – gyakorlás",
+      "grades": [
+        6
+      ],
+      "category": "fractions",
+      "skill": "fraction",
+      "difficulty": 3,
+      "type": "fraction-muldiv",
+      "range": 100,
+      "mission": "✖️➗ Szorzás és osztás",
+      "subtitle": "törtek szorzása és osztása egész számmal és törttel, egyszerűsítés",
+      "file": "./data/lessons/grade6/fraction-muldiv-01.json",
+      "worldTitles": {
+        "postman": "📮 Törtek szorzása és osztása a postán",
+        "racing": "🏎️ Törtek szorzása és osztása a pályán",
+        "cooking": "🍳 Törtek szorzása és osztása a konyhában",
+        "football": "⚽ Törtek szorzása és osztása a bajnokságban",
+        "animals": "🦁 Törtek szorzása és osztása az állatkertben",
+        "space": "🚀 Törtek szorzása és osztása az űrben",
+        "tram": "🚋 Törtek szorzása és osztása a villamoson"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

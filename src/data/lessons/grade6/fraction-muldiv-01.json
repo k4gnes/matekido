@@ -1,0 +1,112 @@
+{
+  "id": "fraction-muldiv-01",
+  "title": "✖️➗ Törtek szorzása és osztása – gyakorlás",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "✖️➗ Törtek szorzása és osztása",
+      "text": "A törtekkel való szorzást és osztást már ismered – most gyakoroljuk együtt! Szorzáskor a számlálókat és a nevezőket külön-külön összeszorozzuk: 2/3 × 3/4 = 6/12 = 1/2. Egész számmal szorozva csak a számláló változik: 3/4 × 2 = 6/4 = 3/2. Osztáskor egész számmal a nevezőt szorozzuk meg: 3/4 ÷ 2 = 3/8. Törttel osztva pedig megfordítjuk az osztót, és szorzunk: 3/4 ÷ 1/2 = 3/4 × 2/1 = 6/4 = 3/2. Az eredményt mindig a legegyszerűbb alakban add meg!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Törtek szorzása és osztása a postán",
+          "text": "A postán a csomagok tömegét törtekkel számoljuk. Ha 3/4 kg-ból több egyforma csomag lesz, szorozni kell; ha egy kupacot osztunk szét egyenlően, osztani. Gyakorold a műveleteket!"
+        },
+        "racing": {
+          "title": "🏎️ Törtek szorzása és osztása a pályán",
+          "text": "A versenypályán a köröket törtekkel mérjük. A 2/3 kör kétszerese, vagy a 3/4 kör fele – szorzással és osztással is számolhatsz."
+        },
+        "cooking": {
+          "title": "🍳 Törtek szorzása és osztása a konyhában",
+          "text": "A konyhában a receptadagokat törtekkel írjuk. Ha duplázod az adagot, szorzol; ha többfelé osztod a tésztát, osztasz."
+        },
+        "football": {
+          "title": "⚽ Törtek szorzása és osztása a bajnokságban",
+          "text": "A bajnokságban a játékidő törtrészeit számoljuk. A 3/4 félidő kétszerese és a fele is előkerül a feladatokban."
+        },
+        "animals": {
+          "title": "🦁 Törtek szorzása és osztása az állatkertben",
+          "text": "Az állatkertben az eleség adagjait törtekkel mérjük. Több állatnak adsz, vagy egy adagot osztasz szét – szorozz és ossz bátran!"
+        },
+        "space": {
+          "title": "🚀 Törtek szorzása és osztása az űrben",
+          "text": "Az űrhajón az üzemanyag mennyiségét törtekkel számoljuk. Szorzással és osztással is ellenőrizzük a készletet."
+        },
+        "tram": {
+          "title": "🚋 Törtek szorzása és osztása a villamoson",
+          "text": "A villamoson az út hosszát törtrészekben is mérjük. A 3/4 út fele vagy kétszerese is szorzással és osztással jön ki."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-muldiv",
+      "options": {
+        "count": 3,
+        "op": "times",
+        "level": "basic"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-muldiv",
+      "options": {
+        "count": 3,
+        "op": "divide",
+        "level": "basic"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-muldiv",
+      "options": {
+        "count": 3,
+        "op": "times",
+        "level": "advanced"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-muldiv",
+      "options": {
+        "count": 3,
+        "op": "divide",
+        "level": "advanced"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen szoroztad és osztottad a törteket!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál törtekkel a postán!"
+        },
+        "racing": {
+          "title": "🏁 Szuper vagy!",
+          "text": "Ügyesen szoroztál és osztottál a pályán!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál törtekkel a konyhában!"
+        },
+        "football": {
+          "title": "🏆 Nagy vagy!",
+          "text": "Ügyesen szoroztál és osztottál a bajnokságban!"
+        },
+        "animals": {
+          "title": "🦁 Ügyes voltál!",
+          "text": "Ügyesen szoroztál és osztottál az állatkertben!"
+        },
+        "space": {
+          "title": "🚀 Szuper vagy!",
+          "text": "Ügyesen számoltál törtekkel az űrben!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen szoroztál és osztottál a villamoson!"
+        }
+      }
+    }
+  ]
+}

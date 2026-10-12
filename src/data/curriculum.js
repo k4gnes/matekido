@@ -237,6 +237,7 @@ export const CURRICULUM_ORDER = {
         "operation-order-power-01",
         "fraction-line-01",
         "fraction-decimal-01",
+        "fraction-muldiv-01",
     ],
 };
 

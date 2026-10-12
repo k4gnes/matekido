@@ -28,7 +28,8 @@ export const HINT_TYPES = new Set([
     "gcd-lcm",
     "power",
     "power-ten",
-    "fraction-line"
+    "fraction-line",
+    "fraction-decimal"
 ]);
 
 export function lessonHasHint(lessonMeta) {

@@ -1103,6 +1103,30 @@
       }
     },
     {
+      "id": "fraction-decimal-01",
+      "title": "🔁 Tört és tizedes tört átváltása",
+      "grades": [
+        6
+      ],
+      "category": "fractions",
+      "skill": "fraction",
+      "difficulty": 2,
+      "type": "fraction-decimal",
+      "range": 100,
+      "mission": "🔁 Tört és tizedes átváltás",
+      "subtitle": "átváltás mindkét irányban, a legegyszerűbb tört alak megtalálása",
+      "file": "./data/lessons/grade6/fraction-decimal-01.json",
+      "worldTitles": {
+        "postman": "📮 Törtek és tizedes törtek a postán",
+        "racing": "🏎️ Törtek és tizedes törtek a pályán",
+        "cooking": "🍳 Törtek és tizedes törtek a konyhában",
+        "football": "⚽ Törtek és tizedes törtek a bajnokságban",
+        "animals": "🦁 Törtek és tizedes törtek az állatkertben",
+        "space": "🚀 Törtek és tizedes törtek az űrben",
+        "tram": "🚋 Törtek és tizedes törtek a villamoson"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

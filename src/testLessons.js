@@ -12,7 +12,7 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=29";
+import { buildLesson } from "./builders/LessonBuilder.js?v=30";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
@@ -947,6 +947,59 @@ function validateStep(step, ctx, range) {
                 if (new Set(values).size !== 4) fail(ctx, "options értéke ismétlődik");
                 for (const o of step.options) {
                     if (o.numerator < 1) fail(ctx, `to-fraction numerator hibás: ${o.numerator}`);
+                }
+            }
+            break;
+        }
+        case "fraction-decimal": {
+            if (!["fraction-to-decimal", "decimal-to-fraction"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!isInt(step.hundredths) || step.hundredths < 1 || step.hundredths > 99) fail(ctx, `hundredths hibás: ${step.hundredths}`);
+            const gcd = (a, b) => (b ? gcd(b, a % b) : a);
+            if (!isInt(step.numerator) || !isInt(step.denominator)) {
+                fail(ctx, "numerator/denominator hibás");
+            } else {
+                if (step.denominator < 2) fail(ctx, `denominator hibás: ${step.denominator}`);
+                if (step.numerator < 1 || step.numerator >= step.denominator) fail(ctx, `numerator hibás: ${step.numerator}`);
+                if (gcd(step.numerator, step.denominator) !== 1) fail(ctx, "a tört nem legegyszerűbb");
+                if (step.numerator * 100 !== step.denominator * step.hundredths) {
+                    fail(ctx, `a tört értéke nem ${step.hundredths}/100`);
+                }
+            }
+            const expectedDecimal = step.hundredths % 10 === 0
+                ? `0,${step.hundredths / 10}`
+                : `0,${String(step.hundredths).padStart(2, "0")}`;
+            if (step.decimal !== expectedDecimal) fail(ctx, `decimal hibás: ${step.decimal} != ${expectedDecimal}`);
+            const expanded = step.expanded;
+            if (!expanded || !isInt(expanded.numerator) || !isInt(expanded.denominator)) {
+                fail(ctx, "expanded hibás");
+            } else if (step.hundredths % 10 === 0) {
+                if (expanded.numerator !== step.hundredths / 10 || expanded.denominator !== 10) fail(ctx, "expanded (tized) hibás");
+            } else if (expanded.numerator !== step.hundredths || expanded.denominator !== 100) {
+                fail(ctx, "expanded (század) hibás");
+            }
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            if (!Array.isArray(step.options) || step.options.length !== 4) {
+                fail(ctx, "4 options kell");
+            } else {
+                if (step.options.filter(o => o.correct).length !== 1) fail(ctx, "pontosan 1 helyes kell");
+                if (step.mode === "fraction-to-decimal") {
+                    if (!step.options.every(o => o && typeof o.text === "string" && typeof o.correct === "boolean")) fail(ctx, "options mezők hibásak");
+                    if (new Set(step.options.map(o => o.text)).size !== 4) fail(ctx, "options ismétlődik");
+                    const correct = step.options.find(o => o.correct);
+                    if (correct && correct.text !== step.decimal) fail(ctx, "a helyes option nem a tizedes tört");
+                    if (step.answer !== step.decimal) fail(ctx, "answer hibás");
+                } else {
+                    if (!step.options.every(o => o && isInt(o.numerator) && isInt(o.denominator))) fail(ctx, "options numerator/denominator hibás");
+                    const correct = step.options.find(o => o.correct);
+                    if (correct && (correct.numerator !== step.numerator || correct.denominator !== step.denominator)) {
+                        fail(ctx, "a helyes option nem a legegyszerűbb tört");
+                    }
+                    const values = step.options.map(o => o.numerator / o.denominator);
+                    if (new Set(values).size !== 4) fail(ctx, "options értéke ismétlődik");
+                    for (const o of step.options) {
+                        if (o.numerator < 1 || o.numerator >= o.denominator) fail(ctx, `option tört kilép: ${o.text}`);
+                    }
+                    if (step.answer !== `${step.numerator}/${step.denominator}`) fail(ctx, "answer hibás");
                 }
             }
             break;

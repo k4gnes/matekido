@@ -94,6 +94,7 @@ import { renderGcdLcm } from "../components/gcdLcm.js?v=1";
 import { renderPower } from "../components/power.js?v=1";
 import { renderPowerTen } from "../components/powerTen.js?v=1";
 import { renderFractionLine } from "../components/fractionLine.js?v=2";
+import { renderFractionDecimal } from "../components/fractionDecimal.js?v=1";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -190,7 +191,8 @@ const COUNTED_TYPES = new Set([
     "gcd-lcm",
     "power",
     "power-ten",
-    "fraction-line"
+    "fraction-line",
+    "fraction-decimal"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -233,7 +235,8 @@ const SKILL_BY_TYPE = {
     "gcd-lcm": "gcd-lcm",
     "power": "powers",
     "power-ten": "powers",
-    "fraction-line": "fraction"
+    "fraction-line": "fraction",
+    "fraction-decimal": "fraction"
 };
 
 const RENDERERS = new Map([
@@ -335,7 +338,8 @@ const RENDERERS = new Map([
     ["gcd-lcm", renderGcdLcm],
     ["power", renderPower],
     ["power-ten", renderPowerTen],
-    ["fraction-line", renderFractionLine]
+    ["fraction-line", renderFractionLine],
+    ["fraction-decimal", renderFractionDecimal]
 ]);
 
 

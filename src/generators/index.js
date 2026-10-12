@@ -86,6 +86,7 @@ import { generateGcdLcm } from "./gcdLcmGenerator.js?v=1";
 import { generatePower } from "./powerGenerator.js?v=1";
 import { generatePowerTen } from "./powerTenGenerator.js?v=1";
 import { generateFractionLine } from "./fractionLineGenerator.js?v=1";
+import { generateFractionDecimal } from "./fractionDecimalGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -275,6 +276,8 @@ export function generate(step) {
             return generatePowerTen(opts);
         case "fraction-line":
             return generateFractionLine(opts);
+        case "fraction-decimal":
+            return generateFractionDecimal(opts);
 
         default:
             throw new Error(

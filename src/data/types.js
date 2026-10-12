@@ -98,7 +98,8 @@ export const TYPE_EMOJI = {
     "gcd-lcm": "🤝",
     "power": "⚡",
     "power-ten": "🔟",
-    "fraction-line": "📍"
+    "fraction-line": "📍",
+    "fraction-decimal": "🔁"
 };
 
 export const TYPE_LABEL = {
@@ -200,5 +201,6 @@ export const TYPE_LABEL = {
     "gcd-lcm": "LNKO és LKKT",
     "power": "Hatványozás",
     "power-ten": "Tízes hatványok",
-    "fraction-line": "Törtek a számegyenesen"
+    "fraction-line": "Törtek a számegyenesen",
+    "fraction-decimal": "Tört és tizedes átváltás"
 };

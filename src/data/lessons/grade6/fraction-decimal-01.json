@@ -1,0 +1,112 @@
+{
+  "id": "fraction-decimal-01",
+  "title": "🔁 Tört és tizedes tört átváltása",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔁 Tört és tizedes tört átváltása",
+      "text": "A törteket és a tizedes törteket oda-vissza átválthatjuk. A 0,75 ugyanazt jelenti, mint a 75/100, mert a 0,75 az hetvenöt század. A 75/100-ot egyszerűsíthetjük: 75 és 100 legnagyobb közös osztója a 25, ezért 75/100 = 3/4. Sok tizedes tört szép egyszerű törtté alakul: az 1/2 = 0,5, a 1/4 = 0,25, a 1/5 = 0,2, a 1/10 = 0,1. Fordítva is megy: a törtet 10-re vagy 100-ra bővítjük, és leolvassuk a tizedes törtet.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Törtek és tizedes törtek a postán",
+          "text": "A postán a csomagok tömegét néha törttel, néha tizedes törttel írjuk ki. A 3/4 kg ugyanannyi, mint a 0,75 kg – így is, úgy is ugyanazt a csomagot méri a mérleg."
+        },
+        "racing": {
+          "title": "🏎️ Törtek és tizedes törtek a pályán",
+          "text": "A versenypályán az időeredményeket tizedes törttel mérjük: a 0,25 másodperc ugyanaz, mint a negyed másodperc, azaz 1/4."
+        },
+        "cooking": {
+          "title": "🍳 Törtek és tizedes törtek a konyhában",
+          "text": "A konyhában a recept fél csészét kér: az 1/2 ugyanaz, mint a 0,5. A negyed csésze pedig 1/4 = 0,25."
+        },
+        "football": {
+          "title": "⚽ Törtek és tizedes törtek a bajnokságban",
+          "text": "A bajnokságban a győzelmi arányt törttel is, tizedes törttel is ki lehet fejezni: a 3/4 ugyanannyi, mint a 0,75."
+        },
+        "animals": {
+          "title": "🦁 Törtek és tizedes törtek az állatkertben",
+          "text": "Az állatkertben a takarmány adagját törttel mérik: az 1/5 vödör ugyanaz, mint a 0,2 vödör."
+        },
+        "space": {
+          "title": "🚀 Törtek és tizedes törtek az űrben",
+          "text": "Az űrhajó műszerei tizedes törttel számolnak, de a naplóba törttel írjuk: a 0,8 ugyanaz, mint a 4/5."
+        },
+        "tram": {
+          "title": "🚋 Törtek és tizedes törtek a villamoson",
+          "text": "A villamoson a menetidőt tizedes törttel mérjük: a 0,5 óra ugyanaz, mint az 1/2 óra."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-decimal",
+      "options": {
+        "count": 3,
+        "mode": "fraction-to-decimal",
+        "level": "basic"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-decimal",
+      "options": {
+        "count": 3,
+        "mode": "decimal-to-fraction",
+        "level": "basic"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-decimal",
+      "options": {
+        "count": 3,
+        "mode": "fraction-to-decimal",
+        "level": "advanced"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "fraction-decimal",
+      "options": {
+        "count": 3,
+        "mode": "decimal-to-fraction",
+        "level": "advanced"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen váltottad át a törteket tizedes törtekké és vissza!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen váltottad át a tömegeket a postán!"
+        },
+        "racing": {
+          "title": "🏁 Szuper vagy!",
+          "text": "Ügyesen váltottad át az időket a pályán!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen váltogattad a mértékeket a konyhában!"
+        },
+        "football": {
+          "title": "🏆 Nagy vagy!",
+          "text": "Ügyesen váltottad át az arányokat a bajnokságban!"
+        },
+        "animals": {
+          "title": "🦁 Ügyes voltál!",
+          "text": "Ügyesen váltottad át az adagokat az állatkertben!"
+        },
+        "space": {
+          "title": "🚀 Szuper vagy!",
+          "text": "Ügyesen váltottál a tizedes törtek és a törtek között az űrben!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen váltottad át az időket a villamoson!"
+        }
+      }
+    }
+  ]
+}

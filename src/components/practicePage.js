@@ -71,34 +71,3 @@ export function getPracticeLessonFiles(lessonIndex, grade) {
     return files;
 
 }
-
-export function getNextPracticeLesson(lessonIndex, path) {
-
-    const files = new Set(getPracticeLessonFiles(lessonIndex));
-    files.delete(path);
-    return pickNextLesson(lessonIndex, files);
-
-}
-
-function pickNextLesson(lessonIndex, weakLessonFiles) {
-
-    const lessons = (lessonIndex.lessons || []).filter(l => weakLessonFiles.has(l.file));
-
-    if (lessons.length === 0) return null;
-
-    let next = lessons[0];
-    let worst = Infinity;
-
-    for (const lesson of lessons) {
-        const stats = getLessonStats(lesson.file);
-        if (stats?.practice) continue;
-        const percentage = stats ? stats.percentage : 0;
-        if (percentage < worst) {
-            worst = percentage;
-            next = lesson;
-        }
-    }
-
-    return next;
-
-}

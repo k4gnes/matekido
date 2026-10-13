@@ -8,7 +8,7 @@ import { CATEGORIES, SKILLS } from "../data/skills.js";
 import { HINT_TYPES, lessonHasHint } from "../data/hintLessons.js";
 import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=18";
 import { curriculumSort } from "../data/curriculum.js";
-import { getPracticeLessonFiles } from "./practicePage.js?v=11";
+import { getPracticeLessonFiles } from "./practicePage.js?v=12";
 import { gradesWithLessons } from "../utils/grades.js?v=1";
 import { getWorld } from "../world/WorldRegistry.js";
 
@@ -925,7 +925,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
                 practiceLessons,
                 onSelect,
                 activeWorld,
-                { from: "practice" }
+                { from: "practice", list: practiceLessons.map(l => l.file) }
             ));
         }
 

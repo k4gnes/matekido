@@ -1,12 +1,11 @@
 import { Game } from "./engine/Game.js?v=133";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=65";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=112";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=113";
 import { renderSkillMap } from "./components/skillMap.js?v=46";
 import { renderHelp } from "./components/help.js?v=7";
 import { renderProfilePage } from "./components/profilePage.js?v=14";
 import { renderStatsPage } from "./components/statsPage.js?v=28";
-import { getNextPracticeLesson } from "./components/practicePage.js?v=11";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=10";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=8";
 import { renderParentHub } from "./components/parentHub.js?v=10";
@@ -287,9 +286,9 @@ async function startLesson(path, opts = {}) {
                     return;
                 }
                 if (from === "practice") {
-                    const next = getNextPracticeLesson(lessonIndex, path);
+                    const next = nextInList(path, opts);
                     if (next) {
-                        startLesson(next.file, { from: "practice" });
+                        startLesson(next, opts);
                         return;
                     }
                 }
@@ -314,12 +313,19 @@ async function startLesson(path, opts = {}) {
 
 }
 
+function nextInList(path, opts) {
+
+    if (!Array.isArray(opts.list)) return null;
+
+    const idx = opts.list.indexOf(path);
+    return idx !== -1 ? opts.list[idx + 1] || null : null;
+
+}
+
 function continueToNext(path, opts = {}) {
 
-    if (opts.from === "custom" && Array.isArray(opts.list)) {
-        const files = opts.list;
-        const idx = files.indexOf(path);
-        const next = idx !== -1 ? files[idx + 1] : null;
+    if ((opts.from === "custom" || opts.from === "practice") && Array.isArray(opts.list)) {
+        const next = nextInList(path, opts);
         if (next) {
             startLesson(next, opts);
             return;
@@ -329,13 +335,6 @@ function continueToNext(path, opts = {}) {
     }
 
     if (opts.from === "practice" || opts.from === "play") {
-        if (opts.from === "practice") {
-            const next = getNextPracticeLesson(lessonIndex, path);
-            if (next) {
-                startLesson(next.file, { from: "practice" });
-                return;
-            }
-        }
         showMenu();
         return;
     }

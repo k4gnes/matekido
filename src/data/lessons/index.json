@@ -1223,6 +1223,30 @@
       }
     },
     {
+      "id": "inequality-01",
+      "title": "📈 Egyenlőtlenségek a számegyenesen",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "inequality",
+      "difficulty": 3,
+      "type": "inequality",
+      "range": 100,
+      "mission": "📈 Egyenlőtlenségek",
+      "subtitle": "a megoldáshalmaz a számegyenesen: olvasás, kiválasztás és megoldás",
+      "file": "./data/lessons/grade6/inequality-01.json",
+      "worldTitles": {
+        "postman": "📮 Egyenlőtlenségek a postán",
+        "racing": "🏎️ Egyenlőtlenségek a pályán",
+        "football": "⚽ Egyenlőtlenségek a pályán",
+        "cooking": "🍳 Egyenlőtlenségek a konyhában",
+        "animals": "🦁 Egyenlőtlenségek az állatkertben",
+        "space": "🚀 Egyenlőtlenségek az űrben",
+        "tram": "🚋 Egyenlőtlenségek a villamoson"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

@@ -33,7 +33,8 @@ export const HINT_TYPES = new Set([
     "fraction-muldiv",
     "fraction-percent",
     "open-sentence",
-    "equation"
+    "equation",
+    "inequality"
 ]);
 
 export function lessonHasHint(lessonMeta) {

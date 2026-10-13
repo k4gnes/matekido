@@ -1315,6 +1315,39 @@ function validateStep(step, ctx, range) {
             if (isFiniteNum(range) && step.answer > range) fail(ctx, `answer kilép a tartományból: ${step.answer}`);
             break;
         }
+        case "inequality": {
+            if (!["read", "choose", "solve"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (![">", "<", "≥", "≤"].includes(step.relation)) fail(ctx, `relation hibás: ${step.relation}`);
+            if (!isInt(step.bound) || step.bound < 1 || step.bound > 9) fail(ctx, `bound hibás: ${step.bound}`);
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            if (!Array.isArray(step.options) || step.options.length !== 4) {
+                fail(ctx, `options hibás: ${step.options?.length}`);
+                break;
+            }
+            const correctCount = step.options.filter(o => o && o.correct).length;
+            if (correctCount !== 1) fail(ctx, `${correctCount} helyes opció (1 kellene)`);
+            if (step.mode === "choose") {
+                if (new Set(step.options.map(o => `${o.relation}|${o.bound}`)).size !== 4) fail(ctx, "a számegyenes opciók ismétlődnek");
+                for (const o of step.options) {
+                    if (![">", "<", "≥", "≤"].includes(o.relation)) fail(ctx, `opció relation hibás: ${o.relation}`);
+                    if (o.bound !== step.bound) fail(ctx, `opció bound hibás: ${o.bound}`);
+                }
+                const correct = step.options.find(o => o.correct);
+                if (correct.relation !== step.relation) fail(ctx, "a helyes opció relation hibás");
+            } else {
+                if (new Set(step.options.map(o => o.text)).size !== 4) fail(ctx, "a szöveges opciók ismétlődnek");
+                const expectedText = `x ${step.relation} ${step.bound}`;
+                const correct = step.options.find(o => o.correct);
+                if (correct.text !== expectedText) fail(ctx, `a helyes opció hibás: ${correct.text} != ${expectedText}`);
+            }
+            if (step.mode === "solve") {
+                if (!isInt(step.a) || step.a < 1) fail(ctx, `a hibás: ${step.a}`);
+                if (step.expression !== `x + ${step.a} ${step.relation} ${step.bound + step.a}`) {
+                    fail(ctx, `expression hibás: ${step.expression}`);
+                }
+            }
+            break;
+        }
         case "find-error": {
             if (Array.isArray(step.items)) {
                 if (step.items.length === 0) fail(ctx, "üres items");

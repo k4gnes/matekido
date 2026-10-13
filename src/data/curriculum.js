@@ -246,6 +246,7 @@ export const CURRICULUM_ORDER = {
         "fraction-percent-01",
         "open-sentence-01",
         "equation-01",
+        "inequality-01",
     ],
 };
 

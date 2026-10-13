@@ -2,7 +2,7 @@ export const CATEGORIES = {
     numbers: {
         title: "Számok",
         icon: "🔢",
-        skills: ["neighbours", "comparison", "ordering", "missing-number", "place-value", "rounding", "number-sequence", "even-odd", "pattern", "estimation", "number-names", "roman", "sets", "data-charts", "probability", "combinatorics", "divisibility", "primes", "prime-factor", "gcd-lcm", "powers", "integers", "open-sentence", "equation"]
+        skills: ["neighbours", "comparison", "ordering", "missing-number", "place-value", "rounding", "number-sequence", "even-odd", "pattern", "estimation", "number-names", "roman", "sets", "data-charts", "probability", "combinatorics", "divisibility", "primes", "prime-factor", "gcd-lcm", "powers", "integers", "open-sentence", "equation", "inequality"]
     },
     fractions: {
         title: "Törtek",
@@ -64,6 +64,7 @@ export const SKILLS = {
     integers: { title: "Egész számok", category: "numbers" },
     "open-sentence": { title: "Nyitott mondat", category: "numbers" },
     equation: { title: "Egyenlet", category: "numbers" },
+    inequality: { title: "Egyenlőtlenség", category: "numbers" },
 
     // Operations
     addition: { title: "Összeadás", category: "operations" },

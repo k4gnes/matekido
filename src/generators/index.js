@@ -92,6 +92,7 @@ import { generateFractionMulDiv } from "./fractionMulDivGenerator.js?v=1";
 import { generateFractionPercent } from "./fractionPercentGenerator.js?v=1";
 import { generateOpenSentence } from "./openSentenceGenerator.js?v=1";
 import { generateEquation } from "./equationGenerator.js?v=1";
+import { generateInequality } from "./inequalityGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -293,6 +294,8 @@ export function generate(step) {
             return generateOpenSentence(opts);
         case "equation":
             return generateEquation(opts);
+        case "inequality":
+            return generateInequality(opts);
 
         default:
             throw new Error(

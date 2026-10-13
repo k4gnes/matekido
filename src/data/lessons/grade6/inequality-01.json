@@ -1,0 +1,108 @@
+{
+  "id": "inequality-01",
+  "title": "📈 Egyenlőtlenségek a számegyenesen",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📈 Egyenlőtlenségek a számegyenesen",
+      "text": "Az egyenlőtlenségben nem egyetlen számot keresünk, hanem az összes olyan számot, amelyre az állítás igaz. Ez a megoldáshalmaz. A számegyenesen ezt egy színes nyíllal (félegyenessel) jelöljük. A > és < esetén a határérték nem tartozik a megoldáshalmazba, ezért üres karikát rajzolunk. A ≥ és ≤ esetén a határérték is megoldás, ezért teli karikát rajzolunk. Például az x > 3 megoldása minden 3-nál nagyobb szám, ezért a nyíl jobbra mutat, és a 3-nál üres karika van. Keresd meg mindig a helyes megoldáshalmazt!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Egyenlőtlenségek a postán",
+          "text": "A postán a csomagok súlyára adnak feltételeket. Melyik számegyenes mutatja a megoldáshalmazt?"
+        },
+        "racing": {
+          "title": "🏎️ Egyenlőtlenségek a pályán",
+          "text": "A versenypályán a körök számára adnak feltételeket. Melyik számegyenes mutatja a megoldáshalmazt?"
+        },
+        "football": {
+          "title": "⚽ Egyenlőtlenségek a pályán",
+          "text": "A bajnokságban a gólok számára adnak feltételeket. Melyik számegyenes mutatja a megoldáshalmazt?"
+        },
+        "cooking": {
+          "title": "🍳 Egyenlőtlenségek a konyhában",
+          "text": "A konyhában a hozzávalók mennyiségére adnak feltételeket. Melyik számegyenes mutatja a megoldáshalmazt?"
+        },
+        "animals": {
+          "title": "🦁 Egyenlőtlenségek az állatkertben",
+          "text": "Az állatkertben az állatok számára adnak feltételeket. Melyik számegyenes mutatja a megoldáshalmazt?"
+        },
+        "space": {
+          "title": "🚀 Egyenlőtlenségek az űrben",
+          "text": "Az űrhajón a kódokra adnak feltételeket. Melyik számegyenes mutatja a megoldáshalmazt?"
+        },
+        "tram": {
+          "title": "🚋 Egyenlőtlenségek a villamoson",
+          "text": "A villamoson az utasok számára adnak feltételeket. Melyik számegyenes mutatja a megoldáshalmazt?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "inequality",
+      "options": {
+        "count": 3,
+        "mode": "read"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "inequality",
+      "options": {
+        "count": 3,
+        "mode": "choose"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "inequality",
+      "options": {
+        "count": 3,
+        "mode": "solve"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "inequality",
+      "options": {
+        "count": 3,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megtaláltad az egyenlőtlenségek megoldáshalmazát!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a posta megoldáshalmazait!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a pálya megoldáshalmazait!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a konyha megoldáshalmazait!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a bajnokság megoldáshalmazait!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megtaláltad az állatkert megoldáshalmazait!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megtaláltad az űr megoldáshalmazait!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a villamos megoldáshalmazait!"
+        }
+      }
+    }
+  ]
+}

@@ -100,7 +100,7 @@ import { renderFractionMulDiv } from "../components/fractionMulDiv.js?v=1";
 import { renderFractionPercent } from "../components/fractionPercent.js?v=1";
 import { renderOpenSentence } from "../components/openSentence.js?v=1";
 import { renderEquation } from "../components/equation.js?v=1";
-import { renderInequality } from "../components/inequality.js?v=1";
+import { renderInequality } from "../components/inequality.js?v=2";
 
 const COUNTED_TYPES = new Set([
     "exercise",

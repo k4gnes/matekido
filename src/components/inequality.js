@@ -28,10 +28,10 @@ function svgEl(name, attrs) {
 function buildLine(relation, bound) {
     const min = 0;
     const max = 10;
-    const w = 120;
-    const h = 34;
-    const pad = 10;
-    const lineY = 20;
+    const w = 264;
+    const h = 88;
+    const pad = 20;
+    const lineY = 44;
     const usable = w - 2 * pad;
     const x = v => pad + ((v - min) / (max - min)) * usable;
     const right = relation === ">" || relation === "≥";
@@ -40,30 +40,30 @@ function buildLine(relation, bound) {
 
     const svg = svgEl("svg", { viewBox: `0 0 ${w} ${h}`, class: "ineq-svg", "aria-hidden": "true" });
 
-    svg.append(svgEl("line", { x1: x(min) - 3, y1: lineY, x2: x(max) + 1, y2: lineY, class: "ineq-axis" }));
-    svg.append(svgEl("polygon", { points: `${x(max) + 1},${lineY - 2} ${x(max) + 5},${lineY} ${x(max) + 1},${lineY + 2}`, class: "ineq-axis-arrow" }));
+    svg.append(svgEl("line", { x1: x(min) - 6, y1: lineY, x2: x(max) + 2, y2: lineY, class: "ineq-axis" }));
+    svg.append(svgEl("polygon", { points: `${x(max) + 2},${lineY - 4} ${x(max) + 10},${lineY} ${x(max) + 2},${lineY + 4}`, class: "ineq-axis-arrow" }));
 
     for (let v = min; v <= max; v++) {
-        svg.append(svgEl("line", { x1: x(v), y1: lineY - 2, x2: x(v), y2: lineY + 2, class: "ineq-tick" }));
-        const label = svgEl("text", { x: x(v), y: lineY + 10, class: "ineq-label", "text-anchor": "middle" });
+        svg.append(svgEl("line", { x1: x(v), y1: lineY - 5, x2: x(v), y2: lineY + 5, class: "ineq-tick" }));
+        const label = svgEl("text", { x: x(v), y: lineY + 26, class: "ineq-label", "text-anchor": "middle" });
         label.textContent = v;
         svg.append(label);
     }
 
-    const from = right ? x(bound) : x(min) - 3;
-    const to = right ? x(max) + 1 : x(bound);
+    const from = right ? x(bound) : x(min) - 6;
+    const to = right ? x(max) + 2 : x(bound);
     svg.append(svgEl("line", { x1: from, y1: lineY, x2: to, y2: lineY, class: "ineq-ray", stroke: color }));
 
     if (right) {
-        svg.append(svgEl("polygon", { points: `${to},${lineY - 3} ${to + 5},${lineY} ${to},${lineY + 3}`, class: "ineq-ray-arrow", fill: color }));
+        svg.append(svgEl("polygon", { points: `${to},${lineY - 7} ${to + 12},${lineY} ${to},${lineY + 7}`, class: "ineq-ray-arrow", fill: color }));
     } else {
-        svg.append(svgEl("polygon", { points: `${to},${lineY - 3} ${to - 5},${lineY} ${to},${lineY + 3}`, class: "ineq-ray-arrow", fill: color }));
+        svg.append(svgEl("polygon", { points: `${to},${lineY - 7} ${to - 12},${lineY} ${to},${lineY + 7}`, class: "ineq-ray-arrow", fill: color }));
     }
 
     svg.append(svgEl("circle", {
         cx: x(bound),
         cy: lineY,
-        r: 2.4,
+        r: 6,
         class: strict ? "ineq-endpoint ineq-open" : "ineq-endpoint ineq-closed",
         fill: strict ? "#ffffff" : color,
         stroke: color

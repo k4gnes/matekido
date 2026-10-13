@@ -1288,6 +1288,33 @@ function validateStep(step, ctx, range) {
             }
             break;
         }
+        case "equation": {
+            if (!["add", "sub", "mul", "div", "two-step"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (typeof step.equation !== "string" || !step.equation.includes("x")) fail(ctx, "equation hibás");
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            let expected = null;
+            if (step.mode === "add") {
+                if (!isInt(step.a) || !isInt(step.c)) fail(ctx, "a/c hibás");
+                else expected = step.c - step.a;
+            } else if (step.mode === "sub") {
+                if (!isInt(step.a) || !isInt(step.c)) fail(ctx, "a/c hibás");
+                else expected = step.c + step.a;
+            } else if (step.mode === "mul") {
+                if (!isInt(step.a) || !isInt(step.c) || step.a === 0) fail(ctx, "a/c hibás");
+                else expected = step.c / step.a;
+            } else if (step.mode === "div") {
+                if (!isInt(step.a) || !isInt(step.c)) fail(ctx, "a/c hibás");
+                else expected = step.a * step.c;
+            } else {
+                if (!["mul-add", "mul-sub"].includes(step.form)) fail(ctx, `form hibás: ${step.form}`);
+                if (!isInt(step.a) || !isInt(step.b) || !isInt(step.c) || step.a === 0) fail(ctx, "a/b/c hibás");
+                else expected = step.form === "mul-add" ? (step.c - step.b) / step.a : (step.c + step.b) / step.a;
+            }
+            if (expected !== null && step.answer !== expected) fail(ctx, `answer (${step.answer}) != számolt (${expected})`);
+            if (!isInt(step.answer) || step.answer < 1) fail(ctx, `answer nem pozitív egész: ${step.answer}`);
+            if (isFiniteNum(range) && step.answer > range) fail(ctx, `answer kilép a tartományból: ${step.answer}`);
+            break;
+        }
         case "find-error": {
             if (Array.isArray(step.items)) {
                 if (step.items.length === 0) fail(ctx, "üres items");

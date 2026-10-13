@@ -1199,6 +1199,30 @@
       }
     },
     {
+      "id": "equation-01",
+      "title": "🟰 Egyenlet megoldása",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "equation",
+      "difficulty": 2,
+      "type": "equation",
+      "range": 100,
+      "mission": "🟰 Egyenlet megoldása",
+      "subtitle": "az ismeretlen keresése összeadással, kivonással, szorzással és osztással",
+      "file": "./data/lessons/grade6/equation-01.json",
+      "worldTitles": {
+        "postman": "📮 Egyenlet a postán",
+        "racing": "🏎️ Egyenlet a pályán",
+        "football": "⚽ Egyenlet a pályán",
+        "cooking": "🍳 Egyenlet a konyhában",
+        "animals": "🦁 Egyenlet az állatkertben",
+        "space": "🚀 Egyenlet az űrben",
+        "tram": "🚋 Egyenlet a villamoson"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

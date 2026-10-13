@@ -52,7 +52,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
 | 18 | Nyitott mondat | [Nyitott mondat – igaz vagy hamis?](?lesson=open-sentence-01) | Behelyettesítés és igazságérték | 100 | 2 |
-|  | Egyenlet | Egyenlet megoldása | Ismeretlen keresése | 100 | 2 |
+| 19 | Egyenlet | [Egyenlet megoldása](?lesson=equation-01) | Ismeretlen keresése | 100 | 2 |
 |  | Egyenlőtlenség | Egyenlőtlenségek a számegyenesen | Megoldáshalmaz | 100 | 3 |
 
 ## Arány és százalék (4 lecke)
@@ -120,7 +120,7 @@ A fenti 38 lecke a 6. osztályos tanmenet terve. Tovább tervezett leckék:
 - A témakör elkészült; a többi témakör tervezett.
 - Hatványok (3/3): 11. A hatványozás alapjai (`powers-basics-01`, négyzetre és köbre emelés, a hatványjelölés és a fordított keresés) ✔, 12. Tízes hatványok (`powers-ten-01`, a 10 kitevői és a nagyságrend millióig: érték, nullák száma, hatványos alak, számnevek) ✔, 13. Hatványok a műveleti sorrendben (`operation-order-power-01`, a hatvány helye a sorrendben: hatvány az összeadás és a szorzás előtt, zárójel a hatvány előtt, vegyes gyakorlás) ✔ – a Hatványok téma kész.
 - Törtek és tizedes törtek (4/4): 14. Törtek a számegyenesen és vegyes számok (`fraction-line-01`, törtek és vegyes számok helye a számegyenesen, áltört és vegyes szám átváltása) ✔, 15. Tört és tizedes tört átváltása (`fraction-decimal-01`, átváltás mindkét irányban: törtből tizedes tört bővítéssel, tizedes törtből a legegyszerűbb tört egyszerűsítéssel) ✔, 16. Törtek szorzása és osztása – gyakorlás (`fraction-muldiv-01`, törtek szorzása és osztása egész számmal és törttel, az eredmény egyszerűsítése) ✔, 17. Törtrész, arány és százalék (`fraction-percent-01`, a törtrész, az arány (rész : egész) és a százalék átváltása mindkét irányban) ✔
-- Nyitott mondatok, egyenletek és egyenlőtlenségek (1/3): 18. Nyitott mondat – igaz vagy hamis? (`open-sentence-01`, behelyettesítés és igazságérték: összeadás, kivonás, szorzás és osztás nyitott mondatai) ✔ – a többi tervezett.
+- Nyitott mondatok, egyenletek és egyenlőtlenségek (2/3): 18. Nyitott mondat – igaz vagy hamis? (`open-sentence-01`, behelyettesítés és igazságérték: összeadás, kivonás, szorzás és osztás nyitott mondatai) ✔, 19. Egyenlet megoldása (`equation-01`, az ismeretlen keresése összeadással, kivonással, szorzással és osztással, valamint kétlépéses egyenletek) ✔ – az egyenlőtlenségek tervezettek.
 - Kombinatorika (0/2): tervezett – a NAT 2020 tanmenetből felvett hiányzó témakör (sorba rendezés és összeszámlálás, kiválasztás és párosítás).
 
 A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg.

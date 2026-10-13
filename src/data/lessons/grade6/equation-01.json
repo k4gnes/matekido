@@ -1,0 +1,116 @@
+{
+  "id": "equation-01",
+  "title": "🟰 Egyenlet megoldása",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🟰 Egyenlet megoldása",
+      "text": "Az egyenlet olyan nyitott mondat, amelyben az ismeretlen – rendszerint az x – értékét keressük, hogy az egyenlőség igaz legyen. Az egyenlet két oldala ugyanannyit ér. A műveletek fordítottjával jutunk el az ismeretlenhez: az összeadás fordítottja a kivonás, a szorzásé az osztás. Például az x + 7 = 12 egyenletben x = 12 − 7 = 5. Oldd meg te is az egyenleteket!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Egyenlet a postán",
+          "text": "A postán a csomagok számát rejti az x. Oldd meg az egyenletet, és találd meg a hiányzó számot!"
+        },
+        "racing": {
+          "title": "🏎️ Egyenlet a pályán",
+          "text": "A versenypályán a körök számát rejti az x. Oldd meg az egyenletet, és találd meg a hiányzó számot!"
+        },
+        "football": {
+          "title": "⚽ Egyenlet a pályán",
+          "text": "A bajnokságban a gólok számát rejti az x. Oldd meg az egyenletet, és találd meg a hiányzó számot!"
+        },
+        "cooking": {
+          "title": "🍳 Egyenlet a konyhában",
+          "text": "A konyhában a hozzávalók számát rejti az x. Oldd meg az egyenletet, és találd meg a hiányzó számot!"
+        },
+        "animals": {
+          "title": "🦁 Egyenlet az állatkertben",
+          "text": "Az állatkertben az állatok számát rejti az x. Oldd meg az egyenletet, és találd meg a hiányzó számot!"
+        },
+        "space": {
+          "title": "🚀 Egyenlet az űrben",
+          "text": "Az űrhajón a kódot rejti az x. Oldd meg az egyenletet, és találd meg a hiányzó számot!"
+        },
+        "tram": {
+          "title": "🚋 Egyenlet a villamoson",
+          "text": "A villamoson az utasok számát rejti az x. Oldd meg az egyenletet, és találd meg a hiányzó számot!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "equation",
+      "options": {
+        "count": 2,
+        "mode": "add"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "equation",
+      "options": {
+        "count": 2,
+        "mode": "sub"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "equation",
+      "options": {
+        "count": 2,
+        "mode": "mul"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "equation",
+      "options": {
+        "count": 2,
+        "mode": "div"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "equation",
+      "options": {
+        "count": 4,
+        "mode": "two-step"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megoldottad az egyenleteket!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a posta egyenleteit!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a pálya egyenleteit!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a konyha egyenleteit!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a bajnokság egyenleteit!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megoldottad az állatkert egyenleteit!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad az űr egyenleteit!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a villamos egyenleteit!"
+        }
+      }
+    }
+  ]
+}

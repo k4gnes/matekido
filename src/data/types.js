@@ -103,7 +103,8 @@ export const TYPE_EMOJI = {
     "fraction-decimal": "🔁",
     "fraction-muldiv": "✖️",
     "fraction-percent": "🔗",
-    "open-sentence": "🧩"
+    "open-sentence": "🧩",
+    "equation": "🟰"
 };
 
 export const TYPE_LABEL = {
@@ -210,5 +211,6 @@ export const TYPE_LABEL = {
     "fraction-decimal": "Tört és tizedes átváltás",
     "fraction-muldiv": "Törtek szorzása és osztása",
     "fraction-percent": "Törtrész, arány és százalék",
-    "open-sentence": "Nyitott mondat"
+    "open-sentence": "Nyitott mondat",
+    "equation": "Egyenlet"
 };

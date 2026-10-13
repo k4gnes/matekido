@@ -244,6 +244,7 @@ export const CURRICULUM_ORDER = {
         "fraction-decimal-01",
         "fraction-muldiv-01",
         "fraction-percent-01",
+        "open-sentence-01",
     ],
 };
 

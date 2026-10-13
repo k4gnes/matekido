@@ -31,7 +31,8 @@ export const HINT_TYPES = new Set([
     "fraction-line",
     "fraction-decimal",
     "fraction-muldiv",
-    "fraction-percent"
+    "fraction-percent",
+    "open-sentence"
 ]);
 
 export function lessonHasHint(lessonMeta) {

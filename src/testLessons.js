@@ -1266,6 +1266,28 @@ function validateStep(step, ctx, range) {
             if (typeof step.answer !== "boolean") fail(ctx, "answer nem boolean");
             break;
         }
+        case "open-sentence": {
+            if (!["add", "sub", "mul", "div"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!isInt(step.a) || step.a < 2) fail(ctx, `a hibás: ${step.a}`);
+            if (!isInt(step.value) || step.value < 1) fail(ctx, `value hibás: ${step.value}`);
+            if (!isInt(step.left) || !isInt(step.right)) fail(ctx, "left/right nem egész");
+            const expectedLeft = step.mode === "add"
+                ? step.value + step.a
+                : step.mode === "sub"
+                    ? step.value - step.a
+                    : step.mode === "mul"
+                        ? step.a * step.value
+                        : step.value / step.a;
+            if (step.left !== expectedLeft) fail(ctx, `left (${step.left}) != számolt (${expectedLeft})`);
+            if (typeof step.answer !== "boolean") fail(ctx, "answer nem boolean");
+            if (step.answer !== (step.left === step.right)) fail(ctx, "answer != (left == right)");
+            if (typeof step.sentence !== "string" || !step.sentence.includes("x")) fail(ctx, "sentence hibás");
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            if (isFiniteNum(range) && (step.right > range || step.value > range || step.left > range)) {
+                fail(ctx, `kilép a tartományból: left=${step.left} right=${step.right} value=${step.value}`);
+            }
+            break;
+        }
         case "find-error": {
             if (Array.isArray(step.items)) {
                 if (step.items.length === 0) fail(ctx, "üres items");

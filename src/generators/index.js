@@ -90,6 +90,7 @@ import { generateFractionLine } from "./fractionLineGenerator.js?v=1";
 import { generateFractionDecimal } from "./fractionDecimalGenerator.js?v=1";
 import { generateFractionMulDiv } from "./fractionMulDivGenerator.js?v=1";
 import { generateFractionPercent } from "./fractionPercentGenerator.js?v=1";
+import { generateOpenSentence } from "./openSentenceGenerator.js?v=1";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -287,6 +288,8 @@ export function generate(step) {
             return generateFractionMulDiv(opts);
         case "fraction-percent":
             return generateFractionPercent(opts);
+        case "open-sentence":
+            return generateOpenSentence(opts);
 
         default:
             throw new Error(

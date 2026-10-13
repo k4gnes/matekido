@@ -1,0 +1,116 @@
+{
+  "id": "open-sentence-01",
+  "title": "🧩 Nyitott mondat – igaz vagy hamis?",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧩 Nyitott mondat – igaz vagy hamis?",
+      "text": "A nyitott mondatban egy betű (legtöbbször az x) helyére kell számot képzelni. Ha behelyettesítjük a megadott számot, és a művelet eredménye megegyezik a mondat jobb oldalával, akkor a mondat igaz. Az x + 3 = 9 mondat például igaz, ha x = 6, de hamis, ha x = 5. Számold ki mindig a műveletet, és döntsd el, igaz-e a mondat!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Nyitott mondat a postán",
+          "text": "A postán minden csomagra ráírják a feladó számát. Ha x = a feladó száma, igaz-e a mondat? Számolj, és döntsd el!"
+        },
+        "racing": {
+          "title": "🏎️ Nyitott mondat a pályán",
+          "text": "A versenypályán a körök számát találgatjuk. Ha x = a körök száma, igaz-e a mondat? Számolj, és döntsd el!"
+        },
+        "football": {
+          "title": "⚽ Nyitott mondat a pályán",
+          "text": "A bajnokságban a gólok számát rejti az x. Ha x = a gólok száma, igaz-e a mondat? Számolj, és döntsd el!"
+        },
+        "cooking": {
+          "title": "🍳 Nyitott mondat a konyhában",
+          "text": "A konyhában a hozzávalók számát jelöli az x. Ha x = a hozzávalók száma, igaz-e a mondat? Számolj, és döntsd el!"
+        },
+        "animals": {
+          "title": "🦁 Nyitott mondat az állatkertben",
+          "text": "Az állatkertben az állatok számát jelöli az x. Ha x = az állatok száma, igaz-e a mondat? Számolj, és döntsd el!"
+        },
+        "space": {
+          "title": "🚀 Nyitott mondat az űrben",
+          "text": "Az űrhajón a kódokat rejti az x. Ha x = a kód száma, igaz-e a mondat? Számolj, és döntsd el!"
+        },
+        "tram": {
+          "title": "🚋 Nyitott mondat a villamoson",
+          "text": "A villamoson az utasok számát jelöli az x. Ha x = az utasok száma, igaz-e a mondat? Számolj, és döntsd el!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "open-sentence",
+      "options": {
+        "count": 2,
+        "mode": "add"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "open-sentence",
+      "options": {
+        "count": 2,
+        "mode": "sub"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "open-sentence",
+      "options": {
+        "count": 2,
+        "mode": "mul"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "open-sentence",
+      "options": {
+        "count": 2,
+        "mode": "div"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "open-sentence",
+      "options": {
+        "count": 4,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen kiszámoltad, mikor igaz egy nyitott mondat!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megfejtetted a posta nyitott mondatait!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiszámoltad a pálya nyitott mondatait!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megfejtetted a konyha nyitott mondatait!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiszámoltad a bajnokság nyitott mondatait!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megfejtetted az állatkert nyitott mondatait!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megfejtetted az űr nyitott mondatait!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiszámoltad a villamos nyitott mondatait!"
+        }
+      }
+    }
+  ]
+}

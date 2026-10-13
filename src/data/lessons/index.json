@@ -1175,6 +1175,30 @@
       }
     },
     {
+      "id": "open-sentence-01",
+      "title": "🧩 Nyitott mondat – igaz vagy hamis?",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "open-sentence",
+      "difficulty": 2,
+      "type": "open-sentence",
+      "range": 100,
+      "mission": "🧩 Nyitott mondat",
+      "subtitle": "behelyettesítés és igazságérték",
+      "file": "./data/lessons/grade6/open-sentence-01.json",
+      "worldTitles": {
+        "postman": "📮 Nyitott mondat a postán",
+        "racing": "🏎️ Nyitott mondat a pályán",
+        "football": "⚽ Nyitott mondat a pályán",
+        "cooking": "🍳 Nyitott mondat a konyhában",
+        "animals": "🦁 Nyitott mondat az állatkertben",
+        "space": "🚀 Nyitott mondat az űrben",
+        "tram": "🚋 Nyitott mondat a villamoson"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

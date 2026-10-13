@@ -1,0 +1,73 @@
+.open-sentence-prompt {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #444;
+    text-align: center;
+    margin: 0.5rem 0 0.6rem;
+}
+
+.open-sentence-substitution {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1f3a5f;
+    text-align: center;
+    margin: 0 0 0.5rem;
+}
+
+.open-sentence-expression {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 5rem;
+    margin: 0 auto 1.25rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #1f3a5f;
+    background: #f4f8ff;
+    border: 2px solid #bcd4f6;
+    border-radius: 16px;
+}
+
+.open-sentence-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.open-sentence-option {
+    min-width: 7rem;
+    padding: 0.9rem 1.4rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1f3a5f;
+    background: #ffffff;
+    border: 2px solid #bcd4f6;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.open-sentence-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(31, 58, 95, 0.15);
+}
+
+.open-sentence-true {
+    border-color: #9ed4a3;
+}
+
+.open-sentence-false {
+    border-color: #f0b4b4;
+}
+
+.open-sentence-hint {
+    text-align: left;
+}
+
+.open-sentence-hint p {
+    margin: 0.35rem 0;
+}

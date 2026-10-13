@@ -98,6 +98,7 @@ import { renderFractionLine } from "../components/fractionLine.js?v=2";
 import { renderFractionDecimal } from "../components/fractionDecimal.js?v=1";
 import { renderFractionMulDiv } from "../components/fractionMulDiv.js?v=1";
 import { renderFractionPercent } from "../components/fractionPercent.js?v=1";
+import { renderOpenSentence } from "../components/openSentence.js?v=1";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -198,7 +199,8 @@ const COUNTED_TYPES = new Set([
     "fraction-line",
     "fraction-decimal",
     "fraction-muldiv",
-    "fraction-percent"
+    "fraction-percent",
+    "open-sentence"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -350,7 +352,8 @@ const RENDERERS = new Map([
     ["fraction-line", renderFractionLine],
     ["fraction-decimal", renderFractionDecimal],
     ["fraction-muldiv", renderFractionMulDiv],
-    ["fraction-percent", renderFractionPercent]
+    ["fraction-percent", renderFractionPercent],
+    ["open-sentence", renderOpenSentence]
 ]);
 
 

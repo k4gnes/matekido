@@ -8,7 +8,7 @@ import { CATEGORIES, SKILLS } from "../data/skills.js";
 import { HINT_TYPES, lessonHasHint } from "../data/hintLessons.js";
 import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=18";
 import { curriculumSort } from "../data/curriculum.js";
-import { getPracticeLessonFiles } from "./practicePage.js?v=12";
+import { getPracticeLessonFiles } from "./practicePage.js?v=13";
 import { gradesWithLessons } from "../utils/grades.js?v=1";
 import { getWorld } from "../world/WorldRegistry.js";
 

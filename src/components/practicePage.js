@@ -18,7 +18,7 @@ export function getWeakLessonFiles(lessonIndex, grade) {
 }
 
 export const REVIEW_INTERVAL_DAYS = 14;
-export const REVIEW_BLOCK_MAX = 8;
+export const PRACTICE_BLOCK_MAX = 8;
 
 export function isReviewDue(lesson, now = Date.now()) {
 
@@ -43,7 +43,7 @@ export function getReviewDueLessons(lessonIndex, grade, now = Date.now()) {
 
     due.sort((a, b) => a.lastDoneAt - b.lastDoneAt);
 
-    return due.slice(0, REVIEW_BLOCK_MAX).map(entry => entry.lesson);
+    return due.map(entry => entry.lesson);
 
 }
 
@@ -68,6 +68,6 @@ export function getPracticeLessonFiles(lessonIndex, grade) {
         seen.add(lesson.file);
     }
 
-    return files;
+    return files.slice(0, PRACTICE_BLOCK_MAX);
 
 }

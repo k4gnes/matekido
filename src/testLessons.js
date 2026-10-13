@@ -15,7 +15,6 @@ const ROOT = new URL("./", import.meta.url);
 import { buildLesson } from "./builders/LessonBuilder.js?v=36";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
-import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
 import { SKILLS } from "./data/skills.js";
 
 const INDEX_ANSWER_TYPES = new Set(["calendar", "data-chart", "solid-shape", "polygon", "length-units"]);
@@ -1874,19 +1873,6 @@ const indexIds = new Set(index.lessons.map(l => l.id));
 for (const lesson of lessons) {
     if (!SKILLS[lesson.skill]) {
         fail(`index/${lesson.id}`, `ismeretlen skill: ${lesson.skill}`);
-    }
-}
-
-for (const [grade, ids] of Object.entries(CONSOLIDATION_LESSONS)) {
-    for (const id of ids) {
-        const lessonMeta = index.lessons.find(l => l.id === id);
-        if (!lessonMeta) {
-            fail(`consolidation/grade${grade}`, `nem létező lecke: ${id}`);
-            continue;
-        }
-        if (!lessonMeta.grades?.includes(Number(grade))) {
-            fail(`consolidation/grade${grade}`, `${id} nem ${grade}. osztályos (grades: ${lessonMeta.grades})`);
-        }
     }
 }
 

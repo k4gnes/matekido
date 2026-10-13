@@ -17,19 +17,66 @@ export function getWeakLessonFiles(lessonIndex, grade) {
 
 }
 
-export function getNextPracticeLesson(lessonIndex, path) {
+export const REVIEW_INTERVAL_DAYS = 14;
+export const REVIEW_BLOCK_MAX = 8;
 
-    const weak = getWeakLessonFiles(lessonIndex);
+export function isReviewDue(lesson, now = Date.now()) {
 
-    const currentStillWeak = weak.has(path);
+    if (lesson.practice) return false;
+    const stats = getLessonStats(lesson.file);
+    if (!stats || stats.percentage === null || stats.percentage < 90) return false;
+    if (!stats.lastDoneAt) return false;
+    return stats.lastDoneAt <= now - REVIEW_INTERVAL_DAYS * 24 * 60 * 60 * 1000;
 
-    weak.delete(path);
+}
 
-    if (currentStillWeak) {
-        return pickNextLesson(lessonIndex, weak);
+export function getReviewDueLessons(lessonIndex, grade, now = Date.now()) {
+
+    const activeGrade = grade ?? getActiveGrade();
+    const due = [];
+
+    for (const lesson of lessonIndex.lessons || []) {
+        if (!lesson.grades?.includes(activeGrade)) continue;
+        if (!isReviewDue(lesson, now)) continue;
+        due.push({ lesson, lastDoneAt: getLessonStats(lesson.file).lastDoneAt });
     }
 
-    return pickNextLesson(lessonIndex, weak);
+    due.sort((a, b) => a.lastDoneAt - b.lastDoneAt);
+
+    return due.slice(0, REVIEW_BLOCK_MAX).map(entry => entry.lesson);
+
+}
+
+export function getPracticeLessonFiles(lessonIndex, grade) {
+
+    const weak = getWeakLessonFiles(lessonIndex, grade);
+    const files = [];
+    const seen = new Set();
+
+    const weakLessons = (lessonIndex.lessons || [])
+        .filter(l => weak.has(l.file))
+        .sort((a, b) => (getLessonStats(a.file)?.percentage ?? 0) - (getLessonStats(b.file)?.percentage ?? 0));
+
+    for (const lesson of weakLessons) {
+        files.push(lesson.file);
+        seen.add(lesson.file);
+    }
+
+    for (const lesson of getReviewDueLessons(lessonIndex, grade)) {
+        if (seen.has(lesson.file)) continue;
+        files.push(lesson.file);
+        seen.add(lesson.file);
+    }
+
+    return files;
+
+}
+
+export function getNextPracticeLesson(lessonIndex, path) {
+
+    const files = new Set(getPracticeLessonFiles(lessonIndex));
+    files.delete(path);
+    return pickNextLesson(lessonIndex, files);
 
 }
 

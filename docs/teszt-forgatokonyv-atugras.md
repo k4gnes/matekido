@@ -101,13 +101,12 @@ Folytasd a menetet a 2. szakasz állásától: **oldd meg a 5–42. feladatot so
 
 | # | Lépés | Várt eredmény | Eredmény |
 |---|-------|---------------|----------|
-| 4.1 | A **🔁 Erősítő feladatok** listából ⏭️-zd az elsőt | NEM kerül a kimaradt listára (a menü Átugrott szekciója nem változik), a lista következő Erősítő feladata jön | |
-| 4.2 | A **❤️ Kedvenceim** listából ⏭️-zd az elsőt | Ugyanaz, mint 4.1 – nem számít félretételnek | |
-| 4.3 | A **🎯 Gyakorlás** oldalon ⏭️-zd az elsőt | A következő gyakorló feladat jön, nem kerül a kimaradt listára | |
-| 4.4 | Maradjon félretett feladat, és a menüben **🔙 Osztály** gombbal válts 2. osztályra | **Nem gátolja semmi:** a váltás szabadon működik | |
-| 4.5 | Szülői nézet (a feladatmenü **👨‍👩‍👧 Szülői** gombjával) | „⏭️ Kihagyott feladatok (N): <címek>” sor látszik (csak az **osztályos** félretettekkel) | |
-| 4.6 | Ugyanazt a feladatot kétszer hagyd ki (⏭️ kétszer ugyanazon a jeleneten) | A listán **egyszer** szerepel (nem duplázódik) | |
-| 4.7 | **Már megoldott** feladatot ⏭️-zz ki (osztály menetben), majd nézd meg a menü Átugrott szekcióját | **Nem** kerül a kimaradt listára – a ⏭️ csak továbblép (a félretétel csak megoldatlan feladatnál él) | |
+| 4.1 | A **❤️ Kedvenceim** listából ⏭️-zd az elsőt | Nem kerül a kimaradt listára (a menü Átugrott szekciója nem változik), a lista következő kedvenc feladata jön | |
+| 4.2 | A **🎯 Gyakorlás** oldalon ⏭️-zd az elsőt | A következő gyakorló feladat jön, nem kerül a kimaradt listára | |
+| 4.3 | Maradjon félretett feladat, és a menüben **🔙 Osztály** gombbal válts 2. osztályra | **Nem gátolja semmi:** a váltás szabadon működik | |
+| 4.4 | Szülői nézet (a feladatmenü **👨‍👩‍👧 Szülői** gombjával) | „⏭️ Kihagyott feladatok (N): <címek>” sor látszik (csak az **osztályos** félretettekkel) | |
+| 4.5 | Ugyanazt a feladatot kétszer hagyd ki (⏭️ kétszer ugyanazon a jeleneten) | A listán **egyszer** szerepel (nem duplázódik) | |
+| 4.6 | **Már megoldott** feladatot ⏭️-zz ki (osztály menetben), majd nézd meg a menü Átugrott szekcióját | **Nem** kerül a kimaradt listára – a ⏭️ csak továbblép (a félretétel csak megoldatlan feladatnál él) | |
 
 ### 4b. Saját lista – külön kontextus
 

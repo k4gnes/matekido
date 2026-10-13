@@ -248,7 +248,6 @@ const SW_CACHE_LIST = [
     "/css/word-problem.css",
     "/css/written-division.css",
     "/css/written-operation.css",
-    "/data/consolidation.js",
     "/data/curriculum.js",
     "/data/hintLessons.js",
     "/data/lessons/grade1/addition-01.json",

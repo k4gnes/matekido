@@ -7,8 +7,8 @@ import { getLessonStats, getPlayBest, getActiveWorld, getActiveGrade, setActiveG
 import { CATEGORIES, SKILLS } from "../data/skills.js";
 import { HINT_TYPES, lessonHasHint } from "../data/hintLessons.js";
 import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=18";
-import { CONSOLIDATION_LESSONS } from "../data/consolidation.js";
 import { curriculumSort } from "../data/curriculum.js";
+import { getPracticeLessonFiles } from "./practicePage.js?v=11";
 import { gradesWithLessons } from "../utils/grades.js?v=1";
 import { getWorld } from "../world/WorldRegistry.js";
 
@@ -910,25 +910,19 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
 
         // Egypercesek most külön oldalon találhatók
 
-        const byId = new Map(allLessons.map(l => [l.id, l]));
-        const consolidationIds = CONSOLIDATION_LESSONS[selectedGrade] || [];
-        const consolidationLessons = consolidationIds.map(id => byId.get(id)).filter(l => l && l.grades?.includes(selectedGrade));
-
         const byFile = new Map(allLessons.map(l => [l.file, l]));
         const favoriteLessons = getFavoriteLessons().map(f => byFile.get(f)).filter(l => l && l.grades?.includes(selectedGrade));
 
         const pickerSections = [];
 
-        const weakLessons = allLessons.filter(l => {
-            if (!l.grades?.includes(selectedGrade)) return false;
-            const stats = getLessonStats(l.file);
-            return stats !== null && stats.percentage !== null && stats.percentage < 90;
-        });
+        const practiceLessons = getPracticeLessonFiles(index, selectedGrade)
+            .map(f => byFile.get(f))
+            .filter(Boolean);
 
-        if (weakLessons.length > 0) {
+        if (practiceLessons.length > 0) {
             pickerSections.push(createPickerSection(
-                `🎯 Gyakorlásra javasolt (${weakLessons.length}) – 90% alatt vannak`,
-                weakLessons,
+                `🎯 Gyakorlásra javasolt (${practiceLessons.length}) – amit érdemes átismételni`,
+                practiceLessons,
                 onSelect,
                 activeWorld,
                 { from: "practice" }
@@ -946,16 +940,6 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
                 skippedLessons,
                 onSelect,
                 activeWorld
-            ));
-        }
-
-        if (consolidationLessons.length > 0) {
-            pickerSections.push(createPickerSection(
-                `🔁 Erősítő feladatok (${consolidationLessons.length}) – ezeket érdemes ismételni`,
-                consolidationLessons,
-                onSelect,
-                activeWorld,
-                { from: "consolidation" }
             ));
         }
 

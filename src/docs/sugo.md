@@ -97,7 +97,7 @@ Az **Elmúlt 7 nap** oszlopai a napi játéktevékenységet mutatják: a sávok 
 - 🔴 piros: 50% alatti
 - ⚪ szürke: aznap nem játszott
 
-A [**🎯 Gyakorlásra javasolt**](#gyakorlas-a-gyengebb-leckek) részben azok a készségek és leckék látszanak, amelyekben az eredmény **90% alatt** van – a gyerek ezeket a Gyakorlásra javasolt listából újragyakorolhatja. A [**⏭️ Kihagyott feladatok**](#kihagyott-leckek) rész pedig az osztályos félretett leckéket mutatja; ajánlott utóbb pótolni, hogy az osztály leckéi teljesek legyenek.
+A [**🎯 Gyakorlásra javasolt**](#gyakorlas-a-gyengebb-es-a-regen-gyakorolt-leckek) részben azok a készségek és leckék látszanak, amelyekben az eredmény **90% alatt** van, vagy amelyeket a gyerek **régen gyakorolt** – ezeket a Gyakorlásra javasolt listából újragyakorolhatja. A [**⏭️ Kihagyott feladatok**](#kihagyott-leckek) rész pedig az osztályos félretett leckéket mutatja; ajánlott utóbb pótolni, hogy az osztály leckéi teljesek legyenek.
 
 ### 📚 Témakörök
 
@@ -126,8 +126,7 @@ A leckék **listákban vannak**, és mindegyiknek más a szerepe:
 
 - **⚽ Válogatott** – a **🔍 Szűrők** alapján összeállított szűrt lista.
 - **🎲 Egypercesek** – az egyperces játékok: ezeknek nincs sorszámuk, mindegyiknek saját rekordja van, és a játék végén a {{➡️ Tovább|outline}} gomb ide visz vissza.
-- **🎯 Gyakorlásra javasolt** – a 90% alatti eredményű leckéid.
-- **🔁 Erősítő feladatok** – az osztály kulcsleckéi, amelyeket érdemes időről időre ismételni.
+- **🎯 Gyakorlásra javasolt** – a gyengén sikerült és a régen gyakorolt leckéid.
 - **❤️ Kedvenceim** – a kedvencnek jelölt leckéid.
 
 ## 📖 Lecke és feladat – mi a különbség?
@@ -139,7 +138,7 @@ Az egész app leckékből és feladatokból áll, ezért tisztázzuk, miben kül
 
 ![A lecke bevezető jelenettel kezdődik – a Kezdjük! gombbal indulsz](/docs/bevezeto-jelenet.png)
 
-- A **listákat leckékből** állítod össze: ⚽ Válogatott, 🎯 Gyakorlás, 🔁 Erősítő feladatok, ❤️ Kedvenceim.
+- A **listákat leckékből** állítod össze: ⚽ Válogatott, 🎯 Gyakorlás, ❤️ Kedvenceim.
 - A ⭐ csillag is **lecke** teljesítéséért jár (nem feladatonként) – [lásd a ⭐ szakaszt](#csillagok-kuldetesek-merfoldkovek-es-kituzok).
 
 ## 📖 Hogyan épül fel egy lecke?
@@ -194,27 +193,29 @@ A Matekidő **hét világban** játszódik, és a leckék történetei mindig az
 
 ## 📚 A feladatok menüje
 
-{{➡️ Következő feladat}} {{📚 Feladatok listája}} {{🎯 Gyakorlásra javasolt}} {{⏭️ Átugrott feladatok}} {{🔁 Erősítő feladatok}} {{❤️ Kedvenceim}}
+{{➡️ Következő feladat}} {{📚 Feladatok listája}} {{🎯 Gyakorlásra javasolt}} {{⏭️ Átugrott feladatok}} {{❤️ Kedvenceim}}
 
 A feladatlistára belépve sorban a következők jönnek:
 
 - **➡️ Következő feladat** – az, amit legközelebb érdemes megoldani.
 - **📚 Feladatok listája** – az évfolyam teljes feladatlistája. Szűrni **csak a ⚽ Válogatott nézetben** lehet (lásd a [szűrőkről szóló szakaszt](#valogatott-es-szurok)).
-- **🎯 Gyakorlásra javasolt** – azok a leckék, amelyekben az eredmény **90% alatti** (részletek a [Gyakorlás szakaszban](#gyakorlas-a-gyengebb-leckek)).
+- **🎯 Gyakorlásra javasolt** – a gyengén sikerült és a régen gyakorolt leckéid (részletek a [Gyakorlás szakaszban](#gyakorlas-a-gyengebb-es-a-regen-gyakorolt-leckek)).
 - **⏭️ Átugrott feladatok** – a kihagyott leckék itt látszanak. Érdemes pótolni őket, mert a sorrendjükben a végén úgyis visszajönnek.
-- **🔁 Erősítő feladatok** – ismétlésre javasolt feladatok. A nyitó feladat után a következő erősítő feladat jön automatikusan, a lista végén a menübe tér vissza.
 - **❤️ Kedvenceim** – azok a leckék, amelyeket a sor jobb oldalán lévő szív gombbal (**🤍 → ❤️**) megjelöltél. Ugyanígy játszólistaként megy végig a kedvenceken.
 
-## 🎯 Gyakorlás – a gyengébb leckék
+## 🎯 Gyakorlás – a gyengébb és a régen gyakorolt leckék
 
 {{🎯 Gyakorlásra javasolt}}
 
-Ha egy leckében az eredmény **90% alatt** van, az bekerül a **Gyakorlásra javasolt** listára:
+A **Gyakorlásra javasolt** listára kétféle lecke kerül:
 
-- A feladatmenüben van a **🎯 Gyakorlásra javasolt** rész, amíg van 90% alatti lecke.
-- A gyakorlásnál pontosan azokat a leckéket ajánlja fel az app, amelyekben még bizonytalan vagy.
+- amelyikben az eredmény **90% alatt** van, vagy
+- amelyiket **régen gyakoroltál** (kb. két hete nem került elő), pedig már jól ment.
+
+- A feladatmenüben van a **🎯 Gyakorlásra javasolt** rész, amíg van ilyen lecke.
+- A gyakorlásnál pontosan azokat a leckéket ajánlja fel az app, amelyekben még bizonytalan vagy, illetve amelyeket régen ismételtél.
 - A lista mindig az **aktívan választott osztály** leckéit mutatja: ha átváltasz például 1. osztályról 2. osztályra, a gyakorlás is csak az éppen választott osztály leckéit ajánlja.
-- Ezzel mindig azt erősítjük, ami még gyenge – nem azt, ami már megy.
+- Ezzel mindig azt erősítjük, ami még gyenge vagy régen volt – nem azt, ami már megy és friss.
 
 ## ⏭️ Kihagyott leckék
 
@@ -223,7 +224,7 @@ Ha egy leckében az eredmény **90% alatt** van, az bekerül a **Gyakorlásra ja
 - Az **⏭️** gombbal **kihagyhatod a leckét** – a következő, még meg nem oldott leckére ugrik.
 - A kihagyott leckék **összegyűlnek**, és **legvégül jönnek következőnek**: előbb a többi leckét megoldod, a kihagyottak a sorrendjükben úgyis visszatérnek.
 - **Már megoldott** leckénél a **⏭️** csak továbblép, nem tesz félre semmit.
-- Kihagyás **az osztályos leckékből számít**: az erősítő feladatok és a kedvencek listája nem tesz el leckét, csak a **➡️ Tovább** gombbal halad végig.
+- Kihagyás **az osztályos leckékből számít**: a kedvencek listája nem tesz el leckét, csak a **➡️ Tovább** gombbal halad végig.
 - Az **osztályváltóval bármikor** továbbléphetsz a következő osztályra – a kihagyott lecke ekkor is vár rád, ajánlott utóbb pótolni.
 - A **Szülői** nézetben az **osztályos** kihagyott leckéket is látod, így utólag is látszik, mi maradt ki.
 

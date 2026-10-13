@@ -1,19 +1,18 @@
 import { Game } from "./engine/Game.js?v=133";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=65";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=110";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=112";
 import { renderSkillMap } from "./components/skillMap.js?v=46";
 import { renderHelp } from "./components/help.js?v=7";
 import { renderProfilePage } from "./components/profilePage.js?v=14";
 import { renderStatsPage } from "./components/statsPage.js?v=28";
-import { getNextPracticeLesson } from "./components/practicePage.js?v=10";
+import { getNextPracticeLesson } from "./components/practicePage.js?v=11";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=10";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=8";
 import { renderParentHub } from "./components/parentHub.js?v=10";
 import { renderTransferPage } from "./components/transferPage.js?v=2";
 import { getActiveId, listPlayers } from "./profile/UserManager.js?v=4";
 import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld, setActiveGrade, resolveLessonGrade } from "./profile/Profile.js";
-import { CONSOLIDATION_LESSONS } from "./data/consolidation.js";
 import { curriculumSort } from "./data/curriculum.js";
 import { createCard } from "./components/ui/card.js";
 import { createButton } from "./components/ui/button.js";
@@ -341,8 +340,8 @@ function continueToNext(path, opts = {}) {
         return;
     }
 
-    if (opts.from === "consolidation" || opts.from === "favorites") {
-        const files = opts.from === "consolidation" ? getConsolidationFiles() : getFavoriteFiles();
+    if (opts.from === "favorites") {
+        const files = getFavoriteFiles();
         const idx = files.indexOf(path);
         if (idx !== -1) {
             const next = files[idx + 1];
@@ -366,16 +365,6 @@ function continueToNext(path, opts = {}) {
         return;
     }
     showMenu();
-
-}
-
-function getConsolidationFiles() {
-
-    const grade = getActiveGrade();
-    const ids = CONSOLIDATION_LESSONS[grade] || [];
-    const byId = new Map((lessonIndex.lessons || []).map(l => [l.id, l]));
-    const files = ids.map(id => byId.get(id)).filter(l => l && l.grades?.includes(grade));
-    return files.map(l => l.file);
 
 }
 

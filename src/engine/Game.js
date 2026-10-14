@@ -426,7 +426,7 @@ export class Game {
         if (allLessons[idx].master) return null;
         const grade = resolveLessonGrade(allLessons[idx]);
         if (grade == null) return null;
-        const gradeLessons = curriculumSort(allLessons.filter(l => l.grades?.includes(grade) && !l.practice), grade);
+        const gradeLessons = curriculumSort(allLessons.filter(l => l.grades?.includes(grade) && !l.practice && !l.master), grade);
         const posInGrade = gradeLessons.findIndex(l => l.file === this.lessonFile);
         return { position: posInGrade + 1, total: gradeLessons.length };
     }

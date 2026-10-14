@@ -1,0 +1,92 @@
+{
+  "id": "circle-02",
+  "title": "⭕ A kör és részei",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "⭕ A kör és részei",
+      "text": "A kör minden pontja ugyanolyan messze van a középponttól. Ezt a távolságot sugárnak nevezzük. Az átmérő a kör középpontján átmenő, két pontot összekötő szakasz: kétszer akkora, mint a sugár. A húr két tetszőleges körpontot köt össze. Ezért átmérő = 2 × sugár, és sugár = átmérő ÷ 2.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Kör a postán",
+          "text": "A postán a kerek pecséteket és címkéket vizsgálod. Nevezd meg a kör részeit!"
+        },
+        "racing": {
+          "title": "🏁 Kör a garázsban",
+          "text": "A garázsban a kerek kerekeket nézed. Keresd meg a középpontot, a sugarat és az átmérőt!"
+        },
+        "football": {
+          "title": "⚽ Kör a pályán",
+          "text": "A pálya közepén kör van. Nevezd meg a kör részeit!"
+        },
+        "cooking": {
+          "title": "🍳 Kör a konyhában",
+          "text": "A konyhában a kerek tányérokat vizsgálod. Találd meg a kör részeit!"
+        },
+        "animals": {
+          "title": "🦁 Kör az állatkertben",
+          "text": "Az állatkertben kerek tavak vannak. Nevezd meg a részeiket!"
+        },
+        "space": {
+          "title": "🚀 Kör az űrben",
+          "text": "Az űrhajó kerek ablakait nézed. Keresd meg a kör részeit!"
+        },
+        "tram": {
+          "title": "🚋 Kör a villamoson",
+          "text": "A villamos kerekeit vizsgálod. Nevezd meg a kör részeit!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "circle",
+      "options": {
+        "count": 3,
+        "mode": "identify"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "circle",
+      "options": {
+        "count": 3,
+        "mode": "convert"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "A kör minden részét felismered!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden pecsét és címke a helyén!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden kerék adata pontos!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "A pálya közepe a helyén van!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden tányér a helyére került!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden tó és medence körüljárva!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden ablak a helyén!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "A villamos kerekei rendben!"
+        }
+      }
+    }
+  ]
+}

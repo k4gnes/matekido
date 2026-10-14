@@ -1,0 +1,108 @@
+{
+    "id": "polygon-03",
+    "title": "🔷 A négyszögek rendszerezése",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🔷 A négyszögek rendszerezése",
+            "text": "A négyszögeknek négy oldala és négy szöge van. A négyzet, a téglalap, a rombusz, a paralelogramma, a trapéz és a deltoid mind négyszög – mindegyiknek megvannak a maga tulajdonságai. Rendszerezd őket, és figyeld meg, mi igaz rájuk!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Négyszögű csomagok",
+                    "text": "A postán minden csomag és bélyeg négyszög alakú! Rendszerezd őket a tulajdonságaik szerint!"
+                },
+                "racing": {
+                    "title": "🏁 A pálya elemei",
+                    "text": "A versenypálya jelei és kerítései négyszögek! Ismerd fel a különböző fajtákat!"
+                },
+                "football": {
+                    "title": "⚽ Kapuk és vonalak",
+                    "text": "A futballpályán a kapuk, a felfestések és a csapatjelzések négyszögek! Rendszerezd őket!"
+                },
+                "cooking": {
+                    "title": "🍳 Tepsik és szeletek",
+                    "text": "A tepsik és a szeletek négyszög alakúak! Válogasd szét a fajtáikat a tulajdonságaik alapján!"
+                },
+                "animals": {
+                    "title": "🦁 Karámok formái",
+                    "text": "Az állatkert karámjai és ketrecei négyszögek! Ismerd fel, melyik milyen négyszög!"
+                },
+                "space": {
+                    "title": "🚀 Űrállomás paneljei",
+                    "text": "Az űrállomás napelem-paneljei négyszögek! Rendszerezd a fajtáikat!"
+                },
+                "tram": {
+                    "title": "🚋 Ablakok és ülések",
+                    "text": "A villamos ablakai, ajtói és ülései négyszögek! Válogasd szét őket tulajdonságaik szerint!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "polygon",
+            "options": {
+                "count": 3,
+                "mode": "quadrilateral"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "polygon",
+            "options": {
+                "count": 3,
+                "mode": "quadrilateral"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "polygon",
+            "options": {
+                "count": 3,
+                "mode": "quadrilateral"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "polygon",
+            "options": {
+                "count": 3,
+                "mode": "quadrilateral"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "A négyszögek családját rendszerezted – tudod, melyik miben hasonlít és miben különbözik!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden csomagot és bélyeget a helyére soroltál – a posta készen áll!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "A pálya minden négyszögét felismerted – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A pálya minden négyszögét rendszerezted – a meccs kezdődhet!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden tepsit és szeletet szétválogattál – a konyha rendben van!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden karám formáját felismerted – az állatok elégedettek!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Az űrállomás paneljei a helyükre kerültek – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden ablak és ülés a helyén – a villamos indulhat!"
+                }
+            }
+        }
+    ]
+}

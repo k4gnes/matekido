@@ -98,11 +98,22 @@ export function renderCircle(step, root, next, progress, onResult, onAttempt) {
 
     const options = document.createElement("div");
     options.className = "cir-options";
-    step.options.forEach((label, i) => {
-        const btn = createButton(label, { className: "cir-option" });
+    step.options.forEach((value) => {
+        const btn = createButton(String(value), { className: "cir-option" });
         btn.addEventListener("click", () => {
             if (feedback.isAnswered()) return;
-            if (label === step.correctLabel) {
+
+            if (step.mode === "convert") {
+                if (Number(value) === step.answer) {
+                    markCorrect(btn);
+                    feedback.success(step.successText);
+                } else {
+                    feedback.retry();
+                }
+                return;
+            }
+
+            if (value === step.correctLabel) {
                 markCorrect(btn);
                 feedback.success(`😊 Szép munka! Ez a ${step.correctLabel.toLowerCase()}!`);
             } else {

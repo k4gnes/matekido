@@ -1,0 +1,108 @@
+{
+  "id": "combinatorics-03",
+  "title": "🎲 Kiválasztás és párosítás",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🎲 Kiválasztás és párosítás",
+      "text": "Ha néhány dologból párokat alkotunk, mindenki mindenkivel pontosan egyszer fog kezet. Az n dologból alkotható párok száma n × (n−1) ÷ 2. Ha pedig két csoportból választunk egy-egy elemet, a lehetőségek számát összeszorozzuk.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Párosítás a postán",
+          "text": "A postán a küldeményeket párosítják. Számold össze a lehetőségeket!"
+        },
+        "racing": {
+          "title": "🏁 Párosítás a garázsban",
+          "text": "A szerelők kezet fognak egymással. Hány kézfogás lesz?"
+        },
+        "football": {
+          "title": "⚽ Párosítás a pályán",
+          "text": "A játékosok párokat alkotnak. Számold össze a párokat!"
+        },
+        "cooking": {
+          "title": "🍳 Párosítás a konyhában",
+          "text": "A hozzávalókat párosítod. Hányféle párosítás lehetséges?"
+        },
+        "animals": {
+          "title": "🦁 Párosítás az állatkertben",
+          "text": "Az állatokat párokba rendezik. Számold össze a lehetőségeket!"
+        },
+        "space": {
+          "title": "🚀 Párosítás az űrben",
+          "text": "Az űrhajósok kezet fognak. Hány kézfogás lesz?"
+        },
+        "tram": {
+          "title": "🚋 Párosítás a villamoson",
+          "text": "Az utasok párokat alkotnak. Számold össze a párokat!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "combinatorics",
+      "options": {
+        "count": 3,
+        "mode": "pair"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "combinatorics",
+      "options": {
+        "count": 3,
+        "mode": "multiply"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "combinatorics",
+      "options": {
+        "count": 3,
+        "mode": "pair"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "combinatorics",
+      "options": {
+        "count": 3,
+        "mode": "multiply"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "A párosításokat és a kiválasztásokat is ügyesen megszámolod!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden küldeményt párosítottál!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden kézfogást megszámoltál!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden párost megtaláltál!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden párosítás megvan!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden állatpár kiszámolva!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden kézfogás megszámolva!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden utaspár megvan!"
+        }
+      }
+    }
+  ]
+}

@@ -58,6 +58,14 @@ export function renderPercentHint(step, container) {
 
             <p>Ez tizedes törttel ${step.percent / 100}, százalékban pedig <strong>${step.percent}%</strong>.</p>
         `;
+    } else if (step.mode === "base") {
+        body = `
+            <p>Itt az <strong>egészet</strong> keressük, és tudjuk a részt meg a százalékot. A képlet: <strong>rész ÷ százalék × 100</strong>.</p>
+
+            <p>${step.value} ÷ ${step.percent} × 100 = ${step.value / step.percent * 100}</p>
+
+            <p>Ellenőrzés: ${step.base} ${step.percent}%-a valóban ${step.value}.</p>
+        `;
     }
 
     box.innerHTML = `

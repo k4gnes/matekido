@@ -1,0 +1,108 @@
+{
+  "id": "transform-03",
+  "title": "🔄 Tükrözés, eltolás, forgatás",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔄 Tükrözés, eltolás, forgatás",
+      "text": "A geometriai transzformációk során az alakzat helyzete vagy állása változik. Az eltolásnál minden pont ugyanabba az irányba mozdul. A forgatásnál az alakzat egy pont körül fordul. A tükrözésnél a tükörképet kapod. Figyeld meg a mintákat!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Csomagok mozgatása",
+          "text": "A postán a csomagokat tolják, forgatják és tükrözik a polcokon. Keresd meg a helyes végeredményt!"
+        },
+        "racing": {
+          "title": "🏁 Rajtrács-állások",
+          "text": "A versenyautókat a rajtrácson ide-oda tolják. Melyik ábra lesz a helyes?"
+        },
+        "football": {
+          "title": "⚽ Taktikai mozgás",
+          "text": "A pályán a játékosok eltolással és forgatással mozognak. Találd meg a helyes mintát!"
+        },
+        "cooking": {
+          "title": "🍳 Tálak átrendezése",
+          "text": "A konyhában a tálakat forgatod és tolod. Keresd meg a helyes elrendezést!"
+        },
+        "animals": {
+          "title": "🦁 Játékok mozgatása",
+          "text": "Az állatkertben a játékokat tolják és forgatják. Melyik ábra a helyes?"
+        },
+        "space": {
+          "title": "🚀 Műszerek áthelyezése",
+          "text": "Az űrhajón a műszereket ide-oda tolják. Találd meg a helyes végeredményt!"
+        },
+        "tram": {
+          "title": "🚋 Csomagok a csomagtartón",
+          "text": "A villamoson a csomagokat forgatják és tolják. Melyik lesz a helyes?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "transform",
+      "options": {
+        "count": 3,
+        "mode": "turn"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "transform",
+      "options": {
+        "count": 3,
+        "mode": "translate"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "transform",
+      "options": {
+        "count": 3,
+        "mode": "turn"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "transform",
+      "options": {
+        "count": 3,
+        "mode": "translate"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Az eltolást, a forgatást és a tükrözést is ügyesen felismered!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden csomag a helyére került!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "A rajtrács minden állása a helyén van!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "A taktikai mozgás sikerült!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden tál a helyére került!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden játék a helyére került!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden műszer a helyén van!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "A csomagtartó rendben!"
+        }
+      }
+    }
+  ]
+}

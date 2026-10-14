@@ -1,0 +1,116 @@
+{
+  "id": "percent-word-01",
+  "title": "💯 Százalékos szöveges feladatok",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "💯 Százalékos szöveges feladatok",
+      "text": "A százalékos szöveges feladatokban figyelmesen olvasd el, mi az egész (alap), mi a rész (százalékérték), és hány százalék (százalékláb). Ha kettőt ismersz közülük, a harmadikat ki tudod számolni. Hol az értéket, hol a lábat, hol az alapot keresed!",
+      "worldTitles": {
+        "postman": {
+          "title": "💯 Százalékos feladatok a postán",
+          "text": "A postán a kézbesített küldemények arányát számolod. Olvasd el figyelmesen a történetet!"
+        },
+        "racing": {
+          "title": "💯 Százalékos feladatok a garázsban",
+          "text": "A garázsban a kész alkatrészek arányát vizsgálod. Keresd a hiányzó adatot!"
+        },
+        "football": {
+          "title": "💯 Százalékos feladatok a pályán",
+          "text": "A bajnokságban a győzelmek arányát számolod. Olvasd el figyelmesen a szöveget!"
+        },
+        "cooking": {
+          "title": "💯 Százalékos feladatok a konyhában",
+          "text": "A konyhában a felhasznált hozzávalók arányát méred. Keresd a hiányzó értéket!"
+        },
+        "animals": {
+          "title": "💯 Százalékos feladatok az állatkertben",
+          "text": "Az állatkertben az ellátott állatok arányát számolod. Olvasd figyelmesen!"
+        },
+        "space": {
+          "title": "💯 Százalékos feladatok az űrben",
+          "text": "Az űrhajón a fogyó készlet arányát vizsgálod. Számold ki a hiányzó adatot!"
+        },
+        "tram": {
+          "title": "💯 Százalékos feladatok a villamoson",
+          "text": "A villamoson az eladott jegyek arányát számolod. Keresd a helyes eredményt!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "percent",
+      "options": {
+        "count": 3,
+        "mode": "cases",
+        "max": 1000,
+        "percents": [10, 20, 25, 50]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "percent",
+      "options": {
+        "count": 3,
+        "mode": "cases",
+        "max": 1000,
+        "percents": [5, 15, 40, 60, 75, 80]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "percent",
+      "options": {
+        "count": 3,
+        "mode": "of",
+        "max": 1000,
+        "percents": [5, 10, 15, 20, 40, 60, 75]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "percent",
+      "options": {
+        "count": 3,
+        "mode": "cases",
+        "max": 1000,
+        "percents": [10, 20, 25, 50, 75]
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "A százalékos szöveges feladatokat is ügyesen megoldod!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden postai százalék kiszámolva!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "A garázs minden adata kész!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "A bajnokság minden aránya megvan!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden recept aránya pontos!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden állat aránya kiszámolva!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden űrbeli adat kész!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden jegy aránya megvan!"
+        }
+      }
+    }
+  ]
+}

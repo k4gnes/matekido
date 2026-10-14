@@ -530,6 +530,20 @@ export function generateWordProblems(options = {}) {
         while (tasks.length < count) {
             tasks.push(generateDirectProportion(max, world, mode, interaction));
         }
+    } else if (kind === "inverse-proportion") {
+        const seen = new Set();
+        let attempts = 0;
+        while (tasks.length < count && attempts < 300) {
+            attempts++;
+            const task = generateInverseProportion(max, world, mode, interaction);
+            const signature = `${task.total}|${task.mode}|${task.amount1}|${task.amount2}`;
+            if (seen.has(signature)) continue;
+            seen.add(signature);
+            tasks.push(task);
+        }
+        while (tasks.length < count) {
+            tasks.push(generateInverseProportion(max, world, mode, interaction));
+        }
     } else {
         for (let i = 0; i < count; i++) {
             tasks.push(generateTask(KINDS[i % KINDS.length], max, world));
@@ -867,6 +881,78 @@ function generateDirectProportion(max, world, mode, interaction) {
             ? [value1, value1 + rate, value2 + rate, value2 - rate]
             : [amount1, amount2 + 1, amount2 - 1];
         const bound = normMode === "value" ? max : Math.max(12, amount2 + 5);
+        task.options = makeOptions(answer, 1, bound, 4, candidates);
+    }
+
+    return task;
+}
+
+const INVERSE_THEMES = {
+    postman: { place: "A postán", worker: "postás", unit: "óra" },
+    racing: { place: "A garázsban", worker: "szerelő", unit: "óra" },
+    football: { place: "A pályán", worker: "szertáros", unit: "perc" },
+    cooking: { place: "A konyhában", worker: "szakács", unit: "perc" },
+    animals: { place: "Az állatkertben", worker: "gondozó", unit: "óra" },
+    space: { place: "Az űrhajón", worker: "szerelő", unit: "óra" },
+    tram: { place: "A villamoson", worker: "kalauz", unit: "perc" }
+};
+
+function generateInverseProportion(max, world, mode, interaction) {
+
+    const theme = INVERSE_THEMES[world] ?? INVERSE_THEMES.postman;
+    const normMode = mode === "amount" ? "amount" : "value";
+    const normInteraction = interaction === "input" ? "input" : "choice";
+
+    const maxWorkers = 8;
+    let amount1 = 2;
+    let unit1 = 2;
+    let total = 4;
+    let amount2 = 4;
+    for (let attempt = 0; attempt < 100; attempt++) {
+        amount1 = random(2, maxWorkers);
+        unit1 = random(2, Math.max(2, Math.min(10, Math.floor(max / amount1))));
+        total = amount1 * unit1;
+        const divisors = [];
+        for (let d = 2; d <= 10; d++) {
+            if (total % d === 0 && d !== amount1 && total / d >= 2 && total / d <= 12) divisors.push(d);
+        }
+        if (divisors.length) {
+            amount2 = divisors[random(0, divisors.length - 1)];
+            break;
+        }
+    }
+
+    const unit2 = total / amount2;
+    const answer = normMode === "value" ? unit2 : amount2;
+
+    const task = {
+        kind: "inverse-proportion",
+        world,
+        title: "📐 Fordított arányosság",
+        text: `${theme.place} ${amount1} ${theme.worker} ${unit1} ${theme.unit} alatt elkészül a munkával.`,
+        question: normMode === "value"
+            ? `Ugyanezt a munkát hány ${theme.unit} alatt végzi el ${amount2} ${theme.worker}?`
+            : `Ugyanezt a munkát hány ${theme.worker} végzi el ${unit2} ${theme.unit} alatt?`,
+        mode: normMode,
+        interaction: normInteraction,
+        total,
+        amount1,
+        unit1,
+        amount2,
+        unit2,
+        worker: theme.worker,
+        unit: theme.unit,
+        answer,
+        successText: normMode === "value"
+            ? `😊 Szép munka! ${amount2} ${theme.worker} ${answer} ${theme.unit} alatt végez!`
+            : `😊 Szép munka! ${answer} ${theme.worker} ${unit2} ${theme.unit} alatt végez!`
+    };
+
+    if (normInteraction === "choice") {
+        const candidates = normMode === "value"
+            ? [unit1, unit2 + 1, unit2 - 1, unit2 + 2, amount2, amount1]
+            : [amount1, amount2 + 1, amount2 - 1, unit2];
+        const bound = normMode === "value" ? Math.max(12, unit2 + 5) : maxWorkers;
         task.options = makeOptions(answer, 1, bound, 4, candidates);
     }
 

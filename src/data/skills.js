@@ -27,12 +27,12 @@ export const CATEGORIES = {
     geometry: {
         title: "Geometria",
         icon: "📐",
-        skills: ["shapes", "shape-compare", "solid-shapes", "transform", "perimeter", "area", "angles", "circle", "position", "coordinates"]
+        skills: ["shapes", "shape-compare", "solid-shapes", "transform", "perimeter", "area", "angles", "circle", "position", "coordinates", "triangles", "quadrilaterals"]
     },
     wordProblems: {
         title: "Szöveges feladatok",
         icon: "📝",
-        skills: ["one-step", "two-step", "ratio-split", "direct-proportion"]
+        skills: ["one-step", "two-step", "ratio-split", "direct-proportion", "inverse-proportion"]
     }
 };
 
@@ -110,12 +110,15 @@ export const SKILLS = {
     circle: { title: "Kör", category: "geometry" },
     position: { title: "Térbeli tájékozódás", category: "geometry" },
     coordinates: { title: "Koordináták", category: "geometry" },
+    triangles: { title: "Háromszögek", category: "geometry" },
+    quadrilaterals: { title: "Négyszögek", category: "geometry" },
 
     // Word Problems
     "one-step": { title: "Egylépéses", category: "wordProblems" },
     "two-step": { title: "Kétlépéses", category: "wordProblems" },
     "ratio-split": { title: "Arányos osztás", category: "wordProblems" },
-    "direct-proportion": { title: "Egyenes arányosság", category: "wordProblems" }
+    "direct-proportion": { title: "Egyenes arányosság", category: "wordProblems" },
+    "inverse-proportion": { title: "Fordított arányosság", category: "wordProblems" }
 };
 
 export const DIFFICULTY = {

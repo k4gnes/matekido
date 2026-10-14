@@ -12,7 +12,7 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=39";
+import { buildLesson } from "./builders/LessonBuilder.js?v=40";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { SKILLS } from "./data/skills.js";
@@ -36,6 +36,33 @@ const POLYGON_SIDES = {
     hexagon: 6,
     heptagon: 7,
     octagon: 8
+};
+
+const QUAD_LABELS = ["Négyzet", "Téglalap", "Rombusz", "Paralelogramma", "Trapéz", "Deltoid"];
+
+const QUAD_TRAITS = [
+    { text: "Minden oldala egyenlő", shapes: ["square", "rhombus"] },
+    { text: "Minden szöge derékszög", shapes: ["square", "rectangle"] },
+    { text: "Szemközti oldalai párhuzamosak", shapes: ["square", "rectangle", "rhombus", "parallelogram"] },
+    { text: "Szemközti oldalai egyenlők", shapes: ["square", "rectangle", "rhombus", "parallelogram"] },
+    { text: "Szemközti szögei egyenlők", shapes: ["square", "rectangle", "rhombus", "parallelogram"] },
+    { text: "Átlói egyenlő hosszúak", shapes: ["square", "rectangle"] },
+    { text: "Átlói merőlegesek", shapes: ["square", "rhombus", "kite"] },
+    { text: "Az átlói felezik egymást", shapes: ["square", "rectangle", "rhombus", "parallelogram"] },
+    { text: "Van legalább egy pár párhuzamos oldala", shapes: ["square", "rectangle", "rhombus", "parallelogram", "trapezoid"] },
+    { text: "Csak az egyik pár szemközti oldala párhuzamos", shapes: ["trapezoid"] },
+    { text: "Két-két szomszédos oldala egyenlő", shapes: ["square", "rhombus", "kite"] },
+    { text: "Az átlói nem metszik egymást", shapes: [] },
+    { text: "Pontosan három oldala egyenlő hosszú", shapes: [] }
+];
+
+const QUAD_KIND_LABELS = {
+    square: "Négyzet",
+    rectangle: "Téglalap",
+    rhombus: "Rombusz",
+    parallelogram: "Paralelogramma",
+    trapezoid: "Trapéz",
+    kite: "Deltoid"
 };
 
 const errors = [];
@@ -512,6 +539,47 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "polygon": {
+            if (step.mode === "quadrilateral") {
+                if (!["name", "property"].includes(step.ask)) fail(ctx, `ask hibás: ${step.ask}`);
+                if (!Object.keys(QUAD_KIND_LABELS).includes(step.kind)) fail(ctx, `kind hibás: ${step.kind}`);
+                if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+                if (!Array.isArray(step.options) || step.options.length !== 4) {
+                    fail(ctx, "4 options kell");
+                    break;
+                }
+                if (!step.options.every(o => o && typeof o.text === "string" && typeof o.correct === "boolean")) {
+                    fail(ctx, "options mezők hibásak");
+                }
+                if (new Set(step.options.map(o => o.text)).size !== 4) fail(ctx, "options ismétlődik");
+                const correctOptions = step.options.filter(o => o.correct);
+                if (correctOptions.length !== 1) fail(ctx, "pontosan 1 helyes kell");
+                if (typeof step.answer !== "string") fail(ctx, `answer nem szöveg: ${step.answer}`);
+                if (correctOptions[0] && correctOptions[0].text !== step.answer) {
+                    fail(ctx, "a helyes option != answer");
+                }
+                if (step.ask === "name") {
+                    if (!QUAD_LABELS.includes(step.answer)) fail(ctx, `name answer hibás: ${step.answer}`);
+                    if (QUAD_KIND_LABELS[step.kind] !== step.answer) {
+                        fail(ctx, `name answer (${step.answer}) != kind (${QUAD_KIND_LABELS[step.kind]})`);
+                    }
+                    if (!step.options.every(o => QUAD_LABELS.includes(o.text))) fail(ctx, "name options nem négyszögnevek");
+                } else {
+                    const trait = QUAD_TRAITS.find(t => t.text === step.answer);
+                    if (!trait) {
+                        fail(ctx, `property answer ismeretlen tulajdonság: ${step.answer}`);
+                    } else if (!trait.shapes.includes(step.kind)) {
+                        fail(ctx, `a tulajdonság nem igaz a ${step.kind} négyszögre: ${step.answer}`);
+                    }
+                    for (const o of step.options) {
+                        if (o.correct) continue;
+                        const t = QUAD_TRAITS.find(tr => tr.text === o.text);
+                        if (t && t.shapes.includes(step.kind)) {
+                            fail(ctx, `a zavaró tulajdonság is igaz a ${step.kind} négyszögre: ${o.text}`);
+                        }
+                    }
+                }
+                break;
+            }
             if (!["name", "sides", "vertices", "diagonals"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             if (!POLYGON_SIDES[step.kind]) fail(ctx, `kind hibás: ${step.kind}`);
             if (step.n !== POLYGON_SIDES[step.kind]) fail(ctx, `n != oldalak száma (${step.n})`);
@@ -527,6 +595,107 @@ function validateStep(step, ctx, range) {
                 if (!step.options.every(o => typeof o === "string" && o.length > 0)) fail(ctx, "name options nem stringek");
             } else {
                 if (!step.options.every(o => isInt(o) && o >= 0)) fail(ctx, "számoptions nem nemnegatív egészek");
+            }
+            break;
+        }
+        case "triangle": {
+            if (!["angle-sum", "classify-sides", "inequality"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            if (!Array.isArray(step.options) || step.options.length < 2) {
+                fail(ctx, "options hiányos");
+                break;
+            }
+            if (!step.options.every(o => o && typeof o.text === "string" && typeof o.correct === "boolean")) {
+                fail(ctx, "options mezők hibásak");
+            }
+            if (new Set(step.options.map(o => o.text)).size !== step.options.length) fail(ctx, "options ismétlődik");
+            const triangleCorrect = step.options.filter(o => o.correct);
+            if (triangleCorrect.length !== 1) fail(ctx, "pontosan 1 helyes kell");
+            if (step.mode === "angle-sum") {
+                for (const k of ["a", "b"]) {
+                    if (!isInt(step[k]) || step[k] < 1) fail(ctx, `${k} hibás: ${step[k]}`);
+                }
+                if (isInt(step.a) && isInt(step.b)) {
+                    const expected = 180 - step.a - step.b;
+                    if (expected <= 0 || expected >= 180) fail(ctx, `a harmadik szög hibás: ${expected}`);
+                    if (step.answer !== expected) fail(ctx, `answer (${step.answer}) != 180-a-b (${expected})`);
+                    if (triangleCorrect[0] && triangleCorrect[0].text !== `${expected}°`) {
+                        fail(ctx, "a helyes option nem a harmadik szög");
+                    }
+                    if (isFiniteNum(range) && step.answer > range) fail(ctx, `answer kilép a tartományból: ${step.answer}`);
+                }
+                if (!step.options.every(o => /^\d+°$/.test(o.text))) fail(ctx, "options nem fokban");
+            } else if (step.mode === "classify-sides") {
+                for (const k of ["a", "b", "c"]) {
+                    if (!isInt(step[k]) || step[k] < 1) fail(ctx, `${k} hibás: ${step[k]}`);
+                }
+                if (isInt(step.a) && isInt(step.b) && isInt(step.c)) {
+                    const expected = step.a === step.b && step.b === step.c
+                        ? "Egyenlő oldalú"
+                        : step.a === step.b || step.b === step.c || step.a === step.c
+                            ? "Egyenlőszárú"
+                            : "Általános";
+                    if (step.answer !== expected) fail(ctx, `answer (${step.answer}) != ${expected}`);
+                    if (triangleCorrect[0] && triangleCorrect[0].text !== expected) {
+                        fail(ctx, "a helyes option nem a besorolás");
+                    }
+                }
+            } else {
+                for (const k of ["a", "b", "c"]) {
+                    if (!isInt(step[k]) || step[k] < 1) fail(ctx, `${k} hibás: ${step[k]}`);
+                }
+                if (isInt(step.a) && isInt(step.b) && isInt(step.c)) {
+                    const sorted = [step.a, step.b, step.c].sort((x, y) => x - y);
+                    const buildable = sorted[0] + sorted[1] > sorted[2];
+                    if (typeof step.answer !== "boolean") fail(ctx, "answer nem logikai");
+                    else if (step.answer !== buildable) fail(ctx, `answer (${step.answer}) != szerkeszthető (${buildable})`);
+                    const igen = step.options.find(o => o.text === "Igen");
+                    const nem = step.options.find(o => o.text === "Nem");
+                    if (!igen || !nem) fail(ctx, "az inequality options Igen/Nem kell legyen");
+                    if (igen && igen.correct !== buildable) fail(ctx, "az Igen option jelölése hibás");
+                    if (nem && nem.correct !== !buildable) fail(ctx, "a Nem option jelölése hibás");
+                }
+            }
+            break;
+        }
+        case "shape-area": {
+            if (!["triangle-perimeter", "triangle-area", "rectangle-perimeter", "rectangle-area", "parallelogram-area"].includes(step.mode)) {
+                fail(ctx, `mode hibás: ${step.mode}`);
+            }
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            let areaExpected = null;
+            if (step.mode === "triangle-perimeter") {
+                for (const k of ["a", "b", "c"]) {
+                    if (!isInt(step[k]) || step[k] < 1) fail(ctx, `${k} hibás: ${step[k]}`);
+                }
+                if (isInt(step.a) && isInt(step.b) && isInt(step.c)) areaExpected = step.a + step.b + step.c;
+            } else if (step.mode === "triangle-area") {
+                if (!isInt(step.base) || step.base < 2 || step.base % 2 !== 0) fail(ctx, `base hibás: ${step.base}`);
+                if (!isInt(step.height) || step.height < 1) fail(ctx, `height hibás: ${step.height}`);
+                if (isInt(step.base) && isInt(step.height)) areaExpected = step.base * step.height / 2;
+            } else if (step.mode === "rectangle-perimeter" || step.mode === "rectangle-area") {
+                for (const k of ["a", "b"]) {
+                    if (!isInt(step[k]) || step[k] < 1) fail(ctx, `${k} hibás: ${step[k]}`);
+                }
+                if (isInt(step.a) && isInt(step.b)) {
+                    areaExpected = step.mode === "rectangle-perimeter" ? 2 * (step.a + step.b) : step.a * step.b;
+                }
+            } else {
+                if (!isInt(step.base) || step.base < 1) fail(ctx, `base hibás: ${step.base}`);
+                if (!isInt(step.height) || step.height < 1) fail(ctx, `height hibás: ${step.height}`);
+                if (isInt(step.base) && isInt(step.height)) areaExpected = step.base * step.height;
+            }
+            if (areaExpected !== null && step.answer !== areaExpected) {
+                fail(ctx, `answer (${step.answer}) != számolt (${areaExpected})`);
+            }
+            if (!isInt(step.answer) || step.answer < 1 || step.answer > 1000) fail(ctx, `answer kilép: ${step.answer}`);
+            if (isFiniteNum(range) && step.answer > range) fail(ctx, `answer kilép a tartományból: ${step.answer} > ${range}`);
+            if (!Array.isArray(step.options) || step.options.length !== 4) {
+                fail(ctx, "4 options kell");
+            } else {
+                if (!step.options.every(o => isInt(o))) fail(ctx, "options nem egészek");
+                if (new Set(step.options).size !== 4) fail(ctx, "options ismétlődik");
+                if (!step.options.includes(step.answer)) fail(ctx, "options nem tartalmazza a választ");
             }
             break;
         }
@@ -1572,6 +1741,26 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "circle": {
+            if (step.mode === "convert") {
+                if (!["radius-to-diameter", "diameter-to-radius"].includes(step.variant)) {
+                    fail(ctx, `variant hibás: ${step.variant}`);
+                }
+                if (!Array.isArray(step.options) || step.options.length !== 4) {
+                    fail(ctx, "options nem 4 elemű");
+                }
+                let expected;
+                if (step.variant === "radius-to-diameter") {
+                    if (!isInt(step.r) || step.r < 1) fail(ctx, `r hibás: ${step.r}`);
+                    expected = step.r * 2;
+                } else {
+                    if (!isInt(step.d) || step.d < 2 || step.d % 2 !== 0) fail(ctx, `d hibás: ${step.d}`);
+                    expected = step.d / 2;
+                }
+                if (step.answer !== expected) fail(ctx, `answer (${step.answer}) != számolt (${expected})`);
+                if (!step.options.includes(expected)) fail(ctx, "options nem tartalmazza a választ");
+                if (new Set(step.options).size !== step.options.length) fail(ctx, "options ismétlődik");
+                break;
+            }
             const labels = { center: "Középpont", radius: "Sugár", diameter: "Átmérő" };
             if (!Object.keys(labels).includes(step.variant)) {
                 fail(ctx, `variant hibás: ${step.variant}`);
@@ -1611,20 +1800,59 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "combinatorics": {
-            if (step.mode !== "order") fail(ctx, `mode hibás: ${step.mode}`);
-            if (!Array.isArray(step.items) || step.items.length !== 3) {
-                fail(ctx, "items nem 3 elemű");
-                break;
-            }
-            if (!step.items.every(it => typeof it === "string" && it.length > 0)) {
-                fail(ctx, "items nem szövegek");
-            }
-            if (new Set(step.items).size !== 3) {
-                fail(ctx, "items nem mind különböző");
-            }
-            if (step.total !== 6) fail(ctx, `total hibás: ${step.total}`);
+            if (!["order", "count", "pair", "multiply"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             if (typeof step.question !== "string" || step.question.length === 0) {
                 fail(ctx, "question hiányzik");
+            }
+            if (step.mode === "order") {
+                if (!Array.isArray(step.items) || step.items.length !== 3) {
+                    fail(ctx, "items nem 3 elemű");
+                    break;
+                }
+                if (!step.items.every(it => typeof it === "string" && it.length > 0)) {
+                    fail(ctx, "items nem szövegek");
+                }
+                if (new Set(step.items).size !== 3) {
+                    fail(ctx, "items nem mind különböző");
+                }
+                if (step.total !== 6) fail(ctx, `total hibás: ${step.total}`);
+            } else {
+                let expected;
+                if (step.mode === "count") {
+                    if (!isInt(step.n) || step.n < 3 || step.n > 4) fail(ctx, `n hibás: ${step.n}`);
+                    expected = [1, 1, 2, 6, 24][step.n];
+                } else if (step.mode === "pair") {
+                    if (!isInt(step.n) || step.n < 4 || step.n > 6) fail(ctx, `n hibás: ${step.n}`);
+                    expected = (step.n * (step.n - 1)) / 2;
+                } else {
+                    if (!isInt(step.a) || !isInt(step.b) || step.a < 2 || step.b < 2) fail(ctx, `a/b hibás: ${step.a}/${step.b}`);
+                    expected = step.a * step.b;
+                }
+                if (step.answer !== expected) fail(ctx, `answer (${step.answer}) != számolt (${expected})`);
+                if (!Array.isArray(step.options) || step.options.length !== 4) {
+                    fail(ctx, `options nem 4 elemű: ${step.options?.length}`);
+                } else {
+                    const correct = step.options.filter(o => o.correct);
+                    if (correct.length !== 1) fail(ctx, `options: ${correct.length} helyes találat (1 kellene)`);
+                    else if (correct[0].text !== String(expected)) fail(ctx, `helyes opció (${correct[0].text}) != ${expected}`);
+                }
+                if (typeof step.explanation !== "string" || step.explanation.length === 0) {
+                    fail(ctx, "explanation hiányzik");
+                }
+                if (!Array.isArray(step.reasoning) || step.reasoning.length !== 4) {
+                    fail(ctx, `reasoning nem 4 elemű: ${step.reasoning?.length}`);
+                } else {
+                    const correctReason = step.reasoning.filter(r => r.correct);
+                    if (correctReason.length !== 1) {
+                        fail(ctx, `reasoning: ${correctReason.length} helyes találat (1 kellene)`);
+                    }
+                    if (new Set(step.reasoning.map(r => r.text)).size !== step.reasoning.length) {
+                        fail(ctx, "reasoning szövegek ismétlődnek");
+                    }
+                    if (step.reasoning.some(r => typeof r.text !== "string" || r.text.includes("="))) {
+                        fail(ctx, "reasoning nem tiszta kifejezés (nem tartalmazhat eredményt)");
+                    }
+                }
             }
             break;
         }
@@ -1959,7 +2187,7 @@ function validateStep(step, ctx, range) {
             break;
         }
     case "word-problem": {
-            if (!["join", "remove", "part-whole", "compare", "multiply", "divide", "proportion", "remainder", "two-step", "ratio-split", "direct-proportion"].includes(step.kind)) {
+            if (!["join", "remove", "part-whole", "compare", "multiply", "divide", "proportion", "remainder", "two-step", "ratio-split", "direct-proportion", "inverse-proportion"].includes(step.kind)) {
                 fail(ctx, `ismeretlen kind: ${step.kind}`);
             }
             if (typeof step.text !== "string" || step.text.length === 0) fail(ctx, "text hiányzik");
@@ -2038,6 +2266,27 @@ function validateStep(step, ctx, range) {
                 const expectedProportion = step.mode === "value" ? step.value2 : step.amount2;
                 if (step.answer !== expectedProportion) {
                     fail(ctx, `answer (${step.answer}) != számolt (${expectedProportion})`);
+                }
+                if (typeof range === "number" && step.answer > range) {
+                    fail(ctx, `answer (${step.answer}) meghaladja a tartományt (${range})`);
+                }
+                if (step.interaction === "choice" && !Array.isArray(step.options)) {
+                    fail(ctx, "choice interakcióhoz hiányzik az options");
+                }
+            }
+            if (step.kind === "inverse-proportion") {
+                if (!["value", "amount"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+                if (!["choice", "input"].includes(step.interaction)) fail(ctx, `interaction hibás: ${step.interaction}`);
+                for (const k of ["total", "amount1", "unit1", "amount2", "unit2"]) {
+                    if (!isInt(step[k]) || step[k] < 1) fail(ctx, `${k} hibás: ${step[k]}`);
+                }
+                if (step.total !== step.amount1 * step.unit1) fail(ctx, `total (${step.total}) != amount1*unit1`);
+                if (step.total !== step.amount2 * step.unit2) fail(ctx, `total (${step.total}) != amount2*unit2`);
+                if (step.amount1 === step.amount2) fail(ctx, "amount1 == amount2");
+                if (step.unit1 === step.unit2) fail(ctx, "unit1 == unit2");
+                const expectedInverse = step.mode === "value" ? step.unit2 : step.amount2;
+                if (step.answer !== expectedInverse) {
+                    fail(ctx, `answer (${step.answer}) != számolt (${expectedInverse})`);
                 }
                 if (typeof range === "number" && step.answer > range) {
                     fail(ctx, `answer (${step.answer}) meghaladja a tartományt (${range})`);

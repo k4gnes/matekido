@@ -1,0 +1,108 @@
+{
+    "id": "shape-area-01",
+    "title": "📏 Háromszög és négyszög kerülete, területe",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📏 Kerület és terület",
+            "text": "A kerület a síkidom körbejárásának hossza, a terület pedig a belsejének mérete. A téglalap kerülete K = 2 × (a + b), területe T = a × b. A háromszög kerülete a három oldal összege, területe T = a × m ÷ 2. A paralelogramma területe T = a × m. Számoljunk együtt!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Csomagok mérete",
+                    "text": "A postán lemérjük a csomagok kerületét és területét! Számolj te is a képletekkel!"
+                },
+                "racing": {
+                    "title": "🏁 Pálya méretei",
+                    "text": "A versenypálya szakaszait kell kiszámolni! Kerület és terület – rajta, számoljunk!"
+                },
+                "football": {
+                    "title": "⚽ A pálya méretei",
+                    "text": "A futballpálya téglalapjának kerületét és területét is kiszámoljuk! Segíts!"
+                },
+                "cooking": {
+                    "title": "🍳 Tepsik és szeletek",
+                    "text": "A tepsik kerületét és területét mérjük! A szeletek területét is számoljuk ki!"
+                },
+                "animals": {
+                    "title": "🦁 Karámok mérete",
+                    "text": "Az állatok karámjainak kerületét és területét kell kiszámolni! Számolj velünk!"
+                },
+                "space": {
+                    "title": "🚀 Panelek mérete",
+                    "text": "Az űrállomás paneljeinek kerületét és területét mérjük! Számolj pontosan!"
+                },
+                "tram": {
+                    "title": "🚋 Villamos ablakai",
+                    "text": "A villamos ablakainak és tábláinak kerületét és területét számoljuk! Segíts!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "shape-area",
+            "options": {
+                "count": 3,
+                "mode": "triangle-perimeter"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "shape-area",
+            "options": {
+                "count": 3,
+                "mode": "triangle-area"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "shape-area",
+            "options": {
+                "count": 3,
+                "mode": "parallelogram-area"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "shape-area",
+            "options": {
+                "count": 3,
+                "mode": "mixed"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "A kerület- és területképleteket is magabiztosan használod – a háromszögek és négyszögek méretei sem jelentenek többé titkot!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden csomag méretét kiszámoltad – a posta indulhat!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "A pálya méreteit kiszámoltad – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A pálya kerületét és területét is kiszámoltad – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden tepsi és szelet méretét kiszámoltad – a konyha rendben van!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden karám méretét kiszámoltad – az állatok elégedettek!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "A panelek méretei pontosak – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden ablak és tábla méretét kiszámoltad – a villamos indulhat!"
+                }
+            }
+        }
+    ]
+}

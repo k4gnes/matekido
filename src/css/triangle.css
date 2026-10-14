@@ -1,0 +1,43 @@
+.tri-figure {
+    display: flex;
+    justify-content: center;
+    margin: .8rem 0 .2rem;
+}
+
+.tri-figure svg {
+    width: 180px;
+    height: 158px;
+}
+
+.tri-question {
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: center;
+    color: #475569;
+    margin: .4rem 0 .8rem;
+}
+
+.tri-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .6rem;
+    margin: .8rem 0;
+}
+
+.tri-option {
+    background: #fff;
+    border: 2px solid var(--primary);
+    border-radius: 16px;
+    padding: .7rem 1.1rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+    cursor: pointer;
+    transition: transform .15s, box-shadow .15s;
+}
+
+.tri-option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
+}

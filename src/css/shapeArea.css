@@ -1,0 +1,43 @@
+.sa-figure {
+    display: flex;
+    justify-content: center;
+    margin: .6rem 0 .2rem;
+}
+
+.sa-figure svg {
+    width: 200px;
+    height: 156px;
+}
+
+.sa-question {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    color: #475569;
+    margin: .4rem 0 .8rem;
+}
+
+.sa-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .6rem;
+    margin: .8rem 0;
+}
+
+.sa-option {
+    background: #fff;
+    border: 2px solid var(--primary);
+    border-radius: 16px;
+    padding: .7rem 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e293b;
+    cursor: pointer;
+    transition: transform .15s, box-shadow .15s;
+}
+
+.sa-option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
+}

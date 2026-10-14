@@ -1,0 +1,100 @@
+{
+  "id": "solid-measure-02",
+  "title": "📦 Felszín és térfogat – téglatest, kocka",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📦 Felszín és térfogat",
+      "text": "A téglatest felszíne a határoló lapok területének összege: 2 × (a×b + a×c + b×c). A térfogata: a × b × c. A kocka minden éle egyenlő, ezért felszíne 6a², térfogata pedig a³.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Csomagok felszíne és térfogata",
+          "text": "A postán a dobozokat méred. Számold ki a csomagok felszínét és térfogatát!"
+        },
+        "racing": {
+          "title": "🏁 Dobozok a boxutcában",
+          "text": "A garázsban a szerszámos ládákat méred. Mennyi a felszínük és a térfogatuk?"
+        },
+        "football": {
+          "title": "⚽ Labdáskosarak",
+          "text": "A pályán a felszereléses dobozokat méred. Számold ki az adataikat!"
+        },
+        "cooking": {
+          "title": "🍳 Tárolódobozok",
+          "text": "A konyhában a tárolódobozokat méred. Mennyi a felszínük és térfogatuk?"
+        },
+        "animals": {
+          "title": "🦁 Ketrecek és odúk",
+          "text": "Az állatkertben a ketrecek méreteit vizsgálod. Számolj felszínt és térfogatot!"
+        },
+        "space": {
+          "title": "🚀 Űrhajó-raktér",
+          "text": "Az űrhajón a raktér dobozait méred. Mennyi a felszínük és a térfogatuk?"
+        },
+        "tram": {
+          "title": "🚋 Bőröndök a villamoson",
+          "text": "A villamoson a bőröndöket méred. Számold ki a felszínüket és térfogatukat!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "solid-measure",
+      "options": {
+        "count": 4,
+        "mode": "surface"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "solid-measure",
+      "options": {
+        "count": 4,
+        "mode": "volume"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "solid-measure",
+      "options": {
+        "count": 4,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "A felszínt és a térfogatot is pontosan kiszámolod!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden csomag adata a helyén van!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden láda mérete pontos!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "A felszerelés mind elfér a dobozokban!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden tárolódobozt kiszámoltál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden ketrec mérete pontos!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "A raktér minden doboza a helyén van!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden bőrönd elfér a csomagtartóban!"
+        }
+      }
+    }
+  ]
+}

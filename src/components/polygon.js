@@ -178,27 +178,40 @@ export function renderPolygon(step, root, next, progress, onResult, onAttempt) {
     title.textContent = TITLES[world] ?? TITLES.postman;
     card.append(title);
 
-    const figure = document.createElement("div");
-    figure.className = "pg-figure";
-    figure.append(createShapeSvg(step));
-    card.append(figure);
+    if (step.mode !== "quadrilateral") {
+        const figure = document.createElement("div");
+        figure.className = "pg-figure";
+        figure.append(createShapeSvg(step));
+        card.append(figure);
+    }
 
     const question = document.createElement("p");
     question.className = "pg-question";
-    question.textContent = QUESTIONS[step.mode] ?? QUESTIONS.name;
+    question.textContent = step.mode === "quadrilateral" ? step.question : (QUESTIONS[step.mode] ?? QUESTIONS.name);
     card.append(question);
 
     const optionsContainer = document.createElement("div");
     optionsContainer.className = "pg-options";
 
-    step.options.forEach((option, index) => {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "pg-option" + (step.mode === "name" ? "" : " pg-option-num");
-        btn.dataset.value = index;
-        btn.textContent = String(option);
-        optionsContainer.append(btn);
-    });
+    if (step.mode === "quadrilateral") {
+        step.options.forEach(option => {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "pg-option";
+            btn.dataset.correct = option.correct ? "1" : "0";
+            btn.textContent = option.text;
+            optionsContainer.append(btn);
+        });
+    } else {
+        step.options.forEach((option, index) => {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "pg-option" + (step.mode === "name" ? "" : " pg-option-num");
+            btn.dataset.value = index;
+            btn.textContent = String(option);
+            optionsContainer.append(btn);
+        });
+    }
 
     card.append(optionsContainer);
 
@@ -229,6 +242,10 @@ export function renderPolygon(step, root, next, progress, onResult, onAttempt) {
     });
 
     function successText() {
+        if (step.mode === "quadrilateral") {
+            const correct = step.options.find(o => o.correct);
+            return `😊 Ügyes! ${correct.text}`;
+        }
         const data = POLYGONS[step.kind];
         if (step.mode === "name") {
             return `😊 Ügyes! Ez egy ${data.label}.`;
@@ -266,7 +283,9 @@ export function renderPolygon(step, root, next, progress, onResult, onAttempt) {
         const btn = e.target.closest(".pg-option");
         if (!btn || feedback.isAnswered()) return;
 
-        const ok = Number(btn.dataset.value) === step.answer;
+        const ok = step.mode === "quadrilateral"
+            ? btn.dataset.correct === "1"
+            : Number(btn.dataset.value) === step.answer;
 
         if (ok) markCorrect(btn);
 

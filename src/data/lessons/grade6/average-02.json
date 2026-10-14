@@ -1,0 +1,128 @@
+{
+  "id": "average-02",
+  "title": "📊 Adatok, diagramok és átlag",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📊 Adatok, diagramok és átlag",
+      "text": "Az átlag megmutatja, mennyi jutna egy-egy adatra, ha mindenki ugyanannyit kapna. Kiszámítása: átlag = összeg ÷ adatok száma. Ha ismered az átlagot és néhány adatot, a hiányzó adatot is meg tudod keresni.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Átlag a postán",
+          "text": "A postás naponta különböző számú csomagot visz. Számold ki a napi átlagot!"
+        },
+        "racing": {
+          "title": "🏁 Átlag a boxutcában",
+          "text": "A boxutcai megállások idejét méred. Mennyi az átlag?"
+        },
+        "football": {
+          "title": "⚽ Átlag a pályán",
+          "text": "Az edzéseken szerzett pontokat összesíted. Számold ki az átlagot!"
+        },
+        "cooking": {
+          "title": "🍳 Átlag a konyhában",
+          "text": "A napi rendelések számát vizsgálod. Mennyi az átlag?"
+        },
+        "animals": {
+          "title": "🦁 Átlag az állatkertben",
+          "text": "Az állatok napi látogatóit számolod. Keresd meg az átlagot!"
+        },
+        "space": {
+          "title": "🚀 Átlag az űrhajón",
+          "text": "Az űrállomás napi adatait dolgozod fel. Számolj átlagot!"
+        },
+        "tram": {
+          "title": "🚋 Átlag a villamoson",
+          "text": "A villamos napi utasait méred. Mennyi az átlag?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "average",
+      "options": {
+        "count": 4,
+        "mode": "avg",
+        "display": "table",
+        "interaction": "input",
+        "size": 4,
+        "min": 1,
+        "max": 200
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "average",
+      "options": {
+        "count": 4,
+        "mode": "missing",
+        "display": "table",
+        "interaction": "input",
+        "size": 4,
+        "min": 1,
+        "max": 200
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "average",
+      "options": {
+        "count": 4,
+        "mode": "avg",
+        "display": "chart",
+        "interaction": "choice",
+        "size": 5,
+        "min": 10,
+        "max": 1000
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "average",
+      "options": {
+        "count": 4,
+        "mode": "missing",
+        "display": "chart",
+        "interaction": "choice",
+        "size": 4,
+        "min": 5,
+        "max": 500
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Az átlagot és a hiányzó adatot is ügyesen megtalálod!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "A postás napi átlaga kiszámolva!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "A boxutca átlaga kész!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Az edzés átlaga megvan!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "A rendelések átlaga kiszámolva!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "A látogatók átlaga kész!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Az űrállomás adatai feldolgozva!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "A villamos utasainak átlaga kész!"
+        }
+      }
+    }
+  ]
+}

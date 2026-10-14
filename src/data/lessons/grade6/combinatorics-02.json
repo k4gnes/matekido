@@ -1,0 +1,108 @@
+{
+  "id": "combinatorics-02",
+  "title": "🎲 Hányféleképpen? – sorba rendezés",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🎲 Hányféleképpen? – sorba rendezés",
+      "text": "A kombinatorika a leszámolással foglalkozik. Ha 3 különböző dolgot minden lehetséges sorrendben egymás mellé rakunk, 6 sorrendet kapunk. Ha n dolgot rendezünk sorba, a lehetőségek száma n × (n−1) × … × 1. Ha két csoportból választunk egyet-egyet, a lehetőségeket összeszorozzuk.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Sorba rendezés a postán",
+          "text": "A postán a küldeményeket rakják sorba. Hányféle sorrend lehetséges?"
+        },
+        "racing": {
+          "title": "🏁 Sorba rendezés a rajtrácson",
+          "text": "A versenyautókat a rajtrácsra állítják. Számold össze a lehetőségeket!"
+        },
+        "football": {
+          "title": "⚽ Sorba rendezés a pályán",
+          "text": "A csapatot felsorakoztatják. Hányféleképpen állhatnak sorba?"
+        },
+        "cooking": {
+          "title": "🍳 Sorba rendezés a konyhában",
+          "text": "A tányérokat pakolják egymás után. Hányféle sorrend lehet?"
+        },
+        "animals": {
+          "title": "🦁 Sorba rendezés az állatkertben",
+          "text": "Az állatokat sorakoztatják fel. Számold össze a sorrendeket!"
+        },
+        "space": {
+          "title": "🚀 Sorba rendezés az űrben",
+          "text": "A műszereket rakják sorba. Hányféle sorrend lehetséges?"
+        },
+        "tram": {
+          "title": "🚋 Sorba rendezés a villamoson",
+          "text": "A jegyeket rakják sorba. Számold össze a lehetőségeket!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "combinatorics",
+      "options": {
+        "count": 1,
+        "mode": "order"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "combinatorics",
+      "options": {
+        "count": 3,
+        "mode": "count"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "combinatorics",
+      "options": {
+        "count": 3,
+        "mode": "multiply"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "combinatorics",
+      "options": {
+        "count": 3,
+        "mode": "count"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen számolod össze a sorba rendezések számát!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden küldemény sorrendjét megtaláltad!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "A rajtrács minden változatát kiszámoltad!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "A csapat minden felsorakozása megvan!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden sorrendet összeszámoltál!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden sorrendet megtaláltál!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden műszer-sorrend kiszámolva!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden jegy-sorrend megvan!"
+        }
+      }
+    }
+  ]
+}

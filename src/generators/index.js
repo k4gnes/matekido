@@ -49,7 +49,7 @@ import { generateDataChart } from "./dataChartGenerator.js?v=3";
 import { generateCalendar } from "./calendarGenerator.js?v=4";
 import { generateFraction } from "./fractionGenerator.js?v=4";
 import { generateDecimalPrep } from "./decimalPrepGenerator.js?v=3";
-import { generatePercent } from "./percentGenerator.js?v=1";
+import { generatePercent } from "./percentGenerator.js?v=2";
 import { generateDivisibility } from "./divisibilityGenerator.js?v=2";
 import { generateAngleMeasure } from "./angleMeasureGenerator.js?v=2";
 import { generateMeasureUnits } from "./measureUnitsGenerator.js?v=19";
@@ -66,11 +66,11 @@ import { generateFractionCommonDen } from "./fractionCommonDenGenerator.js?v=1";
 import { generateFractionTimesInt } from "./fractionTimesIntGenerator.js?v=1";
 import { generateFractionTimesFrac } from "./fractionTimesFracGenerator.js?v=1";
 import { generateFractionDivide } from "./fractionDivideGenerator.js?v=1";
-import { generateCircle } from "./circleGenerator.js?v=1";
+import { generateCircle } from "./circleGenerator.js?v=2";
 import { generateProbability } from "./probabilityGenerator.js?v=4";
-import { generateCombinatorics } from "./combinatoricsGenerator.js?v=1";
+import { generateCombinatorics } from "./combinatoricsGenerator.js?v=7";
 import { generateOperationOrder } from "./operationOrderGenerator.js?v=3";
-import { generatePolygon } from "./polygonGenerator.js?v=1";
+import { generatePolygon } from "./polygonGenerator.js?v=3";
 import { generateSolidMeasure } from "./solidMeasureGenerator.js?v=1";
 import { generateCoordinate } from "./coordinateGenerator.js?v=1";
 import { generateElapsedTime } from "./elapsedTimeGenerator.js?v=1";
@@ -94,6 +94,8 @@ import { generateOpenSentence } from "./openSentenceGenerator.js?v=1";
 import { generateEquation } from "./equationGenerator.js?v=1";
 import { generateInequality } from "./inequalityGenerator.js?v=1";
 import { generateRatio } from "./ratioGenerator.js?v=1";
+import { generateTriangle } from "./triangleGenerator.js?v=1";
+import { generateShapeArea } from "./shapeAreaGenerator.js?v=1";
 import { generateMaster } from "./masterGenerator.js?v=3";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -300,6 +302,10 @@ export function generate(step) {
             return generateInequality(opts);
         case "ratio":
             return generateRatio(opts);
+        case "triangle":
+            return generateTriangle(opts);
+        case "shape-area":
+            return generateShapeArea(opts);
         case "master":
             return generateMaster(opts);
 

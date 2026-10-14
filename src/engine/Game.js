@@ -26,7 +26,7 @@ import { renderMoneyCompare } from "../components/moneyCompare.js?v=14";
 import { renderMoneyEnough } from "../components/moneyEnough.js?v=14";
 import { renderMeasureCompare } from "../components/measureCompare.js?v=14";
 import { renderMeasureSquares } from "../components/measureSquares.js?v=16";
-import { renderWordProblem } from "../components/wordProblem.js?v=27";
+import { renderWordProblem } from "../components/wordProblem.js?v=28";
 import { renderMultPrep } from "../components/multPrep.js?v=9";
 import { renderMultiplication } from "../components/multiplication.js?v=7";
 import { renderMultiplicationPlay } from "../components/multiplicationPlay.js?v=10";
@@ -39,7 +39,7 @@ import { renderTrueFalse } from "../components/trueFalse.js?v=6";
 import { renderFindError } from "../components/findError.js?v=3";
 import { renderShapeCompare } from "../components/shapeCompare.js?v=4";
 import { renderSolidShape } from "../components/solidShape.js?v=4";
-import { renderPolygon } from "../components/polygon.js?v=5";
+import { renderPolygon } from "../components/polygon.js?v=6";
 import { renderElapsedTime } from "../components/elapsedTime.js?v=2";
 import { renderLengthUnits } from "../components/lengthUnits.js?v=2";
 import { renderCompoundShape } from "../components/compoundShape.js?v=3";
@@ -66,7 +66,7 @@ import { renderFractionTimesInt } from "../components/fractionTimesInt.js?v=1";
 import { renderFractionTimesFrac } from "../components/fractionTimesFrac.js?v=1";
 import { renderFractionDivide } from "../components/fractionDivide.js?v=1";
 import { renderDecimal } from "../components/decimal.js?v=5";
-import { renderPercent } from "../components/percent.js?v=1";
+import { renderPercent } from "../components/percent.js?v=2";
 import { renderDivisibility } from "../components/divisibility.js?v=2";
 import { renderAngleMeasure } from "../components/angleMeasure.js?v=3";
 import { renderMeasureUnits } from "../components/measureUnits.js?v=15";
@@ -76,9 +76,9 @@ import { renderWrittenDivision } from "../components/writtenDivision.js?v=4";
 import { renderPerimeter } from "../components/perimeter.js?v=2";
 import { renderArea } from "../components/area.js?v=2";
 import { renderAngles } from "../components/angles.js?v=2";
-import { renderCircle } from "../components/circle.js?v=2";
+import { renderCircle } from "../components/circle.js?v=3";
 import { renderProbability } from "../components/probability.js?v=4";
-import { renderCombinatorics } from "../components/combinatorics.js?v=1";
+import { renderCombinatorics } from "../components/combinatorics.js?v=6";
 import { renderOperationOrder } from "../components/operationOrder.js?v=2";
 import { renderSolidMeasure } from "../components/solidMeasure.js?v=1";
 import { renderCoordinate } from "../components/coordinate.js?v=1";
@@ -102,6 +102,8 @@ import { renderOpenSentence } from "../components/openSentence.js?v=1";
 import { renderEquation } from "../components/equation.js?v=1";
 import { renderInequality } from "../components/inequality.js?v=2";
 import { renderRatio } from "../components/ratio.js?v=1";
+import { renderTriangle } from "../components/triangle.js?v=1";
+import { renderShapeArea } from "../components/shapeArea.js?v=1";
 import { renderMaster } from "../components/master.js?v=2";
 
 const COUNTED_TYPES = new Set([
@@ -208,6 +210,8 @@ const COUNTED_TYPES = new Set([
     "equation",
     "inequality",
     "ratio",
+    "triangle",
+    "shape-area",
     "master"
 ]);
 
@@ -365,6 +369,8 @@ const RENDERERS = new Map([
     ["equation", renderEquation],
     ["inequality", renderInequality],
     ["ratio", renderRatio],
+    ["triangle", renderTriangle],
+    ["shape-area", renderShapeArea],
     ["master", renderMaster]
 ]);
 

@@ -1,0 +1,108 @@
+{
+    "id": "triangle-01",
+    "title": "🔺 A háromszögek tulajdonságai",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🔺 A háromszögek tulajdonságai",
+            "text": "A háromszögnek három oldala, három csúcsa és három szöge van. A három szög összege mindig 180°. Az oldalak hossza szerint a háromszög lehet egyenlő oldalú, egyenlőszárú vagy általános. Háromszöget csak akkor lehet szerkeszteni, ha a két rövidebb oldal összege nagyobb a leghosszabbnál!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Háromszögű bélyegek",
+                    "text": "A postán a bélyegek és a címkék sokszor háromszögek! Figyeld meg a szögeiket és az oldalaikat!"
+                },
+                "racing": {
+                    "title": "🏁 Háromszög a pályán",
+                    "text": "A versenypálya jelzőtáblái háromszög alakúak! Számold ki a szögeiket és vizsgáld az oldalaikat!"
+                },
+                "football": {
+                    "title": "⚽ Háromszögelés",
+                    "text": "A futballban a passzok háromszöget rajzolnak! Vizsgáld meg a háromszögek tulajdonságait!"
+                },
+                "cooking": {
+                    "title": "🍳 Süteményháromszögek",
+                    "text": "A szendvicseket és a sütiket háromszögre vágják! Nézd meg a szögeiket és az oldalaikat!"
+                },
+                "animals": {
+                    "title": "🦁 Hegyes fülek",
+                    "text": "Sok állat füle és orra háromszöget formáz! Fedezd fel a háromszögek tulajdonságait!"
+                },
+                "space": {
+                    "title": "🚀 Űrhajó szárnyai",
+                    "text": "Az űrhajó szárnyai háromszögekből állnak! Számold ki a szögeket és az oldalakat!"
+                },
+                "tram": {
+                    "title": "🚋 Figyelmeztető táblák",
+                    "text": "A villamoson a figyelmeztető táblák háromszögek! Vizsgáld meg őket!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "triangle",
+            "options": {
+                "count": 3,
+                "mode": "angle-sum"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "triangle",
+            "options": {
+                "count": 3,
+                "mode": "classify-sides"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "triangle",
+            "options": {
+                "count": 3,
+                "mode": "inequality"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "triangle",
+            "options": {
+                "count": 3,
+                "mode": "mixed"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "A háromszögek szögeit, oldalait és szerkeszthetőségét is érted – minden titkukat felfedezted!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden bélyeg háromszögét megvizsgáltad – a levelek útra készen állnak!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden jelzőtábla tulajdonságait kiszámoltad – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A háromszögeléseid pontosak – a csapat készen áll a meccsre!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden szeletet megvizsgáltál – a tálalás tökéletes!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "A háromszögek minden tulajdonságát ismered – az állatok is elégedettek!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Az űrhajó szárnyai pontosan illeszkednek – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden tábla a helyén – a villamos indulhat!"
+                }
+            }
+        }
+    ]
+}

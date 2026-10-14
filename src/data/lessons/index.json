@@ -1271,6 +1271,410 @@
       }
     },
     {
+      "id": "direct-proportion-02",
+      "title": "📐 Egyenes arányosság a gyakorlatban",
+      "grades": [
+        6
+      ],
+      "category": "wordProblems",
+      "skill": "direct-proportion",
+      "difficulty": 3,
+      "type": "word-problem",
+      "range": 1000,
+      "mission": "📐 Egyenes arányosság a gyakorlatban",
+      "subtitle": "egységnyi érték és skálázás valós helyzetekben",
+      "file": "./data/lessons/grade6/direct-proportion-02.json",
+      "worldTitles": {
+        "postman": "📮 Bélyegek a postán",
+        "racing": "🏁 Üzemanyag a garázsban",
+        "football": "⚽ Pontok a pályán",
+        "cooking": "🍳 Adagok a konyhában",
+        "animals": "🦁 Napi adagok",
+        "space": "🚀 Üzemanyag az űrhajón",
+        "tram": "🚋 Utasok a villamoson"
+      }
+    },
+    {
+      "id": "inverse-proportion-01",
+      "title": "📐 Fordított arányosság",
+      "grades": [
+        6
+      ],
+      "category": "wordProblems",
+      "skill": "inverse-proportion",
+      "difficulty": 3,
+      "type": "word-problem",
+      "range": 1000,
+      "mission": "📐 Fordított arányosság",
+      "subtitle": "a szorzat állandó: több munkás, kevesebb idő",
+      "file": "./data/lessons/grade6/inverse-proportion-01.json",
+      "worldTitles": {
+        "postman": "📮 Munka a postán",
+        "racing": "🏁 Szerelés a garázsban",
+        "football": "⚽ Munka a pályán",
+        "cooking": "🍳 Munka a konyhában",
+        "animals": "🦁 Munka az állatkertben",
+        "space": "🚀 Javítás az űrhajón",
+        "tram": "🚋 Jegyellenőrzés a villamoson"
+      }
+    },
+    {
+      "id": "percent-cases-01",
+      "title": "💯 Százalékérték, százalékláb és alap",
+      "grades": [
+        6
+      ],
+      "category": "fractions",
+      "skill": "percent",
+      "difficulty": 3,
+      "type": "percent",
+      "range": 1000,
+      "mission": "💯 A százalékszámítás három alapesete",
+      "subtitle": "érték, lábra és alap – a három alapeset együtt",
+      "file": "./data/lessons/grade6/percent-cases-01.json",
+      "worldTitles": {
+        "postman": "📮 Százalék a postán",
+        "racing": "🏁 Százalék a pályán",
+        "football": "⚽ Százalék a pályán",
+        "cooking": "🍳 Százalék a konyhában",
+        "animals": "🦁 Százalék az állatkertben",
+        "space": "🚀 Százalék az űrben",
+        "tram": "🚋 Százalék a villamoson"
+      }
+    },
+    {
+      "id": "triangle-01",
+      "title": "🔺 A háromszögek tulajdonságai",
+      "grades": [
+        6
+      ],
+      "category": "geometry",
+      "skill": "triangles",
+      "difficulty": 2,
+      "type": "triangle",
+      "range": 180,
+      "mission": "🔺 A háromszögek tulajdonságai",
+      "subtitle": "Oldalak, szögek, szögösszeg és szerkeszthetőség",
+      "file": "./data/lessons/grade6/triangle-01.json",
+      "worldTitles": {
+        "postman": "📮 Háromszögű bélyegek",
+        "racing": "🏁 Háromszög a pályán",
+        "football": "⚽ Háromszögelés",
+        "cooking": "🍳 Süteményháromszögek",
+        "animals": "🦁 Hegyes fülek",
+        "space": "🚀 Űrhajó szárnyai",
+        "tram": "🚋 Figyelmeztető táblák"
+      }
+    },
+    {
+      "id": "polygon-03",
+      "title": "🔷 A négyszögek rendszerezése",
+      "grades": [
+        6
+      ],
+      "category": "geometry",
+      "skill": "quadrilaterals",
+      "difficulty": 2,
+      "type": "polygon",
+      "mission": "🔷 A négyszögek rendszerezése",
+      "subtitle": "Tulajdonságok és csoportosítás",
+      "file": "./data/lessons/grade6/polygon-03.json",
+      "worldTitles": {
+        "postman": "📮 Négyszögű csomagok",
+        "racing": "🏁 A pálya elemei",
+        "football": "⚽ Kapuk és vonalak",
+        "cooking": "🍳 Tepsik és szeletek",
+        "animals": "🦁 Karámok formái",
+        "space": "🚀 Űrállomás paneljei",
+        "tram": "🚋 Ablakok és ülések"
+      }
+    },
+    {
+      "id": "angle-measure-03",
+      "title": "📐 Szögek mérése és szerkesztése",
+      "grades": [
+        6
+      ],
+      "category": "geometry",
+      "skill": "angles",
+      "difficulty": 2,
+      "type": "angle-measure",
+      "range": 360,
+      "mission": "📐 Szögek mérése",
+      "subtitle": "5°-os leolvasás, teljes kör, szögfajták és összehasonlítás",
+      "file": "./data/lessons/grade6/angle-measure-03.json",
+      "worldTitles": {
+        "postman": "📮 Szögek a postán",
+        "racing": "🏁 Kanyarok fokban",
+        "football": "⚽ Rúgásszögek",
+        "cooking": "🍳 Szeletek szöge",
+        "animals": "🦁 Karámok sarkai",
+        "space": "🚀 Robotkarok",
+        "tram": "🚋 Kapaszkodók szöge"
+      }
+    },
+    {
+      "id": "circle-02",
+      "title": "⭕ A kör és részei",
+      "grades": [
+        6
+      ],
+      "category": "geometry",
+      "skill": "circle",
+      "difficulty": 2,
+      "type": "circle",
+      "mission": "⭕ A kör részei",
+      "subtitle": "középpont, sugár és átmérő felismerése",
+      "file": "./data/lessons/grade6/circle-02.json",
+      "worldTitles": {
+        "postman": "📮 Kör a postán",
+        "racing": "🏁 Kör a garázsban",
+        "football": "⚽ Kör a pályán",
+        "cooking": "🍳 Kör a konyhában",
+        "animals": "🦁 Kör az állatkertben",
+        "space": "🚀 Kör az űrben",
+        "tram": "🚋 Kör a villamoson"
+      }
+    },
+    {
+      "id": "transform-03",
+      "title": "🔄 Tükrözés, eltolás, forgatás",
+      "grades": [
+        6
+      ],
+      "category": "geometry",
+      "skill": "transform",
+      "difficulty": 3,
+      "type": "transform",
+      "mission": "🔄 Transzformációk",
+      "subtitle": "eltolás és forgatás mintákkal",
+      "file": "./data/lessons/grade6/transform-03.json",
+      "worldTitles": {
+        "postman": "📮 Csomagok mozgatása",
+        "racing": "🏁 Rajtrács-állások",
+        "football": "⚽ Taktikai mozgás",
+        "cooking": "🍳 Tálak átrendezése",
+        "animals": "🦁 Játékok mozgatása",
+        "space": "🚀 Műszerek áthelyezése",
+        "tram": "🚋 Csomagok a csomagtartón"
+      }
+    },
+    {
+      "id": "solid-measure-02",
+      "title": "📦 Felszín és térfogat – téglatest, kocka",
+      "grades": [
+        6
+      ],
+      "category": "geometry",
+      "skill": "solid-shapes",
+      "difficulty": 3,
+      "type": "solid-measure",
+      "range": 1000,
+      "mission": "📦 Felszín és térfogat",
+      "subtitle": "felszín: 6a² és 2(ab + ac + bc); térfogat: a³ és a × b × c",
+      "file": "./data/lessons/grade6/solid-measure-02.json",
+      "worldTitles": {
+        "postman": "📮 Csomagok felszíne és térfogata",
+        "racing": "🏁 Dobozok a boxutcában",
+        "football": "⚽ Labdáskosarak",
+        "cooking": "🍳 Tárolódobozok",
+        "animals": "🦁 Ketrecek és odúk",
+        "space": "🚀 Űrhajó-raktér",
+        "tram": "🚋 Bőröndök a villamoson"
+      }
+    },
+    {
+      "id": "shape-area-01",
+      "title": "📏 Háromszög és négyszög kerülete, területe",
+      "grades": [
+        6
+      ],
+      "category": "geometry",
+      "skill": "area",
+      "difficulty": 3,
+      "type": "shape-area",
+      "range": 1000,
+      "mission": "📏 Kerület és terület",
+      "subtitle": "Háromszög és négyszög képletei",
+      "file": "./data/lessons/grade6/shape-area-01.json",
+      "worldTitles": {
+        "postman": "📮 Csomagok mérete",
+        "racing": "🏁 Pálya méretei",
+        "football": "⚽ A pálya méretei",
+        "cooking": "🍳 Tepsik és szeletek",
+        "animals": "🦁 Karámok mérete",
+        "space": "🚀 Panelek mérete",
+        "tram": "🚋 Villamos ablakai"
+      }
+    },
+    {
+      "id": "average-02",
+      "title": "📊 Adatok, diagramok és átlag",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "data-charts",
+      "difficulty": 2,
+      "type": "average",
+      "range": 1000,
+      "mission": "📊 Adatok és átlag",
+      "subtitle": "átlag és hiányzó adat táblázatból és diagramból",
+      "file": "./data/lessons/grade6/average-02.json",
+      "worldTitles": {
+        "postman": "📮 Átlag a postán",
+        "racing": "🏁 Átlag a boxutcában",
+        "football": "⚽ Átlag a pályán",
+        "cooking": "🍳 Átlag a konyhában",
+        "animals": "🦁 Átlag az állatkertben",
+        "space": "🚀 Átlag az űrhajón",
+        "tram": "🚋 Átlag a villamoson"
+      }
+    },
+    {
+      "id": "probability-02",
+      "title": "🎲 Valószínűség és esély",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "probability",
+      "difficulty": 2,
+      "type": "probability",
+      "mission": "🎲 Valószínűség és esély",
+      "subtitle": "esélyek becslése és összehasonlítása",
+      "file": "./data/lessons/grade6/probability-02.json",
+      "worldTitles": {
+        "postman": "📮 Esélyek a postán",
+        "racing": "🏁 Esélyek a garázsban",
+        "football": "⚽ Esélyek a pályán",
+        "cooking": "🍳 Esélyek a konyhában",
+        "animals": "🦁 Esélyek az állatkertben",
+        "space": "🚀 Esélyek az űrben",
+        "tram": "🚋 Esélyek a villamoson"
+      }
+    },
+    {
+      "id": "multi-step-word-01",
+      "title": "📝 Többlépéses szöveges feladatok",
+      "grades": [
+        6
+      ],
+      "category": "wordProblems",
+      "skill": "two-step",
+      "difficulty": 3,
+      "type": "word-problem",
+      "range": 1000,
+      "mission": "📝 Többlépéses szöveges feladatok",
+      "subtitle": "több művelet egy történetben",
+      "file": "./data/lessons/grade6/multi-step-word-01.json",
+      "worldTitles": {
+        "postman": "📮 Több lépés a postán",
+        "racing": "🏁 Több lépés a garázsban",
+        "football": "⚽ Több lépés a pályán",
+        "cooking": "🍳 Több lépés a konyhában",
+        "animals": "🦁 Több lépés az állatkertben",
+        "space": "🚀 Több lépés az űrben",
+        "tram": "🚋 Több lépés a villamoson"
+      }
+    },
+    {
+      "id": "combinatorics-02",
+      "title": "🎲 Hányféleképpen? – sorba rendezés",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "combinatorics",
+      "difficulty": 2,
+      "type": "combinatorics",
+      "range": 100,
+      "mission": "🎲 Hányféleképpen?",
+      "subtitle": "sorba rendezés és összeszámlálás – n tényező és szorzat",
+      "file": "./data/lessons/grade6/combinatorics-02.json",
+      "worldTitles": {
+        "postman": "📮 Sorba rendezés a postán",
+        "racing": "🏁 Sorba rendezés a rajtrácson",
+        "football": "⚽ Sorba rendezés a pályán",
+        "cooking": "🍳 Sorba rendezés a konyhában",
+        "animals": "🦁 Sorba rendezés az állatkertben",
+        "space": "🚀 Sorba rendezés az űrben",
+        "tram": "🚋 Sorba rendezés a villamoson"
+      }
+    },
+    {
+      "id": "combinatorics-03",
+      "title": "🎲 Kiválasztás és párosítás",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "combinatorics",
+      "difficulty": 3,
+      "type": "combinatorics",
+      "range": 100,
+      "mission": "🎲 Kiválasztás és párosítás",
+      "subtitle": "párok és szorzatok összeszámlálása",
+      "file": "./data/lessons/grade6/combinatorics-03.json",
+      "worldTitles": {
+        "postman": "📮 Párosítás a postán",
+        "racing": "🏁 Párosítás a garázsban",
+        "football": "⚽ Párosítás a pályán",
+        "cooking": "🍳 Párosítás a konyhában",
+        "animals": "🦁 Párosítás az állatkertben",
+        "space": "🚀 Párosítás az űrben",
+        "tram": "🚋 Párosítás a villamoson"
+      }
+    },
+    {
+      "id": "percent-word-01",
+      "title": "💯 Százalékos szöveges feladatok",
+      "grades": [
+        6
+      ],
+      "category": "fractions",
+      "skill": "percent",
+      "difficulty": 3,
+      "type": "percent",
+      "range": 1000,
+      "mission": "💯 Százalékos szöveges feladatok",
+      "subtitle": "alap, érték és százalékláb a szövegben",
+      "file": "./data/lessons/grade6/percent-word-01.json",
+      "worldTitles": {
+        "postman": "📮 Százalékos feladatok a postán",
+        "racing": "🏁 Százalékos feladatok a garázsban",
+        "football": "⚽ Százalékos feladatok a pályán",
+        "cooking": "🍳 Százalékos feladatok a konyhában",
+        "animals": "🦁 Százalékos feladatok az állatkertben",
+        "space": "🚀 Százalékos feladatok az űrben",
+        "tram": "🚋 Százalékos feladatok a villamoson"
+      }
+    },
+    {
+      "id": "proportion-word-01",
+      "title": "📐 Arányossági szöveges feladatok",
+      "grades": [
+        6
+      ],
+      "category": "wordProblems",
+      "skill": "direct-proportion",
+      "difficulty": 3,
+      "type": "word-problem",
+      "range": 1000,
+      "mission": "📐 Arányossági szöveges feladatok",
+      "subtitle": "egyenes és fordított arányosság a szövegben",
+      "file": "./data/lessons/grade6/proportion-word-01.json",
+      "worldTitles": {
+        "postman": "📮 Arányosság a postán",
+        "racing": "🏁 Arányosság a garázsban",
+        "football": "⚽ Arányosság a pályán",
+        "cooking": "🍳 Arányosság a konyhában",
+        "animals": "🦁 Arányosság az állatkertben",
+        "space": "🚀 Arányosság az űrben",
+        "tram": "🚋 Arányosság a villamoson"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [

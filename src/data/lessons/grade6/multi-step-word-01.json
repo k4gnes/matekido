@@ -1,0 +1,112 @@
+{
+  "id": "multi-step-word-01",
+  "title": "📝 Többlépéses szöveges feladatok",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📝 Többlépéses szöveges feladatok",
+      "text": "A többlépéses feladatokban több műveletet kell egymás után elvégezni. Először mindig az első lépést számold ki (a részeredményt), és csak utána a másodikat. Olvasd el figyelmesen a történetet, és haladj lépésről lépésre!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Több lépés a postán",
+          "text": "A postán először összeszámolják, aztán szétosztják a küldeményeket. Kövesd a lépéseket!"
+        },
+        "racing": {
+          "title": "🏁 Több lépés a garázsban",
+          "text": "A garázsban először köröket számolnak, aztán üzemanyagot. Számolj lépésről lépésre!"
+        },
+        "football": {
+          "title": "⚽ Több lépés a pályán",
+          "text": "A meccsen gólokat és pontokat is számolnak. Haladj sorban!"
+        },
+        "cooking": {
+          "title": "🍳 Több lépés a konyhában",
+          "text": "A konyhában először adagokat, aztán hozzávalókat számolnak. Kövesd a receptet!"
+        },
+        "animals": {
+          "title": "🦁 Több lépés az állatkertben",
+          "text": "Az állatkertben először adagot, aztán összesen mennyiséget számolnak. Haladj sorban!"
+        },
+        "space": {
+          "title": "🚀 Több lépés az űrben",
+          "text": "Az űrhajón először készletet, aztán felhasználást számolnak. Kövesd a lépéseket!"
+        },
+        "tram": {
+          "title": "🚋 Több lépés a villamoson",
+          "text": "A villamoson először felszállókat, aztán leszállókat számolnak. Haladj sorban!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 3,
+        "max": 100,
+        "kind": "two-step"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 3,
+        "max": 500,
+        "kind": "two-step"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 3,
+        "max": 1000,
+        "kind": "two-step"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 3,
+        "max": 1000,
+        "kind": "two-step"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "A többlépéses feladatokat is sorban megoldod!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden küldemény a helyére került!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "A garázs minden számítása kész!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "A meccs minden pontja kiszámolva!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden recept elkészült!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden állat megkapta az adagját!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden készlet kiszámolva!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden utas a helyén van!"
+        }
+      }
+    }
+  ]
+}

@@ -21,13 +21,63 @@ const POLYGONS = {
 
 const ALL_KINDS = Object.keys(POLYGONS);
 
+const QUADS = {
+    square: {
+        label: "Négyzet",
+        dative: "négyzetre",
+        definition: "minden oldala egyenlő, és minden szöge derékszög"
+    },
+    rectangle: {
+        label: "Téglalap",
+        dative: "téglalapra",
+        definition: "minden szöge derékszög, de nem minden oldala egyenlő"
+    },
+    rhombus: {
+        label: "Rombusz",
+        dative: "rombuszra",
+        definition: "minden oldala egyenlő, de nem minden szöge derékszög"
+    },
+    parallelogram: {
+        label: "Paralelogramma",
+        dative: "paralelogrammára",
+        definition: "szemközti oldalai párhuzamosak, de nincs derékszöge és nem minden oldala egyenlő"
+    },
+    trapezoid: {
+        label: "Trapéz",
+        dative: "trapézra",
+        definition: "pontosan az egyik pár szemközti oldala párhuzamos"
+    },
+    kite: {
+        label: "Deltoid",
+        dative: "deltoidra",
+        definition: "két-két szomszédos oldala egyenlő, de nem minden oldala egyenlő"
+    }
+};
+
+const QUAD_KINDS = Object.keys(QUADS);
+
+const QUAD_TRAITS = [
+    { text: "Minden oldala egyenlő", shapes: ["square", "rhombus"] },
+    { text: "Minden szöge derékszög", shapes: ["square", "rectangle"] },
+    { text: "Szemközti oldalai párhuzamosak", shapes: ["square", "rectangle", "rhombus", "parallelogram"] },
+    { text: "Szemközti oldalai egyenlők", shapes: ["square", "rectangle", "rhombus", "parallelogram"] },
+    { text: "Szemközti szögei egyenlők", shapes: ["square", "rectangle", "rhombus", "parallelogram"] },
+    { text: "Átlói egyenlő hosszúak", shapes: ["square", "rectangle"] },
+    { text: "Átlói merőlegesek", shapes: ["square", "rhombus", "kite"] },
+    { text: "Az átlói felezik egymást", shapes: ["square", "rectangle", "rhombus", "parallelogram"] },
+    { text: "Van legalább egy pár párhuzamos oldala", shapes: ["square", "rectangle", "rhombus", "parallelogram", "trapezoid"] },
+    { text: "Csak az egyik pár szemközti oldala párhuzamos", shapes: ["trapezoid"] },
+    { text: "Két-két szomszédos oldala egyenlő", shapes: ["square", "rhombus", "kite"] },
+    { text: "Az átlói nem metszik egymást", shapes: [] },
+    { text: "Pontosan három oldala egyenlő hosszú", shapes: [] }
+];
+
 function diagonalsOf(kind) {
     const n = POLYGONS[kind].sides;
     return n * (n - 3) / 2;
 }
 
-function buildName(kinds) {
-    const kind = pick(kinds);
+function buildName(kinds) {    const kind = pick(kinds);
     const correct = POLYGONS[kind].label;
     const others = shuffle(ALL_KINDS.filter(k => k !== kind)).slice(0, 3);
     const options = shuffle([kind, ...others]).map(k => POLYGONS[k].label);
@@ -62,6 +112,44 @@ function buildCount(mode, kinds) {
     };
 }
 
+const QUAD_MIXES = ["name", "property"];
+
+function buildQuadrilateral(kind = pick(QUAD_KINDS)) {
+    const ask = pick(QUAD_MIXES);
+    if (ask === "name") {
+        const correct = QUADS[kind].label;
+        const others = shuffle(QUAD_KINDS.filter(k => k !== kind)).slice(0, 3);
+        const options = shuffle([kind, ...others]).map(k => ({
+            text: QUADS[k].label,
+            correct: k === kind
+        }));
+        return {
+            mode: "quadrilateral",
+            ask: "name",
+            kind,
+            answer: correct,
+            question: `Melyik négyszög: ${QUADS[kind].definition}?`,
+            options
+        };
+    }
+    const trueTraits = QUAD_TRAITS.filter(t => t.shapes.includes(kind));
+    const falseTraits = QUAD_TRAITS.filter(t => !t.shapes.includes(kind));
+    const correctTrait = pick(trueTraits);
+    const distractors = shuffle(falseTraits).slice(0, 3);
+    const options = shuffle([correctTrait, ...distractors]).map(t => ({
+        text: t.text,
+        correct: t === correctTrait
+    }));
+    return {
+        mode: "quadrilateral",
+        ask: "property",
+        kind,
+        answer: correctTrait.text,
+        question: `Melyik tulajdonság igaz a ${QUADS[kind].dative}?`,
+        options
+    };
+}
+
 export function generatePolygon(options = {}) {
     const { count = 8, mode = "mixed", kinds = ALL_KINDS } = options;
 
@@ -69,16 +157,35 @@ export function generatePolygon(options = {}) {
         ? ["name", "sides", "sides", "vertices", "vertices", "diagonals", "diagonals", "diagonals"]
         : null;
 
+    const quadOrder = shuffle([...QUAD_KINDS]);
+
     const tasks = [];
+    let lastSignature = null;
     for (let i = 0; i < count; i++) {
         const m = mixes ? pick(mixes) : mode;
-        if (m === "name") {
-            tasks.push(buildName(kinds));
-        } else if (m === "sides" || m === "vertices" || m === "diagonals") {
-            tasks.push(buildCount(m, kinds));
-        } else {
-            throw new Error(`Ismeretlen polygon mód: ${m}`);
+        let task = buildTask(m, kinds, quadOrder[i % quadOrder.length]);
+        let signature = `${task.mode}:${task.kind}`;
+
+        for (let attempt = 0; attempt < 6 && signature === lastSignature; attempt++) {
+            task = buildTask(m, kinds, quadOrder[(i + attempt + 1) % quadOrder.length]);
+            signature = `${task.mode}:${task.kind}`;
         }
+
+        lastSignature = signature;
+        tasks.push(task);
     }
     return tasks;
+}
+
+function buildTask(m, kinds, quadKind) {
+    if (m === "name") {
+        return buildName(kinds);
+    }
+    if (m === "sides" || m === "vertices" || m === "diagonals") {
+        return buildCount(m, kinds);
+    }
+    if (m === "quadrilateral") {
+        return buildQuadrilateral(quadKind);
+    }
+    throw new Error(`Ismeretlen polygon mód: ${m}`);
 }

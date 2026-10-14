@@ -1,0 +1,108 @@
+{
+  "id": "angle-measure-03",
+  "title": "📐 Szögek mérése és szerkesztése",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📐 Szögek mérése és szerkesztése",
+      "text": "A szöget fokban mérjük. A derékszög 90°, a teljes kör 360°. A szögmérő segítségével 5°-os pontossággal is leolvashatod a szögeket, és meg tudod mondani, hogy hegyes, derék- vagy tompaszög-e.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Szögek a postán",
+          "text": "A postán a polcok és a dobozok szögeit méred. Olvasd le a szögeket fokban!"
+        },
+        "racing": {
+          "title": "🏁 Kanyarok fokban",
+          "text": "A versenypálya kanyarjait szögmérővel méred. Add meg a kanyarok nagyságát!"
+        },
+        "football": {
+          "title": "⚽ Rúgásszögek",
+          "text": "A pályán a rúgások szögét vizsgálod. Mérd meg és hasonlítsd össze őket!"
+        },
+        "cooking": {
+          "title": "🍳 Szeletek szöge",
+          "text": "A tortát cikkekre vágod. Mekkora szöget zárnak be a szeletek?"
+        },
+        "animals": {
+          "title": "🦁 Karámok sarkai",
+          "text": "Az állatkert karámjainak sarkait méred. Olvasd le a szögeket!"
+        },
+        "space": {
+          "title": "🚀 Robotkarok",
+          "text": "Az űrhajón a robotkarok szögét állítod be. Számolj fokban!"
+        },
+        "tram": {
+          "title": "🚋 Kapaszkodók szöge",
+          "text": "A villamoson a kapaszkodók dőlésszögét vizsgálod. Mérd meg őket!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "angle-measure",
+      "options": {
+        "count": 4,
+        "mode": "measure5"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "angle-measure",
+      "options": {
+        "count": 4,
+        "mode": "full"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "angle-measure",
+      "options": {
+        "count": 4,
+        "mode": "kind"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "angle-measure",
+      "options": {
+        "count": 4,
+        "mode": "compare"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Pontosan leolvasod és összehasonlítod a szögeket!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden polc és doboz szögét megmérted!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "A kanyarok fokban már nem rejtenek titkot!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "A rúgásszögek mind a helyükön vannak!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "A szeletek szöge tökéletes!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden karám sarkát megmérted!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "A robotkarok pontosan beálltak!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden kapaszkodó szögét kiszámoltad!"
+        }
+      }
+    }
+  ]
+}

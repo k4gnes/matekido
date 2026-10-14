@@ -164,6 +164,34 @@ function buildOfTask(percents, max) {
     };
 }
 
+function buildBaseTask(percents, max) {
+    const percent = pick(percents);
+    const { base, answer: part } = ofValue(percent, max);
+    const step = answerStep(base);
+    const candidates = [
+        base + step,
+        base - step,
+        base + 5,
+        base - 5,
+        base * 2,
+        Math.round(base / 2),
+        part * 2,
+        part * 5,
+        part * 10
+    ];
+    return {
+        type: "percent",
+        mode: "base",
+        percent,
+        base,
+        value: part,
+        answer: base,
+        symbol: `${part} = ${percent}%`,
+        question: `A(z) ${part} a ${percent}%-a egy számnak. Melyik ez a szám?`,
+        options: numberOptions(base, candidates)
+    };
+}
+
 function buildFindTask(percents, max) {
     const percent = pick(percents);
     const { base, answer } = ofValue(percent, max);
@@ -200,6 +228,17 @@ export function generatePercent(options = {}) {
             tasks.push(buildOfTask(percents, max));
         } else if (chosen === "find") {
             tasks.push(buildFindTask(percents, max));
+        } else if (chosen === "base") {
+            tasks.push(buildBaseTask(percents, max));
+        } else if (chosen === "cases") {
+            const sub = pick(["of", "find", "base"]);
+            if (sub === "of") {
+                tasks.push(buildOfTask(percents, max));
+            } else if (sub === "find") {
+                tasks.push(buildFindTask(percents, max));
+            } else {
+                tasks.push(buildBaseTask(percents, max));
+            }
         } else {
             tasks.push(buildGridTask(percents));
         }

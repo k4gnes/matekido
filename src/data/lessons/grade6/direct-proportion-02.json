@@ -1,0 +1,120 @@
+{
+  "id": "direct-proportion-02",
+  "title": "📐 Egyenes arányosság a gyakorlatban",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📐 Egyenes arányosság a gyakorlatban",
+      "text": "Két mennyiség egyenesen arányos, ha az egyik kétszeresére, háromszorosára nő, a másik is ugyanannyiszorosára nő. Ilyenkor először kiszámoljuk, mennyi jut egy egységhez, aztán szorozzuk. Oldd meg a történeteket!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Bélyegek és csomagok",
+          "text": "A postán minden csomaghoz ugyanannyi bélyeg kell. Számold ki az egységnyi értéket, és találd meg a hiányzót!"
+        },
+        "racing": {
+          "title": "🏁 Üzemanyag a garázsban",
+          "text": "A garázsban minden körhöz ugyanannyi üzemanyag jut. Számolj egységnyi értéket, és keresd a hiányzó adatot!"
+        },
+        "cooking": {
+          "title": "🍳 Adagok a konyhában",
+          "text": "A konyhában minden adaghoz ugyanannyi hozzávaló jut. Számold ki az egy adagra jutó mennyiséget!"
+        },
+        "football": {
+          "title": "⚽ Pontok a pályán",
+          "text": "A bajnokságban minden meccshez ugyanannyi pont jut. Keresd meg a hiányzó értéket!"
+        },
+        "animals": {
+          "title": "🦁 Napi adagok",
+          "text": "Az állatkertben minden állathoz ugyanannyi táp jut. Számold ki az egységnyi adagot!"
+        },
+        "space": {
+          "title": "🚀 Üzemanyag az űrhajón",
+          "text": "Az űrhajón minden kilométerhez ugyanannyi üzemanyag kell. Számolj egységnyi értéket!"
+        },
+        "tram": {
+          "title": "🚋 Utasok a villamoson",
+          "text": "A villamoson minden megállóhoz ugyanannyi idő jut. Keresd meg a hiányzó adatot!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 3,
+        "max": 120,
+        "kind": "direct-proportion",
+        "mode": "value",
+        "interaction": "choice"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 3,
+        "max": 400,
+        "kind": "direct-proportion",
+        "mode": "value",
+        "interaction": "input"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 3,
+        "max": 1000,
+        "kind": "direct-proportion",
+        "mode": "amount",
+        "interaction": "choice"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 3,
+        "max": 1000,
+        "kind": "direct-proportion",
+        "mode": "amount",
+        "interaction": "input"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen bánsz az egyenes arányossággal a gyakorlatban!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden bélyeget és csomagot kiszámoltál!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Az üzemanyagot pontosan kimérted a garázsban!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden adag hozzávalója a helyén van!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Kiszámoltad a pontokat a bajnokságban!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden állat megkapta a napi adagját!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Az üzemanyag pontosan elég az útra!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "A villamos menetrendje pontos lett!"
+        }
+      }
+    }
+  ]
+}

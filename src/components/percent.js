@@ -37,6 +37,9 @@ function successText(step, correct) {
     if (step.mode === "find") {
         return `🎉 Ügyes! ${step.value} a ${step.base} szám ${step.percent} százaléka.`;
     }
+    if (step.mode === "base") {
+        return `🎉 Ügyes! A keresett szám ${step.base}, mert ${step.base} ${step.percent}%-a ${step.value}.`;
+    }
     return `🎉 Ügyes! ${correct}`;
 }
 

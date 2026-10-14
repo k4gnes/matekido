@@ -1,0 +1,100 @@
+{
+  "id": "probability-02",
+  "title": "🎲 Valószínűség és esély",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🎲 Valószínűség és esély",
+      "text": "Az esély (valószínűség) megmutatja, mennyire valószínű, hogy egy esemény bekövetkezik. Ha egy zsákban több piros golyó van, mint kék, akkor nagyobb eséllyel húzunk pirosat. Ha ugyanannyi van belőlük, akkor ugyanolyan az esély. Hasonlítsd össze az esélyeket!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Esélyek a postán",
+          "text": "A postán a zsákokban különböző színű bélyegek vannak. Melyiket húzzák nagyobb eséllyel?"
+        },
+        "racing": {
+          "title": "🏁 Esélyek a garázsban",
+          "text": "A garázsban különböző színű alkatrészek vannak egy dobozban. Hasonlítsd össze az esélyeket!"
+        },
+        "football": {
+          "title": "⚽ Esélyek a pályán",
+          "text": "A pályán a színes kártyák esélyét vizsgálod. Melyik szín jön nagyobb eséllyel?"
+        },
+        "cooking": {
+          "title": "🍳 Esélyek a konyhában",
+          "text": "A konyhában a cukorkák színeit hasonlítod össze. Melyiket húzod nagyobb eséllyel?"
+        },
+        "animals": {
+          "title": "🦁 Esélyek az állatkertben",
+          "text": "Az állatkertben a színes labdák esélyét vizsgálod. Melyik jön nagyobb eséllyel?"
+        },
+        "space": {
+          "title": "🚀 Esélyek az űrben",
+          "text": "Az űrhajón a pörgettyű színeit hasonlítod össze. Melyiken áll meg nagyobb eséllyel?"
+        },
+        "tram": {
+          "title": "🚋 Esélyek a villamoson",
+          "text": "A villamoson a színes jegyek esélyét vizsgálod. Melyik jön nagyobb eséllyel?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "probability",
+      "options": {
+        "count": 4,
+        "mode": "compare"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "probability",
+      "options": {
+        "count": 4,
+        "mode": "compare"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "probability",
+      "options": {
+        "count": 4,
+        "level": 2
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen hasonlítod össze az esélyeket!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden bélyeg esélyét felismerted!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Az alkatrészek esélye kiszámolva!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "A színes kártyák esélye megvan!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "A cukorkák esélye kiszámolva!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden labda esélyét felismerted!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "A pörgettyű esélyei tisztázva!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "A jegyek esélye kiszámolva!"
+        }
+      }
+    }
+  ]
+}

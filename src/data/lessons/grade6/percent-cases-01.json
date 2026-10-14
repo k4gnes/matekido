@@ -1,0 +1,116 @@
+{
+  "id": "percent-cases-01",
+  "title": "💯 Százalékérték, százalékláb és alap",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "💯 A százalékszámítás három alapesete",
+      "text": "A százalékszámításnak három alapesete van. Ha az egészet és a százaléklábat ismerjük, a százalékértéket keressük: érték = alap × százalékláb ÷ 100. Ha a részt és az egészet ismerjük, a százaléklábat keressük: lábra = érték ÷ alap × 100. Ha pedig a részt és a százaléklábat ismerjük, az alapot keressük: alap = érték ÷ százalékláb × 100.",
+      "worldTitles": {
+        "postman": {
+          "title": "💯 Százalék a postán",
+          "text": "A postán a küldemények százalékát számolod. Hol az értéket, hol a lábat, hol az alapot keresed!"
+        },
+        "racing": {
+          "title": "💯 Százalék a pályán",
+          "text": "A versenyen a teljesített körök százalékát vizsgálod. Számold ki a hiányzó adatot!"
+        },
+        "football": {
+          "title": "💯 Százalék a pályán",
+          "text": "A bajnokságban a megnyert meccsek százalékát számolod. Keresd a hiányzó értéket!"
+        },
+        "cooking": {
+          "title": "💯 Százalék a konyhában",
+          "text": "A konyhában a hozzávalók százalékát méred. Hol az érték, hol az alap a kérdés?"
+        },
+        "animals": {
+          "title": "💯 Százalék az állatkertben",
+          "text": "Az állatkertben a gondozott állatok százalékát számolod. Keresd a hiányzó adatot!"
+        },
+        "space": {
+          "title": "💯 Százalék az űrben",
+          "text": "Az űrhajón a készlet százalékát vizsgálod. Számold ki a hiányzó értéket!"
+        },
+        "tram": {
+          "title": "💯 Százalék a villamoson",
+          "text": "A villamoson az utasok százalékát számolod. Hol az érték, hol az alap a kérdés?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "percent",
+      "options": {
+        "count": 3,
+        "mode": "of",
+        "max": 1000,
+        "percents": [5, 10, 15, 20, 25, 40, 50, 60, 75, 80]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "percent",
+      "options": {
+        "count": 3,
+        "mode": "find",
+        "max": 1000,
+        "percents": [5, 10, 20, 25, 40, 50, 60, 75, 80]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "percent",
+      "options": {
+        "count": 3,
+        "mode": "base",
+        "max": 1000,
+        "percents": [5, 10, 20, 25, 40, 50, 60, 75, 80]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "percent",
+      "options": {
+        "count": 3,
+        "mode": "cases",
+        "max": 1000,
+        "percents": [5, 10, 20, 25, 50, 75, 80]
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "A százalékszámítás mindhárom alapesetét ismered!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden küldemény százaléka kiszámolva!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden kör százaléka megvan!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "A bajnokság százalékai készen vannak!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden recept százaléka pontos!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden állat százaléka kiszámolva!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden készlet százaléka megvan!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden utas százaléka kész!"
+        }
+      }
+    }
+  ]
+}

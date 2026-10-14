@@ -1,0 +1,120 @@
+{
+  "id": "inverse-proportion-01",
+  "title": "📐 Fordított arányosság",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📐 Fordított arányosság",
+      "text": "Fordított arányosságról beszélünk, ha az egyik mennyiség kétszeresére nő, a másik a felére csökken. Ilyenkor a két mennyiség szorzata állandó: több munkás ugyanazt a munkát kevesebb idő alatt végzi el. Számold ki a szorzatot, és abból a hiányzó értéket!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Munka a postán",
+          "text": "A postán több postás ugyanannyi küldeményt kevesebb idő alatt rendez át. Számolj a szorzattal!"
+        },
+        "racing": {
+          "title": "🏁 Szerelés a garázsban",
+          "text": "A garázsban több szerelő ugyanazt a munkát hamarabb végzi el. Keresd meg a hiányzó időt!"
+        },
+        "football": {
+          "title": "⚽ Munka a pályán",
+          "text": "A pályán több szertáros ugyanazt a munkát rövidebb idő alatt készíti el. Számolj!"
+        },
+        "cooking": {
+          "title": "🍳 Munka a konyhában",
+          "text": "A konyhában több szakács ugyanannyi ételt kevesebb idő alatt készít el. Keresd a hiányzó adatot!"
+        },
+        "animals": {
+          "title": "🦁 Munka az állatkertben",
+          "text": "Az állatkertben több gondozó ugyanazt a munkát hamarabb végzi el. Számolj a szorzattal!"
+        },
+        "space": {
+          "title": "🚀 Javítás az űrhajón",
+          "text": "Az űrhajón több szerelő ugyanazt a javítást rövidebb idő alatt végzi el. Keresd a hiányzó értéket!"
+        },
+        "tram": {
+          "title": "🚋 Jegyellenőrzés a villamoson",
+          "text": "A villamoson több kalauz ugyanannyi jegyet kevesebb idő alatt ellenőriz. Számolj!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 3,
+        "max": 60,
+        "kind": "inverse-proportion",
+        "mode": "value",
+        "interaction": "choice"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 3,
+        "max": 120,
+        "kind": "inverse-proportion",
+        "mode": "value",
+        "interaction": "input"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 3,
+        "max": 500,
+        "kind": "inverse-proportion",
+        "mode": "amount",
+        "interaction": "choice"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 3,
+        "max": 1000,
+        "kind": "inverse-proportion",
+        "mode": "amount",
+        "interaction": "input"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "A fordított arányosságot is ügyesen kezeled!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "A postások minden küldeményt időben átválogattak!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "A szerelők időre elkészültek a garázsban!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "A szertár minden felszerelés a helyére került!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "A konyhában minden étel időben elkészült!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Az állatkertben minden munka időben elkészült!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Az űrhajó javítása időben elkészült!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden jegyet időben ellenőriztek!"
+        }
+      }
+    }
+  ]
+}

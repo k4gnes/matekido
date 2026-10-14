@@ -13,7 +13,63 @@ const TITLES = {
     tram: "🚋 Rendezd sorba!"
 };
 
+const SVG_NS = "http://www.w3.org/2000/svg";
+
+function svgEl(name, attrs = {}) {
+    const el = document.createElementNS(SVG_NS, name);
+    for (const [key, value] of Object.entries(attrs)) {
+        el.setAttribute(key, value);
+    }
+    return el;
+}
+
+function createPairSvg(n) {
+    const size = 220;
+    const center = size / 2;
+    const radius = 78;
+
+    const svg = svgEl("svg", { viewBox: `0 0 ${size} ${size}`, class: "comb-diagram" });
+
+    const points = [];
+    for (let i = 0; i < n; i++) {
+        const angle = (Math.PI * 2 * i) / n - Math.PI / 2;
+        points.push({
+            x: center + radius * Math.cos(angle),
+            y: center + radius * Math.sin(angle)
+        });
+    }
+
+    for (let i = 0; i < n; i++) {
+        for (let j = i + 1; j < n; j++) {
+            svg.append(svgEl("line", {
+                x1: points[i].x,
+                y1: points[i].y,
+                x2: points[j].x,
+                y2: points[j].y,
+                stroke: "#cbd5e1",
+                "stroke-width": 2
+            }));
+        }
+    }
+
+    for (const point of points) {
+        svg.append(svgEl("circle", {
+            cx: point.x,
+            cy: point.y,
+            r: 7,
+            fill: "#334155"
+        }));
+    }
+
+    return svg;
+}
+
 export function renderCombinatorics(step, root, next, progress, onResult, onAttempt) {
+
+    if (step.mode && step.mode !== "order") {
+        renderCountChoice(step, root, next, progress, onResult, onAttempt);
+        return;
+    }
 
     const world = getActiveWorld();
 
@@ -161,4 +217,100 @@ export function renderCombinatorics(step, root, next, progress, onResult, onAtte
 
     render();
 
+}
+
+function renderCountChoice(step, root, next, progress, onResult, onAttempt) {
+
+    const world = getActiveWorld();
+
+    root.replaceChildren();
+
+    const card = createCard();
+
+    if (progress) {
+        card.append(progress);
+    }
+
+    const title = document.createElement("h1");
+    title.textContent = (TITLES[world] ?? TITLES.postman).replace("Rendezd sorba!", "Hányféleképpen?");
+    card.append(title);
+
+    const prompt = document.createElement("p");
+    prompt.className = "comb-prompt";
+    prompt.textContent = step.question;
+    card.append(prompt);
+
+    if (step.mode === "pair") {
+        card.append(createPairSvg(step.n));
+    }
+
+    const message = createMessageBox();
+    card.append(message.element);
+
+    root.append(card);
+
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext: next,
+        onResult,
+        onAttempt
+    });
+
+    const options = document.createElement("div");
+    options.className = "comb-choice-options";
+
+    let phase = "answer";
+
+    function showReasonPrompt() {
+        phase = "reason";
+        options.replaceChildren();
+
+        const note = document.createElement("p");
+        note.className = "comb-reason-prompt";
+        note.textContent = "✅ Jó a szám! De melyik számítással kapjuk? Válaszd ki a helyeset!";
+        options.append(note);
+
+        step.reasoning.forEach(opt => {
+            const rbtn = document.createElement("button");
+            rbtn.type = "button";
+            rbtn.className = "comb-choice-option comb-reason-option";
+            rbtn.textContent = opt.text;
+
+            rbtn.addEventListener("click", () => {
+                if (feedback.isAnswered()) return;
+
+                if (opt.correct) {
+                    rbtn.classList.add("comb-choice-correct");
+                    feedback.success(`🎉 Ügyes! ${step.explanation}`);
+                } else {
+                    feedback.retry("🤔 Ez a számítás nem jó. Gondold végig, hány lehetőség van az egyes helyeken!");
+                }
+            });
+
+            options.append(rbtn);
+        });
+    }
+
+    step.options.forEach(opt => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "comb-choice-option";
+        btn.textContent = opt.text;
+
+        btn.addEventListener("click", () => {
+            if (feedback.isAnswered() || phase !== "answer") return;
+
+            if (opt.correct) {
+                btn.classList.add("comb-choice-correct");
+                showReasonPrompt();
+            } else {
+                feedback.retry();
+            }
+        });
+
+        options.append(btn);
+    });
+
+    card.append(options);
 }

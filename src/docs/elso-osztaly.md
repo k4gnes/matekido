@@ -1,8 +1,8 @@
 # Matekidő – 1. osztályos készségtérkép
 
-**44 lecke**, 6 kategóriában. Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
+**45 lecke**, 6 kategóriában. Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
-Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
+Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 
 ---
 
@@ -79,6 +79,14 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
 | 44 | Egy lépéses | [Szöveges feladatok](?lesson=word-problems-01) | Szöveges feladat | 20 | 1 |
+
+## 🌟 Mester kihívás (1 lecke)
+
+Azoknak, akiknek nagyon jól megy a matek. Itt nem elég számolni: gondolkodni kell. A feladatok megoldása a **visszafelé gondolkodást** és a **műveleti jelek felismerését** gyakoroltatja.
+
+| # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|---|
+| 45 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade1-master-01) | Hiányzó műveleti jel és visszafelé gondolkodás | 20 | 4 |
 
 
 ## 🎲 Egypercesek

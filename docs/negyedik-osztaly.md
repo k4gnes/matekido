@@ -1,10 +1,10 @@
 # Matekidő – 4. osztályos tanmenet
 
-**35 lecke**, 6 kategóriában (a táblázatok 7 témakörbe rendezve). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
+**36 lecke**, 6 kategóriában (a táblázatok 7 témakörbe rendezve). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
 A 3. osztályos tananyag (1000-es számkör) lezárult – a 4. osztály a **10 000-ig bővülő számkörre**, az **írásbeli műveletekre**, a **törtek bevezetésére** és a **geometria** terület/kerület felé forduló kiszélesítésére épül.
 
-Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
+Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 
 ---
 
@@ -78,11 +78,19 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | 34 | Többlépéses | [Többlépéses szöveges feladatok](?lesson=word-problems-two-step-02) | Több művelet egy történetben | 1000 | 3 |
 | 35 | Arányos | [Arányos szöveges feladatok](?lesson=word-problems-proportion-02) | Egyszerű arányosság, megosztás | 1000 | 3 |
 
+## 🌟 Mester kihívás (1 lecke)
+
+Azoknak, akiknek nagyon jól megy a matek. Itt nem elég számolni: gondolkodni kell. A feladatok megoldása a **visszafelé gondolkodást** és a **műveleti jelek felismerését** gyakoroltatja.
+
+| # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|---|
+| 36 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade4-master-01) | Hiányzó műveleti jel és visszafelé gondolkodás | 1000 | 4 |
+
 ---
 
 ## Státusz
 
-**Megvalósult leckék (35/35):**
+**Megvalósult leckék (36/36):**
 
 - Számfogalom 10 000-ig (8/8): helyiérték, számnevek, szomszédok, összehasonlítás, római számok, kerekítés, osztó és többszörös, táblázatok és diagramok (közös a 3. osztállyal) ✔
 - Műveletek – írásbeli számolás (7/7): írásbeli összeadás, kivonás, szorzás egyjegyűvel, szorzás kétjegyűvel, osztás egyjegyűvel, osztás kétjegyűvel, vegyes írásbeli műveletek ✔
@@ -90,8 +98,9 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 - Geometria (8/8): sokszögek és tulajdonságaik (oldalak, csúcsok, átlók), kerület és terület (rácsos, közös a 3. osztállyal), szögek és tükrözés (közös a 3. osztállyal), szögek mérése szögmérővel (fokban), összetett alakzatok kerülete és területe (L- és lépcsős alakzatok), kerület és terület számolással (képletek téglalapnál és négyzetnél) ✔
 - Gyakorlati tudások (6/6): mértékegység-átváltás hosszúság/tömeg/űrtartalom 1000-ig, idő – óra és perc tartamok (kezdés/vég/eltelt idő), vásárlás és visszajáró 10 000-ig, távolságok és hosszúságok a valóságban (km, m, cm a hétköznapokban), űrtartalom a milliliterig (l, dl, cl, ml) ✔, tömeg a tonnáig visszafelé (kg, dkg, g, t) ✔
 - Szöveges feladatok (2/2): többlépéses szöveges feladatok két lépésben 1000-ig (összeadás-kivonás, kivonás-összeadás, szorzás-összeadás) ✔, arányos szöveges feladatok (a fele, a harmada) 1000-ig ✔
+- Mester kihívás (1/1): 🌟 Mester kihívás (`grade4-master-01`) – hiányzó műveleti jel és visszafelé gondolkodás a legügyesebbeknek ✔
 
-A 4. osztályos terv minden leckéje megvalósult: **35 lecke a fenti táblázatokban**, ami a `src/data/lessons/index.json` regiszterben szereplő 4. osztályos darabszámmal egyezik (8 + 7 + 4 + 8 + 6 + 2). A „Táblázatok és diagramok" lecke a regiszterben a `numbers` kategóriába tartozik, a dokszban viszont külön témakörként jelenik meg.
+A 4. osztályos terv minden leckéje megvalósult: **36 lecke a fenti táblázatokban**, ami a `src/data/lessons/index.json` regiszterben szereplő 4. osztályos darabszámmal egyezik (8 + 7 + 4 + 8 + 6 + 2 + 1 mester). A „Táblázatok és diagramok" lecke a regiszterben a `numbers` kategóriába tartozik, a dokszban viszont külön témakörként jelenik meg.
 
 ## 🎲 Egypercesek
 

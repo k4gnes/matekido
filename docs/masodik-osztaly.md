@@ -1,8 +1,8 @@
 # Matekidő – 2. osztályos készségtérkép
 
-**58 lecke**, 7 kategóriában. Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
+**59 lecke**, 7 kategóriában. Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
-Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
+Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 
 ---
 
@@ -98,6 +98,14 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | 56 | Egy lépéses – szorzás | [📝 Szorzásos szöveges feladatok](?lesson=word-problems-multiply-01) | Szöveges feladat | 30 | 2 |
 | 57 | Egy lépéses – osztás | [📝 Osztásos szöveges feladatok](?lesson=word-problems-divide-01) | Szöveges feladat | 30 | 2 |
 | 58 | Kétlépéses | [📝 Kétlépéses szöveges feladatok](?lesson=word-problems-two-step-01) | Kétlépéses szöveges feladat | 20 | 3 |
+
+## 🌟 Mester kihívás (1 lecke)
+
+Azoknak, akiknek nagyon jól megy a matek. Itt nem elég számolni: gondolkodni kell. A feladatok megoldása a **visszafelé gondolkodást** és a **műveleti jelek felismerését** gyakoroltatja.
+
+| # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|---|
+| 59 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade2-master-01) | Hiányzó műveleti jel és visszafelé gondolkodás | 100 | 4 |
 
 
 ## 🎲 Egypercesek

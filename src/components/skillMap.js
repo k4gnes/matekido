@@ -3,12 +3,12 @@ import { createCard } from "./ui/card.js";
 import { renderMarkdown } from "../utils/markdown.js?v=16";
 
 const DOCS = [
-    { id: "elso-osztaly", emoji: "🌱", label: "1. osztály", desc: "44 lecke – számfogalom, válogatás, valószínűség, naptár, mérések, geometria" },
-    { id: "masodik-osztaly", emoji: "🚀", label: "2. osztály", desc: "58 lecke – számok 100-ig, szorzás és osztás, kombinatorika, valószínűség" },
-    { id: "harmadik-osztaly", emoji: "🪐", label: "3. osztály", desc: "48 lecke – számok 1000-ig, írásbeli műveletek, szorzás, osztás, szöveges feladatok, geometria" },
-    { id: "negyedik-osztaly", emoji: "🍀", label: "4. osztály", desc: "35 lecke – 10 000-ig, írásbeli műveletek, törtek, geometria" },
-    { id: "otodik-osztaly", emoji: "🌌", label: "5. osztály", desc: "32 lecke – 1 000 000-ig, oszthatóság, törtek, tizedes törtek, százalék, nagy számok műveletei, geometria, adatok, szöveges feladatok" },
-    { id: "hatodik-osztaly", emoji: "🧊", label: "6. osztály", desc: "20 lecke (tervezett 38) – negatív számok, ellentett és abszolút érték, egész számok összehasonlítása és műveletei, oszthatósági szabályok, osztók és többszörösök, prím- és összetett számok, prímfelbontás, LNKO és LKKT, hatványozás alapjai, tízes hatványok, hatványok a műveleti sorrendben, törtek a számegyenesen és vegyes számok, törtek és tizedes törtek átváltása, törtek szorzása és osztása, törtrész és százalék, nyitott mondat – igaz vagy hamis?, egyenlet megoldása, egyenlőtlenségek a számegyenesen" }
+    { id: "elso-osztaly", emoji: "🌱", label: "1. osztály", desc: "45 lecke – számfogalom, válogatás, valószínűség, naptár, mérések, geometria, mester kihívás" },
+    { id: "masodik-osztaly", emoji: "🚀", label: "2. osztály", desc: "59 lecke – számok 100-ig, szorzás és osztás, kombinatorika, valószínűség, mester kihívás" },
+    { id: "harmadik-osztaly", emoji: "🪐", label: "3. osztály", desc: "49 lecke – számok 1000-ig, írásbeli műveletek, szorzás, osztás, szöveges feladatok, geometria, mester kihívás" },
+    { id: "negyedik-osztaly", emoji: "🍀", label: "4. osztály", desc: "36 lecke – 10 000-ig, írásbeli műveletek, törtek, geometria, mester kihívás" },
+    { id: "otodik-osztaly", emoji: "🌌", label: "5. osztály", desc: "33 lecke – 1 000 000-ig, oszthatóság, törtek, tizedes törtek, százalék, nagy számok műveletei, geometria, adatok, szöveges feladatok, mester kihívás" },
+    { id: "hatodik-osztaly", emoji: "🧊", label: "6. osztály", desc: "22 lecke (tervezett 38) – negatív számok, ellentett és abszolút érték, egész számok összehasonlítása és műveletei, oszthatósági szabályok, osztók és többszörösök, prím- és összetett számok, prímfelbontás, LNKO és LKKT, hatványozás alapjai, tízes hatványok, hatványok a műveleti sorrendben, törtek a számegyenesen és vegyes számok, törtek és tizedes törtek átváltása, törtek szorzása és osztása, törtrész és százalék, nyitott mondat – igaz vagy hamis?, egyenlet megoldása, egyenlőtlenségek a számegyenesen, arány és aránypár, mester kihívás" }
 ];
 
 export function renderSkillMap(root, onBack) {

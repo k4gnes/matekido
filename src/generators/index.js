@@ -93,6 +93,8 @@ import { generateFractionPercent } from "./fractionPercentGenerator.js?v=1";
 import { generateOpenSentence } from "./openSentenceGenerator.js?v=1";
 import { generateEquation } from "./equationGenerator.js?v=1";
 import { generateInequality } from "./inequalityGenerator.js?v=1";
+import { generateRatio } from "./ratioGenerator.js?v=1";
+import { generateMaster } from "./masterGenerator.js?v=3";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {
@@ -296,6 +298,10 @@ export function generate(step) {
             return generateEquation(opts);
         case "inequality":
             return generateInequality(opts);
+        case "ratio":
+            return generateRatio(opts);
+        case "master":
+            return generateMaster(opts);
 
         default:
             throw new Error(

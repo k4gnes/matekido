@@ -101,6 +101,8 @@ import { renderFractionPercent } from "../components/fractionPercent.js?v=1";
 import { renderOpenSentence } from "../components/openSentence.js?v=1";
 import { renderEquation } from "../components/equation.js?v=1";
 import { renderInequality } from "../components/inequality.js?v=2";
+import { renderRatio } from "../components/ratio.js?v=1";
+import { renderMaster } from "../components/master.js?v=2";
 
 const COUNTED_TYPES = new Set([
     "exercise",
@@ -204,7 +206,9 @@ const COUNTED_TYPES = new Set([
     "fraction-percent",
     "open-sentence",
     "equation",
-    "inequality"
+    "inequality",
+    "ratio",
+    "master"
 ]);
 
 const isCounted = s => COUNTED_TYPES.has(s.type);
@@ -359,7 +363,9 @@ const RENDERERS = new Map([
     ["fraction-percent", renderFractionPercent],
     ["open-sentence", renderOpenSentence],
     ["equation", renderEquation],
-    ["inequality", renderInequality]
+    ["inequality", renderInequality],
+    ["ratio", renderRatio],
+    ["master", renderMaster]
 ]);
 
 
@@ -411,6 +417,7 @@ export class Game {
         const allLessons = this.lessonIndex.lessons || [];
         const idx = allLessons.findIndex(l => l.file === this.lessonFile);
         if (idx === -1) return null;
+        if (allLessons[idx].master) return null;
         const grade = resolveLessonGrade(allLessons[idx]);
         if (grade == null) return null;
         const gradeLessons = curriculumSort(allLessons.filter(l => l.grades?.includes(grade) && !l.practice), grade);
@@ -458,7 +465,7 @@ export class Game {
         const grade = this.getLessonGrade();
         if (grade == null) return false;
         const gradeLessons = allLessons.filter(l => l.grades?.includes(grade));
-        const counted = gradeLessons.filter(l => !l.practice);
+        const counted = gradeLessons.filter(l => !l.practice && !l.master);
         return counted.length > 0 && counted.every(l => getLessonStats(l.file));
     }
 

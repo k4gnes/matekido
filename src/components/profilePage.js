@@ -6,7 +6,7 @@ import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getAllWorlds } from "../world/WorldRegistry.js";
 
 function getGradeProgress(lessonIndex, grade) {
-    const lessons = (lessonIndex?.lessons || []).filter(l => l.grades?.includes(grade) && !l.practice);
+    const lessons = (lessonIndex?.lessons || []).filter(l => l.grades?.includes(grade) && !l.practice && !l.master);
     const total = lessons.length;
     let done = 0;
 

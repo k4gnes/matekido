@@ -1,0 +1,92 @@
+{
+  "id": "grade3-master-01",
+  "title": "🌟 Mester kihívás",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🌟 Mester kihívás",
+      "text": "Ez egy különleges kihívás azoknak, akiknek jól megy a matek! Itt nem elég számolni: gondolkodni kell. Keresd meg a hiányzó műveleti jelet, és találd ki, melyik számra gondoltam!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Mester kihívás a postán",
+          "text": "A postán ma trükkös csomagok érkeztek. Keresd meg a hiányzó műveleti jelet, és találd ki, melyik számra gondoltam!"
+        },
+        "racing": {
+          "title": "🏎️ Mester kihívás a pályán",
+          "text": "A boxutcában csupa ravasz feladvány vár. Keresd meg a hiányzó műveleti jelet, és találd ki, melyik számra gondoltam!"
+        },
+        "football": {
+          "title": "⚽ Mester kihívás a pályán",
+          "text": "A meccs előtt az edző trükkös feladatokat adott. Keresd meg a hiányzó műveleti jelet, és találd ki, melyik számra gondoltam!"
+        },
+        "cooking": {
+          "title": "🍳 Mester kihívás a konyhában",
+          "text": "A séf titkos receptje számokból áll. Keresd meg a hiányzó műveleti jelet, és találd ki, melyik számra gondoltam!"
+        },
+        "animals": {
+          "title": "🦁 Mester kihívás az állatkertben",
+          "text": "Az állatkertben ma számrejtvényeket rejtettek el. Keresd meg a hiányzó műveleti jelet, és találd ki, melyik számra gondoltam!"
+        },
+        "space": {
+          "title": "🚀 Mester kihívás az űrben",
+          "text": "Az űrhajó számítógépe rejtvényeket kér. Keresd meg a hiányzó műveleti jelet, és találd ki, melyik számra gondoltam!"
+        },
+        "tram": {
+          "title": "🚋 Mester kihívás a villamoson",
+          "text": "A villamoson a jegyellenőr trükkös feladványokat osztogat. Keresd meg a hiányzó műveleti jelet, és találd ki, melyik számra gondoltam!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "master",
+      "options": {
+        "count": 4,
+        "mode": "missing-op"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "master",
+      "options": {
+        "count": 4,
+        "mode": "think-number"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Mester vagy!",
+      "text": "Végigvitted a mester kihívást – gondolkodva számoltál, nem csak bemagolva!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Mester vagy!",
+          "text": "A posta legtrükkösebb csomagjait is kinyitottad!"
+        },
+        "racing": {
+          "title": "🎉 Mester vagy!",
+          "text": "A boxutca minden rejtvényét megoldottad!"
+        },
+        "football": {
+          "title": "🎉 Mester vagy!",
+          "text": "Az edző trükkös feladatait is megoldottad!"
+        },
+        "cooking": {
+          "title": "🎉 Mester vagy!",
+          "text": "A séf titkos receptjét is megfejtetted!"
+        },
+        "animals": {
+          "title": "🎉 Mester vagy!",
+          "text": "Az állatkert minden számrejtvényét megfejtetted!"
+        },
+        "space": {
+          "title": "🎉 Mester vagy!",
+          "text": "Az űrhajó számítógépe is elismerően bólogat!"
+        },
+        "tram": {
+          "title": "🎉 Mester vagy!",
+          "text": "A jegyellenőr is elismeri: te vagy a villamos mestere!"
+        }
+      }
+    }
+  ]
+}

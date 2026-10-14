@@ -12,7 +12,7 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=36";
+import { buildLesson } from "./builders/LessonBuilder.js?v=39";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { SKILLS } from "./data/skills.js";
@@ -1345,6 +1345,120 @@ function validateStep(step, ctx, range) {
                 if (step.expression !== `x + ${step.a} ${step.relation} ${step.bound + step.a}`) {
                     fail(ctx, `expression hibás: ${step.expression}`);
                 }
+            }
+            break;
+        }
+        case "ratio": {
+            if (!["write", "simplify", "missing"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            if (!Array.isArray(step.options) || step.options.length !== 4) {
+                fail(ctx, `4 options kell (${step.options?.length})`);
+                break;
+            }
+            if (!step.options.every(o => o && typeof o.text === "string" && typeof o.correct === "boolean")) {
+                fail(ctx, "options mezők hibásak");
+            }
+            if (new Set(step.options.map(o => o.text)).size !== 4) fail(ctx, "options ismétlődik");
+            const correctOptions = step.options.filter(o => o.correct);
+            if (correctOptions.length !== 1) fail(ctx, "pontosan 1 helyes kell");
+
+            const gcdRatio = (a, b) => (b ? gcdRatio(b, a % b) : a);
+
+            if (step.mode === "write") {
+                if (!isInt(step.a) || !isInt(step.b) || step.a < 1 || step.b < 1) fail(ctx, `a/b hibás: ${step.a}/${step.b}`);
+                if (step.a === step.b) fail(ctx, "a === b");
+                if (step.answer !== `${step.a} : ${step.b}`) fail(ctx, `answer hibás: ${step.answer}`);
+                if (correctOptions[0]?.text !== step.answer) fail(ctx, "a helyes option nem a felírt arány");
+                if (!step.options.some(o => !o.correct && o.text === `${step.b} : ${step.a}`)) {
+                    fail(ctx, "nincs megfordított arány a zavarók között");
+                }
+                for (const k of ["leftEmoji", "rightEmoji", "leftName", "rightName"]) {
+                    if (typeof step[k] !== "string" || step[k].length === 0) fail(ctx, `${k} hiányzik`);
+                }
+            } else if (step.mode === "simplify") {
+                if (!isInt(step.a) || !isInt(step.b) || step.a < 2 || step.b < 2) fail(ctx, `a/b hibás: ${step.a}/${step.b}`);
+                const g = gcdRatio(step.a, step.b);
+                if (g < 2) fail(ctx, `az arány nem egyszerűsíthető: ${step.a} : ${step.b}`);
+                if (step.simpleA !== step.a / g || step.simpleB !== step.b / g) {
+                    fail(ctx, `simpleA/simpleB hibás: ${step.simpleA}/${step.simpleB}`);
+                }
+                if (step.display !== `${step.a} : ${step.b}`) fail(ctx, `display hibás: ${step.display}`);
+                const expected = `${step.a / g} : ${step.b / g}`;
+                if (step.answer !== expected) fail(ctx, `answer hibás: ${step.answer} != ${expected}`);
+                if (correctOptions[0]?.text !== step.answer) fail(ctx, "a helyes option nem az egyszerűsített arány");
+            } else {
+                if (!isInt(step.a) || !isInt(step.b) || !isInt(step.k) || step.a < 1 || step.b < 1 || step.k < 2) {
+                    fail(ctx, `a/b/k hibás: ${step.a}/${step.b}/${step.k}`);
+                }
+                if (step.a === step.b) fail(ctx, "a === b");
+                if (gcdRatio(step.a, step.b) !== 1) fail(ctx, `az arány nem legegyszerűbb: ${step.a} : ${step.b}`);
+                if (!["left", "right"].includes(step.unknownSide)) fail(ctx, `unknownSide hibás: ${step.unknownSide}`);
+                const expectedAnswer = step.unknownSide === "right" ? step.b * step.k : step.a * step.k;
+                const expectedDisplay = step.unknownSide === "right"
+                    ? `${step.a} : ${step.b} = ${step.a * step.k} : ?`
+                    : `${step.a} : ${step.b} = ? : ${step.b * step.k}`;
+                if (step.display !== expectedDisplay) fail(ctx, `display hibás: ${step.display} != ${expectedDisplay}`);
+                if (step.answer !== expectedAnswer) fail(ctx, `answer hibás: ${step.answer} != ${expectedAnswer}`);
+                if (correctOptions[0]?.text !== String(step.answer)) fail(ctx, "a helyes option nem a hiányzó tag");
+                if (isFiniteNum(range) && step.answer > range) fail(ctx, `answer kilép a tartományból: ${step.answer} > ${range}`);
+            }
+            break;
+        }
+        case "master": {
+            if (!["missing-op", "think-number"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+
+            if (step.mode === "missing-op") {
+                if (!isInt(step.a) || !isInt(step.b) || !isInt(step.result)) {
+                    fail(ctx, `a/b/result hibás: ${step.a}/${step.b}/${step.result}`);
+                    break;
+                }
+                if (step.result < 1) fail(ctx, `result hibás: ${step.result}`);
+                if (isFiniteNum(range) && step.result > range) fail(ctx, `result kilép a tartományból: ${step.result} > ${range}`);
+                if (!["+", "−", "×", "÷"].includes(step.answer)) fail(ctx, `answer hibás: ${step.answer}`);
+                if (step.display !== `${step.a} ? ${step.b} = ${step.result}`) fail(ctx, `display hibás: ${step.display}`);
+                const matches = ["+", "−", "×", "÷"].filter(op => applyOp(op, step.a, step.b) === step.result);
+                if (matches.length !== 1) fail(ctx, `nem egyértelmű a művelet: [${matches.join(",")}]`);
+                else if (matches[0] !== step.answer) fail(ctx, `answer nem a helyes művelet: ${step.answer} != ${matches[0]}`);
+                if (!Array.isArray(step.options) || step.options.length < 2) {
+                    fail(ctx, `legalább 2 options kell (${step.options?.length})`);
+                    break;
+                }
+                if (!step.options.every(o => o && typeof o.text === "string" && typeof o.correct === "boolean")) {
+                    fail(ctx, "options mezők hibásak");
+                }
+                if (new Set(step.options.map(o => o.text)).size !== step.options.length) fail(ctx, "options ismétlődik");
+                const correctOptions = step.options.filter(o => o.correct);
+                if (correctOptions.length !== 1) fail(ctx, "pontosan 1 helyes kell");
+                if (correctOptions[0]?.text !== step.answer) fail(ctx, "a helyes option nem a jó művelet");
+            } else {
+                if (!isInt(step.start) || step.start < 1) fail(ctx, `start hibás: ${step.start}`);
+                if (isFiniteNum(range) && step.answer > range) fail(ctx, `answer kilép a tartományból: ${step.answer} > ${range}`);
+                if (!Array.isArray(step.ops) || step.ops.length !== 2) {
+                    fail(ctx, `ops hibás: ${JSON.stringify(step.ops)}`);
+                    break;
+                }
+                let value = step.start;
+                for (const op of step.ops) {
+                    if (!["×", "+", "−"].includes(op.op) || !isInt(op.value) || op.value < 1) {
+                        fail(ctx, `op hibás: ${JSON.stringify(op)}`);
+                        break;
+                    }
+                    if (op.op === "×") value *= op.value;
+                    else if (op.op === "+") value += op.value;
+                    else value -= op.value;
+                    if (value < 1) fail(ctx, `közbenső érték nem pozitív: ${value}`);
+                }
+                if (step.result !== value) fail(ctx, `result hibás: ${step.result} != ${value}`);
+                if (step.answer !== step.start) fail(ctx, `answer hibás: ${step.answer} != ${step.start}`);
+                if (typeof step.chain !== "string" || step.chain.length === 0) fail(ctx, "chain hiányzik");
+                if (!step.chain.endsWith(`= ${step.result}`)) fail(ctx, `a lánc nem a végeredménnyel zárul: ${step.chain}`);
+                const firstOp = step.ops[0].op;
+                const secondOp = step.ops[1].op;
+                if ((firstOp === "+" || firstOp === "−") && secondOp === "×" && !step.chain.startsWith("(")) {
+                    fail(ctx, `a láncból hiányoznak a zárójelek: ${step.chain}`);
+                }
+                if (step.options !== undefined) fail(ctx, "think-number nem választós");
             }
             break;
         }

@@ -3,7 +3,7 @@ import { createButton } from "./ui/button.js";
 import { createNavBar } from "./ui/navbar.js";
 import { getDailyStats, getAllSkillStats, getActiveWorld, getLessonStats } from "../profile/Profile.js";
 import { SKILLS, CATEGORIES } from "../data/skills.js";
-import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=21";
+import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=23";
 import { gradesWithLessons } from "../utils/grades.js?v=1";
 
 function formatDate(dateStr) {
@@ -47,7 +47,7 @@ function getGradeCompletion(lessonIndex) {
     const grades = gradesWithLessons(lessonIndex);
 
     return grades.map(gc => {
-        const gradeLessons = lessons.filter(l => l.grades?.includes(gc.grade) && !l.practice);
+        const gradeLessons = lessons.filter(l => l.grades?.includes(gc.grade) && !l.practice && !l.master);
         const total = gradeLessons.length;
         let done = 0;
         let sumPct = 0;

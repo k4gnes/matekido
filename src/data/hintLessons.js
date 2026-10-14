@@ -34,7 +34,9 @@ export const HINT_TYPES = new Set([
     "fraction-percent",
     "open-sentence",
     "equation",
-    "inequality"
+    "inequality",
+    "ratio",
+    "master"
 ]);
 
 export function lessonHasHint(lessonMeta) {

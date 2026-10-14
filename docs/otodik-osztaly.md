@@ -1,12 +1,12 @@
 # Matekidő – 5. osztályos tanmenet
 
-> **Státusz: megvalósult.** A regiszterben 206 lecke van, ebből 35 az 5. osztályos (32 számozott feladat + 3 egyperces: a teljes Számfogalom, Törtek, Tizedes törtek, Százalékszámítás, Műveletek nagy számokkal, Geometria, Gyakorlati tudások, Adatok és Szöveges feladatok blokk). Az alábbiak irányadó tervek – a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
+> **Státusz: megvalósult.** A regiszterben 240 lecke van, ebből 36 az 5. osztályos (32 számozott feladat + 1 mester kihívás + 3 egyperces: a teljes Számfogalom, Törtek, Tizedes törtek, Százalékszámítás, Műveletek nagy számokkal, Geometria, Gyakorlati tudások, Adatok és Szöveges feladatok blokk). Az alábbiak irányadó tervek – a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
 
-**Tervezett 32 lecke**, 9 témakörben (a regiszterben 7 kategória: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
+**Tervezett 32 lecke + 1 mester kihívás**, 9 témakörben (a regiszterben 7 kategória: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
 A 4. osztályos tananyag (10 000-es számkör, írásbeli műveletek) lezárult – az 5. osztály az **1 000 000-ig bővülő számkörre**, az **oszthatóságra**, a **törtek és tizedes törtek teljes műveletkörére**, valamint a **százalékszámítás alapjaira** épül.
 
-Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
+Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 
 ---
 
@@ -87,6 +87,14 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | 31 | Arányos osztás | [Arányos osztás](?lesson=ratio-split-01) | Megosztás arányban | 1000 | 3 ✔ |
 | 32 | Egyenes arányosság | [Egyenes arányosság](?lesson=direct-proportion-01) | Skálázott helyzetek | 1000 | 3 ✔ |
 
+## 🌟 Mester kihívás (1 lecke)
+
+Azoknak, akiknek nagyon jól megy a matek. Itt nem elég számolni: gondolkodni kell. A feladatok megoldása a **visszafelé gondolkodást** és a **műveleti jelek felismerését** gyakoroltatja.
+
+| # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|---|
+| 33 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade5-master-01) | Hiányzó műveleti jel és visszafelé gondolkodás | 1000 | 4 |
+
 ---
 
 ## Tervezett kiegészítések
@@ -102,7 +110,7 @@ A fenti 32 lecke az 5. osztályos tanmenet terve. Tovább tervezett leckék:
 
 ## Státusz
 
-**Megvalósult leckék (32/32):**
+**Megvalósult leckék (32/32 + 1 mester):**
 
 - Számfogalom 1 000 000-ig (6/6): helyiérték (`place-value-millions-01`), számnevek (`number-name-millions-01`), számszomszédok és kerekítés (`neighbor-round-millions-01`), összehasonlítás (`comparison-millions-01`), oszthatósági szabályok 2, 3, 4, 5, 6, 9, 10-zel (`divisibility-rules-01`), kerekítés és becslés (`rounding-millions-01`) ✔
 - Törtek (5/5 – blokk kész): bővítés és egyszerűsítés – azonos értékű töredékek leírása (`fraction-equal-01`) ✔; különböző nevezőjű törtek összeadása és kivonása (`fraction-common-den-01`, feladat-segítséggel) ✔; törtek szorzása egész számmal (`fraction-times-int-01`, egész adagos és tört eredményű feladatokkal, feladat-segítséggel) ✔; törtek szorzása törttel (`fraction-times-frac-01`, területmodellel, egyszerűsítendő és egyszerűsítés nélküli feladatokkal, feladat-segítséggel) ✔; törtek osztása (`fraction-divide-01`, egésszel és törttel, megfordított szorzás, feladat-segítséggel) ✔
@@ -113,8 +121,9 @@ A fenti 32 lecke az 5. osztályos tanmenet terve. Tovább tervezett leckék:
 - Gyakorlati tudások (3/3 – blokk kész): mértékegység-átváltás (`unit-conversion-01`: hosszúság km/m/cm, tömeg t/kg/g és űrtartalom hl/l/dl – előre szorozva és visszafelé osztva is, összehasonlításokkal, kiterjesztett generátorral) ✔; terület- és térfogategységek (`area-volume-units-01`: m² ↔ dm² ↔ cm² szorozással és osztással 100-zal, valamint dm³ ↔ l 1:1 átváltás, összehasonlításokkal és igaz/hamis feladatokkal – új `area` és `capacity` fajták a `measure-units` generátorban, új készség) ✔; idő, sebesség, út (`time-speed-01`: út = sebesség × idő, valamint fordított osztások időre és sebességre, km/h és m/perc családokkal, 4 blokkban – új `speed-trip` feladattípus és új `time-speed` készség) ✔
 - Adatok és valószínűség (1/1 – blokk kész): táblázatok, diagramok és átlag (`average-01`: átlag = összeg ÷ adatok száma 4–5 adatos táblázatokból és oszlopdiagramokból, valamint hiányzó adat keresése adott átlagból – új `average` feladattípus, `data-charts` készséggel) ✔
 - Szöveges feladatok (2/2 – blokk kész): arányos osztás (`ratio-split-01`: adott egész és arány → a részek, valamint adott arány és rész → az egész számítása 1000-ig, arány-sávos segédlettel, választós és beírós interakcióval – új `ratio-split` fajta a `word-problem` feladattípusban, új `ratio-split` készség) ✔; egyenes arányosság (`direct-proportion-01`: adott mennyiség–érték párból a hiányzó érték, valamint a hiányzó mennyiség kiszámítása 1000-ig, aránytáblázatos segédlettel, választós és beírós interakcióval – új `direct-proportion` fajta a `word-problem` feladattípusban, új `direct-proportion` készség) ✔
+- Mester kihívás (1/1): 🌟 Mester kihívás (`grade5-master-01`) – hiányzó műveleti jel és visszafelé gondolkodás a legügyesebbeknek ✔
 
-A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg; mind a 32 tervezett lecke elkészült.
+A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg; mind a 32 tervezett lecke elkészült, és elkészült a 🌟 Mester kihívás is.
 
 
 ## 🎲 Egypercesek

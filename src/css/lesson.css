@@ -129,6 +129,10 @@
     background: #fffbe9;
 }
 
+.lesson-card.lesson-card-master {
+    border-color: #e04040;
+}
+
 .play-section {
     border: 2px dashed #c9b6ee;
     background: linear-gradient(180deg, #faf7ff 0%, #ffffff 100%);

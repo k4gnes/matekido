@@ -2,11 +2,11 @@
 
 > **Státusz: folyamatban.** Az alábbiak a 6. osztályos tanmenet terve; a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
 
-**Tervezett 38 lecke**, 10 témakörben (a regiszter 7 kategóriája: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
+**Tervezett 38 lecke + 1 mester kihívás**, 10 témakörben (a regiszter 7 kategóriája: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
 Az 5. osztályos tananyag (1 000 000-ig bővülő számkör, oszthatóság, törtek és tizedes törtek, százalék, nagy számok műveletei, geometria) lezárult – a 6. osztály az **egész számokra és a negatív számokra**, az **oszthatóság és számelmélet** elmélyítésére, a **hatványokra**, az **egyenletekre és egyenlőtlenségekre**, az **arányra és arányosságra**, a **kombinatorikára**, valamint a **geometria rendszerező ismétlésére** épül.
 
-Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
+Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 
 ---
 
@@ -59,44 +59,52 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-|  | Arány | Arány és aránypár | Arány felírása és egyszerűsítése | 100 | 2 |
-|  | Arányosság | Egyenes arányosság a gyakorlatban | Skálázott helyzetek | 1000 | 3 |
-|  | Arányosság | Fordított arányosság | Fordítottan arányos helyzetek | 1000 | 3 |
-|  | Százalék | Százalékérték, százalékláb és alap | A három alapeset | 1000 | 3 |
+| 21 | Arány | [Arány és aránypár](?lesson=ratio-01) | Arány felírása és egyszerűsítése | 100 | 2 |
+| 22 | Arányosság | Egyenes arányosság a gyakorlatban | Skálázott helyzetek | 1000 | 3 |
+| 23 | Arányosság | Fordított arányosság | Fordítottan arányos helyzetek | 1000 | 3 |
+| 24 | Százalék | Százalékérték, százalékláb és alap | A három alapeset | 1000 | 3 |
 
 ## Geometria (7 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-|  | Háromszögek | A háromszögek tulajdonságai | Oldalak, szögek, szögösszeg | 180 | 2 |
-|  | Négyszögek | A négyszögek rendszerezése | Tulajdonságok és csoportosítás | — | 2 |
-|  | Szögek | Szögek mérése és szerkesztése | Fokban mérés | 360 | 2 |
-|  | Kör | A kör és részei | Középpont, sugár, átmérő, húr | — | 2 |
-|  | Transzformációk | Tükrözés, eltolás, forgatás | Geometriai transzformációk | — | 3 |
-|  | Kerület, terület | Háromszög és négyszög kerülete, területe | Képletek | 1000 | 3 |
-|  | Felszín, térfogat | Felszín és térfogat – téglatest, kocka | Képletek | 1000 | 3 |
+| 25 | Háromszögek | A háromszögek tulajdonságai | Oldalak, szögek, szögösszeg | 180 | 2 |
+| 26 | Négyszögek | A négyszögek rendszerezése | Tulajdonságok és csoportosítás | — | 2 |
+| 27 | Szögek | Szögek mérése és szerkesztése | Fokban mérés | 360 | 2 |
+| 28 | Kör | A kör és részei | Középpont, sugár, átmérő, húr | — | 2 |
+| 29 | Transzformációk | Tükrözés, eltolás, forgatás | Geometriai transzformációk | — | 3 |
+| 30 | Kerület, terület | Háromszög és négyszög kerülete, területe | Képletek | 1000 | 3 |
+| 31 | Felszín, térfogat | Felszín és térfogat – téglatest, kocka | Képletek | 1000 | 3 |
 
 ## Kombinatorika (2 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-|  | Kombinatorika | Hányféleképpen? – sorba rendezés | Sorba rendezés és összeszámlálás | 20 | 2 |
-|  | Kombinatorika | Kiválasztás és párosítás | Összeszámolás | 100 | 3 |
+| 32 | Kombinatorika | Hányféleképpen? – sorba rendezés | Sorba rendezés és összeszámlálás | 20 | 2 |
+| 33 | Kombinatorika | Kiválasztás és párosítás | Összeszámolás | 100 | 3 |
 
 ## Adatok és valószínűség (2 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-|  | Adatok | Adatok, diagramok és átlag | Átlag és gyakoriság | 1000 | 2 |
-|  | Valószínűség | Valószínűség és esély | Esély becslése | — | 2 |
+| 34 | Adatok | Adatok, diagramok és átlag | Átlag és gyakoriság | 1000 | 2 |
+| 35 | Valószínűség | Valószínűség és esély | Esély becslése | — | 2 |
 
 ## Szöveges feladatok (3 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-|  | Arányosság | Arányossági szöveges feladatok | Egyenes és fordított arányosság | 1000 | 3 |
-|  | Százalék | Százalékos szöveges feladatok | Alap, érték, százalékláb | 1000 | 3 |
-|  | Többlépéses | Többlépéses szöveges feladatok | Több művelet egy történetben | 1000 | 3 |
+| 36 | Arányosság | Arányossági szöveges feladatok | Egyenes és fordított arányosság | 1000 | 3 |
+| 37 | Százalék | Százalékos szöveges feladatok | Alap, érték, százalékláb | 1000 | 3 |
+| 38 | Többlépéses | Többlépéses szöveges feladatok | Több művelet egy történetben | 1000 | 3 |
+
+## 🌟 Mester kihívás (1 lecke)
+
+Azoknak, akiknek nagyon jól megy a matek. Itt nem elég számolni: gondolkodni kell. A feladatok megoldása a **visszafelé gondolkodást** és a **műveleti jelek felismerését** gyakoroltatja.
+
+| # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|---|
+| 39 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade6-master-01) | Hiányzó műveleti jel és visszafelé gondolkodás | 1000 | 4 |
 
 ---
 
@@ -121,7 +129,9 @@ A fenti 38 lecke a 6. osztályos tanmenet terve. Tovább tervezett leckék:
 - Hatványok (3/3): 11. A hatványozás alapjai (`powers-basics-01`, négyzetre és köbre emelés, a hatványjelölés és a fordított keresés) ✔, 12. Tízes hatványok (`powers-ten-01`, a 10 kitevői és a nagyságrend millióig: érték, nullák száma, hatványos alak, számnevek) ✔, 13. Hatványok a műveleti sorrendben (`operation-order-power-01`, a hatvány helye a sorrendben: hatvány az összeadás és a szorzás előtt, zárójel a hatvány előtt, vegyes gyakorlás) ✔ – a Hatványok téma kész.
 - Törtek és tizedes törtek (4/4): 14. Törtek a számegyenesen és vegyes számok (`fraction-line-01`, törtek és vegyes számok helye a számegyenesen, áltört és vegyes szám átváltása) ✔, 15. Tört és tizedes tört átváltása (`fraction-decimal-01`, átváltás mindkét irányban: törtből tizedes tört bővítéssel, tizedes törtből a legegyszerűbb tört egyszerűsítéssel) ✔, 16. Törtek szorzása és osztása – gyakorlás (`fraction-muldiv-01`, törtek szorzása és osztása egész számmal és törttel, az eredmény egyszerűsítése) ✔, 17. Törtrész, arány és százalék (`fraction-percent-01`, a törtrész, az arány (rész : egész) és a százalék átváltása mindkét irányban) ✔
 - Nyitott mondatok, egyenletek és egyenlőtlenségek (3/3): 18. Nyitott mondat – igaz vagy hamis? (`open-sentence-01`, behelyettesítés és igazságérték: összeadás, kivonás, szorzás és osztás nyitott mondatai) ✔, 19. Egyenlet megoldása (`equation-01`, az ismeretlen keresése összeadással, kivonással, szorzással és osztással, valamint kétlépéses egyenletek) ✔, 20. Egyenlőtlenségek a számegyenesen (`inequality-01`, a megoldáshalmaz olvasása, kiválasztása és kiszámítása a számegyenesen) ✔.
+- Arány és százalék (1/4): 21. Arány és aránypár (`ratio-01`, az arány felírása a mennyiségek sorrendjében, az arány egyszerűsítése a legkisebb tagokra, valamint az aránypár hiányzó tagjának megtalálása) ✔ – a többi téma tervezett.
 - Kombinatorika (0/2): tervezett – a NAT 2020 tanmenetből felvett hiányzó témakör (sorba rendezés és összeszámlálás, kiválasztás és párosítás).
+- Mester kihívás (1/1): 🌟 Mester kihívás (`grade6-master-01`) – hiányzó műveleti jel és visszafelé gondolkodás a legügyesebbeknek ✔
 
 A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg.
 

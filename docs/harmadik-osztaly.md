@@ -1,10 +1,10 @@
 # Matekidő – 3. osztályos készségtérkép
 
-**48 lecke**, 9 kategóriában. Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
+**49 lecke**, 9 kategóriában. Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
 A 2. osztályos tananyag lezárult – a 3. osztály **nagyobb számkörre (1000-ig)**, a **szorzás és osztás bővítésére** épül.
 
-Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
+Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 
 ---
 
@@ -100,6 +100,14 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó.
 | 46 | Idő | [Idő – perc és óra](?lesson=time-convert-01) | Perc és óra átváltása (choice + input) | – | 2 |
 | 47 | Pénz | [Vásárlás 1000-ig](?lesson=money-pay-03) | Fizetés 200 és 500 forintos bankjegyekkel | 1000 | 2 |
 | 48 | Naptár | [Naptár és év](?lesson=calendar-1000-01) | Év, hónap, hét, nap kapcsolata | – | 2 |
+
+## 🌟 Mester kihívás (1 lecke)
+
+Azoknak, akiknek nagyon jól megy a matek. Itt nem elég számolni: gondolkodni kell. A feladatok megoldása a **visszafelé gondolkodást** és a **műveleti jelek felismerését** gyakoroltatja.
+
+| # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|---|
+| 49 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade3-master-01) | Hiányzó műveleti jel és visszafelé gondolkodás | 100 | 4 |
 
 
 ## 🎲 Egypercesek

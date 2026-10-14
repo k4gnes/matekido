@@ -105,7 +105,9 @@ export const TYPE_EMOJI = {
     "fraction-percent": "🔗",
     "open-sentence": "🧩",
     "equation": "🟰",
-    "inequality": "📈"
+    "inequality": "📈",
+    "ratio": "🔗",
+    "master": "🌟"
 };
 
 export const TYPE_LABEL = {
@@ -214,5 +216,7 @@ export const TYPE_LABEL = {
     "fraction-percent": "Törtrész, arány és százalék",
     "open-sentence": "Nyitott mondat",
     "equation": "Egyenlet",
-    "inequality": "Egyenlőtlenség"
+    "inequality": "Egyenlőtlenség",
+    "ratio": "Arány és aránypár",
+    "master": "Mester kihívás"
 };

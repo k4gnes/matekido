@@ -1,0 +1,108 @@
+{
+  "id": "ratio-01",
+  "title": "🔗 Arány és aránypár",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔗 Arány és aránypár",
+      "text": "Az arány két mennyiség összehasonlítása. Ha 4 alma és 6 körte van, akkor azt mondjuk: az almák és a körték aránya 4 : 6. A sorrend számít: 4 : 6 nem ugyanaz, mint 6 : 4. Az arányt egyszerűsíthetjük, ha mindkét tagot ugyanazzal a számmal osztjuk: 6 : 4 = 3 : 2. Két arány egyenlő, ha aránypárt alkotnak: 2 : 3 = 8 : 12, mert mindkét tag 4-szeresére nőtt. Most te jössz!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Arányok a postán",
+          "text": "A postán a csomagok és a bélyegek számát hasonlítjuk össze. Keresd meg a helyes arányt, egyszerűsíts, és találd meg a hiányzó tagot!"
+        },
+        "racing": {
+          "title": "🏎️ Arányok a pályán",
+          "text": "A versenypályán a kerekek és az autók számát hasonlítjuk össze. Keresd meg a helyes arányt, egyszerűsíts, és találd meg a hiányzó tagot!"
+        },
+        "football": {
+          "title": "⚽ Arányok a pályán",
+          "text": "A bajnokságban a gólok és a meccsek számát hasonlítjuk össze. Keresd meg a helyes arányt, egyszerűsíts, és találd meg a hiányzó tagot!"
+        },
+        "cooking": {
+          "title": "🍳 Arányok a konyhában",
+          "text": "A konyhában a hozzávalók mennyiségét hasonlítjuk össze. Keresd meg a helyes arányt, egyszerűsíts, és találd meg a hiányzó tagot!"
+        },
+        "animals": {
+          "title": "🦁 Arányok az állatkertben",
+          "text": "Az állatkertben az állatok számát hasonlítjuk össze. Keresd meg a helyes arányt, egyszerűsíts, és találd meg a hiányzó tagot!"
+        },
+        "space": {
+          "title": "🚀 Arányok az űrben",
+          "text": "Az űrhajón a modulok és az űrhajósok számát hasonlítjuk össze. Keresd meg a helyes arányt, egyszerűsíts, és találd meg a hiányzó tagot!"
+        },
+        "tram": {
+          "title": "🚋 Arányok a villamoson",
+          "text": "A villamoson az utasok és az ülések számát hasonlítjuk össze. Keresd meg a helyes arányt, egyszerűsíts, és találd meg a hiányzó tagot!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "ratio",
+      "options": {
+        "count": 3,
+        "mode": "write"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "ratio",
+      "options": {
+        "count": 3,
+        "mode": "simplify"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "ratio",
+      "options": {
+        "count": 3,
+        "mode": "missing"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "ratio",
+      "options": {
+        "count": 3,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen felírtad és egyszerűsítetted az arányokat!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen bánsz az arányokkal a postán!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen bánsz az arányokkal a pályán!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen bánsz az arányokkal a bajnokságban!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen bánsz az arányokkal a konyhában!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen bánsz az arányokkal az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen bánsz az arányokkal az űrben!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen bánsz az arányokkal a villamoson!"
+        }
+      }
+    }
+  ]
+}

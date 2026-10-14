@@ -44,6 +44,7 @@ export const CURRICULUM_ORDER = {
         "money-compare-01",
         "money-enough-01",
         "word-problems-01",
+        "grade1-master-01",
     ],
     2: [
         "estimate-01",
@@ -104,6 +105,7 @@ export const CURRICULUM_ORDER = {
         "word-problems-multiply-01",
         "word-problems-divide-01",
         "word-problems-two-step-01",
+        "grade2-master-01",
     ],
     3: [
         "place-value-hundreds-01",
@@ -154,6 +156,7 @@ export const CURRICULUM_ORDER = {
         "time-convert-01",
         "money-pay-03",
         "calendar-1000-01",
+        "grade3-master-01",
     ],
     4: [
         "place-value-thousands-01",
@@ -191,6 +194,7 @@ export const CURRICULUM_ORDER = {
         "data-chart-01",
         "word-problems-two-step-02",
         "word-problems-proportion-02",
+        "grade4-master-01",
     ],
     5: [
         "place-value-millions-01",
@@ -225,6 +229,7 @@ export const CURRICULUM_ORDER = {
         "average-01",
         "ratio-split-01",
         "direct-proportion-01",
+        "grade5-master-01",
     ],
     6: [
         "integers-line-01",
@@ -247,6 +252,8 @@ export const CURRICULUM_ORDER = {
         "open-sentence-01",
         "equation-01",
         "inequality-01",
+        "ratio-01",
+        "grade6-master-01",
     ],
 };
 

@@ -6,7 +6,7 @@ import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getLessonStats, getPlayBest, getActiveWorld, getActiveGrade, setActiveGrade, getFavoriteLessons, getSkippedLessons, isFavoriteLesson, toggleFavoriteLesson, getCustomDoneLessons, getMenuPrefs, saveMenuPrefs } from "../profile/Profile.js";
 import { CATEGORIES, SKILLS } from "../data/skills.js";
 import { HINT_TYPES, lessonHasHint } from "../data/hintLessons.js";
-import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=21";
+import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=23";
 import { curriculumSort } from "../data/curriculum.js";
 import { getPracticeLessonFiles } from "./practicePage.js?v=13";
 import { gradesWithLessons } from "../utils/grades.js?v=1";
@@ -160,7 +160,7 @@ const DIFFICULTY_LABEL = {
 export function createLessonCard(lesson, onSelect, activeWorld, position, total, selectOpts) {
     const lessonCard = document.createElement("div");
     const isPractice = !!lesson.practice;
-    lessonCard.className = "lesson-card" + (isPractice ? " lesson-card-practice" : "");
+    lessonCard.className = "lesson-card" + (isPractice ? " lesson-card-practice" : "") + (lesson.master ? " lesson-card-master" : "");
 
     const mission = lesson.worldTitles?.[activeWorld] ?? lesson.mission;
 
@@ -791,7 +791,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
         grid.className = "lesson-grid";
 
         gradeConfig.forEach(gc => {
-            const gradeLessons = allLessons.filter(l => l.grades?.includes(gc.grade) && !l.practice);
+            const gradeLessons = allLessons.filter(l => l.grades?.includes(gc.grade) && !l.practice && !l.master);
             const done = gradeLessons.length > 0 && gradeLessons.every(l => getLessonStats(l.file));
             const btn = createButton(done ? `✅ ${gc.title} – kész!` : gc.title, {
                 onClick: () => chooseGrade(gc.grade)
@@ -824,7 +824,8 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
     function renderGradeContent() {
         const gradeConfigEntry = gradeConfig.find(gc => gc.grade === selectedGrade);
         const gradeLessons = curriculumSort(allLessons.filter(l => l.grades?.includes(selectedGrade)), selectedGrade);
-        const taskLessons = gradeLessons.filter(l => !l.practice);
+        const taskLessons = gradeLessons.filter(l => !l.practice && !l.master);
+        const masterLessons = gradeLessons.filter(l => l.master);
         const playLessons = gradeLessons.filter(l => l.practice);
 
         const gradeTitle = document.createElement("h2");
@@ -953,6 +954,16 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
             ));
         }
 
+        if (masterLessons.length > 0) {
+            pickerSections.push(createPickerSection(
+                `🌟 Mester kihívás (${masterLessons.length}) – a legügyesebbeknek`,
+                masterLessons,
+                onSelect,
+                activeWorld,
+                { from: "master" }
+            ));
+        }
+
         if (pickerSections.length > 0) {
             contentArea.append(createPickerRow(pickerSections));
         }
@@ -960,7 +971,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
 
     function createPositionMap(lessons) {
         const positionMap = new Map();
-        const counted = lessons.filter(l => !l.practice);
+        const counted = lessons.filter(l => !l.practice && !l.master);
         counted.forEach((lesson, index) => {
             positionMap.set(lesson.file, { position: index + 1, total: counted.length });
         });

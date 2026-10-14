@@ -1247,6 +1247,30 @@
       }
     },
     {
+      "id": "ratio-01",
+      "title": "🔗 Arány és aránypár",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "ratio",
+      "difficulty": 2,
+      "type": "ratio",
+      "range": 100,
+      "mission": "🔗 Arány és aránypár",
+      "subtitle": "az arány felírása és egyszerűsítése, valamint a hiányzó tag",
+      "file": "./data/lessons/grade6/ratio-01.json",
+      "worldTitles": {
+        "postman": "📮 Arány a postán",
+        "racing": "🏎️ Arány a pályán",
+        "football": "⚽ Arány a pályán",
+        "cooking": "🍳 Arány a konyhában",
+        "animals": "🦁 Arány az állatkertben",
+        "space": "🚀 Arány az űrben",
+        "tram": "🚋 Arány a villamoson"
+      }
+    },
+    {
       "id": "set-match-01-grade1",
       "title": "🧺 Válogatás",
       "grades": [
@@ -5430,6 +5454,156 @@
         "tram": "🚋 Műveleti sorrend a villamoson"
       },
       "playMode": "operation-order-play"
+    },
+    {
+      "id": "grade3-master-01",
+      "title": "🌟 Mester kihívás",
+      "grades": [
+        3
+      ],
+      "category": "numbers",
+      "skill": "master",
+      "difficulty": 4,
+      "type": "master",
+      "master": true,
+      "range": 100,
+      "mission": "🌟 Mester kihívás",
+      "subtitle": "hiányzó műveleti jel és visszafelé gondolkodás – a legügyesebbeknek",
+      "file": "./data/lessons/grade3/master-01.json",
+      "worldTitles": {
+        "postman": "📮 Mester kihívás a postán",
+        "racing": "🏎️ Mester kihívás a pályán",
+        "football": "⚽ Mester kihívás a pályán",
+        "cooking": "🍳 Mester kihívás a konyhában",
+        "animals": "🦁 Mester kihívás az állatkertben",
+        "space": "🚀 Mester kihívás az űrben",
+        "tram": "🚋 Mester kihívás a villamoson"
+      }
+    },
+    {
+      "id": "grade1-master-01",
+      "title": "🌟 Mester kihívás",
+      "grades": [
+        1
+      ],
+      "category": "numbers",
+      "skill": "master",
+      "difficulty": 4,
+      "type": "master",
+      "master": true,
+      "range": 20,
+      "mission": "🌟 Mester kihívás",
+      "subtitle": "hiányzó műveleti jel és visszafelé gondolkodás – a legügyesebbeknek",
+      "file": "./data/lessons/grade1/master-01.json",
+      "worldTitles": {
+        "postman": "📮 Mester kihívás a postán",
+        "racing": "🏎️ Mester kihívás a pályán",
+        "football": "⚽ Mester kihívás a pályán",
+        "cooking": "🍳 Mester kihívás a konyhában",
+        "animals": "🦁 Mester kihívás az állatkertben",
+        "space": "🚀 Mester kihívás az űrben",
+        "tram": "🚋 Mester kihívás a villamoson"
+      }
+    },
+    {
+      "id": "grade2-master-01",
+      "title": "🌟 Mester kihívás",
+      "grades": [
+        2
+      ],
+      "category": "numbers",
+      "skill": "master",
+      "difficulty": 4,
+      "type": "master",
+      "master": true,
+      "range": 100,
+      "mission": "🌟 Mester kihívás",
+      "subtitle": "hiányzó műveleti jel és visszafelé gondolkodás – a legügyesebbeknek",
+      "file": "./data/lessons/grade2/master-01.json",
+      "worldTitles": {
+        "postman": "📮 Mester kihívás a postán",
+        "racing": "🏎️ Mester kihívás a pályán",
+        "football": "⚽ Mester kihívás a pályán",
+        "cooking": "🍳 Mester kihívás a konyhában",
+        "animals": "🦁 Mester kihívás az állatkertben",
+        "space": "🚀 Mester kihívás az űrben",
+        "tram": "🚋 Mester kihívás a villamoson"
+      }
+    },
+    {
+      "id": "grade4-master-01",
+      "title": "🌟 Mester kihívás",
+      "grades": [
+        4
+      ],
+      "category": "numbers",
+      "skill": "master",
+      "difficulty": 4,
+      "type": "master",
+      "master": true,
+      "range": 1000,
+      "mission": "🌟 Mester kihívás",
+      "subtitle": "hiányzó műveleti jel és visszafelé gondolkodás – a legügyesebbeknek",
+      "file": "./data/lessons/grade4/master-01.json",
+      "worldTitles": {
+        "postman": "📮 Mester kihívás a postán",
+        "racing": "🏎️ Mester kihívás a pályán",
+        "football": "⚽ Mester kihívás a pályán",
+        "cooking": "🍳 Mester kihívás a konyhában",
+        "animals": "🦁 Mester kihívás az állatkertben",
+        "space": "🚀 Mester kihívás az űrben",
+        "tram": "🚋 Mester kihívás a villamoson"
+      }
+    },
+    {
+      "id": "grade5-master-01",
+      "title": "🌟 Mester kihívás",
+      "grades": [
+        5
+      ],
+      "category": "numbers",
+      "skill": "master",
+      "difficulty": 4,
+      "type": "master",
+      "master": true,
+      "range": 1000,
+      "mission": "🌟 Mester kihívás",
+      "subtitle": "hiányzó műveleti jel és visszafelé gondolkodás – a legügyesebbeknek",
+      "file": "./data/lessons/grade5/master-01.json",
+      "worldTitles": {
+        "postman": "📮 Mester kihívás a postán",
+        "racing": "🏎️ Mester kihívás a pályán",
+        "football": "⚽ Mester kihívás a pályán",
+        "cooking": "🍳 Mester kihívás a konyhában",
+        "animals": "🦁 Mester kihívás az állatkertben",
+        "space": "🚀 Mester kihívás az űrben",
+        "tram": "🚋 Mester kihívás a villamoson"
+      }
+    },
+    {
+      "id": "grade6-master-01",
+      "title": "🌟 Mester kihívás",
+      "grades": [
+        6
+      ],
+      "category": "numbers",
+      "skill": "master",
+      "difficulty": 4,
+      "type": "master",
+      "master": true,
+      "range": 1000,
+      "mission": "🌟 Mester kihívás",
+      "subtitle": "hiányzó műveleti jel és visszafelé gondolkodás – a legügyesebbeknek",
+      "file": "./data/lessons/grade6/master-01.json",
+      "worldTitles": {
+        "postman": "📮 Mester kihívás a postán",
+        "racing": "🏎️ Mester kihívás a pályán",
+        "football": "⚽ Mester kihívás a pályán",
+        "cooking": "🍳 Mester kihívás a konyhában",
+        "animals": "🦁 Mester kihívás az állatkertben",
+        "space": "🚀 Mester kihívás az űrben",
+        "tram": "🚋 Mester kihívás a villamoson"
+      }
     }
   ],
   "gradeConfig": [

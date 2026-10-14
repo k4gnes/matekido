@@ -561,7 +561,7 @@ export class Game {
             if (!this.lesson.completed) {
                 try {
                     const profileBefore = completeLesson();
-                    const dailyQuestJustCompleted = profileBefore && !profileBefore.dailyQuestCompleted;
+                    const dailyQuestJustCompleted = profileBefore && profileBefore.dailyQuestJustCompleted;
                     recordDailyResult(this.correct, this.wrong, this.byType);
                     if (this.lessonFile) {
                         if (practice) recordLessonPractice(this.lessonFile);

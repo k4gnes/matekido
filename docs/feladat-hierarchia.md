@@ -173,7 +173,27 @@ csak más szöveggel és ikonokkal (`worldTitles`). A világokat csillagokkal
 lehet megnyitni (`requiredStars`), a `setActiveWorld` pedig csak azt mondja meg,
 melyik tematikával jelenjen meg a menü és a leckék.
 
-## 7. Hivatkozott források
+## 7. 7. osztály – tervezett témakörök
+
+A 7. osztály anyaga még **tervezés alatt** áll; a részletes tanmenetet a
+`docs/hetedik-osztaly.md` tartalmazza. A tervezett témakörök (a 6. osztály
+hierarchiáját folytatva, a NAT 7. évfolyamos témáira építve):
+
+1. **Racionális számok** – kiterjesztés, összehasonlítás, műveletek, vegyes sorrend.
+2. **Algebrai kifejezések** – helyettesítési érték, hasonló tagok, zárójelek, kiemelés.
+3. **Egyenletek és egyenlőtlenségek** – elsőfokú egyenletek, szöveges egyenletek, egyenlőtlenségek, arányos összefüggések.
+4. **Koordináta-rendszer és függvények** – pontok, értéktáblázat, grafikon, lineáris összefüggések előkészítése.
+5. **Geometria** – háromszög-egyenlőtlenség, Pitagorasz-tétel, négyszögek, sokszögek területe, kerület és terület, kör és körcikk, hasonlóság, transzformációk.
+6. **Statisztika és valószínűség** – diagramok, átlag/medián/módusz, klasszikus valószínűség.
+7. **Szöveges feladatok és összefoglalás** – vegyes gyakorlatok, ismétlés, mester kihívás.
+
+A leckék azonosítói és a hozzájuk tartozó generátorok/komponensek az
+implementálás során véglegesednek (több meglévő típus újrahasznosítható:
+`equation`, `inequality`, `ratio`, `word-problem`, `circle`, `polygon`,
+`shape-area`, `triangle`, `transform`, `coordinate`, `average`, `probability`,
+`combinatorics`, `master`).
+
+## 8. Hivatkozott források
 
 - Lecke-regiszter: `src/data/lessons/index.json`
 - Kategóriák és készségek: `src/data/skills.js`

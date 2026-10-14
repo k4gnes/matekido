@@ -535,6 +535,7 @@ const SW_CACHE_LIST = [
     "/docs/feladatmegoldas.png",
     "/docs/harmadik-osztaly.md",
     "/docs/hatodik-osztaly.md",
+    "/docs/hetedik-osztaly.md",
     "/docs/kezdes-jatekosvalaszto.png",
     "/docs/masodik-osztaly.md",
     "/docs/negyedik-osztaly.md",

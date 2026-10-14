@@ -2,7 +2,7 @@ export const CATEGORIES = {
     numbers: {
         title: "Számok",
         icon: "🔢",
-        skills: ["neighbours", "comparison", "ordering", "missing-number", "place-value", "rounding", "number-sequence", "even-odd", "pattern", "estimation", "number-names", "roman", "sets", "data-charts", "probability", "combinatorics", "divisibility", "primes", "prime-factor", "gcd-lcm", "powers", "integers", "open-sentence", "equation", "inequality", "ratio", "master"]
+        skills: ["neighbours", "comparison", "ordering", "missing-number", "place-value", "rounding", "number-sequence", "even-odd", "pattern", "estimation", "number-names", "roman", "sets", "data-charts", "probability", "combinatorics", "divisibility", "primes", "prime-factor", "gcd-lcm", "powers", "integers", "open-sentence", "equation", "inequality", "ratio", "rational", "algebra", "functions", "statistics", "master"]
     },
     fractions: {
         title: "Törtek",
@@ -27,7 +27,7 @@ export const CATEGORIES = {
     geometry: {
         title: "Geometria",
         icon: "📐",
-        skills: ["shapes", "shape-compare", "solid-shapes", "transform", "perimeter", "area", "angles", "circle", "position", "coordinates", "triangles", "quadrilaterals"]
+        skills: ["shapes", "shape-compare", "solid-shapes", "transform", "perimeter", "area", "angles", "circle", "position", "coordinates", "triangles", "quadrilaterals", "pythagorean", "similarity"]
     },
     wordProblems: {
         title: "Szöveges feladatok",
@@ -118,7 +118,15 @@ export const SKILLS = {
     "two-step": { title: "Kétlépéses", category: "wordProblems" },
     "ratio-split": { title: "Arányos osztás", category: "wordProblems" },
     "direct-proportion": { title: "Egyenes arányosság", category: "wordProblems" },
-    "inverse-proportion": { title: "Fordított arányosság", category: "wordProblems" }
+    "inverse-proportion": { title: "Fordított arányosság", category: "wordProblems" },
+
+    // 7. osztály
+    rational: { title: "Racionális számok", category: "numbers" },
+    algebra: { title: "Algebra", category: "numbers" },
+    functions: { title: "Függvények", category: "numbers" },
+    statistics: { title: "Statisztika", category: "numbers" },
+    pythagorean: { title: "Pitagorasz-tétel", category: "geometry" },
+    similarity: { title: "Hasonlóság", category: "geometry" }
 };
 
 export const DIFFICULTY = {

@@ -285,6 +285,7 @@ export const CURRICULUM_ORDER = {
         "algebra-factor-10",
         "equation-linear-11",
         "equation-word-12",
+        "inequality-linear-13",
     ],
 };
 

@@ -6296,6 +6296,30 @@
         "space": "🚀 Szöveges feladatok az űrben",
         "tram": "🚋 Szöveges feladatok a villamoson"
       }
+    },
+    {
+      "id": "inequality-linear-13",
+      "title": "🚦 Elsőfokú egyenlőtlenségek",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "inequality",
+      "difficulty": 3,
+      "type": "inequality",
+      "range": 1000,
+      "mission": "🚦 Elsőfokú egyenlőtlenségek",
+      "subtitle": "megoldáshalmaz számegyenesen, jelváltás",
+      "file": "./data/lessons/grade7/inequality-linear-13.json",
+      "worldTitles": {
+        "postman": "📮 Egyenlőtlenségek a postán",
+        "racing": "🏎️ Egyenlőtlenségek a pályán",
+        "football": "⚽ Egyenlőtlenségek a pályán",
+        "cooking": "🍳 Egyenlőtlenségek a konyhában",
+        "animals": "🦁 Egyenlőtlenségek az állatkertben",
+        "space": "🚀 Egyenlőtlenségek az űrben",
+        "tram": "🚋 Egyenlőtlenségek a villamoson"
+      }
     }
   ],
   "gradeConfig": [

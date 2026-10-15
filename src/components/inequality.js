@@ -72,8 +72,16 @@ function buildLine(relation, bound) {
     return svg;
 }
 
-function hintText() {
-    return "A > és < esetén a határérték nem tartozik a megoldáshalmazba, ezért üres karika van. A ≥ és ≤ esetén a határérték is megoldás, ezért teli karika van. A színes nyíl arra mutat, amerre a megoldások vannak: x > 3 esetén jobbra, x < 3 esetén balra.";
+function hintText(step) {
+    const circles = "A > és < esetén a határérték nem tartozik a megoldáshalmazba, ezért üres karika van. A ≥ és ≤ esetén a határérték is megoldás, ezért teli karika van.";
+    if (step.mode === "linear" || step.mode === "linear-line") {
+        const flip = step.sourceRelation !== step.relation;
+        const flipNote = flip
+            ? " Mivel negatív számmal osztottunk, az egyenlőtlenség jele megfordult."
+            : " Mivel pozitív számmal osztottunk, a jel nem változott.";
+        return `Az ismeretlent hagyd az egyik oldalon, a számokat a másikon, majd ossz az együtthatóval.${flipNote} ${circles}`;
+    }
+    return `${circles} A színes nyíl arra mutat, amerre a megoldások vannak: x > 3 esetén jobbra, x < 3 esetén balra.`;
 }
 
 function successText(step) {
@@ -108,7 +116,7 @@ export function renderInequality(step, root, next, progress, onResult, onAttempt
         card.append(lineBox);
     }
 
-    if (step.mode === "solve") {
+    if (["solve", "linear", "linear-line"].includes(step.mode)) {
         const expression = document.createElement("div");
         expression.className = "ineq-expression";
         expression.textContent = step.expression;
@@ -119,7 +127,8 @@ export function renderInequality(step, root, next, progress, onResult, onAttempt
     card.append(message.element);
 
     const options = document.createElement("div");
-    options.className = step.mode === "choose" ? "ineq-options ineq-options-lines" : "ineq-options";
+    const lineMode = step.mode === "choose" || step.mode === "linear-line";
+    options.className = lineMode ? "ineq-options ineq-options-lines" : "ineq-options";
 
     step.options.forEach(opt => {
         const btn = document.createElement("button");
@@ -127,7 +136,7 @@ export function renderInequality(step, root, next, progress, onResult, onAttempt
         btn.className = "ineq-option";
         btn.dataset.correct = String(!!opt.correct);
 
-        if (step.mode === "choose") {
+        if (lineMode) {
             btn.classList.add("ineq-option-line");
             btn.append(buildLine(opt.relation, opt.bound));
         } else {
@@ -168,7 +177,7 @@ export function renderInequality(step, root, next, progress, onResult, onAttempt
     const hintButton = createButton("💡 Segítséget kérek", {
         onClick: () => {
             hintShown = true;
-            hint.innerHTML = `<p><strong>💡 Segítség</strong></p><p>${hintText()}</p>`;
+            hint.innerHTML = `<p><strong>💡 Segítség</strong></p><p>${hintText(step)}</p>`;
             hintButton.style.display = "none";
         }
     });

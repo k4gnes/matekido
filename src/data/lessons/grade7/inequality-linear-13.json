@@ -1,0 +1,100 @@
+{
+  "id": "inequality-linear-13",
+  "title": "🚦 Elsőfokú egyenlőtlenségek",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🚦 Elsőfokú egyenlőtlenségek",
+      "text": "Az egyenlőtlenség is olyan nyitott mondat, de itt a megoldás nem egyetlen szám, hanem számok egy csoportja: a megoldáshalmaz. Az egyenlőtlenséget ugyanúgy rendezzük, mint az egyenletet, de van egy fontos szabály: ha negatív számmal szorozzuk vagy osztjuk mindkét oldalt, akkor az egyenlőtlenség jele megfordul. A megoldáshalmazt számegyenesen ábrázoljuk: teli karika, ha a határérték is megoldás (≥, ≤), üres karika, ha nem (>, <).",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Egyenlőtlenségek a postán",
+          "text": "A postán a csomagok számára adunk alsó vagy felső korlátot. Oldd meg az egyenlőtlenségeket, és keresd meg a megoldáshalmazt!"
+        },
+        "racing": {
+          "title": "🏎️ Egyenlőtlenségek a pályán",
+          "text": "A versenyen a körök számára adunk korlátot. Oldd meg az egyenlőtlenségeket, és keresd meg a megoldáshalmazt!"
+        },
+        "cooking": {
+          "title": "🍳 Egyenlőtlenségek a konyhában",
+          "text": "A konyhában a hozzávalók mennyiségére adunk korlátot. Oldd meg az egyenlőtlenségeket!"
+        },
+        "football": {
+          "title": "⚽ Egyenlőtlenségek a pályán",
+          "text": "A bajnokságban a gólok számára adunk korlátot. Oldd meg az egyenlőtlenségeket!"
+        },
+        "animals": {
+          "title": "🦁 Egyenlőtlenségek az állatkertben",
+          "text": "Az állatkertben az adagokra adunk korlátot. Oldd meg az egyenlőtlenségeket!"
+        },
+        "space": {
+          "title": "🚀 Egyenlőtlenségek az űrben",
+          "text": "Az űrhajón a készletre adunk korlátot. Oldd meg az egyenlőtlenségeket!"
+        },
+        "tram": {
+          "title": "🚋 Egyenlőtlenségek a villamoson",
+          "text": "A villamoson az utasok számára adunk korlátot. Oldd meg az egyenlőtlenségeket!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "inequality",
+      "options": {
+        "count": 4,
+        "mode": "linear-line"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "inequality",
+      "options": {
+        "count": 4,
+        "mode": "linear"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "inequality",
+      "options": {
+        "count": 4,
+        "mode": "linear-line"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megoldottad az elsőfokú egyenlőtlenségeket!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a postai korlátokat!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megoldottad a pálya egyenlőtlenségeit!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen megtaláltad a konyhai korlátokat!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad a bajnokság egyenlőtlenségeit!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad az állatkerti korlátokat!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megoldottad az űr egyenlőtlenségeit!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megtaláltad a villamos korlátait!"
+        }
+      }
+    }
+  ]
+}

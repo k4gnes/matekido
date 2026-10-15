@@ -12,7 +12,7 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=47";
+import { buildLesson } from "./builders/LessonBuilder.js?v=48";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { SKILLS } from "./data/skills.js";
@@ -1498,7 +1498,8 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "inequality": {
-            if (!["read", "choose", "solve"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            const INEQ_OPPOSITE = { ">": "<", "<": ">", "≥": "≤", "≤": "≥" };
+            if (!["read", "choose", "solve", "linear", "linear-line"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             if (![">", "<", "≥", "≤"].includes(step.relation)) fail(ctx, `relation hibás: ${step.relation}`);
             if (!isInt(step.bound) || step.bound < 1 || step.bound > 9) fail(ctx, `bound hibás: ${step.bound}`);
             if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
@@ -1508,14 +1509,20 @@ function validateStep(step, ctx, range) {
             }
             const correctCount = step.options.filter(o => o && o.correct).length;
             if (correctCount !== 1) fail(ctx, `${correctCount} helyes opció (1 kellene)`);
-            if (step.mode === "choose") {
+            const lineMode = step.mode === "choose" || step.mode === "linear-line";
+            if (lineMode) {
                 if (new Set(step.options.map(o => `${o.relation}|${o.bound}`)).size !== 4) fail(ctx, "a számegyenes opciók ismétlődnek");
                 for (const o of step.options) {
                     if (![">", "<", "≥", "≤"].includes(o.relation)) fail(ctx, `opció relation hibás: ${o.relation}`);
-                    if (o.bound !== step.bound) fail(ctx, `opció bound hibás: ${o.bound}`);
+                    if (!isInt(o.bound) || o.bound < 0 || o.bound > 10) fail(ctx, `opció bound hibás: ${o.bound}`);
                 }
                 const correct = step.options.find(o => o.correct);
-                if (correct.relation !== step.relation) fail(ctx, "a helyes opció relation hibás");
+                if (correct.relation !== step.relation || correct.bound !== step.bound) fail(ctx, "a helyes opció hibás");
+                if (step.mode === "choose") {
+                    for (const o of step.options) {
+                        if (o.bound !== step.bound) fail(ctx, `opció bound hibás: ${o.bound}`);
+                    }
+                }
             } else {
                 if (new Set(step.options.map(o => o.text)).size !== 4) fail(ctx, "a szöveges opciók ismétlődnek");
                 const expectedText = `x ${step.relation} ${step.bound}`;
@@ -1527,6 +1534,19 @@ function validateStep(step, ctx, range) {
                 if (step.expression !== `x + ${step.a} ${step.relation} ${step.bound + step.a}`) {
                     fail(ctx, `expression hibás: ${step.expression}`);
                 }
+            }
+            if (step.mode === "linear" || step.mode === "linear-line") {
+                if (!isInt(step.a) || step.a === 0 || Math.abs(step.a) < 2 || Math.abs(step.a) > 5) fail(ctx, `a hibás: ${step.a}`);
+                if (!isInt(step.b) || step.b < 1) fail(ctx, `b hibás: ${step.b}`);
+                if (!isInt(step.c)) fail(ctx, `c hibás: ${step.c}`);
+                if (![">", "<", "≥", "≤"].includes(step.sourceRelation)) fail(ctx, `sourceRelation hibás: ${step.sourceRelation}`);
+                const expectedSource = step.a > 0 ? step.relation : INEQ_OPPOSITE[step.relation];
+                if (step.sourceRelation !== expectedSource) fail(ctx, `sourceRelation hibás: ${step.sourceRelation} != ${expectedSource}`);
+                if (step.c !== step.a * step.bound + step.b) fail(ctx, `c (${step.c}) != a*bound+b (${step.a * step.bound + step.b})`);
+                const coef = step.a > 0 ? `${step.a}x` : `−${Math.abs(step.a)}x`;
+                const cText = step.c < 0 ? `−${Math.abs(step.c)}` : `${step.c}`;
+                const expectedExpression = `${coef} + ${step.b} ${step.sourceRelation} ${cText}`;
+                if (step.expression !== expectedExpression) fail(ctx, `expression hibás: ${step.expression} != ${expectedExpression}`);
             }
             break;
         }

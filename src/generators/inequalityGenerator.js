@@ -85,10 +85,87 @@ function buildSolve() {
     };
 }
 
+function buildLinear(lineMode) {
+    const sourceRelation = pick(RELATIONS);
+    const magnitude = randint(2, 5);
+    const a = Math.random() < 0.5 ? -magnitude : magnitude;
+    const bound = randint(1, 8);
+    const b = randint(1, 9);
+    const c = a * bound + b;
+    const relation = a > 0 ? sourceRelation : OPPOSITE[sourceRelation];
+
+    const coef = a > 0 ? `${a}x` : `−${magnitude}x`;
+    const cText = c < 0 ? `−${Math.abs(c)}` : `${c}`;
+    const expression = `${coef} + ${b} ${sourceRelation} ${cText}`;
+
+    const correctText = label(relation, bound);
+    const textDecoys = [];
+    for (const candidate of [
+        label(sourceRelation, bound),
+        label(relation, bound + 1),
+        label(OPPOSITE[relation], bound),
+        label(relation, bound - 1)
+    ]) {
+        if (candidate !== correctText && !textDecoys.includes(candidate)) textDecoys.push(candidate);
+        if (textDecoys.length === 3) break;
+    }
+
+    const lineDecoys = [];
+    for (const candidate of [
+        { relation: sourceRelation, bound },
+        { relation, bound: bound + 1 },
+        { relation: OPPOSITE[relation], bound },
+        { relation, bound: bound - 1 }
+    ]) {
+        if (candidate.relation === relation && candidate.bound === bound) continue;
+        const key = `${candidate.relation}|${candidate.bound}`;
+        if (!lineDecoys.some(d => `${d.relation}|${d.bound}` === key)) lineDecoys.push(candidate);
+        if (lineDecoys.length === 3) break;
+    }
+
+    const base = {
+        relation,
+        sourceRelation,
+        bound,
+        a,
+        b,
+        c,
+        expression
+    };
+
+    if (lineMode) {
+        return {
+            ...base,
+            mode: "linear-line",
+            question: "Oldd meg az egyenlőtlenséget! Melyik számegyenes mutatja a megoldáshalmazt?",
+            options: shuffle([
+                { relation, bound, correct: true },
+                ...lineDecoys.map(d => ({ relation: d.relation, bound: d.bound, correct: false }))
+            ])
+        };
+    }
+
+    return {
+        ...base,
+        mode: "linear",
+        question: "Oldd meg az egyenlőtlenséget! Melyik a megoldáshalmaz?",
+        options: shuffle([
+            { text: correctText, correct: true },
+            ...textDecoys.map(text => ({ text, correct: false }))
+        ])
+    };
+}
+
 export function generateInequality(options = {}) {
     const { count = 4, mode = "mixed" } = options;
 
-    const builders = { read: buildRead, choose: buildChoose, solve: buildSolve };
+    const builders = {
+        read: buildRead,
+        choose: buildChoose,
+        solve: buildSolve,
+        linear: () => buildLinear(false),
+        "linear-line": () => buildLinear(true)
+    };
 
     if (mode !== "mixed" && !builders[mode]) {
         throw new Error(`Ismeretlen egyenlőtlenség mód: ${mode}`);

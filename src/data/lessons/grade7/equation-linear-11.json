@@ -1,0 +1,108 @@
+{
+  "id": "equation-linear-11",
+  "title": "🟰 Elsőfokú egyenletek",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🟰 Elsőfokú egyenletek",
+      "text": "Az elsőfokú egyenletben az ismeretlen (x) csak első hatványon szerepel. A megoldás során arra törekszünk, hogy az egyik oldalon csak x maradjon. Ehhez mindkét oldalon ugyanazt a műveletet végezzük: az ismeretlenes tagokat az egyik oldalra, a számokat a másikra rendezzük. A zárójelet előbb felbontjuk, a törtet pedig a nevezővel való szorzással tüntetjük el.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Egyenletek a postán",
+          "text": "A postán a csomagok számát rejti az x. Rendezd az egyenletet, hogy megtaláld az ismeretlent!"
+        },
+        "racing": {
+          "title": "🏎️ Egyenletek a pályán",
+          "text": "A versenyen a körök számát rejti az x. Oldd meg az egyenletet lépésről lépésre!"
+        },
+        "cooking": {
+          "title": "🍳 Egyenletek a konyhában",
+          "text": "A konyhában a hozzávalók mennyiségét rejti az x. Rendezd az egyenletet!"
+        },
+        "football": {
+          "title": "⚽ Egyenletek a pályán",
+          "text": "A bajnokságban a gólok számát rejti az x. Oldd meg az egyenletet!"
+        },
+        "animals": {
+          "title": "🦁 Egyenletek az állatkertben",
+          "text": "Az állatkertben az adagok számát rejti az x. Rendezd az egyenletet!"
+        },
+        "space": {
+          "title": "🚀 Egyenletek az űrben",
+          "text": "Az űrhajón a kódot rejti az x. Oldd meg az egyenletet lépésről lépésre!"
+        },
+        "tram": {
+          "title": "🚋 Egyenletek a villamoson",
+          "text": "A villamoson az utasok számát rejti az x. Rendezd az egyenletet!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "equation",
+      "options": {
+        "count": 3,
+        "mode": "both-sides"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "equation",
+      "options": {
+        "count": 3,
+        "mode": "paren"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "equation",
+      "options": {
+        "count": 3,
+        "mode": "fraction-add"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "equation",
+      "options": {
+        "count": 3,
+        "mode": "fraction-div"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megoldottad az elsőfokú egyenleteket!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen rendezted a posta egyenleteit!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen oldottad meg a pálya egyenleteit!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen rendezted a konyha egyenleteit!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen oldottad meg a bajnokság egyenleteit!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen rendezted az állatkert egyenleteit!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen oldottad meg az űr egyenleteit!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen rendezted a villamos egyenleteit!"
+        }
+      }
+    }
+  ]
+}

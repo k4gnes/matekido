@@ -9,7 +9,7 @@ const DOCS = [
     { id: "negyedik-osztaly", emoji: "🍀", label: "4. osztály", desc: "36 lecke – 10 000-ig, írásbeli műveletek, törtek, geometria, mester kihívás" },
     { id: "otodik-osztaly", emoji: "🌌", label: "5. osztály", desc: "33 lecke – 1 000 000-ig, oszthatóság, törtek, tizedes törtek, százalék, nagy számok műveletei, geometria, adatok, szöveges feladatok, mester kihívás" },
     { id: "hatodik-osztaly", emoji: "🧊", label: "6. osztály", desc: "39 lecke – negatív számok, ellentett és abszolút érték, egész számok összehasonlítása és műveletei, oszthatósági szabályok, osztók és többszörösök, prím- és összetett számok, prímfelbontás, LNKO és LKKT, hatványozás alapjai, tízes hatványok, hatványok a műveleti sorrendben, törtek a számegyenesen és vegyes számok, törtek és tizedes törtek átváltása, törtek szorzása és osztása, törtrész és százalék, nyitott mondat – igaz vagy hamis?, egyenlet megoldása, egyenlőtlenségek a számegyenesen, arány és aránypár, egyenes és fordított arányosság, százalékszámítás, háromszögek, négyszögek, szögek, kör, transzformációk, kerület és terület, felszín és térfogat, átlag és diagramok, valószínűség, arányossági és százalékos szöveges feladatok, többlépéses feladatok, kombinatorika, mester kihívás" },
-    { id: "hetedik-osztaly", emoji: "🛰️", label: "7. osztály", desc: "10 lecke – racionális számok (5) és algebrai kifejezések (5): helyettesítési érték, összevonás, zárójel, szorzás, kiemelés (tervezett továbbfejlesztés)" }
+    { id: "hetedik-osztaly", emoji: "🛰️", label: "7. osztály", desc: "11 lecke – racionális számok (5), algebrai kifejezések (5) és elsőfokú egyenletek (tervezett továbbfejlesztés)" }
 ];
 
 export function renderSkillMap(root, onBack) {

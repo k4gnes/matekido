@@ -1458,7 +1458,7 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "equation": {
-            if (!["add", "sub", "mul", "div", "two-step"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!["add", "sub", "mul", "div", "two-step", "both-sides", "paren", "fraction-add", "fraction-div"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             if (typeof step.equation !== "string" || !step.equation.includes("x")) fail(ctx, "equation hibás");
             if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
             let expected = null;
@@ -1474,6 +1474,19 @@ function validateStep(step, ctx, range) {
             } else if (step.mode === "div") {
                 if (!isInt(step.a) || !isInt(step.c)) fail(ctx, "a/c hibás");
                 else expected = step.a * step.c;
+            } else if (step.mode === "both-sides") {
+                if (!isInt(step.a) || !isInt(step.b) || !isInt(step.c) || !isInt(step.d) || step.a === step.c) fail(ctx, "a/b/c/d hibás");
+                else expected = (step.d - step.b) / (step.a - step.c);
+            } else if (step.mode === "paren") {
+                if (!["add", "sub"].includes(step.form)) fail(ctx, `form hibás: ${step.form}`);
+                if (!isInt(step.a) || !isInt(step.b) || !isInt(step.c) || step.a === 0) fail(ctx, "a/b/c hibás");
+                else expected = step.form === "add" ? step.c / step.a - step.b : step.c / step.a + step.b;
+            } else if (step.mode === "fraction-add") {
+                if (!isInt(step.a) || !isInt(step.b) || !isInt(step.c) || step.a === 0) fail(ctx, "a/b/c hibás");
+                else expected = step.a * (step.c - step.b);
+            } else if (step.mode === "fraction-div") {
+                if (!isInt(step.a) || !isInt(step.b) || !isInt(step.c) || step.a === 0) fail(ctx, "a/b/c hibás");
+                else expected = step.a * step.c - step.b;
             } else {
                 if (!["mul-add", "mul-sub"].includes(step.form)) fail(ctx, `form hibás: ${step.form}`);
                 if (!isInt(step.a) || !isInt(step.b) || !isInt(step.c) || step.a === 0) fail(ctx, "a/b/c hibás");

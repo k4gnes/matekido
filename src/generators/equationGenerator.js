@@ -51,12 +51,99 @@ function buildTwoStepSub() {
     return { mode: "two-step", form: "mul-sub", a, b, c, answer, equation: `${a} × x − ${b} = ${c}` };
 }
 
+function buildBothSides() {
+    const answer = randint(2, 12);
+    const a = randint(3, 9);
+    const c = randint(1, a - 1);
+    const b = randint(1, 15);
+    const d = (a - c) * answer + b;
+    return {
+        mode: "both-sides",
+        a,
+        b,
+        c,
+        d,
+        answer,
+        equation: `${a}x + ${b} = ${c}x + ${d}`,
+        expr: [`${a}x + ${b} = ${c}x + ${d}`]
+    };
+}
+
+function buildParen() {
+    const answer = randint(2, 12);
+    const a = randint(2, 9);
+    const b = randint(1, 9);
+    if (Math.random() < 0.5) {
+        const c = a * (answer + b);
+        return {
+            mode: "paren",
+            form: "add",
+            a,
+            b,
+            c,
+            answer,
+            equation: `${a}(x + ${b}) = ${c}`,
+            expr: [`${a}(x + ${b}) = ${c}`]
+        };
+    }
+    const s = Math.max(answer, b + 1);
+    const c = a * (s - b);
+    return {
+        mode: "paren",
+        form: "sub",
+        a,
+        b,
+        c,
+        answer: s,
+        equation: `${a}(x − ${b}) = ${c}`,
+        expr: [`${a}(x − ${b}) = ${c}`]
+    };
+}
+
+function buildFractionAdd() {
+    const a = randint(2, 9);
+    const t = randint(1, 9);
+    const answer = a * t;
+    const b = randint(1, 9);
+    const c = t + b;
+    return {
+        mode: "fraction-add",
+        a,
+        b,
+        c,
+        answer,
+        equation: `x/${a} + ${b} = ${c}`,
+        expr: [{ frac: ["x", String(a)] }, " + ", String(b), " = ", String(c)]
+    };
+}
+
+function buildFractionDiv() {
+    const a = randint(2, 9);
+    const c = randint(2, 12);
+    const b = randint(1, 9);
+    const answer = a * c - b;
+    if (answer < 1) return buildFractionDiv();
+    return {
+        mode: "fraction-div",
+        a,
+        b,
+        c,
+        answer,
+        equation: `(x + ${b})/${a} = ${c}`,
+        expr: [{ frac: [`x + ${b}`, String(a)] }, " = ", String(c)]
+    };
+}
+
 const MODES = {
     add: buildAdd,
     sub: buildSub,
     mul: buildMul,
     div: buildDiv,
-    "two-step": () => (Math.random() < 0.5 ? buildTwoStepAdd() : buildTwoStepSub())
+    "two-step": () => (Math.random() < 0.5 ? buildTwoStepAdd() : buildTwoStepSub()),
+    "both-sides": buildBothSides,
+    paren: buildParen,
+    "fraction-add": buildFractionAdd,
+    "fraction-div": buildFractionDiv
 };
 
 export function generateEquation(options = {}) {

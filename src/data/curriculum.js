@@ -283,6 +283,7 @@ export const CURRICULUM_ORDER = {
         "algebra-parenthesis-08",
         "algebra-distribute-09",
         "algebra-factor-10",
+        "equation-linear-11",
     ],
 };
 

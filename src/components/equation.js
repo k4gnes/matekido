@@ -29,10 +29,53 @@ function hintText(step) {
     if (step.mode === "div") {
         return `Az osztás fordítottja a szorzás, ezért x = ${step.c} × ${step.a}.`;
     }
+    if (step.mode === "both-sides") {
+        return `Az ismeretlent gyűjtsd az egyik oldalra: vond ki mindkét oldalból a ${step.c}x-et, majd a ${step.b}-t is vond ki. Így ${step.a - step.c}x = ${step.d - step.b}, ezért x = ${step.d - step.b} ÷ ${step.a - step.c}.`;
+    }
+    if (step.mode === "paren") {
+        return `Először bontsd fel a zárójelet: szorozd be a ${step.a}-t mindkét taggal, majd az ismeretlent hagyd az egyik oldalon, a számokat a másikon.`;
+    }
+    if (step.mode === "fraction-add") {
+        return `Szorozd meg mindkét oldalt ${step.a}-val, hogy eltűnjön a tört: x + ${step.b * step.a} = ${step.c * step.a}. Ezután vond ki a ${step.b * step.a}-t.`;
+    }
+    if (step.mode === "fraction-div") {
+        return `Szorozd meg mindkét oldalt ${step.a}-val: x + ${step.b} = ${step.c * step.a}. Ezután vond ki a ${step.b}-t.`;
+    }
     if (step.form === "mul-add") {
         return `Először vond ki a ${step.b}-t a jobb oldalból, aztán oszd el a szorzóval: x = (${step.c} − ${step.b}) ÷ ${step.a}.`;
     }
     return `Először add hozzá a ${step.b}-t a jobb oldalhoz, aztán oszd el a szorzóval: x = (${step.c} + ${step.b}) ÷ ${step.a}.`;
+}
+
+function fractionNode(numText, denText) {
+    const wrap = document.createElement("span");
+    wrap.className = "equation-frac";
+    const n = document.createElement("span");
+    n.className = "equation-frac-num";
+    n.textContent = numText;
+    const line = document.createElement("span");
+    line.className = "equation-frac-line";
+    const d = document.createElement("span");
+    d.className = "equation-frac-den";
+    d.textContent = denText;
+    wrap.append(n, line, d);
+    return wrap;
+}
+
+function expressionNode(expr) {
+    const display = document.createElement("div");
+    display.className = "equation-display equation-expression";
+    expr.forEach(token => {
+        if (typeof token === "string") {
+            const span = document.createElement("span");
+            span.className = "equation-token";
+            span.textContent = token;
+            display.append(span);
+        } else if (token && Array.isArray(token.frac)) {
+            display.append(fractionNode(token.frac[0], token.frac[1]));
+        }
+    });
+    return display;
 }
 
 export function renderEquation(step, root, next, progress, onResult, onAttempt) {
@@ -56,9 +99,14 @@ export function renderEquation(step, root, next, progress, onResult, onAttempt) 
     prompt.textContent = step.question;
     card.append(prompt);
 
-    const display = document.createElement("div");
-    display.className = "equation-display";
-    display.textContent = step.equation;
+    const display = Array.isArray(step.expr)
+        ? expressionNode(step.expr)
+        : (() => {
+            const box = document.createElement("div");
+            box.className = "equation-display";
+            box.textContent = step.equation;
+            return box;
+        })();
     card.append(display);
 
     const message = createMessageBox();

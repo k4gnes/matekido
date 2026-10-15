@@ -40,6 +40,39 @@
     border-radius: 16px;
 }
 
+.equation-expression {
+    gap: 0.35rem;
+}
+
+.equation-token {
+    white-space: pre;
+}
+
+.equation-frac {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.05;
+    vertical-align: middle;
+    margin: 0 0.15rem;
+}
+
+.equation-frac-num {
+    padding: 0 0.3rem;
+}
+
+.equation-frac-line {
+    align-self: stretch;
+    height: 3px;
+    margin: 0.1rem 0;
+    background: #1f3a5f;
+    border-radius: 2px;
+}
+
+.equation-frac-den {
+    padding: 0 0.3rem;
+}
+
 .equation-input {
     display: block;
     width: min(12rem, 80%);

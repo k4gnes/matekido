@@ -1139,6 +1139,46 @@ function generateEquationStory(max, world, mode) {
         c,
         answer,
         equation,
+        options: buildEquationOptions(equation, a, b, c, chosen),
         successText: `😊 Ügyes! Az egyenlet: ${equation}, ebből x = ${answer}.`
     };
+}
+
+function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
+function buildEquationOptions(correct, a, b, c, mode) {
+    const options = [correct];
+    const add = (text) => {
+        if (!options.includes(text)) options.push(text);
+    };
+
+    if (mode === "mul-add") {
+        add(`${a}x + ${b} = ${c + random(1, 3)}`);
+        add(`${a + 1}x + ${b} = ${c}`);
+        add(`${a}x − ${b} = ${c}`);
+    } else if (mode === "mul-sub") {
+        add(`${a}x − ${b} = ${c + random(1, 3)}`);
+        add(`${a + 1}x − ${b} = ${c}`);
+        add(`${a}x + ${b} = ${c}`);
+    } else if (mode === "div-add") {
+        add(`x/${a} + ${b} = ${c + random(1, 3)}`);
+        add(`x/${a + 1} + ${b} = ${c}`);
+        add(`x/${a} − ${b} = ${c}`);
+    } else if (mode === "div-sub") {
+        add(`x/${a} − ${b} = ${c + random(1, 3)}`);
+        add(`x/${a + 1} − ${b} = ${c}`);
+        add(`x/${a} + ${b} = ${c}`);
+    } else {
+        add(`${a}x + ${b} = ${c}`);
+        add(`${a}(x − ${b}) = ${c}`);
+        add(`${a}(x + ${b}) = ${c + random(1, 3)}`);
+    }
+
+    return shuffleArray(options);
 }

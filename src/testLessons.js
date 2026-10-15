@@ -12,7 +12,7 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=46";
+import { buildLesson } from "./builders/LessonBuilder.js?v=47";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { SKILLS } from "./data/skills.js";
@@ -2256,6 +2256,13 @@ function validateStep(step, ctx, range) {
                 }
                 if (typeof range === "number" && step.answer > range) {
                     fail(ctx, `answer (${step.answer}) meghaladja a tartományt (${range})`);
+                }
+                if (!Array.isArray(step.options) || step.options.length !== 4 || !step.options.every(o => typeof o === "string")) {
+                    fail(ctx, "options hibás (4 szöveges egyenlet kell)");
+                } else {
+                    const correctCount = step.options.filter(o => o === step.equation).length;
+                    if (correctCount !== 1) fail(ctx, `a helyes egyenlet ${correctCount}× szerepel az options-ban`);
+                    if (new Set(step.options).size !== step.options.length) fail(ctx, "az options tartalmaz ismétlődést");
                 }
             }
             if (step.kind === "ratio-split") {

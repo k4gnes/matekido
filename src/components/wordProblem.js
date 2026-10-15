@@ -498,35 +498,66 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
 
     } else if (step.kind === "equation") {
 
+        let phase = 1;
+
         const question = document.createElement("p");
         question.className = "wp-question";
-        question.textContent = step.question;
+        question.textContent = "1. lépés: válaszd ki a feladathoz tartozó egyenletet!";
         card.append(question);
 
-        const input = createNumberInput("?");
-        input.className = "wp-input";
+        const options = document.createElement("div");
+        options.className = "wp-options wp-options-equation";
 
-        const button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
-        card.append(input, button);
+        const inputArea = document.createElement("div");
+        inputArea.className = "wp-equation-input";
 
-        function check() {
-            if (feedback.isAnswered()) return;
-            const answer = Number(input.value);
-            if (answer === step.answer) {
-                reportSuccess(step.successText);
-            } else {
-                reportRetry();
-                input.focus();
-                input.select();
+        function showNumberStep() {
+            question.textContent = `2. lépés: ${step.question}`;
+            const input = createNumberInput("?");
+            input.className = "wp-input";
+            const button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
+            inputArea.replaceChildren(input, button);
+
+            function check() {
+                if (feedback.isAnswered()) return;
+                const value = Number(input.value);
+                if (value === step.answer) {
+                    reportSuccess(step.successText);
+                } else {
+                    reportRetry();
+                    input.focus();
+                    input.select();
+                }
             }
+
+            button.addEventListener("click", check);
+            input.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") check();
+            });
+
+            requestAnimationFrame(() => input.focus());
         }
 
-        button.addEventListener("click", check);
-        input.addEventListener("keydown", (e) => {
-            if (e.key === "Enter") check();
+        step.options.forEach(option => {
+            const btn = createButton(option, { className: "wp-option wp-option-equation" });
+            btn.addEventListener("click", () => {
+                if (phase !== 1 || feedback.isAnswered()) return;
+                if (option === step.equation) {
+                    phase = 2;
+                    markCorrect(btn);
+                    options.querySelectorAll("button").forEach(other => {
+                        other.disabled = true;
+                    });
+                    onAttempt?.();
+                    showNumberStep();
+                } else {
+                    reportRetry();
+                }
+            });
+            options.append(btn);
         });
 
-        requestAnimationFrame(() => input.focus());
+        card.append(options, inputArea);
 
     } else if (step.kind === "multiply") {
 

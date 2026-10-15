@@ -604,6 +604,104 @@ function buildAddSub(op, level) {
     };
 }
 
+function signedFractionOperand(negProb) {
+    const den = pick([2, 3, 4, 5, 6, 8, 10, 12]);
+    const num = randInt(1, den - 1) * (Math.random() < negProb ? -1 : 1);
+    return operandFrom(num, den, fractionDesc(num, den));
+}
+
+function positiveIntOperand() {
+    const v = randInt(2, 6);
+    return operandFrom(v, 1, decimalDesc(fmtInt(v)));
+}
+
+function mulDivPair(level) {
+    if (level === "basic") {
+        if (Math.random() < 0.8) return [signedFractionOperand(0), signedFractionOperand(0)];
+        return [positiveIntOperand(), signedFractionOperand(0)];
+    }
+    if (level === "sign") {
+        return [signedFractionOperand(0.5), signedFractionOperand(0.5)];
+    }
+    const r = Math.random();
+    if (r < 0.5) return [mixedOperand(), fractionOperand()];
+    if (r < 0.8) return [mixedOperand(), mixedOperand()];
+    return [integerOperand(), mixedOperand()];
+}
+
+function mulDivCandidates(a, b, op, rn, den) {
+    const addN = a.num * b.den + b.num * a.den;
+    const addD = a.den * b.den;
+    const mulN = a.num * b.num;
+    const mulD = a.den * b.den;
+    const divN = a.num * b.den;
+    const divD = a.den * b.num;
+    const list = [
+        [addN, addD],
+        [mulN, mulD],
+        [divN, divD],
+        [b.num, a.num],
+        [b.den, a.den],
+        [rn + 1, den],
+        [rn - 1, den],
+        [rn + 2, den],
+        [rn - 2, den],
+        [rn, den + 1],
+        [rn, den + 2],
+        [-rn, den],
+        [den, rn],
+        [rn + den, den],
+        [rn - den, den],
+        [rn * 2, den]
+    ];
+    const out = [];
+    for (const [num, d] of list) {
+        if (!Number.isInteger(num) || !Number.isInteger(d) || d === 0) continue;
+        if (!Number.isFinite(num / d)) continue;
+        out.push(valueDesc(num, d));
+    }
+    let k = 3;
+    while (out.length < 10 && k < 30) {
+        out.push(valueDesc(rn + k, den));
+        out.push(valueDesc(rn - k, den));
+        out.push(valueDesc(rn, den + k));
+        k++;
+    }
+    return out;
+}
+
+function buildMulDiv(op, level) {
+    let a;
+    let b;
+    let rn;
+    let den;
+    let correct;
+    for (let attempt = 0; attempt < 30; attempt++) {
+        [a, b] = mulDivPair(level);
+        const s = op === "mul"
+            ? simplifyFraction(a.num * b.num, a.den * b.den)
+            : simplifyFraction(a.num * b.den, a.den * b.num);
+        rn = s.num;
+        den = s.den;
+        correct = valueDesc(rn, den);
+        if (Math.abs(descValue(correct)) > 1e-9) break;
+    }
+    const options = buildRationalOptions(correct, mulDivCandidates(a, b, op, rn, den));
+    return {
+        mode: op,
+        level,
+        question: op === "mul" ? "Mennyi a szorzat?" : "Mennyi a hányados?",
+        left: a.desc,
+        right: b.desc,
+        op: op === "mul" ? "×" : "÷",
+        answer: descText(correct),
+        options,
+        hint: op === "mul"
+            ? "A törtek szorzásakor a számlálókat szorozzuk, a nevezőket is. Ezután egyszerűsítsd az eredményt. Az előjelvonal: (+)·(+)=+, (−)·(−)=+, (+)·(−)=−."
+            : "Az osztás a szorzás fordítottja: szorozz a második tag reciprokjával (megcseréljük a számlálót és a nevezőt). Ezután egyszerűsítsd. Az előjel itt is ugyanaz, mint a szorzásnál."
+    };
+}
+
 const ALL_MODES = ["parts", "sign", "opposite", "absolute", "to-decimal", "to-fraction", "to-mixed", "to-improper", "compare"];
 const FORM_MODES = ["to-decimal", "to-fraction", "to-mixed", "to-improper"];
 
@@ -621,7 +719,9 @@ export function generateRational(options = {}) {
         "to-improper": buildToImproper,
         compare: buildCompare,
         add: (o) => buildAddSub("add", o.level),
-        sub: (o) => buildAddSub("sub", o.level)
+        sub: (o) => buildAddSub("sub", o.level),
+        mul: (o) => buildMulDiv("mul", o.level),
+        div: (o) => buildMulDiv("div", o.level)
     };
 
     const tasks = [];
@@ -639,6 +739,8 @@ export function generateRational(options = {}) {
             chosen = "compare";
         } else if (mode === "addsub") {
             chosen = Math.random() < 0.5 ? "add" : "sub";
+        } else if (mode === "muldiv") {
+            chosen = Math.random() < 0.5 ? "mul" : "div";
         } else {
             chosen = mode;
         }
@@ -649,7 +751,7 @@ export function generateRational(options = {}) {
         const task = build(options);
         const key = task.mode === "compare"
             ? `${task.mode}|${descText(task.left)}|${descText(task.right)}|${task.answer}`
-            : task.mode === "add" || task.mode === "sub"
+            : task.mode === "add" || task.mode === "sub" || task.mode === "mul" || task.mode === "div"
                 ? `${task.mode}|${descText(task.left)}|${task.op}|${descText(task.right)}|${task.answer}`
                 : `${task.mode}|${task.answer}|${descText(task.display)}`;
         if (seen.has(key)) continue;

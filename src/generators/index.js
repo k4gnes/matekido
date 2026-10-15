@@ -96,7 +96,7 @@ import { generateInequality } from "./inequalityGenerator.js?v=1";
 import { generateRatio } from "./ratioGenerator.js?v=1";
 import { generateTriangle } from "./triangleGenerator.js?v=1";
 import { generateShapeArea } from "./shapeAreaGenerator.js?v=1";
-import { generateRational } from "./rationalGenerator.js?v=3";
+import { generateRational } from "./rationalGenerator.js?v=4";
 import { generateMaster } from "./masterGenerator.js?v=3";
 import { getActiveWorld } from "../profile/Profile.js";
 

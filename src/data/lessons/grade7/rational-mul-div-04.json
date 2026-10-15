@@ -1,0 +1,121 @@
+{
+  "id": "rational-mul-div-04",
+  "title": "✖️ Racionális számok szorzása és osztása",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "✖️ Racionális számok szorzása és osztása",
+      "text": "Törteket úgy szorzunk, hogy a számlálókat és a nevezőket külön-külön összeszorozzuk. Az osztás a szorzás fordítottja: a második tag reciprokjával szorozzuk (megcseréljük a számlálót és a nevezőt). Az előjel ugyanúgy működik, mint az egész számoknál: (+)·(+)=+, (−)·(−)=+, (+)·(−)=−. A végén mindig egyszerűsítünk.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Részadagok szorzása",
+          "text": "A postán egy csomag tömege is lehet törtrész. Ha több ugyanolyan csomag van, szorzással kapjuk meg az összes tömegét."
+        },
+        "racing": {
+          "title": "🏎️ Idők szorzása és osztása",
+          "text": "A versenyen a köridőket részekre bontjuk. Szorzással és osztással számoljuk, mennyi idő kell több vagy kevesebb körhöz."
+        },
+        "cooking": {
+          "title": "🍳 Recept szorzása",
+          "text": "A konyhában a receptet megduplázzuk vagy felezzük. Ilyenkor a hozzávalók törtrészeit szorozzuk és osztjuk."
+        },
+        "football": {
+          "title": "⚽ Gólok és részek",
+          "text": "A gólarányokat és a részeket is szorozhatjuk. Az előjelmutatja, hogy nyerünk vagy veszítünk."
+        },
+        "animals": {
+          "title": "🦁 Adagok szorzása",
+          "text": "Ha több állatnak adunk ugyanannyi takarmányt, a részeket összeszorozzuk. Az osztás segít egyenlően elosztani."
+        },
+        "space": {
+          "title": "🚀 Üzemanyag számolás",
+          "text": "Az űrhajón a fogyasztást részekre bontjuk, és szorzással becsüljük meg a teljes küldetést."
+        },
+        "tram": {
+          "title": "🚋 Menetidők szorzása",
+          "text": "Ha több villamos indul, a menetidőket szorozzuk és osztjuk, hogy pontosan tervezhessünk."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 3,
+        "mode": "mul",
+        "level": "basic"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 3,
+        "mode": "div",
+        "level": "basic"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 2,
+        "mode": "mul",
+        "level": "sign"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 3,
+        "mode": "div",
+        "level": "sign"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 3,
+        "mode": "muldiv",
+        "level": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen szoroztad és osztottad a racionális számokat!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Minden csomag megvan!",
+          "text": "Ügyesen szorzod a csomagok tömegét a postán!"
+        },
+        "racing": {
+          "title": "🎉 Remek idő!",
+          "text": "Pontosan számolod az időket a versenypályán!"
+        },
+        "cooking": {
+          "title": "🎉 Kész az étel!",
+          "text": "Ügyesen szorzod és osztod a recept adagjait!"
+        },
+        "football": {
+          "title": "🎉 Csapatépítő!",
+          "text": "Megbízhatóan számolod a gólarányokat!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes gazda!",
+          "text": "Pontosan osztod el az állatok takarmányát!"
+        },
+        "space": {
+          "title": "🎉 Küldetésre készen!",
+          "text": "Az üzemanyag számolása is hibátlan!"
+        },
+        "tram": {
+          "title": "🎉 Pont időben!",
+          "text": "Ügyesen tervezed a menetidőket!"
+        }
+      }
+    }
+  ]
+}

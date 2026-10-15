@@ -6080,6 +6080,30 @@
         "space": "🚀 Üzemanyag számolás",
         "tram": "🚋 Menetidők összege"
       }
+    },
+    {
+      "id": "rational-mul-div-04",
+      "title": "✖️ Racionális számok szorzása és osztása",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "rational",
+      "difficulty": 3,
+      "type": "rational",
+      "range": 100,
+      "mission": "✖️ Racionális számok szorzása és osztása",
+      "subtitle": "előjelszabály, reciprok, vegyes számok",
+      "file": "./data/lessons/grade7/rational-mul-div-04.json",
+      "worldTitles": {
+        "postman": "📮 Részadagok szorzása",
+        "racing": "🏎️ Idők szorzása és osztása",
+        "football": "⚽ Gólok és részek",
+        "cooking": "🍳 Recept szorzása",
+        "animals": "🦁 Adagok szorzása",
+        "space": "🚀 Üzemanyag számolás",
+        "tram": "🚋 Menetidők szorzása"
+      }
     }
   ],
   "gradeConfig": [

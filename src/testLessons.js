@@ -12,7 +12,7 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=43";
+import { buildLesson } from "./builders/LessonBuilder.js?v=44";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { SKILLS } from "./data/skills.js";
@@ -2330,20 +2330,27 @@ function validateStep(step, ctx, range) {
                 }
                 break;
             }
-            if (step.mode === "add" || step.mode === "sub") {
+            if (step.mode === "add" || step.mode === "sub" || step.mode === "mul" || step.mode === "div") {
                 const leftValue = descValue(step.left);
                 const rightValue = descValue(step.right);
-                if (leftValue === null) fail(ctx, "add/sub bal oldal hibás");
-                if (rightValue === null) fail(ctx, "add/sub jobb oldal hibás");
+                if (leftValue === null) fail(ctx, "művelet bal oldal hibás");
+                if (rightValue === null) fail(ctx, "művelet jobb oldal hibás");
                 if (leftValue !== null && rightValue !== null) {
-                    const expected = step.mode === "add" ? leftValue + rightValue : leftValue - rightValue;
+                    let expected = null;
+                    if (step.mode === "add") expected = leftValue + rightValue;
+                    else if (step.mode === "sub") expected = leftValue - rightValue;
+                    else if (step.mode === "mul") expected = leftValue * rightValue;
+                    else if (step.mode === "div") {
+                        if (Math.abs(rightValue) < 1e-9) fail(ctx, "div osztó nulla");
+                        else expected = leftValue / rightValue;
+                    }
                     const correctOpt = Array.isArray(step.options) ? step.options.find(o => o.correct) : null;
                     if (!correctOpt) {
-                        fail(ctx, "add/sub nincs helyes opció");
-                    } else {
+                        fail(ctx, "művelet nincs helyes opció");
+                    } else if (expected !== null) {
                         const correctValue = descValue(correctOpt);
                         if (correctValue === null || Math.abs(correctValue - expected) > 1e-9) {
-                            fail(ctx, `add/sub eredmény (${correctValue}) != ${expected}`);
+                            fail(ctx, `művelet eredmény (${correctValue}) != ${expected}`);
                         }
                     }
                 }

@@ -530,6 +530,7 @@ const SW_CACHE_LIST = [
     "/data/lessons/grade7/algebra-factor-10.json",
     "/data/lessons/grade7/algebra-parenthesis-08.json",
     "/data/lessons/grade7/equation-linear-11.json",
+    "/data/lessons/grade7/equation-word-12.json",
     "/data/lessons/grade7/rational-add-sub-03.json",
     "/data/lessons/grade7/rational-compare-02.json",
     "/data/lessons/grade7/rational-mix-ops-05.json",

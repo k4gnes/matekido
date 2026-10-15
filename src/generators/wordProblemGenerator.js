@@ -504,6 +504,20 @@ export function generateWordProblems(options = {}) {
         for (let i = 0; i < count; i++) {
             tasks.push(generateTwoStep(max, world));
         }
+    } else if (kind === "equation") {
+        const seen = new Set();
+        let attempts = 0;
+        while (tasks.length < count && attempts < 300) {
+            attempts++;
+            const task = generateEquationStory(max, world, mode);
+            const signature = `${task.mode}|${task.a}|${task.b}|${task.c}`;
+            if (seen.has(signature)) continue;
+            seen.add(signature);
+            tasks.push(task);
+        }
+        while (tasks.length < count) {
+            tasks.push(generateEquationStory(max, world, mode));
+        }
     } else if (kind === "proportion") {
         for (let i = 0; i < count; i++) {
             tasks.push(generateProportion(max, world));
@@ -1045,5 +1059,86 @@ function generateTwoStep(max, world) {
         firstAnswer: intermediate,
         successText: template.success(answer),
         options: makeOptions(answer, 0, max + 5)
+    };
+}
+
+const EQUATION_NOUNS = {
+    postman: { nom: "levél", acc: "levelet" },
+    racing: { nom: "kör", acc: "kört" },
+    cooking: { nom: "palacsinta", acc: "palacsintát" },
+    football: { nom: "gól", acc: "gólt" },
+    animals: { nom: "zebra", acc: "zebrát" },
+    space: { nom: "robot", acc: "robotot" },
+    tram: { nom: "utas", acc: "utast" }
+};
+
+const EQUATION_MODES = ["mul-add", "mul-sub", "div-add", "div-sub", "times-add"];
+
+function generateEquationStory(max, world, mode) {
+    const chosen = EQUATION_MODES.includes(mode)
+        ? mode
+        : EQUATION_MODES[random(0, EQUATION_MODES.length - 1)];
+    const noun = EQUATION_NOUNS[world] ?? EQUATION_NOUNS.postman;
+
+    let a;
+    let b;
+    let c;
+    let answer;
+    let text;
+    let equation;
+
+    if (chosen === "mul-add") {
+        a = random(2, 9);
+        answer = random(2, 12);
+        b = random(1, 20);
+        c = a * answer + b;
+        text = `Gondoltam egy számra. Ha megszorozom ${a}-${DIFF_SUFFIX[a] ?? "vel"}, majd hozzáadok ${b} ${noun.acc}, ${c} ${noun.nom} lesz. Melyik számra gondoltam?`;
+        equation = `${a}x + ${b} = ${c}`;
+    } else if (chosen === "mul-sub") {
+        a = random(2, 9);
+        answer = random(3, 12);
+        b = random(1, Math.min(20, a * answer - 1));
+        c = a * answer - b;
+        text = `Gondoltam egy számra. Ha megszorozom ${a}-${DIFF_SUFFIX[a] ?? "vel"}, majd kiveszek belőle ${b} ${noun.acc}, ${c} ${noun.nom} marad. Melyik számra gondoltam?`;
+        equation = `${a}x − ${b} = ${c}`;
+    } else if (chosen === "div-add") {
+        a = random(2, 9);
+        const t = random(1, 12);
+        answer = a * t;
+        b = random(1, 20);
+        c = t + b;
+        text = `Gondoltam egy számra. Ha elosztom ${a}-${DIFF_SUFFIX[a] ?? "vel"}, majd hozzáadok ${b} ${noun.acc}, ${c} ${noun.nom} lesz. Melyik számra gondoltam?`;
+        equation = `x/${a} + ${b} = ${c}`;
+    } else if (chosen === "div-sub") {
+        a = random(2, 9);
+        const t = random(3, 12);
+        answer = a * t;
+        b = random(1, t - 1);
+        c = t - b;
+        text = `Gondoltam egy számra. Ha elosztom ${a}-${DIFF_SUFFIX[a] ?? "vel"}, majd kiveszek belőle ${b} ${noun.acc}, ${c} ${noun.nom} marad. Melyik számra gondoltam?`;
+        equation = `x/${a} − ${b} = ${c}`;
+    } else {
+        a = random(2, 6);
+        answer = random(2, 12);
+        b = random(1, 15);
+        c = a * (answer + b);
+        text = `Gondoltam egy számra. Ha hozzáadok ${b} ${noun.acc}, majd megszorozom ${a}-${DIFF_SUFFIX[a] ?? "vel"}, ${c} ${noun.nom} lesz. Melyik számra gondoltam?`;
+        equation = `${a}(x + ${b}) = ${c}`;
+    }
+
+    return {
+        kind: "equation",
+        world,
+        title: "🟰 Egyenlettel megoldható feladat",
+        text,
+        question: "Melyik számra gondoltam?",
+        noun: noun.nom,
+        mode: chosen,
+        a,
+        b,
+        c,
+        answer,
+        equation,
+        successText: `😊 Ügyes! Az egyenlet: ${equation}, ebből x = ${answer}.`
     };
 }

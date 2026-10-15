@@ -1,0 +1,103 @@
+{
+  "id": "equation-word-12",
+  "title": "🟰 Szöveges feladatok egyenlettel",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🟰 Szöveges feladatok egyenlettel",
+      "text": "Sok gyakorlati helyzet megoldható egyenlettel. A lépések ugyanazok: előbb eldöntjük, mit jelöl az ismeretlen (x), ezután a szövegből felírjuk az egyenletet, végül rendezéssel meghatározzuk az ismeretlen értékét. Gondold végig, mi az, amit keresünk, és építsd fel az egyenletet!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Szöveges feladatok a postán",
+          "text": "A postán rejtett számokat keresünk. Olvasd el a feladatot, építsd fel az egyenletet, és oldd meg!"
+        },
+        "racing": {
+          "title": "🏎️ Szöveges feladatok a pályán",
+          "text": "A versenyen rejtett számokat keresünk. Olvasd el a feladatot, építsd fel az egyenletet, és oldd meg!"
+        },
+        "cooking": {
+          "title": "🍳 Szöveges feladatok a konyhában",
+          "text": "A konyhában rejtett számokat keresünk. Olvasd el a feladatot, építsd fel az egyenletet, és oldd meg!"
+        },
+        "football": {
+          "title": "⚽ Szöveges feladatok a pályán",
+          "text": "A bajnokságban rejtett számokat keresünk. Olvasd el a feladatot, építsd fel az egyenletet, és oldd meg!"
+        },
+        "animals": {
+          "title": "🦁 Szöveges feladatok az állatkertben",
+          "text": "Az állatkertben rejtett számokat keresünk. Olvasd el a feladatot, építsd fel az egyenletet, és oldd meg!"
+        },
+        "space": {
+          "title": "🚀 Szöveges feladatok az űrben",
+          "text": "Az űrhajón rejtett számokat keresünk. Olvasd el a feladatot, építsd fel az egyenletet, és oldd meg!"
+        },
+        "tram": {
+          "title": "🚋 Szöveges feladatok a villamoson",
+          "text": "A villamoson rejtett számokat keresünk. Olvasd el a feladatot, építsd fel az egyenletet, és oldd meg!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 4,
+        "max": 1000,
+        "kind": "equation"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 4,
+        "max": 1000,
+        "kind": "equation"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 4,
+        "max": 1000,
+        "kind": "equation"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen oldottad meg a szöveges feladatokat egyenlettel!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen építetted fel a postai egyenleteket!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen oldottad meg a pálya feladatait!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen építetted fel a konyhai egyenleteket!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen oldottad meg a bajnokság feladatait!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen építetted fel az állatkerti egyenleteket!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen oldottad meg az űr feladatait!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen építetted fel a villamos egyenleteit!"
+        }
+      }
+    }
+  ]
+}

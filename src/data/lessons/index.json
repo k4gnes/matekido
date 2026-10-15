@@ -6272,6 +6272,30 @@
         "space": "🚀 Egyenletek az űrben",
         "tram": "🚋 Egyenletek a villamoson"
       }
+    },
+    {
+      "id": "equation-word-12",
+      "title": "🟰 Szöveges feladatok egyenlettel",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "equation",
+      "difficulty": 3,
+      "type": "word-problem",
+      "range": 1000,
+      "mission": "🟰 Szöveges feladatok egyenlettel",
+      "subtitle": "szövegből felírt egyenlet megoldása",
+      "file": "./data/lessons/grade7/equation-word-12.json",
+      "worldTitles": {
+        "postman": "📮 Szöveges feladatok a postán",
+        "racing": "🏎️ Szöveges feladatok a pályán",
+        "football": "⚽ Szöveges feladatok a pályán",
+        "cooking": "🍳 Szöveges feladatok a konyhában",
+        "animals": "🦁 Szöveges feladatok az állatkertben",
+        "space": "🚀 Szöveges feladatok az űrben",
+        "tram": "🚋 Szöveges feladatok a villamoson"
+      }
     }
   ],
   "gradeConfig": [

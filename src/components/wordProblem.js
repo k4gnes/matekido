@@ -496,6 +496,38 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
 
         requestAnimationFrame(() => input.focus());
 
+    } else if (step.kind === "equation") {
+
+        const question = document.createElement("p");
+        question.className = "wp-question";
+        question.textContent = step.question;
+        card.append(question);
+
+        const input = createNumberInput("?");
+        input.className = "wp-input";
+
+        const button = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
+        card.append(input, button);
+
+        function check() {
+            if (feedback.isAnswered()) return;
+            const answer = Number(input.value);
+            if (answer === step.answer) {
+                reportSuccess(step.successText);
+            } else {
+                reportRetry();
+                input.focus();
+                input.select();
+            }
+        }
+
+        button.addEventListener("click", check);
+        input.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") check();
+        });
+
+        requestAnimationFrame(() => input.focus());
+
     } else if (step.kind === "multiply") {
 
         const question = document.createElement("p");

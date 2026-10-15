@@ -2200,7 +2200,7 @@ function validateStep(step, ctx, range) {
             break;
         }
     case "word-problem": {
-            if (!["join", "remove", "part-whole", "compare", "multiply", "divide", "proportion", "remainder", "two-step", "ratio-split", "direct-proportion", "inverse-proportion"].includes(step.kind)) {
+            if (!["join", "remove", "part-whole", "compare", "multiply", "divide", "proportion", "remainder", "two-step", "equation", "ratio-split", "direct-proportion", "inverse-proportion"].includes(step.kind)) {
                 fail(ctx, `ismeretlen kind: ${step.kind}`);
             }
             if (typeof step.text !== "string" || step.text.length === 0) fail(ctx, "text hiányzik");
@@ -2236,6 +2236,26 @@ function validateStep(step, ctx, range) {
                 }
                 if (step.answer !== expected || step.firstAnswer !== step.intermediate) {
                     fail(ctx, `answer (${step.answer}) != számolt (${expected})`);
+                }
+            }
+            if (step.kind === "equation") {
+                if (!["mul-add", "mul-sub", "div-add", "div-sub", "times-add"].includes(step.mode)) {
+                    fail(ctx, `mode hibás: ${step.mode}`);
+                }
+                for (const k of ["a", "b", "c"]) {
+                    if (!isInt(step[k]) || step[k] < 1) fail(ctx, `${k} hibás: ${step[k]}`);
+                }
+                let expectedEquation = null;
+                if (step.mode === "mul-add") expectedEquation = (step.c - step.b) / step.a;
+                else if (step.mode === "mul-sub") expectedEquation = (step.c + step.b) / step.a;
+                else if (step.mode === "div-add") expectedEquation = step.a * (step.c - step.b);
+                else if (step.mode === "div-sub") expectedEquation = step.a * (step.c + step.b);
+                else expectedEquation = step.c / step.a - step.b;
+                if (step.answer !== expectedEquation || step.answer < 1) {
+                    fail(ctx, `answer (${step.answer}) != számolt (${expectedEquation})`);
+                }
+                if (typeof range === "number" && step.answer > range) {
+                    fail(ctx, `answer (${step.answer}) meghaladja a tartományt (${range})`);
                 }
             }
             if (step.kind === "ratio-split") {

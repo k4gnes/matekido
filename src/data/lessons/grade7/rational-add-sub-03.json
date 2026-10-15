@@ -1,0 +1,121 @@
+{
+  "id": "rational-add-sub-03",
+  "title": "➕ Racionális számok összeadása és kivonása",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "➕ Racionális számok összeadása és kivonása",
+      "text": "Törteket úgy adunk össze és vonunk ki, hogy előbb közös nevezőre hozzuk őket, majd a számlálókkal végezzük a műveletet – a nevező változatlan marad. A végén egyszerűsítünk, az áltörtet pedig vegyes számként is felírhatjuk. Negatív számoknál ugyanúgy működnek a szabályok, mint az egész számoknál.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Csomagok összeadása",
+          "text": "A postán több csomag tömegét is összeadjuk. A törteket előbb közös nevezőre hozzuk, aztán összeadhatjuk a részeket."
+        },
+        "racing": {
+          "title": "🏎️ Idők összeadása",
+          "text": "A versenyen a köridőket és a különbségeket is törtrészekkel számoljuk. A közös nevező segít pontosan összeadni és kivonni."
+        },
+        "cooking": {
+          "title": "🍳 Hozzávalók mérése",
+          "text": "A konyhában fél és negyed adagokat adunk össze. A recept szerint előbb közös nevezőre hozzuk a törteket."
+        },
+        "football": {
+          "title": "⚽ Pontok és gólkülönbség",
+          "text": "A gólkülönbség is lehet tört, és a meccsek eredményét összeadjuk. Negatív szám is előfordulhat, ha hátrányt vonunk ki."
+        },
+        "animals": {
+          "title": "🦁 Takarmány adagok",
+          "text": "Az állatoknak több adagot adunk, és néha elveszünk belőle. A törtekkel pontosan számolhatunk."
+        },
+        "space": {
+          "title": "🚀 Üzemanyag számolás",
+          "text": "Az űrhajón az üzemanyagot adagokban adjuk hozzá, és fogyasztáskor kivonjuk. A közös nevező itt is segít."
+        },
+        "tram": {
+          "title": "🚋 Menetidők összege",
+          "text": "A villamos menetrendjében a menetidőket összeadjuk és kivonjuk. A törtrészekkel pontos lesz az eredmény."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 3,
+        "mode": "add",
+        "level": "same"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 2,
+        "mode": "sub",
+        "level": "same"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 3,
+        "mode": "add",
+        "level": "diff"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 3,
+        "mode": "sub",
+        "level": "diff"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 3,
+        "mode": "addsub",
+        "level": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen összeadtad és kivontad a racionális számokat!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Minden csomag megvan!",
+          "text": "Ügyesen összeadod és kivonod a csomagok tömegét a postán!"
+        },
+        "racing": {
+          "title": "🎉 Remek idő!",
+          "text": "Pontosan számolod az időket a versenypályán!"
+        },
+        "cooking": {
+          "title": "🎉 Kész az étel!",
+          "text": "Ügyesen adod össze a hozzávalókat a konyhában!"
+        },
+        "football": {
+          "title": "🎉 Csapatépítő!",
+          "text": "Megbízhatóan számolod a gólkülönbséget!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes gazda!",
+          "text": "Pontosan osztod ki az állatok adagjait!"
+        },
+        "space": {
+          "title": "🎉 Küldetésre készen!",
+          "text": "Az üzemanyag számolása is hibátlan!"
+        },
+        "tram": {
+          "title": "🎉 Pont időben!",
+          "text": "Ügyesen adod össze a menetidőket!"
+        }
+      }
+    }
+  ]
+}

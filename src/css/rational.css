@@ -21,6 +21,17 @@
     border-radius: 16px;
 }
 
+.rational-expression {
+    gap: 0.6rem;
+}
+
+.rational-operator,
+.rational-equals {
+    font-size: 0.75em;
+    font-weight: 800;
+    color: #475569;
+}
+
 .rational-fraction {
     display: flex;
     flex-direction: column;

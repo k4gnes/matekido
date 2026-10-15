@@ -76,6 +76,7 @@ function successText(step) {
     if (step.mode === "to-mixed") return `🎉 Ügyes! Az eredmény ${step.answer}.`;
     if (step.mode === "to-improper") return `🎉 Ügyes! Az eredmény ${step.answer}.`;
     if (step.mode === "compare") return `🎉 Ügyes! ${descTextLocal(step.left)} ${step.answer} ${descTextLocal(step.right)}.`;
+    if (step.mode === "add" || step.mode === "sub") return `🎉 Ügyes! Az eredmény ${step.answer}.`;
     return `🎉 Ügyes! Az eredmény ${step.answer}.`;
 }
 
@@ -102,6 +103,17 @@ export function renderRational(step, root, next, progress, onResult, onAttempt) 
         const display = document.createElement("div");
         display.className = "rational-display";
         display.append(rationalNode(step.display));
+        card.append(display);
+    } else if ((step.mode === "add" || step.mode === "sub") && step.left && step.right) {
+        const display = document.createElement("div");
+        display.className = "rational-display rational-expression";
+        const operator = document.createElement("span");
+        operator.className = "rational-operator";
+        operator.textContent = step.op;
+        const equals = document.createElement("span");
+        equals.className = "rational-equals";
+        equals.textContent = "= ?";
+        display.append(rationalNode(step.left), operator, rationalNode(step.right), equals);
         card.append(display);
     }
 

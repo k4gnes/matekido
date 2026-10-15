@@ -446,6 +446,164 @@ function buildCompare() {
     };
 }
 
+function lcm(a, b) {
+    return (a * b) / gcd(a, b);
+}
+
+function valueDesc(num, den) {
+    const s = simplifyFraction(num, den);
+    if (s.den === 1) return decimalDesc(fmtInt(s.num));
+    if (Math.abs(s.num) > s.den) return buildMixedFromFraction(s.num, s.den);
+    return fractionDesc(s.num, s.den);
+}
+
+function operandFrom(num, den, desc) {
+    return { desc, num, den };
+}
+
+function fractionOperand() {
+    const den = pick([2, 3, 4, 5, 6, 8, 10, 12]);
+    const num = randInt(1, den - 1) * (Math.random() < 0.3 ? -1 : 1);
+    return operandFrom(num, den, fractionDesc(num, den));
+}
+
+function mixedOperand() {
+    const den = pick([2, 3, 4, 5, 6, 8]);
+    const whole = randInt(1, 4);
+    const rem = randInt(1, den - 1);
+    const neg = Math.random() < 0.4;
+    const sign = neg ? -1 : 1;
+    const num = sign * (whole * den + rem);
+    return operandFrom(num, den, mixedDesc(neg, whole, rem, den));
+}
+
+function integerOperand() {
+    const v = randInt(1, 6) * (Math.random() < 0.3 ? -1 : 1);
+    return operandFrom(v, 1, decimalDesc(fmtInt(v)));
+}
+
+function sameDenPair(op) {
+    const den = pick([2, 3, 4, 5, 6, 8, 10, 12]);
+    let an = randInt(1, den - 1);
+    let bn = randInt(1, den - 1);
+    if (op === "sub") {
+        if (Math.random() < 0.5) {
+            const t = an;
+            an = bn;
+            bn = t;
+        }
+        if (an === bn) bn = an === 1 ? 2 : an - 1;
+    }
+    if (Math.random() < 0.3) an = -an;
+    if (Math.random() < 0.25) bn = -bn;
+    return [
+        operandFrom(an, den, fractionDesc(an, den)),
+        operandFrom(bn, den, fractionDesc(bn, den))
+    ];
+}
+
+function diffDenPair() {
+    const dens = [2, 3, 4, 5, 6, 8, 9, 10, 12];
+    const d1 = pick(dens);
+    let d2 = pick(dens);
+    let guard = 0;
+    while ((d2 === d1 || ((d1 % d2 === 0 || d2 % d1 === 0) && Math.random() < 0.6)) && guard < 40) {
+        d2 = pick(dens);
+        guard++;
+    }
+    let an = randInt(1, d1 - 1);
+    let bn = randInt(1, d2 - 1);
+    if (Math.random() < 0.3) an = -an;
+    if (Math.random() < 0.3) bn = -bn;
+    return [
+        operandFrom(an, d1, fractionDesc(an, d1)),
+        operandFrom(bn, d2, fractionDesc(bn, d2))
+    ];
+}
+
+function mixedPair() {
+    const r = Math.random();
+    if (r < 0.5) return [mixedOperand(), mixedOperand()];
+    if (r < 0.8) return [mixedOperand(), fractionOperand()];
+    return [integerOperand(), mixedOperand()];
+}
+
+function resultCandidates(a, b, op, rn, den, an, bn) {
+    const wrongNumerator = op === "add"
+        ? a.num * b.den + b.num * a.den
+        : a.num * b.den - b.num * a.den;
+    const list = [
+        [wrongNumerator, a.den * b.den],
+        [a.num + b.num, a.den + b.den],
+        [a.num - b.num, a.den - b.den],
+        [rn + 1, den],
+        [rn - 1, den],
+        [rn + 2, den],
+        [rn - 2, den],
+        [rn, den + 1],
+        [rn, den + 2],
+        [-rn, den],
+        [rn + den, den],
+        [rn - den, den],
+        [rn * 2, den],
+        [an + bn, den],
+        [wrongNumerator, a.den + b.den]
+    ];
+    const out = [];
+    for (const [num, d] of list) {
+        if (!Number.isInteger(num) || !Number.isInteger(d) || d === 0) continue;
+        if (!Number.isFinite(num / d)) continue;
+        out.push(valueDesc(num, d));
+    }
+    let k = 3;
+    while (out.length < 10 && k < 30) {
+        out.push(valueDesc(rn + k, den));
+        out.push(valueDesc(rn - k, den));
+        out.push(valueDesc(rn, den + k));
+        k++;
+    }
+    return out;
+}
+
+function buildAddSub(op, level) {
+    let a;
+    let b;
+    let den;
+    let an;
+    let bn;
+    let rn;
+    let correct;
+    for (let attempt = 0; attempt < 30; attempt++) {
+        if (level === "same") {
+            [a, b] = sameDenPair(op);
+        } else if (level === "diff") {
+            [a, b] = diffDenPair();
+        } else {
+            [a, b] = mixedPair();
+        }
+        den = lcm(a.den, b.den);
+        an = a.num * (den / a.den);
+        bn = b.num * (den / b.den);
+        rn = op === "add" ? an + bn : an - bn;
+        correct = valueDesc(rn, den);
+        if (Math.abs(descValue(correct)) > 1e-9) break;
+    }
+    const options = buildRationalOptions(correct, resultCandidates(a, b, op, rn, den, an, bn));
+    return {
+        mode: op,
+        level,
+        question: op === "add" ? "Mennyi az összeg?" : "Mennyi a különbség?",
+        left: a.desc,
+        right: b.desc,
+        op: op === "add" ? "+" : MINUS,
+        answer: descText(correct),
+        options,
+        hint: op === "add"
+            ? "Előbb hozd közös nevezőre a törteket, aztán a számlálókat add össze (a nevező nem változik). Az eredményt egyszerűsítsd, és ha áltört, írd fel vegyes számként."
+            : "Előbb hozd közös nevezőre a törteket, aztán a számlálókat vond ki (a nevező nem változik). Ha negatív számot vonsz ki, az hozzáadást jelent. Az eredményt egyszerűsítsd."
+    };
+}
+
 const ALL_MODES = ["parts", "sign", "opposite", "absolute", "to-decimal", "to-fraction", "to-mixed", "to-improper", "compare"];
 const FORM_MODES = ["to-decimal", "to-fraction", "to-mixed", "to-improper"];
 
@@ -461,7 +619,9 @@ export function generateRational(options = {}) {
         "to-fraction": buildToFraction,
         "to-mixed": buildToMixed,
         "to-improper": buildToImproper,
-        compare: buildCompare
+        compare: buildCompare,
+        add: (o) => buildAddSub("add", o.level),
+        sub: (o) => buildAddSub("sub", o.level)
     };
 
     const tasks = [];
@@ -477,6 +637,8 @@ export function generateRational(options = {}) {
             chosen = pick(FORM_MODES);
         } else if (mode === "compare") {
             chosen = "compare";
+        } else if (mode === "addsub") {
+            chosen = Math.random() < 0.5 ? "add" : "sub";
         } else {
             chosen = mode;
         }
@@ -484,10 +646,12 @@ export function generateRational(options = {}) {
         if (!build) {
             throw new Error(`Ismeretlen racionális mód: ${chosen}`);
         }
-        const task = build();
+        const task = build(options);
         const key = task.mode === "compare"
             ? `${task.mode}|${descText(task.left)}|${descText(task.right)}|${task.answer}`
-            : `${task.mode}|${task.answer}|${descText(task.display)}`;
+            : task.mode === "add" || task.mode === "sub"
+                ? `${task.mode}|${descText(task.left)}|${task.op}|${descText(task.right)}|${task.answer}`
+                : `${task.mode}|${task.answer}|${descText(task.display)}`;
         if (seen.has(key)) continue;
         seen.add(key);
         tasks.push(task);

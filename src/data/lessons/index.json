@@ -6056,6 +6056,30 @@
         "space": "🚀 Mennyit fogyasztunk?",
         "tram": "🚋 Ki ér hamarabb?"
       }
+    },
+    {
+      "id": "rational-add-sub-03",
+      "title": "➕ Racionális számok összeadása és kivonása",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "rational",
+      "difficulty": 3,
+      "type": "rational",
+      "range": 100,
+      "mission": "➕ Racionális számok összeadása és kivonása",
+      "subtitle": "közös nevező, vegyes számok, előjelek",
+      "file": "./data/lessons/grade7/rational-add-sub-03.json",
+      "worldTitles": {
+        "postman": "📮 Csomagok összeadása",
+        "racing": "🏎️ Idők összeadása",
+        "football": "⚽ Pontok és gólkülönbség",
+        "cooking": "🍳 Hozzávalók mérése",
+        "animals": "🦁 Takarmány adagok",
+        "space": "🚀 Üzemanyag számolás",
+        "tram": "🚋 Menetidők összege"
+      }
     }
   ],
   "gradeConfig": [

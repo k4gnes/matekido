@@ -104,7 +104,7 @@ import { renderInequality } from "../components/inequality.js?v=2";
 import { renderRatio } from "../components/ratio.js?v=1";
 import { renderTriangle } from "../components/triangle.js?v=1";
 import { renderShapeArea } from "../components/shapeArea.js?v=1";
-import { renderRational } from "../components/rational.js?v=2";
+import { renderRational } from "../components/rational.js?v=3";
 import { renderMaster } from "../components/master.js?v=2";
 
 const COUNTED_TYPES = new Set([

@@ -275,6 +275,7 @@ export const CURRICULUM_ORDER = {
     7: [
         "rational-numbers-01",
         "rational-compare-02",
+        "rational-add-sub-03",
     ],
 };
 

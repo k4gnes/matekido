@@ -1,35 +1,35 @@
 .ineq-prompt {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 600;
     color: #444;
     text-align: center;
-    margin: 0.5rem 0 1rem;
+    margin: 0.25rem 0 0.75rem;
 }
 
 .ineq-line {
     display: flex;
     justify-content: center;
-    margin: 0 auto 1.25rem;
-    padding: 0.75rem 1rem;
+    margin: 0 auto 0.75rem;
+    padding: 0.5rem 0.75rem;
     background: #f4f8ff;
     border: 2px solid #bcd4f6;
-    border-radius: 16px;
+    border-radius: 12px;
 }
 
 .ineq-expression {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 5rem;
-    margin: 0 auto 1.25rem;
-    padding: 0.75rem 1.5rem;
-    font-size: 2.2rem;
+    min-height: 3rem;
+    margin: 0 auto 0.5rem;
+    padding: 0.4rem 1rem;
+    font-size: 1.6rem;
     font-weight: 700;
     letter-spacing: 0.05em;
     color: #1f3a5f;
     background: #f4f8ff;
     border: 2px solid #bcd4f6;
-    border-radius: 16px;
+    border-radius: 12px;
 }
 
 .ineq-svg {
@@ -79,16 +79,10 @@
 
 .ineq-options-lines {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-    max-width: 46rem;
-    margin: 0 auto 1rem;
-}
-
-@media (min-width: 560px) {
-    .ineq-options-lines {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.4rem;
+    max-width: 34rem;
+    margin: 0 auto 0.35rem;
 }
 
 .ineq-option {
@@ -114,7 +108,11 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 0.75rem 1rem;
+    padding: 0.3rem 0.5rem;
+}
+
+.ineq-option-line .ineq-svg {
+    max-width: 22rem;
 }
 
 .ineq-hint {

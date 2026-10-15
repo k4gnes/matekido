@@ -29,9 +29,9 @@ function buildLine(relation, bound) {
     const min = 0;
     const max = 10;
     const w = 264;
-    const h = 88;
+    const h = 64;
     const pad = 20;
-    const lineY = 44;
+    const lineY = 28;
     const usable = w - 2 * pad;
     const x = v => pad + ((v - min) / (max - min)) * usable;
     const right = relation === ">" || relation === "≥";
@@ -44,8 +44,8 @@ function buildLine(relation, bound) {
     svg.append(svgEl("polygon", { points: `${x(max) + 2},${lineY - 4} ${x(max) + 10},${lineY} ${x(max) + 2},${lineY + 4}`, class: "ineq-axis-arrow" }));
 
     for (let v = min; v <= max; v++) {
-        svg.append(svgEl("line", { x1: x(v), y1: lineY - 5, x2: x(v), y2: lineY + 5, class: "ineq-tick" }));
-        const label = svgEl("text", { x: x(v), y: lineY + 26, class: "ineq-label", "text-anchor": "middle" });
+        svg.append(svgEl("line", { x1: x(v), y1: lineY - 4, x2: x(v), y2: lineY + 4, class: "ineq-tick" }));
+        const label = svgEl("text", { x: x(v), y: lineY + 22, class: "ineq-label", "text-anchor": "middle" });
         label.textContent = v;
         svg.append(label);
     }
@@ -55,15 +55,15 @@ function buildLine(relation, bound) {
     svg.append(svgEl("line", { x1: from, y1: lineY, x2: to, y2: lineY, class: "ineq-ray", stroke: color }));
 
     if (right) {
-        svg.append(svgEl("polygon", { points: `${to},${lineY - 7} ${to + 12},${lineY} ${to},${lineY + 7}`, class: "ineq-ray-arrow", fill: color }));
+        svg.append(svgEl("polygon", { points: `${to},${lineY - 6} ${to + 10},${lineY} ${to},${lineY + 6}`, class: "ineq-ray-arrow", fill: color }));
     } else {
-        svg.append(svgEl("polygon", { points: `${to},${lineY - 7} ${to - 12},${lineY} ${to},${lineY + 7}`, class: "ineq-ray-arrow", fill: color }));
+        svg.append(svgEl("polygon", { points: `${to},${lineY - 6} ${to - 10},${lineY} ${to},${lineY + 6}`, class: "ineq-ray-arrow", fill: color }));
     }
 
     svg.append(svgEl("circle", {
         cx: x(bound),
         cy: lineY,
-        r: 6,
+        r: 4,
         class: strict ? "ineq-endpoint ineq-open" : "ineq-endpoint ineq-closed",
         fill: strict ? "#ffffff" : color,
         stroke: color

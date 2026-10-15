@@ -38,8 +38,13 @@ export function createFeedback({ message, container, onNext, onResult, onAttempt
                 onNext?.();
             }
         });
+        nextBtn.style.marginBottom = "1.5rem";
+        nextBtn.style.scrollMarginBottom = "1.5rem";
         container.append(nextBtn);
-        setTimeout(() => nextBtn.focus(), 0);
+        setTimeout(() => {
+            nextBtn.scrollIntoView({ block: "nearest" });
+            nextBtn.focus();
+        }, 0);
     }
 
     function reveal(customText) {
@@ -63,8 +68,13 @@ export function createFeedback({ message, container, onNext, onResult, onAttempt
                 onNext?.();
             }
         });
+        nextBtn.style.marginBottom = "1.5rem";
+        nextBtn.style.scrollMarginBottom = "1.5rem";
         container.append(nextBtn);
-        setTimeout(() => nextBtn.focus(), 0);
+        setTimeout(() => {
+            nextBtn.scrollIntoView({ block: "nearest" });
+            nextBtn.focus();
+        }, 0);
     }
 
     function retry(customText) {

@@ -6104,6 +6104,30 @@
         "space": "🚀 Üzemanyag számolás",
         "tram": "🚋 Menetidők szorzása"
       }
+    },
+    {
+      "id": "rational-mix-ops-05",
+      "title": "🧮 Racionális számok vegyes műveletei",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "rational",
+      "difficulty": 3,
+      "type": "rational",
+      "range": 100,
+      "mission": "🧮 Racionális számok vegyes műveletei",
+      "subtitle": "műveleti sorrend, zárójelek",
+      "file": "./data/lessons/grade7/rational-mix-ops-05.json",
+      "worldTitles": {
+        "postman": "📮 Több művelet a postán",
+        "racing": "🏎️ Idők és műveletek",
+        "football": "⚽ Pontok és arányok",
+        "cooking": "🍳 Recept és műveletek",
+        "animals": "🦁 Adagok és műveletek",
+        "space": "🚀 Üzemanyag és műveletek",
+        "tram": "🚋 Menetidők és műveletek"
+      }
     }
   ],
   "gradeConfig": [

@@ -702,6 +702,142 @@ function buildMulDiv(op, level) {
     };
 }
 
+function mixOpsOperand(level) {
+    if (level === "basic") {
+        if (Math.random() < 0.25) return positiveIntOperand();
+        return signedFractionOperand(0.1);
+    }
+    const r = Math.random();
+    if (r < 0.4) return signedFractionOperand(0.4);
+    if (r < 0.7) return mixedOperand();
+    return integerOperand();
+}
+
+function fracApply(op, x, y) {
+    if (op === "+") return simplifyFraction(x[0] * y[1] + y[0] * x[1], x[1] * y[1]);
+    if (op === "−") return simplifyFraction(x[0] * y[1] - y[0] * x[1], x[1] * y[1]);
+    if (op === "×") return simplifyFraction(x[0] * y[0], x[1] * y[1]);
+    return simplifyFraction(x[0] * y[1], x[1] * y[0]);
+}
+
+function evalFlatPrecedence(vals, ops) {
+    const vs = vals.map(v => [v.num, v.den]);
+    const os = ops.slice();
+    for (let i = 0; i < os.length;) {
+        if (os[i] === "×" || os[i] === "÷") {
+            const r = fracApply(os[i], vs[i], vs[i + 1]);
+            vs.splice(i, 2, [r.num, r.den]);
+            os.splice(i, 1);
+        } else {
+            i++;
+        }
+    }
+    let acc = vs[0];
+    for (let i = 0; i < os.length; i++) {
+        const r = fracApply(os[i], acc, vs[i + 1]);
+        acc = [r.num, r.den];
+    }
+    return { num: acc[0], den: acc[1] };
+}
+
+function pairValue(op, x, y) {
+    return fracApply(op, [x.num, x.den], [y.num, y.den]);
+}
+
+function pickOps() {
+    if (Math.random() < 0.25) return [pick(["×", "÷"]), pick(["×", "÷"])];
+    if (Math.random() < 0.5) return [pick(["×", "÷"]), pick(["+", "−"])];
+    return [pick(["+", "−"]), pick(["×", "÷"])];
+}
+
+function mulDivCandidateDescs(value, extra) {
+    const pairs = [
+        { num: -value.num, den: value.den },
+        { num: value.num + 1, den: value.den },
+        { num: value.num - 1, den: value.den },
+        { num: value.num + 2, den: value.den },
+        { num: value.num, den: value.den + 1 },
+        { num: value.num, den: value.den + 2 },
+        { num: value.num + value.den, den: value.den },
+        { num: value.num * 2, den: value.den },
+        ...extra
+    ];
+    const out = [];
+    for (const p of pairs) {
+        if (!Number.isInteger(p.num) || !Number.isInteger(p.den) || p.den === 0) continue;
+        out.push(valueDesc(p.num, p.den));
+    }
+    let k = 3;
+    while (out.length < 10 && k < 30) {
+        out.push(valueDesc(value.num + k, value.den));
+        out.push(valueDesc(value.num - k, value.den));
+        out.push(valueDesc(value.num, value.den + k));
+        k++;
+    }
+    return out;
+}
+
+function buildMixedOps(mode, level) {
+    for (let attempt = 0; attempt < 80; attempt++) {
+        const a = mixOpsOperand(level);
+        const b = mixOpsOperand(level);
+        const c = mixOpsOperand(level);
+        const [op1, op2] = pickOps();
+        let tokens;
+        let value;
+        let extras;
+        if (mode === "order") {
+            value = evalFlatPrecedence([a, b, c], [op1, op2]);
+            const leftToRight = pairValue(op2, pairValue(op1, a, b), c);
+            const rightFirst = pairValue(op1, a, pairValue(op2, b, c));
+            if (value.num === leftToRight.num && value.den === leftToRight.den) continue;
+            tokens = [a.desc, op1, b.desc, op2, c.desc];
+            extras = [
+                { num: leftToRight.num, den: leftToRight.den },
+                { num: rightFirst.num, den: rightFirst.den }
+            ];
+        } else {
+            const shape = Math.random() < 0.5 ? "left" : "right";
+            let inner;
+            if (shape === "left") {
+                inner = pairValue(op1, a, b);
+                value = pairValue(op2, { num: inner.num, den: inner.den }, c);
+                tokens = ["(", a.desc, op1, b.desc, ")", op2, c.desc];
+            } else {
+                inner = pairValue(op2, b, c);
+                if (op1 === "÷" && inner.num === 0) continue;
+                value = pairValue(op1, a, { num: inner.num, den: inner.den });
+                tokens = [a.desc, op1, "(", b.desc, op2, c.desc, ")"];
+            }
+            const ignoreParens = evalFlatPrecedence([a, b, c], [op1, op2]);
+            if (value.num === ignoreParens.num && value.den === ignoreParens.den) continue;
+            extras = [
+                { num: ignoreParens.num, den: ignoreParens.den },
+                { num: pairValue(op2, pairValue(op1, a, b), c).num, den: pairValue(op2, pairValue(op1, a, b), c).den },
+                { num: pairValue(op1, a, pairValue(op2, b, c)).num, den: pairValue(op1, a, pairValue(op2, b, c)).den }
+            ];
+        }
+        if (value.num === 0) continue;
+        const correct = valueDesc(value.num, value.den);
+        const options = buildRationalOptions(correct, mulDivCandidateDescs(value, extras));
+        return {
+            mode,
+            level,
+            question: "Mennyi a kifejezés értéke?",
+            expr: tokens,
+            operands: [a.desc, b.desc, c.desc],
+            ops: [op1, op2],
+            shape: mode === "order" ? "flat" : (tokens[0] === "(" ? "left" : "right"),
+            answer: descText(correct),
+            options,
+            hint: mode === "order"
+                ? "A műveleti sorrend: előbb a szorzás és az osztás, utána az összeadás és a kivonás, balról jobbra. Ha kell, hozd közös nevezőre a törteket."
+                : "A zárójelben lévő műveletet mindig előbb számoljuk ki, mint a zárójelen kívülit. Utána a szokásos sorrend: előbb szorzás és osztás, aztán összeadás és kivonás."
+        };
+    }
+    return buildMixedOps("order", level);
+}
+
 const ALL_MODES = ["parts", "sign", "opposite", "absolute", "to-decimal", "to-fraction", "to-mixed", "to-improper", "compare"];
 const FORM_MODES = ["to-decimal", "to-fraction", "to-mixed", "to-improper"];
 
@@ -721,7 +857,10 @@ export function generateRational(options = {}) {
         add: (o) => buildAddSub("add", o.level),
         sub: (o) => buildAddSub("sub", o.level),
         mul: (o) => buildMulDiv("mul", o.level),
-        div: (o) => buildMulDiv("div", o.level)
+        div: (o) => buildMulDiv("div", o.level),
+        order: (o) => buildMixedOps("order", o.level),
+        paren: (o) => buildMixedOps("paren", o.level),
+        mixops: (o) => buildMixedOps(Math.random() < 0.5 ? "order" : "paren", o.level)
     };
 
     const tasks = [];
@@ -753,7 +892,9 @@ export function generateRational(options = {}) {
             ? `${task.mode}|${descText(task.left)}|${descText(task.right)}|${task.answer}`
             : task.mode === "add" || task.mode === "sub" || task.mode === "mul" || task.mode === "div"
                 ? `${task.mode}|${descText(task.left)}|${task.op}|${descText(task.right)}|${task.answer}`
-                : `${task.mode}|${task.answer}|${descText(task.display)}`;
+                : task.expr
+                    ? `${task.mode}|${task.expr.map(t => typeof t === "string" ? t : descText(t)).join(" ")}|${task.answer}`
+                    : `${task.mode}|${task.answer}|${descText(task.display)}`;
         if (seen.has(key)) continue;
         seen.add(key);
         tasks.push(task);

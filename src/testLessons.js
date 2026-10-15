@@ -12,7 +12,7 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=44";
+import { buildLesson } from "./builders/LessonBuilder.js?v=45";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { SKILLS } from "./data/skills.js";
@@ -2351,6 +2351,70 @@ function validateStep(step, ctx, range) {
                         const correctValue = descValue(correctOpt);
                         if (correctValue === null || Math.abs(correctValue - expected) > 1e-9) {
                             fail(ctx, `művelet eredmény (${correctValue}) != ${expected}`);
+                        }
+                    }
+                }
+                break;
+            }
+            if (step.mode === "order" || step.mode === "paren") {
+                const toFrac = (d) => {
+                    if (!d || typeof d !== "object") return null;
+                    if (d.kind === "fraction") {
+                        if (!isInt(d.num) || !isInt(d.den) || d.den === 0) return null;
+                        return [d.num, d.den];
+                    }
+                    if (d.kind === "mixed") {
+                        if (!isInt(d.whole) || !isInt(d.num) || !isInt(d.den) || d.den === 0) return null;
+                        return [(d.neg ? -1 : 1) * (d.whole * d.den + d.num), d.den];
+                    }
+                    if (d.kind === "decimal") {
+                        const v = Number(String(d.text).replace(/−/g, "-").replace(",", "."));
+                        return Number.isInteger(v) ? [v, 1] : null;
+                    }
+                    return null;
+                };
+                const fop = (op, x, y) => {
+                    if (op === "+") return [x[0] * y[1] + y[0] * x[1], x[1] * y[1]];
+                    if (op === "−") return [x[0] * y[1] - y[0] * x[1], x[1] * y[1]];
+                    if (op === "×") return [x[0] * y[0], x[1] * y[1]];
+                    if (op === "÷") return [x[0] * y[1], x[1] * y[0]];
+                    return null;
+                };
+                const operands = Array.isArray(step.operands) ? step.operands.map(toFrac) : null;
+                const ops = Array.isArray(step.ops) ? step.ops : null;
+                if (!operands || operands.length !== 3 || operands.some(o => o === null) || !ops || ops.length !== 2) {
+                    fail(ctx, "vegyes művelet operandus/operátor hibás");
+                } else {
+                    const [a, b, c] = operands;
+                    let expected = null;
+                    if (step.shape === "flat") {
+                        const flatOps = ops.slice();
+                        const vals = [a.slice(), b.slice(), c.slice()];
+                        for (let i = 0; i < flatOps.length;) {
+                            if (flatOps[i] === "×" || flatOps[i] === "÷") {
+                                vals.splice(i, 2, fop(flatOps[i], vals[i], vals[i + 1]));
+                                flatOps.splice(i, 1);
+                            } else {
+                                i++;
+                            }
+                        }
+                        let acc = vals[0];
+                        for (let i = 0; i < flatOps.length; i++) acc = fop(flatOps[i], acc, vals[i + 1]);
+                        expected = acc;
+                    } else if (step.shape === "left") {
+                        expected = fop(ops[1], fop(ops[0], a, b), c);
+                    } else if (step.shape === "right") {
+                        expected = fop(ops[0], a, fop(ops[1], b, c));
+                    } else {
+                        fail(ctx, `vegyes művelet ismeretlen shape: ${step.shape}`);
+                    }
+                    if (expected) {
+                        const correctOpt = Array.isArray(step.options) ? step.options.find(o => o.correct) : null;
+                        const cf = correctOpt ? toFrac(correctOpt) : null;
+                        if (!correctOpt) {
+                            fail(ctx, "vegyes művelet nincs helyes opció");
+                        } else if (!cf || cf[0] * expected[1] !== expected[0] * cf[1]) {
+                            fail(ctx, `vegyes művelet eredmény (${correctOpt && correctOpt.text}) != ${expected[0]}/${expected[1]}`);
                         }
                     }
                 }

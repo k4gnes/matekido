@@ -277,6 +277,7 @@ export const CURRICULUM_ORDER = {
         "rational-compare-02",
         "rational-add-sub-03",
         "rational-mul-div-04",
+        "rational-mix-ops-05",
     ],
 };
 

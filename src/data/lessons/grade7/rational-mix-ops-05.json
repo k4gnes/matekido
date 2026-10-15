@@ -1,0 +1,121 @@
+{
+  "id": "rational-mix-ops-05",
+  "title": "🧮 Racionális számok vegyes műveletei",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧮 Racionális számok vegyes műveletei",
+      "text": "Ha egy kifejezésben több művelet is van, a műveleti sorrend dönti el a végeredményt. Előbb a zárójelben lévő műveleteket számoljuk ki, azután a szorzást és az osztást, végül az összeadást és a kivonást – balról jobbra. A törteket a művelet előtt érdemes közös nevezőre hozni vagy egyszerűsíteni.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Több művelet a postán",
+          "text": "A postán a csomagok tömegét és darabszámát is számoljuk. A műveleti sorrend segít, hogy a végeredmény pontos legyen."
+        },
+        "racing": {
+          "title": "🏎️ Idők és műveletek",
+          "text": "A versenyen a köridőket összeadjuk, szorozzuk és osztjuk. Csak a helyes sorrend ad jó eredményt."
+        },
+        "cooking": {
+          "title": "🍳 Recept és műveletek",
+          "text": "A konyhában a recept mennyiségeit többszörözzük és elosztjuk. A műveleti sorrend itt is fontos."
+        },
+        "football": {
+          "title": "⚽ Pontok és arányok",
+          "text": "A gólokat és a részeket is számoljuk. Előbb a szorzás és osztás, aztán az összeadás és kivonás."
+        },
+        "animals": {
+          "title": "🦁 Adagok és műveletek",
+          "text": "Az állatok etetésénél a részeket összeadjuk és szorozzuk. A zárójel megváltoztathatja az eredményt."
+        },
+        "space": {
+          "title": "🚀 Üzemanyag és műveletek",
+          "text": "Az űrhajón a fogyasztást több lépésben számoljuk. A műveleti sorrend segít a pontos tervben."
+        },
+        "tram": {
+          "title": "🚋 Menetidők és műveletek",
+          "text": "A villamos menetrendjében a menetidőket összeadjuk és szorozzuk. A zárójel másképp csoportosít."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 3,
+        "mode": "order",
+        "level": "basic"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 3,
+        "mode": "paren",
+        "level": "basic"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 3,
+        "mode": "order",
+        "level": "mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 2,
+        "mode": "paren",
+        "level": "mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 3,
+        "mode": "mixops",
+        "level": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen számoltad ki a vegyes műveleteket a racionális számokkal!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Minden csomag megvan!",
+          "text": "Megbízhatóan számolod a posta feladatait!"
+        },
+        "racing": {
+          "title": "🎉 Remek idő!",
+          "text": "A versenypályán is pontos a műveleti sorrended!"
+        },
+        "cooking": {
+          "title": "🎉 Kész az étel!",
+          "text": "Ügyesen számolsz a konyhában, akár több művelettel is!"
+        },
+        "football": {
+          "title": "🎉 Csapatépítő!",
+          "text": "Megbízhatóan számolod a pontokat és az arányokat!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes gazda!",
+          "text": "Pontosan osztod el az adagokat több művelettel is!"
+        },
+        "space": {
+          "title": "🎉 Küldetésre készen!",
+          "text": "A több lépéses számolás sem jelent gondot!"
+        },
+        "tram": {
+          "title": "🎉 Pont időben!",
+          "text": "Ügyesen csoportosítod a menetidőket!"
+        }
+      }
+    }
+  ]
+}

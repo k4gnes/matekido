@@ -99,7 +99,25 @@ export function renderRational(step, root, next, progress, onResult, onAttempt) 
     prompt.textContent = step.question;
     card.append(prompt);
 
-    if (step.display) {
+    if (Array.isArray(step.expr)) {
+        const display = document.createElement("div");
+        display.className = "rational-display rational-expression";
+        step.expr.forEach(token => {
+            if (typeof token === "string") {
+                const span = document.createElement("span");
+                span.className = "rational-operator";
+                span.textContent = token;
+                display.append(span);
+            } else {
+                display.append(rationalNode(token));
+            }
+        });
+        const equals = document.createElement("span");
+        equals.className = "rational-equals";
+        equals.textContent = "= ?";
+        display.append(equals);
+        card.append(display);
+    } else if (step.display) {
         const display = document.createElement("div");
         display.className = "rational-display";
         display.append(rationalNode(step.display));

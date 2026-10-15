@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=100";
+import { generate } from "../generators/index.js?v=101";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -471,6 +471,11 @@ export function buildLesson(lesson) {
             } else if (step.generator === "rational") {
                 result.push({
                     type: "rational",
+                    ...task
+                });
+            } else if (step.generator === "algebra") {
+                result.push({
+                    type: "algebra",
                     ...task
                 });
             } else if (step.generator === "master") {

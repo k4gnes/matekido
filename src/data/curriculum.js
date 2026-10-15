@@ -278,6 +278,7 @@ export const CURRICULUM_ORDER = {
         "rational-add-sub-03",
         "rational-mul-div-04",
         "rational-mix-ops-05",
+        "algebra-basics-06",
     ],
 };
 

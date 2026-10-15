@@ -97,6 +97,7 @@ import { generateRatio } from "./ratioGenerator.js?v=1";
 import { generateTriangle } from "./triangleGenerator.js?v=1";
 import { generateShapeArea } from "./shapeAreaGenerator.js?v=1";
 import { generateRational } from "./rationalGenerator.js?v=5";
+import { generateAlgebra } from "./algebraGenerator.js?v=1";
 import { generateMaster } from "./masterGenerator.js?v=3";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -309,6 +310,8 @@ export function generate(step) {
             return generateShapeArea(opts);
         case "rational":
             return generateRational(opts);
+        case "algebra":
+            return generateAlgebra(opts);
         case "master":
             return generateMaster(opts);
 

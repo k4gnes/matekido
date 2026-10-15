@@ -105,6 +105,7 @@ import { renderRatio } from "../components/ratio.js?v=1";
 import { renderTriangle } from "../components/triangle.js?v=1";
 import { renderShapeArea } from "../components/shapeArea.js?v=1";
 import { renderRational } from "../components/rational.js?v=5";
+import { renderAlgebra } from "../components/algebra.js?v=1";
 import { renderMaster } from "../components/master.js?v=2";
 
 const COUNTED_TYPES = new Set([
@@ -214,6 +215,7 @@ const COUNTED_TYPES = new Set([
     "triangle",
     "shape-area",
     "rational",
+    "algebra",
     "master"
 ]);
 
@@ -261,7 +263,8 @@ const SKILL_BY_TYPE = {
     "fraction-decimal": "fraction",
     "fraction-muldiv": "fraction",
     "fraction-percent": "percent",
-    "rational": "rational"
+    "rational": "rational",
+    "algebra": "algebra"
 };
 
 const RENDERERS = new Map([
@@ -375,6 +378,7 @@ const RENDERERS = new Map([
     ["triangle", renderTriangle],
     ["shape-area", renderShapeArea],
     ["rational", renderRational],
+    ["algebra", renderAlgebra],
     ["master", renderMaster]
 ]);
 

@@ -1,0 +1,112 @@
+{
+  "id": "algebra-basics-06",
+  "title": "🧮 Algebrai kifejezések alapjai",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧮 Algebrai kifejezések alapjai",
+      "text": "Az algebrai kifejezésben betűk jelölik a változó számokat. Például a 3x + 5 kifejezésben x a változó, a 3 az együttható, az 5 pedig a konstans. Ha megadjuk x értékét, a kifejezés értékét behelyettesítéssel kiszámolhatjuk.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Csomagok és kifejezések a postán",
+          "text": "A postán a csomagok darabszámát betűvel is jelölhetjük. Ha tudjuk, mennyi a betű értéke, kiszámolhatjuk a fizetendő összeget."
+        },
+        "racing": {
+          "title": "🏎️ Körök és kifejezések",
+          "text": "A versenyen a köröket és a büntetéseket kifejezéssel írjuk le. A betű helyére beírva a körök számát megkapjuk az eredményt."
+        },
+        "cooking": {
+          "title": "🍳 Hozzávalók kifejezésben",
+          "text": "A konyhában a recept adagjait is leírhatjuk kifejezéssel. A betű a vendégek számát jelöli, így bármennyi adag kiszámolható."
+        },
+        "football": {
+          "title": "⚽ Pontok és kifejezések",
+          "text": "A bajnokságban a pontokat kifejezéssel is számolhatjuk. A betű a győzelmek számát jelöli, a helyére írt értékkel megkapjuk a pontot."
+        },
+        "animals": {
+          "title": "🦁 Takarmány és kifejezések",
+          "text": "Az állatkertben az adagokat kifejezéssel írjuk le. Ha tudjuk, hány állat van, a betű helyére írva kiszámoljuk az összes takarmányt."
+        },
+        "space": {
+          "title": "🚀 Üzemanyag és kifejezések",
+          "text": "Az űrhajón az üzemanyag fogyását kifejezéssel becsüljük. A betű a megtett kilométereket jelöli, amit a helyére írva kiszámolhatunk."
+        },
+        "tram": {
+          "title": "🚋 Menetidő és kifejezések",
+          "text": "A villamos menetrendjében a menetidőt kifejezéssel is megadhatjuk. A betű a megállók számát jelöli."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "substitute",
+        "level": "one"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "substitute",
+        "level": "one"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "substitute",
+        "level": "two"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "substitute",
+        "level": "two"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen behelyettesítettél az algebrai kifejezésekbe!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiszámoltad a kifejezések értékét a postán!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a kifejezésekkel a pályán!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen számoltad ki a recept adagjait!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltad a pontokat kifejezéssel!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiszámoltad a takarmány mennyiségét!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltad ki az üzemanyagot!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a menetidőkkel!"
+        }
+      }
+    }
+  ]
+}

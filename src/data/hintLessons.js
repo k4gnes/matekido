@@ -37,6 +37,7 @@ export const HINT_TYPES = new Set([
     "inequality",
     "ratio",
     "rational",
+    "algebra",
     "master"
 ]);
 

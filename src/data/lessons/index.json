@@ -6128,6 +6128,30 @@
         "space": "🚀 Üzemanyag és műveletek",
         "tram": "🚋 Menetidők és műveletek"
       }
+    },
+    {
+      "id": "algebra-basics-06",
+      "title": "🧮 Algebrai kifejezések alapjai",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "algebra",
+      "difficulty": 2,
+      "type": "algebra",
+      "range": 100,
+      "mission": "🧮 Algebrai kifejezések alapjai",
+      "subtitle": "helyettesítési érték, egy- és kétváltozós kifejezések",
+      "file": "./data/lessons/grade7/algebra-basics-06.json",
+      "worldTitles": {
+        "postman": "📮 Kifejezések a postán",
+        "racing": "🏎️ Kifejezések a pályán",
+        "football": "⚽ Pontok kifejezéssel",
+        "cooking": "🍳 Adagok kifejezésekkel",
+        "animals": "🦁 Takarmány kifejezéssel",
+        "space": "🚀 Üzemanyag kifejezéssel",
+        "tram": "🚋 Menetidő kifejezéssel"
+      }
     }
   ],
   "gradeConfig": [

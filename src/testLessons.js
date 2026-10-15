@@ -12,7 +12,7 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=45";
+import { buildLesson } from "./builders/LessonBuilder.js?v=46";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { SKILLS } from "./data/skills.js";
@@ -2422,6 +2422,75 @@ function validateStep(step, ctx, range) {
             }
             if (step.display === undefined) fail(ctx, "display hiányzik");
             if (typeof step.answer !== "string" && !isInt(step.answer)) fail(ctx, "answer hibás");
+            break;
+        }
+        case "algebra": {
+            const evalTerms = (terms, values) => {
+                if (!Array.isArray(terms)) return null;
+                let s = 0;
+                for (const t of terms) {
+                    if (!t || typeof t !== "object" || !isInt(t.coef)) return null;
+                    if (t.variable === null || t.variable === undefined) s += t.coef;
+                    else if (typeof t.variable === "string") s += t.coef * (values[t.variable] ?? 0);
+                    else return null;
+                }
+                return s;
+            };
+            const evalSource = (src, values) => {
+                if (!src || typeof src !== "object") return null;
+                if (src.kind === "terms") return evalTerms(src.terms, values);
+                if (src.kind === "product") return isInt(src.factor) ? src.factor * evalTerms(src.terms, values) : null;
+                if (src.kind === "groups") {
+                    if (!Array.isArray(src.groups)) return null;
+                    let s = 0;
+                    for (const g of src.groups) {
+                        if (!g || (g.sign !== 1 && g.sign !== -1)) return null;
+                        const v = evalTerms(g.terms, values);
+                        if (v === null) return null;
+                        s += g.sign * v;
+                    }
+                    return s;
+                }
+                return null;
+            };
+            const evalNode = (node, values) => {
+                if (!node || typeof node !== "object") return null;
+                if (node.kind === "product") {
+                    if (!isInt(node.factor) || !node.inner || !Array.isArray(node.inner.terms)) return null;
+                    const v = evalTerms(node.inner.terms, values);
+                    return v === null ? null : node.factor * v;
+                }
+                if (node.kind === "poly") return evalTerms(node.terms, values);
+                return null;
+            };
+            const correctOpt = Array.isArray(step.options) ? step.options.find(o => o.correct) : null;
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            if (typeof step.expression !== "string" || step.expression.length === 0) fail(ctx, "expression hiányzik");
+            if (!correctOpt || correctOpt.text !== step.answer) fail(ctx, "algebra answer != helyes opció");
+            if (step.mode === "substitute") {
+                const value = evalTerms(step.source && step.source.terms, step.values ?? {});
+                if (value === null) {
+                    fail(ctx, "substitute source hibás");
+                } else {
+                    const shown = Number(String(correctOpt.text).replace(/−/g, "-"));
+                    if (shown !== value) fail(ctx, `substitute érték (${correctOpt.text}) != ${value}`);
+                }
+            } else {
+                const points = [-3, -1, 0, 1, 2, 5, 7];
+                let ok = true;
+                for (const x of points) {
+                    for (const y of points) {
+                        const a = evalSource(step.source, { x, y });
+                        const b = evalNode(step.result, { x, y });
+                        if (a === null || b === null || a !== b) {
+                            ok = false;
+                            break;
+                        }
+                    }
+                    if (!ok) break;
+                }
+                if (!ok) fail(ctx, `algebra egyenlőség hibás: ${step.expression} => ${step.answer}`);
+            }
             break;
         }
     }

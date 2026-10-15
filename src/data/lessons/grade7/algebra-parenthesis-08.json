@@ -1,0 +1,112 @@
+{
+  "id": "algebra-parenthesis-08",
+  "title": "🧮 Zárójel felbontása és összevonás",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧮 Zárójel felbontása és összevonás",
+      "text": "A zárójel előtti jel minden tagra vonatkozik. Ha a zárójel előtt „+” áll, a tagok előjele nem változik: +(x + 3) = x + 3. Ha „−” áll, minden tag előjele megfordul: −(x + 3) = −x − 3. A zárójel felbontása után vonjuk össze a hasonló tagokat.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Csomagok zárójelben",
+          "text": "A postán egy csomaghoz több dolgot is hozzáadunk vagy elveszünk. A zárójel előtti jel minden elemre vonatkozik."
+        },
+        "racing": {
+          "title": "🏎️ Időbüntetés zárójelben",
+          "text": "A versenyen a büntetés minden körre vonatkozik. A zárójel felbontásakor ügyelj az előjelekre."
+        },
+        "cooking": {
+          "title": "🍳 Recept zárójelben",
+          "text": "A konyhában a zárójelben lévő hozzávalók mindegyikére vonatkozik a módosítás."
+        },
+        "football": {
+          "title": "⚽ Pontok zárójelben",
+          "text": "A bajnokságban a zárójeles kifejezés minden tagját figyelembe vesszük a pontszámításkor."
+        },
+        "animals": {
+          "title": "🦁 Adagok zárójelben",
+          "text": "Az állatkertben az adagok módosítása minden hozzávalóra vonatkozik. Figyeld az előjeleket!"
+        },
+        "space": {
+          "title": "🚀 Készletek zárójelben",
+          "text": "Az űrhajón a tartalékok módosítása minden tételre vonatkozik. A zárójel felbontásakor vigyázz az előjelekre."
+        },
+        "tram": {
+          "title": "🚋 Menetidők zárójelben",
+          "text": "A villamos menetrendjében a zárójeles korrekció minden megállóra érvényes."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "parenthesis",
+        "level": "one"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "parenthesis",
+        "level": "one"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "parenthesis",
+        "level": "two"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "parenthesis",
+        "level": "two"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen bontottad fel a zárójeleket!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen bontottad fel a zárójeleket a postán!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kezelted a büntetéseket a pályán!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen bontottad fel a recept zárójeleit!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltad a pontokat zárójellel!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen bontottad fel az adagok zárójeleit!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen kezelted a készletek zárójeleit!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen bontottad fel a menetidők zárójeleit!"
+        }
+      }
+    }
+  ]
+}

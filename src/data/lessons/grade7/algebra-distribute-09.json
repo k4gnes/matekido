@@ -1,0 +1,112 @@
+{
+  "id": "algebra-distribute-09",
+  "title": "🧮 Egytag szorzása többtaggal",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧮 Egytag szorzása többtaggal",
+      "text": "Ha egy zárójelet megszorzunk egy számmal vagy egytaggal, a szorzót a zárójel minden tagjával megszorozzuk: a(x + b) = ax + ab. Ezt nevezzük disztributivitásnak (szétosztásnak). Például: 3(2x + 4) = 6x + 12. Negatív szorzónál ügyelj az előjelekre: −2(x − 3) = −2x + 6.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Csomagok szorzása",
+          "text": "A postán egy csomag árát többször számoljuk. A szorzót minden tételre alkalmazzuk."
+        },
+        "racing": {
+          "title": "🏎️ Idők szorzása",
+          "text": "A versenyen a köröket többszörözzük. A szorzó minden tagra vonatkozik."
+        },
+        "cooking": {
+          "title": "🍳 Recept szorzása",
+          "text": "A konyhában a receptet többszörözzük. Minden hozzávalót meg kell szorozni!"
+        },
+        "football": {
+          "title": "⚽ Pontok szorzása",
+          "text": "A bajnokságban a pontokat megduplázzuk. A szorzó minden tagra érvényes."
+        },
+        "animals": {
+          "title": "🦁 Adagok szorzása",
+          "text": "Az állatkertben több adagot készítünk. A szorzót minden hozzávalóra alkalmazzuk."
+        },
+        "space": {
+          "title": "🚀 Készletek szorzása",
+          "text": "Az űrhajón a készleteket megsokszorozzuk. A szorzó minden tételre vonatkozik."
+        },
+        "tram": {
+          "title": "🚋 Menetidők szorzása",
+          "text": "A villamos menetrendjében az időket többszörözzük. Minden szakaszra érvényes a szorzó."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "distribute",
+        "level": "one"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "distribute",
+        "level": "one"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "distribute",
+        "level": "two"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "distribute",
+        "level": "two"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen beszoroztad a zárójeleket!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen szoroztad a csomagokat a postán!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen szoroztad az időket a pályán!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen szoroztad a recept hozzávalóit!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen szoroztad a pontokat!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen szoroztad az adagokat!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen szoroztad a készleteket!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen szoroztad a menetidőket!"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "id": "algebra-combine-07",
+  "title": "🧮 Hasonló tagok összevonása",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧮 Hasonló tagok összevonása",
+      "text": "Egy kifejezésben a hasonló tagok ugyanazt a betűt tartalmazzák. Az ilyen tagok együtthatóit összeadhatjuk, a betű változatlan marad: 3x + 5x = 8x. A konstansokat (számokat) külön vonjuk össze: 4 + 7 = 11. A különböző betűket nem lehet összevonni.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Csomagok összevonása",
+          "text": "A postán a csomagokat típus szerint csoportosítjuk. A hasonló tagok összevonása is ilyen csoportosítás."
+        },
+        "racing": {
+          "title": "🏎️ Körök összevonása",
+          "text": "A versenyen a megtett köröket és a büntetéseket külön számoljuk. A hasonló tagok összevonása segít ebben."
+        },
+        "cooking": {
+          "title": "🍳 Hozzávalók összesítése",
+          "text": "A konyhában az azonos hozzávalókat összesítjük. Így működik a hasonló tagok összevonása is."
+        },
+        "football": {
+          "title": "⚽ Pontok összesítése",
+          "text": "A bajnokságban a győzelmek és a döntetlenek külön pontot érnek. A hasonló tagokat külön vonjuk össze."
+        },
+        "animals": {
+          "title": "🦁 Adagok összesítése",
+          "text": "Az állatkertben az azonos fajtákat összesítjük. A hasonló tagok összevonása is csoportosítás."
+        },
+        "space": {
+          "title": "🚀 Készletek összesítése",
+          "text": "Az űrhajón a különböző készleteket külön tartjuk nyilván. A hasonló tagokat külön vonjuk össze."
+        },
+        "tram": {
+          "title": "🚋 Menetidők összesítése",
+          "text": "A villamos menetrendjében az azonos típusú időket összesítjük. Így működik a hasonló tagok összevonása."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "combine",
+        "level": "one"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "combine",
+        "level": "one"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "combine",
+        "level": "two"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "combine",
+        "level": "two"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen összevontad a hasonló tagokat!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen csoportosítottad a csomagokat a postán!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen vontad össze a köröket a pályán!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen összesítetted a hozzávalókat!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltad össze a pontokat!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen összesítetted az adagokat!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen összesítetted a készleteket!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen összesítetted a menetidőket!"
+        }
+      }
+    }
+  ]
+}

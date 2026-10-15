@@ -6152,6 +6152,102 @@
         "space": "🚀 Üzemanyag kifejezéssel",
         "tram": "🚋 Menetidő kifejezéssel"
       }
+    },
+    {
+      "id": "algebra-combine-07",
+      "title": "🧮 Hasonló tagok összevonása",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "algebra",
+      "difficulty": 2,
+      "type": "algebra",
+      "range": 100,
+      "mission": "🧮 Hasonló tagok összevonása",
+      "subtitle": "hasonló tagok egy- és kétváltozós kifejezésben",
+      "file": "./data/lessons/grade7/algebra-combine-07.json",
+      "worldTitles": {
+        "postman": "📮 Csomagok összevonása",
+        "racing": "🏎️ Körök összevonása",
+        "football": "⚽ Pontok összesítése",
+        "cooking": "🍳 Hozzávalók összesítése",
+        "animals": "🦁 Adagok összesítése",
+        "space": "🚀 Készletek összesítése",
+        "tram": "🚋 Menetidők összesítése"
+      }
+    },
+    {
+      "id": "algebra-parenthesis-08",
+      "title": "🧮 Zárójel felbontása és összevonás",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "algebra",
+      "difficulty": 3,
+      "type": "algebra",
+      "range": 100,
+      "mission": "🧮 Zárójel felbontása és összevonás",
+      "subtitle": "zárójel előtti előjelek, összevonás",
+      "file": "./data/lessons/grade7/algebra-parenthesis-08.json",
+      "worldTitles": {
+        "postman": "📮 Csomagok zárójelben",
+        "racing": "🏎️ Időbüntetés zárójelben",
+        "football": "⚽ Pontok zárójelben",
+        "cooking": "🍳 Recept zárójelben",
+        "animals": "🦁 Adagok zárójelben",
+        "space": "🚀 Készletek zárójelben",
+        "tram": "🚋 Menetidők zárójelben"
+      }
+    },
+    {
+      "id": "algebra-distribute-09",
+      "title": "🧮 Egytag szorzása többtaggal",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "algebra",
+      "difficulty": 3,
+      "type": "algebra",
+      "range": 100,
+      "mission": "🧮 Egytag szorzása többtaggal",
+      "subtitle": "disztributivitás, előjelszabály",
+      "file": "./data/lessons/grade7/algebra-distribute-09.json",
+      "worldTitles": {
+        "postman": "📮 Csomagok szorzása",
+        "racing": "🏎️ Idők szorzása",
+        "football": "⚽ Pontok szorzása",
+        "cooking": "🍳 Recept szorzása",
+        "animals": "🦁 Adagok szorzása",
+        "space": "🚀 Készletek szorzása",
+        "tram": "🚋 Menetidők szorzása"
+      }
+    },
+    {
+      "id": "algebra-factor-10",
+      "title": "🧮 Kiemelés",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "algebra",
+      "difficulty": 3,
+      "type": "algebra",
+      "range": 100,
+      "mission": "🧮 Kiemelés",
+      "subtitle": "közös tényező kiemelése",
+      "file": "./data/lessons/grade7/algebra-factor-10.json",
+      "worldTitles": {
+        "postman": "📮 Közös tényező a postán",
+        "racing": "🏎️ Közös idő a pályán",
+        "football": "⚽ Közös pontszám",
+        "cooking": "🍳 Közös hozzávaló",
+        "animals": "🦁 Közös adag",
+        "space": "🚀 Közös készlet",
+        "tram": "🚋 Közös menetidő"
+      }
     }
   ],
   "gradeConfig": [

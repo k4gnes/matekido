@@ -1,0 +1,112 @@
+{
+  "id": "algebra-factor-10",
+  "title": "🧮 Kiemelés",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧮 Kiemelés",
+      "text": "A kiemelés a szétosztás fordított művelete. Ha minden tagban megtalálható ugyanaz a tényező, azt kiemelhetjük a zárójel elé: 6x + 9 = 3(2x + 3). A kiemelt tényező a tagok legnagyobb közös osztója. A zárójelben minden tagot elosztunk a kiemelt tényezővel.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Közös tényező a postán",
+          "text": "A postán a közös csomagolást emeljük ki. A kiemelés a szorzás fordítottja."
+        },
+        "racing": {
+          "title": "🏎️ Közös idő a pályán",
+          "text": "A versenyen a közös köridőt emeljük ki. Így egyszerűbbé válik a számítás."
+        },
+        "cooking": {
+          "title": "🍳 Közös hozzávaló",
+          "text": "A konyhában a közös hozzávalót emeljük ki a receptből."
+        },
+        "football": {
+          "title": "⚽ Közös pontszám",
+          "text": "A bajnokságban a közös pontot emeljük ki a kifejezésből."
+        },
+        "animals": {
+          "title": "🦁 Közös adag",
+          "text": "Az állatkertben a közös adagmennyiséget emeljük ki."
+        },
+        "space": {
+          "title": "🚀 Közös készlet",
+          "text": "Az űrhajón a közös készletet emeljük ki a számításból."
+        },
+        "tram": {
+          "title": "🚋 Közös menetidő",
+          "text": "A villamos menetrendjében a közös időtényezőt emeljük ki."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "factor",
+        "level": "one"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "factor",
+        "level": "one"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "factor",
+        "level": "two"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "factor",
+        "level": "two"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen kiemelted a közös tényezőt!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen emelted ki a közös tényezőt a postán!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen emelted ki a közös időt a pályán!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen emelted ki a közös hozzávalót!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen emelted ki a közös pontot!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen emelted ki a közös adagot!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen emelted ki a közös készletet!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen emelted ki a közös időtényezőt!"
+        }
+      }
+    }
+  ]
+}

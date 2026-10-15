@@ -104,6 +104,7 @@ import { renderInequality } from "../components/inequality.js?v=2";
 import { renderRatio } from "../components/ratio.js?v=1";
 import { renderTriangle } from "../components/triangle.js?v=1";
 import { renderShapeArea } from "../components/shapeArea.js?v=1";
+import { renderRational } from "../components/rational.js?v=2";
 import { renderMaster } from "../components/master.js?v=2";
 
 const COUNTED_TYPES = new Set([
@@ -212,6 +213,7 @@ const COUNTED_TYPES = new Set([
     "ratio",
     "triangle",
     "shape-area",
+    "rational",
     "master"
 ]);
 
@@ -258,7 +260,8 @@ const SKILL_BY_TYPE = {
     "fraction-line": "fraction",
     "fraction-decimal": "fraction",
     "fraction-muldiv": "fraction",
-    "fraction-percent": "percent"
+    "fraction-percent": "percent",
+    "rational": "rational"
 };
 
 const RENDERERS = new Map([
@@ -371,6 +374,7 @@ const RENDERERS = new Map([
     ["ratio", renderRatio],
     ["triangle", renderTriangle],
     ["shape-area", renderShapeArea],
+    ["rational", renderRational],
     ["master", renderMaster]
 ]);
 

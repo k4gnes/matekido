@@ -272,6 +272,10 @@ export const CURRICULUM_ORDER = {
         "combinatorics-03",
         "grade6-master-01",
     ],
+    7: [
+        "rational-numbers-01",
+        "rational-compare-02",
+    ],
 };
 
 const RANK = new Map();

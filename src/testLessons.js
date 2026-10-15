@@ -12,7 +12,7 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=40";
+import { buildLesson } from "./builders/LessonBuilder.js?v=42";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { SKILLS } from "./data/skills.js";
@@ -2295,6 +2295,43 @@ function validateStep(step, ctx, range) {
                     fail(ctx, "choice interakcióhoz hiányzik az options");
                 }
             }
+            break;
+        }
+        case "rational": {
+            const descValue = (d) => {
+                if (!d || typeof d !== "object") return null;
+                if (d.kind === "fraction") {
+                    if (!isInt(d.num) || !isInt(d.den) || d.den === 0) return null;
+                    return d.num / d.den;
+                }
+                if (d.kind === "mixed") {
+                    if (!isInt(d.whole) || !isInt(d.num) || !isInt(d.den) || d.den === 0) return null;
+                    return (d.neg ? -1 : 1) * (d.whole + d.num / d.den);
+                }
+                if (d.kind === "decimal") {
+                    const v = Number(String(d.text).replace(/−/g, "-").replace(",", "."));
+                    return Number.isFinite(v) ? v : null;
+                }
+                return null;
+            };
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            if (step.mode === "compare") {
+                const leftValue = descValue(step.left);
+                const rightValue = descValue(step.right);
+                if (leftValue === null) fail(ctx, "compare bal oldal hibás");
+                if (rightValue === null) fail(ctx, "compare jobb oldal hibás");
+                if (leftValue !== null && rightValue !== null) {
+                    const expected = Math.abs(leftValue - rightValue) < 1e-9
+                        ? "="
+                        : leftValue < rightValue ? "<" : ">";
+                    if (step.answer !== expected) {
+                        fail(ctx, `compare answer (${step.answer}) != ${expected}`);
+                    }
+                }
+                break;
+            }
+            if (step.display === undefined) fail(ctx, "display hiányzik");
+            if (typeof step.answer !== "string" && !isInt(step.answer)) fail(ctx, "answer hibás");
             break;
         }
     }

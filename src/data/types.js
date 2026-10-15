@@ -107,6 +107,7 @@ export const TYPE_EMOJI = {
     "equation": "🟰",
     "inequality": "📈",
     "ratio": "🔗",
+    "rational": "🔢",
     "master": "🌟"
 };
 
@@ -218,5 +219,6 @@ export const TYPE_LABEL = {
     "equation": "Egyenlet",
     "inequality": "Egyenlőtlenség",
     "ratio": "Arány és aránypár",
+    "rational": "Racionális számok",
     "master": "Mester kihívás"
 };

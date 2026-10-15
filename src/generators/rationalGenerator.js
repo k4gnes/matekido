@@ -1,0 +1,497 @@
+const MINUS = "−";
+
+function randInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function pick(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
+function gcd(a, b) {
+    a = Math.abs(a);
+    b = Math.abs(b);
+    while (b) {
+        [a, b] = [b, a % b];
+    }
+    return a;
+}
+
+function fmtInt(n) {
+    return n < 0 ? `${MINUS}${-n}` : String(n);
+}
+
+function fractionDesc(num, den) {
+    return { kind: "fraction", num, den };
+}
+
+function mixedDesc(neg, whole, num, den) {
+    return { kind: "mixed", neg, whole, num, den };
+}
+
+function decimalDesc(text) {
+    return { kind: "decimal", text };
+}
+
+function descText(d) {
+    if (d.kind === "fraction") return `${fmtInt(d.num)}/${d.den}`;
+    if (d.kind === "mixed") return `${d.neg ? MINUS : ""}${d.whole} ${d.num}/${d.den}`;
+    return d.text;
+}
+
+function descValue(d) {
+    if (d.kind === "fraction") return d.num / d.den;
+    if (d.kind === "mixed") return (d.neg ? -1 : 1) * (d.whole + d.num / d.den);
+    return parseFloat(d.text.replace(/−/g, "-").replace(",", "."));
+}
+
+function flipSign(text) {
+    return text.startsWith(MINUS) ? text.slice(1) : `${MINUS}${text}`;
+}
+
+function negateDesc(d) {
+    if (d.kind === "fraction") return fractionDesc(-d.num, d.den);
+    if (d.kind === "mixed") return mixedDesc(!d.neg, d.whole, d.num, d.den);
+    return decimalDesc(flipSign(d.text));
+}
+
+function absDesc(d) {
+    if (d.kind === "fraction") return fractionDesc(Math.abs(d.num), d.den);
+    if (d.kind === "mixed") return mixedDesc(false, d.whole, d.num, d.den);
+    return decimalDesc(d.text.startsWith(MINUS) ? d.text.slice(1) : d.text);
+}
+
+function decimalFromNumber(value) {
+    let s = value.toFixed(3);
+    s = s.replace(/0+$/, "").replace(/\.$/, "");
+    return s.replace(".", ",").replace(/-/g, MINUS);
+}
+
+function decimalText(num, den) {
+    return decimalFromNumber(num / den);
+}
+
+function buildRationalOptions(correct, candidates, count = 4) {
+    const options = [correct];
+    const seen = new Set([descValue(correct)]);
+    for (const cand of shuffle(candidates.slice())) {
+        if (options.length >= count) break;
+        const v = descValue(cand);
+        if (seen.has(v)) continue;
+        seen.add(v);
+        options.push(cand);
+    }
+    return shuffle(options).map(d => ({ ...d, text: descText(d), correct: d === correct }));
+}
+
+const SIGN_DECIMALS = ["0,25", "0,5", "0,75", "0,2", "0,4", "0,6", "0,8", "1,5", "2,25", "0,1", "0,3", "0,9"];
+
+function buildSign() {
+    const form = pick(["fraction", "decimal", "fraction", "mixed", "decimal"]);
+    let display;
+    if (form === "fraction") {
+        const den = pick([2, 3, 4, 5, 6, 8, 10]);
+        const zero = Math.random() < 0.15;
+        let num = zero ? 0 : randInt(1, den - 1);
+        if (!zero && Math.random() < 0.5) num = -num;
+        display = fractionDesc(num, den);
+    } else if (form === "mixed") {
+        const den = pick([2, 3, 4, 5, 8]);
+        const whole = randInt(1, 4);
+        const num = randInt(1, den - 1);
+        display = mixedDesc(Math.random() < 0.5, whole, num, den);
+    } else {
+        const text = pick(SIGN_DECIMALS);
+        display = decimalDesc(Math.random() < 0.35 ? flipSign(text) : text);
+    }
+    const value = descValue(display);
+    const sign = value > 0 ? "positive" : value < 0 ? "negative" : "zero";
+    const label = { positive: "Pozitív", negative: "Negatív", zero: "Nulla" }[sign];
+    const options = ["Pozitív", "Negatív", "Nulla"].map(t => ({ text: t, correct: t === label }));
+    return {
+        mode: "sign",
+        value,
+        sign,
+        question: "Pozitív, negatív vagy nulla ez a szám?",
+        display,
+        answer: label,
+        options,
+        hint: "A pozitív számok nagyobbak 0-nál, a negatívak kisebbek 0-nál. A 0 se nem pozitív, se nem negatív."
+    };
+}
+
+function buildParts() {
+    const den = pick([2, 3, 4, 5, 6, 8, 10, 12]);
+    let num = randInt(1, den - 1);
+    if (Math.random() < 0.5) num = -num;
+    const display = fractionDesc(num, den);
+    const target = pick(["num", "den"]);
+    const answer = target === "num" ? num : den;
+    const question = target === "num" ? "Mennyi a számlálója?" : "Mennyi a nevezője?";
+    const candidates = [num, den, -num, Math.abs(num), num + 1, num - 1, den + 1, den - 1, -den];
+    const options = [];
+    const seen = new Set();
+    for (const v of [answer, ...shuffle(candidates)]) {
+        if (options.length >= 4) break;
+        if (seen.has(v)) continue;
+        seen.add(v);
+        options.push({ text: fmtInt(v), correct: v === answer, value: v });
+    }
+    return {
+        mode: "parts",
+        num,
+        den,
+        target,
+        answer,
+        question,
+        display,
+        options: shuffle(options),
+        hint: "A törtvonal fölötti szám a számláló, az alatti a nevező. A negatív előjel a számlálóhoz tartozik: a −3/4 számlálója −3, nevezője 4."
+    };
+}
+
+function randomBaseDesc() {
+    if (Math.random() < 0.6) {
+        const den = pick([2, 3, 4, 5, 6, 8, 10]);
+        let num = randInt(1, den - 1);
+        if (Math.random() < 0.5) num = -num;
+        return fractionDesc(num, den);
+    }
+    const den = pick([2, 3, 4, 5, 8]);
+    const whole = randInt(1, 4);
+    const num = randInt(1, den - 1);
+    return mixedDesc(Math.random() < 0.5, whole, num, den);
+}
+
+function baseCandidates(base) {
+    if (base.kind === "fraction") {
+        const { num, den } = base;
+        return [
+            fractionDesc(-num, den),
+            fractionDesc(num, den + 1),
+            fractionDesc(-num, den + 1),
+            fractionDesc(num + 1, den),
+            fractionDesc(-(num + 1), den),
+            fractionDesc(den, num),
+            fractionDesc(-den, num),
+            fractionDesc(num, den + 2)
+        ].filter(d => d.num !== 0 && d.den >= 2);
+    }
+    const { neg, whole, num, den } = base;
+    return [
+        mixedDesc(!neg, whole, num, den),
+        mixedDesc(neg, whole + 1, num, den),
+        mixedDesc(!neg, whole + 1, num, den),
+        mixedDesc(neg, whole, num + 1 < den ? num + 1 : num, den),
+        mixedDesc(neg, whole + 2, num, den),
+        mixedDesc(!neg, whole + 2, num, den),
+        mixedDesc(neg, whole, den - num, den),
+        mixedDesc(neg, whole - 1 >= 1 ? whole - 1 : whole + 3, num, den)
+    ].filter(d => d.num >= 1 && d.num < d.den && d.whole >= 1);
+}
+
+function buildOpposite() {
+    const base = randomBaseDesc();
+    const correct = negateDesc(base);
+    const options = buildRationalOptions(correct, baseCandidates(base));
+    return {
+        mode: "opposite",
+        baseValue: descValue(base),
+        question: "Mi ennek a számnak az ellentettje?",
+        display: base,
+        answer: descText(correct),
+        options,
+        hint: "Az ellentettnél csak az előjel változik: a pozitívból negatív, a negatívból pozitív lesz. Ugyanakkora távolságra van a 0-tól, csak a másik oldalon."
+    };
+}
+
+function buildAbsolute() {
+    const base = randomBaseDesc();
+    const correct = absDesc(base);
+    const options = buildRationalOptions(correct, baseCandidates(base));
+    return {
+        mode: "absolute",
+        baseValue: descValue(base),
+        question: "Mennyi ennek a számnak az abszolút értéke?",
+        display: base,
+        answer: descText(correct),
+        options,
+        hint: "Az abszolút érték a szám 0-tól mért távolsága, ezért soha nem negatív: |−3/4| = 3/4 és |3/4| = 3/4."
+    };
+}
+
+function buildToDecimal() {
+    const den = pick([2, 4, 5, 8, 10, 20, 25, 50]);
+    let num = randInt(1, 2 * den - 1);
+    if (num % den === 0) num += 1;
+    const value = num / den;
+    const correct = decimalDesc(decimalText(num, den));
+    const deltas = [0.1, -0.1, 0.01, -0.01, 0.2, -0.2, 1, -1, 0.5, -0.5, 0.05, -0.05];
+    const candidates = [];
+    for (const d of deltas) {
+        const v = value + d;
+        if (v <= 0) continue;
+        candidates.push(decimalDesc(decimalFromNumber(v)));
+    }
+    const options = buildRationalOptions(correct, candidates);
+    return {
+        mode: "to-decimal",
+        numerator: num,
+        denominator: den,
+        question: "Mennyi ennek a törtnek az értéke tizedes tört alakban?",
+        display: fractionDesc(num, den),
+        answer: descText(correct),
+        options,
+        hint: "A tört értéke a számláló és a nevező hányadosa. Ha a nevező 2, 4, 5, 8, 10, 20, 25 vagy 50, akkor véges tizedes törtet kapunk."
+    };
+}
+
+function buildToFraction() {
+    const hundredths = randInt(1, 99);
+    const g = gcd(hundredths, 100);
+    const num = hundredths / g;
+    const den = 100 / g;
+    const decimal = hundredths % 10 === 0
+        ? `0,${hundredths / 10}`
+        : `0,${String(hundredths).padStart(2, "0")}`;
+    const correct = fractionDesc(num, den);
+    const candidates = [
+        fractionDesc(num + 1, den),
+        fractionDesc(num - 1, den),
+        fractionDesc(num, den + 1),
+        fractionDesc(num, den + 2),
+        fractionDesc(den, num),
+        fractionDesc(num + 2, den),
+        fractionDesc(num + 1, den + 1)
+    ].filter(d => d.num >= 1 && d.den >= 2);
+    const options = buildRationalOptions(correct, candidates);
+    return {
+        mode: "to-fraction",
+        hundredths,
+        numerator: num,
+        denominator: den,
+        decimal,
+        question: "Melyik legegyszerűbb tört egyenlő ezzel a tizedes törttel?",
+        display: decimalDesc(decimal),
+        answer: descText(correct),
+        options,
+        hint: "A tizedes tört felírható 100 nevezőjű törtként, majd egyszerűsítjük a közös osztóval."
+    };
+}
+
+function buildToMixed() {
+    const den = pick([3, 4, 5, 6, 8]);
+    const whole = randInt(1, 3);
+    const rem = randInt(1, den - 1);
+    const num = whole * den + rem;
+    const correct = mixedDesc(false, whole, rem, den);
+    const pool = [];
+    for (const d of [2, 3, 4, 5, 6, 8]) {
+        for (let w = 1; w <= 4; w++) {
+            for (let r = 1; r < d; r++) {
+                pool.push(mixedDesc(false, w, r, d));
+            }
+        }
+    }
+    const options = buildRationalOptions(correct, pool);
+    return {
+        mode: "to-mixed",
+        num,
+        den,
+        whole,
+        rem,
+        question: "Írd fel vegyes szám alakban!",
+        display: fractionDesc(num, den),
+        answer: descText(correct),
+        options,
+        hint: "Az egész rész a számláló és a nevező hányadosa. A maradék lesz az új számláló, a nevező változatlan."
+    };
+}
+
+function buildToImproper() {
+    const den = pick([3, 4, 5, 6, 8]);
+    const whole = randInt(1, 3);
+    const rem = randInt(1, den - 1);
+    const num = whole * den + rem;
+    const correct = fractionDesc(num, den);
+    const candidates = [
+        fractionDesc(num + 1, den),
+        fractionDesc(num - 1, den),
+        fractionDesc(num, den + 1),
+        fractionDesc(num, den + 2),
+        fractionDesc(num + den, den),
+        fractionDesc(rem, den),
+        fractionDesc(num + 2, den),
+        fractionDesc(num + 1, den + 1)
+    ].filter(d => d.num >= 1 && d.den >= 2);
+    const options = buildRationalOptions(correct, candidates);
+    return {
+        mode: "to-improper",
+        num,
+        den,
+        whole,
+        rem,
+        question: "Írd fel törtszám (áltört) alakban!",
+        display: mixedDesc(false, whole, rem, den),
+        answer: descText(correct),
+        options,
+        hint: "A vegyes számból áltört lesz: egész × nevező + számláló adja az új számlálót, a nevező marad."
+    };
+}
+
+function buildMixedFromFraction(num, den) {
+    if (num >= 0) {
+        const whole = Math.floor(num / den);
+        const rem = num % den;
+        if (whole === 0) return fractionDesc(rem, den);
+        return mixedDesc(false, whole, rem, den);
+    } else {
+        const whole = Math.floor(-num / den);
+        const rem = (-num) % den;
+        if (whole === 0) return fractionDesc(num, den);
+        return mixedDesc(true, whole, rem, den);
+    }
+}
+
+function simplifyFraction(num, den) {
+    const g = gcd(num, den);
+    let n = num / g;
+    let d = den / g;
+    if (d < 0) {
+        n = -n;
+        d = -d;
+    }
+    return { num: n, den: d };
+}
+
+function randomRational() {
+    const sign = Math.random() < 0.4 ? -1 : 1;
+    const form = Math.random() < 0.5 ? "frac" : "dec";
+    if (form === "frac") {
+        const den = pick([2, 3, 4, 5, 6, 8, 10, 12]);
+        let num = sign * randInt(1, 2 * den);
+        if (num % den === 0) num += sign;
+        const s = simplifyFraction(num, den);
+        if (Math.random() < 0.25) {
+            return buildMixedFromFraction(s.num, s.den);
+        }
+        return fractionDesc(s.num, s.den);
+    }
+    const vals = [0.25, 0.5, 0.75, 0.2, 0.4, 0.6, 0.8, 0.125, 1.25, 1.5, 2.25, 0.1, 0.3, 0.6, 0.9];
+    const v = pick(vals) * (sign >= 0 ? 1 : -1);
+    return decimalDesc(decimalFromNumber(v));
+}
+
+function equalPair() {
+    const den = pick([2, 4, 5, 8, 10, 20, 25, 50]);
+    const num = randInt(1, den - 1);
+    const sign = Math.random() < 0.4 ? -1 : 1;
+    const s = simplifyFraction(sign * num, den);
+    const a = fractionDesc(s.num, s.den);
+    const forms = [
+        decimalDesc(decimalFromNumber(s.num / s.den)),
+        fractionDesc(s.num * 2, s.den * 2)
+    ];
+    if (Math.abs(s.num) > s.den) forms.push(buildMixedFromFraction(s.num, s.den));
+    return [a, pick(forms)];
+}
+
+function buildCompare() {
+    let a;
+    let b;
+    if (Math.random() < 0.25) {
+        [a, b] = equalPair();
+    } else {
+        a = randomRational();
+        b = randomRational();
+        let guard = 0;
+        while (Math.abs(descValue(a) - descValue(b)) < 1e-9 && guard < 50) {
+            guard++;
+            b = randomRational();
+        }
+    }
+    const va = descValue(a);
+    const vb = descValue(b);
+    let answer;
+    if (Math.abs(va - vb) < 1e-9) {
+        answer = "=";
+    } else if (va < vb) {
+        answer = "<";
+    } else {
+        answer = ">";
+    }
+    const left = a;
+    const right = b;
+    const options = [
+        { text: "<", correct: answer === "<" },
+        { text: ">", correct: answer === ">" },
+        { text: "=", correct: answer === "=" }
+    ];
+    return {
+        mode: "compare",
+        question: "Hasonlítsd össze a két számot!",
+        left,
+        right,
+        answer,
+        options,
+        hint: "Törd a törtet tizedesre, vagy hozd közös nevezőre. Negatív számnál a 0-tól távolabb lévő (abszolút értékben nagyobb) a kisebb. Pl. −2 < −1 < 0 < 0,5 < 3/4."
+    };
+}
+
+const ALL_MODES = ["parts", "sign", "opposite", "absolute", "to-decimal", "to-fraction", "to-mixed", "to-improper", "compare"];
+const FORM_MODES = ["to-decimal", "to-fraction", "to-mixed", "to-improper"];
+
+export function generateRational(options = {}) {
+    const { count = 4, mode = "mixed" } = options;
+
+    const builders = {
+        parts: buildParts,
+        sign: buildSign,
+        opposite: buildOpposite,
+        absolute: buildAbsolute,
+        "to-decimal": buildToDecimal,
+        "to-fraction": buildToFraction,
+        "to-mixed": buildToMixed,
+        "to-improper": buildToImproper,
+        compare: buildCompare
+    };
+
+    const tasks = [];
+    const seen = new Set();
+
+    let guard = 0;
+    while (tasks.length < count && guard < count * 200) {
+        guard++;
+        let chosen;
+        if (mode === "mixed") {
+            chosen = pick(ALL_MODES);
+        } else if (mode === "forms") {
+            chosen = pick(FORM_MODES);
+        } else if (mode === "compare") {
+            chosen = "compare";
+        } else {
+            chosen = mode;
+        }
+        const build = builders[chosen];
+        if (!build) {
+            throw new Error(`Ismeretlen racionális mód: ${chosen}`);
+        }
+        const task = build();
+        const key = task.mode === "compare"
+            ? `${task.mode}|${descText(task.left)}|${descText(task.right)}|${task.answer}`
+            : `${task.mode}|${task.answer}|${descText(task.display)}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        tasks.push(task);
+    }
+
+    return tasks;
+}

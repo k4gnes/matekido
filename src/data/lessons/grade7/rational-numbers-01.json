@@ -1,0 +1,116 @@
+{
+  "id": "rational-numbers-01",
+  "title": "🔢 Racionális számok értelmezése",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔢 Racionális számok értelmezése",
+      "text": "A racionális számok azok a számok, amelyek felírhatók tört alakban. A pozitív és negatív törtek, vegyes számok és tizedes törtek is racionális számok. Az előjel, a számláló és a nevező megmutatja, hol van a szám a számegyenesen.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Csomagok és részek a postán",
+          "text": "A postán a küldeményeket gyakran részekre bontjuk. A pozitív és negatív törtekkel is ugyanúgy számolhatunk, mint az egész számokkal."
+        },
+        "racing": {
+          "title": "🏎️ Körök és időrészek",
+          "text": "A versenyen a köridőt lehet törtrészben is mérni. Most megismerjük, hogyan értelmezzük a racionális számokat."
+        },
+        "cooking": {
+          "title": "🍳 Hozzávalók és részek",
+          "text": "A konyhában a receptekben gyakran előfordulnak törtek: fél kiló, negyed liter. Ezek is racionális számok."
+        },
+        "football": {
+          "title": "⚽ Idő és gólarányok",
+          "text": "A futballban is találkozunk részekkel: például félidő. A negatív értékek pedig az előjelváltást mutatják."
+        },
+        "animals": {
+          "title": "🦁 Takarmány és részek",
+          "text": "Az állatkertben a takarmányt részletekben adjuk. A racionális számok segítenek a pontos adagolásban."
+        },
+        "space": {
+          "title": "🚀 Üzemanyag-részek",
+          "text": "Az űrhajón fontos az üzemanyag pontos mérése. A törtek és a tizedes törtek is segítenek ebben."
+        },
+        "tram": {
+          "title": "🚋 Menetrendi részek",
+          "text": "A villamos menetrendjében is előfordulnak időrészek. A racionális számokkal pontosan leírhatjuk őket."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 3,
+        "mode": "parts"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 2,
+        "mode": "sign"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 2,
+        "mode": "opposite"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 2,
+        "mode": "absolute"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 3,
+        "mode": "forms"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megismerted a racionális számokat!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen értelmezted a racionális számokat a postán!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen értelmezed a törtrészeket a pályán!"
+        },
+        "cooking": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kezelted a hozzávalók részeit!"
+        },
+        "football": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megismerted a racionális számokat a pályán!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen kiszámoltad az adagok részeit!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen értelmezted az üzemanyag részeit!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen értelmezed a menetrendi részeket!"
+        }
+      }
+    }
+  ]
+}

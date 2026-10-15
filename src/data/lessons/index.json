@@ -6008,6 +6008,54 @@
         "space": "🚀 Mester kihívás az űrben",
         "tram": "🚋 Mester kihívás a villamoson"
       }
+    },
+    {
+      "id": "rational-numbers-01",
+      "title": "🔢 Racionális számok értelmezése",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "rational",
+      "difficulty": 2,
+      "type": "rational",
+      "range": 100,
+      "mission": "🔢 Racionális számok értelmezése",
+      "subtitle": "előjel, tört, tizedes, vegyes; ellentett és abszolút érték",
+      "file": "./data/lessons/grade7/rational-numbers-01.json",
+      "worldTitles": {
+        "postman": "📮 Csomagok és részek a postán",
+        "racing": "🏎️ Körök és időrészek",
+        "football": "⚽ Idő és gólarányok",
+        "cooking": "🍳 Hozzávalók és részek",
+        "animals": "🦁 Takarmány és részek",
+        "space": "🚀 Üzemanyag-részek",
+        "tram": "🚋 Menetrendi részek"
+      }
+    },
+    {
+      "id": "rational-compare-02",
+      "title": "⚖️ Racionális számok összehasonlítása",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "rational",
+      "difficulty": 2,
+      "type": "rational",
+      "range": 100,
+      "mission": "⚖️ Racionális számok összehasonlítása",
+      "subtitle": "törtek, vegyes számok és tizedes törtek összehasonlítása (<, >, =)",
+      "file": "./data/lessons/grade7/rational-compare-02.json",
+      "worldTitles": {
+        "postman": "📮 Melyik adag több?",
+        "racing": "🏎️ Melyik idő jobb?",
+        "football": "⚽ Ki áll jobban a tabellán?",
+        "cooking": "🍳 Melyik adag több?",
+        "animals": "🦁 Melyik adagot választjuk?",
+        "space": "🚀 Mennyit fogyasztunk?",
+        "tram": "🚋 Ki ér hamarabb?"
+      }
     }
   ],
   "gradeConfig": [

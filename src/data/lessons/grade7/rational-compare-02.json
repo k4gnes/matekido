@@ -1,0 +1,92 @@
+{
+  "id": "rational-compare-02",
+  "title": "⚖️ Racionális számok összehasonlítása",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "⚖️ Racionális számok összehasonlítása",
+      "text": "A racionális számok összehasonlításakor dönthetjük el, hogy melyik nagyobb, melyik kisebb, vagy egyenlőek-e. Negatív számok esetén a 0-tól távolabb eső a kisebb. A legkönnyebb, ha ugyanarra az alakra hozod őket (pl. tizedesre) vagy közös nevezőre.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Melyik adag több?",
+          "text": "A postán gyakran kell eldönteni, hogy melyik csomagban van több levél. Ugyanez igaz a törtekre és a tizedes törtekre is."
+        },
+        "racing": {
+          "title": "🏎️ Melyik idő jobb?",
+          "text": "A versenyben a kisebb köridő a jobb. A negatív számok is segíthetnek, ha a különbséget mutatják, de általában a 0-nál kisebb értékek itt ritkák. A hasonlítás szabályai mindenhol működnek."
+        },
+        "cooking": {
+          "title": "🍳 Melyik adag több?",
+          "text": "A konyhában fontos tudni, hogy fél csésze több-e, mint 0,4 csésze. A racionális számok összehasonlítása segít ebben."
+        },
+        "football": {
+          "title": "⚽ Ki áll jobban a tabellán?",
+          "text": "A gólkülönbség is lehet negatív. Minél nagyobb (pl. +5) annál jobb, minél kisebb (pl. −2) annál rosszabb. Összehasonlítjuk a számokat!"
+        },
+        "animals": {
+          "title": "🦁 Melyik adagot választjuk?",
+          "text": "Az állatok etetésénél el kell dönteni, hogy melyik mennyiség a nagyobb vagy kisebb. A pontos hasonlítás nagyon fontos."
+        },
+        "space": {
+          "title": "🚀 Mennyit fogyasztunk?",
+          "text": "Az űrhajón az üzemanyag-részeket össze kell hasonlítani, hogy elég legyen a küldetéshez."
+        },
+        "tram": {
+          "title": "🚋 Ki ér hamarabb?",
+          "text": "A villamos menetrendjében időrészeket hasonlítunk össze. Melyik a korábbi, melyik a későbbi?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 5,
+        "mode": "compare"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "rational",
+      "options": {
+        "count": 5,
+        "mode": "compare"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen összehasonlítottad a racionális számokat!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Most már pontosan meg tudod mondani, melyik csomag a nagyobb!"
+        },
+        "racing": {
+          "title": "🎉 Remek idő!",
+          "text": "Jól összehasonlítottad az időket!"
+        },
+        "cooking": {
+          "title": "🎉 Főzhetünk!",
+          "text": "Most már pontosan mérsz a konyhában is!"
+        },
+        "football": {
+          "title": "🎉 Csapatépítő!",
+          "text": "Ügyesen értelmezed a gólkülönbségeket!"
+        },
+        "animals": {
+          "title": "🎉 Ügyes gazda!",
+          "text": "Pontos adagokkal gondoskodhatsz az állatokról!"
+        },
+        "space": {
+          "title": "🎉 Küldetésre készen!",
+          "text": "Az üzemanyaggal is tisztában vagy!"
+        },
+        "tram": {
+          "title": "🎉 Pont időben!",
+          "text": "Jól eligazodsz az időrészek között!"
+        }
+      }
+    }
+  ]
+}

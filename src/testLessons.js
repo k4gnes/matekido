@@ -658,6 +658,60 @@ function validateStep(step, ctx, range) {
             }
             break;
         }
+        case "pythagorean": {
+            if (!["hypotenuse", "leg", "check"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            if (!Array.isArray(step.options) || step.options.length < 2) {
+                fail(ctx, "options hiányos");
+                break;
+            }
+            if (!step.options.every(o => o && typeof o.text === "string" && typeof o.correct === "boolean")) {
+                fail(ctx, "options mezők hibásak");
+            }
+            if (new Set(step.options.map(o => o.text)).size !== step.options.length) fail(ctx, "options ismétlődik");
+            const pythCorrect = step.options.filter(o => o.correct);
+            if (pythCorrect.length !== 1) fail(ctx, "pontosan 1 helyes kell");
+            if (step.mode === "hypotenuse") {
+                if (!isInt(step.a) || !isInt(step.b) || step.a < 1 || step.b < 1) fail(ctx, "a/b hibás");
+                if (isInt(step.a) && isInt(step.b)) {
+                    const expected = step.a * step.a + step.b * step.b;
+                    if (step.answer * step.answer !== expected) {
+                        fail(ctx, `answer (${step.answer}) nem elégíti ki a Pitagorasz-tételt`);
+                    }
+                    if (pythCorrect[0] && pythCorrect[0].text !== String(step.answer)) {
+                        fail(ctx, "a helyes option nem az átfogó");
+                    }
+                }
+            } else if (step.mode === "leg") {
+                for (const k of ["known", "hypotenuse", "answer"]) {
+                    if (!isInt(step[k]) || step[k] < 1) fail(ctx, `${k} hibás: ${step[k]}`);
+                }
+                if (isInt(step.known) && isInt(step.hypotenuse) && isInt(step.answer)) {
+                    if (step.known * step.known + step.answer * step.answer !== step.hypotenuse * step.hypotenuse) {
+                        fail(ctx, "a known/answer/hypotenuse nem Pitagorasz-hármas");
+                    }
+                    if (step.answer === step.known) fail(ctx, "a hiányzó befogó nem lehet egyenlő az ismerttel");
+                    if (pythCorrect[0] && pythCorrect[0].text !== String(step.answer)) {
+                        fail(ctx, "a helyes option nem a befogó");
+                    }
+                }
+            } else {
+                for (const k of ["a", "b", "c"]) {
+                    if (!isInt(step[k]) || step[k] < 1) fail(ctx, `${k} hibás: ${step[k]}`);
+                }
+                if (typeof step.answer !== "boolean") fail(ctx, "answer nem logikai");
+                if (isInt(step.a) && isInt(step.b) && isInt(step.c)) {
+                    const right = step.a * step.a + step.b * step.b === step.c * step.c;
+                    if (step.answer !== right) fail(ctx, `answer (${step.answer}) != derékszögű (${right})`);
+                    const igen = step.options.find(o => o.text === "Igen");
+                    const nem = step.options.find(o => o.text === "Nem");
+                    if (!igen || !nem) fail(ctx, "a check options Igen/Nem kell legyen");
+                    if (igen && igen.correct !== right) fail(ctx, "az Igen option jelölése hibás");
+                    if (nem && nem.correct !== !right) fail(ctx, "a Nem option jelölése hibás");
+                }
+            }
+            break;
+        }
         case "shape-area": {
             if (!["triangle-perimeter", "triangle-area", "rectangle-perimeter", "rectangle-area", "parallelogram-area"].includes(step.mode)) {
                 fail(ctx, `mode hibás: ${step.mode}`);

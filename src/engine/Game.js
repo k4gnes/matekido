@@ -103,6 +103,7 @@ import { renderEquation } from "../components/equation.js?v=2";
 import { renderInequality } from "../components/inequality.js?v=4";
 import { renderRatio } from "../components/ratio.js?v=1";
 import { renderTriangle } from "../components/triangle.js?v=1";
+import { renderPythagorean } from "../components/pythagorean.js?v=1";
 import { renderShapeArea } from "../components/shapeArea.js?v=1";
 import { renderRational } from "../components/rational.js?v=5";
 import { renderAlgebra } from "../components/algebra.js?v=1";
@@ -213,6 +214,7 @@ const COUNTED_TYPES = new Set([
     "inequality",
     "ratio",
     "triangle",
+    "pythagorean",
     "shape-area",
     "rational",
     "algebra",
@@ -376,6 +378,7 @@ const RENDERERS = new Map([
     ["inequality", renderInequality],
     ["ratio", renderRatio],
     ["triangle", renderTriangle],
+    ["pythagorean", renderPythagorean],
     ["shape-area", renderShapeArea],
     ["rational", renderRational],
     ["algebra", renderAlgebra],

@@ -353,6 +353,11 @@ export function buildLesson(lesson) {
                     type: "triangle",
                     ...task
                 });
+            } else if (step.generator === "pythagorean") {
+                result.push({
+                    type: "pythagorean",
+                    ...task
+                });
             } else if (step.generator === "shape-area") {
                 result.push({
                     type: "shape-area",

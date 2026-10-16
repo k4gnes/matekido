@@ -1,0 +1,15 @@
+# Matekidő (matekido.hu)
+
+> A Matekidő egy ingyenes, magyar nyelvű, reklámmentes Progressive Web App (PWA), amely szorongásmentes és interaktív matematika gyakorlást biztosít általános iskolás gyermekek számára.
+
+## Fő jellemzők
+- **Célközönség:** Általános iskolás diákok (1–8. osztály), szülők és pedagógusok.
+- **Megközelítés:** Interaktív, vizuális visszajelzésre és jutalmazási rendszerre (csillagok) épülő szorongásmentes gyakorlás.
+- **Technológia:** PWA (Progressive Web App), teljesen offline is használható.
+- **Ár:** Ingyenes, önkéntes támogatásra épülő oktatási platform.
+
+## Főbb témakörök
+- Alapműveletek (összeadás, kivonás, szorzás, osztás, kétjegyű osztás)
+- Pitagorasz-tábla, szorzótábla gyakorlás
+- Mértékegység-átváltás, törtek, geometriai alapok
+- Évfolyamonkénti mesterfeladatok és felvételi előkészítő (folyamatban)

@@ -65,6 +65,15 @@ const QUAD_KIND_LABELS = {
     kite: "Deltoid"
 };
 
+const QUAD_SUPERSETS = {
+    square: ["rectangle", "rhombus", "parallelogram"],
+    rectangle: ["parallelogram"],
+    rhombus: ["parallelogram"],
+    parallelogram: [],
+    trapezoid: [],
+    kite: []
+};
+
 const errors = [];
 
 function fail(ctx, msg) {

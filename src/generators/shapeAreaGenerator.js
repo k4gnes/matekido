@@ -96,12 +96,46 @@ function buildParallelogramArea() {
     };
 }
 
+function buildTrapezoidArea() {
+    const a = random(2, 30);
+    let c = random(2, 30);
+    if ((a + c) % 2 !== 0) c += 1;
+    const height = random(3, 20);
+    const answer = (a + c) * height / 2;
+    return {
+        mode: "trapezoid-area",
+        question: `Mekkora a trapéz területe? Párhuzamos oldalai a = ${a} cm és c = ${c} cm, magassága m = ${height} cm. T = (a + c) × m ÷ 2`,
+        a,
+        c,
+        height,
+        answer,
+        options: makeOptions(answer, 3, 1000)
+    };
+}
+
+function buildRhombusArea() {
+    const e = random(2, 40);
+    let f = random(2, 40);
+    if ((e * f) % 2 !== 0) f += 1;
+    const answer = e * f / 2;
+    return {
+        mode: "rhombus-area",
+        question: `Mekkora a rombusz területe? Átlói e = ${e} cm és f = ${f} cm. T = e × f ÷ 2`,
+        e,
+        f,
+        answer,
+        options: makeOptions(answer, 2, 1000)
+    };
+}
+
 const MODES = {
     "triangle-perimeter": buildTrianglePerimeter,
     "triangle-area": buildTriangleArea,
     "rectangle-perimeter": buildRectanglePerimeter,
     "rectangle-area": buildRectangleArea,
-    "parallelogram-area": buildParallelogramArea
+    "parallelogram-area": buildParallelogramArea,
+    "trapezoid-area": buildTrapezoidArea,
+    "rhombus-area": buildRhombusArea
 };
 
 const MIXED = [
@@ -112,12 +146,25 @@ const MIXED = [
     "parallelogram-area"
 ];
 
+const MIXED_POLYGONS = [
+    "triangle-area",
+    "parallelogram-area",
+    "trapezoid-area",
+    "rhombus-area"
+];
+
+const MIX_GROUPS = {
+    mixed: MIXED,
+    "polygon-mixed": MIXED_POLYGONS
+};
+
 export function generateShapeArea(options = {}) {
     const { count = 6, mode = "mixed" } = options;
 
     const tasks = [];
     for (let i = 0; i < count; i++) {
-        const m = mode === "mixed" ? MIXED[Math.floor(Math.random() * MIXED.length)] : mode;
+        const pool = MIX_GROUPS[mode];
+        const m = pool ? pool[Math.floor(Math.random() * pool.length)] : mode;
         const build = MODES[m];
         if (!build) throw new Error(`Ismeretlen shape-area mód: ${m}`);
         tasks.push(build());

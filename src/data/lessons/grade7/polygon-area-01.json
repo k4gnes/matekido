@@ -1,0 +1,116 @@
+{
+    "id": "polygon-area-01",
+    "title": "🔷 Sokszögek területe",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🔷 Sokszögek területe",
+            "text": "A síkidomok területe a belsejük mérete. A háromszög területe T = a × m ÷ 2, a paralelogrammáé T = a × m. A trapéznál a két párhuzamos oldal átlagát szorozzuk a magassággal: T = (a + c) × m ÷ 2. A rombusz területét az átlóiból számoljuk: T = e × f ÷ 2. Számoljunk együtt!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Csomagok területe",
+                    "text": "A postán a csomagok aljának területét mérjük! Számolj a képletekkel!"
+                },
+                "racing": {
+                    "title": "🏁 Pályaelemek területe",
+                    "text": "A versenypálya szakaszainak területét kell kiszámolni! Rajta!"
+                },
+                "football": {
+                    "title": "⚽ A pálya részei",
+                    "text": "A futballpálya egyes részeinek területét számoljuk! Segíts!"
+                },
+                "cooking": {
+                    "title": "🍳 Tepsik területe",
+                    "text": "A tepsik és sütiformák területét mérjük! Számolj velünk!"
+                },
+                "animals": {
+                    "title": "🦁 Karámok területe",
+                    "text": "Az állatok karámjainak területét kell kiszámolni!"
+                },
+                "space": {
+                    "title": "🚀 Panelek területe",
+                    "text": "Az űrállomás paneljeinek területét mérjük! Számolj pontosan!"
+                },
+                "tram": {
+                    "title": "🚋 Ablakok területe",
+                    "text": "A villamos ablakainak és tábláinak területét számoljuk! Segíts!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "shape-area",
+            "options": {
+                "count": 3,
+                "mode": "triangle-area"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "shape-area",
+            "options": {
+                "count": 2,
+                "mode": "parallelogram-area"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "shape-area",
+            "options": {
+                "count": 3,
+                "mode": "trapezoid-area"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "shape-area",
+            "options": {
+                "count": 2,
+                "mode": "rhombus-area"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "shape-area",
+            "options": {
+                "count": 2,
+                "mode": "polygon-mixed"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "A sokszögek területképleteit is magabiztosan használod – a háromszögtől a rombuszig minden síkidom területét kiszámolod!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden csomag aljának területét kiszámoltad – a posta indulhat!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "A pályaelemek területét kiszámoltad – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A pálya részeinek területét is kiszámoltad – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden tepsi területét kiszámoltad – a konyha rendben van!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden karám területét kiszámoltad – az állatok elégedettek!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "A panelek területei pontosak – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden ablak és tábla területét kiszámoltad – a villamos indulhat!"
+                }
+            }
+        }
+    ]
+}

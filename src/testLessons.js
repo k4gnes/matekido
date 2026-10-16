@@ -760,7 +760,7 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "shape-area": {
-            if (!["triangle-perimeter", "triangle-area", "rectangle-perimeter", "rectangle-area", "parallelogram-area"].includes(step.mode)) {
+            if (!["triangle-perimeter", "triangle-area", "rectangle-perimeter", "rectangle-area", "parallelogram-area", "trapezoid-area", "rhombus-area"].includes(step.mode)) {
                 fail(ctx, `mode hibás: ${step.mode}`);
             }
             if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
@@ -781,6 +781,18 @@ function validateStep(step, ctx, range) {
                 if (isInt(step.a) && isInt(step.b)) {
                     areaExpected = step.mode === "rectangle-perimeter" ? 2 * (step.a + step.b) : step.a * step.b;
                 }
+            } else if (step.mode === "trapezoid-area") {
+                for (const k of ["a", "c", "height"]) {
+                    if (!isInt(step[k]) || step[k] < 1) fail(ctx, `${k} hibás: ${step[k]}`);
+                }
+                if (isInt(step.a) && isInt(step.c) && isInt(step.height)) {
+                    areaExpected = (step.a + step.c) * step.height / 2;
+                }
+            } else if (step.mode === "rhombus-area") {
+                for (const k of ["e", "f"]) {
+                    if (!isInt(step[k]) || step[k] < 1) fail(ctx, `${k} hibás: ${step[k]}`);
+                }
+                if (isInt(step.e) && isInt(step.f)) areaExpected = step.e * step.f / 2;
             } else {
                 if (!isInt(step.base) || step.base < 1) fail(ctx, `base hibás: ${step.base}`);
                 if (!isInt(step.height) || step.height < 1) fail(ctx, `height hibás: ${step.height}`);

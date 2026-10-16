@@ -107,8 +107,66 @@ function createParallelogramSvg(step) {
     return svg;
 }
 
+function createTrapezoidSvg(step) {
+    const svg = svgEl("svg", { viewBox: "0 0 200 150", class: "sa-svg" });
+    svg.append(svgEl("polygon", {
+        points: "60,35 140,35 175,115 25,115",
+        fill: "#ddd6fe",
+        stroke: "#1e293b",
+        "stroke-width": 2.5,
+        "stroke-linejoin": "round"
+    }));
+    svg.append(svgEl("line", {
+        x1: 100,
+        y1: 35,
+        x2: 100,
+        y2: 115,
+        stroke: "#dc2626",
+        "stroke-width": 2,
+        "stroke-dasharray": "6 5"
+    }));
+    addLabel(svg, 100, 132, `${step.a} cm`);
+    addLabel(svg, 100, 28, `${step.c} cm`);
+    addLabel(svg, 112, 78, `${step.height} cm`);
+    return svg;
+}
+
+function createRhombusSvg(step) {
+    const svg = svgEl("svg", { viewBox: "0 0 200 150", class: "sa-svg" });
+    svg.append(svgEl("polygon", {
+        points: "100,25 165,75 100,125 35,75",
+        fill: "#fbcfe8",
+        stroke: "#1e293b",
+        "stroke-width": 2.5,
+        "stroke-linejoin": "round"
+    }));
+    svg.append(svgEl("line", {
+        x1: 35,
+        y1: 75,
+        x2: 165,
+        y2: 75,
+        stroke: "#dc2626",
+        "stroke-width": 2,
+        "stroke-dasharray": "6 5"
+    }));
+    svg.append(svgEl("line", {
+        x1: 100,
+        y1: 25,
+        x2: 100,
+        y2: 125,
+        stroke: "#dc2626",
+        "stroke-width": 2,
+        "stroke-dasharray": "6 5"
+    }));
+    addLabel(svg, 140, 66, `${step.e} cm`);
+    addLabel(svg, 100, 142, `${step.f} cm`);
+    return svg;
+}
+
 function createFigure(step) {
     if (step.mode === "parallelogram-area") return createParallelogramSvg(step);
+    if (step.mode === "trapezoid-area") return createTrapezoidSvg(step);
+    if (step.mode === "rhombus-area") return createRhombusSvg(step);
     if (step.mode === "triangle-area" || step.mode === "triangle-perimeter") return createTriangleSvg(step);
     return createRectSvg(step);
 }
@@ -178,6 +236,12 @@ export function renderShapeArea(step, root, next, progress, onResult, onAttempt)
         }
         if (step.mode === "rectangle-area") {
             return `😊 Ügyes! T = ${step.a} × ${step.b} = ${step.answer} cm²`;
+        }
+        if (step.mode === "trapezoid-area") {
+            return `😊 Ügyes! T = (${step.a} + ${step.c}) × ${step.height} ÷ 2 = ${step.answer} cm²`;
+        }
+        if (step.mode === "rhombus-area") {
+            return `😊 Ügyes! T = ${step.e} × ${step.f} ÷ 2 = ${step.answer} cm²`;
         }
         return `😊 Ügyes! T = ${step.base} × ${step.height} = ${step.answer} cm²`;
     }

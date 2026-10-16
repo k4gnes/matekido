@@ -292,6 +292,7 @@ export const CURRICULUM_ORDER = {
         "percent-change-01",
         "pythagorean-01",
         "quadrilateral-01",
+        "polygon-area-01",
     ],
 };
 

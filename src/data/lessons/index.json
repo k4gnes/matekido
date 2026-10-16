@@ -6464,6 +6464,30 @@
         "space": "🚀 Űrállomás paneljei",
         "tram": "🚋 Ablakok és ülések"
       }
+    },
+    {
+      "id": "polygon-area-01",
+      "title": "🔷 Sokszögek területe",
+      "grades": [
+        7
+      ],
+      "category": "geometry",
+      "skill": "area",
+      "difficulty": 3,
+      "type": "shape-area",
+      "range": 1000,
+      "mission": "🔷 Sokszögek területe",
+      "subtitle": "Háromszög, paralelogramma, trapéz, rombusz",
+      "file": "./data/lessons/grade7/polygon-area-01.json",
+      "worldTitles": {
+        "postman": "📮 Csomagok területe",
+        "racing": "🏁 Pályaelemek területe",
+        "football": "⚽ A pálya részei",
+        "cooking": "🍳 Tepsik területe",
+        "animals": "🦁 Karámok területe",
+        "space": "🚀 Panelek területe",
+        "tram": "🚋 Ablakok területe"
+      }
     }
   ],
   "gradeConfig": [

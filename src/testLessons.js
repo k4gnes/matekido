@@ -785,6 +785,9 @@ function validateStep(step, ctx, range) {
                 for (const k of ["a", "c", "height"]) {
                     if (!isInt(step[k]) || step[k] < 1) fail(ctx, `${k} hibás: ${step[k]}`);
                 }
+                if (isInt(step.a) && isInt(step.c) && step.a <= step.c) {
+                    fail(ctx, `a (${step.a}) legyen nagyobb, mint c (${step.c})`);
+                }
                 if (isInt(step.a) && isInt(step.c) && isInt(step.height)) {
                     areaExpected = (step.a + step.c) * step.height / 2;
                 }

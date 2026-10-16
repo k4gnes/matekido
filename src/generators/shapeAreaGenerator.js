@@ -97,9 +97,9 @@ function buildParallelogramArea() {
 }
 
 function buildTrapezoidArea() {
-    const a = random(2, 30);
-    let c = random(2, 30);
-    if ((a + c) % 2 !== 0) c += 1;
+    let a = random(3, 30);
+    const c = random(2, a - 1);
+    if ((a + c) % 2 !== 0) a += 1;
     const height = random(3, 20);
     const answer = (a + c) * height / 2;
     return {

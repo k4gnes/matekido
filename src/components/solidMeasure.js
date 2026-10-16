@@ -86,9 +86,9 @@ function createSolidSvg(step) {
 function hintFor(step) {
     if (step.mode === "surface") {
         if (step.solid === "cube") {
-            return `💡 A kockának 6 egyforma lapja van: F = 6 × a × a = 6 × ${step.a} × ${step.a} = ${step.answer} cm²`;
+            return `💡 A kockának 6 egyforma lapja van: A = 6 × a × a = 6 × ${step.a} × ${step.a} = ${step.answer} cm²`;
         }
-        return `💡 F = 2 × (a×b + a×c + b×c) = 2 × (${step.a * step.b} + ${step.a * step.c} + ${step.b * step.c}) = ${step.answer} cm²`;
+        return `💡 A = 2 × (a×b + a×c + b×c) = 2 × (${step.a * step.b} + ${step.a * step.c} + ${step.b * step.c}) = ${step.answer} cm²`;
     }
     if (step.solid === "cube") {
         return `💡 A kocka térfogata: V = a × a × a = ${step.a} × ${step.a} × ${step.a} = ${step.answer} cm³`;
@@ -176,9 +176,9 @@ export function renderSolidMeasure(step, root, next, progress, onResult, onAttem
     function successText() {
         if (step.mode === "surface") {
             if (step.solid === "cube") {
-                return `😊 Ügyes! F = 6 × ${step.a} × ${step.a} = ${step.answer} cm²`;
+                return `😊 Ügyes! A = 6 × ${step.a} × ${step.a} = ${step.answer} cm²`;
             }
-            return `😊 Ügyes! F = 2 × (${step.a * step.b} + ${step.a * step.c} + ${step.b * step.c}) = ${step.answer} cm²`;
+            return `😊 Ügyes! A = 2 × (${step.a * step.b} + ${step.a * step.c} + ${step.b * step.c}) = ${step.answer} cm²`;
         }
         if (step.solid === "cube") {
             return `😊 Ügyes! V = ${step.a} × ${step.a} × ${step.a} = ${step.answer} cm³`;

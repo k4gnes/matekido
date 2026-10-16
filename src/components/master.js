@@ -15,11 +15,18 @@ const WORLD_EMOJI = {
     tram: "🚋"
 };
 
-function masterHint() {
+function masterHint(step) {
+    if (step.mode === "pair") {
+        return "Kézfogásnál mindenki mindenkivel egyszer fog kezet: számold meg, hány pár alkotható, és figyelj, hogy egy kézfogásban ketten vesznek részt!";
+    }
+    if (step.mode === "logic") {
+        return "Csukott szemmel a legrosszabb esetre készülj: először minden színből kihúzhatsz egyet úgy, hogy még nincs pár. A megoldás a színek számánál eggyel több.";
+    }
     return "Hiányzó műveleti jelnél próbáld sorban a műveleti jeleket, és nézd meg, melyik adja a jobb oldali eredményt! Visszafelé gondolkodásnál a végéről indulj: az utolsó műveletet fordítva csináld meg – ha hozzáadtak, vonj le; ha szoroztak, ossz.";
 }
 
 function successText(step) {
+    if (step.successText) return step.successText;
     if (step.mode === "missing-op") {
         return `🎉 Ügyes! A helyes jel: ${step.answer}.`;
     }
@@ -33,7 +40,7 @@ function buildExpression(text) {
     return expression;
 }
 
-function buildOperatorOptions(step, onPick) {
+function buildChoiceOptions(step, onPick) {
     const options = document.createElement("div");
     options.className = "master-options";
 
@@ -68,10 +75,9 @@ export function renderMaster(step, root, next, progress, onResult, onAttempt) {
     prompt.textContent = step.question;
     card.append(prompt);
 
-    if (step.mode === "missing-op") {
-        card.append(buildExpression(step.display));
-    } else {
-        card.append(buildExpression(step.chain));
+    const expressionText = step.display ?? step.chain;
+    if (expressionText) {
+        card.append(buildExpression(expressionText));
     }
 
     const message = createMessageBox();
@@ -93,7 +99,7 @@ export function renderMaster(step, root, next, progress, onResult, onAttempt) {
     const hintButton = createButton("💡 Segítséget kérek", {
         onClick: () => {
             hintShown = true;
-            hint.innerHTML = `<p><strong>💡 Segítség</strong></p><p>${masterHint()}</p>`;
+            hint.innerHTML = `<p><strong>💡 Segítség</strong></p><p>${masterHint(step)}</p>`;
             hintButton.style.display = "none";
         }
     });
@@ -105,9 +111,9 @@ export function renderMaster(step, root, next, progress, onResult, onAttempt) {
         }
     }
 
-    if (step.mode === "missing-op") {
+    if (Array.isArray(step.options) && step.options.length > 0) {
 
-        const options = buildOperatorOptions(step, (opt, btn, container) => {
+        const options = buildChoiceOptions(step, (opt, btn, container) => {
             if (feedback.isAnswered()) return;
 
             if (opt.correct) {

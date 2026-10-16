@@ -100,6 +100,26 @@ function operatorOptions(answer, operators) {
     return shuffle(operators.map(operator => ({ text: operator, correct: operator === answer })));
 }
 
+function choiceOptions(answer, candidates) {
+    const seen = new Set([answer]);
+    const values = [answer];
+    const push = (value) => {
+        if (values.length >= 4) return;
+        if (Number.isInteger(value) && value > 0 && !seen.has(value)) {
+            seen.add(value);
+            values.push(value);
+        }
+    };
+    for (const candidate of candidates) push(candidate);
+    let step = 1;
+    while (values.length < 4) {
+        push(answer + step);
+        push(answer - step);
+        step++;
+    }
+    return shuffle(values).map(value => ({ text: String(value), correct: value === answer }));
+}
+
 function missingOperatorFallback(preset) {
     const a = 7;
     const b = 8;
@@ -288,6 +308,39 @@ function buildThinkNumber(preset) {
     return thinkNumberFallback();
 }
 
+const SOCK_COLORS = ["piros", "kék", "zöld"];
+
+function buildPair() {
+    const n = randInt(4, 8);
+    const answer = (n * (n - 1)) / 2;
+    return {
+        mode: "pair",
+        n,
+        answer,
+        question: `${n} gyerek találkozik, és mindenki kezet fog mindenkivel. Hány kézfogás lesz összesen?`,
+        options: choiceOptions(answer, [n * (n - 1), n + (n - 1), n * n, answer + n, answer - n]),
+        successText: `🎉 Ügyes! Mindenki ${n - 1} másikkal fog kezet, ez ${n} × ${n - 1} = ${n * (n - 1)}, de így minden kézfogást kétszer számoltunk, ezért a válasz ${answer}.`
+    };
+}
+
+function buildLogic() {
+    const k = randInt(2, 3);
+    const perColor = [5, 6, 8, 10][randInt(0, 3)];
+    const colors = SOCK_COLORS.slice(0, k);
+    const parts = colors.map(color => `${perColor} ${color}`);
+    const list = parts.slice(0, -1).join(", ") + " és " + parts[parts.length - 1];
+    const answer = k + 1;
+    return {
+        mode: "logic",
+        colors: k,
+        perColor,
+        answer,
+        question: `Egy fiókban ${list} zokni van. Csukott szemmel hány zoknit kell kivenni, hogy biztosan legyen köztük egyszínű pár?`,
+        options: choiceOptions(answer, [k, k + 2, perColor, 2]),
+        successText: `🎉 Ügyes! A legrosszabb esetben minden színből kiveszel egyet (${k} zokni), és még nincs pár. A következő zokni viszont már biztosan párt alkot valamelyikkel, ezért ${answer} zokni kell.`
+    };
+}
+
 export function generateMaster(options = {}) {
 
     const { count = 4, mode = "mixed", grade } = options;
@@ -296,7 +349,9 @@ export function generateMaster(options = {}) {
 
     const builders = {
         "missing-op": () => buildMissingOperator(preset),
-        "think-number": () => buildThinkNumber(preset)
+        "think-number": () => buildThinkNumber(preset),
+        "pair": () => buildPair(),
+        "logic": () => buildLogic()
     };
 
     if (mode !== "mixed" && !builders[mode]) {

@@ -1723,8 +1723,32 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "master": {
-            if (!["missing-op", "think-number"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!["missing-op", "think-number", "pair", "logic"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+
+            if (step.mode === "pair" || step.mode === "logic") {
+                if (!Array.isArray(step.options) || step.options.length !== 4) {
+                    fail(ctx, `options nem 4 elemű (${step.options?.length})`);
+                    break;
+                }
+                if (!step.options.every(o => o && typeof o.text === "string" && typeof o.correct === "boolean")) {
+                    fail(ctx, "options mezők hibásak");
+                    break;
+                }
+                if (new Set(step.options.map(o => o.text)).size !== step.options.length) fail(ctx, "options ismétlődik");
+                const correct = step.options.filter(o => o.correct);
+                if (correct.length !== 1) fail(ctx, "pontosan 1 helyes kell");
+                if (correct[0]?.text !== String(step.answer)) fail(ctx, "a helyes option nem a válasz");
+                if (!isInt(step.answer) || step.answer < 1) fail(ctx, `answer hibás: ${step.answer}`);
+                if (step.mode === "pair") {
+                    if (!isInt(step.n) || step.n < 2) fail(ctx, `n hibás: ${step.n}`);
+                    else if (step.answer !== (step.n * (step.n - 1)) / 2) fail(ctx, "answer nem n(n-1)/2");
+                } else {
+                    if (!isInt(step.colors) || step.colors < 2) fail(ctx, `colors hibás: ${step.colors}`);
+                    else if (step.answer !== step.colors + 1) fail(ctx, "answer nem colors+1");
+                }
+                break;
+            }
 
             if (step.mode === "missing-op") {
                 if (!isInt(step.a) || !isInt(step.b) || !isInt(step.result)) {

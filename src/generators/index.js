@@ -99,7 +99,7 @@ import { generatePythagorean } from "./pythagoreanGenerator.js?v=1";
 import { generateShapeArea } from "./shapeAreaGenerator.js?v=1";
 import { generateRational } from "./rationalGenerator.js?v=5";
 import { generateAlgebra } from "./algebraGenerator.js?v=1";
-import { generateMaster } from "./masterGenerator.js?v=5";
+import { generateMaster } from "./masterGenerator.js?v=6";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {

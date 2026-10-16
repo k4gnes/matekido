@@ -107,7 +107,7 @@ import { renderPythagorean } from "../components/pythagorean.js?v=1";
 import { renderShapeArea } from "../components/shapeArea.js?v=1";
 import { renderRational } from "../components/rational.js?v=5";
 import { renderAlgebra } from "../components/algebra.js?v=1";
-import { renderMaster } from "../components/master.js?v=3";
+import { renderMaster } from "../components/master.js?v=4";
 
 const COUNTED_TYPES = new Set([
     "exercise",

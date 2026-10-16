@@ -100,11 +100,11 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 
 ## 🌟 Mester kihívás (1 lecke)
 
-Azoknak, akiknek nagyon jól megy a matek. Itt nem elég számolni: gondolkodni kell. A feladatok megoldása a **visszafelé gondolkodást** és a **műveleti jelek felismerését** gyakoroltatja.
+Azoknak, akiknek nagyon jól megy a matek. Itt nem elég számolni: gondolkodni kell. A feladatok a **műveleti jelek felismerését**, valamint két szám **összegéből és különbségéből** való kitalálását gyakoroltatják.
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 39 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade6-master-01) | Hiányzó műveleti jel és visszafelé gondolkodás | 1000 | 4 |
+| 39 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade6-master-01) | Hiányzó műveleti jel és két szám kitalálása | 1000 | 4 |
 
 ---
 
@@ -133,7 +133,7 @@ A 6. osztályos tanmenet mind a 38 leckéje elkészült. Tovább tervezett, opci
 - Kombinatorika (2/2): 32. Hányféleképpen? – sorba rendezés (`combinatorics-02`, sorrendek, csoportok és párok összeszámolása az `n × (n−1) × …` mintával) ✔, 33. Kiválasztás és párosítás (`combinatorics-03`, párok alkotása az `n × (n−1) ÷ 2` szerint és egy-egy elemből álló kiválasztás) ✔
 - Adatok és valószínűség (2/2): 34. Adatok, diagramok és átlag (`average-02`, adatok leolvasása diagramról, az átlag számítása és a hiányzó adat keresése) ✔, 35. Valószínűség és esély (`probability-02`, az esély becslése és összehasonlítása) ✔
 - Szöveges feladatok (3/3): 36. Arányossági szöveges feladatok (`proportion-word-01`, egyenes és fordított arányosság szöveges helyzetekben) ✔, 37. Százalékos szöveges feladatok (`percent-word-01`, az alap, az érték és a százalékláb keresése a szöveg alapján) ✔, 38. Többlépéses szöveges feladatok (`multi-step-word-01`, több művelet egy történetben, lépésről lépésre) ✔
-- Mester kihívás (1/1): 🌟 Mester kihívás (`grade6-master-01`) – hiányzó műveleti jel és visszafelé gondolkodás a legügyesebbeknek ✔
+- Mester kihívás (1/1): 🌟 Mester kihívás (`grade6-master-01`) – hiányzó műveleti jel és két szám kitalálása a legügyesebbeknek ✔
 
 A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg.
 

@@ -1,0 +1,94 @@
+{
+  "id": "grade7-master-01",
+  "title": "🌟 Mester kihívás",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🌟 Mester kihívás",
+      "text": "Ez egy különleges kihívás azoknak, akiknek jól megy a matek! Itt nem elég számolni: gondolkodni kell. Számold meg, hány kézfogás történik, és oldj meg ravasz logikai rejtvényeket!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Mester kihívás a postán",
+          "text": "A postán ma csupa gondolkodós feladvány vár. Számolj ravaszul, és oldd meg őket!"
+        },
+        "racing": {
+          "title": "🏎️ Mester kihívás a pályán",
+          "text": "A boxutcában csupa ravasz feladvány vár. Gondolkodj, számolj, és oldd meg őket!"
+        },
+        "football": {
+          "title": "⚽ Mester kihívás a pályán",
+          "text": "A meccs előtt az edző trükkös feladatokat adott. Gondolkodj, számolj, és oldd meg őket!"
+        },
+        "cooking": {
+          "title": "🍳 Mester kihívás a konyhában",
+          "text": "A séf titkos receptje rejtvényekből áll. Gondolkodj, számolj, és oldd meg őket!"
+        },
+        "animals": {
+          "title": "🦁 Mester kihívás az állatkertben",
+          "text": "Az állatkertben ma számrejtvényeket rejtettek el. Gondolkodj, számolj, és oldd meg őket!"
+        },
+        "space": {
+          "title": "🚀 Mester kihívás az űrben",
+          "text": "Az űrhajó számítógépe rejtvényeket kér. Gondolkodj, számolj, és oldd meg őket!"
+        },
+        "tram": {
+          "title": "🚋 Mester kihívás a villamoson",
+          "text": "A villamoson a jegyellenőr trükkös feladványokat osztogat. Gondolkodj, számolj, és oldd meg őket!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "master",
+      "options": {
+        "count": 4,
+        "mode": "pair",
+        "grade": 7
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "master",
+      "options": {
+        "count": 4,
+        "mode": "logic",
+        "grade": 7
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Mester vagy!",
+      "text": "Végigvitted a mester kihívást – gondolkodva számoltál, nem csak bemagolva!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Mester vagy!",
+          "text": "A posta legtrükkösebb csomagjait is kinyitottad!"
+        },
+        "racing": {
+          "title": "🎉 Mester vagy!",
+          "text": "A boxutca minden rejtvényét megoldottad!"
+        },
+        "football": {
+          "title": "🎉 Mester vagy!",
+          "text": "Az edző összes ravasz feladványát megoldottad!"
+        },
+        "cooking": {
+          "title": "🎉 Mester vagy!",
+          "text": "A séf titkos receptjét is megfejtetted!"
+        },
+        "animals": {
+          "title": "🎉 Mester vagy!",
+          "text": "Az állatkert minden számrejtvényét megfejtetted!"
+        },
+        "space": {
+          "title": "🎉 Mester vagy!",
+          "text": "Az űrhajó számítógépe is elismerően bólogat!"
+        },
+        "tram": {
+          "title": "🎉 Mester vagy!",
+          "text": "A villamoson a jegyellenőr is elismeri: te vagy a mester!"
+        }
+      }
+    }
+  ]
+}

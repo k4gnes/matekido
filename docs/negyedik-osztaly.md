@@ -80,11 +80,11 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 
 ## 🌟 Mester kihívás (1 lecke)
 
-Azoknak, akiknek nagyon jól megy a matek. Itt nem elég számolni: gondolkodni kell. A feladatok megoldása a **visszafelé gondolkodást** és a **műveleti jelek felismerését** gyakoroltatja.
+Azoknak, akiknek nagyon jól megy a matek. Itt nem elég számolni: gondolkodni kell. A feladatok **kombinatorikát** (kézfogás, párok) és **logikai rejtvényt** (skatulya-elv) gyakoroltatnak.
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 36 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade4-master-01) | Hiányzó műveleti jel és visszafelé gondolkodás | 1000 | 4 |
+| 36 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade4-master-01) | Kombinatorika és logikai rejtvény | 1000 | 4 |
 
 ---
 
@@ -98,7 +98,7 @@ Azoknak, akiknek nagyon jól megy a matek. Itt nem elég számolni: gondolkodni 
 - Geometria (8/8): sokszögek és tulajdonságaik (oldalak, csúcsok, átlók), kerület és terület (rácsos, közös a 3. osztállyal), szögek és tükrözés (közös a 3. osztállyal), szögek mérése szögmérővel (fokban), összetett alakzatok kerülete és területe (L- és lépcsős alakzatok), kerület és terület számolással (képletek téglalapnál és négyzetnél) ✔
 - Gyakorlati tudások (6/6): mértékegység-átváltás hosszúság/tömeg/űrtartalom 1000-ig, idő – óra és perc tartamok (kezdés/vég/eltelt idő), vásárlás és visszajáró 10 000-ig, távolságok és hosszúságok a valóságban (km, m, cm a hétköznapokban), űrtartalom a milliliterig (l, dl, cl, ml) ✔, tömeg a tonnáig visszafelé (kg, dkg, g, t) ✔
 - Szöveges feladatok (2/2): többlépéses szöveges feladatok két lépésben 1000-ig (összeadás-kivonás, kivonás-összeadás, szorzás-összeadás) ✔, arányos szöveges feladatok (a fele, a harmada) 1000-ig ✔
-- Mester kihívás (1/1): 🌟 Mester kihívás (`grade4-master-01`) – hiányzó műveleti jel és visszafelé gondolkodás a legügyesebbeknek ✔
+- Mester kihívás (1/1): 🌟 Mester kihívás (`grade4-master-01`) – kombinatorika és logikai rejtvények a legügyesebbeknek ✔
 
 A 4. osztályos terv minden leckéje megvalósult: **36 lecke a fenti táblázatokban**, ami a `src/data/lessons/index.json` regiszterben szereplő 4. osztályos darabszámmal egyezik (8 + 7 + 4 + 8 + 6 + 2 + 1 mester). A „Táblázatok és diagramok" lecke a regiszterben a `numbers` kategóriába tartozik, a dokszban viszont külön témakörként jelenik meg.
 

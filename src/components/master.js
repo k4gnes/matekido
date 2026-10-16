@@ -19,7 +19,19 @@ function masterHint(step) {
     if (step.mode === "pair") {
         return "Kézfogásnál mindenki mindenkivel egyszer fog kezet: számold meg, hány pár alkotható, és figyelj, hogy egy kézfogásban ketten vesznek részt!";
     }
+    if (step.mode === "combine") {
+        return "Két csoportból választunk: minden egyes darab mellé az összes másik csoport minden darabja odakerülhet, ezért a lehetőségeket össze kell szorozni.";
+    }
+    if (step.mode === "order") {
+        return "Sorrendnél az első helyre mindenki odaállhat, a másodikra már eggyel kevesebb, és így tovább. Szorozd össze a lehetőségeket!";
+    }
+    if (step.mode === "sumdiff") {
+        return "Két szám összege és különbsége ismert. Ha a kettőt összeadod, éppen a nagyobbik szám kétszeresét kapod – oszd el 2-vel!";
+    }
     if (step.mode === "logic") {
+        if (step.hard) {
+            return "Csukott szemmel a legrosszabb esetre készülj: húzhatsz először csupa más színűt, csak utána jön a keresett szín. Számold ki, mennyi az összes többi szín, és adj hozzá 2-t!";
+        }
         return "Csukott szemmel a legrosszabb esetre készülj: először minden színből kihúzhatsz egyet úgy, hogy még nincs pár. A megoldás a színek számánál eggyel több.";
     }
     return "Hiányzó műveleti jelnél próbáld sorban a műveleti jeleket, és nézd meg, melyik adja a jobb oldali eredményt! Visszafelé gondolkodásnál a végéről indulj: az utolsó műveletet fordítva csináld meg – ha hozzáadtak, vonj le; ha szoroztak, ossz.";

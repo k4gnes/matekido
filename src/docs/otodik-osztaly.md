@@ -89,11 +89,11 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 
 ## 🌟 Mester kihívás (1 lecke)
 
-Azoknak, akiknek nagyon jól megy a matek. Itt nem elég számolni: gondolkodni kell. A feladatok megoldása a **visszafelé gondolkodást** és a **műveleti jelek felismerését** gyakoroltatja.
+Azoknak, akiknek nagyon jól megy a matek. Itt nem elég számolni: gondolkodni kell. A feladatok a **műveleti jelek felismerését** és a **kézfogás/párok** kombinatorikáját gyakoroltatják.
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 33 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade5-master-01) | Hiányzó műveleti jel és visszafelé gondolkodás | 1000 | 4 |
+| 33 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade5-master-01) | Hiányzó műveleti jel és kézfogás (kombinatorika) | 1000 | 4 |
 
 ---
 
@@ -121,7 +121,7 @@ A fenti 32 lecke az 5. osztályos tanmenet terve. Tovább tervezett leckék:
 - Gyakorlati tudások (3/3 – blokk kész): mértékegység-átváltás (`unit-conversion-01`: hosszúság km/m/cm, tömeg t/kg/g és űrtartalom hl/l/dl – előre szorozva és visszafelé osztva is, összehasonlításokkal, kiterjesztett generátorral) ✔; terület- és térfogategységek (`area-volume-units-01`: m² ↔ dm² ↔ cm² szorozással és osztással 100-zal, valamint dm³ ↔ l 1:1 átváltás, összehasonlításokkal és igaz/hamis feladatokkal – új `area` és `capacity` fajták a `measure-units` generátorban, új készség) ✔; idő, sebesség, út (`time-speed-01`: út = sebesség × idő, valamint fordított osztások időre és sebességre, km/h és m/perc családokkal, 4 blokkban – új `speed-trip` feladattípus és új `time-speed` készség) ✔
 - Adatok és valószínűség (1/1 – blokk kész): táblázatok, diagramok és átlag (`average-01`: átlag = összeg ÷ adatok száma 4–5 adatos táblázatokból és oszlopdiagramokból, valamint hiányzó adat keresése adott átlagból – új `average` feladattípus, `data-charts` készséggel) ✔
 - Szöveges feladatok (2/2 – blokk kész): arányos osztás (`ratio-split-01`: adott egész és arány → a részek, valamint adott arány és rész → az egész számítása 1000-ig, arány-sávos segédlettel, választós és beírós interakcióval – új `ratio-split` fajta a `word-problem` feladattípusban, új `ratio-split` készség) ✔; egyenes arányosság (`direct-proportion-01`: adott mennyiség–érték párból a hiányzó érték, valamint a hiányzó mennyiség kiszámítása 1000-ig, aránytáblázatos segédlettel, választós és beírós interakcióval – új `direct-proportion` fajta a `word-problem` feladattípusban, új `direct-proportion` készség) ✔
-- Mester kihívás (1/1): 🌟 Mester kihívás (`grade5-master-01`) – hiányzó műveleti jel és visszafelé gondolkodás a legügyesebbeknek ✔
+- Mester kihívás (1/1): 🌟 Mester kihívás (`grade5-master-01`) – hiányzó műveleti jel és kézfogás a legügyesebbeknek ✔
 
 A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg; mind a 32 tervezett lecke elkészült, és elkészült a 🌟 Mester kihívás is.
 

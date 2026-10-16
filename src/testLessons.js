@@ -1723,10 +1723,10 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "master": {
-            if (!["missing-op", "think-number", "pair", "logic"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!["missing-op", "think-number", "pair", "logic", "combine", "order", "sumdiff"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
 
-            if (step.mode === "pair" || step.mode === "logic") {
+            if (["pair", "logic", "combine", "order", "sumdiff"].includes(step.mode)) {
                 if (!Array.isArray(step.options) || step.options.length !== 4) {
                     fail(ctx, `options nem 4 elemű (${step.options?.length})`);
                     break;
@@ -1743,9 +1743,33 @@ function validateStep(step, ctx, range) {
                 if (step.mode === "pair") {
                     if (!isInt(step.n) || step.n < 2) fail(ctx, `n hibás: ${step.n}`);
                     else if (step.answer !== (step.n * (step.n - 1)) / 2) fail(ctx, "answer nem n(n-1)/2");
-                } else {
+                } else if (step.mode === "logic") {
                     if (!isInt(step.colors) || step.colors < 2) fail(ctx, `colors hibás: ${step.colors}`);
-                    else if (step.answer !== step.colors + 1) fail(ctx, "answer nem colors+1");
+                    else if (step.hard) {
+                        if (!isInt(step.perColor) || step.perColor < 2) fail(ctx, `perColor hibás: ${step.perColor}`);
+                        else if (step.answer !== (step.colors - 1) * step.perColor + 2) fail(ctx, "answer nem (colors-1)*perColor+2");
+                    } else if (step.answer !== step.colors + 1) {
+                        fail(ctx, "answer nem colors+1");
+                    }
+                } else if (step.mode === "combine") {
+                    if (!isInt(step.a) || !isInt(step.b) || step.a < 2 || step.b < 2) fail(ctx, `a/b hibás: ${step.a}/${step.b}`);
+                    else if (step.answer !== step.a * step.b) fail(ctx, "answer nem a*b");
+                } else if (step.mode === "order") {
+                    if (!isInt(step.n) || step.n < 2 || step.n > 6) {
+                        fail(ctx, `n hibás: ${step.n}`);
+                    } else {
+                        let fact = 1;
+                        for (let i = 2; i <= step.n; i++) fact *= i;
+                        if (step.answer !== fact) fail(ctx, `answer nem ${step.n}!`);
+                    }
+                } else {
+                    if (!isInt(step.big) || !isInt(step.small) || step.small < 1 || step.big <= step.small) {
+                        fail(ctx, `big/small hibás: ${step.big}/${step.small}`);
+                    } else if (step.answer !== step.big) {
+                        fail(ctx, "answer nem a nagyobbik szám");
+                    } else if (step.sum !== step.big + step.small || step.diff !== step.big - step.small) {
+                        fail(ctx, "sum/diff hibás");
+                    }
                 }
                 break;
             }

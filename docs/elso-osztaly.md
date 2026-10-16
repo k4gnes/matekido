@@ -82,11 +82,11 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 
 ## 🌟 Mester kihívás (1 lecke)
 
-Azoknak, akiknek nagyon jól megy a matek. Itt nem elég számolni: gondolkodni kell. A feladatok megoldása a **visszafelé gondolkodást** és a **műveleti jelek felismerését** gyakoroltatja.
+Azoknak, akiknek nagyon jól megy a matek. Itt nem elég számolni: gondolkodni kell. A feladatok a **műveleti jelek felismerését** és egy **logikai rejtvényt** (skatulya-elv) gyakoroltatnak.
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 45 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade1-master-01) | Hiányzó műveleti jel és visszafelé gondolkodás | 20 | 4 |
+| 45 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade1-master-01) | Hiányzó műveleti jel és logikai rejtvény | 20 | 4 |
 
 
 ## 🎲 Egypercesek

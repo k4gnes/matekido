@@ -5,35 +5,35 @@
     {
       "type": "scene",
       "title": "🌟 Mester kihívás",
-      "text": "Ez egy különleges kihívás azoknak, akiknek jól megy a matek! Itt nem elég számolni: gondolkodni kell. Keresd meg a hiányzó műveleti jelet, és találd ki, melyik számra gondoltam!",
+      "text": "Ez egy különleges kihívás azoknak, akiknek jól megy a matek! Itt nem elég számolni: gondolkodni kell. Keresd meg a hiányzó műveleti jelet, és számold meg, hányféle sorrend lehetséges!",
       "worldTitles": {
         "postman": {
           "title": "📮 Mester kihívás a postán",
-          "text": "A postán ma trükkös csomagok érkeztek. Keresd meg a hiányzó műveleti jelet, és találd ki, melyik számra gondoltam!"
+          "text": "A postán ma trükkös csomagok érkeztek. Keresd meg a hiányzó műveleti jelet, és számold meg, hányféle sorrend lehetséges!"
         },
         "racing": {
           "title": "🏎️ Mester kihívás a pályán",
-          "text": "A boxutcában csupa ravasz feladvány vár. Keresd meg a hiányzó műveleti jelet, és találd ki, melyik számra gondoltam!"
+          "text": "A boxutcában csupa ravasz feladvány vár. Keresd meg a hiányzó műveleti jelet, és számold meg, hányféle sorrend lehetséges!"
         },
         "football": {
           "title": "⚽ Mester kihívás a pályán",
-          "text": "A meccs előtt az edző trükkös feladatokat adott. Keresd meg a hiányzó műveleti jelet, és találd ki, melyik számra gondoltam!"
+          "text": "A meccs előtt az edző trükkös feladatokat adott. Keresd meg a hiányzó műveleti jelet, és számold meg, hányféle sorrend lehetséges!"
         },
         "cooking": {
           "title": "🍳 Mester kihívás a konyhában",
-          "text": "A séf titkos receptje számokból áll. Keresd meg a hiányzó műveleti jelet, és találd ki, melyik számra gondoltam!"
+          "text": "A séf titkos receptje számokból áll. Keresd meg a hiányzó műveleti jelet, és számold meg, hányféle sorrend lehetséges!"
         },
         "animals": {
           "title": "🦁 Mester kihívás az állatkertben",
-          "text": "Az állatkertben ma számrejtvényeket rejtettek el. Keresd meg a hiányzó műveleti jelet, és találd ki, melyik számra gondoltam!"
+          "text": "Az állatkertben ma számrejtvényeket rejtettek el. Keresd meg a hiányzó műveleti jelet, és számold meg, hányféle sorrend lehetséges!"
         },
         "space": {
           "title": "🚀 Mester kihívás az űrben",
-          "text": "Az űrhajó számítógépe rejtvényeket kér. Keresd meg a hiányzó műveleti jelet, és találd ki, melyik számra gondoltam!"
+          "text": "Az űrhajó számítógépe rejtvényeket kér. Keresd meg a hiányzó műveleti jelet, és számold meg, hányféle sorrend lehetséges!"
         },
         "tram": {
           "title": "🚋 Mester kihívás a villamoson",
-          "text": "A villamoson a jegyellenőr trükkös feladványokat osztogat. Keresd meg a hiányzó műveleti jelet, és találd ki, melyik számra gondoltam!"
+          "text": "A villamoson a jegyellenőr trükkös feladványokat osztogat. Keresd meg a hiányzó műveleti jelet, és számold meg, hányféle sorrend lehetséges!"
         }
       }
     },
@@ -42,7 +42,8 @@
       "generator": "master",
       "options": {
         "count": 4,
-        "mode": "missing-op"
+        "mode": "missing-op",
+        "grade": 3
       }
     },
     {
@@ -50,7 +51,8 @@
       "generator": "master",
       "options": {
         "count": 4,
-        "mode": "think-number"
+        "mode": "order",
+        "grade": 3
       }
     },
     {

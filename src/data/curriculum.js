@@ -295,6 +295,7 @@ export const CURRICULUM_ORDER = {
         "polygon-area-01",
         "perimeter-area-01",
         "circle-03",
+        "grade7-master-01",
     ],
 };
 

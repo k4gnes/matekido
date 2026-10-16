@@ -28,6 +28,6 @@
 ## v1.2 – további évfolyamok
 - [x] Ötödik osztály (32 tervezett lecke: Számfogalom 6/6, Törtek 5/5, Tizedes törtek 4/4, Százalékszámítás 2/2, Műveletek nagy számokkal 3/3, Geometria 6/6, Gyakorlati tudások 3/3, Adatok 1/1, Szöveges feladatok 2/2 – mind kész; terv: `docs/otodik-osztaly.md`)
 - [x] Hatodik osztály (terv: `docs/hatodik-osztaly.md`, 38 tervezett lecke + mester kihívás – mind kész)
-- [x] 🌟 Mester kihívás leckék (1–6. osztály, a legügyesebbeknek – nem számítanak a haladásba)
+- [x] 🌟 Mester kihívás leckék (1–7. osztály, a legügyesebbeknek – nem számítanak a haladásba)
 - [ ] Hetedik osztály (terv: `docs/hetedik-osztaly.md`, kb. 37 lecke; előkészítés alatt)
 - [ ] Nyolcadik osztály

@@ -5872,7 +5872,7 @@
       "master": true,
       "range": 100,
       "mission": "🌟 Mester kihívás",
-      "subtitle": "hiányzó műveleti jel és visszafelé gondolkodás – a legügyesebbeknek",
+      "subtitle": "hiányzó műveleti jel és sorrendek száma – a legügyesebbeknek",
       "file": "./data/lessons/grade3/master-01.json",
       "worldTitles": {
         "postman": "📮 Mester kihívás a postán",
@@ -5897,7 +5897,7 @@
       "master": true,
       "range": 20,
       "mission": "🌟 Mester kihívás",
-      "subtitle": "hiányzó műveleti jel és visszafelé gondolkodás – a legügyesebbeknek",
+      "subtitle": "hiányzó műveleti jel és logikai rejtvény – a legügyesebbeknek",
       "file": "./data/lessons/grade1/master-01.json",
       "worldTitles": {
         "postman": "📮 Mester kihívás a postán",
@@ -5922,7 +5922,7 @@
       "master": true,
       "range": 100,
       "mission": "🌟 Mester kihívás",
-      "subtitle": "hiányzó műveleti jel és visszafelé gondolkodás – a legügyesebbeknek",
+      "subtitle": "hiányzó műveleti jel és szorzás-elv – a legügyesebbeknek",
       "file": "./data/lessons/grade2/master-01.json",
       "worldTitles": {
         "postman": "📮 Mester kihívás a postán",
@@ -5972,7 +5972,7 @@
       "master": true,
       "range": 1000,
       "mission": "🌟 Mester kihívás",
-      "subtitle": "hiányzó műveleti jel és visszafelé gondolkodás – a legügyesebbeknek",
+      "subtitle": "hiányzó műveleti jel és kézfogás – a legügyesebbeknek",
       "file": "./data/lessons/grade5/master-01.json",
       "worldTitles": {
         "postman": "📮 Mester kihívás a postán",
@@ -5997,8 +5997,33 @@
       "master": true,
       "range": 1000,
       "mission": "🌟 Mester kihívás",
-      "subtitle": "hiányzó műveleti jel és visszafelé gondolkodás – a legügyesebbeknek",
+      "subtitle": "hiányzó műveleti jel és két szám kitalálása – a legügyesebbeknek",
       "file": "./data/lessons/grade6/master-01.json",
+      "worldTitles": {
+        "postman": "📮 Mester kihívás a postán",
+        "racing": "🏎️ Mester kihívás a pályán",
+        "football": "⚽ Mester kihívás a pályán",
+        "cooking": "🍳 Mester kihívás a konyhában",
+        "animals": "🦁 Mester kihívás az állatkertben",
+        "space": "🚀 Mester kihívás az űrben",
+        "tram": "🚋 Mester kihívás a villamoson"
+      }
+    },
+    {
+      "id": "grade7-master-01",
+      "title": "🌟 Mester kihívás",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "master",
+      "difficulty": 4,
+      "type": "master",
+      "master": true,
+      "range": 1000,
+      "mission": "🌟 Mester kihívás",
+      "subtitle": "kézfogás és nehezebb logikai rejtvények – a legügyesebbeknek",
+      "file": "./data/lessons/grade7/master-01.json",
       "worldTitles": {
         "postman": "📮 Mester kihívás a postán",
         "racing": "🏎️ Mester kihívás a pályán",

@@ -103,11 +103,11 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 
 ## 🌟 Mester kihívás (1 lecke)
 
-Azoknak, akiknek nagyon jól megy a matek. Itt nem elég számolni: gondolkodni kell. A feladatok megoldása a **visszafelé gondolkodást** és a **műveleti jelek felismerését** gyakoroltatja.
+Azoknak, akiknek nagyon jól megy a matek. Itt nem elég számolni: gondolkodni kell. A feladatok a **műveleti jelek felismerését** és a **sorrendek számát** (hányféle sorrend lehetséges) gyakoroltatják.
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 49 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade3-master-01) | Hiányzó műveleti jel és visszafelé gondolkodás | 100 | 4 |
+| 49 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade3-master-01) | Hiányzó műveleti jel és sorrendek száma | 100 | 4 |
 
 
 ## 🎲 Egypercesek

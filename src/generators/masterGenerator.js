@@ -45,36 +45,58 @@ const ADDSUB_KINDS = ["add-add", "add-sub", "sub-add", "sub-sub"];
 const ONE_STEP_KINDS = ["mul", "add", "sub"];
 const ONE_STEP_ADDSUB_KINDS = ["add", "sub"];
 
+const DEFAULT_CHALLENGE = {
+    logicColors: [2, 3],
+    logicHard: false,
+    combineA: [2, 4],
+    combineB: [2, 4],
+    orderN: [3, 4],
+    pairN: [4, 8],
+    sumDiffMax: 100
+};
+
 const GRADE_PRESETS = {
     1: {
         max: 20,
         missingOp: { addSubMax: 20, mulA: 5, mulB: 5, operators: ["+", "−"] },
-        think: { kinds: ONE_STEP_ADDSUB_KINDS, startMax: 9, factorMax: 5, constMax: 9 }
+        think: { kinds: ONE_STEP_ADDSUB_KINDS, startMax: 9, factorMax: 5, constMax: 9 },
+        challenge: { logicColors: [2, 2] }
     },
     2: {
         max: 100,
         missingOp: { addSubMax: 99, mulA: 10, mulB: 5, operators: ["+", "−", "×"] },
-        think: { kinds: ONE_STEP_KINDS, startMax: 9, factorMax: 5, constMax: 9 }
+        think: { kinds: ONE_STEP_KINDS, startMax: 9, factorMax: 5, constMax: 9 },
+        challenge: { combineA: [2, 4], combineB: [2, 4] }
     },
     3: {
         max: 99,
         missingOp: { addSubMax: 99, mulA: 9, mulB: 9, operators: ALL_OPERATORS },
-        think: { kinds: MUL_KINDS, startMax: 9, factorMax: 5, constMax: 9 }
+        think: { kinds: MUL_KINDS, startMax: 9, factorMax: 5, constMax: 9 },
+        challenge: { orderN: [3, 4] }
     },
     4: {
         max: 1000,
         missingOp: { addSubMax: 999, mulA: 99, mulB: 9, operators: ALL_OPERATORS },
-        think: { kinds: MUL_KINDS, startMax: 9, factorMax: 9, constMax: 9 }
+        think: { kinds: MUL_KINDS, startMax: 9, factorMax: 9, constMax: 9 },
+        challenge: { pairN: [4, 8], logicColors: [2, 3] }
     },
     5: {
         max: 1000,
         missingOp: { addSubMax: 999, mulA: 99, mulB: 9, operators: ALL_OPERATORS },
-        think: { kinds: MUL_KINDS, startMax: 9, factorMax: 9, constMax: 9 }
+        think: { kinds: MUL_KINDS, startMax: 9, factorMax: 9, constMax: 9 },
+        challenge: { pairN: [5, 9] }
     },
     6: {
         max: 1000,
         missingOp: { addSubMax: 999, mulA: 99, mulB: 9, operators: ALL_OPERATORS },
-        think: { kinds: MUL_KINDS, startMax: 9, factorMax: 9, constMax: 9 }
+        think: { kinds: MUL_KINDS, startMax: 9, factorMax: 9, constMax: 9 },
+        challenge: { sumDiffMax: 200 }
+    },
+    7: {
+        max: 1000,
+        missingOp: { addSubMax: 999, mulA: 99, mulB: 9, operators: ALL_OPERATORS },
+        think: { kinds: MUL_KINDS, startMax: 9, factorMax: 9, constMax: 9 },
+        challenge: { pairN: [6, 10], logicColors: [2, 3], logicHard: true, sumDiffMax: 1000 }
     }
 };
 
@@ -82,6 +104,16 @@ const DEFAULT_PRESET = GRADE_PRESETS[3];
 
 function resolvePreset(grade) {
     return GRADE_PRESETS[grade] ?? DEFAULT_PRESET;
+}
+
+function challengeConfig(preset) {
+    return { ...DEFAULT_CHALLENGE, ...(preset.challenge ?? {}) };
+}
+
+function factorial(n) {
+    let value = 1;
+    for (let i = 2; i <= n; i++) value *= i;
+    return value;
 }
 
 function applyOperation(operator, a, b) {
@@ -310,8 +342,16 @@ function buildThinkNumber(preset) {
 
 const SOCK_COLORS = ["piros", "kék", "zöld"];
 
-function buildPair() {
-    const n = randInt(4, 8);
+const COMBINE_CONTEXTS = [
+    { a: "sapka", b: "sál", pickA: "sapkát", pickB: "sálat" },
+    { a: "szendvics", b: "ital", pickA: "szendvicset", pickB: "italt" },
+    { a: "fagylalt", b: "öntet", pickA: "fagylaltot", pickB: "öntetet" },
+    { a: "póló", b: "nadrág", pickA: "pólót", pickB: "nadrágot" }
+];
+
+function buildPair(preset) {
+    const { pairN } = challengeConfig(preset);
+    const n = randInt(pairN[0], pairN[1]);
     const answer = (n * (n - 1)) / 2;
     return {
         mode: "pair",
@@ -323,12 +363,29 @@ function buildPair() {
     };
 }
 
-function buildLogic() {
-    const k = randInt(2, 3);
+function buildLogic(preset) {
+    const { logicColors, logicHard } = challengeConfig(preset);
+    const k = randInt(logicColors[0], logicColors[1]);
     const perColor = [5, 6, 8, 10][randInt(0, 3)];
     const colors = SOCK_COLORS.slice(0, k);
     const parts = colors.map(color => `${perColor} ${color}`);
     const list = parts.slice(0, -1).join(", ") + " és " + parts[parts.length - 1];
+
+    if (logicHard) {
+        const target = colors[randInt(0, colors.length - 1)];
+        const answer = (k - 1) * perColor + 2;
+        return {
+            mode: "logic",
+            hard: true,
+            colors: k,
+            perColor,
+            answer,
+            question: `Egy fiókban ${list} zokni van. Csukott szemmel hány zoknit kell kivenni, hogy biztosan legyen ${target} színű pár?`,
+            options: choiceOptions(answer, [k + 1, perColor, 2, (k - 1) * perColor + 1, perColor * k]),
+            successText: `🎉 Ügyes! A legrosszabb esetben kiveszed az összes többi színt (${k - 1} × ${perColor} = ${(k - 1) * perColor} zokni), és még nincs ${target} színű pár. Utána már 2 ${target} zokni biztosan lesz, ezért ${answer} zokni kell.`
+        };
+    }
+
     const answer = k + 1;
     return {
         mode: "logic",
@@ -341,6 +398,58 @@ function buildLogic() {
     };
 }
 
+function buildCombine(preset) {
+    const { combineA, combineB } = challengeConfig(preset);
+    const context = pick(COMBINE_CONTEXTS);
+    const a = randInt(combineA[0], combineA[1]);
+    const b = randInt(combineB[0], combineB[1]);
+    const answer = a * b;
+    return {
+        mode: "combine",
+        a,
+        b,
+        answer,
+        question: `Egy boltban ${a} különböző ${context.a} és ${b} különböző ${context.b} van. Hányféleképpen választhatsz egy ${context.pickA} és egy ${context.pickB}?`,
+        options: choiceOptions(answer, [a + b, answer + a, answer - b, answer + b]),
+        successText: `🎉 Ügyes! Minden ${context.a} mellé ${b} féle ${context.b} választható, ezért ${a} × ${b} = ${answer} lehetőség van.`
+    };
+}
+
+function buildOrder(preset) {
+    const { orderN } = challengeConfig(preset);
+    const n = randInt(orderN[0], orderN[1]);
+    const answer = factorial(n);
+    const factors = [];
+    for (let i = n; i >= 1; i--) factors.push(i);
+    return {
+        mode: "order",
+        n,
+        answer,
+        question: `Hányféle sorrendben állhat sorba ${n} gyerek?`,
+        options: choiceOptions(answer, [n, n * n, answer - n, answer + n]),
+        successText: `🎉 Ügyes! Az első helyre ${n} gyerek állhat, a másodikra már csak ${n - 1}, aztán ${n - 2}, végül 1: ${factors.join(" × ")} = ${answer}.`
+    };
+}
+
+function buildSumDiff(preset) {
+    const { sumDiffMax } = challengeConfig(preset);
+    const big = randInt(6, Math.max(7, Math.floor(sumDiffMax / 2)));
+    const small = randInt(2, big - 2);
+    const sum = big + small;
+    const diff = big - small;
+    return {
+        mode: "sumdiff",
+        big,
+        small,
+        sum,
+        diff,
+        answer: big,
+        question: `Két szám összege ${sum}, a különbségük ${diff}. Mennyi a nagyobbik szám?`,
+        options: choiceOptions(big, [small, sum, diff, sum + diff]),
+        successText: `🎉 Ügyes! Ha a két szám összege ${sum}, a különbségük pedig ${diff}, akkor a nagyobbik szám: (${sum} + ${diff}) : 2 = ${big}, a kisebbik pedig ${small}.`
+    };
+}
+
 export function generateMaster(options = {}) {
 
     const { count = 4, mode = "mixed", grade } = options;
@@ -350,8 +459,11 @@ export function generateMaster(options = {}) {
     const builders = {
         "missing-op": () => buildMissingOperator(preset),
         "think-number": () => buildThinkNumber(preset),
-        "pair": () => buildPair(),
-        "logic": () => buildLogic()
+        "pair": () => buildPair(preset),
+        "logic": () => buildLogic(preset),
+        "combine": () => buildCombine(preset),
+        "order": () => buildOrder(preset),
+        "sumdiff": () => buildSumDiff(preset)
     };
 
     if (mode !== "mixed" && !builders[mode]) {

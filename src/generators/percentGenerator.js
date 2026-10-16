@@ -208,6 +208,44 @@ function buildFindTask(percents, max) {
     };
 }
 
+function buildChangeTask(percents, max) {
+    const percent = pick(percents);
+    const increase = Math.random() < 0.5;
+    const unit = lcm(100 / gcd(percent, 100), 10);
+    const k = randint(1, Math.max(1, Math.floor(max / unit)));
+    const base = unit * k;
+    const change = (base * percent) / 100;
+    const answer = increase ? base + change : base - change;
+    const step = answerStep(change);
+    const candidates = [
+        base,
+        change,
+        increase ? base - change : base + change,
+        answer + step,
+        answer - step,
+        answer + 1,
+        answer - 1,
+        answer + 2,
+        answer - 2,
+        Math.round(answer / 2),
+        answer * 2
+    ];
+    return {
+        type: "percent",
+        mode: "change",
+        direction: increase ? "increase" : "decrease",
+        percent,
+        base,
+        change,
+        answer,
+        symbol: `${base} ${increase ? "+" : "−"} ${base} × ${percent}%`,
+        question: increase
+            ? `A(z) ${base} érték ${percent}%-kal nő. Mennyi lesz az új érték?`
+            : `A(z) ${base} érték ${percent}%-kal csökken. Mennyi lesz az új érték?`,
+        options: numberOptions(answer, candidates)
+    };
+}
+
 export function generatePercent(options = {}) {
     const { count = 4, mode = "mixed", max = 1000 } = options;
     const percents = options.percents ?? EASY_PERCENTS;
@@ -230,6 +268,8 @@ export function generatePercent(options = {}) {
             tasks.push(buildFindTask(percents, max));
         } else if (chosen === "base") {
             tasks.push(buildBaseTask(percents, max));
+        } else if (chosen === "change") {
+            tasks.push(buildChangeTask(percents, max));
         } else if (chosen === "cases") {
             const sub = pick(["of", "find", "base"]);
             if (sub === "of") {

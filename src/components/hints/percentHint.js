@@ -66,6 +66,17 @@ export function renderPercentHint(step, container) {
 
             <p>Ellenőrzés: ${step.base} ${step.percent}%-a valóban ${step.value}.</p>
         `;
+    } else if (step.mode === "change") {
+        const verb = step.direction === "increase" ? "növekedés" : "csökkenés";
+        const sign = step.direction === "increase" ? "+" : "−";
+        const other = step.direction === "increase" ? step.base - step.change : step.base + step.change;
+        body = `
+            <p>Először számold ki a <strong>${verb}</strong> mértékét: ${step.base} × ${step.percent} ÷ 100 = <strong>${step.change}</strong>.</p>
+
+            <p>Utána az eredeti értékhez ${step.direction === "increase" ? "add" : "vond ki"}: ${step.base} ${sign} ${step.change} = <strong>${step.answer}</strong>.</p>
+
+            <p>Ellenőrzés: az ellenkező iránnyal ${other} lenne.</p>
+        `;
     }
 
     box.innerHTML = `

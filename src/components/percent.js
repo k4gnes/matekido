@@ -40,6 +40,11 @@ function successText(step, correct) {
     if (step.mode === "base") {
         return `🎉 Ügyes! A keresett szám ${step.base}, mert ${step.base} ${step.percent}%-a ${step.value}.`;
     }
+    if (step.mode === "change") {
+        return step.direction === "increase"
+            ? `🎉 Ügyes! ${step.base} + ${step.base} × ${step.percent}% = ${step.answer}, mert a növekedés ${step.change}.`
+            : `🎉 Ügyes! ${step.base} − ${step.base} × ${step.percent}% = ${step.answer}, mert a csökkenés ${step.change}.`;
+    }
     return `🎉 Ügyes! ${correct}`;
 }
 

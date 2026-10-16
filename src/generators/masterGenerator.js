@@ -43,12 +43,13 @@ const ACCUSATIVE = {
 const MUL_KINDS = ["mul-add", "add-mul", "mul-sub", "sub-mul"];
 const ADDSUB_KINDS = ["add-add", "add-sub", "sub-add", "sub-sub"];
 const ONE_STEP_KINDS = ["mul", "add", "sub"];
+const ONE_STEP_ADDSUB_KINDS = ["add", "sub"];
 
 const GRADE_PRESETS = {
     1: {
         max: 20,
         missingOp: { addSubMax: 20, mulA: 5, mulB: 5, operators: ["+", "−"] },
-        think: { kinds: ADDSUB_KINDS, startMax: 9, factorMax: 5, constMax: 9 }
+        think: { kinds: ONE_STEP_ADDSUB_KINDS, startMax: 9, factorMax: 5, constMax: 9 }
     },
     2: {
         max: 100,

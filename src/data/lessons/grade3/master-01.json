@@ -41,7 +41,7 @@
       "type": "exercise",
       "generator": "master",
       "options": {
-        "count": 4,
+        "count": 2,
         "mode": "missing-op",
         "grade": 3
       }
@@ -50,7 +50,7 @@
       "type": "exercise",
       "generator": "master",
       "options": {
-        "count": 4,
+        "count": 2,
         "mode": "order",
         "grade": 3
       }

@@ -1,0 +1,108 @@
+{
+    "id": "circle-03",
+    "title": "⭕ A kör kerülete és területe",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "⭕ A kör kerülete és területe",
+            "text": "A kör kerülete a körvonal hossza: K = 2 × r × π, vagyis K = d × π. A kör területe: T = r × r × π. A π (pi) értéke megközelítőleg 3,14. Ha a választ π-vel adjuk meg, egzakt marad: például ha r = 5 cm, akkor K = 10π cm és T = 25π cm². Figyeld, hogy sugárból (r) vagy átmérőből (d) indulunk-e!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Kör alakú csomagok",
+                    "text": "A postán kör alakú bélyegzőket és címkéket vágnak! Számold ki a kerületüket és a területüket a π segítségével!"
+                },
+                "racing": {
+                    "title": "🏎️ Kerekek a boxutcában",
+                    "text": "A versenyautó kerekei körök! Számold ki a kerületüket és a területüket!"
+                },
+                "football": {
+                    "title": "⚽ A kezdőkör titka",
+                    "text": "A pálya közepén egy kör van! Számold ki a kerületét és a területét!"
+                },
+                "cooking": {
+                    "title": "🍳 Kerek tepsi és pizza",
+                    "text": "A konyhában kerek tepsik és pizzák vannak! Számold ki a méreteiket!"
+                },
+                "animals": {
+                    "title": "🦁 Kerek tavak az állatkertben",
+                    "text": "Az állatkertben kerek tavak vannak! Számold ki a kerületüket és területüket!"
+                },
+                "space": {
+                    "title": "🚀 Bolygók és körpályák",
+                    "text": "Az űrben minden körben kering! Számolj π-vel!"
+                },
+                "tram": {
+                    "title": "🚋 Kerek váltók a villamoson",
+                    "text": "A villamos kerekei kör alakúak! Számold ki a kerületüket és területüket!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "circle",
+            "options": {
+                "count": 2,
+                "mode": "convert"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "circle",
+            "options": {
+                "count": 3,
+                "mode": "circumference"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "circle",
+            "options": {
+                "count": 3,
+                "mode": "area"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "circle",
+            "options": {
+                "count": 4,
+                "mode": "measure-mixed"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "A kör kerületét és területét is kiszámolod, és már a π-t is magabiztosan használod – ez igazi geometriai tudás!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden kerek csomag méretét kiszámoltad – a posta indulhat!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "A kerekek méreteit is kiszámoltad – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A középkör méreteit is kiszámoltad – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden tepsi és pizza méretét kiszámoltad – a konyha rendben van!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden kerek tó méretét kiszámoltad – az állatok elégedettek!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "A körpályák méretei pontosak – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden kerék méretét kiszámoltad – a villamos indulhat!"
+                }
+            }
+        }
+    ]
+}

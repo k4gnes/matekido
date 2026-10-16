@@ -294,6 +294,7 @@ export const CURRICULUM_ORDER = {
         "quadrilateral-01",
         "polygon-area-01",
         "perimeter-area-01",
+        "circle-03",
     ],
 };
 

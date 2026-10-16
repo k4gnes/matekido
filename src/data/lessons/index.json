@@ -6512,6 +6512,30 @@
         "space": "🚀 Panelek körbe és belül",
         "tram": "🚋 Villamos és terület"
       }
+    },
+    {
+      "id": "circle-03",
+      "title": "⭕ A kör kerülete és területe",
+      "grades": [
+        7
+      ],
+      "category": "geometry",
+      "skill": "circle",
+      "difficulty": 3,
+      "type": "circle",
+      "range": 1000,
+      "mission": "⭕ A kör kerülete és területe",
+      "subtitle": "kerület és terület π-vel",
+      "file": "./data/lessons/grade7/circle-03.json",
+      "worldTitles": {
+        "postman": "📮 Kerek csomagok",
+        "racing": "🏁 Kerekek a boxutcában",
+        "football": "⚽ A középkör",
+        "cooking": "🍳 Kerek tepsi és pizza",
+        "animals": "🦁 Kerek tavak",
+        "space": "🚀 Bolygók és körpályák",
+        "tram": "🚋 Kerek váltók"
+      }
     }
   ],
   "gradeConfig": [

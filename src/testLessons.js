@@ -1890,6 +1890,31 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "circle": {
+            if (step.mode === "circumference" || step.mode === "area") {
+                if (!["radius", "diameter"].includes(step.variant)) fail(ctx, `variant hibás: ${step.variant}`);
+                if (!Array.isArray(step.options) || step.options.length !== 4) fail(ctx, "options nem 4 elemű");
+                if (new Set(step.options).size !== step.options.length) fail(ctx, "options ismétlődik");
+                let expected;
+                if (step.mode === "circumference") {
+                    if (step.variant === "radius") {
+                        if (!isInt(step.r) || step.r < 1) fail(ctx, `r hibás: ${step.r}`);
+                        if (isInt(step.r)) expected = `${step.r * 2}π cm`;
+                    } else {
+                        if (!isInt(step.d) || step.d < 2) fail(ctx, `d hibás: ${step.d}`);
+                        if (isInt(step.d)) expected = `${step.d}π cm`;
+                    }
+                } else {
+                    if (step.variant !== "radius") fail(ctx, "area csak sugárból indulhat");
+                    if (!isInt(step.r) || step.r < 1) fail(ctx, `r hibás: ${step.r}`);
+                    if (isInt(step.r)) expected = `${step.r * step.r}π cm²`;
+                }
+                if (expected !== undefined && step.answerLabel !== expected) {
+                    fail(ctx, `answerLabel (${step.answerLabel}) != várt (${expected})`);
+                }
+                if (!step.options.includes(step.answerLabel)) fail(ctx, "options nem tartalmazza a választ");
+                if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+                break;
+            }
             if (step.mode === "convert") {
                 if (!["radius-to-diameter", "diameter-to-radius"].includes(step.variant)) {
                     fail(ctx, `variant hibás: ${step.variant}`);

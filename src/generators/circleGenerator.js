@@ -94,6 +94,89 @@ function generateConvert() {
     };
 }
 
+const PI = "π";
+const MEASURE_MIXED = ["identify", "convert", "circumference", "area"];
+
+function coeffOptions(answer, candidates) {
+    const seen = new Set([answer]);
+    const values = [answer];
+    const push = (value) => {
+        if (values.length >= 4) return;
+        if (Number.isInteger(value) && value > 0 && !seen.has(value)) {
+            seen.add(value);
+            values.push(value);
+        }
+    };
+    for (const candidate of candidates) push(candidate);
+    for (const delta of [1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6]) push(answer + delta);
+    let k = 7;
+    while (values.length < 4) {
+        push(answer + k);
+        k++;
+    }
+    return shuffle(values);
+}
+
+function generateCircumference() {
+    if (Math.random() < 0.5) {
+        const r = random(2, 12);
+        const correct = 2 * r;
+        return {
+            type: "circle",
+            mode: "circumference",
+            variant: "radius",
+            r,
+            answerLabel: `${correct}${PI} cm`,
+            question: `A kör sugara ${r} cm. Mennyi a kör kerülete? K = 2 × r × π`,
+            options: coeffOptions(correct, [r, 2 * r + 2, r * r, r + 2]).map(v => `${v}${PI} cm`),
+            successText: `😊 Ügyes! K = 2 × ${r} × π = ${correct}π cm.`
+        };
+    }
+    const d = random(2, 12) * 2;
+    const r = d / 2;
+    const labels = coeffOptions(d, [r, 2 * d, r * r, d + 2]).map(v => `${v}${PI} cm`);
+    return {
+        type: "circle",
+        mode: "circumference",
+        variant: "diameter",
+        d,
+        r,
+        answerLabel: `${d}${PI} cm`,
+        question: `A kör átmérője ${d} cm. Mennyi a kör kerülete? K = d × π`,
+        options: labels,
+        successText: `😊 Ügyes! K = ${d} × π = ${d}π cm.`
+    };
+}
+
+function generateArea() {
+    const r = random(2, 10);
+    const correct = r * r;
+    const labels = coeffOptions(correct, [2 * r, r, 4 * r, r + 2]).map(v => `${v}${PI} cm²`);
+    return {
+        type: "circle",
+        mode: "area",
+        variant: "radius",
+        r,
+        answerLabel: `${correct}${PI} cm²`,
+        question: `A kör sugara ${r} cm. Mennyi a kör területe? T = r × r × π`,
+        options: labels,
+        successText: `😊 Ügyes! T = ${r} × ${r} × π = ${correct}π cm².`
+    };
+}
+
+function pickMode(mode) {
+    if (mode === "mixed") return Math.random() < 0.5 ? "identify" : "convert";
+    if (mode === "measure-mixed") return MEASURE_MIXED[Math.floor(Math.random() * MEASURE_MIXED.length)];
+    return mode;
+}
+
+function buildMode(m) {
+    if (m === "convert") return generateConvert();
+    if (m === "circumference") return generateCircumference();
+    if (m === "area") return generateArea();
+    return generateTask();
+}
+
 export function generateCircle(opts = {}) {
     const { count = 6, mode = "identify" } = opts;
     const tasks = [];
@@ -101,10 +184,7 @@ export function generateCircle(opts = {}) {
     for (let i = 0; i < count; i++) {
         let task = null;
         for (let attempt = 0; attempt < 6; attempt++) {
-            const m = mode === "mixed"
-                ? (Math.random() < 0.5 ? "identify" : "convert")
-                : mode;
-            task = m === "convert" ? generateConvert() : generateTask();
+            task = buildMode(pickMode(mode));
             const signature = `${task.mode}:${task.variant}`;
             if (signature !== lastSignature) {
                 lastSignature = signature;

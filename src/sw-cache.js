@@ -531,6 +531,7 @@ const SW_CACHE_LIST = [
     "/data/lessons/grade7/algebra-distribute-09.json",
     "/data/lessons/grade7/algebra-factor-10.json",
     "/data/lessons/grade7/algebra-parenthesis-08.json",
+    "/data/lessons/grade7/circle-03.json",
     "/data/lessons/grade7/coordinate-plane-01.json",
     "/data/lessons/grade7/equation-linear-11.json",
     "/data/lessons/grade7/equation-word-12.json",

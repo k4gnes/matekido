@@ -24,6 +24,22 @@ function svgEl(name, attrs = {}) {
     return el;
 }
 
+function addLabel(svg, x, y, text) {
+    const t = svgEl("text", {
+        x,
+        y,
+        "text-anchor": "middle",
+        "font-size": "15",
+        "font-weight": "700",
+        fill: "#1e293b",
+        stroke: "#ffffff",
+        "stroke-width": "4",
+        "paint-order": "stroke"
+    });
+    t.textContent = text;
+    svg.append(t);
+}
+
 function createCircleSvg(step) {
     const cx = 110;
     const cy = 110;
@@ -70,6 +86,15 @@ function createCircleSvg(step) {
         }));
     }
 
+    if (step.mode === "circumference" || step.mode === "area") {
+        if (step.variant === "radius") {
+            addLabel(svg, cx + r / 2, cy - 12, `${step.r} cm`);
+        }
+        if (step.variant === "diameter") {
+            addLabel(svg, cx, cy - 12, `${step.d} cm`);
+        }
+    }
+
     return svg;
 }
 
@@ -102,6 +127,16 @@ export function renderCircle(step, root, next, progress, onResult, onAttempt) {
         const btn = createButton(String(value), { className: "cir-option" });
         btn.addEventListener("click", () => {
             if (feedback.isAnswered()) return;
+
+            if (step.answerLabel !== undefined) {
+                if (value === step.answerLabel) {
+                    markCorrect(btn);
+                    feedback.success(step.successText);
+                } else {
+                    feedback.retry();
+                }
+                return;
+            }
 
             if (step.mode === "convert") {
                 if (Number(value) === step.answer) {

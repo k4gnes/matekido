@@ -1,0 +1,108 @@
+{
+    "id": "pythagorean-01",
+    "title": "📐 A Pitagorasz-tétel",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📐 A Pitagorasz-tétel",
+            "text": "A derékszögű háromszögben a két befogó négyzetének összege egyenlő az átfogó négyzetével: a² + b² = c². Az átfogó a derékszöggel szembeni leghosszabb oldal. Ha ismerjük a két befogót, kiszámolhatjuk az átfogót; ha az átfogót és az egyik befogót ismerjük, a másik befogót kapjuk meg. A tétel segítségével azt is eldönthetjük, hogy egy háromszög derékszögű-e.",
+            "worldTitles": {
+                "postman": {
+                    "title": "📐 Pitagorasz a postán",
+                    "text": "A postán a csomagok és a címkék is derékszögű háromszögeket rejtenek! Számold ki a hiányzó oldalt!"
+                },
+                "racing": {
+                    "title": "📐 Pitagorasz a pályán",
+                    "text": "A versenypálya kanyarjai derékszögű háromszögekre bonthatók! Számold ki az átfogót!"
+                },
+                "football": {
+                    "title": "📐 Pitagorasz a pályán",
+                    "text": "A futballpálya sarkai derékszöget zárnak be! Számold ki a távolságokat a Pitagorasz-tétellel!"
+                },
+                "cooking": {
+                    "title": "📐 Pitagorasz a konyhában",
+                    "text": "A konyhában a tálcák és a sütemények derékszögű háromszögek! Számold ki a hiányzó oldalt!"
+                },
+                "animals": {
+                    "title": "📐 Pitagorasz az állatkertben",
+                    "text": "Az állatkertben a kifutók sarkai derékszögűek! Számold ki az átlókat!"
+                },
+                "space": {
+                    "title": "📐 Pitagorasz az űrben",
+                    "text": "Az űrállomás paneljei derékszögű háromszögek! Számold ki a hiányzó oldalt!"
+                },
+                "tram": {
+                    "title": "📐 Pitagorasz a városban",
+                    "text": "A villamos vonala és a keresztutcák derékszöget alkotnak! Számold ki a távolságokat!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "pythagorean",
+            "options": {
+                "count": 3,
+                "mode": "hypotenuse"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "pythagorean",
+            "options": {
+                "count": 3,
+                "mode": "leg"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "pythagorean",
+            "options": {
+                "count": 3,
+                "mode": "check"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "pythagorean",
+            "options": {
+                "count": 3,
+                "mode": "mixed"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "A Pitagorasz-tételt is érted – az átfogót és a befogókat is ki tudod számolni!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden csomag méretét kiszámoltad – a küldemények útra készen állnak!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Minden kanyar hosszát kiszámoltad – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A távolságaid pontosak – a csapat készen áll a meccsre!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden tálca méretét kiszámoltad – a tálalás tökéletes!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden kifutó átlóját kiszámoltad – az állatok is elégedettek!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "A napelemek pontosan illeszkednek – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden távolságot kiszámoltál – a villamos indulhat!"
+                }
+            }
+        }
+    ]
+}

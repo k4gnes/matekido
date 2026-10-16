@@ -1,0 +1,116 @@
+{
+    "id": "percent-change-01",
+    "title": "💯 Százalékszámítás",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "💯 Százalékszámítás – növekedés és csökkenés",
+            "text": "A százalékszámítás három alapesetét már ismered: százalékérték, százalékláb és alap. Most egy új helyzettel bővítjük: mi történik, ha egy érték százalékkal nő vagy csökken? Ilyenkor először kiszámoljuk a változás mértékét (érték × százalék ÷ 100), majd az eredeti értékhez hozzáadjuk vagy kivonjuk. Így kapjuk az új értéket.",
+            "worldTitles": {
+                "postman": {
+                    "title": "💯 Százalék a postán",
+                    "text": "A postán a küldemények száma nő és csökken. Számold ki a százalékos változást!"
+                },
+                "racing": {
+                    "title": "💯 Százalék a pályán",
+                    "text": "A versenyen a köridők százalékkal változnak. Számold ki az új értéket!"
+                },
+                "football": {
+                    "title": "💯 Százalék a pályán",
+                    "text": "A bajnokságban a nézőszám százalékkal változik. Keresd az új értéket!"
+                },
+                "cooking": {
+                    "title": "💯 Százalék a konyhában",
+                    "text": "A konyhában az adagok nőnek és csökkennek. Számold ki a százalékos változást!"
+                },
+                "animals": {
+                    "title": "💯 Százalék az állatkertben",
+                    "text": "Az állatkertben az állatok száma százalékkal változik. Keresd az új értéket!"
+                },
+                "space": {
+                    "title": "💯 Százalék az űrben",
+                    "text": "Az űrhajón a készlet százalékkal fogy. Számold ki a maradékot!"
+                },
+                "tram": {
+                    "title": "💯 Százalék a villamoson",
+                    "text": "A villamoson az utasok száma százalékkal változik. Keresd az új értéket!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "percent",
+            "options": {
+                "count": 3,
+                "mode": "cases",
+                "max": 1000,
+                "percents": [10, 20, 25, 50]
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "percent",
+            "options": {
+                "count": 3,
+                "mode": "change",
+                "max": 500,
+                "percents": [10, 20, 25, 50]
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "percent",
+            "options": {
+                "count": 3,
+                "mode": "change",
+                "max": 1000,
+                "percents": [5, 15, 40, 60, 75]
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "percent",
+            "options": {
+                "count": 3,
+                "mode": "change",
+                "max": 1000,
+                "percents": [10, 20, 25, 50, 60, 80]
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "A százalékos növekedést és csökkenést is ügyesen kiszámolod!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden postai százalékos változást kiszámoltál!"
+                },
+                "racing": {
+                    "title": "🏁 Szuper!",
+                    "text": "Minden köridő-változást helyesen számoltál!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A nézőszám változásait is jól számoltad!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden adag változását pontosan kiszámoltad!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes vagy!",
+                    "text": "Minden állatlétszám-változást megoldottál!"
+                },
+                "space": {
+                    "title": "🚀 Ügyes vagy!",
+                    "text": "A készlet változását pontosan kiszámoltad!"
+                },
+                "tram": {
+                    "title": "🚋 Szép munka!",
+                    "text": "Minden utasszám-változást helyesen számoltál!"
+                }
+            }
+        }
+    ]
+}

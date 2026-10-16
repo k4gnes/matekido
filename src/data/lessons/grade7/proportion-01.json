@@ -1,0 +1,120 @@
+{
+    "id": "proportion-01",
+    "title": "📐 Arányosság",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📐 Arányosság",
+            "text": "Két mennyiség akkor egyenesen arányos, ha az egyik kétszeresére nő, a másik is kétszeresére nő. Ilyenkor az egységnyi értéket számoljuk ki, majd szorozunk. Ha viszont az egyik nő és a másik csökken (több munkás kevesebb idő alatt végez), akkor fordított arányosságról van szó: a szorzat állandó. Olvasd el figyelmesen a történetet, és döntsd el, melyik fajta!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Arányosság a postán",
+                    "text": "A postán hol egyenes, hol fordított arányosságot találsz. Számold ki a hiányzó értéket!"
+                },
+                "racing": {
+                    "title": "🏁 Arányosság a garázsban",
+                    "text": "A garázsban váltakoznak az egyenes és fordított helyzetek. Számolj figyelmesen!"
+                },
+                "football": {
+                    "title": "⚽ Arányosság a pályán",
+                    "text": "A pályán a pontok és a játékosok arányát vizsgálod. Keresd a helyes eredményt!"
+                },
+                "cooking": {
+                    "title": "🍳 Arányosság a konyhában",
+                    "text": "A konyhában az adagok és a hozzávalók aránya változik. Számold ki a hiányzót!"
+                },
+                "animals": {
+                    "title": "🦁 Arányosság az állatkertben",
+                    "text": "Az állatkertben napi adagokat és munkaidőt számolsz. Keresd meg a helyes eredményt!"
+                },
+                "space": {
+                    "title": "🚀 Arányosság az űrben",
+                    "text": "Az űrhajón üzemanyagot és időt számolsz. Számolj figyelmesen!"
+                },
+                "tram": {
+                    "title": "🚋 Arányosság a villamoson",
+                    "text": "A villamoson utasokat és időt hasonlítasz össze. Keresd a helyes eredményt!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "word-problem",
+            "options": {
+                "count": 3,
+                "max": 200,
+                "kind": "direct-proportion",
+                "mode": "value",
+                "interaction": "choice"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "word-problem",
+            "options": {
+                "count": 3,
+                "max": 500,
+                "kind": "direct-proportion",
+                "mode": "value",
+                "interaction": "input"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "word-problem",
+            "options": {
+                "count": 3,
+                "max": 500,
+                "kind": "inverse-proportion",
+                "mode": "value",
+                "interaction": "choice"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "word-problem",
+            "options": {
+                "count": 3,
+                "max": 1000,
+                "kind": "inverse-proportion",
+                "mode": "value",
+                "interaction": "input"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Ügyesen megkülönböztetted az egyenes és a fordított arányosságot – a szöveges feladatok sem jelentenek akadályt!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden arányossági feladatot megoldottál a postán!"
+                },
+                "racing": {
+                    "title": "🏁 Szuper!",
+                    "text": "Minden arányt helyesen számoltál a garázsban!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "Minden arányossági feladatot jól oldottál meg a pályán!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden adag és hozzávaló a helyén van a konyhában!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes vagy!",
+                    "text": "Minden adagot és munkaidőt helyesen számoltál az állatkertben!"
+                },
+                "space": {
+                    "title": "🚀 Ügyes vagy!",
+                    "text": "Az üzemanyag és az idő pontosan elég az útra!"
+                },
+                "tram": {
+                    "title": "🚋 Szép munka!",
+                    "text": "Minden utas és idő helyesen lett kiszámolva a villamoson!"
+                }
+            }
+        }
+    ]
+}

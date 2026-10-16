@@ -1,0 +1,100 @@
+{
+    "id": "ratio-proportion-01",
+    "title": "🔗 Arány és aránypár",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🔗 Arány és aránypár",
+            "text": "Az arány két mennyiség összehasonlítása: ha 6 alma és 4 körte van, az arány 6 : 4. Egyszerűsítsd a lehető legkisebb tagokra, és keresd meg a hiányzó tagot az aránypárban!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Arányok a postán",
+                    "text": "A postán a csomagokat és a leveleket hasonlítod össze arányban. Egyszerűsíts, és találd meg a hiányzó tagot!"
+                },
+                "racing": {
+                    "title": "🏁 Arányok a pályán",
+                    "text": "A versenyen a köröket és az időt hasonlítod össze. Egyszerűsítsd az arányt, és keresd a hiányzó tagot!"
+                },
+                "football": {
+                    "title": "⚽ Arányok a pályán",
+                    "text": "A meccsen a gólokat és a perceket hasonlítod össze. Egyszerűsítsd az arányt, és találd meg a hiányzó tagot!"
+                },
+                "cooking": {
+                    "title": "🍳 Arányok a konyhában",
+                    "text": "A konyhában a hozzávalók arányát számolod. Egyszerűsítsd, és keresd meg a hiányzó tagot!"
+                },
+                "animals": {
+                    "title": "🦁 Arányok az állatkertben",
+                    "text": "Az állatkertben az állatok számát hasonlítod össze. Egyszerűsítsd az arányt, és találd meg a hiányzó tagot!"
+                },
+                "space": {
+                    "title": "🚀 Arányok az űrben",
+                    "text": "Az űrhajón az üzemanyagot és az időt hasonlítod össze. Egyszerűsítsd, és keresd a hiányzó tagot!"
+                },
+                "tram": {
+                    "title": "🚋 Arányok a villamoson",
+                    "text": "A villamoson az utasokat és a megállókat hasonlítod össze. Egyszerűsítsd az arányt, és találd meg a hiányzó tagot!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "ratio",
+            "options": {
+                "count": 3,
+                "mode": "write"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "ratio",
+            "options": {
+                "count": 3,
+                "mode": "simplify"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "ratio",
+            "options": {
+                "count": 3,
+                "mode": "missing"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Minden arányt helyesen oldottál meg – az aránypárok már nem fognak ki rajtad!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Nagy vagy!",
+                    "text": "Minden csomagot pontosan arányba állítottál – a posta működik!"
+                },
+                "racing": {
+                    "title": "🏁 Szuper!",
+                    "text": "Minden arányt helyesen számoltál – a verseny nyertese te vagy!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "Minden arányt jól oldottál meg – a csapat nyer!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden arányt helyesen számoltál – a recept tökéletes!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes vagy!",
+                    "text": "Minden arányt jól oldottál meg – az állatkert boldog!"
+                },
+                "space": {
+                    "title": "🚀 Ügyes vagy!",
+                    "text": "Minden arányt helyesen számoltál – az űrhajó célba ér!"
+                },
+                "tram": {
+                    "title": "🚋 Szép munka!",
+                    "text": "Minden arányt jól oldottál meg – a villamos pontosan közlekedik!"
+                }
+            }
+        }
+    ]
+}

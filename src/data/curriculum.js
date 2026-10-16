@@ -286,6 +286,11 @@ export const CURRICULUM_ORDER = {
         "equation-linear-11",
         "equation-word-12",
         "inequality-linear-13",
+        "coordinate-plane-01",
+        "ratio-proportion-01",
+        "proportion-01",
+        "percent-change-01",
+        "pythagorean-01",
     ],
 };
 

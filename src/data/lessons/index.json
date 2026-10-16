@@ -6320,6 +6320,126 @@
         "space": "🚀 Egyenlőtlenségek az űrben",
         "tram": "🚋 Egyenlőtlenségek a villamoson"
       }
+    },
+    {
+      "id": "coordinate-plane-01",
+      "title": "📍 Koordináta-rendszer",
+      "grades": [
+        7
+      ],
+      "category": "geometry",
+      "skill": "coordinates",
+      "difficulty": 2,
+      "type": "coordinate",
+      "range": 100,
+      "mission": "📍 Pontok a rácsvillán",
+      "subtitle": "Pontok leolvasása a rácsról és pont kijelölése koordinátából (x; y)",
+      "file": "./data/lessons/grade7/coordinate-plane-01.json",
+      "worldTitles": {
+        "postman": "📍 Címkeresés a postán",
+        "racing": "🏁 Pályatérkép",
+        "football": "⚽ Taktikai tábla",
+        "cooking": "🍳 Recept-rács",
+        "animals": "🦁 Kifutó-térkép",
+        "space": "🚀 Csillagtérkép",
+        "tram": "🚋 Megállók térképe"
+      }
+    },
+    {
+      "id": "ratio-proportion-01",
+      "title": "🔗 Arány és aránypár",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "ratio",
+      "difficulty": 2,
+      "type": "ratio",
+      "range": 100,
+      "mission": "🔗 Arány és aránypár",
+      "subtitle": "Az arány felírása, egyszerűsítése és a hiányzó tag keresése",
+      "file": "./data/lessons/grade7/ratio-proportion-01.json",
+      "worldTitles": {
+        "postman": "📮 Arányok a postán",
+        "racing": "🏁 Arányok a pályán",
+        "football": "⚽ Arányok a pályán",
+        "cooking": "🍳 Arányok a konyhában",
+        "animals": "🦁 Arányok az állatkertben",
+        "space": "🚀 Arányok az űrben",
+        "tram": "🚋 Arányok a villamoson"
+      }
+    },
+    {
+      "id": "proportion-01",
+      "title": "📐 Arányosság",
+      "grades": [
+        7
+      ],
+      "category": "wordProblems",
+      "skill": "direct-proportion",
+      "difficulty": 3,
+      "type": "word-problem",
+      "range": 1000,
+      "mission": "📐 Egyenes és fordított arányosság",
+      "subtitle": "Egyenes és fordított arányosság szöveges feladatokban",
+      "file": "./data/lessons/grade7/proportion-01.json",
+      "worldTitles": {
+        "postman": "📮 Arányosság a postán",
+        "racing": "🏁 Arányosság a garázsban",
+        "football": "⚽ Arányosság a pályán",
+        "cooking": "🍳 Arányosság a konyhában",
+        "animals": "🦁 Arányosság az állatkertben",
+        "space": "🚀 Arányosság az űrben",
+        "tram": "🚋 Arányosság a villamoson"
+      }
+    },
+    {
+      "id": "percent-change-01",
+      "title": "💯 Százalékos növekedés és csökkenés",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "percent",
+      "difficulty": 3,
+      "type": "percent",
+      "range": 1000,
+      "mission": "💯 Százalék a gyakorlatban",
+      "subtitle": "Százalékos változás: érték nő vagy csökken",
+      "file": "./data/lessons/grade7/percent-change-01.json",
+      "worldTitles": {
+        "postman": "💯 Százalék a postán",
+        "racing": "💯 Százalék a pályán",
+        "football": "💯 Százalék a pályán",
+        "cooking": "💯 Százalék a konyhában",
+        "animals": "💯 Százalék az állatkertben",
+        "space": "💯 Százalék az űrben",
+        "tram": "💯 Százalék a villamoson"
+      }
+    },
+    {
+      "id": "pythagorean-01",
+      "title": "📐 A Pitagorasz-tétel",
+      "grades": [
+        7
+      ],
+      "category": "geometry",
+      "skill": "pythagorean",
+      "difficulty": 3,
+      "type": "pythagorean",
+      "range": 0,
+      "mission": "📐 Pitagorasz a gyakorlatban",
+      "subtitle": "Átfogó, befogó és derékszögű-e?",
+      "file": "./data/lessons/grade7/pythagorean-01.json",
+      "worldTitles": {
+        "postman": "📐 Pitagorasz a postán",
+        "racing": "📐 Pitagorasz a pályán",
+        "football": "📐 Pitagorasz a pályán",
+        "cooking": "📐 Pitagorasz a konyhában",
+        "animals": "📐 Pitagorasz az állatkertben",
+        "space": "📐 Pitagorasz az űrben",
+        "tram": "📐 Pitagorasz a városban"
+      }
     }
   ],
   "gradeConfig": [

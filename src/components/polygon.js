@@ -244,6 +244,11 @@ export function renderPolygon(step, root, next, progress, onResult, onAttempt) {
     function successText() {
         if (step.mode === "quadrilateral") {
             const correct = step.options.find(o => o.correct);
+            if (step.ask === "inclusion") {
+                return step.truth
+                    ? "😊 Ügyes! A szűkebb csoport minden tagja beletartozik a tágabb csoportba."
+                    : "😊 Ügyes! Ez a négyszög nem tartozik a másik csoportba.";
+            }
             return `😊 Ügyes! ${correct.text}`;
         }
         const data = POLYGONS[step.kind];

@@ -6440,6 +6440,30 @@
         "space": "📐 Pitagorasz az űrben",
         "tram": "📐 Pitagorasz a városban"
       }
+    },
+    {
+      "id": "quadrilateral-01",
+      "title": "🔷 A négyszögek családfája",
+      "grades": [
+        7
+      ],
+      "category": "geometry",
+      "skill": "quadrilaterals",
+      "difficulty": 2,
+      "type": "polygon",
+      "range": 0,
+      "mission": "🔷 Négyszögek rendszerezése",
+      "subtitle": "Rokonság és tulajdonságok mélyebben",
+      "file": "./data/lessons/grade7/quadrilateral-01.json",
+      "worldTitles": {
+        "postman": "📮 A csomagok családfája",
+        "racing": "🏁 A pálya formái",
+        "football": "⚽ Kapuk és vonalak",
+        "cooking": "🍳 Tepsik családfája",
+        "animals": "🦁 Karámok és ketrecek",
+        "space": "🚀 Űrállomás paneljei",
+        "tram": "🚋 Ablakok és ülések"
+      }
     }
   ],
   "gradeConfig": [

@@ -1,0 +1,112 @@
+{
+    "id": "quadrilateral-01",
+    "title": "🔷 A négyszögek családfája",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🔷 A négyszögek családfája",
+            "text": "A négyszögek között vannak szűkebb és tágabb csoportok. Minden négyzet egyben téglalap és rombusz is, ezért négyzet minden esetben paralelogramma is. A téglalap és a rombusz szintén paralelogramma. A trapéz és a deltoid viszont nem paralelogramma. Ismerd fel, melyik négyszög tartozik a másikhoz, és melyik tulajdonság igaz rá!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 A csomagok családfája",
+                    "text": "A postán a csomagok és bélyegek négyszögek! Találd ki, melyik négyszög tartozik a másikhoz!"
+                },
+                "racing": {
+                    "title": "🏁 A pálya formái",
+                    "text": "A versenypálya jelei négyszögek! Rendszerezd őket a tulajdonságaik szerint!"
+                },
+                "football": {
+                    "title": "⚽ Kapuk és vonalak",
+                    "text": "A futballpályán minden négyszög! Keresd meg a rokonságukat és a tulajdonságaikat!"
+                },
+                "cooking": {
+                    "title": "🍳 Tepsik családfája",
+                    "text": "A tepsik és sütemények négyszögek! Rendszerezd őket a formájuk szerint!"
+                },
+                "animals": {
+                    "title": "🦁 Karámok és ketrecek",
+                    "text": "Az állatkert karámjai négyszögek! Ismerd fel a rokonságukat!"
+                },
+                "space": {
+                    "title": "🚀 Űrállomás paneljei",
+                    "text": "Az űrállomás paneljei négyszögek! Rendszerezd őket a tulajdonságaik szerint!"
+                },
+                "tram": {
+                    "title": "🚋 Ablakok és ülések",
+                    "text": "A villamos ablakai négyszögek! Keresd meg a rokonságukat!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "polygon",
+            "options": {
+                "count": 3,
+                "mode": "quadrilateral",
+                "ask": "inclusion"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "polygon",
+            "options": {
+                "count": 3,
+                "mode": "quadrilateral",
+                "ask": "which"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "polygon",
+            "options": {
+                "count": 3,
+                "mode": "quadrilateral",
+                "ask": "property"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "polygon",
+            "options": {
+                "count": 3,
+                "mode": "quadrilateral",
+                "ask": "mixed-all"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "A négyszögek családfáját is ismered – tudod, melyik négyszög tartozik a másikhoz!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden csomag a helyére került – a posta készen áll!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "A pálya minden négyszögét felismerted – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A pálya minden négyszögét rendszerezted – a meccs kezdődhet!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "Minden tepsit szétválogattál – a konyha rendben van!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden karám helyét megtaláltad – az állatok is elégedettek!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "A napelemek a helyükre kerültek – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden ablak a helyén – a villamos indulhat!"
+                }
+            }
+        }
+    ]
+}

@@ -549,9 +549,31 @@ function validateStep(step, ctx, range) {
         }
         case "polygon": {
             if (step.mode === "quadrilateral") {
-                if (!["name", "property"].includes(step.ask)) fail(ctx, `ask hibás: ${step.ask}`);
+                if (!["name", "property", "inclusion", "which"].includes(step.ask)) fail(ctx, `ask hibás: ${step.ask}`);
                 if (!Object.keys(QUAD_KIND_LABELS).includes(step.kind)) fail(ctx, `kind hibás: ${step.kind}`);
                 if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+                if (step.ask === "inclusion") {
+                    if (!Object.keys(QUAD_KIND_LABELS).includes(step.target)) fail(ctx, `target hibás: ${step.target}`);
+                    if (typeof step.truth !== "boolean") fail(ctx, "truth nem logikai");
+                    if (QUAD_SUPERSETS[step.kind] && typeof step.truth === "boolean") {
+                        const expected = QUAD_SUPERSETS[step.kind].includes(step.target);
+                        if (step.truth !== expected) fail(ctx, `truth (${step.truth}) != valós tartalmazás (${expected})`);
+                    }
+                    if (!Array.isArray(step.options) || step.options.length !== 2) {
+                        fail(ctx, "2 options kell");
+                        break;
+                    }
+                    if (!step.options.every(o => o && typeof o.text === "string" && typeof o.correct === "boolean")) {
+                        fail(ctx, "options mezők hibásak");
+                    }
+                    const igen = step.options.find(o => o.text === "Igen");
+                    const nem = step.options.find(o => o.text === "Nem");
+                    if (!igen || !nem) fail(ctx, "az inclusion options Igen/Nem kell legyen");
+                    if (igen && igen.correct !== step.truth) fail(ctx, "az Igen option jelölése hibás");
+                    if (nem && nem.correct !== !step.truth) fail(ctx, "a Nem option jelölése hibás");
+                    if (step.answer !== (step.truth ? "Igen" : "Nem")) fail(ctx, "inclusion answer hibás");
+                    break;
+                }
                 if (!Array.isArray(step.options) || step.options.length !== 4) {
                     fail(ctx, "4 options kell");
                     break;
@@ -572,6 +594,22 @@ function validateStep(step, ctx, range) {
                         fail(ctx, `name answer (${step.answer}) != kind (${QUAD_KIND_LABELS[step.kind]})`);
                     }
                     if (!step.options.every(o => QUAD_LABELS.includes(o.text))) fail(ctx, "name options nem négyszögnevek");
+                } else if (step.ask === "which") {
+                    const trait = QUAD_TRAITS.find(t => t.text === step.trait);
+                    if (!trait) {
+                        fail(ctx, `which trait ismeretlen: ${step.trait}`);
+                    } else if (!trait.shapes.includes(step.kind)) {
+                        fail(ctx, `a tulajdonság nem igaz a ${step.kind} négyszögre: ${step.trait}`);
+                    }
+                    if (QUAD_KIND_LABELS[step.kind] !== step.answer) fail(ctx, "which answer != kind címke");
+                    if (!step.options.every(o => QUAD_LABELS.includes(o.text))) fail(ctx, "which options nem négyszögnevek");
+                    for (const o of step.options) {
+                        if (o.correct) continue;
+                        const k = Object.keys(QUAD_KIND_LABELS).find(key => QUAD_KIND_LABELS[key] === o.text);
+                        if (trait && k && trait.shapes.includes(k)) {
+                            fail(ctx, `a zavaró négyszögre is igaz a tulajdonság: ${o.text}`);
+                        }
+                    }
                 } else {
                     const trait = QUAD_TRAITS.find(t => t.text === step.answer);
                     if (!trait) {

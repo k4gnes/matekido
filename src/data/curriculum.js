@@ -291,6 +291,7 @@ export const CURRICULUM_ORDER = {
         "proportion-01",
         "percent-change-01",
         "pythagorean-01",
+        "quadrilateral-01",
     ],
 };
 

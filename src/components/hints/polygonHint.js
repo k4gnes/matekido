@@ -21,6 +21,19 @@ export function renderPolygonHint(step, container) {
 
     const box = createHintBox();
 
+    if (step.mode === "quadrilateral") {
+        box.innerHTML = `
+            <p><strong>💡 Segítség</strong></p>
+
+            <p>Gondold végig a négyszögek családfáját!</p>
+            <p>Minden négyzet egyben téglalap, rombusz és paralelogramma is.</p>
+            <p>A téglalap és a rombusz mindig paralelogramma.</p>
+            <p>A trapéz és a deltoid viszont <strong>nem</strong> paralelogramma.</p>
+        `;
+        container.append(box);
+        return;
+    }
+
     const data = SIDES[step.kind];
 
     if (step.mode === "name") {

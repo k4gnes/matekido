@@ -1752,7 +1752,7 @@ function validateStep(step, ctx, range) {
             } else {
                 if (!isInt(step.start) || step.start < 1) fail(ctx, `start hibás: ${step.start}`);
                 if (isFiniteNum(range) && step.answer > range) fail(ctx, `answer kilép a tartományból: ${step.answer} > ${range}`);
-                if (!Array.isArray(step.ops) || step.ops.length !== 2) {
+                if (!Array.isArray(step.ops) || step.ops.length < 1 || step.ops.length > 2) {
                     fail(ctx, `ops hibás: ${JSON.stringify(step.ops)}`);
                     break;
                 }
@@ -1772,9 +1772,11 @@ function validateStep(step, ctx, range) {
                 if (typeof step.chain !== "string" || step.chain.length === 0) fail(ctx, "chain hiányzik");
                 if (!step.chain.endsWith(`= ${step.result}`)) fail(ctx, `a lánc nem a végeredménnyel zárul: ${step.chain}`);
                 const firstOp = step.ops[0].op;
-                const secondOp = step.ops[1].op;
-                if ((firstOp === "+" || firstOp === "−") && secondOp === "×" && !step.chain.startsWith("(")) {
-                    fail(ctx, `a láncból hiányoznak a zárójelek: ${step.chain}`);
+                if (step.ops.length === 2) {
+                    const secondOp = step.ops[1].op;
+                    if ((firstOp === "+" || firstOp === "−") && secondOp === "×" && !step.chain.startsWith("(")) {
+                        fail(ctx, `a láncból hiányoznak a zárójelek: ${step.chain}`);
+                    }
                 }
                 if (step.options !== undefined) fail(ctx, "think-number nem választós");
             }

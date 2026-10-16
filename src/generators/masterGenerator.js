@@ -42,6 +42,7 @@ const ACCUSATIVE = {
 
 const MUL_KINDS = ["mul-add", "add-mul", "mul-sub", "sub-mul"];
 const ADDSUB_KINDS = ["add-add", "add-sub", "sub-add", "sub-sub"];
+const ONE_STEP_KINDS = ["mul", "add", "sub"];
 
 const GRADE_PRESETS = {
     1: {
@@ -52,7 +53,7 @@ const GRADE_PRESETS = {
     2: {
         max: 100,
         missingOp: { addSubMax: 99, mulA: 10, mulB: 5, operators: ["+", "−", "×"] },
-        think: { kinds: [...MUL_KINDS, ...ADDSUB_KINDS], startMax: 9, factorMax: 5, constMax: 9 }
+        think: { kinds: ONE_STEP_KINDS, startMax: 9, factorMax: 5, constMax: 9 }
     },
     3: {
         max: 99,
@@ -197,11 +198,9 @@ function chainText(ops, result) {
     return `${expression} = ${result}`;
 }
 
-function thinkNumberFallback(preset) {
+function thinkNumberFallback() {
     const start = 5;
-    const ops = preset.think.kinds.includes("mul-add")
-        ? [{ op: "×", value: 3 }, { op: "+", value: 4 }]
-        : [{ op: "+", value: 3 }, { op: "−", value: 2 }];
+    const ops = [{ op: "+", value: 3 }];
     const result = applyChain(start, ops);
     return {
         mode: "think-number",
@@ -215,6 +214,15 @@ function thinkNumberFallback(preset) {
 }
 
 function buildOps(kind, factorMax, constMax) {
+    if (kind === "mul") {
+        return [{ op: "×", value: randInt(2, factorMax) }];
+    }
+    if (kind === "add") {
+        return [{ op: "+", value: randInt(1, constMax) }];
+    }
+    if (kind === "sub") {
+        return [{ op: "−", value: randInt(1, constMax) }];
+    }
     if (kind === "mul-add") {
         return [{ op: "×", value: randInt(2, factorMax) }, { op: "+", value: randInt(1, constMax) }];
     }
@@ -276,7 +284,7 @@ function buildThinkNumber(preset) {
         };
     }
 
-    return thinkNumberFallback(preset);
+    return thinkNumberFallback();
 }
 
 export function generateMaster(options = {}) {

@@ -536,6 +536,7 @@ const SW_CACHE_LIST = [
     "/data/lessons/grade7/equation-word-12.json",
     "/data/lessons/grade7/inequality-linear-13.json",
     "/data/lessons/grade7/percent-change-01.json",
+    "/data/lessons/grade7/perimeter-area-01.json",
     "/data/lessons/grade7/polygon-area-01.json",
     "/data/lessons/grade7/proportion-01.json",
     "/data/lessons/grade7/pythagorean-01.json",

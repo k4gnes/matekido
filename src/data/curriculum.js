@@ -293,6 +293,7 @@ export const CURRICULUM_ORDER = {
         "pythagorean-01",
         "quadrilateral-01",
         "polygon-area-01",
+        "perimeter-area-01",
     ],
 };
 

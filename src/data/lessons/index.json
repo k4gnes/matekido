@@ -6488,6 +6488,30 @@
         "space": "🚀 Panelek területe",
         "tram": "🚋 Ablakok területe"
       }
+    },
+    {
+      "id": "perimeter-area-01",
+      "title": "🔷 Kerület és terület vegyesen",
+      "grades": [
+        7
+      ],
+      "category": "geometry",
+      "skill": "area",
+      "difficulty": 3,
+      "type": "shape-area",
+      "range": 1000,
+      "mission": "🔷 Kerület és terület vegyesen",
+      "subtitle": "Síkidomok és összetett alakzatok",
+      "file": "./data/lessons/grade7/perimeter-area-01.json",
+      "worldTitles": {
+        "postman": "📮 Csomagok körbe és belül",
+        "racing": "🏁 Pálya körbe és belül",
+        "football": "⚽ Pálya és terület",
+        "cooking": "🍳 Tepsi körbe és belül",
+        "animals": "🦁 Kerítés és karám",
+        "space": "🚀 Panelek körbe és belül",
+        "tram": "🚋 Villamos és terület"
+      }
     }
   ],
   "gradeConfig": [

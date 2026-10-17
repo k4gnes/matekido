@@ -90,6 +90,15 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 |---|---|---|---|---|---|
 | 37 | Mester kihívás | 🌟 Mester kihívás | Szöveges feladat és logikai rejtvény | 1000 | 4 |
 
+## 🎲 Egypercesek
+
+Ezek nem számozott feladatok: a **🎲 Egypercesek** oldalon találhatók, nem számítanak a haladásba, és mindegyiknek saját rekordja van. A játék végén a ➡️ Tovább gomb visszavigyen ide.
+
+| Játék | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|
+| Egész számok | [🎲 Egész számok – egy perc, előjelekkel](?lesson=integer-play-01) | Egész számok (egyperces) | 100 | 2 |
+| Hatványok | [🎲 Hatványok – egy perc, hatványkitevővel](?lesson=power-play-01) | Hatványok (egyperces) | 10000 | 2 |
+
 ---
 
 **Megjegyzés:** A fenti azonosítók (`lesson=xxx-01`) **tervezett ID-k**. A tényleges fájlnevek és a regiszterbe vétel a 6. osztály mintáját követi (mappa: `src/data/lessons/grade7/`, `src/generators/`, `src/components/`, CSS). A NAT-hoz illeszkedő, már létező generátorok (`equation`, `inequality`, `ratio`, `word-problem`, `combinatorics`, `probability`, `circle`, `polygon`, `shape-area`, `triangle`, `transform`, `coordinate`, `average`, `solid-measure`) újrahasználhatók. Új generátorok szükségesek lehetnek: `rational-*`, `algebra-*`, `pythagorean`, `similarity`, `function-*`, `circle-sector`, `stats-central`.

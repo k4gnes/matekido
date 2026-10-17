@@ -1,0 +1,80 @@
+{
+  "id": "grade7-power-play-01",
+  "title": "🎲 Hatványok",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "⚡ Hatványok a postán",
+      "text": "Egy perc alatt annyi hatványos feladatot oldasz meg, amennyit bírsz. Figyelj a hatványkitevőre és az előjelre! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Hatványok a postán",
+          "text": "Egy perc alatt annyi hatványos feladatot oldasz meg, amennyit bírsz. Figyelj a hatványkitevőre és az előjelre! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "racing": {
+          "title": "🏎️ Hatványok a pályán",
+          "text": "Egy perc alatt annyi kört teljesítesz, amennyit bírsz: minden körben egy hatványos feladat vár. Figyelj a hatványkitevőre és az előjelre! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "football": {
+          "title": "⚽ Hatványok a pályán",
+          "text": "Egy perc alatt annyi gólt rúgsz, amennyit bírsz: minden gólhoz egy hatványos feladat kell. Figyelj a hatványkitevőre és az előjelre! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "cooking": {
+          "title": "🍳 Hatványok a konyhában",
+          "text": "Egy perc alatt annyi tálkát készítesz, amennyit bírsz: minden recepthez egy hatványos feladat tartozik. Figyelj a hatványkitevőre és az előjelre! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "animals": {
+          "title": "🦁 Hatványok az állatkertben",
+          "text": "Egy perc alatt annyi állatot etetsz, amennyit bírsz: minden adagnál egy hatványos feladat kell. Figyelj a hatványkitevőre és az előjelre! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "space": {
+          "title": "🤖 Hatványok az űrhajón",
+          "text": "Egy perc alatt annyi bolygót fedezel fel, amennyit bírsz: minden számításhoz hatványos feladat tartozik. Figyelj a hatványkitevőre és az előjelre! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "tram": {
+          "title": "🚋 Hatványok a villamoson",
+          "text": "Egy perc alatt annyi utast szállítasz el, amennyit bírsz: minden jegyhez egy hatványos feladat tartozik. Figyelj a hatványkitevőre és az előjelre! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        }
+      }
+    },
+    {
+      "type": "power-play",
+      "duration": 60
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Jó móka volt!",
+      "text": "Egyperces hatványos játékot játszottál, és a rekordod megvan!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces hatványos játékot játszottál a postán, és minden hatványt eltaláltál!"
+        },
+        "racing": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces hatványos játékot játszottál a pályán, és minden körben jó eredményt kaptál!"
+        },
+        "football": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces hatványos játékot játszottál a pályán, és minden gólt eltaláltál!"
+        },
+        "cooking": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces hatványos játékot játszottál a konyhában, és minden tálkát kiszámoltál!"
+        },
+        "animals": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces hatványos játékot játszottál az állatkertben, és minden adagot eltaláltál!"
+        },
+        "space": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces hatványos játékot játszottál az űrhajón, és minden bolygót sikerrel számoltál!"
+        },
+        "tram": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces hatványos játékot játszottál a villamoson, és minden jegyet kiszámoltál!"
+        }
+      }
+    }
+  ]
+}

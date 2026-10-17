@@ -1,0 +1,80 @@
+{
+  "id": "grade7-integer-play-01",
+  "title": "🎲 Egész számok",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🌡️ Előjelek a postán",
+      "text": "Egy perc alatt annyi előjeles feladatot oldasz meg, amennyit bírsz. Figyelj az előjelekre: a negatív szám és a kivonás is megfordíthatja az eredményt! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Előjelek a postán",
+          "text": "Egy perc alatt annyi előjeles feladatot oldasz meg, amennyit bírsz. Figyelj az előjelekre: a negatív szám és a kivonás is megfordíthatja az eredményt! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "racing": {
+          "title": "🏎️ Előjelek a pályán",
+          "text": "Egy perc alatt annyi kört teljesítesz, amennyit bírsz: minden körben egy előjeles számolás vár. Figyelj az előjelekre: a negatív szám és a kivonás is megfordíthatja az eredményt! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "football": {
+          "title": "⚽ Előjelek a pályán",
+          "text": "Egy perc alatt annyi gólt rúgsz, amennyit bírsz: minden gólhoz egy előjeles számolás kell. Figyelj az előjelekre: a negatív szám és a kivonás is megfordíthatja az eredményt! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "cooking": {
+          "title": "🍳 Előjelek a konyhában",
+          "text": "Egy perc alatt annyi tálkát készítesz, amennyit bírsz: minden recepthez egy előjeles számolás tartozik. Figyelj az előjelekre: a negatív szám és a kivonás is megfordíthatja az eredményt! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "animals": {
+          "title": "🦁 Előjelek az állatkertben",
+          "text": "Egy perc alatt annyi állatot etetsz, amennyit bírsz: minden adagnál egy előjeles számolás kell. Figyelj az előjelekre: a negatív szám és a kivonás is megfordíthatja az eredményt! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "space": {
+          "title": "🤖 Előjelek az űrhajón",
+          "text": "Egy perc alatt annyi bolygót fedezel fel, amennyit bírsz: minden számításhoz egy előjel dönt. Figyelj az előjelekre: a negatív szám és a kivonás is megfordíthatja az eredményt! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "tram": {
+          "title": "🚋 Előjelek a villamoson",
+          "text": "Egy perc alatt annyi utast szállítasz el, amennyit bírsz: minden jegyhez egy előjeles számolás tartozik. Figyelj az előjelekre: a negatív szám és a kivonás is megfordíthatja az eredményt! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        }
+      }
+    },
+    {
+      "type": "integer-play",
+      "duration": 60
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Jó móka volt!",
+      "text": "Egyperces egész számos játékot játszottál, és a rekordod megvan!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces egész számos játékot játszottál a postán, és minden előjelet eltaláltál!"
+        },
+        "racing": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces egész számos játékot játszottál a pályán, és minden körben jó előjelt adtál!"
+        },
+        "football": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces egész számos játékot játszottál a pályán, és minden gól előjelét eltaláltad!"
+        },
+        "cooking": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces egész számos játékot játszottál a konyhában, és minden tálkát kiszámoltál!"
+        },
+        "animals": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces egész számos játékot játszottál az állatkertben, és minden adagot eltaláltál!"
+        },
+        "space": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces egész számos játékot játszottál az űrhajón, és minden bolygóhoz jó előjelet adtál!"
+        },
+        "tram": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces egész számos játékot játszottál a villamoson, és minden jegyet kiszámoltál!"
+        }
+      }
+    }
+  ]
+}

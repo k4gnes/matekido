@@ -6561,6 +6561,58 @@
         "space": "🚀 Bolygók és körpályák",
         "tram": "🚋 Kerek váltók"
       }
+    },
+    {
+      "id": "integer-play-01",
+      "title": "🎲 Egész számok (egyperces)",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "integers",
+      "difficulty": 2,
+      "type": "integer-play",
+      "range": 100,
+      "practice": true,
+      "mission": "🎲 Egész számok",
+      "subtitle": "Egy perc, annyi előjeles feladat, amennyit bírsz",
+      "file": "./data/lessons/grade7/integer-play-01.json",
+      "worldTitles": {
+        "postman": "📮 Egész számok a postán",
+        "racing": "🏎️ Egész számok a pályán",
+        "football": "⚽ Egész számok a pályán",
+        "cooking": "🍳 Egész számok a konyhában",
+        "animals": "🦁 Egész számok az állatkertben",
+        "space": "🤖 Egész számok az űrhajón",
+        "tram": "🚋 Egész számok a villamoson"
+      },
+      "playMode": "integer-play"
+    },
+    {
+      "id": "power-play-01",
+      "title": "🎲 Hatványok (egyperces)",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "powers",
+      "difficulty": 2,
+      "type": "power-play",
+      "range": 10000,
+      "practice": true,
+      "mission": "🎲 Hatványok",
+      "subtitle": "Egy perc, annyi hatványos feladat, amennyit bírsz",
+      "file": "./data/lessons/grade7/power-play-01.json",
+      "worldTitles": {
+        "postman": "📮 Hatványok a postán",
+        "racing": "🏎️ Hatványok a pályán",
+        "football": "⚽ Hatványok a pályán",
+        "cooking": "🍳 Hatványok a konyhában",
+        "animals": "🦁 Hatványok az állatkertben",
+        "space": "🤖 Hatványok az űrhajón",
+        "tram": "🚋 Hatványok a villamoson"
+      },
+      "playMode": "power-play"
     }
   ],
   "gradeConfig": [

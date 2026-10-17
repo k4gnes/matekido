@@ -31,6 +31,8 @@ import { renderMultPrep } from "../components/multPrep.js?v=9";
 import { renderMultiplication } from "../components/multiplication.js?v=7";
 import { renderMultiplicationPlay } from "../components/multiplicationPlay.js?v=10";
 import { renderOperationOrderPlay } from "../components/operationOrderPlay.js?v=5";
+import { renderIntegerPlay } from "../components/integerPlay.js?v=1";
+import { renderPowerPlay } from "../components/powerPlay.js?v=1";
 import { renderAdditionPlay } from "../components/additionPlay.js?v=1";
 import { renderDivision } from "../components/division.js?v=6";
 import { renderMissingOperand } from "../components/missingOperand.js?v=6";
@@ -355,6 +357,8 @@ const RENDERERS = new Map([
     ["combinatorics", renderCombinatorics],
     ["operation-order", renderOperationOrder],
     ["operation-order-play", renderOperationOrderPlay],
+    ["integer-play", renderIntegerPlay],
+    ["power-play", renderPowerPlay],
     ["solid-measure", renderSolidMeasure],
     ["coordinate", renderCoordinate],
     ["speed-trip", renderSpeedTrip],

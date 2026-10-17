@@ -47,7 +47,7 @@ Az **egyperces játékok** külön oldalon élnek: a feladatok menüjében a {{�
 - Minden játéknak **saját rekordja** van, amit a játékos állít be: a rekord a kártyán és a játék elején is látszik.
 - Elrontani nem baj: a játék **megmutatja a helyes választ**, és ugyanaz a feladat később újra jön.
 - Az egyperces oldalon a **➡️ Tovább** gomb mindig ide visz vissza, és a kiválasztott oldal megmarad a következő látogatásra is.
-- Az oldalon csak az **aktuális évfolyam játékai** jelennek meg (2. osztálytól a szorzótábla-játékok, 3. osztálytól a műveleti sorrend játék is).
+- Az oldalon csak az **aktuális évfolyam játékai** jelennek meg (2. osztálytól a szorzótábla-játékok, 3. osztálytól a műveleti sorrend játék is, 7. osztálytól az egész számok és a hatványok játékai).
 
 ## ⚽ Válogatott és 🔍 Szűrők
 

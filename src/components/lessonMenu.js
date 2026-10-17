@@ -1105,7 +1105,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
             grid.className = "lesson-grid";
             pool.forEach(lesson => {
                 const pos = positionMap.get(lesson.file);
-                grid.append(createLessonCard(lesson, onSelect, activeWorld, pos.position, pos.total, poolOpts));
+                grid.append(createLessonCard(lesson, onSelect, activeWorld, pos?.position, pos?.total, poolOpts));
             });
             flatCard.append(grid);
             browseWrap.append(flatCard);

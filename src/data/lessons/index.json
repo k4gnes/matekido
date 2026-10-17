@@ -6022,7 +6022,7 @@
       "master": true,
       "range": 1000,
       "mission": "🌟 Mester kihívás",
-      "subtitle": "kézfogás és nehezebb logikai rejtvények – a legügyesebbeknek",
+      "subtitle": "szöveges feladat és nehezebb logikai rejtvények – a legügyesebbeknek",
       "file": "./data/lessons/grade7/master-01.json",
       "worldTitles": {
         "postman": "📮 Mester kihívás a postán",

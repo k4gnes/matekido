@@ -1723,7 +1723,7 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "master": {
-            if (!["missing-op", "think-number", "pair", "logic", "combine", "order", "sumdiff"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!["missing-op", "think-number", "pair", "logic", "combine", "order", "sumdiff", "word"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
 
             if (["pair", "logic", "combine", "order", "sumdiff"].includes(step.mode)) {
@@ -1770,6 +1770,50 @@ function validateStep(step, ctx, range) {
                     } else if (step.sum !== step.big + step.small || step.diff !== step.big - step.small) {
                         fail(ctx, "sum/diff hibás");
                     }
+                }
+                break;
+            }
+
+            if (step.mode === "word") {
+                if (typeof step.kind !== "string" || step.kind.length === 0) fail(ctx, `word kind hibás: ${step.kind}`);
+                if (step.options !== undefined) fail(ctx, "word nem választós");
+                if (!isInt(step.answer) || step.answer < 1) fail(ctx, `answer hibás: ${step.answer}`);
+                if (isFiniteNum(range) && step.answer > range) fail(ctx, `answer kilép a tartományból: ${step.answer} > ${range}`);
+
+                if (step.kind === "work") {
+                    if (!isInt(step.workers1) || step.workers1 < 2 || !isInt(step.days1) || step.days1 < 1) {
+                        fail(ctx, `work munkás/nap hibás: ${step.workers1}/${step.days1}`);
+                    } else if (!isInt(step.workers2) || step.workers2 < 2) {
+                        fail(ctx, `workers2 hibás: ${step.workers2}`);
+                    } else if ((step.workers1 * step.days1) % step.workers2 !== 0 || step.answer !== (step.workers1 * step.days1) / step.workers2) {
+                        fail(ctx, "work answer hibás");
+                    }
+                } else if (step.kind === "trip") {
+                    if (!isInt(step.speed1) || step.speed1 < 1 || !isInt(step.time1) || step.time1 < 1) {
+                        fail(ctx, `trip adatok hibás: ${step.speed1}/${step.time1}`);
+                    } else if (!isInt(step.time2) || step.time2 < 1) {
+                        fail(ctx, `time2 hibás: ${step.time2}`);
+                    } else if ((step.speed1 * step.time1) % step.time2 !== 0 || step.answer !== (step.speed1 * step.time1) / step.time2) {
+                        fail(ctx, "trip answer hibás");
+                    }
+                } else if (step.kind === "percent") {
+                    if (!isInt(step.total) || step.total < 1) {
+                        fail(ctx, `total hibás: ${step.total}`);
+                    } else if (!isInt(step.percent) || step.percent < 1 || step.percent > 99) {
+                        fail(ctx, `percent hibás: ${step.percent}`);
+                    } else if ((step.total * (100 - step.percent)) % 100 !== 0 || step.answer !== (step.total * (100 - step.percent)) / 100) {
+                        fail(ctx, "percent answer hibás");
+                    }
+                } else if (step.kind === "share") {
+                    if (!isInt(step.ra) || step.ra < 1 || !isInt(step.rb) || step.rb < 1) {
+                        fail(ctx, `share arány hibás: ${step.ra}/${step.rb}`);
+                    } else if (!isInt(step.total) || step.total < 1) {
+                        fail(ctx, `share total hibás: ${step.total}`);
+                    } else if (step.answer * (step.ra + step.rb) !== Math.max(step.ra, step.rb) * step.total) {
+                        fail(ctx, "share answer hibás");
+                    }
+                } else {
+                    fail(ctx, `ismeretlen word kind: ${step.kind}`);
                 }
                 break;
             }

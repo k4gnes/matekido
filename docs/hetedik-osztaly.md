@@ -88,7 +88,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 37 | Mester kihívás | 🌟 Mester kihívás | Kombinatorika és logikai rejtvény | 1000 | 4 |
+| 37 | Mester kihívás | 🌟 Mester kihívás | Szöveges feladat és logikai rejtvény | 1000 | 4 |
 
 ---
 

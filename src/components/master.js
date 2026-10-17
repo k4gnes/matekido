@@ -16,6 +16,9 @@ const WORLD_EMOJI = {
 };
 
 function masterHint(step) {
+    if (step.mode === "word") {
+        return "Szöveges feladatnál először írd fel, mit keresünk, és jelöld x-szel. A szövegből olvasd ki az összefüggést, számolj lépésenként, és a végén ellenőrizd a kapott értéket!";
+    }
     if (step.mode === "pair") {
         return "Kézfogásnál mindenki mindenkivel egyszer fog kezet: számold meg, hány pár alkotható, és figyelj, hogy egy kézfogásban ketten vesznek részt!";
     }
@@ -149,7 +152,7 @@ export function renderMaster(step, root, next, progress, onResult, onAttempt) {
         input.type = "number";
         input.className = "master-input";
         input.placeholder = "?";
-        input.setAttribute("aria-label", "A gondolt szám");
+        input.setAttribute("aria-label", step.mode === "think-number" ? "A gondolt szám" : "A válasz");
 
         const checkButton = createButton("Ellenőrzöm", { className: "nav-bar-btn" });
         row.append(input, checkButton);

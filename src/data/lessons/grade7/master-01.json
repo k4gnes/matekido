@@ -5,7 +5,7 @@
     {
       "type": "scene",
       "title": "🌟 Mester kihívás",
-      "text": "Ez egy különleges kihívás azoknak, akiknek jól megy a matek! Itt nem elég számolni: gondolkodni kell. Számold meg, hány kézfogás történik, és oldj meg ravasz logikai rejtvényeket!",
+      "text": "Ez egy különleges kihívás azoknak, akiknek jól megy a matek! Itt nem elég számolni: gondolkodni kell. Oldj meg szöveges feladatokat, majd ravasz logikai rejtvényeket!",
       "worldTitles": {
         "postman": {
           "title": "📮 Mester kihívás a postán",
@@ -42,7 +42,7 @@
       "generator": "master",
       "options": {
         "count": 3,
-        "mode": "pair",
+        "mode": "word",
         "grade": 7
       }
     },

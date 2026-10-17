@@ -450,6 +450,141 @@ function buildSumDiff(preset) {
     };
 }
 
+function buildWorkWord(preset) {
+    const max = preset.max;
+    for (let attempt = 0; attempt < 200; attempt++) {
+        const workers1 = randInt(2, 6);
+        const days1 = randInt(2, 8);
+        const total = workers1 * days1;
+        if (total > max) continue;
+
+        const candidates = [];
+        for (let d = 2; d <= 10; d++) {
+            if (d === workers1 || total % d !== 0) continue;
+            const days = total / d;
+            if (days >= 2 && days <= 12) candidates.push({ workers: d, days });
+        }
+        if (candidates.length === 0) continue;
+
+        const chosen = pick(candidates);
+
+        return {
+            mode: "word",
+            kind: "work",
+            workers1,
+            days1,
+            workers2: chosen.workers,
+            answer: chosen.days,
+            question: `Egy munkát ${workers1} munkás ${days1} nap alatt végez el. Ugyanezt a munkát ${chosen.workers} munkás hány nap alatt végzi el?`,
+            successText: `🎉 Ügyes! A munka összesen ${workers1} × ${days1} = ${total} munkanap. ${chosen.workers} munkásnak ez ${total} : ${chosen.workers} = ${chosen.days} nap.`
+        };
+    }
+    return null;
+}
+
+function buildTripWord(preset) {
+    const max = preset.max;
+    for (let attempt = 0; attempt < 200; attempt++) {
+        const speed1 = randInt(9, 15);
+        const time1 = randInt(3, 6);
+        const distance = speed1 * time1;
+        if (distance > max) continue;
+
+        const candidates = [];
+        for (let t = 2; t < time1; t++) {
+            if (distance % t !== 0) continue;
+            const speed = distance / t;
+            if (speed > speed1 && speed <= 90) candidates.push({ time: t, speed });
+        }
+        if (candidates.length === 0) continue;
+
+        const chosen = pick(candidates);
+
+        return {
+            mode: "word",
+            kind: "trip",
+            speed1,
+            time1,
+            time2: chosen.time,
+            answer: chosen.speed,
+            question: `Egy kerékpáros ${speed1} km/h sebességgel ${time1} órán át tekert. Ugyanezt az utat egy autó ${chosen.time} óra alatt teszi meg. Hány km/h az autó sebessége?`,
+            successText: `🎉 Ügyes! Az út hossza ${speed1} × ${time1} = ${distance} km, ezt ${chosen.time} óra alatt megtenni ${distance} : ${chosen.time} = ${chosen.speed} km/h sebesség.`
+        };
+    }
+    return null;
+}
+
+function buildPercentWord(preset) {
+    const max = preset.max;
+    const percent = pick([10, 20, 25, 50, 75]);
+    const total = randInt(2, Math.min(10, Math.floor(max / 100))) * 100;
+    if (total < 100 || total > max) return null;
+
+    const answer = (total * (100 - percent)) / 100;
+
+    return {
+        mode: "word",
+        kind: "percent",
+        total,
+        percent,
+        answer,
+        question: `Egy iskolába ${total} tanuló jár. Közülük ${percent}% fiú. Hány lány jár az iskolába?`,
+        successText: `🎉 Ügyes! A fiúk aránya ${percent}%, így a lányoké ${100 - percent}%. Ezért ${total} × ${100 - percent} : 100 = ${answer} lány jár az iskolába.`
+    };
+}
+
+function buildShareWord(preset) {
+    const max = preset.max;
+    const ratios = [[2, 1], [3, 1], [4, 1], [3, 2], [4, 3], [5, 2]];
+    const steps = [50, 100, 150, 200, 250];
+    for (let attempt = 0; attempt < 100; attempt++) {
+        const [ra, rb] = pick(ratios);
+        const units = ra + rb;
+        const options = steps.filter(k => units * k <= max);
+        if (options.length === 0) continue;
+
+        const k = pick(options);
+        const total = units * k;
+        const bigger = Math.max(ra, rb);
+        const answer = bigger * k;
+
+        return {
+            mode: "word",
+            kind: "share",
+            ra,
+            rb,
+            total,
+            answer,
+            question: `Évi és Dani ${total} forintot kap együtt. Az összeget ${ra}:${rb} arányban osztják el egymás között. Hány forint jut a nagyobbik részre?`,
+            successText: `🎉 Ügyes! Az arány ${ra}:${rb}, összesen ${units} rész. Egy rész ${total} : ${units} = ${k} forint, a nagyobbik rész ${bigger} × ${k} = ${answer} forint.`
+        };
+    }
+    return null;
+}
+
+function buildWordProblem(preset) {
+    const wordBuilders = [buildWorkWord, buildTripWord, buildPercentWord, buildShareWord];
+    for (let attempt = 0; attempt < 60; attempt++) {
+        for (const builder of shuffle(wordBuilders.slice())) {
+            const task = builder(preset);
+            if (task) return task;
+        }
+    }
+
+    const total = 400;
+    const [ra, rb] = [3, 1];
+    return {
+        mode: "word",
+        kind: "share",
+        ra,
+        rb,
+        total,
+        answer: ra * 100,
+        question: `Évi és Dani ${total} forintot kap együtt. Az összeget ${ra}:${rb} arányban osztják el egymás között. Hány forint jut a nagyobbik részre?`,
+        successText: `🎉 Ügyes! Az arány ${ra}:${rb}, összesen ${ra + rb} rész. Egy rész ${total} : ${ra + rb} = 100 forint, a nagyobbik rész ${ra} × 100 = ${ra * 100} forint.`
+    };
+}
+
 export function generateMaster(options = {}) {
 
     const { count = 4, mode = "mixed", grade } = options;
@@ -463,7 +598,8 @@ export function generateMaster(options = {}) {
         "logic": () => buildLogic(preset),
         "combine": () => buildCombine(preset),
         "order": () => buildOrder(preset),
-        "sumdiff": () => buildSumDiff(preset)
+        "sumdiff": () => buildSumDiff(preset),
+        "word": () => buildWordProblem(preset)
     };
 
     if (mode !== "mixed" && !builders[mode]) {

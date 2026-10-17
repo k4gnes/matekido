@@ -45,7 +45,7 @@ Az **egyperces játékok** külön oldalon élnek: a feladatok menüjében a {{�
 - Egy perc alatt **annyi feladatot oldasz meg helyesen, amennyit bírsz** – nincs számozás, és nem számít a haladásba.
 - **Nem siettet**: az idő egy csendes sávon látszik, és ha lejárt, az éppen befejezésre váró feladatot még bátran befejezheted – a válaszod beleszámít. Ha nem akarsz többet, a **🏁 Befejezem** gombbal bármikor az eredményhez ugorhatsz (úgyis megáll magától tíz másodperc múlva).
 - Minden játéknak **saját rekordja** van, amit a játékos állít be: a rekord a kártyán és a játék elején is látszik.
-- Elrontani nem baj: a játék **megmutatja a helyes választot**, és ugyanaz a feladat később újra jön.
+- Elrontani nem baj: a játék **megmutatja a helyes választ**, és ugyanaz a feladat később újra jön.
 - Az egyperces oldalon a **➡️ Tovább** gomb mindig ide visz vissza, és a kiválasztott oldal megmarad a következő látogatásra is.
 - Az oldalon csak az **aktuális évfolyam játékai** jelennek meg (2. osztálytól a szorzótábla-játékok, 3. osztálytól a műveleti sorrend játék is).
 

@@ -23,6 +23,9 @@ const LIST_HIDDEN_KEY = "matekido-lesson-list-hidden";
 const VIEW_STORAGE_KEY = "matekido-lesson-view";
 const CUSTOM_UNLOCKED_KEY = "matekido-custom-unlocked";
 
+// A kedvenc-váltás után azonnal újrarajzolja a nyitott menüt (a renderLessonMenu állítja be)
+let refreshActiveMenu = null;
+
 function saveListHidden(hidden) {
     const prefs = getMenuPrefs();
     prefs.listHidden = hidden;
@@ -230,6 +233,7 @@ export function createLessonCard(lesson, onSelect, activeWorld, position, total,
         favBtn.textContent = nowFav ? "❤️" : "🤍";
         favBtn.classList.toggle("active", nowFav);
         favBtn.title = nowFav ? "Kedvencekből törlés" : "Kedvencekhez adás";
+        refreshActiveMenu?.();
     });
     badges.append(favBtn);
 
@@ -1215,4 +1219,9 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
     renderContent();
 
     root.append(wrapper);
+
+    // isConnected-védő: a korábbi menü már leszerelt, ha egy leckéből tért vissza a felhasználó
+    refreshActiveMenu = () => {
+        if (contentArea.isConnected) renderContent();
+    };
 }

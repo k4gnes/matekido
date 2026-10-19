@@ -1,15 +1,47 @@
-# Matekidő (matekido.hu)
+# matekidő (matekido.hu)
 
-> A Matekidő egy ingyenes, magyar nyelvű, reklámmentes Progressive Web App (PWA), amely szorongásmentes és interaktív matematika gyakorlást biztosít általános iskolás gyermekek számára.
+> A matekidő ingyenes, reklámmentes, magyar nyelvű matematika gyakorló webalkalmazás (PWA) 1–7. osztályos
+> általános iskolásoknak: 282 feladat játékos, rövid történetekbe ágyazva. Nem kell hozzá regisztráció,
+> és internet nélkül is működik.
 
-## Fő jellemzők
-- **Célközönség:** Általános iskolás diákok (1–8. osztály), szülők és pedagógusok.
-- **Megközelítés:** Interaktív, vizuális visszajelzésre és jutalmazási rendszerre (csillagok) épülő szorongásmentes gyakorlás.
-- **Technológia:** PWA (Progressive Web App), teljesen offline is használható.
-- **Ár:** Ingyenes, önkéntes támogatásra épülő oktatási platform.
+## Alapadatok
+
+- **Név:** matekidő (kis kezdőbetűvel; ékezet nélkül írva: matekido)
+- **Webcím:** https://matekido.hu
+- **Nyelv:** magyar
+- **Célközönség:** 1–7. osztályos általános iskolás gyerekek, szüleik és pedagógusaik
+- **Tartalom:** 282 feladat hét évfolyamra bontva; évfolyamonként egy mester kihívás, egyperces gyorsjátékok,
+  valamint évfolyam, nehézség, feladattípus, készség és számkör szerint szűrhető, összeállítható gyakorlólisták
+- **Ár:** ingyenes és reklámmentes, nincs előfizetés; önkéntes támogatás lehetséges
+- **Fiók:** nincs regisztráció és nincs szerveroldali tárolás – a játékosprofil és a haladás az adott eszköz
+  böngészőjében marad; egy eszközön több gyereknek is lehet saját profilja
+- **Technológia:** Progressive Web App (PWA), telepíthető telefonra és asztali gépre, offline is használható
+- **Megközelítés:** szorongásmentes gyakorlás – nincs időnyomás, a hiba nem büntet, minden hibánál ott a helyes
+  válasz és a magyarázat, a nehéz feladat kihagyható, és a sor végén magától visszajön
+- **Forráskód:** nyílt (MIT licenc) – https://github.com/k4gnes/matekido
+- **Kapcsolat:** https://www.facebook.com/profile.php?id=61594289895525
+
+## Oldalak
+
+- [Bemutató és gyakran ismételt kérdések](https://matekido.hu/rolunk.html): mi a matekidő, kinek szól, mennyibe kerül
+- [Játék](https://matekido.hu/): maga az alkalmazás
+- [Súgó](https://matekido.hu/docs/sugo.md): a képernyők, világok és gombok leírása
+- Évfolyamonkénti készségtérkép és tanmenet:
+  [1. osztály](https://matekido.hu/docs/elso-osztaly.md),
+  [2. osztály](https://matekido.hu/docs/masodik-osztaly.md),
+  [3. osztály](https://matekido.hu/docs/harmadik-osztaly.md),
+  [4. osztály](https://matekido.hu/docs/negyedik-osztaly.md),
+  [5. osztály](https://matekido.hu/docs/otodik-osztaly.md),
+  [6. osztály](https://matekido.hu/docs/hatodik-osztaly.md),
+  [7. osztály](https://matekido.hu/docs/hetedik-osztaly.md)
 
 ## Főbb témakörök
-- Alapműveletek (összeadás, kivonás, szorzás, osztás, kétjegyű osztás)
-- Pitagorasz-tábla, szorzótábla gyakorlás
-- Mértékegység-átváltás, törtek, geometriai alapok
-- Évfolyamonkénti mesterfeladatok és felvételi előkészítő (folyamatban)
+
+- Alapműveletek (összeadás, kivonás, szorzás, osztás, kétjegyű osztóval való osztás)
+- Szorzótábla és Pitagorasz-tábla gyakorlása
+- Helyiérték, kerekítés, számnevek, negatív számok
+- Törtek, tizedestörtek, százalékszámítás, arányosság
+- Mértékegység-átváltás (hosszúság, tömeg, űrtartalom, idő, pénz)
+- Geometria (síkidomok, testek, kerület, terület, térfogat, szögek)
+- Szöveges feladatok, kombinatorika, valószínűség, adatok és diagramok
+- Évfolyamonkénti mester kihívás a legügyesebbeknek

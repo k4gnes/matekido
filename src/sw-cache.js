@@ -681,6 +681,7 @@ const SW_CACHE_LIST = [
     "/profile/RewardService.js",
     "/profile/UserManager.js",
     "/robots.txt",
+    "/rolunk.html",
     "/sitemap.xml",
     "/storage.js",
     "/sw.js",

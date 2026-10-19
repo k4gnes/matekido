@@ -132,7 +132,7 @@ export function renderSequence(step, root, next, progress, onResult, onAttempt) 
     function check() {
         if (feedback.isAnswered()) return;
         const answer = Number(input.value);
-        if (isNaN(answer)) return;
+        if (input.value.trim() === "" || isNaN(answer)) return;
         checkAnswer(answer === step.answer);
     }
 

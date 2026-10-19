@@ -142,7 +142,7 @@ export function renderAddition(step, root, next, progress, onResult, onAttempt) 
     } else if (input && button) {
         function check() {
             const answer = Number(input.value);
-            if (isNaN(answer)) return;
+            if (input.value.trim() === "" || isNaN(answer)) return;
             checkAnswer(answer === correctAnswer);
         }
         button.addEventListener("click", check);

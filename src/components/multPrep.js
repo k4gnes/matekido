@@ -245,7 +245,7 @@ export function renderMultPrep(step, root, next, progress, onResult, onAttempt) 
 
                 function checkInput() {
                     const answer = Number(input.value);
-                    if (isNaN(answer)) return;
+                    if (input.value.trim() === "" || isNaN(answer)) return;
                     checkAnswer(answer === step.answer);
                 }
 
@@ -261,7 +261,7 @@ export function renderMultPrep(step, root, next, progress, onResult, onAttempt) 
 
             function checkInput() {
                 const answer = Number(result.input.value);
-                if (isNaN(answer)) return;
+                if (result.input.value.trim() === "" || isNaN(answer)) return;
                 checkAnswer(answer === step.answer);
             }
 

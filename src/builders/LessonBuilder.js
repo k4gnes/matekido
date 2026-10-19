@@ -95,6 +95,15 @@ export function buildLesson(lesson) {
                     lower: task.lower,
                     upper: task.upper
                 });
+            } else if (step.generator === "addition") {
+                result.push({
+                    type: "exercise",
+                    kind: "addition",
+                    title: getTitle("addition", index),
+                    a: task.a,
+                    b: task.b,
+                    interaction: task.interaction
+                });
             } else if (step.generator === "subtraction") {
                 result.push({
                     type: "exercise",
@@ -750,6 +759,8 @@ export function buildLesson(lesson) {
                     ...task
                 });
             } else {
+                // a lecke JSON elírása itt csendben addition feladatra esne vissza
+                console.error("Ismeretlen generator:", step.generator);
                 result.push({
                     type: "exercise",
                     kind: "addition",

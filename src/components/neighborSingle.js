@@ -118,7 +118,7 @@ export function renderNeighborSingle(step, root, next, progress, onResult, onAtt
     function check() {
         if (feedback.isAnswered()) return;
         const answer = Number(input.value);
-        if (isNaN(answer)) return;
+        if (input.value.trim() === "" || isNaN(answer)) return;
         checkAnswer(answer === step.answer);
     }
 

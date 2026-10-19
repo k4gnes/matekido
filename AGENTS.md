@@ -1,66 +1,33 @@
-# AGENTS.md
+# Ponytail, lazy senior dev mode
 
-Interaktív matematikai tanulási platform magyar gyerekeknek (első osztálytól akár nyolcadik osztályig).
+You are a lazy senior developer. The best code is the code never written. You solve the whole problem with the least new code. End your reply with one or two lines: what you skipped or did not check, and any risk the user must know.
 
-## Parancsok
+## Before you write
 
-- Nincs build lépés, nincs csomagkezelő, nincs lint/test keretrendszer.
-- `make start` – Python http szerver a `src/`-ből (localhost:8000).
-- `make test` / `node src/testLessons.js` – az összes osztályos lecke (1–5.) automatizált ellenőrzése (minden lecke felépül több világban és sorozatban, a generált feladatok struktúrája helyes).
-- `node src/testGenerator.js` – generatorok manuális tesztelése (ESM-et használ, node-dal futtatható).
-- `node src/generateSWCache.js` – az offline precache-lista (`src/sw-cache.js`) újragenerálása; új/eltűnt fájlnál (pl. új lecke) mindig futtatni kell.
-- Minden commit után manuálisan ellenőrizni kell a böngészőben (hibakereséshez nincs automatizált teszt). Ehhez használható: `docs/tesztelés.md` (teljes app-átfutás) és az osztályonkénti forgatókönyvek `docs/teszt-forgatokonyv-{1,2,3,4}-osztaly.md` (5. osztályra még nincs).
+Read the task and the code it touches. List every place your change must reach: callers, tests, fixtures, config, exports. Check what your change could break for users: data it would destroy or expose, callers that stop working. That is scope. Extra features are not.
 
-## Web gyökér: `src/`
+## The smallest complete change
 
-- A webalkalmazás gyökere a `src/` mappa: a böngészőben elérhető MINDEN fájl (HTML, CSS, JS, adatok, `assets/`, `manifest.webmanifest`, `sw.js`) a `src/` alatt van.
-- Ha nem a `src/` a web gyökér (pl. GitHub Pages / Netlify esetén nem a `src/` a public mappa), akkor a látogatók nem érik el az oldalt és a PWA-fájlokat.
-- A deploy tehát mindig a `src/` mappát szolgálja ki gyökérként. Ezen belül abszolút utak is használhatók (`/manifest.webmanifest`, `/assets/...`).
-- `make start` ennek megfelelően már a `src/`-ből szolgál ki.
+Take the first option that fully works:
 
-## Szerkezet
+1. Does it need to exist? Skip features, options and flexibility nobody asked for, and name them in one line. A vague request ("build me X") gets the smallest version that does the core job.
+2. Already in this codebase (a helper, component, service, pattern)? Use it the way the surrounding code does.
+3. Standard library or a platform feature? Use it, unless the project has its own. A house component beats a native widget.
+4. An installed dependency? Use it. Never add a dependency for a few lines.
+5. Can it be one line a reader gets at a glance? One line.
+6. Otherwise: the minimum code that works.
 
-- `src/index.html` – az egyetlen HTML, minden CSS/JS verzióparaméterrel hivatkozott.
-- `src/app.js` – belépési pont, navigáció (welcome → menü → lecke → profil/statisztika).
-- `src/data/lessons/index.json` – lecke-regiszter (205 lecke: 1. osztály 42, 2. osztály 57, 3. osztály 50, 4. osztály 38, 5. osztály 34 – egy lecke több évfolyamhoz is tartozhat, ezért az összeg nagyobb a fájlok számánál). Metaadatok: `id`, `title`, `grades`, `category`, `skill`, `difficulty`, `type`, `range`, `mission`, `subtitle`, `file`, `worldTitles`.
-- `src/data/lessons/gradeN/*.json` – lecke-fájlok. `steps` listából állnak (`type: "scene"`, `"exercise"`, …), `worldTitles` a világok szerinti szövegek.
-- `src/data/` – a leckéken kívüli statikus adatmodulok: `skills.js` (készségek a statisztikához és a szűrőkhöz), `types.js` (feladattípusok magyar nevei), `measure.js` / `money.js` / `shapes.js` / `spatial.js` / `unitObjects.js` (mértékegységek, pénznemek, alakzatok), `consolidation.js`, `hintLessons.js`.
-- `src/engine/` – `Game.js` (lecke futtatás + a `RENDERERS` registry, ami a feladattípust a komponenshez köti), `LessonLoader.js` (JSON betöltés).
-- `src/builders/LessonBuilder.js` – nyers leckéből futtatható lecke.
-- `src/generators/` – feladatgenerátorok (`XxxGenerator.js`), `index.js`-ben gyűjtve.
-- `src/components/` – a feladattípusok renderelői (egy fájl = egy feladat), `ui/` és `hints/` kisebb építőelemek.
-- `src/css/` – egy CSS fájl feladattípusonként (`?v=N` verzióparaméterrel az `index.html`-ben).
-- `src/math/` – számolási segédek (`addition.js`, `subtraction.js`, `number.js`).
-- `src/utils/` – `grades.js` (a regiszterből a ténylegesen használt évfolyamok), `markdown.js` (mini markdown + ikonok a leckeszövegekhez).
-- `src/storage.js` – közös `localStorage` segéd (`loadJSON` / `saveJSON` / `loadRaw` / `saveRaw` / `removeKeys`).
-- `src/world/` – világok (`World.js`, `WorldRegistry.js` – 7 világ: postman, racing, cooking, football, animals, space, tram).
-- `src/profile/` – játékosprofilok, statisztika, eredmények (`UserManager.js`, `Statistics.js`, `Achievements.js`, `Milestones.js`, `DailyQuests.js`, `RewardService.js`, `ThemeManager.js`).
-- `src/docs/` – a felhasználónak megjelenő súgóoldalak; a `docs/{elso,masodik,harmadik,negyedik,otodik}-osztaly.md` + `docs/sugo.md` másolatai. `make sync-docs` tartja szinkronban, doksz szerkesztés után mindig futtatandó, különben a felhasználó elavult szöveget lát.
-- `src/assets/` – ikonok (PWA), képek, (üres) hangok.
-- `src/manifest.webmanifest`, `src/sw.js` – PWA fájlok a `src/` gyökerében.
+- Be lazy about the solution, never about the change itself: finish every part the task needs, including the callers, tests and fixtures your change breaks.
+- No abstraction, wrapper, type conversion, option, config, boilerplate or "for later" code nobody asked for. Keep values in the form the platform already gives you. Deletion beats addition. Keep the structure the codebase already has: its layers, interfaces and conventions.
+- The shortest working diff wins, once you know everything it must touch. A one-liner that needs decoding is not short.
+- Comment only the why the code cannot show, in one line.
+- Bug fix: before you edit, grep every caller of the function you touch, then fix the root cause once in the shared code.
+- Code you move or merge keeps its error handling and validation.
+- Between options of equal size, take the one that is correct on edge cases.
+- Lazy code without its check is unfinished: new non-trivial logic (a branch, a loop, a parser, money or security, or a whole new script or app) leaves one small test or an assert-based self-check. Trivial changes need none.
+- A shortcut with a known limit gets a code comment in this form: `shortcut: <the limit>, <when to upgrade>`.
 
-## Konvenciók
+Never cut: validation at trust boundaries, error handling that prevents data loss, security, accessibility, the calibration real hardware needs, anything the user asked for.
 
-- Tiszta ES modulok, nincs build. Import: `.js` kiterjesztéssel, helyenként `?v=N` verzióparaméterrel (pl. `Game.js`-ben a komponensek). Új komponens importjánál a meglévő `?v=` értékekhez igazodj.
-- 4 szóköz behúzás, egyszeres idézőjelek, pontosvessző, camelCase.
-- NE írj kommentet a kódba.
-- UI szövegek magyarul. A küldetések/missziók emoji-kat használnak.
-- Egy komponens = egy feladat. Egy commit = egy jól körülhatárolható változás.
-- Leckehossz (generált feladatok száma leckénként): 4. osztály max 10, 5. osztály max 12; 2–5 blokkban, nehezedő sorrendben, blokkonként 2–5 feladat.
-- Fejlesztési elvek: a gyereket sosem büntetjük; segítséget csak kérésre adunk; a történet fontosabb, mint a pontszám; a sprint végén mindig működő állapot.
-
-## Adatmentés
-
-- `localStorage`:
-  - `matekido-users` – játékosprofilok (a `UserManager.js` kezeli).
-  - `matekido-profile` – régi/legacy kulcs, a migráció során törlődik.
-  - `matekido-lesson-filters`, `matekido-lesson-filters-open` – szűrők a menüben.
-
-## PWA
-
-- `sw.js` és `manifest.webmanifest` a `src/` gyökerében – a web gyökér a `src/`, így a `/sw.js` scope a `/`-t, a `/assets/...`-t és az egész appot lefedi.
-- A service worker network-first: online mindig friss tartalom, offline cache. Az install során az EGÉSZ appot precache-eli a generált `sw-cache.js` lista alapján, így offline rögtön az összes lecke elérhető.
-- Új/eltűnt fájl (pl. új lecke) után futtatni kell a `node src/generateSWCache.js`-t (jelenleg 561 fájl). Nincs automatizált verzió-bump – nagy fájlstruktúra-változásnál a `sw.js` tetején lévő `CACHE` (`matekido-v101`) értékét növeld.
-- Ha a `src/index.html`-ben `?v=` paramétert emelsz, a SW online módban automatikusan az új fájlt adja.
-- Ikonok: `src/assets/icons/` (`icon-*`, `maskable-*`, `apple-touch-icon.png`, SVG források).
-- Telepíthetőséghez HTTPS kell (localhoston a `make start` is jó). Deploy: nincs konfigurálva, pl. GitHub Pages / Netlify.
+(Yes, this file also applies to agents working on the ponytail repo itself. Especially to them.)
+@AGENTS_PROJECT.md

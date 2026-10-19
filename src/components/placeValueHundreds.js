@@ -100,7 +100,7 @@ export function renderPlaceValueHundreds(step, root, next, progress, onResult, o
         if (feedback.isAnswered()) return;
 
         const answer = Number(input.value);
-        if (isNaN(answer)) return;
+        if (input.value.trim() === "" || isNaN(answer)) return;
 
         if (answer === step.answer) {
             input.disabled = true;

@@ -80,7 +80,7 @@ function migrateLegacy() {
         return null;
     }
 
-    const profile = { ...DEFAULT_PROFILE, ...legacyProfile };
+    const profile = { ...structuredClone(DEFAULT_PROFILE), ...legacyProfile };
 
     const player = {
         id: generateId(),
@@ -137,10 +137,10 @@ export function getActiveProfile() {
     const player = data.players.find(p => p.id === data.activeId);
 
     if (!player) {
-        return { ...DEFAULT_PROFILE };
+        return structuredClone(DEFAULT_PROFILE);
     }
 
-    return { ...DEFAULT_PROFILE, ...player.profile };
+    return { ...structuredClone(DEFAULT_PROFILE), ...player.profile };
 }
 
 export function saveActiveProfile(profile) {
@@ -163,7 +163,7 @@ export function createPlayer(name, avatar, grade = null) {
         name,
         avatar,
         profile: {
-            ...DEFAULT_PROFILE,
+            ...structuredClone(DEFAULT_PROFILE),
             grade: grade ?? null
         }
     };
@@ -424,7 +424,7 @@ function mergeProfiles(local, incoming) {
         unlockedThemes: unionList(local.unlockedThemes, incoming.unlockedThemes),
         activeWorld: local.activeWorld ?? incoming.activeWorld ?? "postman",
         grade: local.grade ?? incoming.grade ?? null,
-        dailyQuest: local.dailyQuest ?? incoming.dailyQuest ?? DEFAULT_PROFILE.dailyQuest,
+        dailyQuest: local.dailyQuest ?? incoming.dailyQuest ?? structuredClone(DEFAULT_PROFILE.dailyQuest),
         dailyStats: mergeDailyStats(local.dailyStats, incoming.dailyStats),
         lessonStats: mergeLessonStats(local.lessonStats, incoming.lessonStats),
         favorites: unionList(local.favorites, incoming.favorites),
@@ -477,7 +477,7 @@ export function importUsers(jsonString) {
         const match = existing.get(key);
 
         if (match) {
-            const profile = { ...DEFAULT_PROFILE, ...(raw.profile ?? {}) };
+            const profile = { ...structuredClone(DEFAULT_PROFILE), ...(raw.profile ?? {}) };
             match.profile = mergeProfiles(match.profile ?? {}, profile);
             merged++;
             continue;
@@ -487,7 +487,7 @@ export function importUsers(jsonString) {
             id: generateId(),
             name,
             avatar,
-            profile: { ...DEFAULT_PROFILE, ...(raw.profile ?? {}) }
+            profile: { ...structuredClone(DEFAULT_PROFILE), ...(raw.profile ?? {}) }
         });
     }
 

@@ -1,6 +1,6 @@
-import { renderAddition } from "./addition.js?v=6";
-import { renderSubtraction } from "./subtraction.js?v=6";
-import { renderMixed } from "./mixed.js?v=7";
+import { renderAddition } from "./addition.js?v=7";
+import { renderSubtraction } from "./subtraction.js?v=7";
+import { renderMixed } from "./mixed.js?v=8";
 
 export function renderExercise(step, root, next, progress, onResult, onAttempt) {
 

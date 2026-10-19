@@ -45,25 +45,28 @@ function buildClassifySides() {
     let a;
     let b;
     let c;
-    if (type === "equilateral") {
-        a = random(2, 9);
-        b = a;
-        c = a;
-    } else if (type === "isosceles") {
-        a = random(2, 9);
-        b = a;
-        do {
-            c = random(2, 9);
-        } while (c === a);
-    } else {
-        a = random(2, 9);
-        do {
-            b = random(2, 9);
-        } while (b === a);
-        do {
-            c = random(2, 9);
-        } while (c === a || c === b);
-    }
+    // Háromszög-egyenlőtlenség: különben pl. 2, 2, 9 is megjelenne.
+    do {
+        if (type === "equilateral") {
+            a = random(2, 9);
+            b = a;
+            c = a;
+        } else if (type === "isosceles") {
+            a = random(2, 9);
+            b = a;
+            do {
+                c = random(2, 9);
+            } while (c === a);
+        } else {
+            a = random(2, 9);
+            do {
+                b = random(2, 9);
+            } while (b === a);
+            do {
+                c = random(2, 9);
+            } while (c === a || c === b);
+        }
+    } while (a + b <= c || a + c <= b || b + c <= a);
     const correct = a === b && b === c
         ? "Egyenlő oldalú"
         : a === b || b === c || a === c

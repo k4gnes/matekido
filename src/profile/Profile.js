@@ -6,20 +6,6 @@ function getToday() {
     return new Date().toISOString().split("T")[0];
 }
 
-function refreshDailyQuest(profile) {
-
-    if (profile.dailyQuest.date === getToday()) {
-        return;
-    }
-
-    profile.dailyQuest = {
-        ...profile.dailyQuest,
-        progress: 0,
-        completed: false,
-        date: getToday()
-    };
-
-}
 export function loadProfile() {
 
     const profile = getActiveProfile();
@@ -69,27 +55,11 @@ export function saveMenuPrefs(prefs) {
 
 }
 
-function unlock(theme) {
-
-    const profile = loadProfile();
-
-    if (!profile.unlockedThemes) {
-
-        profile.unlockedThemes = [];
-
-    }
-
-    if (!profile.unlockedThemes.includes(theme)) {
-
-        profile.unlockedThemes.push(theme);
-
-        saveProfile(profile);
-
-    }
-
-}
-
 export function completeLesson() {
+
+    // A sorozat (streak) csak tényleges leckebefejezéskor frissül,
+    // nem már a lecke megnyitásakor is.
+    updateStreak();
 
     const profile = loadProfile();
 
@@ -133,41 +103,6 @@ export function completeLesson() {
 
 }
 
-export function addStars(count = 1) {
-
-    const profile = loadProfile();
-
-    profile.stars += count;
-
-    saveProfile(profile);
-
-}
-
-export function addDeliverLetters(count = 1) {
-
-    const profile = loadProfile();
-
-    profile.lettersDelivered += count;
-
-    saveProfile(profile);
-
-}
-
-export function updateStatistics(lessonId, correct, wrong) {
-
-    const profile = loadProfile();
-
-    if (!profile.statistics[lessonId]) {
-        return;
-    }
-
-    profile.statistics[lessonId].correct += correct;
-    profile.statistics[lessonId].wrong += wrong;
-
-    saveProfile(profile);
-
-}
-
 export function recordLessonResult(lessonFile, correct, wrong) {
 
     const profile = loadProfile();
@@ -206,25 +141,6 @@ export function recordSkillResult(skill, correct, wrong) {
     profile.skillStats[skill].wrong += wrong;
 
     saveProfile(profile);
-
-}
-
-export function getSkillStats(skill) {
-
-    const profile = loadProfile();
-    const stats = profile.skillStats?.[skill];
-
-    if (!stats) return null;
-
-    const total = stats.correct + stats.wrong;
-
-    if (total === 0) return null;
-
-    return {
-        correct: stats.correct,
-        total,
-        percentage: Math.round((stats.correct / total) * 100)
-    };
 
 }
 
@@ -290,12 +206,6 @@ export function recordPlayResult(mode, key, score) {
     saveProfile(profile);
 
     return { best: profile.playRecords[mode][key].best, isRecord };
-
-}
-
-export function isPracticeLesson(lessonFile) {
-
-    return !!loadProfile().practiceDone?.[lessonFile];
 
 }
 
@@ -603,27 +513,5 @@ export function resolveLessonGrade(entry) {
         return active;
     }
     return grades[0] ?? active ?? null;
-
-}
-
-export function getUnlockedWorldIds() {
-
-    const profile = loadProfile();
-    return profile.unlockedThemes ?? ["postman"];
-
-}
-
-export function unlockWorld(worldId) {
-
-    const profile = loadProfile();
-
-    if (!profile.unlockedThemes) {
-        profile.unlockedThemes = ["postman"];
-    }
-
-    if (!profile.unlockedThemes.includes(worldId)) {
-        profile.unlockedThemes.push(worldId);
-        saveProfile(profile);
-    }
 
 }

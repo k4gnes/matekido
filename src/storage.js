@@ -3,7 +3,10 @@ export function loadJSON(key, fallback = null) {
         const raw = localStorage.getItem(key);
         if (raw === null) return fallback;
         return JSON.parse(raw);
-    } catch {
+    } catch (e) {
+        // a sérült mentés nem törlődik, de a következő mentés felülírja:
+        // ha itt nem látunk rá, a felhasználó adatai csendben elvesznek
+        console.warn(`storage: nem sikerült beolvasni (${key}):`, e);
         return fallback;
     }
 }
@@ -12,7 +15,8 @@ export function saveJSON(key, value) {
     try {
         localStorage.setItem(key, JSON.stringify(value));
         return true;
-    } catch {
+    } catch (e) {
+        console.warn(`storage: nem sikerült menteni (${key}):`, e);
         return false;
     }
 }

@@ -479,6 +479,7 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
 
         function check() {
             if (feedback.isAnswered()) return;
+            if (input.value.trim() === "") return;
             const answer = Number(input.value);
             if (answer === step.answer) {
                 reportSuccess(step.successText);
@@ -520,6 +521,7 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
 
             function check() {
                 if (feedback.isAnswered()) return;
+                if (input.value.trim() === "") return;
                 const value = Number(input.value);
                 if (value === step.answer) {
                     reportSuccess(step.successText);
@@ -824,6 +826,7 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
 
             function check() {
                 if (feedback.isAnswered()) return;
+                if (input.value.trim() === "") return;
                 const value = Number(input.value);
                 if (value === step.answer) {
                     reportSuccess(step.successText);
@@ -913,6 +916,7 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
 
             function check() {
                 if (feedback.isAnswered()) return;
+                if (input.value.trim() === "") return;
                 const value = Number(input.value);
                 if (value === step.answer) {
                     reportSuccess(step.successText);
@@ -1009,6 +1013,7 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
 
             function check() {
                 if (feedback.isAnswered()) return;
+                if (input.value.trim() === "") return;
                 const value = Number(input.value);
                 if (value === step.answer) {
                     reportSuccess(step.successText);

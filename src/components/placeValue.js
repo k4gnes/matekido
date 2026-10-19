@@ -78,6 +78,8 @@ export function renderPlaceValue(step, root, next, progress, onResult, onAttempt
 
         const answer = Number(input.value);
 
+        if (input.value.trim() === "") return;
+
         if (answer === step.answer) {
 
             input.disabled = true;

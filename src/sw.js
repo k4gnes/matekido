@@ -1,6 +1,6 @@
 importScripts("./sw-cache.js");
 
-const CACHE = "matekido-v160";
+const CACHE = "matekido-v161";
 
 self.addEventListener("install", (event) => {
     event.waitUntil(
@@ -31,7 +31,9 @@ self.addEventListener("fetch", (event) => {
         event.respondWith(
             fetch(request)
                 .then((response) => {
-                    cachePut(url.pathname, response);
+                    // csak a sikeres válasz kerüljön a cache-be,
+                    // különben egy 404/500 lesz az offline kanonikus oldal
+                    if (response.ok) cachePut(url.pathname, response);
                     return response;
                 })
                 .catch(() =>

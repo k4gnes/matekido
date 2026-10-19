@@ -7,13 +7,13 @@ import { renderDecomposition } from "../components/decomposition.js?v=5";
 import { renderDecompositionFindWrong } from "../components/decompositionFindWrong.js?v=5";
 import { renderMissingNumber } from "../components/missingNumber.js?v=8";
 import { renderComparison } from "../components/comparison.js?v=7";
-import { renderNeighbor } from "../components/neighbor.js?v=5";
-import { renderNeighborSingle } from "../components/neighborSingle.js?v=6";
+import { renderNeighbor } from "../components/neighbor.js?v=6";
+import { renderNeighborSingle } from "../components/neighborSingle.js?v=7";
 import { renderNeighborRound } from "../components/neighborRound.js?v=6";
-import { renderPlaceValue } from "../components/placeValue.js?v=8";
+import { renderPlaceValue } from "../components/placeValue.js?v=9";
 import { renderPlaceValueTwoInput } from "../components/placeValueTwoInput.js?v=7";
 import { renderBridgeTen } from "../components/bridgeTen.js?v=14";
-import { renderSequence } from "../components/sequence.js?v=15";
+import { renderSequence } from "../components/sequence.js?v=16";
 import { renderOrder } from "../components/order.js?v=16";
 import { renderEvenOdd } from "../components/evenOdd.js?v=13";
 import { renderPattern } from "../components/pattern.js?v=12";
@@ -26,8 +26,8 @@ import { renderMoneyCompare } from "../components/moneyCompare.js?v=14";
 import { renderMoneyEnough } from "../components/moneyEnough.js?v=14";
 import { renderMeasureCompare } from "../components/measureCompare.js?v=14";
 import { renderMeasureSquares } from "../components/measureSquares.js?v=16";
-import { renderWordProblem } from "../components/wordProblem.js?v=30";
-import { renderMultPrep } from "../components/multPrep.js?v=9";
+import { renderWordProblem } from "../components/wordProblem.js?v=31";
+import { renderMultPrep } from "../components/multPrep.js?v=10";
 import { renderMultiplication } from "../components/multiplication.js?v=7";
 import { renderMultiplicationPlay } from "../components/multiplicationPlay.js?v=10";
 import { renderOperationOrderPlay } from "../components/operationOrderPlay.js?v=5";
@@ -49,10 +49,10 @@ import { renderShapeFormula } from "../components/shapeFormula.js?v=4";
 import { renderWeight } from "../components/weight.js?v=3";
 import { renderVolume } from "../components/volume.js?v=3";
 import { renderMoneyChange } from "../components/moneyChange.js?v=5";
-import { renderPlaceValueHundreds } from "../components/placeValueHundreds.js?v=6";
+import { renderPlaceValueHundreds } from "../components/placeValueHundreds.js?v=7";
 import { renderPlaceValueThousands } from "../components/placeValueThousands.js?v=9";
 import { renderNumberName } from "../components/numberName.js?v=3";
-import { renderRounding } from "../components/rounding.js?v=6";
+import { renderRounding } from "../components/rounding.js?v=7";
 import { renderRoman } from "../components/roman.js?v=2";
 import { renderTransform } from "../components/transform.js?v=5";
 import { renderMirror } from "../components/mirror.js?v=4";
@@ -564,46 +564,58 @@ export class Game {
 
     }
 
+    finishLesson() {
+
+        const practice = !this.lesson.steps.some(isCounted);
+        let milestone = null;
+        let reward = null;
+        let gradeJustCompleted = false;
+
+        if (this.lesson.completed) {
+            return { practice, milestone, reward, gradeJustCompleted };
+        }
+
+        const gradeWasComplete = this.isGradeComplete();
+
+        try {
+            const result = completeLesson();
+            recordDailyResult(this.correct, this.wrong, this.byType);
+            if (this.lessonFile) {
+                if (practice) recordLessonPractice(this.lessonFile);
+                else recordLessonResult(this.lessonFile, this.correct, this.wrong);
+                resolveSkippedLesson(this.lessonFile);
+            }
+            if (this.skill && !practice) {
+                recordSkillResult(this.skill, this.correct, this.wrong);
+            }
+            if (this.source === "custom" && this.lessonFile) {
+                recordCustomDoneLesson(this.lessonFile);
+            }
+            if (this.wrong === 0 && !practice) {
+                recordPerfectLesson();
+            }
+            milestone = result.milestone ?? null;
+            if (!practice) {
+                reward = grantRewards({
+                    correct: this.correct,
+                    wrong: this.wrong,
+                    isMilestone: !!milestone,
+                    dailyQuestJustCompleted: result.dailyQuestJustCompleted
+                });
+            }
+        } catch (e) { console.error(e); }
+        this.lesson.completed = true;
+        gradeJustCompleted = !gradeWasComplete && this.isGradeComplete();
+
+        return { practice, milestone, reward, gradeJustCompleted };
+    }
+
     renderStep() {
 
         this.cleanupComponent();
 
         if (this.currentStep >= this.lesson.steps.length) {
-            let milestone = null;
-            let reward = null;
-            const practice = !this.lesson.steps.some(isCounted);
-
-            if (!this.lesson.completed) {
-                try {
-                    const profileBefore = completeLesson();
-                    const dailyQuestJustCompleted = profileBefore && profileBefore.dailyQuestJustCompleted;
-                    recordDailyResult(this.correct, this.wrong, this.byType);
-                    if (this.lessonFile) {
-                        if (practice) recordLessonPractice(this.lessonFile);
-                        else recordLessonResult(this.lessonFile, this.correct, this.wrong);
-                        resolveSkippedLesson(this.lessonFile);
-                    }
-                    if (this.skill && !practice) {
-                        recordSkillResult(this.skill, this.correct, this.wrong);
-                    }
-                    if (this.source === "custom" && this.lessonFile) {
-                        recordCustomDoneLesson(this.lessonFile);
-                    }
-                    if (this.wrong === 0 && !practice) {
-                        recordPerfectLesson();
-                    }
-                    milestone = profileBefore?.milestone ?? null;
-                    if (!practice) {
-                        reward = grantRewards({
-                            correct: this.correct,
-                            wrong: this.wrong,
-                            isMilestone: !!milestone,
-                            dailyQuestJustCompleted
-                        });
-                    }
-                } catch (e) { console.error(e); }
-                this.lesson.completed = true;
-            }
+            const { practice, milestone, reward } = this.finishLesson();
 
             renderCelebration(
                 {
@@ -674,42 +686,7 @@ export class Game {
         }
 
         if (step.type === "celebration") {
-            let milestone2 = null;
-            let reward2 = null;
-            let gradeJustCompleted = false;
-            const practice = !this.lesson.steps.some(isCounted);
-            if (!this.lesson.completed) {
-                const gradeWasComplete = this.isGradeComplete();
-                try {
-                    const result2 = completeLesson();
-                    recordDailyResult(this.correct, this.wrong, this.byType);
-                    if (this.lessonFile) {
-                        if (practice) recordLessonPractice(this.lessonFile);
-                        else recordLessonResult(this.lessonFile, this.correct, this.wrong);
-                        resolveSkippedLesson(this.lessonFile);
-                    }
-                    if (this.skill && !practice) {
-                        recordSkillResult(this.skill, this.correct, this.wrong);
-                    }
-                    if (this.source === "custom" && this.lessonFile) {
-                        recordCustomDoneLesson(this.lessonFile);
-                    }
-                    if (this.wrong === 0 && !practice) {
-                        recordPerfectLesson();
-                    }
-                    milestone2 = result2.milestone;
-                    if (!practice) {
-                        reward2 = grantRewards({
-                            correct: this.correct,
-                            wrong: this.wrong,
-                            isMilestone: !!milestone2,
-                            dailyQuestJustCompleted: result2.dailyQuestJustCompleted
-                        });
-                    }
-                } catch (e) { console.error(e); }
-                this.lesson.completed = true;
-                gradeJustCompleted = !gradeWasComplete && this.isGradeComplete();
-            }
+            const { milestone, reward, gradeJustCompleted } = this.finishLesson();
 
             renderCelebration(step, this.root, {
                 onRestart: this.onRestart,
@@ -718,7 +695,7 @@ export class Game {
                 onStats: this.onStats,
                 onHelp: this.onHelp,
                 onNext: gradeJustCompleted && this.onGradeComplete ? this.onGradeComplete : this.onNext
-            }, milestone2, reward2, getActiveWorld(), this.lessonIndex, this.getLessonTitle(), this.getLessonGradeLabel(), this.elapsedSeconds());
+            }, milestone, reward, getActiveWorld(), this.lessonIndex, this.getLessonTitle(), this.getLessonGradeLabel(), this.elapsedSeconds());
 
             return;
         }

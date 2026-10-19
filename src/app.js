@@ -1,6 +1,6 @@
-import { Game } from "./engine/Game.js?v=154";
+import { Game } from "./engine/Game.js?v=155";
 import { loadLesson } from "./engine/LessonLoader.js";
-import { buildLesson } from "./builders/LessonBuilder.js?v=89";
+import { buildLesson } from "./builders/LessonBuilder.js?v=90";
 import { renderLessonMenu } from "./components/lessonMenu.js?v=121";
 import { renderSkillMap } from "./components/skillMap.js?v=62";
 import { renderHelp } from "./components/help.js?v=7";
@@ -10,7 +10,7 @@ import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=10";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=8";
 import { renderParentHub } from "./components/parentHub.js?v=10";
 import { renderTransferPage } from "./components/transferPage.js?v=2";
-import { getActiveId, listPlayers } from "./profile/UserManager.js?v=4";
+import { getActiveId, listPlayers } from "./profile/UserManager.js?v=5";
 import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld, setActiveGrade, resolveLessonGrade } from "./profile/Profile.js";
 import { curriculumSort } from "./data/curriculum.js";
 import { createCard } from "./components/ui/card.js";
@@ -110,7 +110,14 @@ function showRestoredRoute(route) {
     }
 }
 
-const lessonIndex = await loadLesson("./data/lessons/index.json");
+let lessonIndex;
+try {
+    lessonIndex = await loadLesson("./data/lessons/index.json");
+} catch (e) {
+    root.replaceChildren(createCard());
+    root.firstChild.textContent = "⚠️ Nem sikerült betölteni a tananyagot. Töltsd újra az oldalt, vagy ellenőrizd a netkapcsolatot!";
+    throw e;
+}
 
 queueDeepLink();
 

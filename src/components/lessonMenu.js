@@ -949,20 +949,6 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
             ));
         }
 
-        const skippedLessonFiles = new Set(getSkippedLessons());
-        const skippedLessons = allLessons.filter(l =>
-            l.grades?.includes(selectedGrade) && skippedLessonFiles.has(l.file) && !getLessonStats(l.file)
-        );
-
-        if (skippedLessons.length > 0) {
-            pickerSections.push(createPickerSection(
-                `⏭️ Átugrott feladatok (${skippedLessons.length}) – érdemes pótolni, a végén úgyis visszajönnek`,
-                skippedLessons,
-                onSelect,
-                activeWorld
-            ));
-        }
-
         if (favoriteLessons.length > 0) {
             pickerSections.push(createPickerSection(
                 `❤️ Kedvenceim (${favoriteLessons.length})`,

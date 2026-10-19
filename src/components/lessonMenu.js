@@ -23,7 +23,6 @@ const LIST_HIDDEN_KEY = "matekido-lesson-list-hidden";
 const VIEW_STORAGE_KEY = "matekido-lesson-view";
 const CUSTOM_UNLOCKED_KEY = "matekido-custom-unlocked";
 
-// A kedvenc-váltás után azonnal újrarajzolja a nyitott menüt (a renderLessonMenu állítja be)
 let refreshActiveMenu = null;
 
 function saveListHidden(hidden) {
@@ -290,8 +289,6 @@ function pickNextFromList(lessons) {
 
 }
 
-// A fejkártya (pickNextFromList) legyen a lista elején, hogy egy kedvenc-kör
-// minden elemet lefedjen: a kész (sárga) leckék a kör végére kerülnek
 function rotateToStart(lessons) {
     const start = pickNextFromList(lessons);
     const idx = lessons.findIndex(l => l.file === start.file);
@@ -732,8 +729,6 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
         mode = "custom";
         customMode = true;
         setMenuView("custom");
-        // csak az első belépéskor nyíljon ki automatikusan,
-        // a felhasználó bezárását ezután tartsuk tiszteletben
         if (loadFilterOpen() === null) {
             showFilters = true;
             saveFilterOpen(true);
@@ -1240,7 +1235,6 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
 
     root.append(wrapper);
 
-    // isConnected-védő: a korábbi menü már leszerelt, ha egy leckéből tért vissza a felhasználó
     refreshActiveMenu = () => {
         if (contentArea.isConnected) renderContent();
     };

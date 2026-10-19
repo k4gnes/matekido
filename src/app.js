@@ -276,6 +276,8 @@ async function startLesson(path, opts = {}) {
 
     const canMarkSkip = !opts.from && !found?.practice;
     const alreadySkipped = canMarkSkip && getSkippedLessons("grade").includes(path);
+    // ahol nincs hova tovább lépni (lista utolsó eleme, mester kihívás), ott ne legyen néma gomb
+    const canAdvance = !opts.from || (["custom", "practice", "favorites"].includes(opts.from) && !!nextInList(path, opts));
 
     const game = new Game(
         lesson,
@@ -302,7 +304,7 @@ async function startLesson(path, opts = {}) {
                 showMenu();
             } : () => continueToNext(path, opts),
             onGradeComplete: opts.from ? null : () => showGradeComplete(path),
-            onSkipNext: alreadySkipped || found?.practice ? null : () => {
+            onSkipNext: alreadySkipped || found?.practice || !canAdvance ? null : () => {
                 if (canMarkSkip) {
                     if (getLessonStats(path)) {
                         showBanner("Ezt a leckét már teljesítetted, nincs mit kihagyni – mehet a következő.");

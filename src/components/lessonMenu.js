@@ -724,8 +724,12 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
         mode = "custom";
         customMode = true;
         setMenuView("custom");
-        showFilters = true;
-        saveFilterOpen(true);
+        // csak az első belépéskor nyíljon ki automatikusan,
+        // a felhasználó bezárását ezután tartsuk tiszteletben
+        if (loadFilterOpen() === null) {
+            showFilters = true;
+            saveFilterOpen(true);
+        }
         gradePickerPanel.style.display = "none";
         renderContent();
     }

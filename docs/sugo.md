@@ -193,14 +193,14 @@ A Matekidő **hét világban** játszódik, és a leckék történetei mindig az
 
 ## 📚 A feladatok menüje
 
-{{➡️ Következő feladat}} {{📚 Feladatok listája}} {{🎯 Gyakorlásra javasolt}} {{⏭️ Átugrott feladatok}} {{❤️ Kedvenceim}}
+{{➡️ Következő feladat}} {{📚 Feladatok listája}} {{🎯 Gyakorlásra javasolt}} {{❤️ Kedvenceim}}
 
 A feladatlistára belépve sorban a következők jönnek:
 
 - **➡️ Következő feladat** – az, amit legközelebb érdemes megoldani.
 - **📚 Feladatok listája** – az évfolyam teljes feladatlistája. Szűrni **csak a ⚽ Válogatott nézetben** lehet (lásd a [szűrőkről szóló szakaszt](#valogatott-es-szurok)).
 - **🎯 Gyakorlásra javasolt** – a gyengén sikerült és a régen gyakorolt leckéid (részletek a [Gyakorlás szakaszban](#gyakorlas-a-gyengebb-es-a-regen-gyakorolt-leckek)).
-- **⏭️ Átugrott feladatok** – a kihagyott leckék itt látszanak. Érdemes pótolni őket, mert a sorrendjükben a végén úgyis visszajönnek.
+- **⏭️ jel a kártyán** – a kihagyott lecke kártyáján a 📚 Feladatok listájában **⏭️** badge látszik. Érdemes pótolni, mert a sorrendjében a végén úgyis visszajön.
 - **❤️ Kedvenceim** – azok a leckék, amelyeket a sor jobb oldalán lévő szív gombbal (**🤍 → ❤️**) megjelöltél. Ugyanígy játszólistaként megy végig a kedvenceken.
 
 ## 🎯 Gyakorlás – a gyengébb és a régen gyakorolt leckék

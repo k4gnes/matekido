@@ -1,6 +1,6 @@
 const PENDING_KEY = "matekido-pending-msg";
 
-function showBanner(message, isError = false) {
+export function showBanner(message, isError = false) {
 
     const existing = document.querySelector(".backup-toast");
     if (existing) {

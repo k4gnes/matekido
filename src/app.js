@@ -15,7 +15,7 @@ import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, g
 import { curriculumSort } from "./data/curriculum.js";
 import { createCard } from "./components/ui/card.js";
 import { createButton } from "./components/ui/button.js";
-import { installDiagnostics, showPendingMessage } from "./components/appDiagnostics.js";
+import { installDiagnostics, showPendingMessage, showBanner } from "./components/appDiagnostics.js";
 
 installDiagnostics();
 showPendingMessage();
@@ -303,8 +303,12 @@ async function startLesson(path, opts = {}) {
             } : () => continueToNext(path, opts),
             onGradeComplete: opts.from ? null : () => showGradeComplete(path),
             onSkipNext: alreadySkipped || found?.practice ? null : () => {
-                if (canMarkSkip && !getLessonStats(path)) {
-                    recordLessonSkip(path, "grade");
+                if (canMarkSkip) {
+                    if (getLessonStats(path)) {
+                        showBanner("Ezt a leckét már teljesítetted, nincs mit kihagyni – mehet a következő.");
+                    } else {
+                        recordLessonSkip(path, "grade");
+                    }
                 }
                 continueToNext(path, opts);
             }

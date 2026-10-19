@@ -121,6 +121,13 @@ function createFooter() {
 
     footer.append(link);
 
+    const facebookLink = document.createElement("a");
+    facebookLink.href = "https://www.facebook.com/profile.php?id=61594289895525";
+    facebookLink.target = "_blank";
+    facebookLink.rel = "noopener";
+    facebookLink.textContent = "📘 Kövess a Facebookon";
+    footer.append(" · ", facebookLink);
+
     return footer;
 
 }

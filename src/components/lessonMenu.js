@@ -832,6 +832,14 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
     footerLink.rel = "noopener";
     footerLink.textContent = "💻 Iconet Informatika 2026";
     footer.append(footerLink);
+
+    const facebookLink = document.createElement("a");
+    facebookLink.href = "https://www.facebook.com/profile.php?id=61594289895525";
+    facebookLink.target = "_blank";
+    facebookLink.rel = "noopener";
+    facebookLink.textContent = "📘 Kövess a Facebookon";
+    footer.append(" · ", facebookLink);
+
     wrapper.append(footer);
 
     function rebuildAndRender() {

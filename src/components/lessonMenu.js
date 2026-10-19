@@ -213,7 +213,7 @@ export function createLessonCard(lesson, onSelect, activeWorld, position, total,
         badges.append(gradeBadge);
     }
 
-    if (getSkippedLessons(selectOpts?.from === "custom" ? "custom" : "grade").includes(lesson.file)) {
+    if (getSkippedLessons().includes(lesson.file)) {
         const skipBadge = document.createElement("span");
         skipBadge.className = "lesson-skip-badge";
         skipBadge.textContent = "⏭️";

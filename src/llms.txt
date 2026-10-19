@@ -19,7 +19,7 @@
 - **Megközelítés:** szorongásmentes gyakorlás – nincs időnyomás, a hiba nem büntet, minden hibánál ott a helyes
   válasz és a magyarázat, a nehéz feladat kihagyható, és a sor végén magától visszajön
 - **Forráskód:** nyílt (MIT licenc) – https://github.com/k4gnes/matekido
-- **Kapcsolat:** https://www.facebook.com/profile.php?id=61594289895525
+- **Kapcsolat / Facebook:** [Kövess a Facebookon](https://www.facebook.com/profile.php?id=61594289895525) – itt lehet üzenetet is küldeni
 
 ## Oldalak
 

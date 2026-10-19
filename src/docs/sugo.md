@@ -2,6 +2,8 @@
 
 Hibát találtál, ötleted vagy kérésed van a Matekidővel kapcsolatban? Írj nekünk üzenetet a [Facebook-oldalunkra](https://www.facebook.com/profile.php?id=61594289895525) (**Üzenet** gomb), vagy ezen a [közvetlen linken](https://www.facebook.com/messages/t/61594289895525) – szívesen fogadjuk!
 
+Ha tetszik az app, [**kövess minket a Facebookon**](https://www.facebook.com/profile.php?id=61594289895525) is.
+
 ## ☕ Támogatás
 
 [[☕ Támogatás 💛|outline]]

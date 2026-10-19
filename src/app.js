@@ -1,7 +1,7 @@
 import { Game } from "./engine/Game.js?v=155";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=90";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=122";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=123";
 import { renderSkillMap } from "./components/skillMap.js?v=62";
 import { renderHelp } from "./components/help.js?v=7";
 import { renderProfilePage } from "./components/profilePage.js?v=15";
@@ -292,7 +292,7 @@ async function startLesson(path, opts = {}) {
                     showMenu();
                     return;
                 }
-                if (from === "practice") {
+                if (from === "practice" || from === "favorites") {
                     const next = nextInList(path, opts);
                     if (next) {
                         startLesson(next, opts);
@@ -331,7 +331,7 @@ function nextInList(path, opts) {
 
 function continueToNext(path, opts = {}) {
 
-    if ((opts.from === "custom" || opts.from === "practice") && Array.isArray(opts.list)) {
+    if ((opts.from === "custom" || opts.from === "practice" || opts.from === "favorites") && Array.isArray(opts.list)) {
         const next = nextInList(path, opts);
         if (next) {
             startLesson(next, opts);

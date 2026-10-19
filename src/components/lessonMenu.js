@@ -282,6 +282,14 @@ function pickNextFromList(lessons) {
 
 }
 
+// A fejkártya (pickNextFromList) legyen a lista elején, hogy egy kedvenc-kör
+// minden elemet lefedjen: a kész (sárga) leckék a kör végére kerülnek
+function rotateToStart(lessons) {
+    const start = pickNextFromList(lessons);
+    const idx = lessons.findIndex(l => l.file === start.file);
+    return idx > 0 ? [...lessons.slice(idx), ...lessons.slice(0, idx)] : lessons;
+}
+
 function createPickerSection(title, lessons, onSelect, activeWorld, selectOpts) {
     const card = createCard("picker-card");
 
@@ -954,7 +962,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
                 favoriteLessons,
                 onSelect,
                 activeWorld,
-                { from: "favorites" }
+                { from: "favorites", list: rotateToStart(favoriteLessons).map(l => l.file) }
             ));
         }
 
@@ -1142,7 +1150,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
                 favoriteLessons,
                 onSelect,
                 activeWorld,
-                { from: "custom", list: favoriteLessons.map(l => l.file) }
+                { from: "custom", list: rotateToStart(favoriteLessons).map(l => l.file) }
             ));
         }
 

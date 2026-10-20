@@ -259,6 +259,17 @@
     white-space: nowrap;
 }
 
+.lesson-skill-badge {
+    font-size: .72rem;
+    font-weight: 700;
+    color: #2e7d4f;
+    background: #ecfbf1;
+    border: 1px solid #bfe8cf;
+    border-radius: 999px;
+    padding: .12rem .5rem;
+    white-space: nowrap;
+}
+
 .lesson-fav-btn {
     margin-left: auto;
     background: none;

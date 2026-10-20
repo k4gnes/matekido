@@ -212,6 +212,13 @@ export function createLessonCard(lesson, onSelect, activeWorld, position, total,
         badges.append(gradeBadge);
     }
 
+    if (lesson.skill && SKILLS[lesson.skill]) {
+        const skillBadge = document.createElement("span");
+        skillBadge.className = "lesson-skill-badge";
+        skillBadge.textContent = CHILD_FRIENDLY_LABELS[lesson.skill] ?? SKILLS[lesson.skill].title;
+        badges.append(skillBadge);
+    }
+
     if (getSkippedLessons().includes(lesson.file)) {
         const skipBadge = document.createElement("span");
         skipBadge.className = "lesson-skip-badge";

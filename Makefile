@@ -3,6 +3,7 @@ start:
 
 test:
 	node src/testLessons.js
+	node src/testPlayEngine.js
 
 sync-docs:
 	mkdir -p src/docs

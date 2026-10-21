@@ -5,7 +5,7 @@
         {
             "type": "scene",
             "title": "📐 Arányosság",
-            "text": "Két mennyiség akkor egyenesen arányos, ha az egyik kétszeresére nő, a másik is kétszeresére nő. Ilyenkor az egységnyi értéket számoljuk ki, majd szorozunk. Ha viszont az egyik nő és a másik csökken (több munkás kevesebb idő alatt végez), akkor fordított arányosságról van szó: a szorzat állandó. Olvasd el figyelmesen a történetet, és döntsd el, melyik fajta!",
+            "text": "Két mennyiség akkor egyenesen arányos, ha az egyik kétszeresére nő, a másik is kétszeresére nő. Ilyenkor az egységnyi értéket számoljuk ki, majd szorozunk. Ha viszont az egyik nő és a másik csökken (több munkás kevesebb idő alatt végez), akkor fordított arányosságról van szó: a szorzat állandó. Olvasd el figyelmesen a történetet, és számold ki a hiányzó értéket!",
             "worldTitles": {
                 "postman": {
                     "title": "📮 Arányosság a postán",
@@ -45,7 +45,8 @@
                 "max": 200,
                 "kind": "direct-proportion",
                 "mode": "value",
-                "interaction": "choice"
+                "interaction": "choice",
+                "level": "hard"
             }
         },
         {
@@ -56,7 +57,8 @@
                 "max": 500,
                 "kind": "direct-proportion",
                 "mode": "value",
-                "interaction": "input"
+                "interaction": "input",
+                "level": "hard"
             }
         },
         {
@@ -67,7 +69,8 @@
                 "max": 500,
                 "kind": "inverse-proportion",
                 "mode": "value",
-                "interaction": "choice"
+                "interaction": "choice",
+                "level": "hard"
             }
         },
         {
@@ -78,7 +81,8 @@
                 "max": 1000,
                 "kind": "inverse-proportion",
                 "mode": "value",
-                "interaction": "input"
+                "interaction": "input",
+                "level": "hard"
             }
         },
         {

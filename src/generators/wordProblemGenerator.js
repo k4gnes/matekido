@@ -482,7 +482,7 @@ remainder: {
 
 export function generateWordProblems(options = {}) {
 
-    const { count = 4, max = 20, kind, mode, interaction } = options;
+    const { count = 4, max = 20, kind, mode, interaction, level } = options;
 
     if (max < 6) {
         throw new Error("A max értéknek legalább 6-nak kell lennie.");
@@ -535,28 +535,28 @@ export function generateWordProblems(options = {}) {
         let attempts = 0;
         while (tasks.length < count && attempts < 300) {
             attempts++;
-            const task = generateDirectProportion(max, world, mode, interaction);
+            const task = generateDirectProportion(max, world, mode, interaction, level);
             const signature = `${task.rate}|${task.mode}|${task.amount1}|${task.amount2}`;
             if (seen.has(signature)) continue;
             seen.add(signature);
             tasks.push(task);
         }
         while (tasks.length < count) {
-            tasks.push(generateDirectProportion(max, world, mode, interaction));
+            tasks.push(generateDirectProportion(max, world, mode, interaction, level));
         }
     } else if (kind === "inverse-proportion") {
         const seen = new Set();
         let attempts = 0;
         while (tasks.length < count && attempts < 300) {
             attempts++;
-            const task = generateInverseProportion(max, world, mode, interaction);
+            const task = generateInverseProportion(max, world, mode, interaction, level);
             const signature = `${task.total}|${task.mode}|${task.amount1}|${task.amount2}`;
             if (seen.has(signature)) continue;
             seen.add(signature);
             tasks.push(task);
         }
         while (tasks.length < count) {
-            tasks.push(generateInverseProportion(max, world, mode, interaction));
+            tasks.push(generateInverseProportion(max, world, mode, interaction, level));
         }
     } else {
         for (let i = 0; i < count; i++) {
@@ -841,26 +841,34 @@ function generateRatioSplit(max, world, mode, interaction) {
     return task;
 }
 
-const DIRECT_PROPORTION_RATES = [2, 3, 4, 5];
+// "easy": 6. osztályos kis számok, "hard": 7. osztályos, több lépésben
+// számolható (nagyobb) számok
+const DIRECT_PROPORTION_LEVELS = {
+    easy: { rates: [2, 3, 4, 5], maxAmount: 12, minAmount: 2, minValue: 4 },
+    hard: { rates: [2, 3, 4, 5, 6, 7, 8, 9, 10, 12], maxAmount: 30, minAmount: 5, minValue: 30 }
+};
 
-function generateDirectProportion(max, world, mode, interaction) {
+function generateDirectProportion(max, world, mode, interaction, level) {
 
     const theme = getTheme(world, "direct-proportion");
     const normMode = mode === "amount" ? "amount" : "value";
     const normInteraction = interaction === "input" ? "input" : "choice";
+    const cfg = DIRECT_PROPORTION_LEVELS[level] ?? DIRECT_PROPORTION_LEVELS.easy;
 
-    const rates = DIRECT_PROPORTION_RATES.filter(r => Math.floor(max / r) >= 3);
+    const rates = cfg.rates.filter(r => Math.floor(max / r) >= 3);
     const rate = rates[random(0, rates.length - 1)] ?? 2;
-    const maxAmount = Math.min(Math.floor(max / rate), 12);
+    const maxAmount = Math.min(Math.floor(max / rate), cfg.maxAmount);
 
-    const amount1 = random(2, maxAmount);
-    let amount2 = random(2, maxAmount);
+    const minAmount = Math.min(cfg.minAmount, maxAmount);
+    let amount1 = random(minAmount, maxAmount);
+    while (rate * amount1 < cfg.minValue && amount1 < maxAmount) amount1++;
+    let amount2 = random(minAmount, maxAmount);
     let guard = 0;
     while (amount2 === amount1 && guard < 40) {
-        amount2 = random(2, maxAmount);
+        amount2 = random(minAmount, maxAmount);
         guard++;
     }
-    if (amount2 === amount1) amount2 = amount1 === 2 ? amount1 + 1 : amount1 - 1;
+    if (amount2 === amount1) amount2 = amount1 === minAmount ? amount1 + 1 : amount1 - 1;
 
     const value1 = rate * amount1;
     const value2 = rate * amount2;
@@ -894,7 +902,7 @@ function generateDirectProportion(max, world, mode, interaction) {
         const candidates = normMode === "value"
             ? [value1, value1 + rate, value2 + rate, value2 - rate]
             : [amount1, amount2 + 1, amount2 - 1];
-        const bound = normMode === "value" ? max : Math.max(12, amount2 + 5);
+        const bound = normMode === "value" ? Math.max(max, value2 + 5) : Math.max(12, amount2 + 5);
         task.options = makeOptions(answer, 1, bound, 4, candidates);
     }
 
@@ -911,29 +919,53 @@ const INVERSE_THEMES = {
     tram: { place: "A villamoson", worker: "kalauz", unit: "perc" }
 };
 
-function generateInverseProportion(max, world, mode, interaction) {
+// "easy": 6. osztályos kis számok (2-8 ember, 2-10 óra),
+// "hard": 7. osztályos, több lépésben számolható nagyobb számok
+const INVERSE_LEVELS = {
+    easy: { workers: [2, 8], time: [2, 10], time2: [2, 12], divisors: [2, 10], minTotal: 4, minGap: 1, avoidSwap: false },
+    hard: { workers: [4, 18], time: [4, 30], time2: [3, 36], divisors: [2, 36], minTotal: 60, minGap: 2, avoidSwap: true }
+};
+
+function generateInverseProportion(max, world, mode, interaction, level) {
 
     const theme = INVERSE_THEMES[world] ?? INVERSE_THEMES.postman;
     const normMode = mode === "amount" ? "amount" : "value";
     const normInteraction = interaction === "input" ? "input" : "choice";
+    const cfg = INVERSE_LEVELS[level] ?? INVERSE_LEVELS.easy;
 
-    const maxWorkers = 8;
-    let amount1 = 2;
-    let unit1 = 2;
-    let total = 4;
-    let amount2 = 4;
-    for (let attempt = 0; attempt < 100; attempt++) {
-        amount1 = random(2, maxWorkers);
-        unit1 = random(2, Math.max(2, Math.min(10, Math.floor(max / amount1))));
+    let amount1 = cfg.workers[0];
+    let unit1 = cfg.time[0];
+    let total = amount1 * unit1;
+    let amount2 = amount1 * 2;
+    let found = false;
+
+    for (let attempt = 0; attempt < 200; attempt++) {
+        amount1 = random(cfg.workers[0], cfg.workers[1]);
+        unit1 = random(cfg.time[0], cfg.time[1]);
         total = amount1 * unit1;
+        if (total < cfg.minTotal) continue;
         const divisors = [];
-        for (let d = 2; d <= 10; d++) {
-            if (total % d === 0 && d !== amount1 && total / d >= 2 && total / d <= 12) divisors.push(d);
+        for (let d = cfg.divisors[0]; d <= cfg.divisors[1]; d++) {
+            if (total % d !== 0) continue;
+            if (Math.abs(d - amount1) < cfg.minGap) continue;
+            if (cfg.avoidSwap && d === unit1) continue;
+            const u = total / d;
+            if (u < cfg.time2[0] || u > cfg.time2[1]) continue;
+            divisors.push(d);
         }
         if (divisors.length) {
             amount2 = divisors[random(0, divisors.length - 1)];
+            found = true;
             break;
         }
+    }
+
+    if (!found) {
+        // tartalék: ugyanannyi munka, kétszer annyi ember, feleakkora idő
+        amount1 = cfg.workers[0];
+        unit1 = cfg.time[0] * 2;
+        total = amount1 * unit1;
+        amount2 = amount1 * 2;
     }
 
     const unit2 = total / amount2;
@@ -943,10 +975,10 @@ function generateInverseProportion(max, world, mode, interaction) {
         kind: "inverse-proportion",
         world,
         title: "📐 Fordított arányosság",
-        text: `${theme.place} ${amount1} ${theme.worker} ${unit1} ${theme.unit} alatt elkészül a munkával.`,
+        text: `${theme.place} ${amount1} ${theme.worker} ${unit1} ${theme.unit} alatt befejezi a munkát.`,
         question: normMode === "value"
-            ? `Ugyanezt a munkát hány ${theme.unit} alatt végzi el ${amount2} ${theme.worker}?`
-            : `Ugyanezt a munkát hány ${theme.worker} végzi el ${unit2} ${theme.unit} alatt?`,
+            ? `Ugyanezt a munkát hány ${theme.unit} alatt fejezi be ${amount2} ${theme.worker}?`
+            : `Ugyanezt a munkát hány ${theme.worker} fejezi be ${unit2} ${theme.unit} alatt?`,
         mode: normMode,
         interaction: normInteraction,
         total,
@@ -958,15 +990,17 @@ function generateInverseProportion(max, world, mode, interaction) {
         unit: theme.unit,
         answer,
         successText: normMode === "value"
-            ? `😊 Szép munka! ${amount2} ${theme.worker} ${answer} ${theme.unit} alatt végez!`
-            : `😊 Szép munka! ${answer} ${theme.worker} ${unit2} ${theme.unit} alatt végez!`
+            ? `😊 Szép munka! ${amount2} ${theme.worker} ${answer} ${theme.unit} alatt fejezi be a munkát!`
+            : `😊 Szép munka! ${answer} ${theme.worker} ${unit2} ${theme.unit} alatt fejezi be a munkát!`
     };
 
     if (normInteraction === "choice") {
         const candidates = normMode === "value"
             ? [unit1, unit2 + 1, unit2 - 1, unit2 + 2, amount2, amount1]
             : [amount1, amount2 + 1, amount2 - 1, unit2];
-        const bound = normMode === "value" ? Math.max(12, unit2 + 5) : maxWorkers;
+        const bound = normMode === "value"
+            ? Math.max(12, unit2 + 5)
+            : Math.max(cfg.workers[1] * 2, amount2 + 5);
         task.options = makeOptions(answer, 1, bound, 4, candidates);
     }
 

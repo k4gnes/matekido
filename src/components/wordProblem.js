@@ -956,9 +956,7 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
 
         const note = document.createElement("p");
         note.className = "wp-hint";
-        note.textContent = step.mode === "value"
-            ? `Több ${step.worker} ugyanazt a munkát kevesebb ${step.unit} alatt végzi el.`
-            : `Kevesebb ${step.unit} alatt több ${step.worker} kell.`;
+        note.textContent = `Ugyanannyi munka jut: több idő alatt több ${step.worker}, kevesebb idő alatt kevesebb ${step.worker}.`;
         card.append(note);
 
         const table = document.createElement("div");

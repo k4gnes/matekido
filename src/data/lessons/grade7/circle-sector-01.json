@@ -16,8 +16,8 @@
                     "text": "A versenyautó kerekei körcikket hasonlítanak a kanyarrokban! Számold ki a körív hosszát és a körcikk területét!"
                 },
                 "football": {
-                    "title": "⚽ A szögletartó körív",
-                    "text": "A pályán a szögletartó sarokban körív húzódik! Milyen hosszú, és mekkora a területe?"
+                    "title": "⚽ A szögtartó körív",
+                    "text": "A pályán a sarokban futó szögtartó körív húzódik! Milyen hosszú, és mekkora a területe?"
                 },
                 "cooking": {
                     "title": "🍳 Körcikk pizza",
@@ -76,7 +76,7 @@
                 },
                 "football": {
                     "title": "🏆 Szuper!",
-                    "text": "A szögletartó körívét is kiszámoltad – kezdődhet a meccs!"
+                    "text": "A szögtartó körívét is kiszámoltad – kezdődhet a meccs!"
                 },
                 "cooking": {
                     "title": "🍳 Szép munka!",

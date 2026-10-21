@@ -97,6 +97,7 @@ import { generateRatio } from "./ratioGenerator.js?v=1";
 import { generateTriangle } from "./triangleGenerator.js?v=2";
 import { generatePythagorean } from "./pythagoreanGenerator.js?v=1";
 import { generateSimilarity } from "./similarityGenerator.js?v=1";
+import { generateFunction } from "./functionGenerator.js?v=1";
 import { generateShapeArea } from "./shapeAreaGenerator.js?v=1";
 import { generateRational } from "./rationalGenerator.js?v=5";
 import { generateAlgebra } from "./algebraGenerator.js?v=1";
@@ -312,6 +313,8 @@ export function generate(step) {
             return generatePythagorean(opts);
         case "similarity":
             return generateSimilarity(opts);
+        case "function":
+            return generateFunction(opts);
         case "shape-area":
             return generateShapeArea(opts);
         case "rational":

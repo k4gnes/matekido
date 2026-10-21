@@ -1,0 +1,100 @@
+{
+    "id": "function-table-01",
+    "title": "📈 Táblázat és grafikon kapcsolata",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📈 Táblázat és grafikon kapcsolata",
+            "text": "Az értéktáblázat és a grafikon ugyanazt a történetet mesélik el, csak másképpen. A táblázatban az x és az y számai vannak; a grafikont a táblázat pontjaiból rajzoljuk meg. Minden táblázati sor egy pontot jelent! Az x a vízszintes, az y a függőleges tengelyen található. Ha a pontokat összekötjük, és az egyenes vonal egyenletes halad, akkor a függvény lineáris, vagyis ugyanúgy változik, mint egy mindig ugyanannyival növekvő érték.",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 A postás értéktáblázata",
+                    "text": "A postás minden órában ugyanannyi levelet kézbesít. A táblázat az órákat és a kézbesített levelek számát mutatja – rajzold be a pontokat a grafikonra!"
+                },
+                "racing": {
+                    "title": "🏎️ A versenyző adatai",
+                    "text": "A versenyző körönként ugyanannyi utat tesz meg. A táblázat a köröket és a megtett utat mutatja – jelöld be a pontokat!"
+                },
+                "football": {
+                    "title": "⚽ A csapat teljesítménye",
+                    "text": "A csapat a mérkőzés során egyenletesen lő gólokat. A táblázat a perceket és a gólokat mutatja – rajzold be a pontokat a pályán!"
+                },
+                "cooking": {
+                    "title": "🍳 A konyha adatai",
+                    "text": "A tésztához adagonként ugyanannyi tojás kell. A táblázat az adagokat és a tojásokat mutatja – jelöld be a pontokat!"
+                },
+                "animals": {
+                    "title": "🦁 Az állatkert adatai",
+                    "text": "Az állatkertben naponta ugyanannyi ételt adnak az állatoknak. A táblázat a napokat és az ételeket mutatja – rajzold be a pontokat!"
+                },
+                "space": {
+                    "title": "🚀 Az űrhajó adatai",
+                    "text": "Az űrhajó óránként ugyanannyi utat tesz meg. A táblázat az órákat és a megtett utat mutatja – jelöld be a pontokat!"
+                },
+                "tram": {
+                    "title": "🚋 A villamos adatai",
+                    "text": "A villamos megállók között mindig ugyanannyi perc alatt jut. A táblázat a megállókat és a percet mutatja – rajzold be a pontokat!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "function",
+            "options": {
+                "count": 3,
+                "mode": "plot"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "function",
+            "options": {
+                "count": 3,
+                "mode": "plot"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "function",
+            "options": {
+                "count": 3,
+                "mode": "plot"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Megtanultad, hogy az értéktáblázat és a grafikon ugyanazt a függvényt mutatja – innentől bármilyen táblázatot át tudsz rajzolni grafikonra!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "A postás útvonalát is felrajzoltad – indulhat a kézbesítés!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "A verseny teljesítményét is ábrázoltad – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A csapat teljesítményét is ábrázoltad – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "A tészták adatait is felrajzoltad – jó étvágyat!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Az állatok etetését is ábrázoltad – az állatkert elégedett!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Az űrhajó útját is felrajzoltad – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "A villamos útját is ábrázoltad – indulhat a járat!"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,114 @@
+.fn-question {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    color: #475569;
+    margin: .4rem 0 .6rem;
+}
+
+.fn-table {
+    border-collapse: collapse;
+    margin: .3rem auto;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.fn-table th,
+.fn-table td {
+    border: 2px solid #cbd5e1;
+    padding: .3rem 1.2rem;
+    text-align: center;
+    background: #ffffff;
+}
+
+.fn-table th {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.fn-missing {
+    color: #dc2626;
+    font-weight: 900;
+}
+
+.fn-grid {
+    display: flex;
+    justify-content: center;
+    margin: .5rem 0;
+}
+
+.fn-svg {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+}
+
+.fn-cell {
+    cursor: pointer;
+    transition: fill .12s;
+}
+
+.fn-cell:hover {
+    fill: #bfdbfe;
+}
+
+/* a jelölés erősebb, mint a hover (a kattintás után a kurzor még a cellán áll) */
+.fn-cell.fn-cell-marked {
+    fill: #f59e0b;
+}
+
+.fn-counter {
+    text-align: center;
+    font-weight: 700;
+    color: #475569;
+    margin: .2rem 0;
+}
+
+.fn-input {
+    width: 7ch;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    padding: .3rem;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    margin: 1rem auto .6rem;
+    display: block;
+}
+
+.fn-input:focus {
+    border-color: #16a34a;
+    outline: none;
+}
+
+.fn-input:disabled {
+    opacity: .7;
+}
+
+.fn-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .6rem;
+    margin: .8rem 0;
+}
+
+.fn-option {
+    min-width: 68px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1e293b;
+    background: #ffffff;
+    border: 2px solid var(--primary);
+    border-radius: 14px;
+    padding: .5rem .9rem;
+    cursor: pointer;
+    transition: transform .1s ease, border-color .1s ease;
+}
+
+.fn-option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
+}

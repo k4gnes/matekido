@@ -107,6 +107,7 @@ import { renderRatio } from "../components/ratio.js?v=1";
 import { renderTriangle } from "../components/triangle.js?v=1";
 import { renderPythagorean } from "../components/pythagorean.js?v=1";
 import { renderSimilarity } from "../components/similarity.js?v=1";
+import { renderFunction } from "../components/function.js?v=1";
 import { renderShapeArea } from "../components/shapeArea.js?v=1";
 import { renderRational } from "../components/rational.js?v=5";
 import { renderAlgebra } from "../components/algebra.js?v=1";
@@ -219,6 +220,7 @@ const COUNTED_TYPES = new Set([
     "triangle",
     "pythagorean",
     "similarity",
+    "function",
     "shape-area",
     "rational",
     "algebra",
@@ -386,6 +388,7 @@ const RENDERERS = new Map([
     ["triangle", renderTriangle],
     ["pythagorean", renderPythagorean],
     ["similarity", renderSimilarity],
+    ["function", renderFunction],
     ["shape-area", renderShapeArea],
     ["rational", renderRational],
     ["algebra", renderAlgebra],

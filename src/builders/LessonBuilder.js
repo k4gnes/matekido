@@ -728,6 +728,11 @@ export function buildLesson(lesson) {
                     type: "similarity",
                     ...task
                 });
+            } else if (step.generator === "function") {
+                result.push({
+                    type: "function",
+                    ...task
+                });
             } else if (step.generator === "probability") {
                 result.push({
                     type: "probability",

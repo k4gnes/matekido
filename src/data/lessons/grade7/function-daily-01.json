@@ -1,0 +1,100 @@
+{
+    "id": "function-daily-01",
+    "title": "📈 Függvények a mindennapban",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📈 Függvények a mindennapban",
+            "text": "A mindennapi életben szinte mindenre vigyázni kell, és szinte minden összefügg: minél tovább dolgozol, annál többet készítesz; minél többet utazol, annál messzebb jutsz. A grafikontól le lehet olvasni, hogy egy adott pillanatban mennyi volt a másik érték. Ha a vonal emelkedik, a y növekszik, ha lefelezik, csökken. A meredekebb vonal gyorsabban változik.",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 A postás napja",
+                    "text": "A postás grafikonja mutatja, hogyan változik a kézbesített levelek száma az idő múlásával. Olvasd le a grafikonról a számokat!"
+                },
+                "racing": {
+                    "title": "🏎️ A verseny útja",
+                    "text": "A versenyző grafikonja mutatja, mekkora utat tett meg körönként. Olvasd le a grafikonról a számokat!"
+                },
+                "football": {
+                    "title": "⚽ A meccs története",
+                    "text": "A mérkőzés grafikonja mutatja, hány gól született a percek során. Olvasd le a grafikonról a számokat!"
+                },
+                "cooking": {
+                    "title": "🍳 A konyha munkája",
+                    "text": "A konyhában minden adaghoz ugyanannyi tojás kell. A grafikon mutatja, mennyi tojásra van szükség – olvasd le!"
+                },
+                "animals": {
+                    "title": "🦁 Az állatkert napjai",
+                    "text": "Az állatkertben naponta ugyanannyi ételt adnak ki. A grafikonról olvasd le, mennyi étel jutott egy napra!"
+                },
+                "space": {
+                    "title": "🚀 Az űrhajó útja",
+                    "text": "Az űrhajó grafikonja mutatja, mekkora utat tett meg a világűrben. Olvasd le a grafikonról a számokat!"
+                },
+                "tram": {
+                    "title": "🚋 A villamos útja",
+                    "text": "A villamos grafikonja mutatja, mennyi idő alatt jut megállóról megállóra. Olvasd le a grafikonról a számokat!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "function",
+            "options": {
+                "count": 3,
+                "mode": "read"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "function",
+            "options": {
+                "count": 3,
+                "mode": "read"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "function",
+            "options": {
+                "count": 3,
+                "mode": "read"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Megtanultad, hogyan olvasd le egy grafikonról az értékeket – ezzel a mindennapi adatokat is értelmezni tudod!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "A postás grafikonját is leolvasd – indulhat a kézbesítés!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "A verseny útját is leolvasd – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A meccs történetét is leolvasd – kezdődhet a játszma!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "A konyha adatait is leolvasd – jó étvágyat!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Az állatkert napjait is leolvasd – az állatkert elégedett!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Az űrhajó útját is leolvasd – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "A villamos útját is leolvasd – indulhat a járat!"
+                }
+            }
+        }
+    ]
+}

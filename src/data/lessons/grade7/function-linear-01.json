@@ -1,0 +1,108 @@
+{
+    "id": "function-linear-01",
+    "title": "📈 Lineáris függvények felismerése",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📈 Lineáris függvények felismerése",
+            "text": "Ha az értéktáblázatban az x minden lépésben 1-gyel nő, és az y minden lépésben ugyanannyival változik, akkor lineáris függvénnyel dolgozunk. Ezt az állandó számot a függvény meredekségének nevezzük, és m-mel jelöljük. A táblázatból így könnyen kiszámítható a hiányzó érték, és fel is írhatjuk a függvényt y = m·x + b alakban. Például ha a postás 1 órában mindig 3 levelet kézbesít, akkor m = 3, és 4 óra alatt 4·3 = 12 levelet visz el.",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 A postás teljesítménye",
+                    "text": "A postás óránként ugyanannyi levelet kézbesít. Nézd meg az értéktáblázatot, és töltsd ki a hiányzó sort!"
+                },
+                "racing": {
+                    "title": "🏎️ A versenyző tempója",
+                    "text": "A versenyző körönként ugyanannyi utat tesz meg. Egészítsd ki az értéktáblázatot!"
+                },
+                "football": {
+                    "title": "⚽ A csapat gólszáma",
+                    "text": "A csapat a percben ugyanannyi gólt lő. Nézd meg a táblázatot, és töltsd ki a hiányzó sort!"
+                },
+                "cooking": {
+                    "title": "🍳 A tésztarecept",
+                    "text": "Adagonként ugyanannyi tojás kell a tésztához. Egészítsd ki az értéktáblázatot!"
+                },
+                "animals": {
+                    "title": "🦁 Az állatkert etetése",
+                    "text": "Naponta ugyanannyi ételt adnak az állatoknak. Nézd meg a táblázatot, és töltsd ki!"
+                },
+                "space": {
+                    "title": "🚀 Az űrhajó sebessége",
+                    "text": "Az űrhajó óránként ugyanannyi utat tesz meg. Egészítsd ki az értéktáblázatot!"
+                },
+                "tram": {
+                    "title": "🚋 A villamos menetrendje",
+                    "text": "A villamos megállók között mindig ugyanannyi perc alatt jut. Nézd meg a táblázatot, és töltsd ki a hiányzó sort!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "function",
+            "options": {
+                "count": 3,
+                "mode": "extend"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "function",
+            "options": {
+                "count": 3,
+                "mode": "extend"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "function",
+            "options": {
+                "count": 3,
+                "mode": "rule"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "function",
+            "options": {
+                "count": 3,
+                "mode": "rule"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Megtanultad, hogyan ismerhető fel a lineáris függvény: mindig ugyanannyival változik a y értéke. Ezzel már az értéktáblázatok hiányzó sorait is ki tudod tölteni!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "A postás táblázatát is kitöltötted – indulhat a kézbesítés!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "A versenyző adatait is kitöltötted – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A csapat gólszámát is kiszámítottad – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "A tésztareceptet is kiegészítetted – jó étvágyat!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Az állatok etetését is kiszámítottad – az állatkert elégedett!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Az űrhajó adatait is kiszámítottad – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "A villamos menetrendjét is kitöltötted – indulhat a járat!"
+                }
+            }
+        }
+    ]
+}

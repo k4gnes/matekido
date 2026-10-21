@@ -1,6 +1,6 @@
 # Matekidő – 7. osztályos tanmenet
 
-> **Státusz: folyamatban.** A 7. osztályos tanmenet terve; a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan. **Elkészült: 23 lecke a 36 tervezettből + a mester kihívás** (a táblázatban linkelt leckék már a regiszterben vannak), továbbá 2 egyperces játék.
+> **Státusz: folyamatban.** A 7. osztályos tanmenet terve; a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan. **Elkészült: 26 lecke a 36 tervezettből + a mester kihívás** (a táblázatban linkelt leckék már a regiszterben vannak), továbbá 2 egyperces játék.
 
 **Tervezett 36 lecke + 1 mester kihívás**, 8 témakörben (a regiszter 7 kategóriája: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
@@ -43,9 +43,9 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
 | 16 | Koordináta-rendszer | [Koordináta-rendszer](?lesson=coordinate-plane-01) | Pontok ábrázolása, távolság | — | 2 |
-| 17 | Táblázatból grafikon | Táblázat és grafikon kapcsolata *(tervezett)* | Értéktáblázat → pontok | — | 2 |
-| 18 | Lineáris függvények | Lineáris függvények felismerése *(tervezett)* | y = mx + b előkészítés | — | 3 |
-| 19 | Függvények alkalmazása | Függvények a mindennapban *(tervezett)* | Összefüggések leolvasása | — | 3 |
+| 17 | Táblázatból grafikon | [Táblázat és grafikon kapcsolata](?lesson=function-table-01) | Értéktáblázat → pontok | — | 2 |
+| 18 | Lineáris függvények | [Lineáris függvények felismerése](?lesson=function-linear-01) | y = mx + b előkészítés | — | 3 |
+| 19 | Függvények alkalmazása | [Függvények a mindennapban](?lesson=function-daily-01) | Összefüggések leolvasása | — | 3 |
 
 ## Geometria – háromszögek, négyszögek (5 lecke)
 

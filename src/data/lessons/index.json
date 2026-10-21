@@ -6443,6 +6443,78 @@
       }
     },
     {
+      "id": "function-table-01",
+      "title": "📈 Táblázat és grafikon kapcsolata",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "functions",
+      "difficulty": 2,
+      "type": "function",
+      "range": 100,
+      "mission": "📈 Pontok a grafikonon",
+      "subtitle": "értéktáblázat pontjainak ábrázolása a koordináta-rendszerben",
+      "file": "./data/lessons/grade7/function-table-01.json",
+      "worldTitles": {
+        "postman": "📮 A postás értéktáblázata",
+        "racing": "🏁 A versenyző adatai",
+        "football": "⚽ A csapat teljesítménye",
+        "cooking": "🍳 A konyha adatai",
+        "animals": "🦁 Az állatkert adatai",
+        "space": "🚀 Az űrhajó adatai",
+        "tram": "🚋 A villamos adatai"
+      }
+    },
+    {
+      "id": "function-linear-01",
+      "title": "📈 Lineáris függvények felismerése",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "functions",
+      "difficulty": 3,
+      "type": "function",
+      "range": 100,
+      "mission": "📈 A táblázat titka",
+      "subtitle": "lineáris összefüggések felismerése, hiányzó táblázatértékek",
+      "file": "./data/lessons/grade7/function-linear-01.json",
+      "worldTitles": {
+        "postman": "📮 A postás teljesítménye",
+        "racing": "🏁 A versenyző tempója",
+        "football": "⚽ A csapat gólszáma",
+        "cooking": "🍳 A tésztarecept",
+        "animals": "🦁 Az állatkert etetése",
+        "space": "🚀 Az űrhajó sebessége",
+        "tram": "🚋 A villamos menetrendje"
+      }
+    },
+    {
+      "id": "function-daily-01",
+      "title": "📈 Függvények a mindennapban",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "functions",
+      "difficulty": 3,
+      "type": "function",
+      "range": 100,
+      "mission": "📈 Értékek a grafikonon",
+      "subtitle": "grafikon leolvasása: mennyi volt a y, ha x ennyi volt?",
+      "file": "./data/lessons/grade7/function-daily-01.json",
+      "worldTitles": {
+        "postman": "📮 A postás napja",
+        "racing": "🏁 A verseny útja",
+        "football": "⚽ A meccs története",
+        "cooking": "🍳 A konyha munkája",
+        "animals": "🦁 Az állatkert napjai",
+        "space": "🚀 Az űrhajó útja",
+        "tram": "🚋 A villamos útja"
+      }
+    },
+    {
       "id": "ratio-proportion-01",
       "title": "🔗 Arány és aránypár",
       "grades": [

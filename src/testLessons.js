@@ -805,6 +805,65 @@ function validateStep(step, ctx, range) {
             }
             break;
         }
+        case "function": {
+            if (!["plot", "extend", "rule", "read"].includes(step.mode)) {
+                fail(ctx, `mode hibás: ${step.mode}`);
+            }
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            for (const k of ["xUnit", "yUnit"]) {
+                if (typeof step[k] !== "string" || step[k].length === 0) fail(ctx, `${k} hiányzik`);
+            }
+            // lineáris-e a táblázat/pontok halmaza, és ha igen, mekkora a lépés
+            const slopeOf = (rows) => {
+                if (!Array.isArray(rows) || rows.length < 2) return null;
+                let slope = null;
+                for (let i = 1; i < rows.length; i++) {
+                    const dx = rows[i].x - rows[i - 1].x;
+                    const dy = rows[i].y - rows[i - 1].y;
+                    if (!isInt(dx) || !isInt(dy) || dx === 0) return null;
+                    const s = dy / dx;
+                    if (slope === null) slope = s;
+                    else if (slope !== s) return null;
+                }
+                return slope;
+            };
+            const checkChoices = () => {
+                if (!Array.isArray(step.options) || step.options.length !== 4) fail(ctx, "options nem 4 elemű");
+                else if (new Set(step.options).size !== step.options.length) fail(ctx, "options ismétlődik");
+            };
+            if (step.mode === "plot") {
+                if (!Array.isArray(step.target) || step.target.length < 2) fail(ctx, "target hibás");
+                for (const [x, y] of step.target ?? []) {
+                    if (!isInt(x) || x < 0 || x > 8) fail(ctx, `target x a rácson kívül: ${x}`);
+                    if (!isInt(y) || y < 0 || y > 9) fail(ctx, `target y a rácson kívül: ${y}`);
+                }
+                if (step.answer !== (step.target ?? []).length) fail(ctx, "answer != target hossz");
+                if (!step.table || !Array.isArray(step.table.rows)) fail(ctx, "table hiányzik");
+            } else if (step.mode === "extend") {
+                const rows = step.table?.rows ?? [];
+                const missing = rows.filter(r => r.y === null);
+                if (missing.length !== 1) fail(ctx, `pontosan egy hiányzó érték kell, ennyi van: ${missing.length}`);
+                if (!isInt(step.answer) || step.answer < 0) fail(ctx, "answer hibás");
+                if (typeof range === "number" && step.answer > range) fail(ctx, "answer meghaladja a tartományt");
+                const filled = rows.map(r => (r.y === null ? { x: r.x, y: step.answer } : r));
+                if (slopeOf(filled) === null) fail(ctx, "a táblázat a kitöltött értékkel sem lineáris");
+            } else if (step.mode === "rule") {
+                const slope = slopeOf(step.table?.rows ?? []);
+                if (slope === null) fail(ctx, "a táblázat nem lineáris");
+                else if (step.answer !== Math.abs(slope)) fail(ctx, `answer (${step.answer}) != lépés (${Math.abs(slope)})`);
+                checkChoices();
+            } else if (step.mode === "read") {
+                if (!Array.isArray(step.points) || step.points.length < 2) fail(ctx, "points hibás");
+                const points = (step.points ?? []).map(([x, y]) => ({ x, y }));
+                if (slopeOf(points) === null) fail(ctx, "a pontok nem lineárisak");
+                const asked = points.find(p => p.x === step.askX);
+                if (!asked) fail(ctx, "askX nincs a pontok között");
+                else if (asked.y !== step.answer) fail(ctx, `answer (${step.answer}) != grafikon értéke (${asked.y})`);
+                if (typeof range === "number" && step.answer > range) fail(ctx, "answer meghaladja a tartományt");
+                checkChoices();
+            }
+            break;
+        }
         case "shape-area": {
             if (!["triangle-perimeter", "triangle-area", "rectangle-perimeter", "rectangle-area", "parallelogram-area", "trapezoid-area", "rhombus-area"].includes(step.mode)) {
                 fail(ctx, `mode hibás: ${step.mode}`);

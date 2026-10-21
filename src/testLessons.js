@@ -764,6 +764,47 @@ function validateStep(step, ctx, range) {
             }
             break;
         }
+        case "similarity": {
+            if (!["missing-side", "missing-side-small", "scale-factor", "area-ratio"].includes(step.mode)) {
+                fail(ctx, `mode hibás: ${step.mode}`);
+            }
+            if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+            if (!Array.isArray(step.options) || step.options.length !== 4) fail(ctx, "options nem 4 elemű");
+            if (new Set(step.options).size !== step.options.length) fail(ctx, "options ismétlődik");
+            if (!step.options.includes(step.answerLabel)) fail(ctx, "options nem tartalmazza a választ");
+            for (const key of ["first", "second"]) {
+                const fig = step[key];
+                if (!fig || !Array.isArray(fig.sides) || fig.sides.length !== 3) {
+                    fail(ctx, `${key}.sides hibás`);
+                    continue;
+                }
+                if (!fig.sides.every(s => isInt(s) && s > 0)) fail(ctx, `${key}.sides nem pozitív egész`);
+                if (!Array.isArray(fig.labels) || fig.labels.length !== 3) fail(ctx, `${key}.labels hibás`);
+                if (fig.unknown < -1 || fig.unknown > 2) fail(ctx, `${key}.unknown hibás: ${fig.unknown}`);
+                if (fig.unknown >= 0 && fig.labels[fig.unknown] !== null) {
+                    fail(ctx, `${key}.labels[${fig.unknown}] nem null az ismeretlen oldalnál`);
+                }
+            }
+            if (isInt(step.k) && step.k > 0) {
+                const base = step.first.sides;
+                const big = base.map(s => s * step.k);
+                const unknown = step.second.unknown;
+                if (step.mode === "missing-side" && unknown >= 0) {
+                    if (step.answer !== big[unknown]) fail(ctx, `answer (${step.answer}) != ${big[unknown]}`);
+                    if (step.answerLabel !== `${big[unknown]} cm`) fail(ctx, "answerLabel hibás");
+                }
+                if (step.mode === "missing-side-small" && step.first.unknown >= 0) {
+                    if (step.answer !== base[step.first.unknown]) {
+                        fail(ctx, `answer (${step.answer}) != ${base[step.first.unknown]}`);
+                    }
+                    if (step.answerLabel !== `${base[step.first.unknown]} cm`) fail(ctx, "answerLabel hibás");
+                }
+                if (step.mode === "scale-factor" && step.answer !== step.k) {
+                    fail(ctx, `answer (${step.answer}) != hasonlítási arány (${step.k})`);
+                }
+            }
+            break;
+        }
         case "shape-area": {
             if (!["triangle-perimeter", "triangle-area", "rectangle-perimeter", "rectangle-area", "parallelogram-area", "trapezoid-area", "rhombus-area"].includes(step.mode)) {
                 fail(ctx, `mode hibás: ${step.mode}`);
@@ -2008,6 +2049,33 @@ function validateStep(step, ctx, range) {
                     if (isInt(step.r)) expected = `${step.r * step.r}π cm²`;
                 }
                 if (expected !== undefined && step.answerLabel !== expected) {
+                    fail(ctx, `answerLabel (${step.answerLabel}) != várt (${expected})`);
+                }
+                if (!step.options.includes(step.answerLabel)) fail(ctx, "options nem tartalmazza a választ");
+                if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+                break;
+            }
+            if (step.mode === "sector") {
+                if (!["arc-radius", "arc-diameter", "sector-area"].includes(step.variant)) {
+                    fail(ctx, `variant hibás: ${step.variant}`);
+                }
+                if (!Array.isArray(step.options) || step.options.length !== 4) fail(ctx, "options nem 4 elemű");
+                if (new Set(step.options).size !== step.options.length) fail(ctx, "options ismétlődik");
+                if (!isInt(step.angle) || step.angle <= 0 || step.angle >= 360) fail(ctx, `angle hibás: ${step.angle}`);
+                if (!isInt(step.r) || step.r < 1) fail(ctx, `r hibás: ${step.r}`);
+                if (step.variant === "arc-diameter") {
+                    if (!isInt(step.d) || step.d !== step.r * 2) fail(ctx, `d hibás: ${step.d}`);
+                }
+                let expected;
+                if (step.variant === "sector-area") {
+                    expected = `${step.r * step.r * step.angle / 360}π cm²`;
+                } else {
+                    expected = `${step.r * step.angle / 180}π cm`;
+                }
+                if (!Number.isInteger(Number(expected.replace(/[^0-9]/g, "")))) {
+                    fail(ctx, `nem egész együtthatós: ${expected}`);
+                }
+                if (step.answerLabel !== expected) {
                     fail(ctx, `answerLabel (${step.answerLabel}) != várt (${expected})`);
                 }
                 if (!step.options.includes(step.answerLabel)) fail(ctx, "options nem tartalmazza a választ");

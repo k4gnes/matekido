@@ -723,6 +723,11 @@ export function buildLesson(lesson) {
                     type: "circle",
                     ...task
                 });
+            } else if (step.generator === "similarity") {
+                result.push({
+                    type: "similarity",
+                    ...task
+                });
             } else if (step.generator === "probability") {
                 result.push({
                     type: "probability",

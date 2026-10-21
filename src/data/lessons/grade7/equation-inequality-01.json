@@ -1,0 +1,116 @@
+{
+    "id": "equation-inequality-01",
+    "title": "🧮 Egyenletek és egyenlőtlenségek vegyesen",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🧮 Egyenletek és egyenlőtlenségek vegyesen",
+            "text": "Most vegyes feladatok következnek! Egyenletnél egyetlen szám az x értéke, egyenlőtlenségnél viszont egy egész számcsoport a megoldás. A legfontosabb szabály: ha az egyenlőtlenség mindkét oldalát negatív számmal szorozzuk vagy osztjuk, a jel megfordul!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Egyenletek a postán",
+                    "text": "A postán kiszámoljuk, hány csomagot kell kiszállítani, és megadjuk, hány csomagnál több kell. Oldd meg az egyenleteket és az egyenlőtlenségeket!"
+                },
+                "racing": {
+                    "title": "🏎️ Egyenletek a pályán",
+                    "text": "A versenypályán a körök számát kell kiszámítani, és megadni, legalább hány kör lesz. Oldd meg!"
+                },
+                "cooking": {
+                    "title": "🍳 Egyenletek a konyhában",
+                    "text": "A konyhában a hozzávalók mennyiségét számoljuk ki, és megmondjuk, mennyi kell legalább. Oldd meg az egyenleteket és az egyenlőtlenségeket!"
+                },
+                "football": {
+                    "title": "⚽ Egyenletek a pályán",
+                    "text": "A gólok számát kell kiszámítani, és megadni, hány gólnál több kell. Oldd meg!"
+                },
+                "animals": {
+                    "title": "🦁 Egyenletek az állatkertben",
+                    "text": "Az állatok etetésénél kiszámoljuk a napi adagokat, és megadjuk, mennyi kell legalább. Oldd meg!"
+                },
+                "space": {
+                    "title": "🚀 Egyenletek az űrben",
+                    "text": "Az űrhajón az üzemanyag mennyiségét számoljuk ki, és megadjuk a minimumot. Oldd meg!"
+                },
+                "tram": {
+                    "title": "🚋 Egyenletek a villamoson",
+                    "text": "A villamoson az utasok számát számoljuk, és megadjuk, hány utasnál több kell. Oldd meg!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "equation",
+            "options": {
+                "count": 4,
+                "mode": "mixed"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "equation",
+            "options": {
+                "count": 3,
+                "mode": "both-sides"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "inequality",
+            "options": {
+                "count": 3,
+                "mode": "solve"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "inequality",
+            "options": {
+                "count": 3,
+                "mode": "linear"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "inequality",
+            "options": {
+                "count": 3,
+                "mode": "linear-line"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Az egyenleteket és az egyenlőtlenségeket is magabiztosan megoldod – bármelyik jöjjön is!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden csomagszámot és korlátot kiszámoltál – a posta indulhat!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "A pálya minden egyenletét megoldottad – indulhat a verseny!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "A konyhai adagokat és korlátokat is kiszámoltad – főzhetünk!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A gólszámokat és a feltételeket is megoldottad – kezdődhet a meccs!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Minden adagot és korlátot kiszámoltál – az állatok elégedettek!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Az üzemanyag-mennyiségek is helyesek – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "Minden utasszámot és korlátot megoldottál – a villamos indulhat!"
+                }
+            }
+        }
+    ]
+}

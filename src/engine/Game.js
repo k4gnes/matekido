@@ -78,7 +78,7 @@ import { renderWrittenDivision } from "../components/writtenDivision.js?v=4";
 import { renderPerimeter } from "../components/perimeter.js?v=2";
 import { renderArea } from "../components/area.js?v=2";
 import { renderAngles } from "../components/angles.js?v=2";
-import { renderCircle } from "../components/circle.js?v=4";
+import { renderCircle } from "../components/circle.js?v=5";
 import { renderProbability } from "../components/probability.js?v=4";
 import { renderCombinatorics } from "../components/combinatorics.js?v=6";
 import { renderOperationOrder } from "../components/operationOrder.js?v=2";
@@ -106,6 +106,7 @@ import { renderInequality } from "../components/inequality.js?v=4";
 import { renderRatio } from "../components/ratio.js?v=1";
 import { renderTriangle } from "../components/triangle.js?v=1";
 import { renderPythagorean } from "../components/pythagorean.js?v=1";
+import { renderSimilarity } from "../components/similarity.js?v=1";
 import { renderShapeArea } from "../components/shapeArea.js?v=1";
 import { renderRational } from "../components/rational.js?v=5";
 import { renderAlgebra } from "../components/algebra.js?v=1";
@@ -217,6 +218,7 @@ const COUNTED_TYPES = new Set([
     "ratio",
     "triangle",
     "pythagorean",
+    "similarity",
     "shape-area",
     "rational",
     "algebra",
@@ -383,6 +385,7 @@ const RENDERERS = new Map([
     ["ratio", renderRatio],
     ["triangle", renderTriangle],
     ["pythagorean", renderPythagorean],
+    ["similarity", renderSimilarity],
     ["shape-area", renderShapeArea],
     ["rational", renderRational],
     ["algebra", renderAlgebra],

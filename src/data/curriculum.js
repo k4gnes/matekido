@@ -286,6 +286,7 @@ export const CURRICULUM_ORDER = {
         "equation-linear-11",
         "equation-word-12",
         "inequality-linear-13",
+        "equation-inequality-01",
         "coordinate-plane-01",
         "ratio-proportion-01",
         "proportion-01",
@@ -295,6 +296,8 @@ export const CURRICULUM_ORDER = {
         "polygon-area-01",
         "perimeter-area-01",
         "circle-03",
+        "circle-sector-01",
+        "similarity-01",
         "grade7-master-01",
     ],
 };

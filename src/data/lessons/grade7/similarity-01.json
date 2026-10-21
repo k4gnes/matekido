@@ -1,0 +1,108 @@
+{
+    "id": "similarity-01",
+    "title": "🔺 Hasonlóság alapjai",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🔺 Hasonlóság alapjai",
+            "text": "Két alakzat akkor hasonló, ha megfelelő oldalaik arányosak, és megfelelő szögeik egyenlők. Hasonló alakzatoknál a megfelelő oldalak mind ugyanazzal a számmal szorzódnak meg – ezt nevezzük hasonlítási aránynak (például 2 vagy 0,5). Ha az egyik háromszög oldala 3 cm, 4 cm és 5 cm, akkor a kétszeres nagyításban 6 cm, 8 cm és 10 cm lesznek. A hasonlóság alapján bármelyik hiányzó oldalt kiszámolhatod!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Hasonló csomagok",
+                    "text": "A postán a nagyobb és a kisebb doboz ugyanaz a forma, csak más méretű! Számold ki a hiányzó oldalt a hasonlítási aránnyal!"
+                },
+                "racing": {
+                    "title": "🏎️ Hasonló alkatrészek",
+                    "text": "A boxutcában a versenyautó és a kishallgató ugyanazt a formát követi, csak más arányban! Számold ki a hiányzó oldalt!"
+                },
+                "football": {
+                    "title": "⚽ Hasonló pályák",
+                    "text": "A pályán a kispálya és a nagy pálya hasonló alakú! A hasonlítási aránnyal kiszámolod a hiányzó oldalt!"
+                },
+                "cooking": {
+                    "title": "🍳 Hasonló formák",
+                    "text": "A konyhában a kisebb és a nagyobb sütiformát hasonlóra vágják! Számold ki, mekkora a hiányzó oldal!"
+                },
+                "animals": {
+                    "title": "🦁 Hasonló állatok",
+                    "text": "Az állatkertben a kölykök és a szülők aránya hasonló, csak más méretben! Számold ki a hiányzó oldalt!"
+                },
+                "space": {
+                    "title": "🚀 Hasonló űrhajók",
+                    "text": "Az űrben a kisebb és a nagyobb űrhajó is ugyanazt a formát követi! Számold ki a hiányzó oldalt!"
+                },
+                "tram": {
+                    "title": "🚋 Hasonló járművek",
+                    "text": "A villamosvonalon a kis és a nagy szerelvény hasonló alakú! Számold ki a hiányzó oldalt!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "similarity",
+            "options": {
+                "count": 3,
+                "mode": "missing-side"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "similarity",
+            "options": {
+                "count": 3,
+                "mode": "missing-side-small"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "similarity",
+            "options": {
+                "count": 3,
+                "mode": "scale-factor"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "similarity",
+            "options": {
+                "count": 3,
+                "mode": "area-ratio"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Megtanultad, hogy a hasonló alakzatok megfelelő oldalai arányosak – ezzel már bármilyen hasonlósági feladatot meg tudsz oldani!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden doboz méretét kiszámoltad – a posta indulhat!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "Az alkatrészek méretarányát is kiszámoltad – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A pályák arányát is kiszámoltad – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "A sütiformák méretét is kiszámoltad – jó étvágyat!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Az állatok méretarányát is kiszámoltad – az állatkert elégedett!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Az űrhajók méretét is kiszámoltad – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "A szerelvények arányát is kiszámoltad – a villamos indulhat!"
+                }
+            }
+        }
+    ]
+}

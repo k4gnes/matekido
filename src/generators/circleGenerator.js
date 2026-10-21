@@ -164,6 +164,59 @@ function generateArea() {
     };
 }
 
+// A sugár és a középponti szög úgy van választva, hogy a körív hossza és a
+// körcikk területe is egész együtthatós π legyen (pl. r = 12, α = 90° → 6π cm és 36π cm²).
+const SECTOR_RADII = [12, 24, 36];
+const SECTOR_ANGLES = [30, 45, 60, 90, 120, 180];
+
+function generateSector(kind) {
+    const r = SECTOR_RADII[Math.floor(Math.random() * SECTOR_RADII.length)];
+    const angle = SECTOR_ANGLES[Math.floor(Math.random() * SECTOR_ANGLES.length)];
+
+    if (kind === "arc" || (kind === "mixed" && Math.random() < 0.5)) {
+        const coeff = r * angle / 180;
+        if (Math.random() < 0.5) {
+            return {
+                type: "circle",
+                mode: "sector",
+                variant: "arc-radius",
+                r,
+                angle,
+                answerLabel: `${coeff}${PI} cm`,
+                question: `A kör sugara ${r} cm, a középponti szög ${angle}°. Mennyi a körív hossza? L = (α / 360) × 2 × r × π`,
+                options: coeffOptions(coeff, [2 * r, r]).map(v => `${v}${PI} cm`),
+                successText: `😊 Ügyes! L = (${angle} / 360) × 2 × ${r} × π = ${coeff}π cm.`
+            };
+        }
+        const d = 2 * r;
+        return {
+            type: "circle",
+            mode: "sector",
+            variant: "arc-diameter",
+            r,
+            d,
+            angle,
+            answerLabel: `${coeff}${PI} cm`,
+            question: `A kör átmérője ${d} cm, a középponti szög ${angle}°. Mennyi a körív hossza? L = (α / 360) × π × d`,
+            options: coeffOptions(coeff, [d, r, 2 * r]).map(v => `${v}${PI} cm`),
+            successText: `😊 Ügyes! L = (${angle} / 360) × π × ${d} = ${coeff}π cm.`
+        };
+    }
+
+    const coeff = r * r * angle / 360;
+    return {
+        type: "circle",
+        mode: "sector",
+        variant: "sector-area",
+        r,
+        angle,
+        answerLabel: `${coeff}${PI} cm²`,
+        question: `A kör sugara ${r} cm, a középponti szög ${angle}°. Mennyi a körcikk területe? T = (α / 360) × r × r × π`,
+        options: coeffOptions(coeff, [r * r, (r * r) / 2, 2 * r]).map(v => `${v}${PI} cm²`),
+        successText: `😊 Ügyes! T = (${angle} / 360) × ${r} × ${r} × π = ${coeff}π cm².`
+    };
+}
+
 function pickMode(mode) {
     if (mode === "mixed") return Math.random() < 0.5 ? "identify" : "convert";
     if (mode === "measure-mixed") return MEASURE_MIXED[Math.floor(Math.random() * MEASURE_MIXED.length)];
@@ -174,6 +227,9 @@ function buildMode(m) {
     if (m === "convert") return generateConvert();
     if (m === "circumference") return generateCircumference();
     if (m === "area") return generateArea();
+    if (m === "sector") return generateSector("mixed");
+    if (m === "sector-arc") return generateSector("arc");
+    if (m === "sector-area") return generateSector("area");
     return generateTask();
 }
 

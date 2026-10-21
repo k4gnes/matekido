@@ -66,7 +66,7 @@ import { generateFractionCommonDen } from "./fractionCommonDenGenerator.js?v=1";
 import { generateFractionTimesInt } from "./fractionTimesIntGenerator.js?v=1";
 import { generateFractionTimesFrac } from "./fractionTimesFracGenerator.js?v=1";
 import { generateFractionDivide } from "./fractionDivideGenerator.js?v=1";
-import { generateCircle } from "./circleGenerator.js?v=3";
+import { generateCircle } from "./circleGenerator.js?v=4";
 import { generateProbability } from "./probabilityGenerator.js?v=4";
 import { generateCombinatorics } from "./combinatoricsGenerator.js?v=7";
 import { generateOperationOrder } from "./operationOrderGenerator.js?v=3";
@@ -96,6 +96,7 @@ import { generateInequality } from "./inequalityGenerator.js?v=2";
 import { generateRatio } from "./ratioGenerator.js?v=1";
 import { generateTriangle } from "./triangleGenerator.js?v=2";
 import { generatePythagorean } from "./pythagoreanGenerator.js?v=1";
+import { generateSimilarity } from "./similarityGenerator.js?v=1";
 import { generateShapeArea } from "./shapeAreaGenerator.js?v=1";
 import { generateRational } from "./rationalGenerator.js?v=5";
 import { generateAlgebra } from "./algebraGenerator.js?v=1";
@@ -309,6 +310,8 @@ export function generate(step) {
             return generateTriangle(opts);
         case "pythagorean":
             return generatePythagorean(opts);
+        case "similarity":
+            return generateSimilarity(opts);
         case "shape-area":
             return generateShapeArea(opts);
         case "rational":

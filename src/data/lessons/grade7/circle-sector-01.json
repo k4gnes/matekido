@@ -1,0 +1,100 @@
+{
+    "id": "circle-sector-01",
+    "title": "🥧 Körív és körcikk",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🥧 Körív és körcikk",
+            "text": "A körív a kör egy része, a körcikk pedig a kör és két sugár által közrefogott terület. Ha a középponti szög α, akkor a körív hossza a teljes kerület α/360 része: L = (α / 360) × 2 × r × π, a körcikk területe pedig a teljes terület α/360 része: T = (α / 360) × r × r × π. Fordítsd ki: a teljes kör 360°, tehát a félkör 180°!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 Kör alakú bélyegek",
+                    "text": "A postán bélyegzőket és címkéket vágnak kör alakúra! Számold ki a körív hosszát és a körcikk területét!"
+                },
+                "racing": {
+                    "title": "🏎️ Kanyarus kerekek",
+                    "text": "A versenyautó kerekei körcikket hasonlítanak a kanyarrokban! Számold ki a körív hosszát és a körcikk területét!"
+                },
+                "football": {
+                    "title": "⚽ A szögletartó körív",
+                    "text": "A pályán a szögletartó sarokban körív húzódik! Milyen hosszú, és mekkora a területe?"
+                },
+                "cooking": {
+                    "title": "🍳 Körcikk pizza",
+                    "text": "A konyhában a pizza egy szeletének területét is kiszámolod! Számold ki a körív hosszát és a körcikk területét!"
+                },
+                "animals": {
+                    "title": "🦁 Kerek kifutó",
+                    "text": "Az állatkertben kerek kifutók vannak, amelyeknek csak egy részét járja be az állat! Számold ki a körív hosszát és a körcikk területét!"
+                },
+                "space": {
+                    "title": "🚀 Bolygóátvilágítás",
+                    "text": "Az űrben a bolygóknak csak egy része van fényesen megvilágítva! Ez egy körcikk – számold ki a hosszát és a területét!"
+                },
+                "tram": {
+                    "title": "🚋 Kerek váltókapu",
+                    "text": "A villamoson a kerek váltókapu csak egy része nyílik ki! Számold ki a körív hosszát és a körcikk területét!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "circle",
+            "options": {
+                "count": 3,
+                "mode": "sector-arc"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "circle",
+            "options": {
+                "count": 3,
+                "mode": "sector-area"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "circle",
+            "options": {
+                "count": 4,
+                "mode": "sector"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Kiszámoltad a körív hosszát és a körcikk területét is – érted, hogy a teljes kör 360°!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden bélyeg körívét és területét kiszámoltad – a posta indulhat!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "A kerekek kanyarait is kiszámoltad – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A szögletartó körívét is kiszámoltad – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "A pizzaszelet területét is kiszámoltad – jó étvágyat!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "A kifutó kerek részét is kiszámoltad – az állatok elégedettek!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "A megvilágított részt is kiszámoltad – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "A váltókapu kerek részét is kiszámoltad – a villamos indulhat!"
+                }
+            }
+        }
+    ]
+}

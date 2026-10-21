@@ -1,0 +1,46 @@
+.sim-question {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    color: #475569;
+    margin: .4rem 0 .6rem;
+}
+
+.sim-figure {
+    display: flex;
+    justify-content: center;
+    margin: .2rem 0 .4rem;
+}
+
+.sim-figure svg {
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+}
+
+.sim-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .7rem;
+    margin: .6rem 0;
+}
+
+.sim-option {
+    margin: 0;
+    padding: .8rem 1.4rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    background: var(--primary);
+    color: #fff;
+    cursor: pointer;
+    transition: transform .15s, border-color .15s, background-color .15s;
+}
+
+.sim-option:hover {
+    border-color: var(--primary-dark);
+    background: var(--primary-dark);
+    transform: scale(1.06);
+}

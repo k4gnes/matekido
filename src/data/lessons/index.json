@@ -6010,6 +6010,54 @@
       }
     },
     {
+      "id": "circle-sector-01",
+      "title": "🥧 Körív és körcikk",
+      "grades": [
+        7
+      ],
+      "category": "geometry",
+      "skill": "circle",
+      "difficulty": 3,
+      "type": "circle",
+      "range": 100,
+      "mission": "🥧 Körív és körcikk",
+      "subtitle": "körív hossza és körcikk területe a középponti szögből",
+      "file": "./data/lessons/grade7/circle-sector-01.json",
+      "worldTitles": {
+        "postman": "📮 Kör alakú bélyegek",
+        "racing": "🏎️ Kanyarus kerekek",
+        "football": "⚽ A szögletartó körív",
+        "cooking": "🍳 Körcikk pizza",
+        "animals": "🦁 Kerek kifutó",
+        "space": "🚀 Bolygóátvilágítás",
+        "tram": "🚋 Kerek váltókapu"
+      }
+    },
+    {
+      "id": "similarity-01",
+      "title": "🔺 Hasonlóság alapjai",
+      "grades": [
+        7
+      ],
+      "category": "geometry",
+      "skill": "similarity",
+      "difficulty": 3,
+      "type": "similarity",
+      "range": 100,
+      "mission": "🔺 Hasonlóság alapjai",
+      "subtitle": "hasonlítási arány, hiányzó oldal és területarány",
+      "file": "./data/lessons/grade7/similarity-01.json",
+      "worldTitles": {
+        "postman": "📮 Hasonló csomagok",
+        "racing": "🏎️ Hasonló alkatrészek",
+        "football": "⚽ Hasonló pályák",
+        "cooking": "🍳 Hasonló formák",
+        "animals": "🦁 Hasonló állatok",
+        "space": "🚀 Hasonló űrhajók",
+        "tram": "🚋 Hasonló járművek"
+      }
+    },
+    {
       "id": "grade7-master-01",
       "title": "🌟 Mester kihívás",
       "grades": [
@@ -6344,6 +6392,30 @@
         "animals": "🦁 Egyenlőtlenségek az állatkertben",
         "space": "🚀 Egyenlőtlenségek az űrben",
         "tram": "🚋 Egyenlőtlenségek a villamoson"
+      }
+    },
+    {
+      "id": "equation-inequality-01",
+      "title": "🧮 Egyenletek és egyenlőtlenségek vegyesen",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "equation",
+      "difficulty": 3,
+      "type": "equation",
+      "range": 1000,
+      "mission": "🧮 Egyenletek és egyenlőtlenségek vegyesen",
+      "subtitle": "vegyes gyakorlás: egyenletek és egyenlőtlenségek",
+      "file": "./data/lessons/grade7/equation-inequality-01.json",
+      "worldTitles": {
+        "postman": "📮 Egyenletek a postán",
+        "racing": "🏎️ Egyenletek a pályán",
+        "football": "⚽ Egyenletek a pályán",
+        "cooking": "🍳 Egyenletek a konyhában",
+        "animals": "🦁 Egyenletek az állatkertben",
+        "space": "🚀 Egyenletek az űrben",
+        "tram": "🚋 Egyenletek a villamoson"
       }
     },
     {

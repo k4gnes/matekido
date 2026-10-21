@@ -558,6 +558,7 @@ const SW_CACHE_LIST = [
     "/data/lessons/grade7/rational-mul-div-04.json",
     "/data/lessons/grade7/rational-numbers-01.json",
     "/data/lessons/grade7/similarity-01.json",
+    "/data/lessons/grade7/triangle-build-01.json",
     "/data/lessons/index.json",
     "/data/measure.js",
     "/data/money.js",

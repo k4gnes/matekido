@@ -119,6 +119,12 @@ export function renderTriangle(step, root, next, progress, onResult, onAttempt) 
         if (step.mode === "classify-sides") {
             return `😊 Ügyes! Ez a háromszög ${step.answer.toLowerCase()}.`;
         }
+        if (step.mode === "max-side") {
+            return `😊 Ügyes! ${step.a} + ${step.b} = ${step.a + step.b}, de a háromszög csak akkor zárul be, ha a harmadik oldal kisebb ennél, így a legnagyobb egész érték ${step.answer} cm.`;
+        }
+        if (step.mode === "min-side") {
+            return `😊 Ügyes! A harmadik oldalnak nagyobbnak kell lennie, mint ${Math.abs(step.a - step.b)} cm, ezért a legkisebb egész érték ${step.answer} cm.`;
+        }
         const sorted = [step.a, step.b, step.c].sort((x, y) => x - y);
         if (step.answer) {
             return `😊 Ügyes! ${sorted[0]} + ${sorted[1]} > ${sorted[2]}, ezért megszerkeszthető.`;

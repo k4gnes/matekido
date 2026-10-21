@@ -112,10 +112,51 @@ function buildInequality(index) {
     };
 }
 
+function lengthOptions(answer) {
+    const values = [answer];
+    for (const offset of [1, -1, 2, -2, 3, -3]) {
+        if (values.length >= 4) break;
+        const v = answer + offset;
+        if (v >= 1 && !values.includes(v)) values.push(v);
+    }
+    return shuffle(values).map(v => ({ text: `${v} cm`, correct: v === answer }));
+}
+
+function buildMaxSide() {
+    const a = random(4, 25);
+    const b = random(4, 25);
+    const answer = a + b - 1;
+    return {
+        mode: "max-side",
+        question: `Egy háromszög két oldala ${a} cm és ${b} cm. Mekkora lehet a harmadik oldal legfeljebb?`,
+        a,
+        b,
+        answer,
+        options: lengthOptions(answer)
+    };
+}
+
+function buildMinSide() {
+    const a = random(4, 25);
+    let b = random(4, 25);
+    while (b === a) b = random(4, 25);
+    const answer = Math.abs(a - b) + 1;
+    return {
+        mode: "min-side",
+        question: `Egy háromszög két oldala ${a} cm és ${b} cm. Mekkora lehet a harmadik oldal legkisebben?`,
+        a,
+        b,
+        answer,
+        options: lengthOptions(answer)
+    };
+}
+
 const MODES = {
     "angle-sum": () => buildAngleSum(),
     "classify-sides": () => buildClassifySides(),
-    inequality: (index) => buildInequality(index)
+    inequality: (index) => buildInequality(index),
+    "max-side": () => buildMaxSide(),
+    "min-side": () => buildMinSide()
 };
 
 export function generateTriangle(options = {}) {

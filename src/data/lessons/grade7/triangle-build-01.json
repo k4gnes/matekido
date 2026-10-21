@@ -1,0 +1,100 @@
+{
+    "id": "triangle-build-01",
+    "title": "📐 Háromszögek szerkeszthetősége",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📐 Háromszögek szerkeszthetősége",
+            "text": "Három szakaszból csak akkor készíthető háromszög, ha a leghosszabb oldal rövidebb, mint a másik két oldal összege. Ez a háromszög-egyenlőtlenség. Ha két oldalt ismerünk, a harmadik oldal legnagyobb egész értéke a két oldal összege minusz 1 (a legkisebb pedig a két oldal különbsége plusz 1), hiszen a háromszögnek be kell záródnia, de nem lehet egyenes vonal.",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 A postás útvonala",
+                    "text": "A postás három szakaszú útvonalat tervez. Szerkeszthető-e a háromszög, ha a szakaszok hossza 12 m, 7 m és 20 m? És mekkora lehet a harmadik oldal legfeljebb, ha a másik kettő 12 m és 7 m?"
+                },
+                "racing": {
+                    "title": "🏎️ A versenyző köre",
+                    "text": "A versenyző három egyenes szakaszból építi a kört. Ellenőrizd a háromszög-egyenlőtlenséget, és keresd a harmadik oldal legnagyobb és legkisebb lehetséges értékét!"
+                },
+                "football": {
+                    "title": "⚽ A pálya felújítása",
+                    "text": "A pályán három szakaszból épül a lelátó. Szerkeszthető-e a háromszög, ha a szakaszok 25 m, 18 m és 40 m hosszúak? Mekkora lehet a harmadik oldal legfeljebb?"
+                },
+                "cooking": {
+                    "title": "🍳 A konyhában",
+                    "text": "A konyhában egy háromszög alakú tálalót építenek három deszkából. Ellenőrizd, szerkeszthető-e, és keresd a harmadik oldal lehetséges legnagyobb értékét!"
+                },
+                "animals": {
+                    "title": "🦁 Az állatkert karámja",
+                    "text": "Az állatkert karámja három kerítésszakaszból lesz. Szerkeszthető-e a háromszög, ha a szakaszok 14 m, 9 m és 22 m hosszúak? És mekkora lehet a harmadik oldal legkisebben?"
+                },
+                "space": {
+                    "title": "🚀 Az űrhajó teste",
+                    "text": "Az űrhajó teste három lemezből készül. Ellenőrizd a háromszög-egyenlőtlenséget, és keresd a harmadik oldal legnagyobb lehetséges értékét!"
+                },
+                "tram": {
+                    "title": "🚋 A villamos forgalmi tere",
+                    "text": "A villamos forgalmi terének három szakaszból épülő határolója van. Szerkeszthető-e a háromszög, ha a szakaszok 8 m, 15 m és 20 m hosszúak? Mekkora lehet a harmadik oldal legfeljebb?"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "triangle",
+            "options": {
+                "count": 4,
+                "mode": "inequality"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "triangle",
+            "options": {
+                "count": 3,
+                "mode": "max-side"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "triangle",
+            "options": {
+                "count": 3,
+                "mode": "min-side"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Megtanultad a háromszög-egyenlőtlenséget: ezzel bármilyen három oldalból ellenőrizheted, készíthető-e háromszög, és megmondhatod, mekkora lehet a hiányzó oldal!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "A postás útvonalát is ellenőrizted – indulhat a kézbesítés!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "A versenyző körét is megtervezted – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A pályát is megtervezted – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "A tálalót is megépítetted – jó étvágyat!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Az állatkert karámját is kialakítottad – az állatkert elégedett!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Az űrhajó testét is megtervezted – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "A villamos forgalmi terét is kialakítottad – indulhat a járat!"
+                }
+            }
+        }
+    ]
+}

@@ -6515,6 +6515,30 @@
       }
     },
     {
+      "id": "triangle-build-01",
+      "title": "📐 Háromszögek szerkeszthetősége",
+      "grades": [
+        7
+      ],
+      "category": "geometry",
+      "skill": "triangles",
+      "difficulty": 3,
+      "type": "triangle",
+      "range": 100,
+      "mission": "📐 Háromszög-egyenlőtlenség",
+      "subtitle": "szerkeszthető-e a háromszög, és mekkora lehet a hiányzó oldal",
+      "file": "./data/lessons/grade7/triangle-build-01.json",
+      "worldTitles": {
+        "postman": "📮 A postás útvonala",
+        "racing": "🏁 A versenyző köre",
+        "football": "⚽ A pálya felújítása",
+        "cooking": "🍳 A konyhában",
+        "animals": "🦁 Az állatkert karámja",
+        "space": "🚀 Az űrhajó teste",
+        "tram": "🚋 A villamos forgalmi tere"
+      }
+    },
+    {
       "id": "ratio-proportion-01",
       "title": "🔗 Arány és aránypár",
       "grades": [

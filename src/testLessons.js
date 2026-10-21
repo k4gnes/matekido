@@ -651,7 +651,7 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "triangle": {
-            if (!["angle-sum", "classify-sides", "inequality"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!["angle-sum", "classify-sides", "inequality", "max-side", "min-side"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
             if (!Array.isArray(step.options) || step.options.length < 2) {
                 fail(ctx, "options hiányos");
@@ -691,6 +691,20 @@ function validateStep(step, ctx, range) {
                     if (triangleCorrect[0] && triangleCorrect[0].text !== expected) {
                         fail(ctx, "a helyes option nem a besorolás");
                     }
+                }
+            } else if (step.mode === "max-side" || step.mode === "min-side") {
+                for (const k of ["a", "b"]) {
+                    if (!isInt(step[k]) || step[k] < 1) fail(ctx, `${k} hibás: ${step[k]}`);
+                }
+                if (isInt(step.a) && isInt(step.b)) {
+                    const expected = step.mode === "max-side"
+                        ? step.a + step.b - 1
+                        : Math.abs(step.a - step.b) + 1;
+                    if (step.answer !== expected) fail(ctx, `answer (${step.answer}) != számolt (${expected})`);
+                    if (triangleCorrect[0] && triangleCorrect[0].text !== `${expected} cm`) {
+                        fail(ctx, "a helyes option nem a számított hossz");
+                    }
+                    if (isFiniteNum(range) && step.answer > range) fail(ctx, "answer kilép a tartományból");
                 }
             } else {
                 for (const k of ["a", "b", "c"]) {

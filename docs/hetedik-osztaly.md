@@ -1,6 +1,6 @@
 # Matekidő – 7. osztályos tanmenet
 
-> **Státusz: folyamatban.** A 7. osztályos tanmenet terve; a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan. **Elkészült: 26 lecke a 36 tervezettből + a mester kihívás** (a táblázatban linkelt leckék már a regiszterben vannak), továbbá 2 egyperces játék.
+> **Státusz: folyamatban.** A 7. osztályos tanmenet terve; a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan. **Elkészült: 27 lecke a 36 tervezettből + a mester kihívás** (a táblázatban linkelt leckék már a regiszterben vannak), továbbá 2 egyperces játék.
 
 **Tervezett 36 lecke + 1 mester kihívás**, 8 témakörben (a regiszter 7 kategóriája: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
@@ -51,7 +51,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 20 | Háromszögek tulajdonságai | Háromszögek szerkeszthetősége *(tervezett)* | Háromszög-egyenlőtlenség | — | 3 |
+| 20 | Háromszögek tulajdonságai | [Háromszögek szerkeszthetősége](?lesson=triangle-build-01) | Háromszög-egyenlőtlenség | — | 3 |
 | 21 | Pitagorasz-tétel | [A Pitagorasz-tétel](?lesson=pythagorean-01) | Derékszögű háromszög | — | 3 |
 | 22 | Négyszögek csoportosítása | [A négyszögek családfája](?lesson=quadrilateral-01) | Tulajdonságok | — | 2 |
 | 23 | Sokszögek területe | [Sokszögek területe](?lesson=polygon-area-01) | Háromszög, trapéz, paralelogramma | — | 3 |

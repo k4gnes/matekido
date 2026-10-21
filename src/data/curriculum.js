@@ -294,6 +294,7 @@ export const CURRICULUM_ORDER = {
         "ratio-proportion-01",
         "proportion-01",
         "percent-change-01",
+        "triangle-build-01",
         "pythagorean-01",
         "quadrilateral-01",
         "polygon-area-01",

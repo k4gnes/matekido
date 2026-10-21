@@ -24,9 +24,19 @@ const COMPARE_TITLES = {
     tram: "🎲 Mi valószínűbb a villamoson?"
 };
 
+const CHANCE_TITLES = {
+    postman: "🎯 Mennyi az esélye a postán?",
+    racing: "🎯 Mennyi az esélye a boxutcában?",
+    football: "🎯 Mennyi az esélye a pályán?",
+    cooking: "🎯 Mennyi az esélye a konyhában?",
+    animals: "🎯 Mennyi az esélye az állatkertben?",
+    space: "🎯 Mennyi az esélye az űrhajón?",
+    tram: "🎯 Mennyi az esélye a villamoson?"
+};
+
 export function renderProbability(step, root, next, progress, onResult, onAttempt) {
 
-    if (step.mode === "compare") {
+    if (step.mode === "compare" || step.mode === "chance") {
         renderCompare(step, root, next, progress, onResult, onAttempt);
         return;
     }
@@ -99,7 +109,7 @@ function renderCompare(step, root, next, progress, onResult, onAttempt) {
     }
 
     const title = document.createElement("h1");
-    title.textContent = COMPARE_TITLES[world] ?? COMPARE_TITLES.postman;
+    title.textContent = (step.mode === "chance" ? CHANCE_TITLES[world] : COMPARE_TITLES[world]) ?? COMPARE_TITLES.postman;
     card.append(title);
 
     if (step.scenario === "spinner") {
@@ -145,6 +155,7 @@ function renderCompare(step, root, next, progress, onResult, onAttempt) {
 }
 
 function optionText(step, label) {
+    if (step.mode === "chance") return label;
     const group = step.groups.find(g => g.label === label);
     return group ? `${group.emoji} ${label}` : `⚖️ ${label}`;
 }

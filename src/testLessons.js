@@ -277,6 +277,40 @@ function validateTrueFalse(ctx, step) {
     }
 }
 
+function validateProbabilityChance(ctx, step) {
+    if (!["bag", "spinner"].includes(step.scenario)) fail(ctx, `scenario hibás: ${step.scenario}`);
+    if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+    if (typeof step.successText !== "string" || step.successText.length === 0) fail(ctx, "successText hiányzik");
+    if (!Array.isArray(step.groups) || step.groups.length !== 2) {
+        fail(ctx, "groups nem 2 elemű");
+        return;
+    }
+    let amountSum = 0;
+    for (const group of step.groups) {
+        if (typeof group.color !== "string" || group.color.length === 0) fail(ctx, "group.color hibás");
+        if (typeof group.emoji !== "string" || group.emoji.length === 0) fail(ctx, "group.emoji hibás");
+        if (typeof group.hex !== "string" || !/^#[0-9a-fA-F]{6}$/.test(group.hex)) fail(ctx, `group.hex hibás: ${group.hex}`);
+        if (!isInt(group.amount) || group.amount < 1) fail(ctx, `group.amount hibás: ${group.amount}`);
+        amountSum += group.amount;
+    }
+    if (!isInt(step.favorableIndex) || step.favorableIndex < 0 || step.favorableIndex > 1) {
+        fail(ctx, `favorableIndex hibás: ${step.favorableIndex}`);
+        return;
+    }
+    if (!Array.isArray(step.options) || step.options.length !== 4) {
+        fail(ctx, "options nem 4 elemű");
+        return;
+    }
+    if (new Set(step.options).size !== step.options.length) fail(ctx, "options ismétlődik");
+    if (!isInt(step.answer) || step.answer < 0 || step.answer >= step.options.length) {
+        fail(ctx, `answer index hibás: ${step.answer}`);
+        return;
+    }
+    const favorable = step.groups[step.favorableIndex].amount;
+    const expected = `${favorable}/${amountSum}`;
+    if (step.options[step.answer] !== expected) fail(ctx, `answer (${step.options[step.answer]}) != ${expected}`);
+}
+
 function validateProbabilityCompare(ctx, step) {
     if (!["bag", "spinner"].includes(step.scenario)) fail(ctx, `scenario hibás: ${step.scenario}`);
     if (!["bigger", "smaller"].includes(step.ask)) fail(ctx, `ask hibás: ${step.ask}`);
@@ -2239,6 +2273,10 @@ function validateStep(step, ctx, range) {
         case "probability": {
             if (step.mode === "compare") {
                 validateProbabilityCompare(ctx, step);
+                break;
+            }
+            if (step.mode === "chance") {
+                validateProbabilityChance(ctx, step);
                 break;
             }
             const labels = { certain: "Biztos", possible: "Lehetséges", impossible: "Lehetetlen" };

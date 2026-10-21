@@ -6634,6 +6634,30 @@
       }
     },
     {
+      "id": "probability-03",
+      "title": "🎲 Valószínűség gyakorlása",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "probability",
+      "difficulty": 3,
+      "type": "probability",
+      "range": 100,
+      "mission": "🎲 Klasszikus valószínűség",
+      "subtitle": "kedvező esetek és összes esetek hányadosa",
+      "file": "./data/lessons/grade7/probability-03.json",
+      "worldTitles": {
+        "postman": "📮 A postás színei",
+        "racing": "🏎️ A pörgettyű a boxutcában",
+        "football": "⚽ A meccs labdája",
+        "cooking": "🍳 A konyha gyümölcsei",
+        "animals": "🦁 Az állatkert golyói",
+        "space": "🚀 Az űrhajó pörgettyűje",
+        "tram": "🚋 A villamos jelzője"
+      }
+    },
+    {
       "id": "ratio-proportion-01",
       "title": "🔗 Arány és aránypár",
       "grades": [

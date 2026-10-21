@@ -1,6 +1,6 @@
 # Matekidő – 7. osztályos tanmenet
 
-> **Státusz: folyamatban.** A 7. osztályos tanmenet terve; a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan. **Elkészült: 31 lecke a 36 tervezettből + a mester kihívás** (a táblázatban linkelt leckék már a regiszterben vannak), továbbá 2 egyperces játék.
+> **Státusz: folyamatban.** A 7. osztályos tanmenet terve; a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan. **Elkészült: 32 lecke a 36 tervezettből + a mester kihívás** (a táblázatban linkelt leckék már a regiszterben vannak), továbbá 2 egyperces játék.
 
 **Tervezett 36 lecke + 1 mester kihívás**, 8 témakörben (a regiszter 7 kategóriája: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
@@ -73,7 +73,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 |---|---|---|---|---|---|
 | 30 | Adatok elemzése | [Adatok, diagramok](?lesson=data-diagram-01) | Oszlopdiagram, kördiagram | — | 2 |
 | 31 | Átlag, medián módusz | [Átlag, medián, módusz](?lesson=stats-central-01) | Alapstatisztika | — | 3 |
-| 32 | Valószínűség | Valószínűség gyakorlása *(tervezett)* | Klasszikus valószínűség | — | 3 |
+| 32 | Valószínűség | [Valószínűség gyakorlása](?lesson=probability-03) | Klasszikus valószínűség | — | 3 |
 | 33 | Szöveges feladatok | Vegyes szöveges feladatok *(tervezett)* | Többlépéses, gyakorlati | — | 3 |
 
 ## Összefoglalás, gyakorlás (3–5 lecke)
@@ -103,4 +103,4 @@ Ezek nem számozott feladatok: a **🎲 Egypercesek** oldalon találhatók, nem 
 
 **Kiegészítő leckék a terven túl:** [Arány és aránypár](?lesson=ratio-proportion-01), [Százalékos növekedés és csökkenés](?lesson=percent-change-01).
 
-**Megjegyzés:** A megvalósított leckék között van új generátor (`circle` sector mód, `similarity`, `function`) és új komponens is (`src/components/similarity.js`, `src/components/function.js`); a többi a meglévő generátorokra (`equation`, `inequality`, `ratio`, `word-problem`, `probability`, `circle`, `polygon`, `shape-area`, `triangle`, `transform`, `coordinate`, `average`, `data-chart`, `combinatorics`) épül. A statisztikai lecke a meglévő `average` generátor medián- és módusz-módját használja, a kördiagram pedig a `data-chart` generátor `pie` típusát.
+**Megjegyzés:** A megvalósított leckék között van új generátor (`circle` sector mód, `similarity`, `function`) és új komponens is (`src/components/similarity.js`, `src/components/function.js`); a többi a meglévő generátorokra (`equation`, `inequality`, `ratio`, `word-problem`, `probability`, `circle`, `polygon`, `shape-area`, `triangle`, `transform`, `coordinate`, `average`, `data-chart`, `combinatorics`) épül. A statisztikai lecke a meglévő `average` generátor medián- és módusz-módját használja, a kördiagram pedig a `data-chart` generátor `pie` típusát; a valószínűségi lecke a `probability` generátor új `chance` módját.

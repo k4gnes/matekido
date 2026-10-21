@@ -1,0 +1,100 @@
+{
+    "id": "probability-03",
+    "title": "🎲 Valószínűség gyakorlása",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🎲 Valószínűség gyakorlása",
+            "text": "Ha egy pörgettyűn 3 piros és 2 kék szakasz van, akkor 5 egyformán lehetséges eset közül 3 esetben pirosra áll meg: a piros valószínűsége 3/5, a kéké 2/5. Ugyanez a zacskából húzott golyóknál is igaz: ha 5 golyóból 3 piros, akkor a pirosat húzás valószínűsége 3/5. A valószínűségeket törtekkel vagy százalékkal is megadhatjuk: 3/5 = 60%. Minél nagyobb a kedvező esetek aránya, annál nagyobb az esélye. A legegyszerűbb, ha a lehetséges eseteket egyenlő esélyűnek tekintjük.",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 A postás színei",
+                    "text": "A postás piros és kék bélyegeket húz a zacskából. Melyik a nagyobb esély, és mekkora a valószínűsége?"
+                },
+                "racing": {
+                    "title": "🏎️ A pörgettyű a boxutcában",
+                    "text": "A verseny pörgettyűjének szakaszai színesek. Melyik színen áll meg nagyobb eséllyel, és mekkora annak a valószínűsége?"
+                },
+                "football": {
+                    "title": "⚽ A meccs labdája",
+                    "text": "A labdák között van piros és kék is. Hányadrészt tesznek ki a pirosak? Mekkora a valószínűsége, hogy pirosat húzol?"
+                },
+                "cooking": {
+                    "title": "🍳 A konyha gyümölcsei",
+                    "text": "A gyümölcsös kosárban piros és zöld darabok vannak. Melyiket húzod nagyobb eséllyel, és mekkora a valószínűsége?"
+                },
+                "animals": {
+                    "title": "🦁 Az állatkert golyói",
+                    "text": "Az állatkert játékához piros és lila golyókat pakolnak egy zacskába. Számold ki a húzás valószínűségét!"
+                },
+                "space": {
+                    "title": "🚀 Az űrhajó pörgettyűje",
+                    "text": "Az űrhajó irányító pörgettyűjén a szakaszok aránya dönt. Melyik irányban nagyobb az esélyed, és mennyi az esély?"
+                },
+                "tram": {
+                    "title": "🚋 A villamos jelzője",
+                    "text": "A villamos jelzőpörgettyűje zöld és sárga szakaszokból áll. Mennyi az esélye, hogy zöldre áll meg?"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "probability",
+            "options": {
+                "count": 4,
+                "mode": "compare"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "probability",
+            "options": {
+                "count": 4,
+                "mode": "chance"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "probability",
+            "options": {
+                "count": 4,
+                "mode": "chance"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Megtanultad, hogyan számolod ki egy esemény valószínűségét: a kedvező esetek számát elosztod az összes lehetséges eset számával!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "A bélyegek esélyeit is kiszámítottad – indulhat a kézbesítés!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "A pörgettyű esélyeit is kiszámítottad – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A labda esélyeit is kiszámítottad – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "A gyümölcsök esélyeit is kiszámítottad – jó étvágyat!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "A golyók esélyeit is kiszámítottad – az állatkert elégedett!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "A pörgettyű esélyeit is kiszámítottad – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "A jelző esélyeit is kiszámítottad – indulhat a járat!"
+                }
+            }
+        }
+    ]
+}

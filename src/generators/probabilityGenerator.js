@@ -71,6 +71,55 @@ function pickCompareColors() {
 
 const EQUAL_LABEL = "Ugyanolyan eséllyel";
 
+// a kedvező és a nem kedvező esetek aránya irreduktílos marad
+const CHANCE_PAIRS = [[1, 3], [2, 3], [3, 4], [1, 5], [2, 5], [3, 5], [1, 7], [2, 7]];
+
+function generateChanceTask() {
+    const scenario = Math.random() < 0.5 ? "bag" : "spinner";
+    const [first, second] = pickCompareColors();
+    const [amountA, amountB] = CHANCE_PAIRS[Math.floor(Math.random() * CHANCE_PAIRS.length)];
+    const groups = shuffle([
+        { color: first.color, label: first.label, acc: first.acc, emoji: first.emoji, hex: first.hex, amount: amountA },
+        { color: second.color, label: second.label, acc: second.acc, emoji: second.emoji, hex: second.hex, amount: amountB }
+    ]);
+
+    const favorableIndex = Math.random() < 0.5 ? 0 : 1;
+    const target = groups[favorableIndex];
+    const other = groups[1 - favorableIndex];
+    const total = amountA + amountB;
+    const answer = `${target.amount}/${total}`;
+
+    const candidates = [
+        `${other.amount}/${total}`,
+        `${target.amount}/${other.amount}`,
+        target.amount > 1 ? `${target.amount - 1}/${total}` : `${target.amount + 1}/${total}`,
+        `${target.amount + 1}/${total}`
+    ];
+    const options = [answer];
+    for (const candidate of candidates) {
+        if (options.length >= 4) break;
+        if (!options.includes(candidate)) options.push(candidate);
+    }
+    shuffle(options);
+
+    const question = scenario === "spinner"
+        ? `Mekkora a valószínűsége, hogy ${target.color}ra áll meg a pörgettyű?`
+        : `Mekkora a valószínűsége, hogy ${target.acc} golyót húzunk a zacskiból?`;
+
+    return {
+        type: "probability",
+        mode: "chance",
+        scenario,
+        groups,
+        favorableIndex,
+        question,
+        options,
+        answer: options.indexOf(answer),
+        correctLabel: answer,
+        successText: `😊 Igazad van! ${total} esetből ${target.amount} ${target.color}, ezért a valószínűség ${answer}.`
+    };
+}
+
 function generateCompareTask() {
     const scenario = Math.random() < 0.5 ? "bag" : "spinner";
     const [first, second] = pickCompareColors();
@@ -195,7 +244,9 @@ export function generateProbability(opts = {}) {
     const { count = 6, level = 2, mode } = opts;
     const tasks = [];
     for (let i = 0; i < count; i++) {
-        tasks.push(mode === "compare" ? generateCompareTask() : generateTask(level));
+        if (mode === "compare") tasks.push(generateCompareTask());
+        else if (mode === "chance") tasks.push(generateChanceTask());
+        else tasks.push(generateTask(level));
     }
     return tasks;
 }

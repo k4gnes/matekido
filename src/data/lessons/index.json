@@ -6563,6 +6563,29 @@
       }
     },
     {
+      "id": "transform-mix-01",
+      "title": "🔄 Transzformációk rendszerezése",
+      "grades": [
+        7
+      ],
+      "category": "geometry",
+      "skill": "transform",
+      "difficulty": 2,
+      "type": "transform",
+      "mission": "🔄 Eltolás, tükrözés, forgatás",
+      "subtitle": "a transzformációk közös tulajdonságai és a tükörkép felismerése",
+      "file": "./data/lessons/grade7/transform-mix-01.json",
+      "worldTitles": {
+        "postman": "📮 A postás csomagjai",
+        "racing": "🏎️ A boxutcában",
+        "football": "⚽ A taktikai tábla",
+        "cooking": "🍳 A konyhában",
+        "animals": "🦁 Az állatkert",
+        "space": "🚀 Az űrhajó",
+        "tram": "🚋 A villamos"
+      }
+    },
+    {
       "id": "ratio-proportion-01",
       "title": "🔗 Arány és aránypár",
       "grades": [

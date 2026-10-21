@@ -1,0 +1,99 @@
+{
+    "id": "transform-mix-01",
+    "title": "🔄 Transzformációk rendszerezése",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🔄 Transzformációk rendszerezése",
+            "text": "A százalék, a tükrözés, az eltolás és a forgatás egy családba tartoznak: ezek a transzformációk. Közös tulajdonságuk, hogy az alakzat méretét és alakját nem változtatják meg, csak a helyzetét vagy az irányát. Eltolásnál az alakzat minden pontja ugyanazzal a vektorral mozdul el, tükrözésnél a tükörvonalhoz képest tükröződik, forgatásnál pedig a középpont körül fordul el. Bármelyik transzformáció után ugyanakkora lesz a kerület és a terület is.",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 A postás csomagjai",
+                    "text": "A postás csomagjait eltolja, tükrözi és forgatja a raklapon. Melyik alakzat lesz a csomagból, ha elforgatjuk? És ha a tükörvonalhoz képest tükrözzük?"
+                },
+                "racing": {
+                    "title": "🏎️ A boxutcában",
+                    "text": "A versenyautó a rajtrács alakját követi. Figyeld meg, melyik alakzat lesz, ha az autót eltoljuk vagy elforgatjuk!"
+                },
+                "football": {
+                    "title": "⚽ A taktikai tábla",
+                    "text": "A taktikai táblán a jelölők mintái forognak és tükröződnek. Válaszd ki, melyik alakzat a tükörkép és melyik az elforgatott minta!"
+                },
+                "cooking": {
+                    "title": "🍳 A konyhában",
+                    "text": "A konyhában a tányérokat pakolgatjuk: néha eltoljuk, néha elforgatjuk őket. Melyik alakzat helyes?"
+                },
+                "animals": {
+                    "title": "🦁 Az állatkert",
+                    "text": "Az állatkert karámjának mintája elfordul a kerítés mentén. Melyik alakzat lesz, ha a mintát elforgatod vagy eltolod?"
+                },
+                "space": {
+                    "title": "🚀 Az űrhajó",
+                    "text": "Az űrhajó szárnyának mintája elforgatással készül. Figyeld meg a forgatást és az eltolást!"
+                },
+                "tram": {
+                    "title": "🚋 A villamos",
+                    "text": "A villamos utasainak üléseit a tükörképük is elforgatja. Melyik alakzat a tükörkép, és melyik az elforgatott?"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "transform",
+            "options": {
+                "count": 4,
+                "mode": "turn"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "transform",
+            "options": {
+                "count": 4,
+                "mode": "translate"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "mirror",
+            "options": {
+                "count": 4
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Megtanultad, hogy az eltolás, a tükrözés és a forgatás hogyan kapcsolódik össze: mindegyik transzformáció változatlan méretű és alakú alakzatot ad!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "A postás csomagjait is elrendezted – indulhat a kézbesítés!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "A versenyautó rajtrácsát is megtervezted – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A taktikai táblát is felállítottad – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "A tányérokat is elrendezted – jó étvágyat!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Az állatkert karámját is elrendezted – az állatkert elégedett!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Az űrhajó szárnyát is beállítottad – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "A villamos üléseit is elrendezted – indulhat a járat!"
+                }
+            }
+        }
+    ]
+}

@@ -1,3 +1,5 @@
+import { formatThousands } from "../utils/formatNumbers.js";
+
 function pick(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
@@ -37,7 +39,82 @@ const TRIANGLES = [
 ];
 
 const SCALES = [2, 3, 4, 1.5, 0.5, 0.25];
-const MODES = ["missing-side", "missing-side-small", "scale-factor", "area-ratio"];
+const MODES = ["missing-side", "missing-side-small", "scale-factor", "area-ratio", "application"];
+const MIXED = ["missing-side", "missing-side-small", "scale-factor", "area-ratio"];
+
+// térképi alkalmazások: méretarány
+const MAP_SCALES = [1000, 2000, 5000, 10000, 20000, 50000, 100000];
+
+const MAP_SUBJECTS = {
+    postman: "A postás kézbesítési térképe",
+    racing: "A versenypálya térképe",
+    football: "A stadion helyrajza",
+    cooking: "A konyha berendezési rajza",
+    animals: "Az állatkert térképe",
+    space: "A bolygó felszíni térképe",
+    tram: "A villamosvonal térképe"
+};
+
+function formatScale(scale) {
+    return `1:${formatThousands(scale)}`;
+}
+
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function applicationOptions(answer, candidates, unit) {
+    const seen = new Set([answer]);
+    const values = [answer];
+    for (const value of shuffle(candidates)) {
+        if (values.length >= 4) break;
+        if (!Number.isInteger(value) || value <= 0 || seen.has(value)) continue;
+        seen.add(value);
+        values.push(value);
+    }
+    return shuffle(values).map(v => `${v} ${unit}`);
+}
+
+// térkép és valóság: a méretarány alkalmazása
+function buildApplication(world) {
+    const scale = pick(MAP_SCALES);
+    const maxMap = Math.min(9, Math.floor(100000 / scale));
+    const mapCm = random(1, maxMap);
+    const realCm = mapCm * scale;
+    const realM = realCm / 100;
+    const subject = MAP_SUBJECTS[world] ?? MAP_SUBJECTS.postman;
+    const scaleText = formatScale(scale);
+
+    if (Math.random() < 0.5) {
+        return {
+            type: "similarity",
+            mode: "application",
+            direction: "map-to-real",
+            scale,
+            mapCm,
+            realM,
+            answer: realM,
+            answerLabel: `${realM} m`,
+            options: applicationOptions(realM, [realM - 1, realM + 1, realM - 2, realM + 2, realM * 10, realM / 10], "m"),
+            question: `${subject} ${scaleText} méretarányú. A térképen ${mapCm} cm hosszú út a valóságban hány méter hosszú?`,
+            successText: `😊 Ügyes! ${mapCm} cm × ${formatThousands(scale)} = ${formatThousands(realCm)} cm = ${realM} m.`
+        };
+    }
+
+    return {
+        type: "similarity",
+        mode: "application",
+        direction: "real-to-map",
+        scale,
+        mapCm,
+        realM,
+        answer: mapCm,
+        answerLabel: `${mapCm} cm`,
+        options: applicationOptions(mapCm, [mapCm + 1, mapCm - 1, mapCm * 2, mapCm * 10, mapCm + 2], "cm"),
+        question: `${subject} ${scaleText} méretarányú. A valóságban ${realM} m hosszú út a térképen hány cm hosszú?`,
+        successText: `😊 Ügyes! ${realM} m = ${formatThousands(realCm)} cm, és ${formatThousands(realCm)} ÷ ${formatThousands(scale)} = ${mapCm} cm.`
+    };
+}
 
 function numberOptions(answer, candidates) {
     const seen = new Set([answer]);
@@ -71,7 +148,9 @@ function figure(sides, unknown) {
     };
 }
 
-function buildTask(mode) {
+function buildTask(mode, world) {
+    if (mode === "application") return buildApplication(world);
+
     for (let attempt = 0; attempt < 60; attempt++) {
         const sides = pick(TRIANGLES);
         const k = pick(SCALES);
@@ -155,8 +234,8 @@ function buildTask(mode) {
 }
 
 export function generateSimilarity(options = {}) {
-    const { count = 4, mode = "mixed" } = options;
-    const names = mode === "mixed" ? MODES : [mode];
+    const { count = 4, mode = "mixed", world = "postman" } = options;
+    const names = mode === "mixed" ? MIXED : [mode];
     if (!names.every(name => MODES.includes(name))) {
         throw new Error(`Ismeretlen hasonlóság mód: ${mode}`);
     }
@@ -165,7 +244,7 @@ export function generateSimilarity(options = {}) {
     let guard = 0;
     while (tasks.length < count && guard < count * 60) {
         guard++;
-        const task = buildTask(pick(names));
+        const task = buildTask(pick(names), world);
         if (task) tasks.push(task);
     }
     return tasks;

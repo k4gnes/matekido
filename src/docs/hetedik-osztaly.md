@@ -1,6 +1,6 @@
 # Matekidő – 7. osztályos tanmenet
 
-> **Státusz: folyamatban.** A 7. osztályos tanmenet terve; a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan. **Elkészült: 27 lecke a 36 tervezettből + a mester kihívás** (a táblázatban linkelt leckék már a regiszterben vannak), továbbá 2 egyperces játék.
+> **Státusz: folyamatban.** A 7. osztályos tanmenet terve; a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan. **Elkészült: 28 lecke a 36 tervezettből + a mester kihívás** (a táblázatban linkelt leckék már a regiszterben vannak), továbbá 2 egyperces játék.
 
 **Tervezett 36 lecke + 1 mester kihívás**, 8 témakörben (a regiszter 7 kategóriája: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
@@ -64,7 +64,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 | 25 | Kör hossza, területe | [A kör kerülete és területe](?lesson=circle-03) | π, sugár, átmérő | — | 3 |
 | 26 | Körív, körcikk | [Körív és körcikk](?lesson=circle-sector-01) | Középponti szög, körív, terület | — | 3 |
 | 27 | Hasonlóság alapjai | [Hasonlóság alapjai](?lesson=similarity-01) | Hasonlítási arány, területarány | — | 3 |
-| 28 | Hasonló háromszögek | Hasonló háromszögek *(tervezett)* | Alkalmazások | — | 3 |
+| 28 | Hasonló háromszögek | [Hasonló háromszögek alkalmazása](?lesson=similarity-apply-01) | Alkalmazások | — | 3 |
 | 29 | Transzformációk ismétlése | Transzformációk rendszerezése *(tervezett)* | Eltolás, tükrözés, forgatás | — | 2 |
 
 ## Statisztika, valószínűség, szöveges (4 lecke)

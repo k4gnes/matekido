@@ -1,0 +1,108 @@
+{
+    "id": "similarity-apply-01",
+    "title": "🔺 Hasonló háromszögek alkalmazása",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🔺 Hasonló háromszögek alkalmazása",
+            "text": "A hasonlóság nem csak az iskolai feladatokban hasznos: a térképek, a modellek és az épületek terve is hasonló alakzatokon alapul. A méretarány (például 1:50 000) azt adja meg, hogy a rajzon 1 cm hány cm-nek felel meg a valóságban. Ha a térképen 2 cm hosszú utat mérünk, és a méretarány 1:50 000, akkor a valóságban 100 000 cm, azaz 1000 m hosszú az út. Ugyanezzel a számítással a fordított irányt is elvégezhetjük.",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 A postás kézbesítési térképe",
+                    "text": "A postás térképe 1:50 000 méretarányú. A térképen 2 cm hosszú utat mérsz – a valóságban hány méter hosszú az út? És fordítva: a valóságban 500 m hosszú út a térképen hány cm?"
+                },
+                "racing": {
+                    "title": "🏎️ A versenypálya térképe",
+                    "text": "A versenypálya térképe 1:10 000 méretarányú. Mérd ki a térképen a pálya hosszát, és add meg a valóságban! A valós hosszból is számolhatsz vissza a térképhez."
+                },
+                "football": {
+                    "title": "⚽ A stadion helyrajza",
+                    "text": "A stadion helyrajza 1:5 000 méretarányú. Mekkora a valóságban az a szakasz, amely a helyrajzon 3 cm hosszú? És a valóságban 250 m hosszú oldal a helyrajzon hány cm?"
+                },
+                "cooking": {
+                    "title": "🍳 A konyha berendezési rajza",
+                    "text": "A konyha berendezési rajza 1:100 méretarányú. A rajzon 4 cm hosszú munkapult a valóságban hány méter hosszú? A valóságban 2 m hosszú asztal a rajzon hány cm?"
+                },
+                "animals": {
+                    "title": "🦁 Az állatkert térképe",
+                    "text": "Az állatkert térképe 1:20 000 méretarányú. A térképen 5 cm hosszú sétaút a valóságban hány méter? És a valóságban 1 km hosszú út a térképen hány cm?"
+                },
+                "space": {
+                    "title": "🚀 A bolygó felszíni térképe",
+                    "text": "A bolygó felszíni térképe 1:100 000 méretarányú. A térképen 2 cm hosszú kráter a valóságban hány méter átmérőjű? És visszafelé: 2 km hosszú vonal a térképen hány cm?"
+                },
+                "tram": {
+                    "title": "🚋 A villamosvonal térképe",
+                    "text": "A villamosvonal térképe 1:25 000 méretarányú. A térképen 4 cm hosszú szakasz a valóságban hány méter? A valóságban 750 m hosszú szakasz a térképen hány cm?"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "similarity",
+            "options": {
+                "count": 3,
+                "mode": "application"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "similarity",
+            "options": {
+                "count": 3,
+                "mode": "application"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "similarity",
+            "options": {
+                "count": 3,
+                "mode": "application"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "similarity",
+            "options": {
+                "count": 3,
+                "mode": "application"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Megtanultad, hogyan kell a méretaránnyal számolni: ezzel bármilyen térkép vagy terv valós méretét kiszámíthatod!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "A postás útvonalát is kiszámítottad – indulhat a kézbesítés!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "A versenypálya hosszát is kiszámítottad – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A stadion méretét is kiszámítottad – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "A konyha méreteit is kiszámítottad – jó étvágyat!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Az állatkert méreteit is kiszámítottad – az állatkert elégedett!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "A bolygó méreteit is kiszámítottad – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "A villamosvonal hosszát is kiszámítottad – indulhat a járat!"
+                }
+            }
+        }
+    ]
+}

@@ -779,13 +779,32 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "similarity": {
-            if (!["missing-side", "missing-side-small", "scale-factor", "area-ratio"].includes(step.mode)) {
+            if (!["missing-side", "missing-side-small", "scale-factor", "area-ratio", "application"].includes(step.mode)) {
                 fail(ctx, `mode hibás: ${step.mode}`);
             }
             if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
             if (!Array.isArray(step.options) || step.options.length !== 4) fail(ctx, "options nem 4 elemű");
             if (new Set(step.options).size !== step.options.length) fail(ctx, "options ismétlődik");
             if (!step.options.includes(step.answerLabel)) fail(ctx, "options nem tartalmazza a választ");
+            if (step.mode === "application") {
+                if (!isInt(step.scale) || step.scale <= 0) fail(ctx, "scale hibás");
+                if (!isInt(step.mapCm) || step.mapCm <= 0) fail(ctx, "mapCm hibás");
+                if (!isInt(step.realM) || step.realM <= 0) fail(ctx, "realM hibás");
+                if (isInt(step.mapCm) && isInt(step.scale) && isInt(step.realM)) {
+                    if (step.mapCm * step.scale !== step.realM * 100) fail(ctx, "a méretarány nem egyezik");
+                }
+                if (step.direction === "map-to-real") {
+                    if (step.answer !== step.realM) fail(ctx, "answer hibás");
+                    if (step.answerLabel !== `${step.realM} m`) fail(ctx, "answerLabel hibás");
+                } else if (step.direction === "real-to-map") {
+                    if (step.answer !== step.mapCm) fail(ctx, "answer hibás");
+                    if (step.answerLabel !== `${step.mapCm} cm`) fail(ctx, "answerLabel hibás");
+                } else {
+                    fail(ctx, `direction hibás: ${step.direction}`);
+                }
+                if (isFiniteNum(range) && step.answer > range) fail(ctx, "answer kilép a tartományból");
+                break;
+            }
             for (const key of ["first", "second"]) {
                 const fig = step[key];
                 if (!fig || !Array.isArray(fig.sides) || fig.sides.length !== 3) {

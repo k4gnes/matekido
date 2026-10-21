@@ -6539,6 +6539,30 @@
       }
     },
     {
+      "id": "similarity-apply-01",
+      "title": "🔺 Hasonló háromszögek alkalmazása",
+      "grades": [
+        7
+      ],
+      "category": "geometry",
+      "skill": "similarity",
+      "difficulty": 3,
+      "type": "similarity",
+      "range": 1000,
+      "mission": "🔺 Méretarány a gyakorlatban",
+      "subtitle": "térképek, modellek és tervek valós méretének kiszámítása",
+      "file": "./data/lessons/grade7/similarity-apply-01.json",
+      "worldTitles": {
+        "postman": "📮 A postás kézbesítési térképe",
+        "racing": "🏎️ A versenypálya térképe",
+        "football": "⚽ A stadion helyrajza",
+        "cooking": "🍳 A konyha berendezési rajza",
+        "animals": "🦁 Az állatkert térképe",
+        "space": "🚀 A bolygó felszíni térképe",
+        "tram": "🚋 A villamosvonal térképe"
+      }
+    },
+    {
       "id": "ratio-proportion-01",
       "title": "🔗 Arány és aránypár",
       "grades": [

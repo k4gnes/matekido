@@ -302,6 +302,7 @@ export const CURRICULUM_ORDER = {
         "circle-03",
         "circle-sector-01",
         "similarity-01",
+        "similarity-apply-01",
         "grade7-master-01",
     ],
 };

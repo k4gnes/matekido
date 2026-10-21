@@ -160,10 +160,12 @@ export function renderSimilarity(step, root, next, progress, onResult, onAttempt
     question.textContent = step.question;
     card.append(question);
 
-    const figure = document.createElement("div");
-    figure.className = "sim-figure";
-    figure.append(createSimilaritySvg(step));
-    card.append(figure);
+    if (step.mode !== "application") {
+        const figure = document.createElement("div");
+        figure.className = "sim-figure";
+        figure.append(createSimilaritySvg(step));
+        card.append(figure);
+    }
 
     const options = document.createElement("div");
     options.className = "sim-options";

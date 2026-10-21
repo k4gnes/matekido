@@ -61,6 +61,66 @@ function buildValues(min, max, size) {
     return values;
 }
 
+function medianOf(values) {
+    const sorted = [...values].sort((a, b) => a - b);
+    const mid = Math.floor(sorted.length / 2);
+    return sorted.length % 2 === 1 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+}
+
+function modeOf(values) {
+    const counts = new Map();
+    for (const value of values) counts.set(value, (counts.get(value) ?? 0) + 1);
+    let best = null;
+    let bestCount = 0;
+    for (const [value, count] of counts) {
+        if (count > bestCount) {
+            best = value;
+            bestCount = count;
+        }
+    }
+    return best;
+}
+
+// különböző értékek, és az összeg osztható az adatok számával
+function buildMedianValues(min, max, size) {
+    const values = [];
+    const used = new Set();
+    let guard = 0;
+    while (values.length < size - 1 && guard < 200) {
+        guard++;
+        const value = random(min, max);
+        if (used.has(value)) continue;
+        used.add(value);
+        values.push(value);
+    }
+    const rest = values.reduce((s, v) => s + v, 0);
+    const need = (size - (rest % size)) % size;
+    const candidates = [];
+    for (let value = min; value <= max; value++) {
+        if (value % size === need % size && !used.has(value)) candidates.push(value);
+    }
+    if (!candidates.length) return null;
+    values.push(candidates[Math.floor(Math.random() * candidates.length)]);
+    return shuffle(values);
+}
+
+// egy érték ismétlődik a legtöbbször, az összeg osztható az adatok számával
+function buildModeValues(min, max, size) {
+    for (let attempt = 0; attempt < 60; attempt++) {
+        const modeValue = random(min, max);
+        const first = random(min, max);
+        const second = random(min, max);
+        if (first === second) continue;
+        const values = [];
+        for (let i = 0; i < size - 2; i++) values.push(modeValue);
+        values.push(first, second);
+        const sum = values.reduce((s, v) => s + v, 0);
+        if (sum % size !== 0) continue;
+        return shuffle(values);
+    }
+    return null;
+}
+
 function buildMissingPair(min, max, size) {
     for (let attempt = 0; attempt < 80; attempt++) {
         const avg = random(min, max);
@@ -111,29 +171,54 @@ function buildTask(options, world) {
         values = pair.values;
         avg = pair.avg;
         missingIndex = pair.missingIndex;
+    } else if (mode === "median") {
+        values = buildMedianValues(min, max, size);
+        if (!values) return null;
+        avg = values.reduce((s, v) => s + v, 0) / size;
+    } else if (mode === "mode") {
+        values = buildModeValues(min, max, size);
+        if (!values) return null;
+        avg = values.reduce((s, v) => s + v, 0) / size;
     } else {
         values = buildValues(min, max, size);
         avg = values.reduce((s, v) => s + v, 0) / size;
     }
 
     const sum = values.reduce((s, v) => s + v, 0);
-    const answer = mode === "missing" ? values[missingIndex] : avg;
+    const sorted = [...values].sort((a, b) => a - b);
 
-    const naturals = mode === "missing"
-        ? [avg * size, values.filter((_, i) => i !== missingIndex).reduce((s, v) => s + v, 0), avg]
-        : [sum, Math.max(...values), Math.min(...values)];
+    let answer;
+    let question;
+    let naturals;
+
+    if (mode === "missing") {
+        answer = values[missingIndex];
+        question = `Az átlag ${avg}. Milyen szám hiányzik?`;
+        naturals = [avg * size, values.filter((_, i) => i !== missingIndex).reduce((s, v) => s + v, 0), avg];
+    } else if (mode === "median") {
+        answer = medianOf(values);
+        question = "Mekkora a medián?";
+        const mid = Math.floor(sorted.length / 2);
+        naturals = [sorted[Math.max(0, mid - 1)], sorted[Math.min(sorted.length - 1, mid + 1)], sorted[0]];
+    } else if (mode === "mode") {
+        answer = modeOf(values);
+        question = "Mekkora a módusz?";
+        naturals = values.filter(v => v !== answer);
+    } else {
+        answer = avg;
+        question = "Mennyi az átlag?";
+        naturals = [sum, Math.max(...values), Math.min(...values)];
+    }
 
     const task = {
         mode,
         display,
         interaction,
         values,
-        labels: LABELS.slice(0, size),
+        labels: LABELS.slice(0, values.length),
         avg,
         answer,
-        question: mode === "missing"
-            ? `Az átlag ${avg}. Milyen szám hiányzik?`
-            : "Mennyi az átlag?",
+        question,
         context: CONTEXTS[world] ?? "📊 Napi adatok:"
     };
 

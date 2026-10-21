@@ -1,0 +1,128 @@
+{
+    "id": "stats-central-01",
+    "title": "📈 Átlag, medián, módusz",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📈 Átlag, medián, módusz",
+            "text": "Az átlag, a medián és a módusz három különböző „középérték”, és nem mindig ugyanazt adják! Az átlagot az összeg és az adatok számának hányadosa adja, ezért egy kiugró, nagyon nagy érték elhúzza. A medián a rendezett sor középső eleme (páratlan számú adatnál), amit egyetlen nagy érték sem tud eltolni. A módusz az az érték, amely a leggyakrabban fordul elő. Mindhármat érdemes megismerni, mert más-más kérdésre adnak választ.",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 A postás csomagjai naponta",
+                    "text": "Nézd meg a postás napi csomagszámait! Mennyi az átlag, mekkora a medián, és melyik szám fordul elő a leggyakrabban?"
+                },
+                "racing": {
+                    "title": "🏁 A boxutcai megállások naponta",
+                    "text": "Egy versenyhét mindegyik napján más szám állít meg a boxutcában. Számold ki az átlagot, a mediánt és a móduszt!"
+                },
+                "football": {
+                    "title": "⚽ A napi edzésadatok",
+                    "text": "A játékosok edzésadatait elemezzük: átlag, medián vagy módusz mondja el, mi a jellemző? Próbáld ki mindhármat!"
+                },
+                "cooking": {
+                    "title": "🍳 A napi rendelések",
+                    "text": "A konyhában napi rendelések száma. Mennyi az átlag, mi a medián, és melyik szám a leggyakoribb?"
+                },
+                "animals": {
+                    "title": "🦁 Az állatok napi látogatói",
+                    "text": "Az állatkert látogatószámai: átlag, medián, módusz. Figyeld meg, hogy a sok látogató hogyan húzza el az átlagot!"
+                },
+                "space": {
+                    "title": "🚀 Az űrállomás napi adatai",
+                    "text": "Az űrállomás napi adatai: átlag, medián, módusz. Melyik középérték írja le legjobban a sorozatot?"
+                },
+                "tram": {
+                    "title": "🚋 A villamos napi utasai",
+                    "text": "A villamos napi utasszámai: átlag, medián, módusz. Számolj, és ellenőrizd a válaszaidat!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "average",
+            "options": {
+                "count": 4,
+                "mode": "avg",
+                "display": "table",
+                "interaction": "input",
+                "size": 4,
+                "min": 1,
+                "max": 100
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "average",
+            "options": {
+                "count": 4,
+                "mode": "median",
+                "display": "table",
+                "interaction": "choice",
+                "size": 5,
+                "min": 1,
+                "max": 100
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "average",
+            "options": {
+                "count": 4,
+                "mode": "mode",
+                "display": "table",
+                "interaction": "choice",
+                "size": 5,
+                "min": 1,
+                "max": 100
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "average",
+            "options": {
+                "count": 3,
+                "mode": "median",
+                "display": "chart",
+                "interaction": "input",
+                "size": 5,
+                "min": 1,
+                "max": 100
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Megtanultad, hogy az átlag, a medián és a módusz háromféleképpen mutatja meg egy adathalmaz „közepét” – és hogy melyiket mikor érdemes használni!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "A csomagok adatait is elemezted – indulhat a kézbesítés!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "A boxutca adatait is kiértékelted – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "Az edzésadatokat is elemezted – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "A rendeléseket is kiértékelted – jó étvágyat!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Az állatkert adatait is elemezted – az állatkert elégedett!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Az űrállomás adatait is kiértékelted – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "A villamos utasait is elemezted – indulhat a járat!"
+                }
+            }
+        }
+    ]
+}

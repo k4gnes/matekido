@@ -1,0 +1,116 @@
+{
+    "id": "data-diagram-01",
+    "title": "📊 Adatok, diagramok",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📊 Adatok, diagramok",
+            "text": "A diagramok az adatok vizuális formája. Az oszlopdiagramon az oszlopok magassága mutatja a darabszámot, a kördiagramon pedig a kör egyes részei foglalják el a teljes egészhez viszonyított arányt. Ha a kördiagram részeinek adatai összesen 10, akkor egy rész 1-nek 10 százalék felel meg, tehát a százalékot az adott rész számértékének tízszeresét kell venni. Fontos, hogy mindig a teljes adathalmazra gondoljunk: nem a legnagyobb rész 100%, hanem az összes rész együtt az.",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 A postás küldeményei",
+                    "text": "A postás heti küldeményeit diagrammon ábrázoljuk. Melyik küldeménytípusból van a legtöbb? És a kördiagramon hány százalékot jelent a levél?"
+                },
+                "racing": {
+                    "title": "🏎️ A boxutcai nézőszám",
+                    "text": "A verseny hétvégi nézőszámát ábrázoljuk kördiagramon. Nézd meg, melyik nap a legerősebb, és számold ki a százalékokat is!"
+                },
+                "football": {
+                    "title": "⚽ A pálya használata",
+                    "text": "A pályán a hét napokban ennyi edzés zajlott. Melyik napon volt a legtöbb, és hány százalék esik az ötödik napra?"
+                },
+                "cooking": {
+                    "title": "🍳 A konyha napi bevétele",
+                    "text": "A konyhában háromféle ételből készültek. Melyikből van a legtöbb, és a kördiagramon az egyik szelet hány százalékot jelent?"
+                },
+                "animals": {
+                    "title": "🦁 Az állatkert látogatói",
+                    "text": "Az állatkert látogatóit három csoportba osztjuk. Olvasd ki a kördiagramot, és mondd meg, hány százalékot jelent a legnagyobb rész!"
+                },
+                "space": {
+                    "title": "🚀 Az űrállomás adatai",
+                    "text": "Az űrállomás energiafogyasztását mutatja a diagram. Melyik rész a legnagyobb, és hány százalékot jelent a napelemek aránya?"
+                },
+                "tram": {
+                    "title": "🚋 A villamos forgalma",
+                    "text": "A villamos napi utasait három időszakra bontjuk. A kördiagram segítségével számold ki, hány százalék utazik a csúcsidőben!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "data-chart",
+            "options": {
+                "count": 4,
+                "max": 10,
+                "modes": ["top", "least"],
+                "chartTypes": ["bar", "pie"]
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "data-chart",
+            "options": {
+                "count": 4,
+                "max": 10,
+                "modes": ["compare", "diff"],
+                "chartTypes": ["bar", "pie"]
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "data-chart",
+            "options": {
+                "count": 4,
+                "max": 10,
+                "modes": ["sum", "sum2", "count"],
+                "chartTypes": ["bar", "pie"]
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "data-chart",
+            "options": {
+                "count": 3,
+                "max": 10,
+                "modes": ["percent"],
+                "chartTypes": ["pie"]
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Megtanultad, hogyan olvassuk ki az adatokat a diagramokból, és hogyan számítunk százalékot a kördiagram segítségével!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "A küldemények diagramját is kiolvastad – indulhat a kézbesítés!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "A nézőszámot is elemezted – jöhet a következő verseny!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A pálya adatait is kiértékelted – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "A konyha adatait is elemezted – jó étvágyat!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Az állatkert adatait is kiértékelted – az állatkert elégedett!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Az űrállomás adatait is elemezted – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "A villamos forgalmát is kiértékelted – indulhat a járat!"
+                }
+            }
+        }
+    ]
+}

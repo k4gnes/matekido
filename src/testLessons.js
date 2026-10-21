@@ -516,6 +516,18 @@ function validateStep(step, ctx, range) {
             if (!isInt(step.answer) || step.answer < 0 || step.answer >= step.options.length) {
                 fail(ctx, `answer index hibás: ${step.answer}`);
             }
+            if (step.mode === "percent") {
+                if (step.chartType !== "pie") fail(ctx, "a percent módhoz kördiagram kell");
+                if (!Array.isArray(step.chart) || step.chart.length < 2) {
+                    fail(ctx, "chart hiányos");
+                    break;
+                }
+                const total = step.chart.reduce((s, c) => s + c.value, 0);
+                if (total <= 0) fail(ctx, "a kördiagram összege hibás");
+                const matches = step.chart.some(c => c.value * 100 / total === step.percentValue);
+                if (!matches) fail(ctx, `a százalék (${step.percentValue}) nem egyezik a diagrammal`);
+                if (step.options[step.answer] !== step.percentValue) fail(ctx, "answer index hibás");
+            }
             break;
         }
         case "pattern": {
@@ -1060,7 +1072,7 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "average": {
-            if (!["avg", "missing"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!["avg", "missing", "median", "mode"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             if (!["table", "chart"].includes(step.display)) fail(ctx, `display hibás: ${step.display}`);
             if (!["choice", "input"].includes(step.interaction)) fail(ctx, `interaction ismeretlen: ${step.interaction}`);
             if (!Array.isArray(step.values) || step.values.length < 3 || step.values.length > 5) {
@@ -1081,13 +1093,28 @@ function validateStep(step, ctx, range) {
             if (step.mode === "avg") {
                 if (step.missingIndex !== undefined) fail(ctx, "avg módban nem kell missingIndex");
                 if (step.answer !== avg) fail(ctx, `answer (${step.answer}) != átlag (${avg})`);
-            } else {
+            } else if (step.mode === "missing") {
                 if (!isInt(step.missingIndex) || step.missingIndex < 0 || step.missingIndex >= size) {
                     fail(ctx, `missingIndex hibás: ${step.missingIndex}`);
                 } else if (step.answer !== step.values[step.missingIndex]) {
                     fail(ctx, `answer (${step.answer}) != a hiányzó érték (${step.values[step.missingIndex]})`);
                 }
                 if (step.answer === step.avg) fail(ctx, "a hiányzó érték megegyezik a megadott átlaggal – a kérdés kiszúrja a választ");
+            } else {
+                if (step.missingIndex !== undefined) fail(ctx, `${step.mode} módban nem kell missingIndex`);
+                const sorted = [...step.values].sort((a, b) => a - b);
+                if (step.mode === "median") {
+                    const mid = Math.floor(size / 2);
+                    const median = size % 2 === 1 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+                    if (step.answer !== median) fail(ctx, `answer (${step.answer}) != medián (${median})`);
+                } else {
+                    const counts = new Map();
+                    for (const value of step.values) counts.set(value, (counts.get(value) ?? 0) + 1);
+                    const top = Math.max(...counts.values());
+                    const modes = [...counts.entries()].filter(([, c]) => c === top).map(([v]) => v);
+                    if (modes.length !== 1) fail(ctx, "a módusz nem egyértelmű");
+                    if (step.answer !== modes[0]) fail(ctx, `answer (${step.answer}) != módusz (${modes[0]})`);
+                }
             }
             if (isFiniteNum(range) && step.answer > range) fail(ctx, `answer kilép a tartományból: ${step.answer} > ${range}`);
             if (typeof step.question !== "string" || step.question.length === 0) {

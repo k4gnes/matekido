@@ -304,6 +304,8 @@ export const CURRICULUM_ORDER = {
         "similarity-01",
         "similarity-apply-01",
         "transform-mix-01",
+        "data-diagram-01",
+        "stats-central-01",
         "grade7-master-01",
     ],
 };

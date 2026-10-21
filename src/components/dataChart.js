@@ -24,6 +24,55 @@ function svgEl(name, attrs = {}) {
     return el;
 }
 
+function sectorPath(cx, cy, r, startAngle, endAngle) {
+    const rad = (deg) => ((deg - 90) * Math.PI) / 180;
+    const x1 = cx + r * Math.cos(rad(startAngle));
+    const y1 = cy + r * Math.sin(rad(startAngle));
+    const x2 = cx + r * Math.cos(rad(endAngle));
+    const y2 = cy + r * Math.sin(rad(endAngle));
+    const large = endAngle - startAngle > 180 ? 1 : 0;
+    return `M ${cx} ${cy} L ${x1.toFixed(1)} ${y1.toFixed(1)} A ${r} ${r} 0 ${large} 1 ${x2.toFixed(1)} ${y2.toFixed(1)} Z`;
+}
+
+function createPieSvg(chart) {
+    const total = chart.reduce((s, c) => s + c.value, 0);
+    const cx = 78;
+    const cy = 75;
+    const r = 48;
+
+    const svg = svgEl("svg", { viewBox: "0 0 176 150" });
+
+    let start = 0;
+    chart.forEach((c, i) => {
+        const angle = (c.value / total) * 360;
+        const end = start + angle;
+        svg.append(svgEl("path", {
+            d: sectorPath(cx, cy, r, start, end),
+            fill: BAR_COLORS[i % BAR_COLORS.length],
+            stroke: "#ffffff",
+            "stroke-width": "2"
+        }));
+
+        const rad = ((start + end) / 2 - 90) * Math.PI / 180;
+        const lx = cx + (r + 20) * Math.cos(rad);
+        const ly = cy + (r + 20) * Math.sin(rad);
+        const label = svgEl("text", {
+            x: lx.toFixed(1),
+            y: ly.toFixed(1),
+            "text-anchor": "middle",
+            "font-size": "12",
+            "font-weight": "700",
+            fill: "#334155"
+        });
+        label.textContent = `${c.emoji} ${c.value}`;
+        svg.append(label);
+
+        start = end;
+    });
+
+    return svg;
+}
+
 function createChartSvg(chart) {
     const maxVal = Math.max(...chart.map(c => c.value));
     const gridStep = maxVal <= 10 ? 1 : maxVal <= 20 ? 2 : maxVal <= 50 ? 10 : 20;
@@ -216,6 +265,8 @@ export function renderDataChart(step, root, next, progress, onResult, onAttempt)
         chartBox.append(createPictogramSvg(step.chart));
     } else if (step.chartType === "table") {
         chartBox.append(createTableChart(step.chart));
+    } else if (step.chartType === "pie") {
+        chartBox.append(createPieSvg(step.chart));
     } else {
         chartBox.append(createChartSvg(step.chart));
     }
@@ -260,6 +311,7 @@ export function renderDataChart(step, root, next, progress, onResult, onAttempt)
         if (step.mode === "sum") return "😊 Ügyes! Helyesen összeadtad az összes oszlopot!";
         if (step.mode === "sum2") return "😊 Ügyes! Helyesen összeadtad a két oszlopot!";
         if (step.mode === "diff") return "😊 Ügyes! Helyesen kivontad a kisebbet a nagyobból!";
+        if (step.mode === "percent") return "😊 Ügyes! Jól kiszámoltad a kördiagram százalékait!";
         return "😊 Ügyes! Jól összehasonlítottad az oszlopokat!";
     }
 

@@ -204,12 +204,25 @@ export function renderAverage(step, root, next, progress, onResult, onAttempt) {
         if (step.mode === "missing") {
             return "💡 Az összeg = átlag × adatok száma; a hiányzó érték = összeg − a többi adat összege.";
         }
+        if (step.mode === "median") {
+            return "💡 Rendezd a számokat növekvő sorrendbe: a középső szám (páratlan számú adatnál) a medián.";
+        }
+        if (step.mode === "mode") {
+            return "💡 A módusz az az érték, amely a sorban a leggyakrabban fordul elő.";
+        }
         return `💡 Az átlag = az adatok összege ÷ az adatok száma, ezért ${sum} ÷ ${size} osztást kell elvégezni.`;
     }
 
     function successText() {
         if (step.mode === "missing") {
             return `🎉 Ügyes! ${step.avg} × ${size} = ${sum}, ezért a hiányzó érték ${step.answer}`;
+        }
+        if (step.mode === "median") {
+            const sorted = [...step.values].sort((a, b) => a - b);
+            return `🎉 Ügyes! Rendezve: ${sorted.join(", ")} – a középső szám a medián.`;
+        }
+        if (step.mode === "mode") {
+            return `🎉 Ügyes! A(z) ${step.answer} fordul elő a leggyakrabban, ezért ez a módusz.`;
         }
         return `🎉 Ügyes! ${sum} ÷ ${size} = ${step.answer}`;
     }

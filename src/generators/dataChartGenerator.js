@@ -10,6 +10,10 @@ function shuffle(arr) {
     return arr;
 }
 
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 const EMOJI_SETS_DEFAULT = [
     ["🍎", "🍌", "🍇"],
     ["🐱", "🐶", "🐰"],
@@ -59,6 +63,23 @@ function buildChart(world, max = 6) {
     return emojis.map((emoji, i) => ({ emoji, value: values[i] }));
 }
 
+// kördiagram: a részek összege 10, így a százalék mindig egész szám
+function buildPieChart(world) {
+    const sets = EMOJI_SETS_WORLD[world] ?? EMOJI_SETS_DEFAULT;
+    const emojis = pick(sets);
+    let values = null;
+    for (let attempt = 0; attempt < 40; attempt++) {
+        const a = random(1, 8);
+        const b = random(1, 10 - a);
+        const c = 10 - a - b;
+        if (c < 1 || a === b || b === c || a === c) continue;
+        values = [a, b, c];
+        break;
+    }
+    if (!values) values = [1, 2, 7];
+    return emojis.map((emoji, i) => ({ emoji, value: values[i] }));
+}
+
 function buildNumericOptions(value, lo = 1, hi = 10) {
     const options = [value];
     let cand = 1;
@@ -78,9 +99,33 @@ function buildNumericOptions(value, lo = 1, hi = 10) {
 }
 
 function buildTask(world, max = 6, modes = ["top", "least", "count", "compare"], chartTypes = ["bar"]) {
-    const chart = buildChart(world, max);
     const mode = pick(modes);
-    const chartType = pick(chartTypes);
+    let chartType = pick(chartTypes);
+    if (mode === "percent") chartType = "pie";
+    const chart = chartType === "pie" ? buildPieChart(world) : buildChart(world, max);
+
+    if (mode === "percent") {
+        const target = pick(chart);
+        const total = chart.reduce((s, c) => s + c.value, 0);
+        const value = target.value * 100 / total;
+        const options = [value];
+        for (const delta of [10, -10, 20, -20, 30, -30]) {
+            if (options.length >= 3) break;
+            const candidate = value + delta;
+            if (candidate > 0 && candidate < 100 && !options.includes(candidate)) options.push(candidate);
+        }
+        shuffle(options);
+        return {
+            type: "data-chart",
+            chartType,
+            mode,
+            chart,
+            percentValue: value,
+            question: `A teljes kördiagram 100 százalék. Hány százalékot jelent a ${target.emoji}?`,
+            options,
+            answer: options.indexOf(value)
+        };
+    }
 
     if (mode === "top") {
         const target = chart.reduce((a, b) => a.value > b.value ? a : b);

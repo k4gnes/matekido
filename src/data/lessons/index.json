@@ -6586,6 +6586,54 @@
       }
     },
     {
+      "id": "data-diagram-01",
+      "title": "📊 Adatok, diagramok",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "data-charts",
+      "difficulty": 2,
+      "type": "data-chart",
+      "range": 100,
+      "mission": "📊 Oszlopdiagram és kördiagram",
+      "subtitle": "adatok kiolvasása, különbségek és százalékok a kördiagramon",
+      "file": "./data/lessons/grade7/data-diagram-01.json",
+      "worldTitles": {
+        "postman": "📮 A postás küldeményei",
+        "racing": "🏎️ A boxutcai nézőszám",
+        "football": "⚽ A pálya használata",
+        "cooking": "🍳 A konyha napi bevétele",
+        "animals": "🦁 Az állatkert látogatói",
+        "space": "🚀 Az űrállomás adatai",
+        "tram": "🚋 A villamos forgalma"
+      }
+    },
+    {
+      "id": "stats-central-01",
+      "title": "📈 Átlag, medián, módusz",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "statistics",
+      "difficulty": 3,
+      "type": "average",
+      "range": 1000,
+      "mission": "📈 Középértékek",
+      "subtitle": "átlag, medián és módusz egy adathalmazon",
+      "file": "./data/lessons/grade7/stats-central-01.json",
+      "worldTitles": {
+        "postman": "📮 A postás csomagjai naponta",
+        "racing": "🏁 A boxutcai megállások naponta",
+        "football": "⚽ A napi edzésadatok",
+        "cooking": "🍳 A napi rendelések",
+        "animals": "🦁 Az állatok napi látogatói",
+        "space": "🚀 Az űrállomás napi adatai",
+        "tram": "🚋 A villamos napi utasai"
+      }
+    },
+    {
       "id": "ratio-proportion-01",
       "title": "🔗 Arány és aránypár",
       "grades": [

@@ -1,0 +1,126 @@
+{
+    "id": "word-problems-mix-01",
+    "title": "📝 Vegyes szöveges feladatok",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📝 Vegyes szöveges feladatok",
+            "text": "Az igazi szöveges feladatokban többféle művelet keveredik: előbb hozzáadunk, majd osztunk, végül kivonunk. Hogy ne vesszünk el, mindig kövesd ezt a sorrendet: 1) olvasd el a szöveget, és keresd ki, mit kell megkeresni; 2) írd ki, milyen számokat kapsz és milyen kapcsolat áll fenn köztük; 3) gondold ki a lépések sorrendjét – általában a szorzás és osztás megy előbb, és csak utána jön az összeadás vagy kivonás; 4) ha van választhatóság, ellenőrizd a visszafelé való számolással. Nagy számoknál mindig figyelj az egységekre!",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 A postás munkája",
+                    "text": "A postásnál mindenféle feladat van: csomagok szétosztása, maradék kerekek, arányos mennyiségek. Gondold ki, melyik lépés jön először!"
+                },
+                "racing": {
+                    "title": "🏎️ A garázsban",
+                    "text": "A garázsban alkatrészeket számolnak, osztanak szét, és közben figyelni kell a maradékra is. Bonyolódjon a helyzet!"
+                },
+                "football": {
+                    "title": "⚽ A pályán",
+                    "text": "A pályán labdát osztanak szét csapatok között, és néha marad egy-két labda a padon. Minden számra gondoskodj!"
+                },
+                "cooking": {
+                    "title": "🍳 A konyhában",
+                    "text": "A konyhában adagokat számolnak, tányérokat osztanak, és a maradék tésztát is figyelni kell. Lépésenként gondolkodj!"
+                },
+                "animals": {
+                    "title": "🦁 Az állatkertben",
+                    "text": "Az állatkertben a karámok között osztják az állatokat, és a felszerelésnél a maradék is számít. Nagyon figyelmesen számolj!"
+                },
+                "space": {
+                    "title": "🚀 Az űrállomáson",
+                    "text": "Az űrállomáson robotokat osztanak szét bolygók között, és a rakétaalkatrészekből marad is. Két lépésben is gondolkodj!"
+                },
+                "tram": {
+                    "title": "🚋 A villamoson",
+                    "text": "A villamoson utasokat osztanak szét, és a jegyekből marad valamennyi. Vegyes feladatok várnak rád!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "word-problem",
+            "options": {
+                "count": 3,
+                "max": 1000,
+                "kind": "two-step"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "word-problem",
+            "options": {
+                "count": 3,
+                "max": 1000,
+                "kind": "remainder"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "word-problem",
+            "options": {
+                "count": 3,
+                "max": 1000,
+                "kind": "ratio-split",
+                "mode": "part",
+                "interaction": "input"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "word-problem",
+            "options": {
+                "count": 3,
+                "max": 1000,
+                "kind": "proportion"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "word-problem",
+            "options": {
+                "count": 3,
+                "max": 1000,
+                "kind": "direct-proportion",
+                "mode": "value",
+                "interaction": "input",
+                "level": "hard"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Megtanultad, hogyan érdemes egy szöveges feladathoz hozzáfogni: előbb tervezd meg a lépéseket, aztán számolj, és végül ellenőrizz!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "A postás feladatait is megoldottad – indulhat a kézbesítés!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "A garázs feladatait is megoldottad – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A pálya feladatait is megoldottad – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "A konyha feladatait is megoldottad – jó étvágyat!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Az állatkert feladatait is megoldottad – az állatkert elégedett!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Az űrállomás feladatait is megoldottad – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "A villamos feladatait is megoldottad – indulhat a járat!"
+                }
+            }
+        }
+    ]
+}

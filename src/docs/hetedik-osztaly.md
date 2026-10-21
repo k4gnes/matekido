@@ -1,6 +1,6 @@
 # Matekidő – 7. osztályos tanmenet
 
-> **Státusz: folyamatban.** A 7. osztályos tanmenet terve; a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan. **Elkészült: 32 lecke a 36 tervezettből + a mester kihívás** (a táblázatban linkelt leckék már a regiszterben vannak), továbbá 2 egyperces játék.
+> **Státusz: folyamatban.** A 7. osztályos tanmenet terve; a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan. **Elkészült: 33 lecke a 36 tervezettből + a mester kihívás** (a táblázatban linkelt leckék már a regiszterben vannak), továbbá 2 egyperces játék.
 
 **Tervezett 36 lecke + 1 mester kihívás**, 8 témakörben (a regiszter 7 kategóriája: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
@@ -74,7 +74,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 | 30 | Adatok elemzése | [Adatok, diagramok](?lesson=data-diagram-01) | Oszlopdiagram, kördiagram | — | 2 |
 | 31 | Átlag, medián módusz | [Átlag, medián, módusz](?lesson=stats-central-01) | Alapstatisztika | — | 3 |
 | 32 | Valószínűség | [Valószínűség gyakorlása](?lesson=probability-03) | Klasszikus valószínűség | — | 3 |
-| 33 | Szöveges feladatok | Vegyes szöveges feladatok *(tervezett)* | Többlépéses, gyakorlati | — | 3 |
+| 33 | Szöveges feladatok | [Vegyes szöveges feladatok](?lesson=word-problems-mix-01) | Többlépéses, gyakorlati | — | 3 |
 
 ## Összefoglalás, gyakorlás (3–5 lecke)
 

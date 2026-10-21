@@ -564,6 +564,7 @@ const SW_CACHE_LIST = [
     "/data/lessons/grade7/stats-central-01.json",
     "/data/lessons/grade7/transform-mix-01.json",
     "/data/lessons/grade7/triangle-build-01.json",
+    "/data/lessons/grade7/word-problems-mix-01.json",
     "/data/lessons/index.json",
     "/data/measure.js",
     "/data/money.js",

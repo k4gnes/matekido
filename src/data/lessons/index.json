@@ -6658,6 +6658,30 @@
       }
     },
     {
+      "id": "word-problems-mix-01",
+      "title": "📝 Vegyes szöveges feladatok",
+      "grades": [
+        7
+      ],
+      "category": "wordProblems",
+      "skill": "two-step",
+      "difficulty": 3,
+      "type": "word-problem",
+      "range": 1000,
+      "mission": "📝 Vegyes szöveges feladatok",
+      "subtitle": "többlépéses, gyakorlati feladatok nagy számokkal",
+      "file": "./data/lessons/grade7/word-problems-mix-01.json",
+      "worldTitles": {
+        "postman": "📮 A postás munkája",
+        "racing": "🏎️ A garázsban",
+        "football": "⚽ A pályán",
+        "cooking": "🍳 A konyhában",
+        "animals": "🦁 Az állatkertben",
+        "space": "🚀 Az űrállomáson",
+        "tram": "🚋 A villamoson"
+      }
+    },
+    {
       "id": "ratio-proportion-01",
       "title": "🔗 Arány és aránypár",
       "grades": [

@@ -1,8 +1,8 @@
 # Matekidő – 7. osztályos tanmenet
 
-> **Státusz: tervezet.** Az alábbiak a 7. osztályos tanmenet előzetes terve; a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
+> **Státusz: folyamatban.** A 7. osztályos tanmenet terve; a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan. **Elkészült: 23 lecke a 36 tervezettből + a mester kihívás** (a táblázatban linkelt leckék már a regiszterben vannak), továbbá 2 egyperces játék.
 
-**Tervezett kb. 36–38 lecke + 1 mester kihívás**. A 7. osztály fő témái: **racionális számok** (kiterjesztés, műveletek), **algebrai kifejezések** (érték, összevonás, szorzás, osztás), **egyenletek, egyenlőtlenségek** (mélyebb gyakorlás), **lineáris függvények előkészítése** (koordináta-rendszer, grafikon), **geometria** (háromszögek, négyszögek, kör, transzformációk, hasonlóság).
+**Tervezett 36 lecke + 1 mester kihívás**, 8 témakörben (a regiszter 7 kategóriája: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
 Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 
@@ -12,83 +12,83 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 1 | Racionális számok fogalma | Racionális számok értelmezése | Előjel, tört, tizedes, vegyes | — | 2 |
-| 2 | Összehasonlítás | Racionális számok összehasonlítása | Különböző alakokban | — | 2 |
-| 3 | Összeadás, kivonás | Racionális számok összeadása és kivonása | Közös nevező, vegyes | — | 3 |
-| 4 | Szorzás, osztás | Racionális számok szorzása és osztása | Előjelszabály, reciprok | — | 3 |
-| 5 | Műveletek vegyesen | Racionális számok vegyes műveletei | Műveleti sorrend | — | 3 |
+| 1 | Racionális számok fogalma | [Racionális számok értelmezése](?lesson=rational-numbers-01) | Előjel, tört, tizedes, vegyes | — | 2 |
+| 2 | Összehasonlítás | [Racionális számok összehasonlítása](?lesson=rational-compare-02) | Különböző alakokban | — | 2 |
+| 3 | Összeadás, kivonás | [Racionális számok összeadása és kivonása](?lesson=rational-add-sub-03) | Közös nevező, vegyes | — | 3 |
+| 4 | Szorzás, osztás | [Racionális számok szorzása és osztása](?lesson=rational-mul-div-04) | Előjelszabály, reciprok | — | 3 |
+| 5 | Műveletek vegyesen | [Racionális számok vegyes műveletei](?lesson=rational-mix-ops-05) | Műveleti sorrend | — | 3 |
 
 ## Algebrai kifejezések (5 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 6 | Változó, kifejezés | Algebrai kifejezések alapjai | Helyettesítési érték | 100 | 2 |
-| 7 | Összevonás | Hasonló tagok összevonása | Egy- és többváltozós | 100 | 2 |
-| 8 | Zárójel felbontása | Zárójel felbontása és összevonás | (+)(-) előjelek | 100 | 3 |
-| 9 | Szorzat alakja | Egytag szorzása többtaggal | Disztributivitás | 100 | 3 |
-| 10 | Kiemelés | Kiemelés | Közös tényező | 100 | 3 |
+| 6 | Változó, kifejezés | [Algebrai kifejezések alapjai](?lesson=algebra-basics-06) | Helyettesítési érték | 100 | 2 |
+| 7 | Összevonás | [Hasonló tagok összevonása](?lesson=algebra-combine-07) | Egy- és többváltozós | 100 | 2 |
+| 8 | Zárójel felbontása | [Zárójel felbontása és összevonás](?lesson=algebra-parenthesis-08) | (+)(-) előjelek | 100 | 3 |
+| 9 | Szorzat alakja | [Egytag szorzása többtaggal](?lesson=algebra-distribute-09) | Disztributivitás | 100 | 3 |
+| 10 | Kiemelés | [Kiemelés](?lesson=algebra-factor-10) | Közös tényező | 100 | 3 |
 
 ## Egyenletek és egyenlőtlenségek (5 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 11 | Elsőfokú egyenletek | Elsőfokú egyenletek gyakorlása | Törtes és vegyes lépéses | 1000 | 3 |
-| 12 | Szöveges egyenletek | Egyenlettel megoldható szöveges feladatok | Gyakorlati helyzetek | 1000 | 3 |
-| 13 | Egyenlőtlenségek | Elsőfokú egyenlőtlenségek | Megoldáshalmaz számegyenesen | 1000 | 3 |
-| 14 | Aránnyal megoldható | Arányosság és egyenlet | Közvetlen/fordított kapcsolatok | 1000 | 3 |
-| 15 | Vegyes feladatok | Egyenletek és egyenlőtlenségek vegyesen | Összefoglalás | 1000 | 3 |
+| 11 | Elsőfokú egyenletek | [Elsőfokú egyenletek](?lesson=equation-linear-11) | Törtes és vegyes lépéses | 1000 | 3 |
+| 12 | Szöveges egyenletek | [Szöveges feladatok egyenlettel](?lesson=equation-word-12) | Gyakorlati helyzetek | 1000 | 3 |
+| 13 | Egyenlőtlenségek | [Elsőfokú egyenlőtlenségek](?lesson=inequality-linear-13) | Megoldáshalmaz számegyenesen | 1000 | 3 |
+| 14 | Aránnyal megoldható | [Arányosság](?lesson=proportion-01) | Közvetlen/fordított kapcsolatok | 1000 | 3 |
+| 15 | Vegyes feladatok | [Egyenletek és egyenlőtlenségek vegyesen](?lesson=equation-inequality-01) | Összefoglalás | 1000 | 3 |
 
 ## Koordináta-rendszer és függvények (4 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 16 | Koordináta-rendszer | Koordináta-rendszer ismétlése | Pontok ábrázolása, távolság | — | 2 |
-| 17 | Táblázatból grafikon | Táblázat és grafikon kapcsolata | Értéktáblázat → pontok | — | 2 |
-| 18 | Lineáris függvények | Lineáris függvények felismerése | y = mx + b előkészítés | — | 3 |
-| 19 | Függvények alkalmazása | Függvények a mindennapban | Összefüggések leolvasása | — | 3 |
+| 16 | Koordináta-rendszer | [Koordináta-rendszer](?lesson=coordinate-plane-01) | Pontok ábrázolása, távolság | — | 2 |
+| 17 | Táblázatból grafikon | Táblázat és grafikon kapcsolata *(tervezett)* | Értéktáblázat → pontok | — | 2 |
+| 18 | Lineáris függvények | Lineáris függvények felismerése *(tervezett)* | y = mx + b előkészítés | — | 3 |
+| 19 | Függvények alkalmazása | Függvények a mindennapban *(tervezett)* | Összefüggések leolvasása | — | 3 |
 
 ## Geometria – háromszögek, négyszögek (5 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 20 | Háromszögek tulajdonságai | Háromszögek szerkeszthetősége | Háromszög-egyenlőtlenség | — | 3 |
-| 21 | Pitagorasz-tétel | Pitagorasz-tétel | Derékszögű háromszög | — | 3 |
-| 22 | Négyszögek csoportosítása | Négyszögek rendszerezése mélyebben | Tulajdonságok | — | 2 |
-| 23 | Sokszögek területe | Sokszögek területe | Háromszög, trapéz, paralelogramma | — | 3 |
-| 24 | Kerület és terület vegyesen | Kerület és terület gyakorlása | Vegyes síkidomok | — | 3 |
+| 20 | Háromszögek tulajdonságai | Háromszögek szerkeszthetősége *(tervezett)* | Háromszög-egyenlőtlenség | — | 3 |
+| 21 | Pitagorasz-tétel | [A Pitagorasz-tétel](?lesson=pythagorean-01) | Derékszögű háromszög | — | 3 |
+| 22 | Négyszögek csoportosítása | [A négyszögek családfája](?lesson=quadrilateral-01) | Tulajdonságok | — | 2 |
+| 23 | Sokszögek területe | [Sokszögek területe](?lesson=polygon-area-01) | Háromszög, trapéz, paralelogramma | — | 3 |
+| 24 | Kerület és terület vegyesen | [Kerület és terület vegyesen](?lesson=perimeter-area-01) | Vegyes síkidomok | — | 3 |
 
 ## Geometria – kör, hasonlóság, transzformációk (5 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 25 | Kör hossza, területe | Kör kerülete és területe | π, sugár, átmérő | — | 3 |
-| 26 | Körív, körcikk | Körív és körcikk | Alapfogalmak | — | 3 |
-| 27 | Hasonlóság alapjai | Hasonlóság és arány | Hasonló alakzatok | — | 3 |
-| 28 | Hasonló háromszögek | Hasonló háromszögek | Alkalmazások | — | 3 |
-| 29 | Transzformációk ismétlése | Transzformációk rendszerezése | Eltolás, tükrözés, forgatás | — | 2 |
+| 25 | Kör hossza, területe | [A kör kerülete és területe](?lesson=circle-03) | π, sugár, átmérő | — | 3 |
+| 26 | Körív, körcikk | [Körív és körcikk](?lesson=circle-sector-01) | Középponti szög, körív, terület | — | 3 |
+| 27 | Hasonlóság alapjai | [Hasonlóság alapjai](?lesson=similarity-01) | Hasonlítási arány, területarány | — | 3 |
+| 28 | Hasonló háromszögek | Hasonló háromszögek *(tervezett)* | Alkalmazások | — | 3 |
+| 29 | Transzformációk ismétlése | Transzformációk rendszerezése *(tervezett)* | Eltolás, tükrözés, forgatás | — | 2 |
 
 ## Statisztika, valószínűség, szöveges (4 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 30 | Adatok elemzése | Adatok, diagramok | Oszlopdiagram, kördiagram | — | 2 |
-| 31 | Átlag, medián módusz | Átlag, medián, módusz | Alapstatisztika | — | 3 |
-| 32 | Valószínűség | Valószínűség gyakorlása | Klasszikus valószínűség | — | 3 |
-| 33 | Szöveges feladatok | Vegyes szöveges feladatok | Többlépéses, gyakorlati | — | 3 |
+| 30 | Adatok elemzése | Adatok, diagramok *(tervezett)* | Oszlopdiagram, kördiagram | — | 2 |
+| 31 | Átlag, medián módusz | Átlag, medián, módusz *(tervezett)* | Alapstatisztika | — | 3 |
+| 32 | Valószínűség | Valószínűség gyakorlása *(tervezett)* | Klasszikus valószínűség | — | 3 |
+| 33 | Szöveges feladatok | Vegyes szöveges feladatok *(tervezett)* | Többlépéses, gyakorlati | — | 3 |
 
 ## Összefoglalás, gyakorlás (3–5 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 34 | Algebra összefoglaló | Algebrai kifejezések és egyenletek | Vegyes | — | 3 |
-| 35 | Geometria összefoglaló | Geometria összefoglaló | Vegyes | — | 3 |
-| 36 | Vegyes gyakorló | 7. osztályos vegyes gyakorló | Összefoglalás | — | 3 |
+| 34 | Algebra összefoglaló | Algebrai kifejezések és egyenletek *(tervezett)* | Vegyes | — | 3 |
+| 35 | Geometria összefoglaló | Geometria összefoglaló *(tervezett)* | Vegyes | — | 3 |
+| 36 | Vegyes gyakorló | 7. osztályos vegyes gyakorló *(tervezett)* | Összefoglalás | — | 3 |
 
 ## 🌟 Mester kihívás (1 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 37 | Mester kihívás | 🌟 Mester kihívás | Szöveges feladat és logikai rejtvény | 1000 | 4 |
+| 37 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade7-master-01) | Szöveges feladat és logikai rejtvény | 1000 | 4 |
 
 ## 🎲 Egypercesek
 
@@ -101,4 +101,6 @@ Ezek nem számozott feladatok: a **🎲 Egypercesek** oldalon találhatók, nem 
 
 ---
 
-**Megjegyzés:** A fenti azonosítók (`lesson=xxx-01`) **tervezett ID-k**. A tényleges fájlnevek és a regiszterbe vétel a 6. osztály mintáját követi (mappa: `src/data/lessons/grade7/`, `src/generators/`, `src/components/`, CSS). A NAT-hoz illeszkedő, már létező generátorok (`equation`, `inequality`, `ratio`, `word-problem`, `combinatorics`, `probability`, `circle`, `polygon`, `shape-area`, `triangle`, `transform`, `coordinate`, `average`, `solid-measure`) újrahasználhatók. Új generátorok szükségesek lehetnek: `rational-*`, `algebra-*`, `pythagorean`, `similarity`, `function-*`, `circle-sector`, `stats-central`.
+**Kiegészítő leckék a terven túl:** [Arány és aránypár](?lesson=ratio-proportion-01), [Százalékos növekedés és csökkenés](?lesson=percent-change-01).
+
+**Megjegyzés:** A már megvalósított leckék új generátort (`circle` sector mód, `similarity`) és új komponenst (`src/components/similarity.js`) is igényeltek; a többi a meglévő generátorokra (`equation`, `inequality`, `ratio`, `word-problem`, `probability`, `circle`, `polygon`, `shape-area`, `triangle`, `transform`, `coordinate`, `average`, `combinatorics`) épül. A még hiányzó témák (függvények, transzformációk, statisztika) generátorai: `function-*`, `stats-central`.

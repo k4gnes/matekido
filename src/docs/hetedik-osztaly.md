@@ -1,6 +1,6 @@
 # Matekidő – 7. osztályos tanmenet
 
-> **Státusz: folyamatban.** A 7. osztályos tanmenet terve; a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan. **Elkészült: 36 lecke a 36 tervezettből + a mester kihívás** (a táblázatban linkelt leckék már a regiszterben vannak), továbbá 2 egyperces játék.
+> **Státusz: megvalósult.** A 7. osztályos tanmenet elkészült: **36 lecke a 36 tervezettből + a mester kihívás** (a táblázatban linkelt leckék mind a regiszterben vannak), továbbá 2 egyperces játék. A leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
 
 **Tervezett 36 lecke + 1 mester kihívás**, 8 témakörben (a regiszter 7 kategóriája: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 

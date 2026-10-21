@@ -6,15 +6,15 @@
     {
       "type": "scene",
       "title": "🔢 Váltakozó lépegetés",
-      "text": "Ebben a számsorban kétféle lépés váltakozik: egyszer kicsit, aztán egy kicsit többet lépünk (például +1, +2, +1, +2). Figyeld meg a lépéseket a sor elején, és mondd meg, mi a következő szám!",
+      "text": "Ebben a számsorban kétféle lépés váltakozik (például +1, +2, +1, +2). Figyeld meg a lépéseket a sor elején, és mondd meg, mi a következő szám!",
       "worldTitles": {
         "postman": {
           "title": "📮 Váltakozó házszámok",
-          "text": "A házszámok kétféle lépéssel nőnek váltakozva (például egyszer 1-gyel, aztán 2-vel). Figyeld meg, és mondd meg a következő házszámot!"
+          "text": "A házszámok kétféle lépéssel nőnek váltakozva (például +1, +2, +1, +2). Figyeld meg, és mondd meg a következő házszámot!"
         },
         "racing": {
           "title": "🏎️ Váltakozó rajtszámok",
-          "text": "A rajtszámok kétféle lépéssel nőnek váltakozva (például egyszer 1-gyel, aztán 2-vel). Figyeld meg, és mondd meg a következő rajtszámot!"
+          "text": "A rajtszámok kétféle lépéssel nőnek váltakozva (például +1, +2, +1, +2). Figyeld meg, és mondd meg a következő rajtszámot!"
         },
         "football": {
           "title": "⚽ Váltakozó eredmények",

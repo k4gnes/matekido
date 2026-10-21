@@ -10,7 +10,7 @@
       "worldTitles": {
         "racing": {
           "title": "🏎️ Becslés a versenypályán",
-          "text": "Nem kell pontosan számolni! Kerekítsd a számokat, és tippeld meg, mennyi lesz!"
+          "text": "Nem kell pontosan számolni! Kerekítsd a számokat tízesre, és becsüld meg, mennyi lesz!"
         },
         "football": {
           "title": "⚽ Becslés a pályán",
@@ -22,7 +22,7 @@
         },
         "animals": {
           "title": "🦁 Becslés az állatkertben",
-          "text": "Az állatok gondozójának sokszor kell becslnie. Kerekítsd a számokat, és tippeld meg az eredményt!"
+          "text": "Az állatkertben nem mindig számolják ki pontosan, hány állat van a karámokban. Kerekítsd a számokat tízesre, és becsüld meg az eredményt!"
         },
         "space": {
           "title": "🤖 Becslés a űrben",

@@ -62,7 +62,7 @@ export function renderSequence(step, root, next, progress, onResult, onAttempt) 
         prompt.textContent = "Mi a következő szám?";
         card.append(prompt);
 
-        const options = makeOptions(step.answer, step.answer - 10, step.answer + 10);
+        const options = makeOptions(step.answer, Math.max(0, step.answer - 10), step.answer + 10);
         optionsContainer = document.createElement("div");
         optionsContainer.className = "mult-options";
 

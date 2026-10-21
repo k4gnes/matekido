@@ -6,15 +6,15 @@
     {
       "type": "scene",
       "title": "🔢 Váltakozó léptek 1000-ig",
-      "text": "Ebben a számsorban két különböző lépés váltakozik: egyszer kisebbet, aztán nagyobbat lépünk (például +3, +4, +3, +4 — de lehet +5, +10 vagy +10, +20 is). Figyeld meg a lépéseket a sor elején, és írd be a következő számot!",
+      "text": "Ebben a számsorban két különböző lépés váltakozik (például +3, +4, +3, +4 — de lehet +5, +10 vagy +10, +20 is). Figyeld meg a lépéseket a sor elején, és írd be a következő számot!",
       "worldTitles": {
         "postman": {
           "title": "📮 Váltakozó házszámok",
-          "text": "A házszámok kétféle lépéssel nőnek váltakozva (például egyszer 3-mal, aztán 4-gyel). Figyeld meg, és írd be a következő házszámot!"
+          "text": "A házszámok kétféle lépéssel nőnek váltakozva (például +3, +4, +3, +4). Figyeld meg, és írd be a következő házszámot!"
         },
         "racing": {
           "title": "🏎️ Váltakozó rajtszámok",
-          "text": "A rajtszámok kétféle lépéssel nőnek váltakozva (például egyszer 3-mal, aztán 4-gyel). Figyeld meg, és írd be a következő rajtszámot!"
+          "text": "A rajtszámok kétféle lépéssel nőnek váltakozva (például +3, +4, +3, +4). Figyeld meg, és írd be a következő rajtszámot!"
         },
         "football": {
           "title": "⚽ Váltakozó eredmények",

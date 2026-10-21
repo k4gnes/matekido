@@ -6,30 +6,33 @@ function randint(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+const SEQUENCE_MIN_TERMS = 4;
+const SEQUENCE_MAX_TERMS = 7;
+
 function buildStepped(max) {
 
-    const maxStep = Math.min(10, Math.max(1, Math.floor((max - 1) / 5)));
+    const count = Math.min(randint(SEQUENCE_MIN_TERMS, SEQUENCE_MAX_TERMS), Math.max(2, max - 1));
+
+    const maxStep = Math.min(10, Math.max(1, Math.floor((max - 1) / count)));
 
     const step = randint(1, maxStep);
 
-    const direction = Math.random() < 0.5 ? 1 : -1;
+    const upLimit = max - count * step;
+    const downLimit = count * step + 1;
 
-    let start;
-    if (direction === 1) {
-        start = randint(1, max - 5 * step);
-    } else {
-        start = randint(5 * step + 1, max);
-    }
+    const direction = upLimit >= 1 ? (downLimit <= max && Math.random() < 0.5 ? -1 : 1) : -1;
+
+    const start = direction === 1 ? randint(1, upLimit) : randint(downLimit, max);
 
     const terms = [];
-    for (let t = 0; t < 5; t++) {
+    for (let t = 0; t < count; t++) {
         terms.push(start + direction * step * t);
     }
 
     return {
         type: "sequence",
         terms,
-        answer: start + direction * step * 5,
+        answer: start + direction * step * count,
         step,
         direction
     };
@@ -48,29 +51,50 @@ const ALTERNATING_PAIRS = [
     [4, 5]
 ];
 
+function alternatingSpan(terms, first, second) {
+    return Math.ceil(terms / 2) * first + Math.floor(terms / 2) * second;
+}
+
+function alternatingOptions(pool, max) {
+    const options = [];
+
+    for (const [a, b] of pool) {
+        const orders = a === b ? [[a, b]] : [[a, b], [b, a]];
+        for (const [first, second] of orders) {
+            for (let terms = SEQUENCE_MIN_TERMS; terms <= SEQUENCE_MAX_TERMS; terms++) {
+                if (alternatingSpan(terms, first, second) <= max - 1) {
+                    options.push({ first, second, terms });
+                }
+            }
+        }
+    }
+
+    return options;
+}
+
 function buildAlternating(max, deltas, pairs) {
 
     const pool = deltas ? [deltas] : (pairs || ALTERNATING_PAIRS);
 
-    let usable = pool.filter(([first, second]) => 3 * first + 2 * second <= max - 1);
+    let options = alternatingOptions(pool, max);
 
-    if (usable.length === 0) {
-        usable = ALTERNATING_PAIRS.filter(([first, second]) => 3 * first + 2 * second <= max - 1);
+    if (options.length === 0) {
+        options = alternatingOptions(ALTERNATING_PAIRS, max);
     }
 
-    if (usable.length === 0) {
-        usable = [[1, 2]];
+    if (options.length === 0) {
+        options = [{ first: 1, second: 2, terms: SEQUENCE_MIN_TERMS }];
     }
 
-    const [first, second] = pick(usable);
+    const { first, second, terms: count } = pick(options);
 
-    const span = 3 * first + 2 * second;
+    const span = alternatingSpan(count, first, second);
 
     const start = randint(1, Math.max(1, max - span));
 
     const terms = [];
     let current = start;
-    for (let t = 0; t < 5; t++) {
+    for (let t = 0; t < count; t++) {
         terms.push(current);
         current += t % 2 === 0 ? first : second;
     }

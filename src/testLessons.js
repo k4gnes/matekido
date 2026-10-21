@@ -490,6 +490,11 @@ function validateStep(step, ctx, range) {
         case "sequence": {
             if (!Array.isArray(step.terms) || step.terms.length < 3 || step.terms.some(t => !isInt(t))) fail(ctx, "terms hibás");
             if (!isInt(step.answer)) fail(ctx, "answer hibás");
+            const diffs = step.terms.slice(1).map((t, i) => t - step.terms[i]);
+            const pattern = [diffs[0], diffs[1] ?? diffs[0]];
+            if (!diffs.every((d, i) => d === pattern[i % 2])) fail(ctx, "a lépések nem váltakoznak");
+            const next = step.terms[step.terms.length - 1] + pattern[(step.terms.length - 1) % 2];
+            if (next !== step.answer) fail(ctx, "answer nem folytatja a sort");
             break;
         }
         case "order": {

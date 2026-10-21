@@ -843,9 +843,12 @@ function generateRatioSplit(max, world, mode, interaction) {
 
 // "easy": 6. osztályos kis számok, "hard": 7. osztályos, több lépésben
 // számolható (nagyobb) számok
+// "easy": 5. osztályos kis számok, "medium": 6. osztályos, "hard": 7. osztályos,
+// több lépésben számolható (nagyobb) számok
 const DIRECT_PROPORTION_LEVELS = {
     easy: { rates: [2, 3, 4, 5], maxAmount: 12, minAmount: 2, minValue: 4 },
-    hard: { rates: [2, 3, 4, 5, 6, 7, 8, 9, 10, 12], maxAmount: 30, minAmount: 5, minValue: 30 }
+    medium: { rates: [2, 3, 4, 5, 6, 7, 8], maxAmount: 20, minAmount: 3, minValue: 15 },
+    hard: { rates: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12], maxAmount: 30, minAmount: 5, minValue: 30 }
 };
 
 function generateDirectProportion(max, world, mode, interaction, level) {
@@ -919,10 +922,11 @@ const INVERSE_THEMES = {
     tram: { place: "A villamoson", worker: "kalauz", unit: "perc" }
 };
 
-// "easy": 6. osztályos kis számok (2-8 ember, 2-10 óra),
+// "easy": 5. osztályos kis számok (2-8 ember, 2-10 óra), "medium": 6. osztályos,
 // "hard": 7. osztályos, több lépésben számolható nagyobb számok
 const INVERSE_LEVELS = {
     easy: { workers: [2, 8], time: [2, 10], time2: [2, 12], divisors: [2, 10], minTotal: 4, minGap: 1, avoidSwap: false },
+    medium: { workers: [3, 12], time: [3, 20], time2: [2, 24], divisors: [2, 20], minTotal: 24, minGap: 2, avoidSwap: true },
     hard: { workers: [4, 18], time: [4, 30], time2: [3, 36], divisors: [2, 36], minTotal: 60, minGap: 2, avoidSwap: true }
 };
 

@@ -6586,6 +6586,78 @@
       }
     },
     {
+      "id": "algebra-review-01",
+      "title": "🧮 Algebra összefoglaló",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "algebra",
+      "difficulty": 3,
+      "type": "algebra",
+      "range": 1000,
+      "mission": "🧮 Algebra összefoglaló",
+      "subtitle": "algebrai kifejezések és egyenletek együtt",
+      "file": "./data/lessons/grade7/algebra-review-01.json",
+      "worldTitles": {
+        "postman": "📮 A postás képletei",
+        "racing": "🏎️ A garázs egyenletei",
+        "football": "⚽ A pálya számai",
+        "cooking": "🍳 A konyha képletei",
+        "animals": "🦁 Az állatkert számai",
+        "space": "🚀 Az űrhajó egyenletei",
+        "tram": "🚋 A villamos képletei"
+      }
+    },
+    {
+      "id": "geometry-review-01",
+      "title": "📐 Geometria összefoglaló",
+      "grades": [
+        7
+      ],
+      "category": "geometry",
+      "skill": "triangles",
+      "difficulty": 3,
+      "type": "triangle",
+      "range": 1000,
+      "mission": "📐 Geometria összefoglaló",
+      "subtitle": "háromszögek, területek, körök és hasonlóság",
+      "file": "./data/lessons/grade7/geometry-review-01.json",
+      "worldTitles": {
+        "postman": "📮 A postás csomagjai",
+        "racing": "🏎️ A garázs geometriája",
+        "football": "⚽ A pálya sarkái",
+        "cooking": "🍳 A konyha geometriája",
+        "animals": "🦁 Az állatkert alakjai",
+        "space": "🚀 Az űrhajó geometriája",
+        "tram": "🚋 A villamos vonala"
+      }
+    },
+    {
+      "id": "grade7-mixed-01",
+      "title": "🎲 7. osztályos vegyes gyakorló",
+      "grades": [
+        7
+      ],
+      "category": "numbers",
+      "skill": "review",
+      "difficulty": 3,
+      "type": "rational",
+      "range": 1000,
+      "mission": "🎲 Vegyes gyakorló",
+      "subtitle": "az egész év témáinak vegyes gyakorlása",
+      "file": "./data/lessons/grade7/grade7-mixed-01.json",
+      "worldTitles": {
+        "postman": "📮 A posta minden tudása",
+        "racing": "🏎️ A boxutca összes tudása",
+        "football": "⚽ A pálya összes tudása",
+        "cooking": "🍳 A konyha összes tudása",
+        "animals": "🦁 Az állatkert összes tudása",
+        "space": "🚀 Az űrhajó összes tudása",
+        "tram": "🚋 A villamos összes tudása"
+      }
+    },
+    {
       "id": "data-diagram-01",
       "title": "📊 Adatok, diagramok",
       "grades": [

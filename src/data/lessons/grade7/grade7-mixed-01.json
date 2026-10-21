@@ -1,0 +1,139 @@
+{
+    "id": "grade7-mixed-01",
+    "title": "🎲 7. osztályos vegyes gyakorló",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🎲 7. osztályos vegyes gyakorló",
+            "text": "Itt az egész év anyaga keveredik: racionális számok, algebra, függvények, arányosság, geometria, statisztika és valószínűség. Nincs új módszer – az eddigieket kell gyorsan és magabiztosan használni. Minden feladatnál először azonosítsd a feladattípust, és gondold végig, milyen számítás kell. Ha elakadtál, mindig tedd a legegyszerűbb lépést: írd le az adatokat, és haladj lépésről lépésre. A cél nem a sietség, hanem a magabiztos tudás.",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 A posta minden tudása",
+                    "text": "A postán a racionális számoktól a valószínűségen át mindig jön feladat. Mutasd meg, mit tudsz!"
+                },
+                "racing": {
+                    "title": "🏎️ A boxutca összes tudása",
+                    "text": "A verseny napján minden témából jön egy feladat. Készen állsz?"
+                },
+                "football": {
+                    "title": "⚽ A pálya összes tudása",
+                    "text": "A pályán a számok, a formák és a statisztika együtt keveredik. Játssz!"
+                },
+                "cooking": {
+                    "title": "🍳 A konyha összes tudása",
+                    "text": "A konyhában a receptek és a számolás összetalálkozik. Végigvitted a leckét!"
+                },
+                "animals": {
+                    "title": "🦁 Az állatkert összes tudása",
+                    "text": "Az állatkertben mindenféle feladat vár. Egy igazi vegyes gyakorló!"
+                },
+                "space": {
+                    "title": "🚀 Az űrhajó összes tudása",
+                    "text": "Az űrhajó fedélzetén az egész tanév matematikája számít. Irány a próba!"
+                },
+                "tram": {
+                    "title": "🚋 A villamos összes tudása",
+                    "text": "A villamos utasai az egész tanévet gyakorolják veled. Lássuk, ki a gyorsabb!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "rational",
+            "options": {
+                "count": 3,
+                "mode": "mixops",
+                "level": "mixed"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "equation",
+            "options": {
+                "count": 3,
+                "mode": "mixed"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "function",
+            "options": {
+                "count": 3,
+                "mode": "mixed"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "word-problem",
+            "options": {
+                "count": 3,
+                "max": 1000,
+                "kind": "direct-proportion",
+                "mode": "value",
+                "interaction": "input",
+                "level": "hard"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "shape-area",
+            "options": {
+                "count": 2,
+                "mode": "polygon-mixed"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "data-chart",
+            "options": {
+                "count": 2,
+                "max": 10,
+                "modes": ["percent", "top"],
+                "chartTypes": ["pie", "bar"]
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "probability",
+            "options": {
+                "count": 2,
+                "mode": "chance"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Végigvitted a 7. osztály vegyes gyakorlóját: racionális számok, algebra, függvények, arányosság, geometria, statisztika és valószínűség – mindegyikre tudod a választ!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "A posta összes feladatait megoldottad – indulhat a kézbesítés!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "A boxutca összes feladatát megoldottad – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A pálya összes feladatát megoldottad – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "A konyha összes feladatát megoldottad – jó étvágyat!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Az állatkert összes feladatát megoldottad – az állatkert elégedett!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Az űrhajó összes feladatát megoldottad – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "A villamos összes feladatát megoldottad – indulhat a járat!"
+                }
+            }
+        }
+    ]
+}

@@ -1,6 +1,6 @@
 # Matekidő – 7. osztályos tanmenet
 
-> **Státusz: folyamatban.** A 7. osztályos tanmenet terve; a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan. **Elkészült: 33 lecke a 36 tervezettből + a mester kihívás** (a táblázatban linkelt leckék már a regiszterben vannak), továbbá 2 egyperces játék.
+> **Státusz: folyamatban.** A 7. osztályos tanmenet terve; a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan. **Elkészült: 36 lecke a 36 tervezettből + a mester kihívás** (a táblázatban linkelt leckék már a regiszterben vannak), továbbá 2 egyperces játék.
 
 **Tervezett 36 lecke + 1 mester kihívás**, 8 témakörben (a regiszter 7 kategóriája: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
@@ -80,9 +80,9 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 34 | Algebra összefoglaló | Algebrai kifejezések és egyenletek *(tervezett)* | Vegyes | — | 3 |
-| 35 | Geometria összefoglaló | Geometria összefoglaló *(tervezett)* | Vegyes | — | 3 |
-| 36 | Vegyes gyakorló | 7. osztályos vegyes gyakorló *(tervezett)* | Összefoglalás | — | 3 |
+| 34 | Algebra összefoglaló | [Algebra összefoglaló](?lesson=algebra-review-01) | Vegyes | — | 3 |
+| 35 | Geometria összefoglaló | [Geometria összefoglaló](?lesson=geometry-review-01) | Vegyes | — | 3 |
+| 36 | Vegyes gyakorló | [7. osztályos vegyes gyakorló](?lesson=grade7-mixed-01) | Összefoglalás | — | 3 |
 
 ## 🌟 Mester kihívás (1 lecke)
 
@@ -103,4 +103,4 @@ Ezek nem számozott feladatok: a **🎲 Egypercesek** oldalon találhatók, nem 
 
 **Kiegészítő leckék a terven túl:** [Arány és aránypár](?lesson=ratio-proportion-01), [Százalékos növekedés és csökkenés](?lesson=percent-change-01).
 
-**Megjegyzés:** A megvalósított leckék között van új generátor (`circle` sector mód, `similarity`, `function`) és új komponens is (`src/components/similarity.js`, `src/components/function.js`); a többi a meglévő generátorokra (`equation`, `inequality`, `ratio`, `word-problem`, `probability`, `circle`, `polygon`, `shape-area`, `triangle`, `transform`, `coordinate`, `average`, `data-chart`, `combinatorics`) épül. A statisztikai lecke a meglévő `average` generátor medián- és módusz-módját használja, a kördiagram pedig a `data-chart` generátor `pie` típusát; a valószínűségi lecke a `probability` generátor új `chance` módját.
+**Megjegyzés:** A megvalósított leckék között van új generátor (`circle` sector mód, `similarity`, `function`) és új komponens is (`src/components/similarity.js`, `src/components/function.js`); a többi a meglévő generátorokra (`equation`, `inequality`, `ratio`, `word-problem`, `probability`, `circle`, `polygon`, `shape-area`, `triangle`, `transform`, `coordinate`, `average`, `data-chart`, `combinatorics`) épül. A statisztikai lecke a meglévő `average` generátor medián- és módusz-módját használja, a kördiagram pedig a `data-chart` generátor `pie` típusát; a valószínűségi lecke a `probability` generátor új `chance` módját. Az összefoglaló leckék (`algebra-review-01`, `geometry-review-01`, `grade7-mixed-01`) a meglévő generátorok vegyes módjait használják (`algebra` mixed, `equation` mixed, `triangle` mixed, `shape-area` polygon-mixed, `pythagorean` mixed, `circle` measure-mixed, `similarity` mixed, `rational` mixops, `function` mixed).

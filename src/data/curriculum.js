@@ -308,6 +308,9 @@ export const CURRICULUM_ORDER = {
         "stats-central-01",
         "probability-03",
         "word-problems-mix-01",
+        "algebra-review-01",
+        "geometry-review-01",
+        "grade7-mixed-01",
         "grade7-master-01",
     ],
 };

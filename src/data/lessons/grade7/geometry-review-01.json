@@ -1,0 +1,116 @@
+{
+    "id": "geometry-review-01",
+    "title": "📐 Geometria összefoglaló",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "📐 Geometria összefoglaló",
+            "text": "A geometria feladatokban mindig ugyanaz a három kérdés segít: 1) Milyen alakzatokról van szó? (háromszög, négyszög, sokszög, kör) 2) Milyen adatokat adtak meg? (oldal, szög, magasság, sugár, átmérő) 3) Melyik mennyiséget kell kiszámítani? (kerület, terület, átló, hosszúság). Háromszögeknél a szögösszeg 180°, a derékszöges háromszögeknél a Pitagorasz-tétel: a² + b² = c². Körnél a kerület 2rπ, a terület r²π. Hasonlóságnál pedig az oldalak aránya állandó, és a területek aránya a lineáris arány négyzetese. Mindig ellenőrizd a mértékegységeket, és ha lehet, becsüld meg az eredményt: egy 10 cm sugarú kör területe körülbelül 314 cm².",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 A postás csomagjai",
+                    "text": "A postás csomagjai és a postaláda alakjai: mikor kell terület, mikor kerület? Nézd meg a háromszögeket, a köröket és a hasonló alakzatokat!"
+                },
+                "racing": {
+                    "title": "🏎️ A garázs geometriája",
+                    "text": "A garázsban minden alakzat számít: a versenyautó szélessége és hossza, a gumiabroncsok átmérője. Számolj a háromszögek és a körök adataival!"
+                },
+                "football": {
+                    "title": "⚽ A pálya sarkái",
+                    "text": "A pályán a téglalap és a kör vonal, a kapu sarokharanglövedékei pedig háromszögek. Használd a kerületet, a területet és a szögösszeget!"
+                },
+                "cooking": {
+                    "title": "🍳 A konyha geometriája",
+                    "text": "A konyhában a tálalók és a sütőformák alakja számít. Melyik feladat a területről szól, és melyik a kerületről?"
+                },
+                "animals": {
+                    "title": "🦁 Az állatkert alakjai",
+                    "text": "Az állatkert karámai, kifutói és medencéje mindenféle alakzatú. Hasonlósággal és a Pitagorasz-tétellel is számolhatsz!"
+                },
+                "space": {
+                    "title": "🚀 Az űrhajó geometriája",
+                    "text": "Az űrhajó napelemtáblái téglalapok, a kilépőnyílagok körök. A hasonlóság és a mennyiségek aránya itt is segít!"
+                },
+                "tram": {
+                    "title": "🚋 A villamos vonala",
+                    "text": "A villamos pályája és a kerekek is geometriai alakzatok. Számolj a hosszakkal, a területekkel és a szögekkel!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "triangle",
+            "options": {
+                "count": 4,
+                "mode": "mixed"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "shape-area",
+            "options": {
+                "count": 3,
+                "mode": "polygon-mixed"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "pythagorean",
+            "options": {
+                "count": 3,
+                "mode": "mixed"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "circle",
+            "options": {
+                "count": 3,
+                "mode": "measure-mixed"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "similarity",
+            "options": {
+                "count": 3,
+                "mode": "mixed"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Összefoglaltad a geometria kulcsait: a szögösszeg 180°, a Pitagorasz-tétel, a kerület és a terület képlete, és a hasonlóság arányai!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "A postás csomagjait is kiszámítottad – indulhat a kézbesítés!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "A garázs alakzatait is kiszámítottad – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A pálya feladatait is megoldottad – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "A konyha alakzatait is kiszámítottad – jó étvágyat!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Az állatkert formáit is kiszámítottad – az állatkert elégedett!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Az űrhajó geometriáját is megoldottad – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "A villamos vonalát is kiszámítottad – indulhat a járat!"
+                }
+            }
+        }
+    ]
+}

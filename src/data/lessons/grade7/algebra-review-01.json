@@ -1,0 +1,118 @@
+{
+    "id": "algebra-review-01",
+    "title": "🧮 Algebra összefoglaló",
+    "steps": [
+        {
+            "type": "scene",
+            "title": "🧮 Algebra összefoglaló",
+            "text": "Az algebra a betűkkel és számokkal való számolás. A kulcs az, hogy mindig ugyanazt a három lépést tedd: 1) nézd meg, milyen kifejezéssel dolgozol (hasonló tagok, zárójel, szorzás); 2) végezd el a számítást – zárójel előbb, aztán szorzás, végül összeadás és kivonás; 3) ellenőrizd a kapott számot a kiindulási kifejezésbe való visszahelyettesítéssel. Egyenletnél ugyanez a módszer, de az egyenlőség mindkét oldalán ugyanazt a műveletet kell elvégezni, hogy az egyenlőség megmaradjon. Ne felejtsd: mindkét oldalhoz hozzáadni, kivonni, szorozni, osztani lehet – de mindkettőhöz ugyanazt.",
+            "worldTitles": {
+                "postman": {
+                    "title": "📮 A postás képletei",
+                    "text": "A postás a csomagok számát képletben is megadja. Milyen érték lesz a kifejezés értéke, ha egy adott számot behelyettesítünk? És melyik egyenlet megoldása adja a helyes csomagszámot?"
+                },
+                "racing": {
+                    "title": "🏎️ A garázs egyenletei",
+                    "text": "A garázsban az alkatrészek számát képlettel számolják. Oldj meg egyenleteket, és ellenőrizd a megoldást visszahelyettesítéssel!"
+                },
+                "football": {
+                    "title": "⚽ A pálya számai",
+                    "text": "A pályán a játékosszámokat és a gólokat is képlettel számolják. Végezd el a számításokat, és keresd meg az ismeretlent!"
+                },
+                "cooking": {
+                    "title": "🍳 A konyha képletei",
+                    "text": "A konyhában a recepteket arányszámokkal és egyenletekkel írják le. Hasonló tagok, zárójelek és egyenletek most veled!"
+                },
+                "animals": {
+                    "title": "🦁 Az állatkert számai",
+                    "text": "Az állatkertben a ketrecek és a fajok számát képlettel számolják. Gondoskodj a zárójelekről és az egyenletekről!"
+                },
+                "space": {
+                    "title": "🚀 Az űrhajó egyenletei",
+                    "text": "Az űrhajó üzemanyagát és a rakéták számát képletekkel számolják. Oldd meg a feladatokat, és ne felejtsd el a visszaellenőrzést!"
+                },
+                "tram": {
+                    "title": "🚋 A villamos képletei",
+                    "text": "A villamos utasainak számát és a jegyeket is képlettel számolják. Itt a matek nem áll meg egyetlen műveletnél!"
+                }
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "algebra",
+            "options": {
+                "count": 3,
+                "mode": "mixed",
+                "level": "two"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "algebra",
+            "options": {
+                "count": 3,
+                "mode": "mixed",
+                "level": "two"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "equation",
+            "options": {
+                "count": 3,
+                "mode": "mixed"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "equation",
+            "options": {
+                "count": 3,
+                "mode": "both-sides"
+            }
+        },
+        {
+            "type": "exercise",
+            "generator": "equation",
+            "options": {
+                "count": 2,
+                "mode": "paren"
+            }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Szép munka!",
+            "text": "Összefoglalta az algebrai kifejezések és az egyenletek legfontosabb lépéseit: előbb a zárójel, aztán a szorzás, végül az összeadás – és az egyenlet mindkét oldala ugyanazt kapja!",
+            "worldTitles": {
+                "postman": {
+                    "title": "🎉 Szép munka!",
+                    "text": "A postás képleteit is megoldottad – indulhat a kézbesítés!"
+                },
+                "racing": {
+                    "title": "🏁 Nagy vagy!",
+                    "text": "A garázs egyenleteit is megoldottad – jöhet a következő kör!"
+                },
+                "football": {
+                    "title": "🏆 Szuper!",
+                    "text": "A pálya feladatait is megoldottad – kezdődhet a meccs!"
+                },
+                "cooking": {
+                    "title": "🍳 Szép munka!",
+                    "text": "A konyha számításait is elvégezted – jó étvágyat!"
+                },
+                "animals": {
+                    "title": "🦁 Ügyes voltál!",
+                    "text": "Az állatkert feladatait is megoldottad – az állatkert elégedett!"
+                },
+                "space": {
+                    "title": "🚀 Szuper vagy!",
+                    "text": "Az űrhajó egyenleteit is megoldottad – indulhat a küldetés!"
+                },
+                "tram": {
+                    "title": "🚋 Szuper vagy!",
+                    "text": "A villamos képleteit is megoldottad – indulhat a járat!"
+                }
+            }
+        }
+    ]
+}

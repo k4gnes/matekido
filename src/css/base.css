@@ -240,8 +240,8 @@ body[data-world-theme="racing"] {
 
 body[data-world="cooking"],
 body[data-world-theme="cooking"] {
-    --primary: #C2410C;
-    --primary-dark: #9A3412;
+    --primary: #A16207;
+    --primary-dark: #854D0E;
 }
 
 body[data-world="football"],

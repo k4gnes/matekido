@@ -244,10 +244,10 @@ body[data-world-theme="racing"] {
 
 body[data-world="cooking"],
 body[data-world-theme="cooking"] {
-    --primary: #EF4444;
-    --primary-dark: #F87171;
-    --primary-ink: #B91C1C;
-    --on-primary: #2B0000;
+    --primary: #FF4500;
+    --primary-dark: #FF6A33;
+    --primary-ink: #C2410C;
+    --on-primary: #2B0A00;
 }
 
 body[data-world="football"],

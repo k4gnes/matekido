@@ -271,24 +271,32 @@
 }
 
 .lesson-fav-btn {
+    width: 2rem;
+    height: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin-left: auto;
-    background: none;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--on-primary);
     border: none;
-    padding: 0 .1rem;
+    padding: 0;
     font-size: 1rem;
     line-height: 1;
     cursor: pointer;
-    opacity: .55;
-    transition: opacity .15s ease, transform .15s ease;
+    /* a ❤️/🤍 színes emoji, ezért halvány körvonal kell köré, hogy a fakó szív is látszódjon */
+    text-shadow:
+        0 1px 1px rgba(0, 0, 0, .35),
+        0 -1px 1px rgba(0, 0, 0, .35),
+        1px 0 1px rgba(0, 0, 0, .35),
+        -1px 0 1px rgba(0, 0, 0, .35);
+    transition: transform .15s ease;
 }
 
-.lesson-fav-btn:hover {
-    opacity: 1;
-    transform: scale(1.2);
-}
-
+.lesson-fav-btn:hover,
 .lesson-fav-btn.active {
-    opacity: 1;
+    transform: scale(1.1);
 }
 
 .lesson-difficulty-badge {

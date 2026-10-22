@@ -262,12 +262,13 @@ body[data-world-theme="racing"] {
 
 body[data-world="cooking"],
 body[data-world-theme="cooking"] {
-    --primary: #FF4500;
-    --primary-dark: #FF6A33;
+    --primary: #FFFFFF;
+    --primary-dark: #FFF1F0;
     --primary-ink: #C2410C;
-    --on-primary: #2B0A00;
+    --on-primary: #A00D02;
+    /* a fehér korong is fehér, ezért a ? és a szív a világ piros színét kapja */
     --accent-fill: var(--background);
-    --on-accent-fill: var(--primary-ink);
+    --on-accent-fill: #D6250B;
 }
 
 body[data-world="football"],

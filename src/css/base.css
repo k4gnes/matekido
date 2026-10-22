@@ -238,8 +238,8 @@ body[data-world-theme="postman"] {
 
 body[data-world="racing"],
 body[data-world-theme="racing"] {
-    --primary: #BE123C;
-    --primary-dark: #9F1239;
+    --primary: #2173B8;
+    --primary-dark: #1A5C93;
 }
 
 body[data-world="cooking"],

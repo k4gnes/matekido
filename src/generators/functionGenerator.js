@@ -2,6 +2,8 @@ const WORLDS = {
     postman: {
         x: "óra",
         y: "levél",
+        yAcc: "levelet",
+        yVerb: "kézbesítettek",
         story: "A postásnál az eltelt órák és a kézbesített levelek száma összefügg."
     },
     racing: {
@@ -12,16 +14,21 @@ const WORLDS = {
     football: {
         x: "perc",
         y: "gól",
+        yVerb: "esett",
         story: "A csapatnál a játékidő és a lőtt gólok száma összefügg."
     },
     cooking: {
         x: "adag",
         y: "tojás",
+        yAcc: "tojást",
+        yVerb: "használtak fel",
         story: "A konyhában a tészta adagjai és a felhasznált tojások száma összefügg."
     },
     animals: {
         x: "nap",
         y: "étel",
+        yAcc: "ételt",
+        yVerb: "adtak be",
         story: "Az állatkertben a napok száma és a beadott ételek száma összefügg."
     },
     space: {
@@ -164,12 +171,16 @@ function buildRead(w) {
 
         const options = numberOptions(ask.y, [ask.y + 1, ask.y - 1, ask.y + Math.abs(m), ask.y - Math.abs(m), ask.y + 2]);
 
+        const question = w.yVerb
+            ? `${w.story} Olvasd le a grafikonról: ${ask.x} ${w.x} alatt hány ${w.yAcc ?? w.y} ${w.yVerb}?`
+            : `${w.story} Olvasd le a grafikonról: ${ask.x} ${w.x} esetén hány ${w.y}?`;
+
         return {
             type: "function",
             mode: "read",
             xUnit: w.x,
             yUnit: w.y,
-            question: `${w.story} Olvasd le a grafikonról: ${ask.x} ${w.x} esetén hány ${w.y}?`,
+            question,
             points: rows.map(r => [r.x, r.y]),
             askX: ask.x,
             answer: ask.y,
@@ -177,12 +188,16 @@ function buildRead(w) {
         };
     }
 
+    const question = w.yVerb
+        ? `${w.story} Olvasd le a grafikonról: 2 ${w.x} alatt hány ${w.yAcc ?? w.y} ${w.yVerb}?`
+        : `${w.story} Olvasd le a grafikonról: 2 ${w.x} esetén hány ${w.y}?`;
+
     return {
         type: "function",
         mode: "read",
         xUnit: w.x,
         yUnit: w.y,
-        question: `${w.story} Olvasd le a grafikonról: 2 ${w.x} esetén hány ${w.y}?`,
+        question,
         points: [[1, 2], [2, 4], [3, 6]],
         askX: 2,
         answer: 4,

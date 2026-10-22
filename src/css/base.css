@@ -250,8 +250,11 @@ body[data-world-theme="cooking"] {
 
 body[data-world="football"],
 body[data-world-theme="football"] {
-    --primary: #15803D;
-    --primary-dark: #166534;
+    --primary: #4CAF50;
+    --primary-dark: #43A047;
+    --primary-ink: #2E7D32;
+    --on-primary: #001A00;
+    --logo-color: #43A047;
 }
 
 body[data-world="animals"],

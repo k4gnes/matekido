@@ -152,8 +152,8 @@ function createWeakRow(title, detail, percentage) {
 
     const label = document.createElement("span");
     label.className = "type-label";
-    label.title = detail;
-    label.textContent = title;
+    label.title = title;
+    label.textContent = title.length > 38 ? title.slice(0, 35) + "..." : title;
 
     const barWrap = document.createElement("div");
     barWrap.className = "type-bar-wrap";

@@ -2,6 +2,8 @@
     --primary: #4F86F7;
     --primary-dark: #2563eb;
     --on-primary: #FFFFFF;
+    --accent-fill: var(--primary);
+    --on-accent-fill: var(--on-primary);
     --secondary: #F59E0B;
     --background: #FFFDF8;
     --text: #333333;
@@ -230,16 +232,32 @@ body[data-world="tram"] {
     background-color: #fff9e8;
 }
 
+/* A gombokon a világ gomb-színe és a rajta lévő jel színe.
+   Világos / telített gombnál (piros, sárga, élénkzöld, kék) a jel nem látszik a gombon,
+   ezért ott a gomb a hátteret kapja, a jel pedig a világ sötét (szöveg) színét.
+   A --primary-ink itt a body-n nem oldható fel (az önmagát venné fel), ezért globálisnak kell lennie. */
+body {
+    --primary-ink: var(--primary);
+    --logo-color: var(--primary);
+    --accent-fill: var(--primary);
+    --on-accent-fill: var(--on-primary);
+}
+
+/* A saját érték (a pirosaknál) a theme blokkban marad, mert a body-n felülíródik. */
 body[data-world="postman"],
 body[data-world-theme="postman"] {
     --primary: #2563EB;
     --primary-dark: #1D4ED8;
+    --accent-fill: var(--background);
+    --on-accent-fill: var(--primary-ink);
 }
 
 body[data-world="racing"],
 body[data-world-theme="racing"] {
     --primary: #2173B8;
     --primary-dark: #1A5C93;
+    --accent-fill: var(--background);
+    --on-accent-fill: var(--primary-ink);
 }
 
 body[data-world="cooking"],
@@ -248,6 +266,8 @@ body[data-world-theme="cooking"] {
     --primary-dark: #FF6A33;
     --primary-ink: #C2410C;
     --on-primary: #2B0A00;
+    --accent-fill: var(--background);
+    --on-accent-fill: var(--primary-ink);
 }
 
 body[data-world="football"],

@@ -252,8 +252,8 @@ body[data-world-theme="football"] {
 
 body[data-world="animals"],
 body[data-world-theme="animals"] {
-    --primary: #4D7C0F;
-    --primary-dark: #3F6212;
+    --primary: #78350F;
+    --primary-dark: #451A03;
 }
 
 body[data-world="space"],

@@ -21,6 +21,7 @@ body {
     background: var(--background);
 
     --primary-ink: var(--primary);
+    --logo-color: var(--primary);
 
     font-family: system-ui, sans-serif;
     color: var(--text);
@@ -271,6 +272,7 @@ body[data-world-theme="tram"] {
     --primary-dark: #FACC15;
     --primary-ink: #713F12;
     --on-primary: #422006;
+    --logo-color: #FEF08A;
 }
 
 [data-tcx-url] {

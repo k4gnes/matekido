@@ -191,6 +191,7 @@
 .app-logo {
     display: inline-flex;
     vertical-align: middle;
+    color: var(--logo-color);
 }
 
 .app-logo svg {

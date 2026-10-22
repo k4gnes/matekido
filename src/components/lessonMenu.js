@@ -977,7 +977,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
 
         if (masterLessons.length > 0) {
             pickerSections.push(createPickerSection(
-                `🌟 Mester kihívás (${masterLessons.length}) – a legügyesebbeknek`,
+                `🌟 Mester kihívás (${masterLessons.length})`,
                 masterLessons,
                 onSelect,
                 activeWorld,

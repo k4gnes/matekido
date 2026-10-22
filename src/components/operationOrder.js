@@ -1,6 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createHintRequest } from "./ui/hintBox.js?v=2";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -13,6 +14,10 @@ const TITLES = {
     space: "🤖 Műveleti sorrend az űrhajón",
     tram: "🚋 Műveleti sorrend a villamoson"
 };
+
+function hintText(step) {
+    return `A műveleti sorrend: 1. zárójel, 2. szorzás és osztás, 3. összeadás és kivonás balról jobbra. A feladat: ${step.expression}`;
+}
 
 export function renderOperationOrder(step, root, next, progress, onResult, onAttempt) {
 
@@ -51,6 +56,7 @@ export function renderOperationOrder(step, root, next, progress, onResult, onAtt
                 feedback.success(`😊 Nagyszerű! ${step.explanation}`);
             } else {
                 feedback.retry();
+                maybeShowHint();
             }
         });
         options.append(btn);
@@ -58,6 +64,9 @@ export function renderOperationOrder(step, root, next, progress, onResult, onAtt
     card.append(options);
 
     const message = createMessageBox();
+    const hint = createHintRequest(() => hintText(step));
+
+    card.append(hint.button, hint.box);
     card.append(message.element);
 
     root.append(card);
@@ -69,4 +78,8 @@ export function renderOperationOrder(step, root, next, progress, onResult, onAtt
         onResult,
         onAttempt
     });
+
+    function maybeShowHint() {
+        if (feedback.getMistakes() >= 2) hint.offer();
+    }
 }

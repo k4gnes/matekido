@@ -1,5 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createHintRequest } from "./ui/hintBox.js?v=2";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -242,6 +243,31 @@ function createTableChart(chart) {
     return table;
 }
 
+function hintText(step) {
+    if (step.mode === "top") {
+        return "A legmagasabb oszlopnak a legnagyobb a számértéke – ezt keresd!";
+    }
+    if (step.mode === "least") {
+        return "A legalacsonyabb oszlopnak a legkisebb a számértéke – ezt keresd!";
+    }
+    if (step.mode === "count") {
+        return "Nézd meg a diagramon a megjelölt fajtát, és számold meg, hány darab van belőle!";
+    }
+    if (step.mode === "sum") {
+        return "Adj össze minden oszlop számértékét!";
+    }
+    if (step.mode === "sum2") {
+        return "Adj össze a két megjelölt oszlop számértékét!";
+    }
+    if (step.mode === "diff") {
+        return "Vond ki a kisebb számértéket a nagyobból!";
+    }
+    if (step.mode === "percent") {
+        return "A teljes kördiagram 100%. A százalékot így kapod: oszlop értéke ÷ összes érték × 100.";
+    }
+    return "Nézd meg a diagramot: melyik oszlop magasabb, annak a számértéke nagyobb!";
+}
+
 export function renderDataChart(step, root, next, progress, onResult, onAttempt) {
 
     const ac = new AbortController();
@@ -292,6 +318,9 @@ export function renderDataChart(step, root, next, progress, onResult, onAttempt)
     card.append(optionsContainer);
 
     const message = createMessageBox();
+    const hint = createHintRequest(() => hintText(step));
+
+    card.append(hint.button, hint.box);
     card.append(message.element);
 
     root.append(card);
@@ -303,6 +332,10 @@ export function renderDataChart(step, root, next, progress, onResult, onAttempt)
         onResult,
         onAttempt
     });
+
+    function maybeShowHint() {
+        if (feedback.getMistakes() >= 2) hint.offer();
+    }
 
     function successText() {
         if (step.mode === "top") return "😊 Ügyes! A legmagasabb oszlopé a legtöbb!";
@@ -324,6 +357,7 @@ export function renderDataChart(step, root, next, progress, onResult, onAttempt)
             feedback.success(successText());
         } else {
             feedback.retry();
+            maybeShowHint();
         }
     }
 

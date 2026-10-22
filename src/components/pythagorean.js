@@ -1,5 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createHintRequest } from "./ui/hintBox.js?v=2";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -71,6 +72,16 @@ function createRightTriangleSvg(step) {
     return svg;
 }
 
+function hintText(step) {
+    if (step.mode === "hypotenuse") {
+        return `A Pitagorasz-tétel: a² + b² = c². A két befogó ${step.a} cm és ${step.b} cm, tehát c² = ${step.a * step.a} + ${step.b * step.b}. Keresd a négyzetgyököt!`;
+    }
+    if (step.mode === "leg") {
+        return `A Pitagorasz-tétel: a² + b² = c². Az átfogó ${step.hypotenuse} cm, az egyik befogó ${step.known} cm, ezért a hiányzó befogó négyzetre: ${step.hypotenuse * step.hypotenuse} − ${step.known * step.known}.`;
+    }
+    return "A Pitagorasz-tétel szerint derékszögű háromszögben a² + b² = c². Számold ki mindhárom oldal négyzetét, és nézd meg, egyenlő-e az első két összeg a harmadikkal!";
+}
+
 export function renderPythagorean(step, root, next, progress, onResult, onAttempt) {
 
     const world = getActiveWorld();
@@ -114,6 +125,9 @@ export function renderPythagorean(step, root, next, progress, onResult, onAttemp
     card.append(optionsContainer);
 
     const message = createMessageBox();
+    const hint = createHintRequest(() => hintText(step));
+
+    card.append(hint.button, hint.box);
     card.append(message.element);
 
     root.append(card);
@@ -125,6 +139,10 @@ export function renderPythagorean(step, root, next, progress, onResult, onAttemp
         onResult,
         onAttempt
     });
+
+    function maybeShowHint() {
+        if (feedback.getMistakes() >= 2) hint.offer();
+    }
 
     function successText() {
         if (step.mode === "hypotenuse") {
@@ -151,6 +169,7 @@ export function renderPythagorean(step, root, next, progress, onResult, onAttemp
             feedback.success(successText());
         } else {
             feedback.retry();
+            maybeShowHint();
         }
     });
 }

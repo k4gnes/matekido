@@ -38,7 +38,23 @@ export const HINT_TYPES = new Set([
     "ratio",
     "rational",
     "algebra",
-    "master"
+    "master",
+    "function",
+    "shape-area",
+    "circle",
+    "pythagorean",
+    "similarity",
+    "triangle",
+    "transform",
+    "coordinate",
+    "angle-measure",
+    "divisibility",
+    "operation-order",
+    "data-chart",
+    "solid-measure",
+    "probability",
+    "combinatorics",
+    "word-problem"
 ]);
 
 export function lessonHasHint(lessonMeta) {

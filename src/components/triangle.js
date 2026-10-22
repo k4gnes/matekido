@@ -1,5 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createHintRequest } from "./ui/hintBox.js?v=2";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -57,6 +58,22 @@ function createTriangleSvg(step) {
     return svg;
 }
 
+function hintText(step) {
+    if (step.mode === "angle-sum") {
+        return "A háromszög belső szögeinek összege 180°. A hiányzó szög: 180° − a két ismert szög.";
+    }
+    if (step.mode === "classify-sides") {
+        return "Egyenlő oldalú, ha mindhárom oldal egyforma; egyenlőszárú, ha kettő egyforma; általános, ha mind különböző.";
+    }
+    if (step.mode === "max-side") {
+        return `A harmadik oldal rövidebb kell legyen, mint a másik kettő összege (${step.a} + ${step.b}), de a legnagyobb egész szám, ami még megfelel, az ${step.a + step.b} − 1.`;
+    }
+    if (step.mode === "min-side") {
+        return `A harmadik oldalnak nagyobbnak kell lennie, mint a két ismert oldal különbsége (${Math.abs(step.a - step.b)}), ezért a legkisebb egész szám, ami megfelel, az ${Math.abs(step.a - step.b)} + 1.`;
+    }
+    return "Három szakaszból akkor szerkeszthető háromszög, ha a két rövidebb összege nagyobb, mint a leghosszabb.";
+}
+
 export function renderTriangle(step, root, next, progress, onResult, onAttempt) {
 
     const world = getActiveWorld();
@@ -100,6 +117,9 @@ export function renderTriangle(step, root, next, progress, onResult, onAttempt) 
     card.append(optionsContainer);
 
     const message = createMessageBox();
+    const hint = createHintRequest(() => hintText(step));
+
+    card.append(hint.button, hint.box);
     card.append(message.element);
 
     root.append(card);
@@ -111,6 +131,10 @@ export function renderTriangle(step, root, next, progress, onResult, onAttempt) 
         onResult,
         onAttempt
     });
+
+    function maybeShowHint() {
+        if (feedback.getMistakes() >= 2) hint.offer();
+    }
 
     function successText() {
         if (step.mode === "angle-sum") {
@@ -145,6 +169,7 @@ export function renderTriangle(step, root, next, progress, onResult, onAttempt) 
             feedback.success(successText());
         } else {
             feedback.retry();
+            maybeShowHint();
         }
     });
 }

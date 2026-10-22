@@ -1,6 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createHintRequest } from "./ui/hintBox.js?v=2";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -167,6 +168,25 @@ function createCircleSvg(step) {
     return svg;
 }
 
+function hintText(step) {
+    if (step.mode === "identify") {
+        return "A középpont a kör közepén van, a sugár a középpontból a körvonalig húzott szakasz, az átmérő pedig a középponton átmenő, két körvonalig tartó szakasz.";
+    }
+    if (step.mode === "convert") {
+        return "Az átmérő a sugár kétszerese, a sugár pedig az átmérő fele: d = 2r.";
+    }
+    if (step.mode === "circumference") {
+        return "A kör kerülete: K = 2 × r × π.";
+    }
+    if (step.mode === "area") {
+        return "A kör területe: T = r × r × π.";
+    }
+    if (step.variant === "sector-area") {
+        return "A körcikk területe az egész kör területének a középponti szögre jutó része: T = (α / 360) × r × r × π.";
+    }
+    return "A körív hossza az egész kör kerületének a középponti szögre jutó része: L = (α / 360) × 2 × r × π.";
+}
+
 export function renderCircle(step, root, next, progress, onResult, onAttempt) {
 
     const world = getActiveWorld();
@@ -203,6 +223,7 @@ export function renderCircle(step, root, next, progress, onResult, onAttempt) {
                     feedback.success(step.successText);
                 } else {
                     feedback.retry();
+                    maybeShowHint();
                 }
                 return;
             }
@@ -213,6 +234,7 @@ export function renderCircle(step, root, next, progress, onResult, onAttempt) {
                     feedback.success(step.successText);
                 } else {
                     feedback.retry();
+                    maybeShowHint();
                 }
                 return;
             }
@@ -222,6 +244,7 @@ export function renderCircle(step, root, next, progress, onResult, onAttempt) {
                 feedback.success(`😊 Szép munka! Ez a ${step.correctLabel.toLowerCase()}!`);
             } else {
                 feedback.retry();
+                maybeShowHint();
             }
         });
         options.append(btn);
@@ -229,6 +252,9 @@ export function renderCircle(step, root, next, progress, onResult, onAttempt) {
     card.append(options);
 
     const message = createMessageBox();
+    const hint = createHintRequest(() => hintText(step));
+
+    card.append(hint.button, hint.box);
     card.append(message.element);
 
     root.append(card);
@@ -240,4 +266,8 @@ export function renderCircle(step, root, next, progress, onResult, onAttempt) {
         onResult,
         onAttempt
     });
+
+    function maybeShowHint() {
+        if (feedback.getMistakes() >= 2) hint.offer();
+    }
 }

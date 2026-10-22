@@ -1,6 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createHintRequest } from "./ui/hintBox.js?v=2";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -139,6 +140,21 @@ function createSimilaritySvg(step) {
     return svg;
 }
 
+function hintText(step) {
+    if (step.mode === "scale-factor") {
+        return "A hasonlítási arány = a nagyobb oldal ÷ a kisebb oldal. Nézd meg egy oldalpár hosszait!";
+    }
+    if (step.mode === "area-ratio") {
+        return "A terület a hosszúságok arányának a négyzetével változik: T₂ = T₁ × arány².";
+    }
+    if (step.mode === "application") {
+        return step.direction === "map-to-real"
+            ? "A méretarány 1:N azt jelenti, hogy 1 cm a térképen N cm a valóságban. Szorozd meg a térképoldalt N-nel, és ne felejtsd el: 1 m = 100 cm!"
+            : "Először váltd centiméterre a valós hosszt (1 m = 100 cm), utána oszd el a méretarány számával!";
+    }
+    return "A hasonló háromszögekben az oldalak aránya mindig ugyanaz. A hiányzó oldalt arányosítsd a megadott oldallal!";
+}
+
 export function renderSimilarity(step, root, next, progress, onResult, onAttempt) {
 
     const world = getActiveWorld();
@@ -178,6 +194,7 @@ export function renderSimilarity(step, root, next, progress, onResult, onAttempt
                 feedback.success(step.successText);
             } else {
                 feedback.retry();
+                maybeShowHint();
             }
         });
         options.append(btn);
@@ -185,6 +202,9 @@ export function renderSimilarity(step, root, next, progress, onResult, onAttempt
     card.append(options);
 
     const message = createMessageBox();
+    const hint = createHintRequest(() => hintText(step));
+
+    card.append(hint.button, hint.box);
     card.append(message.element);
 
     root.append(card);
@@ -196,4 +216,8 @@ export function renderSimilarity(step, root, next, progress, onResult, onAttempt
         onResult,
         onAttempt
     });
+
+    function maybeShowHint() {
+        if (feedback.getMistakes() >= 2) hint.offer();
+    }
 }

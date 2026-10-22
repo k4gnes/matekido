@@ -1,5 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createHintRequest } from "./ui/hintBox.js?v=2";
 import { createFeedback } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -64,6 +65,21 @@ function createPairSvg(n) {
     return svg;
 }
 
+function hintText(step) {
+    if (step.mode === "count") {
+        const parts = [];
+        for (let i = step.n; i >= 1; i--) parts.push(String(i));
+        return `Az első helyre ${step.n}-féle, a másodikra ${step.n - 1}-féle kerülhet, és így tovább. Ezért összeszorozzuk őket: ${parts.join(" × ")}.`;
+    }
+    if (step.mode === "pair") {
+        return `Az elsőt ${step.n}-féleképp, a másodikat ${step.n - 1}-féleképp választhatjuk, de a sorrend nem számít, ezért osztunk 2-vel: ${step.n} × ${step.n - 1} ÷ 2.`;
+    }
+    if (step.mode === "multiply") {
+        return `Az egyik csoportból ${step.a}-féle, a másikból ${step.b}-féle választás van, ezeket összeszorozzuk: ${step.a} × ${step.b}.`;
+    }
+    return "Az első helyre bármelyik elem kerülhet, a másodikra a maradékok közül választasz, és így tovább. Az utolsó hely automatikusan adódik!";
+}
+
 export function renderCombinatorics(step, root, next, progress, onResult, onAttempt) {
 
     if (step.mode && step.mode !== "order") {
@@ -113,6 +129,9 @@ export function renderCombinatorics(step, root, next, progress, onResult, onAtte
     card.append(foundWrap);
 
     const message = createMessageBox();
+    const hint = createHintRequest(() => hintText(step));
+
+    card.append(hint.button, hint.box);
     card.append(message.element);
 
     root.append(card);
@@ -124,6 +143,10 @@ export function renderCombinatorics(step, root, next, progress, onResult, onAtte
         onResult,
         onAttempt
     });
+
+    function maybeShowHint() {
+        if (feedback.getMistakes() >= 2) hint.offer();
+    }
 
     function render() {
 
@@ -202,6 +225,7 @@ export function renderCombinatorics(step, root, next, progress, onResult, onAtte
         if (found.some(f => f.join("|") === key)) {
             message.show("🙂 Ezt a sorrendet már megtaláltad! Rakj ki egy másikat.", "retry");
             clearSlots();
+            hint.offer();
             return;
         }
 
@@ -257,6 +281,12 @@ function renderCountChoice(step, root, next, progress, onResult, onAttempt) {
         onAttempt
     });
 
+    const hint = createHintRequest(() => hintText(step));
+
+    function maybeShowHint() {
+        if (feedback.getMistakes() >= 2) hint.offer();
+    }
+
     const options = document.createElement("div");
     options.className = "comb-choice-options";
 
@@ -285,6 +315,7 @@ function renderCountChoice(step, root, next, progress, onResult, onAttempt) {
                     feedback.success(`🎉 Ügyes! ${step.explanation}`);
                 } else {
                     feedback.retry("🤔 Ez a számítás nem jó. Gondold végig, hány lehetőség van az egyes helyeken!");
+                    maybeShowHint();
                 }
             });
 
@@ -306,6 +337,7 @@ function renderCountChoice(step, root, next, progress, onResult, onAttempt) {
                 showReasonPrompt();
             } else {
                 feedback.retry();
+                maybeShowHint();
             }
         });
 
@@ -313,4 +345,5 @@ function renderCountChoice(step, root, next, progress, onResult, onAttempt) {
     });
 
     card.append(options);
+    card.append(hint.button, hint.box);
 }

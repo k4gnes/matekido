@@ -1,5 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createHintRequest } from "./ui/hintBox.js?v=2";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -171,6 +172,28 @@ function createFigure(step) {
     return createRectSvg(step);
 }
 
+function hintText(step) {
+    if (step.mode === "triangle-perimeter") {
+        return "A háromszög kerülete a három oldal összege: K = a + b + c.";
+    }
+    if (step.mode === "triangle-area") {
+        return "A háromszög területe: T = alap × magasság ÷ 2. A magasság mindig a bázisra merőleges!";
+    }
+    if (step.mode === "rectangle-perimeter") {
+        return "A téglalap kerülete: K = 2 × (hossz + szélesség).";
+    }
+    if (step.mode === "rectangle-area") {
+        return "A téglalap területe: T = hossz × szélesség.";
+    }
+    if (step.mode === "parallelogram-area") {
+        return "A paralelogramma területe: T = alap × magasság.";
+    }
+    if (step.mode === "trapezoid-area") {
+        return "A trapéz területe: T = (a + c) × magasság ÷ 2, ahol a és c a két alap.";
+    }
+    return "A rombusz területe: T = e × f ÷ 2, ahol e és f az átlók.";
+}
+
 export function renderShapeArea(step, root, next, progress, onResult, onAttempt) {
 
     const world = getActiveWorld();
@@ -212,6 +235,9 @@ export function renderShapeArea(step, root, next, progress, onResult, onAttempt)
     card.append(optionsContainer);
 
     const message = createMessageBox();
+    const hint = createHintRequest(() => hintText(step));
+
+    card.append(hint.button, hint.box);
     card.append(message.element);
 
     root.append(card);
@@ -223,6 +249,10 @@ export function renderShapeArea(step, root, next, progress, onResult, onAttempt)
         onResult,
         onAttempt
     });
+
+    function maybeShowHint() {
+        if (feedback.getMistakes() >= 2) hint.offer();
+    }
 
     function successText() {
         if (step.mode === "triangle-perimeter") {
@@ -259,6 +289,7 @@ export function renderShapeArea(step, root, next, progress, onResult, onAttempt)
             feedback.success(successText());
         } else {
             feedback.retry();
+            maybeShowHint();
         }
     });
 }

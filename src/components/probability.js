@@ -1,6 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createHintRequest } from "./ui/hintBox.js?v=2";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -33,6 +34,22 @@ const CHANCE_TITLES = {
     space: "🎯 Mennyi az esélye az űrhajón?",
     tram: "🎯 Mennyi az esélye a villamoson?"
 };
+
+function hintText(step) {
+    if (step.mode === "chance") {
+        const total = step.groups.reduce((sum, g) => sum + g.amount, 0);
+        const target = step.groups[step.favorableIndex];
+        return `A valószínűség = a kedvező esetek száma ÷ az összes eset száma. Összesen ${total} golyó van, és ${target.amount} ${target.color} – tehát ${target.amount}/${total}.`;
+    }
+    if (step.mode === "compare") {
+        if (step.equal) {
+            return "Mindkét színből ugyanannyi van a zacskában, ezért mindkettőt ugyanolyan eséllyel választod!";
+        }
+        const more = step.groups[0].amount > step.groups[1].amount ? step.groups[0] : step.groups[1];
+        return `A ${more.color} golyóból van több (${more.amount} db), ezért azt választod ${step.ask === "bigger" ? "nagyobb" : "kisebb"} eséllyel.`;
+    }
+    return "Biztos az, ami mindig megtörténik; lehetetlen az, ami soha nem fordulhat elő; lehetséges az, ami előfordulhat, de nem biztos.";
+}
 
 export function renderProbability(step, root, next, progress, onResult, onAttempt) {
 
@@ -76,6 +93,7 @@ export function renderProbability(step, root, next, progress, onResult, onAttemp
                 feedback.success(`😊 Igazad van! Ez ${step.correctLabel.toLowerCase()}!`);
             } else {
                 feedback.retry();
+                maybeShowHint();
             }
         });
         options.append(btn);
@@ -83,6 +101,9 @@ export function renderProbability(step, root, next, progress, onResult, onAttemp
     card.append(options);
 
     const message = createMessageBox();
+    const hint = createHintRequest(() => hintText(step));
+
+    card.append(hint.button, hint.box);
     card.append(message.element);
 
     root.append(card);
@@ -94,6 +115,11 @@ export function renderProbability(step, root, next, progress, onResult, onAttemp
         onResult,
         onAttempt
     });
+
+    function maybeShowHint() {
+        if (feedback.getMistakes() >= 2) hint.offer();
+    }
+
 }
 
 function renderCompare(step, root, next, progress, onResult, onAttempt) {
@@ -134,6 +160,7 @@ function renderCompare(step, root, next, progress, onResult, onAttempt) {
                 feedback.success(step.successText);
             } else {
                 feedback.retry();
+                maybeShowHint();
             }
         });
         options.append(btn);
@@ -141,6 +168,9 @@ function renderCompare(step, root, next, progress, onResult, onAttempt) {
     card.append(options);
 
     const message = createMessageBox();
+    const hint = createHintRequest(() => hintText(step));
+
+    card.append(hint.button, hint.box);
     card.append(message.element);
 
     root.append(card);
@@ -152,6 +182,11 @@ function renderCompare(step, root, next, progress, onResult, onAttempt) {
         onResult,
         onAttempt
     });
+
+    function maybeShowHint() {
+        if (feedback.getMistakes() >= 2) hint.offer();
+    }
+
 }
 
 function optionText(step, label) {

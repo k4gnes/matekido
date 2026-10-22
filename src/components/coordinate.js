@@ -1,6 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createHintRequest } from "./ui/hintBox.js?v=2";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -113,6 +114,13 @@ function createGridSvg(step) {
     return svg;
 }
 
+function hintText(step) {
+    if (step.mode === "read") {
+        return "A koordináta olvasása: először nézd meg, hány egységre van a pont a függőleges (y) tengelytől vízszintesen – ez az x; utána hány egységre van a vízszintes (x) tengelytől függőlegesen – ez az y.";
+    }
+    return "Először az x-et keresd meg a vízszintes tengelyen, és lépj annyit jobbra; utána az y-t a függőleges tengelyen, és lépj annyit fel!";
+}
+
 export function renderCoordinate(step, root, next, progress, onResult, onAttempt) {
 
     const ac = new AbortController();
@@ -143,6 +151,9 @@ export function renderCoordinate(step, root, next, progress, onResult, onAttempt
     card.append(gridWrap);
 
     const message = createMessageBox();
+    const hint = createHintRequest(() => hintText(step));
+
+    card.append(hint.button, hint.box);
     card.append(message.element);
 
     root.append(card);
@@ -154,6 +165,10 @@ export function renderCoordinate(step, root, next, progress, onResult, onAttempt
         onResult,
         onAttempt
     });
+
+    function maybeShowHint() {
+        if (feedback.getMistakes() >= 2) hint.offer();
+    }
 
     function successText() {
         if (step.mode === "read") {
@@ -171,6 +186,7 @@ export function renderCoordinate(step, root, next, progress, onResult, onAttempt
             feedback.success(successText());
         } else {
             feedback.retry();
+            maybeShowHint();
         }
     }
 

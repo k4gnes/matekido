@@ -2,6 +2,7 @@ import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createMessageBox } from "./ui/messageBox.js";
 import { createNumberInput } from "./ui/numberInput.js";
+import { createHintRequest } from "./ui/hintBox.js?v=2";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -346,6 +347,56 @@ function makeStepOptions(answer, min, max, count = 4) {
     return options;
 }
 
+function hintText(step) {
+
+    if (step.kind === "join") {
+        return `Összeadás: ${step.a} + ${step.b}.`;
+    }
+    if (step.kind === "remove") {
+        return `Kivonás: ${step.total} − ${step.leaving}.`;
+    }
+    if (step.kind === "part-whole") {
+        return `Az egészből kivonod a részt: ${step.total} − ${step.part}.`;
+    }
+    if (step.kind === "compare") {
+        return `A nagyobbikból kivonod a kisebbiket: ${step.a} − ${step.b}.`;
+    }
+    if (step.kind === "multiply") {
+        return `Szorzás: ${step.a} × ${step.b}.`;
+    }
+    if (step.kind === "divide") {
+        return `Osztás: ${step.a} ÷ ${step.b}.`;
+    }
+    if (step.kind === "proportion") {
+        return step.text.includes("harmad")
+            ? "A keresett rész a harmada: oszd el a teljes számot 3-mal!"
+            : "A keresett rész a fele: oszd el a teljes számot 2-vel!";
+    }
+    if (step.kind === "remainder") {
+        return `Oszd el a ${step.a} darabot ${step.b}-es csoportokba! A teljes csoportok száma a hányados, ami megmarad, az a maradék.`;
+    }
+    if (step.kind === "ratio-split") {
+        const need = step.which === "a" ? step.ra : step.rb;
+        return `Az arány ${step.ra} : ${step.rb}, vagyis ${step.ra + step.rb} részre osztunk. ${step.total} ÷ ${step.ra + step.rb} = ${step.total / (step.ra + step.rb)} az egy rész értéke, és a keresett rész ennek ${need}-szorosa.`;
+    }
+    if (step.kind === "direct-proportion") {
+        return `Egy ${step.amountNoun}-hoz ${step.value1} ${step.valueNoun} jut. Oszd el ${step.value1}-et ${step.amount1}-tel, aztán szorozd meg ${step.amount2}-tel!`;
+    }
+    if (step.kind === "inverse-proportion") {
+        return `Ugyanannyi munka jut, ezért a szám és az idő szorzata állandó: ${step.amount1} × ${step.unit1} = ${step.amount2} × ?`;
+    }
+    if (step.kind === "two-step") {
+        const ops = { "add-sub": ["+", "−"], "sub-add": ["−", "+"], "mult-add": ["×", "+"] };
+        const [op1, op2] = ops[step.form] ?? ops["add-sub"];
+        return `Két lépésben számolj: ${step.a} ${op1} ${step.b}, majd az eredmény ${op2} ${step.c}.`;
+    }
+    if (step.kind === "equation") {
+        return `Az egyenlet: ${step.equation}. Ha az egyenlet két tagját felcseréled, az eredmény nem változik!`;
+    }
+    return "Olvasd el a szöveget figyelmesen, és keresd ki, melyik számokat kell összeadni, kivonni vagy szorozni!";
+
+}
+
 export function renderWordProblem(step, root, next, progress, onResult, onAttempt) {
 
     root.replaceChildren();
@@ -377,12 +428,17 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
         onAttempt
     });
 
+    function maybeShowHint() {
+        if (feedback.getMistakes() >= 2) hint.offer();
+    }
+
     function reportSuccess(successText) {
         feedback.success(successText);
     }
 
     function reportRetry() {
         feedback.retry();
+        maybeShowHint();
     }
 
     const itemIcon = () => createItemIcon(world);
@@ -1125,6 +1181,9 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
 
     }
 
+    const hint = createHintRequest(() => hintText(step));
+
+    card.append(hint.button, hint.box);
     card.append(message.element);
     root.append(card);
 }

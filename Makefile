@@ -5,6 +5,7 @@ test:
 	node src/testLessons.js
 	node src/testPlayEngine.js
 	node src/testPractice.js
+	node src/testHints.js
 
 sync-docs:
 	mkdir -p src/docs

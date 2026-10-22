@@ -1,5 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createHintRequest } from "./ui/hintBox.js?v=2";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -239,6 +240,19 @@ function createMiniAngle(angleDeg) {
     return svg;
 }
 
+function hintText(step) {
+    if (step.mode === "compare") {
+        return "Az a szög a nagyobb, amelyik szélesebb – nézd meg, melyik ív hosszabb!";
+    }
+    if (step.mode === "kind") {
+        return "A hegyes szög 90°-nál kisebb, a derékszög pontosan 90°, a tompaszög 90° és 180° közé esik.";
+    }
+    if (step.mode === "full") {
+        return "Egy teljes kör 360°. A hiányzó szög: 360° − a megadott szög.";
+    }
+    return "A szögmérő középpontját a szög csúcsához igazítsd, és a nulla jelzést az egyik szárral. A leolvasott érték a két szár közötti szög nagysága.";
+}
+
 export function renderAngleMeasure(step, root, next, progress, onResult, onAttempt) {
 
     const world = getActiveWorld();
@@ -292,6 +306,7 @@ export function renderAngleMeasure(step, root, next, progress, onResult, onAttem
                 feedback.success(`🎉 Ügyes! Az A szög a nagyobb.`);
             } else {
                 feedback.retry();
+                maybeShowHint();
             }
         });
         const figB = makeFigure("B", step.angleB, step.options[1].correct, () => {
@@ -301,6 +316,7 @@ export function renderAngleMeasure(step, root, next, progress, onResult, onAttem
                 feedback.success(`🎉 Ügyes! A B szög a nagyobb.`);
             } else {
                 feedback.retry();
+                maybeShowHint();
             }
         });
 
@@ -338,6 +354,7 @@ export function renderAngleMeasure(step, root, next, progress, onResult, onAttem
                     }
                 } else {
                     feedback.retry();
+                    maybeShowHint();
                 }
             });
 
@@ -348,6 +365,9 @@ export function renderAngleMeasure(step, root, next, progress, onResult, onAttem
     }
 
     const message = createMessageBox();
+    const hint = createHintRequest(() => hintText(step));
+
+    card.append(hint.button, hint.box);
     card.append(message.element);
 
     root.append(card);
@@ -359,4 +379,8 @@ export function renderAngleMeasure(step, root, next, progress, onResult, onAttem
         onResult,
         onAttempt
     });
+
+    function maybeShowHint() {
+        if (feedback.getMistakes() >= 2) hint.offer();
+    }
 }

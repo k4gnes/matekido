@@ -1,5 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createMessageBox } from "./ui/messageBox.js";
+import { createHintRequest } from "./ui/hintBox.js?v=2";
 import { createFeedback, markCorrect } from "./ui/feedback.js";
 import { getActiveWorld } from "../profile/Profile.js";
 
@@ -70,6 +71,13 @@ function createShapeSvg(cells, color) {
     return svg;
 }
 
+function hintText(step) {
+    if (step.mode === "translate") {
+        return `A minta minden kis négyzete ugyanarra a számú lépésre tolódott: ${describeShift(step.shift)}.`;
+    }
+    return "A keresett alakzat a minta elforgatott másolata: minden kis négyzetnek ugyanott kell lennie, csak más irányban!";
+}
+
 export function renderTransform(step, root, next, progress, onResult, onAttempt) {
 
     const ac = new AbortController();
@@ -116,6 +124,9 @@ export function renderTransform(step, root, next, progress, onResult, onAttempt)
     card.append(optionsContainer);
 
     const message = createMessageBox();
+    const hint = createHintRequest(() => hintText(step));
+
+    card.append(hint.button, hint.box);
     card.append(message.element);
 
     root.append(card);
@@ -127,6 +138,10 @@ export function renderTransform(step, root, next, progress, onResult, onAttempt)
         onResult,
         onAttempt
     });
+
+    function maybeShowHint() {
+        if (feedback.getMistakes() >= 2) hint.offer();
+    }
 
     function successText() {
         if (step.mode === "translate") {
@@ -144,6 +159,7 @@ export function renderTransform(step, root, next, progress, onResult, onAttempt)
             feedback.success(successText());
         } else {
             feedback.retry();
+            maybeShowHint();
         }
     }
 

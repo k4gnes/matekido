@@ -1,5 +1,12 @@
 import { getLessonStats, getActiveGrade } from "../profile/Profile.js";
 
+// Az ismétlésnél az utolsó próba számít; a régi mentésekben még nincs ilyen,
+// ott a teljes előélet százaléka marad.
+export function latestPercentage(stats) {
+    if (!stats) return null;
+    return stats.lastPercentage ?? stats.percentage ?? null;
+}
+
 export function getWeakLessonFiles(lessonIndex, grade) {
 
     const weak = new Set();
@@ -7,8 +14,8 @@ export function getWeakLessonFiles(lessonIndex, grade) {
 
     for (const lesson of lessonIndex.lessons || []) {
         if (activeGrade != null && !(lesson.grades?.includes(activeGrade))) continue;
-        const stats = getLessonStats(lesson.file);
-        if (stats && stats.percentage !== null && stats.percentage < 90) {
+        const percentage = latestPercentage(getLessonStats(lesson.file));
+        if (percentage !== null && percentage < 90) {
             weak.add(lesson.file);
         }
     }
@@ -24,7 +31,8 @@ export function isReviewDue(lesson, now = Date.now()) {
 
     if (lesson.practice) return false;
     const stats = getLessonStats(lesson.file);
-    if (!stats || stats.percentage === null || stats.percentage < 90) return false;
+    const percentage = latestPercentage(stats);
+    if (percentage === null || percentage < 90) return false;
     if (!stats.lastDoneAt) return false;
     return stats.lastDoneAt <= now - REVIEW_INTERVAL_DAYS * 24 * 60 * 60 * 1000;
 
@@ -55,7 +63,7 @@ export function getPracticeLessonFiles(lessonIndex, grade) {
 
     const weakLessons = (lessonIndex.lessons || [])
         .filter(l => weak.has(l.file))
-        .sort((a, b) => (getLessonStats(a.file)?.percentage ?? 0) - (getLessonStats(b.file)?.percentage ?? 0));
+        .sort((a, b) => (latestPercentage(getLessonStats(a.file)) ?? 0) - (latestPercentage(getLessonStats(b.file)) ?? 0));
 
     for (const lesson of weakLessons) {
         files.push(lesson.file);

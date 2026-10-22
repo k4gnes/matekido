@@ -115,9 +115,15 @@ export function recordLessonResult(lessonFile, correct, wrong) {
         profile.lessonStats[lessonFile] = { correct: 0, wrong: 0 };
     }
 
-    profile.lessonStats[lessonFile].correct += correct;
-    profile.lessonStats[lessonFile].wrong += wrong;
-    profile.lessonStats[lessonFile].lastDoneAt = Date.now();
+    const stats = profile.lessonStats[lessonFile];
+
+    stats.correct += correct;
+    stats.wrong += wrong;
+    stats.lastDoneAt = Date.now();
+
+    if (correct + wrong > 0) {
+        stats.lastPercentage = Math.round((correct / (correct + wrong)) * 100);
+    }
 
     saveProfile(profile);
 
@@ -217,7 +223,7 @@ export function getLessonStats(lessonFile) {
     if (!stats) {
         const practiced = profile.practiceDone?.[lessonFile];
         if (!practiced) return null;
-        return { correct: 0, total: 0, percentage: null, practice: true, lastDoneAt: practiced.lastDoneAt || 0 };
+        return { correct: 0, total: 0, percentage: null, lastPercentage: null, practice: true, lastDoneAt: practiced.lastDoneAt || 0 };
     }
 
     const total = stats.correct + stats.wrong;
@@ -226,10 +232,13 @@ export function getLessonStats(lessonFile) {
         return null;
     }
 
+    const percentage = Math.round((stats.correct / total) * 100);
+
     return {
         correct: stats.correct,
         total,
-        percentage: Math.round((stats.correct / total) * 100),
+        percentage,
+        lastPercentage: stats.lastPercentage ?? percentage,
         lastDoneAt: stats.lastDoneAt || 0
     };
 

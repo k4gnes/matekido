@@ -211,7 +211,7 @@ A feladatlistára belépve sorban a következők jönnek:
 
 A **Gyakorlásra javasolt** listára kétféle lecke kerül:
 
-- amelyikben az eredmény **90% alatt** van, vagy
+- amelyikben az utolsó próba eredménye **90% alatt** van, vagy
 - amelyiket **régen gyakoroltál** (kb. két hete nem került elő), pedig már jól ment.
 
 - A feladatmenüben van a **🎯 Gyakorlásra javasolt** rész, amíg van ilyen lecke.

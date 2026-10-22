@@ -8,7 +8,7 @@ import { CATEGORIES, SKILLS } from "../data/skills.js";
 import { HINT_TYPES, lessonHasHint } from "../data/hintLessons.js";
 import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=23";
 import { curriculumSort } from "../data/curriculum.js";
-import { getPracticeLessonFiles } from "./practicePage.js?v=13";
+import { getPracticeLessonFiles, latestPercentage } from "./practicePage.js?v=14";
 import { gradesWithLessons } from "../utils/grades.js?v=1";
 import { getWorld } from "../world/WorldRegistry.js";
 
@@ -261,10 +261,11 @@ export function createLessonCard(lesson, onSelect, activeWorld, position, total,
         playStatBadge.textContent = playBest ? `🎲 Játszottad 🏆 ${playBest}` : "🎲 Játszottad";
         lessonCard.append(playStatBadge);
     } else if (stats) {
-        const mastered = stats.percentage >= 90;
+        const percentage = latestPercentage(stats);
+        const mastered = percentage >= 90;
         const statBadge = document.createElement("span");
         statBadge.className = "lesson-stat-badge " + (mastered ? "mastered" : "done");
-        statBadge.textContent = (mastered ? "⭐ " : "✓ ") + `${stats.percentage}%`;
+        statBadge.textContent = (mastered ? "⭐ " : "✓ ") + `${percentage}%`;
         lessonCard.classList.add(mastered ? "lesson-mastered" : "lesson-done");
         lessonCard.append(statBadge);
     }
@@ -1134,8 +1135,8 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
         contentArea.append(browseWrap);
 
         const weakLessons = pool.filter(l => {
-            const stats = getLessonStats(l.file);
-            return stats !== null && stats.percentage !== null && stats.percentage < 90;
+            const percentage = latestPercentage(getLessonStats(l.file));
+            return percentage !== null && percentage < 90;
         });
 
         const favoriteLessons = pool.filter(l => isFavoriteLesson(l.file));

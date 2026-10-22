@@ -709,6 +709,7 @@ const SW_CACHE_LIST = [
     "/storage.js",
     "/sw.js",
     "/testPlayEngine.js",
+    "/testPractice.js",
     "/utils/formatNumbers.js",
     "/utils/grades.js",
     "/utils/markdown.js",

@@ -159,6 +159,7 @@ const SW_CACHE_LIST = [
     "/components/ui/hintBox.js",
     "/components/ui/inputHelper.js",
     "/components/ui/instruction.js",
+    "/components/ui/logo.js",
     "/components/ui/messageBox.js",
     "/components/ui/navbar.js",
     "/components/ui/numberInput.js",

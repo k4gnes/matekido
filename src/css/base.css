@@ -226,6 +226,48 @@ body[data-world="tram"] {
     background-color: #fff9e8;
 }
 
+body[data-world="postman"],
+body[data-world-theme="postman"] {
+    --primary: #2563EB;
+    --primary-dark: #1D4ED8;
+}
+
+body[data-world="racing"],
+body[data-world-theme="racing"] {
+    --primary: #BE123C;
+    --primary-dark: #9F1239;
+}
+
+body[data-world="cooking"],
+body[data-world-theme="cooking"] {
+    --primary: #C2410C;
+    --primary-dark: #9A3412;
+}
+
+body[data-world="football"],
+body[data-world-theme="football"] {
+    --primary: #15803D;
+    --primary-dark: #166534;
+}
+
+body[data-world="animals"],
+body[data-world-theme="animals"] {
+    --primary: #4D7C0F;
+    --primary-dark: #3F6212;
+}
+
+body[data-world="space"],
+body[data-world-theme="space"] {
+    --primary: #6D28D9;
+    --primary-dark: #5B21B6;
+}
+
+body[data-world="tram"],
+body[data-world-theme="tram"] {
+    --primary: #0E7490;
+    --primary-dark: #155E75;
+}
+
 [data-tcx-url] {
     display: none !important;
 }

@@ -1,4 +1,5 @@
 import { createCard } from "./ui/card.js";
+import { createLogo } from "./ui/logo.js?v=1";
 import { resetMenuPrefs } from "./lessonMenu.js";
 import { gradesWithLessons } from "../utils/grades.js?v=1";
 import {
@@ -24,13 +25,7 @@ export function renderWelcomeScreen(root, onSelect, onHelp, lessonIndex) {
     const wrapper = createCard("welcome-screen");
 
     const title = document.createElement("h1");
-    const logo = document.createElement("img");
-    logo.src = "assets/icons/icon.svg";
-    logo.alt = "matekidő";
-    logo.style.height = "2em";
-    logo.style.width = "auto";
-    logo.style.verticalAlign = "middle";
-    title.append(logo, " matekidő");
+    title.append(createLogo(), " matekidő");
     title.style.color = "var(--primary)";
 
     const subtitle = document.createElement("p");

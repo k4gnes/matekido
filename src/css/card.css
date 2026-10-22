@@ -188,9 +188,15 @@
     margin-bottom: .4rem;
 }
 
-.app-header img {
+.app-logo {
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+.app-logo svg {
     height: 2em;
     width: auto;
+    display: block;
 }
 
 .app-parent-btn {

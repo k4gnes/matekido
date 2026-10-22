@@ -1,4 +1,5 @@
 import { createButton } from "./button.js";
+import { createLogo } from "./logo.js?v=1";
 import { listPlayers, getActiveId } from "../../profile/UserManager.js";
 
 export function createNavBar({ current = null, player = null, onLessons, onProfile, onStats, onHelp, onSwitch, onParent }) {
@@ -8,9 +9,7 @@ export function createNavBar({ current = null, player = null, onLessons, onProfi
 
     const header = document.createElement("div");
     header.className = "app-header";
-    const logo = document.createElement("img");
-    logo.src = "assets/icons/icon.svg";
-    logo.alt = "matekidő";
+    const logo = createLogo();
     const label = document.createElement("span");
     label.textContent = "matekidő";
     header.append(logo, label);

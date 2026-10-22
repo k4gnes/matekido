@@ -4,9 +4,9 @@ import { buildLesson } from "./builders/LessonBuilder.js?v=90";
 import { renderLessonMenu } from "./components/lessonMenu.js?v=131";
 import { renderSkillMap } from "./components/skillMap.js?v=63";
 import { renderHelp } from "./components/help.js?v=7";
-import { renderProfilePage } from "./components/profilePage.js?v=15";
+import { renderProfilePage } from "./components/profilePage.js?v=16";
 import { renderStatsPage } from "./components/statsPage.js?v=34";
-import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=10";
+import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=11";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=8";
 import { renderParentHub } from "./components/parentHub.js?v=10";
 import { renderTransferPage } from "./components/transferPage.js?v=2";
@@ -132,6 +132,14 @@ function setWorldBackground() {
     if (worldId) {
         document.body.dataset.world = worldId;
     }
+    setWorldTheme();
+}
+
+function setWorldTheme() {
+    const worldId = getActiveWorld();
+    if (worldId) {
+        document.body.dataset.worldTheme = worldId;
+    }
 }
 
 function setTipVisible(visible) {
@@ -144,6 +152,7 @@ function clearWorldBackground() {
 
 function showWelcome() {
     clearWorldBackground();
+    setWorldTheme();
     setTipVisible(true);
     setRoute("welcome");
     renderWelcomeScreen(root, () => {
@@ -254,6 +263,7 @@ function showStats() {
 
 async function startLesson(path, opts = {}) {
     clearWorldBackground();
+    setWorldTheme();
     setTipVisible(false);
 
     let rawLesson;

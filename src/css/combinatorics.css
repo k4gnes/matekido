@@ -8,7 +8,7 @@
 .comb-counter {
     text-align: center;
     font-weight: 800;
-    color: var(--primary);
+    color: var(--primary-ink);
     margin: .2rem 0 .8rem;
 }
 

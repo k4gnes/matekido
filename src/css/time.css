@@ -32,7 +32,7 @@
     border: 2px solid var(--primary);
     border-radius: 12px;
     background: var(--primary);
-    color: #ffffff;
+    color: var(--on-primary);
     cursor: pointer;
     transition: transform .15s, border-color .15s, background-color .15s;
 }

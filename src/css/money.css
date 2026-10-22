@@ -194,7 +194,7 @@
     border: 2px solid var(--primary);
     border-radius: 12px;
     background: var(--primary);
-    color: #fff;
+    color: var(--on-primary);
     cursor: pointer;
     transition: transform .15s, background-color .15s;
     display: inline-flex;
@@ -223,7 +223,7 @@
     border-radius: 12px;
     border: 2px solid var(--primary);
     background: var(--primary);
-    color: #fff;
+    color: var(--on-primary);
 }
 
 .money-enough-yes:hover {

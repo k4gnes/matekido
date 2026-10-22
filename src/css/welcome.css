@@ -6,7 +6,7 @@
 }
 
 .welcome-screen h1 {
-    color: var(--primary);
+    color: var(--primary-ink);
 }
 
 .player-grid {
@@ -37,7 +37,7 @@
 }
 
 .parent-link:hover {
-    color: var(--primary);
+    color: var(--primary-ink);
     border-color: var(--primary);
     background: rgba(79, 134, 247, .05);
     transform: none;
@@ -79,7 +79,7 @@
 .player-grade {
     font-size: .8rem;
     font-weight: 600;
-    color: var(--primary);
+    color: var(--primary-ink);
     background: rgba(79, 134, 247, .1);
     border-radius: 10px;
     padding: .1rem .55rem;
@@ -266,7 +266,7 @@
 
 .modal-confirm {
     background: var(--primary);
-    color: white;
+    color: var(--on-primary);
 }
 
 .modal-confirm:disabled {

@@ -100,7 +100,7 @@
     flex: 0 0 auto;
     border: 2px solid var(--primary);
     background: #fff;
-    color: var(--primary);
+    color: var(--primary-ink);
 }
 
 .parent-week-nav .daily-nav-btn:disabled {

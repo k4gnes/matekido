@@ -27,7 +27,7 @@
     justify-content: center;
     border-radius: 50%;
     background: var(--primary);
-    color: #fff;
+    color: var(--on-primary);
     font-weight: 700;
     font-size: 1.2rem;
     cursor: help;
@@ -86,7 +86,7 @@
     justify-content: center;
     border-radius: 50%;
     background: var(--primary);
-    color: #fff;
+    color: var(--on-primary);
     font-size: 1.1rem;
     cursor: pointer;
     margin: 0;
@@ -108,7 +108,7 @@
     justify-content: center;
     border-radius: 50%;
     background: var(--primary);
-    color: #fff;
+    color: var(--on-primary);
     font-size: 1rem;
     cursor: pointer;
     margin: 0;
@@ -130,7 +130,7 @@
     justify-content: center;
     border-radius: 50%;
     background: transparent;
-    color: var(--primary);
+    color: var(--primary-ink);
     font-size: 1.05rem;
     cursor: help;
     margin: 0;
@@ -147,7 +147,7 @@
     padding: .2rem .7rem;
     border-radius: 999px;
     background: var(--background);
-    color: var(--primary);
+    color: var(--primary-ink);
     border: 2px solid var(--primary);
     font-size: .85rem;
     font-weight: 700;
@@ -184,7 +184,7 @@
     font-weight: 800;
     font-size: 2rem;
     line-height: 1.1;
-    color: var(--primary);
+    color: var(--primary-ink);
     margin-bottom: .4rem;
 }
 
@@ -208,7 +208,7 @@
     font-weight: 700;
     border: 1.5px solid #dce7f8;
     background: #fff;
-    color: var(--primary);
+    color: var(--primary-ink);
     border-radius: 999px;
     cursor: pointer;
     margin: 0;
@@ -241,7 +241,7 @@
     font-weight: 600;
     border: 2px solid var(--primary);
     background: var(--primary);
-    color: #fff;
+    color: var(--on-primary);
     border-radius: 999px;
     cursor: pointer;
     margin: 0;
@@ -267,12 +267,12 @@
 
 .nav-bar-player {
     background: var(--background);
-    color: var(--primary);
+    color: var(--primary-ink);
 }
 
 .confirm-exit {
     background: var(--primary);
-    color: #fff;
+    color: var(--on-primary);
 }
 
 .scene-lesson-pos {
@@ -781,7 +781,7 @@
 }
 
 .stats-tab.active {
-    color: var(--primary);
+    color: var(--primary-ink);
     border-bottom-color: var(--primary);
     font-weight: 600;
 }

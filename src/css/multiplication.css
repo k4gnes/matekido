@@ -35,7 +35,7 @@
     border: 2px solid var(--primary);
     border-radius: 12px;
     background: var(--primary);
-    color: #fff;
+    color: var(--on-primary);
     cursor: pointer;
     transition: transform .15s, border-color .15s, background-color .15s;
     min-width: 3.5rem;
@@ -83,7 +83,7 @@
 
 .mult-item {
     font-size: 1.2rem;
-    color: var(--primary);
+    color: var(--primary-ink);
 }
 
 @media (max-width: 380px) {

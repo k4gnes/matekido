@@ -1,6 +1,7 @@
 :root {
     --primary: #4F86F7;
     --primary-dark: #2563eb;
+    --on-primary: #FFFFFF;
     --secondary: #F59E0B;
     --background: #FFFDF8;
     --text: #333333;
@@ -18,6 +19,8 @@ body {
     justify-content: center;
 
     background: var(--background);
+
+    --primary-ink: var(--primary);
 
     font-family: system-ui, sans-serif;
     color: var(--text);
@@ -55,7 +58,7 @@ button {
     border-radius: 12px;
 
     background: var(--primary);
-    color: white;
+    color: var(--on-primary);
 
     font-size: 1.1rem;
 
@@ -264,8 +267,10 @@ body[data-world-theme="space"] {
 
 body[data-world="tram"],
 body[data-world-theme="tram"] {
-    --primary: #0E7490;
-    --primary-dark: #155E75;
+    --primary: #FDE047;
+    --primary-dark: #FACC15;
+    --primary-ink: #713F12;
+    --on-primary: #422006;
 }
 
 [data-tcx-url] {

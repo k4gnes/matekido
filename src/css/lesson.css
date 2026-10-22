@@ -346,7 +346,7 @@
     font-size: 0.9rem;
     font-weight: 700;
     background: var(--background);
-    color: var(--primary);
+    color: var(--primary-ink);
     border: 2px solid var(--primary);
     border-radius: 8px;
     cursor: pointer;
@@ -359,7 +359,7 @@
 
 .mode-tab.active {
     background: var(--primary);
-    color: #fff;
+    color: var(--on-primary);
 }
 
 .menu-player-row {
@@ -447,7 +447,7 @@
 
 .filter-btn.active {
     background: var(--primary);
-    color: white;
+    color: var(--on-primary);
     border-color: var(--primary);
 }
 

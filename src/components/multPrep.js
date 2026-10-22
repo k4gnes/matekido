@@ -139,7 +139,7 @@ function renderSkipCounting(step, card) {
                 missingSpan.className = "mp-term";
                 missingSpan.textContent = "?";
                 missingSpan.style.fontWeight = "bold";
-                missingSpan.style.color = "var(--primary)";
+                missingSpan.style.color = "var(--primary-ink)";
                 sequence.append(missingSpan);
             } else {
                 const input = createNumberInput();

@@ -233,7 +233,7 @@ function renderCSS(card) {
             display: block;
         }
         .div-input:focus {
-            border-color: var(--primary);
+            border-color: var(--primary-ink);
             outline: none;
         }
     `;

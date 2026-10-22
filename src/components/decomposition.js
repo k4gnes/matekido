@@ -183,7 +183,7 @@ export function renderDecomposition(step, root, onNext, progress, onResult, onAt
                     ? "padding:0.7rem 1.8rem; font-size:1.1rem; border:none; border-radius:12px; background:#22c55e; color:white; cursor:pointer; box-shadow:0 4px 0 #15803d;"
                     : world === "tram"
                         ? "padding:0.7rem 1.8rem; font-size:1.1rem; border:none; border-radius:12px; background:#f59e0b; color:white; cursor:pointer; box-shadow:0 4px 0 #b45309;"
-                        : "padding:0.6rem 1.5rem; font-size:1rem; border:2px solid var(--primary); border-radius:12px; background:var(--primary); color:white; cursor:pointer;";
+                        : "padding:0.6rem 1.5rem; font-size:1rem; border:2px solid var(--primary); border-radius:12px; background:var(--primary); color:var(--on-primary); cursor:pointer;";
     finishBtn.addEventListener("click", () => {
         const selectedCount = items.filter(it => it.dataset.selected === "true").length;
         const key = `${selectedCount}+${number - selectedCount}`;

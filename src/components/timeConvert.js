@@ -220,7 +220,7 @@ function renderCSS(card) {
             display: block;
         }
         .tc-input:focus {
-            border-color: var(--primary);
+            border-color: var(--primary-ink);
             outline: none;
         }
     `;

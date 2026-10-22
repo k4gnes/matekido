@@ -39,13 +39,7 @@
     z-index: 5;
 }
 
-/* a ? szöveg, nem emoji: így pontosan a világ gomb-színét kapja */
-.instruction-help::before {
-    content: "?";
-    color: var(--on-accent-fill);
-    /* vésztartalék: ha a token a világ blokkból rosszul öröklődne, akkor is olvasható marad */
-    text-shadow: 0 0 2px rgba(255, 255, 255, .9), 0 0 2px rgba(255, 255, 255, .9);
-}
+/* A ? szöveges, ezért a gomb saját színét kapja (nem emoji). */
 
 .instruction-help:hover,
 .instruction-help:focus-visible {

@@ -5,7 +5,7 @@ export function createInstructionHelp(title, text) {
     help.tabIndex = 0;
     help.setAttribute("role", "button");
     help.setAttribute("aria-label", "Feladat útmutató");
-    // a "?" CSS-ből jön (::before), így sosem emoji és mindig a gomb színét kapja
+    help.textContent = "?";
 
     const tooltip = document.createElement("div");
     tooltip.className = "instruction-tooltip";

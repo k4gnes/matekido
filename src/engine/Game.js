@@ -1,5 +1,5 @@
 import { renderScene } from "../components/scene.js?v=12";
-import { createInstructionHelp } from "../components/ui/instruction.js?v=3";
+import { createInstructionHelp } from "../components/ui/instruction.js?v=4";
 import { HINT_TYPES, lessonHasHint } from "../data/hintLessons.js?v=2";
 import { createExitButton } from "../components/ui/exit.js";
 import { renderExercise } from "../components/exercise.js?v=5";

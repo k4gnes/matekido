@@ -172,7 +172,8 @@ export function createLessonCard(lesson, onSelect, activeWorld, position, total,
 
     const subtitle = document.createElement("p");
     subtitle.className = "lesson-card-subtitle";
-    subtitle.textContent = lesson.subtitle;
+    const subtitleText = lesson.subtitle || "";
+    subtitle.textContent = subtitleText.length > 48 ? subtitleText.slice(0, 45) + "..." : subtitleText;
 
     const badges = document.createElement("div");
     badges.className = "lesson-badges";

@@ -268,11 +268,24 @@ body[data-world-theme="space"] {
 
 body[data-world="tram"],
 body[data-world-theme="tram"] {
-    --primary: #FDE047;
-    --primary-dark: #FACC15;
+    --primary: #FEF08A;
+    --primary-dark: #FDE047;
     --primary-ink: #713F12;
     --on-primary: #422006;
     --logo-color: #FEF08A;
+}
+
+body[data-world="tram"] .app-parent-btn,
+body[data-world-theme="tram"] .app-parent-btn {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--on-primary);
+}
+
+body[data-world="tram"] .app-parent-btn:hover,
+body[data-world-theme="tram"] .app-parent-btn:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
 }
 
 [data-tcx-url] {

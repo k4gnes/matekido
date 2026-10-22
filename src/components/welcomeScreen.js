@@ -26,7 +26,7 @@ export function renderWelcomeScreen(root, onSelect, onHelp, lessonIndex) {
 
     const title = document.createElement("h1");
     title.append(createLogo(), " matekidő");
-    title.style.color = "var(--primary-ink)";
+    title.style.color = "var(--logo-color)";
 
     const subtitle = document.createElement("p");
     subtitle.textContent = "Ki játszik ma?";

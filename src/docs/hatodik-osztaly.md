@@ -106,6 +106,12 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 
 ---
 
+## Tervezett kiegészítések
+
+- [ ] **Számrendszerek** (a kettes számrendszer alapjai a helyiérték mintájára)
+
+---
+
 ## 🎲 Egypercesek
 
 Ezek nem számozott feladatok: a **🎲 Egypercesek** oldalon találhatók, nem számítanak a haladásba, és mindegyiknek saját rekordja van. A játék végén a ➡️ Tovább gomb visszavigyen ide.

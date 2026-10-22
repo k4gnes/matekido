@@ -108,7 +108,12 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 
 ## Tervezett kiegészítések
 
+A 6. osztályos tanmenet mind a 38 leckéje elkészült. Tovább tervezett, opcionális leckék:
+
 - [ ] **Számrendszerek** (a kettes számrendszer alapjai a helyiérték mintájára)
+- [ ] **Szögek szerkesztése körzővel és vonalzóval** (a fokok ismétlése után)
+- [ ] **Háromszög-egyenlőtlenség és szerkeszthetőség** (játékos esetvizsgálat)
+- [ ] **Mértékegységek vegyes gyakorlása** (idő, sebesség, terület együtt)
 
 ---
 

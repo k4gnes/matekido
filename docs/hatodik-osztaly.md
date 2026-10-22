@@ -100,8 +100,6 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 
 ## 🌟 Mester kihívás (1 lecke)
 
-Azoknak, akiknek nagyon jól megy a matek. Itt nem elég számolni: gondolkodni kell. A feladatok a **műveleti jelek felismerését**, valamint két szám **összegéből és különbségéből** való kitalálását gyakoroltatják.
-
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
 | 39 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade6-master-01) | Hiányzó műveleti jel és két szám kitalálása | 1000 | 4 |

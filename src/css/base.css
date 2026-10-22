@@ -268,11 +268,11 @@ body[data-world-theme="space"] {
 
 body[data-world="tram"],
 body[data-world-theme="tram"] {
-    --primary: #FEF08A;
-    --primary-dark: #FDE047;
+    --primary: #FFCA28;
+    --primary-dark: #FFB300;
     --primary-ink: #713F12;
     --on-primary: #422006;
-    --logo-color: #FEF08A;
+    --logo-color: #FFCA28;
 }
 
 body[data-world="tram"] .app-parent-btn,

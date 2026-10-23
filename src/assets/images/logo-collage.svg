@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680">
+  <defs>
+    <linearGradient id="collage-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <symbol id="collage-mark" viewBox="60 148 392 300">
+      <g transform="translate(256,296) scale(1.2) translate(-256,-296)"
+         stroke="#FFFFFF" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="96,256 176,176 176,256" fill="currentColor" />
+        <polygon points="96,256 176,256 96,336" fill="currentColor" opacity=".35" />
+        <polygon points="96,336 176,256 176,336" fill="currentColor" />
+        <polygon points="96,336 176,336 96,416" fill="currentColor" opacity=".78" />
+        <polygon points="96,416 176,336 176,416" fill="currentColor" opacity=".35" />
+        <polygon points="176,176 336,176 256,256" fill="currentColor" opacity=".35" />
+        <polygon points="176,176 256,256 176,256" fill="currentColor" opacity=".78" />
+        <polygon points="176,256 256,256 336,256 256,336" fill="currentColor" />
+        <polygon points="336,176 336,256 256,256" fill="currentColor" opacity=".6" />
+        <polygon points="336,176 416,256 336,256" fill="currentColor" opacity=".6" />
+        <polygon points="336,256 416,256 336,336" fill="currentColor" />
+        <polygon points="416,256 336,336 416,336" fill="currentColor" opacity=".78" />
+        <polygon points="336,336 416,336 336,416" fill="currentColor" opacity=".78" />
+        <polygon points="336,416 416,336 416,416" fill="currentColor" opacity=".35" />
+      </g>
+    </symbol>
+  </defs>
+
+  <rect width="1200" height="680" fill="url(#collage-bg)"/>
+
+  <text x="600" y="74" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+        font-size="14" font-weight="700" letter-spacing="5" fill="#64748B">MATEKIDŐ VILÁGOK</text>
+
+  <g font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+    <g transform="translate(150 210)">
+      <use href="#collage-mark" x="-128" y="-35" width="92" height="70" color="#2563EB"/>
+      <text x="-22" y="0" dominant-baseline="middle" font-size="34" font-weight="800" letter-spacing="-0.5" fill="#2563EB">matekidő</text>
+      <text x="0" y="68" text-anchor="middle" font-size="15" font-weight="600" letter-spacing="2" fill="#94A3B8">POSTÁS</text>
+    </g>
+    <g transform="translate(450 210)">
+      <use href="#collage-mark" x="-128" y="-35" width="92" height="70" color="#DC2626"/>
+      <text x="-22" y="0" dominant-baseline="middle" font-size="34" font-weight="800" letter-spacing="-0.5" fill="#DC2626">matekidő</text>
+      <text x="0" y="68" text-anchor="middle" font-size="15" font-weight="600" letter-spacing="2" fill="#94A3B8">VERSENYAUTÓ</text>
+    </g>
+    <g transform="translate(750 210)">
+      <use href="#collage-mark" x="-128" y="-35" width="92" height="70" color="#C2410C"/>
+      <text x="-22" y="0" dominant-baseline="middle" font-size="34" font-weight="800" letter-spacing="-0.5" fill="#C2410C">matekidő</text>
+      <text x="0" y="68" text-anchor="middle" font-size="15" font-weight="600" letter-spacing="2" fill="#94A3B8">SZAKÁCS</text>
+    </g>
+    <g transform="translate(1050 210)">
+      <use href="#collage-mark" x="-128" y="-35" width="92" height="70" color="#15803D"/>
+      <text x="-22" y="0" dominant-baseline="middle" font-size="34" font-weight="800" letter-spacing="-0.5" fill="#15803D">matekidő</text>
+      <text x="0" y="68" text-anchor="middle" font-size="15" font-weight="600" letter-spacing="2" fill="#94A3B8">FOCI</text>
+    </g>
+
+    <g transform="translate(300 500)">
+      <use href="#collage-mark" x="-128" y="-35" width="92" height="70" color="#92400E"/>
+      <text x="-22" y="0" dominant-baseline="middle" font-size="34" font-weight="800" letter-spacing="-0.5" fill="#92400E">matekidő</text>
+      <text x="0" y="68" text-anchor="middle" font-size="15" font-weight="600" letter-spacing="2" fill="#94A3B8">ÁLLATKERT</text>
+    </g>
+    <g transform="translate(600 500)">
+      <use href="#collage-mark" x="-128" y="-35" width="92" height="70" color="#7C3AED"/>
+      <text x="-22" y="0" dominant-baseline="middle" font-size="34" font-weight="800" letter-spacing="-0.5" fill="#7C3AED">matekidő</text>
+      <text x="0" y="68" text-anchor="middle" font-size="15" font-weight="600" letter-spacing="2" fill="#94A3B8">ŰR</text>
+    </g>
+    <g transform="translate(900 500)">
+      <use href="#collage-mark" x="-128" y="-35" width="92" height="70" color="#FFD100"/>
+      <text x="-22" y="0" dominant-baseline="middle" font-size="34" font-weight="800" letter-spacing="-0.5" fill="#FFD100">matekidő</text>
+      <text x="0" y="68" text-anchor="middle" font-size="15" font-weight="600" letter-spacing="2" fill="#94A3B8">VILLAMOS</text>
+    </g>
+  </g>
+</svg>

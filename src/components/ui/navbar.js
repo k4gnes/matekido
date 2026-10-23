@@ -49,8 +49,8 @@ export function createNavBar({ current = null, player = null, onLessons, onProfi
 
     addButton("lessons", "📚 Leckék", onLessons);
     addButton("stats", "📊 Százalék", onStats);
-    addButton("help", "❓ Súgó", onHelp);
-    addButton("switch", "👤 Csere", onSwitch);
+    addButton("help", "? Súgó", onHelp);
+    addButton("switch", "⇄ Csere", onSwitch);
 
     shell.append(header, row);
 

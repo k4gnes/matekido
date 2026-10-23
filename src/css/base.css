@@ -199,46 +199,90 @@ body[data-world] {
 
 body[data-world="postman"] {
     --world-bg-image: url("../assets/images/bg-postman.svg");
-    background-color: #f2f7ff;
+    background-color: #eef4ff;
 }
 
 body[data-world="racing"] {
     --world-bg-image: url("../assets/images/bg-racing.svg");
-    background-color: #fff3e8;
+    background-color: #fff1f1;
 }
 
 body[data-world="cooking"] {
     --world-bg-image: url("../assets/images/bg-cooking.svg");
-    background-color: #fff7ed;
+    background-color: #fff4e6;
 }
 
 body[data-world="football"] {
     --world-bg-image: url("../assets/images/bg-football.svg");
-    background-color: #f3fbf3;
+    background-color: #f0fdf4;
 }
 
 body[data-world="animals"] {
     --world-bg-image: url("../assets/images/bg-animals.svg");
-    background-color: #fcfaf0;
+    background-color: #faf3e8;
 }
 
 body[data-world="space"] {
     --world-bg-image: url("../assets/images/bg-space.svg");
-    background-color: #eef1fb;
+    background-color: #f3efff;
 }
 
 body[data-world="tram"] {
     --world-bg-image: url("../assets/images/bg-tram.svg");
-    background-color: #fff9e8;
+    background-color: #fff9c4;
 }
 
-/* A világok csak a hátteret színezik. A logó, a keretek, a kiemelések és a gombok
-   minden világban a postás (alap) palettát használják. */
 body {
     --primary-ink: var(--primary);
     --logo-color: var(--primary);
     --accent-fill: var(--background);
     --on-accent-fill: var(--primary-ink);
+}
+
+body[data-world="postman"],
+body[data-world-theme="postman"] {
+    --primary: #2563EB;
+    --primary-dark: #1D4ED8;
+}
+
+body[data-world="racing"],
+body[data-world-theme="racing"] {
+    --primary: #DC2626;
+    --primary-dark: #B91C1C;
+}
+
+body[data-world="cooking"],
+body[data-world-theme="cooking"] {
+    --primary: #C2410C;
+    --primary-dark: #9A3412;
+    --primary-ink: #9A3412;
+}
+
+body[data-world="football"],
+body[data-world-theme="football"] {
+    --primary: #15803D;
+    --primary-dark: #166534;
+    --primary-ink: #15803D;
+}
+
+body[data-world="animals"],
+body[data-world-theme="animals"] {
+    --primary: #92400E;
+    --primary-dark: #78350F;
+}
+
+body[data-world="space"],
+body[data-world-theme="space"] {
+    --primary: #7C3AED;
+    --primary-dark: #6D28D9;
+}
+
+body[data-world="tram"],
+body[data-world-theme="tram"] {
+    --primary: #FFD100;
+    --primary-dark: #E6BC00;
+    --primary-ink: #7A5B00;
+    --on-primary: #3A2A00;
 }
 
 [data-tcx-url] {

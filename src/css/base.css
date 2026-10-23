@@ -1,6 +1,6 @@
 :root {
-    --primary: #4F86F7;
-    --primary-dark: #2563eb;
+    --primary: #2563EB;
+    --primary-dark: #1D4ED8;
     --on-primary: #FFFFFF;
     --accent-fill: var(--primary);
     --on-accent-fill: var(--on-primary);
@@ -232,85 +232,13 @@ body[data-world="tram"] {
     background-color: #fff9e8;
 }
 
-/* A gombokon a világ gomb-színe és a rajta lévő jel színe.
-   Világos / telített gombnál (piros, sárga, élénkzöld, kék) a jel nem látszik a gombon,
-   ezért ott a gomb a hátteret kapja, a jel pedig a világ sötét (szöveg) színét.
-   A --primary-ink itt a body-n nem oldható fel (az önmagát venné fel), ezért globálisnak kell lennie. */
+/* A világok csak a hátteret színezik. A logó, a keretek, a kiemelések és a gombok
+   minden világban a postás (alap) palettát használják. */
 body {
     --primary-ink: var(--primary);
     --logo-color: var(--primary);
-    --accent-fill: var(--primary);
-    --on-accent-fill: var(--on-primary);
-}
-
-/* A saját érték (a pirosaknál) a theme blokkban marad, mert a body-n felülíródik. */
-body[data-world="postman"],
-body[data-world-theme="postman"] {
-    --primary: #2563EB;
-    --primary-dark: #1D4ED8;
     --accent-fill: var(--background);
     --on-accent-fill: var(--primary-ink);
-}
-
-body[data-world="racing"],
-body[data-world-theme="racing"] {
-    --primary: #2173B8;
-    --primary-dark: #1A5C93;
-    --accent-fill: var(--background);
-    --on-accent-fill: var(--primary-ink);
-}
-
-body[data-world="cooking"],
-body[data-world-theme="cooking"] {
-    --primary: #E75A7C;
-    --primary-dark: #D84A6E;
-    --primary-ink: #C2185B;
-    --on-primary: #4A0721;
-    --accent-fill: var(--background);
-    --on-accent-fill: var(--primary-ink);
-}
-
-body[data-world="football"],
-body[data-world-theme="football"] {
-    --primary: #6FD96F;
-    --primary-dark: #4CAF50;
-    --primary-ink: #2E7D32;
-    --on-primary: #001A00;
-    --logo-color: #43A047;
-}
-
-body[data-world="animals"],
-body[data-world-theme="animals"] {
-    --primary: #78350F;
-    --primary-dark: #451A03;
-}
-
-body[data-world="space"],
-body[data-world-theme="space"] {
-    --primary: #6D28D9;
-    --primary-dark: #5B21B6;
-}
-
-body[data-world="tram"],
-body[data-world-theme="tram"] {
-    --primary: #FDD835;
-    --primary-dark: #F4B400;
-    --primary-ink: #713F12;
-    --on-primary: #422006;
-    --logo-color: #FDD835;
-}
-
-body[data-world="tram"] .app-parent-btn,
-body[data-world-theme="tram"] .app-parent-btn {
-    background: var(--primary);
-    border-color: var(--primary);
-    color: var(--on-primary);
-}
-
-body[data-world="tram"] .app-parent-btn:hover,
-body[data-world-theme="tram"] .app-parent-btn:hover {
-    background: var(--primary-dark);
-    border-color: var(--primary-dark);
 }
 
 [data-tcx-url] {

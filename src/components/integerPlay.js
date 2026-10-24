@@ -1,4 +1,4 @@
-import { createPlayGame, fmtMinus, shuffle, weightedPick } from "./playEngine.js";
+import { createPlayGame, fmtMinus, shuffle, weightedPick } from "./playEngine.js?v=1";
 
 const RECORD_MODE = "integer-play";
 

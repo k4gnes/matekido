@@ -1,4 +1,4 @@
-import { createPlayGame, shuffle, weightedPick } from "./playEngine.js";
+import { createPlayGame, shuffle, weightedPick } from "./playEngine.js?v=1";
 import { getPlayRecord } from "../profile/Profile.js";
 
 const ALL_TABLES = [2, 3, 4, 5, 6, 7, 8, 9, 10];

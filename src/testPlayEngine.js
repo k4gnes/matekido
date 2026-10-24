@@ -108,6 +108,7 @@ globalThis.document = {
 
 globalThis.requestAnimationFrame = (fn) => setTimeout(fn, 0);
 
+const { createPlayGame } = await import("./components/playEngine.js");
 const { renderAdditionPlay } = await import("./components/additionPlay.js");
 const { renderMultiplicationPlay } = await import("./components/multiplicationPlay.js");
 const { renderPowerPlay } = await import("./components/powerPlay.js");
@@ -232,6 +233,55 @@ async function testOptionsGame(render, name) {
     ctx.cleanup();
 }
 
+async function testMissedStaysAfterRetry() {
+    const name = "playEngine (kijavított hiba)";
+    console.log(name);
+    const game = {
+        recordMode: "test-retry",
+        ui: { postman: { title: "Teszt", item: "📦", done: "Kész" } },
+        levels: [],
+        defaultLevel: null,
+        subtitleIdle: "",
+        lead: "",
+        subtitleInGame: () => "",
+        startRound: (state) => { state.pool = [{ a: 3, b: 5, answer: 15 }]; },
+        nextTask: () => ({
+            key: "3x5",
+            missedKey: "3x5",
+            display: "3 × 5 = ?",
+            answer: 15,
+            options: [15, 13, 16, 18],
+            a: 3,
+            b: 5
+        }),
+        successMessage: () => "ok",
+        failMessage: () => "nem",
+        correctDelay: () => 0,
+        wrongDelay: () => 0,
+        chipText: (task) => `${task.a} × ${task.b}`,
+        allGoodText: "Minden szorzatot elsőre találtál! 🌟"
+    };
+    const root = new El("div");
+    const cleanup = createPlayGame(game, { duration: 0.4 }, root, () => {}, null);
+
+    buttonByText(root, "⏱️ Indul a perc!").click();
+    const options = () => root.querySelectorAll(".mult-play-option");
+    options().find(btn => btn.textContent === "13").click();
+    await sleep(20);
+    options().find(btn => btn.textContent === "15").click();
+    await sleep(450);
+
+    let summary = root.querySelector(".mult-play-summary");
+    if (!summary) {
+        buttonByText(root, "🏁 Befejezem")?.click();
+        summary = root.querySelector(".mult-play-summary");
+    }
+    check(Boolean(summary), `${name}: összegzés`);
+    check(Boolean(summary) && summary.textContent.includes("Ezeket érdemes"), `${name}: a kijavított hiba a gyakorláslistán marad`);
+    check(Boolean(summary) && !summary.textContent.includes("elsőre"), `${name}: nincs hamis dicséret`);
+    cleanup();
+}
+
 async function testMultiplicationChoice() {
     const name = "multiplicationPlay (választós)";
     console.log(name);
@@ -338,6 +388,7 @@ await testOptionsGame(renderIntegerPlay, "integerPlay");
 await testOptionsGame(renderOperationOrderPlay, "operationOrderPlay");
 await testMultiplicationChoice();
 await testMultiplicationInput();
+await testMissedStaysAfterRetry();
 
 if (failures > 0) {
     console.error(`\nHIBA: ${failures} ellenőrzés bukott meg.`);

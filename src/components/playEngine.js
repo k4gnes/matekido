@@ -428,7 +428,6 @@ export function createPlayGame(game, step, root, next, progress) {
 
         if (value === task.answer) {
             state.correct++;
-            state.missed.delete(task.missedKey);
             state.weights.set(task.key, Math.max(1, weight * 0.5));
             if (game.onCorrect) game.onCorrect(state, task);
             if (btn) markCorrect(btn);

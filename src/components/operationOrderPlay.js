@@ -1,4 +1,4 @@
-import { createPlayGame, shuffle, weightedPick } from "./playEngine.js";
+import { createPlayGame, shuffle, weightedPick } from "./playEngine.js?v=1";
 
 const RECORD_MODE = "operation-order-play";
 

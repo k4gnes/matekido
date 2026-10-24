@@ -98,7 +98,7 @@ const COMPARE_LABELS = {
     postman: { a: "Páros oldal", b: "Páratlan oldal", unit: "levél" },
     racing: { a: "Első verseny", b: "Második verseny", unit: "kör" },
     cooking: { a: "Reggel", b: "Délben", unit: "palacsinta" },
-    football: { a: "Első félidő", b: "Második félidő", unit: "gól" },
+    football: { a: "Első forduló", b: "Második forduló", unit: "gól" },
     animals: { a: "Reggel", b: "Este", unit: "zebra" },
     space: { a: "Első űrhajó", b: "Második űrhajó", unit: "robot" },
     tram: { a: "Első megálló", b: "Második megálló", unit: "utas" }

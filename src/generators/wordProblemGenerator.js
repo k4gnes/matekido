@@ -236,9 +236,9 @@ const THEMES = {
         },
         compare: {
             title: "⚽ Összehasonlítás",
-            text: (a, b) => `Az első félidőben ${a} gólt, a másodikban ${b} gólt rúgtak.`,
-            question: "Mennyivel több gól esett az első félidőben?",
-            success: (answer) => `😊 Szép munka! ${diffPhrase(answer)} gól esett az első félidőben!`
+            text: (a, b) => `Az első fordulóban ${a} gólt, a másodikban ${b} gólt rúgtak.`,
+            question: "Mennyivel több gól esett az első fordulóban?",
+            success: (answer) => `😊 Szép munka! ${diffPhrase(answer)} gól esett az első fordulóban!`
         },
         multiply: {
             title: "⚽ Szorzás",
@@ -1032,7 +1032,7 @@ const TWO_STEP_THEMES = {
     ],
     football: [
         { text: (a, b, c) => `A csapatban ${a} játékos van. ${b} játékos csatlakozik. Aztán ${c} játékos lecserélik. Hány játékos van a pályán?`, question: "Hány játékos van a pályán?", success: (ans) => `😊 Szép munka! ${ans} játékos van a pályán!`, form: "add-sub" },
-        { text: (a, b, c) => `${a} gól esett az első félidőben. A második félidőben ${b} gól. Aztán ${c} gólt érvénytelenítettek. Hány gól maradt?`, question: "Hány gól maradt?", success: (ans) => `😊 Szép munka! ${ans} gól maradt!`, form: "add-sub" },
+        { text: (a, b, c) => `${a} gól esett az első fordulóban. A második fordulóban ${b} gól. Aztán ${c} gólt érvénytelenítettek. Hány gól maradt?`, question: "Hány gól maradt?", success: (ans) => `😊 Szép munka! ${ans} gól maradt!`, form: "add-sub" },
         { text: (a, b, c) => `${a} labda volt a raktárban. ${b} labdát kivisznek a pályára. Aztán ${c} labda érkezik. Hány labda van most a raktárban?`, question: "Hány labda van most a raktárban?", success: (ans) => `😊 Szép munka! ${ans} labda van a raktárban!`, form: "sub-add" },
         { text: (a, b, c) => `${b} csapatnak ${a} labdára van szüksége. Még ${c} tartalék labda van. Hány labdára van szükség összesen?`, question: "Hány labdára van szükség összesen?", success: (ans) => `😊 Szép munka! Összesen ${ans} labda kell!`, form: "mult-add" }
     ],

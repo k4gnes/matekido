@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=105";
+import { generate } from "../generators/index.js?v=106";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -13,7 +13,7 @@ const WORLD_TITLES = {
     subtraction: {
         postman: (i) => `🎒 ${i}. táska`,
         racing: (i) => `⚙️ ${i}. kerék`,
-        football: (i) => `⚽ ${i}. félidő`,
+        football: (i) => `⚽ ${i}. forduló`,
         cooking: (i) => `🍳 ${i}. étel`,
         animals: (i) => `🦒 ${i}. karám`,
         space: (i) => `🚀 ${i}. egység`

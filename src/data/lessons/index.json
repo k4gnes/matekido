@@ -6996,6 +6996,318 @@
         "tram": "🚋 Hatványok a villamoson"
       },
       "playMode": "power-play"
+    },
+    {
+      "id": "grade8-algebra-01",
+      "title": "🧮 Algebrai kifejezések",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "algebra",
+      "difficulty": 2,
+      "type": "algebra",
+      "range": 1000,
+      "mission": "🧮 Algebrai kifejezések",
+      "subtitle": "helyettesítés, összevonás, zárójel és kiemelés",
+      "file": "./data/lessons/grade8/grade8-algebra-01.json",
+      "worldTitles": {
+        "postman": "📮 Kifejezések a postán",
+        "racing": "🏎️ Kifejezések a pályán",
+        "football": "⚽ Kifejezések a pályán",
+        "cooking": "🍳 Kifejezések a konyhában",
+        "animals": "🦁 Kifejezések az állatkertben",
+        "space": "🚀 Kifejezések az űrben",
+        "tram": "🚋 Kifejezések a villamoson"
+      }
+    },
+    {
+      "id": "grade8-equation-01",
+      "title": "🟰 Elsőfokú egyenletek",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "equation",
+      "difficulty": 3,
+      "type": "equation",
+      "range": 1000,
+      "mission": "🟰 Elsőfokú egyenletek",
+      "subtitle": "mérlegelv, zárójel és törtes egyenletek",
+      "file": "./data/lessons/grade8/grade8-equation-01.json",
+      "worldTitles": {
+        "postman": "📮 Egyenletek a postán",
+        "racing": "🏎️ Egyenletek a pályán",
+        "football": "⚽ Egyenletek a pályán",
+        "cooking": "🍳 Egyenletek a konyhában",
+        "animals": "🦁 Egyenletek az állatkertben",
+        "space": "🚀 Egyenletek az űrben",
+        "tram": "🚋 Egyenletek a villamoson"
+      }
+    },
+    {
+      "id": "grade8-inequality-01",
+      "title": "🚦 Elsőfokú egyenlőtlenségek",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "inequality",
+      "difficulty": 3,
+      "type": "inequality",
+      "range": 1000,
+      "mission": "🚦 Elsőfokú egyenlőtlenségek",
+      "subtitle": "megoldáshalmaz a számegyenesen, negatív együttható",
+      "file": "./data/lessons/grade8/grade8-inequality-01.json",
+      "worldTitles": {
+        "postman": "📮 Egyenlőtlenségek a postán",
+        "racing": "🏎️ Egyenlőtlenségek a pályán",
+        "football": "⚽ Egyenlőtlenségek a pályán",
+        "cooking": "🍳 Egyenlőtlenségek a konyhában",
+        "animals": "🦁 Egyenlőtlenségek az állatkertben",
+        "space": "🚀 Egyenlőtlenségek az űrben",
+        "tram": "🚋 Egyenlőtlenségek a villamoson"
+      }
+    },
+    {
+      "id": "grade8-equation-word-01",
+      "title": "🟰 Egyenlettel megoldható szöveges feladatok",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "equation",
+      "difficulty": 3,
+      "type": "word-problem",
+      "range": 1000,
+      "mission": "🟰 Szöveges feladatok egyenlettel",
+      "subtitle": "szöveg → egyenlet → megoldás → ellenőrzés",
+      "file": "./data/lessons/grade8/grade8-equation-word-01.json",
+      "worldTitles": {
+        "postman": "📮 Szöveges feladatok a postán",
+        "racing": "🏎️ Szöveges feladatok a pályán",
+        "football": "⚽ Szöveges feladatok a pályán",
+        "cooking": "🍳 Szöveges feladatok a konyhában",
+        "animals": "🦁 Szöveges feladatok az állatkertben",
+        "space": "🚀 Szöveges feladatok az űrben",
+        "tram": "🚋 Szöveges feladatok a villamoson"
+      }
+    },
+    {
+      "id": "grade8-ratio-proportion-01",
+      "title": "🔗 Arányosság és arányos osztás",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "ratio",
+      "difficulty": 3,
+      "type": "word-problem",
+      "range": 1000,
+      "mission": "🔗 Arányosság és arányos osztás",
+      "subtitle": "aránypár, arányos felosztás, egyenes és fordított arány",
+      "file": "./data/lessons/grade8/grade8-ratio-proportion-01.json",
+      "worldTitles": {
+        "postman": "📮 Arányok a postán",
+        "racing": "🏎️ Arányok a pályán",
+        "football": "⚽ Arányok a pályán",
+        "cooking": "🍳 Arányok a konyhában",
+        "animals": "🦁 Arányok az állatkertben",
+        "space": "🚀 Arányok az űrben",
+        "tram": "🚋 Arányok a villamoson"
+      }
+    },
+    {
+      "id": "grade8-functions-01",
+      "title": "📈 Megfeleltetések és grafikonok",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "functions",
+      "difficulty": 3,
+      "type": "function",
+      "range": 1000,
+      "mission": "📈 Megfeleltetések és grafikonok",
+      "subtitle": "táblázat, szabály, grafikon és lineáris függvény",
+      "file": "./data/lessons/grade8/grade8-functions-01.json",
+      "worldTitles": {
+        "postman": "📮 Függvények a postán",
+        "racing": "🏎️ Függvények a pályán",
+        "football": "⚽ Függvények a pályán",
+        "cooking": "🍳 Függvények a konyhában",
+        "animals": "🦁 Függvények az állatkertben",
+        "space": "🚀 Függvények az űrben",
+        "tram": "🚋 Függvények a villamoson"
+      }
+    },
+    {
+      "id": "grade8-perimeter-area-01",
+      "title": "🔷 Kerület és terület",
+      "grades": [
+        8
+      ],
+      "category": "geometry",
+      "skill": "area",
+      "difficulty": 3,
+      "type": "shape-area",
+      "range": 1000,
+      "mission": "🔷 Kerület és terület",
+      "subtitle": "háromszög, négyszög és összetett síkidom",
+      "file": "./data/lessons/grade8/grade8-perimeter-area-01.json",
+      "worldTitles": {
+        "postman": "📮 Kerület és terület a postán",
+        "racing": "🏎️ Kerület és terület a pályán",
+        "football": "⚽ Kerület és terület a pályán",
+        "cooking": "🍳 Kerület és terület a konyhában",
+        "animals": "🦁 Kerület és terület az állatkertben",
+        "space": "🚀 Kerület és terület az űrben",
+        "tram": "🚋 Kerület és terület a villamoson"
+      }
+    },
+    {
+      "id": "grade8-pythagorean-01",
+      "title": "📐 Pitagorasz-tétel",
+      "grades": [
+        8
+      ],
+      "category": "geometry",
+      "skill": "pythagorean",
+      "difficulty": 3,
+      "type": "pythagorean",
+      "range": 0,
+      "mission": "📐 Pitagorasz-tétel",
+      "subtitle": "átfogó, befogó, ellenőrzés és szöveges alkalmazás",
+      "file": "./data/lessons/grade8/grade8-pythagorean-01.json",
+      "worldTitles": {
+        "postman": "📮 Pitagorasz a postán",
+        "racing": "🏎️ Pitagorasz a pályán",
+        "football": "⚽ Pitagorasz a pályán",
+        "cooking": "🍳 Pitagorasz a konyhában",
+        "animals": "🦁 Pitagorasz az állatkertben",
+        "space": "🚀 Pitagorasz az űrben",
+        "tram": "🚋 Pitagorasz a villamoson"
+      }
+    },
+    {
+      "id": "grade8-circle-parts-01",
+      "title": "⭕ Kör részei, körcikk",
+      "grades": [
+        8
+      ],
+      "category": "geometry",
+      "skill": "circle",
+      "difficulty": 3,
+      "type": "circle",
+      "range": 1000,
+      "mission": "⭕ Kör részei, körcikk",
+      "subtitle": "sugár, átmérő, húr, szelő, érintő, körív és körcikk",
+      "file": "./data/lessons/grade8/grade8-circle-parts-01.json",
+      "worldTitles": {
+        "postman": "📮 Körök a postán",
+        "racing": "🏎️ Körök a pályán",
+        "football": "⚽ Körök a pályán",
+        "cooking": "🍳 Körök a konyhában",
+        "animals": "🦁 Körök az állatkertben",
+        "space": "🚀 Körök az űrben",
+        "tram": "🚋 Körök a villamoson"
+      }
+    },
+    {
+      "id": "grade8-statistics-01",
+      "title": "📊 Középértékek és terjedelem",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "statistics",
+      "difficulty": 3,
+      "type": "average",
+      "range": 1000,
+      "mission": "📊 Középértékek és terjedelem",
+      "subtitle": "átlag, medián, módusz, terjedelem és összehasonlítás",
+      "file": "./data/lessons/grade8/grade8-statistics-01.json",
+      "worldTitles": {
+        "postman": "📮 Középértékek a postán",
+        "racing": "🏎️ Középértékek a pályán",
+        "football": "⚽ Középértékek a pályán",
+        "cooking": "🍳 Középértékek a konyhában",
+        "animals": "🦁 Középértékek az állatkertben",
+        "space": "🚀 Középértékek az űrben",
+        "tram": "🚋 Középértékek a villamoson"
+      }
+    },
+    {
+      "id": "grade8-data-charts-01",
+      "title": "📊 Adatok és diagramok",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "data-charts",
+      "difficulty": 2,
+      "type": "data-chart",
+      "range": 1000,
+      "mission": "📊 Adatok és diagramok",
+      "subtitle": "táblázat, oszlop-, kör-, vonal- és pontdiagram",
+      "file": "./data/lessons/grade8/grade8-data-charts-01.json",
+      "worldTitles": {
+        "postman": "📮 Adatok a postán",
+        "racing": "🏎️ Adatok a pályán",
+        "football": "⚽ Adatok a pályán",
+        "cooking": "🍳 Adatok a konyhában",
+        "animals": "🦁 Adatok az állatkertben",
+        "space": "🚀 Adatok az űrben",
+        "tram": "🚋 Adatok a villamoson"
+      }
+    },
+    {
+      "id": "grade8-probability-frequency-01",
+      "title": "🎲 Valószínűség és gyakoriság",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "probability",
+      "difficulty": 3,
+      "type": "probability",
+      "range": 100,
+      "mission": "🎲 Valószínűség és gyakoriság",
+      "subtitle": "esély, kísérlet, gyakoriság és relatív gyakoriság",
+      "file": "./data/lessons/grade8/grade8-probability-frequency-01.json",
+      "worldTitles": {
+        "postman": "📮 Esélyek a postán",
+        "racing": "🏎️ Esélyek a pályán",
+        "football": "⚽ Esélyek a pályán",
+        "cooking": "🍳 Esélyek a konyhában",
+        "animals": "🦁 Esélyek az állatkertben",
+        "space": "🚀 Esélyek az űrben",
+        "tram": "🚋 Esélyek a villamoson"
+      }
+    },
+    {
+      "id": "grade8-combinatorics-01",
+      "title": "🎲 Kombinatorika",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "combinatorics",
+      "difficulty": 3,
+      "type": "combinatorics",
+      "range": 100,
+      "mission": "🎲 Kombinatorika",
+      "subtitle": "rendszeres felsorolás, szorzási elv, kiválasztás és párosítás",
+      "file": "./data/lessons/grade8/grade8-combinatorics-01.json",
+      "worldTitles": {
+        "postman": "📮 Leszámolás a postán",
+        "racing": "🏎️ Leszámolás a pályán",
+        "football": "⚽ Leszámolás a pályán",
+        "cooking": "🍳 Leszámolás a konyhában",
+        "animals": "🦁 Leszámolás az állatkertben",
+        "space": "🚀 Leszámolás az űrben",
+        "tram": "🚋 Leszámolás a villamoson"
+      }
     }
   ],
   "gradeConfig": [
@@ -7026,6 +7338,10 @@
     {
       "grade": 7,
       "title": "7. osztály"
+    },
+    {
+      "grade": 8,
+      "title": "8. osztály"
     }
   ]
 }

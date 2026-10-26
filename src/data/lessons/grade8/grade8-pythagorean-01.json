@@ -1,0 +1,108 @@
+{
+  "id": "grade8-pythagorean-01",
+  "title": "📐 Pitagorasz-tétel",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📐 Pitagorasz-tétel",
+      "text": "A derékszögű háromszögben a befogók négyzetének összege egyenlő az átfogó négyzetével: a² + b² = c². Az átfogó a derékszöggel szemben van. A tétellel hiányzó oldalt számolhatunk, és ellenőrizhetjük, hogy egy háromszög derékszögű-e.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Pitagorasz a postán",
+          "text": "A csomagok derékszögű elrendezésénél az átlót számoljuk; használd a tételt!"
+        },
+        "racing": {
+          "title": "🏎️ Pitagorasz a pályán",
+          "text": "A pálya derékszögű szakaszainál a távolságot számoljuk; oldd meg!"
+        },
+        "football": {
+          "title": "⚽ Pitagorasz a pályán",
+          "text": "A pálya átlóját és a kapu távolságát számoljuk; használd a tételt!"
+        },
+        "cooking": {
+          "title": "🍳 Pitagorasz a konyhában",
+          "text": "A tepsi átlóját számoljuk; oldd meg a derékszögű háromszöget!"
+        },
+        "animals": {
+          "title": "🦁 Pitagorasz az állatkertben",
+          "text": "A kifutók átlóját számoljuk; használd a Pitagorasz-tételt!"
+        },
+        "space": {
+          "title": "🚀 Pitagorasz az űrben",
+          "text": "Az űrállomás derékszögű moduljainál a távolságot számoljuk; oldd meg!"
+        },
+        "tram": {
+          "title": "🚋 Pitagorasz a villamoson",
+          "text": "A villamos derékszögű szerkezeténél a távolságot számoljuk; használd a tételt!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "pythagorean",
+      "options": {
+        "count": 3,
+        "mode": "hypotenuse"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "pythagorean",
+      "options": {
+        "count": 3,
+        "mode": "leg"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "pythagorean",
+      "options": {
+        "count": 3,
+        "mode": "check"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "pythagorean",
+      "options": {
+        "count": 3,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen alkalmaztad a Pitagorasz-tételt!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a posta átlóival!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a pálya távolságaival!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltál a pálya átlójával!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen számoltál a tepsi átlójával!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál az állatkert átlóival!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltál az űrállomás távolságaival!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a villamos szerkezetével!"
+        }
+      }
+    }
+  ]
+}

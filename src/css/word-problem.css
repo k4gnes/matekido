@@ -385,6 +385,116 @@
     color: #92400e;
 }
 
+.wp-ratio-seg-red {
+    background: #fee2e2;
+    border: 2px solid #ef4444;
+    color: #b91c1c;
+}
+
+.wp-ratio-seg-blue {
+    background: #dbeafe;
+    border: 2px solid #3b82f6;
+    color: #1d4ed8;
+}
+
+.wp-ratio-seg-yellow {
+    background: #fef3c7;
+    border: 2px solid #f59e0b;
+    color: #92400e;
+}
+
+.wp-ratio-seg-green {
+    background: #dcfce7;
+    border: 2px solid #22c55e;
+    color: #166534;
+}
+
+.wp-ratio-seg-brown {
+    background: #f5f3ff;
+    border: 2px solid #a16207;
+    color: #92400e;
+}
+
+.wp-ratio-seg-white {
+    background: #ffffff;
+    border: 2px solid #9ca3af;
+    color: #374151;
+}
+
+.wp-ratio-seg-black {
+    background: #e5e7eb;
+    border: 2px solid #1f2937;
+    color: #111827;
+}
+
+.wp-ratio-seg-orange {
+    background: #fff7ed;
+    border: 2px solid #fb923c;
+    color: #c2410c;
+}
+
+.wp-ratio-seg-purple {
+    background: #f3e8ff;
+    border: 2px solid #a855f7;
+    color: #6b21a8;
+}
+
+.wp-ratio-seg-pink {
+    background: #fce7f3;
+    border: 2px solid #ec4899;
+    color: #9d174d;
+}
+
+.wp-ratio-seg-gray {
+    background: #f9fafb;
+    border: 2px solid #9ca3af;
+    color: #374151;
+}
+
+.wp-ratio-legend-red {
+    color: #b91c1c;
+}
+
+.wp-ratio-legend-blue {
+    color: #1d4ed8;
+}
+
+.wp-ratio-legend-yellow {
+    color: #92400e;
+}
+
+.wp-ratio-legend-green {
+    color: #166534;
+}
+
+.wp-ratio-legend-brown {
+    color: #92400e;
+}
+
+.wp-ratio-legend-white {
+    color: #374151;
+}
+
+.wp-ratio-legend-black {
+    color: #111827;
+}
+
+.wp-ratio-legend-orange {
+    color: #c2410c;
+}
+
+.wp-ratio-legend-purple {
+    color: #6b21a8;
+}
+
+.wp-ratio-legend-pink {
+    color: #9d174d;
+}
+
+.wp-ratio-legend-gray {
+    color: #374151;
+}
+
 .wp-r-label {
     width: 100%;
     text-align: center;

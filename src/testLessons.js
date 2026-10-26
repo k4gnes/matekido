@@ -1106,7 +1106,7 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "average": {
-            if (!["avg", "missing", "median", "mode"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!["avg", "missing", "median", "mode", "range"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             if (!["table", "chart"].includes(step.display)) fail(ctx, `display hibás: ${step.display}`);
             if (!["choice", "input"].includes(step.interaction)) fail(ctx, `interaction ismeretlen: ${step.interaction}`);
             if (!Array.isArray(step.values) || step.values.length < 3 || step.values.length > 5) {
@@ -1141,13 +1141,16 @@ function validateStep(step, ctx, range) {
                     const mid = Math.floor(size / 2);
                     const median = size % 2 === 1 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
                     if (step.answer !== median) fail(ctx, `answer (${step.answer}) != medián (${median})`);
-                } else {
+                } else if (step.mode === "mode") {
                     const counts = new Map();
                     for (const value of step.values) counts.set(value, (counts.get(value) ?? 0) + 1);
                     const top = Math.max(...counts.values());
                     const modes = [...counts.entries()].filter(([, c]) => c === top).map(([v]) => v);
                     if (modes.length !== 1) fail(ctx, "a módusz nem egyértelmű");
                     if (step.answer !== modes[0]) fail(ctx, `answer (${step.answer}) != módusz (${modes[0]})`);
+                } else {
+                    const range = sorted[sorted.length - 1] - sorted[0];
+                    if (step.answer !== range) fail(ctx, `answer (${step.answer}) != terjedelem (${range})`);
                 }
             }
             if (isFiniteNum(range) && step.answer > range) fail(ctx, `answer kilép a tartományból: ${step.answer} > ${range}`);
@@ -2277,6 +2280,22 @@ function validateStep(step, ctx, range) {
             }
             if (step.mode === "chance") {
                 validateProbabilityChance(ctx, step);
+                break;
+            }
+            if (step.mode === "frequency") {
+                if (!isInt(step.trials) || step.trials < 2) fail(ctx, `trials hibás: ${step.trials}`);
+                if (!isInt(step.favorable) || step.favorable < 1 || step.favorable >= step.trials) {
+                    fail(ctx, `favorable hibás: ${step.favorable}`);
+                }
+                if (typeof step.event !== "string" || step.event.length === 0) fail(ctx, "event hiányzik");
+                if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+                if (!Array.isArray(step.options) || step.options.length !== 4) fail(ctx, "options nem 4 elemű");
+                if (Array.isArray(step.options) && new Set(step.options).size !== 4) fail(ctx, "options ismétlődik");
+                const expected = `${step.favorable}/${step.trials}`;
+                if (step.correctLabel !== expected) fail(ctx, `correctLabel (${step.correctLabel}) != ${expected}`);
+                if (!Array.isArray(step.options) || step.options[step.answer] !== expected) {
+                    fail(ctx, "answer nem a helyes törtre mutat");
+                }
                 break;
             }
             const labels = { certain: "Biztos", possible: "Lehetséges", impossible: "Lehetetlen" };

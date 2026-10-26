@@ -1,0 +1,108 @@
+{
+  "id": "grade8-circle-parts-01",
+  "title": "⭕ Kör részei, körcikk",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "⭕ Kör részei, körcikk",
+      "text": "A kör minden pontja ugyanolyan távol van a középponttól. A sugarat r-rel, az átmérőt d-vel jelöljük, d = 2r. A húr, a szelő és az érintő a körhöz kapcsolódó nevezetes vonalak. A kör kerülete 2rπ, területe r²π; a körcikk a teljes kör arányos része.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Körök a postán",
+          "text": "A postán kerek címkék és körcikk alakú matricák vannak; számolj!"
+        },
+        "racing": {
+          "title": "🏎️ Körök a pályán",
+          "text": "A kerekek és a kanyarok köríveit számoljuk; használd a képleteket!"
+        },
+        "football": {
+          "title": "⚽ Körök a pályán",
+          "text": "A középkör és a körcikkek méreteit számoljuk; oldd meg!"
+        },
+        "cooking": {
+          "title": "🍳 Körök a konyhában",
+          "text": "A kerek tepsi és a pizzaszeletek méreteit számoljuk; számolj!"
+        },
+        "animals": {
+          "title": "🦁 Körök az állatkertben",
+          "text": "A kerek kifutók és a körcikk alakú etetők méreteit számoljuk; oldd meg!"
+        },
+        "space": {
+          "title": "🚀 Körök az űrben",
+          "text": "A kerek ablakok és a körcikk alakú panelek méreteit számoljuk; használd a képleteket!"
+        },
+        "tram": {
+          "title": "🚋 Körök a villamoson",
+          "text": "A kerek kerekek és a körcikk alakú ablakok méreteit számoljuk; számolj!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "circle",
+      "options": {
+        "count": 3,
+        "mode": "identify"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "circle",
+      "options": {
+        "count": 2,
+        "mode": "convert"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "circle",
+      "options": {
+        "count": 3,
+        "mode": "sector-arc"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "circle",
+      "options": {
+        "count": 3,
+        "mode": "sector-area"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen számoltál a kör részeivel és a körcikkekkel!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a posta köreivel!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a pálya köríveivel!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltál a pálya köreivel!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen számoltál a konyha körcikkeivel!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál az állatkert kerekeivel!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltál az űr köreivel!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a villamos kerekeivel!"
+        }
+      }
+    }
+  ]
+}

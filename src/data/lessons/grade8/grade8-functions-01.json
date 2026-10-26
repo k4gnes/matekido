@@ -1,0 +1,108 @@
+{
+  "id": "grade8-functions-01",
+  "title": "📈 Megfeleltetések és grafikonok",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📈 Megfeleltetések és grafikonok",
+      "text": "A függvény egy hozzárendelés: minden bemeneti értékhez pontosan egy kimeneti értéket rendel. A lineáris függvény grafikonja egyenes, a meredeksége állandó. Táblázatból, szabályból és grafikonból is leolvashatod az összefüggést.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Függvények a postán",
+          "text": "A csomagok száma és a fizetendő összeg között hozzárendelés van; olvasd le a grafikont!"
+        },
+        "racing": {
+          "title": "🏎️ Függvények a pályán",
+          "text": "A körök száma és az idő között lineáris kapcsolat van; használd a táblázatot!"
+        },
+        "football": {
+          "title": "⚽ Függvények a pályán",
+          "text": "A meccsek és a pontok között hozzárendelés van; ábrázold a grafikont!"
+        },
+        "cooking": {
+          "title": "🍳 Függvények a konyhában",
+          "text": "Az adagok és a hozzávalók között lineáris kapcsolat van; számolj!"
+        },
+        "animals": {
+          "title": "🦁 Függvények az állatkertben",
+          "text": "Az állatok és a takarmány között hozzárendelés van; olvasd le az értékeket!"
+        },
+        "space": {
+          "title": "🚀 Függvények az űrben",
+          "text": "Az üzemanyag és a megtett út között lineáris kapcsolat van; ábrázold!"
+        },
+        "tram": {
+          "title": "🚋 Függvények a villamoson",
+          "text": "Az utasok és a menetidő között hozzárendelés van; használd a grafikont!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "function",
+      "options": {
+        "count": 3,
+        "mode": "plot"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "function",
+      "options": {
+        "count": 3,
+        "mode": "extend"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "function",
+      "options": {
+        "count": 3,
+        "mode": "rule"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "function",
+      "options": {
+        "count": 3,
+        "mode": "read"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen olvastad le és ábrázoltad a függvényeket!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen olvastad le a posta grafikonjait!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen használtad a pálya táblázatait!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen ábrázoltad a bajnokság függvényeit!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen számoltál a konyha hozzárendeléseivel!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen olvastad le az állatkert grafikonjait!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen ábrázoltad az űr függvényeit!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen használtad a villamos grafikonjait!"
+        }
+      }
+    }
+  ]
+}

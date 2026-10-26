@@ -1,0 +1,108 @@
+{
+  "id": "grade8-perimeter-area-01",
+  "title": "🔷 Kerület és terület",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔷 Kerület és terület",
+      "text": "A kerület a síkidom határvonalának hossza, a terület a síkidom nagysága. A háromszög, a négyszög és az összetett síkidomok kerületét és területét képletekkel, illetve részekre bontással számoljuk.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Kerület és terület a postán",
+          "text": "A postán a csomagok felületét és a szalag hosszát számoljuk; használd a képleteket!"
+        },
+        "racing": {
+          "title": "🏎️ Kerület és terület a pályán",
+          "text": "A pálya részeit és a kerítés hosszát számoljuk; oldd meg!"
+        },
+        "football": {
+          "title": "⚽ Kerület és terület a pályán",
+          "text": "A pálya vonalainak hosszát és a gyep területét számoljuk; számolj!"
+        },
+        "cooking": {
+          "title": "🍳 Kerület és terület a konyhában",
+          "text": "A tepsi és a konyhai lapok méreteit számoljuk; használd a képleteket!"
+        },
+        "animals": {
+          "title": "🦁 Kerület és terület az állatkertben",
+          "text": "A kifutók kerítését és területét számoljuk; oldd meg!"
+        },
+        "space": {
+          "title": "🚀 Kerület és terület az űrben",
+          "text": "Az űrállomás moduljainak felületét számoljuk; használd a képleteket!"
+        },
+        "tram": {
+          "title": "🚋 Kerület és terület a villamoson",
+          "text": "A villamos ablakainak és padlójának méreteit számoljuk; számolj!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "shape-area",
+      "options": {
+        "count": 3,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "shape-area",
+      "options": {
+        "count": 3,
+        "mode": "polygon-mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "compound-shape",
+      "options": {
+        "count": 3,
+        "mode": "perimeter"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "compound-shape",
+      "options": {
+        "count": 3,
+        "mode": "area"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen számoltál kerületekkel és területekkel!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a posta felületeivel!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a pálya méreteivel!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltál a pálya területével!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen számoltál a konyhai lapok méreteivel!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál az állatkert kifutóival!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltál az űrállomás moduljaival!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a villamos méreteivel!"
+        }
+      }
+    }
+  ]
+}

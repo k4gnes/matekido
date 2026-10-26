@@ -832,16 +832,39 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
             ? `Összesen: ? ${step.nounTotal}`
             : `Összesen: ${step.total} ${step.nounTotal}`;
 
+        const getColorInfo = (text = "") => {
+            const lower = text.toLowerCase();
+            if (lower.includes("piros")) return { seg: "wp-ratio-seg-red", legend: "wp-ratio-legend-red", emoji: "🔴" };
+            if (lower.includes("kék")) return { seg: "wp-ratio-seg-blue", legend: "wp-ratio-legend-blue", emoji: "🔵" };
+            if (lower.includes("sárga") || lower.includes("sarga")) return { seg: "wp-ratio-seg-yellow", legend: "wp-ratio-legend-yellow", emoji: "🟡" };
+            if (lower.includes("zöld")) return { seg: "wp-ratio-seg-green", legend: "wp-ratio-legend-green", emoji: "🟢" };
+            if (lower.includes("barna")) return { seg: "wp-ratio-seg-brown", legend: "wp-ratio-legend-brown", emoji: "🟤" };
+            if (lower.includes("fehér")) return { seg: "wp-ratio-seg-white", legend: "wp-ratio-legend-white", emoji: "⚪" };
+            if (lower.includes("fekete")) return { seg: "wp-ratio-seg-black", legend: "wp-ratio-legend-black", emoji: "⚫" };
+            if (lower.includes("narancs")) return { seg: "wp-ratio-seg-orange", legend: "wp-ratio-legend-orange", emoji: "🟠" };
+            if (lower.includes("lila") || lower.includes("ibolya")) return { seg: "wp-ratio-seg-purple", legend: "wp-ratio-legend-purple", emoji: "🟣" };
+            if (lower.includes("rózsaszín") || lower.includes("pink")) return { seg: "wp-ratio-seg-pink", legend: "wp-ratio-legend-pink", emoji: "🩷" };
+            if (lower.includes("szürke") || lower.includes("szurke")) return { seg: "wp-ratio-seg-gray", legend: "wp-ratio-legend-gray", emoji: "⚪" };
+            return { seg: "wp-ratio-seg-a", legend: "wp-ratio-legend-a", emoji: "🟦" };
+        };
+
+        const colorA = getColorInfo(step.nounA || step.textA || "");
+        const colorB = getColorInfo(step.nounB || step.textB || "");
+        if (colorA.seg === "wp-ratio-seg-a" && colorB.seg === "wp-ratio-seg-a") {
+            colorB.seg = "wp-ratio-seg-b";
+            colorB.legend = "wp-ratio-legend-b";
+        }
+
         const bar = document.createElement("div");
         bar.className = "wp-ratio-bar";
 
         const segA = document.createElement("div");
-        segA.className = "wp-ratio-seg wp-ratio-seg-a";
+        segA.className = `wp-ratio-seg ${colorA.seg}`;
         segA.style.flexGrow = String(step.ra);
         segA.textContent = String(step.ra);
 
         const segB = document.createElement("div");
-        segB.className = "wp-ratio-seg wp-ratio-seg-b";
+        segB.className = `wp-ratio-seg ${colorB.seg}`;
         segB.style.flexGrow = String(step.rb);
         segB.textContent = String(step.rb);
 
@@ -853,16 +876,16 @@ export function renderWordProblem(step, root, next, progress, onResult, onAttemp
         legend.className = "wp-legend";
 
         const legendA = document.createElement("span");
-        legendA.className = "wp-ratio-legend-a";
+        legendA.className = colorA.legend;
         legendA.textContent = step.mode === "total"
-            ? `🟦 ${step.nounA}: ${step.which === "a" ? step.part : "?"}`
-            : `🟦 ${step.nounA}`;
+            ? `${colorA.emoji} ${step.nounA}: ${step.which === "a" ? step.part : "?"}`
+            : `${colorA.emoji} ${step.nounA}`;
 
         const legendB = document.createElement("span");
-        legendB.className = "wp-ratio-legend-b";
+        legendB.className = colorB.legend;
         legendB.textContent = step.mode === "total"
-            ? `🟨 ${step.nounB}: ${step.which === "b" ? step.part : "?"}`
-            : `🟨 ${step.nounB}`;
+            ? `${colorB.emoji} ${step.nounB}: ${step.which === "b" ? step.part : "?"}`
+            : `${colorB.emoji} ${step.nounB}`;
 
         legend.append(legendA, legendB);
         card.append(legend);

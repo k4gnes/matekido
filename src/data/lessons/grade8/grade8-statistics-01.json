@@ -1,0 +1,141 @@
+{
+  "id": "grade8-statistics-01",
+  "title": "📊 Középértékek és terjedelem",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📊 Középértékek és terjedelem",
+      "text": "Az átlag az adatok összegét osztja az adatok számával. A medián a rendezett adatok középső értéke, a módusz a leggyakrabban előforduló érték. A terjedelem a legnagyobb és a legkisebb adat különbsége. Ezekkel az adatsorokat össze is hasonlíthatjuk.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Középértékek a postán",
+          "text": "A postán a napi csomagok számából átlagot, mediánt és terjedelmet számolunk; hasonlítsd össze az adatokat!"
+        },
+        "racing": {
+          "title": "🏎️ Középértékek a pályán",
+          "text": "A boxutcai megállások adataiból középértékeket számolunk; figyeld a szélső értékeket!"
+        },
+        "football": {
+          "title": "⚽ Középértékek a pályán",
+          "text": "A napi edzésadatokból átlagot és mediánt számolunk; hasonlítsd össze a csapatokat!"
+        },
+        "cooking": {
+          "title": "🍳 Középértékek a konyhában",
+          "text": "A napi rendelések adataiból középértékeket számolunk; keresd a leggyakoribb értéket!"
+        },
+        "animals": {
+          "title": "🦁 Középértékek az állatkertben",
+          "text": "A látogatók napi adataiból átlagot, mediánt és terjedelmet számolunk; hasonlítsd össze!"
+        },
+        "space": {
+          "title": "🚀 Középértékek az űrben",
+          "text": "Az űrállomás napi adataiból középértékeket számolunk; figyeld a szélső értékeket!"
+        },
+        "tram": {
+          "title": "🚋 Középértékek a villamoson",
+          "text": "A villamos napi utasainak adataiból átlagot és mediánt számolunk; hasonlítsd össze!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "average",
+      "options": {
+        "count": 3,
+        "mode": "avg",
+        "display": "table",
+        "interaction": "input",
+        "size": 4,
+        "min": 1,
+        "max": 100
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "average",
+      "options": {
+        "count": 3,
+        "mode": "median",
+        "display": "table",
+        "interaction": "choice",
+        "size": 5,
+        "min": 1,
+        "max": 100
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "average",
+      "options": {
+        "count": 3,
+        "mode": "mode",
+        "display": "table",
+        "interaction": "choice",
+        "size": 5,
+        "min": 1,
+        "max": 100
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "average",
+      "options": {
+        "count": 3,
+        "mode": "range",
+        "display": "chart",
+        "interaction": "input",
+        "size": 5,
+        "min": 1,
+        "max": 100
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "average",
+      "options": {
+        "count": 2,
+        "mode": "missing",
+        "display": "table",
+        "interaction": "input",
+        "size": 4,
+        "min": 1,
+        "max": 100
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen számoltál átlaggal, mediánnal, módusszal és terjedelemmel!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a posta adataival!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a pálya adataival!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltál a bajnokság adataival!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen számoltál a konyha adataival!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál az állatkert adataival!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltál az űr adataival!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a villamos adataival!"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "id": "grade8-combinatorics-01",
+  "title": "🎲 Kombinatorika",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🎲 Kombinatorika",
+      "text": "A kombinatorika leszámolja, hányféleképpen lehet kiválasztani, sorba rendezni vagy párosítani dolgokat. A szorzási elv szerint, ha az egyik lépésben a lehetőségek száma a, a másikban b, akkor együtt a × b lehetőség van. A sorrend számít, ha a kiválasztott elemek sorrendje különbözik; a kiválasztásnál a sorrend nem számít.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Leszámolás a postán",
+          "text": "A postán a küldemények sorrendjét és a csomagolások számát számoljuk; használd a szorzási elvet!"
+        },
+        "racing": {
+          "title": "🏎️ Leszámolás a pályán",
+          "text": "A versenyen a rajt sorrendjét és a csapatok párosítását számoljuk; oldd meg!"
+        },
+        "football": {
+          "title": "⚽ Leszámolás a pályán",
+          "text": "A bajnokságban a meccsek és a csapatok párosítását számoljuk; használd a kombinatorikát!"
+        },
+        "cooking": {
+          "title": "🍳 Leszámolás a konyhában",
+          "text": "A konyhában a feltétek és az adagok sorrendjét számoljuk; oldd meg!"
+        },
+        "animals": {
+          "title": "🦁 Leszámolás az állatkertben",
+          "text": "Az állatkertben az állatok sorrendjét és a párosításokat számoljuk; használd a szorzási elvet!"
+        },
+        "space": {
+          "title": "🚀 Leszámolás az űrben",
+          "text": "Az űrhajón a kódok és az utak sorrendjét számoljuk; oldd meg!"
+        },
+        "tram": {
+          "title": "🚋 Leszámolás a villamoson",
+          "text": "A villamoson az utasok sorrendjét és a kocsik párosítását számoljuk; használd a kombinatorikát!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "combinatorics",
+      "options": {
+        "count": 2,
+        "mode": "order"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "combinatorics",
+      "options": {
+        "count": 3,
+        "mode": "count"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "combinatorics",
+      "options": {
+        "count": 3,
+        "mode": "pair"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "combinatorics",
+      "options": {
+        "count": 3,
+        "mode": "multiply"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen számoltál a kombinatorika feladataival!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a posta lehetőségeivel!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a pálya lehetőségeivel!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltál a bajnokság lehetőségeivel!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen számoltál a konyha lehetőségeivel!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál az állatkert lehetőségeivel!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltál az űr lehetőségeivel!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a villamos lehetőségeivel!"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "id": "grade8-inequality-01",
+  "title": "🚦 Elsőfokú egyenlőtlenségek",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🚦 Elsőfokú egyenlőtlenségek",
+      "text": "Az egyenlőtlenség megoldáshalmaza a számegyenes egy szakasza vagy félegyenese. A reláció iránya akkor fordul meg, ha negatív számmal szorzunk vagy osztunk. Figyeld a nyílt és zárt végpontot, és a megoldást mindig ábrázold a számegyenesen!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Egyenlőtlenségek a postán",
+          "text": "A postán a küldemények száma is lehet több vagy kevesebb; oldd meg az egyenlőtlenséget!"
+        },
+        "racing": {
+          "title": "🏎️ Egyenlőtlenségek a pályán",
+          "text": "A körök és a büntetések között is van határ; jelöld a megoldáshalmazt!"
+        },
+        "football": {
+          "title": "⚽ Egyenlőtlenségek a pályán",
+          "text": "A pontok és a gólok között is lehet feltétel; oldd meg az egyenlőtlenséget!"
+        },
+        "cooking": {
+          "title": "🍳 Egyenlőtlenségek a konyhában",
+          "text": "A hozzávalók mennyisége is lehet legalább vagy legfeljebb valamennyi; számolj!"
+        },
+        "animals": {
+          "title": "🦁 Egyenlőtlenségek az állatkertben",
+          "text": "Az adagok száma is lehet több vagy kevesebb; jelöld a megoldáshalmazt!"
+        },
+        "space": {
+          "title": "🚀 Egyenlőtlenségek az űrben",
+          "text": "Az üzemanyag és a robotok száma is határok között mozog; oldd meg!"
+        },
+        "tram": {
+          "title": "🚋 Egyenlőtlenségek a villamoson",
+          "text": "Az utasok száma is lehet legfeljebb valamennyi; számolj!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "inequality",
+      "options": {
+        "count": 3,
+        "mode": "linear"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "inequality",
+      "options": {
+        "count": 3,
+        "mode": "linear-line"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "inequality",
+      "options": {
+        "count": 3,
+        "mode": "linear"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "inequality",
+      "options": {
+        "count": 3,
+        "mode": "linear-line"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megoldottad az elsőfokú egyenlőtlenségeket!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen rendezted a posta egyenlőtlenségeit!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen oldottad meg a pálya egyenlőtlenségeit!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen oldottad meg a bajnokság egyenlőtlenségeit!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen rendezted a konyha egyenlőtlenségeit!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen rendezted az állatkert egyenlőtlenségeit!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen oldottad meg az űr egyenlőtlenségeit!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen rendezted a villamos egyenlőtlenségeit!"
+        }
+      }
+    }
+  ]
+}

@@ -313,6 +313,21 @@ export const CURRICULUM_ORDER = {
         "grade7-mixed-01",
         "grade7-master-01",
     ],
+    8: [
+        "grade8-combinatorics-01",
+        "grade8-algebra-01",
+        "grade8-equation-01",
+        "grade8-inequality-01",
+        "grade8-equation-word-01",
+        "grade8-ratio-proportion-01",
+        "grade8-functions-01",
+        "grade8-perimeter-area-01",
+        "grade8-pythagorean-01",
+        "grade8-circle-parts-01",
+        "grade8-data-charts-01",
+        "grade8-statistics-01",
+        "grade8-probability-frequency-01",
+    ],
 };
 
 const RANK = new Map();

@@ -30,4 +30,4 @@
 - [x] Hatodik osztály (terv: `docs/hatodik-osztaly.md`, 38 tervezett lecke + mester kihívás – mind kész)
 - [x] 🌟 Mester kihívás leckék (1–7. osztály, a legügyesebbeknek – nem számítanak a haladásba)
 - [x] Hetedik osztály (terv: `docs/hetedik-osztaly.md`, 36 lecke + mester kihívás – mind kész)
-- [ ] Nyolcadik osztály
+- [ ] Nyolcadik osztály (terv: `docs/nyolcadik-osztaly.md`, 36 lecke + mester kihívás – tervezet)

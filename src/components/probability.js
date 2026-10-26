@@ -35,6 +35,16 @@ const CHANCE_TITLES = {
     tram: "🎯 Mennyi az esélye a villamoson?"
 };
 
+const FREQUENCY_TITLES = {
+    postman: "📊 Gyakoriság a postán",
+    racing: "📊 Gyakoriság a boxutcában",
+    football: "📊 Gyakoriság a pályán",
+    cooking: "📊 Gyakoriság a konyhában",
+    animals: "📊 Gyakoriság az állatkertben",
+    space: "📊 Gyakoriság az űrhajón",
+    tram: "📊 Gyakoriság a villamoson"
+};
+
 function hintText(step) {
     if (step.mode === "chance") {
         const total = step.groups.reduce((sum, g) => sum + g.amount, 0);
@@ -48,6 +58,9 @@ function hintText(step) {
         const more = step.groups[0].amount > step.groups[1].amount ? step.groups[0] : step.groups[1];
         return `A ${more.color} golyóból van több (${more.amount} db), ezért azt választod ${step.ask === "bigger" ? "nagyobb" : "kisebb"} eséllyel.`;
     }
+    if (step.mode === "frequency") {
+        return "A relatív gyakoriság = a kedvező esetek száma ÷ a kísérletek száma.";
+    }
     return "Biztos az, ami mindig megtörténik; lehetetlen az, ami soha nem fordulhat elő; lehetséges az, ami előfordulhat, de nem biztos.";
 }
 
@@ -55,6 +68,11 @@ export function renderProbability(step, root, next, progress, onResult, onAttemp
 
     if (step.mode === "compare" || step.mode === "chance") {
         renderCompare(step, root, next, progress, onResult, onAttempt);
+        return;
+    }
+
+    if (step.mode === "frequency") {
+        renderFrequency(step, root, next, progress, onResult, onAttempt);
         return;
     }
 
@@ -91,6 +109,102 @@ export function renderProbability(step, root, next, progress, onResult, onAttemp
             if (label === step.correctLabel) {
                 markCorrect(btn);
                 feedback.success(`😊 Igazad van! Ez ${step.correctLabel.toLowerCase()}!`);
+            } else {
+                feedback.retry();
+                maybeShowHint();
+            }
+        });
+        options.append(btn);
+    });
+    card.append(options);
+
+    const message = createMessageBox();
+    const hint = createHintRequest(() => hintText(step));
+
+    card.append(hint.button, hint.box);
+    card.append(message.element);
+
+    root.append(card);
+
+    const feedback = createFeedback({
+        message,
+        container: card,
+        onNext: next,
+        onResult,
+        onAttempt
+    });
+
+    function maybeShowHint() {
+        if (feedback.getMistakes() >= 2) hint.offer();
+    }
+
+}
+
+function renderFrequency(step, root, next, progress, onResult, onAttempt) {
+
+    const world = getActiveWorld();
+
+    root.replaceChildren();
+
+    const card = createCard();
+
+    if (progress) {
+        card.append(progress);
+    }
+
+    const title = document.createElement("h1");
+    title.textContent = FREQUENCY_TITLES[world] ?? FREQUENCY_TITLES.postman;
+    card.append(title);
+
+    const event = document.createElement("p");
+    event.className = "prob-event";
+    event.textContent = step.event;
+    card.append(event);
+
+    const table = document.createElement("table");
+    table.className = "dt-table";
+
+    const thead = document.createElement("thead");
+    const headRow = document.createElement("tr");
+    const headLabel = document.createElement("th");
+    headLabel.textContent = "Adat";
+    const headValue = document.createElement("th");
+    headValue.textContent = "Érték";
+    headRow.append(headLabel, headValue);
+    thead.append(headRow);
+    table.append(thead);
+
+    const tbody = document.createElement("tbody");
+    [
+        ["Kísérletek száma", step.trials],
+        ["Kedvező esetek", step.favorable],
+        ["Nem kedvező esetek", step.trials - step.favorable]
+    ].forEach(([label, value]) => {
+        const row = document.createElement("tr");
+        const labelCell = document.createElement("td");
+        labelCell.textContent = label;
+        const valueCell = document.createElement("td");
+        valueCell.textContent = String(value);
+        row.append(labelCell, valueCell);
+        tbody.append(row);
+    });
+    table.append(tbody);
+    card.append(table);
+
+    const prompt = document.createElement("p");
+    prompt.className = "prob-prompt";
+    prompt.textContent = step.question;
+    card.append(prompt);
+
+    const options = document.createElement("div");
+    options.className = "prob-options";
+    step.options.forEach((label) => {
+        const btn = createButton(label, { className: "prob-option" });
+        btn.addEventListener("click", () => {
+            if (feedback.isAnswered()) return;
+            if (label === step.correctLabel) {
+                markCorrect(btn);
+                feedback.success(step.successText);
             } else {
                 feedback.retry();
                 maybeShowHint();

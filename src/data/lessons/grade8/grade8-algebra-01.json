@@ -1,0 +1,112 @@
+{
+  "id": "grade8-algebra-01",
+  "title": "🧮 Algebrai kifejezések",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧮 Algebrai kifejezések",
+      "text": "A 8. osztályban az algebrai kifejezésekkel dolgozunk: a betűk változókat jelölnek. Helyettesíts be, vonj össze hasonló tagokat, bonts fel zárójelet, és emelj ki közös tényezőt! A kifejezés értéke a változó értékétől függ.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Kifejezések a postán",
+          "text": "A postán a csomagok számát betű jelöli; számold ki a kifejezések értékét!"
+        },
+        "racing": {
+          "title": "🏎️ Kifejezések a pályán",
+          "text": "A körök és a büntetések kifejezésben is szerepelnek; helyettesíts be!"
+        },
+        "football": {
+          "title": "⚽ Kifejezések a pályán",
+          "text": "A pontok és a gólok kifejezésben is megjelennek; számold ki az értéküket!"
+        },
+        "cooking": {
+          "title": "🍳 Kifejezések a konyhában",
+          "text": "A recept adagjai kifejezéssel is leírhatók; számold ki őket!"
+        },
+        "animals": {
+          "title": "🦁 Kifejezések az állatkertben",
+          "text": "A takarmány adagját kifejezés adja; számold ki az értékét!"
+        },
+        "space": {
+          "title": "🚀 Kifejezések az űrben",
+          "text": "Az üzemanyag és a robotok száma kifejezésben is szerepel; helyettesíts!"
+        },
+        "tram": {
+          "title": "🚋 Kifejezések a villamoson",
+          "text": "A menetidő és az utasok száma kifejezéssel is leírható; számolj!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "substitute",
+        "level": "two"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "combine",
+        "level": "two"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "parenthesis",
+        "level": "two"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "factor",
+        "level": "two"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen használtad az algebrai kifejezéseket!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a posta kifejezéseivel!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a pálya kifejezéseivel!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltál a bajnokság kifejezéseivel!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen számoltál a konyha kifejezéseivel!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál az állatkert kifejezéseivel!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltál az űr kifejezéseivel!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a villamos kifejezéseivel!"
+        }
+      }
+    }
+  ]
+}

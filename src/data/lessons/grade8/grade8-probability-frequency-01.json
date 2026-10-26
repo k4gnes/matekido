@@ -1,0 +1,108 @@
+{
+  "id": "grade8-probability-frequency-01",
+  "title": "🎲 Valószínűség és gyakoriság",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🎲 Valószínűség és gyakoriság",
+      "text": "A valószínűség azt mutatja meg, mekkora esélye van egy eseménynek. A kísérlet során kapott gyakoriság megmutatja, hányszor következett be az esemény. A relatív gyakoriság = a kedvező esetek száma ÷ a kísérletek száma. Minél több kísérletet végzünk, annál jobban közelít a relatív gyakoriság a valószínűséghez.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Esélyek a postán",
+          "text": "A postán a küldemények színét és számát vizsgáljuk; számold ki az esélyeket!"
+        },
+        "racing": {
+          "title": "🏎️ Esélyek a pályán",
+          "text": "A versenyen a nyerési esélyeket és a kísérletek gyakoriságát vizsgáljuk; számolj!"
+        },
+        "football": {
+          "title": "⚽ Esélyek a pályán",
+          "text": "A bajnokságban a gólok és a lövések gyakoriságát vizsgáljuk; hasonlítsd össze!"
+        },
+        "cooking": {
+          "title": "🍳 Esélyek a konyhában",
+          "text": "A konyhában a hozzávalók kihúzásának esélyét vizsgáljuk; számolj!"
+        },
+        "animals": {
+          "title": "🦁 Esélyek az állatkertben",
+          "text": "Az állatkertben a látogatók és az események gyakoriságát vizsgáljuk; oldd meg!"
+        },
+        "space": {
+          "title": "🚀 Esélyek az űrben",
+          "text": "Az űrállomáson a kísérletek eredményeit és gyakoriságát vizsgáljuk; számolj!"
+        },
+        "tram": {
+          "title": "🚋 Esélyek a villamoson",
+          "text": "A villamoson a késések és az utasok gyakoriságát vizsgáljuk; hasonlítsd össze!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "probability",
+      "options": {
+        "count": 4,
+        "mode": "chance"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "probability",
+      "options": {
+        "count": 4,
+        "mode": "compare"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "probability",
+      "options": {
+        "count": 4,
+        "mode": "frequency"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "probability",
+      "options": {
+        "count": 3,
+        "level": 2
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen számoltál valószínűséggel és gyakorisággal!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a posta esélyeivel!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a pálya esélyeivel!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltál a bajnokság esélyeivel!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen számoltál a konyha esélyeivel!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál az állatkert esélyeivel!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltál az űr esélyeivel!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a villamos esélyeivel!"
+        }
+      }
+    }
+  ]
+}

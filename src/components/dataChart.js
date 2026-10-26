@@ -160,6 +160,100 @@ function createChartSvg(chart) {
     return svg;
 }
 
+function createSeriesSvg(chart, connect) {
+    const maxVal = Math.max(...chart.map(c => c.value));
+    const gridStep = maxVal <= 10 ? 1 : maxVal <= 20 ? 2 : maxVal <= 50 ? 10 : 20;
+
+    const svg = svgEl("svg", { viewBox: "0 0 176 150" });
+
+    const plotW = 150;
+    const plotH = 92;
+    const marginLeft = 13;
+    const marginTop = 44;
+    const baseline = marginTop + plotH;
+    const unitH = plotH / maxVal;
+
+    for (let i = gridStep; i <= maxVal; i += gridStep) {
+        const y = baseline - i * unitH;
+        svg.append(svgEl("line", {
+            x1: marginLeft,
+            y1: y,
+            x2: marginLeft + plotW,
+            y2: y,
+            stroke: "#94a3b8",
+            "stroke-width": "1.2"
+        }));
+        const tickLabel = svgEl("text", {
+            x: marginLeft - 3,
+            y: y + 4,
+            "text-anchor": "end",
+            "font-size": "8",
+            fill: "#94a3b8"
+        });
+        tickLabel.textContent = String(i);
+        svg.append(tickLabel);
+    }
+
+    const colW = plotW / chart.length;
+    const points = chart.map((c, i) => {
+        const x = marginLeft + colW * i + colW / 2;
+        const y = baseline - c.value * unitH;
+
+        const emojiLabel = svgEl("text", {
+            x,
+            y: 16,
+            "text-anchor": "middle",
+            "font-size": "20"
+        });
+        emojiLabel.textContent = c.emoji;
+        svg.append(emojiLabel);
+
+        const valLabel = svgEl("text", {
+            x,
+            y: 36,
+            "text-anchor": "middle",
+            "font-size": "14",
+            "font-weight": "800",
+            fill: "#1e293b"
+        });
+        valLabel.textContent = String(c.value);
+        svg.append(valLabel);
+
+        return { x, y };
+    });
+
+    if (connect) {
+        svg.append(svgEl("polyline", {
+            points: points.map(p => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(" "),
+            fill: "none",
+            stroke: "#3b82f6",
+            "stroke-width": "3",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round"
+        }));
+    }
+
+    points.forEach(p => svg.append(svgEl("circle", {
+        cx: p.x.toFixed(1),
+        cy: p.y.toFixed(1),
+        r: "5",
+        fill: "#f43f5e",
+        stroke: "#ffffff",
+        "stroke-width": "2"
+    })));
+
+    svg.append(svgEl("line", {
+        x1: marginLeft,
+        y1: baseline,
+        x2: marginLeft + plotW,
+        y2: baseline,
+        stroke: "#334155",
+        "stroke-width": "2"
+    }));
+
+    return svg;
+}
+
 function createPictogramSvg(chart) {
     const svg = svgEl("svg", { viewBox: "0 0 176 150" });
 
@@ -293,6 +387,10 @@ export function renderDataChart(step, root, next, progress, onResult, onAttempt)
         chartBox.append(createTableChart(step.chart));
     } else if (step.chartType === "pie") {
         chartBox.append(createPieSvg(step.chart));
+    } else if (step.chartType === "line") {
+        chartBox.append(createSeriesSvg(step.chart, true));
+    } else if (step.chartType === "dot") {
+        chartBox.append(createSeriesSvg(step.chart, false));
     } else {
         chartBox.append(createChartSvg(step.chart));
     }

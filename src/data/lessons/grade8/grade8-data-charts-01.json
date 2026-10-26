@@ -1,0 +1,143 @@
+{
+  "id": "grade8-data-charts-01",
+  "title": "📊 Adatok és diagramok",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📊 Adatok és diagramok",
+      "text": "Ugyanazt az adatsort többféle diagramon is ábrázolhatjuk: táblázaton, oszlopdiagramon, kördiagramon, vonaldiagramon vagy pontdiagramon. A diagram típusát az adatok és a kérdés alapján válaszd. Olvasd le az értékeket, hasonlítsd össze őket, és számolj a diagramokkal!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Adatok a postán",
+          "text": "A postán a küldemények adatait táblázatban és diagramon is ábrázolják; olvasd le az értékeket!"
+        },
+        "racing": {
+          "title": "🏎️ Adatok a pályán",
+          "text": "A boxutca adatait oszlop- és vonaldiagramon ábrázolják; hasonlítsd össze!"
+        },
+        "football": {
+          "title": "⚽ Adatok a pályán",
+          "text": "A bajnokság adatait diagramon ábrázolják; keresd a legtöbbet és a legkevesebbet!"
+        },
+        "cooking": {
+          "title": "🍳 Adatok a konyhában",
+          "text": "A napi rendelések adatait táblázatban és diagramon is láthatod; számolj!"
+        },
+        "animals": {
+          "title": "🦁 Adatok az állatkertben",
+          "text": "A látogatók adatait diagramon ábrázolják; olvasd le és hasonlítsd össze!"
+        },
+        "space": {
+          "title": "🚀 Adatok az űrben",
+          "text": "Az űrállomás adatait vonal- és pontdiagramon ábrázolják; figyeld az értékeket!"
+        },
+        "tram": {
+          "title": "🚋 Adatok a villamoson",
+          "text": "A villamos utasainak adatait diagramon ábrázolják; számolj és hasonlíts!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "data-chart",
+      "options": {
+        "count": 4,
+        "max": 10,
+        "modes": [
+          "top",
+          "least"
+        ],
+        "chartTypes": [
+          "bar",
+          "line",
+          "dot"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "data-chart",
+      "options": {
+        "count": 4,
+        "max": 10,
+        "modes": [
+          "compare",
+          "diff"
+        ],
+        "chartTypes": [
+          "bar",
+          "pictogram",
+          "table"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "data-chart",
+      "options": {
+        "count": 4,
+        "max": 10,
+        "modes": [
+          "sum",
+          "sum2",
+          "count"
+        ],
+        "chartTypes": [
+          "bar",
+          "line",
+          "dot",
+          "pictogram"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "data-chart",
+      "options": {
+        "count": 3,
+        "max": 10,
+        "modes": [
+          "percent"
+        ],
+        "chartTypes": [
+          "pie"
+        ]
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen olvastad le és hasonlítottad össze a diagramokat!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen olvastad le a posta diagramjait!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen olvastad le a pálya diagramjait!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen olvastad le a bajnokság diagramjait!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen olvastad le a konyha diagramjait!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen olvastad le az állatkert diagramjait!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen olvastad le az űr diagramjait!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen olvastad le a villamos diagramjait!"
+        }
+      }
+    }
+  ]
+}

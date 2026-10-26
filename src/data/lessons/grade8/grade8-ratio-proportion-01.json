@@ -1,0 +1,138 @@
+{
+  "id": "grade8-ratio-proportion-01",
+  "title": "🔗 Arányosság és arányos osztás",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔗 Arányosság és arányos osztás",
+      "text": "Az arány két mennyiség viszonyát mutatja. Az arányos osztásnál a részeket az arány szerint osztjuk szét. Egyenes arányosságnál a két mennyiség együtt nő vagy csökken; fordított arányosságnál az egyik nő, a másik csökken, a szorzat állandó.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Arányok a postán",
+          "text": "A postán a küldeményeket arányosan osztják szét; számolj aránypárral!"
+        },
+        "racing": {
+          "title": "🏎️ Arányok a pályán",
+          "text": "A versenyen az üzemanyag és a körök arányát számoljuk; oldd meg!"
+        },
+        "football": {
+          "title": "⚽ Arányok a pályán",
+          "text": "A bajnokságban a pontok és a meccsek arányát vizsgáljuk; számolj!"
+        },
+        "cooking": {
+          "title": "🍳 Arányok a konyhában",
+          "text": "A recept hozzávalóit arányosan kell felosztani; számold ki a részeket!"
+        },
+        "animals": {
+          "title": "🦁 Arányok az állatkertben",
+          "text": "Az állatkertben a takarmányt arányosan osztják el; számolj!"
+        },
+        "space": {
+          "title": "🚀 Arányok az űrben",
+          "text": "Az űrhajón az üzemanyag és a rakomány arányát számoljuk; oldd meg!"
+        },
+        "tram": {
+          "title": "🚋 Arányok a villamoson",
+          "text": "A villamoson az utasok és a kocsik arányát vizsgáljuk; számolj!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "ratio",
+      "options": {
+        "count": 2,
+        "mode": "write"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "ratio",
+      "options": {
+        "count": 2,
+        "mode": "simplify"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 2,
+        "max": 1000,
+        "kind": "ratio-split",
+        "mode": "total",
+        "interaction": "input"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 2,
+        "max": 1000,
+        "kind": "ratio-split",
+        "mode": "part",
+        "interaction": "choice"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 2,
+        "max": 1000,
+        "kind": "direct-proportion",
+        "mode": "value",
+        "interaction": "input",
+        "level": "hard"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 2,
+        "max": 1000,
+        "kind": "inverse-proportion",
+        "mode": "value",
+        "interaction": "input",
+        "level": "hard"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen számoltál arányokkal és arányossággal!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen osztottad fel a posta küldeményeit!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a pálya arányaival!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltál a bajnokság arányaival!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen osztottad fel a konyha hozzávalóit!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen osztottad el az állatkert takarmányát!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltál az űr arányaival!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltál a villamos arányaival!"
+        }
+      }
+    }
+  ]
+}

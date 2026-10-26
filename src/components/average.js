@@ -210,6 +210,9 @@ export function renderAverage(step, root, next, progress, onResult, onAttempt) {
         if (step.mode === "mode") {
             return "💡 A módusz az az érték, amely a sorban a leggyakrabban fordul elő.";
         }
+        if (step.mode === "range") {
+            return "💡 A terjedelem = a legnagyobb adat − a legkisebb adat.";
+        }
         return `💡 Az átlag = az adatok összege ÷ az adatok száma, ezért ${sum} ÷ ${size} osztást kell elvégezni.`;
     }
 
@@ -223,6 +226,10 @@ export function renderAverage(step, root, next, progress, onResult, onAttempt) {
         }
         if (step.mode === "mode") {
             return `🎉 Ügyes! A(z) ${step.answer} fordul elő a leggyakrabban, ezért ez a módusz.`;
+        }
+        if (step.mode === "range") {
+            const sorted = [...step.values].sort((a, b) => a - b);
+            return `🎉 Ügyes! ${sorted[sorted.length - 1]} − ${sorted[0]} = ${step.answer}, ez a terjedelem.`;
         }
         return `🎉 Ügyes! ${sum} ÷ ${size} = ${step.answer}`;
     }

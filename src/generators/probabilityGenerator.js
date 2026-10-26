@@ -74,6 +74,46 @@ const EQUAL_LABEL = "Ugyanolyan eséllyel";
 // a kedvező és a nem kedvező esetek aránya irreduktílos marad
 const CHANCE_PAIRS = [[1, 3], [2, 3], [3, 4], [1, 5], [2, 5], [3, 5], [1, 7], [2, 7]];
 
+const FREQUENCY_SCENARIOS = [
+    { trials: 20, favorable: 4, event: "A zacskóból 20 húzásból 4-szer piros golyót húztunk." },
+    { trials: 25, favorable: 5, event: "Egy dobókockával 25-szor dobtunk, és 5-ször kaptunk hatost." },
+    { trials: 40, favorable: 8, event: "A pörgettyű 40 pörgetésből 8-szor állt meg a kék színen." },
+    { trials: 50, favorable: 10, event: "A focista 50 lövésből 10-szer talált a kapuba." },
+    { trials: 30, favorable: 6, event: "A villamos 30 indulásból 6-szor késett." },
+    { trials: 20, favorable: 5, event: "Az állatkertben 20 látogatóból 5-en vettek ajándékot." }
+];
+
+function generateFrequencyTask() {
+    const scenario = FREQUENCY_SCENARIOS[Math.floor(Math.random() * FREQUENCY_SCENARIOS.length)];
+    const answer = `${scenario.favorable}/${scenario.trials}`;
+    const candidates = [
+        `${scenario.favorable}/${scenario.trials - 1}`,
+        `${scenario.favorable + 1}/${scenario.trials}`,
+        `${scenario.trials - scenario.favorable}/${scenario.trials}`,
+        `${scenario.favorable}/${scenario.trials + 1}`,
+        `${scenario.favorable + 2}/${scenario.trials}`
+    ];
+    const options = [answer];
+    for (const candidate of candidates) {
+        if (options.length >= 4) break;
+        if (!options.includes(candidate)) options.push(candidate);
+    }
+    shuffle(options);
+
+    return {
+        type: "probability",
+        mode: "frequency",
+        event: scenario.event,
+        trials: scenario.trials,
+        favorable: scenario.favorable,
+        question: "Mennyi a relatív gyakorisága?",
+        options,
+        answer: options.indexOf(answer),
+        correctLabel: answer,
+        successText: `😊 Igazad van! ${scenario.favorable} kedvező eset ÷ ${scenario.trials} kísérlet = ${answer}.`
+    };
+}
+
 function generateChanceTask() {
     const scenario = Math.random() < 0.5 ? "bag" : "spinner";
     const [first, second] = pickCompareColors();
@@ -246,6 +286,7 @@ export function generateProbability(opts = {}) {
     for (let i = 0; i < count; i++) {
         if (mode === "compare") tasks.push(generateCompareTask());
         else if (mode === "chance") tasks.push(generateChanceTask());
+        else if (mode === "frequency") tasks.push(generateFrequencyTask());
         else tasks.push(generateTask(level));
     }
     return tasks;

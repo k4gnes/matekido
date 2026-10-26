@@ -61,6 +61,14 @@ function buildValues(min, max, size) {
     return values;
 }
 
+function buildRangeValues(min, max, size) {
+    for (let attempt = 0; attempt < 50; attempt++) {
+        const values = buildValues(min, max, size);
+        if (Math.max(...values) > Math.min(...values)) return values;
+    }
+    return buildValues(min, max, size);
+}
+
 function medianOf(values) {
     const sorted = [...values].sort((a, b) => a - b);
     const mid = Math.floor(sorted.length / 2);
@@ -179,6 +187,9 @@ function buildTask(options, world) {
         values = buildModeValues(min, max, size);
         if (!values) return null;
         avg = values.reduce((s, v) => s + v, 0) / size;
+    } else if (mode === "range") {
+        values = buildRangeValues(min, max, size);
+        avg = values.reduce((s, v) => s + v, 0) / size;
     } else {
         values = buildValues(min, max, size);
         avg = values.reduce((s, v) => s + v, 0) / size;
@@ -204,6 +215,10 @@ function buildTask(options, world) {
         answer = modeOf(values);
         question = "Mekkora a módusz?";
         naturals = values.filter(v => v !== answer);
+    } else if (mode === "range") {
+        answer = Math.max(...values) - Math.min(...values);
+        question = "Mekkora a terjedelem?";
+        naturals = [Math.max(...values), Math.min(...values), avg, answer + 1];
     } else {
         answer = avg;
         question = "Mennyi az átlag?";

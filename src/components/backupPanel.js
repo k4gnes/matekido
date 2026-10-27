@@ -121,17 +121,30 @@ async function decodeQrPayload(text) {
 
 async function copyText(value) {
 
-    if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(value);
-        return;
-    }
+    const text = value ?? "";
+
+    try {
+        if (navigator.clipboard?.writeText) {
+            await navigator.clipboard.writeText(text);
+            return;
+        }
+    } catch {}
 
     const field = document.createElement("textarea");
-    field.value = value;
+    field.value = text;
+    field.setAttribute("readonly", "");
+    field.style.position = "fixed";
+    field.style.left = "-9999px";
+    field.style.top = "0";
     document.body.appendChild(field);
-    field.select();
-    document.execCommand("copy");
-    document.body.removeChild(field);
+    try {
+        field.focus();
+        field.select();
+        field.setSelectionRange(0, field.value.length);
+        document.execCommand("copy");
+    } finally {
+        document.body.removeChild(field);
+    }
 
 }
 

@@ -1,0 +1,54 @@
+{
+  "id": "grade8-percent-practice-01",
+  "title": "💯 Százalékszámítás a gyakorlatban",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "💯 Százalékszámítás a gyakorlatban",
+      "text": "A mindennapban gyakran találkozunk százalékkal: árengedmény, áremelés, kamat, keverés. Ha egy ár százalékkal csökken, akkor az eredeti árból kivonjuk a százalékértéket. Ha nő, hozzáadjuk. Figyelj a különbségre: a százalékpont nem ugyanaz, mint a százalékos változás! Mindig nézd, hogy mihez viszonyítjuk a számítást.",
+      "worldTitles": {
+        "postman": { "title": "💯 Százalék a postán", "text": "A postaköltség változhat, de ügyesen számoljuk a végösszeget." },
+        "racing": { "title": "💯 Százalék a pályán", "text": "A csapat költségei és támogatásai százalékokkal alakulnak." },
+        "football": { "title": "💯 Százalék a fociban", "text": "Meccsjegyek, árengedmények és nézőszám-változás." },
+        "cooking": { "title": "💯 Százalék a konyhában", "text": "Receptet módosítunk: több vagy kevesebb alapanyag a megadott százalék szerint." },
+        "animals": { "title": "💯 Százalék az állatkertben", "text": "Takarmánykészlet, belépőjegyek és költségek." },
+        "space": { "title": "💯 Százalék az űrben", "text": "Készletek, fogyasztás, tartalékok számítása." },
+        "tram": { "title": "💯 Százalék a villamoson", "text": "Jegyárak, kedvezmények, utasszám alakulása." }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "percent",
+      "options": { "count": 3, "mode": "cases", "max": 1000, "percents": [10, 15, 20, 25, 30, 40, 50] }
+    },
+    {
+      "type": "exercise",
+      "generator": "percent",
+      "options": { "count": 3, "mode": "change", "max": 1000, "percents": [10, 15, 20, 25, 30, 40, 50] }
+    },
+    {
+      "type": "exercise",
+      "generator": "percent",
+      "options": { "count": 3, "mode": "of", "max": 1000, "percents": [10, 15, 20, 25, 30, 40, 50] }
+    },
+    {
+      "type": "exercise",
+      "generator": "percent",
+      "options": { "count": 5, "mode": "change", "max": 1000, "percents": [10, 15, 20, 25, 30, 40, 50] }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen alkalmaztad a százalékszámítást a gyakorlati feladatokban!",
+      "worldTitles": {
+        "postman": { "title": "🎉 Szép munka!", "text": "Jól számoltad ki a postai költségeket!" },
+        "racing": { "title": "🎉 Szuper vagy!", "text": "Ügyesen gazdálkodtál a költségekkel!" },
+        "football": { "title": "🎉 Remek!", "text": "Jól boldogultál a kedvezményekkel!" },
+        "cooking": { "title": "🎉 Ügyes vagy!", "text": "Tökéletesre sikerült az átszámítás!" },
+        "animals": { "title": "🎉 Szép munka!", "text": "Gondosan számoltad a takarmányt!" },
+        "space": { "title": "🎉 Csillag vagy!", "text": "Pontos számításokkal spóroltad a készletet!" },
+        "tram": { "title": "🎉 Szép munka!", "text": "Ügyesen kiszámoltad a kedvezményes árat!" }
+      }
+    }
+  ]
+}

@@ -7118,6 +7118,30 @@
       }
     },
     {
+      "id": "grade8-percent-practice-01",
+      "title": "💯 Százalékszámítás a gyakorlatban",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "percent",
+      "difficulty": 3,
+      "type": "word-problem",
+      "range": 1000,
+      "mission": "💯 Százalékszámítás a gyakorlatban",
+      "subtitle": "árengedmény, áremelés, kamat, keverés, százalékpont",
+      "file": "./data/lessons/grade8/grade8-percent-practice-01.json",
+      "worldTitles": {
+        "postman": "💯 Százalék a postán",
+        "racing": "💯 Százalék a pályán",
+        "football": "💯 Százalék a fociban",
+        "cooking": "💯 Százalék a konyhában",
+        "animals": "💯 Százalék az állatkertben",
+        "space": "💯 Százalék az űrben",
+        "tram": "💯 Százalék a villamoson"
+      }
+    },
+    {
       "id": "grade8-functions-01",
       "title": "📈 Megfeleltetések és grafikonok",
       "grades": [

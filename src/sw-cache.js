@@ -583,6 +583,7 @@ const SW_CACHE_LIST = [
     "/data/lessons/grade8/grade8-probability-frequency-01.json",
     "/data/lessons/grade8/grade8-pythagorean-01.json",
     "/data/lessons/grade8/grade8-ratio-proportion-01.json",
+    "/data/lessons/grade8/grade8-percent-practice-01.json",
     "/data/lessons/grade8/grade8-statistics-01.json",
     "/data/lessons/index.json",
     "/data/measure.js",

@@ -320,6 +320,7 @@ export const CURRICULUM_ORDER = {
         "grade8-inequality-01",
         "grade8-equation-word-01",
         "grade8-ratio-proportion-01",
+        "grade8-percent-practice-01",
         "grade8-functions-01",
         "grade8-perimeter-area-01",
         "grade8-pythagorean-01",

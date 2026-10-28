@@ -29,8 +29,8 @@ function buildTask() {
         {
             question: "Igaz-e: Minden prímszám páratlan?",
             options: [
-                { text: "Hamis", correct: false },
-                { text: "Igaz", correct: true }
+                { text: "Hamis", correct: true },
+                { text: "Igaz", correct: false }
             ]
         },
         {
@@ -43,8 +43,8 @@ function buildTask() {
         {
             question: "Igaz-e: Ha egy szám osztható 3-mal, akkor osztható 9-cel is?",
             options: [
-                { text: "Hamis", correct: false },
-                { text: "Igaz", correct: true }
+                { text: "Hamis", correct: true },
+                { text: "Igaz", correct: false }
             ]
         },
         {
@@ -67,8 +67,16 @@ function buildTask() {
 export function generateLogic(options = {}) {
     const { count = 5 } = options;
     const tasks = [];
+    const seen = new Set();
     for (let i = 0; i < count; i++) {
-        tasks.push(buildTask());
+        let task = buildTask();
+        let tries = 0;
+        while (seen.has(task.question) && tries < 20) {
+            task = buildTask();
+            tries++;
+        }
+        seen.add(task.question);
+        tasks.push(task);
     }
     return tasks;
 }

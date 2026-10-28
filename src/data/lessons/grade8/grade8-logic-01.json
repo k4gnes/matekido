@@ -1,0 +1,83 @@
+{
+  "id": "grade8-logic-01",
+  "title": "🧠 Igaz és hamis állítások",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧠 Igaz és hamis állítások",
+      "text": "Az állításokról el kell dönteni, hogy igazak vagy hamisak. Gyakran használjuk a 'minden' és a 'van olyan' kifejezéseket is.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Logika a postán",
+          "text": "A szabályokat igaz-hamis szerint ellenőrizzük!"
+        },
+        "racing": {
+          "title": "🏎️ Logika a pályán",
+          "text": "A szabályok betartását vizsgáljuk!"
+        },
+        "football": {
+          "title": "⚽ Logika a bajnokságban",
+          "text": "A szabályokat kell helyesen értelmezni!"
+        },
+        "cooking": {
+          "title": "🍳 Logika a konyhában",
+          "text": "A receptek állításait ellenőrizzük!"
+        },
+        "animals": {
+          "title": "🦁 Logika az állatkertben",
+          "text": "Az állatokról szóló állításokat vizsgáljuk!"
+        },
+        "space": {
+          "title": "🚀 Logika az űrben",
+          "text": "A küldetés szabályait elemezzük!"
+        },
+        "tram": {
+          "title": "🚋 Logika a villamoson",
+          "text": "A közlekedési szabályokat értelmezzük!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "logic",
+      "options": {
+        "count": 6
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen eldöntötted az állítások igazságértékét!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen értelmezted a szabályokat!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen ellenőrizted a szabályokat!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen alkalmaztad a logikát!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen vizsgáltad az állításokat!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen döntöttél az igazságról!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen elemezted a szabályokat!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen értelmezted a közlekedést!"
+        }
+      }
+    }
+  ]
+}

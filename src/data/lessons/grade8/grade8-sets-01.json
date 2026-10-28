@@ -1,0 +1,92 @@
+{
+  "id": "grade8-sets-01",
+  "title": "🗂 Halmazok és számhalmazok",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🗂 Halmazok és számhalmazok",
+      "text": "A halmazba bizonyos dolgokat sorolunk. A számokat is csoportosíthatjuk: a természetes számok halmaza (ℕ): 0,1,2,3,... Az egész számok halmaza (ℤ): ..., -2,-1,0,1,2,... A racionális számok halmaza (ℚ) azok, amelyek felírhatók két egész szám hányadosaként (egész számok, törtek, véges vagy szakaszos tizedes törtek is).",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Számhalmazok a postán",
+          "text": "A postán a címek és a csomagok számait halmazokba soroljuk!"
+        },
+        "racing": {
+          "title": "🏎️ Számhalmazok a pályán",
+          "text": "A köridőket és a számokat csoportosítjuk halmazok szerint!"
+        },
+        "football": {
+          "title": "⚽ Számhalmazok a pályán",
+          "text": "A gólok számát és a statisztikát halmazokba rendezzük!"
+        },
+        "cooking": {
+          "title": "🍳 Számhalmazok a konyhában",
+          "text": "A mennyiségeket és mértékegységeket csoportosítjuk!"
+        },
+        "animals": {
+          "title": "🦁 Számhalmazok az állatkertben",
+          "text": "Az állatok számát és adatait halmazokba soroljuk!"
+        },
+        "space": {
+          "title": "🚀 Számhalmazok az űrben",
+          "text": "A koordinátákat és adatokat különböző számhalmazokba osztjuk!"
+        },
+        "tram": {
+          "title": "🚋 Számhalmazok a villamoson",
+          "text": "Az utasok számát halmazok szerint vizsgáljuk!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "set-match",
+      "options": {
+        "count": 4,
+        "mode": "numbers"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "set-match",
+      "options": {
+        "count": 4,
+        "mode": "numbers"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen csoportosítottad a számokat a számhalmazok szerint!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen válogattad a számokat a posta halmazaiban!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen csoportosítottad a számokat a pályán!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen válogattad a számokat a bajnokságban!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen csoportosítottad a mennyiségeket!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen válogattad a számokat az állatkertben!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen csoportosítottad a számokat az űrben!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen válogattad a számokat a villamoson!"
+        }
+      }
+    }
+  ]
+}

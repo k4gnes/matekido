@@ -57,6 +57,9 @@ import { renderRoman } from "../components/roman.js?v=2";
 import { renderTransform } from "../components/transform.js?v=6";
 import { renderMirror } from "../components/mirror.js?v=4";
 import { renderSetMatch } from "../components/setMatch.js?v=4";
+import { renderSetOps } from "../components/setOps.js?v=1";
+import { renderLogic } from "../components/logic.js?v=1";
+import { renderGraph } from "../components/graph.js?v=1";
 import { renderDataChart } from "../components/dataChart.js?v=6";
 import { renderCalendar } from "../components/calendar.js?v=3";
 import { renderFraction } from "../components/fraction.js?v=8";
@@ -165,6 +168,9 @@ const COUNTED_TYPES = new Set([
     "transform",
     "mirror",
     "set-match",
+    "set-ops",
+    "logic",
+    "graph",
     "data-chart",
     "calendar",
 "fraction",
@@ -335,6 +341,9 @@ const RENDERERS = new Map([
     ["transform", renderTransform],
     ["mirror", renderMirror],
     ["set-match", renderSetMatch],
+    ["set-ops", renderSetOps],
+    ["logic", renderLogic],
+    ["graph", renderGraph],
     ["data-chart", renderDataChart],
     ["calendar", renderCalendar],
     ["fraction", renderFraction],

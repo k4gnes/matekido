@@ -65,7 +65,7 @@ function formatGroups(groups) {
 }
 
 const NUMBERS = [];
-for (let n = 4; n <= 100; n++) {
+for (let n = 4; n <= 1000; n++) {
     if (!isPrime(n)) NUMBERS.push(n);
 }
 

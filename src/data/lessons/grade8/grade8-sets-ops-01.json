@@ -1,0 +1,83 @@
+{
+  "id": "grade8-sets-ops-01",
+  "title": "🧮 Halmazműveletek",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧮 Halmazműveletek",
+      "text": "Az unió (A ∪ B) mindazok az elemek, amelyek legalább az egyik halmazban benne vannak. A metszet (A ∩ B) azok, amelyek mindkét halmazban benne vannak. Az alaphalmazhoz képest a komplementer azok az elemek, amelyek nincsenek A-ban.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Halmazműveletek a postán",
+          "text": "A küldeményeket unióval, metszettel csoportosítjuk!"
+        },
+        "racing": {
+          "title": "🏎️ Halmazműveletek a pályán",
+          "text": "A versenyzőket különböző csoportok szerint vizsgáljuk!"
+        },
+        "football": {
+          "title": "⚽ Halmazműveletek a pályán",
+          "text": "A játékosokat csapatok szerint hasonlítjuk össze!"
+        },
+        "cooking": {
+          "title": "🍳 Halmazműveletek a konyhában",
+          "text": "A hozzávalókat csoportok szerint válogatjuk!"
+        },
+        "animals": {
+          "title": "🦁 Halmazműveletek az állatkertben",
+          "text": "Az állatokat tulajdonságok szerint csoportosítjuk!"
+        },
+        "space": {
+          "title": "🚀 Halmazműveletek az űrben",
+          "text": "A készleteket halmazokkal elemezzük!"
+        },
+        "tram": {
+          "title": "🚋 Halmazműveletek a villamoson",
+          "text": "Az utasokat különböző feltételek szerint nézzük!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "set-ops",
+      "options": {
+        "count": 5
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen alkalmaztad a halmazműveleteket!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen dolgoztál a posta halmazaival!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen elemezted a versenyzőket!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen használtad a halmazműveleteket!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen válogattad a hozzávalókat!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen csoportosítottad az állatokat!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltad a készleteket!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen elemezted az utasokat!"
+        }
+      }
+    }
+  ]
+}

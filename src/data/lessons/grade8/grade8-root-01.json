@@ -1,0 +1,92 @@
+{
+  "id": "grade8-root-01",
+  "title": "√ Négyzetgyök",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "√ Négyzetgyök",
+      "text": "Egy nemnegatív a szám négyzetgyöke az a nemnegatív szám, amelynek négyzete a. Csak négyzetszámok négyzetgyöke egész szám.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Négyzetgyök a postán",
+          "text": "A területből kiszámoljuk az oldal hosszát!"
+        },
+        "racing": {
+          "title": "🏎️ Négyzetgyök a pályán",
+          "text": "A négyzet alakú pályarészeket vizsgáljuk!"
+        },
+        "football": {
+          "title": "⚽ Négyzetgyök a pályán",
+          "text": "A négyzetes területeket oldallá alakítjuk!"
+        },
+        "cooking": {
+          "title": "🍳 Négyzetgyök a konyhában",
+          "text": "A négyzet alakú sütőformák oldalát számoljuk!"
+        },
+        "animals": {
+          "title": "🦁 Négyzetgyök az állatkertben",
+          "text": "A négyzet alakú kifutók méretét határozzuk meg!"
+        },
+        "space": {
+          "title": "🚀 Négyzetgyök az űrben",
+          "text": "A négyzetes felületeket oldallá számoljuk!"
+        },
+        "tram": {
+          "title": "🚋 Négyzetgyök a villamoson",
+          "text": "A négyzet alakú jeleket vizsgáljuk!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "power",
+      "options": {
+        "count": 6,
+        "mode": "base"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "power",
+      "options": {
+        "count": 6,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen megtaláltad a négyzetgyököt!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen kiszámoltad az oldalakat!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen meghatároztad a méreteket!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen oldottad meg a feladatokat!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen kiszámoltad a formák oldalát!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen meghatároztad a kifutók méretét!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltad az oldalakat!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen oldottad meg a feladatokat!"
+        }
+      }
+    }
+  ]
+}

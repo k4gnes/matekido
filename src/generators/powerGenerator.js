@@ -71,7 +71,7 @@ function buildSquare() {
 }
 
 function buildCube() {
-    const base = randInt(2, 10);
+    const base = randInt(2, 12);
     const answer = base * base * base;
     const candidates = [
         base * 3,
@@ -96,14 +96,15 @@ function buildCube() {
 }
 
 function buildNotation() {
-    const exponent = pick([2, 3]);
-    const base = exponent === 2 ? randInt(2, 10) : randInt(2, 6);
+    const exponent = pick([2, 3, 4]);
+    const base = exponent === 2 ? randInt(2, 12) : exponent === 3 ? randInt(2, 8) : randInt(2, 6);
     const answer = powerText(base, exponent);
     const repeated = Array(exponent).fill(base).join(" · ");
     const candidates = [
         powerText(exponent, base),
-        powerText(base, exponent === 2 ? 3 : 2),
+        powerText(base, exponent === 2 ? 3 : exponent === 3 ? 4 : 2),
         powerText(base, exponent + 1),
+        powerText(base, exponent - 1 >= 2 ? exponent - 1 : 2),
         `${base} · ${exponent}`,
         String(base + exponent),
         String(base * exponent)
@@ -125,8 +126,8 @@ function buildNotation() {
 }
 
 function buildBase() {
-    const exponent = pick([2, 3]);
-    const base = exponent === 2 ? randInt(2, 12) : randInt(2, 6);
+    const exponent = pick([2, 3, 4]);
+    const base = exponent === 2 ? randInt(2, 15) : exponent === 3 ? randInt(2, 8) : randInt(2, 6);
     const value = base ** exponent;
     const candidates = [base - 1, base + 1, base + 2, base - 2, base + 3];
     return {

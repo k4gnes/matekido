@@ -41,12 +41,23 @@ export function renderSetMatch(step, root, next, progress, onResult, onAttempt) 
 
     const membersEl = document.createElement("div");
     membersEl.className = "sz-members";
-    step.examples.forEach(shape => {
-        const wrap = document.createElement("span");
-        wrap.className = "sz-member";
-        wrap.append(createShapeSvg({ kind: shape.kind, color: shape.color, size: shape.size }));
-        membersEl.append(wrap);
-    });
+    const mode = step.mode || (step.examples && step.examples[0] && typeof step.examples[0].value !== "undefined" ? "numbers" : "shapes");
+    if (mode === "numbers") {
+        (step.examples || []).forEach(ex => {
+            const wrap = document.createElement("span");
+            wrap.className = "sz-member sz-member-num";
+            const val = typeof ex === "object" && ex !== null ? ex.value : ex;
+            wrap.textContent = String(val);
+            membersEl.append(wrap);
+        });
+    } else {
+        (step.examples || []).forEach(shape => {
+            const wrap = document.createElement("span");
+            wrap.className = "sz-member";
+            wrap.append(createShapeSvg({ kind: shape.kind, color: shape.color, size: shape.size }));
+            membersEl.append(wrap);
+        });
+    }
     setBox.append(membersEl);
 
     card.append(setBox);
@@ -59,12 +70,20 @@ export function renderSetMatch(step, root, next, progress, onResult, onAttempt) 
     const optionsContainer = document.createElement("div");
     optionsContainer.className = "sz-options";
 
-    step.options.forEach((shape, index) => {
+    (step.options || []).forEach((opt, index) => {
         const btn = document.createElement("button");
         btn.type = "button";
         btn.className = "sz-option";
         btn.dataset.index = index;
-        btn.append(createShapeSvg({ kind: shape.kind, color: shape.color, size: shape.size }));
+        if (mode === "numbers") {
+            const span = document.createElement("span");
+            span.className = "sz-option-num";
+            const val = typeof opt === "object" && opt !== null ? opt.value : opt;
+            span.textContent = String(val);
+            btn.append(span);
+        } else {
+            btn.append(createShapeSvg({ kind: opt.kind, color: opt.color, size: opt.size }));
+        }
         optionsContainer.append(btn);
     });
 
@@ -91,7 +110,7 @@ export function renderSetMatch(step, root, next, progress, onResult, onAttempt) 
         if (feedback.isAnswered()) return;
 
         if (isCorrect) {
-            optionsContainer.querySelectorAll("button").forEach(b => b.style.pointerEvents = "none");
+            optionsContainer.querySelectorAll(".sz-option").forEach(b => b.disabled = true);
 
             feedback.success(successText());
         } else {
@@ -102,8 +121,12 @@ export function renderSetMatch(step, root, next, progress, onResult, onAttempt) 
     optionsContainer.addEventListener("click", (e) => {
         const btn = e.target.closest(".sz-option");
         if (!btn || feedback.isAnswered()) return;
+        if (btn.disabled) return;
 
-        const ok = Number(btn.dataset.index) === step.answer;
+        const idx = Number(btn.dataset.index);
+        if (Number.isNaN(idx)) return;
+        if (typeof step.answer === "undefined" || step.answer === null) return;
+        const ok = idx === step.answer;
 
         if (ok) markCorrect(btn);
 

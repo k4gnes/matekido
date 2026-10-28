@@ -7332,6 +7332,198 @@
         "space": "🚀 Leszámolás az űrben",
         "tram": "🚋 Leszámolás a villamoson"
       }
+    },
+    {
+      "id": "grade8-sets-01",
+      "title": "🗂 Halmazok és számhalmazok",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "sets",
+      "difficulty": 2,
+      "type": "set-match",
+      "range": 1000,
+      "mission": "🗂 Halmazok és számhalmazok",
+      "subtitle": "természetes, egész, racionális számok",
+      "file": "./data/lessons/grade8/grade8-sets-01.json",
+      "worldTitles": {
+        "postman": "📮 Számhalmazok a postán",
+        "racing": "🏎️ Számhalmazok a pályán",
+        "football": "⚽ Számhalmazok a pályán",
+        "cooking": "🍳 Számhalmazok a konyhában",
+        "animals": "🦁 Számhalmazok az állatkertben",
+        "space": "🚀 Számhalmazok az űrben",
+        "tram": "🚋 Számhalmazok a villamoson"
+      }
+    },
+    {
+      "id": "grade8-sets-ops-01",
+      "title": "🧮 Halmazműveletek",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "sets",
+      "difficulty": 3,
+      "type": "set-ops",
+      "range": 1000,
+      "mission": "🧮 Halmazműveletek",
+      "subtitle": "metszet, unió, komplementer",
+      "file": "./data/lessons/grade8/grade8-sets-ops-01.json",
+      "worldTitles": {
+        "postman": "📮 Halmazműveletek a postán",
+        "racing": "🏎️ Halmazműveletek a pályán",
+        "football": "⚽ Halmazműveletek a pályán",
+        "cooking": "🍳 Halmazműveletek a konyhában",
+        "animals": "🦁 Halmazműveletek az állatkertben",
+        "space": "🚀 Halmazműveletek az űrben",
+        "tram": "🚋 Halmazműveletek a villamoson"
+      }
+    },
+    {
+      "id": "grade8-prime-factor-01",
+      "title": "🧩 Prímszámok, prímtényezős felbontás",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "prime-factor",
+      "difficulty": 3,
+      "type": "prime-factor",
+      "range": 1000,
+      "mission": "🧩 Prímszámok, prímtényezős felbontás",
+      "subtitle": "prím/összetett, prímtényezős felbontás",
+      "file": "./data/lessons/grade8/grade8-prime-factor-01.json",
+      "worldTitles": {
+        "postman": "📮 Prímek a postán",
+        "racing": "🏎️ Prímek a pályán",
+        "football": "⚽ Prímek a bajnokságban",
+        "cooking": "🍳 Prímek a konyhában",
+        "animals": "🦁 Prímek az állatkertben",
+        "space": "🚀 Prímek az űrben",
+        "tram": "🚋 Prímek a villamoson"
+      }
+    },
+    {
+      "id": "grade8-gcd-lcm-01",
+      "title": "🔢 LNKO és LKKT",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "gcd-lcm",
+      "difficulty": 3,
+      "type": "gcd-lcm",
+      "range": 1000,
+      "mission": "🔢 LNKO és LKKT",
+      "subtitle": "legnagyobb közös osztó, legkisebb közös többszörös",
+      "file": "./data/lessons/grade8/grade8-gcd-lcm-01.json",
+      "worldTitles": {
+        "postman": "📮 LNKO és LKKT a postán",
+        "racing": "🏎️ LNKO és LKKT a pályán",
+        "football": "⚽ LNKO és LKKT a bajnokságban",
+        "cooking": "🍳 LNKO és LKKT a konyhában",
+        "animals": "🦁 LNKO és LKKT az állatkertben",
+        "space": "🚀 LNKO és LKKT az űrben",
+        "tram": "🚋 LNKO és LKKT a villamoson"
+      }
+    },
+    {
+      "id": "grade8-power-01",
+      "title": "⚡ Hatványozás",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "power",
+      "difficulty": 2,
+      "type": "power",
+      "range": 1000,
+      "mission": "⚡ Hatványozás",
+      "subtitle": "négyzet, köb, nagyobb kitevő",
+      "file": "./data/lessons/grade8/grade8-power-01.json",
+      "worldTitles": {
+        "postman": "📮 Hatványozás a postán",
+        "racing": "🏎️ Hatványozás a pályán",
+        "football": "⚽ Hatványozás a bajnokságban",
+        "cooking": "🍳 Hatványozás a konyhában",
+        "animals": "🦁 Hatványozás az állatkertben",
+        "space": "🚀 Hatványozás az űrben",
+        "tram": "🚋 Hatványozás a villamoson"
+      }
+    },
+    {
+      "id": "grade8-root-01",
+      "title": "√ Négyzetgyök",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "power",
+      "difficulty": 3,
+      "type": "power",
+      "range": 1000,
+      "mission": "√ Négyzetgyök",
+      "subtitle": "négyzetszámok, négyzetgyök",
+      "file": "./data/lessons/grade8/grade8-root-01.json",
+      "worldTitles": {
+        "postman": "📮 Négyzetgyök a postán",
+        "racing": "🏎️ Négyzetgyök a pályán",
+        "football": "⚽ Négyzetgyök a pályán",
+        "cooking": "🍳 Négyzetgyök a konyhában",
+        "animals": "🦁 Négyzetgyök az állatkertben",
+        "space": "🚀 Négyzetgyök az űrben",
+        "tram": "🚋 Négyzetgyök a villamoson"
+      }
+    },
+    {
+      "id": "grade8-logic-01",
+      "title": "🧠 Igaz és hamis állítások",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "logic",
+      "difficulty": 2,
+      "type": "logic",
+      "range": 1000,
+      "mission": "🧠 Igaz és hamis állítások",
+      "subtitle": "minden, van olyan, igaz-hamis",
+      "file": "./data/lessons/grade8/grade8-logic-01.json",
+      "worldTitles": {
+        "postman": "📮 Logika a postán",
+        "racing": "🏎️ Logika a pályán",
+        "football": "⚽ Logika a bajnokságban",
+        "cooking": "🍳 Logika a konyhában",
+        "animals": "🦁 Logika az állatkertben",
+        "space": "🚀 Logika az űrben",
+        "tram": "🚋 Logika a villamoson"
+      }
+    },
+    {
+      "id": "grade8-graph-01",
+      "title": "🕸️ Gráfok",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "graph",
+      "difficulty": 3,
+      "type": "graph",
+      "range": 1000,
+      "mission": "🕸️ Gráfok",
+      "subtitle": "csúcs, él, kézfogás, útvonal",
+      "file": "./data/lessons/grade8/grade8-graph-01.json",
+      "worldTitles": {
+        "postman": "📮 Gráfok a postán",
+        "racing": "🏎️ Gráfok a pályán",
+        "football": "⚽ Gráfok a bajnokságban",
+        "cooking": "🍳 Gráfok a konyhában",
+        "animals": "🦁 Gráfok az állatkertben",
+        "space": "🚀 Gráfok az űrben",
+        "tram": "🚋 Gráfok a villamoson"
+      }
     }
   ],
   "gradeConfig": [

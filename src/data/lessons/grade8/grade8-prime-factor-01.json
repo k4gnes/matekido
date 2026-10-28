@@ -1,0 +1,100 @@
+{
+  "id": "grade8-prime-factor-01",
+  "title": "🧩 Prímszámok, prímtényezős felbontás",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧩 Prímszámok, prímtényezős felbontás",
+      "text": "A prímszámoknak pontosan két pozitív osztójuk van: 1 és önmaga. Az összetett számokat felbonthatjuk prímszámok szorzatára. A prímfelbontást hatványalakban is írhatjuk.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Prímek a postán",
+          "text": "A küldeményeket osztályozzuk: prímszámok és összetett számok."
+        },
+        "racing": {
+          "title": "🏎️ Prímek a pályán",
+          "text": "A rajtszámokat vizsgáljuk oszthatóság szerint!"
+        },
+        "football": {
+          "title": "⚽ Prímek a bajnokságban",
+          "text": "A mezszámokat csoportosítjuk prímszámokra és összetettekre!"
+        },
+        "cooking": {
+          "title": "🍳 Prímek a konyhában",
+          "text": "Az adagokat bontjuk prímtényezőkre!"
+        },
+        "animals": {
+          "title": "🦁 Prímek az állatkertben",
+          "text": "Az állatok számát bontjuk prímszámok szorzatára!"
+        },
+        "space": {
+          "title": "🚀 Prímek az űrben",
+          "text": "A kódokat prímekre bontjuk!"
+        },
+        "tram": {
+          "title": "🚋 Prímek a villamoson",
+          "text": "A kocsiszámokat elemezzük prímfelbontással!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "prime",
+      "options": {
+        "count": 3,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "prime-factor",
+      "options": {
+        "count": 4,
+        "mode": "choose"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "prime-factor",
+      "options": {
+        "count": 4,
+        "mode": "exponents"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen azonosítottad a prímeket és végezted el a prímfelbontást!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen csoportosítottad a számokat!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen felismered a prímeket!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen bontottad a számokat!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen végezted a prímfelbontást!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen bontottad az állatszámokat!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megfejtetted a kódokat!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen elemezted a kocsiszámokat!"
+        }
+      }
+    }
+  ]
+}

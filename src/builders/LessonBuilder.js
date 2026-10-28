@@ -609,6 +609,21 @@ export function buildLesson(lesson) {
                     type: "set-match",
                     ...task
                 });
+            } else if (step.generator === "set-ops") {
+                result.push({
+                    type: "set-ops",
+                    ...task
+                });
+            } else if (step.generator === "logic") {
+                result.push({
+                    type: "logic",
+                    ...task
+                });
+            } else if (step.generator === "graph") {
+                result.push({
+                    type: "graph",
+                    ...task
+                });
             } else if (step.generator === "data-chart") {
                 result.push({
                     type: "data-chart",

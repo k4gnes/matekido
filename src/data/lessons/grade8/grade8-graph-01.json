@@ -1,0 +1,92 @@
+{
+  "id": "grade8-graph-01",
+  "title": "🕸️ Gráfok",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🕸️ Gráfok",
+      "text": "A gráf pontokból (csúcsok) és őket összekötő vonalakból (élek) áll. A kézfogások száma, útvonalak, kapcsolatok jól ábrázolhatók gráffal.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Gráfok a postán",
+          "text": "A postai útvonalakat gráffal ábrázoljuk!"
+        },
+        "racing": {
+          "title": "🏎️ Gráfok a pályán",
+          "text": "A versenyzők közötti kapcsolatokat vizsgáljuk!"
+        },
+        "football": {
+          "title": "⚽ Gráfok a bajnokságban",
+          "text": "A mérkőzéseket gráffal ábrázoljuk!"
+        },
+        "cooking": {
+          "title": "🍳 Gráfok a konyhában",
+          "text": "Az összetevők kapcsolatát vizsgáljuk!"
+        },
+        "animals": {
+          "title": "🦁 Gráfok az állatkertben",
+          "text": "Az állatok közötti kapcsolatokat nézzük!"
+        },
+        "space": {
+          "title": "🚀 Gráfok az űrben",
+          "text": "Az űrállomások közötti utakat vizsgáljuk!"
+        },
+        "tram": {
+          "title": "🚋 Gráfok a villamoson",
+          "text": "A megállók közötti kapcsolatokat ábrázoljuk!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "graph",
+      "options": {
+        "count": 5,
+        "mode": "handshake"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "graph",
+      "options": {
+        "count": 4,
+        "mode": "path"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen értelmezted a gráfokat!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen ábrázoltad az útvonalakat!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen elemezted a kapcsolatokat!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen értelmezted a mérkőzéseket!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen nézted a kapcsolatokat!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen elemezted a gráfokat!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen tervezted az útvonalakat!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen értelmezted a hálózatot!"
+        }
+      }
+    }
+  ]
+}

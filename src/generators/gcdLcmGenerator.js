@@ -36,9 +36,9 @@ function multiplesOf(n, limit) {
 }
 
 const PAIRS = [];
-for (let a = 2; a <= 20; a++) {
-    for (let b = a + 1; b <= 20; b++) {
-        if (lcm(a, b) <= 60) PAIRS.push([a, b]);
+for (let a = 2; a <= 40; a++) {
+    for (let b = a + 1; b <= 40; b++) {
+        if (lcm(a, b) <= 120) PAIRS.push([a, b]);
     }
 }
 

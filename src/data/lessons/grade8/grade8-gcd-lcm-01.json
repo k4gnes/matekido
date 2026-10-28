@@ -1,0 +1,100 @@
+{
+  "id": "grade8-gcd-lcm-01",
+  "title": "🔢 LNKO és LKKT",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔢 LNKO és LKKT",
+      "text": "Két szám legnagyobb közös osztója (LNKO) a közös osztók közül a legnagyobb. Két szám legkisebb közös többszöröse (LKKT) a közös többszörösök közül a legkisebb. Mindkettő hasznos törtek egyszerűsítésénél és közös nevező keresésénél.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 LNKO és LKKT a postán",
+          "text": "A csomagokat csoportokba osztjuk közös osztókkal és többszörösökkel!"
+        },
+        "racing": {
+          "title": "🏎️ LNKO és LKKT a pályán",
+          "text": "A köröket időzítjük, hogy egyszerre induljanak újra!"
+        },
+        "football": {
+          "title": "⚽ LNKO és LKKT a bajnokságban",
+          "text": "A meccseket úgy szervezzük, hogy mindenki egyenlően játsszon!"
+        },
+        "cooking": {
+          "title": "🍳 LNKO és LKKT a konyhában",
+          "text": "Az adagokat egyenlő részekre osztjuk!"
+        },
+        "animals": {
+          "title": "🦁 LNKO és LKKT az állatkertben",
+          "text": "Az etetést időzíteni kell a gondozóknak!"
+        },
+        "space": {
+          "title": "🚀 LNKO és LKKT az űrben",
+          "text": "A műholdak pályáját szinkronizáljuk!"
+        },
+        "tram": {
+          "title": "🚋 LNKO és LKKT a villamoson",
+          "text": "A járatokat úgy ütemezzük, hogy ne torlódjanak!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "gcd-lcm",
+      "options": {
+        "count": 4,
+        "mode": "gcd"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "gcd-lcm",
+      "options": {
+        "count": 4,
+        "mode": "lcm"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "gcd-lcm",
+      "options": {
+        "count": 3,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen számoltad ki az LNKO-t és az LKKT-t!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen osztottad a csomagokat!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen szinkronizáltad a köröket!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen megszervezted a bajnokságot!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen osztottad egyenlő részekre az adagokat!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen időzítetted az etetést!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen szinkronizáltad a műholdakat!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen megszervezted a járatokat!"
+        }
+      }
+    }
+  ]
+}

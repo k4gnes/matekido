@@ -47,7 +47,86 @@ function matches(shape, prop) {
     return false;
 }
 
-function buildTask() {
+function isNatural(n) {
+    return Number.isInteger(n) && n >= 0;
+}
+
+function isInteger(n) {
+    return Number.isInteger(n);
+}
+
+function isRational(n) {
+    return Number.isFinite(n);
+}
+
+function buildNumberSetTask() {
+    const sets = [
+        { type: "N", label: "Természetes számok (ℕ)", rule: "a természetes számok halmazába" },
+        { type: "Z", label: "Egész számok (ℤ)", rule: "az egész számok halmazába" },
+        { type: "Q", label: "Racionális számok (ℚ)", rule: "a racionális számok halmazába" }
+    ];
+    const chosen = pick(sets);
+    let members = [];
+    let nonMembers = [];
+
+    const candidates = [];
+    for (let i = 0; i < 12; i++) candidates.push(Math.floor(Math.random() * 20));
+    for (let i = 0; i < 8; i++) candidates.push(-Math.floor(Math.random() * 15));
+    candidates.push(0.5, 0.25, -0.5, 1.5, 2.25, -1.25);
+
+    if (chosen.type === "N") {
+        members = candidates.filter(n => isNatural(n));
+        nonMembers = candidates.filter(n => !isNatural(n));
+    } else if (chosen.type === "Z") {
+        members = candidates.filter(n => isInteger(n));
+        nonMembers = candidates.filter(n => !isInteger(n));
+    } else {
+        members = candidates.filter(n => isRational(n));
+        nonMembers = candidates.filter(n => !isFinite(n));
+        if (nonMembers.length === 0) {
+            nonMembers = [0.3333333333, 1/3];
+        }
+    }
+
+    members = Array.from(new Set(members.map(x => (Math.abs(x) < 1000 ? x : Math.round(x))))).filter(x => (chosen.type === "N" ? isNatural(x) : chosen.type === "Z" ? isInteger(x) : isRational(x)));
+    nonMembers = Array.from(new Set(nonMembers.map(x => x))).filter(x => !(chosen.type === "N" ? isNatural(x) : chosen.type === "Z" ? isInteger(x) : isRational(x)));
+
+    if (members.length < 3) {
+        if (chosen.type === "N") members = [0, 1, 2, 3, 5];
+        else if (chosen.type === "Z") members = [-2, -1, 0, 1, 2];
+        else members = [-1, 0, 0.5, 1, 2];
+    }
+    if (nonMembers.length < 2) {
+        if (chosen.type === "N") nonMembers = [-1, -2, 0.5, 1.5];
+        else if (chosen.type === "Z") nonMembers = [0.5, 1.5, 2.25, -0.25];
+        else nonMembers = [1/3, Math.PI];
+    }
+
+    const examples = shuffle(members).slice(0, 3);
+    const remainingMembers = members.filter(m => !examples.includes(m));
+    const answerVal = remainingMembers.length > 0 ? remainingMembers[0] : members[0];
+    let distractors = shuffle(nonMembers).slice(0, 2);
+    if (distractors.length < 2) {
+        distractors = nonMembers.slice(0, 2);
+    }
+    if (distractors.length < 2) {
+        distractors = [0.3333333333, -0.5].filter(x => !(chosen.type === "N" ? isNatural(x) : chosen.type === "Z" ? isInteger(x) : isRational(x)));
+    }
+    const options = shuffle([answerVal, ...distractors.slice(0, 2)]);
+
+    const outOptions = options.map(v => ({ value: v }));
+    return {
+        type: "set-match",
+        mode: "numbers",
+        label: chosen.label,
+        rule: chosen.rule,
+        examples: examples.map(v => ({ value: v })),
+        options: outOptions,
+        answer: outOptions.findIndex(o => o.value === answerVal)
+    };
+}
+
+function buildShapeTask() {
     const r = Math.random();
     let prop;
     if (r < 0.5) {
@@ -102,6 +181,7 @@ function buildTask() {
 
         return {
             type: "set-match",
+            mode: "shapes",
             label: prop.label,
             rule: prop.rule,
             examples,
@@ -113,12 +193,19 @@ function buildTask() {
     throw new Error("Nem sikerült halmaz-feladatot generálni");
 }
 
+function buildTask(mode = "shapes") {
+    if (mode === "numbers" || mode === "number-sets") {
+        return buildNumberSetTask();
+    }
+    return buildShapeTask();
+}
+
 export function generateSetMatch(options = {}) {
-    const { count = 5 } = options;
+    const { count = 5, mode = "shapes" } = options;
 
     const tasks = [];
     for (let i = 0; i < count; i++) {
-        tasks.push(buildTask());
+        tasks.push(buildTask(mode));
     }
     return tasks;
 }

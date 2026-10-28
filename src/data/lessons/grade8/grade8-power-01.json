@@ -1,0 +1,108 @@
+{
+  "id": "grade8-power-01",
+  "title": "⚡ Hatványozás",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "⚡ Hatványozás",
+      "text": "A hatványozás rövidített szorzás: a^n = a · a · ... · a, ahol n-szer szorozzuk a-t önmagával. A négyzet (a²) és a köb (a³) gyakori, de nagyobb kitevő is előfordul.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Hatványozás a postán",
+          "text": "A csomagok számát hatványokkal írjuk le!"
+        },
+        "racing": {
+          "title": "🏎️ Hatványozás a pályán",
+          "text": "A köröket hatványokkal számoljuk!"
+        },
+        "football": {
+          "title": "⚽ Hatványozás a bajnokságban",
+          "text": "A gólsorozatokat hatványokkal fejezzük ki!"
+        },
+        "cooking": {
+          "title": "🍳 Hatványozás a konyhában",
+          "text": "A receptben a mennyiségek hatványokkal nőnek!"
+        },
+        "animals": {
+          "title": "🦁 Hatványozás az állatkertben",
+          "text": "Az állatok száma hatványosan szaporodhat!"
+        },
+        "space": {
+          "title": "🚀 Hatványozás az űrben",
+          "text": "A távolságokat hatványokkal fejezzük ki!"
+        },
+        "tram": {
+          "title": "🚋 Hatványozás a villamoson",
+          "text": "Az utasszámot hatványokkal számoljuk!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "power",
+      "options": {
+        "count": 4,
+        "mode": "square"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "power",
+      "options": {
+        "count": 4,
+        "mode": "cube"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "power",
+      "options": {
+        "count": 4,
+        "mode": "notation"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "power",
+      "options": {
+        "count": 3,
+        "mode": "base"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen számoltad a hatványok értékét!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen használtad a hatványokat!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltad a hatványokat!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen dolgoztál a hatványokkal!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen alkalmaztad a hatványozást!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltad a hatványokat!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen használtad a hatványozást!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen dolgoztál a hatványokkal!"
+        }
+      }
+    }
+  ]
+}

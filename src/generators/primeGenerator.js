@@ -20,7 +20,7 @@ export function isPrime(n) {
 
 const PRIMES = [];
 const COMPOSITES = [];
-for (let n = 2; n <= 100; n++) {
+for (let n = 2; n <= 200; n++) {
     if (isPrime(n)) PRIMES.push(n);
     else if (n >= 4) COMPOSITES.push(n);
 }

@@ -45,6 +45,9 @@ import { generateRoman } from "./romanGenerator.js?v=1";
 import { generateTransform } from "./transformGenerator.js?v=3";
 import { generateMirror } from "./mirrorGenerator.js?v=2";
 import { generateSetMatch } from "./setMatchGenerator.js?v=3";
+import { generateSetOps } from "./setOpsGenerator.js?v=1";
+import { generateLogic } from "./logicGenerator.js?v=1";
+import { generateGraph } from "./graphGenerator.js?v=1";
 import { generateDataChart } from "./dataChartGenerator.js?v=3";
 import { generateCalendar } from "./calendarGenerator.js?v=4";
 import { generateFraction } from "./fractionGenerator.js?v=4";
@@ -209,6 +212,12 @@ export function generate(step) {
             return generateMirror(opts);
         case "set-match":
             return generateSetMatch(opts);
+        case "set-ops":
+            return generateSetOps(opts);
+        case "logic":
+            return generateLogic(opts);
+        case "graph":
+            return generateGraph(opts);
         case "data-chart":
             return generateDataChart(opts);
         case "calendar":

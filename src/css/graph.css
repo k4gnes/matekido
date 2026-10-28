@@ -1,0 +1,65 @@
+.graph-svg {
+    display: block;
+    margin: 1rem auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.graph-edge {
+    stroke: #2563eb;
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+
+.graph-node {
+    fill: #ffffff;
+    stroke: #1e293b;
+    stroke-width: 2;
+}
+
+.graph-label {
+    font-size: 14px;
+    font-weight: 800;
+    fill: #1e293b;
+    dominant-baseline: central;
+}
+
+.graph-question {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0.5rem 0 1rem;
+}
+
+.graph-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.graph-option {
+    min-width: 3.2rem;
+    padding: 0.6rem 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 999px;
+    border: 2px solid #64748b;
+    background: #f8fafc;
+    color: #0f172a;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.graph-option:hover:not(:disabled) {
+    border-color: #2563eb;
+}
+
+.graph-option.correct {
+    border-color: #22c55e;
+    background: #dcfce7;
+}

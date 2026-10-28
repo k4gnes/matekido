@@ -251,6 +251,7 @@ const SW_CACHE_LIST = [
     "/css/remainder.css",
     "/css/sequence.css",
     "/css/set-match.css",
+    "/css/graph.css",
     "/css/shape-compare.css",
     "/css/shape-formula.css",
     "/css/shape-sort.css",

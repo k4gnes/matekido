@@ -116,7 +116,7 @@ export function renderGraph(step, root, next, progress, onResult, onAttempt) {
         if (feedback.isAnswered()) return;
 
         if (isCorrect) {
-            optionsContainer.querySelectorAll("button").forEach(b => b.style.pointerEvents = "none");
+            optionsContainer.querySelectorAll(".graph-option").forEach(b => b.disabled = true);
             feedback.success("😊 Ügyes! Helyes válasz.");
         } else {
             feedback.retry();
@@ -128,7 +128,8 @@ export function renderGraph(step, root, next, progress, onResult, onAttempt) {
         if (!btn || feedback.isAnswered()) return;
 
         const idx = Number(btn.dataset.index);
-        const ok = step.options && step.options[idx] && step.options[idx].correct;
+        if (Number.isNaN(idx)) return;
+        const ok = !!(step.options && step.options[idx] && step.options[idx].correct);
 
         if (ok) markCorrect(btn);
 

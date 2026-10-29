@@ -62,6 +62,15 @@ function hintText(step) {
     if (step.mode === "angle-sum") {
         return "A háromszög belső szögeinek összege 180°. A hiányzó szög: 180° − a két ismert szög.";
     }
+    if (step.mode === "angle-type") {
+        return "Ha minden szög hegyes, a háromszög hegyesszögű; ha van derékszög, derékszögű; ha van tompaszög, tompaszögű.";
+    }
+    if (step.mode === "iso-base") {
+        return "Az egyenlőszárú háromszög két alapszöge egyenlő. Számold ki: 180° − szárszög, majd oszd el kettővel.";
+    }
+    if (step.mode === "exterior") {
+        return "A külső szög egyenlő a két nem mellette fekvő belső szög összegével.";
+    }
     if (step.mode === "classify-sides") {
         return "Egyenlő oldalú, ha mindhárom oldal egyforma; egyenlőszárú, ha kettő egyforma; általános, ha mind különböző.";
     }
@@ -139,6 +148,15 @@ export function renderTriangle(step, root, next, progress, onResult, onAttempt) 
     function successText() {
         if (step.mode === "angle-sum") {
             return `😊 Ügyes! 180° − ${step.a}° − ${step.b}° = ${step.answer}°.`;
+        }
+        if (step.mode === "angle-type") {
+            return `😊 Ügyes! A szögek összege 180°, és ez a háromszög ${step.answer.toLowerCase()}.`;
+        }
+        if (step.mode === "iso-base") {
+            return `😊 Ügyes! 180° − ${step.apex}° = ${180 - step.apex}°, ennek a fele ${step.answer}°, tehát a két alapszög ${step.answer}° és ${step.answer}°.`;
+        }
+        if (step.mode === "exterior") {
+            return `😊 Ügyes! A külső szög a két nem mellette fekvő belső szög összege: ${step.a}° + ${step.b}° = ${step.answer}°.`;
         }
         if (step.mode === "classify-sides") {
             return `😊 Ügyes! Ez a háromszög ${step.answer.toLowerCase()}.`;

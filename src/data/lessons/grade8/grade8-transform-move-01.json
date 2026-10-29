@@ -1,0 +1,100 @@
+{
+  "id": "grade8-transform-move-01",
+  "title": "🌀 Eltolás, forgatás, nagyítás és kicsinyítés",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🌀 Eltolás, forgatás, nagyítás és kicsinyítés",
+      "text": "Eltoláskor az alakzat minden pontja ugyanazzal a vektorral mozdul el: alakja, mérete és iránya változatlan. Forgatáskor egy pont körül elfordítjuk az alakzatot. Kicsinyítés és nagyításkor az alakzat hasonló marad: szögei ugyanazok, oldalainak aránya állandó. A hasonlóság középpontja és aránya határozza meg a képet.",
+      "worldTitles": {
+        "postman": {
+          "title": "🌀 Mozgatás a postán",
+          "text": "A csomagokat toljuk és forgatjuk a rakodón!"
+        },
+        "racing": {
+          "title": "🏎️ Forgatás a pályán",
+          "text": "A kanyarokban és a boxutcában is vizsgáljuk az elmozdulást!"
+        },
+        "football": {
+          "title": "⚽ Mozgatás a pályán",
+          "text": "A formációkat toljuk és forgatjuk a táblán!"
+        },
+        "cooking": {
+          "title": "🍳 Mozgatás a konyhában",
+          "text": "A mintákat eltoljuk és nagyítjuk a sütin!"
+        },
+        "animals": {
+          "title": "🦁 Mozgatás az állatkertben",
+          "text": "Az állatkert térképén követjük az eltolást!"
+        },
+        "space": {
+          "title": "🚀 Mozgatás az űrben",
+          "text": "Az űrállomás részeit eltoljuk és forgatjuk!"
+        },
+        "tram": {
+          "title": "🚋 Mozgatás a villamoson",
+          "text": "A villamos útvonalán és a szerkezetén vizsgáljuk a mozgatást!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "transform",
+      "options": {
+        "count": 4,
+        "mode": "translate"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "transform",
+      "options": {
+        "count": 4,
+        "mode": "turn"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "transform",
+      "options": {
+        "count": 3,
+        "mode": "translate"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Eltolást és forgatást is ügyesen felismered!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden csomag a megfelelő helyre került!"
+        },
+        "racing": {
+          "title": "🏁 Nagy vagy!",
+          "text": "Minden kanyarban pontosan számoltál!"
+        },
+        "football": {
+          "title": "🏆 Szuper!",
+          "text": "A formációk mindig a helyükre kerülnek!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "A minták tökéletesen illeszkednek!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Az állatkert térképe kristálytiszta!"
+        },
+        "space": {
+          "title": "🚀 Szuper vagy!",
+          "text": "Az űrállomás minden része a helyére került!"
+        },
+        "tram": {
+          "title": "🚋 Szép munka!",
+          "text": "Minden eltolást és forgatást helyesen felismerd!"
+        }
+      }
+    }
+  ]
+}

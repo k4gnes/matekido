@@ -1,0 +1,99 @@
+{
+  "id": "grade8-construction-01",
+  "title": "📏 Alapszerkesztések",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📏 Alapszerkesztések",
+      "text": "Az alapszerkesztések közé tartozik a merőleges és párhuzamos egyenes szerkesztése, a szögfelezés, valamint háromszög szerkesztése három adatból (oldal-oldal-oldal, oldal-szög-oldal, szög-oldal-szög). A szerkesztésnél mindig tartsd be a szerkesztési sorrendet és ellenőrizd a feltételeket.",
+      "worldTitles": {
+        "postman": {
+          "title": "📏 Szerkesztés a postán",
+          "text": "A postai útvonalakat kell egyenesekkel és szögekkel megrajzolni!"
+        },
+        "racing": {
+          "title": "🏎️ Szerkesztés a pályán",
+          "text": "A versenypálya egyeneseit és íveit szerkesztjük!"
+        },
+        "football": {
+          "title": "⚽ Szerkesztés a pályán",
+          "text": "A focipálya vonalait pontosan kell megrajzolni!"
+        },
+        "cooking": {
+          "title": "🍳 Szerkesztés a konyhában",
+          "text": "A torta mintázatát pontos szerkesztéssel készítjük!"
+        },
+        "animals": {
+          "title": "🦁 Szerkesztés az állatkertben",
+          "text": "A karámok határait pontosan kell kijelölni!"
+        },
+        "space": {
+          "title": "🚀 Szerkesztés az űrben",
+          "text": "Az űrállomás szerkezetét egyenesekkel és szögekkel szerkesztjük!"
+        },
+        "tram": {
+          "title": "🚋 Szerkesztés a villamoson",
+          "text": "A villamos síneinek elrendezését szerkesztjük!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "transform",
+      "options": {
+        "count": 4,
+        "mode": "turn"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "mirror",
+      "options": {
+        "count": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "transform",
+      "options": {
+        "count": 4,
+        "mode": "translate"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Az alapszerkesztések logikáját jól alkalmazod!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden útvonal tökéletesen megrajzolva!"
+        },
+        "racing": {
+          "title": "🏁 Nagy vagy!",
+          "text": "A pálya minden egyenese pontos!"
+        },
+        "football": {
+          "title": "🏆 Szuper!",
+          "text": "A pálya minden vonala a helyén van!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "A torta mintája gyönyörűen sikerült!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden karám pontosan kijelölve!"
+        },
+        "space": {
+          "title": "🚀 Szuper vagy!",
+          "text": "Az űrállomás szerkezete stabil!"
+        },
+        "tram": {
+          "title": "🚋 Szép munka!",
+          "text": "A sínek tökéletesen illeszkednek!"
+        }
+      }
+    }
+  ]
+}

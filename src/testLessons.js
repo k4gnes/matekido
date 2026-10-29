@@ -38,7 +38,7 @@ const POLYGON_SIDES = {
     octagon: 8
 };
 
-const QUAD_LABELS = ["Négyzet", "Téglalap", "Rombusz", "Paralelogramma", "Trapéz", "Deltoid"];
+const QUAD_LABELS = ["Négyzet", "Téglalap", "Rombusz", "Paralelogramma", "Trapéz", "Húrtrapéz", "Deltoid", "Konkáv négyszög"];
 
 const QUAD_TRAITS = [
     { text: "Minden oldala egyenlő", shapes: ["square", "rhombus"] },
@@ -46,13 +46,14 @@ const QUAD_TRAITS = [
     { text: "Szemközti oldalai párhuzamosak", shapes: ["square", "rectangle", "rhombus", "parallelogram"] },
     { text: "Szemközti oldalai egyenlők", shapes: ["square", "rectangle", "rhombus", "parallelogram"] },
     { text: "Szemközti szögei egyenlők", shapes: ["square", "rectangle", "rhombus", "parallelogram"] },
-    { text: "Átlói egyenlő hosszúak", shapes: ["square", "rectangle"] },
+    { text: "Átlói egyenlő hosszúak", shapes: ["square", "rectangle", "isosceles-trapezoid"] },
     { text: "Átlói merőlegesek", shapes: ["square", "rhombus", "kite"] },
     { text: "Az átlói felezik egymást", shapes: ["square", "rectangle", "rhombus", "parallelogram"] },
-    { text: "Van legalább egy pár párhuzamos oldala", shapes: ["square", "rectangle", "rhombus", "parallelogram", "trapezoid"] },
-    { text: "Csak az egyik pár szemközti oldala párhuzamos", shapes: ["trapezoid"] },
+    { text: "Van legalább egy pár párhuzamos oldala", shapes: ["square", "rectangle", "rhombus", "parallelogram", "trapezoid", "isosceles-trapezoid"] },
+    { text: "Csak az egyik pár szemközti oldala párhuzamos", shapes: ["trapezoid", "isosceles-trapezoid"] },
     { text: "Két-két szomszédos oldala egyenlő", shapes: ["square", "rhombus", "kite"] },
-    { text: "Az átlói nem metszik egymást", shapes: [] },
+    { text: "Szárai egyenlők", shapes: ["isosceles-trapezoid"] },
+    { text: "Van homorúszöge", shapes: ["concave"] },
     { text: "Pontosan három oldala egyenlő hosszú", shapes: [] }
 ];
 
@@ -62,7 +63,9 @@ const QUAD_KIND_LABELS = {
     rhombus: "Rombusz",
     parallelogram: "Paralelogramma",
     trapezoid: "Trapéz",
-    kite: "Deltoid"
+    "isosceles-trapezoid": "Húrtrapéz",
+    kite: "Deltoid",
+    concave: "Konkáv négyszög"
 };
 
 const QUAD_SUPERSETS = {
@@ -71,7 +74,9 @@ const QUAD_SUPERSETS = {
     rhombus: ["parallelogram"],
     parallelogram: [],
     trapezoid: [],
-    kite: []
+    "isosceles-trapezoid": ["trapezoid"],
+    kite: [],
+    concave: []
 };
 
 const errors = [];
@@ -599,6 +604,34 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "polygon": {
+            if (step.mode === "angle-sum") {
+                if (!["quad-sum", "quad-missing", "exterior"].includes(step.sub)) fail(ctx, `angle-sum sub hibás: ${step.sub}`);
+                if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
+                if (!Array.isArray(step.options) || step.options.length !== 4) {
+                    fail(ctx, "4 options kell");
+                    break;
+                }
+                if (!step.options.every(o => isInt(o) && o > 0)) fail(ctx, "az options pozitív egészek");
+                if (new Set(step.options).size !== 4) fail(ctx, "options ismétlődik");
+                if (!isInt(step.answer) || step.answer < 0 || step.answer >= step.options.length) {
+                    fail(ctx, `answer index hibás: ${step.answer}`);
+                    break;
+                }
+                let expected = 360;
+                if (step.sub === "quad-missing") {
+                    for (const k of ["a", "b", "c"]) {
+                        if (!isInt(step[k]) || step[k] < 1) fail(ctx, `${k} hibás: ${step[k]}`);
+                    }
+                    if (isInt(step.a) && isInt(step.b) && isInt(step.c)) {
+                        expected = 360 - step.a - step.b - step.c;
+                        if (expected <= 0) fail(ctx, `a negyedik szög hibás: ${expected}`);
+                    }
+                }
+                if (step.expected !== expected) fail(ctx, `expected (${step.expected}) != ${expected}`);
+                if (step.options[step.answer] !== expected) fail(ctx, "answer nem a helyes érték");
+                if (typeof step.explain !== "string" || step.explain.length === 0) fail(ctx, "explain hiányzik");
+                break;
+            }
             if (step.mode === "quadrilateral") {
                 if (!["name", "property", "inclusion", "which"].includes(step.ask)) fail(ctx, `ask hibás: ${step.ask}`);
                 if (!Object.keys(QUAD_KIND_LABELS).includes(step.kind)) fail(ctx, `kind hibás: ${step.kind}`);
@@ -697,7 +730,7 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "triangle": {
-            if (!["angle-sum", "classify-sides", "inequality", "max-side", "min-side"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!["angle-sum", "angle-type", "iso-base", "exterior", "classify-sides", "inequality", "max-side", "min-side"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
             if (!Array.isArray(step.options) || step.options.length < 2) {
                 fail(ctx, "options hiányos");
@@ -721,6 +754,49 @@ function validateStep(step, ctx, range) {
                         fail(ctx, "a helyes option nem a harmadik szög");
                     }
                     if (isFiniteNum(range) && step.answer > range) fail(ctx, `answer kilép a tartományból: ${step.answer}`);
+                }
+                if (!step.options.every(o => /^\d+°$/.test(o.text))) fail(ctx, "options nem fokban");
+            } else if (step.mode === "angle-type") {
+                for (const k of ["a", "b", "c"]) {
+                    if (!isInt(step[k]) || step[k] < 1) fail(ctx, `${k} hibás: ${step[k]}`);
+                }
+                if (isInt(step.a) && isInt(step.b) && isInt(step.c)) {
+                    if (step.a + step.b + step.c !== 180) fail(ctx, "a szögek összege nem 180°");
+                    const expected = [step.a, step.b, step.c].some(v => v > 90)
+                        ? "Tompaszögű"
+                        : [step.a, step.b, step.c].some(v => v === 90)
+                            ? "Derékszögű"
+                            : "Hegyesszögű";
+                    if (step.answer !== expected) fail(ctx, `answer (${step.answer}) != ${expected}`);
+                    if (triangleCorrect[0] && triangleCorrect[0].text !== expected) {
+                        fail(ctx, "a helyes option nem a besorolás");
+                    }
+                }
+                if (!step.options.every(o => ["Hegyesszögű", "Derékszögű", "Tompaszögű"].includes(o.text))) {
+                    fail(ctx, "options nem szög szerinti fajták");
+                }
+            } else if (step.mode === "iso-base") {
+                if (!isInt(step.apex) || step.apex < 1 || step.apex >= 180) fail(ctx, `apex hibás: ${step.apex}`);
+                if (isInt(step.apex)) {
+                    const expected = (180 - step.apex) / 2;
+                    if (!isInt(expected)) fail(ctx, "az alapszög nem egész");
+                    if (step.answer !== expected) fail(ctx, `answer (${step.answer}) != ${expected}`);
+                    if (triangleCorrect[0] && triangleCorrect[0].text !== `${expected}°`) {
+                        fail(ctx, "a helyes option nem az alapszög");
+                    }
+                }
+                if (!step.options.every(o => /^\d+°$/.test(o.text))) fail(ctx, "options nem fokban");
+            } else if (step.mode === "exterior") {
+                for (const k of ["a", "b"]) {
+                    if (!isInt(step[k]) || step[k] < 1) fail(ctx, `${k} hibás: ${step[k]}`);
+                }
+                if (isInt(step.a) && isInt(step.b)) {
+                    const expected = step.a + step.b;
+                    if (expected >= 180) fail(ctx, `a külső szög hibás: ${expected}`);
+                    if (step.answer !== expected) fail(ctx, `answer (${step.answer}) != ${expected}`);
+                    if (triangleCorrect[0] && triangleCorrect[0].text !== `${expected}°`) {
+                        fail(ctx, "a helyes option nem a külső szög");
+                    }
                 }
                 if (!step.options.every(o => /^\d+°$/.test(o.text))) fail(ctx, "options nem fokban");
             } else if (step.mode === "classify-sides") {

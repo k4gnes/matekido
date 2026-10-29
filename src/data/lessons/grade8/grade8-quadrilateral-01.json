@@ -1,0 +1,141 @@
+{
+  "id": "grade8-quadrilateral-01",
+  "title": "🔷 Négyszögek rendszerezése",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🔷 Négyszögek rendszerezése",
+      "text": "A négyszögeket a tulajdonságaik szerint csoportosítjuk. A négyzet, a téglalap, a rombusz, a paralelogramma, a trapéz és a húrtrapéz konvex, mert minden szöge 180°-nál kisebb; a konkáv négyszögnek van homorú szöge. A négyszög belső szögeinek összege 360°, a külső szögeinek összege szintén 360°. A négyzet a téglalap, a rombusz és a paralelogramma csoportjába is beletartozik, a húrtrapéz pedig a trapézok közé.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Négyszögek a postán",
+          "text": "A borítékok és csomagok négyszögek: rendszerezd őket tulajdonságaik szerint!"
+        },
+        "racing": {
+          "title": "🏎️ Négyszögek a pályán",
+          "text": "A pálya táblái négyszögek: keresd meg a családfájukat és a szögeiket!"
+        },
+        "football": {
+          "title": "⚽ Négyszögek a pályán",
+          "text": "A pálya vonalai és kapui négyszögek: rendszerezd őket!"
+        },
+        "cooking": {
+          "title": "🍳 Négyszögek a konyhában",
+          "text": "A tepsik és tányérok négyszögek: találd meg a rokonságukat!"
+        },
+        "animals": {
+          "title": "🦁 Négyszögek az állatkertben",
+          "text": "A karámok négyszög alakúak: vizsgáljuk a szögeiket és átlóikat!"
+        },
+        "space": {
+          "title": "🚀 Négyszögek az űrben",
+          "text": "Az űrállomás paneljei négyszögek: rendszerezd és számold a szögeket!"
+        },
+        "tram": {
+          "title": "🚋 Négyszögek a villamoson",
+          "text": "Az ablakok és ülések négyszögek: keresd a tulajdonságaikat!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "polygon",
+      "options": {
+        "count": 3,
+        "mode": "quadrilateral",
+        "ask": "name",
+        "quadKinds": [
+          "square",
+          "rectangle",
+          "rhombus",
+          "parallelogram",
+          "trapezoid",
+          "isosceles-trapezoid",
+          "kite",
+          "concave"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "polygon",
+      "options": {
+        "count": 3,
+        "mode": "quadrilateral",
+        "ask": "inclusion",
+        "quadKinds": [
+          "square",
+          "rectangle",
+          "rhombus",
+          "parallelogram",
+          "trapezoid",
+          "isosceles-trapezoid",
+          "kite",
+          "concave"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "polygon",
+      "options": {
+        "count": 3,
+        "mode": "quadrilateral",
+        "ask": "which",
+        "quadKinds": [
+          "square",
+          "rectangle",
+          "rhombus",
+          "parallelogram",
+          "trapezoid",
+          "isosceles-trapezoid",
+          "kite",
+          "concave"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "polygon",
+      "options": {
+        "count": 3,
+        "mode": "angle-sum"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ismered a négyszögek családfáját, a tulajdonságaikat és a szögeik összegét!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden csomag a helyére került!"
+        },
+        "racing": {
+          "title": "🏁 Nagy vagy!",
+          "text": "A pálya minden négyszögét felismerted!"
+        },
+        "football": {
+          "title": "🏆 Szuper!",
+          "text": "A pálya minden négyszögét rendszerezted!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden tepsi a helyére került!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden karám szögét kiszámoltad!"
+        },
+        "space": {
+          "title": "🚀 Szuper vagy!",
+          "text": "A napelemek pontosan illeszkednek!"
+        },
+        "tram": {
+          "title": "🚋 Szép munka!",
+          "text": "Minden ablak a helyén van!"
+        }
+      }
+    }
+  ]
+}

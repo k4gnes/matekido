@@ -1,6 +1,6 @@
 # Matekidő – 8. osztályos tanmenet
 
-> **Státusz: folyamatban (21/36 lecke).** A tanmenet jóváhagyott; a leckéket a megvalósítással párhuzamosan vesszük fel a regiszterbe. A 7. osztály lezárult, ez a Nat 2020 7–8. évfolyamának utolsó tanéve.
+> **Státusz: folyamatban (24/36 lecke).** A tanmenet jóváhagyott; a leckéket a megvalósítással párhuzamosan vesszük fel a regiszterbe. A 7. osztály lezárult, ez a Nat 2020 7–8. évfolyamának utolsó tanéve.
 
 **Tervezett 36 lecke + 1 mester kihívás**, 9 témakörben (a regiszter 7 kategóriája: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋). A 36 lecke mellett 2 egyperces játék szerepel a tervben; ezek nem számítanak a haladásba.
 
@@ -151,7 +151,7 @@ Ezek nem számozott feladatok: a **🎲 Egypercesek** oldalon találhatók, nem 
 
 ## Megvalósítási állapot
 
-Elkészült (21/36): halmazok, számhalmazok, halmazműveletek, prímszámok és prímtényezős felbontás, LNKO és LKKT, hatványozás, négyzetgyök, igaz és hamis állítások, gráfok; kombinatorika; algebrai kifejezések, elsőfokú egyenletek, egyenlőtlenségek, szöveges feladatok, arányosság; függvények; kerület-terület, Pitagorasz-tétel, kör; adatok és diagramok, középértékek, valószínűség és gyakoriság. A leckék a `grade8-*` azonosítókkal szerepelnek a regiszterben.
+Elkészült (24/36): halmazok, számhalmazok, halmazműveletek, prímszámok és prímtényezős felbontás, LNKO és LKKT, hatványozás, négyzetgyök, igaz és hamis állítások, gráfok; kombinatorika; algebrai kifejezések, elsőfokú egyenletek, egyenlőtlenségek, szöveges feladatok, arányosság; függvények; háromszög szögei, négyszögek rendszerezése, kerület-terület, Pitagorasz-tétel, kör; adatok és diagramok, középértékek, valószínűség és gyakoriság. A leckék a `grade8-*` azonosítókkal szerepelnek a regiszterben.
 
 ---
 

@@ -178,7 +178,7 @@ export function renderPolygon(step, root, next, progress, onResult, onAttempt) {
     title.textContent = TITLES[world] ?? TITLES.postman;
     card.append(title);
 
-    if (step.mode !== "quadrilateral") {
+    if (step.mode !== "quadrilateral" && step.mode !== "angle-sum") {
         const figure = document.createElement("div");
         figure.className = "pg-figure";
         figure.append(createShapeSvg(step));
@@ -187,7 +187,7 @@ export function renderPolygon(step, root, next, progress, onResult, onAttempt) {
 
     const question = document.createElement("p");
     question.className = "pg-question";
-    question.textContent = step.mode === "quadrilateral" ? step.question : (QUESTIONS[step.mode] ?? QUESTIONS.name);
+    question.textContent = step.question ?? QUESTIONS[step.mode] ?? QUESTIONS.name;
     card.append(question);
 
     const optionsContainer = document.createElement("div");
@@ -208,7 +208,7 @@ export function renderPolygon(step, root, next, progress, onResult, onAttempt) {
             btn.type = "button";
             btn.className = "pg-option" + (step.mode === "name" ? "" : " pg-option-num");
             btn.dataset.value = index;
-            btn.textContent = String(option);
+            btn.textContent = step.mode === "angle-sum" ? `${option}°` : String(option);
             optionsContainer.append(btn);
         });
     }
@@ -242,6 +242,9 @@ export function renderPolygon(step, root, next, progress, onResult, onAttempt) {
     });
 
     function successText() {
+        if (step.mode === "angle-sum") {
+            return `😊 Ügyes! ${step.explain}`;
+        }
         if (step.mode === "quadrilateral") {
             const correct = step.options.find(o => o.correct);
             if (step.ask === "inclusion") {

@@ -9,7 +9,8 @@ const DOCS = [
     { id: "negyedik-osztaly", emoji: "🍀", label: "4. osztály", desc: "36 lecke – 10 000-ig, írásbeli műveletek, törtek, geometria, mester kihívás" },
     { id: "otodik-osztaly", emoji: "🌌", label: "5. osztály", desc: "33 lecke – 1 000 000-ig, oszthatóság, törtek, tizedes törtek, százalék, nagy számok műveletei, geometria, adatok, szöveges feladatok, mester kihívás" },
     { id: "hatodik-osztaly", emoji: "🧊", label: "6. osztály", desc: "39 lecke – egész számok, oszthatóság, hatványok, törtek és tizedes törtek, nyitott mondatok, egyenletek, egyenlőtlenségek, arány és százalék, geometria, kombinatorika, adatok és valószínűség, szöveges feladatok, mester kihívás" },
-    { id: "hetedik-osztaly", emoji: "🛰️", label: "7. osztály", desc: "13 lecke – racionális számok (5), algebrai kifejezések (5) és egyenletek/egyenlőtlenségek (3: elsőfokú egyenletek, szöveges feladatok, egyenlőtlenségek – tervezett továbbfejlesztés)" }
+    { id: "hetedik-osztaly", emoji: "🛰️", label: "7. osztály", desc: "40 lecke – racionális számok, algebrai kifejezések, egyenletek és egyenlőtlenségek, függvények, arányosság, százalék, háromszögek, sokszögek, kör, hasonlóság, transzformációk, adatok, statisztika, valószínűség, szöveges feladatok, összefoglalók, mester kihívás" },
+    { id: "nyolcadik-osztaly", emoji: "🎓", label: "8. osztály", desc: "36 lecke + 1 mester + 2 egyperces – halmazok, számelmélet, hatvány, négyzetgyök, logika, kombinatorika, gráfok, algebra, egyenletek, arány, százalék, függvények, síkgeometria, transzformációk, szerkesztések, térgeometria, statisztika, valószínűség, összefoglalás" }
 ];
 
 export function renderSkillMap(root, onBack) {

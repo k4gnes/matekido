@@ -34,6 +34,18 @@ export function renderPolygonHint(step, container) {
         return;
     }
 
+    if (step.mode === "angle-sum") {
+        box.innerHTML = `
+            <p><strong>💡 Segítség</strong></p>
+
+            <p>A négyszög belső szögeinek összege 360°.</p>
+            <p>A külső szögek összege szintén 360°.</p>
+            <p>Három ismert belső szögből a negyediket így kapod: 360° − (a három szög összege).</p>
+        `;
+        container.append(box);
+        return;
+    }
+
     const data = SIDES[step.kind];
 
     if (step.mode === "name") {

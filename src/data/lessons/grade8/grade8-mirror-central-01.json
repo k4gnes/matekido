@@ -1,0 +1,98 @@
+{
+  "id": "grade8-mirror-central-01",
+  "title": "🪞 Tengelyes és középpontos tükrözés",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🪞 Tengelyes és középpontos tükrözés",
+      "text": "A tengelyes tükrözésnél a tükörtengelytől egyenlő távolságra, ellentétes oldalon keletkezik a tükörkép. A középpontos tükrözésnél egy pont körül 180°-kal fordul el az alakzat, így a középpont az eredeti és a képpont szakaszának felezőpontja. Mindkettő megtartja a távolságokat és a szögeket.",
+      "worldTitles": {
+        "postman": {
+          "title": "🪞 Tükrözés a postán",
+          "text": "A postai címkéken tengelyes és középpontos tükörképeket keresünk!"
+        },
+        "racing": {
+          "title": "🏎️ Tükrözés a boxutcában",
+          "text": "A versenyautók szimmetriáját vizsgáljuk!"
+        },
+        "football": {
+          "title": "⚽ Tükrözés a pályán",
+          "text": "A pálya jelzésein keressük a szimmetriát!"
+        },
+        "cooking": {
+          "title": "🍳 Tükrözés a konyhában",
+          "text": "A mintás süteményeken fedezzük fel a tükörképeket!"
+        },
+        "animals": {
+          "title": "🦁 Tükrözés az állatkertben",
+          "text": "Az állatok testén is sok szimmetriát találunk!"
+        },
+        "space": {
+          "title": "🚀 Tükrözés az űrben",
+          "text": "Az űrhajó panelein tengelyes és középpontos tükrözést alkalmazunk!"
+        },
+        "tram": {
+          "title": "🚋 Tükrözés a villamoson",
+          "text": "A villamos ablakainak mintázatát vizsgáljuk!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "mirror",
+      "options": {
+        "count": 4
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "transform",
+      "options": {
+        "count": 4,
+        "mode": "turn"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "mirror",
+      "options": {
+        "count": 3
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Megismerted a tengelyes és a középpontos tükrözést is!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden tükörképet helyesen megtaláltál!"
+        },
+        "racing": {
+          "title": "🏁 Nagy vagy!",
+          "text": "A szimmetriát remekül felismered!"
+        },
+        "football": {
+          "title": "🏆 Szuper!",
+          "text": "A pálya minden mintáját kibogozod!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Gyönyörűen felismered a tükörképeket!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Az állatkert minden szimmetriáját megtaláltad!"
+        },
+        "space": {
+          "title": "🚀 Szuper vagy!",
+          "text": "Az űrhajó minden panelje a helyére került!"
+        },
+        "tram": {
+          "title": "🚋 Szép munka!",
+          "text": "A villamos minden mintáját helyesen azonosítottad!"
+        }
+      }
+    }
+  ]
+}

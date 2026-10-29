@@ -7166,6 +7166,54 @@
       }
     },
     {
+      "id": "grade8-triangle-angles-01",
+      "title": "📐 A háromszög szögei",
+      "grades": [
+        8
+      ],
+      "category": "geometry",
+      "skill": "triangles",
+      "difficulty": 2,
+      "type": "triangle",
+      "range": 180,
+      "mission": "📐 A háromszög szögei",
+      "subtitle": "belső szögek összege, szögfajták, külső szög, egyenlőszárú háromszög",
+      "file": "./data/lessons/grade8/grade8-triangle-angles-01.json",
+      "worldTitles": {
+        "postman": "📮 Szögek a postán",
+        "racing": "🏎️ Szögek a pályán",
+        "football": "⚽ Szögek a pályán",
+        "cooking": "🍳 Szögek a konyhában",
+        "animals": "🦁 Szögek az állatkertben",
+        "space": "🚀 Szögek az űrben",
+        "tram": "🚋 Szögek a villamoson"
+      }
+    },
+    {
+      "id": "grade8-quadrilateral-01",
+      "title": "🔷 Négyszögek rendszerezése",
+      "grades": [
+        8
+      ],
+      "category": "geometry",
+      "skill": "quadrilaterals",
+      "difficulty": 3,
+      "type": "polygon",
+      "range": 0,
+      "mission": "🔷 Négyszögek rendszerezése",
+      "subtitle": "konvex és konkáv, húrtrapéz, deltoid, halmazábra, szögösszeg",
+      "file": "./data/lessons/grade8/grade8-quadrilateral-01.json",
+      "worldTitles": {
+        "postman": "📮 Négyszögek a postán",
+        "racing": "🏎️ Négyszögek a pályán",
+        "football": "⚽ Négyszögek a pályán",
+        "cooking": "🍳 Négyszögek a konyhában",
+        "animals": "🦁 Négyszögek az állatkertben",
+        "space": "🚀 Négyszögek az űrben",
+        "tram": "🚋 Négyszögek a villamoson"
+      }
+    },
+    {
       "id": "grade8-perimeter-area-01",
       "title": "🔷 Kerület és terület",
       "grades": [
@@ -7307,6 +7355,75 @@
         "animals": "🦁 Esélyek az állatkertben",
         "space": "🚀 Esélyek az űrben",
         "tram": "🚋 Esélyek a villamoson"
+      }
+    },
+    {
+      "id": "grade8-mirror-central-01",
+      "title": "🪞 Tengelyes és középpontos tükrözés",
+      "grades": [
+        8
+      ],
+      "category": "geometry",
+      "skill": "transform",
+      "difficulty": 3,
+      "type": "mirror",
+      "mission": "🪞 Tengelyes és középpontos tükrözés",
+      "subtitle": "tengelyes és középpontos tükrözés, szimmetriák",
+      "file": "./data/lessons/grade8/grade8-mirror-central-01.json",
+      "worldTitles": {
+        "postman": "🪞 Tükrözés a postán",
+        "racing": "🏎️ Tükrözés a boxutcában",
+        "football": "⚽ Tükrözés a pályán",
+        "cooking": "🍳 Tükrözés a konyhában",
+        "animals": "🦁 Tükrözés az állatkertben",
+        "space": "🚀 Tükrözés az űrben",
+        "tram": "🚋 Tükrözés a villamoson"
+      }
+    },
+    {
+      "id": "grade8-transform-move-01",
+      "title": "🌀 Eltolás, forgatás, nagyítás és kicsinyítés",
+      "grades": [
+        8
+      ],
+      "category": "geometry",
+      "skill": "transform",
+      "difficulty": 3,
+      "type": "transform",
+      "mission": "🌀 Eltolás és forgatás",
+      "subtitle": "eltolás, forgatás, hasonlóság alapjai",
+      "file": "./data/lessons/grade8/grade8-transform-move-01.json",
+      "worldTitles": {
+        "postman": "🌀 Mozgatás a postán",
+        "racing": "🏎️ Forgatás a pályán",
+        "football": "⚽ Mozgatás a pályán",
+        "cooking": "🍳 Mozgatás a konyhában",
+        "animals": "🦁 Mozgatás az állatkertben",
+        "space": "🚀 Mozgatás az űrben",
+        "tram": "🚋 Mozgatás a villamoson"
+      }
+    },
+    {
+      "id": "grade8-construction-01",
+      "title": "📏 Alapszerkesztések",
+      "grades": [
+        8
+      ],
+      "category": "geometry",
+      "skill": "transform",
+      "difficulty": 3,
+      "type": "transform",
+      "mission": "📏 Alapszerkesztések",
+      "subtitle": "merőleges, párhuzamos, szögfelező, háromszög szerkesztése",
+      "file": "./data/lessons/grade8/grade8-construction-01.json",
+      "worldTitles": {
+        "postman": "📏 Szerkesztés a postán",
+        "racing": "🏎️ Szerkesztés a pályán",
+        "football": "⚽ Szerkesztés a pályán",
+        "cooking": "🍳 Szerkesztés a konyhában",
+        "animals": "🦁 Szerkesztés az állatkertben",
+        "space": "🚀 Szerkesztés az űrben",
+        "tram": "🚋 Szerkesztés a villamoson"
       }
     },
     {

@@ -1,0 +1,108 @@
+{
+  "id": "grade8-triangle-angles-01",
+  "title": "📐 A háromszög szögei",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📐 A háromszög szögei",
+      "text": "A háromszög belső szögeinek összege mindig 180°. A szögei szerint lehet hegyesszögű, derékszögű vagy tompaszögű. Egy csúcsnál a belső és a külső szög együtt 180°, ezért a külső szög egyenlő a két nem mellette fekvő belső szög összegével. Az egyenlőszárú háromszög alapszögei egyenlők.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Szögek a postán",
+          "text": "A csomagok háromszög alakú címkéin a szögeket kell kiszámolni!"
+        },
+        "racing": {
+          "title": "🏎️ Szögek a pályán",
+          "text": "A versenypálya háromszög alakú kanyarjaiban a szögeket vizsgáljuk!"
+        },
+        "football": {
+          "title": "⚽ Szögek a pályán",
+          "text": "A taktikai tábla háromszögeinél számold ki a hiányzó szögeket!"
+        },
+        "cooking": {
+          "title": "🍳 Szögek a konyhában",
+          "text": "A háromszög alakú szendvicsek szögeit számoljuk!"
+        },
+        "animals": {
+          "title": "🦁 Szögek az állatkertben",
+          "text": "A karámok háromszög alakú sarkainál keressük a szögeket!"
+        },
+        "space": {
+          "title": "🚀 Szögek az űrben",
+          "text": "Az űrhajó háromszög alakú paneljeinél számolj szögeket!"
+        },
+        "tram": {
+          "title": "🚋 Szögek a villamoson",
+          "text": "A villamos háromszög alakú ablakainál vizsgáljuk a szögeket!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "triangle",
+      "options": {
+        "count": 3,
+        "mode": "angle-sum"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "triangle",
+      "options": {
+        "count": 3,
+        "mode": "angle-type"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "triangle",
+      "options": {
+        "count": 3,
+        "mode": "iso-base"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "triangle",
+      "options": {
+        "count": 3,
+        "mode": "exterior"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ismered a háromszög szögeit: a belső szögek összegét, a külső szöget és a szögek szerinti fajtákat!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden címke szöge a helyére került!"
+        },
+        "racing": {
+          "title": "🏁 Nagy vagy!",
+          "text": "A pálya minden kanyarjának szögét kiszámoltad!"
+        },
+        "football": {
+          "title": "🏆 Szuper!",
+          "text": "A taktikai tábla minden háromszögét kiszámoltad!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden szendvics szöge a helyén van!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Az állatkert minden karámjának szögét kiszámoltad!"
+        },
+        "space": {
+          "title": "🚀 Szuper vagy!",
+          "text": "Az űrhajó minden panelje pontosan illeszkedik!"
+        },
+        "tram": {
+          "title": "🚋 Szép munka!",
+          "text": "A villamos minden ablakának szögét kiszámoltad!"
+        }
+      }
+    }
+  ]
+}

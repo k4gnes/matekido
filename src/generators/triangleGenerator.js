@@ -40,6 +40,71 @@ function buildAngleSum() {
     };
 }
 
+const ANGLE_TYPES = {
+    acute: "Hegyesszögű",
+    right: "Derékszögű",
+    obtuse: "Tompaszögű"
+};
+
+function buildAngleType() {
+    const type = pick(["acute", "right", "obtuse"]);
+    let a;
+    let b;
+    let c;
+    if (type === "right") {
+        a = 90;
+        b = random(4, 14) * 5;
+        c = 90 - b;
+    } else if (type === "obtuse") {
+        a = random(19, 30) * 5;
+        b = random(1, (175 - a) / 5) * 5;
+        c = 180 - a - b;
+    } else {
+        do {
+            a = random(4, 16) * 5;
+            b = random(4, 16) * 5;
+            c = 180 - a - b;
+        } while (c < 20 || c > 85);
+    }
+    const angles = shuffle([a, b, c]);
+    const answer = ANGLE_TYPES[type];
+    return {
+        mode: "angle-type",
+        question: `Egy háromszög szögei ${angles[0]}°, ${angles[1]}° és ${angles[2]}°. Milyen ez a háromszög a szögei szerint?`,
+        a,
+        b,
+        c,
+        answer,
+        options: shuffle(Object.values(ANGLE_TYPES)).map(label => ({ text: label, correct: label === answer }))
+    };
+}
+
+function buildIsoBase() {
+    const apex = random(1, 17) * 10;
+    const answer = (180 - apex) / 2;
+    return {
+        mode: "iso-base",
+        question: `Egy egyenlőszárú háromszög szárszöge ${apex}°. Mekkora a két alapszöge?`,
+        apex,
+        answer,
+        options: degreesOptions(answer)
+    };
+}
+
+function buildExterior() {
+    const a = random(5, 15) * 5;
+    const b = random(5, 15) * 5;
+    const answer = a + b;
+    return {
+        mode: "exterior",
+        question: `A háromszög két szöge ${a}° és ${b}°. Mekkora a harmadik csúcsnál lévő külső szög?`,
+        a,
+        b,
+        answer,
+        options: degreesOptions(answer)
+    };
+}
+
 function buildClassifySides() {
     const type = pick(["equilateral", "isosceles", "scalene"]);
     let a;
@@ -153,6 +218,9 @@ function buildMinSide() {
 
 const MODES = {
     "angle-sum": () => buildAngleSum(),
+    "angle-type": () => buildAngleType(),
+    "iso-base": () => buildIsoBase(),
+    exterior: () => buildExterior(),
     "classify-sides": () => buildClassifySides(),
     inequality: (index) => buildInequality(index),
     "max-side": () => buildMaxSide(),

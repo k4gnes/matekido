@@ -330,12 +330,17 @@ export const CURRICULUM_ORDER = {
         "grade8-ratio-proportion-01",
         "grade8-percent-practice-01",
         "grade8-functions-01",
+        "grade8-triangle-angles-01",
+        "grade8-quadrilateral-01",
         "grade8-perimeter-area-01",
         "grade8-pythagorean-01",
         "grade8-circle-parts-01",
         "grade8-data-charts-01",
         "grade8-statistics-01",
         "grade8-probability-frequency-01",
+        "grade8-mirror-central-01",
+        "grade8-transform-move-01",
+        "grade8-construction-01",
     ],
 };
 

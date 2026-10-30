@@ -7166,6 +7166,54 @@
       }
     },
     {
+      "id": "grade8-proportion-graph-01",
+      "title": "📈 Egyenes arányosság grafikonja",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "functions",
+      "difficulty": 3,
+      "type": "function",
+      "range": 1000,
+      "mission": "📈 Arányos grafikon",
+      "subtitle": "egyenes arányosság, origón átmenő egyenes, meredekség",
+      "file": "./data/lessons/grade8/grade8-proportion-graph-01.json",
+      "worldTitles": {
+        "postman": "📮 Arányos kézbesítés",
+        "racing": "🏎️ Egyenletes tempó",
+        "football": "⚽ Gólok a meccsen",
+        "cooking": "🍳 Adagok és tojások",
+        "animals": "🦁 Etetési rend",
+        "space": "🚀 Egyenletes út",
+        "tram": "🚋 Menetidő"
+      }
+    },
+    {
+      "id": "grade8-graph-describe-01",
+      "title": "📈 Grafikonok jellemzése",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "functions",
+      "difficulty": 3,
+      "type": "function",
+      "range": 1000,
+      "mission": "📈 A grafikon jellemzői",
+      "subtitle": "növekedés, csökkenés, y tengelymetszet, legnagyobb érték",
+      "file": "./data/lessons/grade8/grade8-graph-describe-01.json",
+      "worldTitles": {
+        "postman": "📮 A posta grafikonja",
+        "racing": "🏎️ A pálya grafikonja",
+        "football": "⚽ A meccs grafikonja",
+        "cooking": "🍳 A konyha grafikonja",
+        "animals": "🦁 Az állatkert grafikonja",
+        "space": "🚀 Az űr grafikonja",
+        "tram": "🚋 A villamos grafikonja"
+      }
+    },
+    {
       "id": "grade8-triangle-angles-01",
       "title": "📐 A háromszög szögei",
       "grades": [
@@ -7553,7 +7601,7 @@
         8
       ],
       "category": "numbers",
-      "skill": "power",
+      "skill": "powers",
       "difficulty": 2,
       "type": "power",
       "range": 1000,
@@ -7577,7 +7625,7 @@
         8
       ],
       "category": "numbers",
-      "skill": "power",
+      "skill": "powers",
       "difficulty": 3,
       "type": "power",
       "range": 1000,

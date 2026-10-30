@@ -71,7 +71,7 @@ function buildSquare() {
 }
 
 function buildCube() {
-    const base = randInt(2, 12);
+    const base = randInt(2, 10);
     const answer = base * base * base;
     const candidates = [
         base * 3,
@@ -95,9 +95,14 @@ function buildCube() {
     };
 }
 
-function buildNotation() {
-    const exponent = pick([2, 3, 4]);
-    const base = exponent === 2 ? randInt(2, 12) : exponent === 3 ? randInt(2, 8) : randInt(2, 6);
+function pickExponent(maxExponent) {
+    const exponents = [2, 3, 4].filter(e => e <= maxExponent);
+    return pick(exponents.length ? exponents : [2]);
+}
+
+function buildNotation(maxExponent) {
+    const exponent = pickExponent(maxExponent);
+    const base = exponent === 2 ? randInt(2, 12) : exponent === 3 ? randInt(2, 8) : randInt(2, 5);
     const answer = powerText(base, exponent);
     const repeated = Array(exponent).fill(base).join(" · ");
     const candidates = [
@@ -125,9 +130,9 @@ function buildNotation() {
     };
 }
 
-function buildBase() {
-    const exponent = pick([2, 3, 4]);
-    const base = exponent === 2 ? randInt(2, 15) : exponent === 3 ? randInt(2, 8) : randInt(2, 6);
+function buildBase(maxExponent) {
+    const exponent = pickExponent(maxExponent);
+    const base = exponent === 2 ? randInt(2, 15) : exponent === 3 ? randInt(2, 8) : randInt(2, 5);
     const value = base ** exponent;
     const candidates = [base - 1, base + 1, base + 2, base - 2, base + 3];
     return {
@@ -138,13 +143,13 @@ function buildBase() {
         value,
         answer: base,
         display: String(value),
-        question: `Melyik szám ${exponent === 2 ? "négyzete" : "köbe"} a ${value}?`,
+        question: `Melyik szám ${exponent === 2 ? "négyzete" : exponent === 3 ? "köbe" : "negyedik hatványa"} a ${value}?`,
         options: numberOptions(base, candidates)
     };
 }
 
 export function generatePower(options = {}) {
-    const { count = 4, mode = "mixed" } = options;
+    const { count = 4, mode = "mixed", maxExponent = 3 } = options;
 
     const builders = {
         square: buildSquare,
@@ -164,7 +169,7 @@ export function generatePower(options = {}) {
         if (!build) {
             throw new Error(`Ismeretlen hatvány mód: ${chosen}`);
         }
-        const task = build();
+        const task = build(maxExponent);
         const key = `${task.mode}|${task.question}`;
         if (seen.has(key)) continue;
         seen.add(key);

@@ -1,0 +1,108 @@
+{
+  "id": "grade8-graph-describe-01",
+  "title": "📈 Grafikonok jellemzése",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📈 Grafikonok jellemzése",
+      "text": "A grafikonról leolvashatod a függvény viselkedését. Ha a vonal balról jobbra felfelé halad, a függvény növekvő; ha lefelé, csökkenő. Az y tengelymetszet az a pont, ahol a grafikon az y tengelyt metszi (x = 0), a legnagyobb y érték pedig a grafikon legfelső pontja.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 A posta grafikonja",
+          "text": "A grafikon megmutatja, hogyan változik a kézbesítés. Olvasd le a menetét, a tengelymetszetét és a legnagyobb értékét!"
+        },
+        "racing": {
+          "title": "🏎️ A pálya grafikonja",
+          "text": "A grafikon a körök és az idő kapcsolatát mutatja. Figyeld a vonal irányát és a legnagyobb értéket!"
+        },
+        "football": {
+          "title": "⚽ A meccs grafikonja",
+          "text": "A grafikon a játékidő és a gólok kapcsolatát mutatja. Olvasd le a jellemzőit!"
+        },
+        "cooking": {
+          "title": "🍳 A konyha grafikonja",
+          "text": "A grafikon az adagok és a hozzávalók kapcsolatát mutatja. Olvasd le a menetét!"
+        },
+        "animals": {
+          "title": "🦁 Az állatkert grafikonja",
+          "text": "A grafikon a napok és az etetés kapcsolatát mutatja. Figyeld a vonal irányát!"
+        },
+        "space": {
+          "title": "🚀 Az űr grafikonja",
+          "text": "A grafikon az üzemanyag és az út kapcsolatát mutatja. Olvasd le a jellemzőit!"
+        },
+        "tram": {
+          "title": "🚋 A villamos grafikonja",
+          "text": "A grafikon a megállók és a menetidő kapcsolatát mutatja. Figyeld a menetét!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "function",
+      "options": {
+        "count": 3,
+        "mode": "describe"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "function",
+      "options": {
+        "count": 3,
+        "mode": "describe"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "function",
+      "options": {
+        "count": 3,
+        "mode": "read"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "function",
+      "options": {
+        "count": 3,
+        "mode": "describe"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Megtanultad jellemezni a grafikont: növekedés, csökkenés, y tengelymetszet és legnagyobb érték.",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "A posta grafikonját is jellemezted – mehet a kézbesítés!"
+        },
+        "racing": {
+          "title": "🏁 Nagy vagy!",
+          "text": "A pálya grafikonját is jellemezted – jöhet a következő kör!"
+        },
+        "football": {
+          "title": "🏆 Szuper!",
+          "text": "A meccs grafikonját is jellemezted – kezdődhet a meccs!"
+        },
+        "cooking": {
+          "title": "🍳 Szép munka!",
+          "text": "A konyha grafikonját is jellemezted – jó étvágyat!"
+        },
+        "animals": {
+          "title": "🦁 Ügyes voltál!",
+          "text": "Az állatkert grafikonját is jellemezted – az állatok elégedettek!"
+        },
+        "space": {
+          "title": "🚀 Szuper vagy!",
+          "text": "Az űr grafikonját is jellemezted – indulhat a küldetés!"
+        },
+        "tram": {
+          "title": "🚋 Szuper vagy!",
+          "text": "A villamos grafikonját is jellemezted – indulhat a járat!"
+        }
+      }
+    }
+  ]
+}

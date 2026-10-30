@@ -1,6 +1,6 @@
 # Matekidő – 8. osztályos tanmenet
 
-> **Státusz: folyamatban (24/36 lecke).** A tanmenet jóváhagyott; a leckéket a megvalósítással párhuzamosan vesszük fel a regiszterbe. A 7. osztály lezárult, ez a Nat 2020 7–8. évfolyamának utolsó tanéve.
+> **Státusz: folyamatban (29/36 lecke).** A tanmenet jóváhagyott; a leckéket a megvalósítással párhuzamosan vesszük fel a regiszterbe. A 7. osztály lezárult, ez a Nat 2020 7–8. évfolyamának utolsó tanéve.
 
 **Tervezett 36 lecke + 1 mester kihívás**, 9 témakörben (a regiszter 7 kategóriája: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋). A 36 lecke mellett 2 egyperces játék szerepel a tervben; ezek nem számítanak a haladásba.
 
@@ -14,57 +14,57 @@ A 8. osztály a 7. osztályra épül, és a 7–8. kerettanterv addig nem érint
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 1 | Halmazok, számhalmazok | Halmazok és számhalmazok | Halmazba rendezés, részhalmaz, N/Z/Q, számegyenes, tizedes törtek fajtái | — | 2 |
-| 2 | Halmazműveletek | Halmazműveletek | Metszet, unió, komplementer, logikai szita halmazábra alapján | — | 3 |
-| 3 | Számelmélet | Prímszámok, prímtényezős felbontás | Prím/összetett, Eratoszthenész, prímfelbontás 1000-ig | 1000 | 3 |
-| 4 | Oszthatóság | LNKO és LKKT | Legnagyobb közös osztó, legkisebb közös többszörös, törtek egyszerűsítése | 1000 | 3 |
-| 5 | Hatványozás | Hatványozás | Pozitív egész kitevő, hatványérték, azonosságok szemléletesen, helyi érték | 1000 | 2 |
-| 6 | Négyzetgyök | Négyzetgyök | Négyzetszámok, négyzetgyök, területből oldal | 1000 | 3 |
+| 1 | Halmazok, számhalmazok | [Halmazok és számhalmazok](?lesson=grade8-sets-01) | Halmazba rendezés, részhalmaz, N/Z/Q, számegyenes, tizedes törtek fajtái | — | 2 |
+| 2 | Halmazműveletek | [Halmazműveletek](?lesson=grade8-sets-ops-01) | Metszet, unió, komplementer, logikai szita halmazábra alapján | — | 3 |
+| 3 | Számelmélet | [Prímszámok, prímtényezős felbontás](?lesson=grade8-prime-factor-01) | Prím/összetett, Eratoszthenész, prímfelbontás 1000-ig | 1000 | 3 |
+| 4 | Oszthatóság | [LNKO és LKKT](?lesson=grade8-gcd-lcm-01) | Legnagyobb közös osztó, legkisebb közös többszörös, törtek egyszerűsítése | 1000 | 3 |
+| 5 | Hatványozás | [Hatványozás](?lesson=grade8-power-01) | Pozitív egész kitevő, hatványérték, azonosságok szemléletesen, helyi érték | 1000 | 2 |
+| 6 | Négyzetgyök | [Négyzetgyök](?lesson=grade8-root-01) | Négyzetszámok, négyzetgyök, területből oldal | 1000 | 3 |
 
 ## Logika, kombinatorika, gráfok (3 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 7 | Logika | Igaz és hamis állítások | „minden”, „van olyan”, tagadás, egyszerű következtetés | — | 2 |
-| 8 | Kombinatorika | Sorba rendezés és kiválasztás | Permutáció, pár, szorzat; táblázat és ágrajz | — | 3 |
-| 9 | Gráfok | Gráfok | Csúcs, él, kézfogás, körmérkőzés, útvonal | — | 3 |
+| 7 | Logika | [Igaz és hamis állítások](?lesson=grade8-logic-01) | „minden”, „van olyan”, tagadás, egyszerű következtetés | — | 2 |
+| 8 | Kombinatorika | [Sorba rendezés és kiválasztás](?lesson=grade8-combinatorics-01) | Permutáció, pár, szorzat; táblázat és ágrajz | — | 3 |
+| 9 | Gráfok | [Gráfok](?lesson=grade8-graph-01) | Csúcs, él, kézfogás, körmérkőzés, útvonal | — | 3 |
 
 ## Algebra, egyenletek, arány, százalék (6 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 10 | Algebrai kifejezések | Algebrai kifejezések | Helyettesítés, összevonás, zárójel, kiemelés | 1000 | 2 |
-| 11 | Egyenletek | Elsőfokú egyenletek | Mérlegelv, zárójel, törtes egyenlet | 1000 | 3 |
-| 12 | Egyenlőtlenségek | Elsőfokú egyenlőtlenségek | Megoldáshalmaz, számegyenes, negatív együttható | 1000 | 3 |
-| 13 | Szöveges feladatok | Egyenlettel megoldható szöveges feladatok | Szöveg → modell → egyenlet → ellenőrzés, becslés | 1000 | 3 |
-| 14 | Arányosság | Arányosság, arányos osztás | Egyenes és fordított arány, arányos felosztás | 1000 | 3 |
-| 15 | Százalékszámítás | Százalékszámítás a gyakorlatban | Ár, árengedmény, kamat, keverés, százalékpont, pénzügyi döntések | 1000 | 3 |
+| 10 | Algebrai kifejezések | [Algebrai kifejezések](?lesson=grade8-algebra-01) | Helyettesítés, összevonás, zárójel, kiemelés | 1000 | 2 |
+| 11 | Egyenletek | [Elsőfokú egyenletek](?lesson=grade8-equation-01) | Mérlegelv, zárójel, törtes egyenlet | 1000 | 3 |
+| 12 | Egyenlőtlenségek | [Elsőfokú egyenlőtlenségek](?lesson=grade8-inequality-01) | Megoldáshalmaz, számegyenes, negatív együttható | 1000 | 3 |
+| 13 | Szöveges feladatok | [Egyenlettel megoldható szöveges feladatok](?lesson=grade8-equation-word-01) | Szöveg → modell → egyenlet → ellenőrzés, becslés | 1000 | 3 |
+| 14 | Arányosság | [Arányosság, arányos osztás](?lesson=grade8-ratio-proportion-01) | Egyenes és fordított arány, arányos felosztás | 1000 | 3 |
+| 15 | Százalékszámítás | [Százalékszámítás a gyakorlatban](?lesson=grade8-percent-practice-01) | Ár, árengedmény, kamat, keverés, százalékpont, pénzügyi döntések | 1000 | 3 |
 
 ## Függvények, grafikonok (3 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 16 | Függvények | Megfeleltetések és grafikonok | Értéktáblázat, pontok, megfeleltetés szabálya | — | 2 |
-| 17 | Egyenes arányosság | Egyenes arányosság grafikonja | y = kx, meredekség, arányosság | — | 3 |
-| 18 | Grafikonok | Grafikonok jellemzése | Növekedés, csökkenés, szélsőérték, tengelymetszet | — | 3 |
+| 16 | Függvények | [Megfeleltetések és grafikonok](?lesson=grade8-functions-01) | Értéktáblázat, pontok, megfeleltetés szabálya | — | 2 |
+| 17 | Egyenes arányosság | [Egyenes arányosság grafikonja](?lesson=grade8-proportion-graph-01) | y = kx, meredekség, arányosság | — | 3 |
+| 18 | Grafikonok | [Grafikonok jellemzése](?lesson=grade8-graph-describe-01) | Növekedés, csökkenés, szélsőérték, tengelymetszet | — | 3 |
 
 ## Síkbeli alakzatok (5 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 19 | Háromszögek | Háromszögek szögei | Belső szögek összege, külső szög, szögfajták | — | 2 |
-| 20 | Négyszögek | Négyszögek rendszerezése | Konvex/konkáv, belső és külső szögek összege, átlók, trapéz, húrtrapéz, deltoid, halmazábra | — | 3 |
-| 21 | Kerület, terület | Kerület és terület | Háromszög, négyszög, összetett alakzat, átdarabolás | 1000 | 3 |
-| 22 | Pitagorasz-tétel | Pitagorasz-tétel alkalmazása | Hiányzó oldal, derékszög ellenőrzése, gyakorlati feladatok | — | 3 |
-| 23 | Kör | Kör részei | Körvonal, körlap, sugár, húr, átmérő, szelő, érintő, körcikk | — | 2 |
+| 19 | Háromszögek | [Háromszögek szögei](?lesson=grade8-triangle-angles-01) | Belső szögek összege, külső szög, szögfajták | — | 2 |
+| 20 | Négyszögek | [Négyszögek rendszerezése](?lesson=grade8-quadrilateral-01) | Konvex/konkáv, belső és külső szögek összege, átlók, trapéz, húrtrapéz, deltoid, halmazábra | — | 3 |
+| 21 | Kerület, terület | [Kerület és terület](?lesson=grade8-perimeter-area-01) | Háromszög, négyszög, összetett alakzat, átdarabolás | 1000 | 3 |
+| 22 | Pitagorasz-tétel | [Pitagorasz-tétel alkalmazása](?lesson=grade8-pythagorean-01) | Hiányzó oldal, derékszög ellenőrzése, gyakorlati feladatok | — | 3 |
+| 23 | Kör | [Kör részei](?lesson=grade8-circle-parts-01) | Körvonal, körlap, sugár, húr, átmérő, szelő, érintő, körcikk | — | 2 |
 
 ## Transzformációk, szerkesztések (3 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 24 | Tükrözés | Tengelyes és középpontos tükrözés | Tükörkép szerkesztése, szimmetria | — | 3 |
-| 25 | Mozgatás | Eltolás, forgatás, szimmetria | Eltolás, 90° és 180° forgatás, szimmetriák, kicsinyítés és nagyítás | — | 3 |
-| 26 | Szerkesztések | Szerkesztések | Merőleges, párhuzamos, szögfelező, háromszög szerkesztése | — | 3 |
+| 24 | Tükrözés | [Tengelyes és középpontos tükrözés](?lesson=grade8-mirror-central-01) | Tükörkép szerkesztése, szimmetria | — | 3 |
+| 25 | Mozgatás | [Eltolás, forgatás, szimmetria](?lesson=grade8-transform-move-01) | Eltolás, 90° és 180° forgatás, szimmetriák, kicsinyítés és nagyítás | — | 3 |
+| 26 | Szerkesztések | [Szerkesztések](?lesson=grade8-construction-01) | Merőleges, párhuzamos, szögfelező, háromszög szerkesztése | — | 3 |
 
 ## Térgeometria (4 lecke)
 
@@ -79,9 +79,9 @@ A 8. osztály a 7. osztályra épül, és a 7–8. kerettanterv addig nem érint
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 31 | Adatok | Adatok és diagramok | Táblázat, oszlop-, kör-, vonal- és pontdiagram, átalakítás | — | 2 |
-| 32 | Középértékek | Középértékek | Átlag, medián, módusz, összehasonlítás | 1000 | 3 |
-| 33 | Valószínűség | Valószínűség és gyakoriság | Esély, gyakoriság, relatív gyakoriság, kísérlet | — | 3 |
+| 31 | Adatok | [Adatok és diagramok](?lesson=grade8-data-charts-01) | Táblázat, oszlop-, kör-, vonal- és pontdiagram, átalakítás | — | 2 |
+| 32 | Középértékek | [Középértékek](?lesson=grade8-statistics-01) | Átlag, medián, módusz, összehasonlítás | 1000 | 3 |
+| 33 | Valószínűség | [Valószínűség és gyakoriság](?lesson=grade8-probability-frequency-01) | Esély, gyakoriság, relatív gyakoriság, kísérlet | — | 3 |
 
 ## Összefoglalás, gyakorlás (3 lecke)
 
@@ -116,9 +116,9 @@ Ezek nem számozott feladatok: a **🎲 Egypercesek** oldalon találhatók, nem 
 | Logika | `true-false` (műveletek igaz/hamis) | új `logic` (minden/van olyan, tagadás, következtetés) |
 | Gráfok | — | új `graph` (csúcs, él, kézfogás, útvonal) |
 | Számelmélet | `prime`, `prime-factor`, `gcd-lcm` | 1000-es számkör, alkalmazások, több lépés |
-| Hatvány, gyök | `power` (négyzet, köb) | nagyobb kitevő, azonosságok, új `root` mód |
+| Hatvány, gyök | `power` (négyzet, köb, negyedik hatvány) | azonosságok, új `root` mód |
 | Százalék | `percent` (alap három eset) | kamat, keverés, százalékpont |
-| Függvények | `function` (plot, extend, rule, read) | egyenes arányosság grafikonja, jellemzés |
+| Függvények | `function` (plot, extend, rule, read, describe) | — |
 | Szögek | `angles`, `triangle` | háromszög belső és külső szöge |
 | Négyszögek | `polygon` | húrtrapéz, konvex/konkáv, átlók |
 | Kör | `circle` | kör részei: húr, szelő, érintő, körcikk |
@@ -151,7 +151,7 @@ Ezek nem számozott feladatok: a **🎲 Egypercesek** oldalon találhatók, nem 
 
 ## Megvalósítási állapot
 
-Elkészült (24/36): halmazok, számhalmazok, halmazműveletek, prímszámok és prímtényezős felbontás, LNKO és LKKT, hatványozás, négyzetgyök, igaz és hamis állítások, gráfok; kombinatorika; algebrai kifejezések, elsőfokú egyenletek, egyenlőtlenségek, szöveges feladatok, arányosság; függvények; háromszög szögei, négyszögek rendszerezése, kerület-terület, Pitagorasz-tétel, kör; adatok és diagramok, középértékek, valószínűség és gyakoriság. A leckék a `grade8-*` azonosítókkal szerepelnek a regiszterben.
+Elkészült (29/36): halmazok, számhalmazok, halmazműveletek, prímszámok és prímtényezős felbontás, LNKO és LKKT, hatványozás, négyzetgyök, igaz és hamis állítások, gráfok; kombinatorika; algebrai kifejezések, elsőfokú egyenletek, egyenlőtlenségek, szöveges feladatok, arányosság, százalékszámítás; függvények (megfeleltetések, egyenes arányosság grafikonja, grafikonok jellemzése); háromszög szögei, négyszögek rendszerezése, kerület-terület, Pitagorasz-tétel, kör; tengelyes és középpontos tükrözés, eltolás és forgatás, alapszerkesztések; adatok és diagramok, középértékek, valószínűség és gyakoriság. A táblázatban linkelt leckék mind a regiszterben vannak, `grade8-*` azonosítókkal.
 
 ---
 

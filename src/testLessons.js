@@ -961,7 +961,7 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "function": {
-            if (!["plot", "extend", "rule", "read"].includes(step.mode)) {
+            if (!["plot", "extend", "rule", "read", "describe"].includes(step.mode)) {
                 fail(ctx, `mode hibás: ${step.mode}`);
             }
             if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
@@ -1016,6 +1016,28 @@ function validateStep(step, ctx, range) {
                 else if (asked.y !== step.answer) fail(ctx, `answer (${step.answer}) != grafikon értéke (${asked.y})`);
                 if (typeof range === "number" && step.answer > range) fail(ctx, "answer meghaladja a tartományt");
                 checkChoices();
+            } else if (step.mode === "describe") {
+                if (!["direction", "intercept", "max"].includes(step.kind)) fail(ctx, `kind hibás: ${step.kind}`);
+                const points = (step.points ?? []).map(([x, y]) => ({ x, y }));
+                if (points.length < 2) fail(ctx, "points hibás");
+                for (const p of points) {
+                    if (!isInt(p.x) || p.x < 0 || p.x > 8) fail(ctx, `points x a rácson kívül: ${p.x}`);
+                    if (!isInt(p.y) || p.y < 0 || p.y > 9) fail(ctx, `points y a rácson kívül: ${p.y}`);
+                }
+                const slope = slopeOf(points);
+                if (slope === null) fail(ctx, "a pontok nem lineárisak");
+                checkChoices();
+                if (!step.options.some(o => String(o) === String(step.answer))) fail(ctx, "answer nincs az options között");
+                if (step.kind === "direction") {
+                    const expected = slope > 0 ? "növekvő" : "csökkenő";
+                    if (slope !== null && step.answer !== expected) fail(ctx, `answer (${step.answer}) != ${expected}`);
+                } else if (step.kind === "intercept") {
+                    const start = points.find(p => p.x === 0);
+                    if (!start || start.y !== step.answer) fail(ctx, "answer nem az y tengelymetszet");
+                } else {
+                    const max = Math.max(...points.map(p => p.y));
+                    if (step.answer !== max) fail(ctx, `answer (${step.answer}) != legnagyobb y (${max})`);
+                }
             }
             break;
         }
@@ -1448,10 +1470,10 @@ function validateStep(step, ctx, range) {
         case "power": {
             if (!["square", "cube", "notation", "base"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             if (!isInt(step.base) || step.base < 2 || step.base > 40) fail(ctx, `base hibás: ${step.base}`);
-            if (![2, 3].includes(step.exponent)) fail(ctx, `exponent hibás: ${step.exponent}`);
+            if (![2, 3, 4].includes(step.exponent)) fail(ctx, `exponent hibás: ${step.exponent}`);
             if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
             if (typeof step.display !== "string" || step.display.length === 0) fail(ctx, "display hiányzik");
-            const SUP = { 2: "²", 3: "³" };
+            const SUP = { 2: "²", 3: "³", 4: "⁴" };
             const expected = step.base ** step.exponent;
             if (step.mode === "notation") {
                 if (typeof step.answer !== "string") fail(ctx, `notation answer nem szöveg: ${step.answer}`);

@@ -1,0 +1,112 @@
+{
+  "id": "grade8-proportion-graph-01",
+  "title": "📈 Egyenes arányosság grafikonja",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📈 Egyenes arányosság grafikonja",
+      "text": "Egyenes arányosságnál a két mennyiség aránya állandó: y = k·x. A grafikon olyan egyenes, amely átmegy az origón, a meredeksége pedig éppen a k arányossági tényező. Ha a postás óránként 3 levelet kézbesít, akkor 2 óra alatt 6-ot, 3 óra alatt 9-et visz el – a pontok az origóból induló egyenesen vannak.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Arányos kézbesítés",
+          "text": "A postás óránként ugyanannyi levelet visz. A grafikon az origóból indul: 1 óra → 3 levél, 2 óra → 6 levél."
+        },
+        "racing": {
+          "title": "🏎️ Egyenletes tempó",
+          "text": "A versenyző körönként ugyanannyit tesz meg. Az origóból induló egyenes meredeksége a körönkénti távolság."
+        },
+        "football": {
+          "title": "⚽ Gólok a meccsen",
+          "text": "A csapat percenként ugyanannyi gólt lő. A grafikon az origóból indul, a meredekség a percenkénti gólszám."
+        },
+        "cooking": {
+          "title": "🍳 Adagok és tojások",
+          "text": "Adagonként ugyanannyi tojás kell. A pontok az origóból induló egyenesen vannak: 2 adag → 4 tojás."
+        },
+        "animals": {
+          "title": "🦁 Etetési rend",
+          "text": "Naponta ugyanannyi ételt adnak be. Az origóból induló egyenes meredeksége a napi adag."
+        },
+        "space": {
+          "title": "🚀 Egyenletes út",
+          "text": "Az űrhajó óránként ugyanannyi utat tesz meg. A grafikon az origóból indul, a meredekség az óránkénti út."
+        },
+        "tram": {
+          "title": "🚋 Menetidő",
+          "text": "A villamos megállónként ugyanannyi perc alatt halad. A pontok az origóból induló egyenesen vannak."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "function",
+      "options": {
+        "count": 3,
+        "mode": "plot",
+        "throughOrigin": true
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "function",
+      "options": {
+        "count": 3,
+        "mode": "rule",
+        "throughOrigin": true
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "function",
+      "options": {
+        "count": 3,
+        "mode": "read",
+        "throughOrigin": true
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "function",
+      "options": {
+        "count": 3,
+        "mode": "plot",
+        "throughOrigin": true
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Felismerted az egyenes arányosságot: a grafikon origón átmenő egyenes, a meredeksége az arányossági tényező.",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "A postás arányos grafikonját is kiolvastad – mehet a kézbesítés!"
+        },
+        "racing": {
+          "title": "🏁 Nagy vagy!",
+          "text": "Az egyenletes tempó grafikonját is felismerted – jöhet a következő kör!"
+        },
+        "football": {
+          "title": "🏆 Szuper!",
+          "text": "A gólok arányos grafikonját is megértetted – kezdődhet a meccs!"
+        },
+        "cooking": {
+          "title": "🍳 Szép munka!",
+          "text": "Az adagok arányos grafikonját is kiolvastad – jó étvágyat!"
+        },
+        "animals": {
+          "title": "🦁 Ügyes voltál!",
+          "text": "Az etetés arányos grafikonját is megértetted – az állatkert elégedett!"
+        },
+        "space": {
+          "title": "🚀 Szuper vagy!",
+          "text": "Az űrhajó arányos grafikonját is felismerted – indulhat a küldetés!"
+        },
+        "tram": {
+          "title": "🚋 Szuper vagy!",
+          "text": "A villamos arányos grafikonját is kiolvastad – indulhat a járat!"
+        }
+      }
+    }
+  ]
+}

@@ -48,6 +48,7 @@ const X_MAX = 8;
 const Y_MAX = 9;
 
 const MODES = ["plot", "extend", "rule", "read"];
+const DESCRIBE_KINDS = ["direction", "intercept", "max"];
 
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -75,10 +76,10 @@ function numberOptions(answer, candidates) {
 }
 
 // y = m·x + b lineáris pontok, minden pont a rács belsejében
-function buildLinear() {
+function buildLinear(throughOrigin = false) {
     for (let attempt = 0; attempt < 200; attempt++) {
-        const m = pick([1, 1, 2, 2, 3, -1, -2]);
-        const b = random(0, 6);
+        const m = throughOrigin ? pick([1, 2, 3, 3]) : pick([1, 1, 2, 2, 3, -1, -2]);
+        const b = throughOrigin ? 0 : random(0, 6);
         const x0 = random(1, 2);
         const count = pick([3, 4]);
         const rows = [];
@@ -108,8 +109,9 @@ function tableOf(rows, w) {
     };
 }
 
-function buildPlot(w) {
-    const { rows } = buildLinear();
+function buildPlot(w, throughOrigin = false) {
+    const { rows } = buildLinear(throughOrigin);
+    const points = throughOrigin ? [{ x: 0, y: 0 }, ...rows] : rows;
 
     return {
         type: "function",
@@ -117,9 +119,9 @@ function buildPlot(w) {
         xUnit: w.x,
         yUnit: w.y,
         question: `${w.story} Jelöld be a grafikonon az értéktáblázat összes pontját!`,
-        table: tableOf(rows, w),
-        target: rows.map(r => [r.x, r.y]),
-        answer: rows.length
+        table: tableOf(points, w),
+        target: points.map(r => [r.x, r.y]),
+        answer: points.length
     };
 }
 
@@ -162,9 +164,9 @@ function buildRule(w) {
     };
 }
 
-function buildRead(w) {
+function buildRead(w, throughOrigin = false) {
     for (let attempt = 0; attempt < 50; attempt++) {
-        const { m, rows } = buildLinear();
+        const { m, rows } = buildLinear(throughOrigin);
         const index = random(1, rows.length - 2);
         const ask = rows[index];
         if (ask.y < 1) continue;
@@ -205,9 +207,57 @@ function buildRead(w) {
     };
 }
 
+function buildDescribe(w) {
+    const { m, b, rows } = buildLinear();
+    const points = [[0, b], ...rows.map(r => [r.x, r.y])];
+    const kind = pick(DESCRIBE_KINDS);
+
+    if (kind === "direction") {
+        return {
+            type: "function",
+            mode: "describe",
+            kind,
+            xUnit: w.x,
+            yUnit: w.y,
+            question: `${w.story} Merre halad a grafikon: növekvő vagy csökkenő?`,
+            points,
+            answer: m > 0 ? "növekvő" : "csökkenő",
+            options: shuffle(["növekvő", "csökkenő", "állandó", "ingadozó"])
+        };
+    }
+
+    if (kind === "intercept") {
+        return {
+            type: "function",
+            mode: "describe",
+            kind,
+            xUnit: w.x,
+            yUnit: w.y,
+            question: `${w.story} Hol metszi a grafikon az y tengelyt?`,
+            points,
+            answer: b,
+            options: numberOptions(b, [b + 1, b - 1, b + 2, b + 3])
+        };
+    }
+
+    const maxY = Math.max(...points.map(([, y]) => y));
+
+    return {
+        type: "function",
+        mode: "describe",
+        kind,
+        xUnit: w.x,
+        yUnit: w.y,
+        question: `${w.story} Melyik a grafikon legnagyobb y értéke?`,
+        points,
+        answer: maxY,
+        options: numberOptions(maxY, [maxY + 1, maxY - 1, maxY + 2, maxY + 3])
+    };
+}
+
 export function generateFunction(options = {}) {
 
-    const { count = 6, mode = "mixed" } = options;
+    const { count = 6, mode = "mixed", throughOrigin = false } = options;
     const world = options.world ?? "postman";
     const w = WORLDS[world] ?? WORLDS.postman;
 
@@ -217,10 +267,11 @@ export function generateFunction(options = {}) {
     for (let i = 0; i < count; i++) {
         const m = modes[i % modes.length];
 
-        if (m === "plot") tasks.push(buildPlot(w));
+        if (m === "plot") tasks.push(buildPlot(w, throughOrigin));
         else if (m === "extend") tasks.push(buildExtend(w));
         else if (m === "rule") tasks.push(buildRule(w));
-        else tasks.push(buildRead(w));
+        else if (m === "describe") tasks.push(buildDescribe(w));
+        else tasks.push(buildRead(w, throughOrigin));
     }
 
     return tasks;

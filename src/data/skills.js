@@ -2,7 +2,7 @@ export const CATEGORIES = {
     numbers: {
         title: "Számok",
         icon: "🔢",
-        skills: ["neighbours", "comparison", "ordering", "missing-number", "place-value", "rounding", "number-sequence", "even-odd", "pattern", "estimation", "number-names", "roman", "sets", "data-charts", "probability", "combinatorics", "divisibility", "primes", "prime-factor", "gcd-lcm", "powers", "integers", "open-sentence", "equation", "inequality", "ratio", "rational", "algebra", "functions", "statistics", "review", "master"]
+        skills: ["neighbours", "comparison", "ordering", "missing-number", "place-value", "rounding", "number-sequence", "even-odd", "pattern", "estimation", "number-names", "roman", "sets", "data-charts", "probability", "combinatorics", "logic", "graph", "divisibility", "primes", "prime-factor", "gcd-lcm", "powers", "integers", "open-sentence", "equation", "inequality", "ratio", "rational", "algebra", "functions", "statistics", "review", "master"]
     },
     fractions: {
         title: "Törtek",
@@ -56,6 +56,8 @@ export const SKILLS = {
     percent: { title: "Százalék", category: "fractions" },
     probability: { title: "Valószínűség", category: "numbers" },
     combinatorics: { title: "Kombinatorika", category: "numbers" },
+    logic: { title: "Logika", category: "numbers" },
+    graph: { title: "Gráfok", category: "numbers" },
     divisibility: { title: "Osztó és többszörös", category: "numbers" },
     primes: { title: "Prímszámok", category: "numbers" },
     "prime-factor": { title: "Prímfelbontás", category: "numbers" },

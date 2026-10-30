@@ -43,7 +43,7 @@ function makeOptions(answer, naturals) {
         if (answer - k >= 1) options.add(answer - k);
         k++;
     }
-    return shuffle([...options]);
+    return shuffle([...options].slice(0, 4));
 }
 
 function buildValues(min, max, size) {

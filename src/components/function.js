@@ -107,7 +107,9 @@ function createGridSvg(step) {
             x2: ask, y2: PAD_TOP + gridH,
             stroke: "#f59e0b", "stroke-width": 2, "stroke-dasharray": "5 4"
         }));
+    }
 
+    if (step.mode === "read" || step.mode === "describe") {
         const pts = step.points.map(([x, y]) =>
             `${(cellX(x) + CELL / 2).toFixed(1)},${(cellY(y) + CELL / 2).toFixed(1)}`);
         svg.append(svgEl("polyline", {
@@ -195,7 +197,7 @@ export function renderFunction(step, root, next, progress, onResult, onAttempt) 
     }
 
     let svg = null;
-    if (step.mode === "plot" || step.mode === "read") {
+    if (step.mode === "plot" || step.mode === "read" || step.mode === "describe") {
         const grid = document.createElement("div");
         grid.className = "fn-grid";
         svg = createGridSvg(step);
@@ -235,6 +237,7 @@ export function renderFunction(step, root, next, progress, onResult, onAttempt) 
         step.options.forEach(value => {
             const btn = createButton(String(value), { className: "fn-option" });
             btn.dataset.value = String(value);
+            if (typeof value !== "number") btn.classList.add("fn-option-word");
             choiceBox.append(btn);
         });
 
@@ -284,6 +287,9 @@ export function renderFunction(step, root, next, progress, onResult, onAttempt) 
         if (step.mode === "rule") {
             return "💡 A lépés a két egymás utáni sor y értékeinek különbsége.";
         }
+        if (step.mode === "describe") {
+            return "💡 A grafikon balról jobbra halad; az y tengelyt ott metszi, ahol x = 0.";
+        }
         return "💡 Kövesd a szaggatott vonalat, és olvasd le, hol metszi a kék grafikont!";
     }
 
@@ -296,6 +302,9 @@ export function renderFunction(step, root, next, progress, onResult, onAttempt) 
         }
         if (step.mode === "rule") {
             return `🎉 Ügyes! A lépés ${step.answer}, vagyis minden sorban ennyivel változik az y.`;
+        }
+        if (step.mode === "describe") {
+            return `🎉 Ügyes! A grafikon jellemzője: ${step.answer}.`;
         }
         return `🎉 Ügyes! A grafikonon ${step.askX} ${step.xUnit} alatt ${step.answer} ${step.yUnit} van.`;
     }
@@ -384,7 +393,7 @@ export function renderFunction(step, root, next, progress, onResult, onAttempt) 
             const btn = e.target.closest(".fn-option");
             if (!btn || feedback.isAnswered()) return;
 
-            const ok = Number(btn.dataset.value) === step.answer;
+            const ok = String(btn.dataset.value) === String(step.answer);
             if (ok) markCorrect(btn);
 
             checkAnswer(ok);

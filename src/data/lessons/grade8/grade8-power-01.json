@@ -42,7 +42,8 @@
       "generator": "power",
       "options": {
         "count": 4,
-        "mode": "square"
+        "mode": "square",
+        "maxExponent": 4
       }
     },
     {
@@ -50,7 +51,8 @@
       "generator": "power",
       "options": {
         "count": 4,
-        "mode": "cube"
+        "mode": "cube",
+        "maxExponent": 4
       }
     },
     {
@@ -58,7 +60,8 @@
       "generator": "power",
       "options": {
         "count": 4,
-        "mode": "notation"
+        "mode": "notation",
+        "maxExponent": 4
       }
     },
     {
@@ -66,7 +69,8 @@
       "generator": "power",
       "options": {
         "count": 3,
-        "mode": "base"
+        "mode": "base",
+        "maxExponent": 4
       }
     },
     {

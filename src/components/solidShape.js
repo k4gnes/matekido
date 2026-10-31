@@ -14,8 +14,10 @@ const TITLES = {
 };
 
 const SOLIDS = {
-    cube: { label: "kocka", dative: "kockának", faces: 6, color: "#3b82f6" },
-    cuboid: { label: "téglatest", dative: "téglatestnek", faces: 6, color: "#8b5cf6" },
+    cube: { label: "kocka", dative: "kockának", faces: 6, edges: 12, vertices: 8, color: "#3b82f6" },
+    cuboid: { label: "téglatest", dative: "téglatestnek", faces: 6, edges: 12, vertices: 8, color: "#8b5cf6" },
+    prism: { label: "hasáb", dative: "hasábnak", faces: 5, edges: 9, vertices: 6, color: "#14b8a6" },
+    pyramid: { label: "gúla", dative: "gúlának", faces: 5, edges: 8, vertices: 5, color: "#f97316" },
     cylinder: { label: "henger", dative: "hengernek", faces: 3, color: "#10b981" },
     cone: { label: "kúp", dative: "kúpnak", faces: 2, color: "#f59e0b" },
     sphere: { label: "gömb", dative: "gömbnek", faces: 0, color: "#ef4444" }
@@ -48,6 +50,15 @@ function createSolidSvg(solid) {
         svg.append(svgEl("rect", { x: 20, y: 52, width: 60, height: 40, rx: 2, fill: color, "fill-opacity": ".9", ...la }));
         svg.append(svgEl("path", { d: "M20,52 L36,32 L96,32 L80,52", fill: color, "fill-opacity": ".65", ...la }));
         svg.append(svgEl("path", { d: "M96,32 L96,72 L80,92 L80,52 Z", fill: color, "fill-opacity": ".5", ...la }));
+    } else if (solid === "prism") {
+        svg.append(svgEl("path", { d: "M42,76 L72,26 L102,76 Z", fill: color, "fill-opacity": ".5", ...la }));
+        svg.append(svgEl("path", { d: "M30,88 L42,76 L102,76 L90,88 Z", fill: color, "fill-opacity": ".7", ...la }));
+        svg.append(svgEl("path", { d: "M90,88 L102,76 L72,26 L60,38 Z", fill: color, "fill-opacity": ".6", ...la }));
+        svg.append(svgEl("path", { d: "M30,88 L60,38 L90,88 Z", fill: color, "fill-opacity": ".9", ...la }));
+    } else if (solid === "pyramid") {
+        svg.append(svgEl("path", { d: "M22,82 L60,96 L98,82 L60,68 Z", fill: color, "fill-opacity": ".5", ...la }));
+        svg.append(svgEl("path", { d: "M22,82 L60,26 L60,96 Z", fill: color, "fill-opacity": ".75", ...la }));
+        svg.append(svgEl("path", { d: "M98,82 L60,26 L60,96 Z", fill: color, "fill-opacity": ".9", ...la }));
     } else if (solid === "cylinder") {
         svg.append(svgEl("path", { d: "M30,34 L30,86 A30,11 0 0 0 90,86 L90,34", fill: color, "fill-opacity": ".85", ...la }));
         svg.append(svgEl("ellipse", { cx: 60, cy: 86, rx: 30, ry: 11, fill: color, ...la }));
@@ -61,6 +72,38 @@ function createSolidSvg(solid) {
             cx: 47, cy: 46, rx: 13, ry: 9, fill: "#ffffff", "fill-opacity": ".4", stroke: "none",
             transform: "rotate(-28 47 46)"
         }));
+    }
+
+    return svg;
+}
+
+function createNetSvg(solid) {
+    const svg = svgEl("svg", { viewBox: "0 0 160 130" });
+    const color = SOLIDS[solid].color;
+    const la = lineAttrs();
+
+    function face(name, attrs) {
+        svg.append(svgEl(name, { fill: color, "fill-opacity": ".25", ...la, ...attrs }));
+    }
+
+    if (solid === "cube") {
+        [[15, 45], [45, 45], [75, 45], [105, 45], [45, 15], [45, 75]]
+            .forEach(([x, y]) => face("rect", { x, y, width: 30, height: 30 }));
+    } else if (solid === "cuboid") {
+        [[20, 50], [48, 50], [76, 50], [104, 50]]
+            .forEach(([x, y]) => face("rect", { x, y, width: 28, height: 20 }));
+        [[48, 30], [48, 70]].forEach(([x, y]) => face("rect", { x, y, width: 20, height: 20 }));
+    } else if (solid === "prism") {
+        [[35, 45], [65, 45], [95, 45]]
+            .forEach(([x, y]) => face("rect", { x, y, width: 30, height: 40 }));
+        face("path", { d: "M65,45 L95,45 L80,20 Z" });
+        face("path", { d: "M65,85 L95,85 L80,110 Z" });
+    } else if (solid === "pyramid") {
+        face("rect", { x: 60, y: 45, width: 40, height: 40 });
+        face("path", { d: "M60,45 L100,45 L80,15 Z" });
+        face("path", { d: "M60,85 L100,85 L80,115 Z" });
+        face("path", { d: "M60,45 L60,85 L30,65 Z" });
+        face("path", { d: "M100,45 L100,85 L130,65 Z" });
     }
 
     return svg;
@@ -85,12 +128,16 @@ export function renderSolidShape(step, root, next, progress, onResult, onAttempt
 
     const figure = document.createElement("div");
     figure.className = "ss-figure";
-    figure.append(createSolidSvg(step.solid));
+    figure.append(step.mode === "net" ? createNetSvg(step.solid) : createSolidSvg(step.solid));
     card.append(figure);
 
     const prompt = document.createElement("p");
     prompt.className = "ss-prompt";
-    prompt.textContent = step.mode === "faces" ? "Hány lapja van ennek a testnek?" : "Mi ez a test?";
+    prompt.textContent = step.mode === "faces" ? "Hány lapja van ennek a testnek?"
+        : step.mode === "edges" ? "Hány éle van ennek a testnek?"
+        : step.mode === "vertices" ? "Hány csúcsa van ennek a testnek?"
+        : step.mode === "net" ? "Melyik test hálója ez?"
+        : "Mi ez a test?";
     card.append(prompt);
 
     const optionsContainer = document.createElement("div");
@@ -124,6 +171,15 @@ export function renderSolidShape(step, root, next, progress, onResult, onAttempt
         const info = SOLIDS[step.solid];
         if (step.mode === "faces") {
             return `😊 Ügyes! A ${info.dative} ${info.faces} lapja van.`;
+        }
+        if (step.mode === "edges") {
+            return `😊 Ügyes! A ${info.dative} ${info.edges} éle van.`;
+        }
+        if (step.mode === "vertices") {
+            return `😊 Ügyes! A ${info.dative} ${info.vertices} csúcsa van.`;
+        }
+        if (step.mode === "net") {
+            return `😊 Ügyes! Ez a ${info.label} hálója.`;
         }
         return `😊 Ügyes! Ez egy ${info.label}.`;
     }

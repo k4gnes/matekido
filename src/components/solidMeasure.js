@@ -15,6 +15,16 @@ const TITLES = {
     tram: "🚋 Felszín és térfogat a villamoson"
 };
 
+const PROPERTY_TITLES = {
+    postman: "📦 Testek tulajdonságai a postán",
+    racing: "🏎️ Testek tulajdonságai a boxutcában",
+    football: "⚽ Testek tulajdonságai a pályán",
+    cooking: "🍳 Testek tulajdonságai a konyhában",
+    animals: "🦁 Testek tulajdonságai az állatkertben",
+    space: "🚀 Testek tulajdonságai az űrhajón",
+    tram: "🚋 Testek tulajdonságai a villamoson"
+};
+
 const SVG_NS = "http://www.w3.org/2000/svg";
 
 function svgEl(name, attrs = {}) {
@@ -60,6 +70,18 @@ function createSolidSvg(step) {
         "stroke-linejoin": "round"
     }));
 
+    if (step.mode === "faceDiagonal" || step.mode === "spaceDiagonal") {
+        const x2 = step.mode === "faceDiagonal" ? x + fw : x + fw + dx;
+        const y2 = step.mode === "faceDiagonal" ? y : y - dy;
+        svg.append(svgEl("line", {
+            x1: x, y1: y + fh, x2, y2,
+            stroke: "#dc2626",
+            "stroke-width": "2.5",
+            "stroke-dasharray": "6 4",
+            "stroke-linecap": "round"
+        }));
+    }
+
     function label(cx, cy, text) {
         const t = svgEl("text", {
             x: cx,
@@ -84,6 +106,12 @@ function createSolidSvg(step) {
 }
 
 function hintFor(step) {
+    if (step.mode === "faceDiagonal") {
+        return `💡 A lapátló az a és b él által alkotott derékszögű háromszög átfogója: √(${step.a}² + ${step.b}²) = ${step.answer} cm.`;
+    }
+    if (step.mode === "spaceDiagonal") {
+        return `💡 A testátló: √(${step.a}² + ${step.b}² + ${step.c}²) = ${step.answer} cm.`;
+    }
     if (step.mode === "surface") {
         if (step.solid === "cube") {
             return `💡 A kockának 6 egyforma lapja van: A = 6 × a × a = 6 × ${step.a} × ${step.a} = ${step.answer} cm²`;
@@ -110,8 +138,10 @@ export function renderSolidMeasure(step, root, next, progress, onResult, onAttem
         card.append(progress);
     }
 
+    const propertyMode = step.mode === "faceDiagonal" || step.mode === "spaceDiagonal";
+    const titles = propertyMode ? PROPERTY_TITLES : TITLES;
     const title = document.createElement("h1");
-    title.textContent = TITLES[world] ?? TITLES.postman;
+    title.textContent = titles[world] ?? titles.postman;
     card.append(title);
 
     const figure = document.createElement("div");
@@ -121,8 +151,9 @@ export function renderSolidMeasure(step, root, next, progress, onResult, onAttem
 
     const prompt = document.createElement("p");
     prompt.className = "slm-prompt";
-    prompt.textContent = step.mode === "surface"
-        ? "Mekkora a test felszíne? (A lapok területének összege.)"
+    prompt.textContent = step.mode === "faceDiagonal" ? "Mekkora az a × b lap átlója?"
+        : step.mode === "spaceDiagonal" ? "Mekkora a testátló?"
+        : step.mode === "surface" ? "Mekkora a test felszíne? (A lapok területének összege.)"
         : "Mekkora a test térfogata? (Mennyi fér bele?)";
     card.append(prompt);
 
@@ -174,6 +205,12 @@ export function renderSolidMeasure(step, root, next, progress, onResult, onAttem
     });
 
     function successText() {
+        if (step.mode === "faceDiagonal") {
+            return `😊 Ügyes! A lapátló ${step.answer} cm.`;
+        }
+        if (step.mode === "spaceDiagonal") {
+            return `😊 Ügyes! A testátló ${step.answer} cm.`;
+        }
         if (step.mode === "surface") {
             if (step.solid === "cube") {
                 return `😊 Ügyes! A = 6 × ${step.a} × ${step.a} = ${step.answer} cm²`;

@@ -1,6 +1,6 @@
 # Matekidő – 8. osztályos tanmenet
 
-> **Státusz: folyamatban (29/36 lecke).** A tanmenet jóváhagyott; a leckéket a megvalósítással párhuzamosan vesszük fel a regiszterbe. A 7. osztály lezárult, ez a Nat 2020 7–8. évfolyamának utolsó tanéve.
+> **Státusz: folyamatban (30/36 lecke).** A tanmenet jóváhagyott; a leckéket a megvalósítással párhuzamosan vesszük fel a regiszterbe. A 7. osztály lezárult, ez a Nat 2020 7–8. évfolyamának utolsó tanéve.
 
 **Tervezett 36 lecke + 1 mester kihívás**, 9 témakörben (a regiszter 7 kategóriája: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋). A 36 lecke mellett 2 egyperces játék szerepel a tervben; ezek nem számítanak a haladásba.
 
@@ -70,7 +70,7 @@ A 8. osztály a 7. osztályra épül, és a 7–8. kerettanterv addig nem érint
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 27 | Testek | Testek és hálók | Kocka, téglatest, hasáb, gúla, gömb, Földgömb; háló, nézet, alaprajz | — | 2 |
+| 27 | Testek | [Testek és hálók](?lesson=grade8-solid-nets-01) | Kocka, téglatest, hasáb, gúla, gömb, Földgömb; háló, lapok | — | 2 |
 | 28 | Testek tulajdonságai | Testek tulajdonságai | Lapok, élek, csúcsok, lapátló, testátló | — | 3 |
 | 29 | Felszín | Felszín | Kocka, téglatest, egyenes hasáb felszíne | 1000 | 3 |
 | 30 | Térfogat | Térfogat és űrtartalom | Kocka, téglatest, hasáb térfogata; 1 dm³ = 1 l | 1000 | 3 |
@@ -151,7 +151,7 @@ Ezek nem számozott feladatok: a **🎲 Egypercesek** oldalon találhatók, nem 
 
 ## Megvalósítási állapot
 
-Elkészült (29/36): halmazok, számhalmazok, halmazműveletek, prímszámok és prímtényezős felbontás, LNKO és LKKT, hatványozás, négyzetgyök, igaz és hamis állítások, gráfok; kombinatorika; algebrai kifejezések, elsőfokú egyenletek, egyenlőtlenségek, szöveges feladatok, arányosság, százalékszámítás; függvények (megfeleltetések, egyenes arányosság grafikonja, grafikonok jellemzése); háromszög szögei, négyszögek rendszerezése, kerület-terület, Pitagorasz-tétel, kör; tengelyes és középpontos tükrözés, eltolás és forgatás, alapszerkesztések; adatok és diagramok, középértékek, valószínűség és gyakoriság. A táblázatban linkelt leckék mind a regiszterben vannak, `grade8-*` azonosítókkal.
+Elkészült (30/36): halmazok, számhalmazok, halmazműveletek, prímszámok és prímtényezős felbontás, LNKO és LKKT, hatványozás, négyzetgyök, igaz és hamis állítások, gráfok; kombinatorika; algebrai kifejezések, elsőfokú egyenletek, egyenlőtlenségek, szöveges feladatok, arányosság, százalékszámítás; függvények (megfeleltetések, egyenes arányosság grafikonja, grafikonok jellemzése); háromszög szögei, négyszögek rendszerezése, kerület-terület, Pitagorasz-tétel, kör, testek és hálók; tengelyes és középpontos tükrözés, eltolás és forgatás, alapszerkesztések; adatok és diagramok, középértékek, valószínűség és gyakoriság. A táblázatban linkelt leckék mind a regiszterben vannak, `grade8-*` azonosítókkal.
 
 ---
 

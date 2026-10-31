@@ -1,6 +1,6 @@
-import { Game } from "./engine/Game.js?v=159";
+import { Game } from "./engine/Game.js?v=160";
 import { loadLesson } from "./engine/LessonLoader.js";
-import { buildLesson } from "./builders/LessonBuilder.js?v=93";
+import { buildLesson } from "./builders/LessonBuilder.js?v=95";
 import { renderLessonMenu } from "./components/lessonMenu.js?v=131";
 import { renderSkillMap } from "./components/skillMap.js?v=63";
 import { renderHelp } from "./components/help.js?v=7";

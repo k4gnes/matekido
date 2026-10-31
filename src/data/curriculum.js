@@ -337,6 +337,8 @@ export const CURRICULUM_ORDER = {
         "grade8-perimeter-area-01",
         "grade8-pythagorean-01",
         "grade8-circle-parts-01",
+        "grade8-solid-nets-01",
+        "grade8-solid-properties-01",
         "grade8-data-charts-01",
         "grade8-statistics-01",
         "grade8-probability-frequency-01",

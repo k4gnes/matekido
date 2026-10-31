@@ -13,6 +13,7 @@ globalThis.localStorage = {
 const ROOT = new URL("./", import.meta.url);
 
 import { buildLesson } from "./builders/LessonBuilder.js?v=49";
+import { generateSolidShape } from "./generators/solidShapeGenerator.js?v=4";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { SKILLS } from "./data/skills.js";
@@ -590,16 +591,32 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "solid-shape": {
-            if (!["cube", "cuboid", "cylinder", "cone", "sphere"].includes(step.solid)) fail(ctx, `solid hibás: ${step.solid}`);
-            if (!["name", "faces"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            const labels = {
+                cube: "Kocka", cuboid: "Téglatest", prism: "Hasáb", pyramid: "Gúla",
+                cylinder: "Henger", cone: "Kúp", sphere: "Gömb"
+            };
+            const counts = {
+                faces: { cube: 6, cuboid: 6, prism: 5, pyramid: 5, cylinder: 3, cone: 2, sphere: 0 },
+                edges: { cube: 12, cuboid: 12, prism: 9, pyramid: 8 },
+                vertices: { cube: 8, cuboid: 8, prism: 6, pyramid: 5 }
+            };
+            if (!labels[step.solid]) fail(ctx, `solid hibás: ${step.solid}`);
+            if (!["name", "faces", "net", "edges", "vertices"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             if (!Array.isArray(step.options) || step.options.length < 2) fail(ctx, "options hiányos");
             if (!isInt(step.answer) || step.answer < 0 || step.answer >= step.options.length) {
                 fail(ctx, `answer index hibás: ${step.answer}`);
             }
-            if (step.mode === "name") {
+            if (step.mode === "name" || step.mode === "net") {
                 if (!step.options.every(o => typeof o === "string" && o.length > 0)) fail(ctx, "name options nem stringek");
+                if (step.options[step.answer] !== labels[step.solid]) fail(ctx, "a helyes válasz nem a test neve");
+                if (step.mode === "net" && !["cube", "cuboid", "prism", "pyramid"].includes(step.solid)) {
+                    fail(ctx, `nincs háló ehhez: ${step.solid}`);
+                }
             } else {
-                if (!step.options.every(o => isInt(o) && o > 0)) fail(ctx, "faces options nem pozitív egészek");
+                const expected = counts[step.mode]?.[step.solid];
+                if (!step.options.every(o => isInt(o) && o > 0)) fail(ctx, "count options nem pozitív egészek");
+                if (expected === undefined) fail(ctx, `${step.mode} nem értelmezett ehhez: ${step.solid}`);
+                else if (step.options[step.answer] !== expected) fail(ctx, `a helyes válasz nem a ${step.mode} száma`);
             }
             break;
         }
@@ -1099,20 +1116,34 @@ function validateStep(step, ctx, range) {
         }
         case "solid-measure": {
             if (!["cube", "cuboid"].includes(step.solid)) fail(ctx, `solid hibás: ${step.solid}`);
-            if (!["surface", "volume"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!["surface", "volume", "faceDiagonal", "spaceDiagonal"].includes(step.mode)) {
+                fail(ctx, `mode hibás: ${step.mode}`);
+            }
+            const diagonal = step.mode === "faceDiagonal" || step.mode === "spaceDiagonal";
             for (const k of ["a", "b", "c"]) {
-                if (!isInt(step[k]) || step[k] < 3 || step[k] > 10) fail(ctx, `${k} hibás: ${step[k]}`);
+                if (!isInt(step[k]) || step[k] < (diagonal ? 2 : 3) || step[k] > 12) {
+                    fail(ctx, `${k} hibás: ${step[k]}`);
+                }
             }
-            if (step.solid === "cube" && !(step.a === step.b && step.b === step.c)) {
-                fail(ctx, `kockánál az élek nem egyenlők: ${step.a}/${step.b}/${step.c}`);
-            }
-            if (step.solid === "cuboid" && step.a === step.b && step.b === step.c) {
-                fail(ctx, `téglatestnél minden él egyenlő (kocka lenne): ${step.a}`);
+            if (!diagonal) {
+                if (step.solid === "cube" && !(step.a === step.b && step.b === step.c)) {
+                    fail(ctx, `kockánál az élek nem egyenlők: ${step.a}/${step.b}/${step.c}`);
+                }
+                if (step.solid === "cuboid" && step.a === step.b && step.b === step.c) {
+                    fail(ctx, `téglatestnél minden él egyenlő (kocka lenne): ${step.a}`);
+                }
             }
             const expectedSurface = 2 * (step.a * step.b + step.a * step.c + step.b * step.c);
             const expectedVolume = step.a * step.b * step.c;
-            const expectedSolid = step.mode === "surface" ? expectedSurface : expectedVolume;
-            if (step.answer !== expectedSolid) {
+            const expectedFace = Math.sqrt(step.a * step.a + step.b * step.b);
+            const expectedSpace = Math.sqrt(step.a * step.a + step.b * step.b + step.c * step.c);
+            const expectedSolid = step.mode === "surface" ? expectedSurface
+                : step.mode === "volume" ? expectedVolume
+                : step.mode === "faceDiagonal" ? expectedFace
+                : expectedSpace;
+            if (!Number.isInteger(expectedSolid)) {
+                fail(ctx, `${step.mode} nem egész: ${expectedSolid}`);
+            } else if (step.answer !== expectedSolid) {
                 fail(ctx, `answer (${step.answer}) != képlet (${expectedSolid})`);
             }
             if (!Array.isArray(step.options) || step.options.length !== 4) {
@@ -3205,6 +3236,20 @@ for (const key of ["A", "B"]) {
     const obj = defaultTask[`object${key}`];
     if (!DEFAULT_POOL.some(o => o.emoji === obj.emoji && o.name === obj.name)) {
         fail("measure-compare/default", `nem az alapkészletből való: ${obj.name}`);
+    }
+}
+
+const solidPool = ["cube", "cuboid", "prism", "pyramid", "cylinder", "cone", "sphere"];
+for (const mode of ["name", "net", "faces"]) {
+    const tasks = generateSolidShape({ count: 4, mode, solids: solidPool });
+    if (new Set(tasks.map(t => t.solid)).size !== tasks.length) {
+        fail(`solid-shape/${mode}`, "ismétlődő test egy blokkban");
+    }
+}
+const longNet = generateSolidShape({ count: 8, mode: "net", solids: solidPool });
+for (let i = 1; i < longNet.length; i++) {
+    if (longNet[i].solid === longNet[i - 1].solid) {
+        fail("solid-shape/net", "egymás után ismétlődő test");
     }
 }
 

@@ -601,6 +601,7 @@ const SW_CACHE_LIST = [
     "/data/lessons/grade8/grade8-root-01.json",
     "/data/lessons/grade8/grade8-sets-01.json",
     "/data/lessons/grade8/grade8-sets-ops-01.json",
+    "/data/lessons/grade8/grade8-solid-nets-01.json",
     "/data/lessons/grade8/grade8-statistics-01.json",
     "/data/lessons/grade8/grade8-transform-move-01.json",
     "/data/lessons/grade8/grade8-triangle-angles-01.json",

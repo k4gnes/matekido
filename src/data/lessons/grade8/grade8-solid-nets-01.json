@@ -1,0 +1,103 @@
+{
+  "id": "grade8-solid-nets-01",
+  "title": "📦 Testek és hálók",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📦 Testek és hálók",
+      "text": "A testeket hálójukról is felismerhetjük. A kocka hálója 6 négyzet, a téglatesté 6 téglalap, a hasábé 3 téglalap és 2 háromszög, a gúláé 1 négyzet és 4 háromszög. A gömb, a henger és a kúp görbült felületű, ezért másmilyen hálót ad. A Földgömb is gömb alakú.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Csomagok és hálók",
+          "text": "A postán a csomagok dobozait hálójukról is felismerheted. Nézd meg a testeket és a hálóikat!"
+        },
+        "racing": {
+          "title": "🏎️ Dobozok a boxutcában",
+          "text": "A szerelők dobozait hálójukról ismerd fel, és számold meg a lapjaikat!"
+        },
+        "football": {
+          "title": "⚽ Labdák és testek",
+          "text": "A felszerelések dobozait hálójukról ismerd fel, és figyeld a lapokat!"
+        },
+        "cooking": {
+          "title": "🍳 Formák a konyhában",
+          "text": "A konyhai dobozok hálóját vizsgáld, és ismerd fel a testeket!"
+        },
+        "animals": {
+          "title": "🦁 Ketrecek és testek",
+          "text": "Az állatkert dobozait hálójukról ismerd fel, és számold a lapjaikat!"
+        },
+        "space": {
+          "title": "🚀 Űrhajó-testek",
+          "text": "Az űrhajó alkatrészeit hálójukról ismerd fel, és figyeld a lapokat!"
+        },
+        "tram": {
+          "title": "🚋 Csomagok a villamoson",
+          "text": "A villamoson a csomagokat hálójukról ismerd fel, és számold a lapjaikat!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "solid-shape",
+      "options": {
+        "count": 4,
+        "mode": "name",
+        "solids": ["cube", "cuboid", "prism", "pyramid", "sphere", "cylinder", "cone"]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "solid-shape",
+      "options": {
+        "count": 4,
+        "mode": "net",
+        "solids": ["cube", "cuboid", "prism", "pyramid"]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "solid-shape",
+      "options": {
+        "count": 4,
+        "mode": "faces",
+        "solids": ["cube", "cuboid", "prism", "pyramid", "cylinder", "cone"]
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen felismerted a testeket és a hálóikat!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen felismerted a posta csomagjainak hálóit!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen felismerted a boxutca dobozainak hálóit!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen felismerted a felszerelések hálóit!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen felismerted a konyhai dobozok hálóit!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen felismerted az állatkert dobozainak hálóit!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen felismerted az űrhajó alkatrészeinek hálóit!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen felismerted a villamos csomagjainak hálóit!"
+        }
+      }
+    }
+  ]
+}

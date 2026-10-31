@@ -30,11 +30,60 @@ function makeOptions(answer) {
     return shuffle([...options]);
 }
 
+const FACE_TRIPLES = [
+    [3, 4, 5],
+    [6, 8, 10],
+    [5, 12, 13]
+];
+
+const SPACE_TRIPLES = [
+    [2, 3, 6, 7],
+    [2, 4, 4, 6],
+    [2, 6, 9, 11],
+    [3, 6, 6, 9],
+    [4, 4, 7, 9],
+    [6, 6, 7, 11]
+];
+
 function surfaceOf(a, b, c) {
     return 2 * (a * b + a * c + b * c);
 }
 
+function buildFaceDiagonal() {
+    const [a, b, answer] = pick(FACE_TRIPLES);
+    const c = random(3, 10);
+
+    return {
+        type: "solid-measure",
+        solid: "cuboid",
+        mode: "faceDiagonal",
+        a,
+        b,
+        c,
+        answer,
+        options: makeOptions(answer)
+    };
+}
+
+function buildSpaceDiagonal() {
+    const [a, b, c, answer] = pick(SPACE_TRIPLES);
+
+    return {
+        type: "solid-measure",
+        solid: "cuboid",
+        mode: "spaceDiagonal",
+        a,
+        b,
+        c,
+        answer,
+        options: makeOptions(answer)
+    };
+}
+
 function buildTask(mode, solid) {
+    if (mode === "faceDiagonal") return buildFaceDiagonal();
+    if (mode === "spaceDiagonal") return buildSpaceDiagonal();
+
     let a;
     let b;
     let c;
@@ -70,9 +119,20 @@ export function generateSolidMeasure(options = {}) {
     const modes = mode === "mixed" ? ["surface", "volume"] : [mode];
 
     const tasks = [];
+    const seen = new Set();
     for (let i = 0; i < count; i++) {
-        const solid = Math.random() < 0.5 ? "cube" : "cuboid";
-        tasks.push(buildTask(modes[i % modes.length], solid));
+        const m = modes[i % modes.length];
+        let task;
+        let guard = 0;
+        do {
+            const solid = m === "surface" || m === "volume"
+                ? (Math.random() < 0.5 ? "cube" : "cuboid")
+                : "cuboid";
+            task = buildTask(m, solid);
+            guard++;
+        } while (seen.has(`${task.mode}:${task.a}:${task.b}:${task.c}`) && guard < 30);
+        seen.add(`${task.mode}:${task.a}:${task.b}:${task.c}`);
+        tasks.push(task);
     }
     return tasks;
 }

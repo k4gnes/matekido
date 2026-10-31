@@ -1,0 +1,119 @@
+{
+  "id": "grade8-solid-properties-01",
+  "title": "📦 Testek tulajdonságai",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📦 Testek tulajdonságai",
+      "text": "A kocka és a téglatest 6 lapból, 12 élből és 8 csúcsból áll. A háromszög alapú hasábnak 5 lapja, 9 éle és 6 csúcsa van; a négyzet alapú gúlának 5 lapja, 8 éle és 5 csúcsa. A lapátló egy lap két szemközti csúcsát köti össze: hossza √(a² + b²). A testátló két szemközti csúcsot köt össze: hossza √(a² + b² + c²).",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Testek a postán",
+          "text": "A postai csomagok lapjait, éleit és csúcsait számoljuk; a lapátlóhoz és a testátlóhoz a Pitagorasz-tételt használjuk."
+        },
+        "racing": {
+          "title": "🏎️ Testek a boxutcában",
+          "text": "A boxutca dobozainak tulajdonságait vizsgáljuk: lapok, élek, csúcsok, majd az átlók hossza."
+        },
+        "football": {
+          "title": "⚽ Testek a pályán",
+          "text": "A felszerelések dobozainál számoljuk a lapokat, éleket, csúcsokat és az átlókat."
+        },
+        "cooking": {
+          "title": "🍳 Testek a konyhában",
+          "text": "A konyhai dobozok éleit és átlóit vizsgáljuk; használd a Pitagorasz-tételt!"
+        },
+        "animals": {
+          "title": "🦁 Testek az állatkertben",
+          "text": "Az állatkert dobozainak tulajdonságait számoljuk: lapok, élek, csúcsok, átlók."
+        },
+        "space": {
+          "title": "🚀 Testek az űrben",
+          "text": "Az űrhajó moduljainak éleit, csúcsait és átlóit vizsgáljuk."
+        },
+        "tram": {
+          "title": "🚋 Testek a villamoson",
+          "text": "A villamos csomagjainak tulajdonságait számoljuk: lapok, élek, csúcsok, átlók."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "solid-shape",
+      "options": {
+        "count": 2,
+        "mode": "faces",
+        "solids": ["cube", "cuboid", "prism", "pyramid"]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "solid-shape",
+      "options": {
+        "count": 2,
+        "mode": "edges",
+        "solids": ["cube", "cuboid", "prism", "pyramid"]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "solid-shape",
+      "options": {
+        "count": 2,
+        "mode": "vertices",
+        "solids": ["cube", "cuboid", "prism", "pyramid"]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "solid-measure",
+      "options": {
+        "count": 3,
+        "mode": "faceDiagonal"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "solid-measure",
+      "options": {
+        "count": 3,
+        "mode": "spaceDiagonal"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen számoltad a testek lapjait, éleit, csúcsait és átlóit!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltad a postai csomagok tulajdonságait és átlóit!"
+        },
+        "racing": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltad a boxutca dobozainak éleit és átlóit!"
+        },
+        "football": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltad a felszerelések dobozainak tulajdonságait!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Ügyesen számoltad a konyhai dobozok éleit és átlóit!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltad az állatkert dobozainak tulajdonságait!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Ügyesen számoltad az űrhajó moduljainak átlóit!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Ügyesen számoltad a villamos csomagjainak tulajdonságait!"
+        }
+      }
+    }
+  ]
+}

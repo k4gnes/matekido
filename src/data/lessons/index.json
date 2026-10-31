@@ -7334,6 +7334,52 @@
       }
     },
     {
+      "id": "grade8-solid-nets-01",
+      "title": "📦 Testek és hálók",
+      "grades": [
+        8
+      ],
+      "category": "geometry",
+      "skill": "solid-shapes",
+      "difficulty": 2,
+      "type": "solid-shape",
+      "mission": "📦 Testek és hálók",
+      "subtitle": "testek felismerése, hálók és lapok",
+      "file": "./data/lessons/grade8/grade8-solid-nets-01.json",
+      "worldTitles": {
+        "postman": "📮 Csomagok és hálók",
+        "racing": "🏎️ Dobozok a boxutcában",
+        "football": "⚽ Labdák és testek",
+        "cooking": "🍳 Formák a konyhában",
+        "animals": "🦁 Ketrecek és testek",
+        "space": "🚀 Űrhajó-testek",
+        "tram": "🚋 Csomagok a villamoson"
+      }
+    },
+    {
+      "id": "grade8-solid-properties-01",
+      "title": "📦 Testek tulajdonságai",
+      "grades": [
+        8
+      ],
+      "category": "geometry",
+      "skill": "solid-shapes",
+      "difficulty": 3,
+      "type": "solid-shape",
+      "mission": "📦 Testek tulajdonságai",
+      "subtitle": "lapok, élek, csúcsok, lapátló és testátló",
+      "file": "./data/lessons/grade8/grade8-solid-properties-01.json",
+      "worldTitles": {
+        "postman": "📮 Testek a postán",
+        "racing": "🏎️ Testek a boxutcában",
+        "football": "⚽ Testek a pályán",
+        "cooking": "🍳 Testek a konyhában",
+        "animals": "🦁 Testek az állatkertben",
+        "space": "🚀 Testek az űrben",
+        "tram": "🚋 Testek a villamoson"
+      }
+    },
+    {
       "id": "grade8-statistics-01",
       "title": "📊 Középértékek és terjedelem",
       "grades": [

@@ -1468,14 +1468,19 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "power": {
-            if (!["square", "cube", "notation", "base"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
+            if (!["square", "cube", "notation", "base", "root"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             if (!isInt(step.base) || step.base < 2 || step.base > 40) fail(ctx, `base hibás: ${step.base}`);
             if (![2, 3, 4].includes(step.exponent)) fail(ctx, `exponent hibás: ${step.exponent}`);
             if (typeof step.question !== "string" || step.question.length === 0) fail(ctx, "question hiányzik");
             if (typeof step.display !== "string" || step.display.length === 0) fail(ctx, "display hiányzik");
             const SUP = { 2: "²", 3: "³", 4: "⁴" };
             const expected = step.base ** step.exponent;
-            if (step.mode === "notation") {
+            if (step.mode === "root") {
+                if (!["sqrt", "square", "area"].includes(step.kind)) fail(ctx, `root kind hibás: ${step.kind}`);
+                if (step.radicand !== step.base ** 2) fail(ctx, `radicand (${step.radicand}) != base² (${step.base ** 2})`);
+                if (step.answer !== step.base) fail(ctx, `answer (${step.answer}) != base (${step.base})`);
+                if (isFiniteNum(range) && step.radicand > range) fail(ctx, `radicand kilép a tartományból: ${step.radicand} > ${range}`);
+            } else if (step.mode === "notation") {
                 if (typeof step.answer !== "string") fail(ctx, `notation answer nem szöveg: ${step.answer}`);
                 if (step.answer !== `${step.base}${SUP[step.exponent]}`) fail(ctx, `notation answer hibás: ${step.answer}`);
                 if (!step.display.includes(String(step.base))) fail(ctx, "notation display nem tartalmazza az alapot");

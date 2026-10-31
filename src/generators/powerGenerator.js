@@ -148,6 +148,45 @@ function buildBase(maxExponent) {
     };
 }
 
+function buildRoot() {
+    const kind = pick(["sqrt", "square", "area"]);
+    const base = randInt(2, 20);
+    const radicand = base * base;
+    const options = numberOptions(base, [base - 1, base + 1, base + 2, base + 3]);
+    const shared = {
+        type: "power",
+        mode: "root",
+        kind,
+        base,
+        exponent: 2,
+        radicand,
+        answer: base,
+        options
+    };
+
+    if (kind === "square") {
+        return {
+            ...shared,
+            display: String(radicand),
+            question: `Melyik nemnegatív szám négyzete a ${radicand}?`
+        };
+    }
+
+    if (kind === "area") {
+        return {
+            ...shared,
+            display: `${radicand} cm²`,
+            question: `Egy négyzet területe ${radicand} cm². Milyen hosszú az oldala?`
+        };
+    }
+
+    return {
+        ...shared,
+        display: `√${radicand}`,
+        question: `Mennyi a √${radicand} értéke?`
+    };
+}
+
 export function generatePower(options = {}) {
     const { count = 4, mode = "mixed", maxExponent = 3 } = options;
 
@@ -155,7 +194,8 @@ export function generatePower(options = {}) {
         square: buildSquare,
         cube: buildCube,
         notation: buildNotation,
-        base: buildBase
+        base: buildBase,
+        root: buildRoot
     };
 
     const tasks = [];

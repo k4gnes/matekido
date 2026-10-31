@@ -42,7 +42,7 @@
       "generator": "power",
       "options": {
         "count": 6,
-        "mode": "base"
+        "mode": "root"
       }
     },
     {
@@ -50,7 +50,7 @@
       "generator": "power",
       "options": {
         "count": 6,
-        "mode": "mixed"
+        "mode": "root"
       }
     },
     {

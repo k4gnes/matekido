@@ -15,13 +15,22 @@ const WORLD_EMOJI = {
     tram: "🚋"
 };
 
-const SUPERSCRIPTS = { 2: "²", 3: "³" };
+const SUPERSCRIPTS = { 2: "²", 3: "³", 4: "⁴" };
 
-function powerHint() {
+function powerHint(step) {
+    if (step.mode === "root") {
+        return "A négyzetgyök azt a nemnegatív számot adja, amelynek négyzete az adott szám. Például 7 · 7 = 49, ezért √49 = 7. Területből az oldalt is így keresd: melyik nemnegatív szám négyzete a terület?";
+    }
     return "A hatványban az alap és a kitevő van: például a 4³-nél az alap a 4, a kitevő a 3, és azt jelenti, hogy 4 · 4 · 4 = 64. A négyzet az n² = n · n, a köb az n³ = n · n · n – annyiszor szorozzuk össze az alapot, ahány a kitevő.";
 }
 
 function successText(step) {
+    if (step.mode === "root") {
+        if (step.kind === "area") {
+            return `🎉 Ügyes! Az oldal ${step.answer} cm.`;
+        }
+        return `🎉 Ügyes! √${step.radicand} = ${step.answer}.`;
+    }
     const sup = SUPERSCRIPTS[step.exponent] ?? `^${step.exponent}`;
     if (step.mode === "base") {
         return `🎉 Ügyes! A ${step.answer}${sup} = ${step.value}.`;
@@ -43,7 +52,7 @@ export function renderPower(step, root, next, progress, onResult, onAttempt) {
     if (progress) card.append(progress);
 
     const title = document.createElement("h1");
-    title.textContent = `${WORLD_EMOJI[getActiveWorld()] ?? "⚡"} Hatványozás`;
+    title.textContent = `${WORLD_EMOJI[getActiveWorld()] ?? "⚡"} ${step.mode === "root" ? "Négyzetgyök" : "Hatványozás"}`;
     card.append(title);
 
     const prompt = document.createElement("p");
@@ -77,7 +86,7 @@ export function renderPower(step, root, next, progress, onResult, onAttempt) {
     const hintButton = createButton("💡 Segítséget kérek", {
         onClick: () => {
             hintShown = true;
-            hint.innerHTML = `<p><strong>💡 Segítség</strong></p><p>${powerHint()}</p>`;
+            hint.innerHTML = `<p><strong>💡 Segítség</strong></p><p>${powerHint(step)}</p>`;
             hintButton.style.display = "none";
         }
     });

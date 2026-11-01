@@ -824,8 +824,49 @@
     justify-content: space-between;
     gap: 0.5rem;
     padding: 0.18rem 0.4rem;
+    border-left: 3px solid var(--grade-accent, #94a3b8);
     border-radius: 0.4rem;
-    background: var(--surface-2, #f5f7fb);
+    background: var(--grade-bg, #f5f7fb);
+}
+
+.grade-completion-row:nth-child(8n+1) {
+    --grade-accent: #4f86f7;
+    --grade-bg: #eef4ff;
+}
+
+.grade-completion-row:nth-child(8n+2) {
+    --grade-accent: #22a06b;
+    --grade-bg: #e9f8f0;
+}
+
+.grade-completion-row:nth-child(8n+3) {
+    --grade-accent: #f59e0b;
+    --grade-bg: #fff6e5;
+}
+
+.grade-completion-row:nth-child(8n+4) {
+    --grade-accent: #8b5cf6;
+    --grade-bg: #f3efff;
+}
+
+.grade-completion-row:nth-child(8n+5) {
+    --grade-accent: #14b8a6;
+    --grade-bg: #e8faf7;
+}
+
+.grade-completion-row:nth-child(8n+6) {
+    --grade-accent: #ec4899;
+    --grade-bg: #fdeef6;
+}
+
+.grade-completion-row:nth-child(8n+7) {
+    --grade-accent: #d97706;
+    --grade-bg: #fff5e3;
+}
+
+.grade-completion-row:nth-child(8n+8) {
+    --grade-accent: #0ea5e9;
+    --grade-bg: #e8f6fe;
 }
 
 .grade-completion-label {

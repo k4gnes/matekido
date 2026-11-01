@@ -807,26 +807,15 @@
 
 .grade-completion {
     display: grid;
-    grid-template-columns: auto minmax(0, 26rem);
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.75rem;
-    margin: 0.25rem 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.18rem 0.5rem;
+    margin: 0.2rem 0;
 }
 
-.grade-completion-logo {
-    font-size: 1.6rem;
-    opacity: 0.18;
-    justify-self: start;
-    pointer-events: none;
-}
-
-.grade-completion-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-    width: 100%;
-    justify-self: end;
+@media (max-width: 520px) {
+    .grade-completion {
+        grid-template-columns: 1fr;
+    }
 }
 
 .grade-completion-row {
@@ -834,17 +823,17 @@
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
-    padding: 0.28rem 0.55rem;
-    border-radius: 0.5rem;
+    padding: 0.18rem 0.4rem;
+    border-radius: 0.4rem;
     background: var(--surface-2, #f5f7fb);
 }
 
 .grade-completion-label {
     font-weight: 600;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
 }
 
 .grade-completion-state {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     color: #555;
 }

@@ -1,0 +1,103 @@
+{
+  "id": "grade8-surface-01",
+  "title": "📦 Felszín",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📦 Felszín",
+      "text": "A felszín a testet határoló lapok területének összege. A kocka 6 egyforma négyzetből áll: A = 6 · a · a. A téglatest felszíne A = 2 · (a·b + a·c + b·c), mert minden lapból kettő van. Az egyenes hasáb felszíne: 2 · alapterület + palást; a derékszögű háromszög alapú hasábnál A = a·b + (a + b + √(a² + b²)) · c. A felszínt négyzetegységben mérjük: cm², dm², m².",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Csomagok felszíne",
+          "text": "A postán a dobozokat papírba csomagolják. Mennyi papír kell a kocka, a téglatest és a hasáb alakú csomagokra?"
+        },
+        "racing": {
+          "title": "🏎️ Fólia a boxutcában",
+          "text": "A szerelődobozokat fóliával vonják be. Számold ki, mennyi fólia kell egy-egy dobozra!"
+        },
+        "football": {
+          "title": "⚽ Háló a labdás ládán",
+          "text": "A labdás ládák oldalát háló fedi. Hány cm² háló kell a kocka, a téglatest és a hasáb alakú ládára?"
+        },
+        "cooking": {
+          "title": "🍳 Fólia a konyhában",
+          "text": "A konyhai dobozokat fóliával csomagolják. Számold ki a felszínüket!"
+        },
+        "animals": {
+          "title": "🦁 Védőháló az odún",
+          "text": "Az állatok odúit védőháló borítja. Mennyi háló kell a különböző alakú odúkra?"
+        },
+        "space": {
+          "title": "🚀 Hőpajzs az űrhajón",
+          "text": "Az űrhajó moduljait hőpajzs borítja. Hány cm² védőréteg kell egy-egy modulra?"
+        },
+        "tram": {
+          "title": "🚋 Csomagolás a villamoson",
+          "text": "A villamoson az utasok csomagjait papírba csomagolják. Számold ki a felszínüket!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "solid-measure",
+      "options": {
+        "count": 4,
+        "mode": "surface",
+        "solids": ["cube"]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "solid-measure",
+      "options": {
+        "count": 4,
+        "mode": "surface",
+        "solids": ["cuboid"]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "solid-measure",
+      "options": {
+        "count": 4,
+        "mode": "surface",
+        "solids": ["prism"]
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen kiszámoltad a kocka, a téglatest és a hasáb felszínét!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden csomag be van csomagolva – a felszínszámítás nem rejt több titkot!"
+        },
+        "racing": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden doboz fóliát kapott – a boxutca készen áll!"
+        },
+        "football": {
+          "title": "🎉 Gól a felszínnel!",
+          "text": "Minden ládára elég háló került – kezdődhet a meccs!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden konyhai doboz be van csomagolva – a rendelés mehet!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden odú védőhálót kapott – az állatok biztonságban vannak!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden modul hőpajzsot kapott – indulhat a küldetés!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden csomag be van csomagolva – a villamos indulhat!"
+        }
+      }
+    }
+  ]
+}

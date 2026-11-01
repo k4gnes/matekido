@@ -1,5 +1,5 @@
 // Füstteszt az egyperces játékok közös motorjához (playEngine.js).
-// Minimális DOM-hamisításon végigjátssza mind az 5 játékot:
+// Minimális DOM-hamisításon végigjátssza mind a 7 játékot:
 // választó → indulás → helyes válasz → összegzés → rekord → tovább.
 //
 // Futtatás: make test
@@ -112,6 +112,8 @@ const { createPlayGame } = await import("./components/playEngine.js");
 const { renderAdditionPlay } = await import("./components/additionPlay.js");
 const { renderMultiplicationPlay } = await import("./components/multiplicationPlay.js");
 const { renderPowerPlay } = await import("./components/powerPlay.js");
+const { renderRootPlay } = await import("./components/rootPlay.js");
+const { renderPercentPlay } = await import("./components/percentPlay.js");
 const { renderIntegerPlay } = await import("./components/integerPlay.js");
 const { renderOperationOrderPlay } = await import("./components/operationOrderPlay.js");
 
@@ -141,6 +143,11 @@ function buttonByText(root, text) {
 function parseAnswer(factText) {
     const expr = factText
         .replace(/\s*=\s*\?$/, "")
+        .replace(/√\(([^)]+)\)/g, "Math.sqrt($1)")
+        .replace(/√(\d+)/g, "Math.sqrt($1)")
+        .replace(/∛\(([^)]+)\)/g, "Math.cbrt($1)")
+        .replace(/∛(\d+)/g, "Math.cbrt($1)")
+        .replace(/(\d+(?:[.,]\d+)?)\s*%/g, "($1/100)")
         .replace(/\^/g, "**")
         .replace(/−/g, "-")
         .replace(/×/g, "*")
@@ -384,6 +391,8 @@ async function testMultiplicationInput() {
 await testOptionsGame(renderAdditionPlay, "additionPlay");
 await testAgainButton();
 await testOptionsGame(renderPowerPlay, "powerPlay");
+await testOptionsGame(renderRootPlay, "rootPlay");
+await testOptionsGame(renderPercentPlay, "percentPlay");
 await testOptionsGame(renderIntegerPlay, "integerPlay");
 await testOptionsGame(renderOperationOrderPlay, "operationOrderPlay");
 await testMultiplicationChoice();

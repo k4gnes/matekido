@@ -1,0 +1,114 @@
+{
+  "id": "grade8-volume-01",
+  "title": "📦 Térfogat és űrtartalom",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📦 Térfogat és űrtartalom",
+      "text": "A térfogat megmutatja, mennyi fér a testbe. A kocka térfogata V = a · a · a, a téglatesté V = a · b · c. Az egyenes hasáb térfogata V = alapterület · magasság; a derékszögű háromszög alapú hasábnál V = (a · b / 2) · c. A térfogat egysége a cm³, dm³, m³. Fontos: 1 dm³ = 1 l, 1 m³ = 1000 l.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Csomagok űrtartalma",
+          "text": "Mennyi fér a postai csomagokba? Számold ki a kocka, a téglatest és a hasáb térfogatát!"
+        },
+        "racing": {
+          "title": "🏎️ Tartályok a boxutcában",
+          "text": "A boxutcában minden csepp számít. Mennyi fér a dobozokba és a tartályokba?"
+        },
+        "football": {
+          "title": "⚽ Labdás ládák űrtartalma",
+          "text": "Hány labda fér a ládákba? Számold ki a térfogatot, majd váltsd át literbe!"
+        },
+        "cooking": {
+          "title": "🍳 Edények űrtartalma",
+          "text": "A konyhában mindent kimérnek. Mennyi fér a dobozokba és az edényekbe?"
+        },
+        "animals": {
+          "title": "🦁 Itatótálak űrtartalma",
+          "text": "Mennyi víz fér az itatótálakba és a vödrökbe? Számolj térfogatot és űrtartalmat!"
+        },
+        "space": {
+          "title": "🚀 Üzemanyagtartályok",
+          "text": "Az űrhajó tartályaiban minden köbcentiméter számít. Számold ki, mennyi fér beléjük!"
+        },
+        "tram": {
+          "title": "🚋 Csomagok és tartályok",
+          "text": "A villamoson a csomagok és a tartályok űrtartalmát is kiszámoljuk. Mennyi fér beléjük?"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "solid-measure",
+      "options": {
+        "count": 3,
+        "mode": "volume",
+        "solids": ["cube"]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "solid-measure",
+      "options": {
+        "count": 3,
+        "mode": "volume",
+        "solids": ["cuboid"]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "solid-measure",
+      "options": {
+        "count": 3,
+        "mode": "volume",
+        "solids": ["prism"]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 3,
+        "kind": "capacity",
+        "context": true,
+        "interaction": "mixed",
+        "units": ["dm³", "l"]
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Ügyesen kiszámoltad a testek térfogatát, és tudod, hogy 1 dm³ = 1 l!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden csomag űrtartalmát kiszámoltad – a küldemények útra készen állnak!"
+        },
+        "racing": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden tartály tele van – indulhat a verseny!"
+        },
+        "football": {
+          "title": "🎉 Gól a térfogattal!",
+          "text": "Minden ládába pont annyi labda fér, amennyi kell – kezdődhet a meccs!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "Minden edény űrtartalmát ismered – a recept tökéletes lesz!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden itatótál megtelt – az állatok szomjan nem maradnak!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Minden tartály üzemanyaggal telt meg – indulhat a küldetés!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "Minden csomag és tartály a helyén van – a villamos indulhat!"
+        }
+      }
+    }
+  ]
+}

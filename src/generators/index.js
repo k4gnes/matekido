@@ -74,7 +74,7 @@ import { generateProbability } from "./probabilityGenerator.js?v=5";
 import { generateCombinatorics } from "./combinatoricsGenerator.js?v=7";
 import { generateOperationOrder } from "./operationOrderGenerator.js?v=3";
 import { generatePolygon } from "./polygonGenerator.js?v=4";
-import { generateSolidMeasure } from "./solidMeasureGenerator.js?v=1";
+import { generateSolidMeasure } from "./solidMeasureGenerator.js?v=2";
 import { generateCoordinate } from "./coordinateGenerator.js?v=1";
 import { generateElapsedTime } from "./elapsedTimeGenerator.js?v=1";
 import { generateSpeedTrip } from "./speedTripGenerator.js?v=1";
@@ -104,7 +104,7 @@ import { generateFunction } from "./functionGenerator.js?v=2";
 import { generateShapeArea } from "./shapeAreaGenerator.js?v=1";
 import { generateRational } from "./rationalGenerator.js?v=5";
 import { generateAlgebra } from "./algebraGenerator.js?v=1";
-import { generateMaster } from "./masterGenerator.js?v=8";
+import { generateMaster } from "./masterGenerator.js?v=9";
 import { getActiveWorld } from "../profile/Profile.js";
 
 export function generate(step) {

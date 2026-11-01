@@ -97,6 +97,12 @@ const GRADE_PRESETS = {
         missingOp: { addSubMax: 999, mulA: 99, mulB: 9, operators: ALL_OPERATORS },
         think: { kinds: MUL_KINDS, startMax: 9, factorMax: 9, constMax: 9 },
         challenge: { pairN: [6, 10], logicColors: [2, 3], logicHard: true, sumDiffMax: 1000 }
+    },
+    8: {
+        max: 1000,
+        missingOp: { addSubMax: 999, mulA: 99, mulB: 9, operators: ALL_OPERATORS },
+        think: { kinds: MUL_KINDS, startMax: 9, factorMax: 9, constMax: 9 },
+        challenge: { pairN: [6, 10], logicColors: [2, 3], logicHard: true, sumDiffMax: 1000 }
     }
 };
 

@@ -1115,11 +1115,12 @@ function validateStep(step, ctx, range) {
             break;
         }
         case "solid-measure": {
-            if (!["cube", "cuboid"].includes(step.solid)) fail(ctx, `solid hibás: ${step.solid}`);
+            if (!["cube", "cuboid", "prism"].includes(step.solid)) fail(ctx, `solid hibás: ${step.solid}`);
             if (!["surface", "volume", "faceDiagonal", "spaceDiagonal"].includes(step.mode)) {
                 fail(ctx, `mode hibás: ${step.mode}`);
             }
             const diagonal = step.mode === "faceDiagonal" || step.mode === "spaceDiagonal";
+            if (step.solid === "prism" && diagonal) fail(ctx, "hasábnál nincs átlófeladat");
             for (const k of ["a", "b", "c"]) {
                 if (!isInt(step[k]) || step[k] < (diagonal ? 2 : 3) || step[k] > 12) {
                     fail(ctx, `${k} hibás: ${step[k]}`);
@@ -1133,9 +1134,17 @@ function validateStep(step, ctx, range) {
                     fail(ctx, `téglatestnél minden él egyenlő (kocka lenne): ${step.a}`);
                 }
             }
-            const expectedSurface = 2 * (step.a * step.b + step.a * step.c + step.b * step.c);
-            const expectedVolume = step.a * step.b * step.c;
-            const expectedFace = Math.sqrt(step.a * step.a + step.b * step.b);
+            const hyp = Math.sqrt(step.a * step.a + step.b * step.b);
+            if (step.solid === "prism" && !Number.isInteger(hyp)) {
+                fail(ctx, `hasáb alapja nem egész átfogójú: ${step.a}/${step.b}`);
+            }
+            const expectedSurface = step.solid === "prism"
+                ? step.a * step.b + (step.a + step.b + hyp) * step.c
+                : 2 * (step.a * step.b + step.a * step.c + step.b * step.c);
+            const expectedVolume = step.solid === "prism"
+                ? (step.a * step.b / 2) * step.c
+                : step.a * step.b * step.c;
+            const expectedFace = hyp;
             const expectedSpace = Math.sqrt(step.a * step.a + step.b * step.b + step.c * step.c);
             const expectedSolid = step.mode === "surface" ? expectedSurface
                 : step.mode === "volume" ? expectedVolume

@@ -1,0 +1,80 @@
+{
+  "id": "grade8-root-play-01",
+  "title": "🎲 Négyzetgyökök",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "⚡ Négyzetgyökök a postán",
+      "text": "Egy perc alatt annyi gyökös feladatot oldasz meg, amennyit bírsz. Keresd azt a számot, amelynek a négyzete vagy köbe az adott érték! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Négyzetgyökök a postán",
+          "text": "Egy perc alatt annyi csomagot adsz fel, amennyit bírsz: minden csomaghoz egy gyökös feladat tartozik. Keresd a számot, amelynek a négyzete vagy köbe az adott érték! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "racing": {
+          "title": "🏎️ Négyzetgyökök a pályán",
+          "text": "Egy perc alatt annyi kört teljesítesz, amennyit bírsz: minden körben egy gyökös feladat vár. Keresd a számot, amelynek a négyzete vagy köbe az adott érték! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "football": {
+          "title": "⚽ Négyzetgyökök a pályán",
+          "text": "Egy perc alatt annyi gólt rúgsz, amennyit bírsz: minden gólhoz egy gyökös feladat kell. Keresd a számot, amelynek a négyzete vagy köbe az adott érték! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "cooking": {
+          "title": "🍳 Négyzetgyökök a konyhában",
+          "text": "Egy perc alatt annyi tálkát készítesz, amennyit bírsz: minden recepthez egy gyökös feladat tartozik. Keresd a számot, amelynek a négyzete vagy köbe az adott érték! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "animals": {
+          "title": "🦁 Négyzetgyökök az állatkertben",
+          "text": "Egy perc alatt annyi állatot etetsz, amennyit bírsz: minden adagnál egy gyökös feladat kell. Keresd a számot, amelynek a négyzete vagy köbe az adott érték! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "space": {
+          "title": "🤖 Négyzetgyökök az űrhajón",
+          "text": "Egy perc alatt annyi bolygót fedezel fel, amennyit bírsz: minden számításhoz egy gyökös feladat tartozik. Keresd a számot, amelynek a négyzete vagy köbe az adott érték! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "tram": {
+          "title": "🚋 Négyzetgyökök a villamoson",
+          "text": "Egy perc alatt annyi utast szállítasz el, amennyit bírsz: minden jegyhez egy gyökös feladat tartozik. Keresd a számot, amelynek a négyzete vagy köbe az adott érték! Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        }
+      }
+    },
+    {
+      "type": "root-play",
+      "duration": 60
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Jó móka volt!",
+      "text": "Egyperces gyökös játékot játszottál, és a rekordod megvan!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces gyökös játékot játszottál a postán, és minden csomagot kiszámoltál!"
+        },
+        "racing": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces gyökös játékot játszottál a pályán, és minden körben jó eredményt kaptál!"
+        },
+        "football": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces gyökös játékot játszottál a pályán, és minden gólt eltaláltál!"
+        },
+        "cooking": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces gyökös játékot játszottál a konyhában, és minden tálkát kiszámoltál!"
+        },
+        "animals": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces gyökös játékot játszottál az állatkertben, és minden adagot eltaláltál!"
+        },
+        "space": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces gyökös játékot játszottál az űrhajón, és minden bolygót sikerrel számoltál!"
+        },
+        "tram": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces gyökös játékot játszottál a villamoson, és minden jegyet kiszámoltál!"
+        }
+      }
+    }
+  ]
+}

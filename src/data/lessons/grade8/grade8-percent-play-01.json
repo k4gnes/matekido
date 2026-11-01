@@ -1,0 +1,80 @@
+{
+  "id": "grade8-percent-play-01",
+  "title": "🎲 Százalék",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "⚡ Százalék a postán",
+      "text": "Egy perc alatt annyi százalékos feladatot oldasz meg, amennyit bírsz. A százalék századrészt jelent: 20% = 20/100 = 0,2. Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 Százalék a postán",
+          "text": "Egy perc alatt annyi csomagot adsz fel, amennyit bírsz: minden csomaghoz egy százalékos feladat tartozik. A százalék századrészt jelent: 20% = 20/100 = 0,2. Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "racing": {
+          "title": "🏎️ Százalék a pályán",
+          "text": "Egy perc alatt annyi kört teljesítesz, amennyit bírsz: minden körben egy százalékos feladat vár. A százalék századrészt jelent: 20% = 20/100 = 0,2. Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "football": {
+          "title": "⚽ Százalék a pályán",
+          "text": "Egy perc alatt annyi gólt rúgsz, amennyit bírsz: minden gólhoz egy százalékos feladat kell. A százalék századrészt jelent: 20% = 20/100 = 0,2. Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "cooking": {
+          "title": "🍳 Százalék a konyhában",
+          "text": "Egy perc alatt annyi tálkát készítesz, amennyit bírsz: minden recepthez egy százalékos feladat tartozik. A százalék századrészt jelent: 20% = 20/100 = 0,2. Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "animals": {
+          "title": "🦁 Százalék az állatkertben",
+          "text": "Egy perc alatt annyi állatot etetsz, amennyit bírsz: minden adagnál egy százalékos feladat kell. A százalék századrészt jelent: 20% = 20/100 = 0,2. Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "space": {
+          "title": "🤖 Százalék az űrhajón",
+          "text": "Egy perc alatt annyi bolygót fedezel fel, amennyit bírsz: minden számításhoz egy százalékos feladat tartozik. A százalék századrészt jelent: 20% = 20/100 = 0,2. Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        },
+        "tram": {
+          "title": "🚋 Százalék a villamoson",
+          "text": "Egy perc alatt annyi utast szállítasz el, amennyit bírsz: minden jegyhez egy százalékos feladat tartozik. A százalék századrészt jelent: 20% = 20/100 = 0,2. Elrontani nem baj: megmutatjuk a helyes választ, és ugyanaz a feladat később újra jön. A saját rekordodat te állítod!"
+        }
+      }
+    },
+    {
+      "type": "percent-play",
+      "duration": 60
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Jó móka volt!",
+      "text": "Egyperces százalékos játékot játszottál, és a rekordod megvan!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces százalékos játékot játszottál a postán, és minden csomagot kiszámoltál!"
+        },
+        "racing": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces százalékos játékot játszottál a pályán, és minden körben jó eredményt kaptál!"
+        },
+        "football": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces százalékos játékot játszottál a pályán, és minden gólt eltaláltál!"
+        },
+        "cooking": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces százalékos játékot játszottál a konyhában, és minden tálkát kiszámoltál!"
+        },
+        "animals": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces százalékos játékot játszottál az állatkertben, és minden adagot eltaláltál!"
+        },
+        "space": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces százalékos játékot játszottál az űrhajón, és minden bolygót sikerrel számoltál!"
+        },
+        "tram": {
+          "title": "🎉 Jó móka volt!",
+          "text": "Egyperces százalékos játékot játszottál a villamoson, és minden jegyet kiszámoltál!"
+        }
+      }
+    }
+  ]
+}

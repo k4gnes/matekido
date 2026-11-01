@@ -1,0 +1,138 @@
+{
+  "id": "grade8-geometry-review-01",
+  "title": "📐 Geometria és mérés összefoglaló",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "📐 Geometria és mérés összefoglaló",
+      "text": "A geometriában három kérdés segít mindig: milyen alakzatról van szó, milyen adatokat ismerünk, és mit kell kiszámítani? Háromszögnél a szögösszeg 180°, négyszögnél 360°, derékszögű háromszögnél a Pitagorasz-tétel: a² + b² = c². A kör kerülete és területe, a síkidomok kerülete és területe, valamint a testek felszíne és térfogata is előkerül. Mindig figyelj a mértékegységekre: 1 dm³ = 1 l, 1 m² = 100 dm².",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 A postás alakzatai",
+          "text": "A csomagok, a címkék és a postaládák mind geometriai alakzatok. Számolj szögekkel, területekkel és térfogattal!"
+        },
+        "racing": {
+          "title": "🏎️ A boxutca geometriája",
+          "text": "A pálya kanyarjai, a kerekek és a dobozok is geometriai feladatok. Vegyük sorra őket!"
+        },
+        "football": {
+          "title": "⚽ A pálya geometriája",
+          "text": "A pálya vonalai, a kapu és a labdák is számítanak. Számolj szögekkel, kerülettel és területtel!"
+        },
+        "cooking": {
+          "title": "🍳 A konyha geometriája",
+          "text": "A tálcák, a formák és a dobozok alakja mind mérésre vár. Számolj velünk!"
+        },
+        "animals": {
+          "title": "🦁 Az állatkert alakzatai",
+          "text": "A kifutók, a medencék és az odúk geometriai alakzatok. Számold ki a kerületet, a területet és a térfogatot!"
+        },
+        "space": {
+          "title": "🚀 Az űrhajó geometriája",
+          "text": "A napelemek, a modulok és a tartályok geometriája dönt a küldetésről. Számolj pontosan!"
+        },
+        "tram": {
+          "title": "🚋 A villamos geometriája",
+          "text": "A villamos padlója, a kijelzők és a csomagok is mérhetők. Vegyük sorra a feladatokat!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "triangle",
+      "options": {
+        "count": 3,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "polygon",
+      "options": {
+        "count": 2,
+        "mode": "quadrilateral",
+        "ask": "name",
+        "quadKinds": ["square", "rectangle", "rhombus", "parallelogram", "trapezoid", "isosceles-trapezoid", "kite", "concave"]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "pythagorean",
+      "options": {
+        "count": 3,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "circle",
+      "options": {
+        "count": 3,
+        "mode": "measure-mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "shape-area",
+      "options": {
+        "count": 2,
+        "mode": "polygon-mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "solid-measure",
+      "options": {
+        "count": 2,
+        "mode": "mixed",
+        "solids": ["cube", "cuboid", "prism"]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "measure-units",
+      "options": {
+        "count": 2,
+        "kind": "area",
+        "context": true,
+        "interaction": "mixed",
+        "units": ["m²", "dm²", "cm²"]
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Összefoglaltad a geometria és a mérés kulcsait: szögek, négyszögek, Pitagorasz-tétel, kör, kerület és terület, felszín és térfogat!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "A posta összes alakzatát kiszámoltad – indulhat a kézbesítés!"
+        },
+        "racing": {
+          "title": "🎉 Szuper vagy!",
+          "text": "A boxutca geometriáját is megoldottad – jöhet a következő kör!"
+        },
+        "football": {
+          "title": "🎉 Gól!",
+          "text": "A pálya összes geometriai feladatát megoldottad – kezdődhet a meccs!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "A konyha alakzatait kiszámoltad – jó étvágyat!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Az állatkert minden méretét kiszámoltad – az állatok elégedettek!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Az űrhajó geometriáját is megoldottad – indulhat a küldetés!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "A villamos minden méretét kiszámoltad – indulhat a járat!"
+        }
+      }
+    }
+  ]
+}

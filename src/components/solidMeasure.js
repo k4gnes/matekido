@@ -35,7 +35,62 @@ function svgEl(name, attrs = {}) {
     return el;
 }
 
+function svgLabel(svg, cx, cy, text) {
+    const t = svgEl("text", {
+        x: cx,
+        y: cy,
+        "text-anchor": "middle",
+        "font-size": "13",
+        "font-weight": "700",
+        fill: "#1e293b",
+        stroke: "#ffffff",
+        "stroke-width": "4",
+        "paint-order": "stroke"
+    });
+    t.textContent = text;
+    svg.append(t);
+}
+
+function createPrismSvg(step) {
+    const { a, b, c } = step;
+    const unit = 56 / Math.max(a, b, c);
+    const fw = a * unit;
+    const fh = b * unit;
+    const dx = c * unit * 0.6;
+    const dy = c * unit * 0.35;
+    const x = 58;
+    const y = 92;
+
+    const svg = svgEl("svg", { viewBox: "0 0 205 165", class: "slm-svg" });
+
+    const p1 = [x, y];
+    const p2 = [x + fw, y];
+    const p3 = [x, y - fh];
+
+    function face(points, fill) {
+        svg.append(svgEl("polygon", {
+            points: points.map(p => p.join(",")).join(" "),
+            fill,
+            stroke: "#1e293b",
+            "stroke-width": "2.5",
+            "stroke-linejoin": "round"
+        }));
+    }
+
+    face([p1, p2, [p2[0] + dx, p2[1] - dy], [p1[0] + dx, p1[1] - dy]], "#60a5fa");
+    face([p2, p3, [p3[0] + dx, p3[1] - dy], [p2[0] + dx, p2[1] - dy]], "#93c5fd");
+    face([p1, p2, p3], "#3b82f6");
+
+    svgLabel(svg, x + fw / 2, y + 18, `a = ${a} cm`);
+    svgLabel(svg, x - 14, y - fh / 2, `b = ${b} cm`);
+    svgLabel(svg, x + fw + dx / 2 + 14, y - dy / 2 + 4, `c = ${c} cm`);
+
+    return svg;
+}
+
 function createSolidSvg(step) {
+    if (step.solid === "prism") return createPrismSvg(step);
+
     const { solid, a, b, c } = step;
     const unit = 64 / Math.max(a, b, c);
     const fw = a * unit;
@@ -82,25 +137,9 @@ function createSolidSvg(step) {
         }));
     }
 
-    function label(cx, cy, text) {
-        const t = svgEl("text", {
-            x: cx,
-            y: cy,
-            "text-anchor": "middle",
-            "font-size": "13",
-            "font-weight": "700",
-            fill: "#1e293b",
-            stroke: "#ffffff",
-            "stroke-width": "4",
-            "paint-order": "stroke"
-        });
-        t.textContent = text;
-        svg.append(t);
-    }
-
-    label(x + fw / 2, y + fh + 20, `a = ${a} cm`);
-    label(x - 12, y + fh / 2 + 4, `${solid === "cube" ? "a" : "b"} = ${b} cm`);
-    label(x + fw + dx + 2, y - dy - 8, `${solid === "cube" ? "a" : "c"} = ${c} cm`);
+    svgLabel(svg, x + fw / 2, y + fh + 20, `a = ${a} cm`);
+    svgLabel(svg, x - 12, y + fh / 2 + 4, `${solid === "cube" ? "a" : "b"} = ${b} cm`);
+    svgLabel(svg, x + fw + dx + 2, y - dy - 8, `${solid === "cube" ? "a" : "c"} = ${c} cm`);
 
     return svg;
 }
@@ -116,10 +155,17 @@ function hintFor(step) {
         if (step.solid === "cube") {
             return `💡 A kockának 6 egyforma lapja van: A = 6 × a × a = 6 × ${step.a} × ${step.a} = ${step.answer} cm²`;
         }
+        if (step.solid === "prism") {
+            const hyp = Math.sqrt(step.a * step.a + step.b * step.b);
+            return `💡 A = a×b + (a + b + √(a²+b²)) × c = ${step.a * step.b} + (${step.a + step.b + hyp}) × ${step.c} = ${step.answer} cm²`;
+        }
         return `💡 A = 2 × (a×b + a×c + b×c) = 2 × (${step.a * step.b} + ${step.a * step.c} + ${step.b * step.c}) = ${step.answer} cm²`;
     }
     if (step.solid === "cube") {
         return `💡 A kocka térfogata: V = a × a × a = ${step.a} × ${step.a} × ${step.a} = ${step.answer} cm³`;
+    }
+    if (step.solid === "prism") {
+        return `💡 V = (a×b / 2) × c = (${step.a}×${step.b} / 2) × ${step.c} = ${step.answer} cm³`;
     }
     return `💡 V = a × b × c = ${step.a} × ${step.b} × ${step.c} = ${step.answer} cm³`;
 }
@@ -215,10 +261,16 @@ export function renderSolidMeasure(step, root, next, progress, onResult, onAttem
             if (step.solid === "cube") {
                 return `😊 Ügyes! A = 6 × ${step.a} × ${step.a} = ${step.answer} cm²`;
             }
+            if (step.solid === "prism") {
+                return `😊 Ügyes! A = ${step.a * step.b} + ${step.a + step.b + Math.sqrt(step.a * step.a + step.b * step.b)} × ${step.c} = ${step.answer} cm²`;
+            }
             return `😊 Ügyes! A = 2 × (${step.a * step.b} + ${step.a * step.c} + ${step.b * step.c}) = ${step.answer} cm²`;
         }
         if (step.solid === "cube") {
             return `😊 Ügyes! V = ${step.a} × ${step.a} × ${step.a} = ${step.answer} cm³`;
+        }
+        if (step.solid === "prism") {
+            return `😊 Ügyes! V = (${step.a} × ${step.b} / 2) × ${step.c} = ${step.answer} cm³`;
         }
         return `😊 Ügyes! V = ${step.a} × ${step.b} × ${step.c} = ${step.answer} cm³`;
     }

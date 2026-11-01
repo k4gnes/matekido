@@ -1,6 +1,6 @@
 # Matekidő – 8. osztályos tanmenet
 
-> **Státusz: folyamatban (30/36 lecke).** A tanmenet jóváhagyott; a leckéket a megvalósítással párhuzamosan vesszük fel a regiszterbe. A 7. osztály lezárult, ez a Nat 2020 7–8. évfolyamának utolsó tanéve.
+> **Státusz: megvalósult.** A 8. osztályos tanmenet elkészült: **36 lecke a 36 tervezettből + a mester kihívás** (a táblázatban linkelt leckék mind a regiszterben vannak), továbbá 2 egyperces játék. A leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
 
 **Tervezett 36 lecke + 1 mester kihívás**, 9 témakörben (a regiszter 7 kategóriája: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋). A 36 lecke mellett 2 egyperces játék szerepel a tervben; ezek nem számítanak a haladásba.
 
@@ -71,9 +71,9 @@ A 8. osztály a 7. osztályra épül, és a 7–8. kerettanterv addig nem érint
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
 | 27 | Testek | [Testek és hálók](?lesson=grade8-solid-nets-01) | Kocka, téglatest, hasáb, gúla, gömb, Földgömb; háló, lapok | — | 2 |
-| 28 | Testek tulajdonságai | Testek tulajdonságai | Lapok, élek, csúcsok, lapátló, testátló | — | 3 |
-| 29 | Felszín | Felszín | Kocka, téglatest, egyenes hasáb felszíne | 1000 | 3 |
-| 30 | Térfogat | Térfogat és űrtartalom | Kocka, téglatest, hasáb térfogata; 1 dm³ = 1 l | 1000 | 3 |
+| 28 | Testek tulajdonságai | [Testek tulajdonságai](?lesson=grade8-solid-properties-01) | Lapok, élek, csúcsok, lapátló, testátló | — | 3 |
+| 29 | Felszín | [Felszín](?lesson=grade8-surface-01) | Kocka, téglatest, egyenes hasáb felszíne | 1000 | 3 |
+| 30 | Térfogat | [Térfogat és űrtartalom](?lesson=grade8-volume-01) | Kocka, téglatest, hasáb térfogata; 1 dm³ = 1 l | 1000 | 3 |
 
 ## Statisztika, valószínűség (3 lecke)
 
@@ -87,19 +87,22 @@ A 8. osztály a 7. osztályra épül, és a 7–8. kerettanterv addig nem érint
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 34 | Számok, algebra | Számok, algebra, egyenletek összefoglaló | Vegyes ismétlés | 1000 | 3 |
-| 35 | Geometria | Geometria és mérés összefoglaló | Vegyes ismétlés | 1000 | 3 |
-| 36 | Vegyes gyakorló | 8. osztályos vegyes gyakorló | Minden témakör | 1000 | 3 |
+| 34 | Számok, algebra | [Számok, algebra, egyenletek összefoglaló](?lesson=grade8-algebra-review-01) | Vegyes ismétlés | 1000 | 3 |
+| 35 | Geometria | [Geometria és mérés összefoglaló](?lesson=grade8-geometry-review-01) | Vegyes ismétlés | 1000 | 3 |
+| 36 | Vegyes gyakorló | [8. osztályos vegyes gyakorló](?lesson=grade8-mixed-01) | Minden témakör | 1000 | 3 |
 
 ## 🌟 Mester kihívás (1 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 37 | Mester kihívás | 🌟 Mester kihívás | Szöveges feladat és logikai rejtvény | 1000 | 4 |
+| 37 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade8-master-01) | Szöveges feladat és logikai rejtvény | 1000 | 4 |
 
 ## 🎲 Egypercesek
 
 Ezek nem számozott feladatok: a **🎲 Egypercesek** oldalon találhatók, nem számítanak a haladásba, és mindegyiknek saját rekordja van.
+
+- [🎲 Négyzetgyökök (egyperces)](?lesson=grade8-root-play-01) – négyzet- és köbgyökök, két nehézségi szinten.
+- [🎲 Százalék (egyperces)](?lesson=grade8-percent-play-01) – százalékrész kiszámítása, két nehézségi szinten.
 
 | Játék | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
@@ -147,11 +150,11 @@ Ezek nem számozott feladatok: a **🎲 Egypercesek** oldalon találhatók, nem 
 
 - Marad a 36 lecke + 1 mester + 2 egyperces felosztás.
 - A szerkesztések első körben választós feladatok; az interaktív lépéssorrend később jöhet.
-- A két egyperces a 36 lecke és a mester után készül el, a 7. osztály mintájára.
+- A két egyperces a 7. osztály mintájára készült el (négyzetgyökök és százalék).
 
 ## Megvalósítási állapot
 
-Elkészült (30/36): halmazok, számhalmazok, halmazműveletek, prímszámok és prímtényezős felbontás, LNKO és LKKT, hatványozás, négyzetgyök, igaz és hamis állítások, gráfok; kombinatorika; algebrai kifejezések, elsőfokú egyenletek, egyenlőtlenségek, szöveges feladatok, arányosság, százalékszámítás; függvények (megfeleltetések, egyenes arányosság grafikonja, grafikonok jellemzése); háromszög szögei, négyszögek rendszerezése, kerület-terület, Pitagorasz-tétel, kör, testek és hálók; tengelyes és középpontos tükrözés, eltolás és forgatás, alapszerkesztések; adatok és diagramok, középértékek, valószínűség és gyakoriság. A táblázatban linkelt leckék mind a regiszterben vannak, `grade8-*` azonosítókkal.
+Elkészült (36/36 + mester + 2 egyperces): halmazok, számhalmazok, halmazműveletek, prímszámok és prímtényezős felbontás, LNKO és LKKT, hatványozás, négyzetgyök, igaz és hamis állítások, gráfok; kombinatorika; algebrai kifejezések, elsőfokú egyenletek, egyenlőtlenségek, szöveges feladatok, arányosság, százalékszámítás; függvények (megfeleltetések, egyenes arányosság grafikonja, grafikonok jellemzése); háromszög szögei, négyszögek rendszerezése, kerület-terület, Pitagorasz-tétel, kör, testek és hálók, testek tulajdonságai, felszín, térfogat és űrtartalom; tengelyes és középpontos tükrözés, eltolás és forgatás, alapszerkesztések; adatok és diagramok, középértékek, valószínűség és gyakoriság; számok-algebra, geometria-mérés és vegyes összefoglaló, a mester kihívás, valamint a négyzetgyökös és százalékos egyperces. A táblázatban linkelt leckék mind a regiszterben vannak, `grade8-*` azonosítókkal.
 
 ---
 

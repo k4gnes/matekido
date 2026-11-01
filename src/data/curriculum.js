@@ -339,12 +339,18 @@ export const CURRICULUM_ORDER = {
         "grade8-circle-parts-01",
         "grade8-solid-nets-01",
         "grade8-solid-properties-01",
+        "grade8-surface-01",
+        "grade8-volume-01",
         "grade8-data-charts-01",
         "grade8-statistics-01",
         "grade8-probability-frequency-01",
         "grade8-mirror-central-01",
         "grade8-transform-move-01",
         "grade8-construction-01",
+        "grade8-algebra-review-01",
+        "grade8-geometry-review-01",
+        "grade8-mixed-01",
+        "grade8-master-01",
     ],
 };
 

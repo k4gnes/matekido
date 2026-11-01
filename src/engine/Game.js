@@ -33,6 +33,8 @@ import { renderMultiplicationPlay } from "../components/multiplicationPlay.js?v=
 import { renderOperationOrderPlay } from "../components/operationOrderPlay.js?v=7";
 import { renderIntegerPlay } from "../components/integerPlay.js?v=3";
 import { renderPowerPlay } from "../components/powerPlay.js?v=3";
+import { renderRootPlay } from "../components/rootPlay.js?v=1";
+import { renderPercentPlay } from "../components/percentPlay.js?v=1";
 import { renderAdditionPlay } from "../components/additionPlay.js?v=3";
 import { renderDivision } from "../components/division.js?v=7";
 import { renderMissingOperand } from "../components/missingOperand.js?v=6";
@@ -85,7 +87,7 @@ import { renderCircle } from "../components/circle.js?v=6";
 import { renderProbability } from "../components/probability.js?v=6";
 import { renderCombinatorics } from "../components/combinatorics.js?v=7";
 import { renderOperationOrder } from "../components/operationOrder.js?v=3";
-import { renderSolidMeasure } from "../components/solidMeasure.js?v=1";
+import { renderSolidMeasure } from "../components/solidMeasure.js?v=2";
 import { renderCoordinate } from "../components/coordinate.js?v=2";
 import { renderSpeedTrip } from "../components/speedTrip.js?v=1";
 import { renderAverage } from "../components/average.js?v=3";
@@ -372,6 +374,8 @@ const RENDERERS = new Map([
     ["operation-order-play", renderOperationOrderPlay],
     ["integer-play", renderIntegerPlay],
     ["power-play", renderPowerPlay],
+    ["root-play", renderRootPlay],
+    ["percent-play", renderPercentPlay],
     ["solid-measure", renderSolidMeasure],
     ["coordinate", renderCoordinate],
     ["speed-trip", renderSpeedTrip],

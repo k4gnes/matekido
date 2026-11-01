@@ -7380,6 +7380,54 @@
       }
     },
     {
+      "id": "grade8-surface-01",
+      "title": "📦 Felszín",
+      "grades": [
+        8
+      ],
+      "category": "geometry",
+      "skill": "solid-shapes",
+      "difficulty": 3,
+      "type": "solid-measure",
+      "range": 1000,
+      "mission": "📦 Felszín",
+      "subtitle": "kocka, téglatest és egyenes hasáb felszíne",
+      "file": "./data/lessons/grade8/grade8-surface-01.json",
+      "worldTitles": {
+        "postman": "📮 Csomagok felszíne",
+        "racing": "🏎️ Fólia a boxutcában",
+        "football": "⚽ Háló a labdás ládán",
+        "cooking": "🍳 Fólia a konyhában",
+        "animals": "🦁 Védőháló az odún",
+        "space": "🚀 Hőpajzs az űrhajón",
+        "tram": "🚋 Csomagolás a villamoson"
+      }
+    },
+    {
+      "id": "grade8-volume-01",
+      "title": "📦 Térfogat és űrtartalom",
+      "grades": [
+        8
+      ],
+      "category": "geometry",
+      "skill": "solid-shapes",
+      "difficulty": 3,
+      "type": "solid-measure",
+      "range": 1000,
+      "mission": "📦 Térfogat és űrtartalom",
+      "subtitle": "kocka, téglatest és hasáb térfogata; 1 dm³ = 1 l",
+      "file": "./data/lessons/grade8/grade8-volume-01.json",
+      "worldTitles": {
+        "postman": "📮 Csomagok űrtartalma",
+        "racing": "🏎️ Tartályok a boxutcában",
+        "football": "⚽ Labdás ládák űrtartalma",
+        "cooking": "🍳 Edények űrtartalma",
+        "animals": "🦁 Itatótálak űrtartalma",
+        "space": "🚀 Üzemanyagtartályok",
+        "tram": "🚋 Csomagok és tartályok"
+      }
+    },
+    {
       "id": "grade8-statistics-01",
       "title": "📊 Középértékek és terjedelem",
       "grades": [
@@ -7735,6 +7783,155 @@
         "space": "🚀 Gráfok az űrben",
         "tram": "🚋 Gráfok a villamoson"
       }
+    },
+    {
+      "id": "grade8-algebra-review-01",
+      "title": "🧮 Számok és algebra összefoglaló",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "algebra",
+      "difficulty": 3,
+      "type": "algebra",
+      "range": 1000,
+      "mission": "🧮 Számok és algebra összefoglaló",
+      "subtitle": "halmazok, számelmélet, hatvány, gyök, algebra és egyenletek",
+      "file": "./data/lessons/grade8/grade8-algebra-review-01.json",
+      "worldTitles": {
+        "postman": "📮 A postás számai",
+        "racing": "🏎️ A boxutca számai",
+        "football": "⚽ A pálya számai",
+        "cooking": "🍳 A konyha számai",
+        "animals": "🦁 Az állatkert számai",
+        "space": "🚀 Az űrhajó számai",
+        "tram": "🚋 A villamos számai"
+      }
+    },
+    {
+      "id": "grade8-geometry-review-01",
+      "title": "📐 Geometria és mérés összefoglaló",
+      "grades": [
+        8
+      ],
+      "category": "geometry",
+      "skill": "triangles",
+      "difficulty": 3,
+      "type": "triangle",
+      "range": 1000,
+      "mission": "📐 Geometria és mérés összefoglaló",
+      "subtitle": "szögek, négyszögek, Pitagorasz-tétel, kör, kerület, terület, felszín és térfogat",
+      "file": "./data/lessons/grade8/grade8-geometry-review-01.json",
+      "worldTitles": {
+        "postman": "📮 A postás alakzatai",
+        "racing": "🏎️ A boxutca geometriája",
+        "football": "⚽ A pálya geometriája",
+        "cooking": "🍳 A konyha geometriája",
+        "animals": "🦁 Az állatkert alakzatai",
+        "space": "🚀 Az űrhajó geometriája",
+        "tram": "🚋 A villamos geometriája"
+      }
+    },
+    {
+      "id": "grade8-mixed-01",
+      "title": "🎲 8. osztályos vegyes gyakorló",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "review",
+      "difficulty": 3,
+      "type": "algebra",
+      "range": 1000,
+      "mission": "🎲 Vegyes gyakorló",
+      "subtitle": "az egész év témáinak vegyes gyakorlása",
+      "file": "./data/lessons/grade8/grade8-mixed-01.json",
+      "worldTitles": {
+        "postman": "📮 A posta minden tudása",
+        "racing": "🏎️ A boxutca összes tudása",
+        "football": "⚽ A pálya összes tudása",
+        "cooking": "🍳 A konyha összes tudása",
+        "animals": "🦁 Az állatkert összes tudása",
+        "space": "🚀 Az űrhajó összes tudása",
+        "tram": "🚋 A villamos összes tudása"
+      }
+    },
+    {
+      "id": "grade8-master-01",
+      "title": "🌟 Mester kihívás",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "master",
+      "difficulty": 4,
+      "type": "master",
+      "master": true,
+      "range": 1000,
+      "mission": "🌟 Mester kihívás",
+      "subtitle": "szöveges feladat és nehezebb logikai rejtvények – a legügyesebbeknek",
+      "file": "./data/lessons/grade8/grade8-master-01.json",
+      "worldTitles": {
+        "postman": "📮 Mester kihívás a postán",
+        "racing": "🏎️ Mester kihívás a pályán",
+        "football": "⚽ Mester kihívás a pályán",
+        "cooking": "🍳 Mester kihívás a konyhában",
+        "animals": "🦁 Mester kihívás az állatkertben",
+        "space": "🚀 Mester kihívás az űrben",
+        "tram": "🚋 Mester kihívás a villamoson"
+      }
+    },
+    {
+      "id": "grade8-root-play-01",
+      "title": "🎲 Négyzetgyökök (egyperces)",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "powers",
+      "difficulty": 2,
+      "type": "root-play",
+      "range": 1000,
+      "practice": true,
+      "mission": "🎲 Négyzetgyökök",
+      "subtitle": "Egy perc, annyi gyökös feladat, amennyit bírsz",
+      "file": "./data/lessons/grade8/grade8-root-play-01.json",
+      "worldTitles": {
+        "postman": "📮 Négyzetgyökök a postán",
+        "racing": "🏎️ Négyzetgyökök a pályán",
+        "football": "⚽ Négyzetgyökök a pályán",
+        "cooking": "🍳 Négyzetgyökök a konyhában",
+        "animals": "🦁 Négyzetgyökök az állatkertben",
+        "space": "🤖 Négyzetgyökök az űrhajón",
+        "tram": "🚋 Négyzetgyökök a villamoson"
+      },
+      "playMode": "root-play"
+    },
+    {
+      "id": "grade8-percent-play-01",
+      "title": "🎲 Százalék (egyperces)",
+      "grades": [
+        8
+      ],
+      "category": "numbers",
+      "skill": "percent",
+      "difficulty": 2,
+      "type": "percent-play",
+      "range": 1000,
+      "practice": true,
+      "mission": "🎲 Százalék",
+      "subtitle": "Egy perc, annyi százalékos feladat, amennyit bírsz",
+      "file": "./data/lessons/grade8/grade8-percent-play-01.json",
+      "worldTitles": {
+        "postman": "📮 Százalék a postán",
+        "racing": "🏎️ Százalék a pályán",
+        "football": "⚽ Százalék a pályán",
+        "cooking": "🍳 Százalék a konyhában",
+        "animals": "🦁 Százalék az állatkertben",
+        "space": "🤖 Százalék az űrhajón",
+        "tram": "🚋 Százalék a villamoson"
+      },
+      "playMode": "percent-play"
     }
   ],
   "gradeConfig": [

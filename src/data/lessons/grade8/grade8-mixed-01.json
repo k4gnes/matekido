@@ -1,0 +1,164 @@
+{
+  "id": "grade8-mixed-01",
+  "title": "🎲 8. osztályos vegyes gyakorló",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🎲 8. osztályos vegyes gyakorló",
+      "text": "Itt az egész év anyaga keveredik: halmazok, hatványok és gyökök, egyenletek, arányosság, százalék, függvények, geometria, statisztika és valószínűség. Nincs új módszer – az eddigieket kell magabiztosan használni. Minden feladatnál először ismerd fel a típust, aztán gondold végig, milyen számítás kell. Ha elakadtál, írd le az adatokat, és haladj lépésről lépésre. A cél nem a sietség, hanem a biztos tudás.",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 A posta minden tudása",
+          "text": "A postán a halmazoktól a valószínűségig minden téma előkerül. Mutasd meg, mit tudsz!"
+        },
+        "racing": {
+          "title": "🏎️ A boxutca összes tudása",
+          "text": "A verseny napján minden témából jön egy feladat. Készen állsz?"
+        },
+        "football": {
+          "title": "⚽ A pálya összes tudása",
+          "text": "A pályán a számok, a formák és a statisztika együtt keveredik. Játssz!"
+        },
+        "cooking": {
+          "title": "🍳 A konyha összes tudása",
+          "text": "A konyhában a receptek, az arányok és a mérések találkoznak. Végigviszed?"
+        },
+        "animals": {
+          "title": "🦁 Az állatkert összes tudása",
+          "text": "Az állatkertben mindenféle feladat vár. Egy igazi vegyes gyakorló!"
+        },
+        "space": {
+          "title": "🚀 Az űrhajó összes tudása",
+          "text": "Az űrhajó fedélzetén az egész tanév matematikája számít. Irány a próba!"
+        },
+        "tram": {
+          "title": "🚋 A villamos összes tudása",
+          "text": "A villamos utasai az egész tanévet gyakorolják veled. Lássuk, ki a gyorsabb!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "set-ops",
+      "options": {
+        "count": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "power",
+      "options": {
+        "count": 2,
+        "mode": "mixed",
+        "maxExponent": 4
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "equation",
+      "options": {
+        "count": 2,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "percent",
+      "options": {
+        "count": 2,
+        "mode": "cases",
+        "max": 1000,
+        "percents": [10, 15, 20, 25, 30, 40, 50]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 2,
+        "max": 1000,
+        "kind": "ratio-split",
+        "mode": "total",
+        "interaction": "input"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "function",
+      "options": {
+        "count": 2,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "shape-area",
+      "options": {
+        "count": 2,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "solid-measure",
+      "options": {
+        "count": 2,
+        "mode": "mixed",
+        "solids": ["cube", "cuboid", "prism"]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "data-chart",
+      "options": {
+        "count": 2,
+        "max": 10,
+        "modes": ["percent", "top"],
+        "chartTypes": ["pie", "bar"]
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "probability",
+      "options": {
+        "count": 2,
+        "mode": "chance"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Végigvitted a 8. osztály vegyes gyakorlóját: halmazok, hatványok, egyenletek, arányosság, százalék, függvények, geometria, statisztika és valószínűség – mindegyikre tudod a választ!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "A posta összes feladatát megoldottad – indulhat a kézbesítés!"
+        },
+        "racing": {
+          "title": "🎉 Nagy vagy!",
+          "text": "A boxutca összes feladatát megoldottad – jöhet a következő kör!"
+        },
+        "football": {
+          "title": "🎉 Gól!",
+          "text": "A pálya összes feladatát megoldottad – kezdődhet a meccs!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "A konyha összes feladatát megoldottad – jó étvágyat!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Az állatkert összes feladatát megoldottad – az állatok elégedettek!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Az űrhajó összes feladatát megoldottad – indulhat a küldetés!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "A villamos összes feladatát megoldottad – indulhat a járat!"
+        }
+      }
+    }
+  ]
+}

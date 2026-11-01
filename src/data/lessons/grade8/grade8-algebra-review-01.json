@@ -1,0 +1,127 @@
+{
+  "id": "grade8-algebra-review-01",
+  "title": "🧮 Számok és algebra összefoglaló",
+  "steps": [
+    {
+      "type": "scene",
+      "title": "🧮 Számok és algebra összefoglaló",
+      "text": "Ez az összefoglaló a számok, az algebra és az egyenletek világát járja körbe: halmazműveletek, prímtényezős felbontás, hatvány és négyzetgyök, algebrai kifejezések, egyenletek és szöveges feladatok. Minden blokkban más eszköz kell: először ismerd fel a feladat típusát, aztán számolj. A végén mindig ellenőrizz: a kapott értéket helyettesítsd vissza a kifejezésbe vagy az egyenletbe!",
+      "worldTitles": {
+        "postman": {
+          "title": "📮 A postás számai",
+          "text": "A postán a küldemények számát halmazokkal, prímtényezőkkel és egyenletekkel is nyilvántartják. Mutasd meg, hogy mindegyiket ismered!"
+        },
+        "racing": {
+          "title": "🏎️ A boxutca számai",
+          "text": "A boxutcában a körök, az alkatrészek és az üzemanyag számai jönnek. Számolj hatványokkal, gyökökkel és egyenletekkel!"
+        },
+        "football": {
+          "title": "⚽ A pálya számai",
+          "text": "A csapat statisztikái, a jegyárak és a gólok mind számokban vannak. Oldd meg a feladatokat!"
+        },
+        "cooking": {
+          "title": "🍳 A konyha számai",
+          "text": "A receptek arányai, a hozzávalók mennyisége és az adagok száma is számítás. Vegyük sorra!"
+        },
+        "animals": {
+          "title": "🦁 Az állatkert számai",
+          "text": "Az állatok száma, a ketrecek mérete és az etetés rendje mind matematika. Számolj velünk!"
+        },
+        "space": {
+          "title": "🚀 Az űrhajó számai",
+          "text": "Az űrhajó rendszerei halmazokban, hatványokban és egyenletekben beszélnek. Fejtsd meg őket!"
+        },
+        "tram": {
+          "title": "🚋 A villamos számai",
+          "text": "A villamos utasai, a jegyek és a menetrend számai együtt jönnek. Számolj magabiztosan!"
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "set-ops",
+      "options": {
+        "count": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "prime-factor",
+      "options": {
+        "count": 2,
+        "mode": "exponents"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "power",
+      "options": {
+        "count": 3,
+        "mode": "mixed",
+        "maxExponent": 4
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "algebra",
+      "options": {
+        "count": 3,
+        "mode": "mixed",
+        "level": "two"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "equation",
+      "options": {
+        "count": 3,
+        "mode": "mixed"
+      }
+    },
+    {
+      "type": "exercise",
+      "generator": "word-problem",
+      "options": {
+        "count": 2,
+        "max": 1000,
+        "kind": "equation",
+        "mode": "mul-add"
+      }
+    },
+    {
+      "type": "celebration",
+      "title": "🎉 Szép munka!",
+      "text": "Összefoglaltad a számok és az algebra legfontosabb eszközeit: halmazok, prímtényezők, hatványok, gyökök, kifejezések és egyenletek – mind a helyén van!",
+      "worldTitles": {
+        "postman": {
+          "title": "🎉 Szép munka!",
+          "text": "A posta összes számát és egyenletét megoldottad – indulhat a kézbesítés!"
+        },
+        "racing": {
+          "title": "🎉 Szuper vagy!",
+          "text": "A boxutca minden számítását elvégezted – jöhet a következő kör!"
+        },
+        "football": {
+          "title": "🎉 Gól!",
+          "text": "A pálya összes feladatát megoldottad – kezdődhet a meccs!"
+        },
+        "cooking": {
+          "title": "🎉 Ügyes voltál!",
+          "text": "A konyha minden számítását megoldottad – jó étvágyat!"
+        },
+        "animals": {
+          "title": "🎉 Szép munka!",
+          "text": "Az állatkert összes feladatát megoldottad – az állatok elégedettek!"
+        },
+        "space": {
+          "title": "🎉 Szuper vagy!",
+          "text": "Az űrhajó minden rendszerét megfejtetted – indulhat a küldetés!"
+        },
+        "tram": {
+          "title": "🎉 Szép munka!",
+          "text": "A villamos összes számítását megoldottad – indulhat a járat!"
+        }
+      }
+    }
+  ]
+}

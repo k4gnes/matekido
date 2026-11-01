@@ -1,6 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createNavBar } from "./ui/navbar.js";
+import { createLogo } from "./ui/logo.js?v=1";
 import { getDailyStats, getAllSkillStats, getActiveWorld, getLessonStats } from "../profile/Profile.js";
 import { SKILLS, CATEGORIES } from "../data/skills.js";
 import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=24";
@@ -92,6 +93,12 @@ function createGradeCompletionSection(lessonIndex) {
     const container = document.createElement("div");
     container.className = "grade-completion";
 
+    const logo = createLogo();
+    logo.classList.add("grade-completion-logo");
+
+    const list = document.createElement("div");
+    list.className = "grade-completion-list";
+
     rows.forEach(row => {
         const rowEl = document.createElement("div");
         rowEl.className = "grade-completion-row";
@@ -114,12 +121,11 @@ function createGradeCompletionSection(lessonIndex) {
         }
 
         rowEl.append(label, state);
-        container.append(rowEl);
+        list.append(rowEl);
     });
 
-    if (container.children.length > 0) {
-        section.append(container);
-    }
+    container.append(logo, list);
+    section.append(container);
 
     return section;
 

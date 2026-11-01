@@ -808,6 +808,8 @@
 .grade-completion {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(4, auto);
+    grid-auto-flow: column;
     gap: 0.18rem 0.5rem;
     margin: 0.2rem 0;
 }
@@ -815,6 +817,8 @@
 @media (max-width: 520px) {
     .grade-completion {
         grid-template-columns: 1fr;
+        grid-template-rows: none;
+        grid-auto-flow: row;
     }
 }
 

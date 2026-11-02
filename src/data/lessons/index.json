@@ -89,7 +89,7 @@
       "worldTitles": {
         "postman": "🚚 Melyik rakományszám a nagyobb?",
         "racing": "🏁 Melyik raktárszám a nagyobb?",
-        "cooking": "🥘 Melyik ladaszám a nagyobb?",
+        "cooking": "🥘 Melyik rendelésszám a nagyobb?",
         "football": "🏆 Melyik nézőszám a nagyobb?",
         "animals": "🦛 Melyik állatszám a nagyobb?",
         "space": "🛸 Melyik bázisszám a nagyobb?",
@@ -1806,7 +1806,7 @@
         "postman": "📮 Levelek bontása",
         "animals": "🦁 Állatok szétválogatása",
         "space": "🤖 Robotok szétválogatása",
-        "tram": "🚋 Robotok szétválogatása"
+        "tram": "🚋 Utasok szétválogatása"
       }
     },
     {
@@ -1923,7 +1923,7 @@
         "football": "⚽ Rendezzük sorainkat!",
         "animals": "🦁 Állatok sorba rendezése",
         "space": "🤖 Robotok sorba rendezése",
-        "tram": "🚋 Robotok sorba rendezése"
+        "tram": "🚋 Utasok sorba rendezése"
       }
     },
     {
@@ -1946,7 +1946,7 @@
         "football": "⚽ Melyik csapat erősebb?",
         "animals": "🦁 Állatok összehasonlítása",
         "space": "🤖 Bolygók összehasonlítása",
-        "tram": "🚋 Bolygók összehasonlítása"
+        "tram": "🚋 Kerületek összehasonlítása"
       }
     },
     {
@@ -1970,7 +1970,7 @@
         "football": "⚽ Melyik játékos magasabb?",
         "animals": "🦁 Állatok összehasonlítása",
         "space": "🤖 Bolygók összehasonlítása",
-        "tram": "🚋 Bolygók összehasonlítása"
+        "tram": "🚋 Kerületek összehasonlítása"
       }
     },
     {
@@ -2719,8 +2719,8 @@
         "cooking": "🍲 Melyik tál nagyobb?",
         "football": "⚽ Melyik csapat erősebb?",
         "animals": "🦁 Melyik állatcsapat nagyobb?",
-        "space": "🤖 Melyik bolygón többen vannak?",
-        "tram": "🚋 Melyik kerületn többen vannak?"
+        "space": "🤖 Melyik bolygón vannak többen?",
+        "tram": "🚋 Melyik kerületben vannak többen?"
       }
     },
     {
@@ -3112,7 +3112,7 @@
         "football": "⚽ Rendezzük sorainkat!",
         "animals": "🦁 Állatok sorba rendezése",
         "space": "🤖 Robotok sorba rendezése",
-        "tram": "🚋 Robotok sorba rendezése"
+        "tram": "🚋 Utasok sorba rendezése"
       }
     },
     {
@@ -4236,8 +4236,8 @@
         "cooking": "🍲 Melyik tál nagyobb?",
         "football": "⚽ Melyik csapat erősebb?",
         "animals": "🦁 Melyik állatcsapat nagyobb?",
-        "space": "🤖 Melyik bolygón többen vannak?",
-        "tram": "🚋 Melyik kerületn többen vannak?"
+        "space": "🤖 Melyik bolygón vannak többen?",
+        "tram": "🚋 Melyik kerületben vannak többen?"
       }
     },
     {
@@ -4260,7 +4260,7 @@
         "football": "⚽ Rendezzük sorainkat!",
         "animals": "🦁 Állatok sorba rendezése",
         "space": "🤖 Robotok sorba rendezése",
-        "tram": "🚋 Robotok sorba rendezése"
+        "tram": "🚋 Utasok sorba rendezése"
       }
     },
     {

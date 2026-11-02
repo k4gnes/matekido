@@ -22,7 +22,7 @@
                     "text": "Először a helyiértéket nézd: aki több százezerrel vagy ezressel rendelkezik, az a nagyobb!"
                 },
                 "cooking": {
-                    "title": "🥘 Melyik ladaszám a nagyobb?",
+                    "title": "🥘 Melyik rendelésszám a nagyobb?",
                     "text": "Először a helyiértéket nézd: aki több százezerrel vagy ezressel rendelkezik, az a nagyobb!"
                 },
                 "animals": {
@@ -84,7 +84,7 @@
                 },
                 "cooking": {
                     "title": "🥘 Szép munka!",
-                    "text": "Minden ladaszámot jól hasonlítottál össze!"
+                    "text": "Minden rendelésszámot jól hasonlítottál össze!"
                 },
                 "animals": {
                     "title": "🦛 Ügyes voltál!",

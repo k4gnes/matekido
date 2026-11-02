@@ -18,7 +18,7 @@
         },
         "cooking": {
           "title": "🍳 Segíts a szakácsnak!",
-          "text": "A szakácsnak ma sok ételt kell elkészítenie. Számold ki a műveleteket!"
+          "text": "Válaszd ki a helyes relációjelet az ételek számaihoz!"
         },
         "animals": {
           "title": "⚖️ Melyik karámban van több?",
@@ -26,10 +26,10 @@
         },
         "space": {
           "title": "⚖️ Melyik bolygón van több?",
-          "text": "Válaszd ki a helyes relációjelet a robotok számaihoz!"
+          "text": "Válaszd ki a helyes relációjelet a bolygók számaihoz!"
         },
         "tram": {
-          "title": "🚋 Melyik kerületn van több?",
+          "title": "🚋 Melyik kerületben van több?",
           "text": "Válaszd ki a helyes relációjelet az utasok számaihoz!"
         }
       }

@@ -123,7 +123,7 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
 
     // --- Achievements + Worlds side by side ---
     const achWorldRow = document.createElement("div");
-    achWorldRow.style.cssText = "display:flex; gap:0.5rem; width:100%; margin-bottom:0.3rem;";
+    achWorldRow.className = "profile-page-bottom";
     const achievementSection = document.createElement("div");
     achievementSection.className = "profile-page-achievements";
 

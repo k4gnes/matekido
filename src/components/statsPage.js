@@ -136,6 +136,7 @@ export function renderStatsPage(root, navConfig, lessonIndex) {
     let activeTab = "summary";
 
     const card = createCard();
+    card.classList.add("stats-page");
 
     const title = document.createElement("h1");
     const world = getActiveWorld();

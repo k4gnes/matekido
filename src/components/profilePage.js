@@ -1,6 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createNavBar } from "./ui/navbar.js";
-import { loadProfile, getNextGoal, getActiveWorld, setActiveWorld, getLessonStats, getActiveGrade } from "../profile/Profile.js";
+import { loadProfile, getNextGoal, getActiveWorld, setActiveWorld, getLessonStats, getActiveGrade, getDailyStats } from "../profile/Profile.js";
 import { ACHIEVEMENTS, getUnlockedAchievements } from "../profile/Achievements.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getAllWorlds } from "../world/WorldRegistry.js";
@@ -49,15 +49,26 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
     stars.className = "profile-page-stat";
     stars.innerHTML = `<span class="stat-icon">⭐</span><span class="stat-value">${profile.stars}</span><span class="stat-label">csillag</span>`;
 
-    const streak = document.createElement("div");
-    streak.className = "profile-page-stat";
-    streak.innerHTML = `<span class="stat-icon">🔥</span><span class="stat-value">${profile.streak}</span><span class="stat-label">nap</span>`;
+    const dailyStats = getDailyStats();
+    let totalCorrect = 0;
+    let totalWrong = 0;
+    Object.values(dailyStats).forEach(day => {
+        totalCorrect += day.correct || 0;
+        totalWrong += day.wrong || 0;
+    });
+    const accuracy = totalCorrect + totalWrong > 0
+        ? Math.round((totalCorrect / (totalCorrect + totalWrong)) * 100)
+        : 0;
+
+    const accuracyTile = document.createElement("div");
+    accuracyTile.className = "profile-page-stat";
+    accuracyTile.innerHTML = `<span class="stat-icon">🎯</span><span class="stat-value">${accuracy}%</span><span class="stat-label">pontosság</span>`;
 
     const perfect = document.createElement("div");
     perfect.className = "profile-page-stat";
-    perfect.innerHTML = `<span class="stat-icon">✨</span><span class="stat-value">${profile.perfectLessons || 0}</span><span class="stat-label">hiba nélkül</span>`;
+    perfect.innerHTML = `<span class="stat-icon">✨</span><span class="stat-value">${profile.perfectLessons || 0}</span><span class="stat-label">hibátlan lecke</span>`;
 
-    stats.append(lessons, stars, streak, perfect);
+    stats.append(lessons, stars, accuracyTile, perfect);
 
     const activeGrade = getActiveGrade();
     const gradeCard = document.createElement("div");
@@ -91,7 +102,7 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
 
     const progressLabel = document.createElement("p");
     progressLabel.className = "profile-goal";
-    progressLabel.textContent = `🎯 Következő cél: ${goal.current} / ${goal.target}`;
+    progressLabel.innerHTML = `<span>🎯 Következő cél: ${goal.current} / ${goal.target}</span><span class="profile-streak">🔥 ${profile.streak} nap</span>`;
 
     const progress = document.createElement("progress");
     progress.max = goal.target;

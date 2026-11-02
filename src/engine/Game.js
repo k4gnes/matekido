@@ -597,7 +597,7 @@ export class Game {
         const gradeWasComplete = this.isGradeComplete();
 
         try {
-            const result = completeLesson();
+            const result = completeLesson({ practice });
             recordDailyResult(this.correct, this.wrong, this.byType);
             if (this.lessonFile) {
                 if (practice) recordLessonPractice(this.lessonFile);

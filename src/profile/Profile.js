@@ -55,13 +55,22 @@ export function saveMenuPrefs(prefs) {
 
 }
 
-export function completeLesson() {
+export function completeLesson({ practice = false } = {}) {
 
     // A sorozat (streak) csak tényleges leckebefejezéskor frissül,
     // nem már a lecke megnyitásakor is.
     updateStreak();
 
     const profile = loadProfile();
+
+    // Gyakorló/play lecke nem számít bele a "3 lecke" napi küldetésbe.
+    if (practice) {
+        return {
+            milestone: null,
+            dailyQuestCompleted: profile.dailyQuest?.completed ?? false,
+            dailyQuestJustCompleted: false
+        };
+    }
 
     const prev = profile.lessonsCompleted;
     const dailyQuestWasCompleted = profile.dailyQuest?.completed ?? false;
@@ -72,7 +81,9 @@ export function completeLesson() {
         profile.dailyQuest = { id: "three-lessons", progress: 0, date: null };
     }
 
-    profile.dailyQuest.progress++;
+    if (profile.dailyQuest.progress < 3) {
+        profile.dailyQuest.progress++;
+    }
 
     if (profile.dailyQuest.progress >= 3) {
         profile.dailyQuest.completed = true;

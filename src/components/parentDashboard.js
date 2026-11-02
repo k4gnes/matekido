@@ -282,7 +282,7 @@ function createPlayerCard(player, accent, lessonIndex) {
         { icon: "📚", value: profile.lessonsCompleted ?? 0, label: "lecke" },
         { icon: "⭐", value: profile.stars ?? 0, label: "csillag" },
         { icon: "🔥", value: profile.streak ?? 0, label: "nap" },
-        { icon: "✨", value: profile.perfectLessons ?? 0, label: "hiba nélkül" },
+        { icon: "✨", value: profile.perfectLessons ?? 0, label: "hibátlan lecke" },
         { icon: "🎯", value: acc === null ? "–" : acc + " %", label: "pontosság" }
     ];
 

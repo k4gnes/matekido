@@ -313,10 +313,25 @@
 }
 
 .profile-goal{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
     margin: 0 0 .15rem;
     font-weight: 600;
     font-size: .82rem;
     line-height: 1.3;
+}
+
+.profile-streak {
+    flex: none;
+    font-size: .72rem;
+    font-weight: 700;
+    color: #b45309;
+    background: #fff3e8;
+    border-radius: 999px;
+    padding: 0.08rem 0.4rem;
+    white-space: nowrap;
 }
 
 .profile-quest {
@@ -412,8 +427,8 @@
 }
 
 .profile-page-stat:nth-child(3) {
-    --tile-accent: #f97316;
-    --tile-bg: #fff3e8;
+    --tile-accent: #14b8a6;
+    --tile-bg: #e8faf7;
 }
 
 .profile-page-stat:nth-child(4) {
@@ -423,6 +438,11 @@
 
 .profile-page-stat:nth-child(2) .stat-value {
     color: #a16207;
+    font-weight: 800;
+}
+
+.profile-page-stat:nth-child(3) .stat-value {
+    color: #0f766e;
     font-weight: 800;
 }
 

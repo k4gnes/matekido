@@ -8,7 +8,7 @@ Interaktív matematikai tanulási platform magyar gyerekeknek (első osztálytó
 - `make start` – Python http szerver a `src/`-ből (localhost:8000).
 - `make test` / `node src/testLessons.js` – az összes osztályos lecke (1–8.) automatizált ellenőrzése (minden lecke felépül több világban és sorozatban, a generált feladatok struktúrája helyes).
 - `node src/generateSWCache.js` – az offline precache-lista (`src/sw-cache.js`) újragenerálása; új/eltűnt fájlnál (pl. új lecke) mindig futtatni kell.
-- Minden commit után manuálisan ellenőrizni kell a böngészőben (hibakereséshez nincs automatizált teszt). Ehhez használható: `docs/tesztelés.md` (teljes app-átfutás) és az osztályonkénti forgatókönyvek `docs/teszt-forgatokonyv-{1,2,3,4,5,6,7}-osztaly.md` (mind a hét évfolyamhoz van).
+- Minden commit után manuálisan ellenőrizni kell a böngészőben (hibakereséshez nincs automatizált teszt). Ehhez használható: `docs/tesztelés.md` (teljes app-átfutás) és az osztályonkénti forgatókönyvek `docs/teszt-forgatokonyv-{1,2,3,4,5,6,7,8}-osztaly.md` (mind a nyolc évfolyamhoz van).
 
 ## Web gyökér: `src/`
 

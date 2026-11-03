@@ -106,8 +106,8 @@ Ezek nem számozott feladatok: a **🎲 Egypercesek** oldalon találhatók, nem 
 
 | Játék | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|
-| Négyzetgyök | Négyzetgyök – egy perc | Négyzetszámok, négyzetgyök | 1000 | 2 |
-| Százalék | Százalék – egy perc | 10%, 25%, 50%, 100% fejben | 1000 | 2 |
+| Négyzetgyök | Négyzetgyök – egy perc | Négyzet- és köbgyökök, négyzetgyök-szorzat | 1000 | 2 |
+| Százalék | Százalék – egy perc | 5%, 10%, 15%, 20%, 25%, 30%, 50%, 75%, 120% fejben | 1000 | 2 |
 
 ---
 
@@ -158,4 +158,4 @@ Elkészült (36/36 + mester + 2 egyperces): halmazok, számhalmazok, halmazműve
 
 ---
 
-**Kapcsolódó dokumentumok:** [7. osztályos tanmenet](hetedik-osztaly.md), [Nat 2020 kerettanterv, Matematika 5–8.](https://www.oktatas.hu/pub_bin/dload/kozoktatas/kerettanterv/Matematika_F.docx), [Roadmap](ROADMAP.md).
+**Kapcsolódó dokumentumok:** [7. osztályos tanmenet](hetedik-osztaly.md), [8. osztályos tesztforgatókönyv](teszt-forgatokonyv-8-osztaly.md), [Nat 2020 kerettanterv, Matematika 5–8.](https://www.oktatas.hu/pub_bin/dload/kozoktatas/kerettanterv/Matematika_F.docx), [Roadmap](ROADMAP.md).

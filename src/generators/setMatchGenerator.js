@@ -75,21 +75,18 @@ function buildNumberSetTask() {
     candidates.push(0.5, 0.25, -0.5, 1.5, 2.25, -1.25);
 
     if (chosen.type === "N") {
-        members = candidates.filter(n => isNatural(n));
+        members = candidates.filter(isNatural);
         nonMembers = candidates.filter(n => !isNatural(n));
     } else if (chosen.type === "Z") {
-        members = candidates.filter(n => isInteger(n));
+        members = candidates.filter(isInteger);
         nonMembers = candidates.filter(n => !isInteger(n));
     } else {
-        members = candidates.filter(n => isRational(n));
-        nonMembers = candidates.filter(n => !isFinite(n));
-        if (nonMembers.length === 0) {
-            nonMembers = [0.3333333333, 1/3];
-        }
+        members = candidates.filter(isRational);
+        nonMembers = ["π", "√2"];
     }
 
-    members = Array.from(new Set(members.map(x => (Math.abs(x) < 1000 ? x : Math.round(x))))).filter(x => (chosen.type === "N" ? isNatural(x) : chosen.type === "Z" ? isInteger(x) : isRational(x)));
-    nonMembers = Array.from(new Set(nonMembers.map(x => x))).filter(x => !(chosen.type === "N" ? isNatural(x) : chosen.type === "Z" ? isInteger(x) : isRational(x)));
+    members = Array.from(new Set(members));
+    nonMembers = Array.from(new Set(nonMembers));
 
     if (members.length < 3) {
         if (chosen.type === "N") members = [0, 1, 2, 3, 5];
@@ -99,7 +96,7 @@ function buildNumberSetTask() {
     if (nonMembers.length < 2) {
         if (chosen.type === "N") nonMembers = [-1, -2, 0.5, 1.5];
         else if (chosen.type === "Z") nonMembers = [0.5, 1.5, 2.25, -0.25];
-        else nonMembers = [1/3, Math.PI];
+        else nonMembers = ["π", "√2"];
     }
 
     const examples = shuffle(members).slice(0, 3);

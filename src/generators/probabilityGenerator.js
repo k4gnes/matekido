@@ -57,11 +57,11 @@ const EVENTS_EASY = {
 const CATEGORIES = ["certain", "possible", "impossible"];
 
 const COMPARE_COLORS = [
-    { color: "piros", label: "Piros", acc: "pirosat", emoji: "🔴", hex: "#ef4444" },
-    { color: "kék", label: "Kék", acc: "kéket", emoji: "🔵", hex: "#3b82f6" },
-    { color: "zöld", label: "Zöld", acc: "zöldet", emoji: "🟢", hex: "#22c55e" },
-    { color: "sárga", label: "Sárga", acc: "sárgát", emoji: "🟡", hex: "#eab308" },
-    { color: "lila", label: "Lila", acc: "lilát", emoji: "🟣", hex: "#a855f7" }
+    { color: "piros", label: "Piros", acc: "pirosat", on: "pirosra", emoji: "🔴", hex: "#ef4444" },
+    { color: "kék", label: "Kék", acc: "kéket", on: "kékre", emoji: "🔵", hex: "#3b82f6" },
+    { color: "zöld", label: "Zöld", acc: "zöldet", on: "zöldre", emoji: "🟢", hex: "#22c55e" },
+    { color: "sárga", label: "Sárga", acc: "sárgát", on: "sárgára", emoji: "🟡", hex: "#eab308" },
+    { color: "lila", label: "Lila", acc: "lilát", on: "lilára", emoji: "🟣", hex: "#a855f7" }
 ];
 
 function pickCompareColors() {
@@ -119,8 +119,8 @@ function generateChanceTask() {
     const [first, second] = pickCompareColors();
     const [amountA, amountB] = CHANCE_PAIRS[Math.floor(Math.random() * CHANCE_PAIRS.length)];
     const groups = shuffle([
-        { color: first.color, label: first.label, acc: first.acc, emoji: first.emoji, hex: first.hex, amount: amountA },
-        { color: second.color, label: second.label, acc: second.acc, emoji: second.emoji, hex: second.hex, amount: amountB }
+        { color: first.color, label: first.label, acc: first.acc, on: first.on, emoji: first.emoji, hex: first.hex, amount: amountA },
+        { color: second.color, label: second.label, acc: second.acc, on: second.on, emoji: second.emoji, hex: second.hex, amount: amountB }
     ]);
 
     const favorableIndex = Math.random() < 0.5 ? 0 : 1;
@@ -143,8 +143,8 @@ function generateChanceTask() {
     shuffle(options);
 
     const question = scenario === "spinner"
-        ? `Mekkora a valószínűsége, hogy ${target.color}ra áll meg a pörgettyű?`
-        : `Mekkora a valószínűsége, hogy ${target.acc} golyót húzunk a zacskiból?`;
+        ? `Mekkora a valószínűsége, hogy ${target.on} áll meg a pörgettyű?`
+        : `Mekkora a valószínűsége, hogy ${target.label.toLowerCase()} golyót húzunk a zacskiból?`;
 
     return {
         type: "probability",

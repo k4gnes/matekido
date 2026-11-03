@@ -52,7 +52,7 @@ function buildPathTask() {
         { text: String(answer), correct: true },
         { text: String(answer + 1), correct: false },
         { text: String(answer - 1), correct: false },
-        { text: String(n), correct: false }
+        { text: String(n + 1), correct: false }
     ]);
     return {
         type: "graph",

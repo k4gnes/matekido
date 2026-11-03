@@ -91,7 +91,7 @@ Ennek a dokumentumnak a célja, hogy a **8. osztályos tananyagot** (39 lecke: 3
 |---|-------|-------------------|---------------|----------|
 | 2.6.1 | 🪞 Tengelyes és középpontos tükrözés | `mirror` + `transform` (turn) | 3 blokk, 11 feladat; tengelyes tükörkép vízszintes és függőleges tengelyre, 180°-os forgatás; a tükörkép nem forgatás | |
 | 2.6.2 | 🌀 Eltolás, forgatás, nagyítás és kicsinyítés | `transform` | 3 blokk, 11 feladat; eltolás jobbra/lefelé, 90°/180° forgatás; a kiválasztott alakzat tájolása és a lépésszám helyes | |
-| 2.6.3 | 📏 Alapszerkesztések | `transform` + `mirror` | 3 blokk, 11 feladat; eltolás, forgatás, tükrözés választós feladatokban; valódi körző–vonalzó szerkesztés még nincs | |
+| 2.6.3 | 📏 Alapszerkesztések | `construction` | 3 blokk, 12 feladat; 1) mi a következő lépés (felezőmerőleges, szögfelező, merőleges, párhuzamos), 2) ábra alapján melyik szerkesztés eredménye, 3) háromszög szerkeszthetősége (oldalak, szögösszeg, SAS); statikus ábra, nem kell rajzolni | |
 
 ### 2.7 Térgeometria
 
@@ -165,7 +165,7 @@ Ennek a dokumentumnak a célja, hogy a **8. osztályos tananyagot** (39 lecke: 3
 
 | # | Kérdés | Megjegyzés |
 |---|--------|------------|
-| 5.1 | Szerkesztések | Az „Alapszerkesztések” lecke jelenleg transzformációs választós feladatokból áll, valódi körző–vonalzó szerkesztés nincs. A tanmenet döntése szerint ez az első kör; később jöhet interaktív szerkesztés |
+| 5.1 | Szerkesztések | A választós minimálváltozat elkészült (következő lépés, eredményfelismerés, háromszög-feltételek). Valódi körző–vonalzó rajzolás és interaktív lépéssorrend még nincs; ez későbbi fejlesztés |
 | 5.2 | Nagyítás és kicsinyítés | Az „Eltolás, forgatás, nagyítás és kicsinyítés” cím szerepel, de a feladatokban csak eltolás és forgatás van; a nagyítás/kicsinyítés még hiányzik |
 | 5.3 | Kör részei | A körlecke a középpontot, sugarat, átmérőt, körívet és körcikket kéri számon; a húr, szelő, érintő és körlap még nem szerepel |
 | 5.4 | Halmazok | A halmazlecke csak ℕ/ℤ/ℚ-ba tartozást kérdez; a részhalmaz, számegyenes és a tizedes törtek fajtái még nem szerepelnek |

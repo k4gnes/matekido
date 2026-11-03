@@ -64,7 +64,7 @@ A 8. osztály a 7. osztályra épül, és a 7–8. kerettanterv addig nem érint
 |---|---|---|---|---|---|
 | 24 | Tükrözés | [Tengelyes és középpontos tükrözés](?lesson=grade8-mirror-central-01) | Tükörkép szerkesztése, szimmetria | — | 3 |
 | 25 | Mozgatás | [Eltolás, forgatás, szimmetria](?lesson=grade8-transform-move-01) | Eltolás, 90° és 180° forgatás, szimmetriák, kicsinyítés és nagyítás | — | 3 |
-| 26 | Szerkesztések | [Szerkesztések](?lesson=grade8-construction-01) | Merőleges, párhuzamos, szögfelező, háromszög szerkesztése | — | 3 |
+| 26 | Szerkesztések | [Alapszerkesztések](?lesson=grade8-construction-01) | Szerkesztési lépések, eredményfelismerés, háromszög szerkeszthetősége | — | 3 |
 
 ## Térgeometria (4 lecke)
 
@@ -127,7 +127,7 @@ Ezek nem számozott feladatok: a **🎲 Egypercesek** oldalon találhatók, nem 
 | Kör | `circle` | kör részei: húr, szelő, érintő, körcikk |
 | Tükrözés | `mirror`, `transform` | középpontos tükrözés |
 | Mozgatás | `transform`, `similarity` | kicsinyítés és nagyítás |
-| Szerkesztések | `transform`, `mirror` | új `construction` (merőleges, párhuzamos, szögfelező) |
+| Szerkesztések | `construction` | Kész a választós változat (következő lépés, eredményfelismerés, háromszög-feltételek); az interaktív lépéssorrend későbbi |
 | Térgeometria | `solid-shape`, `solid-measure` | háló, nézet, lap/él/csúcs, hasáb felszín és térfogat |
 | Adatok | `data-chart`, `average` | vonal- és pontdiagram |
 | Valószínűség | `probability` | gyakoriság, relatív gyakoriság |
@@ -149,7 +149,7 @@ Ezek nem számozott feladatok: a **🎲 Egypercesek** oldalon találhatók, nem 
 ## Döntések
 
 - Marad a 36 lecke + 1 mester + 2 egyperces felosztás.
-- A szerkesztések első körben választós feladatok; az interaktív lépéssorrend később jöhet.
+- A szerkesztések első körben választós feladatok (következő lépés, eredményfelismerés, háromszög-feltételek); az interaktív lépéssorrend később jöhet.
 - A két egyperces a 7. osztály mintájára készült el (négyzetgyökök és százalék).
 
 ## Megvalósítási állapot

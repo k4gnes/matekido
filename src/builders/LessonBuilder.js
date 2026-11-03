@@ -1,4 +1,4 @@
-import { generate } from "../generators/index.js?v=115";
+import { generate } from "../generators/index.js?v=116";
 import { getActiveWorld } from "../profile/Profile.js";
 
 const WORLD_TITLES = {
@@ -593,6 +593,11 @@ export function buildLesson(lesson) {
                     options: task.options,
                     answer: task.answer,
                     direction: task.direction
+                });
+            } else if (step.generator === "construction") {
+                result.push({
+                    type: "construction",
+                    ...task
                 });
             } else if (step.generator === "transform") {
                 result.push({

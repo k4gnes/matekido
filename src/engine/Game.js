@@ -58,6 +58,7 @@ import { renderRounding } from "../components/rounding.js?v=7";
 import { renderRoman } from "../components/roman.js?v=2";
 import { renderTransform } from "../components/transform.js?v=6";
 import { renderMirror } from "../components/mirror.js?v=4";
+import { renderConstruction } from "../components/construction.js?v=1";
 import { renderSetMatch } from "../components/setMatch.js?v=4";
 import { renderSetOps } from "../components/setOps.js?v=1";
 import { renderLogic } from "../components/logic.js?v=1";
@@ -169,6 +170,7 @@ const COUNTED_TYPES = new Set([
     "roman",
     "transform",
     "mirror",
+    "construction",
     "set-match",
     "set-ops",
     "logic",
@@ -280,7 +282,8 @@ const SKILL_BY_TYPE = {
     "fraction-muldiv": "fraction",
     "fraction-percent": "percent",
     "rational": "rational",
-    "algebra": "algebra"
+    "algebra": "algebra",
+    "construction": "construction"
 };
 
 const RENDERERS = new Map([
@@ -342,6 +345,7 @@ const RENDERERS = new Map([
     ["roman", renderRoman],
     ["transform", renderTransform],
     ["mirror", renderMirror],
+    ["construction", renderConstruction],
     ["set-match", renderSetMatch],
     ["set-ops", renderSetOps],
     ["logic", renderLogic],

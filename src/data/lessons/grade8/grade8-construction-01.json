@@ -39,25 +39,26 @@
     },
     {
       "type": "exercise",
-      "generator": "transform",
+      "generator": "construction",
       "options": {
         "count": 4,
-        "mode": "turn"
+        "mode": "next-step"
       }
     },
     {
       "type": "exercise",
-      "generator": "mirror",
+      "generator": "construction",
       "options": {
-        "count": 3
+        "count": 4,
+        "mode": "which"
       }
     },
     {
       "type": "exercise",
-      "generator": "transform",
+      "generator": "construction",
       "options": {
         "count": 4,
-        "mode": "translate"
+        "mode": "triangle"
       }
     },
     {

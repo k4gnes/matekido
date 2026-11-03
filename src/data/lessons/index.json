@@ -7552,9 +7552,9 @@
         8
       ],
       "category": "geometry",
-      "skill": "transform",
+      "skill": "construction",
       "difficulty": 3,
-      "type": "transform",
+      "type": "construction",
       "mission": "📏 Alapszerkesztések",
       "subtitle": "merőleges, párhuzamos, szögfelező, háromszög szerkesztése",
       "file": "./data/lessons/grade8/grade8-construction-01.json",

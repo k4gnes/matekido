@@ -1848,6 +1848,77 @@ function validateStep(step, ctx, range) {
             }
             break;
         }
+        case "construction": {
+            if (!["next-step", "which", "triangle"].includes(step.mode)) {
+                fail(ctx, `mode hibás: ${step.mode}`);
+            }
+            if (typeof step.question !== "string" || step.question.length === 0) {
+                fail(ctx, "question hiányzik");
+            }
+            if (typeof step.hint !== "string" || step.hint.length === 0) {
+                fail(ctx, "hint hiányzik");
+            }
+            if (!Array.isArray(step.options) || step.options.length !== 3) {
+                fail(ctx, "options nem 3 elemű");
+            } else {
+                if (!step.options.every(o => o && typeof o.text === "string" && o.text.length > 0)) {
+                    fail(ctx, "options szöveg hibás");
+                }
+                if (step.options.filter(o => o.correct).length !== 1) {
+                    fail(ctx, "options: pontosan 1 helyes kell");
+                }
+                if (new Set(step.options.map(o => o.text)).size !== 3) {
+                    fail(ctx, "options szövege ismétlődik");
+                }
+                if (!isInt(step.answer) || step.answer < 0 || step.answer >= 3) {
+                    fail(ctx, "answer index hibás");
+                } else if (!step.options[step.answer] || !step.options[step.answer].correct) {
+                    fail(ctx, "answer nem a helyes opcióra mutat");
+                }
+            }
+            if (step.mode === "next-step" || step.mode === "which") {
+                const figureKinds = new Set([
+                    "segment", "angle", "line-point",
+                    "bisector-result", "angle-bisector-result", "parallel-result", "perpendicular-result"
+                ]);
+                if (!step.figure || !figureKinds.has(step.figure.kind)) {
+                    fail(ctx, `figure hibás: ${JSON.stringify(step.figure)}`);
+                }
+            }
+            if (step.mode === "triangle") {
+                const correct = Array.isArray(step.options) ? step.options.find(o => o.correct) : null;
+                if (step.kind === "sss") {
+                    const s = step.sides;
+                    if (!s || !isInt(s.a) || !isInt(s.b) || !isInt(s.c) || s.a < 1 || s.b < 1 || s.c < 1) {
+                        fail(ctx, "sss sides hibás");
+                    } else if (step.constructible !== (s.a + s.b > s.c)) {
+                        fail(ctx, `sss constructible hibás: ${s.a}+${s.b} vs ${s.c}`);
+                    }
+                } else if (step.kind === "angles") {
+                    const a = step.angles;
+                    if (!a || !isInt(a.a) || !isInt(a.b) || !isInt(a.c)) {
+                        fail(ctx, "angles hibás");
+                    } else if (step.constructible !== (a.a + a.b + a.c === 180)) {
+                        fail(ctx, `angles constructible hibás: ${a.a}+${a.b}+${a.c}`);
+                    }
+                } else if (step.kind === "sas") {
+                    const s = step.sides;
+                    if (!s || !isInt(s.a) || !isInt(s.b) || s.a < 1 || s.b < 1) {
+                        fail(ctx, "sas sides hibás");
+                    }
+                    if (!isInt(step.angle) || step.angle <= 0 || step.angle >= 180) {
+                        fail(ctx, `sas angle hibás: ${step.angle}`);
+                    }
+                    if (step.constructible !== true) fail(ctx, "sas constructible hibás");
+                } else {
+                    fail(ctx, `triangle kind hibás: ${step.kind}`);
+                }
+                if (correct && typeof correct.text === "string" && /^Igen/.test(correct.text) !== step.constructible) {
+                    fail(ctx, "triangle correct option nem illik a constructible értékhez");
+                }
+            }
+            break;
+        }
         case "transform": {
             if (!["turn", "translate"].includes(step.mode)) fail(ctx, `mode hibás: ${step.mode}`);
             const checkCells = cells => {

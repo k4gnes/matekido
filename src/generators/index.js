@@ -44,6 +44,7 @@ import { generateRounding } from "./roundingGenerator.js?v=4";
 import { generateRoman } from "./romanGenerator.js?v=1";
 import { generateTransform } from "./transformGenerator.js?v=3";
 import { generateMirror } from "./mirrorGenerator.js?v=2";
+import { generateConstruction } from "./constructionGenerator.js?v=1";
 import { generateSetMatch } from "./setMatchGenerator.js?v=4";
 import { generateSetOps } from "./setOpsGenerator.js?v=1";
 import { generateLogic } from "./logicGenerator.js?v=1";
@@ -210,6 +211,8 @@ export function generate(step) {
             return generateTransform(opts);
         case "mirror":
             return generateMirror(opts);
+        case "construction":
+            return generateConstruction(opts);
         case "set-match":
             return generateSetMatch(opts);
         case "set-ops":

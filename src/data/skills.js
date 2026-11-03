@@ -27,7 +27,7 @@ export const CATEGORIES = {
     geometry: {
         title: "Geometria",
         icon: "📐",
-        skills: ["shapes", "shape-compare", "solid-shapes", "transform", "perimeter", "area", "angles", "circle", "position", "coordinates", "triangles", "quadrilaterals", "pythagorean", "similarity"]
+        skills: ["shapes", "shape-compare", "solid-shapes", "transform", "construction", "perimeter", "area", "angles", "circle", "position", "coordinates", "triangles", "quadrilaterals", "pythagorean", "similarity"]
     },
     wordProblems: {
         title: "Szöveges feladatok",
@@ -106,6 +106,7 @@ export const SKILLS = {
     "shape-compare": { title: "Alakzatok összehasonlítása", category: "geometry" },
     "solid-shapes": { title: "Térbeli alakzatok", category: "geometry" },
     transform: { title: "Forgatás és tükrözés", category: "geometry" },
+    construction: { title: "Szerkesztések", category: "geometry" },
     perimeter: { title: "Kerület", category: "geometry" },
     area: { title: "Terület", category: "geometry" },
     angles: { title: "Szögek", category: "geometry" },

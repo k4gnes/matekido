@@ -2472,7 +2472,15 @@ function validateStep(step, ctx, range) {
                 if (new Set(step.options).size !== step.options.length) fail(ctx, "options ismétlődik");
                 break;
             }
-            const labels = { center: "Középpont", radius: "Sugár", diameter: "Átmérő" };
+            const labels = {
+                center: "Középpont",
+                radius: "Sugár",
+                diameter: "Átmérő",
+                chord: "Húr",
+                secant: "Szelő",
+                tangent: "Érintő",
+                disc: "Körlap"
+            };
             if (!Object.keys(labels).includes(step.variant)) {
                 fail(ctx, `variant hibás: ${step.variant}`);
             }

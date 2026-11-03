@@ -10,18 +10,26 @@ function shuffle(arr) {
     return arr;
 }
 
-const VARIANTS = ["center", "radius", "diameter"];
+const VARIANTS = ["center", "radius", "diameter", "chord", "secant", "tangent", "disc"];
 
 const LABELS = {
     center: "Középpont",
     radius: "Sugár",
-    diameter: "Átmérő"
+    diameter: "Átmérő",
+    chord: "Húr",
+    secant: "Szelő",
+    tangent: "Érintő",
+    disc: "Körlap"
 };
 
 const QUESTIONS = {
     center: "Mit jelöl a piros pont?",
     radius: "Mit jelöl a piros szakasz?",
-    diameter: "Mit jelöl a piros szakasz?"
+    diameter: "Mit jelöl a piros szakasz?",
+    chord: "Mit jelöl a piros szakasz?",
+    secant: "Mit jelöl a piros egyenes?",
+    tangent: "Mit jelöl a piros egyenes?",
+    disc: "Mit jelöl a piros rész?"
 };
 
 function numberOptions(answer, candidates) {
@@ -46,12 +54,11 @@ function numberOptions(answer, candidates) {
     return shuffle(values);
 }
 
-function generateTask() {
-    const variant = VARIANTS[Math.floor(Math.random() * VARIANTS.length)];
+function generateTask(variant = VARIANTS[Math.floor(Math.random() * VARIANTS.length)]) {
     const correctLabel = LABELS[variant];
-    const otherLabels = VARIANTS
+    const otherLabels = shuffle(VARIANTS
         .filter(v => v !== variant)
-        .map(v => LABELS[v]);
+        .map(v => LABELS[v])).slice(0, 2);
     const options = shuffle([correctLabel, ...otherLabels]);
 
     return {
@@ -223,24 +230,25 @@ function pickMode(mode) {
     return mode;
 }
 
-function buildMode(m) {
+function buildMode(m, variant) {
     if (m === "convert") return generateConvert();
     if (m === "circumference") return generateCircumference();
     if (m === "area") return generateArea();
     if (m === "sector") return generateSector("mixed");
     if (m === "sector-arc") return generateSector("arc");
     if (m === "sector-area") return generateSector("area");
-    return generateTask();
+    return generateTask(variant);
 }
 
 export function generateCircle(opts = {}) {
     const { count = 6, mode = "identify" } = opts;
+    const identifyOrder = mode === "identify" ? shuffle([...VARIANTS]) : null;
     const tasks = [];
     let lastSignature = null;
     for (let i = 0; i < count; i++) {
         let task = null;
         for (let attempt = 0; attempt < 6; attempt++) {
-            task = buildMode(pickMode(mode));
+            task = buildMode(pickMode(mode), identifyOrder ? identifyOrder[i % identifyOrder.length] : undefined);
             const signature = `${task.mode}:${task.variant}`;
             if (signature !== lastSignature) {
                 lastSignature = signature;

@@ -156,6 +156,47 @@ function createCircleSvg(step) {
         }));
     }
 
+    if (step.variant === "chord") {
+        const p1 = polar(cx, cy, r, 30);
+        const p2 = polar(cx, cy, r, 150);
+        svg.append(svgEl("line", {
+            x1: p1.x, y1: p1.y, x2: p2.x, y2: p2.y,
+            stroke: "#ef4444",
+            "stroke-width": 4,
+            "stroke-linecap": "round"
+        }));
+    }
+
+    if (step.variant === "secant") {
+        svg.append(svgEl("line", {
+            x1: 10, y1: cy + 35, x2: 210, y2: cy + 35,
+            stroke: "#ef4444",
+            "stroke-width": 4,
+            "stroke-linecap": "round"
+        }));
+    }
+
+    if (step.variant === "tangent") {
+        svg.append(svgEl("line", {
+            x1: 10, y1: cy - r, x2: 210, y2: cy - r,
+            stroke: "#ef4444",
+            "stroke-width": 4,
+            "stroke-linecap": "round"
+        }));
+        svg.append(svgEl("circle", {
+            cx, cy: cy - r, r: 4,
+            fill: "#ef4444"
+        }));
+    }
+
+    if (step.variant === "disc") {
+        svg.append(svgEl("circle", {
+            cx, cy, r: r - 1,
+            fill: "#ef4444",
+            "fill-opacity": ".72"
+        }));
+    }
+
     if (step.mode === "circumference" || step.mode === "area") {
         if (step.variant === "radius") {
             addLabel(svg, cx + r / 2, cy - 12, `${step.r} cm`);
@@ -170,7 +211,7 @@ function createCircleSvg(step) {
 
 function hintText(step) {
     if (step.mode === "identify") {
-        return "A középpont a kör közepén van, a sugár a középpontból a körvonalig húzott szakasz, az átmérő pedig a középponton átmenő, két körvonalig tartó szakasz.";
+        return "A középpont a kör közepén van, a sugár a középpontból a körvonalig húzott szakasz, az átmérő a középponton átmenő húr. A húr két körvonalpontot köt össze, a szelő két pontban metszi a kört, az érintő egy pontban érinti, a körlap pedig a kör által határolt terület.";
     }
     if (step.mode === "convert") {
         return "Az átmérő a sugár kétszerese, a sugár pedig az átmérő fele: d = 2r.";

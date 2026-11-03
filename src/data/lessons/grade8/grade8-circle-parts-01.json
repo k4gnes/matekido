@@ -41,7 +41,7 @@
       "type": "exercise",
       "generator": "circle",
       "options": {
-        "count": 3,
+        "count": 7,
         "mode": "identify"
       }
     },

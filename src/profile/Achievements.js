@@ -95,6 +95,14 @@ export const ACHIEVEMENTS = [
         title: "Nagymester",
         category: "perfect",
         target: 50
+    },
+    {
+        // shortcut: target = a napocskával gyűjtött világok száma, új világnál növelni
+        id: "sun-all-worlds",
+        icon: "☀️",
+        title: "Napfényjáró",
+        category: "napocska",
+        target: 7
     }
 ];
 
@@ -108,6 +116,10 @@ export function getUnlockedAchievements(profile) {
         }
         if (ach.category === "perfect") {
             return perfect >= ach.target;
+        }
+        if (ach.category === "napocska") {
+            const worlds = Object.values(profile.napocskak || {}).filter(n => n >= 1).length;
+            return worlds >= ach.target;
         }
         return false;
     });

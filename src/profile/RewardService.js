@@ -8,7 +8,7 @@ const REWARD_TYPES = {
     MILESTONE: { stars: 5, label: "Mérföldkő elérve" }
 };
 
-export function grantRewards({ correct, wrong, isMilestone, dailyQuestJustCompleted }) {
+export function grantRewards({ correct, wrong, isMilestone, dailyQuestJustCompleted, napocska }) {
 
     const rewards = [];
 
@@ -51,5 +51,5 @@ export function grantRewards({ correct, wrong, isMilestone, dailyQuestJustComple
 
     saveProfile(profile);
 
-    return { rewards, totalStars, newlyUnlocked };
+    return { rewards, totalStars, newlyUnlocked, napocska: napocska ?? null };
 }

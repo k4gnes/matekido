@@ -663,16 +663,17 @@
     margin-bottom: 0.2rem;
 }
 
-.quest-dot {
+.quest-sun {
     width: 18px;
     height: 18px;
-    border-radius: 50%;
     background: #e0e0e0;
     transition: background 0.3s;
+    -webkit-mask: url("../assets/images/sun.svg") center / contain no-repeat;
+    mask: url("../assets/images/sun.svg") center / contain no-repeat;
 }
 
-.quest-dot.done {
-    background: var(--secondary);
+.quest-sun.done {
+    background: var(--primary);
 }
 
 .profile-page-bottom {
@@ -802,6 +803,16 @@
 .world-info {
     display: flex;
     flex-direction: column;
+}
+
+.world-sun {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    flex: none;
 }
 
 .world-name {

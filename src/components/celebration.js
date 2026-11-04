@@ -114,6 +114,18 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
 
         rewardEl.append(starsEl, rewardList);
 
+        if (reward.napocska) {
+            const sunEl = document.createElement("div");
+            sunEl.className = "reward-napocska";
+
+            const sunIcon = document.createElement("span");
+            sunIcon.className = "napocska-sun";
+            sunIcon.style.background = `var(--world-${reward.napocska.world})`;
+
+            sunEl.append(sunIcon, "+1 napocska");
+            rewardEl.append(sunEl);
+        }
+
         if (milestone) {
             const milestoneEl = card.querySelector(".milestone");
             milestoneEl.after(rewardEl);

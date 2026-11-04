@@ -121,9 +121,10 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
     questBar.className = "quest-bar";
 
     for (let i = 0; i < 3; i++) {
-        const dot = document.createElement("div");
-        dot.className = i < profile.dailyQuest.progress ? "quest-dot done" : "quest-dot";
-        questBar.append(dot);
+        const sun = document.createElement("span");
+        sun.className = i < profile.dailyQuest.progress ? "quest-sun done" : "quest-sun";
+        sun.setAttribute("aria-hidden", "true");
+        questBar.append(sun);
     }
 
     const questText = document.createElement("p");
@@ -152,7 +153,9 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
         const achIcon = ach.worldIcons?.[activeWorldForAch] ?? ach.icon;
         const reqText = ach.category === "lessons"
             ? `${ach.target} lecke`
-            : `${ach.target} tökéletes lecke`;
+            : ach.category === "napocska"
+                ? `${ach.target} világ`
+                : `${ach.target} tökéletes lecke`;
 
         const item = document.createElement("div");
         item.className = unlocked ? "achievement-item unlocked" : "achievement-item locked";
@@ -205,7 +208,15 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
         }
 
         info.append(name, desc);
-        item.append(icon, info);
+
+        const sunCount = document.createElement("span");
+        sunCount.className = "world-sun";
+        const sunIcon = document.createElement("span");
+        sunIcon.className = "napocska-sun";
+        sunIcon.style.background = `var(--world-${world.id})`;
+        sunCount.append(sunIcon, String(profile.napocskak?.[world.id] ?? 0));
+
+        item.append(icon, info, sunCount);
 
         if (isUnlocked && !isActive) {
             item.style.cursor = "pointer";

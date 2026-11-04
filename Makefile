@@ -7,6 +7,7 @@ test:
 	node src/testPractice.js
 	node src/testDailyQuest.js
 	node src/testHints.js
+	node src/testAchievements.js
 
 sync-docs:
 	mkdir -p src/docs

@@ -240,7 +240,7 @@ const COUNTED_TYPES = new Set([
 const isCounted = s => COUNTED_TYPES.has(s.type);
 
 
-import { renderCelebration } from "../components/celebration.js?v=15";
+import { renderCelebration } from "../components/celebration.js?v=16";
 import { renderProgress } from "../components/progress.js?v=4";
 import { renderMissingProgress } from "../components/missingProgress.js?v=4";
 import { renderComparisonProgress } from "../components/comparisonProgress.js?v=4";
@@ -623,7 +623,8 @@ export class Game {
                     correct: this.correct,
                     wrong: this.wrong,
                     isMilestone: !!milestone,
-                    dailyQuestJustCompleted: result.dailyQuestJustCompleted
+                    dailyQuestJustCompleted: result.dailyQuestJustCompleted,
+                    napocska: result.napocska
                 });
             }
         } catch (e) { console.error(e); }

@@ -129,6 +129,23 @@ button:hover {
     color:#666;
 }
 
+.reward-napocska{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    font-weight:600;
+}
+
+.napocska-sun{
+    width:1em;
+    height:1em;
+    flex:none;
+    background:var(--primary);
+    -webkit-mask:url("../assets/images/sun.svg") center / contain no-repeat;
+    mask:url("../assets/images/sun.svg") center / contain no-repeat;
+}
+
 .world-unlock{
     text-align:center;
     margin:1rem 0;
@@ -237,49 +254,56 @@ body {
     --logo-color: var(--primary);
     --accent-fill: var(--background);
     --on-accent-fill: var(--primary-ink);
+    --world-postman: #2563EB;
+    --world-racing: #DC2626;
+    --world-cooking: #C2410C;
+    --world-football: #15803D;
+    --world-animals: #92400E;
+    --world-space: #7C3AED;
+    --world-tram: #FFD100;
 }
 
 body[data-world="postman"],
 body[data-world-theme="postman"] {
-    --primary: #2563EB;
+    --primary: var(--world-postman);
     --primary-dark: #1D4ED8;
 }
 
 body[data-world="racing"],
 body[data-world-theme="racing"] {
-    --primary: #DC2626;
+    --primary: var(--world-racing);
     --primary-dark: #B91C1C;
 }
 
 body[data-world="cooking"],
 body[data-world-theme="cooking"] {
-    --primary: #C2410C;
+    --primary: var(--world-cooking);
     --primary-dark: #9A3412;
     --primary-ink: #9A3412;
 }
 
 body[data-world="football"],
 body[data-world-theme="football"] {
-    --primary: #15803D;
+    --primary: var(--world-football);
     --primary-dark: #166534;
     --primary-ink: #15803D;
 }
 
 body[data-world="animals"],
 body[data-world-theme="animals"] {
-    --primary: #92400E;
+    --primary: var(--world-animals);
     --primary-dark: #78350F;
 }
 
 body[data-world="space"],
 body[data-world-theme="space"] {
-    --primary: #7C3AED;
+    --primary: var(--world-space);
     --primary-dark: #6D28D9;
 }
 
 body[data-world="tram"],
 body[data-world-theme="tram"] {
-    --primary: #FFD100;
+    --primary: var(--world-tram);
     --primary-dark: #E6BC00;
     --primary-ink: #7A5B00;
     --on-primary: #3A2A00;

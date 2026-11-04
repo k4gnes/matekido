@@ -764,6 +764,7 @@ const SW_CACHE_LIST = [
     "/sitemap.xml",
     "/storage.js",
     "/sw.js",
+    "/testAchievements.js",
     "/testDailyQuest.js",
     "/testHints.js",
     "/testPlayEngine.js",

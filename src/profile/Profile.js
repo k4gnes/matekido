@@ -14,6 +14,10 @@ export function loadProfile() {
         profile.dailyQuest = { id: "three-lessons", progress: 0, date: null };
     }
 
+    if (!profile.napocskak) {
+        profile.napocskak = {};
+    }
+
     if (profile.dailyQuest.date !== getToday()) {
         profile.dailyQuest = {
             ...profile.dailyQuest,
@@ -68,7 +72,8 @@ export function completeLesson({ practice = false } = {}) {
         return {
             milestone: null,
             dailyQuestCompleted: profile.dailyQuest?.completed ?? false,
-            dailyQuestJustCompleted: false
+            dailyQuestJustCompleted: false,
+            napocska: null
         };
     }
 
@@ -87,6 +92,16 @@ export function completeLesson({ practice = false } = {}) {
 
     if (profile.dailyQuest.progress >= 3) {
         profile.dailyQuest.completed = true;
+    }
+
+    const dailyQuestJustCompleted = profile.dailyQuest.completed && !dailyQuestWasCompleted;
+
+    // A napi 1 napocska a teljesítéskor aktív világhoz gyűlik, dátum nélkül.
+    let napocska = null;
+    if (dailyQuestJustCompleted) {
+        const world = profile.activeWorld ?? "postman";
+        profile.napocskak[world] = (profile.napocskak[world] || 0) + 1;
+        napocska = { world, count: profile.napocskak[world] };
     }
 
     saveProfile(profile);
@@ -109,7 +124,8 @@ export function completeLesson({ practice = false } = {}) {
     return {
         milestone,
         dailyQuestCompleted: profile.dailyQuest.completed,
-        dailyQuestJustCompleted: profile.dailyQuest.completed && !dailyQuestWasCompleted
+        dailyQuestJustCompleted,
+        napocska
     };
 
 }

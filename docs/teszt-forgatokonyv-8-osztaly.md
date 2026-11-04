@@ -83,7 +83,7 @@ Ennek a dokumentumnak a célja, hogy a **8. osztályos tananyagot** (39 lecke: 3
 | 2.5.2 | 🔷 Négyszögek rendszerezése | `polygon` | 4 blokk, 12 feladat; név, halmazba tartozás, tulajdonság, belső/külső szögek összege; a négyzet téglalap, rombusz és paralelogramma is, a trapéz nem az | |
 | 2.5.3 | 🔷 Kerület és terület | `shape-area` + `compound-shape` / 1000 | 4 blokk, 12 feladat; háromszög, téglalap, paralelogramma, trapéz, rombusz, összetett alakzat; a belső illesztési varratok nem számítanak a kerületbe | |
 | 2.5.4 | 📐 Pitagorasz-tétel | `pythagorean` | 4 blokk, 12 feladat; átfogó, befogó, derékszög ellenőrzése; pitagoraszi számhármasok, egész válaszok; a derékszög jelölése a rajzon | |
-| 2.5.5 | ⭕ Kör részei, körcikk | `circle` / 1000 | 4 blokk, 11 feladat; középpont, sugár, átmérő, körív, körcikk; a válasz **π-vel** jelenik meg (pl. `8π cm`), nem 3,14-gyel kerekítve | |
+| 2.5.5 | ⭕ Kör részei, körcikk | `circle` / 1000 | 4 blokk, 15 feladat; felismerés: középpont, sugár, átmérő, húr, szelő, érintő, körlap (7 feladat, csak ebben a leckében), majd átváltás, körív és körcikk számítás; a válasz **π-vel** jelenik meg (pl. `8π cm`), nem 3,14-gyel kerekítve | |
 
 ### 2.6 Transzformációk, szerkesztések
 
@@ -167,12 +167,11 @@ Ennek a dokumentumnak a célja, hogy a **8. osztályos tananyagot** (39 lecke: 3
 |---|--------|------------|
 | 5.1 | Szerkesztések | A választós minimálváltozat elkészült (következő lépés, eredményfelismerés, háromszög-feltételek). Valódi körző–vonalzó rajzolás és interaktív lépéssorrend még nincs; ez későbbi fejlesztés |
 | 5.2 | Nagyítás és kicsinyítés | Az „Eltolás, forgatás, nagyítás és kicsinyítés” cím szerepel, de a feladatokban csak eltolás és forgatás van; a nagyítás/kicsinyítés még hiányzik |
-| 5.3 | Kör részei | A körlecke a középpontot, sugarat, átmérőt, körívet és körcikket kéri számon; a húr, szelő, érintő és körlap még nem szerepel |
-| 5.4 | Halmazok | A halmazlecke csak ℕ/ℤ/ℚ-ba tartozást kérdez; a részhalmaz, számegyenes és a tizedes törtek fajtái még nem szerepelnek |
-| 5.5 | Gráfok | A gráflecke kézfogást és útvonalat kérdez; a csúcs/él fogalma és a körmérkőzés még nem önálló feladat |
-| 5.6 | Százalék a gyakorlatban | A százaléklecke alap-, érték- és változásszámítást tartalmaz; a kamat, keverés, százalékpont és a pénzügyi döntések még nem |
-| 5.7 | Henger és kúp | A testek és hálók leckében a henger/kúp lapjainak száma is kérdezhető; a tanmenet szerint ezek csak felismerési szinten szerepelnek |
-| 5.8 | Szöveges feladatok | Az egyenletes szöveges feladatok mind „gondoltam egy számra” típusúak; a becslés és a változatos szövegkörnyezet még szűk |
+| 5.3 | Halmazok | A halmazlecke csak ℕ/ℤ/ℚ-ba tartozást kérdez; a részhalmaz, számegyenes és a tizedes törtek fajtái még nem szerepelnek |
+| 5.4 | Gráfok | A gráflecke kézfogást és útvonalat kérdez; a csúcs/él fogalma és a körmérkőzés még nem önálló feladat |
+| 5.5 | Százalék a gyakorlatban | A százaléklecke alap-, érték- és változásszámítást tartalmaz; a kamat, keverés, százalékpont és a pénzügyi döntések még nem |
+| 5.6 | Henger és kúp | A testek és hálók leckében a henger/kúp lapjainak száma is kérdezhető; a tanmenet szerint ezek csak felismerési szinten szerepelnek |
+| 5.7 | Szöveges feladatok | Az egyenletes szöveges feladatok mind „gondoltam egy számra” típusúak; a becslés és a változatos szövegkörnyezet még szűk |
 
 ---
 

@@ -5,7 +5,7 @@
     {
       "type": "scene",
       "title": "⭕ Kör részei, körcikk",
-      "text": "A kör minden pontja ugyanolyan távol van a középponttól. A sugarat r-rel, az átmérőt d-vel jelöljük, d = 2r. A húr, a szelő és az érintő a körhöz kapcsolódó nevezetes vonalak. A kör kerülete 2rπ, területe r²π; a körcikk a teljes kör arányos része.",
+      "text": "A kör minden pontja ugyanolyan távol van a középponttól. A sugarat r-rel, az átmérőt d-vel jelöljük, d = 2r. A húr két körvonalpontot köt össze, a szelő két pontban metszi a kört, az érintő egy pontban érinti, a körlap pedig a kör által határolt terület. A kör kerülete 2rπ, területe r²π; a körcikk a teljes kör arányos része.",
       "worldTitles": {
         "postman": {
           "title": "📮 Körök a postán",
@@ -42,7 +42,8 @@
       "generator": "circle",
       "options": {
         "count": 7,
-        "mode": "identify"
+        "mode": "identify",
+        "extended": true
       }
     },
     {

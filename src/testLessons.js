@@ -2484,6 +2484,9 @@ function validateStep(step, ctx, range) {
             if (!Object.keys(labels).includes(step.variant)) {
                 fail(ctx, `variant hibás: ${step.variant}`);
             }
+            if (["chord", "secant", "tangent", "disc"].includes(step.variant) && !ctx.includes("grade8-circle-parts-01")) {
+                fail(ctx, `húr/szelő/érintő/körlap csak a grade8-circle-parts-01 leckében jöhet: ${step.variant}`);
+            }
             if (!Array.isArray(step.options) || step.options.length !== 3) {
                 fail(ctx, "options nem 3 elemű");
             }

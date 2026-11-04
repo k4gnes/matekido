@@ -10,7 +10,9 @@ function shuffle(arr) {
     return arr;
 }
 
-const VARIANTS = ["center", "radius", "diameter", "chord", "secant", "tangent", "disc"];
+const BASIC_VARIANTS = ["center", "radius", "diameter"];
+const EXTENDED_VARIANTS = ["chord", "secant", "tangent", "disc"];
+const VARIANTS = [...BASIC_VARIANTS, ...EXTENDED_VARIANTS];
 
 const LABELS = {
     center: "Középpont",
@@ -54,9 +56,9 @@ function numberOptions(answer, candidates) {
     return shuffle(values);
 }
 
-function generateTask(variant = VARIANTS[Math.floor(Math.random() * VARIANTS.length)]) {
+function generateTask(pool, variant = pool[Math.floor(Math.random() * pool.length)]) {
     const correctLabel = LABELS[variant];
-    const otherLabels = shuffle(VARIANTS
+    const otherLabels = shuffle(pool
         .filter(v => v !== variant)
         .map(v => LABELS[v])).slice(0, 2);
     const options = shuffle([correctLabel, ...otherLabels]);
@@ -230,25 +232,26 @@ function pickMode(mode) {
     return mode;
 }
 
-function buildMode(m, variant) {
+function buildMode(m, pool, variant) {
     if (m === "convert") return generateConvert();
     if (m === "circumference") return generateCircumference();
     if (m === "area") return generateArea();
     if (m === "sector") return generateSector("mixed");
     if (m === "sector-arc") return generateSector("arc");
     if (m === "sector-area") return generateSector("area");
-    return generateTask(variant);
+    return generateTask(pool, variant);
 }
 
 export function generateCircle(opts = {}) {
-    const { count = 6, mode = "identify" } = opts;
-    const identifyOrder = mode === "identify" ? shuffle([...VARIANTS]) : null;
+    const { count = 6, mode = "identify", extended = false } = opts;
+    const pool = extended ? VARIANTS : BASIC_VARIANTS;
+    const identifyOrder = mode === "identify" ? shuffle([...pool]) : null;
     const tasks = [];
     let lastSignature = null;
     for (let i = 0; i < count; i++) {
         let task = null;
         for (let attempt = 0; attempt < 6; attempt++) {
-            task = buildMode(pickMode(mode), identifyOrder ? identifyOrder[i % identifyOrder.length] : undefined);
+            task = buildMode(pickMode(mode), pool, identifyOrder ? identifyOrder[i % identifyOrder.length] : undefined);
             const signature = `${task.mode}:${task.variant}`;
             if (signature !== lastSignature) {
                 lastSignature = signature;

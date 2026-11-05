@@ -40,6 +40,37 @@
                 "count": 4,
                 "max": 20
             }
+        },
+        {
+            "type": "celebration",
+            "title": "🎉 Ügyes voltál!",
+            "text": "Minden szöveges feladatot megoldottál!",
+            "worldTitles": {
+                "racing": {
+                    "title": "🎉 Ügyes voltál!",
+                    "text": "Minden szöveges feladatot megoldottál!"
+                },
+                "football": {
+                    "title": "🎉 Ügyes voltál!",
+                    "text": "Minden szöveges feladatot megoldottál!"
+                },
+                "cooking": {
+                    "title": "🎉 Szép munka!",
+                    "text": "Minden szöveges feladatot megoldottál!"
+                },
+                "animals": {
+                    "title": "🎉 Ügyes voltál!",
+                    "text": "Minden szöveges feladatot megoldottál!"
+                },
+                "space": {
+                    "title": "🎉 Szuper vagy!",
+                    "text": "Minden szöveges feladatot megoldottál!"
+                },
+                "tram": {
+                    "title": "🎉 Szuper vagy!",
+                    "text": "Minden szöveges feladatot megoldottál!"
+                }
+            }
         }
     ]
 }

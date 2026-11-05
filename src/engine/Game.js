@@ -633,7 +633,7 @@ export class Game {
         this.cleanupComponent();
 
         if (this.currentStep >= this.lesson.steps.length) {
-            const { practice, milestone, reward } = this.finishLesson();
+            const { practice, milestone, reward, gradeJustCompleted } = this.finishLesson();
 
             renderCelebration(
                 {
@@ -651,7 +651,7 @@ export class Game {
                     onProfile: this.onProfile,
                     onStats: this.onStats,
                     onHelp: this.onHelp,
-                    onNext: this.onNext
+                    onNext: gradeJustCompleted && this.onGradeComplete ? this.onGradeComplete : this.onNext
                 },
                 milestone,
                 reward,

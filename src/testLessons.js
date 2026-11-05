@@ -3272,6 +3272,9 @@ function validateLesson(built, ctx, range) {
     if (counted.length === 0) {
         fail(ctx, "nincs feladatlépés");
     }
+    if (built.steps[built.steps.length - 1]?.type !== "celebration") {
+        fail(ctx, "nincs celebration záró lépés");
+    }
     built.steps.forEach((step, index) => validateStep(step, `${ctx} [#${index} ${step.type ?? "?"}]`, range));
 }
 

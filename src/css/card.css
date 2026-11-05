@@ -134,7 +134,7 @@
     background: transparent;
     color: var(--primary-ink);
     font-size: 1.05rem;
-    cursor: help;
+    cursor: pointer;
     margin: 0;
     padding: 0;
     border: 1px dashed var(--primary);

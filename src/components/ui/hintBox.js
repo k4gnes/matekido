@@ -9,6 +9,12 @@ export function createHintBox() {
 
 }
 
+// Minden komponens ugyanezzel a felirattal hozza létre a gombot; a 💡 sarokgomb ezt keresi.
+export function findHintButton(container) {
+    return [...container.querySelectorAll("button")]
+        .find(btn => btn.textContent.includes("Segítséget kérek")) ?? null;
+}
+
 export function createHintRequest(getText) {
 
     const box = createHintBox();

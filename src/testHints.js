@@ -3,9 +3,10 @@
 // Minden olyan komponenst lejátszik, ami 6-7. osztályos leckét szolgál ki,
 // és ellenőrzi, hogy:
 //   1. a renderelés nem dob hibát,
-//   2. a segítség gomb létezik, és eleinte rejtett,
+//   2. a findHintButton (a 💡 sarokgomb keresője) megtalálja a gombot, ami eleinte rejtett,
 //   3. két hibás válasz után megjelenik,
-//   4. a gomb megnyomására a gomb és a feladat szövegéhez igazodó segítség jelenik meg.
+//   4. a gomb megnyomására a gomb és a feladat szövegéhez igazodó segítség jelenik meg
+//      (hibázás nélkül is, ez a 💡 sarokgomb azonnali segítségkérése).
 //
 // Futtatás: make test
 
@@ -204,23 +205,13 @@ const { generateAngleMeasure } = await import("./generators/angleMeasureGenerato
 const { generateDivisibility } = await import("./generators/divisibilityGenerator.js");
 const { generateOperationOrder } = await import("./generators/operationOrderGenerator.js");
 
+const { findHintButton } = await import("./components/ui/hintBox.js");
+
 let failures = 0;
 
 function check(cond, msg) {
     if (cond) console.log(`  ✔ ${msg}`);
     else { failures++; console.error(`  ✘ ${msg}`); }
-}
-
-function buttonByText(root, text) {
-    const walk = (el) => {
-        for (const child of el.children) {
-            if (child.tagName === "BUTTON" && child.textContent.trim() === text) return child;
-            const hit = walk(child);
-            if (hit) return hit;
-        }
-        return null;
-    };
-    return walk(root);
 }
 
 function render(renderFn, step) {
@@ -370,7 +361,7 @@ for (const testCase of CASES) {
 
     for (const step of steps) {
         const root = render(testCase.render, step);
-        const button = buttonByText(root, "💡 Segítséget kérek");
+        const button = findHintButton(root);
 
         if (!button) {
             check(false, `${testCase.name}: nincs segítség gomb (mód: ${step.mode ?? step.kind ?? "?"})`);
@@ -391,7 +382,7 @@ for (const testCase of CASES) {
     }
 
     const root = render(testCase.render, wrongStep);
-    const button = buttonByText(root, "💡 Segítséget kérek");
+    const button = findHintButton(root);
     const wrong = testCase.wrong(wrongStep, root);
 
     wrong.click();

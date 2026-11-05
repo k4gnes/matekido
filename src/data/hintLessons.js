@@ -58,5 +58,6 @@ export const HINT_TYPES = new Set([
 ]);
 
 export function lessonHasHint(lessonMeta) {
-    return HINT_TYPES.has(lessonMeta?.type);
+    // a típus-teszt nem látja a vegyes leckékbe kevert segítséges lépést, ezért a leckére írt jel dönt
+    return lessonMeta?.hint === true || HINT_TYPES.has(lessonMeta?.type);
 }

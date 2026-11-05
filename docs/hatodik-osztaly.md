@@ -1,6 +1,6 @@
 # Matekidő – 6. osztályos tanmenet
 
-> **Státusz: folyamatban.** Az alábbiak a 6. osztályos tanmenet terve; a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
+> **Státusz: megvalósult.** A 6. osztályos tanmenet elkészült: **39 lecke a 39 tervezettből** (38 számozott + 1 mester kihívás), a táblázatban linkelt leckék mind a regiszterben vannak. A leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
 
 **Tervezett 38 lecke + 1 mester kihívás**, 10 témakörben (a regiszter 7 kategóriája: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 

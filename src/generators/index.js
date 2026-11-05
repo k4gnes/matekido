@@ -1,6 +1,6 @@
 import { generateAddition } from "./additionGenerator.js?v=5";
 import { generateSubtraction } from "./subtractionGenerator.js?v=5";
-import { generateMixed } from "./mixedGenerator.js?v=3";
+import { generateMixed } from "./mixedGenerator.js?v=4";
 import { generateMissingTo10, generateMissingRandom } from "./missingNumberGenerator.js?v=3";
 import { generateComparison } from "./comparisonGenerator.js?v=8";
 import { generateNeighbor } from "./neighborGenerator.js?v=3";

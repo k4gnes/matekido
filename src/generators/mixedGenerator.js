@@ -36,7 +36,8 @@ export function generateMixed(options = {}) {
             answer = a - b;
         }
 
-        if (answer > max || answer < 0) continue;
+        // a/b/answer mind ≥ 1: a gyerek ne kapjon nullát gépelni/begépelni
+        if (answer > max || answer < 1 || a < 1 || b < 1) continue;
 
         tasks.push({
             op,

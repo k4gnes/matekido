@@ -407,7 +407,7 @@ function validateStep(step, ctx, range) {
                 fail(ctx, "a/b nem érvényes egész");
             }
             if (step.kind === "mixed") {
-                if (!isInt(step.answer) || step.answer < 0) fail(ctx, "mixed answer hibás");
+                if (!isInt(step.answer) || step.answer < 1 || step.a < 1 || step.b < 1) fail(ctx, "mixed a/b/answer nem pozitív");
                 if (!["+", "-"].includes(step.op)) fail(ctx, `mixed op hibás: ${step.op}`);
                 if (!["left", "right", "result"].includes(step.inputPos)) fail(ctx, `mixed inputPos hibás: ${step.inputPos}`);
             }

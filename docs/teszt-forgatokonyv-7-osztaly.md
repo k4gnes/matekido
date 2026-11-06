@@ -146,7 +146,7 @@ Ennek a dokumentumnak a célja, hogy a **7. osztályos tananyagot** (41 lecke: 3
 
 | # | Lépés | Várt eredmény | Eredmény |
 |---|-------|---------------|----------|
-| 4.1 | Ikon a fülön / PWA | Kék háttér, piros M betű gombszürke körvonallal | |
+| 4.1 | Ikon a fülön / PWA | A fülön (favicon) és a telepített PWA-ban ugyanaz a tangram-M: kék és világosszürke háromszögekből álló M, fehér vonalakkal | |
 | 4.2 | Telefonméret (DevTools 375px) | A ☕ „Támogatás” link NEM jelenik meg, a jobb felső gombok (súgó, 📚) koppinthatók | |
 | 4.3 | Hosszú algebrai kifejezés és tört | Nem csúszik ki a képernyőről, a tört számlálója/nevezője olvasható, a válaszgombok több sorba tördelhetők | |
 | 4.4 | Koordináta-rács és függvénygrafikon mobilon | A rácspontok koppinthatók, a tengelyfeliratok nem lógnak ki, a pontok kijelölése látszik | |

@@ -148,7 +148,7 @@ Ennek a dokumentumnak a célja, hogy az **5. osztályos tananyagot** (36 lecke: 
 
 | # | Lépés | Várt eredmény | Eredmény |
 |---|-------|---------------|----------|
-| 4.1 | Ikon a fülön / PWA | Kék háttér, piros M betű gombszürke körvonallal | |
+| 4.1 | Ikon a fülön / PWA | A fülön (favicon) és a telepített PWA-ban ugyanaz a tangram-M: kék és világosszürke háromszögekből álló M, fehér vonalakkal | |
 | 4.2 | Telefonméret (DevTools 375px) | A ☕ „Támogatás” link NEM jelenik meg, a jobb felső gombok (súgó, 📚) koppinthatók | |
 | 4.3 | Helyiérték-táblázat és nagy számok mobilon | A táblázat nem csúszik ki, a számjegyek és a helyiérték-feliratok olvashatók | |
 | 4.4 | Törtek és tizedes törtek mobilon | A tört számlálója/nevezője olvasható, a tizedesvessző nem tűnik el, a válaszgombok tördelhetők | |

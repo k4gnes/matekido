@@ -140,7 +140,7 @@ Ennek a dokumentumnak a célja, hogy a **2. osztályos tananyagot** (58 lecke, 7
 
 | # | Lépés | Várt eredmény | Eredmény |
 |---|-------|---------------|----------|
-| 4.1 | Ikon a fülön / PWA | Kék háttér, piros M betű gombszürke körvonallal | |
+| 4.1 | Ikon a fülön / PWA | A fülön (favicon) és a telepített PWA-ban ugyanaz a tangram-M: kék és világosszürke háromszögekből álló M, fehér vonalakkal | |
 | 4.2 | Telefonméret (DevTools 375px) | A ☕ „Támogatás” link NEM jelenik meg, a jobb felső gombok (súgó, 📚) koppinthatók | |
 | 4.3 | Asztali nézet | A ☕ „Támogatás” link a bal alsó sarokban látható | |
 | 4.4 | Hard reload / offline | Nincs konzolhiba; az app cache-ből is betölt | |

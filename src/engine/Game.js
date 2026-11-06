@@ -247,6 +247,7 @@ import { renderComparisonProgress } from "../components/comparisonProgress.js?v=
 import { renderNeighborProgress } from "../components/neighborProgress.js?v=4";
 
 import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, recordLessonPractice, recordSkillResult, recordCustomDoneLesson, resolveSkippedLesson, getLessonStats, getActiveWorld, isFavoriteLesson, toggleFavoriteLesson, resolveLessonGrade } from "../profile/Profile.js";
+import { getActiveId, listPlayers } from "../profile/UserManager.js";
 import { curriculumSort } from "../data/curriculum.js";
 import { grantRewards } from "../profile/RewardService.js";
 import { observeBigNumbers } from "../utils/formatNumbers.js";
@@ -745,6 +746,14 @@ export class Game {
         if (card) {
             const cornerBar = document.createElement("div");
             cornerBar.className = "corner-buttons";
+            const activePlayer = listPlayers().find(p => p.id === getActiveId());
+            if (activePlayer) {
+                const playerChip = document.createElement("span");
+                playerChip.className = "lesson-player-chip";
+                playerChip.textContent = `${activePlayer.avatar} ${activePlayer.name}`;
+                playerChip.title = `Most játszik: ${activePlayer.name}`;
+                cornerBar.append(playerChip);
+            }
             const gradeLabel = this.getLessonGradeLabel();
             if (gradeLabel) {
                 const gradeText = document.createElement("span");

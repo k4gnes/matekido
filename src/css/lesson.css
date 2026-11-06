@@ -259,6 +259,22 @@
     white-space: nowrap;
 }
 
+.lesson-player-chip {
+    margin-right: auto;
+    min-width: 0;
+    max-width: 45%;
+    font-size: .78rem;
+    font-weight: 600;
+    color: #64748b;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 999px;
+    padding: .12rem .55rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .lesson-skill-badge {
     font-size: .72rem;
     font-weight: 700;

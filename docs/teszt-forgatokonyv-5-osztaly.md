@@ -154,7 +154,7 @@ Ennek a dokumentumnak a célja, hogy az **5. osztályos tananyagot** (36 lecke: 
 | 4.4 | Törtek és tizedes törtek mobilon | A tört számlálója/nevezője olvasható, a tizedesvessző nem tűnik el, a válaszgombok tördelhetők | |
 | 4.5 | Koordináta-rács és transzformáció mobilon | A rácspontok koppinthatók, a tengelyfeliratok nem lógnak ki, a tükrözés/forgatás iránya látszik | |
 | 4.6 | Számbeviteles feladatok | Mobilon is numerikus billentyűzet jön fel, az Enter/„Ellenőrzöm” működik | |
-| 4.7 | Asztali nézet | A ☕ „Támogatás” link a jobb felső sarokban látható | |
+| 4.7 | Asztali nézet | A ☕ „Támogatás” link a bal alsó sarokban látható | |
 | 4.8 | Hard reload / offline | Nincs konzolhiba; az app cache-ből is betölt (az aktuális fájlszámot a `src/sw-cache.js` adja) | |
 
 ---

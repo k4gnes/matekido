@@ -156,7 +156,7 @@ Ennek a dokumentumnak a célja, hogy a **8. osztályos tananyagot** (39 lecke: 3
 | 4.5 | Számegyeneses egyenlőtlenség | A négy válaszlehetőség nem csúszik szét, a nyílt/zárt végpont megkülönböztethető | |
 | 4.6 | Térgeometriai rajzok | A testek, hálók és átlók rajzai nem torzulnak, a lap/él/csúcs kérdésnél a modell felismerhető | |
 | 4.7 | Számbeviteles feladatok | Mobilon is numerikus billentyűzet jön fel, az Enter/„Ellenőrzöm” működik | |
-| 4.8 | Asztali nézet | A ☕ „Támogatás” link a jobb felső sarokban látható | |
+| 4.8 | Asztali nézet | A ☕ „Támogatás” link a bal alsó sarokban látható | |
 | 4.9 | Hard reload / offline | Nincs konzolhiba; az app cache-ből is betölt (a `src/sw-cache.js` aktuális listája szerint) | |
 
 ---

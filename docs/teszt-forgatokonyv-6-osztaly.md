@@ -165,7 +165,7 @@ Ennek a dokumentumnak a célja, hogy a **6. osztályos tananyagot** (42 lecke: 3
 | 4.4 | Hatványok és törtek mobilon | A kitevő felső indexe olvasható, a tört számlálója/nevezője nem csúszik szét | |
 | 4.5 | Geometria mobilon | A szögmérő, a körrészek és a transzformációs ábra nem lóg ki, a válaszgombok tördelhetők | |
 | 4.6 | Számbeviteles feladatok | Mobilon is numerikus billentyűzet jön fel, az Enter/„Ellenőrzöm” működik | |
-| 4.7 | Asztali nézet | A ☕ „Támogatás” link a jobb felső sarokban látható | |
+| 4.7 | Asztali nézet | A ☕ „Támogatás” link a bal alsó sarokban látható | |
 | 4.8 | Hard reload / offline | Nincs konzolhiba; az app cache-ből is betölt (az aktuális fájlszámot a `src/sw-cache.js` adja) | |
 
 ---

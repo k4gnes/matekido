@@ -152,7 +152,7 @@ Ennek a dokumentumnak a célja, hogy a **7. osztályos tananyagot** (41 lecke: 3
 | 4.4 | Koordináta-rács és függvénygrafikon mobilon | A rácspontok koppinthatók, a tengelyfeliratok nem lógnak ki, a pontok kijelölése látszik | |
 | 4.5 | Számegyeneses egyenlőtlenség | A négy válaszlehetőség nem csúszik szét, a nyílt/zárt végpont megkülönböztethető | |
 | 4.6 | Számbeviteles feladatok | Mobilon is numerikus billentyűzet jön fel, az Enter/„Ellenőrzöm” működik | |
-| 4.7 | Asztali nézet | A ☕ „Támogatás” link a jobb felső sarokban látható | |
+| 4.7 | Asztali nézet | A ☕ „Támogatás” link a bal alsó sarokban látható | |
 | 4.8 | Hard reload / offline | Nincs konzolhiba; az app cache-ből is betölt (723 fájl, `matekido-v206`) | |
 
 ---

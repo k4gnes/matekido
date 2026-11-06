@@ -4,7 +4,7 @@ Ennek a dokumentumnak a célja, hogy az **1. osztályos tananyagot** (44 lecke, 
 
 - **Szerver:** `make start` (localhost:8000) – a `src/` mappát szolgálja ki.
 - **Böngésző:** Asztali (Chrome / Firefox / Edge) + legalább egyszer telefon méretű nézet.
-- **Jelölések:** ✅ működik · ❌ hibás · ⚠️ kisebb hiba / megjegyzés · ➖ nem érinti / átugorható.
+- **Jelölések:** ok működik · ❌ hibás · ⚠️ kisebb hiba / megjegyzés · ➖ nem érinti / átugorható.
 
 ---
 
@@ -121,9 +121,9 @@ Ennek a dokumentumnak a célja, hogy az **1. osztályos tananyagot** (44 lecke, 
 | # | Lépés | Várt eredmény | Eredmény |
 |---|-------|---------------|----------|
 | 4.1 | Ikon a fülön / PWA | A fülön (favicon) és a telepített PWA-ban ugyanaz a tangram-M: kék és világosszürke háromszögekből álló M, fehér vonalakkal | |
-| 4.2 | Telefonméret (DevTools 375px) | A ☕ „Támogatás” link NEM jelenik meg, a jobb felső gombok (súgó, 📚) koppinthatók | |
-| 4.3 | Asztali nézet | A ☕ „Támogatás” link a bal alsó sarokban látható | |
-| 4.4 | Hard reload / offline | Nincs konzolhiba; az app cache-ből is betölt | |
+| 4.2 | Telefonméret (DevTools 375px) | A ☕ „Támogatás” link NEM jelenik meg, a jobb felső gombok (súgó, 📚) koppinthatók | ok|
+| 4.3 | Asztali nézet | A ☕ „Támogatás” link a bal alsó sarokban látható | ok|
+| 4.4 | Hard reload / offline | Nincs konzolhiba; az app cache-ből is betölt | ok|
 
 ---
 

@@ -66,7 +66,7 @@ function renderVisual(step, card) {
 
     const note = document.createElement("p");
     note.className = "fof-note";
-    note.textContent = `A piros rész a ${FRACTION_NAMES[step.denominator]} – ${step.answer} darab.`;
+    note.textContent = `A piros rész a ${FRACTION_NAMES[step.denominator]}.`;
     visual.append(note);
 
     card.append(visual);

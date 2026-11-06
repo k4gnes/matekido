@@ -111,34 +111,6 @@ Ezek nem számozott feladatok: a **🎲 Egypercesek** oldalon találhatók, nem 
 
 ---
 
-## Szükséges generátor- és komponensfejlesztések
-
-| Terület | Jelenlegi | Szükséges |
-|---|---|---|
-| Halmazok | `set-match` (alakzatok válogatása) | számhalmaz-mód, új `set-ops` (metszet, unió, komplementer) |
-| Logika | `true-false` (műveletek igaz/hamis) | új `logic` (minden/van olyan, tagadás, következtetés) |
-| Gráfok | — | új `graph` (csúcs, él, kézfogás, útvonal) |
-| Számelmélet | `prime`, `prime-factor`, `gcd-lcm` | 1000-es számkör, alkalmazások, több lépés |
-| Hatvány, gyök | `power` (négyzet, köb, negyedik hatvány) | azonosságok, új `root` mód |
-| Százalék | `percent` (alap három eset) | kamat, keverés, százalékpont |
-| Függvények | `function` (plot, extend, rule, read, describe) | — |
-| Szögek | `angles`, `triangle` | háromszög belső és külső szöge |
-| Négyszögek | `polygon` | húrtrapéz, konvex/konkáv, átlók |
-| Kör | `circle` | kör részei: húr, szelő, érintő, körcikk |
-| Tükrözés | `mirror`, `transform` | középpontos tükrözés |
-| Mozgatás | `transform`, `similarity` | kicsinyítés és nagyítás |
-| Szerkesztések | `construction` | Kész a választós változat (következő lépés, eredményfelismerés, háromszög-feltételek); az interaktív lépéssorrend későbbi |
-| Térgeometria | `solid-shape`, `solid-measure` | háló, nézet, lap/él/csúcs, hasáb felszín és térfogat |
-| Adatok | `data-chart`, `average` | vonal- és pontdiagram |
-| Valószínűség | `probability` | gyakoriság, relatív gyakoriság |
-| Egypercesek | `power-play` | `root-play`, `percent-play` (vagy a meglévők bővítése) |
-
-## Javasolt megvalósítási sorrend
-
-1. **Meglévő generátorokra épülő leckék:** algebra, egyenletek, arány, százalék alap, függvények, síkgeometria, statisztika, összefoglalók.
-2. **Meglévő generátorok bővítése:** számelmélet, hatvány és gyök, százalék, szögek, négyszögek, kör, térgeometria, adatok, valószínűség.
-3. **Új generátorok és komponensek:** halmazműveletek, logika, gráfok, szerkesztések, testhálók, egypercesek.
-
 ## Nem szerepel a tervben
 
 - A henger és a kúp felszín- és térfogatképlete (a Nat 7–8. csak a hasábot, a gúlát és a gömböt nevezi meg; a henger és a kúp legfeljebb felismerési szinten jelenik meg).

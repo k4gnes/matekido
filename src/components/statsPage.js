@@ -205,7 +205,7 @@ export function renderStatsPage(root, navConfig, lessonIndex) {
             byType: raw?.byType ?? {}
         };
         const total = dayStats.correct + dayStats.wrong;
-        const accuracy = total > 0 ? Math.round((dayStats.correct / total) * 100) : 0;
+        const accuracy = total > 0 ? Math.round((dayStats.correct / total) * 100) : null;
 
         dateLabel.textContent = isToday(selectedDate)
             ? "Ma — " + formatDate(selectedDate)
@@ -218,7 +218,7 @@ export function renderStatsPage(root, navConfig, lessonIndex) {
             { icon: "✅", value: dayStats.correct, label: "helyes" },
             { icon: "❌", value: dayStats.wrong, label: "hibás" },
             { icon: "📖", value: dayStats.lessonsPlayed, label: "lecke" },
-            { icon: "🎯", value: accuracy + "%", label: "pontosság" }
+            { icon: "🎯", value: accuracy === null ? "–" : accuracy + "%", label: "pontosság" }
         ];
         statItems.forEach(({ icon, value, label }) => {
             const item = document.createElement("div");
@@ -228,6 +228,14 @@ export function renderStatsPage(root, navConfig, lessonIndex) {
         });
 
         typeBreakdown.replaceChildren();
+
+        if (total === 0) {
+            const emptyNote = document.createElement("p");
+            emptyNote.className = "type-breakdown-title";
+            emptyNote.textContent = "Erre a napra még nincs adat.";
+            typeBreakdown.append(emptyNote);
+        }
+
         const types = Object.entries(dayStats.byType).filter(([, v]) => v.correct + v.wrong > 0);
         if (types.length > 0) {
             const typeTitle = document.createElement("h3");
@@ -287,7 +295,7 @@ export function renderStatsPage(root, navConfig, lessonIndex) {
     });
 
     const totalAll = totalCorrect + totalWrong;
-    const totalAccuracy = totalAll > 0 ? Math.round((totalCorrect / totalAll) * 100) : 0;
+    const totalAccuracy = totalAll > 0 ? Math.round((totalCorrect / totalAll) * 100) : null;
 
     const summaryTitle = document.createElement("h2");
     summaryTitle.textContent = "📊 Összesített adatok";
@@ -296,10 +304,17 @@ export function renderStatsPage(root, navConfig, lessonIndex) {
         { icon: "✅", value: totalCorrect, label: "helyes" },
         { icon: "❌", value: totalWrong, label: "hibás" },
         { icon: "📖", value: totalLessons, label: "lecke" },
-        { icon: "🎯", value: totalAccuracy + "%", label: "pontosság" }
+        { icon: "🎯", value: totalAccuracy === null ? "–" : totalAccuracy + "%", label: "pontosság" }
     ]);
 
     summarySection.append(summaryTitle, summaryGrid);
+
+    if (totalAll === 0) {
+        const emptyNote = document.createElement("p");
+        emptyNote.className = "type-breakdown-title";
+        emptyNote.textContent = "Még nincs adat – játssz egy leckét!";
+        summarySection.append(emptyNote);
+    }
 
     const gradeCompletionSection = createGradeCompletionSection(lessonIndex);
     if (gradeCompletionSection) {

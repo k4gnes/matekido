@@ -58,11 +58,11 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
     });
     const accuracy = totalCorrect + totalWrong > 0
         ? Math.round((totalCorrect / (totalCorrect + totalWrong)) * 100)
-        : 0;
+        : null;
 
     const accuracyTile = document.createElement("div");
     accuracyTile.className = "profile-page-stat";
-    accuracyTile.innerHTML = `<span class="stat-icon">🎯</span><span class="stat-value">${accuracy}%</span><span class="stat-label">pontosság</span>`;
+    accuracyTile.innerHTML = `<span class="stat-icon">🎯</span><span class="stat-value">${accuracy === null ? "–" : accuracy + "%"}</span><span class="stat-label">pontosság</span>`;
 
     const perfect = document.createElement("div");
     perfect.className = "profile-page-stat";

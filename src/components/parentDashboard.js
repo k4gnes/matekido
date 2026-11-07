@@ -33,7 +33,7 @@ function formatDayLabel(dateStr) {
 }
 
 function lastPlayedText(dateStr) {
-    if (!dateStr) return "Még nem játszott";
+    if (!dateStr) return "Ezen a héten még nem játszott";
     const diff = Math.round((new Date(getToday()) - new Date(dateStr)) / DAY);
     if (diff <= 0) return "Ma játszott";
     if (diff === 1) return "Tegnap játszott";
@@ -353,7 +353,7 @@ function createPlayerCard(player, accent, lessonIndex) {
         nextBtn.disabled = offset === 0;
 
         if (totalLessons === 0) {
-            weekSummary.textContent = "Ebben a hétben még nem játszott.";
+            weekSummary.textContent = "Ezen a héten még nem játszott.";
         } else {
             const accuracy = Math.round((totalCorrect / (totalCorrect + totalWrong)) * 100);
             weekSummary.textContent = `📚 ${totalLessons} lecke · 🎯 ${accuracy}% pontosság · 📅 ${playedDays}/7 nap`;

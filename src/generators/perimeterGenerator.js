@@ -40,27 +40,37 @@ function buildPerimeter() {
     };
 }
 
+function buildTask(shape) {
+    const mode = shape === "mixed"
+        ? SHAPES[Math.floor(Math.random() * SHAPES.length)]
+        : shape;
+    if (mode !== "square") return buildPerimeter();
+
+    const side = random(2, 5);
+    const answer = 4 * side;
+    return {
+        type: "perimeter",
+        rows: side,
+        cols: side,
+        answer,
+        options: makeOptions(answer, 2 * 2 + 2, 4 * 5 + 2)
+    };
+}
+
 export function generatePerimeter(options = {}) {
     const { count = 6, shape = "mixed" } = options;
 
     const tasks = [];
+    let prev = null;
     for (let i = 0; i < count; i++) {
-        const mode = shape === "mixed"
-            ? SHAPES[Math.floor(Math.random() * SHAPES.length)]
-            : shape;
-        if (mode === "square") {
-            const side = random(2, 5);
-            const answer = 4 * side;
-            tasks.push({
-                type: "perimeter",
-                rows: side,
-                cols: side,
-                answer,
-                options: makeOptions(answer, 2 * 2 + 2, 4 * 5 + 2)
-            });
-        } else {
-            tasks.push(buildPerimeter());
+        let task = buildTask(shape);
+        let guard = 0;
+        while (guard < 20 && prev && task.rows === prev.rows && task.cols === prev.cols) {
+            task = buildTask(shape);
+            guard++;
         }
+        prev = task;
+        tasks.push(task);
     }
     return tasks;
 }

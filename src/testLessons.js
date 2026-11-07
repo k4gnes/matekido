@@ -12,8 +12,9 @@ globalThis.localStorage = {
 
 const ROOT = new URL("./", import.meta.url);
 
-import { buildLesson } from "./builders/LessonBuilder.js?v=49";
+import { buildLesson } from "./builders/LessonBuilder.js?v=50";
 import { generateSolidShape } from "./generators/solidShapeGenerator.js?v=4";
+import { generatePerimeter } from "./generators/perimeterGenerator.js?v=2";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
 import { COMPARE_OBJECTS, COMPARE_OBJECTS_WORLD } from "./data/measure.js?v=4";
 import { SKILLS } from "./data/skills.js";
@@ -3344,6 +3345,17 @@ const longNet = generateSolidShape({ count: 8, mode: "net", solids: solidPool })
 for (let i = 1; i < longNet.length; i++) {
     if (longNet[i].solid === longNet[i - 1].solid) {
         fail("solid-shape/net", "egymás után ismétlődő test");
+    }
+}
+
+for (let run = 0; run < 200; run++) {
+    const perimTasks = generatePerimeter({ count: 6 });
+    for (let i = 1; i < perimTasks.length; i++) {
+        const prev = perimTasks[i - 1];
+        const task = perimTasks[i];
+        if (task.rows === prev.rows && task.cols === prev.cols) {
+            fail("perimeter", "egymás után ismétlődő alakzat");
+        }
     }
 }
 

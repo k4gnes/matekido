@@ -184,6 +184,13 @@ function createWeakRow(title, detail, percentage) {
 
 }
 
+// a gyakorlásra javasolt lista csak válaszokból áll össze:
+// ahol csak játék/gyakorlás volt (lessonsPlayed > 0, correct+wrong = 0), ott sincs adat
+export function hasAnswerData(profile) {
+    return Object.values(profile?.dailyStats ?? {})
+        .some(d => (d.correct ?? 0) + (d.wrong ?? 0) > 0);
+}
+
 function createWeakSection(player, lessonIndex) {
 
     const section = document.createElement("div");
@@ -225,7 +232,9 @@ function createWeakSection(player, lessonIndex) {
     if (rows.length === 0) {
         const empty = document.createElement("p");
         empty.className = "parent-practice-ok";
-        empty.textContent = "🎉 Minden rendben, nincs gyakorlandó terület!";
+        empty.textContent = hasAnswerData(player.profile)
+            ? "🎉 Minden rendben, nincs gyakorlandó terület!"
+            : "Nincs még válaszadat – a lista a válaszok alapján készül.";
         section.append(empty);
     } else {
         rows.forEach(row => section.append(row));

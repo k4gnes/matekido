@@ -3,7 +3,7 @@
 //
 // Futtatás: make test
 
-const { weekSummaryText, lastPlayedText } = await import("./components/parentDashboard.js");
+const { weekSummaryText, lastPlayedText, hasAnswerData } = await import("./components/parentDashboard.js");
 
 let failures = 0;
 
@@ -29,6 +29,17 @@ check(lastPlayedText(null) === "Még nem játszott", `null lastPlayed: ${lastPla
 
 const today = new Date().toISOString().split("T")[0];
 check(lastPlayedText(today) === "Ma játszott", `mai dátum: ${lastPlayedText(today)}`);
+
+check(!hasAnswerData(null), "nincs profil: nincs válaszadat");
+check(!hasAnswerData({}), "üres profil: nincs válaszadat");
+
+// csak játék/gyakorló nap: van leckeszám, de nincs válasz → a gyakorlás-lista üres,
+// és nem állíthatja, hogy minden rendben van
+const playOnlyDay = { dailyStats: { "2026-11-08": { correct: 0, wrong: 0, lessonsPlayed: 1 } } };
+check(!hasAnswerData(playOnlyDay), "csak játék nap: nincs válaszadat");
+
+const answeredDay = { dailyStats: { "2026-11-08": { correct: 3, wrong: 1, lessonsPlayed: 1 } } };
+check(hasAnswerData(answeredDay), "van válaszadat");
 
 if (failures > 0) {
     process.exitCode = 1;

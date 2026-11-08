@@ -397,8 +397,10 @@ export function renderStatsPage(root, navConfig, lessonIndex) {
         skillGrid.append(catSection);
     }
 
-    skillSection.append(skillGrid);
-    summarySection.append(skillSection);
+    if (skillGrid.children.length > 0) {
+        skillSection.append(skillGrid);
+        summarySection.append(skillSection);
+    }
 
     // --- Tab switching ---
     function switchTab(tab) {

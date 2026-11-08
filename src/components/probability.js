@@ -49,14 +49,25 @@ function hintText(step) {
     if (step.mode === "chance") {
         const total = step.groups.reduce((sum, g) => sum + g.amount, 0);
         const target = step.groups[step.favorableIndex];
-        return `A valószínűség = a kedvező esetek száma ÷ az összes eset száma. Összesen ${total} golyó van, és ${target.amount} ${target.color} – tehát ${target.amount}/${total}.`;
+        const where = step.scenario === "spinner"
+            ? `A pörgettyű ${total} részre van osztva, ebből ${target.amount} ${target.color}`
+            : `Összesen ${total} golyó van, és ${target.amount} ${target.color}`;
+        return `A valószínűség = a kedvező esetek száma ÷ az összes eset száma. ${where} – tehát ${target.amount}/${total}.`;
     }
     if (step.mode === "compare") {
+        const bigger = step.ask === "bigger";
+        const word = bigger ? "nagyobb" : "kisebb";
         if (step.equal) {
-            return "Mindkét színből ugyanannyi van a zacskában, ezért mindkettőt ugyanolyan eséllyel választod!";
+            return step.scenario === "spinner"
+                ? "Mindkét színnek ugyanakkora a körcikke, ezért ugyanolyan eséllyel áll meg bármelyikük!"
+                : "Mindkét színből ugyanannyi van a zacskában, ezért mindkettőt ugyanolyan eséllyel választod!";
         }
-        const more = step.groups[0].amount > step.groups[1].amount ? step.groups[0] : step.groups[1];
-        return `A ${more.color} golyóból van több (${more.amount} db), ezért azt választod ${step.ask === "bigger" ? "nagyobb" : "kisebb"} eséllyel.`;
+        const sorted = [...step.groups].sort((a, b) => b.amount - a.amount);
+        const target = bigger ? sorted[0] : sorted[1];
+        if (step.scenario === "spinner") {
+            return `A ${target.color} körcikk ${word}, ezért azon áll meg ${word} eséllyel a pörgettyű.`;
+        }
+        return `A ${target.color} golyóból van ${bigger ? "több" : "kevesebb"} (${target.amount} db), ezért azt választod ${word} eséllyel.`;
     }
     if (step.mode === "frequency") {
         return "A relatív gyakoriság = a kedvező esetek száma ÷ a kísérletek száma.";

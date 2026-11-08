@@ -293,7 +293,16 @@ const CASES = [
         wrong: (step, root) => wrongButton(root, ".prob-option", btn => {
             const text = btn.textContent.trim();
             return text !== step.correctLabel && !text.endsWith(` ${step.correctLabel}`);
-        })
+        }),
+        hintOk: (step, text) => {
+            if (step.mode === "compare" && !step.equal) {
+                const other = step.groups.find(g => g.color !== step.correctColor)?.color;
+                const word = step.ask === "bigger" ? "nagyobb" : "kisebb";
+                if (!text.includes(step.correctColor) || (other && text.includes(other))) return false;
+                if (!text.includes(word)) return false;
+            }
+            return step.scenario === "spinner" ? !text.includes("golyó") : true;
+        }
     },
     {
         name: "combinatorics",
@@ -373,6 +382,10 @@ for (const testCase of CASES) {
 
         const box = root.querySelector(".hint");
         check(Boolean(box && box.textContent.trim().length > 0), `${testCase.name} (${step.mode ?? step.kind ?? "?"}): a gomb szöveget ad`);
+
+        if (testCase.hintOk && box) {
+            check(testCase.hintOk(step, box.textContent), `${testCase.name} (${step.mode ?? "?"}): a segítség a feladathoz igazodik`);
+        }
     }
 
     const wrongStep = steps.find(step => testCase.wrong(step, render(testCase.render, step)));

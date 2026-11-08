@@ -116,6 +116,26 @@ Ezt a lépéskört **futtasd végig a főbb feladattípusokon is**, hogy mindegy
 |---|-------|---------------|----------|
 | 6.1 | Nyisd meg a `📋 Értékek` oldalt a profilból | A világ szerinti jelentés (pl. „📬 Postai jelentés”), napi statisztikák, készség-százalékok megjelennek | |
 | 6.2 | Válts a statisztika és a profil között | A Vissza gomb a profilra, a „Leckék” a menüre visz | |
+| 6.3 | Üres profillal nyisd meg a `📋 Értékek` → „📈 Összesített” fület | Pontosság „–” (nem 0%), a jegyzet „Még nincs adat – játssz egy leckét!”, és **nem** jelenik meg üres „📊 Készségek” szekció | |
+| 6.4 | Egyperces játék után nézd meg ugyanezt a fület | „Van lecke, de nincs válaszadat – csak játék/gyakorlás volt.” (nem „játssz egy leckét!”) | |
+| 6.5 | Válts a `📅 Napi` fület, és lépkedj `◀ ▶` napokkal | Pontosság üres napnál „–”; a jegyzet üres napnál „Erre a napra még nincs adat.”, csak játékos napnál „Erre a napra csak játék/gyakorlás volt, nincs válaszadat.” | |
+
+---
+
+## 6b. Szülői összefoglaló
+
+A szülői nézet a profil oldalnavbarjából a `👪 Szülői` gombbal nyílik. Három állapotot érdemes végigpróbálni: **üres profil**, **csak egyperces játék** (ebben nincs válaszadat), **vegyes hét** (lecke + válasz).
+
+| # | Lépés | Várt eredmény | Eredmény |
+|---|-------|---------------|----------|
+| 6b.1 | Üres profillal nyisd meg a `👪 Szülői` oldalt | Játékoskártya: „Még nem játszott”, 🎯 pontosság helyett „–”, a heti összefoglaló „Ezen a héten még nem játszott.” | |
+| 6b.2 | Ugyanitt nézd a „Gyakorlásra javasolt” részt | **Nem** állítja, hogy „Minden rendben”: „Nincs még válaszadat – a lista a válaszok alapján készül.” | |
+| 6b.3 | Játssz végig egy egyperces játékot (pl. 🎲 Szorzótábla-játék), majd frissítsd a szülői oldalt | A heti összefoglalóban **nincs NaN%**: „📚 1 lecke · 🎯 – pontosság · 📅 1/7 nap”; a sáv mellett „1”, a szürke legenda felirata „nincs válaszadat” | |
+| 6b.4 | Vidd az egeret a szürke sávra | Tooltip: „… – 1 lecke, nincs válaszadat” (nem „nem játszott”) | |
+| 6b.5 | Játssz egy valódi leckét (van számozott feladat), majd frissítsd | A heti összefoglalóban valós százalék (pl. „🎯 80% pontosság”), a sáv színe zöld/sárga/piros a pontosság szerint | |
+| 6b.6 | Lapozz vissza `◀` hetekkel | A heti összefoglaló és a dátumcsík követi a lapozást; a legkorábbi rögzített dátumnál a `◀` letiltva | |
+| 6b.7 | Olyan játékossal, akinek van kihagyott feladata | Megjelenik a „⏭️ Kihagyott feladatok (N): …” sor a kártya alján | |
+| 6b.8 | Menj vissza a profilra | A „Legutóbb játszott” felirat valós („Ma játszott” / „Tegnap játszott” / „X napja játszott”), üres profilnál „Még nem játszott” | |
 
 ---
 

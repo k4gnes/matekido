@@ -97,7 +97,7 @@ Az **Elmúlt 7 nap** oszlopai a napi játéktevékenységet mutatják: a sávok 
 - 🟢 zöld: 80% fölötti pontosság
 - 🟡 sárga: 50–79%
 - 🔴 piros: 50% alatti
-- ⚪ szürke: aznap nem játszott
+- ⚪ szürke: aznap nincs válaszadat (nem játszott, vagy csak játék/gyakorló lecke volt)
 
 A [**🎯 Gyakorlásra javasolt**](#gyakorlas-a-gyengebb-es-a-regen-gyakorolt-leckek) részben azok a készségek és leckék látszanak, amelyekben az eredmény **90% alatt** van, vagy amelyeket a gyerek **régen gyakorolt** – ezeket a Gyakorlásra javasolt listából újragyakorolhatja. A [**⏭️ Kihagyott feladatok**](#kihagyott-leckek) rész pedig az osztályos félretett leckéket mutatja; ajánlott utóbb pótolni, hogy az osztály leckéi teljesek legyenek.
 

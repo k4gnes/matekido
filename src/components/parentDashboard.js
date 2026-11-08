@@ -32,12 +32,20 @@ function formatDayLabel(dateStr) {
     return `${WEEKDAY_SHORT[d.getDay()]} ${d.getDate()}`;
 }
 
-function lastPlayedText(dateStr) {
-    if (!dateStr) return "Ezen a héten még nem játszott";
+export function lastPlayedText(dateStr) {
+    if (!dateStr) return "Még nem játszott";
     const diff = Math.round((new Date(getToday()) - new Date(dateStr)) / DAY);
     if (diff <= 0) return "Ma játszott";
     if (diff === 1) return "Tegnap játszott";
     return `${diff} napja játszott`;
+}
+
+// tiszta függvény, hogy tesztelhető legyen: 0 válaszból ne legyen NaN%
+export function weekSummaryText(totalLessons, totalCorrect, totalWrong, playedDays) {
+    if (totalLessons === 0) return "Ezen a héten még nem játszott.";
+    const totalAnswers = totalCorrect + totalWrong;
+    const accuracy = totalAnswers === 0 ? "–" : `${Math.round((totalCorrect / totalAnswers) * 100)}%`;
+    return `📚 ${totalLessons} lecke · 🎯 ${accuracy} pontosság · 📅 ${playedDays}/7 nap`;
 }
 
 function dayAccuracy(day) {
@@ -248,6 +256,11 @@ function firstRecordedDate(dailyStats) {
     return dates.length > 0 ? dates[0] : null;
 }
 
+function lastDailyDate(dailyStats) {
+    const dates = Object.keys(dailyStats ?? {}).sort();
+    return dates.length > 0 ? dates[dates.length - 1] : null;
+}
+
 function createPlayerCard(player, accent, lessonIndex) {
 
     const card = document.createElement("div");
@@ -269,7 +282,8 @@ function createPlayerCard(player, accent, lessonIndex) {
 
     const lastPlayed = document.createElement("span");
     lastPlayed.className = "parent-last-played";
-    lastPlayed.textContent = lastPlayedText(profile.lastPlayed);
+    // régi profiloknál nincs lastPlayed, de a dailyStats dátumaiból megvan az utolsó
+    lastPlayed.textContent = lastPlayedText(profile.lastPlayed ?? lastDailyDate(dailyStats));
 
     header.append(avatar, name, lastPlayed);
 
@@ -345,21 +359,15 @@ function createPlayerCard(player, accent, lessonIndex) {
         const totalCorrect = days.reduce((sum, d) => sum + d.correct, 0);
         const totalWrong = days.reduce((sum, d) => sum + d.wrong, 0);
         const playedDays = days.filter(d => d.lessons > 0).length;
-        const hasData = days.some(d => d.accuracy !== null);
 
         weekLabel.textContent = weekRangeLabel(dates, offset);
 
         prevBtn.disabled = earliest === null || dates[0] <= earliest;
         nextBtn.disabled = offset === 0;
 
-        if (totalLessons === 0) {
-            weekSummary.textContent = "Ezen a héten még nem játszott.";
-        } else {
-            const accuracy = Math.round((totalCorrect / (totalCorrect + totalWrong)) * 100);
-            weekSummary.textContent = `📚 ${totalLessons} lecke · 🎯 ${accuracy}% pontosság · 📅 ${playedDays}/7 nap`;
-        }
+        weekSummary.textContent = weekSummaryText(totalLessons, totalCorrect, totalWrong, playedDays);
 
-        note.textContent = hasData
+        note.textContent = totalLessons > 0
             ? "A sávok magassága a leckék száma, színük a napi pontosság."
             : "Nincs adat ehhez a héthez.";
 
@@ -376,9 +384,11 @@ function createPlayerCard(player, accent, lessonIndex) {
             const bar = document.createElement("div");
             bar.className = "parent-bar";
             bar.style.background = accuracyColor(day.accuracy);
-            bar.title = day.accuracy === null
-                ? `${day.date} – nem játszott`
-                : `${day.date} – ${day.lessons} lecke, ${day.accuracy}% pontosság`;
+            bar.title = day.accuracy !== null
+                ? `${day.date} – ${day.lessons} lecke, ${day.accuracy}% pontosság`
+                : (day.lessons > 0
+                    ? `${day.date} – ${day.lessons} lecke, nincs válaszadat`
+                    : `${day.date} – nem játszott`);
             if (day.lessons > 0) {
                 bar.style.height = Math.max(6, Math.round((day.lessons / maxLessons) * 100)) + "px";
             }
@@ -412,7 +422,7 @@ function createPlayerCard(player, accent, lessonIndex) {
         { color: "#4caf50", text: "80%+" },
         { color: "#f59e0b", text: "50–79%" },
         { color: "#e53935", text: "50% alatt" },
-        { color: "#e0e0e0", text: "nem játszott" }
+        { color: "#e0e0e0", text: "nincs válaszadat" }
     ].forEach(({ color, text }) => {
         const item = document.createElement("span");
         item.className = "parent-legend-item";

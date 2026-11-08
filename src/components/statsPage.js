@@ -232,7 +232,9 @@ export function renderStatsPage(root, navConfig, lessonIndex) {
         if (total === 0) {
             const emptyNote = document.createElement("p");
             emptyNote.className = "type-breakdown-title";
-            emptyNote.textContent = "Erre a napra még nincs adat.";
+            emptyNote.textContent = dayStats.lessonsPlayed > 0
+                ? "Erre a napra csak játék/gyakorlás volt, nincs válaszadat."
+                : "Erre a napra még nincs adat.";
             typeBreakdown.append(emptyNote);
         }
 
@@ -312,7 +314,9 @@ export function renderStatsPage(root, navConfig, lessonIndex) {
     if (totalAll === 0) {
         const emptyNote = document.createElement("p");
         emptyNote.className = "type-breakdown-title";
-        emptyNote.textContent = "Még nincs adat – játssz egy leckét!";
+        emptyNote.textContent = totalLessons > 0
+            ? "Van lecke, de nincs válaszadat – csak játék/gyakorlás volt."
+            : "Még nincs adat – játssz egy leckét!";
         summarySection.append(emptyNote);
     }
 

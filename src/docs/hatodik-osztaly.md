@@ -73,30 +73,30 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 | 27 | Szögek | [Szögek mérése és szerkesztése](?lesson=angle-measure-03) | Fokban mérés | 360 | 2 |
 | 28 | Kör | [A kör és részei](?lesson=circle-02) | Középpont, sugár, átmérő, húr | — | 2 |
 | 29 | Transzformációk | [Tükrözés, eltolás, forgatás](?lesson=transform-03) | Geometriai transzformációk | — | 3 |
-| 30 | Kerület, terület | [Háromszög és négyszög kerülete, területe](?lesson=shape-area-01) | Képletek | 1000 | 3 |
-| 31 | Felszín, térfogat | [Felszín és térfogat – téglatest, kocka](?lesson=solid-measure-02) | Képletek | 1000 | 3 |
-
-## Kombinatorika (2 lecke)
-
-| # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
-|---|---|---|---|---|---|
-| 32 | Kombinatorika | [Hányféleképpen? – sorba rendezés](?lesson=combinatorics-02) | Sorba rendezés és összeszámlálás | 100 | 2 |
-| 33 | Kombinatorika | [Kiválasztás és párosítás](?lesson=combinatorics-03) | Összeszámolás | 100 | 3 |
+| 30 | Felszín, térfogat | [Felszín és térfogat – téglatest, kocka](?lesson=solid-measure-02) | Képletek | 1000 | 3 |
+| 31 | Kerület, terület | [Háromszög és négyszög kerülete, területe](?lesson=shape-area-01) | Képletek | 1000 | 3 |
 
 ## Adatok és valószínűség (2 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 34 | Adatok | [Adatok, diagramok és átlag](?lesson=average-02) | Átlag és gyakoriság | 1000 | 2 |
-| 35 | Valószínűség | [Valószínűség és esély](?lesson=probability-02) | Esély becslése | — | 2 |
+| 32 | Adatok | [Adatok, diagramok és átlag](?lesson=average-02) | Átlag és gyakoriság | 1000 | 2 |
+| 33 | Valószínűség | [Valószínűség és esély](?lesson=probability-02) | Esély becslése | — | 2 |
 
 ## Szöveges feladatok (3 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 36 | Arányosság | [Arányossági szöveges feladatok](?lesson=proportion-word-01) | Egyenes és fordított arányosság | 1000 | 3 |
-| 37 | Százalék | [Százalékos szöveges feladatok](?lesson=percent-word-01) | Alap, érték, százalékláb | 1000 | 3 |
-| 38 | Többlépéses | [Többlépéses szöveges feladatok](?lesson=multi-step-word-01) | Több művelet egy történetben | 1000 | 3 |
+| 34 | Arányosság | [Arányossági szöveges feladatok](?lesson=proportion-word-01) | Egyenes és fordított arányosság | 1000 | 3 |
+| 35 | Százalék | [Százalékos szöveges feladatok](?lesson=percent-word-01) | Alap, érték, százalékláb | 1000 | 3 |
+| 36 | Többlépéses | [Többlépéses szöveges feladatok](?lesson=multi-step-word-01) | Több művelet egy történetben | 1000 | 3 |
+
+## Kombinatorika (2 lecke)
+
+| # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|---|
+| 37 | Kombinatorika | [Hányféleképpen? – sorba rendezés](?lesson=combinatorics-02) | Sorba rendezés és összeszámlálás | 100 | 2 |
+| 38 | Kombinatorika | [Kiválasztás és párosítás](?lesson=combinatorics-03) | Összeszámolás | 100 | 3 |
 
 ## 🌟 Mester kihívás (1 lecke)
 

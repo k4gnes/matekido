@@ -26,8 +26,8 @@ A 8. osztály a 7. osztályra épül, és a 7–8. kerettanterv addig nem érint
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
 | 7 | Logika | [Igaz és hamis állítások](?lesson=grade8-logic-01) | „minden”, „van olyan”, tagadás, egyszerű következtetés | — | 2 |
-| 8 | Kombinatorika | [Sorba rendezés és kiválasztás](?lesson=grade8-combinatorics-01) | Permutáció, pár, szorzat; táblázat és ágrajz | — | 3 |
-| 9 | Gráfok | [Gráfok](?lesson=grade8-graph-01) | Csúcs, él, kézfogás, körmérkőzés, útvonal | — | 3 |
+| 8 | Gráfok | [Gráfok](?lesson=grade8-graph-01) | Csúcs, él, kézfogás, körmérkőzés, útvonal | — | 3 |
+| 9 | Kombinatorika | [Sorba rendezés és kiválasztás](?lesson=grade8-combinatorics-01) | Permutáció, pár, szorzat; táblázat és ágrajz | — | 3 |
 
 ## Algebra, egyenletek, arány, százalék (6 lecke)
 
@@ -58,30 +58,30 @@ A 8. osztály a 7. osztályra épül, és a 7–8. kerettanterv addig nem érint
 | 22 | Pitagorasz-tétel | [Pitagorasz-tétel alkalmazása](?lesson=grade8-pythagorean-01) | Hiányzó oldal, derékszög ellenőrzése, gyakorlati feladatok | — | 3 |
 | 23 | Kör | [Kör részei](?lesson=grade8-circle-parts-01) | Körvonal, körlap, sugár, húr, átmérő, szelő, érintő, körcikk | — | 2 |
 
-## Transzformációk, szerkesztések (3 lecke)
-
-| # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
-|---|---|---|---|---|---|
-| 24 | Tükrözés | [Tengelyes és középpontos tükrözés](?lesson=grade8-mirror-central-01) | Tükörkép szerkesztése, szimmetria | — | 3 |
-| 25 | Mozgatás | [Eltolás, forgatás, szimmetria](?lesson=grade8-transform-move-01) | Eltolás, 90° és 180° forgatás, szimmetriák, kicsinyítés és nagyítás | — | 3 |
-| 26 | Szerkesztések | [Alapszerkesztések](?lesson=grade8-construction-01) | Szerkesztési lépések, eredményfelismerés, háromszög szerkeszthetősége | — | 3 |
-
 ## Térgeometria (4 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 27 | Testek | [Testek és hálók](?lesson=grade8-solid-nets-01) | Kocka, téglatest, hasáb, gúla, gömb, Földgömb; háló, lapok | — | 2 |
-| 28 | Testek tulajdonságai | [Testek tulajdonságai](?lesson=grade8-solid-properties-01) | Lapok, élek, csúcsok, lapátló, testátló | — | 3 |
-| 29 | Felszín | [Felszín](?lesson=grade8-surface-01) | Kocka, téglatest, egyenes hasáb felszíne | 1000 | 3 |
-| 30 | Térfogat | [Térfogat és űrtartalom](?lesson=grade8-volume-01) | Kocka, téglatest, hasáb térfogata; 1 dm³ = 1 l | 1000 | 3 |
+| 24 | Testek | [Testek és hálók](?lesson=grade8-solid-nets-01) | Kocka, téglatest, hasáb, gúla, gömb, Földgömb; háló, lapok | — | 2 |
+| 25 | Testek tulajdonságai | [Testek tulajdonságai](?lesson=grade8-solid-properties-01) | Lapok, élek, csúcsok, lapátló, testátló | — | 3 |
+| 26 | Felszín | [Felszín](?lesson=grade8-surface-01) | Kocka, téglatest, egyenes hasáb felszíne | 1000 | 3 |
+| 27 | Térfogat | [Térfogat és űrtartalom](?lesson=grade8-volume-01) | Kocka, téglatest, hasáb térfogata; 1 dm³ = 1 l | 1000 | 3 |
 
 ## Statisztika, valószínűség (3 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 31 | Adatok | [Adatok és diagramok](?lesson=grade8-data-charts-01) | Táblázat, oszlop-, kör-, vonal- és pontdiagram, átalakítás | — | 2 |
-| 32 | Középértékek | [Középértékek](?lesson=grade8-statistics-01) | Átlag, medián, módusz, összehasonlítás | 1000 | 3 |
-| 33 | Valószínűség | [Valószínűség és gyakoriság](?lesson=grade8-probability-frequency-01) | Esély, gyakoriság, relatív gyakoriság, kísérlet | — | 3 |
+| 28 | Adatok | [Adatok és diagramok](?lesson=grade8-data-charts-01) | Táblázat, oszlop-, kör-, vonal- és pontdiagram, átalakítás | — | 2 |
+| 29 | Középértékek | [Középértékek](?lesson=grade8-statistics-01) | Átlag, medián, módusz, összehasonlítás | 1000 | 3 |
+| 30 | Valószínűség | [Valószínűség és gyakoriság](?lesson=grade8-probability-frequency-01) | Esély, gyakoriság, relatív gyakoriság, kísérlet | — | 3 |
+
+## Transzformációk, szerkesztések (3 lecke)
+
+| # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|---|
+| 31 | Tükrözés | [Tengelyes és középpontos tükrözés](?lesson=grade8-mirror-central-01) | Tükörkép szerkesztése, szimmetria | — | 3 |
+| 32 | Mozgatás | [Eltolás, forgatás, szimmetria](?lesson=grade8-transform-move-01) | Eltolás, 90° és 180° forgatás, szimmetriák, kicsinyítés és nagyítás | — | 3 |
+| 33 | Szerkesztések | [Alapszerkesztések](?lesson=grade8-construction-01) | Szerkesztési lépések, eredményfelismerés, háromszög szerkeszthetősége | — | 3 |
 
 ## Összefoglalás, gyakorlás (3 lecke)
 

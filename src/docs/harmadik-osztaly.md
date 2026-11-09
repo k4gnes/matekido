@@ -41,7 +41,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 | 22 | Vegyes műveletek | [Vegyes műveletek 1000-ig](?lesson=mixed-1000-01) | Vegyes műveletek | 1000 | 3 |
 | 23 | Műveleti sorrend | [Műveleti sorrend](?lesson=operation-order-01) | Sorrend és zárójelek | 100 | 2 |
 
-## Szorzás és osztás bővítése (8 lecke)
+## Szorzás és osztás bővítése (7 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|

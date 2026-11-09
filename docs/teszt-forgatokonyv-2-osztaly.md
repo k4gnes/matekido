@@ -51,8 +51,8 @@ A sorok sorszáma **1–58, folytonos** – megegyezik a tanmenettel (`docs/maso
 | 11 | Összehasonlítás 20-ig | `comparison` / 20 | Az előjeles döntés az értékeknek megfelel |✅ |
 | 12 | Összehasonlítás 100-ig | `comparison` / 100 | Az értékek 100-on belül, a jel illik az értékekhez | ✅|
 | 13 | 🍕 Törtek – fele, harmada, negyede | `fraction` / — | A kép és a tört jele társítható; **a menüben nem a Számok, hanem a külön „Törtek” szekcióban jelenik meg** (rajta a 13/58 jelzés) |✅ |
-| 14 | 🔀 Sorrendbe! – 3 elem | `combinatorics` / — | 3 különböző elemből 6 sorrend; koppintással rakható sorba, ismétlődésnél jelzés jön, új sorrendnél nő a számláló; mind a 6 megtalálása után celebráció | |
-| 15 | 🎲 Mi valószínűbb? | `probability` (compare) / — | Zsák és pörgettyű vegyesen; a nagyobb/kisebb mennyiség (több golyó / nagyobb körcikk) felismerhető; néha ugyanannyi van, ilyenkor „Ugyanolyan eséllyel” a helyes | |
+| 14 | 🔀 Sorrendbe! – 3 elem | `combinatorics` / — | 3 különböző elemből 6 sorrend; koppintással rakható sorba, ismétlődésnél jelzés jön, új sorrendnél nő a számláló; mind a 6 megtalálása után celebráció | ✅|
+| 15 | 🎲 Mi valószínűbb? | `probability` (compare) / — | Zsák és pörgettyű vegyesen; a nagyobb/kisebb mennyiség (több golyó / nagyobb körcikk) felismerhető; néha ugyanannyi van, ilyenkor „Ugyanolyan eséllyel” a helyes | ✅|
 
 ### 2.2 Műveletek (összeadás, kivonás, vegyes)
 

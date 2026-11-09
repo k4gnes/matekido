@@ -126,9 +126,14 @@ export function renderPlaceValueTwoInput(step, root, next, progress, onResult, o
         }
     }
 
+    const tensDigits = String(Math.floor(step.answer / 10)).length;
+
     button.addEventListener("click", check);
+    tensInput.addEventListener("input", () => {
+        if (tensInput.value.length >= tensDigits) onesInput.focus();
+    }, { signal: ac.signal });
     tensInput.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") { e.preventDefault(); check(); }
+        if (e.key === "Enter") { e.preventDefault(); onesInput.focus(); }
     }, { signal: ac.signal });
     onesInput.addEventListener("keydown", (e) => {
         if (e.key === "Enter") { e.preventDefault(); check(); }

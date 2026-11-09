@@ -39,96 +39,98 @@ Ennek a dokumentumnak a célja, hogy az **5. osztályos tananyagot** (36 lecke: 
 
 ## 2. Lecke-ellenőrző táblázatok
 
+A sorok sorszáma **1–32, folytonos** – megegyezik a menüben és a lecke fejlécében látott „x/32” jelzéssel. A 🌟 Mester kihívás és a 🎲 Egypercesek „–” jelölésűek, mert a menüben nincs rájuk x/N jelzés. A szekciók csak csoportosítás, a sorszámok a tananyag (curriculum) sorrendjét követik.
+
 ### 2.1 Számfogalom 1 000 000-ig
 
 | # | Lecke | Típus / tartomány | Amire figyelj | Eredmény |
 |---|-------|-------------------|---------------|----------|
-| 2.1.1 | Helyiérték 1 000 000-ig | `place-value-thousands` / 1 000 000 | Három blokk: beírás, választás, majd átviteles feladat; a helyiérték-táblázatban a nullák helye és a milliós nagyságrend stimmeljen | |
-| 2.1.2 | Számnevek 1 000 000-ig | `number-name` / 1 000 000 | Mindkét irány: szám → szöveg és szöveg → szám; a magyar számnév kötőjelezése, a kerek számok és az „egymillió” alak helyes legyen | |
-| 2.1.3 | Számszomszédok 1 000 000-ig | `neighbor-round` / 1 000 000 | Két blokk: tízes/százas/ezres, majd ezres/tízezres/százzezres; az alsó és felső kerekített szomszéd a kért helyiértékhez igazodjon | |
-| 2.1.4 | Összehasonlítás 1 000 000-ig | `comparison` / 1 000 000 | Két blokk; a `< = >` jel a nagyságrendhez illeszkedjen, az egyenlőség is előfordul (forceEqual), a nulla helye ne csússzon el | |
-| 2.1.5 | Oszthatóság 2, 3, 4, 5, 6, 9, 10-zel | `divisibility` / 1 000 000 | Többszörös és nem-többszörös; a 3-as, 4-es, 6-os és 9-es szabály helyes legyen, a „nem többszörös” kérdés ne keveredjen a „többszörös” kérdéssel | |
-| 2.1.6 | Kerekítés és becslés 1 000 000-ig | `rounding` + `estimate` / 1 000 000 | Kerekítés százasra, ezresre, tízezresre és százezresre; a becslés külön blokk, a nagyságrend és a kerekített érték összhangban legyen | |
+| 1 | Helyiérték 1 000 000-ig | `place-value-thousands` / 1 000 000 | Három blokk: beírás, választás, majd átviteles feladat; a helyiérték-táblázatban a nullák helye és a milliós nagyságrend stimmeljen | |
+| 2 | Számnevek 1 000 000-ig | `number-name` / 1 000 000 | Mindkét irány: szám → szöveg és szöveg → szám; a magyar számnév kötőjelezése, a kerek számok és az „egymillió” alak helyes legyen | |
+| 3 | Számszomszédok 1 000 000-ig | `neighbor-round` / 1 000 000 | Két blokk: tízes/százas/ezres, majd ezres/tízezres/százzezres; az alsó és felső kerekített szomszéd a kért helyiértékhez igazodjon | |
+| 4 | Összehasonlítás 1 000 000-ig | `comparison` / 1 000 000 | Két blokk; a `< = >` jel a nagyságrendhez illeszkedjen, az egyenlőség is előfordul (forceEqual), a nulla helye ne csússzon el | |
+| 5 | Oszthatóság 2, 3, 4, 5, 6, 9, 10-zel | `divisibility` / 1 000 000 | Többszörös és nem-többszörös; a 3-as, 4-es, 6-os és 9-es szabály helyes legyen, a „nem többszörös” kérdés ne keveredjen a „többszörös” kérdéssel | |
+| 6 | Kerekítés és becslés 1 000 000-ig | `rounding` + `estimate` / 1 000 000 | Kerekítés százasra, ezresre, tízezresre és százezresre; a becslés külön blokk, a nagyságrend és a kerekített érték összhangban legyen | |
 
 ### 2.2 Törtek
 
 | # | Lecke | Típus / tartomány | Amire figyelj | Eredmény |
 |---|-------|-------------------|---------------|----------|
-| 2.2.1 | Bővítés és egyszerűsítés | `fraction-equal` / 100 | Bővítés, egyszerűsítés és összehasonlítás; az egyenlő törtek értéke azonos, az egyszerűsített alak a legkisebb tagokkal szerepeljen | |
-| 2.2.2 | Különböző nevezőjű törtek összeadása | `fraction-common-den` / 20 | Összeadás és kivonás; a közös nevező helyes, az eredmény egyszerűsítve vagy vegyes számként jelenik meg | |
-| 2.2.3 | Törtek szorzása egész számmal | `fraction-times-int` / 20 | Egész számmal való szorzás, tört eredmény és vegyes eredmény; a nevező változatlan, a számláló szorzódik | |
-| 2.2.4 | Törtek szorzása törttel | `fraction-times-frac` / 100 | Számláló × számláló, nevező × nevező; a területmodell és az egyszerűsítés is helyes legyen | |
-| 2.2.5 | Törtek osztása | `fraction-divide` / 100 | Egésszel és törttel való osztás; az osztás a reciprokkal való szorzás, az eredmény egyszerűsítve | |
+| 7 | Bővítés és egyszerűsítés | `fraction-equal` / 100 | Bővítés, egyszerűsítés és összehasonlítás; az egyenlő törtek értéke azonos, az egyszerűsített alak a legkisebb tagokkal szerepeljen | |
+| 8 | Különböző nevezőjű törtek összeadása | `fraction-common-den` / 20 | Összeadás és kivonás; a közös nevező helyes, az eredmény egyszerűsítve vagy vegyes számként jelenik meg | |
+| 9 | Törtek szorzása egész számmal | `fraction-times-int` / 20 | Egész számmal való szorzás, tört eredmény és vegyes eredmény; a nevező változatlan, a számláló szorzódik | |
+| 10 | Törtek szorzása törttel | `fraction-times-frac` / 100 | Számláló × számláló, nevező × nevező; a területmodell és az egyszerűsítés is helyes legyen | |
+| 11 | Törtek osztása | `fraction-divide` / 100 | Egésszel és törttel való osztás; az osztás a reciprokkal való szorzás, az eredmény egyszerűsítve | |
 
 ### 2.3 Tizedes törtek
 
 | # | Lecke | Típus / tartomány | Amire figyelj | Eredmény |
 |---|-------|-------------------|---------------|----------|
-| 2.3.1 | Tizedes törtek: írás, olvasás, összehasonlítás | `decimal-prep` / 100 | Szöveges olvasat → tizedes szám, tizedes szám → szöveges olvasat, összehasonlítás; a magyar tizedesvessző és a záró nullák helyesek | |
-| 2.3.2 | Tizedes törtek összeadása és kivonása | `decimal-prep` / 100 | Vesszők igazítása, egész rész pótlása nullával, átvitel és kölcsönzés; az eredmény helyiértékei stimmeljenek | |
-| 2.3.3 | Szorzás 10-zel, 100-zal, 1000-rel | `decimal-prep` / 1 000 | A vessző jobbra mozdul, a hiányzó helyekre nulla kerül; a 10, 100 és 1000 hatása különüljön el | |
-| 2.3.4 | Osztás 10-zel, 100-zal, egésszel | `decimal-prep` / 1 000 | A vessző balra mozdul, szükség esetén nulla kerül a vessző elé; az egésszel való osztás külön blokk | |
+| 12 | Tizedes törtek: írás, olvasás, összehasonlítás | `decimal-prep` / 100 | Szöveges olvasat → tizedes szám, tizedes szám → szöveges olvasat, összehasonlítás; a magyar tizedesvessző és a záró nullák helyesek | |
+| 13 | Tizedes törtek összeadása és kivonása | `decimal-prep` / 100 | Vesszők igazítása, egész rész pótlása nullával, átvitel és kölcsönzés; az eredmény helyiértékei stimmeljenek | |
+| 14 | Szorzás 10-zel, 100-zal, 1000-rel | `decimal-prep` / 1 000 | A vessző jobbra mozdul, a hiányzó helyekre nulla kerül; a 10, 100 és 1000 hatása különüljön el | |
+| 15 | Osztás 10-zel, 100-zal, egésszel | `decimal-prep` / 1 000 | A vessző balra mozdul, szükség esetén nulla kerül a vessző elé; az egésszel való osztás külön blokk | |
 
 ### 2.4 Százalékszámítás
 
 | # | Lecke | Típus / tartomány | Amire figyelj | Eredmény |
 |---|-------|-------------------|---------------|----------|
-| 2.4.1 | Százalék fogalma: 10%, 20%, 25%, 50% | `percent` / 100 | Száz kockás rács, százalék ↔ egyszerű tört, hétköznapi szöveg; a színezett rész és a százalék egyezzen | |
-| 2.4.2 | Mennyi az X százaléka? | `percent` / 1 000 | Először 10/20/25/50%, majd 5/15/30/40/75%; a „mennyi az X%-a” és a „hány százaléka” kérdés is helyes legyen, az eredmény egész | |
+| 16 | Százalék fogalma: 10%, 20%, 25%, 50% | `percent` / 100 | Száz kockás rács, százalék ↔ egyszerű tört, hétköznapi szöveg; a színezett rész és a százalék egyezzen | |
+| 17 | Mennyi az X százaléka? | `percent` / 1 000 | Először 10/20/25/50%, majd 5/15/30/40/75%; a „mennyi az X%-a” és a „hány százaléka” kérdés is helyes legyen, az eredmény egész | |
 
 ### 2.5 Műveletek nagy számokkal
 
 | # | Lecke | Típus / tartomány | Amire figyelj | Eredmény |
 |---|-------|-------------------|---------------|----------|
-| 2.5.1 | Írásbeli műveletek nagy számokkal | `written-operation` + `written-division` / 100 000 | Ötjegyű összeadás és kivonás, négyjegyű szorzás 11–15-tel, ötjegyű osztás kétjegyűvel; az átvitel, a részszorzatok és a lépcsős osztás látszódjon | |
-| 2.5.2 | Műveleti sorrend és zárójelek | `operation-order` / 1 000 | Két blokk: kisebb és nagyobb számok; a szorzás/osztás megelőzi az összeadást/kivonást, a zárójel tényleg megváltoztatja az eredményt | |
-| 2.5.3 | Hiányzó tag és hiányzó tényező | `missing-operand` + `multiplication` / 1 000 | Fordított összeadás/kivonás és hiányzó tényező a 11, 12, 15, 20, 25, 40, 50, 100-as táblákból; az inverz művelet helyes | |
+| 18 | Írásbeli műveletek nagy számokkal | `written-operation` + `written-division` / 100 000 | Ötjegyű összeadás és kivonás, négyjegyű szorzás 11–15-tel, ötjegyű osztás kétjegyűvel; az átvitel, a részszorzatok és a lépcsős osztás látszódjon | |
+| 19 | Műveleti sorrend és zárójelek | `operation-order` / 1 000 | Két blokk: kisebb és nagyobb számok; a szorzás/osztás megelőzi az összeadást/kivonást, a zárójel tényleg megváltoztatja az eredményt | |
+| 20 | Hiányzó tag és hiányzó tényező | `missing-operand` + `multiplication` / 1 000 | Fordított összeadás/kivonás és hiányzó tényező a 11, 12, 15, 20, 25, 40, 50, 100-as táblákból; az inverz művelet helyes | |
 
 ### 2.6 Geometria
 
 | # | Lecke | Típus / tartomány | Amire figyelj | Eredmény |
 |---|-------|-------------------|---------------|----------|
-| 2.6.1 | Síkidomok tulajdonságai | `polygon` / – | Ötszögtől nyolcszögig oldalak, csúcsok és átlók; az átlók száma a `n(n−3)/2` képlettel egyezzen | |
-| 2.6.2 | Kerület és terület – négyzet és téglalap | `shape-formula` / 1 000 | `K = 2(a + b)` és `T = a × b`; a képlet, a méretjelölés és a mértékegység (cm, cm²) stimmeljen | |
-| 2.6.3 | Kocka és téglatest felszíne és térfogata | `solid-measure` / 1 000 | `6a²`, `2(ab + ac + bc)`, `a³`, `a × b × c`; a felszín cm², a térfogat cm³ legyen | |
-| 2.6.4 | Szögek mérése és szerkesztése | `angle-measure` / 360 | 5°-os lépések, teljes kör, szögösszehasonlítás; a szögmérő leolvasása és a szögfajta megnevezése helyes | |
-| 2.6.5 | Koordináta-rendszer | `coordinate` / 100 | Pont leolvasása és kijelölése; **csak az első síknegyed, 0–9 közötti értékek**, a sorrend `(x; y)` | |
-| 2.6.6 | Eltolás, forgatás és tükrözés | `transform` + `mirror` / – | Eltolás lépésekben, forgatás iránya és szöge, tükrözés tengelye; a tükrözött alakzat nem forgatott | |
+| 21 | Síkidomok tulajdonságai | `polygon` / – | Ötszögtől nyolcszögig oldalak, csúcsok és átlók; az átlók száma a `n(n−3)/2` képlettel egyezzen | |
+| 22 | Kerület és terület – négyzet és téglalap | `shape-formula` / 1 000 | `K = 2(a + b)` és `T = a × b`; a képlet, a méretjelölés és a mértékegység (cm, cm²) stimmeljen | |
+| 23 | Kocka és téglatest felszíne és térfogata | `solid-measure` / 1 000 | `6a²`, `2(ab + ac + bc)`, `a³`, `a × b × c`; a felszín cm², a térfogat cm³ legyen | |
+| 24 | Szögek mérése és szerkesztése | `angle-measure` / 360 | 5°-os lépések, teljes kör, szögösszehasonlítás; a szögmérő leolvasása és a szögfajta megnevezése helyes | |
+| 25 | Koordináta-rendszer | `coordinate` / 100 | Pont leolvasása és kijelölése; **csak az első síknegyed, 0–9 közötti értékek**, a sorrend `(x; y)` | |
+| 26 | Eltolás, forgatás és tükrözés | `transform` + `mirror` / – | Eltolás lépésekben, forgatás iránya és szöge, tükrözés tengelye; a tükrözött alakzat nem forgatott | |
 
 ### 2.7 Gyakorlati tudások
 
 | # | Lecke | Típus / tartomány | Amire figyelj | Eredmény |
 |---|-------|-------------------|---------------|----------|
-| 2.7.1 | 📏 Átváltások tisztán – hosszúság, tömeg és űrtartalom | `measure-units` / 10 000 | km/m/cm, t/kg/g, hl/l/dl; előre és visszafelé is, összehasonlításokkal és hétköznapi tárgyakkal | |
-| 2.7.2 | 📐 Terület- és térfogategységek | `measure-units` / 10 000 | m² ↔ dm² ↔ cm² 100-zal, dm³ ↔ l 1:1; a visszafelé váltás és az összehasonlítás is helyes | |
-| 2.7.3 | ⏱️ Idő, sebesség, út | `speed-trip` / 1 000 | `út = sebesség × idő`, valamint idő és sebesség kiszámítása; a km/h és m/perc egységek ne keveredjenek | |
+| 27 | 📏 Átváltások tisztán – hosszúság, tömeg és űrtartalom | `measure-units` / 10 000 | km/m/cm, t/kg/g, hl/l/dl; előre és visszafelé is, összehasonlításokkal és hétköznapi tárgyakkal | |
+| 28 | 📐 Terület- és térfogategységek | `measure-units` / 10 000 | m² ↔ dm² ↔ cm² 100-zal, dm³ ↔ l 1:1; a visszafelé váltás és az összehasonlítás is helyes | |
+| 29 | ⏱️ Idő, sebesség, út | `speed-trip` / 1 000 | `út = sebesség × idő`, valamint idő és sebesség kiszámítása; a km/h és m/perc egységek ne keveredjenek | |
 
 ### 2.8 Adatok
 
 | # | Lecke | Típus / tartomány | Amire figyelj | Eredmény |
 |---|-------|-------------------|---------------|----------|
-| 2.8.1 | 📊 Táblázatok, diagramok, átlag | `average` / 1 000 | Átlag = összeg ÷ darabszám; táblázatból és oszlopdiagramból is, valamint hiányzó adat adott átlagból | |
+| 30 | 📊 Táblázatok, diagramok, átlag | `average` / 1 000 | Átlag = összeg ÷ darabszám; táblázatból és oszlopdiagramból is, valamint hiányzó adat adott átlagból | |
 
 ### 2.9 Szöveges feladatok
 
 | # | Lecke | Típus / tartomány | Amire figyelj | Eredmény |
 |---|-------|-------------------|---------------|----------|
-| 2.9.1 | 📐 Megosztás arányban | `word-problem` / 1 000 | Adott arány → részek, illetve adott rész → egész; az arány sorrendje, a részek összege és a mértékegység helyes | |
-| 2.9.2 | 📐 Egyenes arányosság | `word-problem` / 1 000 | Adott mennyiség–érték párból a hiányzó érték vagy mennyiség; a skálázás mindkét irányban helyes | |
+| 31 | 📐 Megosztás arányban | `word-problem` / 1 000 | Adott arány → részek, illetve adott rész → egész; az arány sorrendje, a részek összege és a mértékegység helyes | |
+| 32 | 📐 Egyenes arányosság | `word-problem` / 1 000 | Adott mennyiség–érték párból a hiányzó érték vagy mennyiség; a skálázás mindkét irányban helyes | |
 
 ### 2.10 Mester kihívás
 
 | # | Lecke | Típus / tartomány | Amire figyelj | Eredmény |
 |---|-------|-------------------|---------------|----------|
-| 2.10.1 | 🌟 Mester kihívás | `master` / 1 000 | Hiányzó műveleti jel és kézfogás/párok; a megoldás egyértelmű, a kézfogásnál `n(n−1)/2`; a mester kihívás nem számít bele az osztály haladásába | |
+| – | 🌟 Mester kihívás | `master` / 1 000 | Hiányzó műveleti jel és kézfogás/párok; a megoldás egyértelmű, a kézfogásnál `n(n−1)/2`; a mester kihívás nem számít bele az osztály haladásába | |
 
 ### 2.11 Egypercesek
 
 | # | Játék | Típus / tartomány | Amire figyelj | Eredmény |
 |---|-------|-------------------|---------------|----------|
-| 2.11.1 | Szorzótábla-játék (gombokkal) | `multiplication-play` / 100 | 60 másodperc, négy gomb; rossz válasznál megmutatja a helyeset, a rekord mentése működik | |
-| 2.11.2 | Szorzótábla-játék (beírással) | `multiplication-play` / 100 | Ugyanaz beírással; a numerikus billentyűzet és az Enter működik, a rekord mentése külön történik | |
-| 2.11.3 | 🎲 Műveleti sorrend (egyperces) | `operation-order-play` / – | 60 másodperc, műveleti sorrend; a rossz válasz után a helyes megoldás látszik, a játék nem számít bele a haladásba | |
+| – | Szorzótábla-játék (gombokkal) | `multiplication-play` / 100 | 60 másodperc, négy gomb; rossz válasznál megmutatja a helyeset, a rekord mentése működik | |
+| – | Szorzótábla-játék (beírással) | `multiplication-play` / 100 | Ugyanaz beírással; a numerikus billentyűzet és az Enter működik, a rekord mentése külön történik | |
+| – | 🎲 Műveleti sorrend (egyperces) | `operation-order-play` / – | 60 másodperc, műveleti sorrend; a rossz válasz után a helyes megoldás látszik, a játék nem számít bele a haladásba | |
 
 ---
 
@@ -174,7 +176,7 @@ Ennek a dokumentumnak a célja, hogy az **5. osztályos tananyagot** (36 lecke: 
 
 ## 6. Visszajelzés sablon
 
-- **Lecke / lépés:** (pl. 2.3.4 – Osztás 10-zel, 100-zal, egésszel)
+- **Lecke / lépés:** (pl. 15 – Osztás 10-zel, 100-zal, egésszel)
 - **Elvárt:** …
 - **Tapasztalt:** …
 - **Képernyőkép / konzolhiba:** …

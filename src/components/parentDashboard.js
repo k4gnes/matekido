@@ -274,24 +274,23 @@ function renderFavoritesPrint(area, player, rows, grade, state) {
 
     const actions = document.createElement("div");
     actions.className = "favorites-print-actions print-hide";
-    actions.append(
-        createButton("🖨️ Mentés PDF-ként", { className: "nav-bar-btn", onClick: () => window.print() })
-    );
 
-    // A megoldások nyomtatása választható: ha nincs kipipálva, nem jelenik meg.
-    const toggle = document.createElement("label");
-    toggle.className = "favorites-print-toggle";
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.checked = state.answers;
-    checkbox.addEventListener("change", () => {
-        state.answers = checkbox.checked;
-        area.querySelector(".favorites-print-answers-section")?.toggleAttribute("hidden", !state.answers);
+    // A megoldások nyomtatása választható: ha nincs bekapcsolva, nem jelenik meg.
+    const answersBtn = createButton(state.answers ? "☑ Megoldások" : "☐ Megoldások", {
+        className: state.answers ? "nav-bar-btn active" : "nav-bar-btn",
+        onClick: () => {
+            state.answers = !state.answers;
+            answersBtn.textContent = state.answers ? "☑ Megoldások" : "☐ Megoldások";
+            answersBtn.classList.toggle("active", state.answers);
+            answersBtn.setAttribute("aria-pressed", String(state.answers));
+            area.querySelector(".favorites-print-answers-section")?.toggleAttribute("hidden", !state.answers);
+        }
     });
-    toggle.append(checkbox, document.createTextNode("Megoldások"));
-    actions.append(toggle);
+    answersBtn.setAttribute("aria-pressed", String(state.answers));
 
     actions.append(
+        createButton("🖨️ Mentés PDF-ként", { className: "nav-bar-btn", onClick: () => window.print() }),
+        answersBtn,
         createButton("✗ Bezárás", { className: "nav-bar-btn", onClick: () => area.remove() })
     );
     area.append(actions);

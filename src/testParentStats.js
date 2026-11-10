@@ -86,7 +86,9 @@ check(taskText({ type: "fraction" }) === "🍕 Törtek", "törtes feladat: csak 
 check(taskText({ type: "root-play" }) === "🎲 Egyperces játék", "egyperces: név fallback");
 check(taskAnswer({ type: "time", answer: "fél hét" }) === "—", "képes feladat: nincs megoldás a lapon");
 check(taskAnswer({ type: "fraction", answer: 3 }) === "—", "törtes feladat: nincs megoldás a lapon");
-check(!isNameOnlyStep({ type: "table" }) && isNameOnlyStep({ type: "fraction-divide" }) && isNameOnlyStep({ type: "addition-play" }), "név-only típusok");
+check(!isNameOnlyStep({ type: "table" }) && isNameOnlyStep({ type: "fraction-divide" }) && isNameOnlyStep({ type: "addition-play" }) && isNameOnlyStep({ type: "measure-compare" }) && isNameOnlyStep({ type: "measure-squares" }), "név-only típusok");
+check(isNameOnlyStep({ type: "angle-measure" }) && isNameOnlyStep({ type: "coordinate" }) && isNameOnlyStep({ type: "shape-sort" }) && isNameOnlyStep({ type: "data-chart" }), "ábrás típusok a név-only listán");
+check(!isNameOnlyStep({ type: "word-problem" }) && !isNameOnlyStep({ type: "similarity" }), "szövegből megoldható típusok teljes feladatként maradnak");
 
 const lines = lessonLines([
     { type: "time" },

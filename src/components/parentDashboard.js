@@ -212,6 +212,7 @@ function createLessonBlock(row, index) {
 function createAnswersBlock(rows) {
 
     const block = document.createElement("section");
+    block.className = "favorites-print-answers-section";
 
     const heading = document.createElement("h3");
     heading.textContent = "✔ Megoldások";
@@ -236,7 +237,7 @@ function createAnswersBlock(rows) {
 
 }
 
-function renderFavoritesPrint(area, player, rows, grade, loading) {
+function renderFavoritesPrint(area, player, rows, grade, state) {
 
     area.replaceChildren();
 
@@ -249,7 +250,7 @@ function renderFavoritesPrint(area, player, rows, grade, loading) {
 
     area.append(title, date);
 
-    if (loading) {
+    if (state.loading) {
 
         const note = document.createElement("p");
         note.textContent = "A feladatok betöltése…";
@@ -264,14 +265,33 @@ function renderFavoritesPrint(area, player, rows, grade, loading) {
     } else {
 
         rows.forEach((row, index) => area.append(createLessonBlock(row, index)));
-        area.append(createAnswersBlock(rows));
+
+        const answers = createAnswersBlock(rows);
+        answers.hidden = !state.answers;
+        area.append(answers);
 
     }
 
     const actions = document.createElement("div");
     actions.className = "favorites-print-actions print-hide";
     actions.append(
-        createButton("🖨️ Mentés PDF-ként", { className: "nav-bar-btn", onClick: () => window.print() }),
+        createButton("🖨️ Mentés PDF-ként", { className: "nav-bar-btn", onClick: () => window.print() })
+    );
+
+    // A megoldások nyomtatása választható: ha nincs kipipálva, nem jelenik meg.
+    const toggle = document.createElement("label");
+    toggle.className = "favorites-print-toggle";
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = state.answers;
+    checkbox.addEventListener("change", () => {
+        state.answers = checkbox.checked;
+        area.querySelector(".favorites-print-answers-section")?.toggleAttribute("hidden", !state.answers);
+    });
+    toggle.append(checkbox, document.createTextNode("Megoldások"));
+    actions.append(toggle);
+
+    actions.append(
         createButton("✗ Bezárás", { className: "nav-bar-btn", onClick: () => area.remove() })
     );
     area.append(actions);
@@ -289,7 +309,9 @@ async function openFavoritesPrint(player, lessonIndex) {
     area.className = "favorites-print";
     document.body.append(area);
 
-    renderFavoritesPrint(area, player, rows, grade, rows.length > 0);
+    const state = { answers: true, loading: rows.length > 0 };
+
+    renderFavoritesPrint(area, player, rows, grade, state);
 
     if (rows.length === 0) return;
 
@@ -303,7 +325,8 @@ async function openFavoritesPrint(player, lessonIndex) {
         }
     }
 
-    renderFavoritesPrint(area, player, rows, grade, false);
+    state.loading = false;
+    renderFavoritesPrint(area, player, rows, grade, state);
 
 }
 

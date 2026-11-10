@@ -348,6 +348,15 @@
     font-style: italic;
 }
 
+.favorites-print-toggle {
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+    font-size: .9rem;
+    cursor: pointer;
+    user-select: none;
+}
+
 .favorites-print-actions {
     display: flex;
     gap: .5rem;

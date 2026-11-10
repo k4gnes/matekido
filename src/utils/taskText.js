@@ -15,16 +15,27 @@ const SOLID_SHAPE_QUESTIONS = {
     net: "Melyik test hálója ez?"
 };
 
-// Nem nyomtatható feladatok: a kép (óra, törtes rajz) nélkül nem megoldhatók,
-// az egyperces játékok pedig a képernyőn játszandók – a PDF-ben csak a nevük jelenik meg.
+// Nem nyomtatható feladatok: a megoldáshoz kép kell (óra, rajz, rács, ábra), ami a
+// lapon nem jön át – a PDF-ben csak a nevük jelenik meg. Az egyperces játékok
+// képernyőn játszandók. A szövegből megoldható típusok (word-problem, similarity
+// – a kérdésük minden adatot felsorol) nincsenek benne.
 const NAME_ONLY_TYPES = new Set([
+    // óra és törtes rajzok
     "time",
-    "fraction",
-    "fraction-divide",
-    "fraction-equal",
-    "fraction-equal-den",
-    "fraction-common-den",
-    "fraction-times-int"
+    "fraction", "fraction-divide", "fraction-equal", "fraction-equal-den",
+    "fraction-common-den", "fraction-times-int",
+    // hosszúságmérés
+    "measure-compare", "measure-squares",
+    // szögek, alakzatok, térgeometria
+    "angle-measure", "angles", "area", "circle", "compound-shape", "construction",
+    "perimeter", "polygon", "pythagorean", "shape-area", "shape-compare",
+    "shape-formula", "shape-sort", "solid-measure", "solid-shape", "triangle",
+    // rácsok, diagramok, számegyenesek
+    "coordinate", "data-chart", "fraction-line", "function", "graph", "inequality",
+    "number-line",
+    // az ábra a feladat része
+    "combinatorics", "decomposition", "decomposition-find-wrong", "mirror",
+    "spatial", "transform"
 ]);
 
 export function isNameOnlyStep(step) {

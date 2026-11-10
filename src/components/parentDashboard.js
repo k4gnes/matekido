@@ -2,6 +2,10 @@ import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { listPlayers } from "../profile/UserManager.js";
 import { SKILLS, CATEGORIES } from "../data/skills.js";
+import { CHILD_FRIENDLY_LABELS, DIFFICULTY_BADGE, DIFFICULTY_LABEL } from "./lessonMenu.js";
+import { loadLesson } from "../engine/LessonLoader.js";
+import { buildLesson } from "../builders/LessonBuilder.js?v=102";
+import { isTaskStep, lessonLines } from "../utils/taskText.js";
 
 const DAY = 24 * 60 * 60 * 1000;
 
@@ -141,6 +145,165 @@ function computeSkippedLessons(player, lessonIndex) {
         const lesson = byFile.get(file);
         return lesson ? lesson.title : file;
     });
+
+}
+
+// Tiszta függvény, hogy tesztelhető legyen: a játékos kedvencei az aktív évfolyamra szűrve,
+// a szülői PDF-lista soraival (fájl, cím, készség, nehézség).
+export function favoriteRowsFor(player, lessonIndex) {
+
+    const favorites = player?.profile?.favorites ?? [];
+    const grade = player?.profile?.grade ?? null;
+    const byFile = new Map((lessonIndex?.lessons ?? []).map(l => [l.file, l]));
+
+    return favorites
+        .map(f => byFile.get(f))
+        .filter(l => l && (grade == null || (l.grades ?? []).includes(grade)))
+        .map(l => ({
+            file: l.file,
+            title: l.title,
+            skill: CHILD_FRIENDLY_LABELS[l.skill] ?? SKILLS[l.skill]?.title ?? "",
+            difficulty: `${DIFFICULTY_BADGE[l.difficulty] ?? ""} ${DIFFICULTY_LABEL[l.difficulty] ?? ""}`.trim()
+        }));
+
+}
+
+function createLessonBlock(row, index) {
+
+    const block = document.createElement("section");
+
+    const heading = document.createElement("h3");
+    const name = document.createElement("strong");
+    name.textContent = `${index + 1}. ${row.title}`;
+    const meta = document.createElement("span");
+    meta.textContent = [row.skill, row.difficulty].filter(Boolean).join(" · ");
+    heading.append(name, meta);
+    block.append(heading);
+
+    if (!row.steps) {
+        const note = document.createElement("p");
+        note.className = "favorites-print-note";
+        note.textContent = "Nem sikerült betölteni a lecke feladatait.";
+        block.append(note);
+        return block;
+    }
+
+    const list = document.createElement("ol");
+    list.className = "favorites-print-tasks";
+    lessonLines(row.steps).forEach(line => {
+        const item = document.createElement("li");
+        item.append(document.createTextNode(line.count > 1 ? `${line.text} ×${line.count}` : line.text));
+        if (!line.nameOnly) {
+            // hely a gyerek válaszának a nyomtatott lapon
+            const blank = document.createElement("span");
+            blank.className = "favorites-print-answer-line";
+            item.append(blank);
+        }
+        list.append(item);
+    });
+    block.append(list);
+
+    return block;
+
+}
+
+// A megoldások külön szekcióban, a feladatok UTÁN következnek (a gyakorlólap
+// ne árulja el válasz közben): leckénként ugyanabban a sorrendben.
+function createAnswersBlock(rows) {
+
+    const block = document.createElement("section");
+
+    const heading = document.createElement("h3");
+    heading.textContent = "✔ Megoldások";
+    block.append(heading);
+
+    rows.forEach((row, index) => {
+        if (!row.steps) return;
+
+        const sub = document.createElement("h4");
+        sub.textContent = `${index + 1}. ${row.title}`;
+        const list = document.createElement("ol");
+        list.className = "favorites-print-answers";
+        lessonLines(row.steps).forEach(line => {
+            const item = document.createElement("li");
+            item.textContent = line.answer;
+            list.append(item);
+        });
+        block.append(sub, list);
+    });
+
+    return block;
+
+}
+
+function renderFavoritesPrint(area, player, rows, grade, loading) {
+
+    area.replaceChildren();
+
+    const title = document.createElement("h2");
+    title.textContent = `❤️ ${player?.name ?? "Játékos"} kedvencei${grade != null ? ` – ${grade}. osztály` : ""}`;
+
+    const date = document.createElement("p");
+    date.className = "favorites-print-date";
+    date.textContent = new Date().toLocaleDateString("hu-HU");
+
+    area.append(title, date);
+
+    if (loading) {
+
+        const note = document.createElement("p");
+        note.textContent = "A feladatok betöltése…";
+        area.append(note);
+
+    } else if (rows.length === 0) {
+
+        const empty = document.createElement("p");
+        empty.textContent = "Nincs még kedvenc lecke ehhez az évfolyamhoz.";
+        area.append(empty);
+
+    } else {
+
+        rows.forEach((row, index) => area.append(createLessonBlock(row, index)));
+        area.append(createAnswersBlock(rows));
+
+    }
+
+    const actions = document.createElement("div");
+    actions.className = "favorites-print-actions print-hide";
+    actions.append(
+        createButton("🖨️ Mentés PDF-ként", { className: "nav-bar-btn", onClick: () => window.print() }),
+        createButton("✗ Bezárás", { className: "nav-bar-btn", onClick: () => area.remove() })
+    );
+    area.append(actions);
+
+}
+
+async function openFavoritesPrint(player, lessonIndex) {
+
+    document.querySelector(".favorites-print")?.remove();
+
+    const rows = favoriteRowsFor(player, lessonIndex);
+    const grade = player?.profile?.grade ?? null;
+
+    const area = document.createElement("div");
+    area.className = "favorites-print";
+    document.body.append(area);
+
+    renderFavoritesPrint(area, player, rows, grade, rows.length > 0);
+
+    if (rows.length === 0) return;
+
+    for (const row of rows) {
+        try {
+            const built = buildLesson(await loadLesson(row.file));
+            row.steps = (built.steps ?? []).filter(isTaskStep);
+        } catch (e) {
+            console.error("Nem sikerült betölteni a kedvenc leckét:", row.file, e);
+            row.steps = null;
+        }
+    }
+
+    renderFavoritesPrint(area, player, rows, grade, false);
 
 }
 
@@ -444,6 +607,16 @@ function createPlayerCard(player, accent, lessonIndex) {
     const skippedTitles = computeSkippedLessons(player, lessonIndex);
     if (skippedTitles.length > 0) {
         card.append(createSkippedNote(skippedTitles));
+    }
+
+    // Csak akkor jelenik meg, ha az évfolyamra szűrve van mit listázni.
+    const favRows = favoriteRowsFor(player, lessonIndex);
+    if (favRows.length > 0) {
+        const favBtn = createButton("📄 Kedvencek listája (PDF)", {
+            className: "nav-bar-btn favorites-export-btn",
+            onClick: () => openFavoritesPrint(player, lessonIndex)
+        });
+        card.append(favBtn);
     }
 
     return card;

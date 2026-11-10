@@ -12,7 +12,7 @@ import { getPracticeLessonFiles, latestPercentage } from "./practicePage.js?v=14
 import { gradesWithLessons } from "../utils/grades.js?v=1";
 import { getWorld } from "../world/WorldRegistry.js";
 
-const CHILD_FRIENDLY_LABELS = {
+export const CHILD_FRIENDLY_LABELS = {
     sets: "Válogatás",
     "set-match": "Válogatás"
 };
@@ -144,14 +144,14 @@ const RANGE_LABEL = {
     1000000: "1 000 000-ig"
 };
 
-const DIFFICULTY_BADGE = {
+export const DIFFICULTY_BADGE = {
     1: "🟢",
     2: "🟡",
     3: "🟠",
     4: "🔴"
 };
 
-const DIFFICULTY_LABEL = {
+export const DIFFICULTY_LABEL = {
     1: "Alap",
     2: "Gyakorló",
     3: "Haladó",

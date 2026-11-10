@@ -13,6 +13,7 @@ globalThis.localStorage = {
 const ROOT = new URL("./", import.meta.url);
 
 import { buildLesson } from "./builders/LessonBuilder.js?v=50";
+import { isTaskStep, taskAnswer, taskText } from "./utils/taskText.js";
 import { generateSolidShape } from "./generators/solidShapeGenerator.js?v=4";
 import { generatePerimeter } from "./generators/perimeterGenerator.js?v=2";
 import { generateMeasureCompare } from "./generators/measureCompareGenerator.js?v=4";
@@ -85,6 +86,19 @@ const errors = [];
 
 function fail(ctx, msg) {
     errors.push(`${ctx}: ${msg}`);
+}
+
+// A szülői PDF feladatszövege és megoldása minden lépésnél hibátlan legyen:
+// se undefined, se NaN a nyomtatott stringben.
+function checkTaskPrint(lesson, ctx) {
+    for (const step of lesson.steps ?? []) {
+        if (!isTaskStep(step)) continue;
+        for (const value of [taskText(step), taskAnswer(step)]) {
+            if (/undefined|NaN/.test(value)) {
+                fail(ctx, `hibás nyomtatható érték (${step.type}): ${value}`);
+            }
+        }
+    }
 }
 
 function readJson(rel) {
@@ -3300,6 +3314,7 @@ for (const world of WORLDS) {
             try {
                 const built = buildLesson(raw);
                 validateLesson(built, `${world}/${lesson.id}`, lesson.range);
+                checkTaskPrint(built, `${world}/${lesson.id}`);
                 JSON.stringify(built);
                 builds++;
             } catch (e) {

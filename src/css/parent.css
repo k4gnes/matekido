@@ -274,3 +274,105 @@
     line-height: 1.4;
     text-align: center;
 }
+
+/* Szülői kedvenc-lista: képernyőn panel, nyomtatásban csak ez jelenik meg (PDF mentés). */
+.favorites-export-btn {
+    display: block;
+    margin: .7rem auto 0;
+}
+
+.favorites-print {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    color: #222;
+    z-index: 1000;
+    overflow: auto;
+    padding: 1.2rem 1.4rem;
+}
+
+.favorites-print h2 {
+    margin: 0 0 .2rem;
+}
+
+.favorites-print-date {
+    margin: 0 0 .8rem;
+    font-size: .85rem;
+    color: #777;
+}
+
+.favorites-print h3 {
+    margin: 1rem 0 .3rem;
+    font-size: 1rem;
+}
+
+.favorites-print h3 strong {
+    display: block;
+}
+
+.favorites-print h3 span {
+    font-size: .85rem;
+    font-weight: normal;
+    color: #666;
+}
+
+.favorites-print h4 {
+    margin: .8rem 0 .2rem;
+    font-size: .95rem;
+}
+
+.favorites-print ol {
+    margin: 0;
+    padding-left: 1.4rem;
+}
+
+.favorites-print ol li {
+    margin-bottom: .3rem;
+}
+
+.favorites-print-answer-line {
+    display: inline-block;
+    width: 5rem;
+    height: 1.1em;
+    margin-left: .6rem;
+    border-bottom: 1px solid #aaa;
+    vertical-align: bottom;
+}
+
+.favorites-print-answers li {
+    color: #444;
+}
+
+.favorites-print-note {
+    color: #777;
+    font-style: italic;
+}
+
+.favorites-print-actions {
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    margin-top: 1.2rem;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .favorites-print,
+    .favorites-print * {
+        visibility: visible;
+    }
+    .favorites-print {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        overflow: visible;
+        padding: 0;
+    }
+    .print-hide,
+    .print-hide * {
+        display: none !important;
+    }
+}

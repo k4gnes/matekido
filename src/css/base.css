@@ -190,6 +190,20 @@ button:hover {
     font-size:.9rem;
     color:#7a6f00;
 }
+
+.badge-earned{
+    animation:badge-pop .5s ease-out;
+}
+
+@keyframes badge-pop{
+    from{ transform:scale(.85); opacity:0; }
+    60%{ transform:scale(1.03); }
+    to{ transform:scale(1); opacity:1; }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .badge-earned{ animation:none; }
+}
 .option-correct{
     border-color:#2e7d32 !important;
     background:#e8f5e9 !important;

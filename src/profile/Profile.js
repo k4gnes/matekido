@@ -100,8 +100,12 @@ export function completeLesson({ practice = false } = {}) {
     let napocska = null;
     if (dailyQuestJustCompleted) {
         const world = profile.activeWorld ?? "postman";
-        profile.napocskak[world] = (profile.napocskak[world] || 0) + 1;
-        napocska = { world, count: profile.napocskak[world] };
+        const suns = profile.napocskak[world] || 0;
+        // 7 a plafon: onnan nem gyűlik, és nem is jár érte napocska.
+        if (suns < 7) {
+            profile.napocskak[world] = suns + 1;
+            napocska = { world, count: suns + 1 };
+        }
     }
 
     saveProfile(profile);

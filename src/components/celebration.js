@@ -1,6 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createNavBar } from "./ui/navbar.js";
+import { getAllWorlds } from "../world/WorldRegistry.js";
 
 function formatDuration(seconds) {
     if (seconds < 60) return `${seconds} mp`;
@@ -178,6 +179,49 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
             text.after(worldEl);
         }
 
+    }
+
+    // A 7. napocska jelvényt ér: egyszer, az átlépés napján villan fel.
+    const earnedWorld = reward?.napocska?.count === 7
+        ? getAllWorlds().find(w => w.id === reward.napocska.world)
+        : null;
+
+    if (earnedWorld) {
+
+        const badgeEl = document.createElement("div");
+        badgeEl.className = "world-unlock world-unlock-link badge-earned";
+        badgeEl.setAttribute("role", "button");
+        badgeEl.setAttribute("tabindex", "0");
+        badgeEl.setAttribute("aria-label", `${earnedWorld.name} jelvény megszerezve – kattints a profilodra`);
+        badgeEl.addEventListener("click", () => actions.onProfile?.());
+        badgeEl.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                actions.onProfile?.();
+            }
+        });
+
+        const badgeTitle = document.createElement("h2");
+        badgeTitle.textContent = "🎖️ Jelvény megszerezve!";
+
+        const badgeItem = document.createElement("div");
+        badgeItem.className = "world-unlock-item";
+        badgeItem.innerHTML = `<span class="world-unlock-icon">${earnedWorld.icon}</span><span>${earnedWorld.name}</span>`;
+
+        const badgeHint = document.createElement("p");
+        badgeHint.className = "world-unlock-hint";
+        badgeHint.textContent = "👉 Kattints, és nézd meg a jelvényed a profilodban!";
+
+        badgeEl.append(badgeTitle, badgeItem, badgeHint);
+
+        const rewardSectionForBadge = card.querySelector(".reward-section");
+        if (rewardSectionForBadge) {
+            rewardSectionForBadge.after(badgeEl);
+        } else if (milestone) {
+            card.querySelector(".milestone").after(badgeEl);
+        } else {
+            text.after(badgeEl);
+        }
     }
 
     if (typeof elapsedSeconds === "number" && elapsedSeconds >= 0) {

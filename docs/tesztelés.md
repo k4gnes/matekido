@@ -80,6 +80,7 @@ Egy korábbi (1. osztályos) leckén gyorsan ellenőrizd a játékmenetet:
 | 4.3 | Válaszolj helytelenül valahol | A játék nem büntet (csak rögzíti), a következő feladatra lép | |
 | 4.4 | Ha van készségtérkép-gomb a leckén belül (súgó) | Megnyílik, vissza hozható, a lecke állapota nem vész el | | ez nem tudom hol fordulhat elő
 | 4.5 | Fejezd be a leckét | Celebráció jelenik meg a csillag/feloldás jutalommal | |
+| 4.6 | 6 napocskás világban teljesítsd a napi küldetést (7. napocska) | A celebráció „🎖️ Jelvény megszerezve!” blokkot mutat a világikon + névvel, pop-animációval; kattintás a profilra visz, ahol a jelvény a sávban színes | |
 
 Ezt a lépéskört **futtasd végig a főbb feladattípusokon is**, hogy mindegyik render módját ellenőrizd. Gyors lista:
 
@@ -101,12 +102,13 @@ Ezt a lépéskört **futtasd végig a főbb feladattípusokon is**, hogy mindegy
 | # | Lépés | Várt eredmény | Eredmény |
 |---|-------|---------------|----------|
 | 5.1 | Kattints a `👤 Profilom` gombra a menüben | Megnyílik a profiloldal: avatar, „Saját …” cím, név, 4 stat (📚 lecke, ⭐ csillag, 🔥 nap, ✨ hiba nélkül) | |
-| 5.2 | Ellenőrizd a haladás-sávot | A „k Következő cél: X / Y” progress-sáv a teljesítéshez igazodik | |
-| 5.3 | Ellenőrizd a „📅 Mai küldetés” részt | 3-pontos kvótasáv (0/3, 1/3 …), szöveg: „x/3 lecke teljesítve” | |
-| 5.4 | „🏆 Teljesítmények” | Megjelennek a feloldott és lezárt teljesítmények, a feloldottak ✓ jellel | |
-| 5.5 | „🌍 Világok” | Megjelennek a világok; a feloldott, de nem aktív világ kattintásra aktiválódik és újratölti az oldalt | |
-| 5.6 | Válts világot | Ha elég ⭐ van, kattintással válts; a menü cím (pl. a „Matekidő” felirat enoji) is változik | |
-| 5.7 | Az alsó gombok: `📋 Értékek`, `📚 Leckék`, `🎯 Gyakorlás`, `❓ Súgó` | Mind a megfelelő képernyőre visz | |
+| 5.2 | Ellenőrizd a „🏅 Világjelvények · 7 napocska” sávot | 7 világikon a haladás-sáv felett; 7 napocskás világnál színre vált és karikát kap; hoverrel a tooltip „x/7 napocska” vagy „megszerezve ✓” | |
+| 5.3 | Ellenőrizd a haladás-sávot | A „k Következő cél: X / Y” progress-sáv a teljesítéshez igazodik | |
+| 5.4 | Ellenőrizd a „📅 Mai küldetés” részt | 3-pontos kvótasáv (0/3, 1/3 …), szöveg: „x/3 lecke teljesítve” | |
+| 5.5 | „🏆 Teljesítmények” | Megjelennek a feloldott és lezárt teljesítmények, a feloldottak ✓ jellel | |
+| 5.6 | „🌍 Világok” | Megjelennek a világok; a feloldott, de nem aktív világ kattintásra aktiválódik és újratölti az oldalt | |
+| 5.7 | Válts világot | Ha elég ⭐ van, kattintással válts; a menü cím (pl. a „Matekidő” felirat enoji) is változik | |
+| 5.8 | Az alsó gombok: `📋 Értékek`, `📚 Leckék`, `🎯 Gyakorlás`, `❓ Súgó` | Mind a megfelelő képernyőre visz | |
 
 ---
 

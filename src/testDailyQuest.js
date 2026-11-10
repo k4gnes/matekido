@@ -11,7 +11,7 @@ globalThis.localStorage = {
 };
 
 const { createPlayer } = await import("./profile/UserManager.js");
-const { completeLesson, loadProfile } = await import("./profile/Profile.js");
+const { completeLesson, loadProfile, saveProfile } = await import("./profile/Profile.js");
 
 let failures = 0;
 
@@ -61,6 +61,34 @@ profile = loadProfile();
 check(profile.dailyQuest.progress === startQuest + 3, "a küldetés 3 felett nem nő tovább");
 check(fourth.dailyQuestJustCompleted === false, "negyedik lecke után nincs újra teljesítés");
 check(fourth.napocska === null && (profile.napocskak?.postman ?? 0) === startSuns + 1, "negyedik lecke nem ad újabb napocskát");
+
+// A 7. napocska jelvényt ér: az átlépés napján count=7-cel jön.
+profile = loadProfile();
+profile.napocskak.postman = 6;
+profile.dailyQuest = { ...profile.dailyQuest, progress: 0, completed: false };
+saveProfile(profile);
+
+let crossing;
+for (let i = 0; i < 3; i++) {
+    crossing = completeLesson();
+}
+profile = loadProfile();
+check(crossing.napocska?.count === 7, "a 7. napocska átlépéskor count=7-cel jön");
+check((profile.napocskak?.postman ?? 0) === 7, "átlépés után 7 a tárolt érték");
+
+// A 7 napocska plafon: onnan nem nő, és nem is jár érte napocska.
+profile = loadProfile();
+profile.napocskak.postman = 7;
+profile.dailyQuest = { ...profile.dailyQuest, progress: 0, completed: false };
+saveProfile(profile);
+
+let capped;
+for (let i = 0; i < 3; i++) {
+    capped = completeLesson();
+}
+profile = loadProfile();
+check((profile.napocskak?.postman ?? 0) === 7, "7 napocska a plafon, nem nő tovább");
+check(capped.napocska === null, "plafonnál nem jár napocska-jutalom");
 
 if (failures > 0) {
     console.error(`\nHIBA: ${failures} ellenőrzés bukott meg.`);

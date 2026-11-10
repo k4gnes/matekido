@@ -97,6 +97,31 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
 
     gradeCard.append(gradeLabel, gradeInfo);
 
+    // Világjelvények sáva: 7 slot, 7 napocska felett élesedik.
+    const badgeSection = document.createElement("div");
+    badgeSection.className = "profile-page-badges";
+
+    const badgeTitle = document.createElement("p");
+    badgeTitle.className = "profile-page-badges-title";
+    badgeTitle.textContent = "🏅 Világjelvények · 7 napocska";
+
+    const badgeRow = document.createElement("div");
+    badgeRow.className = "badge-row";
+
+    getAllWorlds().forEach(world => {
+        const suns = Math.min(profile.napocskak?.[world.id] ?? 0, 7);
+        const slot = document.createElement("span");
+        slot.className = suns >= 7 ? "world-badge earned" : "world-badge";
+        slot.style.setProperty("--badge-color", `var(--world-${world.id})`);
+        slot.textContent = world.icon;
+        slot.title = suns >= 7
+            ? `${world.name} jelvény: megszerezve ✓`
+            : `${world.name}: ${suns}/7 napocska`;
+        badgeRow.append(slot);
+    });
+
+    badgeSection.append(badgeTitle, badgeRow);
+
     const progressSection = document.createElement("div");
     progressSection.className = "profile-page-progress";
 
@@ -214,7 +239,8 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
         const sunIcon = document.createElement("span");
         sunIcon.className = "napocska-sun";
         sunIcon.style.background = `var(--world-${world.id})`;
-        sunCount.append(sunIcon, String(profile.napocskak?.[world.id] ?? 0));
+        // Math.min: régi mentésben is 7/7-nél több nem jelenik meg.
+        sunCount.append(sunIcon, `${Math.min(profile.napocskak?.[world.id] ?? 0, 7)}/7`);
 
         item.append(icon, info, sunCount);
 
@@ -243,7 +269,7 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
         onParent
     });
 
-    card.append(navbar, title, stats, gradeCard, progressSection, questSection, achWorldRow);
+    card.append(navbar, title, stats, gradeCard, badgeSection, progressSection, questSection, achWorldRow);
 
     root.append(card);
 }

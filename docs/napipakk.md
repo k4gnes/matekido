@@ -41,14 +41,16 @@ A napocskák az adott MatekIdő-világhoz kapcsolódnak.
 
 - A rendszerben jelenleg hét világ van.
 - Minden világban külön napocska-gyűjtemény vezethető.
-- Egy világban **10 napocska** összegyűjtése után a gyerek megszerzi az adott világ jelvényét.
+- Egy világban **7 napocska** összegyűjtése után a gyerek megszerzi az adott világ jelvényét.
+- A napocska-számláló világonként 7-nél áll meg: 7/7 után nem nő tovább, és újabb napocska nem jár érte.
+- A jelvények sávja a profil oldalon, a haladás-sáv felett jelenik meg: a még nem megszerzett világok ikonjai halványan, a 7 napocskás világok színesen, karikával.
 - A jelvény vizuálisan és tematikájában az adott világhoz kapcsolódik.
 
 A napocskák és a jelvények így a MatekIdő világainak saját gyűjthető elemeivé válnak.
 
 ## 6. A hét világ teljesítése – nagy ünneplés
 
-Amikor a gyerek mind a hét világ 10 napocskás jelvényét megszerzi, különleges elismerést kap.
+Amikor a gyerek mind a hét világ 7 napocskás jelvényét megszerzi, különleges elismerést kap.
 
 Ez legyen a rendszer kiemelt ünnepi pillanata:
 - látványos, örömteli animáció vagy ünneplés;
@@ -57,16 +59,12 @@ Ez legyen a rendszer kiemelt ünnepi pillanata:
 
 A konkrét ünneplés és jutalom vizuális megvalósítása később tervezhető meg.
 
-## 7. Következő gyűjtési kör
+## 7. A gyűjtés vége
 
-A hét világ első jelvényeinek megszerzése után a gyűjtés folytatódik.
+A gyűjtés minden világban a 7 napocska jelvénynél ér véget:
 
-- Az első, 10 napocskás jelvények megmaradnak.
-- Minden világban újabb gyűjtési cél nyílik: **20 napocska**.
-- A 20 napocskás szinthez újabb, az adott világhoz illő jelvény tartozik.
-- A későbbiekben további szintek is bevezethetők (például 30, 40 napocska).
-
-A korábban megszerzett jelvények nem vesznek el: a gyerek gyűjteménye folyamatosan bővül.
+- A 7 napocska elérése után a számláló 7/7-nél megáll, további napocska nem jár.
+- A hét jelvény megszerzése a gyűjtés végső célja; ezt követi a nagy ünneplés (lásd 6. pont).
 
 ## 8. Fontos fejlesztési és működési szempontok
 
@@ -79,5 +77,5 @@ A korábban megszerzett jelvények nem vesznek el: a gyerek gyűjteménye folyam
 
 ## 9. Röviden
 
-**Minden évfolyamnak saját napi leckecsokra van. A gyerek annyiszor próbálkozhat, ahányszor szeretne. A leckékért a szokásos csillagokat kapja, a teljes napi pakk hibátlan megoldásáért pedig naponta egy napocskát. A napocskákat az adott világban gyűjti: 10 után jelvényt szerez. Ha mind a hét világ jelvénye megvan, nagy ünneplés következik, majd indul a következő, 20 napocskás gyűjtési kör.**
+**Minden évfolyamnak saját napi leckecsokra van. A gyerek annyiszor próbálkozhat, ahányszor szeretne. A leckékért a szokásos csillagokat kapja, a teljes napi pakk hibátlan megoldásáért pedig naponta egy napocskát. A napocskákat az adott világban gyűjti: 7 után jelvényt szerez, a számláló 7/7-nél megáll. Ha mind a hét világ jelvénye megvan, nagy ünneplés következik.**
 """

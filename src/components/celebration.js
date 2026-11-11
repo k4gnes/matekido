@@ -4,8 +4,8 @@ import { createNavBar } from "./ui/navbar.js";
 import { getAllWorlds } from "../world/WorldRegistry.js";
 import { formatDuration, worstRunIndex, compareText, runTooltip } from "../utils/assessment.js?v=5";
 
-// A felmérés rövid kiértékelése: az összidő, a hibák, leckénkénti bontás,
-// majd a korábbi futások idővel és hibaszámmal (a legtöbb hibás jelölve).
+// A felmérés rövid kiértékelése: az összidő, a helyes/hibás darabszám, leckénkénti
+// bontás, majd a korábbi futások idővel, helyessel és hibával (a legtöbb hibás jelölve).
 function renderEvaluation({ summary, history }) {
 
     const box = document.createElement("section");
@@ -39,7 +39,7 @@ function renderEvaluation({ summary, history }) {
         history.forEach((run, index) => {
             const item = document.createElement("li");
             const when = new Date(run.startedAt).toLocaleString("hu-HU");
-            item.textContent = `${when} · ⏱ ${formatDuration(run.seconds)} · ❌ ${run.wrong ?? 0}`
+            item.textContent = `${when} · ⏱ ${formatDuration(run.seconds)} · ✅ ${run.correct ?? 0} · ❌ ${run.wrong ?? 0}`
                 + (index === worst ? " · legtöbb hiba" : "");
             item.title = runTooltip(run, when);
             list.append(item);

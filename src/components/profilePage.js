@@ -1,7 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createNavBar } from "./ui/navbar.js";
 import { loadProfile, getNextGoal, getActiveWorld, setActiveWorld, getLessonStats, getActiveGrade, getDailyStats, getAssessments } from "../profile/Profile.js";
-import { formatDuration, runTooltip } from "../utils/assessment.js?v=4";
+import { formatDuration, runTooltip, sortRunsByList } from "../utils/assessment.js?v=5";
 import { ACHIEVEMENTS, getUnlockedAchievements } from "../profile/Achievements.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getAllWorlds } from "../world/WorldRegistry.js";
@@ -284,7 +284,8 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
         const table = document.createElement("table");
         table.className = "assessment-table";
 
-        assessments.slice(0, 10).forEach(run => {
+        // lista neve szerint csoportosítva, azonos néven belül a legfrissebb felül
+        sortRunsByList(assessments.slice(0, 10)).forEach(run => {
             const row = document.createElement("tr");
 
             const started = run.startedAt ? new Date(run.startedAt).toLocaleString("hu-HU") : "";

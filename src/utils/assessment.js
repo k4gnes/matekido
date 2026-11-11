@@ -102,6 +102,20 @@ export function previousRuns(assessments, key, excludeStartedAt = null, limit = 
 
 }
 
+// A profil táblázatának sorrendje: elsősorban a lista neve (a „4 kedvenc”-ből
+// a darabszám levágva, hogy a lista tartalmának változása se bontsa szét a
+// csoportot), másodsorban az elvégzés ideje – a legfrissebb felül.
+export function sortRunsByList(runs) {
+
+    const nameOf = run => (run?.label ?? "").replace(/^\d+\s*/, "");
+
+    return [...(runs ?? [])].sort((a, b) =>
+        nameOf(a).localeCompare(nameOf(b), "hu") ||
+        (b?.finishedAt ?? b?.startedAt ?? 0) - (a?.finishedAt ?? a?.startedAt ?? 0)
+    );
+
+}
+
 // A legtöbb hibás futás sorszáma (a „mikor volt több hibája” jelöléshez),
 // -1, ha nincs hibás futás a listában.
 export function worstRunIndex(runs) {

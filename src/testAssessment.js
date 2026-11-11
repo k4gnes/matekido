@@ -22,7 +22,8 @@ const {
     worstRunIndex,
     compareText,
     runTooltip,
-    resolveAssessmentLessons
+    resolveAssessmentLessons,
+    sortRunsByList
 } = await import("./utils/assessment.js");
 const { createPlayer } = await import("./profile/UserManager.js");
 const { recordAssessment, getAssessments, getAssessmentLessons, isInAssessmentList, toggleAssessmentLesson } = await import("./profile/Profile.js");
@@ -95,6 +96,20 @@ check(tip.split("\n").length === 3, "a tooltip fejléce + a két lecke");
 check(tip.includes("• Szorzótábla") && tip.includes("• b.json"), "a leckék címei a tooltipben");
 check(runTooltip({ files: ["a.json"] }).includes("• a.json"), "cím nélküli futásnál a fájlnév marad");
 check(runTooltip(null) === "", "adat nélkül üres tooltip");
+
+// A profil táblázatának sorrendje
+const tableRuns = [
+    { label: "12 válogatott", finishedAt: 5 },
+    { label: "5 felmérő", finishedAt: 9 },
+    { label: "4 kedvenc", finishedAt: 7 },
+    { label: "6 kedvenc", finishedAt: 8 }
+];
+
+check(sortRunsByList(tableRuns).map(r => r.label).join(" · ")
+    === "5 felmérő · 6 kedvenc · 4 kedvenc · 12 válogatott",
+    "a táblázat a lista neve szerint csoportosul, azonos néven belül a legfrissebb felül");
+check(tableRuns[0].label === "12 válogatott", "a bemeneti lista sorrendje nem változik");
+check(sortRunsByList(null).length === 0, "üres lista nem hibázik");
 
 // Profilba mentett lista: legelöl az új, legfeljebb 30 tétel
 createPlayer("Felmérő", "🦊", 1);

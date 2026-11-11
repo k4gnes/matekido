@@ -311,6 +311,7 @@ export function toggleFavoriteLesson(lessonFile) {
 }
 
 // A 📝 Felmérő lista: a szülő a Témakörök tananyagtáblájáról pipálja ki a leckéket.
+// Az érték a lecke `id`-ja (a `?lesson=` hivatkozás), nem a fájl – a menü alakítja át.
 export function getAssessmentLessons() {
 
     const profile = loadProfile();

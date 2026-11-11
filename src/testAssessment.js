@@ -21,7 +21,8 @@ const {
     previousRuns,
     worstRunIndex,
     compareText,
-    runTooltip
+    runTooltip,
+    resolveAssessmentLessons
 } = await import("./utils/assessment.js");
 const { createPlayer } = await import("./profile/UserManager.js");
 const { recordAssessment, getAssessments, getAssessmentLessons, isInAssessmentList, toggleAssessmentLesson } = await import("./profile/Profile.js");
@@ -104,6 +105,13 @@ check(toggleAssessmentLesson("a.json") === true, "a pipa bekapcsol");
 check(isInAssessmentList("a.json"), "a kiválasztott lecke a listában van");
 check(toggleAssessmentLesson("a.json") === false, "a pipa kikapcsol");
 check(getAssessmentLessons().length === 0, "a kivett lecke nincs a listában");
+
+// A tárolt érték lecke-id, a menühöz leckefájllá kell alakulnia
+const idxForIds = [{ id: "place-01", file: "./data/lessons/grade3/place-01.json", grades: [3] }];
+check(resolveAssessmentLessons(["place-01"], idxForIds).length === 1, "a lecke-id leckévé válik");
+check(resolveAssessmentLessons(["place-01"], idxForIds)[0].file.endsWith("place-01.json"), "a lecke fájlnévvel együtt jön ki");
+check(resolveAssessmentLessons(["nincs-ilyen"], idxForIds).length === 0, "a hiányzó lecke kimarad a listából");
+check(resolveAssessmentLessons(null, null).length === 0, "üres adat nem hibázik");
 
 for (let i = 0; i < 33; i++) {
     recordAssessment({ ...summary, startedAt: i });

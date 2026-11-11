@@ -175,7 +175,7 @@ A szülői nézet a profil oldalnavbarjából a `👪 Szülői` gombbal nyílik.
 
 | # | Lépés | Várt eredmény | Eredmény |
 |---|-------|---------------|----------|
-| 7c.1 | Szülői rész → 📚 Témakörök → válassz egy évfolyamot | A tananyagtábla leckesorai mellett pipa van, fölöttük a „📝 Felmérő lista: 0 lecke ebből az évfolyamból · összesen 0 a listában” sor | |
+| 7c.1 | Szülői rész → 📚 Témakörök → válassz egy évfolyamot | A tananyagtábla leckesorai mellett pipa van, fölöttük a „📝 Felmérő lista: 0 lecke ebből az évfolyamból · összesen 0 a listában” sor; lépj ki a lapról, nyisd újra – a korábbi pipák megmaradnak | |
 | 7c.2 | Pipálj ki három leckét | A pipák bekapcsolódnak, a fejléc száma nő (helyben és összesen is); ha ugyanaz a lecke több sorban is szerepel, a pipák együtt mozdulnak | |
 | 7c.3 | Menj vissza a gyerek menüjébe | A `❤️ Kedvenceim` és a `🌟 Mester kihívás` között ott a `📝 Felmérő (3)` kártya | |
 | 7c.4 | Kattints a `📝 Felmérő (3)` kártyára | Ugyanaz a választó, mint a kedvenceknél (`Kezdjük!`, `⏱️ Időmérő`, `✗ Bezárás`), a címe `📝 Felmérő (3)` | |

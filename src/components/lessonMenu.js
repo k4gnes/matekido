@@ -10,7 +10,7 @@ import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=25";
 import { curriculumSort } from "../data/curriculum.js";
 import { getPracticeLessonFiles, latestPercentage } from "./practicePage.js?v=14";
 import { openFavoritesChooser } from "./favoritesChooser.js?v=4";
-import { beginRun } from "../utils/assessment.js?v=3";
+import { beginRun, resolveAssessmentLessons } from "../utils/assessment.js?v=4";
 import { gradesWithLessons } from "../utils/grades.js?v=1";
 import { getWorld } from "../world/WorldRegistry.js";
 
@@ -972,7 +972,8 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
 
         const byFile = new Map(allLessons.map(l => [l.file, l]));
         const favoriteLessons = getFavoriteLessons().map(f => byFile.get(f)).filter(l => l && l.grades?.includes(selectedGrade));
-        const assessmentLessons = getAssessmentLessons().map(f => byFile.get(f)).filter(l => l && l.grades?.includes(selectedGrade));
+        const assessmentLessons = resolveAssessmentLessons(getAssessmentLessons(), allLessons)
+            .filter(l => l.grades?.includes(selectedGrade));
 
         const pickerSections = [];
 

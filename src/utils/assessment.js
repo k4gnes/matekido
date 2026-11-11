@@ -23,6 +23,16 @@ export function runKey(files) {
 
 }
 
+// A tárolt felmérő lista elemei a lecke id-jai (a tananyag `?lesson=` hivatkozásai),
+// a játék viszont leckefájlokkal dolgozik: itt alakítjuk át, a hiányzó lecke kimarad.
+export function resolveAssessmentLessons(ids, lessons) {
+
+    const byId = new Map((lessons ?? []).map(l => [l.id, l]));
+
+    return (ids ?? []).map(id => byId.get(id)).filter(Boolean);
+
+}
+
 // A `label` a lista neve a mentett futáson ("5 kedvenc", "5 felmérő"); nélküle
 // a régi kedvenc-felirat marad.
 export function beginRun(files, startedAt = Date.now(), label = null) {

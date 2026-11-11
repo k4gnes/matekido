@@ -109,6 +109,7 @@ export function renderSkillMap(root, onBack) {
 
 // A kirajzolt tananyagtábla leckesorai mellé kerülő pipa: ezekből áll a
 // 📝 Felmérő lista, amit a menüben a kedvencek után lehet megnyitni.
+// A `?lesson=` hivatkozás a lecke id-ja, ezt tároljuk (lásd resolveAssessmentLessons).
 function addAssessmentChecks(body) {
 
     const entries = [];
@@ -116,42 +117,41 @@ function addAssessmentChecks(body) {
     body.querySelectorAll("a.lesson-link[href^='?lesson=']").forEach(link => {
         const cell = link.closest("td");
         if (!cell) return;
-        entries.push({ link, cell, file: link.getAttribute("href").slice("?lesson=".length) });
+        entries.push({ link, cell, id: link.getAttribute("href").slice("?lesson=".length) });
     });
 
     if (entries.length === 0) return;
 
-    const picked = new Set(getAssessmentLessons());
+    const initial = new Set(getAssessmentLessons());
     const boxes = new Map();
 
     const note = document.createElement("p");
     note.className = "felmero-note";
 
+    // a számláló a tároltból olvas, nem memóriából: ha a mentés nem sikerül, azonnal látszik
     const refresh = () => {
-        // soronként számolná a duplát, ezért a fájlok számítanak, mint a menüben
-        const here = new Set(entries.map(e => e.file).filter(f => picked.has(f))).size;
+        const picked = new Set(getAssessmentLessons());
+        const here = new Set(entries.map(e => e.id).filter(id => picked.has(id))).size;
         note.textContent = `📝 Felmérő lista: ${here} lecke ebből az évfolyamból · összesen ${picked.size} a listában`;
     };
 
-    entries.forEach(({ link, cell, file }) => {
+    entries.forEach(({ link, cell, id }) => {
 
         const box = document.createElement("input");
         box.type = "checkbox";
         box.className = "felmero-check";
-        box.checked = picked.has(file);
+        box.checked = initial.has(id);
         box.setAttribute("aria-label", `Felmérő: ${link.textContent}`);
 
         box.addEventListener("change", () => {
-            const on = toggleAssessmentLesson(file);
-            if (on) picked.add(file);
-            else picked.delete(file);
+            const on = toggleAssessmentLesson(id);
             // ugyanaz a lecke több sorban is szerepelhet: a pipák együtt mozdulnak
-            (boxes.get(file) ?? []).forEach(other => { other.checked = on; });
+            (boxes.get(id) ?? []).forEach(other => { other.checked = on; });
             refresh();
         });
 
-        if (!boxes.has(file)) boxes.set(file, []);
-        boxes.get(file).push(box);
+        if (!boxes.has(id)) boxes.set(id, []);
+        boxes.get(id).push(box);
 
         cell.prepend(box);
     });

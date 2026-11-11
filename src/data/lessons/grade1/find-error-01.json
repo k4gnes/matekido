@@ -5,7 +5,7 @@
     {
       "type": "scene",
       "title": "🕵️ Hibás számolás?",
-      "text": "Egy számolás becsúszott! Nézd meg jól a műveleteket, és találd meg, melyik nem igaz!",
+      "text": "Egy számolás félrecsúszott! Nézd meg jól a műveleteket, és találd meg, melyik nem igaz!",
       "worldTitles": {
         "racing": {
           "title": "🏎️ Hibás számolás a boxutcában?",

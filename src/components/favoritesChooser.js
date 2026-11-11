@@ -24,7 +24,7 @@ export function openFavoritesChooser({ lessons, onChoose, heading = null }) {
 
     const hint = document.createElement("p");
     hint.className = "favorites-chooser-hint";
-    hint.textContent = "Kezdjük – a szokásos gyakorlás, ahogy eddig. Időmérő: felmérés – méri az összidőt és a hibákat, a végén rövid kiértékelés.";
+    hint.textContent = "Kezdjük! – a szokásos gyakorlás, ahogy eddig. ⏱️ Időmérő: felmérés – méri az összidőt és a hibákat, a végén rövid kiértékelés.";
     area.append(hint);
 
     function choose(mode) {
@@ -35,9 +35,9 @@ export function openFavoritesChooser({ lessons, onChoose, heading = null }) {
     const actions = document.createElement("div");
     actions.className = "favorites-chooser-actions";
     actions.append(
-        createButton("Kezdjük", { className: "nav-bar-btn", onClick: () => choose("practice") }),
-        createButton("Időmérő", { className: "nav-bar-btn", onClick: () => choose("assessment") }),
-        createButton("Bezárás", { className: "nav-bar-btn", onClick: () => area.remove() })
+        createButton("Kezdjük!", { className: "nav-bar-btn", onClick: () => choose("practice") }),
+        createButton("⏱️ Időmérő", { className: "nav-bar-btn", onClick: () => choose("assessment") }),
+        createButton("✗ Bezárás", { className: "nav-bar-btn", onClick: () => area.remove() })
     );
     area.append(actions);
 

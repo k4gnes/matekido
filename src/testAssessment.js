@@ -158,9 +158,9 @@ check(chooser.children[1].children.length === 2, "a kedvencek listája címei ol
 
 const chooserButtons = chooser.children[3].children;
 check(chooserButtons.length === 3, "három gomb: kezdjük, időmérő, bezárás");
-check(chooserButtons[0].textContent === "Kezdjük", "az első gomb a szokásos Kezdjük");
-check(chooserButtons[1].textContent === "Időmérő", "a második gomb az időmérő");
-check(chooserButtons[2].textContent === "Bezárás", "a harmadik gomb a bezárás");
+check(chooserButtons[0].textContent === "Kezdjük!", "az első gomb a szokásos Kezdjük!");
+check(chooserButtons[1].textContent === "⏱️ Időmérő", "a második gomb az időmérő");
+check(chooserButtons[2].textContent === "✗ Bezárás", "a harmadik gomb a bezárás");
 check(chosen === null, "még nincs választás gombnyomás nélkül");
 
 chooserButtons[1].handlers.click();

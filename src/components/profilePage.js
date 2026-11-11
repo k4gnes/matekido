@@ -211,9 +211,18 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
         const assessmentList = document.createElement("ul");
         assessments.slice(0, 10).forEach(run => {
             const item = document.createElement("li");
-            const when = new Date(run.startedAt).toLocaleDateString("hu-HU");
-            item.textContent = `${when} · ${run.label ?? ""} · ⏱ ${formatDuration(run.seconds)}`
-                + ` · ✅ ${run.correct ?? 0} · ❌ ${run.wrong ?? 0} hiba`;
+
+            // két oszlop: balra a dátum és a kedvencek száma, jobbra egy sorba zárt számok
+            const when = document.createElement("span");
+            when.className = "assessment-when";
+            const date = run.startedAt ? new Date(run.startedAt).toLocaleDateString("hu-HU") : "";
+            when.textContent = run.label ? `${date} · ${run.label}` : date;
+
+            const nums = document.createElement("span");
+            nums.className = "assessment-nums";
+            nums.textContent = `⏱ ${formatDuration(run.seconds)} · ✅ ${run.correct ?? 0} · ❌ ${run.wrong ?? 0}`;
+
+            item.append(when, nums);
             assessmentList.append(item);
         });
         assessmentSection.append(assessmentList);

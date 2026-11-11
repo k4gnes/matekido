@@ -241,7 +241,7 @@ const COUNTED_TYPES = new Set([
 const isCounted = s => COUNTED_TYPES.has(s.type);
 
 
-import { renderCelebration } from "../components/celebration.js?v=20";
+import { renderCelebration } from "../components/celebration.js?v=21";
 import { renderProgress } from "../components/progress.js?v=4";
 import { renderMissingProgress } from "../components/missingProgress.js?v=4";
 import { renderComparisonProgress } from "../components/comparisonProgress.js?v=4";

@@ -260,9 +260,9 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
 
     achWorldRow.append(achievementSection, worldSection);
 
-    // Felmérések (⏱️ Időmérő) listája: mikor, mennyi idővel, hány helyes és hány hibás
-    // megoldással. A profil aljára kerül (nem a teljesítmények blokkjába), hogy szűk
-    // helyen a Világok UTÁN jöjjön; széles helyen a CSS a Teljesítmények alá rendezi.
+    // Felmérések (⏱️ Időmérő) táblázata: egy futás = egy sor, minden adat külön
+    // oszlopban (kezdés, lista, idő, helyes, hiba). A Teljesítmények + Világok
+    // blokk ALÁ kerül, teljes szélességben (a CSS grid-areas rendezi).
     const assessments = getAssessments();
 
     if (assessments.length > 0) {
@@ -274,28 +274,37 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
         assessmentTitle.textContent = "📝 Felmérések";
         assessmentSection.append(assessmentTitle);
 
-        const assessmentList = document.createElement("ul");
+        const cell = (className, text) => {
+            const td = document.createElement("td");
+            td.className = className;
+            td.textContent = text;
+            return td;
+        };
+
+        const table = document.createElement("table");
+        table.className = "assessment-table";
+
         assessments.slice(0, 10).forEach(run => {
-            const item = document.createElement("li");
+            const row = document.createElement("tr");
 
-            // balra a dátum + a lista neve, jobbra egy sorba zárt számok
-            // (szűk helyen a CSS két sorba állítja a sort)
-            const when = document.createElement("span");
-            when.className = "assessment-when";
-            const date = run.startedAt ? new Date(run.startedAt).toLocaleDateString("hu-HU") : "";
-            when.textContent = run.label ? `${date} · ${run.label}` : date;
+            const started = run.startedAt ? new Date(run.startedAt).toLocaleString("hu-HU") : "";
+            const label = run.label ?? "";
+            const heading = label ? `${started} · ${label}` : started;
 
-            const nums = document.createElement("span");
-            nums.className = "assessment-nums";
-            nums.textContent = `⏱ ${formatDuration(run.seconds)} · ✅ ${run.correct ?? 0} · ❌ ${run.wrong ?? 0}`;
+            // tooltip: mely leckékből állt a felmérés
+            row.title = runTooltip(run, heading);
 
-            // tooltip: mely kedvenc leckékből állt a felmérés
-            item.title = runTooltip(run, when.textContent);
-
-            item.append(when, nums);
-            assessmentList.append(item);
+            row.append(
+                cell("assessment-when", started),
+                cell("assessment-label", label),
+                cell("assessment-nums", `⏱ ${formatDuration(run.seconds)}`),
+                cell("assessment-nums", `✅ ${run.correct ?? 0}`),
+                cell("assessment-nums", `❌ ${run.wrong ?? 0}`)
+            );
+            table.append(row);
         });
-        assessmentSection.append(assessmentList);
+
+        assessmentSection.append(table);
 
         achWorldRow.append(assessmentSection);
 

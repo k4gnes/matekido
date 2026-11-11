@@ -723,15 +723,15 @@
     background: var(--primary);
 }
 
-/* Profil alja: széles helyen két oszlop – balra a Teljesítmények, alatta a
-   Felmérések, jobbra a Világok; szűk helyen három sor: Teljesítmények, Világok,
-   aztán Felmérések (a sorrendet a grid-areas adja, nem a DOM-sorrend). */
+/* Profil alja: az első sorban egymás mellett a Teljesítmények és a Világok,
+   alattuk teljes szélességben a Felmérések táblázata. Szűk helyen mindhárom
+   blokk egymás alá kerül (a sorrendet a grid-areas adja, nem a DOM-sorrend). */
 .profile-page-bottom {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
         "ach worlds"
-        "assess worlds";
+        "assess assess";
     column-gap: 0.5rem;
     width: 100%;
     margin-bottom: 0.3rem;
@@ -1078,37 +1078,35 @@
     opacity: 0.75;
 }
 
-.profile-assessments ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+/* Felmérés-táblázat: egy futás = egy sor, minden adat külön oszlopban
+   (kezdés, lista, idő, helyes, hiba) */
+.profile-assessments table {
+    width: 100%;
+    border-collapse: collapse;
     font-size: .92rem;
     line-height: 1.5;
 }
 
-/* Egy sor két oszlopa: balra a dátum, jobbra a számok (nem törik át).
-   A dátum csak szóköznél törik (nem betűnként), hogy szűk helyen se szétesjen */
-.profile-assessments li {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: .1rem .5rem;
-    align-items: baseline;
-    padding: .15rem 0;
-}
-
-.profile-assessments .assessment-when {
-    min-width: 0;
+.profile-assessments td {
+    padding: .2rem .5rem .2rem 0;
+    vertical-align: baseline;
     overflow-wrap: break-word;
+    border-bottom: 1px solid rgba(0, 0, 0, .06);
 }
 
-.profile-assessments .assessment-nums {
-    white-space: nowrap;
+.profile-assessments .assessment-label {
     font-weight: 600;
 }
 
+/* a számok sehol nem törnek át */
+.profile-assessments .assessment-nums {
+    white-space: nowrap;
+    text-align: right;
+}
+
 /* Szűk helyen (telefon, kis tablet) minden blokk a teljes szélességet kapja és
-   egymás alá kerül: Teljesítmények → Világok → Felmérések. A felmérés sora is
-   két sorba áll, hogy a dátum + lista neve (pl. „12 válogatott”) egy sorban maradjon */
+   egymás alá kerül: Teljesítmények → Világok → Felmérések. A táblázat betű- és
+   cellamérete kisebb, hogy az öt oszlop elférjen vízszintes görgetés nélkül */
 @media (max-width: 760px) {
     .profile-page-bottom {
         grid-template-columns: 1fr;
@@ -1123,7 +1121,11 @@
         margin-top: 0;
     }
 
-    .profile-assessments li {
-        grid-template-columns: 1fr;
+    .profile-assessments table {
+        font-size: .85rem;
+    }
+
+    .profile-assessments td {
+        padding-right: .35rem;
     }
 }

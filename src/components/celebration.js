@@ -38,7 +38,7 @@ function renderEvaluation({ summary, history }) {
         const list = document.createElement("ul");
         history.forEach((run, index) => {
             const item = document.createElement("li");
-            const when = new Date(run.startedAt).toLocaleDateString("hu-HU");
+            const when = new Date(run.startedAt).toLocaleString("hu-HU");
             item.textContent = `${when} · ⏱ ${formatDuration(run.seconds)} · ❌ ${run.wrong ?? 0}`
                 + (index === worst ? " · legtöbb hiba" : "");
             item.title = runTooltip(run, when);

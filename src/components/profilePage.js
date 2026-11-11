@@ -195,45 +195,6 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
         achievementSection.append(item);
     });
 
-    // Felmérések (⏱️ Időmérő) listája a teljesítmények alatt, bal oldalon:
-    // mikor, mennyi idővel, hány helyes és hány hibás megoldással.
-    const assessments = getAssessments();
-
-    if (assessments.length > 0) {
-
-        const assessmentSection = document.createElement("div");
-        assessmentSection.className = "profile-assessments";
-
-        const assessmentTitle = document.createElement("h2");
-        assessmentTitle.textContent = "📝 Felmérések";
-        assessmentSection.append(assessmentTitle);
-
-        const assessmentList = document.createElement("ul");
-        assessments.slice(0, 10).forEach(run => {
-            const item = document.createElement("li");
-
-            // két oszlop: balra a dátum és a kedvencek száma, jobbra egy sorba zárt számok
-            const when = document.createElement("span");
-            when.className = "assessment-when";
-            const date = run.startedAt ? new Date(run.startedAt).toLocaleDateString("hu-HU") : "";
-            when.textContent = run.label ? `${date} · ${run.label}` : date;
-
-            const nums = document.createElement("span");
-            nums.className = "assessment-nums";
-            nums.textContent = `⏱ ${formatDuration(run.seconds)} · ✅ ${run.correct ?? 0} · ❌ ${run.wrong ?? 0}`;
-
-            // tooltip: mely kedvenc leckékből állt a felmérés
-            item.title = runTooltip(run, when.textContent);
-
-            item.append(when, nums);
-            assessmentList.append(item);
-        });
-        assessmentSection.append(assessmentList);
-
-        achievementSection.append(assessmentSection);
-
-    }
-
     // --- Worlds ---
     const worldSection = document.createElement("div");
     worldSection.className = "profile-page-worlds";
@@ -298,6 +259,47 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
     });
 
     achWorldRow.append(achievementSection, worldSection);
+
+    // Felmérések (⏱️ Időmérő) listája: mikor, mennyi idővel, hány helyes és hány hibás
+    // megoldással. A profil aljára kerül (nem a teljesítmények blokkjába), hogy szűk
+    // helyen a Világok UTÁN jöjjön; széles helyen a CSS a Teljesítmények alá rendezi.
+    const assessments = getAssessments();
+
+    if (assessments.length > 0) {
+
+        const assessmentSection = document.createElement("div");
+        assessmentSection.className = "profile-assessments";
+
+        const assessmentTitle = document.createElement("h2");
+        assessmentTitle.textContent = "📝 Felmérések";
+        assessmentSection.append(assessmentTitle);
+
+        const assessmentList = document.createElement("ul");
+        assessments.slice(0, 10).forEach(run => {
+            const item = document.createElement("li");
+
+            // balra a dátum + a lista neve, jobbra egy sorba zárt számok
+            // (szűk helyen a CSS két sorba állítja a sort)
+            const when = document.createElement("span");
+            when.className = "assessment-when";
+            const date = run.startedAt ? new Date(run.startedAt).toLocaleDateString("hu-HU") : "";
+            when.textContent = run.label ? `${date} · ${run.label}` : date;
+
+            const nums = document.createElement("span");
+            nums.className = "assessment-nums";
+            nums.textContent = `⏱ ${formatDuration(run.seconds)} · ✅ ${run.correct ?? 0} · ❌ ${run.wrong ?? 0}`;
+
+            // tooltip: mely kedvenc leckékből állt a felmérés
+            item.title = runTooltip(run, when.textContent);
+
+            item.append(when, nums);
+            assessmentList.append(item);
+        });
+        assessmentSection.append(assessmentList);
+
+        achWorldRow.append(assessmentSection);
+
+    }
 
     const navbar = createNavBar({
         current: "profile",

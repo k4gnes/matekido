@@ -723,9 +723,16 @@
     background: var(--primary);
 }
 
+/* Profil alja: széles helyen két oszlop – balra a Teljesítmények, alatta a
+   Felmérések, jobbra a Világok; szűk helyen három sor: Teljesítmények, Világok,
+   aztán Felmérések (a sorrendet a grid-areas adja, nem a DOM-sorrend). */
 .profile-page-bottom {
-    display: flex;
-    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "ach worlds"
+        "assess worlds";
+    column-gap: 0.5rem;
     width: 100%;
     margin-bottom: 0.3rem;
     padding: 0.4rem 0.35rem 0.2rem;
@@ -734,7 +741,7 @@
 }
 
 .profile-page-achievements {
-    flex: 1;
+    grid-area: ach;
     min-width: 0;
 }
 
@@ -782,7 +789,7 @@
 }
 
 .profile-page-worlds {
-    flex: 1;
+    grid-area: worlds;
     min-width: 0;
 }
 
@@ -1056,8 +1063,10 @@
     color: #555;
 }
 
-/* Felmérések listája a profiloldalon, a teljesítmények alatt (bal oldali oszlop) */
+/* Felmérések listája a profiloldalon: széles helyen a Teljesítmények alatt a bal
+   oldali oszlopban, szűk helyen a Világok után (a grid-areas rendezi) */
 .profile-assessments {
+    grid-area: assess;
     margin: .7rem 0 .2rem;
     padding-top: .5rem;
     border-top: 1px solid rgba(0, 0, 0, .08);
@@ -1097,15 +1106,24 @@
     font-weight: 600;
 }
 
-/* Telefonon a profil alja (Teljesítmények + Világok) egymás alá kerül, mert
-   a fél oszlopban a felmérések sora és a számok nem férnének el */
-@media (max-width: 560px) {
+/* Szűk helyen (telefon, kis tablet) minden blokk a teljes szélességet kapja és
+   egymás alá kerül: Teljesítmények → Világok → Felmérések. A felmérés sora is
+   két sorba áll, hogy a dátum + lista neve (pl. „12 válogatott”) egy sorban maradjon */
+@media (max-width: 760px) {
     .profile-page-bottom {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "ach"
+            "worlds"
+            "assess";
+        row-gap: 0.5rem;
     }
 
-    .profile-page-achievements,
-    .profile-page-worlds {
-        flex: none;
+    .profile-assessments {
+        margin-top: 0;
+    }
+
+    .profile-assessments li {
+        grid-template-columns: 1fr;
     }
 }

@@ -149,7 +149,7 @@ function computeSkippedLessons(player, lessonIndex) {
 }
 
 // Tiszta függvény, hogy tesztelhető legyen: a játékos kedvencei az aktív évfolyamra szűrve,
-// a szülői PDF-lista soraival (fájl, cím, készség, nehézség).
+// a szülői kedvenc-lista soraival (fájl, cím, készség, nehézség).
 export function favoriteRowsFor(player, lessonIndex) {
 
     const favorites = player?.profile?.favorites ?? [];
@@ -194,7 +194,7 @@ function createLessonBlock(row, index) {
         const item = document.createElement("li");
         item.append(document.createTextNode(line.count > 1 ? `${line.text} ×${line.count}` : line.text));
         if (!line.nameOnly) {
-            // hely a gyerek válaszának a nyomtatott lapon
+            // hely a gyerek válaszának
             const blank = document.createElement("span");
             blank.className = "favorites-print-answer-line";
             item.append(blank);
@@ -273,7 +273,7 @@ function renderFavoritesPrint(area, player, rows, grade, state) {
     }
 
     const actions = document.createElement("div");
-    actions.className = "favorites-print-actions print-hide";
+    actions.className = "favorites-print-actions";
 
     // A megoldások nyomtatása választható: ha nincs bekapcsolva, nem jelenik meg.
     const answersBtn = createButton(state.answers ? "☑ Megoldások" : "☐ Megoldások", {
@@ -289,7 +289,6 @@ function renderFavoritesPrint(area, player, rows, grade, state) {
     answersBtn.setAttribute("aria-pressed", String(state.answers));
 
     actions.append(
-        createButton("🖨️ Mentés PDF-ként", { className: "nav-bar-btn", onClick: () => window.print() }),
         answersBtn,
         createButton("✗ Bezárás", { className: "nav-bar-btn", onClick: () => area.remove() })
     );
@@ -634,7 +633,7 @@ function createPlayerCard(player, accent, lessonIndex) {
     // Csak akkor jelenik meg, ha az évfolyamra szűrve van mit listázni.
     const favRows = favoriteRowsFor(player, lessonIndex);
     if (favRows.length > 0) {
-        const favBtn = createButton("📄 Kedvencek listája (PDF)", {
+        const favBtn = createButton("📄 Kedvencek listája", {
             className: "nav-bar-btn favorites-export-btn",
             onClick: () => openFavoritesPrint(player, lessonIndex)
         });

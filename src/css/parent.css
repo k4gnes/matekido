@@ -275,10 +275,10 @@
     text-align: center;
 }
 
-/* Szülői kedvenc-lista: képernyőn panel, nyomtatásban csak ez jelenik meg (PDF mentés). */
+/* Szülői kedvenc-lista: képernyős panel, a feladatok helye a gyerek válaszának. */
+/* Elrejtve: nincs nyomtatás, a lista belépőjét CSS-ből takarjuk el (kódban megmarad). */
 .favorites-export-btn {
-    display: block;
-    margin: .7rem auto 0;
+    display: none;
 }
 
 .favorites-print {
@@ -353,26 +353,4 @@
     gap: .5rem;
     justify-content: center;
     margin-top: 1.2rem;
-}
-
-@media print {
-    body * {
-        visibility: hidden;
-    }
-    .favorites-print,
-    .favorites-print * {
-        visibility: visible;
-    }
-    .favorites-print {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        overflow: visible;
-        padding: 0;
-    }
-    .print-hide,
-    .print-hide * {
-        display: none !important;
-    }
 }

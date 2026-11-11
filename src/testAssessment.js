@@ -137,12 +137,12 @@ check(chooser.className === "favorites-chooser", "a választó megjelenik");
 check(chooser.children[1].children.length === 2, "a kedvencek listája címei olvashatók");
 
 const chooserButtons = chooser.children[3].children;
-check(chooserButtons.length === 3, "három gomb: időmérő, játék, bezárás");
-check(chooserButtons[0].textContent === "⏱️ Időmérő", "az első gomb az időmérő");
-check(chooserButtons[1].textContent === "🎲 Játék", "a második gomb a játék");
+check(chooserButtons.length === 3, "három gomb: játék, időmérő, bezárás");
+check(chooserButtons[0].textContent === "🎲 Játék", "az első gomb a játék");
+check(chooserButtons[1].textContent === "⏱️ Időmérő", "a második gomb az időmérő");
 check(chosen === null, "még nincs választás gombnyomás nélkül");
 
-chooserButtons[0].handlers.click();
+chooserButtons[1].handlers.click();
 check(chosen === "assessment", "az Időmérő felmérésként indul");
 
 if (failures > 0) {

@@ -23,7 +23,7 @@ export function openFavoritesChooser({ lessons, onChoose }) {
 
     const hint = document.createElement("p");
     hint.className = "favorites-chooser-hint";
-    hint.textContent = "⏱️ Időmérő: felmérés – méri az összidőt és a hibákat, a végén rövid kiértékelés. 🎲 Játék: gyakorlás, ahogy eddig.";
+    hint.textContent = "🎲 Játék: gyakorlás, ahogy eddig. ⏱️ Időmérő: felmérés – méri az összidőt és a hibákat, a végén rövid kiértékelés.";
     area.append(hint);
 
     function choose(mode) {
@@ -34,8 +34,8 @@ export function openFavoritesChooser({ lessons, onChoose }) {
     const actions = document.createElement("div");
     actions.className = "favorites-chooser-actions";
     actions.append(
-        createButton("⏱️ Időmérő", { className: "nav-bar-btn", onClick: () => choose("assessment") }),
         createButton("🎲 Játék", { className: "nav-bar-btn", onClick: () => choose("practice") }),
+        createButton("⏱️ Időmérő", { className: "nav-bar-btn", onClick: () => choose("assessment") }),
         createButton("✗ Bezárás", { className: "nav-bar-btn", onClick: () => area.remove() })
     );
     area.append(actions);

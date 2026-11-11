@@ -9,7 +9,7 @@ import { lessonHasHint } from "../data/hintLessons.js?v=3";
 import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=25";
 import { curriculumSort } from "../data/curriculum.js";
 import { getPracticeLessonFiles, latestPercentage } from "./practicePage.js?v=14";
-import { openFavoritesChooser } from "./favoritesChooser.js?v=1";
+import { openFavoritesChooser } from "./favoritesChooser.js?v=2";
 import { beginRun } from "../utils/assessment.js?v=2";
 import { gradesWithLessons } from "../utils/grades.js?v=1";
 import { getWorld } from "../world/WorldRegistry.js";

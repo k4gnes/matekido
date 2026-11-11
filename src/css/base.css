@@ -359,6 +359,9 @@ body[data-world-theme="tram"] {
 
 .favorites-chooser ol {
     max-width: 34rem;
+    /* hosszú listánál (pl. a Válogatott) is befér: a hosszú lista görgethető marad */
+    max-height: 55vh;
+    overflow-y: auto;
     margin: 0 auto;
     padding-left: 1.4rem;
     font-size: 1rem;

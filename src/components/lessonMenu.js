@@ -9,7 +9,7 @@ import { lessonHasHint } from "../data/hintLessons.js?v=3";
 import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=25";
 import { curriculumSort } from "../data/curriculum.js";
 import { getPracticeLessonFiles, latestPercentage } from "./practicePage.js?v=14";
-import { openFavoritesChooser } from "./favoritesChooser.js?v=4";
+import { openFavoritesChooser } from "./favoritesChooser.js?v=5";
 import { beginRun, resolveAssessmentLessons } from "../utils/assessment.js?v=4";
 import { gradesWithLessons } from "../utils/grades.js?v=1";
 import { getWorld } from "../world/WorldRegistry.js";
@@ -1039,7 +1039,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
         return positionMap;
     }
 
-    function createFilterResult(filteredLessons, positionMap, selectOpts) {
+    function createFilterResult(filteredLessons, positionMap, selectOpts, onSelectFn = onSelect) {
         const container = document.createElement("div");
         const resultInfo = document.createElement("div");
         resultInfo.className = "filter-result-info";
@@ -1059,7 +1059,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
 
             const flatCard = createCard();
             for (const [categoryKey, catLessons] of Object.entries(categorized)) {
-                const section = createCategorySection(categoryKey, catLessons, onSelect, activeWorld, positionMap, selectOpts);
+                const section = createCategorySection(categoryKey, catLessons, onSelectFn, activeWorld, positionMap, selectOpts);
                 if (section) flatCard.append(section);
             }
             container.append(flatCard);
@@ -1100,6 +1100,13 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
 
         const poolOpts = { from: "custom", list: pool.map(l => l.file) };
 
+        // A saját lista is választóval nyílik, hogy egységes legyen a többi listával;
+        // a választás az egész listára vonatkozik, a mentett futás is a teljes listára.
+        const customChoice = listChoice(pool, onSelect, {
+            name: "válogatott",
+            heading: `⚽ Válogatott (${pool.length})`
+        });
+
         const doneSet = new Set(getCustomDoneLessons());
         const undone = pool.filter(l => !doneSet.has(l.file));
         const next = undone.length > 0 ? undone[0] : pool[0];
@@ -1117,7 +1124,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
 
             const grid = document.createElement("div");
             grid.className = "next-lesson-card";
-            grid.append(createLessonCard(next, onSelect, activeWorld, nextIdx + 1, pool.length, poolOpts));
+            grid.append(createLessonCard(next, customChoice, activeWorld, nextIdx + 1, pool.length, poolOpts));
             nextCard.append(grid);
 
             const nextNote = document.createElement("p");
@@ -1158,7 +1165,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
         contentArea.append(listButtonRow);
 
         if (hasNonGradeFilters(filters)) {
-            browseWrap.append(createFilterResult(pool, createPositionMap(pool), poolOpts));
+            browseWrap.append(createFilterResult(pool, createPositionMap(pool), poolOpts, customChoice));
         } else {
             const positionMap = createPositionMap(pool);
             const flatCard = createCard();
@@ -1166,7 +1173,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
             grid.className = "lesson-grid";
             pool.forEach(lesson => {
                 const pos = positionMap.get(lesson.file);
-                grid.append(createLessonCard(lesson, onSelect, activeWorld, pos?.position, pos?.total, poolOpts));
+                grid.append(createLessonCard(lesson, customChoice, activeWorld, pos?.position, pos?.total, poolOpts));
             });
             flatCard.append(grid);
             browseWrap.append(flatCard);

@@ -69,6 +69,7 @@ A **⚽ Válogatott** füllel magadnak állítasz össze gyakorlólistát: az é
 
 - A {{🎓 Évfolyam}} gombbal a Válogatottból bármikor visszatérsz – az app a korábban választott osztályodat hozza vissza.
 - A szűrők **játékosonként megmaradnak** a következő látogatásra is – másik játékosra váltva az ő beállításai érvényesek. A {{✕ Szűrők törlése|grey}} gomb visszaállítja az összes leckét.
+- A listán bármelyik leckekártyára kattintva a megszokott választó jön: **Kezdjük** (gyakorlás az egész listán), **Időmérő** (felmérés az egész listán) vagy **Bezárás**. A Válogatott **nem** indít időmérést magától – csak az `Időmérő` választásával.
 
 ## 👪 Szülői rész
 
@@ -105,7 +106,7 @@ A [**🎯 Gyakorlásra javasolt**](#gyakorlas-a-gyengebb-es-a-regen-gyakorolt-le
 
 Az évfolyamonkénti **tananyagtérkép**: megmutatja, milyen feladatok és témakörök tartoznak az adott osztály tananyagába, így előre átlátod, mi következik.
 
-A leckesorok melletti **pipával** kiválaszthatod, mely leckékből álljon a **📝 Felmérő lista**: ez a gyerek menüjében a kedvencek mögé, a mester kihívás elé kerül, és ugyanúgy gyakorolható (`Kezdjük!`) vagy felmérhető (`⏱️ Időmérő`), mint a kedvencek.
+A leckesorok melletti **pipával** kiválaszthatod, mely leckékből álljon a **📝 Felmérő lista**: ez a gyerek menüjében a kedvencek mögé, a mester kihívás elé kerül, és ugyanúgy gyakorolható (`Kezdjük`) vagy felmérhető (`Időmérő`), mint a kedvencek.
 
 ![A Témakörök – évfolyamonkénti tananyagtérkép](/docs/temakorok.png)
 
@@ -205,7 +206,7 @@ A feladatlistára belépve sorban a következők jönnek:
 - **📚 Feladatok listája** – az évfolyam teljes feladatlistája. Szűrni **csak a ⚽ Válogatott nézetben** lehet (lásd a [szűrőkről szóló szakaszt](#valogatott-es-szurok)).
 - **🎯 Gyakorlásra javasolt** – a gyengén sikerült és a régen gyakorolt leckéid (részletek a [Gyakorlás szakaszban](#gyakorlas-a-gyengebb-es-a-regen-gyakorolt-leckek)).
 - **⏭️ jel a kártyán** – a kihagyott lecke kártyáján a 📚 Feladatok listájában **⏭️** badge látszik. Érdemes pótolni, mert a sorrendjében a végén úgyis visszajön.
-- **❤️ Kedvenceim** – azok a leckék, amelyeket a sor jobb oldalán lévő szív gombbal (**🤍 → ❤️**) megjelöltél. Megnyitáskor választhatsz: **Kezdjük!** (gyakorlás, ahogy eddig) vagy **⏱️ Időmérő** (felmérés: méri az összidőt és a hibákat, a végén rövid kiértékelés, amit a profilod is elment). Ugyanígy játszólistaként megy végig a kedvenceken.
+- **❤️ Kedvenceim** – azok a leckék, amelyeket a sor jobb oldalán lévő szív gombbal (**🤍 → ❤️**) megjelöltél. Megnyitáskor választhatsz: **Kezdjük** (gyakorlás, ahogy eddig) vagy **Időmérő** (felmérés: méri az összidőt és a hibákat, a végén rövid kiértékelés, amit a profilod is elment). Ugyanígy játszólistaként megy végig a kedvenceken.
 
 ## 🎯 Gyakorlás – a gyengébb és a régen gyakorolt leckék
 

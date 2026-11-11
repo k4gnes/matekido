@@ -1077,7 +1077,8 @@
     line-height: 1.5;
 }
 
-/* Egy sor két oszlopa: balra a dátum, jobbra a számok (nem törik át) */
+/* Egy sor két oszlopa: balra a dátum, jobbra a számok (nem törik át).
+   A dátum csak szóköznél törik (nem betűnként), hogy szűk helyen se szétesjen */
 .profile-assessments li {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -1088,10 +1089,23 @@
 
 .profile-assessments .assessment-when {
     min-width: 0;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
 }
 
 .profile-assessments .assessment-nums {
     white-space: nowrap;
     font-weight: 600;
+}
+
+/* Telefonon a profil alja (Teljesítmények + Világok) egymás alá kerül, mert
+   a fél oszlopban a felmérések sora és a számok nem férnének el */
+@media (max-width: 560px) {
+    .profile-page-bottom {
+        flex-direction: column;
+    }
+
+    .profile-page-achievements,
+    .profile-page-worlds {
+        flex: none;
+    }
 }

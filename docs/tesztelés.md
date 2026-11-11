@@ -169,6 +169,7 @@ A szülői nézet a profil oldalnavbarjából a `👪 Szülői` gombbal nyílik.
 | 7b.9 | Nyisd meg a ⚽ Válogatott listát, és kattints bármelyik leckekártyára | Ugyanaz a választó jön: `Kezdjük!`, `⏱️ Időmérő`, `✗ Bezárás`, a címe `⚽ Válogatott (N)` – hosszú listánál a leckék görgethetők, lecke még nem indul | |
 | 7b.10 | Válaszd az `⏱️ Időmérő`-t, és játssz végig a listán | A futás a **teljes** Válogatott listára megy (nem csak a kattintott leckétől), a kiértékelés a lista legvégén jön, a Profil `📝 Felmérések` listáján a sor felirata „N válogatott” | |
 | 7b.11 | Vissza a 🎓 Évfolyam nézetre, és kattints a fő listában egy leckére (➡️ Következő feladat vagy 📚 Feladatok listája) | **Nincs választó** – azonnal indul a lecke, időmérés nélkül (a 🎯 Gyakorlásra javasolt és a 🌟 Mester kihívás kártyái szintén választó nélkül indulnak) | |
+| 7b.12 | Nyisd meg a Profil oldalt telefonon (álló módban, ≤560 px) | A `📝 Felmérések` sorai **nem szétesnek**: a dátum szóköznél törik (nem betűnként), a `⏱ idő · ✅ helyes · ❌ hibás` egy sorban marad és nem fut ki vízszintesen; a profil alja (Teljesítmények + Világok) egymás alá kerül | |
 
 *(A felmérés a kedvencek, a 📝 Felmérő lista és a ⚽ Válogatott listájáról indul; a szülői „Kedvencek listája” panel továbbra is rejtve.)*
 

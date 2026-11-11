@@ -1,7 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createNavBar } from "./ui/navbar.js";
 import { loadProfile, getNextGoal, getActiveWorld, setActiveWorld, getLessonStats, getActiveGrade, getDailyStats, getAssessments } from "../profile/Profile.js";
-import { formatDuration } from "../utils/assessment.js?v=1";
+import { formatDuration, runTooltip } from "../utils/assessment.js?v=2";
 import { ACHIEVEMENTS, getUnlockedAchievements } from "../profile/Achievements.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getAllWorlds } from "../world/WorldRegistry.js";
@@ -221,6 +221,9 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
             const nums = document.createElement("span");
             nums.className = "assessment-nums";
             nums.textContent = `⏱ ${formatDuration(run.seconds)} · ✅ ${run.correct ?? 0} · ❌ ${run.wrong ?? 0}`;
+
+            // tooltip: mely kedvenc leckékből állt a felmérés
+            item.title = runTooltip(run, when.textContent);
 
             item.append(when, nums);
             assessmentList.append(item);

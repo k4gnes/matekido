@@ -20,7 +20,8 @@ const {
     finishRun,
     previousRuns,
     worstRunIndex,
-    compareText
+    compareText,
+    runTooltip
 } = await import("./utils/assessment.js");
 const { createPlayer } = await import("./profile/UserManager.js");
 const { recordAssessment, getAssessments } = await import("./profile/Profile.js");
@@ -81,6 +82,13 @@ check(previousRuns(null, "x").length === 0, "üres lista nem hibázik");
 check(compareText({ wrong: 1, seconds: 270 }, { wrong: 2, seconds: 300 }) === "hiba: 2 → 1 · idő: 5:00 → 4:30",
     "a szöveg a hibát és az időt is megmutatja");
 check(compareText({ wrong: 1, seconds: 60 }, null) === null, "előző futás nélkül nincs összehasonlítás");
+
+// Tooltip: mely kedvenc leckékből állt a felmérés
+const tip = runTooltip({ lessons: [{ title: "Szorzótábla" }, { title: null, file: "b.json" }] }, "2026. 11. 11.");
+check(tip.split("\n").length === 3, "a tooltip fejléce + a két lecke");
+check(tip.includes("• Szorzótábla") && tip.includes("• b.json"), "a leckék címei a tooltipben");
+check(runTooltip({ files: ["a.json"] }).includes("• a.json"), "cím nélküli futásnál a fájlnév marad");
+check(runTooltip(null) === "", "adat nélkül üres tooltip");
 
 // Profilba mentett lista: legelöl az új, legfeljebb 30 tétel
 createPlayer("Felmérő", "🦊", 1);

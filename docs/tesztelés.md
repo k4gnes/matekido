@@ -163,8 +163,8 @@ A szülői nézet a profil oldalnavbarjából a `👪 Szülői` gombbal nyílik.
 | 7b.3 | Nyisd meg újra, válaszd az `⏱️ Időmérő`-t | Jobb alul folyamatosan fut az összidő (`⏱️` pill), a kedvencek sorban jönnek | |
 | 7b.4 | Nézd meg a leckék végén a celebrációs képernyőt | Nincs `🔁 Újra` gomb (csak `➡️ Tovább` és a navbar), az idő látszik | |
 | 7b.5 | Az utolsó lecke celebrációján | `📝 Kiértékelés` doboz: összidő, helyes/hibás darabszám, leckénkénti idő és hibaszám; az első futásnál még nincs „Korábbi futások” | |
-| 7b.6 | Indítsd el ugyanezt a kedvenc-listát másodszor, és fejezd be | A kiértékelésben „Korábbi futások” lista dátummal, idővel és hibaszámmal (a legtöbb hibás futás „· legtöbb hiba” jelöléssel), alatta „Előzőhöz képest: hiba: … → … · idő: … → …” | |
-| 7b.7 | Nyisd meg a Profil oldalt | A `🏆 Teljesítmények` szekció **alatt, a bal oldali oszlopban** ott a `📝 Felmérések` lista, **kétoszlopos sorokkal**: balra a dátum + kedvencek száma, jobbra egybezártan `⏱ idő · ✅ helyes · ❌ hibás` (egyik szám sem törik át új sorra) – a korábbi futások visszanézhetők (legfeljebb 30) | |
+| 7b.6 | Indítsd el ugyanezt a kedvenc-listát másodszor, és fejezd be | A kiértékelésben „Korábbi futások” lista dátummal, idővel és hibaszámmal (a legtöbb hibás futás „· legtöbb hiba” jelöléssel), alatta „Előzőhöz képest: hiba: … → … · idő: … → …”; a sor fölé vive az egeret a tooltip kiírja, **mely kedvenc leckékből** állt az a futás | |
+| 7b.7 | Nyisd meg a Profil oldalt | A `🏆 Teljesítmények` szekció **alatt, a bal oldali oszlopban** ott a `📝 Felmérések` lista, **kétoszlopos sorokkal**: balra a dátum + kedvencek száma, jobbra egybezártan `⏱ idő · ✅ helyes · ❌ hibás` (egyik szám sem törik át új sorra) – a sor fölé vive az egeret tooltip mutatja, **mely kedvenc leckékből** állt a felmérés (listajelöléssel); a korábbi futások visszanézhetők (legfeljebb 30) | |
 | 7b.8 | Felmérés közben kattints a `📚 Leckék` (kilépés) gombra, és nézd a menüt | Az óra eltűnik, nem marad lebegő időmérő a menü felett | |
 
 *(A felmérés csak a kedvencek listájáról indul; a szülői „Kedvencek listája” panel továbbra is rejtve.)*

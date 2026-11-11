@@ -119,6 +119,17 @@ export function compareText(current, previous) {
 
 }
 
+// Egy futás sora alá: a benne szereplő kedvenc leckék tooltipként.
+export function runTooltip(run, heading = null) {
+
+    const parts = run?.lessons?.length
+        ? run.lessons.map(l => l.title ?? l.file)
+        : (run?.files ?? []);
+
+    return [heading, ...parts.map(t => `• ${t}`)].filter(Boolean).join("\n");
+
+}
+
 // A lefutó óra a body-ra kerül, hogy a leckeléptetés ne törlje le.
 export function mountTimer(readSeconds) {
 

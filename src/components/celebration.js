@@ -2,7 +2,7 @@ import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createNavBar } from "./ui/navbar.js";
 import { getAllWorlds } from "../world/WorldRegistry.js";
-import { formatDuration, worstRunIndex, compareText } from "../utils/assessment.js?v=1";
+import { formatDuration, worstRunIndex, compareText, runTooltip } from "../utils/assessment.js?v=2";
 
 // A felmérés rövid kiértékelése: az összidő, a hibák, leckénkénti bontás,
 // majd a korábbi futások idővel és hibaszámmal (a legtöbb hibás jelölve).
@@ -41,6 +41,7 @@ function renderEvaluation({ summary, history }) {
             const when = new Date(run.startedAt).toLocaleDateString("hu-HU");
             item.textContent = `${when} · ⏱ ${formatDuration(run.seconds)} · ❌ ${run.wrong ?? 0}`
                 + (index === worst ? " · legtöbb hiba" : "");
+            item.title = runTooltip(run, when);
             list.append(item);
         });
         box.append(list);

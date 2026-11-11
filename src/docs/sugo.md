@@ -203,7 +203,7 @@ A feladatlistára belépve sorban a következők jönnek:
 - **📚 Feladatok listája** – az évfolyam teljes feladatlistája. Szűrni **csak a ⚽ Válogatott nézetben** lehet (lásd a [szűrőkről szóló szakaszt](#valogatott-es-szurok)).
 - **🎯 Gyakorlásra javasolt** – a gyengén sikerült és a régen gyakorolt leckéid (részletek a [Gyakorlás szakaszban](#gyakorlas-a-gyengebb-es-a-regen-gyakorolt-leckek)).
 - **⏭️ jel a kártyán** – a kihagyott lecke kártyáján a 📚 Feladatok listájában **⏭️** badge látszik. Érdemes pótolni, mert a sorrendjében a végén úgyis visszajön.
-- **❤️ Kedvenceim** – azok a leckék, amelyeket a sor jobb oldalán lévő szív gombbal (**🤍 → ❤️**) megjelöltél. Megnyitáskor választhatsz: **🎲 Játék** (gyakorlás, ahogy eddig) vagy **⏱️ Időmérő** (felmérés: méri az összidőt és a hibákat, a végén rövid kiértékelés, amit a profilod is elment). Ugyanígy játszólistaként megy végig a kedvenceken.
+- **❤️ Kedvenceim** – azok a leckék, amelyeket a sor jobb oldalán lévő szív gombbal (**🤍 → ❤️**) megjelöltél. Megnyitáskor választhatsz: **Kezdjük!** (gyakorlás, ahogy eddig) vagy **⏱️ Időmérő** (felmérés: méri az összidőt és a hibákat, a végén rövid kiértékelés, amit a profilod is elment). Ugyanígy játszólistaként megy végig a kedvenceken.
 
 ## 🎯 Gyakorlás – a gyengébb és a régen gyakorolt leckék
 

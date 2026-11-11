@@ -1,6 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createNavBar } from "./ui/navbar.js";
-import { loadProfile, getNextGoal, getActiveWorld, setActiveWorld, getLessonStats, getActiveGrade, getDailyStats } from "../profile/Profile.js";
+import { loadProfile, getNextGoal, getActiveWorld, setActiveWorld, getLessonStats, getActiveGrade, getDailyStats, getAssessments } from "../profile/Profile.js";
+import { formatDuration } from "../utils/assessment.js?v=1";
 import { ACHIEVEMENTS, getUnlockedAchievements } from "../profile/Achievements.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getAllWorlds } from "../world/WorldRegistry.js";
@@ -158,6 +159,28 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
 
     questSection.append(questTitle, questBar, questText);
 
+    // Felmérések (⏱️ Időmérő) listája: mikor, mennyi idővel és hibával teljesítve.
+    const assessments = getAssessments();
+    const assessmentSection = document.createElement("div");
+    assessmentSection.className = "profile-assessments";
+
+    if (assessments.length > 0) {
+
+        const assessmentTitle = document.createElement("h2");
+        assessmentTitle.textContent = "📝 Felmérések";
+        assessmentSection.append(assessmentTitle);
+
+        const assessmentList = document.createElement("ul");
+        assessments.slice(0, 10).forEach(run => {
+            const item = document.createElement("li");
+            const when = new Date(run.startedAt).toLocaleDateString("hu-HU");
+            item.textContent = `${when} · ${run.label ?? ""} · ⏱ ${formatDuration(run.seconds)} · ❌ ${run.wrong ?? 0} hiba`;
+            assessmentList.append(item);
+        });
+        assessmentSection.append(assessmentList);
+
+    }
+
     // --- Achievements + Worlds side by side ---
     const achWorldRow = document.createElement("div");
     achWorldRow.className = "profile-page-bottom";
@@ -269,7 +292,8 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
         onParent
     });
 
-    card.append(navbar, title, stats, gradeCard, badgeSection, progressSection, questSection, achWorldRow);
+    card.append(navbar, title, stats, gradeCard, badgeSection, progressSection, questSection,
+        ...(assessments.length > 0 ? [assessmentSection] : []), achWorldRow);
 
     root.append(card);
 }

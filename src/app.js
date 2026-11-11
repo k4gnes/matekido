@@ -1,10 +1,10 @@
-import { Game } from "./engine/Game.js?v=170";
+import { Game } from "./engine/Game.js?v=171";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=102";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=132";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=133";
 import { renderSkillMap } from "./components/skillMap.js?v=63";
 import { renderHelp } from "./components/help.js?v=7";
-import { renderProfilePage } from "./components/profilePage.js?v=22";
+import { renderProfilePage } from "./components/profilePage.js?v=23";
 import { renderStatsPage } from "./components/statsPage.js?v=41";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=13";
 import { renderParentDashboard } from "./components/parentDashboard.js?v=12";
@@ -329,7 +329,8 @@ async function startLesson(path, opts = {}) {
         skill,
         lessonIndex,
         opts.from || null,
-        opts.list || null
+        opts.list || null,
+        opts.mode || null
     );
 
     game.start();

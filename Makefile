@@ -9,6 +9,7 @@ test:
 	node src/testHints.js
 	node src/testAchievements.js
 	node src/testParentStats.js
+	node src/testAssessment.js
 
 sync-docs:
 	mkdir -p src/docs

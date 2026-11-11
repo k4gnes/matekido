@@ -426,6 +426,30 @@ export function getDailyStats() {
 
 }
 
+// Felmérés (⏱️ Időmérő) eredménye: legelöl a legfrissebb, legfeljebb 30 futás.
+export function recordAssessment(summary) {
+
+    const profile = loadProfile();
+
+    if (!Array.isArray(profile.assessments)) {
+        profile.assessments = [];
+    }
+
+    profile.assessments.unshift(summary);
+    profile.assessments = profile.assessments.slice(0, 30);
+
+    saveProfile(profile);
+
+}
+
+export function getAssessments() {
+
+    const profile = loadProfile();
+
+    return Array.isArray(profile.assessments) ? profile.assessments : [];
+
+}
+
 export function recordPerfectLesson() {
 
     const profile = loadProfile();

@@ -9,6 +9,8 @@ import { lessonHasHint } from "../data/hintLessons.js?v=3";
 import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=25";
 import { curriculumSort } from "../data/curriculum.js";
 import { getPracticeLessonFiles, latestPercentage } from "./practicePage.js?v=14";
+import { openFavoritesChooser } from "./favoritesChooser.js?v=1";
+import { beginRun } from "../utils/assessment.js?v=1";
 import { gradesWithLessons } from "../utils/grades.js?v=1";
 import { getWorld } from "../world/WorldRegistry.js";
 
@@ -327,6 +329,24 @@ function createPickerSection(title, lessons, onSelect, activeWorld, selectOpts) 
     }
 
     return card;
+}
+
+// A kedvencek listájának megnyitásakor jön a választás: felmérés (időmérő) vagy
+// a megszokott gyakorlás. A felmérés futását itt indítjuk, a módot a startLesson viszi tovább.
+function favoritesChoice(lessons, onSelect) {
+
+    return (file, opts = {}) => openFavoritesChooser({
+        lessons,
+        onChoose: (mode) => {
+            if (mode === "assessment") {
+                beginRun(opts.list ?? lessons.map(l => l.file));
+                onSelect(file, { ...opts, mode: "assessment" });
+            } else {
+                onSelect(file, opts);
+            }
+        }
+    });
+
 }
 
 function createPickerRow(sections) {
@@ -970,7 +990,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
             pickerSections.push(createPickerSection(
                 `❤️ Kedvenceim (${favoriteLessons.length})`,
                 favoriteLessons,
-                onSelect,
+                favoritesChoice(favoriteLessons, onSelect),
                 activeWorld,
                 { from: "favorites", list: rotateToStart(favoriteLessons).map(l => l.file) }
             ));
@@ -1158,7 +1178,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
             pickerSections.push(createPickerSection(
                 `❤️ Kedvenceim (${favoriteLessons.length})`,
                 favoriteLessons,
-                onSelect,
+                favoritesChoice(favoriteLessons, onSelect),
                 activeWorld,
                 { from: "custom", list: rotateToStart(favoriteLessons).map(l => l.file) }
             ));

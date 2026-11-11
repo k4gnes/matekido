@@ -1055,3 +1055,20 @@
     font-size: 0.68rem;
     color: #555;
 }
+
+/* Felmérések listája a profiloldalon */
+.profile-assessments {
+    margin: 1rem 0;
+}
+
+.profile-assessments h2 {
+    font-size: 1.1rem;
+    margin: 0 0 .4rem;
+}
+
+.profile-assessments ul {
+    margin: 0;
+    padding-left: 1.3rem;
+    font-size: .92rem;
+    line-height: 1.7;
+}

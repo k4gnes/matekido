@@ -154,6 +154,23 @@ A szülői nézet a profil oldalnavbarjából a `👪 Szülői` gombbal nyílik.
 
 ---
 
+## 7b. Felmérés – ⏱️ Időmérő üzemmód
+
+| # | Lépés | Várt eredmény | Eredmény |
+|---|-------|---------------|----------|
+| 7b.1 | Legyen legalább két kedvenc lecke, majd a menüben kattints a `❤️ Kedvenceim (N)` kártyára | Megnyílik a kedvencek listája (a leckék címei) és három gomb: `⏱️ Időmérő`, `🎲 Játék`, `✗ Bezárás` – lecke még nem indul | |
+| 7b.2 | Válaszd a `🎲 Játék`-ot | Pontosan a régi viselkedés: ugyanaz a leckefutás, nincs külön óra, a celebráción van `🔁 Újra` | |
+| 7b.3 | Nyisd meg újra, válaszd az `⏱️ Időmérő`-t | Jobb alul folyamatosan fut az összidő (`⏱️` pill), a kedvencek sorban jönnek | |
+| 7b.4 | Nézd meg a leckék végén a celebrációs képernyőt | Nincs `🔁 Újra` gomb (csak `➡️ Tovább` és a navbar), az idő látszik | |
+| 7b.5 | Az utolsó lecke celebrációján | `📝 Kiértékelés` doboz: összidő, helyes/hibás darabszám, leckénkénti idő és hibaszám; az első futásnál még nincs „Korábbi futások” | |
+| 7b.6 | Indítsd el ugyanezt a kedvenc-listát másodszor, és fejezd be | A kiértékelésben „Korábbi futások” lista dátummal, idővel és hibaszámmal (a legtöbb hibás futás „· legtöbb hiba” jelöléssel), alatta „Előzőhöz képest: hiba: … → … · idő: … → …” | |
+| 7b.7 | Nyisd meg a Profil oldalt | `📝 Felmérések` lista: dátum, kedvencek száma, összidő, hibák – a korábbi futások visszanézhetők (legfeljebb 30) | |
+| 7b.8 | Felmérés közben kattints a `📚 Leckék` (kilépés) gombra, és nézd a menüt | Az óra eltűnik, nem marad lebegő időmérő a menü felett | |
+
+*(A felmérés csak a kedvencek listájáról indul; a szülői „Kedvencek listája” panel továbbra is rejtve.)*
+
+---
+
 ## 8. Játékosváltás és profilok
 
 | # | Lépés | Várt eredmény | Eredmény |

@@ -24,6 +24,7 @@ const DEFAULT_PROFILE = {
     skippedLessons: [],
     skippedCustomLessons: [],
     menuPrefs: null,
+    assessments: [],
     statistics: {
         addition: { correct: 0, wrong: 0 },
         subtraction: { correct: 0, wrong: 0 },
@@ -431,6 +432,8 @@ function mergeProfiles(local, incoming) {
         skippedLessons: unionList(local.skippedLessons, incoming.skippedLessons),
         skippedCustomLessons: unionList(local.skippedCustomLessons, incoming.skippedCustomLessons),
         menuPrefs: local.menuPrefs ?? incoming.menuPrefs ?? null,
+        // a felmérési lista az eszközön marad: a import nem törölheti
+        assessments: local.assessments ?? incoming.assessments ?? [],
         statistics: mergeCounters(local.statistics, incoming.statistics),
         skillStats: mergeCounters(local.skillStats, incoming.skillStats),
         doneCustomLessons: unionList(local.doneCustomLessons, incoming.doneCustomLessons),

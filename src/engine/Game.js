@@ -1,4 +1,5 @@
 import { renderScene } from "../components/scene.js?v=12";
+import { mountTimer, runSeconds, recordRunLesson, finishRun, previousRuns } from "../utils/assessment.js?v=1";
 import { createInstructionHelp } from "../components/ui/instruction.js?v=4";
 import { findHintButton } from "../components/ui/hintBox.js?v=3";
 import { createExitButton } from "../components/ui/exit.js";
@@ -240,13 +241,13 @@ const COUNTED_TYPES = new Set([
 const isCounted = s => COUNTED_TYPES.has(s.type);
 
 
-import { renderCelebration } from "../components/celebration.js?v=16";
+import { renderCelebration } from "../components/celebration.js?v=17";
 import { renderProgress } from "../components/progress.js?v=4";
 import { renderMissingProgress } from "../components/missingProgress.js?v=4";
 import { renderComparisonProgress } from "../components/comparisonProgress.js?v=4";
 import { renderNeighborProgress } from "../components/neighborProgress.js?v=4";
 
-import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, recordLessonPractice, recordSkillResult, recordCustomDoneLesson, resolveSkippedLesson, getLessonStats, getActiveWorld, isFavoriteLesson, toggleFavoriteLesson, resolveLessonGrade } from "../profile/Profile.js";
+import { completeLesson, recordDailyResult, recordPerfectLesson, recordLessonResult, recordLessonPractice, recordSkillResult, recordCustomDoneLesson, resolveSkippedLesson, getLessonStats, getActiveWorld, isFavoriteLesson, toggleFavoriteLesson, resolveLessonGrade, recordAssessment, getAssessments } from "../profile/Profile.js";
 import { getActiveId, listPlayers } from "../profile/UserManager.js";
 import { curriculumSort } from "../data/curriculum.js";
 import { grantRewards } from "../profile/RewardService.js";
@@ -416,7 +417,7 @@ const RENDERERS = new Map([
 
 export class Game {
 
-    constructor(lesson, root, actions = {}, lessonFile = null, skill = null, lessonIndex = null, source = null, lessonPool = null) {
+    constructor(lesson, root, actions = {}, lessonFile = null, skill = null, lessonIndex = null, source = null, lessonPool = null, mode = null) {
 
         this.lesson = lesson;
         this.root = root;
@@ -425,6 +426,7 @@ export class Game {
         this.lessonIndex = lessonIndex;
         this.source = source;
         this.lessonPool = lessonPool;
+        this.mode = mode;
         this.currentStep = 0;
         this.instructionTitle = null;
         this.instructionText = null;
@@ -435,9 +437,12 @@ export class Game {
         this.startedAt = null;
         this.componentCleanup = null;
         this.stopNumberWatch = null;
+        this.stopTimer = null;
+        this.cachedEvaluation = null;
 
         const leave = (action) => action ? (...args) => {
             this.cleanupComponent();
+            this.stopAssessmentTimer();
             action(...args);
         } : action;
 
@@ -513,7 +518,18 @@ export class Game {
     }
 
     start() {
+
+        if (this.mode === "assessment") {
+            this.stopTimer = mountTimer(() => runSeconds(this.elapsedSeconds() ?? 0));
+        }
+
         this.render();
+    }
+
+    stopAssessmentTimer() {
+        if (!this.stopTimer) return;
+        this.stopTimer();
+        this.stopTimer = null;
     }
 
     next() {
@@ -584,6 +600,8 @@ export class Game {
 
     finishLesson() {
 
+        this.stopAssessmentTimer();
+
         const practice = !this.lesson.steps.some(isCounted);
         let milestone = null;
         let reward = null;
@@ -591,6 +609,17 @@ export class Game {
 
         if (this.lesson.completed) {
             return { practice, milestone, reward, gradeJustCompleted };
+        }
+
+        // Felmérés: leckénként rögzítjük az időt és a helyes/hibás válaszokat.
+        if (this.mode === "assessment") {
+            recordRunLesson({
+                file: this.lessonFile,
+                title: this.getLessonTitle() ?? this.lessonFile,
+                seconds: this.elapsedSeconds() ?? 0,
+                correct: this.correct,
+                wrong: this.wrong
+            });
         }
 
         const gradeWasComplete = this.isGradeComplete();
@@ -629,6 +658,31 @@ export class Game {
         return { practice, milestone, reward, gradeJustCompleted };
     }
 
+    // Felmérésben nincs „Újra” gomb, a futás legutolsó leckéjénél pedig jön a kiértékelés.
+    celebrationOptions() {
+
+        const options = { hideRestart: this.mode === "assessment" };
+
+        if (this.mode !== "assessment" || this.cachedEvaluation) {
+            if (this.cachedEvaluation) options.evaluation = this.cachedEvaluation;
+            return options;
+        }
+
+        const pos = this.getLessonPosition();
+        if (pos && pos.position !== pos.total) return options;
+
+        const summary = finishRun();
+        if (!summary || summary.lessons.length === 0) return options;
+
+        recordAssessment(summary);
+
+        const history = previousRuns(getAssessments(), summary.key, summary.startedAt);
+        this.cachedEvaluation = { summary, history };
+        options.evaluation = this.cachedEvaluation;
+
+        return options;
+    }
+
     renderStep() {
 
         this.cleanupComponent();
@@ -660,7 +714,8 @@ export class Game {
                 this.lessonIndex,
                 null,
                 null,
-                this.elapsedSeconds()
+                this.elapsedSeconds(),
+                this.celebrationOptions()
             );
 
             return;
@@ -714,7 +769,7 @@ export class Game {
                 onStats: this.onStats,
                 onHelp: this.onHelp,
                 onNext: gradeJustCompleted && this.onGradeComplete ? this.onGradeComplete : this.onNext
-            }, milestone, reward, getActiveWorld(), this.lessonIndex, this.getLessonTitle(), this.getLessonGradeLabel(), this.elapsedSeconds());
+            }, milestone, reward, getActiveWorld(), this.lessonIndex, this.getLessonTitle(), this.getLessonGradeLabel(), this.elapsedSeconds(), this.celebrationOptions());
 
             return;
         }

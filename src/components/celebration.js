@@ -2,15 +2,61 @@ import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createNavBar } from "./ui/navbar.js";
 import { getAllWorlds } from "../world/WorldRegistry.js";
+import { formatDuration, worstRunIndex, compareText } from "../utils/assessment.js?v=1";
 
-function formatDuration(seconds) {
-    if (seconds < 60) return `${seconds} mp`;
-    const minutes = Math.floor(seconds / 60);
-    const rest = seconds % 60;
-    return `${minutes}:${String(rest).padStart(2, "0")}`;
+// A felmérés rövid kiértékelése: az összidő, a hibák, leckénkénti bontás,
+// majd a korábbi futások idővel és hibaszámmal (a legtöbb hibás jelölve).
+function renderEvaluation({ summary, history }) {
+
+    const box = document.createElement("section");
+    box.className = "assessment-eval";
+
+    const title = document.createElement("h2");
+    title.textContent = "📝 Kiértékelés";
+    box.append(title);
+
+    const totals = document.createElement("p");
+    totals.className = "assessment-eval-totals";
+    totals.textContent = `⏱️ ${formatDuration(summary.seconds)} · ✅ ${summary.correct} helyes · ❌ ${summary.wrong} hiba`;
+    box.append(totals);
+
+    const lessons = document.createElement("ul");
+    summary.lessons.forEach((lesson, index) => {
+        const item = document.createElement("li");
+        item.textContent = `${index + 1}. ${lesson.title ?? lesson.file} – ⏱ ${formatDuration(lesson.seconds)} · ❌ ${lesson.wrong ?? 0}`;
+        lessons.append(item);
+    });
+    box.append(lessons);
+
+    if (history.length > 0) {
+
+        const heading = document.createElement("h3");
+        heading.textContent = "Korábbi futások";
+        box.append(heading);
+
+        const worst = worstRunIndex(history);
+        const list = document.createElement("ul");
+        history.forEach((run, index) => {
+            const item = document.createElement("li");
+            const when = new Date(run.startedAt).toLocaleDateString("hu-HU");
+            item.textContent = `${when} · ⏱ ${formatDuration(run.seconds)} · ❌ ${run.wrong ?? 0}`
+                + (index === worst ? " · legtöbb hiba" : "");
+            list.append(item);
+        });
+        box.append(list);
+
+        const compare = document.createElement("p");
+        compare.className = "assessment-eval-compare";
+        compare.textContent = `Előzőhöz képest: ${compareText(summary, history[0])}`;
+        box.append(compare);
+
+    }
+
+    return box;
+
 }
 
-export function renderCelebration(step, root, actions = {}, milestone, reward, activeWorld, lessonIndex, lessonTitle, gradeLabel, elapsedSeconds) {
+export function renderCelebration(step, root, actions = {}, milestone, reward, activeWorld, lessonIndex, lessonTitle, gradeLabel, elapsedSeconds, options = {}) {
 
     root.replaceChildren();
 
@@ -90,9 +136,11 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
     buttons.className = "celebration-buttons";
 
     if (nextButton) buttons.append(nextButton);
-    buttons.append(restartButton);
+    if (!options.hideRestart) buttons.append(restartButton);
 
     card.append(buttons);
+
+    if (options.evaluation) card.append(renderEvaluation(options.evaluation));
 
     if (reward && reward.totalStars > 0) {
 

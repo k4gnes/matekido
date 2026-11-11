@@ -1,5 +1,5 @@
 import { renderScene } from "../components/scene.js?v=12";
-import { mountTimer, runSeconds, recordRunLesson, finishRun, previousRuns } from "../utils/assessment.js?v=2";
+import { mountTimer, runSeconds, recordRunLesson, finishRun, previousRuns } from "../utils/assessment.js?v=3";
 import { createInstructionHelp } from "../components/ui/instruction.js?v=4";
 import { findHintButton } from "../components/ui/hintBox.js?v=3";
 import { createExitButton } from "../components/ui/exit.js";
@@ -241,7 +241,7 @@ const COUNTED_TYPES = new Set([
 const isCounted = s => COUNTED_TYPES.has(s.type);
 
 
-import { renderCelebration } from "../components/celebration.js?v=18";
+import { renderCelebration } from "../components/celebration.js?v=19";
 import { renderProgress } from "../components/progress.js?v=4";
 import { renderMissingProgress } from "../components/missingProgress.js?v=4";
 import { renderComparisonProgress } from "../components/comparisonProgress.js?v=4";

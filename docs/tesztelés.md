@@ -167,7 +167,22 @@ A szülői nézet a profil oldalnavbarjából a `👪 Szülői` gombbal nyílik.
 | 7b.7 | Nyisd meg a Profil oldalt | A `🏆 Teljesítmények` szekció **alatt, a bal oldali oszlopban** ott a `📝 Felmérések` lista, **kétoszlopos sorokkal**: balra a dátum + kedvencek száma, jobbra egybezártan `⏱ idő · ✅ helyes · ❌ hibás` (egyik szám sem törik át új sorra) – a sor fölé vive az egeret tooltip mutatja, **mely kedvenc leckékből** állt a felmérés (listajelöléssel); a korábbi futások visszanézhetők (legfeljebb 30) | |
 | 7b.8 | Felmérés közben kattints a `📚 Leckék` (kilépés) gombra, és nézd a menüt | Az óra eltűnik, nem marad lebegő időmérő a menü felett | |
 
-*(A felmérés csak a kedvencek listájáról indul; a szülői „Kedvencek listája” panel továbbra is rejtve.)*
+*(A felmérés a kedvencek és a 📝 Felmérő lista listájáról indul; a szülői „Kedvencek listája” panel továbbra is rejtve.)*
+
+---
+
+## 7c. Felmérő lista – szülői pipa a Témakörökben
+
+| # | Lépés | Várt eredmény | Eredmény |
+|---|-------|---------------|----------|
+| 7c.1 | Szülői rész → 📚 Témakörök → válassz egy évfolyamot | A tananyagtábla leckesorai mellett pipa van, fölöttük a „📝 Felmérő lista: 0 lecke ebből az évfolyamból · összesen 0 a listában” sor | |
+| 7c.2 | Pipálj ki három leckét | A pipák bekapcsolódnak, a fejléc száma nő (helyben és összesen is); ha ugyanaz a lecke több sorban is szerepel, a pipák együtt mozdulnak | |
+| 7c.3 | Menj vissza a gyerek menüjébe | A `❤️ Kedvenceim` és a `🌟 Mester kihívás` között ott a `📝 Felmérő (3)` kártya | |
+| 7c.4 | Kattints a `📝 Felmérő (3)` kártyára | Ugyanaz a választó, mint a kedvenceknél (`Kezdjük!`, `⏱️ Időmérő`, `✗ Bezárás`), a címe `📝 Felmérő (3)` | |
+| 7c.5 | Válaszd az `⏱️ Időmérő`-t, és fejezd be a listát | Felmérés fut (jobb alul az óra, a végén `📝 Kiértékelés`), a Profil `📝 Felmérések` listáján a sor felirata „3 felmérő” – nem „3 kedvenc” | |
+| 7c.6 | Válaszd a `Kezdjük!`-t | Pontosan a régi gyakorlás: nincs külön óra, a celebráción van `🔁 Újra` | |
+| 7c.7 | Vedd ki a pipát az összes leckéből | A `📝 Felmérő` kártya eltűnik a menüből (üres listával nem jelenik meg), a kedvencek és a mester kihívás a helyén marad | |
+| 7c.8 | Profilok átvitele: mentsd el a profilt fájlba, majd importáld ugyanazt | A felmérő lista nem vész el – importkor csak bővülhet, törlést nem okozhat | |
 
 ---
 

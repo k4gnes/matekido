@@ -105,6 +105,8 @@ A [**🎯 Gyakorlásra javasolt**](#gyakorlas-a-gyengebb-es-a-regen-gyakorolt-le
 
 Az évfolyamonkénti **tananyagtérkép**: megmutatja, milyen feladatok és témakörök tartoznak az adott osztály tananyagába, így előre átlátod, mi következik.
 
+A leckesorok melletti **pipával** kiválaszthatod, mely leckékből álljon a **📝 Felmérő lista**: ez a gyerek menüjében a kedvencek mögé, a mester kihívás elé kerül, és ugyanúgy gyakorolható (`Kezdjük!`) vagy felmérhető (`⏱️ Időmérő`), mint a kedvencek.
+
 ![A Témakörök – évfolyamonkénti tananyagtérkép](/docs/temakorok.png)
 
 ### 💾 Profilok átvitele

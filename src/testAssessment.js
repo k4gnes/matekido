@@ -24,7 +24,7 @@ const {
     runTooltip
 } = await import("./utils/assessment.js");
 const { createPlayer } = await import("./profile/UserManager.js");
-const { recordAssessment, getAssessments } = await import("./profile/Profile.js");
+const { recordAssessment, getAssessments, getAssessmentLessons, isInAssessmentList, toggleAssessmentLesson } = await import("./profile/Profile.js");
 
 let failures = 0;
 
@@ -64,6 +64,11 @@ check(finishRun(60000) === null, "a futás egyszer zárható le");
 recordRunLesson({ file: "c.json", seconds: 10, correct: 1, wrong: 0 });
 check(finishRun(60000) === null, "lezárt futásba nem jön új lecke");
 
+// A felmérő lista futása más felirattal ment, mint a kedvenc-listáé
+beginRun(["a.json", "b.json"], 1000, "2 felmérő");
+check(finishRun(60000).label === "2 felmérő", "a felmérő futás felirata");
+check(finishRun(60000) === null, "a felmérő futás is egyszer zárható le");
+
 // Korábbi futások ugyanarra a halmazra
 const older = [
     { key: summary.key, startedAt: 30, wrong: 3, seconds: 200 },
@@ -92,6 +97,13 @@ check(runTooltip(null) === "", "adat nélkül üres tooltip");
 
 // Profilba mentett lista: legelöl az új, legfeljebb 30 tétel
 createPlayer("Felmérő", "🦊", 1);
+
+// A szülői felmérő lista: pipa be és ki a Témakörök listájáról
+check(getAssessmentLessons().length === 0, "üres felmérő lista");
+check(toggleAssessmentLesson("a.json") === true, "a pipa bekapcsol");
+check(isInAssessmentList("a.json"), "a kiválasztott lecke a listában van");
+check(toggleAssessmentLesson("a.json") === false, "a pipa kikapcsol");
+check(getAssessmentLessons().length === 0, "a kivett lecke nincs a listában");
 
 for (let i = 0; i < 33; i++) {
     recordAssessment({ ...summary, startedAt: i });
@@ -144,6 +156,14 @@ check(chosen === null, "még nincs választás gombnyomás nélkül");
 
 chooserButtons[1].handlers.click();
 check(chosen === "assessment", "az Időmérő felmérésként indul");
+
+// A felmérő lista választója saját címmel nyílik
+openFavoritesChooser({
+    lessons: [{ file: "a.json", title: "Szorzótábla" }],
+    heading: "📝 Felmérő (1)",
+    onChoose: () => {}
+});
+check(document.body.children[1].children[0].textContent === "📝 Felmérő (1)", "a felmérő választó címe");
 
 if (failures > 0) {
     console.error(`\nHIBA: ${failures} ellenőrzés bukott meg.`);

@@ -1,8 +1,9 @@
 import { createButton } from "./ui/button.js";
 
-// A kedvencek listájának megnyitásakor jelenik meg: időmérő felmérés vagy a
-// megszokott gyakorlás közül lehet választani, mielőtt az első lecke elindul.
-export function openFavoritesChooser({ lessons, onChoose }) {
+// A lista megnyitásakor jelenik meg: időmérő felmérés vagy a megszokott
+// gyakorlás közül lehet választani, mielőtt az első lecke elindul.
+// A `heading` a lista címe (kedvencek vagy felmérő), nélküle a kedvenceké jön.
+export function openFavoritesChooser({ lessons, onChoose, heading = null }) {
 
     document.querySelector(".favorites-chooser")?.remove();
 
@@ -10,7 +11,7 @@ export function openFavoritesChooser({ lessons, onChoose }) {
     area.className = "favorites-chooser";
 
     const title = document.createElement("h2");
-    title.textContent = `❤️ Kedvenceim (${lessons.length})`;
+    title.textContent = heading ?? `❤️ Kedvenceim (${lessons.length})`;
     area.append(title);
 
     const list = document.createElement("ol");

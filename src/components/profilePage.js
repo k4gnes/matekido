@@ -1,7 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createNavBar } from "./ui/navbar.js";
 import { loadProfile, getNextGoal, getActiveWorld, setActiveWorld, getLessonStats, getActiveGrade, getDailyStats, getAssessments } from "../profile/Profile.js";
-import { formatDuration, runTooltip } from "../utils/assessment.js?v=2";
+import { formatDuration, runTooltip } from "../utils/assessment.js?v=3";
 import { ACHIEVEMENTS, getUnlockedAchievements } from "../profile/Achievements.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getAllWorlds } from "../world/WorldRegistry.js";

@@ -310,6 +310,42 @@ export function toggleFavoriteLesson(lessonFile) {
 
 }
 
+// A 📝 Felmérő lista: a szülő a Témakörök tananyagtáblájáról pipálja ki a leckéket.
+export function getAssessmentLessons() {
+
+    const profile = loadProfile();
+    return Array.isArray(profile.assessmentLessons) ? profile.assessmentLessons : [];
+
+}
+
+export function isInAssessmentList(lessonFile) {
+
+    return getAssessmentLessons().includes(lessonFile);
+
+}
+
+export function toggleAssessmentLesson(lessonFile) {
+
+    const profile = loadProfile();
+
+    if (!Array.isArray(profile.assessmentLessons)) {
+        profile.assessmentLessons = [];
+    }
+
+    const idx = profile.assessmentLessons.indexOf(lessonFile);
+
+    if (idx >= 0) {
+        profile.assessmentLessons.splice(idx, 1);
+    } else {
+        profile.assessmentLessons.push(lessonFile);
+    }
+
+    saveProfile(profile);
+
+    return isInAssessmentList(lessonFile);
+
+}
+
 export function getSkippedLessons(context) {
 
     const profile = loadProfile();

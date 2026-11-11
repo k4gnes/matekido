@@ -2,7 +2,7 @@ import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { createNavBar } from "./ui/navbar.js";
 import { getAllWorlds } from "../world/WorldRegistry.js";
-import { formatDuration, worstRunIndex, compareText, runTooltip } from "../utils/assessment.js?v=2";
+import { formatDuration, worstRunIndex, compareText, runTooltip } from "../utils/assessment.js?v=3";
 
 // A felmérés rövid kiértékelése: az összidő, a hibák, leckénkénti bontás,
 // majd a korábbi futások idővel és hibaszámmal (a legtöbb hibás jelölve).

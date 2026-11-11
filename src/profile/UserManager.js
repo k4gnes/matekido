@@ -21,6 +21,7 @@ const DEFAULT_PROFILE = {
     dailyStats: {},
     lessonStats: {},
     favorites: [],
+    assessmentLessons: [],
     skippedLessons: [],
     skippedCustomLessons: [],
     menuPrefs: null,
@@ -429,6 +430,8 @@ function mergeProfiles(local, incoming) {
         dailyStats: mergeDailyStats(local.dailyStats, incoming.dailyStats),
         lessonStats: mergeLessonStats(local.lessonStats, incoming.lessonStats),
         favorites: unionList(local.favorites, incoming.favorites),
+        // a felmérő lista csak bővülhet importkor, törlést nem okozhat
+        assessmentLessons: unionList(local.assessmentLessons, incoming.assessmentLessons),
         skippedLessons: unionList(local.skippedLessons, incoming.skippedLessons),
         skippedCustomLessons: unionList(local.skippedCustomLessons, incoming.skippedCustomLessons),
         menuPrefs: local.menuPrefs ?? incoming.menuPrefs ?? null,

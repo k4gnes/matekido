@@ -1,6 +1,7 @@
 import { createButton } from "./ui/button.js";
 import { createCard } from "./ui/card.js";
 import { renderMarkdown } from "../utils/markdown.js?v=16";
+import { getAssessmentLessons, toggleAssessmentLesson } from "../profile/Profile.js";
 
 const DOCS = [
     { id: "elso-osztaly", emoji: "🌱", label: "1. osztály", desc: "45 lecke – számfogalom, válogatás, valószínűség, naptár, mérések, geometria, mester kihívás" },
@@ -97,11 +98,66 @@ export function renderSkillMap(root, onBack) {
                 throw new Error(`HTTP ${response.status}`);
             }
             body.innerHTML = renderMarkdown(await response.text());
+            addAssessmentChecks(body);
         } catch {
             body.innerHTML = "<p>A dokumentum most nem tölthető be. Próbáld újra később!</p>";
         }
 
     }
+
+}
+
+// A kirajzolt tananyagtábla leckesorai mellé kerülő pipa: ezekből áll a
+// 📝 Felmérő lista, amit a menüben a kedvencek után lehet megnyitni.
+function addAssessmentChecks(body) {
+
+    const entries = [];
+
+    body.querySelectorAll("a.lesson-link[href^='?lesson=']").forEach(link => {
+        const cell = link.closest("td");
+        if (!cell) return;
+        entries.push({ link, cell, file: link.getAttribute("href").slice("?lesson=".length) });
+    });
+
+    if (entries.length === 0) return;
+
+    const picked = new Set(getAssessmentLessons());
+    const boxes = new Map();
+
+    const note = document.createElement("p");
+    note.className = "felmero-note";
+
+    const refresh = () => {
+        // soronként számolná a duplát, ezért a fájlok számítanak, mint a menüben
+        const here = new Set(entries.map(e => e.file).filter(f => picked.has(f))).size;
+        note.textContent = `📝 Felmérő lista: ${here} lecke ebből az évfolyamból · összesen ${picked.size} a listában`;
+    };
+
+    entries.forEach(({ link, cell, file }) => {
+
+        const box = document.createElement("input");
+        box.type = "checkbox";
+        box.className = "felmero-check";
+        box.checked = picked.has(file);
+        box.setAttribute("aria-label", `Felmérő: ${link.textContent}`);
+
+        box.addEventListener("change", () => {
+            const on = toggleAssessmentLesson(file);
+            if (on) picked.add(file);
+            else picked.delete(file);
+            // ugyanaz a lecke több sorban is szerepelhet: a pipák együtt mozdulnak
+            (boxes.get(file) ?? []).forEach(other => { other.checked = on; });
+            refresh();
+        });
+
+        if (!boxes.has(file)) boxes.set(file, []);
+        boxes.get(file).push(box);
+
+        cell.prepend(box);
+    });
+
+    body.prepend(note);
+    refresh();
 
 }
 

@@ -23,12 +23,15 @@ export function runKey(files) {
 
 }
 
-export function beginRun(files, startedAt = Date.now()) {
+// A `label` a lista neve a mentett futáson ("5 kedvenc", "5 felmérő"); nélküle
+// a régi kedvenc-felirat marad.
+export function beginRun(files, startedAt = Date.now(), label = null) {
 
     run = {
         key: runKey(files),
         files: [...(files ?? [])],
         startedAt,
+        label,
         lessons: [],
         timeBefore: 0,
         finished: false
@@ -69,7 +72,7 @@ export function finishRun(now = Date.now()) {
     return {
         key: run.key,
         files: [...run.files],
-        label: `${run.files.length} kedvenc`,
+        label: run.label ?? `${run.files.length} kedvenc`,
         startedAt: run.startedAt,
         finishedAt: now,
         date: new Date(now).toISOString().slice(0, 10),

@@ -1,7 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createNavBar } from "./ui/navbar.js";
 import { loadProfile, getNextGoal, getActiveWorld, setActiveWorld, getLessonStats, getActiveGrade, getDailyStats, getAssessments } from "../profile/Profile.js";
-import { formatDuration, runTooltip, sortRunsByList } from "../utils/assessment.js?v=5";
+import { formatDuration } from "../utils/assessment.js?v=6";
 import { ACHIEVEMENTS, getUnlockedAchievements } from "../profile/Achievements.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
 import { getAllWorlds } from "../world/WorldRegistry.js";
@@ -21,7 +21,7 @@ function getGradeProgress(lessonIndex, grade) {
     return { total, done, completed: total > 0 && done === total };
 }
 
-export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, onSwitch, onParent }) {
+export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, onSwitch, onParent, onAssessments }) {
 
     root.replaceChildren();
 
@@ -251,7 +251,7 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
                 setActiveWorld(world.id);
                 document.body.dataset.world = world.id;
                 document.body.dataset.worldTheme = world.id;
-                renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, onSwitch, onParent });
+                renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, onSwitch, onParent, onAssessments });
             });
         }
 
@@ -260,54 +260,47 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
 
     achWorldRow.append(achievementSection, worldSection);
 
-    // Felmérések (⏱️ Időmérő) táblázata: egy futás = egy sor, minden adat külön
-    // oszlopban (kezdés, lista, idő, helyes, hiba). A Teljesítmények + Világok
-    // blokk ALÁ kerül, teljes szélességben (a CSS grid-areas rendezi).
+    // 📝 Felmérések: a táblázat külön oldalon van, itt csak egy kattintható sor
+    // visz oda – így a profil nem nyomódik el a sok sorral.
     const assessments = getAssessments();
 
     if (assessments.length > 0) {
 
-        const assessmentSection = document.createElement("div");
-        assessmentSection.className = "profile-assessments";
+        const link = document.createElement("button");
+        link.type = "button";
+        link.className = "profile-assessments profile-assessments-link";
 
-        const assessmentTitle = document.createElement("h2");
-        assessmentTitle.textContent = "📝 Felmérések";
-        assessmentSection.append(assessmentTitle);
+        const icon = document.createElement("span");
+        icon.className = "world-icon";
+        icon.textContent = "📝";
 
-        const cell = (className, text) => {
-            const td = document.createElement("td");
-            td.className = className;
-            td.textContent = text;
-            return td;
-        };
+        const info = document.createElement("div");
+        info.className = "world-info";
 
-        const table = document.createElement("table");
-        table.className = "assessment-table";
+        const name = document.createElement("span");
+        name.className = "world-name";
+        name.textContent = "Felmérések";
 
-        // lista neve szerint csoportosítva, azonos néven belül a legfrissebb felül
-        sortRunsByList(assessments.slice(0, 10)).forEach(run => {
-            const row = document.createElement("tr");
+        // a legfrissebb futás áll elől (a mentés unshift-tel teszi az élére)
+        const lastDate = assessments[0]?.startedAt
+            ? new Date(assessments[0].startedAt).toLocaleString("hu-HU")
+            : "";
+        const totalSeconds = assessments.reduce((sum, run) => sum + (run.seconds ?? 0), 0);
 
-            const started = run.startedAt ? new Date(run.startedAt).toLocaleString("hu-HU") : "";
-            const label = run.label ?? "";
-            const heading = label ? `${started} · ${label}` : started;
+        const desc = document.createElement("span");
+        desc.className = "world-desc";
+        desc.textContent = `${assessments.length} futás${lastDate ? ` · legutóbb: ${lastDate}` : ""} · ⏱ ${formatDuration(totalSeconds)}`;
 
-            // tooltip: mely leckékből állt a felmérés
-            row.title = runTooltip(run, heading);
+        info.append(name, desc);
 
-            row.append(
-                cell("assessment-when", started),
-                cell("assessment-label", label),
-                cell("assessment-nums", `⏱ ${formatDuration(run.seconds)}`),
-                cell("assessment-nums", `✅ ${run.correct ?? 0}`),
-                cell("assessment-nums", `❌ ${run.wrong ?? 0}`)
-            );
-            table.append(row);
-        });
+        const arrow = document.createElement("span");
+        arrow.className = "world-sun";
+        arrow.textContent = "›";
 
-        assessmentSection.append(table);
+        link.append(icon, info, arrow);
+        link.addEventListener("click", () => onAssessments());
 
-        achWorldRow.append(assessmentSection);
+        achWorldRow.append(link);
 
     }
 

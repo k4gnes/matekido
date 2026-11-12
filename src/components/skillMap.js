@@ -1,9 +1,10 @@
 import { createButton } from "./ui/button.js";
 import { createCard } from "./ui/card.js";
 import { renderMarkdown } from "../utils/markdown.js?v=16";
-import { getAssessmentLessons, toggleAssessmentLesson } from "../profile/Profile.js";
+import { getAssessmentLists, createAssessmentList, removeAssessmentList, isInAssessmentList, toggleAssessmentLesson } from "../profile/AssessmentLists.js?v=1";
 
-const DOCS = [
+// Az évfolyamok sorrendje 1-től 8-ig: az index+1 az évfolyamszám.
+export const DOCS = [
     { id: "elso-osztaly", emoji: "🌱", label: "1. osztály", desc: "45 lecke – számfogalom, válogatás, valószínűség, naptár, mérések, geometria, mester kihívás" },
     { id: "masodik-osztaly", emoji: "🚀", label: "2. osztály", desc: "59 lecke – számok 100-ig, szorzás és osztás, kombinatorika, valószínűség, mester kihívás" },
     { id: "harmadik-osztaly", emoji: "🪐", label: "3. osztály", desc: "49 lecke – számok 1000-ig, írásbeli műveletek, szorzás, osztás, szöveges feladatok, geometria, mester kihívás" },
@@ -14,7 +15,7 @@ const DOCS = [
     { id: "nyolcadik-osztaly", emoji: "🎓", label: "8. osztály", desc: "36 lecke + 1 mester + 2 egyperces – halmazok, számelmélet, hatvány, négyzetgyök, logika, kombinatorika, gráfok, algebra, egyenletek, arány, százalék, függvények, síkgeometria, transzformációk, szerkesztések, térgeometria, statisztika, valószínűség, összefoglalás" }
 ];
 
-export function renderSkillMap(root, onBack) {
+export function renderSkillMap(root, onBack, lessonIndex) {
 
     root.replaceChildren();
 
@@ -38,6 +39,27 @@ export function renderSkillMap(root, onBack) {
         });
     }
 
+    function createChoiceCard(emoji, label, desc, onClick) {
+        const btn = document.createElement("button");
+        btn.className = "skill-map-choice";
+
+        const emojiSpan = document.createElement("span");
+        emojiSpan.className = "skill-map-choice-emoji";
+        emojiSpan.textContent = emoji;
+
+        const name = document.createElement("span");
+        name.className = "skill-map-choice-label";
+        name.textContent = label;
+
+        const hint = document.createElement("span");
+        hint.className = "skill-map-choice-desc";
+        hint.textContent = desc;
+
+        btn.append(emojiSpan, name, hint);
+        btn.addEventListener("click", onClick);
+        return btn;
+    }
+
     function showChoice() {
 
         wrapper.replaceChildren(createBackRow(hubBackButton()));
@@ -53,38 +75,45 @@ export function renderSkillMap(root, onBack) {
         grid.className = "skill-map-grid";
 
         DOCS.forEach(doc => {
-            const btn = document.createElement("button");
-            btn.className = "skill-map-choice";
-
-            const emoji = document.createElement("span");
-            emoji.className = "skill-map-choice-emoji";
-            emoji.textContent = doc.emoji;
-
-            const name = document.createElement("span");
-            name.className = "skill-map-choice-label";
-            name.textContent = doc.label;
-
-            const desc = document.createElement("span");
-            desc.className = "skill-map-choice-desc";
-            desc.textContent = doc.desc;
-
-            btn.append(emoji, name, desc);
-            btn.addEventListener("click", () => showDoc(doc));
-            grid.append(btn);
+            grid.append(createChoiceCard(doc.emoji, doc.label, doc.desc, () => showGradeChoice(doc)));
         });
 
         wrapper.append(title, subtitle, grid, createFooter());
 
     }
 
+    // Az évfolyam-kártya után két út: a tanmenet (olvasás) és a felmérők (pipálás).
+    function showGradeChoice(doc) {
+
+        wrapper.replaceChildren(createBackRow(createBackButton("⬅️ Vissza", showChoice)));
+
+        const title = document.createElement("h1");
+        title.textContent = `${doc.emoji} ${doc.label}`;
+
+        const subtitle = document.createElement("p");
+        subtitle.className = "skill-map-subtitle";
+        subtitle.textContent = "Mit szeretnél megnyitni?";
+
+        const grid = document.createElement("div");
+        grid.className = "skill-map-grid";
+
+        grid.append(
+            createChoiceCard("📚", "Tanmenet lista", "Az évfolyam teljes tananyaga, olvasható formában.", () => showDoc(doc)),
+            createChoiceCard("📝", "Felmérők megadása", "Nevet adni a felmérőknek, és kipipálni a hozzájuk tartozó leckéket.", () => showAssessments(doc))
+        );
+
+        wrapper.append(title, subtitle, grid);
+
+    }
+
     async function showDoc(doc) {
 
         wrapper.replaceChildren(createBackRow(
-            createBackButton("⬅️ Vissza", showChoice)
+            createBackButton("⬅️ Vissza", () => showGradeChoice(doc))
         ));
 
         const title = document.createElement("h1");
-        title.textContent = `${doc.emoji} ${doc.label} – témakörök`;
+        title.textContent = `${doc.emoji} ${doc.label} – tanmenet`;
 
         const body = document.createElement("div");
         body.className = "skill-map-body";
@@ -98,66 +127,214 @@ export function renderSkillMap(root, onBack) {
                 throw new Error(`HTTP ${response.status}`);
             }
             body.innerHTML = renderMarkdown(await response.text());
-            addAssessmentChecks(body);
         } catch {
             body.innerHTML = "<p>A dokumentum most nem tölthető be. Próbáld újra később!</p>";
         }
 
     }
 
-}
+    async function showAssessments(doc) {
 
-// A kirajzolt tananyagtábla leckesorai mellé kerülő pipa: ezekből áll a
-// 📝 Felmérő lista, amit a menüben a kedvencek után lehet megnyitni.
-// A `?lesson=` hivatkozás a lecke id-ja, ezt tároljuk (lásd resolveAssessmentLessons).
-function addAssessmentChecks(body) {
+        // a DOCS az 1–8. osztály sorrendjében van
+        const grade = DOCS.indexOf(doc) + 1;
 
-    const entries = [];
+        wrapper.replaceChildren(createBackRow(
+            createBackButton("⬅️ Vissza", () => showGradeChoice(doc))
+        ));
 
-    body.querySelectorAll("a.lesson-link[href^='?lesson=']").forEach(link => {
-        const cell = link.closest("td");
-        if (!cell) return;
-        entries.push({ link, cell, id: link.getAttribute("href").slice("?lesson=".length) });
-    });
+        const title = document.createElement("h1");
+        title.textContent = `${doc.emoji} ${doc.label} – felmérő listák`;
 
-    if (entries.length === 0) return;
+        const listBar = document.createElement("div");
+        listBar.className = "felmero-lists";
 
-    const initial = new Set(getAssessmentLessons());
-    const boxes = new Map();
+        const note = document.createElement("p");
+        note.className = "felmero-note";
 
-    const note = document.createElement("p");
-    note.className = "felmero-note";
+        const body = document.createElement("div");
+        body.className = "skill-map-body";
+        body.innerHTML = "<p class='skill-map-loading'>Betöltés…</p>";
 
-    // a számláló a tároltból olvas, nem memóriából: ha a mentés nem sikerül, azonnal látszik
-    const refresh = () => {
-        const picked = new Set(getAssessmentLessons());
-        const here = new Set(entries.map(e => e.id).filter(id => picked.has(id))).size;
-        note.textContent = `📝 Felmérő lista: ${here} lecke ebből az évfolyamból · összesen ${picked.size} a listában`;
-    };
+        wrapper.append(title, listBar, note, body);
 
-    entries.forEach(({ link, cell, id }) => {
+        let activeId = getAssessmentLists(grade)[0]?.id ?? null;
+        const boxes = new Map();
+        const entries = [];
 
-        const box = document.createElement("input");
-        box.type = "checkbox";
-        box.className = "felmero-check";
-        box.checked = initial.has(id);
-        box.setAttribute("aria-label", `Felmérő: ${link.textContent}`);
+        function currentList() {
+            return getAssessmentLists(grade).find(list => list.id === activeId) ?? null;
+        }
 
-        box.addEventListener("change", () => {
-            const on = toggleAssessmentLesson(id);
-            // ugyanaz a lecke több sorban is szerepelhet: a pipák együtt mozdulnak
-            (boxes.get(id) ?? []).forEach(other => { other.checked = on; });
-            refresh();
+        function refreshNote() {
+            const list = currentList();
+            note.textContent = list
+                ? `📝 ${list.name}: ${list.lessons.length} lecke kijelölve`
+                : "Előbb hozz létre egy listát a „＋ Új lista” gombbal, utána pipáld ki a leckéket.";
+        }
+
+        function syncBoxes() {
+            entries.forEach(({ id }) => {
+                const checked = isInAssessmentList(grade, activeId, id);
+                (boxes.get(id) ?? []).forEach(box => {
+                    box.checked = checked;
+                    box.disabled = !activeId;
+                });
+            });
+        }
+
+        function showNewListForm() {
+
+            if (wrapper.querySelector(".felmero-new")) return;
+
+            const form = document.createElement("div");
+            form.className = "felmero-new";
+
+            const input = document.createElement("input");
+            input.type = "text";
+            input.className = "felmero-new-input";
+            input.maxLength = 40;
+            input.placeholder = "Lista neve, pl. Írásbeli számolás";
+            input.setAttribute("aria-label", "Új felmérő lista neve");
+
+            const save = createButton("Mentés", {
+                className: "nav-bar-btn",
+                onClick: () => {
+                    const list = createAssessmentList(grade, input.value);
+                    if (!list) {
+                        input.focus();
+                        return;
+                    }
+                    activeId = list.id;
+                    form.remove();
+                    renderListBar();
+                    syncBoxes();
+                    refreshNote();
+                }
+            });
+
+            const cancel = createButton("Mégse", {
+                className: "nav-bar-btn",
+                onClick: () => form.remove()
+            });
+
+            input.addEventListener("keydown", event => {
+                if (event.key === "Enter") save.click();
+            });
+
+            form.append(input, save, cancel);
+            listBar.after(form);
+            input.focus();
+
+        }
+
+        function renderListBar() {
+
+            listBar.replaceChildren();
+
+            const lists = getAssessmentLists(grade);
+            if (!lists.some(list => list.id === activeId)) {
+                activeId = lists[0]?.id ?? null;
+            }
+
+            lists.forEach(list => {
+                const chip = document.createElement("button");
+                chip.type = "button";
+                chip.className = "felmero-list-choice" + (list.id === activeId ? " active" : "");
+                chip.textContent = `📝 ${list.name} (${list.lessons.length})`;
+                chip.addEventListener("click", () => {
+                    activeId = list.id;
+                    renderListBar();
+                    syncBoxes();
+                    refreshNote();
+                });
+                listBar.append(chip);
+            });
+
+            listBar.append(createButton("＋ Új lista", {
+                className: "nav-bar-btn",
+                onClick: showNewListForm
+            }));
+
+            if (activeId) {
+                listBar.append(createButton("🗑 Törlés", {
+                    className: "nav-bar-btn",
+                    onClick: () => {
+                        const list = currentList();
+                        if (!list) return;
+                        if (!window.confirm(`Biztosan törlöd a „${list.name}” listát? A benne lévő ${list.lessons.length} kijelölés is eltűnik.`)) {
+                            return;
+                        }
+                        removeAssessmentList(grade, activeId);
+                        activeId = null;
+                        renderListBar();
+                        syncBoxes();
+                        refreshNote();
+                    }
+                }));
+            }
+
+        }
+
+        renderListBar();
+        refreshNote();
+
+        try {
+            const response = await fetch(`/docs/${doc.id}.md`, { cache: "reload" });
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
+            body.innerHTML = renderMarkdown(await response.text());
+        } catch {
+            body.innerHTML = "<p>A dokumentum most nem tölthető be. Próbáld újra később!</p>";
+            return;
+        }
+
+        body.querySelectorAll("a.lesson-link[href^='?lesson=']").forEach(link => {
+            const cell = link.closest("td");
+            if (!cell) return;
+            entries.push({ link, cell, id: link.getAttribute("href").slice("?lesson=".length) });
         });
 
-        if (!boxes.has(id)) boxes.set(id, []);
-        boxes.get(id).push(box);
+        const tasksById = new Map((lessonIndex?.lessons ?? []).map(l => [l.id, l.tasks]));
 
-        cell.prepend(box);
-    });
+        entries.forEach(({ link, cell, id }) => {
 
-    body.prepend(note);
-    refresh();
+            const box = document.createElement("input");
+            box.type = "checkbox";
+            box.className = "felmero-check";
+            box.checked = isInAssessmentList(grade, activeId, id);
+            box.disabled = !activeId;
+            box.setAttribute("aria-label", `Felmérő: ${link.textContent}`);
+
+            box.addEventListener("change", () => {
+                if (!activeId) {
+                    box.checked = false;
+                    return;
+                }
+                const on = toggleAssessmentLesson(grade, activeId, id);
+                // ugyanaz a lecke több sorban is szerepelhet: a pipák együtt mozdulnak
+                (boxes.get(id) ?? []).forEach(other => { other.checked = on; });
+                renderListBar();
+                refreshNote();
+            });
+
+            boxes.set(id, [...(boxes.get(id) ?? []), box]);
+            cell.prepend(box);
+
+            // hány feladatból áll a lecke (az index.json `tasks` mezője)
+            const tasks = tasksById.get(id);
+            if (tasks) {
+                const badge = document.createElement("span");
+                badge.className = "felmero-tasks";
+                badge.textContent = `· ${tasks} feladat`;
+                link.after(badge);
+            }
+
+        });
+
+        refreshNote();
+
+    }
 
 }
 

@@ -3,14 +3,15 @@ import { createButton } from "./ui/button.js";
 import { createNavBar } from "./ui/navbar.js";
 import { loadJSON, loadRaw, removeKeys } from "../storage.js";
 import { listPlayers, getActiveId } from "../profile/UserManager.js";
-import { getLessonStats, getPlayBest, getActiveWorld, getActiveGrade, setActiveGrade, getFavoriteLessons, getAssessmentLessons, getSkippedLessons, isFavoriteLesson, toggleFavoriteLesson, getCustomDoneLessons, getMenuPrefs, saveMenuPrefs } from "../profile/Profile.js";
+import { getLessonStats, getPlayBest, getActiveWorld, getActiveGrade, setActiveGrade, getFavoriteLessons, getSkippedLessons, isFavoriteLesson, toggleFavoriteLesson, getCustomDoneLessons, getMenuPrefs, saveMenuPrefs } from "../profile/Profile.js";
+import { getAssessmentLists } from "../profile/AssessmentLists.js?v=1";
 import { CATEGORIES, SKILLS } from "../data/skills.js";
 import { lessonHasHint } from "../data/hintLessons.js?v=3";
 import { TYPE_EMOJI, TYPE_LABEL } from "../data/types.js?v=25";
 import { curriculumSort } from "../data/curriculum.js";
 import { getPracticeLessonFiles, latestPercentage } from "./practicePage.js?v=14";
 import { openFavoritesChooser } from "./favoritesChooser.js?v=6";
-import { beginRun, resolveAssessmentLessons } from "../utils/assessment.js?v=5";
+import { beginRun, resolveAssessmentLessons } from "../utils/assessment.js?v=6";
 import { gradesWithLessons } from "../utils/grades.js?v=1";
 import { getWorld } from "../world/WorldRegistry.js";
 
@@ -331,10 +332,11 @@ function createPickerSection(title, lessons, onSelect, activeWorld, selectOpts) 
     return card;
 }
 
-// A lista megnyitásakor jön a választás: felmérés (időmérő) vagy a megszokott
+// Csak a felmérő lista nyit választót: felmérés (időmérő) vagy a megszokott
 // gyakorlás. A felmérés futását itt indítjuk, a módot a startLesson viszi tovább.
-// A `name` a lista neve a mentett futáson, a `heading` a választó címe.
-function listChoice(lessons, onSelect, { name = "kedvenc", heading = null } = {}) {
+// A `name` a lista neve a mentett futáson, a `heading` a választó címe, a `grade`
+// az a lista évfolyama (a szülői összesítés szűr rá).
+function listChoice(lessons, onSelect, name, heading, grade) {
 
     return (file, opts = {}) => openFavoritesChooser({
         lessons,
@@ -342,7 +344,7 @@ function listChoice(lessons, onSelect, { name = "kedvenc", heading = null } = {}
         onChoose: (mode) => {
             if (mode === "assessment") {
                 const files = opts.list ?? lessons.map(l => l.file);
-                beginRun(files, Date.now(), `${files.length} ${name}`);
+                beginRun(files, Date.now(), name, grade);
                 onSelect(file, { ...opts, mode: "assessment" });
             } else {
                 onSelect(file, opts);
@@ -972,9 +974,6 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
 
         const byFile = new Map(allLessons.map(l => [l.file, l]));
         const favoriteLessons = getFavoriteLessons().map(f => byFile.get(f)).filter(l => l && l.grades?.includes(selectedGrade));
-        const assessmentLessons = resolveAssessmentLessons(getAssessmentLessons(), allLessons)
-            .filter(l => l.grades?.includes(selectedGrade));
-
         const pickerSections = [];
 
         const practiceLessons = getPracticeLessonFiles(index, selectedGrade)
@@ -995,25 +994,27 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
             pickerSections.push(createPickerSection(
                 `❤️ Kedvenceim (${favoriteLessons.length})`,
                 favoriteLessons,
-                listChoice(favoriteLessons, onSelect),
+                onSelect,
                 activeWorld,
                 { from: "favorites", list: rotateToStart(favoriteLessons).map(l => l.file) }
             ));
         }
 
-        // A felmérő lista a szülő Témakörök-listájáról jön, a kedvencek mögé.
-        if (assessmentLessons.length > 0) {
+        // A felmérő listákat a szülő a Témakörök → Felmérők megadása részen állítja
+        // össze. Minden lista külön kártya, és csak ezek nyitnak választót (⏱️ Időmérő).
+        getAssessmentLists(selectedGrade).forEach(list => {
+            const lessons = resolveAssessmentLessons(list.lessons, allLessons)
+                .filter(l => l.grades?.includes(selectedGrade));
+            if (lessons.length === 0) return;
+
             pickerSections.push(createPickerSection(
-                `📝 Felmérő (${assessmentLessons.length})`,
-                assessmentLessons,
-                listChoice(assessmentLessons, onSelect, {
-                    name: "felmérő",
-                    heading: `📝 Felmérő (${assessmentLessons.length})`
-                }),
+                `📝 ${list.name} (${lessons.length})`,
+                lessons,
+                listChoice(lessons, onSelect, list.name, `📝 ${list.name} (${lessons.length})`, selectedGrade),
                 activeWorld,
-                { from: "favorites", list: rotateToStart(assessmentLessons).map(l => l.file) }
+                { from: "favorites", list: rotateToStart(lessons).map(l => l.file) }
             ));
-        }
+        });
 
         if (masterLessons.length > 0) {
             pickerSections.push(createPickerSection(
@@ -1100,13 +1101,6 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
 
         const poolOpts = { from: "custom", list: pool.map(l => l.file) };
 
-        // A saját lista is választóval nyílik, hogy egységes legyen a többi listával;
-        // a választás az egész listára vonatkozik, a mentett futás is a teljes listára.
-        const customChoice = listChoice(pool, onSelect, {
-            name: "válogatott",
-            heading: `⚽ Válogatott (${pool.length})`
-        });
-
         const doneSet = new Set(getCustomDoneLessons());
         const undone = pool.filter(l => !doneSet.has(l.file));
         const next = undone.length > 0 ? undone[0] : pool[0];
@@ -1124,7 +1118,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
 
             const grid = document.createElement("div");
             grid.className = "next-lesson-card";
-            grid.append(createLessonCard(next, customChoice, activeWorld, nextIdx + 1, pool.length, poolOpts));
+            grid.append(createLessonCard(next, onSelect, activeWorld, nextIdx + 1, pool.length, poolOpts));
             nextCard.append(grid);
 
             const nextNote = document.createElement("p");
@@ -1165,7 +1159,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
         contentArea.append(listButtonRow);
 
         if (hasNonGradeFilters(filters)) {
-            browseWrap.append(createFilterResult(pool, createPositionMap(pool), poolOpts, customChoice));
+            browseWrap.append(createFilterResult(pool, createPositionMap(pool), poolOpts, onSelect));
         } else {
             const positionMap = createPositionMap(pool);
             const flatCard = createCard();
@@ -1173,7 +1167,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
             grid.className = "lesson-grid";
             pool.forEach(lesson => {
                 const pos = positionMap.get(lesson.file);
-                grid.append(createLessonCard(lesson, customChoice, activeWorld, pos?.position, pos?.total, poolOpts));
+                grid.append(createLessonCard(lesson, onSelect, activeWorld, pos?.position, pos?.total, poolOpts));
             });
             flatCard.append(grid);
             browseWrap.append(flatCard);
@@ -1204,7 +1198,7 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
             pickerSections.push(createPickerSection(
                 `❤️ Kedvenceim (${favoriteLessons.length})`,
                 favoriteLessons,
-                listChoice(favoriteLessons, onSelect),
+                onSelect,
                 activeWorld,
                 { from: "custom", list: rotateToStart(favoriteLessons).map(l => l.file) }
             ));

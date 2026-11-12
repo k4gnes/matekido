@@ -6,6 +6,9 @@ import { CHILD_FRIENDLY_LABELS, DIFFICULTY_BADGE, DIFFICULTY_LABEL } from "./les
 import { loadLesson } from "../engine/LessonLoader.js";
 import { buildLesson } from "../builders/LessonBuilder.js?v=102";
 import { isTaskStep, lessonLines } from "../utils/taskText.js";
+import { formatDuration, runTooltip } from "../utils/assessment.js?v=6";
+import { getAssessmentLists } from "../profile/AssessmentLists.js?v=1";
+import { gradesWithLessons } from "../utils/grades.js?v=1";
 
 const DAY = 24 * 60 * 60 * 1000;
 
@@ -643,6 +646,141 @@ function createPlayerCard(player, accent, lessonIndex) {
     return card;
 }
 
+// 📝 Felmérő eredmények: a szülő egy évfolyamot és egy listát választ, és minden
+// gyerek összes futását látja egyszerre (ikrek, testvérek, osztály). A listák
+// eszköz-szintűek, az eredmények játékosonként tárolódnak – itt fűzzük össze.
+// A régi futásokban nincs évfolyam, azokat a lista neve alapján mutatjuk.
+function createAssessmentResultsSection(lessonIndex) {
+
+    const section = document.createElement("section");
+    section.className = "parent-assessments";
+
+    const title = document.createElement("h2");
+    title.className = "parent-assessments-title";
+    title.textContent = "📝 Felmérő eredmények";
+    section.append(title);
+
+    const grades = gradesWithLessons(lessonIndex).filter(gc => getAssessmentLists(gc.grade).length > 0);
+
+    if (grades.length === 0) {
+
+        const hint = document.createElement("p");
+        hint.className = "parent-assessments-empty";
+        hint.textContent = "Még nincs felmérő lista: a Szülői → 📚 Témakörök → évfolyam → 📝 Felmérők megadása részen készíthetsz.";
+        section.append(hint);
+        return section;
+    }
+
+    const gradeBar = document.createElement("div");
+    gradeBar.className = "felmero-lists";
+    const listBar = document.createElement("div");
+    listBar.className = "felmero-lists";
+    const tableArea = document.createElement("div");
+    tableArea.className = "profile-assessments";
+
+    let grade = grades[0].grade;
+    let listId = getAssessmentLists(grade)[0].id;
+
+    function activeList() {
+        return getAssessmentLists(grade).find(list => list.id === listId) ?? getAssessmentLists(grade)[0];
+    }
+
+    function makeChip(text, active, onClick) {
+        const chip = document.createElement("button");
+        chip.type = "button";
+        chip.className = "felmero-list-choice" + (active ? " active" : "");
+        chip.textContent = text;
+        chip.addEventListener("click", onClick);
+        return chip;
+    }
+
+    function renderChips() {
+
+        gradeBar.replaceChildren();
+        grades.forEach(gc => gradeBar.append(
+            makeChip(`${gc.grade}. évfolyam`, gc.grade === grade, () => {
+                grade = gc.grade;
+                listId = getAssessmentLists(grade)[0]?.id ?? null;
+                renderChips();
+                renderTable();
+            })
+        ));
+
+        listBar.replaceChildren();
+        getAssessmentLists(grade).forEach(list => listBar.append(
+            makeChip(`📝 ${list.name}`, list.id === listId, () => {
+                listId = list.id;
+                renderChips();
+                renderTable();
+            })
+        ));
+    }
+
+    function renderTable() {
+
+        tableArea.replaceChildren();
+
+        const list = activeList();
+        if (!list) return;
+
+        // gyerekenként csoportosítva, azon belül a tárolt sorrend (legfrissebb felül)
+        const groups = listPlayers()
+            .map(player => ({
+                player,
+                runs: (player.profile?.assessments ?? []).filter(run =>
+                    run.label === list.name && (run.grade == null || run.grade === grade)
+                ).slice(0, 10)
+            }))
+            .filter(group => group.runs.length > 0);
+
+        if (groups.length === 0) {
+
+            const empty = document.createElement("p");
+            empty.className = "parent-assessments-empty";
+            empty.textContent = `Még nincs futás ehhez a listához (${list.name}).`;
+            tableArea.append(empty);
+            return;
+        }
+
+        const cell = (className, text) => {
+            const td = document.createElement("td");
+            td.className = className;
+            td.textContent = text;
+            return td;
+        };
+
+        const table = document.createElement("table");
+
+        groups.forEach(({ player, runs }) => runs.forEach((run, index) => {
+
+            const row = document.createElement("tr");
+            if (index === 0) row.className = "assessment-group-start";
+
+            const started = run.startedAt ? new Date(run.startedAt).toLocaleString("hu-HU") : "";
+            row.title = runTooltip(run, `${player.name ?? "Játékos"} · ${run.label ?? ""}`);
+
+            row.append(
+                cell("assessment-label assessment-child",
+                    index === 0 ? `${player.avatar ?? "🦊"} ${player.name ?? "Játékos"} (${runs.length} futás)` : ""),
+                cell("assessment-when", started),
+                cell("assessment-nums", `⏱ ${formatDuration(run.seconds)}`),
+                cell("assessment-nums", `✅ ${run.correct ?? 0}`),
+                cell("assessment-nums", `❌ ${run.wrong ?? 0}`)
+            );
+
+            table.append(row);
+        }));
+
+        tableArea.append(table);
+    }
+
+    renderChips();
+    renderTable();
+    section.append(gradeBar, listBar, tableArea);
+
+    return section;
+}
+
 export function renderParentDashboard(root, onBack, lessonIndex) {
 
     root.replaceChildren();
@@ -680,6 +818,9 @@ export function renderParentDashboard(root, onBack, lessonIndex) {
             wrapper.append(createPlayerCard(player, ACCENT_COLORS[index % ACCENT_COLORS.length], lessonIndex));
         });
     }
+
+    // 📝 Felmérő eredmények: az összes gyerek futása egy adott listáról
+    wrapper.append(createAssessmentResultsSection(lessonIndex));
 
     root.append(wrapper);
 }

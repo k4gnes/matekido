@@ -1,5 +1,5 @@
 import { renderScene } from "../components/scene.js?v=12";
-import { mountTimer, runSeconds, recordRunLesson, finishRun, previousRuns } from "../utils/assessment.js?v=5";
+import { mountTimer, runSeconds, recordRunLesson, finishRun, previousRuns } from "../utils/assessment.js?v=6";
 import { createInstructionHelp } from "../components/ui/instruction.js?v=4";
 import { findHintButton } from "../components/ui/hintBox.js?v=3";
 import { createExitButton } from "../components/ui/exit.js";

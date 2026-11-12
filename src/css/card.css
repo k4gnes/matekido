@@ -1078,6 +1078,27 @@
     opacity: 0.75;
 }
 
+/* Kattintható sor a profilon: a táblázat külön oldalon van, ez csak a belépés */
+.profile-assessments-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    padding: .4rem .5rem;
+    border: none;
+    border-radius: 8px;
+    background: #f6f9ff;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: background .15s ease;
+}
+
+.profile-assessments-link:hover {
+    background: #eef4fe;
+}
+
 /* Felmérés-táblázat: egy futás = egy sor, minden adat külön oszlopban
    (kezdés, lista, idő, helyes, hiba) */
 .profile-assessments table {
@@ -1086,7 +1107,6 @@
     font-size: .92rem;
     line-height: 1.5;
 }
-
 .profile-assessments td {
     padding: .2rem .5rem .2rem 0;
     vertical-align: baseline;

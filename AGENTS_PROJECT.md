@@ -8,6 +8,7 @@ Interaktív matematikai tanulási platform magyar gyerekeknek (első osztálytó
 - `make start` – Python http szerver a `src/`-ből (localhost:8000).
 - `make test` / `node src/testLessons.js` – az összes osztályos lecke (1–8.) automatizált ellenőrzése (minden lecke felépül több világban és sorozatban, a generált feladatok struktúrája helyes).
 - `node src/generateSWCache.js` – az offline precache-lista (`src/sw-cache.js`) újragenerálása; új/eltűnt fájlnál (pl. új lecke) mindig futtatni kell.
+- `node src/generateLessonTasks.js` – a leckék feladatszámának (`index.json` `tasks` mezője) kiírása; új vagy módosított lecke után futtatni kell, különben a `make test` hibát jelez.
 - Minden commit után manuálisan ellenőrizni kell a böngészőben (hibakereséshez nincs automatizált teszt). Ehhez használható: `docs/tesztelés.md` (teljes app-átfutás) és az osztályonkénti forgatókönyvek `docs/teszt-forgatokonyv-{1,2,3,4,5,6,7,8}-osztaly.md` (mind a nyolc évfolyamhoz van).
 
 ## Web gyökér: `src/`
@@ -21,7 +22,7 @@ Interaktív matematikai tanulási platform magyar gyerekeknek (első osztálytó
 
 - `src/index.html` – az egyetlen HTML, minden CSS/JS verzióparaméterrel hivatkozott.
 - `src/app.js` – belépési pont, navigáció (welcome → menü → lecke → profil/statisztika).
-- `src/data/lessons/index.json` – lecke-regiszter (337 lecke: 1. osztály 45, 2. osztály 62, 3. osztály 52, 4. osztály 39, 5. osztály 36, 6. osztály 42, 7. osztály 41, 8. osztály 39 – egy lecke több évfolyamhoz is tartozhat, ezért az összeg nagyobb a fájlok számánál). Metaadatok: `id`, `title`, `grades`, `category`, `skill`, `difficulty`, `type`, `range`, `mission`, `subtitle`, `file`, `worldTitles`.
+- `src/data/lessons/index.json` – lecke-regiszter (337 lecke: 1. osztály 45, 2. osztály 62, 3. osztály 52, 4. osztály 39, 5. osztály 36, 6. osztály 42, 7. osztály 41, 8. osztály 39 – egy lecke több évfolyamhoz is tartozhat, ezért az összeg nagyobb a fájlok számánál). Metaadatok: `id`, `title`, `grades`, `category`, `skill`, `difficulty`, `type`, `range`, `mission`, `subtitle`, `file`, `worldTitles`, `tasks` (a lecke feladatszáma – `node src/generateLessonTasks.js` írja ki).
 - `src/data/lessons/gradeN/*.json` – lecke-fájlok. `steps` listából állnak (`type: "scene"`, `"exercise"`, …), `worldTitles` a világok szerinti szövegek.
 - `src/data/` – a leckéken kívüli statikus adatmodulok: `skills.js` (készségek a statisztikához és a szűrőkhöz), `types.js` (feladattípusok magyar nevei), `measure.js` / `money.js` / `shapes.js` / `spatial.js` / `unitObjects.js` (mértékegységek, pénznemek, alakzatok), `consolidation.js`, `hintLessons.js`.
 - `src/engine/` – `Game.js` (lecke futtatás + a `RENDERERS` registry, ami a feladattípust a komponenshez köti), `LessonLoader.js` (JSON betöltés).

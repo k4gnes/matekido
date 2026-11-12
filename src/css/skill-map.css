@@ -185,6 +185,59 @@
     margin: 0 0 0.6rem;
 }
 
+/* 📝 Felmérő listák: a szülő nevesített listák között vált évfolyamonként */
+.felmero-lists {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0.2rem 0 0.6rem;
+}
+
+.felmero-list-choice {
+    padding: 0.32rem 0.8rem;
+    border: 2px solid #dce7f8;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--primary-ink);
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.felmero-list-choice.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--on-primary);
+}
+
+.felmero-new {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0.2rem 0 0.6rem;
+}
+
+.felmero-new-input {
+    flex: 1 1 200px;
+    max-width: 320px;
+    padding: 0.35rem 0.7rem;
+    border: 2px solid #dce7f8;
+    border-radius: 999px;
+    font-family: inherit;
+}
+
+/* hány feladatból áll a lecke – a pipa mellett, a tananyagtábla sorában */
+.felmero-tasks {
+    color: #888;
+    font-size: 0.85em;
+    white-space: nowrap;
+}
+
 .help-btn {
     display: inline-flex;
     align-items: center;

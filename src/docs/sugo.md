@@ -69,7 +69,7 @@ A **⚽ Válogatott** füllel magadnak állítasz össze gyakorlólistát: az é
 
 - A {{🎓 Évfolyam}} gombbal a Válogatottból bármikor visszatérsz – az app a korábban választott osztályodat hozza vissza.
 - A szűrők **játékosonként megmaradnak** a következő látogatásra is – másik játékosra váltva az ő beállításai érvényesek. A {{✕ Szűrők törlése|grey}} gomb visszaállítja az összes leckét.
-- A listán bármelyik leckekártyára kattintva a megszokott választó jön: **Kezdjük!** (gyakorlás az egész listán), **⏱️ Időmérő** (felmérés az egész listán) vagy **✗ Bezárás**. A Válogatott **nem** indít időmérést magától – csak a `⏱️ Időmérő` választásával.
+- A listán bármelyik leckekártyára kattintva **rögtön indul a lecke** a megszokott bevezető jelenettel (**Kezdjük!** és **📚 Leckék**), választó nélkül, időmérés nélkül. A **⏱️ Időmérő** csak a [📝 Felmérő listánál](#temakorok) van.
 
 ## 👪 Szülői rész
 
@@ -102,11 +102,18 @@ Az **Elmúlt 7 nap** oszlopai a napi játéktevékenységet mutatják: a sávok 
 
 A [**🎯 Gyakorlásra javasolt**](#gyakorlas-a-gyengebb-es-a-regen-gyakorolt-leckek) részben azok a készségek és leckék látszanak, amelyekben az eredmény **90% alatt** van, vagy amelyeket a gyerek **régen gyakorolt** – ezeket a Gyakorlásra javasolt listából újragyakorolhatja. A [**⏭️ Kihagyott feladatok**](#kihagyott-leckek) rész pedig az osztályos félretett leckéket mutatja; ajánlott utóbb pótolni, hogy az osztály leckéi teljesek legyenek.
 
+A kártyák alatt a **📝 Felmérő eredmények** blokk egy adott **évfolyam** és egy adott [**felmérő lista**](#temakorok) összes eredményét mutatja meg egyszerre, **gyerekenként csoportosítva** – így az ikrek, a testvérek vagy az osztály teljesítménye egy pillantásra összehasonlítható. A csoport első sorában a gyerek neve és hány futása van (`🦊 Lili (2 futás)`), alatta futásonként a kezdés időpontja, az idő, a helyes és a hibás válaszok száma; a sor fölé vive az egeret a gyerek neve és a lista neve is látszik. Csak olyan lista választható, amire van futás, és minden lista külön jelzi, ha még nincs eredmény.
+
 ### 📚 Témakörök
 
 Az évfolyamonkénti **tananyagtérkép**: megmutatja, milyen feladatok és témakörök tartoznak az adott osztály tananyagába, így előre átlátod, mi következik.
 
-A leckesorok melletti **pipával** kiválaszthatod, mely leckékből álljon a **📝 Felmérő lista**: ez a gyerek menüjében a kedvencek mögé, a mester kihívás elé kerül, és ugyanúgy gyakorolható (`Kezdjük!`) vagy felmérhető (`⏱️ Időmérő`), mint a kedvencek.
+Egy évfolyam-kártya után két út közül választhatsz:
+
+- **📚 Tanmenet lista** – az évfolyam teljes tananyaga, olvasható formában, pipa nélkül.
+- **📝 Felmérők megadása** – itt adhatsz nevet a felmérőknek (többet is), majd a leckesorok melletti **pipával** jelölöd meg, mely leckékből álljon (a lecke neve mellett azt is látod, hány **feladatból** áll). Minden névlista a gyerek menüjében a kedvencek mögé, a mester kihívás elé kerül egy-egy kártyaként. Megnyitáskor választhatsz: **Kezdjük!** (gyakorlás, ahogy a többi listánál) vagy **⏱️ Időmérő** (felmérés: méri az összidőt és a hibákat, a végén rövid kiértékelés, amit a profilod is elment). **Ez az egyetlen lista, ahol időmérőt lehet indítani** – a többi listán nincs választó, azonnal indul a lecke.
+
+A felmérő listák **eszköz-szintűek** (nem egy gyerekhez kötöttek): minden gyerek ugyanazt látja a menüjében, és a [Profilok átvitele](#profilok-atvitel) is magával viszi őket.
 
 ![A Témakörök – évfolyamonkénti tananyagtérkép](/docs/temakorok.png)
 
@@ -206,7 +213,7 @@ A feladatlistára belépve sorban a következők jönnek:
 - **📚 Feladatok listája** – az évfolyam teljes feladatlistája. Szűrni **csak a ⚽ Válogatott nézetben** lehet (lásd a [szűrőkről szóló szakaszt](#valogatott-es-szurok)).
 - **🎯 Gyakorlásra javasolt** – a gyengén sikerült és a régen gyakorolt leckéid (részletek a [Gyakorlás szakaszban](#gyakorlas-a-gyengebb-es-a-regen-gyakorolt-leckek)).
 - **⏭️ jel a kártyán** – a kihagyott lecke kártyáján a 📚 Feladatok listájában **⏭️** badge látszik. Érdemes pótolni, mert a sorrendjében a végén úgyis visszajön.
-- **❤️ Kedvenceim** – azok a leckék, amelyeket a sor jobb oldalán lévő szív gombbal (**🤍 → ❤️**) megjelöltél. Megnyitáskor választhatsz: **Kezdjük!** (gyakorlás, ahogy eddig) vagy **⏱️ Időmérő** (felmérés: méri az összidőt és a hibákat, a végén rövid kiértékelés, amit a profilod is elment). Ugyanígy játszólistaként megy végig a kedvenceken.
+- **❤️ Kedvenceim** – azok a leckék, amelyeket a sor jobb oldalán lévő szív gombbal (**🤍 → ❤️**) megjelöltél. Kártyájára kattintva rögtön az első lecke jön (**Kezdjük!** és **📚 Leckék**), választó nélkül, és a **➡️ Tovább** gombbal megy végig a listán. Időmérő nincs hozzá – a **⏱️ Időmérő** csak a [📝 Felmérő listánál](#temakorok) van.
 
 ## 🎯 Gyakorlás – a gyengébb és a régen gyakorolt leckék
 
@@ -239,7 +246,7 @@ A **Gyakorlásra javasolt** listára kétféle lecke kerül:
 
 ![A Saját oldal – csillagok, statisztika, napi küldetés](/docs/sajat-oldal.png)
 
-- A **Saját oldal** (a navigációs sávban a nevedre/avatárodra, pl. **🦊 Lili**-re kattintva, vagy a lecke végén ugyanerre a **🦊 Lili** gombra) mutatja: csillagok, teljesített leckék, sorozat (🔥 napok), hibátlan leckék, a napi küldetés állása, a kitűzők és a világok.
+- A **Saját oldal** (a navigációs sávban a nevedre/avatárodra, pl. **🦊 Lili**-re kattintva, vagy a lecke végén ugyanerre a **🦊 Lili** gombra) mutatja: csillagok, teljesített leckék, sorozat (🔥 napok), hibátlan leckék, a napi küldetés állása, a kitűzők és a világok. Alatta egy **📝 Felmérések** sor látszik (hány futás, legutóbb mikor, összidő); a részletes táblázat a sorra kattintva, **külön oldalon** nyílik meg, így a profil nem nyomódik el a sok sorral.
 - A **képernyők tetején egységes navigációs sáv** van: [[🦊 Lili]] (Saját oldal), [[📚 Leckék]], [[📊 Százalék]], [[❓ Súgó]], [[👤 Csere]] (profilváltás) – minden képernyőn ugyanaz a sor, az éppen látogatott képernyő gombja kiemelve, így egy koppintással bárhonnan elérhető a többi képernyő.
 - A **📊 Százalék** oldal két fülön mutatja a teljesítményt.
 - A **📅 Napi** fül az adott napra mutatja a **helyes** és **hibás** válaszok számát, a megoldott **leckéket** és a **pontosságot** (🎯 %), valamint a **Feladatok bontásban** listában a feladattípusok találati arányát. A **◀ ▶** nyilakkal visszalapozhatsz a korábbi napokra.

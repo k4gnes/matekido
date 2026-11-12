@@ -139,6 +139,11 @@ A szülői nézet a profil oldalnavbarjából a `👪 Szülői` gombbal nyílik.
 | 6b.6 | Lapozz vissza `◀` hetekkel | A heti összefoglaló és a dátumcsík követi a lapozást; a legkorábbi rögzített dátumnál a `◀` letiltva | |
 | 6b.7 | Olyan játékossal, akinek van kihagyott feladata | Megjelenik a „⏭️ Kihagyott feladatok (N): …” sor a kártya alján | |
 | 6b.8 | Menj vissza a profilra | A „Legutóbb játszott” felirat valós („Ma játszott” / „Tegnap játszott” / „X napja játszott”), üres profilnál „Még nem játszott” | |
+| 6b.9 | Görgess az oldal aljára, a játékoskártyák után | **📝 Felmérő eredmények** blokk: évfolyam-chipek (csak azok, ahol van lista) és alatta `📝 <lista neve>` chipek, a kijelölt kék | |
+| 6b.10 | Válassz egy listát, amire már futott gyerek | A táblázat **gyerekenként csoportosítva**: a csoport első sorában `🦊 <név> (N futás)` és vastagabb elválasztó vonal, alatta a futások kezdési időpontjával, `⏱` idővel, `✅` és `❌` számmal; a sor fölé vive az egeret a tooltip a gyerek nevét és a lista nevét is kiírja; a sorok a gyerek neve szerint, azon belül legfelül a legfrissebb | |
+| 6b.11 | Válassz olyan listát, amire senki nem futott még | „Még nincs futás ehhez a listához (<lista neve>).” | |
+| 6b.12 | Nézd meg ugyanezt egy másik évfolyamon | A lista chipek cserélődnek, a táblázat az új évfolyam listájához igazodik – ugyanazzal a névvel több évfolyamon is lehet lista, a futások nem keverednek | |
+| 6b.13 | Indíts egy felmérő futást egy gyerekkel, majd frissítsd az oldalt | A futás rögtön megjelenik a gyerek csoportjában, legfelül | |
 
 ---
 
@@ -154,39 +159,47 @@ A szülői nézet a profil oldalnavbarjából a `👪 Szülői` gombbal nyílik.
 
 ---
 
-## 7b. Felmérés – ⏱️ Időmérő üzemmód
+## 7b. Felmérés – ⏱️ Időmérő üzemmód (csak a 📝 felmérő-listáknál)
 
 | # | Lépés | Várt eredmény | Eredmény |
 |---|-------|---------------|----------|
-| 7b.1 | Legyen legalább két kedvenc lecke, majd a menüben kattints a `❤️ Kedvenceim (N)` kártyára | Megnyílik a kedvencek listája (a leckék címei) és három gomb, **elöl a szokásos `Kezdjük!`**, utána a `⏱️ Időmérő`, végül `✗ Bezárás` – lecke még nem indul | |
+| 7b.1 | Legyen legalább két kedvenc lecke, majd a menüben kattints a `❤️ Kedvenceim (N)` kártyára | **Nincs választó**: rögtön az első lecke bevezető jelenete jön, `Kezdjük!` és `📚 Leckék` gombokkal – `⏱️ Időmérő` gomb sehol nincs | |
 | 7b.2 | Válaszd a `Kezdjük!`-t | Pontosan a régi viselkedés: ugyanaz a leckefutás, nincs külön óra, a celebráción van `🔁 Újra` | |
-| 7b.3 | Nyisd meg újra, válaszd az `⏱️ Időmérő`-t | Jobb alul folyamatosan fut az összidő (`⏱️` pill), a kedvencek sorban jönnek | |
-| 7b.4 | Nézd meg a leckék végén a celebrációs képernyőt | Nincs `🔁 Újra` gomb (csak `➡️ Tovább` és a navbar), az idő látszik | |
-| 7b.5 | Az utolsó lecke celebrációján | `📝 Kiértékelés` doboz: összidő, helyes/hibás darabszám, leckénkénti idő és hibaszám; az első futásnál még nincs „Korábbi futások” | |
-| 7b.6 | Indítsd el ugyanezt a kedvenc-listát másodszor, és fejezd be | A kiértékelésben „Korábbi futások” lista dátummal, idővel, helyes és hibás darabszámmal (a legtöbb hibás futás „· legtöbb hiba” jelöléssel), alatta „Előzőhöz képest: hiba: … → … · idő: … → …”; a sor fölé vive az egeret a tooltip kiírja, **mely kedvenc leckékből** állt az a futás | |
-| 7b.7 | Nyisd meg a Profil oldalt | A `📝 Felmérések` a **Teljesítmények + Világok blokk alatt, teljes szélességben** jelenik meg, **táblázatként**: minden futás egy sor, **külön oszlopokban** a kezdés időpontja (dátum + óra:perc), a lista neve (pl. `12 válogatott`), az idő, a helyes és a hibás darabszám – a számok sehol nem törnek át, két ugyanazon a napon indított futás így **nem néz ki egyformának**; a sorok **a lista neve szerint csoportosulnak** (azonos néven belül a legfrissebb felül), hogy a hasonló futások egymás alá kerüljenek; a sor fölé vive az egeret a tooltip kiírja, **mely leckékből** állt a felmérés; a korábbi futások visszanézhetők (legfeljebb 30) | |
-| 7b.8 | Felmérés közben kattints a `📚 Leckék` (kilépés) gombra, és nézd a menüt | Az óra eltűnik, nem marad lebegő időmérő a menü felett | |
-| 7b.9 | Nyisd meg a ⚽ Válogatott listát, és kattints bármelyik leckekártyára | Ugyanaz a választó jön: `Kezdjük!`, `⏱️ Időmérő`, `✗ Bezárás`, a címe `⚽ Válogatott (N)` – hosszú listánál a leckék görgethetők, lecke még nem indul | |
-| 7b.10 | Válaszd az `⏱️ Időmérő`-t, és játssz végig a listán | A futás a **teljes** Válogatott listára megy (nem csak a kattintott leckétől), a kiértékelés a lista legvégén jön, a Profil `📝 Felmérések` listáján a sor felirata „N válogatott” | |
-| 7b.11 | Vissza a 🎓 Évfolyam nézetre, és kattints a fő listában egy leckére (➡️ Következő feladat vagy 📚 Feladatok listája) | **Nincs választó** – azonnal indul a lecke, időmérés nélkül (a 🎯 Gyakorlásra javasolt és a 🌟 Mester kihívás kártyái szintén választó nélkül indulnak) | |
-| 7b.12 | Nyisd meg a Profil oldalt telefonon (álló módban, ≤760 px) | A sorrend **Teljesítmények → Világok → 📝 Felmérések** (a táblázat a kettő alatt, teljes szélességben); a táblázat **öt oszlopa** (kezdés, lista, idő, helyes, hiba) kisebb betűvel is **elfér egy sorban**, a számok nem törnek át, vízszintes görgetés nincs | |
+| 7b.3 | Nyisd meg újra a kedvencek listáját, és kattints egy másik kártyára | Szintén **nincs választó**: a kattintott lecke indul, és a `➡️ Tovább` gombbal megy végig a listán | |
+| 7b.4 | Nyisd meg a ⚽ Válogatott listát, és kattints bármelyik leckekártyára | **Nincs választó** – a kattintott lecke indul `Kezdjük!` és `📚 Leckék` gombokkal, a lista fejléce a megszokott `⚽ Válogatott (N)` | |
+| 7b.5 | Kattints a `📝 <lista neve> (N)` kártyára | **Ez az egyetlen lista, ahol választó jön**: `Kezdjük!`, `⏱️ Időmérő`, `✗ Bezárás`, a címe `📝 <lista neve> (N)` – hosszú listánál a leckék görgethetők, lecke még nem indul | |
+| 7b.6 | Válaszd az `⏱️ Időmérő`-t | Jobb alul folyamatosan fut az összidő (`⏱️` pill), a felmérő leckék sorban jönnek | |
+| 7b.7 | Nézd meg a leckék végén a celebrációs képernyőt | Nincs `🔁 Újra` gomb (csak `➡️ Tovább` és a navbar), az idő látszik | |
+| 7b.8 | Az utolsó lecke celebrációján | `📝 Kiértékelés` doboz: összidő, helyes/hibás darabszám, leckénkénti idő és hibaszám; az első futásnál még nincs „Korábbi futások” | |
+| 7b.9 | Indítsd el ugyanezt a felmérő-listát másodszor, és fejezd be | A kiértékelésben „Korábbi futások” lista dátummal, idővel, helyes és hibás darabszámmal (a legtöbb hibás futás „· legtöbb hiba” jelöléssel), alatta „Előzőhöz képest: hiba: … → … · idő: … → …”; a sor fölé vive az egeret a tooltip kiírja, **mely leckékből** állt az a futás | |
+| 7b.10 | Felmérés közben kattints a `📚 Leckék` (kilépés) gombra, és nézd a menüt | Az óra eltűnik, nem marad lebegő időmérő a menü felett | |
+| 7b.11 | Vissza a 🎓 Évfolyam nézetre, és kattints a fő listában egy leckére (➡️ Következő feladat vagy 📚 Feladatok listája) | **Nincs választó** – azonnal indul a lecke, időmérés nélkül (a 🎯 Gyakorlásra javasolt, a ❤️ Kedvenceim és a 🌟 Mester kihívás kártyái szintén választó nélkül indulnak) | |
+| 7b.12 | Nyisd meg a Profil oldalt | A **Teljesítmények + Világok blokk alatt** egy **kattintható sor** van: 📝 ikon, mellette **Felmérések**, alatta `N futás · legutóbb: <dátum> · ⏱ <összidő>`, jobb oldalt `›` nyíl – a profilon **nincs táblázat** | |
+| 7b.13 | Kattints a `📝 Felmérések` sorra | Megnyílik a **Felmérések külön oldala** a táblázattal: minden futás egy sor, **külön oszlopokban** a kezdés időpontja (dátum + óra:perc), a lista neve (pl. `Írásbeli számolás`), az idő, a helyes és a hibás darabszám – a számok sehol nem törnek át, két ugyanazon a napon indított futás így **nem néz ki egyformának**; a sorok **a lista neve szerint csoportosulnak** (azonos néven belül a legfrissebb felül); a sor fölé vive az egeret a tooltip kiírja, **mely leckékből** állt a felmérés; a legfrissebb 10 futás látszik (a tárolt legfeljebb 30); a navbar `🦊 <név>` gombbal vissza a profilra | |
+| 7b.14 | Nyisd meg a 📝 Felmérések oldalt telefonon (álló módban, ≤760 px) | A táblázat **öt oszlopa** (kezdés, lista, idő, helyes, hiba) kisebb betűvel is **elfér egy sorban**, a számok nem törnek át, vízszintes görgetés nincs | |
 
-*(A felmérés a kedvencek, a 📝 Felmérő lista és a ⚽ Válogatott listájáról indul; a szülői „Kedvencek listája” panel továbbra is rejtve.)*
+*(A felmérés **csak a 📝 felmérő-listákról** indul; a kedvencek, a ⚽ Válogatott és az évfolyam listái választó és időmérés nélkül játszhatók végig. A szülői „Kedvencek listája” panel továbbra is rejtve.)*
 
 ---
 
-## 7c. Felmérő lista – szülői pipa a Témakörökben
+## 7c. Felmérő listák – szülői megadás a Témakörökben
 
 | # | Lépés | Várt eredmény | Eredmény |
 |---|-------|---------------|----------|
-| 7c.1 | Szülői rész → 📚 Témakörök → válassz egy évfolyamot | A tananyagtábla leckesorai mellett pipa van, fölöttük a „📝 Felmérő lista: 0 lecke ebből az évfolyamból · összesen 0 a listában” sor; lépj ki a lapról, nyisd újra – a korábbi pipák megmaradnak | |
-| 7c.2 | Pipálj ki három leckét | A pipák bekapcsolódnak, a fejléc száma nő (helyben és összesen is); ha ugyanaz a lecke több sorban is szerepel, a pipák együtt mozdulnak | |
-| 7c.3 | Menj vissza a gyerek menüjébe | A `❤️ Kedvenceim` és a `🌟 Mester kihívás` között ott a `📝 Felmérő (3)` kártya | |
-| 7c.4 | Kattints a `📝 Felmérő (3)` kártyára | Ugyanaz a választó, mint a kedvenceknél (`Kezdjük!`, `⏱️ Időmérő`, `✗ Bezárás`), a címe `📝 Felmérő (3)` | |
-| 7c.5 | Válaszd az `⏱️ Időmérő`-t, és fejezd be a listát | Felmérés fut (jobb alul az óra, a végén `📝 Kiértékelés`), a Profil `📝 Felmérések` listáján a sor felirata „3 felmérő” – nem „3 kedvenc”. **A kiértékelés a futás utolsó leckéjénél jön (a pozíciós számláló `x/n` → `n/n`), csak az mentődik**: a listán belül korábban kilépve nincs doboz és a profilba sem kerül be. Ha a lista elején lévő leckék már kész vannak, a futás onnan indul és ott ér véget – ezeket is végig kell játszani | |
-| 7c.6 | Válaszd a `Kezdjük!`-t | Pontosan a régi gyakorlás: nincs külön óra, a celebráción van `🔁 Újra` | |
-| 7c.7 | Vedd ki a pipát az összes leckéből | A `📝 Felmérő` kártya eltűnik a menüből (üres listával nem jelenik meg), a kedvencek és a mester kihívás a helyén marad | |
-| 7c.8 | Profilok átvitele: mentsd el a profilt fájlba, majd importáld ugyanazt | A felmérő lista nem vész el – importkor csak bővülhet, törlést nem okozhat | |
+| 7c.1 | Szülői rész → 📚 Témakörök → kattints egy évfolyam-kártyára | **Két választás**: `📚 Tanmenet lista` és `📝 Felmérők megadása`, felette a „Mit szeretnél megnyitni?” sor, a vissza gomb a választóhoz visz | |
+| 7c.2 | Válaszd a `📚 Tanmenet lista`-t | A tananyagtábla jön meg, **pipa nélkül** – olvasható lista; a vissza gomb az évfolyam két választásához visz | |
+| 7c.3 | Menj vissza, és válaszd a `📝 Felmérők megadása`-t | Ugyanaz a tananyagtábla, de a leckesorok mellett pipa van, fölöttük az „Előbb hozz létre egy listát…” sor és a `＋ Új lista` gomb | |
+| 7c.4 | Kattints a `＋ Új lista` gombra, írj nevet (pl. `Írásbeli számolás`), majd `Mentés` | Megjelenik a `📝 Írásbeli számolás (0)` chip, a pipák bekattinthatók lesznek, alattuk `📝 Írásbeli számolás: 0 lecke kijelölve`; üres névvel a Mentés nem csinál listát | |
+| 7c.5 | Pipálj ki három leckét | A pipák bekapcsolódnak, a chip száma nő; ha ugyanaz a lecke több sorban is szerepel, a pipák együtt mozdulnak; minden lecke neve mellett `· N feladat` jelzi, hány feladatból áll | |
+| 7c.6 | Hozz létre egy másik listát ugyanabban az évfolyamban, és válts a kettő között | A pipák mindig a kijelölt listához igazodnak, az egyik lista pipái nem jelennek meg a másikban | |
+| 7c.7 | Lépj ki a lapról, és nyisd újra | A korábbi pipák megmaradnak – a listák **eszköz-szintűek**, minden gyerek ugyanazt látja | |
+| 7c.8 | Menj vissza a gyerek menüjébe | A `❤️ Kedvenceim` és a `🌟 Mester kihívás` között minden, legalább egy leckés névlistára jön egy-egy `📝 <név> (N)` kártya | |
+| 7c.9 | Kattints egy ilyen kártyára | **Ez az egyetlen lista, ahol választó jön**: `Kezdjük!`, `⏱️ Időmérő`, `✗ Bezárás`, a címe `📝 <név> (N)` – a többi listán (kedvencek, Válogatott) nincs választó | |
+| 7c.10 | Válaszd az `⏱️ Időmérő`-t, és fejezd be a listát | Felmérés fut (jobb alul az óra, a végén `📝 Kiértékelés`), a Profil `📝 Felmérések` oldalán a sor felirata **a lista neve** (pl. `Írásbeli számolás`) – nem „3 kedvenc”. **A kiértékelés a futás utolsó leckéjénél jön (a pozíciós számláló `x/n` → `n/n`), csak az mentődik**: a listán belül korábban kilépve nincs doboz és a profilba sem kerül be. Ha a lista elején lévő leckék már kész vannak, a futás onnan indul és ott ér véget – ezeket is végig kell játszani | |
+| 7c.11 | Válaszd a `Kezdjük!`-t | Pontosan a régi gyakorlás: nincs külön óra, a celebráción van `🔁 Újra` | |
+| 7c.12 | Vedd ki a pipát egy lista összes leckéjéből | A `📝 <név>` kártya eltűnik a menüből (üres listával nem jelenik meg), a többi felmérő-kártya a helyén marad | |
+| 7c.13 | Jelöld ki a listát, és kattints a `🗑 Törlés` gombra | Megerősítő doboz jön („Biztosan törlöd a … listát?”), visszafordítva semmi nem történik, megerősítve a chip eltűnik és a pipák kikapcsolódnak | |
+| 7c.14 | Profilok átvitele: mentsd el a profilt fájlba, majd importáld ugyanazt | A felmérő listák nem vésznek el – importkor csak bővülhetnek, törlést nem okozhatnak | |
 
 ---
 

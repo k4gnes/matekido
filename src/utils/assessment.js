@@ -34,14 +34,17 @@ export function resolveAssessmentLessons(ids, lessons) {
 }
 
 // A `label` a lista neve a mentett futáson ("5 kedvenc", "5 felmérő"); nélküle
-// a régi kedvenc-felirat marad.
-export function beginRun(files, startedAt = Date.now(), label = null) {
+// a régi kedvenc-felirat marad. A `grade` az a lista évfolyama – ugyanazzal a
+// névvel több évfolyamon is lehet lista, a szülői összesítés csak így tud
+// szűrni; a régi futásokban nincs, azok névvel egyeznek.
+export function beginRun(files, startedAt = Date.now(), label = null, grade = null) {
 
     run = {
         key: runKey(files),
         files: [...(files ?? [])],
         startedAt,
         label,
+        grade,
         lessons: [],
         timeBefore: 0,
         finished: false
@@ -83,6 +86,7 @@ export function finishRun(now = Date.now()) {
         key: run.key,
         files: [...run.files],
         label: run.label ?? `${run.files.length} kedvenc`,
+        grade: run.grade ?? null,
         startedAt: run.startedAt,
         finishedAt: now,
         date: new Date(now).toISOString().slice(0, 10),

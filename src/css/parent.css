@@ -215,6 +215,34 @@
     margin: .2rem 0;
 }
 
+/* 📝 Felmérő eredmények: az összefoglaló alján, évfolyam- és lista-választóval,
+   minden gyerek futása gyerekenként csoportosítva */
+.parent-assessments {
+    margin-top: 1rem;
+    padding-top: .6rem;
+    border-top: 1.5px dashed #e8e8e8;
+}
+
+.parent-assessments-title {
+    font-size: .8rem;
+    font-weight: 700;
+    color: #555;
+    margin: 0 0 .4rem;
+    text-align: center;
+}
+
+.parent-assessments-empty {
+    font-size: .85rem;
+    color: #777;
+    text-align: center;
+    margin: .3rem 0;
+}
+
+/* a gyerek neve a csoport első sorában jelenik meg, a többi sorban üresen */
+.parent-assessments tr.assessment-group-start td {
+    border-top: 2px solid rgba(0, 0, 0, .12);
+}
+
 .parent-hub {
     text-align: center;
 }

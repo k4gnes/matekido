@@ -1,9 +1,18 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { listPlayers, exportUsers, exportUsersSlim, importUsers } from "../profile/UserManager.js";
+import { exportAssessmentLists, mergeAssessmentLists } from "../profile/AssessmentLists.js?v=1";
 import { queueMessage } from "./appDiagnostics.js";
 
 const TRANSFER_PREFIX = "matekido-atvitel:";
+
+// A felmérő listák nem a profilon, hanem az eszközön élnek, ezért a
+// profilmásolatba külön bekerülnek – máskülönben az átvitel után eltűnnének.
+function exportWithLists(playerIds) {
+    const payload = JSON.parse(exportUsers(playerIds));
+    payload.felmerek = exportAssessmentLists();
+    return JSON.stringify(payload);
+}
 
 let activeStream = null;
 
@@ -362,7 +371,7 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
             }
             const filename = buildFilename(players.filter(p => ids.includes(p.id)));
             setStatus("Előkészítés…");
-            const outcome = await shareOrDownload(filename, exportUsers(ids));
+            const outcome = await shareOrDownload(filename, exportWithLists(ids));
 
             if (outcome.mode === "share") {
                 setStatus("💾 Válaszd ki a megosztásban, hová küldöd a fájlt (pl. Messenger, Drive, e-mail).");
@@ -388,7 +397,7 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
             qrArea.replaceChildren();
             setStatus("Kód készül…");
             try {
-                const fullQr = await buildQrImage(exportUsers(ids));
+                const fullQr = await buildQrImage(exportWithLists(ids));
                 const slimQr = fullQr.tooLarge ? await buildQrImage(exportUsersSlim(ids)) : null;
                 const slimUsed = fullQr.tooLarge && slimQr && !slimQr.tooLarge;
                 const shown = slimUsed ? slimQr : fullQr;
@@ -492,6 +501,10 @@ export function createBackupPanel({ playerIds = null, onChanged = () => {} } = {
 
         try {
             result = importUsers(text);
+            if (result.ok) {
+                // a felmérő listák nem a profilon vannak, ezért külön visszük át
+                mergeAssessmentLists(JSON.parse(text).felmerek);
+            }
         } catch (error) {
             const detail = (error && error.message) ? ": " + error.message : "";
             const message = "⚠️ Hiba az importálás közben" + detail + ".";

@@ -3291,6 +3291,8 @@ function validateLesson(built, ctx, range) {
         fail(ctx, "nincs celebration záró lépés");
     }
     built.steps.forEach((step, index) => validateStep(step, `${ctx} [#${index} ${step.type ?? "?"}]`, range));
+    // a feladatszám az index.json-ban tárolt értékkel kerül összevetésre
+    return counted.length;
 }
 
 const index = readJson("data/lessons/index.json");
@@ -3313,7 +3315,10 @@ for (const world of WORLDS) {
             const raw = readJson(lesson.file.replace("./", ""));
             try {
                 const built = buildLesson(raw);
-                validateLesson(built, `${world}/${lesson.id}`, lesson.range);
+                const counted = validateLesson(built, `${world}/${lesson.id}`, lesson.range);
+                if (lesson.tasks !== counted) {
+                    fail(`${world}/${lesson.id}`, `index.tasks = ${lesson.tasks}, a tényleges feladatszám ${counted} – futtasd: node src/generateLessonTasks.js`);
+                }
                 checkTaskPrint(built, `${world}/${lesson.id}`);
                 JSON.stringify(built);
                 builds++;

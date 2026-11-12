@@ -26,7 +26,16 @@ const {
     sortRunsByList
 } = await import("./utils/assessment.js");
 const { createPlayer } = await import("./profile/UserManager.js");
-const { recordAssessment, getAssessments, getAssessmentLessons, isInAssessmentList, toggleAssessmentLesson } = await import("./profile/Profile.js");
+const { recordAssessment, getAssessments } = await import("./profile/Profile.js");
+const {
+    getAssessmentLists,
+    createAssessmentList,
+    removeAssessmentList,
+    isInAssessmentList,
+    toggleAssessmentLesson,
+    migrateAssessmentLists,
+    mergeAssessmentLists
+} = await import("./profile/AssessmentLists.js");
 
 let failures = 0;
 
@@ -61,6 +70,7 @@ check(summary.lessons.length === 2 && summary.lessons[0].title === "A", "leckén
 check(summary.key === runKey(["b.json", "a.json"]), "a mentett kulcs ugyanaz a halmaz");
 check(summary.date === new Date(60000).toISOString().slice(0, 10), "a dátum a befejezés napja");
 check(summary.label === "2 kedvenc", "a lista felirata");
+check(summary.grade === null, "gyakorló/favorit futásban nincs évfolyam");
 
 check(finishRun(60000) === null, "a futás egyszer zárható le");
 recordRunLesson({ file: "c.json", seconds: 10, correct: 1, wrong: 0 });
@@ -70,6 +80,13 @@ check(finishRun(60000) === null, "lezárt futásba nem jön új lecke");
 beginRun(["a.json", "b.json"], 1000, "2 felmérő");
 check(finishRun(60000).label === "2 felmérő", "a felmérő futás felirata");
 check(finishRun(60000) === null, "a felmérő futás is egyszer zárható le");
+
+// A felmérő futás magával viszi az évfolyamot: a szülői összesítés (minden gyerek
+// eredménye egy listáról) csak így tud évfolyamonként szűrni, ugyanis egy névvel
+// több évfolyamon is lehet lista
+beginRun(["a.json", "b.json"], 1000, "Írásbeli számolás", 3);
+const graded = finishRun(60000);
+check(graded.grade === 3 && graded.label === "Írásbeli számolás", "a felmérő futás évfolyama tárolódik");
 
 // Korábbi futások ugyanarra a halmazra
 const older = [
@@ -114,12 +131,57 @@ check(sortRunsByList(null).length === 0, "üres lista nem hibázik");
 // Profilba mentett lista: legelöl az új, legfeljebb 30 tétel
 createPlayer("Felmérő", "🦊", 1);
 
-// A szülői felmérő lista: pipa be és ki a Témakörök listájáról
-check(getAssessmentLessons().length === 0, "üres felmérő lista");
-check(toggleAssessmentLesson("a.json") === true, "a pipa bekapcsol");
-check(isInAssessmentList("a.json"), "a kiválasztott lecke a listában van");
-check(toggleAssessmentLesson("a.json") === false, "a pipa kikapcsol");
-check(getAssessmentLessons().length === 0, "a kivett lecke nincs a listában");
+// A régi, játékosonkénti pipák átvezetése az évfolyamszintű listákra
+const usersRaw = JSON.parse(store["matekido-users"] ?? '{"players":[]}');
+if (usersRaw.players?.[0]) {
+    usersRaw.players[0].profile.assessmentLessons = ["place-01", "nincs-ilyen"];
+    store["matekido-users"] = JSON.stringify(usersRaw);
+}
+
+migrateAssessmentLists([{ id: "place-01", grades: [3] }]);
+check(getAssessmentLists(3).length === 1, "a régi pipákból felmérő lista készül");
+check(getAssessmentLists(3)[0].name === "Felmérő", "a régi lista neve");
+check(getAssessmentLists(3)[0].lessons.join() === "place-01", "csak a meglévő lecke-id kerül át");
+check(getAssessmentLists(4).length === 0, "más évfolyam üres marad");
+
+const migrated = getAssessmentLists(3)[0];
+toggleAssessmentLesson(3, migrated.id, "other-01");
+migrateAssessmentLists([{ id: "place-01", grades: [3] }]);
+check(getAssessmentLists(3)[0].lessons.includes("other-01"), "a második indítás nem írja felül a listát");
+
+// A szülői felmérő listák: évfolyamonként több, saját nevű, eszköz-szintű lista
+const lista = createAssessmentList(3, "  Írásbeli számolás  ");
+check(lista.name === "Írásbeli számolás", "a név nincs kitakarva");
+check(getAssessmentLists(3).length === 2, "a lista az évfolyamhoz kerül");
+check(createAssessmentList(3, "   ") === null, "üres név nem készít listát");
+check(getAssessmentLists(5).length === 0, "más évfolyamon nincs lista");
+
+check(toggleAssessmentLesson(3, lista.id, "place-01") === true, "a pipa bekapcsol");
+check(isInAssessmentList(3, lista.id, "place-01"), "a kiválasztott lecke a listában van");
+check(toggleAssessmentLesson(3, lista.id, "place-01") === false, "a pipa kikapcsol");
+check(!isInAssessmentList(3, lista.id, "place-01"), "a kivett lecke nincs a listában");
+check(getAssessmentLists(3)[0].lessons.includes("place-01"), "a másik lista érintetlen");
+
+// Importkor a listák csak bővülhetnek, a hibás tételt kidobjuk
+mergeAssessmentLists({
+    "3": [
+        { id: "bejovo", name: "Átvitt", lessons: ["place-01"] },
+        { id: "bejovo", lessons: ["other-01"] },
+        "rossz tétel"
+    ],
+    "4": "nem lista"
+});
+const bejovo = getAssessmentLists(3).find(l => l.id === "bejovo");
+check(!!bejovo, "importkor bekerül a lista");
+check(bejovo.name === "Átvitt", "a név megmarad");
+check(bejovo.lessons.length === 2, "azonos id listák egyesülnek");
+check(getAssessmentLists(4).length === 0, "hibás adat nem csinál listát");
+
+mergeAssessmentLists({ "3": [{ id: "bejovo", name: "Átvitt", lessons: [] }] });
+check(getAssessmentLists(3).find(l => l.id === "bejovo").lessons.length === 2, "az import nem távolít el elemet");
+
+removeAssessmentList(3, lista.id);
+check(getAssessmentLists(3).length === 2 && !getAssessmentLists(3).some(l => l.id === lista.id), "a törlés a saját listát viszi");
 
 // A tárolt érték lecke-id, a menühöz leckefájllá kell alakulnia
 const idxForIds = [{ id: "place-01", file: "./data/lessons/grade3/place-01.json", grades: [3] }];
@@ -136,7 +198,7 @@ const saved = getAssessments();
 check(saved.length === 30, "legfeljebb 30 futás marad a profilban");
 check(saved[0].startedAt === 32, "a legfrissebb futás van legelöl");
 
-// A kedvencek-lista választója: három gomb, a lista címeivel, és a választás átadása
+// A felmérő lista választója: három gomb, a lista címeivel, és a választás átadása
 function fakeElement(tag) {
     return {
         tag,
@@ -169,7 +231,7 @@ openFavoritesChooser({
 
 const chooser = document.body.children[0];
 check(chooser.className === "favorites-chooser", "a választó megjelenik");
-check(chooser.children[1].children.length === 2, "a kedvencek listája címei olvashatók");
+check(chooser.children[1].children.length === 2, "a felmérő lista címei olvashatók");
 
 const chooserButtons = chooser.children[3].children;
 check(chooserButtons.length === 3, "három gomb: kezdjük, időmérő, bezárás");

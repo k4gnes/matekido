@@ -1,15 +1,17 @@
 import { Game } from "./engine/Game.js?v=177";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=102";
-import { renderLessonMenu } from "./components/lessonMenu.js?v=140";
-import { renderSkillMap } from "./components/skillMap.js?v=65";
+import { renderLessonMenu } from "./components/lessonMenu.js?v=143";
+import { renderSkillMap } from "./components/skillMap.js?v=66";
 import { renderHelp } from "./components/help.js?v=7";
-import { renderProfilePage } from "./components/profilePage.js?v=31";
+import { renderProfilePage } from "./components/profilePage.js?v=32";
+import { renderProfileAssessmentsPage } from "./components/profileAssessments.js?v=1";
 import { renderStatsPage } from "./components/statsPage.js?v=41";
 import { renderWelcomeScreen } from "./components/welcomeScreen.js?v=13";
-import { renderParentDashboard } from "./components/parentDashboard.js?v=12";
+import { renderParentDashboard } from "./components/parentDashboard.js?v=13";
 import { renderParentHub } from "./components/parentHub.js?v=10";
 import { renderTransferPage } from "./components/transferPage.js?v=2";
+import { migrateAssessmentLists } from "./profile/AssessmentLists.js?v=1";
 import { getActiveId, listPlayers } from "./profile/UserManager.js?v=5";
 import { getActiveGrade, getFavoriteLessons, getLessonStats, recordLessonSkip, getSkippedLessons, getActiveWorld, setActiveGrade, resolveLessonGrade } from "./profile/Profile.js";
 import { curriculumSort } from "./data/curriculum.js";
@@ -99,6 +101,8 @@ function showRestoredRoute(route) {
         showHelp();
     } else if (route === "parent") {
         showParentHub();
+    } else if (route === "profil-felmerek") {
+        showProfileAssessments();
     } else if (route === "dashboard") {
         showParentDashboard();
     } else if (route === "transfer") {
@@ -120,6 +124,9 @@ try {
 }
 
 queueDeepLink();
+
+// a régi, játékosonkénti felmérő-pipák átkerülnek az évfolyamszintű listákra
+migrateAssessmentLists(lessonIndex.lessons);
 
 const restoredRoute = readRoute();
 
@@ -205,7 +212,7 @@ function showSkillMap() {
     clearWorldBackground();
     setTipVisible(true);
     setRoute("parent");
-    renderSkillMap(root, () => showParentHub());
+    renderSkillMap(root, () => showParentHub(), lessonIndex);
 }
 
 function showParentHub() {
@@ -247,6 +254,22 @@ function showProfile() {
         lessonIndex,
         root,
         onBack: showMenu,
+        onStats: showStats,
+        onHelp: () => showHelp(),
+        onSwitch: showWelcome,
+        onParent: showParentHub,
+        onAssessments: showProfileAssessments
+    });
+}
+
+function showProfileAssessments() {
+    setWorldBackground();
+    setTipVisible(true);
+    setRoute("profil-felmerek");
+    renderProfileAssessmentsPage({
+        root,
+        onProfile: showProfile,
+        onLessons: showMenu,
         onStats: showStats,
         onHelp: () => showHelp(),
         onSwitch: showWelcome,

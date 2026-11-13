@@ -314,7 +314,7 @@ export function renderProfilePage({ lessonIndex, root, onBack, onStats, onHelp, 
         onParent
     });
 
-    card.append(navbar, title, stats, gradeCard, badgeSection, progressSection, questSection, achWorldRow);
+    card.append(navbar, title, stats, gradeCard, progressSection, questSection, badgeSection, achWorldRow);
 
     root.append(card);
 }

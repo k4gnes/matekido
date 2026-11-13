@@ -503,7 +503,7 @@
     box-shadow: 0 0 0 2px var(--badge-color);
 }
 
-/* Jelzés szintű keretezés a grade-kártya mintájára: a sáv és a két alatta lévő blokk. */
+/* Jelzés szintű keretezés a grade-kártya mintájára: a haladás, a küldetés és a jelvények blokkjai. */
 .profile-page-badges,
 .profile-page-progress,
 .profile-page-quest {

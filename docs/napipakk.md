@@ -43,7 +43,7 @@ A napocskák az adott MatekIdő-világhoz kapcsolódnak.
 - Minden világban külön napocska-gyűjtemény vezethető.
 - Egy világban **7 napocska** összegyűjtése után a gyerek megszerzi az adott világ jelvényét.
 - A napocska-számláló világonként 7-nél áll meg: 7/7 után nem nő tovább, és újabb napocska nem jár érte.
-- A jelvények sávja a profil oldalon, a haladás-sáv felett jelenik meg: a még nem megszerzett világok ikonjai halványan, a 7 napocskás világok színesen, karikával.
+- A jelvények sávja a profil oldalon, a „📅 Mai küldetés” alatt jelenik meg: a még nem megszerzett világok ikonjai halványan, a 7 napocskás világok színesen, karikával.
 - A jelvény vizuálisan és tematikájában az adott világhoz kapcsolódik.
 
 A napocskák és a jelvények így a MatekIdő világainak saját gyűjthető elemeivé válnak.

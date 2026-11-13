@@ -102,7 +102,7 @@ Ezt a lépéskört **futtasd végig a főbb feladattípusokon is**, hogy mindegy
 | # | Lépés | Várt eredmény | Eredmény |
 |---|-------|---------------|----------|
 | 5.1 | Kattints a `👤 Profilom` gombra a menüben | Megnyílik a profiloldal: avatar, „Saját …” cím, név, 4 stat (📚 lecke, ⭐ csillag, 🔥 nap, ✨ hiba nélkül) | |
-| 5.2 | Ellenőrizd a „🏅 Világjelvények · 7 napocska” sávot | 7 világikon a haladás-sáv felett; 7 napocskás világnál színre vált és karikát kap; hoverrel a tooltip „x/7 napocska” vagy „megszerezve ✓” | |
+| 5.2 | Ellenőrizd a „🏅 Világjelvények · 7 napocska” sávot | 7 világikon a „📅 Mai küldetés” alatt; 7 napocskás világnál színre vált és karikát kap; hoverrel a tooltip „x/7 napocska” vagy „megszerezve ✓” | |
 | 5.3 | Ellenőrizd a haladás-sávot | A „k Következő cél: X / Y” progress-sáv a teljesítéshez igazodik | |
 | 5.4 | Ellenőrizd a „📅 Mai küldetés” részt | 3-pontos kvótasáv (0/3, 1/3 …), szöveg: „x/3 lecke teljesítve” | |
 | 5.5 | „🏆 Teljesítmények” | Megjelennek a feloldott és lezárt teljesítmények, a feloldottak ✓ jellel | |

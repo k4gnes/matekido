@@ -10,6 +10,7 @@ test:
 	node src/testAchievements.js
 	node src/testParentStats.js
 	node src/testAssessment.js
+	node src/testMultPrep.js
 
 sync-docs:
 	mkdir -p src/docs

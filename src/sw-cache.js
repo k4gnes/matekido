@@ -772,6 +772,7 @@ const SW_CACHE_LIST = [
     "/testAssessment.js",
     "/testDailyQuest.js",
     "/testHints.js",
+    "/testMultPrep.js",
     "/testParentStats.js",
     "/testPlayEngine.js",
     "/testPractice.js",

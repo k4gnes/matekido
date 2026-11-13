@@ -55,13 +55,15 @@ function makeOptions(answer, min, max, count = 4) {
 function generateEqualGroups(count, tables, max, interaction, world) {
     const emojis = getEmojis(world);
     const tasks = [];
-    for (let i = 0; i < count; i++) {
+    const seen = new Set();
+    // A [2, 5]-ös táblából csak pár csoportszerkezet van (5 feladatra ~10), ezért az nem jöhet kétszer.
+    const buildTask = () => {
         const perGroup = pick(tables);
         const numGroups = randint(2, Math.min(6, Math.floor(max / perGroup)));
         const total = perGroup * numGroups;
         const emoji = pick(emojis);
         const mode = interaction === "mixed" ? pick(["input", "choice"]) : interaction;
-        tasks.push({
+        return {
             type: "equal-groups",
             groups: numGroups,
             perGroup,
@@ -70,21 +72,34 @@ function generateEqualGroups(count, tables, max, interaction, world) {
             emoji,
             interaction: mode,
             options: mode === "choice" ? makeOptions(total, 1, max + 10) : undefined
-        });
+        };
+    };
+    for (let i = 0; i < count; i++) {
+        let task = buildTask();
+        let key = `${task.groups}x${task.perGroup}`;
+        let tries = 0;
+        while (seen.has(key) && tries < 20) {
+            task = buildTask();
+            key = `${task.groups}x${task.perGroup}`;
+            tries++;
+        }
+        seen.add(key);
+        tasks.push(task);
     }
     return tasks;
 }
 
 function generateRepeatedAddition(count, tables, max, interaction) {
     const tasks = [];
-    for (let i = 0; i < count; i++) {
+    const seen = new Set();
+    const buildTask = () => {
         const addend = pick(tables);
         const times = randint(2, Math.min(5, Math.floor(max / addend)));
         const parts = Array(times).fill(addend);
         const expression = parts.join(" + ");
         const answer = addend * times;
         const mode = interaction === "mixed" ? pick(["input", "choice"]) : interaction;
-        tasks.push({
+        return {
             type: "repeated-addition",
             addend,
             times,
@@ -92,14 +107,25 @@ function generateRepeatedAddition(count, tables, max, interaction) {
             answer,
             interaction: mode,
             options: mode === "choice" ? makeOptions(answer, 1, max + 10) : undefined
-        });
+        };
+    };
+    for (let i = 0; i < count; i++) {
+        let task = buildTask();
+        let tries = 0;
+        while (seen.has(task.expression) && tries < 20) {
+            task = buildTask();
+            tries++;
+        }
+        seen.add(task.expression);
+        tasks.push(task);
     }
     return tasks;
 }
 
 function generateSkipCounting(count, tables, max, interaction) {
     const tasks = [];
-    for (let i = 0; i < count; i++) {
+    const seen = new Set();
+    const buildTask = () => {
         const step = pick(tables);
         const maxStart = max - step * 4;
         const start = randint(1, Math.max(1, maxStart));
@@ -109,14 +135,27 @@ function generateSkipCounting(count, tables, max, interaction) {
         }
         const missingIndex = randint(1, 3);
         const answer = terms[missingIndex];
-        tasks.push({
+        return {
             type: "skip-counting",
             terms,
             missingIndex,
             answer,
             step,
             interaction: interaction === "mixed" ? pick(["input", "choice"]) : interaction
-        });
+        };
+    };
+    for (let i = 0; i < count; i++) {
+        let task = buildTask();
+        // A számsor a feladat: ugyanazzal a sorral másik hiányzó hely is ugyanaz a feladatnak tűnik.
+        let key = task.terms.join(",");
+        let tries = 0;
+        while (seen.has(key) && tries < 20) {
+            task = buildTask();
+            key = task.terms.join(",");
+            tries++;
+        }
+        seen.add(key);
+        tasks.push(task);
     }
     return tasks;
 }

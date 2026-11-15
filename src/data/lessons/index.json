@@ -803,6 +803,7 @@
       "id": "integers-opposite-01",
       "title": "➖ Ellentett és abszolút érték",
       "grades": [
+        5,
         6
       ],
       "category": "numbers",
@@ -828,6 +829,7 @@
       "id": "integers-compare-01",
       "title": "⚖️ Egész számok összehasonlítása",
       "grades": [
+        5,
         6
       ],
       "category": "numbers",
@@ -853,6 +855,7 @@
       "id": "integers-line-01",
       "title": "🌡️ Negatív számok a számegyenesen",
       "grades": [
+        5,
         6
       ],
       "category": "numbers",
@@ -878,6 +881,7 @@
       "id": "integers-ops-01",
       "title": "🧮 Előjeles összeadás és kivonás",
       "grades": [
+        5,
         6
       ],
       "category": "numbers",
@@ -903,6 +907,7 @@
       "id": "integers-muldiv-01",
       "title": "➗ Előjeles szorzás és osztás",
       "grades": [
+        5,
         6
       ],
       "category": "numbers",

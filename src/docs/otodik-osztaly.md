@@ -1,10 +1,10 @@
 # Matekidő – 5. osztályos tanmenet
 
-> **Státusz: megvalósult.** A regiszterben 240 lecke van, ebből 36 az 5. osztályos (32 számozott feladat + 1 mester kihívás + 3 egyperces: a teljes Számfogalom, Törtek, Tizedes törtek, Százalékszámítás, Műveletek nagy számokkal, Geometria, Gyakorlati tudások, Adatok és Szöveges feladatok blokk). Az alábbiak irányadó tervek – a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
+> **Státusz: megvalósult.** A regiszterben 240 lecke van, ebből 41 az 5. osztályos (37 számozott feladat + 1 mester kihívás + 3 egyperces: a teljes Számfogalom, Egész számok, Törtek, Tizedes törtek, Százalékszámítás, Műveletek nagy számokkal, Geometria, Gyakorlati tudások, Adatok és Szöveges feladatok blokk). Az alábbiak irányadó tervek – a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
 
-**Tervezett 32 lecke + 1 mester kihívás**, 9 témakörben (a regiszterben 7 kategória: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
+**Tervezett 37 lecke + 1 mester kihívás**, 10 témakörben (a regiszterben 7 kategória: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 
-A 4. osztályos tananyag (10 000-es számkör, írásbeli műveletek) lezárult – az 5. osztály az **1 000 000-ig bővülő számkörre**, az **oszthatóságra**, a **törtek és tizedes törtek teljes műveletkörére**, valamint a **százalékszámítás alapjaira** épül.
+A 4. osztályos tananyag (10 000-es számkör, írásbeli műveletek) lezárult – az 5. osztály az **1 000 000-ig bővülő számkörre**, az **oszthatóságra**, az **előjeles egész számok műveleteire**, a **törtek és tizedes törtek teljes műveletkörére**, valamint a **százalékszámítás alapjaira** épül.
 
 Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 
@@ -21,71 +21,83 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 | 5 | Oszthatóság | [Oszthatóság 2, 3, 4, 5, 6, 9, 10-zel](?lesson=divisibility-rules-01) | Oszthatósági szabályok | 1000000 | 3 |
 | 6 | Kerekítés és becslés | [Kerekítés és becslés 1 000 000-ig](?lesson=rounding-millions-01) | Kerekítés, nagyságrend | 1000000 | 2 |
 
+## Egész számok, negatív számok (5 lecke)
+
+| # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|---|
+| 7 | Egész számok | [Negatív számok a számegyenesen](?lesson=integers-line-01) | Hőmérséklet, adósság, számegyenes | 20 | 2 ✔ |
+| 8 | Egész számok | [Ellentett és abszolút érték](?lesson=integers-opposite-01) | Ellentett és \|n\| | 100 | 2 ✔ |
+| 9 | Egész számok | [Egész számok összehasonlítása](?lesson=integers-compare-01) | Összehasonlítás `<`, `=`, `>` jelekkel | 100 | 2 ✔ |
+| 10 | Egész számok | [Előjeles összeadás és kivonás](?lesson=integers-ops-01) | Összeadás és kivonás negatív számokkal | 100 | 3 ✔ |
+| 11 | Egész számok | [Előjeles szorzás és osztás](?lesson=integers-muldiv-01) | Előjelszabályok | 100 | 3 ✔ |
+
+> Ezek a leckék a 6. osztályos tananyagban is megmaradnak: a Nat 5–6. évfolyamos témaköre mindkét évfolyamon jelenik meg.
+
 ## Törtek (5 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 7 | Bővítés, egyszerűsítés | [Bővítés és egyszerűsítés](?lesson=fraction-equal-01) | Egyenlő törtek | 100 | 2 |
-| 8 | Törtek összeadása | [Különböző nevezőjű törtek összeadása](?lesson=fraction-common-den-01) | Összeadás és kivonás | 20 | 3 |
-| 9 | Törtek szorzása | [Törtek szorzása egész számmal](?lesson=fraction-times-int-01) | Szorzás egész számmal | 20 | 3 |
-| 10 | Törtek szorzása | [Törtek szorzása törttel](?lesson=fraction-times-frac-01) | Szorzás törttel | 100 | 3 ✔ |
-| 11 | Törtek osztása | [Törtek osztása](?lesson=fraction-divide-01) | Osztás egésszel és törttel | 100 | 3 ✔ |
+| 12 | Bővítés, egyszerűsítés | [Bővítés és egyszerűsítés](?lesson=fraction-equal-01) | Egyenlő törtek | 100 | 2 |
+| 13 | Törtek összeadása | [Különböző nevezőjű törtek összeadása](?lesson=fraction-common-den-01) | Összeadás és kivonás | 20 | 3 |
+| 14 | Törtek szorzása | [Törtek szorzása egész számmal](?lesson=fraction-times-int-01) | Szorzás egész számmal | 20 | 3 |
+| 15 | Törtek szorzása | [Törtek szorzása törttel](?lesson=fraction-times-frac-01) | Szorzás törttel | 100 | 3 ✔ |
+| 16 | Törtek osztása | [Törtek osztása](?lesson=fraction-divide-01) | Osztás egésszel és törttel | 100 | 3 ✔ |
 
 ## Tizedes törtek (4 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 12 | Tizedes törtek alapjai | [Tizedes törtek: írás, olvasás, összehasonlítás](?lesson=decimal-basics-01) | Alak és nagyság | 100 | 2 ✔ |
-| 13 | Tizedes törtek műveletei | [Tizedes törtek összeadása és kivonása](?lesson=decimal-addsub-01) | Összeadás és kivonás | 100 | 2 ✔ |
-| 14 | Tizedes törtek szorzása | [Szorzás 10-zel, 100-zal, 1000-rel](?lesson=decimal-times-01) | Helyiérték-váltás | 1000 | 2 ✔ |
-| 15 | Tizedes törtek osztása | [Osztás 10-zel, 100-zal, egésszel](?lesson=decimal-div-01) | Osztás tizedes törtekkel | 1000 | 3 ✔ |
+| 17 | Tizedes törtek alapjai | [Tizedes törtek: írás, olvasás, összehasonlítás](?lesson=decimal-basics-01) | Alak és nagyság | 100 | 2 ✔ |
+| 18 | Tizedes törtek műveletei | [Tizedes törtek összeadása és kivonása](?lesson=decimal-addsub-01) | Összeadás és kivonás | 100 | 2 ✔ |
+| 19 | Tizedes törtek szorzása | [Szorzás 10-zel, 100-zal, 1000-rel](?lesson=decimal-times-01) | Helyiérték-váltás | 1000 | 2 ✔ |
+| 20 | Tizedes törtek osztása | [Osztás 10-zel, 100-zal, egésszel](?lesson=decimal-div-01) | Osztás tizedes törtekkel | 1000 | 3 ✔ |
 
 ## Százalékszámítás (2 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 16 | Százalék fogalma | [Százalék fogalma: 10%, 20%, 25%, 50%](?lesson=percent-basics-01) | Századrész felismerése | 100 | 2 ✔ |
-| 17 | Százalékszámítás | [Mennyi az X százaléka?](?lesson=percent-of-01) | Alap százalékszámítás | 1000 | 3 ✔ |
+| 21 | Százalék fogalma | [Százalék fogalma: 10%, 20%, 25%, 50%](?lesson=percent-basics-01) | Századrész felismerése | 100 | 2 ✔ |
+| 22 | Százalékszámítás | [Mennyi az X százaléka?](?lesson=percent-of-01) | Alap százalékszámítás | 1000 | 3 ✔ |
 
 ## Műveletek nagy számokkal (3 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 18 | Írásbeli műveletek | [Írásbeli műveletek nagy számokkal](?lesson=written-big-01) | Összeadás, kivonás, szorzás, osztás | 100000 | 2 ✔ |
-| 19 | Műveleti sorrend | [Műveleti sorrend és zárójelek](?lesson=operation-order-02) | Sorrend + zárójel | 1000 | 3 ✔ |
-| 20 | Hiányzó tag | [Hiányzó tag és hiányzó tényező](?lesson=missing-mixed-01) | Fordított műveletek | 1000 | 2 ✔ |
+| 23 | Írásbeli műveletek | [Írásbeli műveletek nagy számokkal](?lesson=written-big-01) | Összeadás, kivonás, szorzás, osztás | 100000 | 2 ✔ |
+| 24 | Műveleti sorrend | [Műveleti sorrend és zárójelek](?lesson=operation-order-02) | Sorrend + zárójel | 1000 | 3 ✔ |
+| 25 | Hiányzó tag | [Hiányzó tag és hiányzó tényező](?lesson=missing-mixed-01) | Fordított műveletek | 1000 | 2 ✔ |
 
 ## Geometria (6 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 21 | Síkidomok | [Síkidomok tulajdonságai](?lesson=polygon-02) | Sokszögek rendszerezése | — | 2 ✔ |
-| 22 | Kerület és terület | [Kerület és terület – négyzet és téglalap](?lesson=shape-formula-02) | Számítás képletekkel | 1000 | 2 ✔ |
-| 23 | Felszín és térfogat | [Kocka és téglatest felszíne, térfogata](?lesson=solid-measure-01) | Testek térfogata | 1000 | 3 ✔ |
-| 24 | Szögek | [Szögek mérése és szerkesztése](?lesson=angle-measure-02) | Fokban mérés | 360 | 2 ✔ |
-| 25 | Koordináták | [Koordináta-rendszer](?lesson=coordinate-01) | Pontok koordinátái | 100 | 2 ✔ |
-| 26 | Transzformációk | [Eltolás, tükrözés, forgatás](?lesson=transform-02) | Geometriai transzformációk | — | 3 ✔ |
+| 26 | Síkidomok | [Síkidomok tulajdonságai](?lesson=polygon-02) | Sokszögek rendszerezése | — | 2 ✔ |
+| 27 | Kerület és terület | [Kerület és terület – négyzet és téglalap](?lesson=shape-formula-02) | Számítás képletekkel | 1000 | 2 ✔ |
+| 28 | Felszín és térfogat | [Kocka és téglatest felszíne, térfogata](?lesson=solid-measure-01) | Testek térfogata | 1000 | 3 ✔ |
+| 29 | Szögek | [Szögek mérése és szerkesztése](?lesson=angle-measure-02) | Fokban mérés | 360 | 2 ✔ |
+| 30 | Koordináták | [Koordináta-rendszer](?lesson=coordinate-01) | Pontok koordinátái | 100 | 2 ✔ |
+| 31 | Transzformációk | [Eltolás, tükrözés, forgatás](?lesson=transform-02) | Geometriai transzformációk | — | 3 ✔ |
 
 ## Gyakorlati tudások (3 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 27 | Mértékegység-átváltás | [Átváltások tisztán (hosszúság, tömeg, űrtartalom)](?lesson=unit-conversion-01) | km/m/cm, t/kg/g, hl/l/dl | 10000 | 2 ✔ |
-| 28 | Terület és térfogat-egységek | [Terület- és térfogategységek váltása](?lesson=area-volume-units-01) | cm², m², dm³, l | 10000 | 3 ✔ |
-| 29 | Idő és sebesség | [Idő, sebesség, út](?lesson=time-speed-01) | Egyszerű sebességhelyzetek | 1000 | 3 ✔ |
+| 32 | Mértékegység-átváltás | [Átváltások tisztán (hosszúság, tömeg, űrtartalom)](?lesson=unit-conversion-01) | km/m/cm, t/kg/g, hl/l/dl | 10000 | 2 ✔ |
+| 33 | Terület és térfogat-egységek | [Terület- és térfogategységek váltása](?lesson=area-volume-units-01) | cm², m², dm³, l | 10000 | 3 ✔ |
+| 34 | Idő és sebesség | [Idő, sebesség, út](?lesson=time-speed-01) | Egyszerű sebességhelyzetek | 1000 | 3 ✔ |
 
 ## Adatok és valószínűség (1 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 30 | Adatok | [Táblázatok, diagramok, átlag](?lesson=average-01) | Átlag számítása | 1000 | 2 ✔ |
+| 35 | Adatok | [Táblázatok, diagramok, átlag](?lesson=average-01) | Átlag számítása | 1000 | 2 ✔ |
 
 ## Szöveges feladatok (2 lecke)
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 31 | Arányos osztás | [Arányos osztás](?lesson=ratio-split-01) | Megosztás arányban | 1000 | 3 ✔ |
-| 32 | Egyenes arányosság | [Egyenes arányosság](?lesson=direct-proportion-01) | Skálázott helyzetek | 1000 | 3 ✔ |
+| 36 | Arányos osztás | [Arányos osztás](?lesson=ratio-split-01) | Megosztás arányban | 1000 | 3 ✔ |
+| 37 | Egyenes arányosság | [Egyenes arányosság](?lesson=direct-proportion-01) | Skálázott helyzetek | 1000 | 3 ✔ |
 
 ## 🌟 Mester kihívás (1 lecke)
 
@@ -93,15 +105,15 @@ Azoknak, akiknek nagyon jól megy a matek. Itt nem elég számolni: gondolkodni 
 
 | # | Készség | Lecke | Feladattípus | Tartomány | Nehézség |
 |---|---|---|---|---|---|
-| 33 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade5-master-01) | Hiányzó műveleti jel és kézfogás (kombinatorika) | 1000 | 4 |
+| 38 | Mester kihívás | [🌟 Mester kihívás](?lesson=grade5-master-01) | Hiányzó műveleti jel és kézfogás (kombinatorika) | 1000 | 4 |
 
 ---
 
 ## Tervezett kiegészítések
 
-A fenti 32 lecke az 5. osztályos tanmenet terve. Tovább tervezett leckék:
+A fenti 37 lecke az 5. osztályos tanmenet terve. Tovább tervezett leckék:
 
-- [ ] **Negatív számok bevezetése** (esetleg a 6. osztályos anyag előrehozása a kerettanterv szerint)
+- [x] **Negatív számok bevezetése** ✔ – a 6. osztályos egész számok leckéi a Nat 5–6. évfolyamos témaköre szerint az 5. osztályban is megjelennek
 - [ ] **Hatók és többszörösök bővítése** (legkisebb közös többszörös, legnagyobb közös osztó)
 - [ ] **Vegyes százalék- és törtfeladatok** (törtrész ↔ százalék váltás)
 - [ ] **Szögek szerkesztése körzővel** (a fokok alapjaira épülő szerkesztés)
@@ -110,9 +122,10 @@ A fenti 32 lecke az 5. osztályos tanmenet terve. Tovább tervezett leckék:
 
 ## Státusz
 
-**Megvalósult leckék (32/32 + 1 mester):**
+**Megvalósult leckék (37/37 + 1 mester):**
 
 - Számfogalom 1 000 000-ig (6/6): helyiérték (`place-value-millions-01`), számnevek (`number-name-millions-01`), számszomszédok és kerekítés (`neighbor-round-millions-01`), összehasonlítás (`comparison-millions-01`), oszthatósági szabályok 2, 3, 4, 5, 6, 9, 10-zel (`divisibility-rules-01`), kerekítés és becslés (`rounding-millions-01`) ✔
+- Egész számok, negatív számok (5/5 – blokk kész): negatív számok helye a számegyenesen (`integers-line-01`), ellentett és abszolút érték (`integers-opposite-01`), egész számok összehasonlítása (`integers-compare-01`), előjeles összeadás és kivonás (`integers-ops-01`), előjeles szorzás és osztás (`integers-muldiv-01`) – a Nat 5–6. évfolyamos témaköre szerint az 5. osztályban is, a 6. osztályos leckékkel közösen ✔
 - Törtek (5/5 – blokk kész): bővítés és egyszerűsítés – azonos értékű töredékek leírása (`fraction-equal-01`) ✔; különböző nevezőjű törtek összeadása és kivonása (`fraction-common-den-01`, feladat-segítséggel) ✔; törtek szorzása egész számmal (`fraction-times-int-01`, egész adagos és tört eredményű feladatokkal, feladat-segítséggel) ✔; törtek szorzása törttel (`fraction-times-frac-01`, területmodellel, egyszerűsítendő és egyszerűsítés nélküli feladatokkal, feladat-segítséggel) ✔; törtek osztása (`fraction-divide-01`, egésszel és törttel, megfordított szorzás, feladat-segítséggel) ✔
 - Tizedes törtek (4/4 – blokk kész): írás, olvasás és összehasonlítás egész és tizedes résszel (`decimal-basics-01`: szöveges olvasat → tizedes szám, tizedes szám → szöveges olvasat, és összehasonlítás nullával kiegészítéssel, `3,5 = 3,50`, `3,9 > 3,85`) ✔; összeadás és kivonás vesszők igazításával (`decimal-addsub-01`: tizedes és század keverve, egész rész pótlásával) ✔; szorzás 10-zel, 100-zal, 1000-rel, a vessző jobbra vándorlásával (`decimal-times-01`, nulla-pótlással) ✔; osztás 10-zel, 100-zal és egésszel, a vessző balra mozdulásával (`decimal-div-01`, nulla elé írásával, tizedes osztása egésszel) ✔
 - Százalékszámítás (2/2 – blokk kész): százalék fogalma (`percent-basics-01`: 100 kockás rács kiszínezése, százalék ↔ egyszerű tört, és hétköznapi szövegben a fele/negyede/ötöde/tizede felismerése, feladat-segítséggel) ✔; százalék számolása és megfordítása (`percent-of-01`: 10/20/25/50% gyors részekkel, majd 5/15/30/40/75%-kal 1000-ig, végül „hány százaléka” – rész ÷ egész × 100, feladat-segítséggel) ✔
@@ -123,7 +136,7 @@ A fenti 32 lecke az 5. osztályos tanmenet terve. Tovább tervezett leckék:
 - Szöveges feladatok (2/2 – blokk kész): arányos osztás (`ratio-split-01`: adott egész és arány → a részek, valamint adott arány és rész → az egész számítása 1000-ig, arány-sávos segédlettel, választós és beírós interakcióval – új `ratio-split` fajta a `word-problem` feladattípusban, új `ratio-split` készség) ✔; egyenes arányosság (`direct-proportion-01`: adott mennyiség–érték párból a hiányzó érték, valamint a hiányzó mennyiség kiszámítása 1000-ig, aránytáblázatos segédlettel, választós és beírós interakcióval – új `direct-proportion` fajta a `word-problem` feladattípusban, új `direct-proportion` készség) ✔
 - Mester kihívás (1/1): 🌟 Mester kihívás (`grade5-master-01`) – hiányzó műveleti jel és kézfogás a legügyesebbeknek ✔
 
-A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg; mind a 32 tervezett lecke elkészült, és elkészült a 🌟 Mester kihívás is.
+A fenti táblázat a fejlesztés sorrendjét és a tervezett nehézségeket adja meg; mind a 37 tervezett lecke elkészült, és elkészült a 🌟 Mester kihívás is.
 
 
 ## 🎲 Egypercesek

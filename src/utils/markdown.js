@@ -135,7 +135,8 @@ export function renderMarkdown(markdown, { toc = false } = {}) {
                 rows.push(lines[i].trim());
                 i++;
             }
-            const parseRow = row => row.replace(/^\|/, "").replace(/\|$/, "").split("|").map(cell => renderInline(cell.trim()));
+            // a \| escape-elt cső nem osztja a sort (pl. |n| a cellában)
+            const parseRow = row => row.replace(/\\\|/g, "\u0000").replace(/^\|/, "").replace(/\|$/, "").split("|").map(cell => renderInline(cell.trim().replace(/\u0000/g, "|")));
             let tableHtml = "<table>";
             let bodyRows = rows;
             if (rows.length > 1 && isTableSeparator(rows[1])) {

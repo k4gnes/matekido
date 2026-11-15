@@ -1,6 +1,6 @@
 import { createCard } from "./ui/card.js";
 import { createNavBar } from "./ui/navbar.js";
-import { renderMarkdown } from "../utils/markdown.js?v=16";
+import { renderMarkdown } from "../utils/markdown.js?v=17";
 
 export function renderHelp(root, nav = {}) {
 

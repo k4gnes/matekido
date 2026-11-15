@@ -1,6 +1,6 @@
 import { createButton } from "./ui/button.js";
 import { createCard } from "./ui/card.js";
-import { renderMarkdown } from "../utils/markdown.js?v=16";
+import { renderMarkdown } from "../utils/markdown.js?v=17";
 import { getAssessmentLists, createAssessmentList, removeAssessmentList, isInAssessmentList, toggleAssessmentLesson } from "../profile/AssessmentLists.js?v=1";
 
 // Az évfolyamok sorrendje 1-től 8-ig: az index+1 az évfolyamszám.

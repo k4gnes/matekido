@@ -11,6 +11,7 @@ test:
 	node src/testParentStats.js
 	node src/testAssessment.js
 	node src/testMultPrep.js
+	node src/testMarkdown.js
 
 sync-docs:
 	mkdir -p src/docs

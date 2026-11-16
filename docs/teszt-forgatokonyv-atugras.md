@@ -51,7 +51,7 @@ Az **1. osztály** leckéi **rögzített sorrendben** vannak (1–42, lentebb a 
 | 12 | Összehasonlítás 20-ig | 33 | Szöveges feladatok |
 | 13 | Páros és páratlan 20-ig | 34 | 🧩 Egyenlő csoportok 20-ig |
 | 14 | Helyiérték 100-ig | 35 | 🧩 Ismételt összeadás 20-ig |
-| 15 | Helyiérték – tízes és egyes 100-ig | 36 | 🧩 Számolás kettesével, ötösével |
+| 15 | Helyiérték – tízes és egyes 100-ig | 36 | 🧩 Számolás kettesével |
 | 16 | Kiegészítés véletlen számig 20-ig | 37 | 📐 Hány oldala van? |
 | 17 | Számok szomszédai 100-ig | 38 | 🧊 Térbeli testek |
 | 18 | Összeadás 20-ig | 39 | 🌀 Forgatás |

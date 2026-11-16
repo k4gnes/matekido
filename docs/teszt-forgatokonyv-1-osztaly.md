@@ -77,7 +77,7 @@ A sorok sorszáma **1–44, folytonos** – megegyezik a menüben és a lecke fe
 |---|-------|-------------------|---------------|----------|
 | 28 | 🧩 Egyenlő csoportok 20-ig | `equal-groups` / 20 | `csoportok × csoportonként` = összesen | ok|
 | 29 | 🧩 Ismételt összeadás 20-ig | `repeated-addition` / 20 | Az ismételt összeadás összege helyes | ok|
-| 30 | 🧩 Számolás kettesével, ötösével | `skip-counting` / 20 | A lépegetés (2/es, 5/ös) állandó, a hiányzó tag helyes | ok|
+| 30 | 🧩 Számolás kettesével | `skip-counting` / 20 | A lépegetés kettesével állandó, a hiányzó tag helyes | ok|
 
 ### 2.4 Geometria
 

@@ -2612,7 +2612,7 @@
     },
     {
       "id": "mult-prep-03-grade1",
-      "title": "🧩 Számolás kettesével, ötösével",
+      "title": "🧩 Számolás kettesével",
       "grades": [
         1
       ],
@@ -2622,15 +2622,15 @@
       "type": "skip-counting",
       "range": 20,
       "mission": "🧩 Számolás kettesével",
-      "subtitle": "Számolás 2, 5-ösével 20-ig",
+      "subtitle": "Számolás kettesével 20-ig",
       "file": "./data/lessons/grade1/mult-prep-03.json",
       "worldTitles": {
         "racing": "🏎️ Számolás kettesével",
         "cooking": "🍳 Számolás kettesével",
-        "football": "⚽ Számolás ötösével",
+        "football": "⚽ Számolás kettesével",
         "animals": "🦁 Számolás kettesével",
-        "space": "🤖 Számolás ötösével",
-        "tram": "🚋 Számolás ötösével"
+        "space": "🤖 Számolás kettesével",
+        "tram": "🚋 Számolás kettesével"
       },
       "tasks": 5
     },
@@ -3755,16 +3755,16 @@
       "difficulty": 2,
       "type": "skip-counting",
       "range": 50,
-      "mission": "🧩 Számolás kettesével",
+      "mission": "🧩 Számolás kettesével, ötösével, tizesével",
       "subtitle": "Számolás 2, 5, 10-esével",
       "file": "./data/lessons/grade2/mult-prep-03.json",
       "worldTitles": {
-        "racing": "🏎️ Számolás kettesével",
-        "cooking": "🍳 Számolás tizesével",
-        "football": "⚽ Számolás ötösével",
-        "animals": "🦁 Számolás kettesével",
-        "space": "🤖 Számolás ötösével",
-        "tram": "🚋 Számolás ötösével"
+        "racing": "🏎️ Számolás kettesével, ötösével, tizesével",
+        "cooking": "🍳 Számolás kettesével, ötösével, tizesével",
+        "football": "⚽ Számolás kettesével, ötösével, tizesével",
+        "animals": "🦁 Számolás kettesével, ötösével, tizesével",
+        "space": "🤖 Számolás kettesével, ötösével, tizesével",
+        "tram": "🚋 Számolás kettesével, ötösével, tizesével"
       },
       "tasks": 5
     },

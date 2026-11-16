@@ -49,7 +49,7 @@ Nehézség: 1 = alapozó, 2 = közepes, 3 = haladó, 4 = mester.
 |---|---|---|---|---|---|
 | 28 | Egyenlő csoportok | [🧩 Egyenlő csoportok 20-ig](?lesson=mult-prep-01-grade1) | Egyenlő csoportok | 20 | 1 |
 | 29 | Ismételt összeadás | [🧩 Ismételt összeadás 20-ig](?lesson=mult-prep-02-grade1) | Ismételt összeadás | 20 | 1 |
-| 30 | Kettesével számolás | [🧩 Számolás kettesével, ötösével](?lesson=mult-prep-03-grade1) | Lépegetéses számolás | 20 | 1 |
+| 30 | Kettesével számolás | [🧩 Számolás kettesével](?lesson=mult-prep-03-grade1) | Lépegetéses számolás | 20 | 1 |
 
 ## Geometria (5 lecke)
 

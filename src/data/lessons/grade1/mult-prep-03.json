@@ -1,10 +1,10 @@
 {
   "id": "grade1-mult-prep-03",
-  "title": "🧩 Számolás kettesével, ötösével",
+  "title": "🧩 Számolás kettesével",
   "steps": [
     {
       "type": "scene",
-      "title": "🧩 Számolás kettesével, ötösével",
+      "title": "🧩 Számolás kettesével",
       "text": "Ismered a számsorokat? Találd ki, mi a hiányzó szám!",
       "worldTitles": {
         "racing": {
@@ -12,8 +12,8 @@
           "text": "A rajtszámok sorban jönnek! Találd ki, mi a hiányzó szám!"
         },
         "football": {
-          "title": "⚽ Számolás ötösével",
-          "text": "A gólok ötösével jönnek! Találd ki, mi a hiányzó szám!"
+          "title": "⚽ Számolás kettesével",
+          "text": "A gólok kettesével jönnek! Találd ki, mi a hiányzó szám!"
         },
         "cooking": {
           "title": "🍳 Számolás kettesével",
@@ -24,12 +24,12 @@
           "text": "Az állatok kettesével jönnek! Találd ki, mi a hiányzó szám!"
         },
         "space": {
-          "title": "🤖 Számolás ötösével",
-          "text": "Az egységek ötösével jönnek! Találd ki, mi a hiányzó szám!"
+          "title": "🤖 Számolás kettesével",
+          "text": "Az egységek kettesével jönnek! Találd ki, mi a hiányzó szám!"
         },
         "tram": {
-          "title": "🚋 Számolás ötösével",
-          "text": "Az egységek ötösével jönnek! Találd ki, mi a hiányzó szám!"
+          "title": "🚋 Számolás kettesével",
+          "text": "Az egységek kettesével jönnek! Találd ki, mi a hiányzó szám!"
         }
       }
     },

@@ -6,7 +6,7 @@ import { formatDuration, worstRunIndex, compareText, runTooltip } from "../utils
 
 // A felmérés rövid kiértékelése: az összidő, a helyes/hibás darabszám, leckénkénti
 // bontás, majd a korábbi futások idővel, helyessel és hibával (a legtöbb hibás jelölve).
-function renderEvaluation({ summary, history }) {
+export function renderEvaluation({ summary, history }) {
 
     const box = document.createElement("section");
     box.className = "assessment-eval";
@@ -14,6 +14,15 @@ function renderEvaluation({ summary, history }) {
     const title = document.createElement("h2");
     title.textContent = "📝 Kiértékelés";
     box.append(title);
+
+    // A futás listájának neve (pl. „Írásbeli számolás”): a mentett futásokon és a
+    // szülői táblázatban ott van, a kiértékelésen eddig nem jelent meg.
+    if (summary.label) {
+        const label = document.createElement("p");
+        label.className = "assessment-eval-label";
+        label.textContent = summary.label;
+        box.append(label);
+    }
 
     const totals = document.createElement("p");
     totals.className = "assessment-eval-totals";

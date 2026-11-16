@@ -401,6 +401,12 @@ body[data-world-theme="tram"] {
     font-size: 1.2rem;
 }
 
+.assessment-eval-label {
+    margin: 0 0 .4rem;
+    font-size: .85rem;
+    color: #556;
+}
+
 .assessment-eval h3 {
     margin: .8rem 0 .2rem;
     font-size: 1rem;

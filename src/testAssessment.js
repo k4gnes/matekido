@@ -251,6 +251,19 @@ openFavoritesChooser({
 });
 check(document.body.children[1].children[0].textContent === "📝 Felmérő (1)", "a felmérő választó címe");
 
+// A kiértékelésen (időmérős futás végén) látszik a felmérő lista neve
+const { renderEvaluation } = await import("./components/celebration.js");
+
+const evalBox = renderEvaluation({
+    summary: { label: "Írásbeli számolás", seconds: 60, correct: 5, wrong: 1, lessons: [] },
+    history: []
+});
+const labelLine = evalBox.children.find(c => c.className === "assessment-eval-label");
+check(labelLine && labelLine.textContent === "Írásbeli számolás", "a kiértékelésen ott a felmérő neve");
+
+const evalNoLabel = renderEvaluation({ summary: { label: null, lessons: [] }, history: [] });
+check(!evalNoLabel.children.some(c => c.className === "assessment-eval-label"), "felirat nélkül nincs üres sor");
+
 if (failures > 0) {
     console.error(`\nHIBA: ${failures} ellenőrzés bukott meg.`);
 } else {

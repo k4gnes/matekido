@@ -51,6 +51,17 @@ Az **egyperces játékok** külön oldalon élnek: a feladatok menüjében a {{�
 - Az egyperces oldalon a **➡️ Tovább** gomb mindig ide visz vissza, és a kiválasztott oldal megmarad a következő látogatásra is.
 - Az oldalon csak az **aktuális évfolyam játékai** jelennek meg (2. osztálytól a szorzótábla-játékok, 3. osztálytól a műveleti sorrend játék is, 7. osztálytól az egész számok és a hatványok játékai).
 
+## 🎄 Adventi naptár
+
+{{🎄 Advent}}
+
+Az **adventi naptár** a {{🎄 Advent|grey}} gombbal nyílik meg a feladatok menüjében, **december 1-jétől vízkeresztig** (január 5-ig). A fa alakja és a díszek minden évben újrakezdődnek.
+
+- Minden nap **kinyílik egy ablak**, és egy, az évfolyamodhoz tartozó **lecke** kerül bele – minden nap más, és ugyanaz a nap mindig ugyanazt a leckét adja, újratöltésnél sem változik.
+- A leckét elvégezve egy **dísz kerül a fenyőfára**: a fa ahogy gyűlnek a díszek, egyre jobban feldíszíti magát.
+- A múltbeli ablakokat **bármikor be lehet pótolni**, egy kihagyott nap semmiért nem büntet.
+- Január 6-án, vízkeresztkor a fa és a naptár eltűnik.
+
 ## ⚽ Válogatott és 🔍 Szűrők
 
 {{⚽ Válogatott}} {{🔍 Szűrők|grey}}

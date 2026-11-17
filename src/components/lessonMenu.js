@@ -13,6 +13,8 @@ import { getPracticeLessonFiles, latestPercentage } from "./practicePage.js?v=14
 import { openFavoritesChooser } from "./favoritesChooser.js?v=6";
 import { beginRun, resolveAssessmentLessons } from "../utils/assessment.js?v=6";
 import { gradesWithLessons } from "../utils/grades.js?v=1";
+import { adventYear } from "../utils/advent.js?v=1";
+import { renderAdventPage } from "./adventPage.js?v=1";
 import { getWorld } from "../world/WorldRegistry.js";
 
 export const CHILD_FRIENDLY_LABELS = {
@@ -105,7 +107,7 @@ function loadMenuMode() {
     const prefs = getMenuPrefs();
     if ("view" in prefs && typeof prefs.view === "string") {
         const v = prefs.view;
-        if (v === "custom" || v === "play" || v === "grade") {
+        if (v === "custom" || v === "play" || v === "grade" || v === "advent") {
             return v;
         }
     }
@@ -722,6 +724,13 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
     let mode = loadMenuMode();
     let customMode = mode === "custom";
 
+    // A naptár csak advent idején van: vízkereszt után a fül és a mód is megszűnik.
+    const adventActive = adventYear() !== null;
+    if (mode === "advent" && !adventActive) {
+        mode = "grade";
+        customMode = false;
+    }
+
     function chooseGrade(grade) {
         selectedGrade = grade;
         mode = "grade";
@@ -780,6 +789,15 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
         renderContent();
     }
 
+    function enterAdventMode() {
+        ctrlLastGrade = selectedGrade;
+        mode = "advent";
+        customMode = false;
+        setMenuView("advent");
+        gradePickerPanel.style.display = "none";
+        renderContent();
+    }
+
     const filters = loadFilters();
     const hasActiveFilters = filters.difficulty.length > 0 || filters.skills.length > 0 || filters.types.length > 0 || filters.ranges.length > 0 || filters.categories.length > 0;
     const savedOpen = loadFilterOpen();
@@ -811,9 +829,14 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
     });
     playTab.className = "mode-tab";
 
+    const adventTab = adventActive ? createButton("🎄 Advent", {
+        onClick: () => enterAdventMode()
+    }) : null;
+    if (adventTab) adventTab.className = "mode-tab";
+
     const menuToolbar = document.createElement("div");
     menuToolbar.className = "menu-toolbar";
-    menuToolbar.append(gradeTab, customTab, playTab);
+    menuToolbar.append(gradeTab, customTab, playTab, ...(adventTab ? [adventTab] : []));
 
     const filterPanel = document.createElement("div");
     filterPanel.className = "filter-panel";
@@ -1255,6 +1278,10 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
         contentArea.append(flatCard);
     }
 
+    function renderAdventContent() {
+        renderAdventPage(contentArea, { lessons: allLessons, grade: selectedGrade, onSelect });
+    }
+
     function renderContent() {
         contentArea.replaceChildren();
 
@@ -1263,11 +1290,14 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
         gradeTab.classList.toggle("active", mode === "grade");
         customTab.classList.toggle("active", mode === "custom");
         playTab.classList.toggle("active", mode === "play");
+        if (adventTab) adventTab.classList.toggle("active", mode === "advent");
 
         if (mode === "custom") {
             renderCustomContent();
         } else if (mode === "play") {
             renderPlayContent();
+        } else if (mode === "advent") {
+            renderAdventContent();
         } else {
             renderGradeContent();
         }

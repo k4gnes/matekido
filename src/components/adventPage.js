@@ -1,28 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { getLessonStats } from "../profile/Profile.js";
-import { adventDateKeys, adventPool, adventStart, adventYear, pickAdventLesson, todayKey, windowState } from "../utils/advent.js?v=1";
-
-// A díszek soronként egyre szélesebb sorban ülnek a fán, alulról felfelé.
-const ROW_COUNTS = [1, 2, 3, 3, 3, 4, 4, 4];
-
-const ORNAMENT_SLOTS = (() => {
-
-    const slots = [];
-
-    ROW_COUNTS.forEach((count, row) => {
-        const top = 16 + row * 8.5;
-        const half = ((top - 2) / 86) * 50;
-        const spread = half * 0.7;
-        for (let i = 0; i < count; i++) {
-            const left = count === 1 ? 50 : 50 + (i - (count - 1) / 2) * (2 * spread / (count - 1));
-            slots.push({ top, left });
-        }
-    });
-
-    return slots;
-
-})();
+import { adventDateKeys, adventPool, adventStart, adventYear, ORNAMENT_SLOTS, pickAdventLesson, todayKey, windowState } from "../utils/advent.js?v=2";
 
 function dayLabel(dateKey) {
 
@@ -82,7 +61,8 @@ export function renderAdventPage(container, { lessons, grade, onSelect }) {
             return;
         }
 
-        const doneCount = dates.filter(isDone).length;
+        const done = dates.map(isDone);
+        const doneCount = done.filter(Boolean).length;
 
         const card = createCard("advent-card");
         const layout = document.createElement("div");
@@ -93,11 +73,13 @@ export function renderAdventPage(container, { lessons, grade, onSelect }) {
 
         const foliage = document.createElement("div");
         foliage.className = "advent-foliage";
-        ORNAMENT_SLOTS.slice(0, doneCount).forEach(slot => {
+        ORNAMENT_SLOTS.forEach((slot, i) => {
+            if (!done[i]) return;
             const ball = document.createElement("span");
-            ball.className = "advent-ornament";
+            ball.className = `advent-ornament ornament-${(i % 3) + 1}`;
             ball.style.top = `${slot.top}%`;
             ball.style.left = `${slot.left}%`;
+            ball.textContent = String(i + 1);
             foliage.append(ball);
         });
 
@@ -119,8 +101,17 @@ export function renderAdventPage(container, { lessons, grade, onSelect }) {
         const grid = document.createElement("div");
         grid.className = "advent-grid";
 
+        const detailBox = document.createElement("div");
+        detailBox.className = "advent-detail";
+
+        // A fa érintetlen marad: kattintáskor csak a részlet doboz frissül,
+        // különben a teljes újrarajzolás miatt ugrál az egész kártya.
+        function fillDetail() {
+            detailBox.replaceChildren(...detailNodes());
+        }
+
         dates.forEach((dateKey, i) => {
-            const state = windowState(dateKey, today, isDone(dateKey));
+            const state = windowState(dateKey, today, done[i]);
             const btn = document.createElement("button");
             btn.type = "button";
             btn.className = `advent-window ${state}${dateKey === selected ? " selected" : ""}`;
@@ -128,26 +119,25 @@ export function renderAdventPage(container, { lessons, grade, onSelect }) {
             btn.setAttribute("aria-label", `${dayLabel(dateKey)} – ${state === "future" ? "zárva" : state === "done" ? "kész" : "nyitva"}`);
             btn.addEventListener("click", () => {
                 selected = dateKey;
-                paint();
+                grid.querySelector(".advent-window.selected")?.classList.remove("selected");
+                btn.classList.add("selected");
+                fillDetail();
             });
             grid.append(btn);
         });
 
-        side.append(title, count, grid, detail());
+        fillDetail();
+        side.append(title, count, grid, detailBox);
         layout.append(tree, side);
         card.append(layout);
         container.append(card);
 
     }
 
-    function detail() {
-
-        const box = document.createElement("div");
-        box.className = "advent-detail";
+    function detailNodes() {
 
         if (!selected) {
-            box.textContent = "Még egy ablak sem nyílt ki.";
-            return box;
+            return [document.createTextNode("Még egy ablak sem nyílt ki.")];
         }
 
         const entry = pickAdventLesson(pool, selected);
@@ -156,36 +146,31 @@ export function renderAdventPage(container, { lessons, grade, onSelect }) {
         const date = document.createElement("p");
         date.className = "advent-detail-date";
         date.textContent = dayLabel(selected);
-        box.append(date);
 
         if (state === "future") {
             const locked = document.createElement("p");
             locked.className = "advent-detail-note";
             locked.textContent = "🔒 Ez az ablak még zárva van – majd akkor nyílik ki, amikor eljön a napja.";
-            box.append(locked);
-            return box;
+            return [date, locked];
         }
 
         const lessonTitle = document.createElement("p");
         lessonTitle.className = "advent-detail-lesson";
         lessonTitle.textContent = entry ? entry.title : "";
-        box.append(lessonTitle);
 
         if (state === "done") {
-            const done = document.createElement("p");
-            done.className = "advent-detail-note";
-            done.textContent = "✔ Kész – a dísz már a fán van!";
-            box.append(done);
-            return box;
+            const note = document.createElement("p");
+            note.className = "advent-detail-note";
+            note.textContent = "✔ Kész – a dísz már a fán van!";
+            return [date, lessonTitle, note];
         }
 
         const open = createButton("▶️ Lecke megnyitása", {
             className: "profile-page-button",
             onClick: () => onSelect(entry.file, { from: "advent" })
         });
-        box.append(open);
 
-        return box;
+        return [date, lessonTitle, open];
 
     }
 

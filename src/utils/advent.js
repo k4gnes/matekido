@@ -83,3 +83,45 @@ export function windowState(dateKey, today, done) {
     return dateKey <= today ? "open" : "future";
 
 }
+
+// A díszek soronként egyre szélesebb sorban ülnek a fán, felülről lefelé.
+const ORNAMENT_ROWS = [1, 1, 2, 3, 3, 4, 5, 5];
+
+// A dísz sugara %-ban a fa oldalhosszához mérve (a legszűkebb eset a mobil).
+export const ORNAMENT_MARGIN = 6;
+
+// A fenyő kontúrjának (a clip-path polygonnak) fele szélessége a megadott
+// magasságon: a dísz csak addig mehet kifelé, amíg a fa ki nem vágja.
+export function treeHalfWidth(y) {
+
+    if (y <= 22) return (14 * y) / 22;
+    if (y <= 48) return 7 + (19 * (y - 22)) / 26;
+    if (y <= 76) return 17 + (25 * (y - 48)) / 28;
+    return 28 + (22 * (y - 76)) / 20;
+
+}
+
+export const ORNAMENT_SLOTS = (() => {
+
+    const slots = [];
+
+    ORNAMENT_ROWS.forEach((count, row) => {
+        const top = 16 + row * 8.5;
+
+        // A dísz a teljes magasságában kell, hogy a fában maradjon.
+        let safe = Infinity;
+        for (let y = top - 5; y <= top + 5; y += 0.5) {
+            safe = Math.min(safe, treeHalfWidth(y));
+        }
+
+        const spread = Math.max(0, safe - ORNAMENT_MARGIN);
+
+        for (let i = 0; i < count; i++) {
+            const left = count === 1 ? 50 : 50 + (i - (count - 1) / 2) * (2 * spread / (count - 1));
+            slots.push({ top, left });
+        }
+    });
+
+    return slots;
+
+})();

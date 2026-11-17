@@ -13,7 +13,8 @@ function check(cond, message) {
 
 const {
     ADVENT_DAYS, adventDateKeys, adventPool, adventStart, adventYear,
-    pickAdventLesson, todayKey, windowState
+    ORNAMENT_MARGIN, ORNAMENT_SLOTS, pickAdventLesson, todayKey, treeHalfWidth,
+    windowState
 } = await import("./utils/advent.js");
 
 check(adventYear(new Date(2026, 11, 1)) === 2026, "december a saját évéhez tartozik");
@@ -56,6 +57,27 @@ check(windowState("2026-12-03", "2026-12-03", true) === "done", "teljesített ab
 check(windowState("2026-12-20", "2026-12-03", true) === "done", "a kész mindig felülírja a zártat");
 
 check(adventStart(2026) === new Date(2026, 11, 1).getTime(), "a gyűjtés dec 1-jén kezdődik");
+
+check(ORNAMENT_SLOTS.length === ADVENT_DAYS, "24 díszhely van a fán");
+check(ORNAMENT_SLOTS.every((s, i) => i === 0 || s.top >= ORNAMENT_SLOTS[i - 1].top), "a díszek felülről lefelé sorakoznak");
+
+// A dísz a teljes magasságában a fa belsejében marad, különben a clip-path levágja.
+// (1e-9: a spread ugyanabból a számításból jön, csak lebegőpontos kerekítés.)
+for (const [i, slot] of ORNAMENT_SLOTS.entries()) {
+    for (let y = slot.top - 5; y <= slot.top + 5; y += 0.5) {
+        check(Math.abs(slot.left - 50) + ORNAMENT_MARGIN <= treeHalfWidth(y) + 1e-9,
+            `a(z) ${i + 1}. dísz kilóg a fából y=${y} magasságon`);
+    }
+}
+
+// A szomszédos díszek nem érhetnek össze (a méretük %-ban ugyanoda esik).
+for (let i = 1; i < ORNAMENT_SLOTS.length; i++) {
+    const prev = ORNAMENT_SLOTS[i - 1];
+    const cur = ORNAMENT_SLOTS[i];
+    if (Math.abs(cur.top - prev.top) < 0.01) {
+        check(cur.left - prev.left >= 10, `a(z) ${i}. és ${i + 1}. dísz túl közel van egymáshoz`);
+    }
+}
 check(/^\d{4}-\d{2}-\d{2}$/.test(todayKey()), "a mai dátum kulcsa YYYY-MM-DD");
 
 globalThis.location = { search: "?advent=12" };

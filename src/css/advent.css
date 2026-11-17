@@ -24,7 +24,7 @@
 
 .advent-tree {
     flex: 0 0 auto;
-    width: min(230px, 44vw);
+    width: min(280px, 62vw);
 }
 
 .advent-foliage {
@@ -32,7 +32,7 @@
     width: 100%;
     aspect-ratio: 1 / 1;
     background: linear-gradient(180deg, #35a75b, #177245);
-    clip-path: polygon(50% 0%, 64% 22%, 57% 22%, 76% 48%, 67% 48%, 92% 76%, 78% 76%, 100% 96%, 0% 96%, 22% 76%, 8% 76%, 33% 48%, 24% 48%, 43% 22%, 36% 22%);
+    clip-path: polygon(50% 0%, 64% 22%, 57% 22%, 76% 48%, 67% 48%, 92% 76%, 78% 76%, 100% 96%, 0% 96%, 22% 76%, 8% 76%, 33% 48%, 24% 48%, 43% 22%, 36% 22%); /* a díszek helyét adó treeHalfWidth() ugyanezt a kontúrt számolja */
 }
 
 .advent-trunk {
@@ -45,19 +45,36 @@
 
 .advent-ornament {
     position: absolute;
-    width: 14px;
-    height: 14px;
-    margin: -7px 0 0 -7px;
+    z-index: 0;
+    width: clamp(18px, 5.5vw, 24px);
+    height: clamp(18px, 5.5vw, 24px);
+    transform: translate(-50%, -50%);
+    display: grid;
+    place-items: center;
     border-radius: 50%;
     background: radial-gradient(circle at 32% 30%, #ffe0b0, #e8590c 62%, #b8420a);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, .35);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+    font-size: clamp(9px, 3vw, 11px);
+    font-weight: 800;
+    line-height: 1;
+    color: #3a3a3a;
 }
 
-.advent-ornament:nth-child(3n + 2) {
-    background: radial-gradient(circle at 32% 30%, #fff3c4, #f0b429 62%, #c98a08);
+/* biliárdgolyó: a szín csak a szegély marad, a szám a fehér középen ül */
+.advent-ornament::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 14%;
+    border-radius: 50%;
+    background: #FFFDF8;
 }
 
-.advent-ornament:nth-child(3n) {
+.advent-ornament.ornament-2 {
+    background: radial-gradient(circle at 32% 30%, #ffe9a8, #d99a06 62%, #9c6d05);
+}
+
+.advent-ornament.ornament-3 {
     background: radial-gradient(circle at 32% 30%, #cfe4ff, #2563eb 62%, #1a4bb8);
 }
 
@@ -106,6 +123,10 @@
 .advent-detail {
     margin-top: .9rem;
     padding: .8rem;
+    min-height: 7.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
     background: #fdf8ee;
     border: 1px dashed #e0cfae;

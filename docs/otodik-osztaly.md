@@ -1,6 +1,6 @@
 # Matekidő – 5. osztályos tanmenet
 
-> **Státusz: megvalósult.** A regiszterben 240 lecke van, ebből 41 az 5. osztályos (37 számozott feladat + 1 mester kihívás + 3 egyperces: a teljes Számfogalom, Egész számok, Törtek, Tizedes törtek, Százalékszámítás, Műveletek nagy számokkal, Geometria, Gyakorlati tudások, Adatok és Szöveges feladatok blokk). Az alábbiak irányadó tervek – a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
+> **Státusz: megvalósult.** A regiszterben 337 lecke van, ebből 41 az 5. osztályos (37 számozott feladat + 1 mester kihívás + 3 egyperces: a teljes Számfogalom, Egész számok, Törtek, Tizedes törtek, Százalékszámítás, Műveletek nagy számokkal, Geometria, Gyakorlati tudások, Adatok és Szöveges feladatok blokk). Az alábbiak irányadó tervek – a leckéket csak akkor szabad felvenni a regiszterbe, ha a leképezés valóban megvan.
 
 **Tervezett 37 lecke + 1 mester kihívás**, 10 témakörben (a regiszterben 7 kategória: Számok, Törtek, Összeadás-Kivonás, Szorzás és Osztás, Gyakorlati matek, Geometria, Szöveges feladatok). Minden lecke a hét világ egyikében játszódik (postás 📮, verseny 🏁, foci ⚽, konyha 🍳, állatkert 🦁, űr 🚀, villamos 🚋).
 

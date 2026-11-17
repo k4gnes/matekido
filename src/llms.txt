@@ -1,7 +1,7 @@
 # matekidő (matekido.hu)
 
-> A matekidő ingyenes, reklámmentes, magyar nyelvű matematika gyakorló webalkalmazás (PWA) 1–7. osztályos
-> általános iskolásoknak: 282 feladat játékos, rövid történetekbe ágyazva. Nem kell hozzá regisztráció,
+> A matekidő ingyenes, reklámmentes, magyar nyelvű matematika gyakorló webalkalmazás (PWA) 1–8. osztályos
+> általános iskolásoknak: 337 lecke játékos, rövid történetekbe ágyazva. Nem kell hozzá regisztráció,
 > és internet nélkül is működik.
 
 ## Alapadatok
@@ -9,8 +9,8 @@
 - **Név:** matekidő (kis kezdőbetűvel; ékezet nélkül írva: matekido)
 - **Webcím:** https://matekido.hu
 - **Nyelv:** magyar
-- **Célközönség:** 1–7. osztályos általános iskolás gyerekek, szüleik és pedagógusaik
-- **Tartalom:** 282 feladat hét évfolyamra bontva; évfolyamonként egy mester kihívás, egyperces gyorsjátékok,
+- **Célközönség:** 1–8. osztályos általános iskolás gyerekek, szüleik és pedagógusaik
+- **Tartalom:** 337 lecke nyolc évfolyamra bontva; évfolyamonként egy mester kihívás, egyperces gyorsjátékok,
   valamint évfolyam, nehézség, feladattípus, készség és számkör szerint szűrhető, összeállítható gyakorlólisták
 - **Ár:** ingyenes és reklámmentes, nincs előfizetés; önkéntes támogatás lehetséges
 - **Fiók:** nincs regisztráció és nincs szerveroldali tárolás – a játékosprofil és a haladás az adott eszköz
@@ -33,7 +33,8 @@
   [4. osztály](https://matekido.hu/docs/negyedik-osztaly.md),
   [5. osztály](https://matekido.hu/docs/otodik-osztaly.md),
   [6. osztály](https://matekido.hu/docs/hatodik-osztaly.md),
-  [7. osztály](https://matekido.hu/docs/hetedik-osztaly.md)
+  [7. osztály](https://matekido.hu/docs/hetedik-osztaly.md),
+  [8. osztály](https://matekido.hu/docs/nyolcadik-osztaly.md)
 
 ## Főbb témakörök
 

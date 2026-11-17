@@ -58,6 +58,18 @@ check(windowState("2026-12-20", "2026-12-03", true) === "done", "a kész mindig 
 check(adventStart(2026) === new Date(2026, 11, 1).getTime(), "a gyűjtés dec 1-jén kezdődik");
 check(/^\d{4}-\d{2}-\d{2}$/.test(todayKey()), "a mai dátum kulcsa YYYY-MM-DD");
 
+globalThis.location = { search: "?advent=12" };
+check(adventYear(new Date(2026, 5, 1)) === 2026, "előnézetben bármikor adventi év");
+check(todayKey(new Date(2026, 10, 17)) === "2026-12-12", "előnézetben a megadott nap a mai");
+check(adventStart(2026) === 0, "előnézetben minden eddigi teljesítés dísz");
+
+globalThis.location = { search: "?advent=99" };
+check(todayKey(new Date(2026, 10, 17)) === "2026-12-01", "érvénytelen napra dec 1-jét adja");
+
+globalThis.location = { search: "" };
+check(adventYear(new Date(2026, 5, 1)) === null, "előnézet nélkül nyáron nincs naptár");
+delete globalThis.location;
+
 if (failures > 0) {
     console.error(`${failures} hiba`);
     process.exit(1);

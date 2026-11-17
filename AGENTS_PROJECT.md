@@ -10,6 +10,7 @@ Interaktív matematikai tanulási platform magyar gyerekeknek (első osztálytó
 - `node src/generateSWCache.js` – az offline precache-lista (`src/sw-cache.js`) újragenerálása; új/eltűnt fájlnál (pl. új lecke) mindig futtatni kell.
 - `node src/generateLessonTasks.js` – a leckék feladatszámának (`index.json` `tasks` mezője) kiírása; új vagy módosított lecke után futtatni kell, különben a `make test` hibát jelez.
 - Minden commit után manuálisan ellenőrizni kell a böngészőben (hibakereséshez nincs automatizált teszt). Ehhez használható: `docs/tesztelés.md` (teljes app-átfutás) és az osztályonkénti forgatókönyvek `docs/teszt-forgatokonyv-{1,2,3,4,5,6,7,8}-osztaly.md` (mind a nyolc évfolyamhoz van).
+- Adventi naptár előnézet: `localhost:8000/?advent=12` – a `?advent=<nap>` paraméter a megadott dec. napjaként mutatja a naptárat, bármikor (1–24).
 
 ## Web gyökér: `src/`
 

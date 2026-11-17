@@ -1,7 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { getLessonStats } from "../profile/Profile.js";
-import { adventDateKeys, adventPool, adventStart, adventYear, ORNAMENT_SLOTS, pickAdventLesson, todayKey, windowState } from "../utils/advent.js?v=2";
+import { adventDateKeys, adventPool, adventStart, adventYear, ORNAMENT_SLOTS, pickAdventLesson, todayKey, windowState } from "../utils/advent.js?v=3";
 
 function dayLabel(dateKey) {
 
@@ -86,6 +86,15 @@ export function renderAdventPage(container, { lessons, grade, onSelect }) {
         const trunk = document.createElement("div");
         trunk.className = "advent-trunk";
         tree.append(foliage, trunk);
+
+        // A 24. ablak csúcsdísz: a fa tetejére kerül, kívül a vágáson,
+        // hogy a clip-path ne metélje le a csillag hegyét.
+        if (done[ORNAMENT_SLOTS.length]) {
+            const star = document.createElement("span");
+            star.className = "advent-star";
+            star.textContent = String(dates.length);
+            tree.append(star);
+        }
 
         const side = document.createElement("div");
         side.className = "advent-side";

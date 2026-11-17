@@ -1,9 +1,16 @@
 .advent-layout {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 1.2rem;
     align-items: flex-start;
     justify-content: center;
+}
+
+/* A .card középre záró alapból szűkíti a gyerekét: tartalomhoz igazodó
+   szélességnél a fa fent/balra állapota váltakozik, ezért itt rögzítjük. */
+.content-area.advent-mode {
+    width: 100%;
 }
 
 .advent-side {
@@ -23,8 +30,10 @@
 }
 
 .advent-tree {
+    position: relative;
     flex: 0 0 auto;
     width: min(280px, 62vw);
+    margin-top: 1.5rem; /* a csúcsdísz hegyének fölötte kell elférnie */
 }
 
 .advent-foliage {
@@ -76,6 +85,25 @@
 
 .advent-ornament.ornament-3 {
     background: radial-gradient(circle at 32% 30%, #cfe4ff, #2563eb 62%, #1a4bb8);
+}
+
+/* a 24. ablak csúcsdíszje: arany csillag a fa tetején */
+.advent-star {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    width: clamp(32px, 9vw, 46px);
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    background: radial-gradient(circle at 35% 30%, #fff6d8, #f0b429 55%, #c98a08);
+    font-size: clamp(10px, 3.2vw, 14px);
+    font-weight: 800;
+    line-height: 1;
+    color: #6b4400;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .3));
 }
 
 .advent-grid {

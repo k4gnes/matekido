@@ -13,8 +13,8 @@ import { getPracticeLessonFiles, latestPercentage } from "./practicePage.js?v=14
 import { openFavoritesChooser } from "./favoritesChooser.js?v=6";
 import { beginRun, resolveAssessmentLessons } from "../utils/assessment.js?v=6";
 import { gradesWithLessons } from "../utils/grades.js?v=1";
-import { adventYear } from "../utils/advent.js?v=1";
-import { renderAdventPage } from "./adventPage.js?v=2";
+import { adventYear } from "../utils/advent.js?v=3";
+import { renderAdventPage } from "./adventPage.js?v=3";
 import { getWorld } from "../world/WorldRegistry.js";
 
 export const CHILD_FRIENDLY_LABELS = {
@@ -1284,6 +1284,9 @@ export function renderLessonMenu({ index, root, onSelect, onProfile, onSwitch, o
 
     function renderContent() {
         contentArea.replaceChildren();
+        // a naptár kártyája csak így kap biztos szélességet (a .card
+        // középre zár, ezért tartalomhoz igazodna – a fa attól ugrálna)
+        contentArea.classList.toggle("advent-mode", mode === "advent");
 
         const gc = gradeConfig.find(g => g.grade === selectedGrade);
         gradeTab.textContent = gc ? `🎓 ${gc.title}` : "🎓 Évfolyam";

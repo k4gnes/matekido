@@ -58,7 +58,7 @@ check(windowState("2026-12-20", "2026-12-03", true) === "done", "a kész mindig 
 
 check(adventStart(2026) === new Date(2026, 11, 1).getTime(), "a gyűjtés dec 1-jén kezdődik");
 
-check(ORNAMENT_SLOTS.length === ADVENT_DAYS, "24 díszhely van a fán");
+check(ORNAMENT_SLOTS.length === ADVENT_DAYS - 1, "23 díszhely a sorokban, a 24. a csúcsdísz");
 check(ORNAMENT_SLOTS.every((s, i) => i === 0 || s.top >= ORNAMENT_SLOTS[i - 1].top), "a díszek felülről lefelé sorakoznak");
 
 // A dísz a teljes magasságában a fa belsejében marad, különben a clip-path levágja.

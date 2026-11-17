@@ -85,7 +85,8 @@ export function windowState(dateKey, today, done) {
 }
 
 // A díszek soronként egyre szélesebb sorban ülnek a fán, felülről lefelé.
-const ORNAMENT_ROWS = [1, 1, 2, 3, 3, 4, 5, 5];
+// A 24. ablak nem ide kerül: ő a csúcsdísz, a fa tetején lévő csillag.
+const ORNAMENT_ROWS = [1, 1, 2, 3, 3, 4, 5, 4];
 
 // A dísz sugara %-ban a fa oldalhosszához mérve (a legszűkebb eset a mobil).
 export const ORNAMENT_MARGIN = 6;

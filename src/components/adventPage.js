@@ -1,7 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { getLessonStats } from "../profile/Profile.js";
-import { adventDateKeys, adventPool, adventStart, adventYear, ORNAMENT_SLOTS, pickAdventLesson, todayKey, windowState } from "../utils/advent.js?v=3";
+import { adventDateKeys, adventPool, adventStart, adventYear, ORNAMENT_SLOTS, pickAdventLesson, todayKey, windowState } from "../utils/advent.js?v=4";
 
 function dayLabel(dateKey) {
 
@@ -45,7 +45,7 @@ export function renderAdventPage(container, { lessons, grade, onSelect }) {
 
     function isDone(dateKey) {
 
-        const entry = pickAdventLesson(pool, dateKey);
+        const entry = pickAdventLesson(pool, dateKey, grade);
         if (!entry) return false;
         const stats = getLessonStats(entry.file);
         return !!stats && (stats.lastDoneAt || 0) >= start;
@@ -149,7 +149,7 @@ export function renderAdventPage(container, { lessons, grade, onSelect }) {
             return [document.createTextNode("Még egy ablak sem nyílt ki.")];
         }
 
-        const entry = pickAdventLesson(pool, selected);
+        const entry = pickAdventLesson(pool, selected, grade);
         const state = windowState(selected, today, isDone(selected));
 
         const date = document.createElement("p");

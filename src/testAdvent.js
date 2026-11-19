@@ -31,24 +31,40 @@ check(keys.every(k => /^\d{4}-\d{2}-\d{2}$/.test(k)), "a dátumkulcsok formátum
 
 const lessons = [];
 for (let i = 0; i < 30; i++) {
-    lessons.push({ id: `l${i}`, file: `l${i}.json`, grades: [5], practice: false, master: false });
+    lessons.push({ id: `l${i}`, file: `l${i}.json`, grades: [4], practice: false, master: false });
 }
-lessons.push({ id: "play", file: "play.json", grades: [5], practice: true });
-lessons.push({ id: "master", file: "master.json", grades: [5], master: true });
-lessons.push({ id: "other", file: "other.json", grades: [3] });
+lessons.push({ id: "play", file: "play.json", grades: [4], practice: true });
+lessons.push({ id: "master", file: "master.json", grades: [4], master: true });
+lessons.push({ id: "other", file: "other.json", grades: [2] });
+const grade1 = [];
+for (let i = 0; i < 8; i++) {
+    grade1.push({ id: `g1-${i}`, file: `g1-${i}.json`, grades: [1], practice: false, master: false });
+}
+lessons.push(...grade1);
 
 const pool = adventPool(lessons, 5);
-check(pool.length === 30, "a medencében csak az évfolyam rendes leckéi vannak (nincs egyperces és mester)");
-check(adventPool(lessons, 3).length === 1, "más évfolyam más medencét kap");
+check(pool.length === 30, "a medence az előző évfolyam rendes leckéiből áll (nincs egyperces és mester)");
+check(adventPool(lessons, 3).length === 1, "minden évfolyam az előző évfolyamból húz");
+check(adventPool(lessons, 1).length === 8, "az elsős a saját évfolyamából kap (nincs előző évfolyam)");
+check(adventPool(lessons, 2).length === 8, "a másodikos az elsősök medencéjéből húz");
 check(adventPool(lessons, null).length === 0, "évfolyam nélkül nincs medence");
 check(adventPool([], 5).length === 0, "üres listából üres medence");
 
-check(pickAdventLesson([], "2026-12-01") === null, "üres medencéből nincs lecke");
+check(pickAdventLesson([], "2026-12-01", 5) === null, "üres medencéből nincs lecke");
 
-const first = keys.map(k => pickAdventLesson(pool, k));
+const first = keys.map(k => pickAdventLesson(pool, k, 5));
 check(first.every(e => e && pool.includes(e)), "minden napra jön lecke a medencéből");
-check(first.every((e, i) => e === pickAdventLesson(pool, keys[i])), "ugyanaz a dátum ugyanazt a leckét adja");
+check(first.every((e, i) => e === pickAdventLesson(pool, keys[i], 5)), "ugyanaz a dátum + évfolyam ugyanazt a leckét adja");
 check(new Set(first.map(e => e.id)).size > 1, "a 24 nap nem ugyanazt a leckét adja");
+
+// Az 1. és a 2. osztály medencéje azonos (utóbbi az előző évfolyamból húz),
+// ezért az évfolyam is a hash része: ne ugyanazt a 24 leckét kapják.
+const p1 = adventPool(lessons, 1);
+const p2 = adventPool(lessons, 2);
+check(p1.length === p2.length && p1.every((l, i) => l === p2[i]), "a két medence tartalma azonos");
+const s1 = keys.map(k => pickAdventLesson(p1, k, 1));
+const s2 = keys.map(k => pickAdventLesson(p2, k, 2));
+check(s1.some((e, i) => e !== s2[i]), "az elsős és a másodikos nem kapja ugyanazt a 24 leckét");
 
 check(windowState("2026-12-05", "2026-12-03", false) === "future", "jövőbeli ablak zárva");
 check(windowState("2026-12-03", "2026-12-03", false) === "open", "mai ablak nyitva");

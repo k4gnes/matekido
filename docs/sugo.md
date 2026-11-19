@@ -57,7 +57,7 @@ Az **egyperces játékok** külön oldalon élnek: a feladatok menüjében a {{�
 
 Az **adventi naptár** a {{🎄 Advent|grey}} gombbal nyílik meg a feladatok menüjében, **december 1-jétől vízkeresztig** (január 5-ig). A fa alakja és a díszek minden évben újrakezdődnek.
 
-- Minden nap **kinyílik egy ablak**, és egy, az évfolyamodhoz tartozó **lecke** kerül bele – minden nap más, és ugyanaz a nap mindig ugyanazt a leckét adja, újratöltésnél sem változik.
+- Minden nap **kinyílik egy ablak**, és egy **lecke** kerül bele – minden nap más, és ugyanaz a nap mindig ugyanazt a leckét adja, újratöltésnél sem változik. 2. osztálytól az **előző évfolyam** anyagából válogat (azt már tanultad), 1. osztályban a saját évfolyamodéról.
 - A leckét elvégezve egy **dísz kerül a fenyőfára**: a fa ahogy gyűlnek a díszek, egyre jobban feldíszíti magát.
 - A múltbeli ablakokat **bármikor be lehet pótolni**, egy kihagyott nap semmiért nem büntet.
 - Január 6-án, vízkeresztkor a fa és a naptár eltűnik.

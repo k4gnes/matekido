@@ -54,11 +54,16 @@ export function adventStart(year) {
 
 }
 
+// Decemberben az adott évfolyam anyagának jó részét még nem tanulták, ezért
+// 2. osztálytól az előző évfolyam leckéiből sorsolunk; az 1. osztálynak nincs
+// előző évfolyama, ő a sajátjából kap.
 export function adventPool(lessons, grade) {
-    return (lessons || []).filter(l => l.grades?.includes(grade) && !l.practice && !l.master);
+    const source = grade > 1 ? grade - 1 : grade;
+    return (lessons || []).filter(l => l.grades?.includes(source) && !l.practice && !l.master);
 }
 
-// FNV-1a: ugyanaz a dátum mindig ugyanazt a leckét adja, mindenkinél.
+// FNV-1a: ugyanaz a dátum + évfolyam mindig ugyanazt a leckét adja, mindenkinél.
+// Az évfolyam is a kulcs része, mert az 1. és a 2. osztály medencéje azonos.
 function hash(text) {
 
     let h = 2166136261;
@@ -70,10 +75,10 @@ function hash(text) {
 
 }
 
-export function pickAdventLesson(pool, dateKey) {
+export function pickAdventLesson(pool, dateKey, grade) {
 
     if (!pool || pool.length === 0) return null;
-    return pool[hash(dateKey) % pool.length];
+    return pool[hash(`${grade}:${dateKey}`) % pool.length];
 
 }
 

@@ -56,6 +56,7 @@ const first = keys.map(k => pickAdventLesson(pool, k, 5));
 check(first.every(e => e && pool.includes(e)), "minden napra jön lecke a medencéből");
 check(first.every((e, i) => e === pickAdventLesson(pool, keys[i], 5)), "ugyanaz a dátum + évfolyam ugyanazt a leckét adja");
 check(new Set(first.map(e => e.id)).size > 1, "a 24 nap nem ugyanazt a leckét adja");
+check(new Set(first.map(e => e.id)).size === ADVENT_DAYS, "a 24 ablak 24 különböző leckét kap");
 
 // Az 1. és a 2. osztály medencéje azonos (utóbbi az előző évfolyamból húz),
 // ezért az évfolyam is a hash része: ne ugyanazt a 24 leckét kapják.

@@ -75,10 +75,38 @@ function hash(text) {
 
 }
 
+function slotOf(pool, dateKey, grade) {
+
+    return hash(`${grade}:${dateKey}`) % pool.length;
+
+}
+
+// Az adott nap helye: az első szabad a saját hash-étől kezdve; a foglalt
+// helyeket a `taken` sorrendben, napok szerint adogatjuk hozzá.
+function claimSlot(pool, dateKey, grade, taken) {
+
+    let i = slotOf(pool, dateKey, grade);
+    for (let n = 0; n < pool.length && taken.has(i); n++) i = (i + 1) % pool.length;
+    taken.add(i);
+    return i;
+
+}
+
 export function pickAdventLesson(pool, dateKey, grade) {
 
     if (!pool || pool.length === 0) return null;
-    return pool[hash(`${grade}:${dateKey}`) % pool.length];
+
+    // Minden korábbi nap lefoglalja a helyét, és az ütközést továbbtoljuk,
+    // hogy a 24 ablak 24 különböző leckét kapjon. Ha a medence kisebb,
+    // mint 24, hamarabb elfogy a hely, és a többi nap megismétel.
+    const prefix = dateKey.slice(0, -2);
+    const day = Number(dateKey.slice(-2));
+    const taken = new Set();
+    for (let d = 1; d < day; d++) {
+        claimSlot(pool, `${prefix}${String(d).padStart(2, "0")}`, grade, taken);
+    }
+
+    return pool[claimSlot(pool, dateKey, grade, taken)];
 
 }
 

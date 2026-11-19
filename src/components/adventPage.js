@@ -1,7 +1,7 @@
 import { createCard } from "./ui/card.js";
 import { createButton } from "./ui/button.js";
 import { getLessonStats } from "../profile/Profile.js";
-import { adventDateKeys, adventPool, adventStart, adventYear, ORNAMENT_SLOTS, pickAdventLesson, todayKey, windowState } from "../utils/advent.js?v=4";
+import { adventDateKeys, adventPool, adventStart, adventYear, ORNAMENT_SLOTS, pickAdventLesson, todayKey, windowState } from "../utils/advent.js?v=5";
 
 function dayLabel(dateKey) {
 

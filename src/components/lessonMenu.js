@@ -13,8 +13,8 @@ import { getPracticeLessonFiles, latestPercentage } from "./practicePage.js?v=14
 import { openFavoritesChooser } from "./favoritesChooser.js?v=6";
 import { beginRun, resolveAssessmentLessons } from "../utils/assessment.js?v=6";
 import { gradesWithLessons } from "../utils/grades.js?v=1";
-import { adventYear } from "../utils/advent.js?v=4";
-import { renderAdventPage } from "./adventPage.js?v=4";
+import { adventYear } from "../utils/advent.js?v=5";
+import { renderAdventPage } from "./adventPage.js?v=5";
 import { getWorld } from "../world/WorldRegistry.js";
 
 export const CHILD_FRIENDLY_LABELS = {

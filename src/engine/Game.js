@@ -242,7 +242,7 @@ const COUNTED_TYPES = new Set([
 const isCounted = s => COUNTED_TYPES.has(s.type);
 
 
-import { renderCelebration } from "../components/celebration.js?v=24";
+import { renderCelebration } from "../components/celebration.js?v=25";
 import { renderProgress } from "../components/progress.js?v=4";
 import { renderMissingProgress } from "../components/missingProgress.js?v=4";
 import { renderComparisonProgress } from "../components/comparisonProgress.js?v=4";
@@ -452,6 +452,8 @@ export class Game {
         this.onProfile = leave(actions.onProfile);
         this.onStats = leave(actions.onStats);
         this.onHelp = leave(actions.onHelp);
+        this.onSwitch = leave(actions.onSwitch);
+        this.onParent = leave(actions.onParent);
         this.onNext = leave(actions.onNext);
         this.onSkipNext = leave(actions.onSkipNext);
         this.onGradeComplete = leave(actions.onGradeComplete);
@@ -707,6 +709,8 @@ export class Game {
                     onProfile: this.onProfile,
                     onStats: this.onStats,
                     onHelp: this.onHelp,
+                    onSwitch: this.onSwitch,
+                    onParent: this.onParent,
                     onNext: gradeJustCompleted && this.onGradeComplete ? this.onGradeComplete : this.onNext
                 },
                 milestone,
@@ -769,6 +773,8 @@ export class Game {
                 onProfile: this.onProfile,
                 onStats: this.onStats,
                 onHelp: this.onHelp,
+                onSwitch: this.onSwitch,
+                onParent: this.onParent,
                 onNext: gradeJustCompleted && this.onGradeComplete ? this.onGradeComplete : this.onNext
             }, milestone, reward, getActiveWorld(), this.lessonIndex, this.getLessonTitle(), this.getLessonGradeLabel(), this.elapsedSeconds(), this.celebrationOptions());
 

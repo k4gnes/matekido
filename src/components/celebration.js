@@ -76,7 +76,9 @@ export function renderCelebration(step, root, actions = {}, milestone, reward, a
         onLessons: () => actions.onExit?.(),
         onProfile: () => actions.onProfile?.(),
         onStats: () => actions.onStats?.(),
-        onHelp: () => actions.onHelp?.()
+        onHelp: () => actions.onHelp?.(),
+        onSwitch: () => actions.onSwitch?.(),
+        onParent: () => actions.onParent?.()
     });
 
     card.append(navbar);

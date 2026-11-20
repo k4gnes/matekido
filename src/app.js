@@ -1,4 +1,4 @@
-import { Game } from "./engine/Game.js?v=177";
+import { Game } from "./engine/Game.js?v=178";
 import { loadLesson } from "./engine/LessonLoader.js";
 import { buildLesson } from "./builders/LessonBuilder.js?v=102";
 import { renderLessonMenu } from "./components/lessonMenu.js?v=145";
@@ -321,6 +321,8 @@ async function startLesson(path, opts = {}) {
             onProfile: showProfile,
             onStats: showStats,
             onHelp: () => showHelp(),
+            onSwitch: showWelcome,
+            onParent: showParentHub,
             onNext: found?.practice ? () => {
                 const from = opts.from;
                 if (from === "play") {

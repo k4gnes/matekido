@@ -6,6 +6,7 @@ test:
 	node src/testPlayEngine.js
 	node src/testPractice.js
 	node src/testDailyQuest.js
+	node src/testLessonCounting.js
 	node src/testHints.js
 	node src/testAchievements.js
 	node src/testParentStats.js

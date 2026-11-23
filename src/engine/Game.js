@@ -129,6 +129,7 @@ const COUNTED_TYPES = new Set([
     "neighbor-round",
     "place-value",
     "place-value-two-input",
+    "decomposition",
     "decomposition-find-wrong",
     "bridge-ten",
     "sequence",
@@ -626,7 +627,7 @@ export class Game {
 
         try {
             const result = completeLesson({ practice });
-            recordDailyResult(this.correct, this.wrong, this.byType);
+            recordDailyResult(this.correct, this.wrong, this.byType, { practice });
             if (this.lessonFile) {
                 if (practice) recordLessonPractice(this.lessonFile);
                 else recordLessonResult(this.lessonFile, this.correct, this.wrong);

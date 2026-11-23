@@ -377,7 +377,9 @@ export function resolveSkippedLesson(lessonFile) {
 
 }
 
-export function recordDailyResult(correct, wrong, byType = {}) {
+// A gyakorló/egyperces játék válaszai beleszámítanak a napi statisztikába,
+// de leckeszámot csak a valódi lecke ad – ahogy a profil lessonsCompleted-ja sem.
+export function recordDailyResult(correct, wrong, byType = {}, { practice = false } = {}) {
 
     const profile = loadProfile();
     const today = getToday();
@@ -397,7 +399,7 @@ export function recordDailyResult(correct, wrong, byType = {}) {
     const day = profile.dailyStats[today];
     day.correct += correct;
     day.wrong += wrong;
-    day.lessonsPlayed++;
+    if (!practice) day.lessonsPlayed++;
 
     for (const [type, counts] of Object.entries(byType)) {
         if (!day.byType[type]) {

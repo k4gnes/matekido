@@ -266,13 +266,13 @@
       "subtitle": "Osztás egésszel és törttel, megfordított szorzás",
       "file": "./data/lessons/grade5/fraction-divide-01.json",
       "worldTitles": {
-        "postman": "📮 Mennyi lapot kapsz fél adagonként?",
-        "racing": "🏎️ Hány körből áll össze az ismétlés?",
-        "cooking": "🥘 Mennyi adag készül a feléből?",
-        "football": "🏆 Hány gól esik összesen?",
-        "animals": "🦛 Mennyi eleséget kapsz összesen?",
-        "space": "🛸 Mennyi energiát töltesz be összesen?",
-        "tram": "🚋 Hány jegyet adtok össze?"
+        "postman": "📮 Mennyi levél jut egy fél adagra?",
+        "racing": "🏎️ Mennyi egy kör fele?",
+        "cooking": "🥘 Mennyi adag jön a feléből?",
+        "football": "⚽ Mennyi a gólok fele?",
+        "animals": "🦛 Mennyi eleség jut egy fél adagra?",
+        "space": "🛸 Mennyi energia marad, ha felezed?",
+        "tram": "🚋 Hány jegy jut feleannyi utasnak?"
       },
       "tasks": 8
     },

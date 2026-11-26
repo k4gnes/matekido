@@ -3906,6 +3906,7 @@
       "id": "addition-play-01",
       "title": "🎲 Számolós játék (egyperces)",
       "grades": [
+        1,
         2
       ],
       "category": "operations",

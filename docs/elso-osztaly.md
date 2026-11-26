@@ -93,4 +93,8 @@ Azoknak, akiknek nagyon jól megy a matek. Itt nem elég számolni: gondolkodni 
 
 Ezek nem számozott feladatok: a **🎲 Egypercesek** oldalon találhatók, nem számítanak a haladásba, és mindegyiknek saját rekordja van. A játék végén a ➡️ Tovább gomb visszavigyen ide.
 
-**Ebben az osztályban még nincsenek egyperces játékok** – a szorzótábla-játékok 2. osztálytól, a műveleti sorrend játék 3. osztálytól érhető el.
+| Játék | Lecke | Feladattípus | Tartomány | Nehézség |
+|---|---|---|---|---|
+| Számolós összeadás | [🎲 Számolós játék – egy perc, négy gomb](?lesson=addition-play-01) | Számolós játék | 20 | 2 |
+
+A szorzótábla-játékok 2. osztálytól, a műveleti sorrend játék 3. osztálytól érhető el.

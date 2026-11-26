@@ -32,7 +32,7 @@ Ennek a dokumentumnak a célja, hogy az **1. osztályos tananyagot** (44 lecke, 
 
 ## 2. Lecke-ellenőrző táblázatok
 
-A sorok sorszáma **1–44, folytonos** – megegyezik a menüben és a lecke fejlécében látott „x/44” jelzéssel. A🌟 Mester kihívás nem szerepel ebben a táblázatban (a menüben sincs rá x/N jelzés). A szekciók csak csoportosítás, a sorszámok a tananyag (curriculum) sorrendjét követik.
+A sorok sorszáma **1–44, folytonos** – megegyezik a menüben és a lecke fejlécében látott „x/44” jelzéssel. A🌟 Mester kihívás és a 🎲 Egypercesek nem szerepelnek ebben a táblázatban (a menüben sincs rájuk x/N jelzés). A szekciók csak csoportosítás, a sorszámok a tananyag (curriculum) sorrendjét követik.
 
 ### 2.1 Számfogalom
 
@@ -107,6 +107,12 @@ A sorok sorszáma **1–44, folytonos** – megegyezik a menüben és a lecke fe
 | # | Lecke | Típus / tartomány | Amire figyelj | Eredmény |
 |---|-------|-------------------|---------------|----------|
 | 44 | Szöveges feladatok | `word-problem` / 20 | Egy lépéses történet, a művelet a szöveghez illik | ok|
+
+### 2.7 Egypercesek
+
+| # | Játék | Típus / tartomány | Amire figyelj | Eredmény |
+|---|-------|-------------------|---------------|----------|
+| – | 🎲 Számolós játék (egyperces) | `addition-play` / 20 | A 🎲 Egypercesek oldalon jelenik meg (nincs x/N jelzés); 60 másodperc, négy gomb, két szint: tízesen belül és tízesátlépés 20-ig; rossz válasznál megmutatja a bontást, a rekord mentése működik, a játék nem számít a haladásba | |
 
 ---
 
